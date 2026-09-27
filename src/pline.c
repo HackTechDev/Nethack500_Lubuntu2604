@@ -158,6 +158,9 @@ vpline(const char *line, va_list the_args)
     int msgtyp;
     boolean no_repeat;
     coord a11y_mesgxy;
+    /* the message in English when it gets translated, for MSGTYPE */
+    const char *english = 0;
+    char ebuf[BUFSZ];
 
     a11y_mesgxy = a11y.msg_loc; /* save a11y.msg_loc before reseting it */
     /* always reset a11y.msg_loc whether we end up using it or not */
@@ -171,6 +174,26 @@ vpline(const char *line, va_list the_args)
 #endif
     if (program_state.wizkit_wishing)
         return;
+
+    /* translate the whole format, including the "You " &c prefix added
+       by You() and similar; for "%s" alone, its argument is translated
+       below */
+    if (i18n_active() && !(line[0] == '%' && line[1] == 's' && !line[2])) {
+        const char *translation = _(line);
+
+        if (translation != line) {
+            english = line;
+            if (strchr(english, '%')) {
+                va_list eargs;
+
+                va_copy(eargs, the_args);
+                (void) vsnprintf(ebuf, sizeof ebuf, english, eargs);
+                va_end(eargs);
+                english = ebuf;
+            }
+            line = translation;
+        }
+    }
 
     /* when accessiblemsg is set and a11y.msg_loc is nonzero, use the latter
        to insert a location prefix in front of current message */
@@ -197,6 +220,12 @@ vpline(const char *line, va_list the_args)
            unlike with the format, it is irrelevant whether the argument
            contains any percent signs */
         line = va_arg(the_args, const char *); /*VA_NEXT(line,const char *);*/
+        if (i18n_active()) {
+            const char *translation = _(line);
+
+            if (translation != line)
+                english = line, line = translation;
+        }
         ln = (int) strlen(line);
     } else {
         /* perform printf() formatting */
@@ -246,6 +275,9 @@ vpline(const char *line, va_list the_args)
     no_repeat = (gp.pline_flags & PLINE_NOREPEAT) ? TRUE : FALSE;
     if ((gp.pline_flags & OVERRIDE_MSGTYPE) == 0) {
         msgtyp = msgtype_type(line, no_repeat);
+        /* MSGTYPE patterns may be written for the English message */
+        if (english && msgtyp == (no_repeat ? MSGTYP_NOREP : MSGTYP_NORMAL))
+            msgtyp = msgtype_type(english, no_repeat);
 #ifdef USER_SOUNDS
         if (msgtyp == MSGTYP_NORMAL || msgtyp == MSGTYP_NOSHOW)
             maybe_play_sound(line);
@@ -480,6 +512,7 @@ verbalize(const char *line, ...)
 
     va_start(the_args, line);
     gp.pline_flags |= PLINE_VERBALIZE;
+    line = _(line);
     tmp = You_buf((int) strlen(line) + sizeof "\"\"");
     Strcpy(tmp, "\"");
     Strcat(tmp, line);

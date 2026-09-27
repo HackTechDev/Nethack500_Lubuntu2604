@@ -627,7 +627,7 @@ disclose(int how, boolean taken)
             Sprintf(qbuf, "Do you want to see what you had when you %s?",
                     (how == QUIT) ? "quit" : "died");
         else
-            Strcpy(qbuf, "Do you want your possessions identified?");
+            Strcpy(qbuf, N_("Do you want your possessions identified?"));
 
         ask = should_query_disclose_option('i', &defquery);
         c = ask ? yn_function(qbuf, ynqchars, defquery, TRUE) : defquery;
@@ -1415,12 +1415,12 @@ really_done(int how)
         /* don't bother counting to see whether it should be plural */
     }
 
-    Sprintf(pbuf, "%s %s the %s...", Goodbye(), svp.plname,
+    Sprintf(pbuf, _("%s %s the %s..."), Goodbye(), svp.plname,
             (how != ASCENDED)
-                ? (const char *) ((flags.female && gu.urole.name.f)
-                    ? gu.urole.name.f
-                    : gu.urole.name.m)
-                : (const char *) (flags.female ? "Demigoddess" : "Demigod"));
+                ? ((flags.female && gu.urole.name.f)
+                    ? _(gu.urole.name.f)
+                    : gendered_word(gu.urole.name.m, flags.female))
+                : (flags.female ? _("Demigoddess") : _("Demigod")));
     dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
     dump_forward_putstr(endwin, 0, "", done_stopprint);
 

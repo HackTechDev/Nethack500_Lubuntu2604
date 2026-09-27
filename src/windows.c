@@ -1872,6 +1872,7 @@ getlin(const char *query, char *bufp)
     boolean got_cmdq = FALSE;
     struct _cmd_queue *cmdq = NULL;
 
+    query = _(query);
     while ((cmdq = cmdq_pop()) != 0) {
         if (cmdq->typ == CMDQ_KEY) {
             got_cmdq = TRUE;

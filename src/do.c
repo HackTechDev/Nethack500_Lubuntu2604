@@ -32,7 +32,7 @@ dodrop(void)
 
     if (*u.ushops)
         sellobj_state(SELL_DELIBERATE);
-    result = drop(getobj("drop", any_obj_ok,
+    result = drop(getobj(NC_("verb", "drop"), any_obj_ok,
                          GETOBJ_PROMPT | GETOBJ_ALLOWCNT));
     if (*u.ushops)
         sellobj_state(SELL_NORMAL);
@@ -933,7 +933,8 @@ doddrop(void)
     if (*u.ushops)
         sellobj_state(SELL_DELIBERATE);
     if (flags.menu_style != MENU_TRADITIONAL
-        || (result = ggetobj("drop", drop, 0, FALSE, (unsigned *) 0)) < -1)
+        || (result = ggetobj(NC_("verb", "drop"), drop, 0, FALSE,
+                             (unsigned *) 0)) < -1)
         result = menu_drop(result);
     if (*u.ushops)
         sellobj_state(SELL_NORMAL);
@@ -1024,7 +1025,7 @@ menu_drop(int retry)
 
         all_categories = FALSE;
         /* Gather valid classes via traditional NetHack method */
-        i = ggetobj("drop", drop, 0, TRUE, &ggoresults);
+        i = ggetobj(NC_("verb", "drop"), drop, 0, TRUE, &ggoresults);
         if (i == -2)
             all_categories = TRUE;
         if ((ggoresults & ALL_FINISHED) != 0) {

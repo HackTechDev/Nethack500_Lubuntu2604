@@ -2997,8 +2997,10 @@ tty and curses: when hitpointbar is displayed, make it blink if current HP is
 	as major trouble)
 Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	<lang>.mo in HACKDIR) to translate messages marked with _() in the
-	sources; French catalog po/fr.po: character selection, welcome,
-	status line, inventory class headings
+	sources, and messages given to pline() and You() &c, yn_function()
+	and getlin(); French catalog po/fr.po: character selection, welcome,
+	status line, inventory class headings, object prompts, common
+	messages
 
 
 NetHack Community Patches (or Variation) Included

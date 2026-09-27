@@ -163,11 +163,15 @@ ajouter son nom à cette ligne avant d'installer (ou modifier directement le
 
 ## 7. Traduction française
 
-La traduction est en cours. Sont traduits : la création du personnage,
-le message de bienvenue, la ligne de statut (avec accord au féminin des
-rangs et de l'alignement), les catégories de l'inventaire et quelques
-messages. Les noms d'objets et de monstres et la plupart des messages du
-jeu restent en anglais. Pour l'activer, ajouter dans `~/.nethackrc` :
+La traduction est en cours (environ 940 textes sur 4 700). Sont traduits :
+la création du personnage, le message de bienvenue, la ligne de statut
+(avec accord au féminin des rangs et de l'alignement), les catégories de
+l'inventaire, les invites de choix d'objet (« Que voulez-vous manger ? »),
+les questions pour quitter ou sauvegarder, et plusieurs centaines de
+messages courants (portes, déplacements, nourriture, gravure, détection).
+Les noms d'objets et de monstres, et donc les messages qui les contiennent
+(combats notamment), restent en anglais. Pour l'activer, ajouter dans
+`~/.nethackrc` :
 
 ```
 OPTIONS=language:fr
@@ -180,10 +184,12 @@ en anglais.
 
 Pour traduire de nouveaux messages :
 
-1. dans le code C, entourer le texte de `_()` :
-   `pline(_("Be careful!  New moon tonight."));` ;
-2. extraire les textes marqués et mettre à jour `po/fr.po` :
-   `make update-po` ;
+1. les messages passés à `pline()`, `You()`, `pline_The()`, `yn_function()`,
+   etc. sont traduits automatiquement ; un texte construit autrement
+   (`Sprintf`, menus...) doit être entouré de `_()` :
+   `Sprintf(buf, _("There is %s here."), ...)` ;
+2. extraire les textes et mettre à jour `po/fr.po` : `make update-po`
+   (script `po/update-pot.sh`) ;
 3. traduire les entrées vides (`msgstr ""`) de `po/fr.po` ;
 4. recompiler et réinstaller (`./install.sh`).
 
@@ -193,8 +199,11 @@ peuvent être omis). Sinon, `msgfmt --check` refuse le catalogue, et le jeu
 ignore de toute façon une traduction incohérente et affiche le texte
 anglais.
 
+Les règles `MSGTYPE` et `hilite_status` de la configuration peuvent rester
+en anglais : elles s'appliquent aussi aux messages traduits.
+
 Les entrées `msgctxt "feminine"` donnent la forme féminine d'un mot (rang,
 race, alignement) pour une héroïne ; sans elle, la forme masculine est
 utilisée. Une entrée marquée `#, fuzzy` par `make update-po` est une
 traduction devinée, ignorée par le jeu tant qu'elle n'a pas été vérifiée
-et le marqueur retiré.
+et le marqueur retiré (`make update-po` n'en crée pas).

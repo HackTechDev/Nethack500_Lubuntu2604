@@ -5484,6 +5484,7 @@ yn_function(
 
     iflags.last_msg = PLNMSG_UNKNOWN; /* most recent pline is clobbered */
 
+    query = _(query);
     /* maximum acceptable length is QBUFSZ-1 */
     if (strlen(query) >= QBUFSZ) {
         /* caller shouldn't have passed anything this long */
@@ -5592,6 +5593,7 @@ paranoid_ynq(
 {
     char c = 'n'; /* default result */
 
+    prompt = _(prompt);
     /* when paranoid, player must respond with "yes" rather than just 'y'
        to give the go-ahead for this query; default is "no" unless the
        ParanoidConfirm flag is set in which case there's no default */

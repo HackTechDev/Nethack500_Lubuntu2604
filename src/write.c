@@ -95,7 +95,7 @@ dowrite(struct obj *pen)
     }
 
     /* get paper to write on */
-    paper = getobj("write on", write_ok, GETOBJ_NOFLAGS);
+    paper = getobj(NC_("verb", "write on"), write_ok, GETOBJ_NOFLAGS);
     if (!paper)
         return ECMD_CANCEL;
     /* can't write on a novel (unless/until it's been converted into a blank

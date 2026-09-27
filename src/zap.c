@@ -2635,7 +2635,7 @@ dozap(void)
     }
     if (check_capacity((char *) 0))
         return ECMD_OK;
-    obj = getobj("zap", zap_ok, GETOBJ_NOFLAGS);
+    obj = getobj(NC_("verb", "zap"), zap_ok, GETOBJ_NOFLAGS);
     if (!obj)
         return ECMD_CANCEL;
 

@@ -368,7 +368,8 @@ dothrow(void)
     if (!ok_to_throw(&shotlimit))
         return ECMD_OK;
 
-    obj = getobj("throw", throw_ok, GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
+    obj = getobj(NC_("verb", "throw"), throw_ok,
+                 GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
     /* it is also possible to throw food */
     /* (or jewels, or iron balls... ) */
 
@@ -547,7 +548,7 @@ dofire(void)
         gi.in_doagain = 0;
 
         /* this gives its own feedback about populating the quiver slot */
-        res = doquiver_core("fire");
+        res = doquiver_core(NC_("verb", "fire"));
         if (res != ECMD_OK && res != ECMD_TIME)
             return res;
 

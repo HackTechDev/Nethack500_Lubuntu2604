@@ -1910,13 +1910,17 @@ getobj(
     *ap = '\0';
 
     if (suggested == 0 && !forceprompt && !allownone) {
-        You("don't have anything %sto %s.", inaccess ? "else " : "", word);
+        if (inaccess)
+            You("don't have anything else to %s.", C_("verb", word));
+        else
+            You("don't have anything to %s.", C_("verb", word));
         return (struct obj *) 0;
     }
     for (;;) {
         cnt = 0L;
         cntgiven = FALSE;
-        Sprintf(qbuf, "What do you want to %s?", word);
+        Snprintf(qbuf, sizeof qbuf, _("What do you want to %s?"),
+                 C_("verb", word));
         if (gi.in_doagain) {
             ilet = readchar();
         } else if (iflags.force_invmenu) {
@@ -1931,7 +1935,8 @@ getobj(
             if (!buf[0])
                 Strcat(qbuf, " [*]");
             else
-                Sprintf(eos(qbuf), " [%s or ?*]", buf);
+                Snprintf(eos(qbuf), sizeof qbuf - strlen(qbuf),
+                         _(" [%s or ?*]"), buf);
             ilet = yn_function(qbuf, (char *) 0, '\0', FALSE);
         }
         if (digit(ilet)) {
@@ -1972,7 +1977,7 @@ getobj(
             menuquery[0] = qbuf[0] = '\0';
             if (iflags.force_invmenu)
                 Snprintf(menuquery, sizeof menuquery,
-                         "What do you want to %s?", word);
+                         _("What do you want to %s?"), C_("verb", word));
             if (!allowed_choices || *allowed_choices == HANDS_SYM
                 || *buf == HANDS_SYM)
                 handsbuf = getobj_hands_txt(word, qbuf);
@@ -2213,7 +2218,7 @@ ggetobj(const char *word, int (*fn)(OBJ_P), int mx,
     char buf[BUFSZ] = DUMMY, qbuf[QBUFSZ];
 
     if (!gi.invent) {
-        You("have nothing to %s.", word);
+        You("have nothing to %s.", C_("verb", word));
         if (resultflags)
             *resultflags = ALL_FINISHED;
         return 0;
@@ -2258,8 +2263,9 @@ ggetobj(const char *word, int (*fn)(OBJ_P), int mx,
     ilets[iletct] = '\0';
 
     for (;;) {
-        Sprintf(qbuf, "What kinds of thing do you want to %s? [%s]",
-                word, ilets);
+        Snprintf(qbuf, sizeof qbuf,
+                 _("What kinds of thing do you want to %s? [%s]"),
+                 C_("verb", word), ilets);
         getlin(qbuf, buf);
         if (buf[0] == '\033')
             return 0;
@@ -2733,8 +2739,8 @@ identify_pack(
         n = 0;
         if (flags.menu_style == MENU_TRADITIONAL)
             do {
-                n = ggetobj("identify", identify, id_limit, FALSE,
-                            (unsigned *) 0);
+                n = ggetobj(NC_("verb", "identify"), identify, id_limit,
+                            FALSE, (unsigned *) 0);
                 if (n < 0)
                     break; /* quit or no eligible items */
             } while ((id_limit -= n) > 0);
@@ -4098,6 +4104,18 @@ dfeature_at(coordxy x, coordxy y, char *buf)
     return dfeature;
 }
 
+#if 0
+/* for xgettext: terrain features from dfeature_at(), with the article
+   given by an(), translated by look_here() and describe_decor() */
+N_("a doorway"), N_("an open door"), N_("a closed door"),
+N_("a broken door"), N_("an open drawbridge portcullis"),
+N_("a fountain"), N_("an opulent throne"), N_("molten lava"),
+N_("a pool of water"), N_("a sink"), N_("a lowered drawbridge"),
+N_("a raised drawbridge"), N_("a grave"), N_("a tree"),
+N_("a set of iron bars"), N_("a staircase up"), N_("a staircase down"),
+N_("a ladder up"), N_("a ladder down"),
+#endif
+
 /* look at what is here; if there are many objects (pile_limit or more),
    don't show them unless obj_cnt is 0 */
 int
@@ -4155,7 +4173,10 @@ look_here(
             Strcat(fbuf, ":");
             (void) display_minventory(mtmp, MINV_ALL | PICK_NONE, fbuf);
         } else {
-            You("%s no objects here.", verb);
+            if (Blind)
+                You("feel no objects here.");
+            else
+                You("see no objects here.");
         }
         return (!!Blind ? ECMD_TIME : ECMD_OK);
     }
@@ -4235,7 +4256,14 @@ look_here(
 
         /* hardcoded "is" worked here because "iron bars" is actually
            "set of iron bars"; use vtense() instead of relying on that */
-        Sprintf(fbuf, "There %s %s here.", vtense(dfeature, "are"), dfeature);
+        if (i18n_active() && _(dfeature) != dfeature)
+            /* the noun phrase is translated with its article; one that
+               isn't (such as a composed stairs description) leaves the
+               whole sentence in English rather than mixing languages */
+            Sprintf(fbuf, _("There is %s here."), _(dfeature));
+        else
+            Sprintf(fbuf, "There %s %s here.", vtense(dfeature, "are"),
+                    dfeature);
     }
 
     if (!otmp || is_lava(u.ux, u.uy)
@@ -4243,8 +4271,12 @@ look_here(
         if (dfeature && !skip_dfeature)
             pline1(fbuf);
         read_engr_at(u.ux, u.uy); /* Eric Backus */
-        if (!skip_objects && (Blind || !dfeature))
-            You("%s no objects here.", verb);
+        if (!skip_objects && (Blind || !dfeature)) {
+            if (Blind)
+                You("feel no objects here.");
+            else
+                You("see no objects here.");
+        }
         return (!!Blind ? ECMD_TIME : ECMD_OK);
     }
     /* we know there is something here */
@@ -5000,7 +5032,8 @@ doorganize(void) /* inventory organizer by Del Lamb */
     adjust_filter = check_invent_gold("adjust") ? adjust_gold_ok : adjust_ok;
 
     /* get object the user wants to organize (the 'from' slot) */
-    obj = getobj("adjust", adjust_filter, GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
+    obj = getobj(NC_("verb", "adjust"), adjust_filter,
+                 GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
 
     return doorganize_core(obj);
 }
@@ -5014,7 +5047,7 @@ adjust_split(void)
     char let, dig = '\0';
 
     /* invlet should be queued so no getobj prompting is expected */
-    obj = getobj("split", adjust_ok, GETOBJ_NOFLAGS);
+    obj = getobj(NC_("verb", "split"), adjust_ok, GETOBJ_NOFLAGS);
     if (!obj || obj->quan < 2L || obj->otyp == GOLD_PIECE)
         return ECMD_FAIL; /* caller has set things up to avoid this */
 

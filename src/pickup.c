@@ -398,7 +398,12 @@ describe_decor(void)
             dfeature = an(dfeature);
 
         if (flags.verbose) {
-            Sprintf(outbuf, "There is %s here.", dfeature);
+            /* the noun phrase is translated with its article (list of
+               them in invent.c), else the sentence is left in English */
+            if (_(dfeature) != dfeature)
+                Sprintf(outbuf, _("There is %s here."), _(dfeature));
+            else
+                Sprintf(outbuf, "There is %s here.", dfeature);
         } else {
             if (dfeature != fbuf)
                 Strcpy(fbuf, dfeature);
@@ -3173,7 +3178,7 @@ use_container(
         add_valid_menu_class(0);
     } else if (stash_one) {
         /* put one item into container */
-        if ((otmp = getobj("stash", stash_ok,
+        if ((otmp = getobj(NC_("verb", "stash"), stash_ok,
                            GETOBJ_PROMPT | GETOBJ_ALLOWCNT)) != 0) {
             if (in_container(otmp)) {
                 used = 1;
@@ -3621,7 +3626,7 @@ dotip(void)
 
     /* either no floor container(s) or 'm' prefix was used to ignore such
        or couldn't tip one or didn't tip any */
-    cobj = getobj("tip", tip_ok, GETOBJ_PROMPT);
+    cobj = getobj(NC_("verb", "tip"), tip_ok, GETOBJ_PROMPT);
     if (!cobj)
         return ECMD_CANCEL;
 

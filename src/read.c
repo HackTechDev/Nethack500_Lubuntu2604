@@ -355,7 +355,7 @@ doread(void)
     if (check_capacity((char *) 0))
         return ECMD_OK;
 
-    scroll = getobj("read", read_ok, GETOBJ_PROMPT);
+    scroll = getobj(NC_("verb", "read"), read_ok, GETOBJ_PROMPT);
     if (!scroll)
         return ECMD_CANCEL;
     otyp = scroll->otyp;
@@ -1373,7 +1373,8 @@ seffect_destroy_armor(struct obj **sobjp)
             if (!objects[sobj->otyp].oc_name_known)
                 pline("This is %s!", an(actualoname(sobj)));
             gk.known = TRUE;
-            atmp = getobj("destroy", any_worn_armor_ok, GETOBJ_PROMPT);
+            atmp = getobj(NC_("verb", "destroy"), any_worn_armor_ok,
+                          GETOBJ_PROMPT);
             /* check the return value, if user picked non-valid obj */
             if (any_worn_armor_ok(atmp) == GETOBJ_SUGGEST)
                 otmp = atmp;
@@ -1821,7 +1822,8 @@ seffect_charging(struct obj **sobjp)
        was already delivered */
     useup(sobj);
     *sobjp = 0; /* it's gone */
-    otmp = getobj("charge", charge_ok, GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
+    otmp = getobj(NC_("verb", "charge"), charge_ok,
+                  GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
     if (otmp)
         recharge(otmp, scursed ? -1 : sblessed ? 1 : 0);
 }

@@ -1790,7 +1790,7 @@ dorub(void)
         You("aren't able to rub anything without hands.");
         return ECMD_OK;
     }
-    obj = getobj("rub", rub_ok, GETOBJ_NOFLAGS);
+    obj = getobj(NC_("verb", "rub"), rub_ok, GETOBJ_NOFLAGS);
     if (!obj)
         return ECMD_CANCEL;
     if (obj->oclass == GEM_CLASS || obj->oclass == FOOD_CLASS) {
@@ -2623,7 +2623,7 @@ use_grease(struct obj *obj)
             dropx(obj);
             return ECMD_TIME;
         }
-        otmp = getobj("grease", grease_ok, GETOBJ_PROMPT);
+        otmp = getobj(NC_("verb", "grease"), grease_ok, GETOBJ_PROMPT);
         if (!otmp)
             return ECMD_CANCEL;
         if (inaccessible_equipment(otmp, "grease", FALSE))
@@ -3627,7 +3627,8 @@ use_royal_jelly(struct obj **optr)
     freeinv(obj);
 
     /* right now you can rub one royal jelly on an entire stack of eggs */
-    eobj = getobj("rub the royal jelly on", jelly_ok, GETOBJ_PROMPT);
+    eobj = getobj(NC_("verb", "rub the royal jelly on"), jelly_ok,
+                  GETOBJ_PROMPT);
     if (!eobj) {
         if (splitit) {
             (void) unsplitobj(obj);
@@ -4223,7 +4224,7 @@ doapply(void)
     if (check_capacity((char *) 0))
         return ECMD_OK;
 
-    obj = getobj("use or apply", apply_ok, GETOBJ_NOFLAGS);
+    obj = getobj(NC_("verb", "use or apply"), apply_ok, GETOBJ_NOFLAGS);
     if (!obj)
         return ECMD_CANCEL;
 

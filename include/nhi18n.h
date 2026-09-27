@@ -28,7 +28,7 @@
  * leave out trailing arguments of the original, though.
  */
 
-#ifdef NHI18N
+#if defined(NHI18N) && !defined(SFCTOOL)
 #define _(msgid) nh_gettext(msgid)
 #define C_(ctx, msgid) nh_pgettext(ctx, msgid)
 #define i18n_active() i18n_translating()

@@ -1750,7 +1750,7 @@ doinvoke(void)
 {
     struct obj *obj;
 
-    obj = getobj("invoke", invoke_ok, GETOBJ_PROMPT);
+    obj = getobj(NC_("verb", "invoke"), invoke_ok, GETOBJ_PROMPT);
     if (!obj)
         return ECMD_CANCEL;
     if (!retouch_object(&obj, FALSE))
@@ -1848,7 +1848,7 @@ staticfn int
 invoke_charge_obj(struct obj *obj)
 {
     const struct artifact *oart = get_artifact(obj);
-    struct obj *otmp = getobj("charge", charge_ok,
+    struct obj *otmp = getobj(NC_("verb", "charge"), charge_ok,
                               GETOBJ_PROMPT | GETOBJ_ALLOWCNT);
     boolean b_effect;
 

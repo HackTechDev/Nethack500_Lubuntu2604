@@ -974,7 +974,7 @@ doengrave(void)
      * Edited by GAN 10/20/86 so as not to change weapon wielded.
      */
 
-    de->otmp = getobj("write with", stylus_ok, GETOBJ_PROMPT);
+    de->otmp = getobj(NC_("verb", "write with"), stylus_ok, GETOBJ_PROMPT);
     if (!de->otmp) {/* otmp == &hands_obj if fingers */
         de->ret = ECMD_CANCEL;
         goto doengr_exit;

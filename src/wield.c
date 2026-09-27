@@ -370,7 +370,8 @@ dowield(void)
 
     /* Prompt for a new weapon */
     clear_splitobjs();
-    if (!(wep = getobj("wield", wield_ok, GETOBJ_PROMPT | GETOBJ_ALLOWCNT))) {
+    if (!(wep = getobj(NC_("verb", "wield"), wield_ok,
+                       GETOBJ_PROMPT | GETOBJ_ALLOWCNT))) {
         /* Cancelled */
         return ECMD_CANCEL;
     } else if (wep == uwep) {
@@ -504,7 +505,7 @@ doswapweapon(void)
 int
 dowieldquiver(void)
 {
-    return doquiver_core("ready");
+    return doquiver_core(NC_("verb", "ready"));
 }
 
 /* guts of #quiver command; also used by #fire when refilling empty quiver */

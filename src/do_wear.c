@@ -1847,7 +1847,7 @@ dotakeoff(void)
         return ECMD_OK;
     }
     if (Narmorpieces != 1 || ParanoidRemove || gi.item_action_in_progress)
-        otmp = getobj("take off", takeoff_ok, GETOBJ_NOFLAGS);
+        otmp = getobj(NC_("verb", "take off"), takeoff_ok, GETOBJ_NOFLAGS);
     if (!otmp)
         return ECMD_CANCEL;
 
@@ -1881,7 +1881,7 @@ doremring(void)
         return ECMD_OK;
     }
     if (Naccessories != 1 || ParanoidRemove || cmdq_peek(CQ_CANNED))
-        otmp = getobj("remove", remove_ok, GETOBJ_NOFLAGS);
+        otmp = getobj(NC_("verb", "remove"), remove_ok, GETOBJ_NOFLAGS);
     if (!otmp)
         return ECMD_CANCEL;
 
@@ -2445,7 +2445,7 @@ dowear(void)
         You("are already wearing a full complement of armor.");
         return ECMD_OK;
     }
-    otmp = getobj("wear", wear_ok, GETOBJ_NOFLAGS);
+    otmp = getobj(NC_("verb", "wear"), wear_ok, GETOBJ_NOFLAGS);
     return otmp ? accessory_or_armor_on(otmp) : ECMD_CANCEL;
 }
 
@@ -2464,7 +2464,7 @@ doputon(void)
              (ublindf->otyp == LENSES) ? "some lenses" : "a blindfold");
         return ECMD_OK;
     }
-    otmp = getobj("put on", puton_ok, GETOBJ_NOFLAGS);
+    otmp = getobj(NC_("verb", "put on"), puton_ok, GETOBJ_NOFLAGS);
     return otmp ? accessory_or_armor_on(otmp) : ECMD_CANCEL;
 }
 
@@ -3035,7 +3035,7 @@ doddoremarm(void)
 
     add_valid_menu_class(0); /* reset */
     if (flags.menu_style != MENU_TRADITIONAL
-        || (result = ggetobj("take off", select_off, 0, FALSE,
+        || (result = ggetobj(NC_("verb", "take off"), select_off, 0, FALSE,
                              (unsigned *) 0)) < -1)
         (void) menu_remarm(result);
 
@@ -3113,7 +3113,8 @@ menu_remarm(int retry)
     } else if (flags.menu_style == MENU_COMBINATION) {
         unsigned ggofeedback = 0;
 
-        i = ggetobj("take off", select_off, 0, TRUE, &ggofeedback);
+        i = ggetobj(NC_("verb", "take off"), select_off, 0, TRUE,
+                    &ggofeedback);
         if (ggofeedback & ALL_FINISHED)
             return 0;
         all_worn_categories = (i == -2);

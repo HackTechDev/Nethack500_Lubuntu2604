@@ -132,6 +132,7 @@ TOPLUALIB = lib/lua/$(LUABASELIB)
 # message catalogs: po/<lang>.po is compiled into dat/<lang>.mo, which is
 # installed in HACKDIR and used with OPTIONS=language:<lang> (nhi18n.c)
 MSGFMT = msgfmt
+MSGCAT = msgcat
 MSGMERGE = msgmerge
 XGETTEXT = xgettext
 MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
@@ -522,16 +523,15 @@ spotless-keep-lib: clean-keep-lib
 dat/%.mo: po/%.po
 	$(MSGFMT) --check -o $@ $<
 
-# 'make update-po' extracts the strings marked with _() or N_() into
-# po/nethack.pot and merges them into each po/<lang>.po
+# 'make update-po' extracts the translatable strings (marked with _() &c,
+# or given to pline() and the other message functions) into po/nethack.pot
+# and merges them into each po/<lang>.po
 update-po:
-	$(XGETTEXT) --language=C --from-code=UTF-8 --keyword=_ --keyword=N_ \
-		--keyword=C_:1c,2 --flag=C_:2:c-format --keyword=NC_:1c,2 \
-		--add-comments=TRANSLATORS: --sort-by-file \
-		--package-name=NetHack --package-version=5.0.0 \
-		-o po/nethack.pot src/*.c win/tty/*.c win/curses/*.c
+	XGETTEXT=$(XGETTEXT) MSGCAT=$(MSGCAT) sh po/update-pot.sh
 	for po in $(wildcard po/*.po); do \
-		$(MSGMERGE) --update --backup=none $$po po/nethack.pot; done
+		$(MSGMERGE) --update --backup=none --no-wrap --no-fuzzy-matching \
+			$$po po/nethack.pot; \
+	done
 
 spotless-clean-submodule:
 	@( if test -f submodules/lua/lua.h ; then \

@@ -568,7 +568,7 @@ dodrink(void)
         }
     }
 
-    otmp = getobj("drink", drink_ok, GETOBJ_NOFLAGS);
+    otmp = getobj(NC_("verb", "drink"), drink_ok, GETOBJ_NOFLAGS);
     if (!otmp)
         return ECMD_CANCEL;
 
@@ -2276,7 +2276,8 @@ dodip(void)
             at_here = (!iflags.menu_requested
                        && (at_pool || at_fountain || at_sink));
 
-    obj = getobj("dip", at_here ? dip_hands_ok : dip_ok, GETOBJ_PROMPT);
+    obj = getobj(NC_("verb", "dip"), at_here ? dip_hands_ok : dip_ok,
+                 GETOBJ_PROMPT);
     if (!obj)
         return ECMD_CANCEL;
     if (inaccessible_equipment(obj, "dip", FALSE))
@@ -2389,7 +2390,7 @@ dip_into(void)
        a potion to dip into */
     drink_ok_extra = 0; /* affects drink_ok(): haven't been asked about and
                          * declined to use a floor feature like a fountain */
-    potion = getobj("dip", drink_ok, GETOBJ_NOFLAGS);
+    potion = getobj(NC_("verb", "dip"), drink_ok, GETOBJ_NOFLAGS);
     if (!potion || potion->oclass != POTION_CLASS)
         return ECMD_CANCEL;
 

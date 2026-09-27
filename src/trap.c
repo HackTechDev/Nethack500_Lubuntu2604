@@ -5633,7 +5633,7 @@ disarm_squeaky_board(struct trap *ttmp)
     boolean bad_tool;
     int fails;
 
-    obj = getobj("untrap with", unsqueak_ok, GETOBJ_PROMPT);
+    obj = getobj(NC_("verb", "untrap with"), unsqueak_ok, GETOBJ_PROMPT);
     if (!obj)
         return 0;
 

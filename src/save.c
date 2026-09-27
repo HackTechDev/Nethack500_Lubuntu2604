@@ -61,7 +61,7 @@ dosave(void)
 
             /* make sure they see the Saving message */
             display_nhwindow(WIN_MESSAGE, TRUE);
-            exit_nhwindows("Be seeing you...");
+            exit_nhwindows(_("Be seeing you..."));
             nh_terminate(EXIT_SUCCESS);
         } else
             docrt();

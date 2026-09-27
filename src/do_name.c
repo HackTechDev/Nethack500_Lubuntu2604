@@ -564,12 +564,12 @@ docallcmd(void)
         do_mgivenname();
         break;
     case 'i': /* name an individual object in inventory */
-        obj = getobj("name", name_ok, GETOBJ_PROMPT);
+        obj = getobj(NC_("verb", "name"), name_ok, GETOBJ_PROMPT);
         if (obj)
             do_oname(obj);
         break;
     case 'o': /* name a type of object in inventory */
-        obj = getobj("call", call_ok, GETOBJ_NOFLAGS);
+        obj = getobj(NC_("verb", "call"), call_ok, GETOBJ_NOFLAGS);
         if (obj) {
             /* behave as if examining it in inventory;
                this might set dknown if it was picked up
