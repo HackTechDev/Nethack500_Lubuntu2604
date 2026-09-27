@@ -12,6 +12,9 @@ OPTIONS=fruit:chocolate,catname:toxoplasmosis,dogname:cujo,horsename:Mr Ed
 #OPTIONS=pettype:none
 
 OPTIONS=windowtype:curses
+
+# Messages du jeu en français (traduction partielle, voir TODO.md)
+OPTIONS=language:fr
 OPTIONS=windowborders:2
 OPTIONS=Perm_invent
 OPTIONS=term_cols:80
