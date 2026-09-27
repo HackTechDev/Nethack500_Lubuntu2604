@@ -14,6 +14,9 @@
  * conversions don't consume the same argument types in the same order
  * as the original text (a translation may reorder them with "%2$s") would
  * make the game crash, so it is ignored and the original text is used.
+ * Leaving out trailing arguments is harmless (printf ignores extra
+ * arguments), so the original can pass last an argument that some
+ * languages don't need.
  */
 
 #include "hack.h"
@@ -45,6 +48,7 @@ staticfn const char *mo_string(struct mo_catalog *, unsigned long,
                                unsigned long);
 staticfn int fmt_conversions(const char *, char[FMT_MAXCONV][FMT_CODELEN]);
 staticfn boolean fmt_compatible(const char *, const char *);
+staticfn const char *mo_lookup(const char *);
 
 static struct mo_catalog catalog;
 static char cur_language[8] = "en";
@@ -230,28 +234,27 @@ fmt_compatible(const char *msgid, const char *translation)
     if (nid < 0) /* not a format we understand: plain text only */
         return !strchr(translation, '%');
     ntr = fmt_conversions(translation, convtr);
-    if (ntr != nid)
+    if (ntr < 0 || ntr > nid)
         return FALSE;
-    for (i = 0; i < nid; ++i)
+    for (i = 0; i < ntr; ++i)
         if (strcmp(convid[i], convtr[i]))
             return FALSE;
     return TRUE;
 }
 
-/* translation of msgid in the current language, or msgid itself */
-const char *
-nh_gettext(const char *msgid)
+/* translation of key (a msgid, or "context\004msgid") that can be used
+   in place of msgid; Null if there is none */
+staticfn const char *
+mo_lookup(const char *key)
 {
     unsigned long lo, hi, mid;
-    const char *translation;
+    const char *translation, *msgid;
     int cmp;
 
-    if (!catalog.data || !msgid || !*msgid)
-        return msgid;
     lo = 0, hi = catalog.count;
     while (lo < hi) {
         mid = lo + (hi - lo) / 2;
-        cmp = strcmp(msgid, mo_string(&catalog, catalog.origtab, mid));
+        cmp = strcmp(key, mo_string(&catalog, catalog.origtab, mid));
         if (cmp < 0) {
             hi = mid;
         } else if (cmp > 0) {
@@ -259,15 +262,55 @@ nh_gettext(const char *msgid)
         } else {
             translation = mo_string(&catalog, catalog.transtab, mid);
             if (catalog.fmtcheck[mid] == fmt_unchecked) {
-                boolean ok = (*translation
-                              && fmt_compatible(msgid, translation));
+                boolean ok;
 
+                if ((msgid = strchr(key, '\004')) != 0)
+                    ++msgid;
+                else
+                    msgid = key;
+                ok = (*translation && fmt_compatible(msgid, translation));
                 catalog.fmtcheck[mid] = ok ? fmt_ok : fmt_bad;
             }
-            return (catalog.fmtcheck[mid] == fmt_ok) ? translation : msgid;
+            return (catalog.fmtcheck[mid] == fmt_ok) ? translation : 0;
         }
     }
-    return msgid;
+    return (const char *) 0;
+}
+
+/* translation of msgid in the current language, or msgid itself */
+const char *
+nh_gettext(const char *msgid)
+{
+    const char *translation;
+
+    if (!catalog.data || !msgid || !*msgid)
+        return msgid;
+    translation = mo_lookup(msgid);
+    return translation ? translation : msgid;
+}
+
+/* translation of msgid for context ctx; without one, that of msgid */
+const char *
+nh_pgettext(const char *ctx, const char *msgid)
+{
+    char key[BUFSZ];
+    const char *translation;
+
+    if (!catalog.data || !msgid || !*msgid)
+        return msgid;
+    if (strlen(ctx) + strlen(msgid) + 2 <= sizeof key) {
+        Sprintf(key, "%s\004%s", ctx, msgid);
+        if ((translation = mo_lookup(key)) != 0)
+            return translation;
+    }
+    return nh_gettext(msgid);
+}
+
+/* are messages being translated? */
+boolean
+i18n_translating(void)
+{
+    return catalog.data ? TRUE : FALSE;
 }
 
 /* switch to language lang ("en" or a code like "fr" or "pt_BR" whose

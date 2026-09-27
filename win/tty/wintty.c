@@ -4850,7 +4850,8 @@ set_condition_length(void)
         for (c = 0; c < SIZE(conditions); ++c) {
             mask = conditions[c].mask;
             if ((tty_condition_bits & mask) == mask)
-                lth += 1 + (int) strlen(conditions[c].text[cond_shrinklvl]);
+                lth += 1
+                       + (int) strlen(_(conditions[c].text[cond_shrinklvl]));
         }
     }
     tty_status[NOW][BL_CONDITION].lth = lth;
@@ -5084,7 +5085,7 @@ render_status(void)
                                 if (coloridx != NO_COLOR)
                                     term_start_color(coloridx);
                             }
-                            condtext = conditions[ci].text[cond_shrinklvl];
+                            condtext = _(conditions[ci].text[cond_shrinklvl]);
                             if (x >= cw->cols && !truncation_expected) {
                                 impossible(
                          "Unexpected condition placement overflow for \"%s\"",

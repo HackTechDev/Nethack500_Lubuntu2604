@@ -4787,12 +4787,14 @@ useupf(struct obj *obj, long numused)
  * This must match the object class order.
  */
 static NEARDATA const char *names[] = {
-    0, "Illegal objects", "Weapons", "Armor", "Rings", "Amulets", "Tools",
-    "Comestibles", "Potions", "Scrolls", "Spellbooks", "Wands", "Coins",
-    "Gems/Stones", "Boulders/Statues", "Iron balls", "Chains", "Venoms"
+    0, N_("Illegal objects"), N_("Weapons"), N_("Armor"), N_("Rings"),
+    N_("Amulets"), N_("Tools"), N_("Comestibles"), N_("Potions"),
+    N_("Scrolls"), N_("Spellbooks"), N_("Wands"), N_("Coins"),
+    N_("Gems/Stones"), N_("Boulders/Statues"), N_("Iron balls"),
+    N_("Chains"), N_("Venoms")
 };
 static NEARDATA const char oth_symbols[] = { CONTAINED_SYM, '\0' };
-static NEARDATA const char *oth_names[] = { "Bagged/Boxed items" };
+static NEARDATA const char *oth_names[] = { N_("Bagged/Boxed items") };
 
 DISABLE_WARNING_FORMAT_NONLITERAL
 
@@ -4807,13 +4809,13 @@ let_to_name(char let, boolean unpaid, boolean showsym)
     unsigned len;
 
     if (oclass)
-        class_name = names[oclass];
+        class_name = _(names[oclass]);
     else if ((pos = strchr(oth_symbols, let)) != 0)
-        class_name = oth_names[pos - oth_symbols];
+        class_name = _(oth_names[pos - oth_symbols]);
     else
-        class_name = names[ILLOBJ_CLASS];
+        class_name = _(names[ILLOBJ_CLASS]);
 
-    len = Strlen(class_name) + (unpaid ? sizeof "unpaid_" : sizeof "")
+    len = Strlen(class_name) + (unpaid ? Strlen(_("Unpaid %s")) : 0) + 1
           + (oclass ? (Strlen(ocsymfmt) + invbuf_sympadding) : 0);
     if (len > gi.invbufsiz) {
         if (gi.invbuf)
@@ -4822,7 +4824,7 @@ let_to_name(char let, boolean unpaid, boolean showsym)
         gi.invbuf = (char *) alloc(gi.invbufsiz);
     }
     if (unpaid)
-        Strcat(strcpy(gi.invbuf, "Unpaid "), class_name);
+        Sprintf(gi.invbuf, _("Unpaid %s"), class_name);
     else
         Strcpy(gi.invbuf, class_name);
     if ((oclass != 0) && showsym) {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 20:13+0200\n"
+"POT-Creation-Date: 2026-09-27 20:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,587 @@ msgstr ""
 
 #: src/allmain.c:66
 msgid "Watch out!  Bad things can happen on Friday the 13th."
+msgstr ""
+
+#: src/allmain.c:931
+#, c-format
+msgid "%s %s, welcome to NetHack!  You are %s."
+msgstr ""
+
+#: src/allmain.c:932
+#, c-format
+msgid "%s %s, the %s, welcome back to NetHack!"
+msgstr ""
+
+#: src/botl.c:373
+msgid " the "
+msgstr ""
+
+#: src/botl.c:373
+#, c-format
+msgctxt "feminine"
+msgid " the "
+msgstr ""
+
+#: src/botl.c:378
+#, c-format
+msgctxt "feminine"
+msgid "Chaotic"
+msgstr ""
+
+#: src/botl.c:378
+#, c-format
+msgctxt "feminine"
+msgid "Neutral"
+msgstr ""
+
+#: src/botl.c:379
+#, c-format
+msgctxt "feminine"
+msgid "Lawful"
+msgstr ""
+
+#: src/botl.c:384
+msgid "Fainted"
+msgstr ""
+
+#: src/botl.c:384
+msgid "Fainting"
+msgstr ""
+
+#: src/botl.c:384
+msgid "Hungry"
+msgstr ""
+
+#: src/botl.c:384
+msgid "Satiated"
+msgstr ""
+
+#: src/botl.c:384
+msgid "Weak"
+msgstr ""
+
+#: src/botl.c:385
+msgid "Burdened"
+msgstr ""
+
+#: src/botl.c:385
+msgid "Starved"
+msgstr ""
+
+#: src/botl.c:385
+msgid "Strained"
+msgstr ""
+
+#: src/botl.c:385
+msgid "Stressed"
+msgstr ""
+
+#: src/botl.c:386
+msgid "Overloaded"
+msgstr ""
+
+#: src/botl.c:386
+msgid "Overtaxed"
+msgstr ""
+
+#: src/botl.c:491
+#, c-format
+msgid "Home %d"
+msgstr ""
+
+#: src/botl.c:502
+msgid "Dlvl"
+msgstr ""
+
+#: src/botl.c:502
+msgid "Tutorial"
+msgstr ""
+
+#: src/botl.c:744
+#, c-format
+msgid " St:%s"
+msgstr ""
+
+#: src/botl.c:745
+#, c-format
+msgid " Dx:%s"
+msgstr ""
+
+#: src/botl.c:746
+#, c-format
+msgid " Co:%s"
+msgstr ""
+
+#: src/botl.c:747
+#, c-format
+msgid " In:%s"
+msgstr ""
+
+#: src/botl.c:748
+#, c-format
+msgid " Wi:%s"
+msgstr ""
+
+#: src/botl.c:749
+#, c-format
+msgid " Ch:%s"
+msgstr ""
+
+#: src/botl.c:751
+#, c-format
+msgid " S:%s"
+msgstr ""
+
+#: src/botl.c:754
+#, c-format
+msgid " Pw:%s"
+msgstr ""
+
+#: src/botl.c:756
+#, c-format
+msgid " Xp:%s"
+msgstr ""
+
+#: src/botl.c:758
+#, c-format
+msgid " AC:%s"
+msgstr ""
+
+#: src/botl.c:759
+#, c-format
+msgid " HD:%s"
+msgstr ""
+
+#: src/botl.c:760
+#, c-format
+msgid " T:%s"
+msgstr ""
+
+#: src/botl.c:763
+#, c-format
+msgid " HP:%s"
+msgstr ""
+
+#: src/botl.c:824
+msgid "Bar"
+msgstr ""
+
+#: src/botl.c:824
+msgid "Bare"
+msgstr ""
+
+#: src/botl.c:824
+msgid "Bh"
+msgstr ""
+
+#: src/botl.c:826
+msgid "Bl"
+msgstr ""
+
+#: src/botl.c:826
+msgid "Blind"
+msgstr ""
+
+#: src/botl.c:826
+msgid "Blnd"
+msgstr ""
+
+#: src/botl.c:828
+msgid "Bsy"
+msgstr ""
+
+#: src/botl.c:828
+msgid "Busy"
+msgstr ""
+
+#: src/botl.c:828
+msgid "By"
+msgstr ""
+
+#: src/botl.c:830
+msgid "Cf"
+msgstr ""
+
+#: src/botl.c:830
+msgid "Cnf"
+msgstr ""
+
+#: src/botl.c:830
+msgid "Conf"
+msgstr ""
+
+#: src/botl.c:832
+msgid "Deaf"
+msgstr ""
+
+#: src/botl.c:832
+msgid "Def"
+msgstr ""
+
+#: src/botl.c:832
+msgid "Df"
+msgstr ""
+
+#: src/botl.c:834
+msgid "Fe"
+msgstr ""
+
+#: src/botl.c:834
+msgid "Irn"
+msgstr ""
+
+#: src/botl.c:834
+msgid "Iron"
+msgstr ""
+
+#: src/botl.c:836
+msgid "Fl"
+msgstr ""
+
+#: src/botl.c:836
+msgid "Fly"
+msgstr ""
+
+#: src/botl.c:838
+msgid "FoodPois"
+msgstr ""
+
+#: src/botl.c:838
+msgid "Fpois"
+msgstr ""
+
+#: src/botl.c:838
+msgid "Poi"
+msgstr ""
+
+#: src/botl.c:840
+msgid "Gl"
+msgstr ""
+
+#: src/botl.c:840
+msgid "Glo"
+msgstr ""
+
+#: src/botl.c:840
+msgid "Glow"
+msgstr ""
+
+#: src/botl.c:842
+msgid "Gr"
+msgstr ""
+
+#: src/botl.c:842
+msgid "Grab"
+msgstr ""
+
+#: src/botl.c:842
+msgid "Grb"
+msgstr ""
+
+#: src/botl.c:844
+msgid "Hal"
+msgstr ""
+
+#: src/botl.c:844
+msgid "Hallu"
+msgstr ""
+
+#: src/botl.c:844
+msgid "Hl"
+msgstr ""
+
+#: src/botl.c:846
+msgid "Hd"
+msgstr ""
+
+#: src/botl.c:846
+msgid "Held"
+msgstr ""
+
+#: src/botl.c:846
+msgid "Hld"
+msgstr ""
+
+#: src/botl.c:848
+msgid "Ic"
+msgstr ""
+
+#: src/botl.c:848
+msgid "Icy"
+msgstr ""
+
+#: src/botl.c:850
+msgid "InLava"
+msgstr ""
+
+#: src/botl.c:850
+msgid "La"
+msgstr ""
+
+#: src/botl.c:850
+msgid "Lav"
+msgstr ""
+
+#: src/botl.c:852
+msgid "Lev"
+msgstr ""
+
+#: src/botl.c:852
+msgid "Lv"
+msgstr ""
+
+#: src/botl.c:854
+msgid "Par"
+msgstr ""
+
+#: src/botl.c:854
+msgid "Para"
+msgstr ""
+
+#: src/botl.c:854
+msgid "Parlyz"
+msgstr ""
+
+#: src/botl.c:856
+msgid "Rd"
+msgstr ""
+
+#: src/botl.c:856
+msgid "Rid"
+msgstr ""
+
+#: src/botl.c:856
+msgid "Ride"
+msgstr ""
+
+#: src/botl.c:858
+msgid "Zz"
+msgstr ""
+
+#: src/botl.c:858
+msgid "Zzz"
+msgstr ""
+
+#: src/botl.c:860
+msgid "Slim"
+msgstr ""
+
+#: src/botl.c:860
+msgid "Slime"
+msgstr ""
+
+#: src/botl.c:860
+msgid "Slm"
+msgstr ""
+
+#: src/botl.c:862
+msgid "Sl"
+msgstr ""
+
+#: src/botl.c:862
+msgid "Slip"
+msgstr ""
+
+#: src/botl.c:862
+msgid "Slp"
+msgstr ""
+
+#: src/botl.c:864
+msgid "Sto"
+msgstr ""
+
+#: src/botl.c:864
+msgid "Ston"
+msgstr ""
+
+#: src/botl.c:864
+msgid "Stone"
+msgstr ""
+
+#: src/botl.c:866
+msgid "Stngl"
+msgstr ""
+
+#: src/botl.c:866
+msgid "Str"
+msgstr ""
+
+#: src/botl.c:866
+msgid "Strngl"
+msgstr ""
+
+#: src/botl.c:868
+msgid "St"
+msgstr ""
+
+#: src/botl.c:868
+msgid "Stun"
+msgstr ""
+
+#: src/botl.c:870
+msgid "Sm"
+msgstr ""
+
+#: src/botl.c:870
+msgid "Subm"
+msgstr ""
+
+#: src/botl.c:870
+msgid "Submrg"
+msgstr ""
+
+#: src/botl.c:872
+msgid "Ill"
+msgstr ""
+
+#: src/botl.c:872
+msgid "TermIll"
+msgstr ""
+
+#: src/botl.c:874
+msgid "Te"
+msgstr ""
+
+#: src/botl.c:874
+msgid "Teth"
+msgstr ""
+
+#: src/botl.c:874
+msgid "Tth"
+msgstr ""
+
+#: src/botl.c:876
+msgid "Tr"
+msgstr ""
+
+#: src/botl.c:876
+msgid "Trap"
+msgstr ""
+
+#: src/botl.c:876
+msgid "Trp"
+msgstr ""
+
+#: src/botl.c:878
+msgid "KO"
+msgstr ""
+
+#: src/botl.c:878
+msgid "Out"
+msgstr ""
+
+#: src/botl.c:880
+msgid "Leg"
+msgstr ""
+
+#: src/botl.c:880
+msgid "Lg"
+msgstr ""
+
+#: src/botl.c:880
+msgid "WLegs"
+msgstr ""
+
+#: src/botl.c:882
+msgid "UHd"
+msgstr ""
+
+#: src/botl.c:882
+msgid "UHld"
+msgstr ""
+
+#: src/botl.c:882
+msgid "UHold"
+msgstr ""
+
+#: src/botl.c:1096
+msgid "Chaotic"
+msgstr ""
+
+#: src/botl.c:1097
+msgid "Neutral"
+msgstr ""
+
+#: src/botl.c:1098
+msgid "Lawful"
+msgstr ""
+
+#: src/invent.c:4790
+msgid "Armor"
+msgstr ""
+
+#: src/invent.c:4790
+msgid "Illegal objects"
+msgstr ""
+
+#: src/invent.c:4790
+msgid "Rings"
+msgstr ""
+
+#: src/invent.c:4790
+msgid "Weapons"
+msgstr ""
+
+#: src/invent.c:4791
+msgid "Amulets"
+msgstr ""
+
+#: src/invent.c:4791
+msgid "Comestibles"
+msgstr ""
+
+#: src/invent.c:4791
+msgid "Potions"
+msgstr ""
+
+#: src/invent.c:4791
+msgid "Tools"
+msgstr ""
+
+#: src/invent.c:4792
+msgid "Coins"
+msgstr ""
+
+#: src/invent.c:4792
+msgid "Scrolls"
+msgstr ""
+
+#: src/invent.c:4792
+msgid "Spellbooks"
+msgstr ""
+
+#: src/invent.c:4792
+msgid "Wands"
+msgstr ""
+
+#: src/invent.c:4793
+msgid "Boulders/Statues"
+msgstr ""
+
+#: src/invent.c:4793
+msgid "Gems/Stones"
+msgstr ""
+
+#: src/invent.c:4793
+msgid "Iron balls"
+msgstr ""
+
+#: src/invent.c:4794
+msgid "Chains"
+msgstr ""
+
+#: src/invent.c:4794
+msgid "Venoms"
+msgstr ""
+
+#: src/invent.c:4797
+msgid "Bagged/Boxed items"
+msgstr ""
+
+#: src/invent.c:4818 src/invent.c:4827
+#, c-format
+msgid "Unpaid %s"
 msgstr ""
 
 #: src/options.c:446
@@ -52,4 +633,1546 @@ msgstr ""
 
 #: src/options.c:466
 msgid "Do you want a tutorial?"
+msgstr ""
+
+#: src/role.c:31
+msgid "Archeologist"
+msgstr ""
+
+#: src/role.c:32
+msgid "Digger"
+msgstr ""
+
+#: src/role.c:33
+msgid "Field Worker"
+msgstr ""
+
+#: src/role.c:34
+msgid "Investigator"
+msgstr ""
+
+#: src/role.c:35
+msgid "Exhumer"
+msgstr ""
+
+#: src/role.c:36
+msgid "Excavator"
+msgstr ""
+
+#: src/role.c:37
+msgid "Spelunker"
+msgstr ""
+
+#: src/role.c:38
+msgid "Speleologist"
+msgstr ""
+
+#: src/role.c:39
+msgid "Collector"
+msgstr ""
+
+#: src/role.c:40
+msgid "Curator"
+msgstr ""
+
+#: src/role.c:72
+msgid "Barbarian"
+msgstr ""
+
+#: src/role.c:73
+msgid "Plunderer"
+msgstr ""
+
+#: src/role.c:73
+msgid "Plunderess"
+msgstr ""
+
+#: src/role.c:74
+msgid "Pillager"
+msgstr ""
+
+#: src/role.c:75
+msgid "Bandit"
+msgstr ""
+
+#: src/role.c:76
+msgid "Brigand"
+msgstr ""
+
+#: src/role.c:77
+msgid "Raider"
+msgstr ""
+
+#: src/role.c:78
+msgid "Reaver"
+msgstr ""
+
+#: src/role.c:79
+msgid "Slayer"
+msgstr ""
+
+#: src/role.c:80
+msgid "Chieftain"
+msgstr ""
+
+#: src/role.c:80
+msgid "Chieftainess"
+msgstr ""
+
+#: src/role.c:81
+msgid "Conqueress"
+msgstr ""
+
+#: src/role.c:81
+msgid "Conqueror"
+msgstr ""
+
+#: src/role.c:113
+msgid "Caveman"
+msgstr ""
+
+#: src/role.c:113
+msgid "Cavewoman"
+msgstr ""
+
+#: src/role.c:114
+msgid "Troglodyte"
+msgstr ""
+
+#: src/role.c:115
+msgid "Aborigine"
+msgstr ""
+
+#: src/role.c:116
+msgid "Wanderer"
+msgstr ""
+
+#: src/role.c:117
+msgid "Vagrant"
+msgstr ""
+
+#: src/role.c:118
+msgid "Wayfarer"
+msgstr ""
+
+#: src/role.c:119
+msgid "Roamer"
+msgstr ""
+
+#: src/role.c:120
+msgid "Nomad"
+msgstr ""
+
+#: src/role.c:121
+msgid "Rover"
+msgstr ""
+
+#: src/role.c:122
+msgid "Pioneer"
+msgstr ""
+
+#: src/role.c:154
+msgid "Healer"
+msgstr ""
+
+#: src/role.c:155
+msgid "Rhizotomist"
+msgstr ""
+
+#: src/role.c:156
+msgid "Empiric"
+msgstr ""
+
+#: src/role.c:157
+msgid "Embalmer"
+msgstr ""
+
+#: src/role.c:158
+msgid "Dresser"
+msgstr ""
+
+#: src/role.c:159
+msgid "Medica ossium"
+msgstr ""
+
+#: src/role.c:159
+msgid "Medicus ossium"
+msgstr ""
+
+#: src/role.c:160
+msgid "Herbalist"
+msgstr ""
+
+#: src/role.c:161
+msgid "Magister"
+msgstr ""
+
+#: src/role.c:161
+msgid "Magistra"
+msgstr ""
+
+#: src/role.c:162
+msgid "Physician"
+msgstr ""
+
+#: src/role.c:163
+msgid "Chirurgeon"
+msgstr ""
+
+#: src/role.c:194 src/role.c:199
+msgid "Knight"
+msgstr ""
+
+#: src/role.c:195
+msgid "Gallant"
+msgstr ""
+
+#: src/role.c:196
+msgid "Esquire"
+msgstr ""
+
+#: src/role.c:197
+msgid "Bachelor"
+msgstr ""
+
+#: src/role.c:198
+msgid "Sergeant"
+msgstr ""
+
+#: src/role.c:200
+msgid "Banneret"
+msgstr ""
+
+#: src/role.c:201
+msgid "Chevalier"
+msgstr ""
+
+#: src/role.c:201
+msgid "Chevaliere"
+msgstr ""
+
+#: src/role.c:202
+msgid "Dame"
+msgstr ""
+
+#: src/role.c:202
+msgid "Seignieur"
+msgstr ""
+
+#: src/role.c:203
+msgid "Paladin"
+msgstr ""
+
+#: src/role.c:234
+msgid "Monk"
+msgstr ""
+
+#: src/role.c:235
+msgid "Candidate"
+msgstr ""
+
+#: src/role.c:236
+msgid "Novice"
+msgstr ""
+
+#: src/role.c:237
+msgid "Initiate"
+msgstr ""
+
+#: src/role.c:238
+msgid "Student of Stones"
+msgstr ""
+
+#: src/role.c:239
+msgid "Student of Waters"
+msgstr ""
+
+#: src/role.c:240
+msgid "Student of Metals"
+msgstr ""
+
+#: src/role.c:241
+msgid "Student of Winds"
+msgstr ""
+
+#: src/role.c:242
+msgid "Student of Fire"
+msgstr ""
+
+#: src/role.c:243
+msgid "Master"
+msgstr ""
+
+#: src/role.c:275 src/role.c:279
+msgid "Priest"
+msgstr ""
+
+#: src/role.c:275 src/role.c:279
+msgid "Priestess"
+msgstr ""
+
+#: src/role.c:276
+msgid "Aspirant"
+msgstr ""
+
+#: src/role.c:277
+msgid "Acolyte"
+msgstr ""
+
+#: src/role.c:278
+msgid "Adept"
+msgstr ""
+
+#: src/role.c:280
+msgid "Curate"
+msgstr ""
+
+#: src/role.c:281
+msgid "Canon"
+msgstr ""
+
+#: src/role.c:281
+msgid "Canoness"
+msgstr ""
+
+#: src/role.c:282
+msgid "Lama"
+msgstr ""
+
+#: src/role.c:283
+msgid "Matriarch"
+msgstr ""
+
+#: src/role.c:283
+msgid "Patriarch"
+msgstr ""
+
+#: src/role.c:284
+msgid "High Priest"
+msgstr ""
+
+#: src/role.c:284
+msgid "High Priestess"
+msgstr ""
+
+#: src/role.c:318 src/role.c:321
+msgid "Rogue"
+msgstr ""
+
+#: src/role.c:319
+msgid "Footpad"
+msgstr ""
+
+#: src/role.c:320
+msgid "Cutpurse"
+msgstr ""
+
+#: src/role.c:322
+msgid "Pilferer"
+msgstr ""
+
+#: src/role.c:323
+msgid "Robber"
+msgstr ""
+
+#: src/role.c:324
+msgid "Burglar"
+msgstr ""
+
+#: src/role.c:325
+msgid "Filcher"
+msgstr ""
+
+#: src/role.c:326
+msgid "Magsman"
+msgstr ""
+
+#: src/role.c:326
+msgid "Magswoman"
+msgstr ""
+
+#: src/role.c:327
+msgid "Thief"
+msgstr ""
+
+#: src/role.c:358
+msgid "Ranger"
+msgstr ""
+
+#: src/role.c:373
+msgid "Tenderfoot"
+msgstr ""
+
+#: src/role.c:374
+msgid "Lookout"
+msgstr ""
+
+#: src/role.c:375
+msgid "Trailblazer"
+msgstr ""
+
+#: src/role.c:376
+msgid "Reconnoiterer"
+msgstr ""
+
+#: src/role.c:376
+msgid "Reconnoiteress"
+msgstr ""
+
+#: src/role.c:377
+msgid "Scout"
+msgstr ""
+
+#: src/role.c:378
+msgid "Arbalester"
+msgstr ""
+
+#: src/role.c:379
+msgid "Archer"
+msgstr ""
+
+#: src/role.c:380
+msgid "Sharpshooter"
+msgstr ""
+
+#: src/role.c:381
+msgid "Marksman"
+msgstr ""
+
+#: src/role.c:381
+msgid "Markswoman"
+msgstr ""
+
+#: src/role.c:413
+msgid "Samurai"
+msgstr ""
+
+#: src/role.c:414
+msgid "Hatamoto"
+msgstr ""
+
+#: src/role.c:415
+msgid "Ronin"
+msgstr ""
+
+#: src/role.c:416
+msgid "Kunoichi"
+msgstr ""
+
+#: src/role.c:416
+msgid "Ninja"
+msgstr ""
+
+#: src/role.c:417
+msgid "Joshu"
+msgstr ""
+
+#: src/role.c:418
+msgid "Ryoshu"
+msgstr ""
+
+#: src/role.c:419
+msgid "Kokushu"
+msgstr ""
+
+#: src/role.c:420
+msgid "Daimyo"
+msgstr ""
+
+#: src/role.c:421
+msgid "Kuge"
+msgstr ""
+
+#: src/role.c:422
+msgid "Shogun"
+msgstr ""
+
+#: src/role.c:453
+msgid "Tourist"
+msgstr ""
+
+#: src/role.c:454
+msgid "Rambler"
+msgstr ""
+
+#: src/role.c:455
+msgid "Sightseer"
+msgstr ""
+
+#: src/role.c:456
+msgid "Excursionist"
+msgstr ""
+
+#: src/role.c:457
+msgid "Peregrinator"
+msgstr ""
+
+#: src/role.c:457
+msgid "Peregrinatrix"
+msgstr ""
+
+#: src/role.c:458
+msgid "Traveler"
+msgstr ""
+
+#: src/role.c:459
+msgid "Journeyer"
+msgstr ""
+
+#: src/role.c:460
+msgid "Voyager"
+msgstr ""
+
+#: src/role.c:461
+msgid "Explorer"
+msgstr ""
+
+#: src/role.c:462
+msgid "Adventurer"
+msgstr ""
+
+#: src/role.c:493
+msgid "Valkyrie"
+msgstr ""
+
+#: src/role.c:494
+msgid "Stripling"
+msgstr ""
+
+#: src/role.c:495
+msgid "Skirmisher"
+msgstr ""
+
+#: src/role.c:496
+msgid "Fighter"
+msgstr ""
+
+#: src/role.c:497
+msgid "Man-at-arms"
+msgstr ""
+
+#: src/role.c:497
+msgid "Woman-at-arms"
+msgstr ""
+
+#: src/role.c:498
+msgid "Warrior"
+msgstr ""
+
+#: src/role.c:499
+msgid "Swashbuckler"
+msgstr ""
+
+#: src/role.c:500
+msgid "Hero"
+msgstr ""
+
+#: src/role.c:500
+msgid "Heroine"
+msgstr ""
+
+#: src/role.c:501
+msgid "Champion"
+msgstr ""
+
+#: src/role.c:502
+msgid "Lady"
+msgstr ""
+
+#: src/role.c:502
+msgid "Lord"
+msgstr ""
+
+#: src/role.c:533 src/role.c:541
+msgid "Wizard"
+msgstr ""
+
+#: src/role.c:534
+msgid "Evoker"
+msgstr ""
+
+#: src/role.c:535
+msgid "Conjurer"
+msgstr ""
+
+#: src/role.c:536
+msgid "Thaumaturge"
+msgstr ""
+
+#: src/role.c:537
+msgid "Magician"
+msgstr ""
+
+#: src/role.c:538
+msgid "Enchanter"
+msgstr ""
+
+#: src/role.c:538
+msgid "Enchantress"
+msgstr ""
+
+#: src/role.c:539
+msgid "Sorcerer"
+msgstr ""
+
+#: src/role.c:539
+msgid "Sorceress"
+msgstr ""
+
+#: src/role.c:540
+msgid "Necromancer"
+msgstr ""
+
+#: src/role.c:542
+msgid "Mage"
+msgstr ""
+
+#: src/role.c:583 src/role.c:584
+msgid "human"
+msgstr ""
+
+#: src/role.c:587
+msgid "man"
+msgstr ""
+
+#: src/role.c:587
+msgid "woman"
+msgstr ""
+
+#: src/role.c:604
+msgid "elf"
+msgstr ""
+
+#: src/role.c:605
+msgid "elven"
+msgstr ""
+
+#: src/role.c:624
+msgid "dwarf"
+msgstr ""
+
+#: src/role.c:625
+msgid "dwarven"
+msgstr ""
+
+#: src/role.c:644
+msgid "gnome"
+msgstr ""
+
+#: src/role.c:645
+msgid "gnomish"
+msgstr ""
+
+#: src/role.c:664
+msgid "orc"
+msgstr ""
+
+#: src/role.c:665
+msgid "orcish"
+msgstr ""
+
+#: src/role.c:689
+msgid "male"
+msgstr ""
+
+#: src/role.c:690
+msgid "female"
+msgstr ""
+
+#: src/role.c:691
+msgid "neuter"
+msgstr ""
+
+#: src/role.c:699
+#, c-format
+msgctxt "feminine"
+msgid "Archeologist"
+msgstr ""
+
+#: src/role.c:699
+#, c-format
+msgctxt "feminine"
+msgid "Digger"
+msgstr ""
+
+#: src/role.c:700
+#, c-format
+msgctxt "feminine"
+msgid "Field Worker"
+msgstr ""
+
+#: src/role.c:700
+#, c-format
+msgctxt "feminine"
+msgid "Investigator"
+msgstr ""
+
+#: src/role.c:701
+#, c-format
+msgctxt "feminine"
+msgid "Excavator"
+msgstr ""
+
+#: src/role.c:701
+#, c-format
+msgctxt "feminine"
+msgid "Exhumer"
+msgstr ""
+
+#: src/role.c:702
+#, c-format
+msgctxt "feminine"
+msgid "Speleologist"
+msgstr ""
+
+#: src/role.c:702
+#, c-format
+msgctxt "feminine"
+msgid "Spelunker"
+msgstr ""
+
+#: src/role.c:703
+#, c-format
+msgctxt "feminine"
+msgid "Collector"
+msgstr ""
+
+#: src/role.c:703
+#, c-format
+msgctxt "feminine"
+msgid "Curator"
+msgstr ""
+
+#: src/role.c:704
+#, c-format
+msgctxt "feminine"
+msgid "Barbarian"
+msgstr ""
+
+#: src/role.c:704
+#, c-format
+msgctxt "feminine"
+msgid "Pillager"
+msgstr ""
+
+#: src/role.c:705
+#, c-format
+msgctxt "feminine"
+msgid "Bandit"
+msgstr ""
+
+#: src/role.c:705
+#, c-format
+msgctxt "feminine"
+msgid "Brigand"
+msgstr ""
+
+#: src/role.c:706
+#, c-format
+msgctxt "feminine"
+msgid "Raider"
+msgstr ""
+
+#: src/role.c:706
+#, c-format
+msgctxt "feminine"
+msgid "Reaver"
+msgstr ""
+
+#: src/role.c:706
+#, c-format
+msgctxt "feminine"
+msgid "Slayer"
+msgstr ""
+
+#: src/role.c:707
+#, c-format
+msgctxt "feminine"
+msgid "Aborigine"
+msgstr ""
+
+#: src/role.c:707
+#, c-format
+msgctxt "feminine"
+msgid "Troglodyte"
+msgstr ""
+
+#: src/role.c:708
+#, c-format
+msgctxt "feminine"
+msgid "Vagrant"
+msgstr ""
+
+#: src/role.c:708
+#, c-format
+msgctxt "feminine"
+msgid "Wanderer"
+msgstr ""
+
+#: src/role.c:709
+#, c-format
+msgctxt "feminine"
+msgid "Roamer"
+msgstr ""
+
+#: src/role.c:709
+#, c-format
+msgctxt "feminine"
+msgid "Wayfarer"
+msgstr ""
+
+#: src/role.c:710
+#, c-format
+msgctxt "feminine"
+msgid "Nomad"
+msgstr ""
+
+#: src/role.c:710
+#, c-format
+msgctxt "feminine"
+msgid "Pioneer"
+msgstr ""
+
+#: src/role.c:710
+#, c-format
+msgctxt "feminine"
+msgid "Rover"
+msgstr ""
+
+#: src/role.c:711
+#, c-format
+msgctxt "feminine"
+msgid "Healer"
+msgstr ""
+
+#: src/role.c:711
+#, c-format
+msgctxt "feminine"
+msgid "Rhizotomist"
+msgstr ""
+
+#: src/role.c:712
+#, c-format
+msgctxt "feminine"
+msgid "Embalmer"
+msgstr ""
+
+#: src/role.c:712
+#, c-format
+msgctxt "feminine"
+msgid "Empiric"
+msgstr ""
+
+#: src/role.c:713
+#, c-format
+msgctxt "feminine"
+msgid "Dresser"
+msgstr ""
+
+#: src/role.c:713
+#, c-format
+msgctxt "feminine"
+msgid "Herbalist"
+msgstr ""
+
+#: src/role.c:714
+#, c-format
+msgctxt "feminine"
+msgid "Chirurgeon"
+msgstr ""
+
+#: src/role.c:714
+#, c-format
+msgctxt "feminine"
+msgid "Physician"
+msgstr ""
+
+#: src/role.c:715
+#, c-format
+msgctxt "feminine"
+msgid "Gallant"
+msgstr ""
+
+#: src/role.c:715
+#, c-format
+msgctxt "feminine"
+msgid "Knight"
+msgstr ""
+
+#: src/role.c:716
+#, c-format
+msgctxt "feminine"
+msgid "Bachelor"
+msgstr ""
+
+#: src/role.c:716
+#, c-format
+msgctxt "feminine"
+msgid "Esquire"
+msgstr ""
+
+#: src/role.c:717
+#, c-format
+msgctxt "feminine"
+msgid "Banneret"
+msgstr ""
+
+#: src/role.c:717
+#, c-format
+msgctxt "feminine"
+msgid "Sergeant"
+msgstr ""
+
+#: src/role.c:718
+#, c-format
+msgctxt "feminine"
+msgid "Monk"
+msgstr ""
+
+#: src/role.c:718
+#, c-format
+msgctxt "feminine"
+msgid "Paladin"
+msgstr ""
+
+#: src/role.c:719
+#, c-format
+msgctxt "feminine"
+msgid "Candidate"
+msgstr ""
+
+#: src/role.c:719
+#, c-format
+msgctxt "feminine"
+msgid "Novice"
+msgstr ""
+
+#: src/role.c:720
+#, c-format
+msgctxt "feminine"
+msgid "Initiate"
+msgstr ""
+
+#: src/role.c:720
+#, c-format
+msgctxt "feminine"
+msgid "Student of Stones"
+msgstr ""
+
+#: src/role.c:721
+#, c-format
+msgctxt "feminine"
+msgid "Student of Metals"
+msgstr ""
+
+#: src/role.c:721
+#, c-format
+msgctxt "feminine"
+msgid "Student of Waters"
+msgstr ""
+
+#: src/role.c:722
+#, c-format
+msgctxt "feminine"
+msgid "Student of Fire"
+msgstr ""
+
+#: src/role.c:722
+#, c-format
+msgctxt "feminine"
+msgid "Student of Winds"
+msgstr ""
+
+#: src/role.c:723
+#, c-format
+msgctxt "feminine"
+msgid "Aspirant"
+msgstr ""
+
+#: src/role.c:723
+#, c-format
+msgctxt "feminine"
+msgid "Master"
+msgstr ""
+
+#: src/role.c:724
+#, c-format
+msgctxt "feminine"
+msgid "Acolyte"
+msgstr ""
+
+#: src/role.c:724
+#, c-format
+msgctxt "feminine"
+msgid "Adept"
+msgstr ""
+
+#: src/role.c:724
+#, c-format
+msgctxt "feminine"
+msgid "Curate"
+msgstr ""
+
+#: src/role.c:725
+#, c-format
+msgctxt "feminine"
+msgid "Footpad"
+msgstr ""
+
+#: src/role.c:725
+#, c-format
+msgctxt "feminine"
+msgid "Lama"
+msgstr ""
+
+#: src/role.c:725
+#, c-format
+msgctxt "feminine"
+msgid "Rogue"
+msgstr ""
+
+#: src/role.c:726
+#, c-format
+msgctxt "feminine"
+msgid "Cutpurse"
+msgstr ""
+
+#: src/role.c:726
+#, c-format
+msgctxt "feminine"
+msgid "Pilferer"
+msgstr ""
+
+#: src/role.c:727
+#, c-format
+msgctxt "feminine"
+msgid "Burglar"
+msgstr ""
+
+#: src/role.c:727
+#, c-format
+msgctxt "feminine"
+msgid "Robber"
+msgstr ""
+
+#: src/role.c:728
+#, c-format
+msgctxt "feminine"
+msgid "Filcher"
+msgstr ""
+
+#: src/role.c:728
+#, c-format
+msgctxt "feminine"
+msgid "Ranger"
+msgstr ""
+
+#: src/role.c:728
+#, c-format
+msgctxt "feminine"
+msgid "Thief"
+msgstr ""
+
+#: src/role.c:729
+#, c-format
+msgctxt "feminine"
+msgid "Lookout"
+msgstr ""
+
+#: src/role.c:729
+#, c-format
+msgctxt "feminine"
+msgid "Tenderfoot"
+msgstr ""
+
+#: src/role.c:730
+#, c-format
+msgctxt "feminine"
+msgid "Scout"
+msgstr ""
+
+#: src/role.c:730
+#, c-format
+msgctxt "feminine"
+msgid "Trailblazer"
+msgstr ""
+
+#: src/role.c:731
+#, c-format
+msgctxt "feminine"
+msgid "Arbalester"
+msgstr ""
+
+#: src/role.c:731
+#, c-format
+msgctxt "feminine"
+msgid "Archer"
+msgstr ""
+
+#: src/role.c:732
+#, c-format
+msgctxt "feminine"
+msgid "Samurai"
+msgstr ""
+
+#: src/role.c:732
+#, c-format
+msgctxt "feminine"
+msgid "Sharpshooter"
+msgstr ""
+
+#: src/role.c:733
+#, c-format
+msgctxt "feminine"
+msgid "Hatamoto"
+msgstr ""
+
+#: src/role.c:733
+#, c-format
+msgctxt "feminine"
+msgid "Joshu"
+msgstr ""
+
+#: src/role.c:733
+#, c-format
+msgctxt "feminine"
+msgid "Ronin"
+msgstr ""
+
+#: src/role.c:734
+#, c-format
+msgctxt "feminine"
+msgid "Kokushu"
+msgstr ""
+
+#: src/role.c:734
+#, c-format
+msgctxt "feminine"
+msgid "Ryoshu"
+msgstr ""
+
+#: src/role.c:735
+#, c-format
+msgctxt "feminine"
+msgid "Daimyo"
+msgstr ""
+
+#: src/role.c:735
+#, c-format
+msgctxt "feminine"
+msgid "Kuge"
+msgstr ""
+
+#: src/role.c:735
+#, c-format
+msgctxt "feminine"
+msgid "Shogun"
+msgstr ""
+
+#: src/role.c:736
+#, c-format
+msgctxt "feminine"
+msgid "Rambler"
+msgstr ""
+
+#: src/role.c:736
+#, c-format
+msgctxt "feminine"
+msgid "Tourist"
+msgstr ""
+
+#: src/role.c:737
+#, c-format
+msgctxt "feminine"
+msgid "Excursionist"
+msgstr ""
+
+#: src/role.c:737
+#, c-format
+msgctxt "feminine"
+msgid "Sightseer"
+msgstr ""
+
+#: src/role.c:738
+#, c-format
+msgctxt "feminine"
+msgid "Journeyer"
+msgstr ""
+
+#: src/role.c:738
+#, c-format
+msgctxt "feminine"
+msgid "Traveler"
+msgstr ""
+
+#: src/role.c:739
+#, c-format
+msgctxt "feminine"
+msgid "Explorer"
+msgstr ""
+
+#: src/role.c:739
+#, c-format
+msgctxt "feminine"
+msgid "Voyager"
+msgstr ""
+
+#: src/role.c:740
+#, c-format
+msgctxt "feminine"
+msgid "Adventurer"
+msgstr ""
+
+#: src/role.c:740
+#, c-format
+msgctxt "feminine"
+msgid "Valkyrie"
+msgstr ""
+
+#: src/role.c:741
+#, c-format
+msgctxt "feminine"
+msgid "Skirmisher"
+msgstr ""
+
+#: src/role.c:741
+#, c-format
+msgctxt "feminine"
+msgid "Stripling"
+msgstr ""
+
+#: src/role.c:742
+#, c-format
+msgctxt "feminine"
+msgid "Fighter"
+msgstr ""
+
+#: src/role.c:742
+#, c-format
+msgctxt "feminine"
+msgid "Warrior"
+msgstr ""
+
+#: src/role.c:743
+#, c-format
+msgctxt "feminine"
+msgid "Champion"
+msgstr ""
+
+#: src/role.c:743
+#, c-format
+msgctxt "feminine"
+msgid "Swashbuckler"
+msgstr ""
+
+#: src/role.c:744
+#, c-format
+msgctxt "feminine"
+msgid "Evoker"
+msgstr ""
+
+#: src/role.c:744
+#, c-format
+msgctxt "feminine"
+msgid "Wizard"
+msgstr ""
+
+#: src/role.c:745
+#, c-format
+msgctxt "feminine"
+msgid "Conjurer"
+msgstr ""
+
+#: src/role.c:745
+#, c-format
+msgctxt "feminine"
+msgid "Thaumaturge"
+msgstr ""
+
+#: src/role.c:746
+#, c-format
+msgctxt "feminine"
+msgid "Magician"
+msgstr ""
+
+#: src/role.c:746
+#, c-format
+msgctxt "feminine"
+msgid "Necromancer"
+msgstr ""
+
+#: src/role.c:747
+#, c-format
+msgctxt "feminine"
+msgid "Mage"
+msgstr ""
+
+#: src/role.c:753
+#, c-format
+msgctxt "feminine"
+msgid "elf"
+msgstr ""
+
+#: src/role.c:753
+#, c-format
+msgctxt "feminine"
+msgid "elven"
+msgstr ""
+
+#: src/role.c:753
+#, c-format
+msgctxt "feminine"
+msgid "human"
+msgstr ""
+
+#: src/role.c:754
+#, c-format
+msgctxt "feminine"
+msgid "dwarf"
+msgstr ""
+
+#: src/role.c:754
+#, c-format
+msgctxt "feminine"
+msgid "dwarven"
+msgstr ""
+
+#: src/role.c:755
+#, c-format
+msgctxt "feminine"
+msgid "gnome"
+msgstr ""
+
+#: src/role.c:755
+#, c-format
+msgctxt "feminine"
+msgid "gnomish"
+msgstr ""
+
+#: src/role.c:756
+#, c-format
+msgctxt "feminine"
+msgid "orc"
+msgstr ""
+
+#: src/role.c:756
+#, c-format
+msgctxt "feminine"
+msgid "orcish"
+msgstr ""
+
+#: src/role.c:757
+#, c-format
+msgctxt "feminine"
+msgid "lawful"
+msgstr ""
+
+#: src/role.c:757
+#, c-format
+msgctxt "feminine"
+msgid "neutral"
+msgstr ""
+
+#: src/role.c:758
+#, c-format
+msgctxt "feminine"
+msgid "chaotic"
+msgstr ""
+
+#: src/role.c:758
+#, c-format
+msgctxt "feminine"
+msgid "unaligned"
+msgstr ""
+
+#: src/role.c:763
+msgid "law"
+msgstr ""
+
+#: src/role.c:763
+msgid "lawful"
+msgstr ""
+
+#: src/role.c:764
+msgid "balance"
+msgstr ""
+
+#: src/role.c:764
+msgid "neutral"
+msgstr ""
+
+#: src/role.c:765
+msgid "chaos"
+msgstr ""
+
+#: src/role.c:765
+msgid "chaotic"
+msgstr ""
+
+#: src/role.c:766
+msgid "evil"
+msgstr ""
+
+#: src/role.c:766
+msgid "unaligned"
+msgstr ""
+
+#: src/role.c:1661
+msgid "Shall I pick a character for you? [ynaq] "
+msgstr ""
+
+#: src/role.c:1915
+msgctxt "rolesel"
+msgid "name"
+msgstr ""
+
+#: src/role.c:1918 src/role.c:1925 src/role.c:1937 src/role.c:1959
+#: src/role.c:1983
+msgctxt "rolesel"
+msgid "role"
+msgstr ""
+
+#: src/role.c:1924 src/role.c:1943 src/role.c:1965 src/role.c:2000
+msgctxt "rolesel"
+msgid "filter"
+msgstr ""
+
+#: src/role.c:1929 src/role.c:1944 src/role.c:1994
+msgctxt "rolesel"
+msgid "race"
+msgstr ""
+
+#: src/role.c:1949 src/role.c:1966
+msgctxt "rolesel"
+msgid "gender"
+msgstr ""
+
+#: src/role.c:1971 src/role.c:2001
+msgctxt "rolesel"
+msgid "alignment"
+msgstr ""
+
+#: src/role.c:2012
+#, c-format
+msgid "%4s%s forces %s"
+msgstr ""
+
+#: src/role.c:2017
+#, c-format
+msgid "Pick another %s first"
+msgstr ""
+
+#: src/role.c:2018
+#, c-format
+msgid "Pick %s first"
+msgstr ""
+
+#: src/role.c:2026
+msgid "Reset role/race/&c filtering"
+msgstr ""
+
+#: src/role.c:2027
+msgid "Set role/race/&c filtering"
+msgstr ""
+
+#: src/role.c:2033
+msgid "Random"
+msgstr ""
+
+#: src/role.c:2038 src/role.c:2757
+msgid "Quit"
+msgstr ""
+
+#: src/role.c:2207
+msgid "Salutations"
+msgstr ""
+
+#: src/role.c:2221
+msgid "Hello"
+msgstr ""
+
+#: src/role.c:2230
+msgid "Fare thee well"
+msgstr ""
+
+#: src/role.c:2238
+msgid "Goodbye"
+msgstr ""
+
+#: src/role.c:2406
+msgid "Pick a role or profession"
+msgstr ""
+
+#: src/role.c:2500
+msgid "Pick a race or species"
+msgstr ""
+
+#: src/role.c:2588
+msgid "Pick a gender or sex"
+msgstr ""
+
+#: src/role.c:2674
+msgid "Pick an alignment or creed"
+msgstr ""
+
+#: src/role.c:2743
+msgid "Yes; start game"
+msgstr ""
+
+#: src/role.c:2747
+msgid "No; choose role again"
+msgstr ""
+
+#: src/role.c:2752
+msgid "Not yet; choose another name"
+msgstr ""
+
+#: src/role.c:2758
+#, c-format
+msgid "Is this ok? [yn%sq]"
+msgstr ""
+
+#: src/role.c:2825
+msgid "Unacceptable roles"
+msgstr ""
+
+#: src/role.c:2829
+msgid "Unacceptable races"
+msgstr ""
+
+#: src/role.c:2833
+msgid "Unacceptable genders"
+msgstr ""
+
+#: src/role.c:2837
+msgid "Unacceptable alignments"
+msgstr ""
+
+#: src/role.c:2842
+msgid "Pick all that apply and/or unpick any that no longer apply"
+msgstr ""
+
+#: src/role.c:2843
+msgid "Pick all that apply"
+msgstr ""
+
+#: src/role.c:2904
+msgid "<role>"
+msgstr ""
+
+#: src/role.c:2911
+msgid "<race>"
+msgstr ""
+
+#: src/role.c:2913
+msgid "<gender>"
+msgstr ""
+
+#: src/role.c:2914
+msgid "<alignment>"
+msgstr ""
+
+#: src/role.c:2918
+#, c-format
+msgid "%.20s the %.20s %.20s %.20s"
 msgstr ""

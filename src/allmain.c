@@ -911,9 +911,31 @@ welcome(boolean new_game) /* false => restoring an old game */
             (currentgend && gu.urole.name.f) ? gu.urole.name.f
                                              : gu.urole.name.m);
 
-    pline(new_game ? "%s %s, welcome to NetHack!  You are a%s."
-                   : "%s %s, the%s, welcome back to NetHack!",
-          Hello((struct monst *) 0), svp.plname, buf);
+    if (i18n_active()) {
+        /* "<role> <race> <alignment>", the gender being conveyed by the
+           gendered words; alignment omitted as above */
+        char tbuf[BUFSZ];
+        boolean showalign = (new_game || adrift
+                             || (u.ualignbase[A_ORIGINAL]
+                                 != u.ualignbase[A_CURRENT]));
+        aligntyp algn = adrift ? u.ualign.type : u.ualignbase[A_CURRENT];
+
+        Sprintf(tbuf, "%s %s",
+                (currentgend && gu.urole.name.f)
+                    ? _(gu.urole.name.f)
+                    : gendered_word(gu.urole.name.m, currentgend),
+                gendered_word(gu.urace.adj, currentgend));
+        if (showalign)
+            Sprintf(eos(tbuf), " %s",
+                    gendered_word(align_str(algn), currentgend));
+        pline(new_game ? _("%s %s, welcome to NetHack!  You are %s.")
+                       : _("%s %s, the %s, welcome back to NetHack!"),
+              Hello((struct monst *) 0), svp.plname, tbuf);
+    } else {
+        pline(new_game ? "%s %s, welcome to NetHack!  You are a%s."
+                       : "%s %s, the%s, welcome back to NetHack!",
+              Hello((struct monst *) 0), svp.plname, buf);
+    }
 
     if (new_game) {
         /* guarantee that 'major' event category is never empty */

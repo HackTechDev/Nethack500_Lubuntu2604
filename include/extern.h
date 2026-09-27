@@ -2081,6 +2081,8 @@ enum instruments obj_to_instr(struct obj *) NONNULLARG1;
 
 #ifdef NHI18N
 extern const char *nh_gettext(const char *) FORMAT_ARG(1);
+extern const char *nh_pgettext(const char *, const char *) FORMAT_ARG(2);
+extern boolean i18n_translating(void);
 extern boolean i18n_set_language(const char *) NONNULLARG1;
 extern const char *i18n_language(void);
 #endif
@@ -2774,6 +2776,7 @@ extern void shuffle_int_array(int *, int) NONNULLARG1;
 
 /* ### role.c ### */
 
+extern const char *gendered_word(const char *, int) NONNULLARG1;
 extern boolean validrole(int);
 extern boolean validrace(int, int);
 extern boolean validgend(int, int, int);

@@ -1100,7 +1100,7 @@ curs_stat_conds(
             ci = cond_idx[i];
             bitmsk = conditions[ci].mask;
             if (curses_condition_bits & bitmsk) {
-                Strcpy(condnam, conditions[ci].text[0]);
+                Strcpy(condnam, _(conditions[ci].text[0]));
                 Strcat(strcat(condbuf, " "), upstart(condnam));
 #ifdef STATUS_HILITES
                 if (nohilite && *nohilite
@@ -1133,9 +1133,9 @@ curs_stat_conds(
             bitmsk = conditions[ci].mask;
             if (cond_bits & bitmsk) {
                 if (!vert_fmt)
-                    Strcpy(condnam, conditions[ci].text[0]);
+                    Strcpy(condnam, _(conditions[ci].text[0]));
                 else
-                    Sprintf(condnam, vert_fmt, conditions[ci].text[0]);
+                    Sprintf(condnam, vert_fmt, _(conditions[ci].text[0]));
                 cndlen = 1 + (int) strlen(condnam); /* count leading space */
                 if (!do_vert) {
                     getyx(win, cy, cx);

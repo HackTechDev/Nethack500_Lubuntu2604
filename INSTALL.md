@@ -163,9 +163,11 @@ ajouter son nom à cette ligne avant d'installer (ou modifier directement le
 
 ## 7. Traduction française
 
-La traduction est en cours : seuls quelques messages sont traduits pour
-l'instant, les autres restent en anglais. Pour l'activer, ajouter dans
-`~/.nethackrc` :
+La traduction est en cours. Sont traduits : la création du personnage,
+le message de bienvenue, la ligne de statut (avec accord au féminin des
+rangs et de l'alignement), les catégories de l'inventaire et quelques
+messages. Les noms d'objets et de monstres et la plupart des messages du
+jeu restent en anglais. Pour l'activer, ajouter dans `~/.nethackrc` :
 
 ```
 OPTIONS=language:fr
@@ -186,6 +188,13 @@ Pour traduire de nouveaux messages :
 4. recompiler et réinstaller (`./install.sh`).
 
 Les `%s`, `%d`, etc. de la traduction doivent correspondre à ceux du texte
-anglais (même ordre, ou ordre changé avec `%1$s`, `%2$s`). Sinon,
-`msgfmt --check` refuse le catalogue, et le jeu ignore de toute façon une
-traduction incohérente et affiche le texte anglais.
+anglais (même ordre, ou ordre changé avec `%1$s`, `%2$s` ; les derniers
+peuvent être omis). Sinon, `msgfmt --check` refuse le catalogue, et le jeu
+ignore de toute façon une traduction incohérente et affiche le texte
+anglais.
+
+Les entrées `msgctxt "feminine"` donnent la forme féminine d'un mot (rang,
+race, alignement) pour une héroïne ; sans elle, la forme masculine est
+utilisée. Une entrée marquée `#, fuzzy` par `make update-po` est une
+traduction devinée, ignorée par le jeu tant qu'elle n'a pas été vérifiée
+et le marqueur retiré.
