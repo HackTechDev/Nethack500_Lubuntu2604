@@ -443,8 +443,8 @@ ask_do_tutorial(void)
         rc = nh_basename(get_configfile(), TRUE);
         norc = !strcmp(get_configfile(), "/dev/null");
         Snprintf(buf, sizeof buf,
-                 "Put \"OPTIONS=!tutorial\" in %s to skip this query.",
-                 (rc && *rc && !norc) ? rc : "your configuration file");
+                 _("Put \"OPTIONS=!tutorial\" in %s to skip this query."),
+                 (rc && *rc && !norc) ? rc : _("your configuration file"));
         do {
             win = create_nhwindow(NHW_MENU);
             start_menu(win, MENU_BEHAVE_STANDARD);
@@ -452,18 +452,18 @@ ask_do_tutorial(void)
             any.a_char = 'y';
             add_menu(win, &nul_glyphinfo, &any, any.a_char, 0,
                      ATR_NONE, NO_COLOR,
-                     "Yes, do a tutorial", MENU_ITEMFLAGS_NONE);
+                     _("Yes, do a tutorial"), MENU_ITEMFLAGS_NONE);
             any.a_char = 'n';
             add_menu(win, &nul_glyphinfo, &any, any.a_char, 0,
                      ATR_NONE, NO_COLOR,
-                     "No, just start play", MENU_ITEMFLAGS_NONE);
+                     _("No, just start play"), MENU_ITEMFLAGS_NONE);
 
             add_menu_str(win, "");
             add_menu_str(win, buf);
             if (pass++) /* we'll get here after <space> or <return> */
-                add_menu_str(win, "(Please choose 'y' or 'n'.)");
+                add_menu_str(win, _("(Please choose 'y' or 'n'.)"));
 
-            end_menu(win, "Do you want a tutorial?");
+            end_menu(win, _("Do you want a tutorial?"));
 
             n = select_menu(win, PICK_ONE, &sel);
             destroy_nhwindow(win);
@@ -1958,6 +1958,35 @@ optfn_IBMgraphics(
     }
     return optn_ok;
 }
+
+#ifdef NHI18N
+staticfn int
+optfn_language(
+    int optidx, int req,
+    boolean negated UNUSED,
+    char *opts, char *op)
+{
+    if (req == do_init) {
+        return optn_ok;
+    }
+    if (req == do_set) {
+        /* language:fr  loads the message catalog fr.mo from HACKDIR */
+        if ((op = string_for_env_opt(allopt[optidx].name, opts, FALSE))
+            == empty_optstr)
+            return optn_err;
+        if (!i18n_set_language(op)) {
+            config_error_add("No message catalog for language '%s'", op);
+            return optn_silenterr;
+        }
+        return optn_ok;
+    }
+    if (req == get_val || req == get_cnf_val) {
+        Sprintf(opts, "%s", i18n_language());
+        return optn_ok;
+    }
+    return optn_ok;
+}
+#endif /* NHI18N */
 
 staticfn int
 optfn_map_mode(

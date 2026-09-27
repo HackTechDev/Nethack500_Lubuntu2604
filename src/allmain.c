@@ -56,14 +56,14 @@ moveloop_preamble(boolean resuming)
     /* side-effects from the real world */
     flags.moonphase = phase_of_the_moon();
     if (flags.moonphase == FULL_MOON) {
-        You("are lucky!  Full moon tonight.");
+        pline(_("You are lucky!  Full moon tonight."));
         change_luck(1);
     } else if (flags.moonphase == NEW_MOON) {
-        pline("Be careful!  New moon tonight.");
+        pline(_("Be careful!  New moon tonight."));
     }
     flags.friday13 = friday_13th();
     if (flags.friday13) {
-        pline("Watch out!  Bad things can happen on Friday the 13th.");
+        pline(_("Watch out!  Bad things can happen on Friday the 13th."));
         change_luck(-1);
     }
 

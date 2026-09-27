@@ -129,7 +129,15 @@ LUA2NHTOP = ../../..
 LUABASELIB = liblua-$(LUA_VERSION).a
 TOPLUALIB = lib/lua/$(LUABASELIB)
 
-ALLDEP = $(PRECHECK) $(GAME) recover Guidebook $(VARDAT) spec_levs check-dlb
+# message catalogs: po/<lang>.po is compiled into dat/<lang>.mo, which is
+# installed in HACKDIR and used with OPTIONS=language:<lang> (nhi18n.c)
+MSGFMT = msgfmt
+MSGMERGE = msgmerge
+XGETTEXT = xgettext
+MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
+
+ALLDEP = $(PRECHECK) $(GAME) recover Guidebook $(VARDAT) spec_levs check-dlb \
+	$(MOFILES)
 
 # first target is also the default target for 'make' without any arguments
 all:    $(ALLDEP)
@@ -303,6 +311,9 @@ dofiles:
 	$(MAKE) dofiles-$${target-nodlb}
 	cp src/$(GAME) $(INSTDIR)
 	cp util/recover $(INSTDIR)
+	if test -n '$(MOFILES)'; then \
+		cp $(MOFILES) $(INSTDIR) && \
+		( cd $(INSTDIR) ; chmod $(FILEPERM) $(notdir $(MOFILES)) ) ; fi
 	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
 	if test -n '$(SHELLDIR)'; then \
 		sed -e 's;/usr/games/lib/nethackdir;$(HACKDIR);' \
@@ -448,7 +459,8 @@ update: $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf
 rootcheck:
 	@true; $(ROOTCHECK)
 
-install: rootcheck $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf
+install: rootcheck $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf \
+	$(MOFILES)
 	true; $(PREINSTALL)
 # set up the directories
 # not all mkdirs have -p; those that don't will create a -p directory
@@ -491,6 +503,7 @@ clean-keep-lib:
 	( cd util ; $(MAKE) clean )
 	( cd dat ; $(MAKE) clean )
 	( cd doc ; $(MAKE) clean )
+	rm -f $(MOFILES)
 
 # 'make spotless' returns the source tree to near-distribution condition.
 # it removes .o files, executables, and compiled data files
@@ -505,6 +518,20 @@ spotless-keep-lib: clean-keep-lib
 	( cd util ; $(MAKE) spotless )
 	( cd dat ; $(MAKE) spotless )
 	( cd doc ; $(MAKE) spotless )
+
+dat/%.mo: po/%.po
+	$(MSGFMT) --check -o $@ $<
+
+# 'make update-po' extracts the strings marked with _() or N_() into
+# po/nethack.pot and merges them into each po/<lang>.po
+update-po:
+	$(XGETTEXT) --language=C --from-code=UTF-8 --keyword=_ --keyword=N_ \
+		--add-comments=TRANSLATORS: --sort-by-file \
+		--package-name=NetHack --package-version=5.0.0 \
+		-o po/nethack.pot src/*.c win/tty/*.c win/curses/*.c
+	for po in $(wildcard po/*.po); do \
+		$(MSGMERGE) --update --backup=none $$po po/nethack.pot; done
+
 spotless-clean-submodule:
 	@( if test -f submodules/lua/lua.h ; then \
 	    git submodule deinit submodules/lua ; fi )

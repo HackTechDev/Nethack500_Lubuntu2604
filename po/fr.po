@@ -1,0 +1,53 @@
+# Traduction française des messages de NetHack.
+# This file is distributed under the same license as the NetHack package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: NetHack 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-27 20:12+0200\n"
+"PO-Revision-Date: 2026-09-27 20:15+0200\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/allmain.c:59
+msgid "You are lucky!  Full moon tonight."
+msgstr "Vous avez de la chance ! C'est la pleine lune ce soir."
+
+#: src/allmain.c:62
+msgid "Be careful!  New moon tonight."
+msgstr "Prudence ! C'est la nouvelle lune ce soir."
+
+#: src/allmain.c:66
+msgid "Watch out!  Bad things can happen on Friday the 13th."
+msgstr "Attention ! Il peut arriver malheur un vendredi 13."
+
+#: src/options.c:446
+#, c-format
+msgid "Put \"OPTIONS=!tutorial\" in %s to skip this query."
+msgstr "Mettez « OPTIONS=!tutorial » dans %s pour ne plus avoir cette question."
+
+#: src/options.c:447
+msgid "your configuration file"
+msgstr "votre fichier de configuration"
+
+#: src/options.c:455
+msgid "Yes, do a tutorial"
+msgstr "Oui, faire le tutoriel"
+
+#: src/options.c:459
+msgid "No, just start play"
+msgstr "Non, commencer à jouer"
+
+#: src/options.c:464
+msgid "(Please choose 'y' or 'n'.)"
+msgstr "(Veuillez choisir « y » ou « n ».)"
+
+#: src/options.c:466
+msgid "Do you want a tutorial?"
+msgstr "Voulez-vous faire le tutoriel ?"

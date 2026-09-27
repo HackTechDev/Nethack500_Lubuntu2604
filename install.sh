@@ -5,7 +5,7 @@ set -euo pipefail
 
 cd "$(dirname "$(readlink -f "$0")")"
 
-PAQUETS="gcc make curl libncurses-dev"
+PAQUETS="gcc make curl gettext libncurses-dev"
 WIN="WANT_WIN_TTY=1 WANT_WIN_CURSES=1"
 HACKDIR="$HOME/nh/install/games/lib/nethackdir"
 # fichiers du joueur conservés d'une installation à l'autre

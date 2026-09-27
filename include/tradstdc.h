@@ -423,6 +423,10 @@ typedef genericptr genericptr_t; /* (void *) or (char *) */
 #if (__GNUC__ > 3) || (__GNUC__ == 3 && __GNUC_MINOR__ >= 1)
 #define PRINTF_F_PTR(f, v) PRINTF_F(f, v)
 #endif
+/* the result of a function with this attribute is argument n, maybe
+   translated: -Wformat checks a call like pline(_("...")) as if that
+   argument were the format */
+#define FORMAT_ARG(n) __attribute__((format_arg(n)))
 #if __GNUC__ >= 3
 #ifndef ATTRUNUSED
 #define UNUSED __attribute__((unused))
@@ -516,6 +520,9 @@ typedef genericptr genericptr_t; /* (void *) or (char *) */
 #endif
 #ifndef PRINTF_F_PTR
 #define PRINTF_F_PTR(f, v)
+#endif
+#ifndef FORMAT_ARG
+#define FORMAT_ARG(n)
 #endif
 #ifndef UNUSED
 #define UNUSED

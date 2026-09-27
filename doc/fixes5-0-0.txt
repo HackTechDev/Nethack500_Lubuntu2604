@@ -2995,6 +2995,9 @@ tty and curses: support italic as text attribute
 tty and curses: when hitpointbar is displayed, make it blink if current HP is
 	below the "critical HP" threshold (where prayer treats being injured
 	as major trouble)
+Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
+	<lang>.mo in HACKDIR) to translate messages marked with _() in the
+	sources; French catalog po/fr.po started
 
 
 NetHack Community Patches (or Variation) Included

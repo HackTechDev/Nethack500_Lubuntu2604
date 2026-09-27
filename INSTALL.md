@@ -14,8 +14,8 @@ Le script `install.sh` enchaîne les étapes 1 à 5 ci-dessous :
 ./install.sh
 ```
 
-1. installe les paquets manquants (`gcc`, `make`, `curl`, `libncurses-dev`)
-   avec `sudo apt-get` ;
+1. installe les paquets manquants (`gcc`, `make`, `curl`, `gettext`,
+   `libncurses-dev`) avec `sudo apt-get` ;
 2. configure avec `hints/linux.500` et télécharge Lua si `lib/lua` est absent ;
 3. compile avec `WANT_WIN_TTY=1 WANT_WIN_CURSES=1` ;
 4. si le jeu est déjà installé, copie les parties et les scores (`save`,
@@ -35,8 +35,11 @@ Les fichiers d'en-tête de ncurses sont indispensables, même pour l'interface
 tty seule. Sans eux, la compilation échoue sur
 `fatal error: curses.h: Aucun fichier ou dossier de ce nom`.
 
+Le paquet `gettext` fournit `msgfmt`, qui compile la traduction française
+(voir « 7. Traduction française »).
+
 ```sh
-sudo apt install build-essential libncurses-dev
+sudo apt install build-essential gettext libncurses-dev
 ```
 
 ## 2. Configuration
@@ -157,3 +160,32 @@ ajouter son nom à cette ligne avant d'installer (ou modifier directement le
 ```sh
 ~/nh/install/games/nethack -D
 ```
+
+## 7. Traduction française
+
+La traduction est en cours : seuls quelques messages sont traduits pour
+l'instant, les autres restent en anglais. Pour l'activer, ajouter dans
+`~/.nethackrc` :
+
+```
+OPTIONS=language:fr
+```
+
+Les traductions sont dans `po/fr.po`. `make` le compile en `dat/fr.mo`, que
+`make install` copie dans le dossier du jeu. Si le catalogue est absent, le
+jeu affiche « No message catalog for language 'fr' » au démarrage et reste
+en anglais.
+
+Pour traduire de nouveaux messages :
+
+1. dans le code C, entourer le texte de `_()` :
+   `pline(_("Be careful!  New moon tonight."));` ;
+2. extraire les textes marqués et mettre à jour `po/fr.po` :
+   `make update-po` ;
+3. traduire les entrées vides (`msgstr ""`) de `po/fr.po` ;
+4. recompiler et réinstaller (`./install.sh`).
+
+Les `%s`, `%d`, etc. de la traduction doivent correspondre à ceux du texte
+anglais (même ordre, ou ordre changé avec `%1$s`, `%2$s`). Sinon,
+`msgfmt --check` refuse le catalogue, et le jeu ignore de toute façon une
+traduction incohérente et affiche le texte anglais.

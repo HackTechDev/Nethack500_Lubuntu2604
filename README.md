@@ -30,8 +30,12 @@ précautions à prendre avant une réinstallation sont dans
 | `config/nethackrc` | Exemple de configuration joueur (interface curses, couleurs de menus, filtres de messages) |
 | `sys/unix/sysconf` | Ajout de l'utilisateur `util01` à `WIZARDS` (accès au mode debug) |
 | `CLAUDE.md`        | Notes pour Claude Code : compilation, tests, architecture du code |
+| `src/nhi18n.c`, `include/nhi18n.h` | Traduction des messages du jeu (option `language`) |
+| `po/fr.po`         | Traduction française des messages (en cours)                      |
 
-Le reste du dépôt est le code source de NetHack 5.0.0 sans modification. Les
+Le reste du dépôt est le code source de NetHack 5.0.0, avec en plus le
+marquage `_()` des messages traduits et la prise en charge de l'option
+`language` (voir la section 7 de [INSTALL.md](INSTALL.md)). Les
 informations générales de l'équipe NetHack se trouvent dans [README](README).
 
 ## Liens

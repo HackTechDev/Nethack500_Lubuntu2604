@@ -10,6 +10,7 @@
 #include "config.h"
 #endif
 #include "lint.h"
+#include "nhi18n.h"
 
 #include "align.h"
 #include "weight.h"

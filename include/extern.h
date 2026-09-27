@@ -2077,6 +2077,14 @@ extern void awaken_soldiers(struct monst *) NONNULLARG1;
 extern int do_play_instrument(struct obj *) NONNULLARG1;
 enum instruments obj_to_instr(struct obj *) NONNULLARG1;
 
+/* ### nhi18n.c ### */
+
+#ifdef NHI18N
+extern const char *nh_gettext(const char *) FORMAT_ARG(1);
+extern boolean i18n_set_language(const char *) NONNULLARG1;
+extern const char *i18n_language(void);
+#endif
+
 /* ### nhlsel.c ### */
 
 #if !defined(CROSSCOMPILE) || defined(CROSSCOMPILE_TARGET)
