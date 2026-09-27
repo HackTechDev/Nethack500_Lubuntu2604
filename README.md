@@ -7,16 +7,15 @@ configuration de joueur prête à l'emploi.
 ## Démarrage rapide
 
 ```sh
-sudo apt install build-essential libncurses-dev
 git clone https://github.com/HackTechDev/Nethack500_Lubuntu2604.git
 cd Nethack500_Lubuntu2604
-cd sys/unix && sh setup.sh hints/linux.500 && cd ../..
-make fetch-lua
-make WANT_WIN_TTY=1 WANT_WIN_CURSES=1
-make install WANT_WIN_TTY=1 WANT_WIN_CURSES=1
-cp config/nethackrc ~/.nethackrc
+./install.sh
 ~/nh/install/games/nethack
 ```
+
+`install.sh` installe les paquets manquants (via `sudo`), compile le jeu avec
+les interfaces tty et curses, l'installe en conservant les parties et les
+scores existants, puis copie `config/nethackrc` dans `~/.nethackrc`.
 
 Le détail de chaque étape, les emplacements des fichiers installés et les
 précautions à prendre avant une réinstallation sont dans
@@ -26,6 +25,7 @@ précautions à prendre avant une réinstallation sont dans
 
 | Fichier            | Rôle                                                              |
 |--------------------|-------------------------------------------------------------------|
+| `install.sh`       | Script d'installation automatique                                 |
 | `INSTALL.md`       | Guide d'installation en français pour Lubuntu 26.04               |
 | `config/nethackrc` | Exemple de configuration joueur (interface curses, couleurs de menus, filtres de messages) |
 | `sys/unix/sysconf` | Ajout de l'utilisateur `util01` à `WIZARDS` (accès au mode debug) |

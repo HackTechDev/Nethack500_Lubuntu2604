@@ -6,6 +6,29 @@ Les interfaces tty et curses sont compilées.
 
 Pour les autres systèmes ou interfaces, voir `sys/unix/NewInstall.unx`.
 
+## Installation automatique
+
+Le script `install.sh` enchaîne les étapes 1 à 5 ci-dessous :
+
+```sh
+./install.sh
+```
+
+1. installe les paquets manquants (`gcc`, `make`, `curl`, `libncurses-dev`)
+   avec `sudo apt-get` ;
+2. configure avec `hints/linux.500` et télécharge Lua si `lib/lua` est absent ;
+3. compile avec `WANT_WIN_TTY=1 WANT_WIN_CURSES=1` ;
+4. si le jeu est déjà installé, copie les parties et les scores (`save`,
+   `record`, `logfile`, `xlogfile`, `livelog`, `perm`) dans
+   `~/nh/backup-AAAAMMJJ-HHMMSS`, lance `make install`, puis les restaure ;
+5. copie `config/nethackrc` dans `~/.nethackrc` ; un `~/.nethackrc`
+   différent est d'abord renommé en `~/.nethackrc.AAAAMMJJ-HHMMSS`.
+
+Les copies de sauvegarde dans `~/nh/` ne sont pas supprimées ; les effacer
+une fois le jeu vérifié.
+
+Les sections suivantes décrivent les mêmes étapes à la main.
+
 ## 1. Dépendances
 
 Les fichiers d'en-tête de ncurses sont indispensables, même pour l'interface
