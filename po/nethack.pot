@@ -225,7 +225,7 @@ msgstr ""
 
 #: src/apply.c:685 src/apply.c:1651 src/cmd.c:1361 src/display.c:2069
 #: src/dog.c:1209 src/explode.c:796 src/getpos.c:986 src/invent.c:3147
-#: src/invent.c:4559 src/mail.c:375 src/muse.c:3144 src/music.c:616
+#: src/invent.c:4560 src/mail.c:375 src/muse.c:3144 src/music.c:616
 #: src/objnam.c:3635 src/objnam.c:3684 src/objnam.c:3815 src/potion.c:1681
 #: src/pray.c:575 src/read.c:1356 src/read.c:2664 src/read.c:2868
 #: src/uhitm.c:3000 src/wield.c:1007 win/tty/wintty.c:2958
@@ -7567,7 +7567,7 @@ msgstr ""
 msgid "You are not wearing rings."
 msgstr ""
 
-#: src/invent.c:2326 src/invent.c:4713
+#: src/invent.c:2326 src/invent.c:4714
 msgid "You are not wearing an amulet."
 msgstr ""
 
@@ -7763,197 +7763,197 @@ msgstr ""
 msgid "There is %s here."
 msgstr ""
 
-#: src/invent.c:4288
+#: src/invent.c:4289
 #, c-format
 msgid "There is %s object here."
 msgstr ""
 
-#: src/invent.c:4290
+#: src/invent.c:4291
 #, c-format
 msgid "There are %s%s objects here."
 msgstr ""
 
-#: src/invent.c:4298 src/mhitu.c:2114 src/monmove.c:41 src/pray.c:1182
+#: src/invent.c:4299 src/mhitu.c:2114 src/monmove.c:41 src/pray.c:1182
 #: src/zap.c:3950
 #, c-format
 msgid "%s %s%s."
 msgstr ""
 
-#: src/invent.c:4313
+#: src/invent.c:4314
 #, c-format
 msgid "You %s here %s."
 msgstr ""
 
-#: src/invent.c:4383
+#: src/invent.c:4384
 #, c-format
 msgid "You touched %s with your bare %s."
 msgstr ""
 
-#: src/invent.c:4386
+#: src/invent.c:4387
 #, c-format
 msgid "Touching %s is a fatal mistake..."
 msgstr ""
 
-#: src/invent.c:4563
+#: src/invent.c:4564
 #, c-format
 msgid "You are carrying a total of %ld %s."
 msgstr ""
 
-#: src/invent.c:4565
+#: src/invent.c:4566
 msgid "You have no money."
 msgstr ""
 
-#: src/invent.c:4612
+#: src/invent.c:4613
 msgid "You are not wearing any armor."
 msgstr ""
 
-#: src/invent.c:4625
+#: src/invent.c:4626
 #, c-format
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4676
+#: src/invent.c:4677
 msgid "You are not wearing any rings."
 msgstr ""
 
-#: src/invent.c:4762
+#: src/invent.c:4763
 msgid "You are not using any tools."
 msgstr ""
 
-#: src/invent.c:4784
+#: src/invent.c:4785
 msgid "You are not wearing or wielding anything."
 msgstr ""
 
-#: src/invent.c:4821
+#: src/invent.c:4822
 msgid "Armor"
 msgstr ""
 
-#: src/invent.c:4821
+#: src/invent.c:4822
 msgid "Illegal objects"
 msgstr ""
 
-#: src/invent.c:4821
+#: src/invent.c:4822
 msgid "Rings"
 msgstr ""
 
-#: src/invent.c:4821
+#: src/invent.c:4822
 msgid "Weapons"
 msgstr ""
 
-#: src/invent.c:4822
+#: src/invent.c:4823
 msgid "Amulets"
 msgstr ""
 
-#: src/invent.c:4822
+#: src/invent.c:4823
 msgid "Comestibles"
 msgstr ""
 
-#: src/invent.c:4822
+#: src/invent.c:4823
 msgid "Potions"
 msgstr ""
 
-#: src/invent.c:4822
+#: src/invent.c:4823
 msgid "Tools"
 msgstr ""
 
-#: src/invent.c:4823
+#: src/invent.c:4824
 msgid "Coins"
 msgstr ""
 
-#: src/invent.c:4823
+#: src/invent.c:4824
 msgid "Scrolls"
 msgstr ""
 
-#: src/invent.c:4823
+#: src/invent.c:4824
 msgid "Spellbooks"
 msgstr ""
 
-#: src/invent.c:4823
+#: src/invent.c:4824
 msgid "Wands"
 msgstr ""
 
-#: src/invent.c:4824
+#: src/invent.c:4825
 msgid "Boulders/Statues"
 msgstr ""
 
-#: src/invent.c:4824
+#: src/invent.c:4825
 msgid "Gems/Stones"
 msgstr ""
 
-#: src/invent.c:4824
+#: src/invent.c:4825
 msgid "Iron balls"
 msgstr ""
 
-#: src/invent.c:4825
+#: src/invent.c:4826
 msgid "Chains"
 msgstr ""
 
-#: src/invent.c:4825
+#: src/invent.c:4826
 msgid "Venoms"
 msgstr ""
 
-#: src/invent.c:4828
+#: src/invent.c:4829
 msgid "Bagged/Boxed items"
 msgstr ""
 
-#: src/invent.c:4849 src/invent.c:4858
+#: src/invent.c:4850 src/invent.c:4859
 #, c-format
 msgid "Unpaid %s"
 msgstr ""
 
-#: src/invent.c:5022
+#: src/invent.c:5023
 #, c-format
 msgid "You aren't carrying anything %s."
 msgstr ""
 
-#: src/invent.c:5034
+#: src/invent.c:5035
 msgctxt "verb"
 msgid "adjust"
 msgstr ""
 
-#: src/invent.c:5049
+#: src/invent.c:5050
 msgctxt "verb"
 msgid "split"
 msgstr ""
 
-#: src/invent.c:5057
+#: src/invent.c:5058
 msgid "Split off how many?"
 msgstr ""
 
-#: src/invent.c:5087
+#: src/invent.c:5088
 #, c-format
 msgid "%s at least 1."
 msgstr ""
 
-#: src/invent.c:5089
+#: src/invent.c:5090
 #, c-format
 msgid "%s less than %ld."
 msgstr ""
 
-#: src/invent.c:5198
+#: src/invent.c:5199
 #, c-format
 msgid "Only gold coins may be moved into the '%c' slot."
 msgstr ""
 
-#: src/invent.c:5210
+#: src/invent.c:5211
 msgid "Select an inventory slot letter."
 msgstr ""
 
-#: src/invent.c:5283
+#: src/invent.c:5284
 msgid "Your pack is too full."
 msgstr ""
 
-#: src/invent.c:5543
+#: src/invent.c:5544
 #, c-format
 msgid "There %s %s under the %s here."
 msgstr ""
 
-#: src/invent.c:5665
+#: src/invent.c:5666
 #, c-format
 msgid "%s could not be enabled."
 msgstr ""
 
-#: src/invent.c:5666
+#: src/invent.c:5667
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
@@ -17921,7 +17921,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 20:49+0200\n"
+"POT-Creation-Date: 2026-09-27 20:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

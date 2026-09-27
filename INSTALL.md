@@ -163,12 +163,14 @@ ajouter son nom à cette ligne avant d'installer (ou modifier directement le
 
 ## 7. Traduction française
 
-La traduction est en cours (environ 940 textes sur 4 700). Sont traduits :
+La traduction est en cours (environ 2 200 textes sur 4 700). Sont traduits :
 la création du personnage, le message de bienvenue, la ligne de statut
 (avec accord au féminin des rangs et de l'alignement), les catégories de
 l'inventaire, les invites de choix d'objet (« Que voulez-vous manger ? »),
-les questions pour quitter ou sauvegarder, et plusieurs centaines de
-messages courants (portes, déplacements, nourriture, gravure, détection).
+les questions pour quitter ou sauvegarder, et presque tous les messages
+qui ne contiennent pas de nom d'objet ou de monstre (portes, déplacements,
+nourriture, pièges, fontaines, trônes, prières, sorts, baguettes,
+boutiques...).
 Les noms d'objets et de monstres, et donc les messages qui les contiennent
 (combats notamment), restent en anglais. Pour l'activer, ajouter dans
 `~/.nethackrc` :
