@@ -2352,6 +2352,9 @@ X11: ascii_map could try to use a color value, with some added flag bits set,
 X11+macOS: after the "bad Atom" fix (below), the persistent inventory window
 	crept downward every time it got updated
 
+glyph customization with an object class symbol (OPTIONS=glyph:S_potion:...)
+	compared the class to object indices, so it applied to no object of
+	that class
 
 Platform- and/or Interface-Specific Fixes
 -----------------------------------------

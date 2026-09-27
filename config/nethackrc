@@ -77,6 +77,53 @@ OPTIONS=glyph:S_upstair:U+25B2
 OPTIONS=glyph:S_brupstair:U+25B2
 OPTIONS=glyph:S_dnstair:U+25BC
 OPTIONS=glyph:S_brdnstair:U+25BC
+# Fontaine : ⌠
+OPTIONS=glyph:S_fountain:U+2320
+# Pièges (sauf la toile ¤ et le carré vibrant) : ⌃
+OPTIONS=glyph:S_arrow_trap:U+2303
+OPTIONS=glyph:S_dart_trap:U+2303
+OPTIONS=glyph:S_falling_rock_trap:U+2303
+OPTIONS=glyph:S_squeaky_board:U+2303
+OPTIONS=glyph:S_bear_trap:U+2303
+OPTIONS=glyph:S_land_mine:U+2303
+OPTIONS=glyph:S_rolling_boulder_trap:U+2303
+OPTIONS=glyph:S_sleeping_gas_trap:U+2303
+OPTIONS=glyph:S_rust_trap:U+2303
+OPTIONS=glyph:S_fire_trap:U+2303
+OPTIONS=glyph:S_pit:U+2303
+OPTIONS=glyph:S_spiked_pit:U+2303
+OPTIONS=glyph:S_hole:U+2303
+OPTIONS=glyph:S_trap_door:U+2303
+OPTIONS=glyph:S_teleportation_trap:U+2303
+OPTIONS=glyph:S_level_teleporter:U+2303
+OPTIONS=glyph:S_magic_portal:U+2303
+OPTIONS=glyph:S_statue_trap:U+2303
+OPTIONS=glyph:S_magic_trap:U+2303
+OPTIONS=glyph:S_anti_magic_trap:U+2303
+OPTIONS=glyph:S_polymorph_trap:U+2303
+# Objets, par catégorie (les outils gardent leur ( à cause des coffres)
+# or : €
+OPTIONS=glyph:S_coin:U+20AC
+# potions : ¡
+OPTIONS=glyph:S_potion:U+00A1
+# parchemins : ¿
+OPTIONS=glyph:S_scroll:U+00BF
+# baguettes : ⁄
+OPTIONS=glyph:S_wand:U+2044
+# anneaux : ○
+OPTIONS=glyph:S_ring:U+25CB
+# amulettes : ♀
+OPTIONS=glyph:S_amulet:U+2640
+# nourriture : ♣
+OPTIONS=glyph:S_food:U+2663
+# armes : ‡
+OPTIONS=glyph:S_weapon:U+2021
+# armures : ▙
+OPTIONS=glyph:S_armor:U+2599
+# livres de sorts : ▤
+OPTIONS=glyph:S_book:U+25A4
+# gemmes et pierres : ◆
+OPTIONS=glyph:S_gem:U+25C6
 
 OPTIONS=windowborders:2
 OPTIONS=Perm_invent

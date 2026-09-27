@@ -114,17 +114,66 @@ cp config/nethackrc ~/.nethackrc
 Si un `~/.nethackrc` existe déjà, il est remplacé : le sauvegarder avant si
 besoin.
 
-Il utilise le jeu de symboles Unicode `Enhanced1` (murs en traits, sol en
-points) et affiche le héros par `☺` au lieu de `@`. Pour un autre
-caractère, remplacer `U+263A` dans les lignes `OPTIONS=glyph:` ; la syntaxe
-est `G_<glyphe>:U+nnnn` (avec un deux-points : la forme avec `/` indiquée
-dans le Guidebook est lue comme une couleur et ignorée). Le terminal doit
-être en UTF-8.
-
 Cet exemple reprend la section « 7/ Fichier de configuration » de
 <https://labo.hacktech.dev/jeu-libre/installation_roguelike_evilhack>.
 Il active l'interface curses (`OPTIONS=windowtype:curses`), d'où la
 compilation avec `WANT_WIN_CURSES=1`.
+
+### Symboles Unicode
+
+L'exemple utilise le jeu de symboles Unicode `Enhanced1` (murs en traits,
+sol en points) et remplace quelques symboles :
+
+| Élément                                  | Avant | Après | Code     |
+|------------------------------------------|:-----:|:-----:|----------|
+| Héros (tous les rôles, les deux sexes)   | `@`   | `☺`   | `U+263A` |
+| Petit chien, chien, grand chien          | `d`   | `ᴥ`   | `U+1D25` |
+| Grande boîte, coffre                     | `(`   | `⊟`   | `U+229F` |
+| Porte fermée                             | `+`   | `▮`   | `U+25AE` |
+| Porte ouverte                            | `\|` `-` | `▯` | `U+25AF` |
+| Escalier montant (y compris de branche)  | `<`   | `▲`   | `U+25B2` |
+| Escalier descendant (y compris de branche) | `>` | `▼`   | `U+25BC` |
+| Fontaine                                 | `{`   | `⌠`   | `U+2320` |
+| Pièges (sauf toile et carré vibrant)     | `^`   | `⌃`   | `U+2303` |
+| Or                                       | `$`   | `€`   | `U+20AC` |
+| Potions                                  | `!`   | `¡`   | `U+00A1` |
+| Parchemins                               | `?`   | `¿`   | `U+00BF` |
+| Baguettes                                | `/`   | `⁄`   | `U+2044` |
+| Anneaux                                  | `=`   | `○`   | `U+25CB` |
+| Amulettes                                | `"`   | `♀`   | `U+2640` |
+| Nourriture                               | `%`   | `♣`   | `U+2663` |
+| Armes                                    | `)`   | `‡`   | `U+2021` |
+| Armures                                  | `[`   | `▙`   | `U+2599` |
+| Livres de sorts                          | `+`   | `▤`   | `U+25A4` |
+| Gemmes et pierres                        | `*`   | `◆`   | `U+25C6` |
+
+Pour changer un caractère, remplacer son code dans les lignes
+`OPTIONS=glyph:` de `config/nethackrc`. La syntaxe est :
+
+- `OPTIONS=glyph:G_<glyphe>:U+nnnn` pour un glyphe précis
+  (`G_female_valkyrie`, `G_pet_male_little_dog`, `G_piletop_chest`...) ;
+- `OPTIONS=glyph:S_<symbole>:U+nnnn` pour tous les glyphes d'un symbole :
+  élément de la carte (`S_vcdoor`, `S_upstair`...) ou catégorie d'objets
+  (`S_potion`, `S_coin`...). Pour les catégories d'objets, ce dépôt
+  corrige un bogue de NetHack 5.0 (`src/glyphs.c`) qui les rendait sans
+  effet.
+
+Attention :
+
+- mettre un **deux-points** avant `U+nnnn` : la forme avec `/` indiquée
+  dans le Guidebook est lue comme une couleur et ignorée, sans message
+  d'erreur ;
+- la ligne `OPTIONS=symset:Enhanced1` doit précéder les lignes `glyph` ;
+  sans jeu de symboles UTF-8, le jeu affiche « Unimplemented customization
+  feature » et garde les symboles ASCII ;
+- choisir des caractères d'une seule colonne de large : les emojis (🐕)
+  en occupent deux et décalent la carte ;
+- le terminal doit être en UTF-8 (c'est le cas par défaut sous Lubuntu).
+
+Les autres canidés (chacal, loup...) et les outils (dont sac et glacière)
+gardent leur symbole d'origine : une ligne `S_tool` remplacerait aussi le
+symbole des coffres, sauf à la placer avant les lignes des coffres. Les autres personnages du même rôle que le héros,
+rares (plan astral), sont aussi affichés par `☺`.
 
 ## 6. Lancement
 

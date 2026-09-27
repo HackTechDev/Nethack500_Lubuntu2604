@@ -256,8 +256,10 @@ glyph_find_core(
                         do_callback = TRUE;
                     break;
                 case find_oc:
+                    /* val is an object class, not an object index */
                     if (glyph_is_object(glyph)
-                        && glyph_to_obj(glyph) == findwhat->val)
+                        && objects[glyph_to_obj(glyph)].oc_class
+                           == findwhat->val)
                         do_callback = TRUE;
                     break;
                 case find_glyph:
@@ -1138,7 +1140,7 @@ parse_id(
         for (i = 0; i < oc_count; ++i) {
             if (!strcmpi(loadsyms[i + oc_offset].name + 2, id + 2)) {
                 findwhat->findtype = find_oc;
-                findwhat->val = i;
+                findwhat->val = i + 1; /* classes start at 1 */
                 findwhat->loadsyms_offset = i + oc_offset;
                 return 1;
             }
