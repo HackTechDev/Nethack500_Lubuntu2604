@@ -99,6 +99,26 @@ compilation avec `WANT_WIN_CURSES=1`.
 ~/nh/install/games/nethack
 ```
 
+### Déplacements
+
+Avec l'interface curses et `OPTIONS=number_pad:0` (réglage de
+`config/nethackrc`), les touches fléchées fonctionnent en plus des touches
+vi, sans configuration supplémentaire :
+
+| Direction          | Lettre | Touche      |
+|--------------------|--------|-------------|
+| Gauche             | `h`    | ←           |
+| Bas                | `j`    | ↓           |
+| Haut               | `k`    | ↑           |
+| Droite             | `l`    | →           |
+| Haut-gauche        | `y`    | Début       |
+| Haut-droite        | `u`    | Page préc.  |
+| Bas-gauche         | `b`    | Fin         |
+| Bas-droite         | `n`    | Page suiv.  |
+
+Si les flèches ne déplacent pas le personnage, vérifier que le jeu s'affiche
+bien en curses (fenêtres avec bordures) : sinon, `~/.nethackrc` n'est pas lu.
+
 ### Mode debug (wizard mode)
 
 Le fichier `sys/unix/sysconf` de ce dépôt autorise l'utilisateur `util01` :
