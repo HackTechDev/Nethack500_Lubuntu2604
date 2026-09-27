@@ -79,8 +79,16 @@ Les options de jeu (interface, couleurs, `MENUCOLOR`, `MSGTYPE`,
 `sysconf` : celui-ci est réservé aux réglages système (`WIZARDS`, etc.) et
 il est écrasé à chaque `make install`.
 
-Le fichier utilisé est l'exemple de la section « 7/ Fichier de
-configuration » de
+Un exemple est fourni dans `config/nethackrc`. Pour l'installer :
+
+```sh
+cp config/nethackrc ~/.nethackrc
+```
+
+Si un `~/.nethackrc` existe déjà, il est remplacé : le sauvegarder avant si
+besoin.
+
+Cet exemple reprend la section « 7/ Fichier de configuration » de
 <https://labo.hacktech.dev/jeu-libre/installation_roguelike_evilhack>.
 Il active l'interface curses (`OPTIONS=windowtype:curses`), d'où la
 compilation avec `WANT_WIN_CURSES=1`.
