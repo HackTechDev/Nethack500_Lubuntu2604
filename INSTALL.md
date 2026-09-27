@@ -2,7 +2,7 @@
 
 Installation effectuée sous **Lubuntu 26.04** (Ubuntu 26.04.1 LTS), avec
 GCC 15.2.0, en utilisant le système de « hints » (`sys/unix/hints/linux.500`).
-Seule l'interface tty est compilée (configuration par défaut).
+Les interfaces tty et curses sont compilées.
 
 Pour les autres systèmes ou interfaces, voir `sys/unix/NewInstall.unx`.
 
@@ -33,8 +33,12 @@ le faire une seule fois.
 ## 3. Compilation
 
 ```sh
-make
+make WANT_WIN_TTY=1 WANT_WIN_CURSES=1
 ```
+
+Sans ces variables, seule l'interface tty est compilée. Pour passer d'une
+compilation tty seule à tty + curses, nettoyer d'abord avec
+`make clean-keep-lib` (conserve Lua dans `lib/`).
 
 Le binaire obtenu est `src/nethack` et l'archive des données `dat/nhdat`.
 
@@ -48,8 +52,11 @@ de l'étape 2.
 ## 4. Installation
 
 ```sh
-make install
+make install WANT_WIN_TTY=1 WANT_WIN_CURSES=1
 ```
+
+Passer les mêmes variables qu'à la compilation : `make install` dépend de la
+cible de compilation et doit voir la même configuration d'interfaces.
 
 Le jeu est installé dans le dossier personnel, sans droits root :
 
@@ -58,13 +65,27 @@ Le jeu est installé dans le dossier personnel, sans droits root :
 | Script de lancement           | `~/nh/install/games/nethack`                |
 | Données, sauvegardes, scores  | `~/nh/install/games/lib/nethackdir/`        |
 | Configuration système         | `~/nh/install/games/lib/nethackdir/sysconf` |
+| Configuration du joueur       | `~/.nethackrc`                              |
 
 **Attention :** `make install` supprime puis recrée
 `~/nh/install/games/lib/nethackdir`. Avant de réinstaller, mettre de côté
 les sauvegardes (`save/`), le tableau des scores (`record`, `logfile`,
 `xlogfile`) et tout `sysconf` modifié à la main.
 
-## 5. Lancement
+## 5. Configuration du joueur
+
+Les options de jeu (interface, couleurs, `MENUCOLOR`, `MSGTYPE`,
+`AUTOPICKUP_EXCEPTION`, etc.) vont dans `~/.nethackrc`, et non dans le
+`sysconf` : celui-ci est réservé aux réglages système (`WIZARDS`, etc.) et
+il est écrasé à chaque `make install`.
+
+Le fichier utilisé est l'exemple de la section « 7/ Fichier de
+configuration » de
+<https://labo.hacktech.dev/jeu-libre/installation_roguelike_evilhack>.
+Il active l'interface curses (`OPTIONS=windowtype:curses`), d'où la
+compilation avec `WANT_WIN_CURSES=1`.
+
+## 6. Lancement
 
 ```sh
 ~/nh/install/games/nethack
