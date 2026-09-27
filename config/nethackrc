@@ -15,6 +15,40 @@ OPTIONS=windowtype:curses
 
 # Messages du jeu en français (traduction partielle, voir TODO.md)
 OPTIONS=language:fr
+
+# Symboles Unicode pour la carte (murs en traits, sol en points) ; requis
+# pour les lignes glyph ci-dessous, qui doivent venir après
+OPTIONS=symset:Enhanced1
+# Le héros est affiché par ☺ (U+263A) au lieu de @, quel que soit son rôle
+# (syntaxe G_<glyphe>:U+nnnn ; la forme G_<glyphe>/U+nnnn du Guidebook
+# est lue comme une couleur)
+OPTIONS=glyph:G_male_archeologist:U+263A
+OPTIONS=glyph:G_female_archeologist:U+263A
+OPTIONS=glyph:G_male_barbarian:U+263A
+OPTIONS=glyph:G_female_barbarian:U+263A
+OPTIONS=glyph:G_male_cave_dweller:U+263A
+OPTIONS=glyph:G_female_cave_dweller:U+263A
+OPTIONS=glyph:G_male_healer:U+263A
+OPTIONS=glyph:G_female_healer:U+263A
+OPTIONS=glyph:G_male_knight:U+263A
+OPTIONS=glyph:G_female_knight:U+263A
+OPTIONS=glyph:G_male_monk:U+263A
+OPTIONS=glyph:G_female_monk:U+263A
+OPTIONS=glyph:G_male_cleric:U+263A
+OPTIONS=glyph:G_female_cleric:U+263A
+OPTIONS=glyph:G_male_ranger:U+263A
+OPTIONS=glyph:G_female_ranger:U+263A
+OPTIONS=glyph:G_male_rogue:U+263A
+OPTIONS=glyph:G_female_rogue:U+263A
+OPTIONS=glyph:G_male_samurai:U+263A
+OPTIONS=glyph:G_female_samurai:U+263A
+OPTIONS=glyph:G_male_tourist:U+263A
+OPTIONS=glyph:G_female_tourist:U+263A
+OPTIONS=glyph:G_male_valkyrie:U+263A
+OPTIONS=glyph:G_female_valkyrie:U+263A
+OPTIONS=glyph:G_male_wizard:U+263A
+OPTIONS=glyph:G_female_wizard:U+263A
+
 OPTIONS=windowborders:2
 OPTIONS=Perm_invent
 OPTIONS=term_cols:80

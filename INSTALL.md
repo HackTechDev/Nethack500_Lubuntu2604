@@ -114,6 +114,13 @@ cp config/nethackrc ~/.nethackrc
 Si un `~/.nethackrc` existe déjà, il est remplacé : le sauvegarder avant si
 besoin.
 
+Il utilise le jeu de symboles Unicode `Enhanced1` (murs en traits, sol en
+points) et affiche le héros par `☺` au lieu de `@`. Pour un autre
+caractère, remplacer `U+263A` dans les lignes `OPTIONS=glyph:` ; la syntaxe
+est `G_<glyphe>:U+nnnn` (avec un deux-points : la forme avec `/` indiquée
+dans le Guidebook est lue comme une couleur et ignorée). Le terminal doit
+être en UTF-8.
+
 Cet exemple reprend la section « 7/ Fichier de configuration » de
 <https://labo.hacktech.dev/jeu-libre/installation_roguelike_evilhack>.
 Il active l'interface curses (`OPTIONS=windowtype:curses`), d'où la
