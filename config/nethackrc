@@ -49,6 +49,35 @@ OPTIONS=glyph:G_female_valkyrie:U+263A
 OPTIONS=glyph:G_male_wizard:U+263A
 OPTIONS=glyph:G_female_wizard:U+263A
 
+# Chiens (petit chien, chien, grand chien, y compris l'animal du joueur) : ᴥ
+OPTIONS=glyph:G_male_little_dog:U+1D25
+OPTIONS=glyph:G_female_little_dog:U+1D25
+OPTIONS=glyph:G_pet_male_little_dog:U+1D25
+OPTIONS=glyph:G_pet_female_little_dog:U+1D25
+OPTIONS=glyph:G_male_dog:U+1D25
+OPTIONS=glyph:G_female_dog:U+1D25
+OPTIONS=glyph:G_pet_male_dog:U+1D25
+OPTIONS=glyph:G_pet_female_dog:U+1D25
+OPTIONS=glyph:G_male_large_dog:U+1D25
+OPTIONS=glyph:G_female_large_dog:U+1D25
+OPTIONS=glyph:G_pet_male_large_dog:U+1D25
+OPTIONS=glyph:G_pet_female_large_dog:U+1D25
+# Grandes boîtes et coffres, seuls ou en haut d'une pile : ⊟
+OPTIONS=glyph:G_large_box:U+229F
+OPTIONS=glyph:G_piletop_large_box:U+229F
+OPTIONS=glyph:G_chest:U+229F
+OPTIONS=glyph:G_piletop_chest:U+229F
+# Portes fermées ▮ et ouvertes ▯
+OPTIONS=glyph:S_vcdoor:U+25AE
+OPTIONS=glyph:S_hcdoor:U+25AE
+OPTIONS=glyph:S_vodoor:U+25AF
+OPTIONS=glyph:S_hodoor:U+25AF
+# Escaliers montants ▲ et descendants ▼ (y compris ceux des branches)
+OPTIONS=glyph:S_upstair:U+25B2
+OPTIONS=glyph:S_brupstair:U+25B2
+OPTIONS=glyph:S_dnstair:U+25BC
+OPTIONS=glyph:S_brdnstair:U+25BC
+
 OPTIONS=windowborders:2
 OPTIONS=Perm_invent
 OPTIONS=term_cols:80
