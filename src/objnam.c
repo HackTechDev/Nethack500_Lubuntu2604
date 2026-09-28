@@ -632,6 +632,7 @@ staticfn char *article_i18n(const char *, unsigned, boolean);
 staticfn const char *obj_pattern(const char *, boolean, unsigned *,
                                  const char *) FORMAT_ARG(1);
 staticfn char *corpse_xname_i18n(struct obj *, unsigned);
+staticfn char *objverb_i18n(struct obj *, const char *, const char *, int);
 
 #if 0
 /* for xgettext: words and patterns used by the functions below */
@@ -1571,6 +1572,46 @@ corpse_xname_i18n(struct obj *otmp, unsigned cxn_flags)
     }
     set_objgram(nambuf, gram);
     return nambuf;
+}
+
+/* aobjnam() (art 0: count if more than one), Tobjnam() (art 1: "the")
+   and yobjnam() (art 2: "your", or "the" if not carried) when
+   translating: translated name 'name' (from xname() or cxname()) with
+   the article, then the verb conjugated to agree with it */
+staticfn char *
+objverb_i18n(struct obj *obj, const char *name, const char *verb, int art)
+{
+    unsigned gram = get_objgram(name);
+    boolean pl = (gram & OGRAM_SET) ? (gram & OGRAM_PLURAL) != 0
+                                    : is_plural(obj);
+    char *buf, *res;
+
+    if (art == 1 || (art == 2 && !carried(obj))) {
+        buf = article_i18n(name, gram, TRUE);
+        *buf = highc(*buf);
+    } else if (art == 2 && (!obj_is_pname(obj)
+                            || obj->oartifact >= ART_ORB_OF_DETECTION)) {
+        buf = nextobuf();
+        if (pl)
+            Snprintf(buf, BUFSZ, C_("plural", "your %s"), name);
+        else if (gram & OGRAM_FEM)
+            Snprintf(buf, BUFSZ, C_("feminine", "your %s"), name);
+        else
+            Snprintf(buf, BUFSZ, _("your %s"), name);
+    } else if (obj->quan != 1L) {
+        buf = nextobuf();
+        Snprintf(buf, BUFSZ, "%ld %s", obj->quan, name);
+    } else {
+        buf = nextobuf();
+        Strcpy(buf, name);
+    }
+    set_objgram(buf, gram);
+    if (verb) {
+        res = eos(buf);
+        Snprintf(res, BUFSZ - (res - buf), " %s",
+                 nh_npgettext("objverb", verb, pl));
+    }
+    return buf;
 }
 
 RESTORE_WARNING_FORMAT_NONLITERAL
@@ -3273,6 +3314,10 @@ aobjnam(struct obj *otmp, const char *verb)
     char prefix[PREFIX];
     char *bp = cxname(otmp);
 
+#ifdef NHI18N
+    if (i18n_active())
+        return objverb_i18n(otmp, bp, verb, 0);
+#endif
     if (otmp->quan != 1L) {
         Sprintf(prefix, "%ld ", otmp->quan);
         bp = strprepend(bp, prefix);
@@ -3288,7 +3333,13 @@ aobjnam(struct obj *otmp, const char *verb)
 char *
 yobjnam(struct obj *obj, const char *verb)
 {
-    char *s = aobjnam(obj, verb);
+    char *s;
+
+#ifdef NHI18N
+    if (i18n_active())
+        return objverb_i18n(obj, cxname(obj), verb, 2);
+#endif
+    s = aobjnam(obj, verb);
 
     /* leave off "your" for most of your artifacts, but prepend
      * "your" for unique objects and "foo of bar" quest artifacts */
@@ -3316,8 +3367,13 @@ Yobjnam2(struct obj *obj, const char *verb)
 char *
 Tobjnam(struct obj *otmp, const char *verb)
 {
-    char *bp = The(xname(otmp));
+    char *bp;
 
+#ifdef NHI18N
+    if (i18n_active())
+        return objverb_i18n(otmp, xname(otmp), verb, 1);
+#endif
+    bp = The(xname(otmp));
     if (verb) {
         Strcat(bp, " ");
         Strcat(bp, otense(otmp, verb));
@@ -3584,6 +3640,11 @@ otense(struct obj *otmp, const char *verb)
      * if the result of xname(otmp) would be plural.  Don't bother
      * recomputing xname(otmp) at this time.
      */
+#ifdef NHI18N
+    if (i18n_active())
+        return strcpy(nextobuf(), nh_npgettext("objverb", verb,
+                                               is_plural(otmp)));
+#endif
     if (!is_plural(otmp))
         return vtense((char *) 0, verb);
 
@@ -3624,6 +3685,15 @@ vtense(const char *subj, const char *verb)
      * Special case: allow null sobj to get the singular 3rd person
      * present tense form so we don't duplicate this code elsewhere.
      */
+#ifdef NHI18N
+    if (i18n_active() && (!subj || strcmpi(subj, "you"))) {
+        /* translated third person, singular or plural (msgctxt "objverb");
+           the subject is plural if it's a translated name known to be */
+        boolean pl = subj && (get_objgram(subj) & OGRAM_PLURAL) != 0;
+
+        return strcpy(buf, nh_npgettext("objverb", verb, pl));
+    }
+#endif
     if (subj) {
         if (!strncmpi(subj, "a ", 2) || !strncmpi(subj, "an ", 3))
             goto sing;

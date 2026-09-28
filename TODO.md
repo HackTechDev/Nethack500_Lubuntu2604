@@ -8,7 +8,7 @@
 > texte. Il faut compter de nombreuses sessions de travail, et des tests
 > en jeu à chaque étape.
 
-État actuel : 4 042 textes traduits sur 7 169 dans `po/fr.po` (dont les
+État actuel : 4 172 textes traduits sur 7 273 dans `po/fr.po` (dont les
 entrées de genre laissées vides, qui valent masculin). Le
 fonctionnement de la traduction et la façon d'ajouter des traductions sont
 décrits dans la section 7 de [INSTALL.md](INSTALL.md).
@@ -40,8 +40,12 @@ C'est ce qui bloque la plupart des messages restants.
   selon le genre et le nombre. Les couleurs `MENUCOLOR` écrites en anglais
   s'appliquent toujours (jumeau anglais de chaque nom). Restent : les noms
   d'artefacts, le texte des fruits nommés par le joueur, `minimal_xname()`
-  et `distant_name()` en partie, et les messages qui conjuguent un verbe
-  anglais avec le nom d'objet (`otense()`, `yobjnam()`, `Tobjnam()`).
+  et `distant_name()` en partie.
+- **Fait : verbes accordés à l'objet.** `otense()`, `vtense()`,
+  `aobjnam()`, `yobjnam()` et `Tobjnam()` conjuguent les 92 verbes qu'on
+  leur passe (contexte `objverb`, singulier et pluriel) : « Votre épée
+  longue brille ». Reste à traduire une bonne partie des phrases qui les
+  entourent, souvent composées de morceaux (« %s %s for a moment. »).
 - **Possessif** : `s_suffix()` (« the fox's » → « du renard ») ; les
   phrases qui l'utilisent sont à reformuler.
 - **Articles et contractions** : le/la/l'/les, de + le = du,

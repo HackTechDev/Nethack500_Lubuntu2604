@@ -90,4 +90,15 @@ $XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
     --keyword=NC_:1c,2 --keyword=N_ --keyword=C_:1c,2 \
     -o "$tmp/2objects.pot" "$tmp/objects.c"
 
+# verbs given to otense(), vtense(), aobjnam(), yobjnam(), Yobjnam2() and
+# Tobjnam() are conjugated for the object with the context "objverb":
+# third person singular and plural
+# shellcheck disable=SC2086
+grep -ohE '(Yobjnam2|yobjnam|Tobjnam|aobjnam|otense|vtense)\([^;()]*, *"[^"]+"\)' \
+    $SRC | grep -oE '"[^"]+"\)$' | sed 's/)$//' | sort -u \
+    | sed 's/.*/NCP_("objverb", &, &);/' > "$tmp/verbs.c"
+# shellcheck disable=SC2086
+$XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
+    -o "$tmp/3verbs.pot" "$tmp/verbs.c"
+
 $MSGCAT --no-wrap --sort-by-file --use-first -o po/nethack.pot "$tmp"/*.pot

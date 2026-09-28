@@ -23,6 +23,8 @@
  *  i18n_active()
  *              TRUE when messages are being translated; for text that has
  *              to be composed differently then (English articles, etc.).
+ *  i18n_has("text")
+ *              TRUE when "text" has a translation in use.
  *  i18n_mon_fem(mon)
  *              TRUE when the translated name of monster mon is feminine,
  *              to pick C_("feminine", ...) forms of the rest of a message.
@@ -38,11 +40,13 @@
 #define C_(ctx, msgid) nh_pgettext(ctx, msgid)
 #define i18n_active() i18n_translating()
 #define i18n_mon_fem(mon) monnam_is_feminine(mon)
+#define i18n_has(msgid) (nh_gettext(msgid) != (msgid))
 #else
 #define _(msgid) (msgid)
 #define C_(ctx, msgid) (msgid)
 #define i18n_active() FALSE
 #define i18n_mon_fem(mon) FALSE
+#define i18n_has(msgid) FALSE
 #endif
 #define N_(msgid) msgid
 #define NC_(ctx, msgid) msgid

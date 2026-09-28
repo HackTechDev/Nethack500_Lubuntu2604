@@ -3004,7 +3004,8 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	and getlin(); French catalog po/fr.po: character selection, welcome,
 	status line, inventory class headings, object prompts, common
 	messages, monster names with their gender and articles, combat,
-	object names with gender, number and articles
+	object names with gender, number and articles, verbs agreeing with
+	objects
 
 
 NetHack Community Patches (or Variation) Included

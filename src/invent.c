@@ -4256,14 +4256,22 @@ look_here(
 
         /* hardcoded "is" worked here because "iron bars" is actually
            "set of iron bars"; use vtense() instead of relying on that */
-        if (i18n_active() && _(dfeature) != dfeature)
+        if (i18n_has(dfeature))
             /* the noun phrase is translated with its article; one that
                isn't (such as a composed stairs description) leaves the
                whole sentence in English rather than mixing languages */
             Sprintf(fbuf, _("There is %s here."), _(dfeature));
-        else
+        else {
+            /* the whole sentence stays in English, verb included */
+#ifdef NHI18N
+            i18n_suspend(TRUE);
+#endif
             Sprintf(fbuf, "There %s %s here.", vtense(dfeature, "are"),
                     dfeature);
+#ifdef NHI18N
+            i18n_suspend(FALSE);
+#endif
+        }
     }
 
     if (!otmp || is_lava(u.ux, u.uy)
@@ -4285,15 +4293,29 @@ look_here(
         if (dfeature && !skip_dfeature)
             pline1(fbuf);
         read_engr_at(u.ux, u.uy); /* Eric Backus */
-        if (obj_cnt == 1 && otmp->quan == 1L)
-            There("is %s object here.", picked_some ? "another" : "an");
-        else
-            There("are %s%s objects here.",
-                  (obj_cnt == 2) ? "two"
-                  : (obj_cnt < 5) ? "a few"
-                    : (obj_cnt < 10) ? "several"
-                      : "many",
-                  picked_some ? " more" : "");
+        if (obj_cnt == 1 && otmp->quan == 1L) {
+            if (picked_some)
+                There("is another object here.");
+            else
+                There("is an object here.");
+        } else {
+            /* whole sentences, so that each can be translated */
+            static const char *const pile_msgs[2][4] = {
+                { N_("There are two objects here."),
+                  N_("There are a few objects here."),
+                  N_("There are several objects here."),
+                  N_("There are many objects here.") },
+                { N_("There are two more objects here."),
+                  N_("There are a few more objects here."),
+                  N_("There are several more objects here."),
+                  N_("There are many more objects here.") },
+            };
+
+            pline1(pile_msgs[picked_some ? 1 : 0][(obj_cnt == 2) ? 0
+                                                  : (obj_cnt < 5) ? 1
+                                                    : (obj_cnt < 10) ? 2
+                                                      : 3]);
+        }
         for (; otmp; otmp = otmp->nexthere)
             if (otmp->otyp == CORPSE && will_feel_cockatrice(otmp, FALSE)) {
                 pline("%s %s%s.",
@@ -4311,7 +4333,10 @@ look_here(
         if (dfeature && !skip_dfeature)
             pline1(fbuf);
         read_engr_at(u.ux, u.uy); /* Eric Backus */
-        You("%s here %s.", verb, doname_with_price(otmp));
+        if (Blind)
+            You("feel here %s.", doname_with_price(otmp));
+        else
+            You("see here %s.", doname_with_price(otmp));
         iflags.last_msg = PLNMSG_ONE_ITEM_HERE;
         if (otmp->otyp == CORPSE)
             feel_cockatrice(otmp, FALSE);
@@ -4324,10 +4349,12 @@ look_here(
             putstr(tmpwin, 0, fbuf);
             putstr(tmpwin, 0, "");
         }
-        Sprintf(buf, "%s that %s here:",
-                picked_some ? "Other things" : "Things",
-                Blind ? "you feel" : "are");
-        putstr(tmpwin, 0, buf);
+        if (picked_some)
+            putstr(tmpwin, 0, Blind ? _("Other things that you feel here:")
+                                    : _("Other things that are here:"));
+        else
+            putstr(tmpwin, 0, Blind ? _("Things that you feel here:")
+                                    : _("Things that are here:"));
         for (; otmp; otmp = otmp->nexthere) {
             if (otmp->otyp == CORPSE && will_feel_cockatrice(otmp, FALSE)) {
                 felt_cockatrice = TRUE;

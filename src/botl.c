@@ -370,9 +370,11 @@ rank(void)
 staticfn const char *
 title_the(void)
 {
+#ifdef NHI18N
     if (!Upolyd && i18n_active()
         && i18n_vowel_start(gendered_word(rank(), flags.female)))
         return C_("elided", " the ");
+#endif
     return (!Upolyd && flags.female) ? C_("feminine", " the ") : _(" the ");
 }
 

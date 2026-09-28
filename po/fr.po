@@ -1019,6 +1019,12 @@ msgctxt "monster"
 msgid "ape"
 msgstr "singe"
 
+msgctxt "objverb"
+msgid "appear"
+msgid_plural "appear"
+msgstr[0] "apparaît"
+msgstr[1] "apparaissent"
+
 msgctxt "object"
 msgid "apple"
 msgid_plural "apples"
@@ -1073,6 +1079,12 @@ msgctxt "monster"
 msgid "archeologist"
 msgstr "archéologue"
 
+msgctxt "objverb"
+msgid "are"
+msgid_plural "are"
+msgstr[0] "est"
+msgstr[1] "sont"
+
 msgctxt "object"
 msgid "arrow"
 msgid_plural "arrows"
@@ -1082,6 +1094,12 @@ msgstr[1] "flèches"
 msgctxt "objgender"
 msgid "arrow"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "assault"
+msgid_plural "assault"
+msgstr[0] "assaille"
+msgstr[1] "assaillent"
 
 msgctxt "object"
 msgid "athame"
@@ -1381,6 +1399,18 @@ msgctxt "objgender"
 msgid "bec de corbin"
 msgstr ""
 
+msgctxt "objverb"
+msgid "become"
+msgid_plural "become"
+msgstr[0] "devient"
+msgstr[1] "deviennent"
+
+msgctxt "objverb"
+msgid "begin"
+msgid_plural "begin"
+msgstr[0] "commence"
+msgstr[1] "commencent"
+
 msgctxt "gender"
 msgid "beholder"
 msgstr ""
@@ -1622,6 +1652,12 @@ msgctxt "objgender"
 msgid "boulder"
 msgstr ""
 
+msgctxt "objverb"
+msgid "bounce"
+msgid_plural "bounce"
+msgstr[0] "rebondit"
+msgstr[1] "rebondissent"
+
 msgctxt "object"
 msgid "bow"
 msgid_plural "bows"
@@ -1648,6 +1684,12 @@ msgstr[1] "lanternes en laiton"
 msgctxt "objgender"
 msgid "brass lantern"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "break"
+msgid_plural "break"
+msgstr[0] "se brise"
+msgstr[1] "se brisent"
 
 msgid "brilliant blue"
 msgstr "bleu vif"
@@ -1770,6 +1812,18 @@ msgstr[1] "fouets"
 msgctxt "objgender"
 msgid "bullwhip"
 msgstr ""
+
+msgctxt "objverb"
+msgid "burn"
+msgid_plural "burn"
+msgstr[0] "brûle"
+msgstr[1] "brûlent"
+
+msgctxt "objverb"
+msgid "burst"
+msgid_plural "burst"
+msgstr[0] "éclate"
+msgstr[1] "éclatent"
 
 msgctxt "object"
 msgid "can of grease"
@@ -2192,6 +2246,12 @@ msgctxt "objgender"
 msgid "combat boots"
 msgstr "fp"
 
+msgctxt "objverb"
+msgid "come"
+msgid_plural "come"
+msgstr[0] "vient"
+msgstr[1] "viennent"
+
 msgid "concave"
 msgstr "concave"
 
@@ -2218,6 +2278,12 @@ msgstr[1] "conflits"
 msgctxt "objgender"
 msgid "conflict"
 msgstr ""
+
+msgctxt "objverb"
+msgid "confuse"
+msgid_plural "confuse"
+msgstr[0] "désoriente"
+msgstr[1] "désorientent"
 
 msgctxt "object"
 msgid "confuse monster"
@@ -2457,6 +2523,12 @@ msgctxt "objgender"
 msgid "crude spear"
 msgstr "f"
 
+msgctxt "objverb"
+msgid "crumble"
+msgid_plural "crumble"
+msgstr[0] "s'effrite"
+msgstr[1] "s'effritent"
+
 msgctxt "object"
 msgid "crysknife"
 msgid_plural "crysknifes"
@@ -2564,6 +2636,12 @@ msgstr[1] "dagues"
 msgctxt "objgender"
 msgid "dagger"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "damage"
+msgid_plural "damage"
+msgstr[0] "endommage"
+msgstr[1] "endommagent"
 
 msgid "dark"
 msgstr "sombre"
@@ -2698,6 +2776,12 @@ msgctxt "objgender"
 msgid "diamond"
 msgstr ""
 
+msgctxt "objverb"
+msgid "die"
+msgid_plural "die"
+msgstr[0] "meurt"
+msgstr[1] "meurent"
+
 msgctxt "object"
 msgid "dig"
 msgid_plural "digs"
@@ -2728,6 +2812,12 @@ msgctxt "objgender"
 msgid "dilithium crystal"
 msgstr ""
 
+msgctxt "objverb"
+msgid "dilute"
+msgid_plural "dilute"
+msgstr[0] "se dilue"
+msgstr[1] "se diluent"
+
 msgctxt "gender"
 msgid "dingo"
 msgstr ""
@@ -2735,6 +2825,12 @@ msgstr ""
 msgctxt "monster"
 msgid "dingo"
 msgstr "dingo"
+
+msgctxt "objverb"
+msgid "disappear"
+msgid_plural "disappear"
+msgstr[0] "disparaît"
+msgstr[1] "disparaissent"
 
 msgctxt "gender"
 msgid "disenchanter"
@@ -2752,6 +2848,12 @@ msgctxt "monster"
 msgid "displacer beast"
 msgstr "bête éclipsante"
 
+msgctxt "objverb"
+msgid "dissipate"
+msgid_plural "dissipate"
+msgstr[0] "se dissipe"
+msgstr[1] "se dissipent"
+
 msgctxt "gender"
 msgid "djinni"
 msgstr ""
@@ -2759,6 +2861,12 @@ msgstr ""
 msgctxt "monster"
 msgid "djinni"
 msgstr "djinn"
+
+msgctxt "objverb"
+msgid "do"
+msgid_plural "do"
+msgstr[0] "fait"
+msgstr[1] "font"
 
 msgctxt "gender"
 msgid "dog"
@@ -2802,6 +2910,12 @@ msgstr[1] "drains de vie"
 msgctxt "objgender"
 msgid "drain life"
 msgstr ""
+
+msgctxt "objverb"
+msgid "drop"
+msgid_plural "drop"
+msgstr[0] "tombe"
+msgstr[1] "tombent"
 
 msgctxt "object"
 msgid "drum"
@@ -3337,6 +3451,18 @@ msgctxt "objgender"
 msgid "eucalyptus leaf"
 msgstr "f"
 
+msgctxt "objverb"
+msgid "evade"
+msgid_plural "evade"
+msgstr[0] "esquive"
+msgstr[1] "esquivent"
+
+msgctxt "objverb"
+msgid "evaporate"
+msgid_plural "evaporate"
+msgstr[0] "s'évapore"
+msgstr[1] "s'évaporent"
+
 msgctxt "object"
 msgid "expensive camera"
 msgid_plural "expensive cameras"
@@ -3346,6 +3472,12 @@ msgstr[1] "appareils photos coûteux"
 msgctxt "objgender"
 msgid "expensive camera"
 msgstr ""
+
+msgctxt "objverb"
+msgid "explode"
+msgid_plural "explode"
+msgstr[0] "explose"
+msgstr[1] "explosent"
 
 msgctxt "object"
 msgid "extra healing"
@@ -3357,6 +3489,12 @@ msgctxt "objgender"
 msgid "extra healing"
 msgstr ""
 
+msgctxt "objverb"
+msgid "fade"
+msgid_plural "fade"
+msgstr[0] "s'estompe"
+msgstr[1] "s'estompent"
+
 msgctxt "object"
 msgid "faded pall"
 msgid_plural "faded palls"
@@ -3366,6 +3504,24 @@ msgstr[1] "linceuls défraîchis"
 msgctxt "objgender"
 msgid "faded pall"
 msgstr ""
+
+msgctxt "objverb"
+msgid "fail"
+msgid_plural "fail"
+msgstr[0] "échoue"
+msgstr[1] "échouent"
+
+msgctxt "objverb"
+msgid "faintly glow"
+msgid_plural "faintly glow"
+msgstr[0] "brille faiblement"
+msgstr[1] "brillent faiblement"
+
+msgctxt "objverb"
+msgid "fall"
+msgid_plural "fall"
+msgstr[0] "tombe"
+msgstr[1] "tombent"
 
 msgctxt "object"
 msgid "fauchard"
@@ -3386,6 +3542,12 @@ msgstr[1] "fédoras"
 msgctxt "objgender"
 msgid "fedora"
 msgstr "n"
+
+msgctxt "objverb"
+msgid "feel"
+msgid_plural "feel"
+msgstr[0] "semble"
+msgstr[1] "semblent"
 
 msgctxt "object"
 msgid "fencing gloves"
@@ -3489,6 +3651,12 @@ msgctxt "objgender"
 msgid "fireball"
 msgstr ""
 
+msgctxt "objverb"
+msgid "fit"
+msgid_plural "fit"
+msgstr[0] "va"
+msgstr[1] "vont"
+
 msgid "fizzy"
 msgstr "gazeux"
 
@@ -3532,6 +3700,12 @@ msgctxt "monster"
 msgid "flesh golem"
 msgstr "golem de chair"
 
+msgctxt "objverb"
+msgid "flicker"
+msgid_plural "flicker"
+msgstr[0] "vacille"
+msgstr[1] "vacillent"
+
 msgctxt "object"
 msgid "flint"
 msgid_plural "flints"
@@ -3569,6 +3743,12 @@ msgstr[1] "flûtes"
 msgctxt "objgender"
 msgid "flute"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "fly"
+msgid_plural "fly"
+msgstr[0] "vole"
+msgstr[1] "volent"
 
 msgctxt "gender"
 msgid "fog cloud"
@@ -3878,6 +4058,12 @@ msgctxt "objgender"
 msgid "genocide"
 msgstr ""
 
+msgctxt "objverb"
+msgid "get"
+msgid_plural "get"
+msgstr[0] "devient"
+msgstr[1] "deviennent"
+
 msgctxt "gender"
 msgid "ghost"
 msgstr ""
@@ -4017,6 +4203,12 @@ msgctxt "monster"
 msgid "glass piercer"
 msgstr "perceur de verre"
 
+msgctxt "objverb"
+msgid "gleam"
+msgid_plural "gleam"
+msgstr[0] "luit"
+msgstr[1] "luisent"
+
 msgid "glittering"
 msgstr "scintillant"
 
@@ -4063,6 +4255,12 @@ msgstr[1] "globules de bave verte"
 msgctxt "objgender"
 msgid "glob of green slime"
 msgstr ""
+
+msgctxt "objverb"
+msgid "glow"
+msgid_plural "glow"
+msgstr[0] "brille"
+msgstr[1] "brillent"
 
 msgctxt "gender"
 msgid "gnome"
@@ -4143,6 +4341,12 @@ msgstr ""
 msgctxt "monster"
 msgid "gnomish wizard"
 msgstr "magicien gnome"
+
+msgctxt "objverb"
+msgid "go"
+msgid_plural "go"
+msgstr[0] "va"
+msgstr[1] "vont"
 
 msgctxt "gender"
 msgid "goblin"
@@ -4482,6 +4686,12 @@ msgctxt "objgender"
 msgid "haste self"
 msgstr ""
 
+msgctxt "objverb"
+msgid "have"
+msgid_plural "have"
+msgstr[0] "a"
+msgstr[1] "ont"
+
 msgctxt "gender"
 msgid "healer"
 msgstr ""
@@ -4499,6 +4709,12 @@ msgstr[1] "soins"
 msgctxt "objgender"
 msgid "healing"
 msgstr ""
+
+msgctxt "objverb"
+msgid "heat"
+msgid_plural "heat"
+msgstr[0] "chauffe"
+msgstr[1] "chauffent"
 
 msgctxt "gender"
 msgid "hell hound"
@@ -4650,6 +4866,12 @@ msgstr[1] "armes d'hast à garde"
 msgctxt "objgender"
 msgid "hilted polearm"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "hit"
+msgid_plural "hit"
+msgstr[0] "frappe"
+msgstr[1] "frappent"
 
 msgctxt "gender"
 msgid "hobbit"
@@ -4825,6 +5047,12 @@ msgctxt "objgender"
 msgid "identify"
 msgstr ""
 
+msgctxt "objverb"
+msgid "ignite"
+msgid_plural "ignite"
+msgstr[0] "s'enflamme"
+msgstr[1] "s'enflamment"
+
 msgctxt "gender"
 msgid "iguana"
 msgstr ""
@@ -4840,6 +5068,12 @@ msgstr ""
 msgctxt "monster"
 msgid "imp"
 msgstr "diablotin"
+
+msgctxt "objverb"
+msgid "implode"
+msgid_plural "implode"
+msgstr[0] "implose"
+msgstr[1] "implosent"
 
 msgctxt "object"
 msgid "increase accuracy"
@@ -4945,6 +5179,18 @@ msgstr[1] "calottes de fer"
 msgctxt "objgender"
 msgid "iron skull cap"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "issue"
+msgid_plural "issue"
+msgstr[0] "sort"
+msgstr[1] "sortent"
+
+msgctxt "objverb"
+msgid "itch"
+msgid_plural "itch"
+msgstr[0] "démange"
+msgstr[1] "démangent"
 
 msgid "ivory"
 msgstr "en ivoire"
@@ -5174,6 +5420,12 @@ msgctxt "objgender"
 msgid "knock"
 msgstr ""
 
+msgctxt "objverb"
+msgid "knock"
+msgid_plural "knock"
+msgstr[0] "frappe"
+msgstr[1] "frappent"
+
 msgctxt "gender"
 msgid "kobold"
 msgstr ""
@@ -5257,6 +5509,12 @@ msgstr[1] "lances de cavalerie"
 msgctxt "objgender"
 msgid "lance"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "land"
+msgid_plural "land"
+msgstr[0] "atterrit"
+msgstr[1] "atterrissent"
 
 msgctxt "object"
 msgid "land mine"
@@ -5653,6 +5911,12 @@ msgctxt "monster"
 msgid "long worm tail"
 msgstr "queue de ver long"
 
+msgctxt "objverb"
+msgid "look"
+msgid_plural "look"
+msgstr[0] "semble"
+msgstr[1] "semblent"
+
 msgctxt "object"
 msgid "looking glass"
 msgid_plural "looking glasss"
@@ -5888,6 +6152,12 @@ msgctxt "monster"
 msgid "mastodon"
 msgstr "mastodonte"
 
+msgctxt "objverb"
+msgid "materialize"
+msgid_plural "materialize"
+msgstr[0] "se matérialise"
+msgstr[1] "se matérialisent"
+
 msgctxt "object"
 msgid "meat ring"
 msgid_plural "meat rings"
@@ -5960,6 +6230,24 @@ msgstr[1] "miroirs"
 msgctxt "objgender"
 msgid "mirror"
 msgstr ""
+
+msgctxt "objverb"
+msgid "misfire"
+msgid_plural "misfire"
+msgstr[0] "s'enraye"
+msgstr[1] "s'enrayent"
+
+msgctxt "objverb"
+msgid "miss"
+msgid_plural "miss"
+msgstr[0] "rate"
+msgstr[1] "ratent"
+
+msgctxt "objverb"
+msgid "mix"
+msgid_plural "mix"
+msgstr[0] "se mélange"
+msgstr[1] "se mélangent"
 
 msgctxt "gender"
 msgid "monk"
@@ -6598,6 +6886,12 @@ msgctxt "objgender"
 msgid "partisan"
 msgstr "f"
 
+msgctxt "objverb"
+msgid "pass"
+msgid_plural "pass"
+msgstr[0] "passe"
+msgstr[1] "passent"
+
 msgctxt "object"
 msgid "pear"
 msgid_plural "pears"
@@ -6641,6 +6935,12 @@ msgstr[1] "morceaux de tissu"
 msgctxt "objgender"
 msgid "piece of cloth"
 msgstr ""
+
+msgctxt "objverb"
+msgid "pierce"
+msgid_plural "pierce"
+msgstr[0] "transperce"
+msgstr[1] "transpercent"
 
 msgid "pine"
 msgstr "en pin"
@@ -6711,6 +7011,12 @@ msgstr "en platine"
 msgctxt "feminine"
 msgid "platinum"
 msgstr "en platine"
+
+msgctxt "objverb"
+msgid "plug"
+msgid_plural "plug"
+msgstr[0] "bouche"
+msgstr[1] "bouchent"
 
 msgctxt "object"
 msgid "plumed helmet"
@@ -6824,6 +7130,12 @@ msgctxt "objgender"
 msgid "probing"
 msgstr ""
 
+msgctxt "objverb"
+msgid "produce"
+msgid_plural "produce"
+msgstr[0] "produit"
+msgstr[1] "produisent"
+
 msgctxt "object"
 msgid "pronged polearm"
 msgid_plural "pronged polearms"
@@ -6871,6 +7183,12 @@ msgctxt "feminine"
 msgid "puce"
 msgstr "puce"
 
+msgctxt "objverb"
+msgid "pulsate"
+msgid_plural "pulsate"
+msgstr[0] "palpite"
+msgstr[1] "palpitent"
+
 msgctxt "object"
 msgid "punishment"
 msgid_plural "punishments"
@@ -6902,6 +7220,12 @@ msgstr "pourpre"
 msgctxt "feminine"
 msgid "purple-red"
 msgstr "pourpre"
+
+msgctxt "objverb"
+msgid "push"
+msgid_plural "push"
+msgstr[0] "pousse"
+msgstr[1] "poussent"
 
 msgid "pyramidal"
 msgstr "pyramidal"
@@ -6960,6 +7284,12 @@ msgctxt "monster"
 msgid "queen bee"
 msgstr "reine des abeilles"
 
+msgctxt "objverb"
+msgid "quiver"
+msgid_plural "quiver"
+msgstr[0] "frémit"
+msgstr[1] "frémissent"
+
 msgctxt "gender"
 msgid "quivering blob"
 msgstr "f"
@@ -6975,6 +7305,12 @@ msgstr ""
 msgctxt "monster"
 msgid "rabid rat"
 msgstr "rat enragé"
+
+msgctxt "objverb"
+msgid "radiate"
+msgid_plural "radiate"
+msgstr[0] "rayonne"
+msgstr[1] "rayonnent"
 
 msgid "ragged"
 msgstr "en loques"
@@ -7000,6 +7336,12 @@ msgstr[1] "corsèques"
 msgctxt "objgender"
 msgid "ranseur"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "rattle"
+msgid_plural "rattle"
+msgstr[0] "cliquette"
+msgstr[1] "cliquettent"
 
 msgctxt "gender"
 msgid "raven"
@@ -7095,6 +7437,12 @@ msgctxt "objgender"
 msgid "regeneration"
 msgstr ""
 
+msgctxt "objverb"
+msgid "remain"
+msgid_plural "remain"
+msgstr[0] "reste"
+msgstr[1] "restent"
+
 msgctxt "object"
 msgid "remove curse"
 msgid_plural "remove curses"
@@ -7105,6 +7453,12 @@ msgctxt "objgender"
 msgid "remove curse"
 msgstr ""
 
+msgctxt "objverb"
+msgid "resist"
+msgid_plural "resist"
+msgstr[0] "résiste"
+msgstr[1] "résistent"
+
 msgctxt "object"
 msgid "restore ability"
 msgid_plural "restore abilitys"
@@ -7114,6 +7468,12 @@ msgstr[1] "restaurations"
 msgctxt "objgender"
 msgid "restore ability"
 msgstr ""
+
+msgctxt "objverb"
+msgid "return"
+msgid_plural "return"
+msgstr[0] "revient"
+msgstr[1] "reviennent"
 
 msgctxt "object"
 msgid "riding boots"
@@ -7212,6 +7572,12 @@ msgstr ""
 msgctxt "monster"
 msgid "roshi"
 msgstr "roshi"
+
+msgctxt "objverb"
+msgid "rot"
+msgid_plural "rot"
+msgstr[0] "pourrit"
+msgstr[1] "pourrissent"
 
 msgctxt "gender"
 msgid "rothe"
@@ -7460,6 +7826,12 @@ msgctxt "monster"
 msgid "scorpion"
 msgstr "scorpion"
 
+msgctxt "objverb"
+msgid "sear"
+msgid_plural "sear"
+msgstr[0] "brûle"
+msgstr[1] "brûlent"
+
 msgctxt "object"
 msgid "searching"
 msgid_plural "searchings"
@@ -7489,6 +7861,12 @@ msgstr[1] "visions de l'invisible"
 msgctxt "objgender"
 msgid "see invisible"
 msgstr ""
+
+msgctxt "objverb"
+msgid "seem"
+msgid_plural "seem"
+msgstr[0] "semble"
+msgstr[1] "semblent"
 
 msgctxt "gender"
 msgid "sergeant"
@@ -7521,6 +7899,12 @@ msgstr ""
 msgctxt "monster"
 msgid "shark"
 msgstr "requin"
+
+msgctxt "objverb"
+msgid "shatter"
+msgid_plural "shatter"
+msgstr[0] "vole en éclats"
+msgstr[1] "volent en éclats"
 
 msgctxt "object"
 msgid "shield of drain resistance"
@@ -7579,6 +7963,12 @@ msgstr[1] "écailles de dragon chatoyant"
 msgctxt "objgender"
 msgid "shimmering dragon scales"
 msgstr "fp"
+
+msgctxt "objverb"
+msgid "shine"
+msgid_plural "shine"
+msgstr[0] "brille"
+msgstr[1] "brillent"
 
 msgid "shining"
 msgstr "luisant"
@@ -7788,12 +8178,24 @@ msgctxt "objgender"
 msgid "skeleton key"
 msgstr ""
 
+msgctxt "objverb"
+msgid "skip"
+msgid_plural "skip"
+msgstr[0] "ricoche"
+msgstr[1] "ricochent"
+
 msgid "sky blue"
 msgstr "bleu ciel"
 
 msgctxt "feminine"
 msgid "sky blue"
 msgstr "bleu ciel"
+
+msgctxt "objverb"
+msgid "slam"
+msgid_plural "slam"
+msgstr[0] "claque"
+msgstr[1] "claquent"
 
 msgctxt "object"
 msgid "sleep"
@@ -7815,6 +8217,12 @@ msgctxt "objgender"
 msgid "sleeping"
 msgstr ""
 
+msgctxt "objverb"
+msgid "slide"
+msgid_plural "slide"
+msgstr[0] "glisse"
+msgstr[1] "glissent"
+
 msgctxt "object"
 msgid "slime mold"
 msgid_plural "slime molds"
@@ -7834,6 +8242,12 @@ msgstr[1] "frondes"
 msgctxt "objgender"
 msgid "sling"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "slip"
+msgid_plural "slip"
+msgstr[0] "glisse"
+msgstr[1] "glissent"
 
 msgctxt "object"
 msgid "slippery cloak"
@@ -7883,6 +8297,12 @@ msgctxt "objgender"
 msgid "small shield"
 msgstr ""
 
+msgctxt "objverb"
+msgid "smell"
+msgid_plural "smell"
+msgstr[0] "sent"
+msgstr[1] "sentent"
+
 msgid "smoky"
 msgstr "fumeux"
 
@@ -7898,6 +8318,12 @@ msgctxt "monster"
 msgid "snake"
 msgstr "serpent"
 
+msgctxt "objverb"
+msgid "snap"
+msgid_plural "snap"
+msgstr[0] "se brise"
+msgstr[1] "se brisent"
+
 msgctxt "object"
 msgid "snow boots"
 msgid_plural "snow bootss"
@@ -7907,6 +8333,12 @@ msgstr[1] "bottes de neige"
 msgctxt "objgender"
 msgid "snow boots"
 msgstr "fp"
+
+msgctxt "objverb"
+msgid "softly glow"
+msgid_plural "softly glow"
+msgstr[0] "brille doucement"
+msgstr[1] "brillent doucement"
 
 msgctxt "gender"
 msgid "soldier"
@@ -7980,6 +8412,18 @@ msgstr "sphérique"
 msgctxt "feminine"
 msgid "spherical"
 msgstr "sphérique"
+
+msgctxt "objverb"
+msgid "spill"
+msgid_plural "spill"
+msgstr[0] "se renverse"
+msgstr[1] "se renversent"
+
+msgctxt "objverb"
+msgid "splash"
+msgid_plural "splash"
+msgstr[0] "éclabousse"
+msgstr[1] "éclaboussent"
 
 msgctxt "object"
 msgid "splash of acid venom"
@@ -8078,6 +8522,12 @@ msgctxt "feminine"
 msgid "stamped"
 msgstr "timbrée"
 
+msgctxt "objverb"
+msgid "stand"
+msgid_plural "stand"
+msgstr[0] "se tient"
+msgstr[1] "se tiennent"
+
 msgctxt "object"
 msgid "stasis"
 msgid_plural "stasiss"
@@ -8143,6 +8593,12 @@ msgctxt "objgender"
 msgid "stiletto"
 msgstr ""
 
+msgctxt "objverb"
+msgid "sting"
+msgid_plural "sting"
+msgstr[0] "pique"
+msgstr[1] "piquent"
+
 msgctxt "object"
 msgid "stinking cloud"
 msgid_plural "stinking clouds"
@@ -8178,6 +8634,12 @@ msgstr[1] "pierres en chair"
 msgctxt "objgender"
 msgid "stone to flesh"
 msgstr ""
+
+msgctxt "objverb"
+msgid "stop"
+msgid_plural "stop"
+msgstr[0] "s'arrête"
+msgstr[1] "s'arrêtent"
 
 msgctxt "gender"
 msgid "storm giant"
@@ -8250,6 +8712,18 @@ msgstr "f"
 msgctxt "monster"
 msgid "succubus"
 msgstr "succube"
+
+msgctxt "objverb"
+msgid "suddenly roll"
+msgid_plural "suddenly roll"
+msgstr[0] "roule soudain"
+msgstr[1] "roulent soudain"
+
+msgctxt "objverb"
+msgid "suddenly vibrate"
+msgid_plural "suddenly vibrate"
+msgstr[0] "vibre soudain"
+msgstr[1] "vibrent soudain"
 
 msgctxt "object"
 msgid "sustain ability"
@@ -8447,6 +8921,12 @@ msgctxt "objgender"
 msgid "tin whistle"
 msgstr ""
 
+msgctxt "objverb"
+msgid "tingle"
+msgid_plural "tingle"
+msgstr[0] "picote"
+msgstr[1] "picotent"
+
 msgctxt "object"
 msgid "tinning kit"
 msgid_plural "tinning kits"
@@ -8553,6 +9033,12 @@ msgctxt "objgender"
 msgid "trident"
 msgstr ""
 
+msgctxt "objverb"
+msgid "trigger"
+msgid_plural "trigger"
+msgstr[0] "déclenche"
+msgstr[1] "déclenchent"
+
 msgctxt "object"
 msgid "tripe ration"
 msgid_plural "tripe rations"
@@ -8580,6 +9066,18 @@ msgstr[1] "tsurugis"
 msgctxt "objgender"
 msgid "tsurugi"
 msgstr ""
+
+msgctxt "objverb"
+msgid "tumble"
+msgid_plural "tumble"
+msgstr[0] "dégringole"
+msgstr[1] "dégringolent"
+
+msgctxt "objverb"
+msgid "turn"
+msgid_plural "turn"
+msgstr[0] "devient"
+msgstr[1] "deviennent"
 
 msgctxt "object"
 msgid "turn undead"
@@ -8614,6 +9112,12 @@ msgstr "torsadé"
 msgctxt "feminine"
 msgid "twisted"
 msgstr "torsadée"
+
+msgctxt "objverb"
+msgid "twitch"
+msgid_plural "twitch"
+msgstr[0] "tressaille"
+msgstr[1] "tressaillent"
 
 msgctxt "object"
 msgid "two-handed sword"
@@ -8723,6 +9227,12 @@ msgctxt "monster"
 msgid "vampire mage"
 msgstr "mage vampire"
 
+msgctxt "objverb"
+msgid "vanish"
+msgid_plural "vanish"
+msgstr[0] "disparaît"
+msgstr[1] "disparaissent"
+
 msgid "vellum"
 msgstr "en vélin"
 
@@ -8736,6 +9246,18 @@ msgstr "en velours"
 msgctxt "feminine"
 msgid "velvet"
 msgstr "en velours"
+
+msgctxt "objverb"
+msgid "vibrate"
+msgid_plural "vibrate"
+msgstr[0] "vibre"
+msgstr[1] "vibrent"
+
+msgctxt "objverb"
+msgid "violently glow"
+msgid_plural "violently glow"
+msgstr[0] "brille violemment"
+msgstr[1] "brillent violemment"
 
 msgid "violet"
 msgstr "violet"
@@ -8797,6 +9319,12 @@ msgstr[1] "armes d'hast vulgaire"
 msgctxt "objgender"
 msgid "vulgar polearm"
 msgstr "f"
+
+msgctxt "objverb"
+msgid "wake"
+msgid_plural "wake"
+msgstr[0] "se réveille"
+msgstr[1] "se réveillent"
 
 msgctxt "object"
 msgid "walking shoes"
@@ -8878,6 +9406,12 @@ msgctxt "objgender"
 msgid "water"
 msgstr ""
 
+msgctxt "objverb"
+msgid "water"
+msgid_plural "water"
+msgstr[0] "pleure"
+msgstr[1] "pleurent"
+
 msgctxt "gender"
 msgid "water demon"
 msgstr ""
@@ -8938,6 +9472,12 @@ msgctxt "objgender"
 msgid "wax candle"
 msgstr "f"
 
+msgctxt "objverb"
+msgid "weld"
+msgid_plural "weld"
+msgstr[0] "se soude"
+msgstr[1] "se soudent"
+
 msgctxt "gender"
 msgid "werejackal"
 msgstr ""
@@ -8961,6 +9501,12 @@ msgstr ""
 msgctxt "monster"
 msgid "werewolf"
 msgstr "loup-garou"
+
+msgctxt "objverb"
+msgid "whisper"
+msgid_plural "whisper"
+msgstr[0] "chuchote"
+msgstr[1] "chuchotent"
 
 msgctxt "object"
 msgid "whistle"
@@ -9378,6 +9924,12 @@ msgctxt "objgender"
 msgid "yumi"
 msgstr ""
 
+msgctxt "objverb"
+msgid "zap"
+msgid_plural "zap"
+msgstr[0] "électrise"
+msgstr[1] "électrisent"
+
 msgid "zinc"
 msgstr "en zinc"
 
@@ -9537,7 +10089,7 @@ msgstr ""
 msgid "%s is in %s health for a statue."
 msgstr ""
 
-#: src/apply.c:328 src/pickup.c:2204 src/pickup.c:2951
+#: src/apply.c:328 src/pickup.c:2207 src/pickup.c:2954
 msgid "You have no hands!"
 msgstr "Vous n'avez pas de mains !"
 
@@ -9545,7 +10097,7 @@ msgstr "Vous n'avez pas de mains !"
 msgid "You can't hear anything!"
 msgstr "Vous n'entendez rien !"
 
-#: src/apply.c:334 src/pickup.c:2954
+#: src/apply.c:334 src/pickup.c:2957
 #, c-format
 msgid "You have no free %s."
 msgstr ""
@@ -9620,8 +10172,8 @@ msgstr ""
 
 #: src/apply.c:685 src/apply.c:1651 src/cmd.c:1361 src/display.c:2069
 #: src/dog.c:1209 src/explode.c:796 src/getpos.c:986 src/invent.c:3147
-#: src/invent.c:4560 src/mail.c:375 src/muse.c:3144 src/music.c:616
-#: src/objnam.c:4682 src/objnam.c:4731 src/objnam.c:4862 src/potion.c:1681
+#: src/invent.c:4579 src/mail.c:375 src/muse.c:3144 src/music.c:616
+#: src/objnam.c:4752 src/objnam.c:4801 src/objnam.c:4932 src/potion.c:1681
 #: src/pray.c:575 src/read.c:1356 src/read.c:2664 src/read.c:2868
 #: src/uhitm.c:3005 src/wield.c:1007 win/tty/wintty.c:2958
 #, c-format
@@ -12156,7 +12708,7 @@ msgstr ""
 #: src/muse.c:218 src/shk.c:5452 src/sit.c:611 src/steed.c:429 src/trap.c:6364
 #, c-format
 msgid "%s!"
-msgstr ""
+msgstr "%s !"
 
 #: src/detect.c:1265
 #, c-format
@@ -12842,12 +13394,12 @@ msgstr "L'évier disparaît."
 #: src/do.c:504
 #, c-format
 msgid "You drop %s down the drain."
-msgstr ""
+msgstr "Vous faites tomber %s dans le siphon."
 
 #: src/do.c:508
 #, c-format
 msgid "You thought %s got lost in the sink, but there it is!"
-msgstr ""
+msgstr "Vous pensiez que %s s'était perdu dans l'évier, mais le voilà !"
 
 #: src/do.c:511
 msgid "The ring is regurgitated!"
@@ -12970,7 +13522,7 @@ msgstr "Vous entendez l'anneau rebondir dans la canalisation."
 msgid "The sink backs up, leaving %s."
 msgstr ""
 
-#: src/do.c:669 src/pickup.c:2579
+#: src/do.c:669 src/pickup.c:2582
 #, c-format
 msgid "You cannot %s %s you are wearing."
 msgstr ""
@@ -12998,12 +13550,12 @@ msgstr ""
 #: src/do.c:750
 #, c-format
 msgid "You drop %s into %s."
-msgstr ""
+msgstr "Vous lâchez %s dans %s."
 
-#: src/do.c:767 src/do.c:775 src/pickup.c:2426
+#: src/do.c:767 src/do.c:775 src/pickup.c:2429
 #, c-format
 msgid "You drop %s."
-msgstr ""
+msgstr "Vous lâchez %s."
 
 #: src/do.c:870
 #, c-format
@@ -13182,12 +13734,12 @@ msgstr "Vous sentez quelque chose se tortiller dans votre sac !"
 #: src/do.c:2174
 #, c-format
 msgid "%s rises from the dead%s!"
-msgstr ""
+msgstr "%s se relève d'entre les morts%s !"
 
 #: src/do.c:2179
 #, c-format
 msgid "%s disappears%s!"
-msgstr ""
+msgstr "%s disparaît%s !"
 
 #: src/do.c:2187
 #, c-format
@@ -13197,12 +13749,12 @@ msgstr ""
 #: src/do.c:2191 src/muse.c:2474 src/zap.c:1212
 #, c-format
 msgid "%s suddenly appears!"
-msgstr ""
+msgstr "%s apparaît soudain !"
 
 #: src/do.c:2206
 #, c-format
 msgid "%s writhes out of %s!"
-msgstr ""
+msgstr "%s se tortille hors de %s !"
 
 #: src/do.c:2209
 #, c-format
@@ -13217,7 +13769,7 @@ msgstr ""
 #: src/do.c:2227
 #, c-format
 msgid "%s claws itself out of the ground!"
-msgstr ""
+msgstr "%s s'extirpe du sol à coups de griffes !"
 
 #: src/do.c:2232
 msgid "You hear scratching noises."
@@ -13226,17 +13778,17 @@ msgstr "Vous entendez des grattements."
 #: src/do.c:2269 src/muse.c:124 src/potion.c:2860
 #, c-format
 msgid "%s vanishes."
-msgstr ""
+msgstr "%s disparaît."
 
 #: src/do.c:2271 src/trap.c:3836 src/zap.c:2386
 #, c-format
 msgid "%s appears."
-msgstr ""
+msgstr "%s apparaît."
 
 #: src/do.c:2273
 #, c-format
 msgid "%s teleports."
-msgstr ""
+msgstr "%s se téléporte."
 
 #: src/do.c:2287
 #, c-format
@@ -13545,25 +14097,25 @@ msgctxt "adjective-position"
 msgid "plain"
 msgstr ""
 
-#: src/do_name.c:829 src/do_name.c:979 src/objnam.c:1262
+#: src/do_name.c:829 src/do_name.c:979 src/objnam.c:1263
 #, c-format
 msgctxt "feminine"
 msgid "a %s"
 msgstr "une %s"
 
-#: src/do_name.c:829 src/do_name.c:971 src/objnam.c:647 src/objnam.c:1248
+#: src/do_name.c:829 src/do_name.c:971 src/objnam.c:648 src/objnam.c:1249
 #, c-format
 msgctxt "elided"
 msgid "the %s"
 msgstr "l'%s"
 
-#: src/do_name.c:829 src/do_name.c:973 src/objnam.c:1254
+#: src/do_name.c:829 src/do_name.c:973 src/objnam.c:1255
 #, c-format
 msgctxt "feminine"
 msgid "the %s"
 msgstr "la %s"
 
-#: src/do_name.c:830 src/do_name.c:985 src/objnam.c:3405
+#: src/do_name.c:830 src/do_name.c:985 src/objnam.c:1598 src/objnam.c:3461
 #, c-format
 msgctxt "feminine"
 msgid "your %s"
@@ -13574,22 +14126,22 @@ msgstr "votre %s"
 msgid "%s ghost"
 msgstr "fantôme de %s"
 
-#: src/do_name.c:912 src/objnam.c:645
+#: src/do_name.c:912 src/objnam.c:646
 #, c-format
 msgid "%s called %s"
 msgstr "%s nommé %s"
 
-#: src/do_name.c:975 src/objnam.c:646 src/objnam.c:1256
+#: src/do_name.c:975 src/objnam.c:647 src/objnam.c:1257
 #, c-format
 msgid "the %s"
 msgstr "le %s"
 
-#: src/do_name.c:981 src/objnam.c:646 src/objnam.c:1264
+#: src/do_name.c:981 src/objnam.c:647 src/objnam.c:1265
 #, c-format
 msgid "a %s"
 msgstr "un %s"
 
-#: src/do_name.c:987 src/objnam.c:3407
+#: src/do_name.c:987 src/objnam.c:1600 src/objnam.c:3463
 #, c-format
 msgid "your %s"
 msgstr "votre %s"
@@ -13613,12 +14165,12 @@ msgstr "quelque chose"
 #: src/do_wear.c:71
 #, c-format
 msgid "You were wearing %s."
-msgstr ""
+msgstr "Vous portiez %s."
 
 #: src/do_wear.c:96
 #, c-format
 msgid "You are now wearing %s%s."
-msgstr ""
+msgstr "Vous portez maintenant %s%s."
 
 #: src/do_wear.c:125
 msgid "You move very quietly."
@@ -13840,12 +14392,12 @@ msgstr ""
 #: src/do_wear.c:2013
 #, c-format
 msgid "You are already wearing %s%c"
-msgstr ""
+msgstr "Vous portez déjà %s%c"
 
 #: src/do_wear.c:2019
 #, c-format
 msgid "You can't wear %s because you're wearing %s there already."
-msgstr ""
+msgstr "Vous ne pouvez pas porter %s car vous portez déjà %s à cet endroit."
 
 #: src/do_wear.c:2039
 msgid "You can't wear any armor in your current form."
@@ -13954,7 +14506,7 @@ msgstr ""
 #: src/do_wear.c:2325
 #, c-format
 msgid "You have no head to wear %s on."
-msgstr ""
+msgstr "Vous n'avez pas de tête pour porter %s."
 
 #: src/do_wear.c:2331
 #, c-format
@@ -15002,7 +15554,7 @@ msgstr "Une pensée triste vous traverse, puis passe."
 #: src/eat.c:679 src/eat.c:745 src/sounds.c:1454
 #, c-format
 msgid "%s doesn't notice."
-msgstr ""
+msgstr "%s ne remarque rien."
 
 #: src/eat.c:683
 msgid "Ingesting that is fatal."
@@ -15134,7 +15686,7 @@ msgstr "Vous vous sentez coupable."
 #: src/eat.c:1564
 #, c-format
 msgid "It's full of %s."
-msgstr ""
+msgstr "C'est plein de %s."
 
 #: src/eat.c:1568 src/potion.c:2822
 msgid "It turns out to be empty."
@@ -15143,7 +15695,7 @@ msgstr "Elle se révèle vide."
 #: src/eat.c:1598
 #, c-format
 msgid "It smells like %s."
-msgstr ""
+msgstr "Ça sent %s."
 
 #: src/eat.c:1599 src/eat.c:1671
 msgid "Eat it?"
@@ -15192,7 +15744,7 @@ msgstr "La boîte semble facile à ouvrir."
 #: src/eat.c:1783
 #, c-format
 msgid "Using %s you try to open the tin."
-msgstr ""
+msgstr "Avec %s, vous essayez d'ouvrir la boîte."
 
 #: src/eat.c:1786
 msgid "It is not so easy to open this tin."
@@ -15601,7 +16153,7 @@ msgstr "Demi-dieu"
 msgid "Demigoddess"
 msgstr "Demi-déesse"
 
-#: src/end.c:1663 src/pickup.c:4054
+#: src/end.c:1663 src/pickup.c:4057
 #, c-format
 msgid "%s is empty."
 msgstr ""
@@ -16346,7 +16898,7 @@ msgstr "Vous sentez un anneau perdu dans le siphon."
 msgid "A wisp of vapor rises up..."
 msgstr "Une volute de vapeur s'élève..."
 
-#: src/fountain.c:815 src/music.c:602 src/objnam.c:4623
+#: src/fountain.c:815 src/music.c:602 src/objnam.c:4693
 #, c-format
 msgid "%s%s."
 msgstr ""
@@ -17202,7 +17754,7 @@ msgstr "Vous ne maniez rien."
 msgid "You are not wearing rings."
 msgstr "Vous ne portez pas d'anneaux."
 
-#: src/invent.c:2326 src/invent.c:4714
+#: src/invent.c:2326 src/invent.c:4733
 msgid "You are not wearing an amulet."
 msgstr "Vous ne portez pas d'amulette."
 
@@ -17398,197 +17950,248 @@ msgstr "Mais vous ne pouvez pas l'atteindre !"
 msgid "There is %s here."
 msgstr "Il y a %s ici."
 
-#: src/invent.c:4289
-#, c-format
-msgid "There is %s object here."
-msgstr ""
+#: src/invent.c:4290
+msgid "There is another object here."
+msgstr "Il y a un autre objet ici."
 
-#: src/invent.c:4291
-#, c-format
-msgid "There are %s%s objects here."
-msgstr ""
+#: src/invent.c:4292
+msgid "There is an object here."
+msgstr "Il y a un objet ici."
 
-#: src/invent.c:4299 src/mhitu.c:2122 src/monmove.c:41 src/pray.c:1182
+#: src/invent.c:4296
+msgid "There are two objects here."
+msgstr "Il y a deux objets ici."
+
+#: src/invent.c:4297
+msgid "There are a few objects here."
+msgstr "Il y a quelques objets ici."
+
+#: src/invent.c:4298
+msgid "There are several objects here."
+msgstr "Il y a plusieurs objets ici."
+
+#: src/invent.c:4299
+msgid "There are many objects here."
+msgstr "Il y a beaucoup d'objets ici."
+
+#: src/invent.c:4300
+msgid "There are two more objects here."
+msgstr "Il y a deux autres objets ici."
+
+#: src/invent.c:4301
+msgid "There are a few more objects here."
+msgstr "Il y a quelques autres objets ici."
+
+#: src/invent.c:4302
+msgid "There are several more objects here."
+msgstr "Il y a plusieurs autres objets ici."
+
+#: src/invent.c:4303
+msgid "There are many more objects here."
+msgstr "Il y a beaucoup d'autres objets ici."
+
+#: src/invent.c:4313 src/mhitu.c:2122 src/monmove.c:41 src/pray.c:1182
 #: src/zap.c:3950
 #, c-format
 msgid "%s %s%s."
 msgstr ""
 
-#: src/invent.c:4314
+#: src/invent.c:4329
 #, c-format
-msgid "You %s here %s."
-msgstr ""
+msgid "You feel here %s."
+msgstr "Vous sentez ici %s."
 
-#: src/invent.c:4384
+#: src/invent.c:4331
+#, c-format
+msgid "You see here %s."
+msgstr "Vous voyez ici %s."
+
+#: src/invent.c:4345
+msgid "Other things that you feel here:"
+msgstr "Autres objets que vous sentez ici :"
+
+#: src/invent.c:4346
+msgid "Other things that are here:"
+msgstr "Autres objets présents ici :"
+
+#: src/invent.c:4348
+msgid "Things that you feel here:"
+msgstr "Objets que vous sentez ici :"
+
+#: src/invent.c:4349
+msgid "Things that are here:"
+msgstr "Objets présents ici :"
+
+#: src/invent.c:4403
 #, c-format
 msgid "You touched %s with your bare %s."
 msgstr ""
 
-#: src/invent.c:4387
+#: src/invent.c:4406
 #, c-format
 msgid "Touching %s is a fatal mistake..."
 msgstr ""
 
-#: src/invent.c:4564
+#: src/invent.c:4583
 #, c-format
 msgid "You are carrying a total of %ld %s."
 msgstr ""
 
-#: src/invent.c:4566
+#: src/invent.c:4585
 msgid "You have no money."
 msgstr "Vous n'avez pas d'argent."
 
-#: src/invent.c:4613
+#: src/invent.c:4632
 msgid "You are not wearing any armor."
 msgstr "Vous ne portez aucune armure."
 
-#: src/invent.c:4626
+#: src/invent.c:4645
 #, c-format
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4677
+#: src/invent.c:4696
 msgid "You are not wearing any rings."
 msgstr "Vous ne portez aucun anneau."
 
-#: src/invent.c:4763
+#: src/invent.c:4782
 msgid "You are not using any tools."
 msgstr "Vous n'utilisez aucun outil."
 
-#: src/invent.c:4785
+#: src/invent.c:4804
 msgid "You are not wearing or wielding anything."
 msgstr "Vous ne portez ni ne maniez rien."
 
-#: src/invent.c:4822
+#: src/invent.c:4841
 msgid "Armor"
 msgstr "Armures"
 
-#: src/invent.c:4822
+#: src/invent.c:4841
 msgid "Illegal objects"
 msgstr "Objets illégaux"
 
-#: src/invent.c:4822
+#: src/invent.c:4841
 msgid "Rings"
 msgstr "Anneaux"
 
-#: src/invent.c:4822
+#: src/invent.c:4841
 msgid "Weapons"
 msgstr "Armes"
 
-#: src/invent.c:4823
+#: src/invent.c:4842
 msgid "Amulets"
 msgstr "Amulettes"
 
-#: src/invent.c:4823
+#: src/invent.c:4842
 msgid "Comestibles"
 msgstr "Comestibles"
 
-#: src/invent.c:4823
+#: src/invent.c:4842
 msgid "Potions"
 msgstr "Potions"
 
-#: src/invent.c:4823
+#: src/invent.c:4842
 msgid "Tools"
 msgstr "Outils"
 
-#: src/invent.c:4824
+#: src/invent.c:4843
 msgid "Coins"
 msgstr "Pièces"
 
-#: src/invent.c:4824
+#: src/invent.c:4843
 msgid "Scrolls"
 msgstr "Parchemins"
 
-#: src/invent.c:4824
+#: src/invent.c:4843
 msgid "Spellbooks"
 msgstr "Livres de sorts"
 
-#: src/invent.c:4824
+#: src/invent.c:4843
 msgid "Wands"
 msgstr "Baguettes"
 
-#: src/invent.c:4825
+#: src/invent.c:4844
 msgid "Boulders/Statues"
 msgstr "Rochers/Statues"
 
-#: src/invent.c:4825
+#: src/invent.c:4844
 msgid "Gems/Stones"
 msgstr "Gemmes/Pierres"
 
-#: src/invent.c:4825
+#: src/invent.c:4844
 msgid "Iron balls"
 msgstr "Boulets"
 
-#: src/invent.c:4826
+#: src/invent.c:4845
 msgid "Chains"
 msgstr "Chaînes"
 
-#: src/invent.c:4826
+#: src/invent.c:4845
 msgid "Venoms"
 msgstr "Venins"
 
-#: src/invent.c:4829
+#: src/invent.c:4848
 msgid "Bagged/Boxed items"
 msgstr "Objets en sac ou en coffre"
 
-#: src/invent.c:4850 src/invent.c:4859
+#: src/invent.c:4869 src/invent.c:4878
 #, c-format
 msgid "Unpaid %s"
 msgstr "%s non payés"
 
-#: src/invent.c:5023
+#: src/invent.c:5042
 #, c-format
 msgid "You aren't carrying anything %s."
 msgstr ""
 
-#: src/invent.c:5035
+#: src/invent.c:5054
 msgctxt "verb"
 msgid "adjust"
 msgstr "ajuster"
 
-#: src/invent.c:5050
+#: src/invent.c:5069
 msgctxt "verb"
 msgid "split"
 msgstr "séparer"
 
-#: src/invent.c:5058
+#: src/invent.c:5077
 msgid "Split off how many?"
 msgstr "En séparer combien ?"
 
-#: src/invent.c:5088
+#: src/invent.c:5107
 #, c-format
 msgid "%s at least 1."
 msgstr ""
 
-#: src/invent.c:5090
+#: src/invent.c:5109
 #, c-format
 msgid "%s less than %ld."
 msgstr ""
 
-#: src/invent.c:5199
+#: src/invent.c:5218
 #, c-format
 msgid "Only gold coins may be moved into the '%c' slot."
 msgstr ""
 
-#: src/invent.c:5211
+#: src/invent.c:5230
 msgid "Select an inventory slot letter."
 msgstr "Choisissez une lettre d'inventaire."
 
-#: src/invent.c:5284
+#: src/invent.c:5303
 msgid "Your pack is too full."
 msgstr "Votre sac est trop plein."
 
-#: src/invent.c:5544
+#: src/invent.c:5563
 #, c-format
 msgid "There %s %s under the %s here."
 msgstr ""
 
-#: src/invent.c:5666
+#: src/invent.c:5685
 #, c-format
 msgid "%s could not be enabled."
 msgstr ""
 
-#: src/invent.c:5667
+#: src/invent.c:5686
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
@@ -19238,7 +19841,7 @@ msgstr ""
 msgid "%s %s out."
 msgstr ""
 
-#: src/mkobj.c:2926 src/pickup.c:3820
+#: src/mkobj.c:2926 src/pickup.c:3823
 #, c-format
 msgid "%s %s to the %s."
 msgstr ""
@@ -20738,436 +21341,436 @@ msgstr ""
 msgid "None of your discoveries can be assigned names..."
 msgstr "Aucune de vos découvertes ne peut être nommée..."
 
-#: src/objnam.c:638
+#: src/objnam.c:639
 msgid "blessed"
 msgstr "béni"
 
-#: src/objnam.c:638
+#: src/objnam.c:639
 msgid "cursed"
 msgstr "maudit"
 
-#: src/objnam.c:638
+#: src/objnam.c:639
 msgid "empty"
 msgstr "vide"
 
-#: src/objnam.c:638
+#: src/objnam.c:639
 msgid "trapped"
 msgstr "piégé"
 
-#: src/objnam.c:638
+#: src/objnam.c:639
 msgid "uncursed"
 msgstr "non maudit"
 
-#: src/objnam.c:639
+#: src/objnam.c:640
 msgid "broken"
 msgstr "cassé"
 
-#: src/objnam.c:639
+#: src/objnam.c:640
 msgid "greased"
 msgstr "graissé"
 
-#: src/objnam.c:639
+#: src/objnam.c:640
 msgid "locked"
 msgstr "verrouillé"
 
-#: src/objnam.c:639
+#: src/objnam.c:640
 msgid "poisoned"
 msgstr "empoisonné"
 
-#: src/objnam.c:639
+#: src/objnam.c:640
 msgid "unlocked"
 msgstr "déverrouillé"
 
-#: src/objnam.c:640
+#: src/objnam.c:641
 msgid "diluted"
 msgstr "dilué"
 
-#: src/objnam.c:640
+#: src/objnam.c:641
 msgid "moist"
 msgstr "humide"
 
-#: src/objnam.c:640
+#: src/objnam.c:641
 msgid "partly eaten"
 msgstr "entamé"
 
-#: src/objnam.c:640
+#: src/objnam.c:641
 msgid "partly used"
 msgstr "entamé"
 
-#: src/objnam.c:641
+#: src/objnam.c:642
 msgid "historic"
 msgstr "historique"
 
-#: src/objnam.c:641
+#: src/objnam.c:642
 msgid "medium"
 msgstr "moyen"
 
-#: src/objnam.c:641
+#: src/objnam.c:642
 msgid "next"
 msgstr "suivant"
 
-#: src/objnam.c:641
+#: src/objnam.c:642
 msgid "small"
 msgstr "petit"
 
-#: src/objnam.c:641
+#: src/objnam.c:642
 msgid "wet"
 msgstr "mouillé"
 
-#: src/objnam.c:642
+#: src/objnam.c:643
 msgid "burnt"
 msgstr "brûlé"
 
-#: src/objnam.c:642
+#: src/objnam.c:643
 msgid "cracked"
 msgstr "fissuré"
 
-#: src/objnam.c:642
+#: src/objnam.c:643
 msgid "large"
 msgstr "gros"
 
-#: src/objnam.c:642
+#: src/objnam.c:643
 msgid "rusty"
 msgstr "rouillé"
 
-#: src/objnam.c:642
+#: src/objnam.c:643
 msgid "very large"
 msgstr "très gros"
 
-#: src/objnam.c:643
+#: src/objnam.c:644
 msgid "corroded"
 msgstr "corrodé"
 
-#: src/objnam.c:643
+#: src/objnam.c:644
 msgid "fixed"
 msgstr "fixé"
 
-#: src/objnam.c:643
+#: src/objnam.c:644
 msgid "rotted"
 msgstr "pourri"
 
-#: src/objnam.c:643
+#: src/objnam.c:644
 msgid "rustproof"
 msgstr "inoxydable"
 
-#: src/objnam.c:644
+#: src/objnam.c:645
 msgid "corrodeproof"
 msgstr "anticorrosion"
 
-#: src/objnam.c:644
+#: src/objnam.c:645
 msgid "fireproof"
 msgstr "ignifugé"
 
-#: src/objnam.c:644
+#: src/objnam.c:645
 msgid "rotproof"
 msgstr "imputrescible"
 
-#: src/objnam.c:644
+#: src/objnam.c:645
 msgid "tempered"
 msgstr "trempé"
 
-#: src/objnam.c:645
+#: src/objnam.c:646
 #, c-format
 msgid " named %s"
 msgstr " nommé %s"
 
-#: src/objnam.c:645 src/objnam.c:906 src/objnam.c:913
+#: src/objnam.c:646 src/objnam.c:907 src/objnam.c:914
 msgid "thoroughly "
 msgstr "complètement "
 
-#: src/objnam.c:645 src/objnam.c:905 src/objnam.c:912
+#: src/objnam.c:646 src/objnam.c:906 src/objnam.c:913
 msgid "very "
 msgstr "très "
 
-#: src/objnam.c:646
+#: src/objnam.c:647
 #, c-format
 msgid "some %s"
 msgstr "des %s"
 
-#: src/objnam.c:647 src/objnam.c:1260
+#: src/objnam.c:648 src/objnam.c:1261
 #, c-format
 msgctxt "plural"
 msgid "a %s"
 msgstr "des %s"
 
-#: src/objnam.c:647 src/objnam.c:1252
+#: src/objnam.c:648 src/objnam.c:1253
 #, c-format
 msgctxt "plural"
 msgid "the %s"
 msgstr "les %s"
 
-#: src/objnam.c:648 src/objnam.c:1258
+#: src/objnam.c:649 src/objnam.c:1259
 #, c-format
 msgctxt "feminine plural"
 msgid "a %s"
 msgstr "des %s"
 
-#: src/objnam.c:648 src/objnam.c:1250
+#: src/objnam.c:649 src/objnam.c:1251
 #, c-format
 msgctxt "feminine plural"
 msgid "the %s"
 msgstr "les %s"
 
-#: src/objnam.c:649
+#: src/objnam.c:650
 #, c-format
 msgctxt "feminine"
 msgid "some %s"
 msgstr ""
 
-#: src/objnam.c:649 src/objnam.c:1516
+#: src/objnam.c:650 src/objnam.c:1517
 #, c-format
 msgctxt "plural"
 msgid "some %s"
 msgstr "des %s"
 
-#: src/objnam.c:650 src/objnam.c:1514
+#: src/objnam.c:651 src/objnam.c:1515
 #, c-format
 msgctxt "feminine plural"
 msgid "some %s"
 msgstr "des %s"
 
-#: src/objnam.c:651
+#: src/objnam.c:652
 #, c-format
 msgctxt "feminine"
 msgid " named %s"
 msgstr " nommée %s"
 
-#: src/objnam.c:651
+#: src/objnam.c:652
 #, c-format
 msgctxt "plural"
 msgid " named %s"
 msgstr " nommés %s"
 
-#: src/objnam.c:652
+#: src/objnam.c:653
 #, c-format
 msgctxt "feminine plural"
 msgid " named %s"
 msgstr " nommées %s"
 
-#: src/objnam.c:652
+#: src/objnam.c:653
 #, c-format
 msgctxt "feminine"
 msgid "%s called %s"
 msgstr "%s appelée %s"
 
-#: src/objnam.c:653
+#: src/objnam.c:654
 #, c-format
 msgctxt "feminine plural"
 msgid "%s called %s"
 msgstr "%s appelées %s"
 
-#: src/objnam.c:653
+#: src/objnam.c:654
 #, c-format
 msgctxt "plural"
 msgid "%s called %s"
 msgstr "%s appelés %s"
 
-#: src/objnam.c:654 src/objnam.c:3403
+#: src/objnam.c:655 src/objnam.c:1596 src/objnam.c:3459
 #, c-format
 msgctxt "plural"
 msgid "your %s"
 msgstr "vos %s"
 
-#: src/objnam.c:656
+#: src/objnam.c:657
 #, c-format
 msgctxt "feminine"
 msgid "blessed"
 msgstr "bénie"
 
-#: src/objnam.c:656
+#: src/objnam.c:657
 #, c-format
 msgctxt "feminine"
 msgid "uncursed"
 msgstr "non maudite"
 
-#: src/objnam.c:657
+#: src/objnam.c:658
 #, c-format
 msgctxt "feminine"
 msgid "cursed"
 msgstr "maudite"
 
-#: src/objnam.c:657
+#: src/objnam.c:658
 #, c-format
 msgctxt "feminine"
 msgid "empty"
 msgstr "vide"
 
-#: src/objnam.c:657
+#: src/objnam.c:658
 #, c-format
 msgctxt "feminine"
 msgid "trapped"
 msgstr "piégée"
 
-#: src/objnam.c:658
+#: src/objnam.c:659
 #, c-format
 msgctxt "feminine"
 msgid "broken"
 msgstr "cassée"
 
-#: src/objnam.c:658
+#: src/objnam.c:659
 #, c-format
 msgctxt "feminine"
 msgid "locked"
 msgstr "verrouillée"
 
-#: src/objnam.c:659
+#: src/objnam.c:660
 #, c-format
 msgctxt "feminine"
 msgid "greased"
 msgstr "graissée"
 
-#: src/objnam.c:659
+#: src/objnam.c:660
 #, c-format
 msgctxt "feminine"
 msgid "unlocked"
 msgstr "déverrouillée"
 
-#: src/objnam.c:660
+#: src/objnam.c:661
 #, c-format
 msgctxt "feminine"
 msgid "partly used"
 msgstr "entamée"
 
-#: src/objnam.c:660
+#: src/objnam.c:661
 #, c-format
 msgctxt "feminine"
 msgid "poisoned"
 msgstr "empoisonnée"
 
-#: src/objnam.c:661
+#: src/objnam.c:662
 #, c-format
 msgctxt "feminine"
 msgid "diluted"
 msgstr "diluée"
 
-#: src/objnam.c:661
+#: src/objnam.c:662
 #, c-format
 msgctxt "feminine"
 msgid "partly eaten"
 msgstr "entamée"
 
-#: src/objnam.c:662
+#: src/objnam.c:663
 #, c-format
 msgctxt "feminine"
 msgid "historic"
 msgstr "historique"
 
-#: src/objnam.c:662
+#: src/objnam.c:663
 #, c-format
 msgctxt "feminine"
 msgid "moist"
 msgstr "humide"
 
-#: src/objnam.c:662
+#: src/objnam.c:663
 #, c-format
 msgctxt "feminine"
 msgid "wet"
 msgstr "mouillée"
 
-#: src/objnam.c:663
+#: src/objnam.c:664
 #, c-format
 msgctxt "feminine"
 msgid "medium"
 msgstr "moyenne"
 
-#: src/objnam.c:663
+#: src/objnam.c:664
 #, c-format
 msgctxt "feminine"
 msgid "next"
 msgstr "suivante"
 
-#: src/objnam.c:663
+#: src/objnam.c:664
 #, c-format
 msgctxt "feminine"
 msgid "small"
 msgstr "petite"
 
-#: src/objnam.c:664
+#: src/objnam.c:665
 #, c-format
 msgctxt "feminine"
 msgid "large"
 msgstr "grosse"
 
-#: src/objnam.c:664
+#: src/objnam.c:665
 #, c-format
 msgctxt "feminine"
 msgid "very large"
 msgstr "très grosse"
 
-#: src/objnam.c:665
+#: src/objnam.c:666
 #, c-format
 msgctxt "feminine"
 msgid "burnt"
 msgstr "brûlée"
 
-#: src/objnam.c:665
+#: src/objnam.c:666
 #, c-format
 msgctxt "feminine"
 msgid "cracked"
 msgstr "fissurée"
 
-#: src/objnam.c:665
+#: src/objnam.c:666
 #, c-format
 msgctxt "feminine"
 msgid "rusty"
 msgstr "rouillée"
 
-#: src/objnam.c:666
+#: src/objnam.c:667
 #, c-format
 msgctxt "feminine"
 msgid "corroded"
 msgstr "corrodée"
 
-#: src/objnam.c:666
+#: src/objnam.c:667
 #, c-format
 msgctxt "feminine"
 msgid "rotted"
 msgstr "pourrie"
 
-#: src/objnam.c:667
+#: src/objnam.c:668
 #, c-format
 msgctxt "feminine"
 msgid "fixed"
 msgstr "fixée"
 
-#: src/objnam.c:667
+#: src/objnam.c:668
 #, c-format
 msgctxt "feminine"
 msgid "rustproof"
 msgstr "inoxydable"
 
-#: src/objnam.c:668
+#: src/objnam.c:669
 #, c-format
 msgctxt "feminine"
 msgid "corrodeproof"
 msgstr "anticorrosion"
 
-#: src/objnam.c:668
+#: src/objnam.c:669
 #, c-format
 msgctxt "feminine"
 msgid "fireproof"
 msgstr "ignifugée"
 
-#: src/objnam.c:669
+#: src/objnam.c:670
 #, c-format
 msgctxt "feminine"
 msgid "rotproof"
 msgstr "imputrescible"
 
-#: src/objnam.c:669
+#: src/objnam.c:670
 #, c-format
 msgctxt "feminine"
 msgid "tempered"
 msgstr "trempée"
 
-#: src/objnam.c:671
+#: src/objnam.c:672
 msgctxt "object"
 msgid "amulet"
 msgid_plural "amulets"
 msgstr[0] "amulette"
 msgstr[1] "amulettes"
 
-#: src/objnam.c:672
+#: src/objnam.c:673
 #, c-format
 msgctxt "object"
 msgid "%s amulet"
@@ -21175,7 +21778,7 @@ msgid_plural "%s amulets"
 msgstr[0] "amulette %s"
 msgstr[1] "amulettes %s"
 
-#: src/objnam.c:673
+#: src/objnam.c:674
 #, c-format
 msgctxt "object"
 msgid "pair of %s"
@@ -21183,7 +21786,7 @@ msgid_plural "pairs of %s"
 msgstr[0] "paire de %s"
 msgstr[1] "paires de %s"
 
-#: src/objnam.c:674
+#: src/objnam.c:675
 #, c-format
 msgctxt "object"
 msgid "set of %s"
@@ -21191,35 +21794,35 @@ msgid_plural "sets of %s"
 msgstr[0] "jeu de %s"
 msgstr[1] "jeux de %s"
 
-#: src/objnam.c:675
+#: src/objnam.c:676
 msgctxt "object"
 msgid "shield"
 msgid_plural "shields"
 msgstr[0] "bouclier"
 msgstr[1] "boucliers"
 
-#: src/objnam.c:676
+#: src/objnam.c:677
 msgctxt "object"
 msgid "smooth shield"
 msgid_plural "smooth shields"
 msgstr[0] "bouclier lisse"
 msgstr[1] "boucliers lisses"
 
-#: src/objnam.c:677
+#: src/objnam.c:678
 msgctxt "object"
 msgid "tin of spinach"
 msgid_plural "tins of spinach"
 msgstr[0] "boîte d'épinards"
 msgstr[1] "boîtes d'épinards"
 
-#: src/objnam.c:678
+#: src/objnam.c:679
 msgctxt "object"
 msgid "empty tin"
 msgid_plural "empty tins"
 msgstr[0] "boîte vide"
 msgstr[1] "boîtes vides"
 
-#: src/objnam.c:679
+#: src/objnam.c:680
 #, c-format
 msgctxt "object"
 msgid "tin of %s"
@@ -21227,7 +21830,7 @@ msgid_plural "tins of %s"
 msgstr[0] "boîte de %s"
 msgstr[1] "boîtes de %s"
 
-#: src/objnam.c:680
+#: src/objnam.c:681
 #, c-format
 msgctxt "object"
 msgid "tin of %s meat"
@@ -21235,7 +21838,7 @@ msgid_plural "tins of %s meat"
 msgstr[0] "boîte de viande de %s"
 msgstr[1] "boîtes de viande de %s"
 
-#: src/objnam.c:681
+#: src/objnam.c:682
 #, c-format
 msgctxt "object"
 msgid "statue of %s"
@@ -21243,28 +21846,28 @@ msgid_plural "statues of %s"
 msgstr[0] "statue de %s"
 msgstr[1] "statues de %s"
 
-#: src/objnam.c:682
+#: src/objnam.c:683
 msgctxt "object"
 msgid "heavy iron ball"
 msgid_plural "heavy iron balls"
 msgstr[0] "lourd boulet de fer"
 msgstr[1] "lourds boulets de fer"
 
-#: src/objnam.c:683
+#: src/objnam.c:684
 msgctxt "object"
 msgid "very heavy iron ball"
 msgid_plural "very heavy iron balls"
 msgstr[0] "très lourd boulet de fer"
 msgstr[1] "très lourds boulets de fer"
 
-#: src/objnam.c:684
+#: src/objnam.c:685
 msgctxt "object"
 msgid "potion"
 msgid_plural "potions"
 msgstr[0] "potion"
 msgstr[1] "potions"
 
-#: src/objnam.c:685
+#: src/objnam.c:686
 #, c-format
 msgctxt "object"
 msgid "potion of %s"
@@ -21272,21 +21875,21 @@ msgid_plural "potions of %s"
 msgstr[0] "potion de %s"
 msgstr[1] "potions de %s"
 
-#: src/objnam.c:686
+#: src/objnam.c:687
 msgctxt "object"
 msgid "holy water"
 msgid_plural "holy water"
 msgstr[0] "eau bénite"
 msgstr[1] "eaux bénites"
 
-#: src/objnam.c:687
+#: src/objnam.c:688
 msgctxt "object"
 msgid "unholy water"
 msgid_plural "unholy water"
 msgstr[0] "eau maudite"
 msgstr[1] "eaux maudites"
 
-#: src/objnam.c:688
+#: src/objnam.c:689
 #, c-format
 msgctxt "object"
 msgid "%s potion"
@@ -21294,14 +21897,14 @@ msgid_plural "%s potions"
 msgstr[0] "potion %s"
 msgstr[1] "potions %s"
 
-#: src/objnam.c:689
+#: src/objnam.c:690
 msgctxt "object"
 msgid "scroll"
 msgid_plural "scrolls"
 msgstr[0] "parchemin"
 msgstr[1] "parchemins"
 
-#: src/objnam.c:690
+#: src/objnam.c:691
 #, c-format
 msgctxt "object"
 msgid "scroll of %s"
@@ -21309,7 +21912,7 @@ msgid_plural "scrolls of %s"
 msgstr[0] "parchemin de %s"
 msgstr[1] "parchemins de %s"
 
-#: src/objnam.c:691
+#: src/objnam.c:692
 #, c-format
 msgctxt "object"
 msgid "scroll labeled %s"
@@ -21317,7 +21920,7 @@ msgid_plural "scrolls labeled %s"
 msgstr[0] "parchemin intitulé %s"
 msgstr[1] "parchemins intitulés %s"
 
-#: src/objnam.c:692
+#: src/objnam.c:693
 #, c-format
 msgctxt "object"
 msgid "%s scroll"
@@ -21325,14 +21928,14 @@ msgid_plural "%s scrolls"
 msgstr[0] "parchemin %s"
 msgstr[1] "parchemins %s"
 
-#: src/objnam.c:692
+#: src/objnam.c:693
 msgctxt "object"
 msgid "wand"
 msgid_plural "wands"
 msgstr[0] "baguette"
 msgstr[1] "baguettes"
 
-#: src/objnam.c:693
+#: src/objnam.c:694
 #, c-format
 msgctxt "object"
 msgid "wand of %s"
@@ -21340,7 +21943,7 @@ msgid_plural "wands of %s"
 msgstr[0] "baguette de %s"
 msgstr[1] "baguettes de %s"
 
-#: src/objnam.c:694
+#: src/objnam.c:695
 #, c-format
 msgctxt "object"
 msgid "%s wand"
@@ -21348,14 +21951,14 @@ msgid_plural "%s wands"
 msgstr[0] "baguette %s"
 msgstr[1] "baguettes %s"
 
-#: src/objnam.c:694
+#: src/objnam.c:695
 msgctxt "object"
 msgid "book"
 msgid_plural "books"
 msgstr[0] "livre"
 msgstr[1] "livres"
 
-#: src/objnam.c:695
+#: src/objnam.c:696
 #, c-format
 msgctxt "object"
 msgid "%s book"
@@ -21363,21 +21966,21 @@ msgid_plural "%s books"
 msgstr[0] "livre %s"
 msgstr[1] "livres %s"
 
-#: src/objnam.c:695
+#: src/objnam.c:696
 msgctxt "object"
 msgid "novel"
 msgid_plural "novels"
 msgstr[0] "roman"
 msgstr[1] "romans"
 
-#: src/objnam.c:696
+#: src/objnam.c:697
 msgctxt "object"
 msgid "spellbook"
 msgid_plural "spellbooks"
 msgstr[0] "livre de sorts"
 msgstr[1] "livres de sorts"
 
-#: src/objnam.c:697
+#: src/objnam.c:698
 #, c-format
 msgctxt "object"
 msgid "spellbook of %s"
@@ -21385,7 +21988,7 @@ msgid_plural "spellbooks of %s"
 msgstr[0] "livre de sorts de %s"
 msgstr[1] "livres de sorts de %s"
 
-#: src/objnam.c:698
+#: src/objnam.c:699
 #, c-format
 msgctxt "object"
 msgid "%s spellbook"
@@ -21393,14 +21996,14 @@ msgid_plural "%s spellbooks"
 msgstr[0] "livre de sorts %s"
 msgstr[1] "livres de sorts %s"
 
-#: src/objnam.c:699
+#: src/objnam.c:700
 msgctxt "object"
 msgid "ring"
 msgid_plural "rings"
 msgstr[0] "anneau"
 msgstr[1] "anneaux"
 
-#: src/objnam.c:699
+#: src/objnam.c:700
 #, c-format
 msgctxt "object"
 msgid "ring of %s"
@@ -21408,7 +22011,7 @@ msgid_plural "rings of %s"
 msgstr[0] "anneau de %s"
 msgstr[1] "anneaux de %s"
 
-#: src/objnam.c:700
+#: src/objnam.c:701
 #, c-format
 msgctxt "object"
 msgid "%s ring"
@@ -21416,14 +22019,14 @@ msgid_plural "%s rings"
 msgstr[0] "anneau %s"
 msgstr[1] "anneaux %s"
 
-#: src/objnam.c:700
+#: src/objnam.c:701
 msgctxt "object"
 msgid "stone"
 msgid_plural "stones"
 msgstr[0] "pierre"
 msgstr[1] "pierres"
 
-#: src/objnam.c:701
+#: src/objnam.c:702
 #, c-format
 msgctxt "object"
 msgid "%s stone"
@@ -21431,14 +22034,14 @@ msgid_plural "%s stones"
 msgstr[0] "pierre %s"
 msgstr[1] "pierres %s"
 
-#: src/objnam.c:701
+#: src/objnam.c:702
 msgctxt "object"
 msgid "gem"
 msgid_plural "gems"
 msgstr[0] "gemme"
 msgstr[1] "gemmes"
 
-#: src/objnam.c:702
+#: src/objnam.c:703
 #, c-format
 msgctxt "object"
 msgid "%s gem"
@@ -21446,7 +22049,7 @@ msgid_plural "%s gems"
 msgstr[0] "gemme %s"
 msgstr[1] "gemmes %s"
 
-#: src/objnam.c:703
+#: src/objnam.c:704
 #, c-format
 msgctxt "object"
 msgid "%s corpse"
@@ -21454,147 +22057,147 @@ msgid_plural "%s corpses"
 msgstr[0] "cadavre de %s"
 msgstr[1] "cadavres de %s"
 
-#: src/objnam.c:704
+#: src/objnam.c:705
 msgctxt "object"
 msgid "object?"
 msgid_plural "objects?"
 msgstr[0] "objet ?"
 msgstr[1] "objets ?"
 
-#: src/objnam.c:706
+#: src/objnam.c:707
 msgid " (being worn)"
 msgstr " (porté)"
 
-#: src/objnam.c:706
+#: src/objnam.c:707
 msgid " (embedded in your skin)"
 msgstr " (incrusté dans votre peau)"
 
-#: src/objnam.c:706
+#: src/objnam.c:707
 msgid " (lit)"
 msgstr " (allumé)"
 
-#: src/objnam.c:707
+#: src/objnam.c:708
 msgid " (at the ready)"
 msgstr " (prêt)"
 
-#: src/objnam.c:707
+#: src/objnam.c:708
 #, c-format
 msgid " (unpaid, %ld %s)"
 msgstr " (impayé, %ld %s)"
 
-#: src/objnam.c:707
+#: src/objnam.c:708
 msgid " (wielded)"
 msgstr " (manié)"
 
-#: src/objnam.c:708
+#: src/objnam.c:709
 #, c-format
 msgctxt "feminine"
 msgid " (being worn)"
 msgstr " (portée)"
 
-#: src/objnam.c:709
+#: src/objnam.c:710
 #, c-format
 msgctxt "plural"
 msgid " (being worn)"
 msgstr " (portés)"
 
-#: src/objnam.c:710
+#: src/objnam.c:711
 #, c-format
 msgctxt "feminine plural"
 msgid " (being worn)"
 msgstr " (portées)"
 
-#: src/objnam.c:711
+#: src/objnam.c:712
 #, c-format
 msgctxt "feminine"
 msgid " (embedded in your skin)"
 msgstr " (incrustée dans votre peau)"
 
-#: src/objnam.c:712
+#: src/objnam.c:713
 #, c-format
 msgctxt "plural"
 msgid " (embedded in your skin)"
 msgstr " (incrustés dans votre peau)"
 
-#: src/objnam.c:713
+#: src/objnam.c:714
 #, c-format
 msgctxt "feminine plural"
 msgid " (embedded in your skin)"
 msgstr " (incrustées dans votre peau)"
 
-#: src/objnam.c:714
+#: src/objnam.c:715
 #, c-format
 msgctxt "feminine"
 msgid " (lit)"
 msgstr " (allumée)"
 
-#: src/objnam.c:715
+#: src/objnam.c:716
 #, c-format
 msgctxt "plural"
 msgid " (lit)"
 msgstr " (allumés)"
 
-#: src/objnam.c:716
+#: src/objnam.c:717
 #, c-format
 msgctxt "feminine plural"
 msgid " (lit)"
 msgstr " (allumées)"
 
-#: src/objnam.c:717
+#: src/objnam.c:718
 #, c-format
 msgctxt "feminine"
 msgid " (wielded)"
 msgstr " (maniée)"
 
-#: src/objnam.c:718
+#: src/objnam.c:719
 #, c-format
 msgctxt "plural"
 msgid " (wielded)"
 msgstr " (maniés)"
 
-#: src/objnam.c:719
+#: src/objnam.c:720
 #, c-format
 msgctxt "feminine plural"
 msgid " (wielded)"
 msgstr " (maniées)"
 
-#: src/objnam.c:720
+#: src/objnam.c:721
 #, c-format
 msgctxt "feminine"
 msgid " (at the ready)"
 msgstr " (prête)"
 
-#: src/objnam.c:721
+#: src/objnam.c:722
 #, c-format
 msgctxt "plural"
 msgid " (at the ready)"
 msgstr " (prêts)"
 
-#: src/objnam.c:722
+#: src/objnam.c:723
 #, c-format
 msgctxt "feminine plural"
 msgid " (at the ready)"
 msgstr " (prêtes)"
 
-#: src/objnam.c:723
+#: src/objnam.c:724
 #, c-format
 msgctxt "feminine"
 msgid " (unpaid, %ld %s)"
 msgstr " (impayée, %ld %s)"
 
-#: src/objnam.c:724
+#: src/objnam.c:725
 #, c-format
 msgctxt "plural"
 msgid " (unpaid, %ld %s)"
 msgstr " (impayés, %ld %s)"
 
-#: src/objnam.c:725
+#: src/objnam.c:726
 #, c-format
 msgctxt "feminine plural"
 msgid " (unpaid, %ld %s)"
 msgstr " (impayées, %ld %s)"
 
-#: src/objnam.c:726
+#: src/objnam.c:727
 #, c-format
 msgctxt "object-elided"
 msgid "potion of %s"
@@ -21602,7 +22205,7 @@ msgid_plural "potions of %s"
 msgstr[0] "potion d'%s"
 msgstr[1] "potions d'%s"
 
-#: src/objnam.c:727
+#: src/objnam.c:728
 #, c-format
 msgctxt "object-elided"
 msgid "scroll of %s"
@@ -21610,7 +22213,7 @@ msgid_plural "scrolls of %s"
 msgstr[0] "parchemin d'%s"
 msgstr[1] "parchemins d'%s"
 
-#: src/objnam.c:728
+#: src/objnam.c:729
 #, c-format
 msgctxt "object-elided"
 msgid "wand of %s"
@@ -21618,7 +22221,7 @@ msgid_plural "wands of %s"
 msgstr[0] "baguette d'%s"
 msgstr[1] "baguettes d'%s"
 
-#: src/objnam.c:729
+#: src/objnam.c:730
 #, c-format
 msgctxt "object-elided"
 msgid "ring of %s"
@@ -21626,7 +22229,7 @@ msgid_plural "rings of %s"
 msgstr[0] "anneau d'%s"
 msgstr[1] "anneaux d'%s"
 
-#: src/objnam.c:730
+#: src/objnam.c:731
 #, c-format
 msgctxt "object-elided"
 msgid "spellbook of %s"
@@ -21634,7 +22237,7 @@ msgid_plural "spellbooks of %s"
 msgstr[0] "livre de sorts d'%s"
 msgstr[1] "livres de sorts d'%s"
 
-#: src/objnam.c:731
+#: src/objnam.c:732
 #, c-format
 msgctxt "object-elided"
 msgid "tin of %s"
@@ -21642,7 +22245,7 @@ msgid_plural "tins of %s"
 msgstr[0] "boîte d'%s"
 msgstr[1] "boîtes d'%s"
 
-#: src/objnam.c:732
+#: src/objnam.c:733
 #, c-format
 msgctxt "object-elided"
 msgid "tin of %s meat"
@@ -21650,7 +22253,7 @@ msgid_plural "tins of %s meat"
 msgstr[0] "boîte de viande d'%s"
 msgstr[1] "boîtes de viande d'%s"
 
-#: src/objnam.c:733
+#: src/objnam.c:734
 #, c-format
 msgctxt "object-elided"
 msgid "statue of %s"
@@ -21658,7 +22261,7 @@ msgid_plural "statues of %s"
 msgstr[0] "statue d'%s"
 msgstr[1] "statues d'%s"
 
-#: src/objnam.c:734
+#: src/objnam.c:735
 #, c-format
 msgctxt "object-elided"
 msgid "set of %s"
@@ -21666,7 +22269,7 @@ msgid_plural "sets of %s"
 msgstr[0] "jeu d'%s"
 msgstr[1] "jeux d'%s"
 
-#: src/objnam.c:735
+#: src/objnam.c:736
 #, c-format
 msgctxt "object-elided"
 msgid "pair of %s"
@@ -21674,7 +22277,7 @@ msgid_plural "pairs of %s"
 msgstr[0] "paire d'%s"
 msgstr[1] "paires d'%s"
 
-#: src/objnam.c:736
+#: src/objnam.c:737
 #, c-format
 msgctxt "object-elided"
 msgid "%s corpse"
@@ -21682,436 +22285,436 @@ msgid_plural "%s corpses"
 msgstr[0] "cadavre d'%s"
 msgstr[1] "cadavres d'%s"
 
-#: src/objnam.c:737 src/objnam.c:1212 src/objnam.c:1396
+#: src/objnam.c:738 src/objnam.c:1213 src/objnam.c:1397
 #, c-format
 msgctxt "elided"
 msgid " of %s"
 msgstr " d'%s"
 
-#: src/objnam.c:739
+#: src/objnam.c:740
 msgctxt "objgender"
 msgid "amulet"
-msgstr "f"
-
-#: src/objnam.c:740
-#, no-c-format
-msgctxt "objgender"
-msgid "%s amulet"
 msgstr "f"
 
 #: src/objnam.c:741
 #, no-c-format
 msgctxt "objgender"
-msgid "pair of %s"
+msgid "%s amulet"
 msgstr "f"
 
 #: src/objnam.c:742
 #, no-c-format
 msgctxt "objgender"
-msgid "set of %s"
-msgstr ""
+msgid "pair of %s"
+msgstr "f"
 
 #: src/objnam.c:743
+#, no-c-format
 msgctxt "objgender"
-msgid "shield"
+msgid "set of %s"
 msgstr ""
 
 #: src/objnam.c:744
 msgctxt "objgender"
-msgid "smooth shield"
+msgid "shield"
 msgstr ""
 
 #: src/objnam.c:745
 msgctxt "objgender"
-msgid "tin of spinach"
-msgstr "f"
+msgid "smooth shield"
+msgstr ""
 
 #: src/objnam.c:746
 msgctxt "objgender"
-msgid "empty tin"
+msgid "tin of spinach"
 msgstr "f"
 
 #: src/objnam.c:747
-#, no-c-format
 msgctxt "objgender"
-msgid "tin of %s"
+msgid "empty tin"
 msgstr "f"
 
 #: src/objnam.c:748
 #, no-c-format
 msgctxt "objgender"
-msgid "tin of %s meat"
+msgid "tin of %s"
 msgstr "f"
 
 #: src/objnam.c:749
 #, no-c-format
 msgctxt "objgender"
-msgid "statue of %s"
+msgid "tin of %s meat"
 msgstr "f"
 
 #: src/objnam.c:750
+#, no-c-format
+msgctxt "objgender"
+msgid "statue of %s"
+msgstr "f"
+
+#: src/objnam.c:751
 msgctxt "objgender"
 msgid "heavy iron ball"
 msgstr ""
 
-#: src/objnam.c:751
+#: src/objnam.c:752
 msgctxt "objgender"
 msgid "very heavy iron ball"
 msgstr ""
 
-#: src/objnam.c:752
+#: src/objnam.c:753
 msgctxt "objgender"
 msgid "potion"
 msgstr "f"
 
-#: src/objnam.c:753
+#: src/objnam.c:754
 #, no-c-format
 msgctxt "objgender"
 msgid "potion of %s"
 msgstr "f"
 
-#: src/objnam.c:754
+#: src/objnam.c:755
 msgctxt "objgender"
 msgid "holy water"
 msgstr ""
 
-#: src/objnam.c:755
+#: src/objnam.c:756
 msgctxt "objgender"
 msgid "unholy water"
 msgstr ""
 
-#: src/objnam.c:756
+#: src/objnam.c:757
 #, no-c-format
 msgctxt "objgender"
 msgid "%s potion"
 msgstr "f"
 
-#: src/objnam.c:757
+#: src/objnam.c:758
 msgctxt "objgender"
 msgid "scroll"
-msgstr ""
-
-#: src/objnam.c:758
-#, no-c-format
-msgctxt "objgender"
-msgid "scroll of %s"
 msgstr ""
 
 #: src/objnam.c:759
 #, no-c-format
 msgctxt "objgender"
-msgid "scroll labeled %s"
+msgid "scroll of %s"
 msgstr ""
 
 #: src/objnam.c:760
 #, no-c-format
 msgctxt "objgender"
-msgid "%s scroll"
+msgid "scroll labeled %s"
 msgstr ""
 
 #: src/objnam.c:761
-msgctxt "objgender"
-msgid "wand"
-msgstr "f"
-
-#: src/objnam.c:762
 #, no-c-format
 msgctxt "objgender"
-msgid "wand of %s"
+msgid "%s scroll"
+msgstr ""
+
+#: src/objnam.c:762
+msgctxt "objgender"
+msgid "wand"
 msgstr "f"
 
 #: src/objnam.c:763
 #, no-c-format
 msgctxt "objgender"
-msgid "%s wand"
+msgid "wand of %s"
 msgstr "f"
 
 #: src/objnam.c:764
+#, no-c-format
+msgctxt "objgender"
+msgid "%s wand"
+msgstr "f"
+
+#: src/objnam.c:765
 msgctxt "objgender"
 msgid "book"
 msgstr ""
 
-#: src/objnam.c:765
+#: src/objnam.c:766
 msgctxt "objgender"
 msgid "novel"
 msgstr ""
 
-#: src/objnam.c:766
+#: src/objnam.c:767
 #, no-c-format
 msgctxt "objgender"
 msgid "%s book"
 msgstr ""
 
-#: src/objnam.c:767
+#: src/objnam.c:768
 msgctxt "objgender"
 msgid "spellbook"
-msgstr ""
-
-#: src/objnam.c:768
-#, no-c-format
-msgctxt "objgender"
-msgid "spellbook of %s"
 msgstr ""
 
 #: src/objnam.c:769
 #, no-c-format
 msgctxt "objgender"
-msgid "%s spellbook"
+msgid "spellbook of %s"
 msgstr ""
 
 #: src/objnam.c:770
+#, no-c-format
 msgctxt "objgender"
-msgid "ring"
+msgid "%s spellbook"
 msgstr ""
 
 #: src/objnam.c:771
-#, no-c-format
 msgctxt "objgender"
-msgid "ring of %s"
+msgid "ring"
 msgstr ""
 
 #: src/objnam.c:772
 #, no-c-format
 msgctxt "objgender"
-msgid "%s ring"
+msgid "ring of %s"
 msgstr ""
 
 #: src/objnam.c:773
+#, no-c-format
+msgctxt "objgender"
+msgid "%s ring"
+msgstr ""
+
+#: src/objnam.c:774
 msgctxt "objgender"
 msgid "stone"
 msgstr "f"
 
-#: src/objnam.c:774
+#: src/objnam.c:775
 msgctxt "objgender"
 msgid "gem"
-msgstr "f"
-
-#: src/objnam.c:775
-#, no-c-format
-msgctxt "objgender"
-msgid "%s stone"
 msgstr "f"
 
 #: src/objnam.c:776
 #, no-c-format
 msgctxt "objgender"
-msgid "%s gem"
+msgid "%s stone"
 msgstr "f"
 
 #: src/objnam.c:777
 #, no-c-format
 msgctxt "objgender"
+msgid "%s gem"
+msgstr "f"
+
+#: src/objnam.c:778
+#, no-c-format
+msgctxt "objgender"
 msgid "%s corpse"
 msgstr ""
 
-#: src/objnam.c:778
+#: src/objnam.c:779
 msgctxt "objgender"
 msgid "object?"
 msgstr ""
 
-#: src/objnam.c:1213 src/objnam.c:1397
+#: src/objnam.c:1214 src/objnam.c:1398
 #, c-format
 msgid " of %s"
 msgstr " de %s"
 
-#: src/objnam.c:1301 src/objnam.c:1551
+#: src/objnam.c:1302 src/objnam.c:1552
 msgid "thing"
 msgstr "chose"
 
-#: src/objnam.c:1389
+#: src/objnam.c:1390
 #, c-format
 msgid " containing %ld item%s"
 msgstr " contenant %ld objet%s"
 
-#: src/objnam.c:1399
+#: src/objnam.c:1400
 msgid " (laid by you)"
 msgstr " (pondu par vous)"
 
-#: src/objnam.c:1407
+#: src/objnam.c:1408
 msgid " (being doffed)"
 msgstr " (en train d'être retiré)"
 
-#: src/objnam.c:1408
+#: src/objnam.c:1409
 msgid " (being donned)"
 msgstr " (en train d'être mis)"
 
-#: src/objnam.c:1414
+#: src/objnam.c:1415
 #, c-format
 msgid " (attached to %s)"
 msgstr " (attaché à %s)"
 
-#: src/objnam.c:1417
+#: src/objnam.c:1418
 #, c-format
 msgid " (%d of 7 candles, lit)"
 msgstr " (%d bougies sur 7, allumé)"
 
-#: src/objnam.c:1418
+#: src/objnam.c:1419
 #, c-format
 msgid " (%d of 7 candles attached)"
 msgstr " (%d bougies sur 7 fixées)"
 
-#: src/objnam.c:1430
+#: src/objnam.c:1431
 msgid " (on right hand)"
 msgstr " (à la main droite)"
 
-#: src/objnam.c:1432
+#: src/objnam.c:1433
 msgid " (on left hand)"
 msgstr " (à la main gauche)"
 
-#: src/objnam.c:1434
+#: src/objnam.c:1435
 msgid " (chained to you)"
 msgstr " (enchaîné à vous)"
 
-#: src/objnam.c:1435
+#: src/objnam.c:1436
 msgid " (attached to you)"
 msgstr " (attaché à vous)"
 
-#: src/objnam.c:1447
+#: src/objnam.c:1448
 msgid " (tethered to hands)"
 msgstr " (attaché aux mains)"
 
-#: src/objnam.c:1448
+#: src/objnam.c:1449
 msgid " (wielded in hands)"
 msgstr " (manié à deux mains)"
 
-#: src/objnam.c:1449
+#: src/objnam.c:1450
 msgid " (weapon in hands)"
 msgstr " (arme en main)"
 
-#: src/objnam.c:1451
+#: src/objnam.c:1452
 msgid " (tethered to right hand)"
 msgstr " (attaché à la main droite)"
 
-#: src/objnam.c:1452 src/objnam.c:1462
+#: src/objnam.c:1453 src/objnam.c:1463
 msgid " (wielded in right hand)"
 msgstr " (manié de la main droite)"
 
-#: src/objnam.c:1453
+#: src/objnam.c:1454
 msgid " (weapon in right hand)"
 msgstr " (arme en main droite)"
 
-#: src/objnam.c:1455
+#: src/objnam.c:1456
 msgid " (tethered to left hand)"
 msgstr " (attaché à la main gauche)"
 
-#: src/objnam.c:1456 src/objnam.c:1461
+#: src/objnam.c:1457 src/objnam.c:1462
 msgid " (wielded in left hand)"
 msgstr " (manié de la main gauche)"
 
-#: src/objnam.c:1457
+#: src/objnam.c:1458
 msgid " (weapon in left hand)"
 msgstr " (arme en main gauche)"
 
-#: src/objnam.c:1460
+#: src/objnam.c:1461
 msgid " (alternate weapon; not wielded)"
 msgstr " (arme de rechange ; non maniée)"
 
-#: src/objnam.c:1482
+#: src/objnam.c:1483
 msgid " (in quiver)"
 msgstr " (dans le carquois)"
 
-#: src/objnam.c:1483
+#: src/objnam.c:1484
 msgid " (in quiver pouch)"
 msgstr " (dans la pochette)"
 
-#: src/objnam.c:1492 src/objnam.c:1500
+#: src/objnam.c:1493 src/objnam.c:1501
 #, c-format
 msgid " (contents, %ld %s)"
 msgstr " (contenu, %ld %s)"
 
-#: src/objnam.c:1501
+#: src/objnam.c:1502
 #, c-format
 msgid " (for sale, %ld %s)"
 msgstr " (à vendre, %ld %s)"
 
-#: src/objnam.c:1505
+#: src/objnam.c:1506
 msgid " (no charge)"
 msgstr " (gratuit)"
 
-#: src/objnam.c:4626
+#: src/objnam.c:4696
 #, c-format
 msgid "Creation of %s failed."
 msgstr ""
 
-#: src/objnam.c:4643
+#: src/objnam.c:4713
 #, c-format
 msgid "A %sfountain."
 msgstr ""
 
-#: src/objnam.c:4648
+#: src/objnam.c:4718
 msgid "A throne."
 msgstr "Un trône."
 
-#: src/objnam.c:4655
+#: src/objnam.c:4725
 msgid "A sink."
 msgstr "Un évier."
 
-#: src/objnam.c:4704
+#: src/objnam.c:4774
 #, c-format
 msgid "A %s of molten lava."
 msgstr ""
 
-#: src/objnam.c:4751
+#: src/objnam.c:4821
 #, c-format
 msgid "%s altar."
 msgstr ""
 
-#: src/objnam.c:4759
+#: src/objnam.c:4829
 #, c-format
 msgid "A %sgrave."
 msgstr ""
 
-#: src/objnam.c:4762
+#: src/objnam.c:4832
 msgid "Can't place a grave here."
 msgstr ""
 
-#: src/objnam.c:4769
+#: src/objnam.c:4839
 msgid "A tree."
 msgstr "Un arbre."
 
-#: src/objnam.c:4779
+#: src/objnam.c:4849
 msgid "Iron bars."
 msgstr "Des barreaux de fer."
 
-#: src/objnam.c:4784
+#: src/objnam.c:4854
 msgid "A cloud."
 msgstr "Un nuage."
 
-#: src/objnam.c:4866
+#: src/objnam.c:4936
 #, c-format
 msgid "%s requires door or wall location."
 msgstr ""
 
-#: src/objnam.c:4882
+#: src/objnam.c:4952
 msgid "A wall."
 msgstr "Un mur."
 
-#: src/objnam.c:4887
+#: src/objnam.c:4957
 msgid "Secret corridor."
 msgstr "Couloir secret."
 
-#: src/objnam.c:4890
+#: src/objnam.c:4960
 msgid "Secret corridor requires corridor location."
 msgstr ""
 
-#: src/objnam.c:4902
+#: src/objnam.c:4972
 msgid "Room floor."
 msgstr "Sol de la pièce."
 
-#: src/objnam.c:4914
+#: src/objnam.c:4984
 msgid "Room|floor|ground not allowed here."
 msgstr ""
 
-#: src/objnam.c:4971
+#: src/objnam.c:5041
 #, c-format
 msgid "%s %s the drawbridge."
 msgstr ""
 
-#: src/objnam.c:6112
+#: src/objnam.c:6182
 msgid "Override glob weight limit?"
 msgstr ""
 
-#: src/objnam.c:6425
+#: src/objnam.c:6495
 #, c-format
 msgid "For a moment, you feel %s in your %s, but it disappears!"
 msgstr ""
@@ -22354,321 +22957,316 @@ msgstr ""
 msgid "You are physically incapable of picking anything up."
 msgstr "Vous êtes physiquement incapable de ramasser quoi que ce soit."
 
-#: src/pickup.c:827
-#, c-format
-msgid "There are %s objects here."
-msgstr ""
-
-#: src/pickup.c:1187
+#: src/pickup.c:1190
 msgid "You can't pick yourself up!"
 msgstr "Vous ne pouvez pas vous ramasser vous-même !"
 
-#: src/pickup.c:1191 src/pickup.c:1829
+#: src/pickup.c:1194 src/pickup.c:1832
 #, c-format
 msgid "You can't pick %s up."
 msgstr ""
 
-#: src/pickup.c:1470
+#: src/pickup.c:1473
 msgid "Really autoselect All?"
 msgstr "Vraiment tout sélectionner automatiquement ?"
 
-#: src/pickup.c:1506
+#: src/pickup.c:1509
 msgid "No relevant items selected."
 msgstr "Aucun objet concerné sélectionné."
 
-#: src/pickup.c:1684
+#: src/pickup.c:1687
 #, c-format
 msgid "You can only %s %s of the %s %s."
 msgstr ""
 
-#: src/pickup.c:1701
+#: src/pickup.c:1704
 #, c-format
 msgid "There %s %s %s, but %s%s%s%s."
 msgstr ""
 
-#: src/pickup.c:1719
+#: src/pickup.c:1722
 #, c-format
 msgid "You cannot get your %s around this %s."
 msgstr ""
 
-#: src/pickup.c:1736
+#: src/pickup.c:1739
 #, c-format
 msgid "You are carrying too much stuff to pick up %s %s."
 msgstr ""
 
-#: src/pickup.c:1754
+#: src/pickup.c:1757
 #, c-format
 msgid "Your knapsack cannot accommodate any more items%s."
 msgstr ""
 
-#: src/pickup.c:1859
+#: src/pickup.c:1862
 #, c-format
 msgid "The scroll%s %s to dust as you %s %s up."
 msgstr ""
 
-#: src/pickup.c:1990
+#: src/pickup.c:1993
 msgid "Your movements are slowed slightly because of your load."
 msgstr "Votre charge ralentit légèrement vos mouvements."
 
-#: src/pickup.c:1993
+#: src/pickup.c:1996
 msgid "You rebalance your load.  Movement is difficult."
 msgstr "Vous rééquilibrez votre charge. Vous bougez difficilement."
 
-#: src/pickup.c:1996
+#: src/pickup.c:1999
 #, c-format
 msgid "You %s under your heavy load.  Movement is very hard."
 msgstr ""
 
-#: src/pickup.c:2000
+#: src/pickup.c:2003
 #, c-format
 msgid "You %s move a handspan with this load!"
 msgstr ""
 
-#: src/pickup.c:2008
+#: src/pickup.c:2011
 msgid "Your movements are now unencumbered."
 msgstr "Vos mouvements ne sont plus entravés."
 
-#: src/pickup.c:2011
+#: src/pickup.c:2014
 msgid "Your movements are only slowed slightly by your load."
 msgstr "Votre charge ne ralentit plus que légèrement vos mouvements."
 
-#: src/pickup.c:2014
+#: src/pickup.c:2017
 msgid "You rebalance your load.  Movement is still difficult."
 msgstr "Vous rééquilibrez votre charge. Vous bougez encore difficilement."
 
-#: src/pickup.c:2017
+#: src/pickup.c:2020
 #, c-format
 msgid "You %s under your load.  Movement is still very hard."
 msgstr ""
 
-#: src/pickup.c:2062
+#: src/pickup.c:2065
 #, c-format
 msgid "You cannot %s things that are deep in the %s."
 msgstr ""
 
-#: src/pickup.c:2066
+#: src/pickup.c:2069
 #, c-format
 msgid "Without limbs, you cannot %s anything."
 msgstr ""
 
-#: src/pickup.c:2069
+#: src/pickup.c:2072
 #, c-format
 msgid "Without a free %s, you cannot loot anything."
 msgstr ""
 
-#: src/pickup.c:2107 src/pickup.c:3002
+#: src/pickup.c:2110 src/pickup.c:3005
 #, c-format
 msgid "%s locked."
 msgstr ""
 
-#: src/pickup.c:2112 src/pickup.c:3984
+#: src/pickup.c:2115 src/pickup.c:3987
 #, c-format
 msgid "%s is locked."
 msgstr ""
 
-#: src/pickup.c:2114
+#: src/pickup.c:2117
 #, c-format
 msgid "Hmmm, %s turns out to be locked."
 msgstr ""
 
-#: src/pickup.c:2158
+#: src/pickup.c:2161
 #, c-format
 msgid "You carefully open %s..."
 msgstr ""
 
-#: src/pickup.c:2159
+#: src/pickup.c:2162
 msgid "It develops a huge set of teeth and bites you!"
 msgstr "Il se dote d'énormes dents et vous mord !"
 
-#: src/pickup.c:2211
+#: src/pickup.c:2214
 msgid "Being confused, you find nothing to loot."
 msgstr "Confus, vous ne trouvez rien à piller."
 
-#: src/pickup.c:2294
+#: src/pickup.c:2297
 msgid "You need to dig up the grave to effectively loot it..."
 msgstr "Il faut déterrer la tombe pour vraiment la piller..."
 
-#: src/pickup.c:2310
+#: src/pickup.c:2313
 #, c-format
 msgid "You %s to loot on the %s."
 msgstr ""
 
-#: src/pickup.c:2333
+#: src/pickup.c:2336
 #, c-format
 msgid "You can't loot anything %sthere with %s in the way."
 msgstr ""
 
-#: src/pickup.c:2337
+#: src/pickup.c:2340
 msgid "You have to be at a container to loot it."
 msgstr "Il faut être près d'un conteneur pour le piller."
 
-#: src/pickup.c:2340
+#: src/pickup.c:2343
 #, c-format
 msgid "You %s %s%shere to loot."
 msgstr ""
 
-#: src/pickup.c:2347
+#: src/pickup.c:2350
 #, c-format
 msgid "You %s %s to loot."
 msgstr ""
 
-#: src/pickup.c:2392
+#: src/pickup.c:2395
 msgid "Ok, now there is loot here."
 msgstr "Bon, maintenant il y a du butin ici."
 
-#: src/pickup.c:2409
+#: src/pickup.c:2412
 msgid "Thank you for your contribution to reduce the debt."
 msgstr "Merci de votre contribution à la réduction de la dette."
 
-#: src/pickup.c:2422
+#: src/pickup.c:2425
 msgid "The exchequer accepts your contribution."
 msgstr "Le trésor accepte votre contribution."
 
-#: src/pickup.c:2455
+#: src/pickup.c:2458
 msgid "You can't do that without limbs."
 msgstr "Vous ne pouvez pas faire cela sans membres."
 
-#: src/pickup.c:2459
+#: src/pickup.c:2462
 #, c-format
 msgid "You can't.  The saddle seems to be stuck to %s."
 msgstr ""
 
-#: src/pickup.c:2467
+#: src/pickup.c:2470
 #, c-format
 msgid "You take %s off of %s."
 msgstr ""
 
-#: src/pickup.c:2573
+#: src/pickup.c:2576
 msgid "You must be kidding."
 msgstr "Vous plaisantez."
 
-#: src/pickup.c:2576
+#: src/pickup.c:2579
 msgid "That would be an interesting topological exercise."
 msgstr "Ce serait un exercice de topologie intéressant."
 
-#: src/pickup.c:2584
+#: src/pickup.c:2587
 #, c-format
 msgid "The stone%s won't leave your person."
 msgstr ""
 
-#: src/pickup.c:2594
+#: src/pickup.c:2597
 #, c-format
 msgid "%s cannot be confined in such trappings."
 msgstr ""
 
-#: src/pickup.c:2597
+#: src/pickup.c:2600
 #, c-format
 msgid "%s attached to your pet."
 msgstr ""
 
-#: src/pickup.c:2625
+#: src/pickup.c:2628
 #, c-format
 msgid "You cannot fit %s into %s."
 msgstr ""
 
-#: src/pickup.c:2667
+#: src/pickup.c:2670
 #, c-format
 msgid "As you put %s inside, you are blasted by a magical explosion!"
 msgstr ""
 
-#: src/pickup.c:2703
+#: src/pickup.c:2706
 #, c-format
 msgid "You put %s into %s."
 msgstr ""
 
-#: src/pickup.c:2815
+#: src/pickup.c:2818
 #, c-format
 msgid "%s %s vanished!"
 msgstr ""
 
-#: src/pickup.c:2817
+#: src/pickup.c:2820
 #, c-format
 msgid "You %s %s disappear!"
 msgstr ""
 
-#: src/pickup.c:2858 src/pray.c:2111
+#: src/pickup.c:2861 src/pray.c:2111
 #, c-format
 msgid "You think %s brushed your %s."
 msgstr ""
 
-#: src/pickup.c:2861
+#: src/pickup.c:2864
 #, c-format
 msgid "%s inside the box is still alive!"
 msgstr ""
 
-#: src/pickup.c:2882
+#: src/pickup.c:2885
 #, c-format
 msgid "The %s inside the box is dead!"
 msgstr ""
 
-#: src/pickup.c:3004
+#: src/pickup.c:3007
 msgid "You must put it down to unlock."
 msgstr "Il faut le poser pour le déverrouiller."
 
-#: src/pickup.c:3008
+#: src/pickup.c:3011
 #, c-format
 msgid "You open %s..."
 msgstr ""
 
-#: src/pickup.c:3038 src/pickup.c:3836
+#: src/pickup.c:3041 src/pickup.c:3839
 #, c-format
 msgid "You owe %ld %s for lost merchandise."
 msgstr ""
 
-#: src/pickup.c:3163
+#: src/pickup.c:3166
 #, c-format
 msgid "You don't have anything%s to %s."
 msgstr ""
 
-#: src/pickup.c:3181
+#: src/pickup.c:3184
 msgctxt "verb"
 msgid "stash"
 msgstr "ranger"
 
-#: src/pickup.c:3629
+#: src/pickup.c:3632
 msgctxt "verb"
 msgid "tip"
 msgstr "vider"
 
-#: src/pickup.c:3663
+#: src/pickup.c:3666
 #, c-format
 msgid "Some %s %s onto the %s%s."
 msgstr ""
 
-#: src/pickup.c:3674
+#: src/pickup.c:3677
 #, c-format
 msgid "The %s %s securely sealed."
 msgstr ""
 
-#: src/pickup.c:3678
+#: src/pickup.c:3681
 msgid "Nothing interesting happens."
 msgstr "Il ne se passe rien d'intéressant."
 
-#: src/pickup.c:3754
+#: src/pickup.c:3757
 #, c-format
 msgid "%s into %s."
 msgstr ""
 
-#: src/pickup.c:3758
+#: src/pickup.c:3761
 #, c-format
 msgid "%s out%c"
 msgstr ""
 
-#: src/pickup.c:3787
+#: src/pickup.c:3790
 #, c-format
 msgid "As %s %s inside, you are blasted by a magical explosion!"
 msgstr ""
 
-#: src/pickup.c:3823
+#: src/pickup.c:3826
 #, c-format
 msgid "%s%c"
 msgstr ""
 
-#: src/pickup.c:3895
+#: src/pickup.c:3898
 msgid "Tipping contents to floor only..."
 msgstr "Vidage du contenu au sol seulement..."
 
-#: src/pickup.c:4046
+#: src/pickup.c:4049
 #, c-format
 msgid "%sbox is now empty."
 msgstr ""
@@ -28974,7 +29572,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 19:54+0200\n"
+"POT-Creation-Date: 2026-09-28 20:02+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"

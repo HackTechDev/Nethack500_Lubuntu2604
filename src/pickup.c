@@ -400,7 +400,7 @@ describe_decor(void)
         if (flags.verbose) {
             /* the noun phrase is translated with its article (list of
                them in invent.c), else the sentence is left in English */
-            if (_(dfeature) != dfeature)
+            if (i18n_has(dfeature))
                 Sprintf(outbuf, _("There is %s here."), _(dfeature));
             else
                 Sprintf(outbuf, "There is %s here.", dfeature);
@@ -824,7 +824,10 @@ pickup(int what) /* should be a long */
         } else if (ct >= 2) {
             int via_menu = 0;
 
-            There("are %s objects here.", (ct <= 10) ? "several" : "many");
+            if (ct <= 10)
+                There("are several objects here.");
+            else
+                There("are many objects here.");
             if (!query_classes(oclasses, &selective, &all_of_a_type,
                                "pick up", *objchain_p,
                                (traverse_how & BY_NEXTHERE) ? TRUE : FALSE,

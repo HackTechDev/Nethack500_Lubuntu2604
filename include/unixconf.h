@@ -316,7 +316,10 @@
 
 #define HLOCK "perm" /* an empty file used for locking purposes */
 
-#define NHI18N /* translation of game messages (nhi18n.c) */
+/* translation of game messages (nhi18n.c); -DNHI18N_OFF to leave it out */
+#ifndef NHI18N_OFF
+#define NHI18N
+#endif
 
 #define tgetch getchar
 
