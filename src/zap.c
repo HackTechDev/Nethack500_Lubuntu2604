@@ -3549,7 +3549,7 @@ exclam(int force)
     /* force == 0 occurs e.g. with sleep ray */
     /* note that large force is usual with wands so that !! would
             require information about hand/weapon/wand */
-    return (const char *) ((force < 0) ? "?" : (force <= 4) ? "." : "!");
+    return (force < 0) ? _("?") : (force <= 4) ? "." : _("!");
 }
 
 void

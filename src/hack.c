@@ -2166,7 +2166,7 @@ domove_swap_with_pet(
         newsym(x, y);
         newsym(u.ux0, u.uy0);
 
-        You("%s %s.", mtmp->mpeaceful ? "swap places with" : "frighten",
+        You(mtmp->mpeaceful ? "swap places with %s." : "frighten %s.",
             x_monnam(mtmp,
                      mtmp->mtame ? ARTICLE_YOUR
                      : (!has_mgivenname(mtmp)

@@ -306,6 +306,20 @@ nh_pgettext(const char *ctx, const char *msgid)
     return nh_gettext(msgid);
 }
 
+/* translation of msgid for context ctx, or Null if the catalog has none;
+   for data rather than text, such as the grammatical gender of a noun */
+const char *
+i18n_lookup(const char *ctx, const char *msgid)
+{
+    char key[BUFSZ];
+
+    if (!catalog.data || !*msgid
+        || strlen(ctx) + strlen(msgid) + 2 > sizeof key)
+        return (const char *) 0;
+    Sprintf(key, "%s\004%s", ctx, msgid);
+    return mo_lookup(key);
+}
+
 /* are messages being translated? */
 boolean
 i18n_translating(void)

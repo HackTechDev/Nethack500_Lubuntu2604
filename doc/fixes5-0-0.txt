@@ -3003,7 +3003,7 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	sources, and messages given to pline() and You() &c, yn_function()
 	and getlin(); French catalog po/fr.po: character selection, welcome,
 	status line, inventory class headings, object prompts, common
-	messages
+	messages, monster names with their gender and articles, combat
 
 
 NetHack Community Patches (or Variation) Included

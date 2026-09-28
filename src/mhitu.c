@@ -42,21 +42,21 @@ hitmsg(struct monst *mtmp, struct attack *mattk)
     } else {
         switch (mattk->aatyp) {
         case AT_BITE:
-            verb = "bites";
+            verb = NC_("monverb", "bites");
             break;
         case AT_KICK:
             if (thick_skinned(gy.youmonst.data))
                 punct = ".";
-            verb = "kicks";
+            verb = NC_("monverb", "kicks");
             break;
         case AT_STNG:
-            verb = "stings";
+            verb = NC_("monverb", "stings");
             break;
         case AT_BUTT:
-            verb = "butts";
+            verb = NC_("monverb", "butts");
             break;
         case AT_TUCH:
-            verb = "touches you";
+            verb = NC_("monverb", "touches you");
             break;
         case AT_TENT:
             verb = "tentacles suck your brain";
@@ -64,17 +64,24 @@ hitmsg(struct monst *mtmp, struct attack *mattk)
             break;
         case AT_EXPL:
         case AT_BOOM:
-            verb = "explodes";
+            verb = NC_("monverb", "explodes");
             break;
         default:
-            verb = "hits";
+            verb = NC_("monverb", "hits");
         }
         /* if a monster hits more than once with similar attack, say so */
         again = (mtmp->m_id == gh.hitmsg_mid
                  && gh.hitmsg_prev != NULL
                  && mattk == gh.hitmsg_prev + 1
                  && mattk->aatyp == gh.hitmsg_prev->aatyp) ? " again" : "";
-        pline_mon(mtmp, "%s %s%s%s", Monst_name, verb, again, punct);
+        if (i18n_active() && mattk->aatyp == AT_TENT)
+            /* the possessive of Monst_name can't be translated */
+            pline_mon(mtmp, _("%s sucks your brain with its tentacles%s!"),
+                      Monnam(mtmp), *again ? _(" again") : "");
+        else
+            pline_mon(mtmp, "%s %s%s%s", Monst_name, C_("monverb", verb),
+                      *again ? _(" again") : "",
+                      (*punct == '!') ? _("!") : punct);
     }
     gh.hitmsg_mid = mtmp->m_id;
     gh.hitmsg_prev = mattk;
@@ -92,9 +99,10 @@ missmu(struct monst *mtmp, boolean nearmiss, struct attack *mattk)
 
     if (could_seduce(mtmp, &gy.youmonst, mattk) && !mtmp->mcan)
         pline_mon(mtmp, "%s pretends to be friendly.", Monnam(mtmp));
+    else if (nearmiss && flags.verbose)
+        pline_mon(mtmp, "%s just misses!", Monnam(mtmp));
     else
-        pline_mon(mtmp, "%s %smisses!", Monnam(mtmp),
-                  (nearmiss && flags.verbose) ? "just " : "");
+        pline_mon(mtmp, "%s misses!", Monnam(mtmp));
 
     stop_occupation();
 }

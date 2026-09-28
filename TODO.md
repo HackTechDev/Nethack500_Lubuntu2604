@@ -8,19 +8,28 @@
 > texte. Il faut compter de nombreuses sessions de travail, et des tests
 > en jeu à chaque étape.
 
-État actuel : 2 217 textes traduits sur 4 734 dans `po/fr.po`. Le
+État actuel : 2 844 textes traduits sur 5 638 dans `po/fr.po` (dont les
+entrées de genre laissées vides, qui valent masculin). Le
 fonctionnement de la traduction et la façon d'ajouter des traductions sont
 décrits dans la section 7 de [INSTALL.md](INSTALL.md).
 
 ## 1. Grammaire française des noms (priorité haute)
 
-C'est ce qui bloque la plupart des messages restants, dont tous les
-combats (« The fox bites! », « You kill the newt! »).
+C'est ce qui bloque la plupart des messages restants.
 
-- **Noms de monstres** : 396 entrées dans `include/monsters.h`, à traduire
-  avec leur genre (le renard, la vipère). Ne pas traduire la table
-  elle-même : les noms anglais servent aux options, aux vœux et aux
-  fichiers de sauvegarde. Les marquer `N_()` et les traduire à l'affichage.
+- **Fait : noms de monstres.** Les 419 noms de `include/monsters.h` sont
+  traduits (contexte `monster`) avec leur genre (contexte `gender` : `f`
+  féminin, `e` élision forcée, `n` pas d'élision). `x_monnam()` compose
+  l'article et place les adjectifs ; `Monnam()`, `mon_nam()`, `a_monnam()`
+  et `y_monnam()` en profitent. Les combats courants sont traduits
+  (« Le chacal mord ! », « Vous tuez le triton ! », « Sirius mord le
+  triton. »). Restent : les prêtres et les marchands (composés à part),
+  les noms hallucinés tirés de `dat/bogusmon.txt`, et les phrases qui
+  utilisent le possessif `s_suffix()` (« the fox's »).
+- **Accords avec le monstre** : `i18n_mon_fem(mon)` indique si le nom
+  traduit est féminin, pour choisir une forme `C_("feminine", ...)` du
+  message (fait pour « %s is killed! »). Ailleurs, préférer des tournures
+  sans participe (« %s se change en pierre ! »).
 - **Noms d'objets** : 380 entrées dans `include/objects.h`, plus les
   descriptions des objets non identifiés (« bubbly potion », « scroll
   labeled FOOBIE BLETCH »), les matériaux et les appellations données par
@@ -29,9 +38,8 @@ combats (« The fox bites! », « You kill the newt! »).
   `an()`, `the()`, `makeplural()`, et l'ordre des adjectifs
   (« uncursed +0 long sword » → « épée longue +0 non maudite »), avec les
   accords en genre et en nombre.
-- **Noms de monstres dans les phrases** (`src/do_name.c`) : `Monnam()`,
-  `mon_nam()`, `a_monnam()`, `x_monnam()`, et le possessif
-  `s_suffix()` (« the fox's » → « du renard »).
+- **Possessif** : `s_suffix()` (« the fox's » → « du renard ») ; les
+  phrases qui l'utilisent sont à reformuler.
 - **Articles et contractions** : le/la/l'/les, de + le = du,
   à + le = au, élision devant voyelle ou h muet.
 - **Conjugaison** : `vtense()` et `otense()` accordent le verbe anglais avec

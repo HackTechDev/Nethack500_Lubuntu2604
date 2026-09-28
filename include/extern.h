@@ -692,6 +692,9 @@ extern int call_ok(struct obj *);
 extern int docallcmd(void);
 extern void docall(struct obj *) NONNULLARG1;
 extern const char *rndghostname(void);
+#ifdef NHI18N
+extern boolean monnam_is_feminine(struct monst *) NONNULLARG1;
+#endif
 extern char *x_monnam(struct monst *, int, const char *, int, boolean) NONNULLARG1;
 extern char *l_monnam(struct monst *) NONNULLARG1;
 extern char *mon_nam(struct monst *) NONNULLARG1;
@@ -2083,6 +2086,7 @@ enum instruments obj_to_instr(struct obj *) NONNULLARG1;
 extern const char *nh_gettext(const char *) FORMAT_ARG(1);
 extern const char *nh_pgettext(const char *, const char *) FORMAT_ARG(2);
 extern boolean i18n_translating(void);
+extern const char *i18n_lookup(const char *, const char *) NONNULLARG12;
 extern boolean i18n_set_language(const char *) NONNULLARG1;
 extern const char *i18n_language(void);
 #endif

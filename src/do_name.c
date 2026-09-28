@@ -12,6 +12,14 @@ staticfn boolean alreadynamed(struct monst *, char *, char *) NONNULLPTRS;
 staticfn void do_oname(struct obj *) NONNULLARG1;
 staticfn char *docall_xname(struct obj *) NONNULLARG1;
 staticfn void namefloorobj(void);
+#ifdef NHI18N
+staticfn boolean i18n_feminine(const char *);
+staticfn boolean i18n_elides(const char *, const char *);
+staticfn const char *i18n_adjective(const char *, boolean);
+staticfn char *x_monnam_i18n(struct monst *, char *, int, const char *,
+                             boolean, boolean, boolean, boolean, boolean,
+                             const char *);
+#endif
 
 #define NUMMBUF 5
 
@@ -798,6 +806,202 @@ rndghostname(void)
  *              article newt    art xan art invisible orc       art dog
  */
 
+#ifdef NHI18N
+#if 0
+/* for xgettext: data used by x_monnam_i18n() */
+/* feminine forms of the adjectives given to x_monnam() */
+C_("feminine", "invisible"), C_("feminine", "saddled"),
+C_("feminine", "poor"), C_("feminine", "angry"), C_("feminine", "sleeping"),
+C_("feminine", "blind"), C_("feminine", "blinded"),
+C_("feminine", "immobile"), C_("feminine", "falling"),
+C_("feminine", "beautiful"), C_("feminine", "plain"),
+C_("feminine", "peaceful"),
+/* "before" when the language puts the adjective before the noun */
+NC_("adjective-position", "poor"), NC_("adjective-position", "angry"),
+NC_("adjective-position", "sleeping"), NC_("adjective-position", "blind"),
+NC_("adjective-position", "blinded"), NC_("adjective-position", "immobile"),
+NC_("adjective-position", "falling"),
+NC_("adjective-position", "beautiful"), NC_("adjective-position", "plain"),
+/* article formats */
+C_("feminine", "the %s"), C_("elided", "the %s"), C_("feminine", "a %s"),
+C_("feminine", "your %s"),
+#endif
+
+/* is the translation of monster name 'name' grammatically feminine?
+   the "gender" entry of a noun holds "f" for feminine, else masculine */
+staticfn boolean
+i18n_feminine(const char *name)
+{
+    const char *g = i18n_lookup("gender", name);
+
+    return (g && strchr(g, 'f')) ? TRUE : FALSE;
+}
+
+/* does the article elide before 'phrase' (translation of the noun or
+   adjective that follows it)?  'name' is the English noun, whose "gender"
+   entry can force elision ('e', as for a mute h) or prevent it ('n') */
+staticfn boolean
+i18n_elides(const char *phrase, const char *name)
+{
+    static const char *const initials[] = {
+        "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y",
+        "\303\240", "\303\242", "\303\251", "\303\250", "\303\252",
+        "\303\253", "\303\256", "\303\257", "\303\264", "\303\273",
+        "\303\211", 0 /* à â é è ê ë î ï ô û É */
+    };
+    const char *g = name ? i18n_lookup("gender", name) : 0;
+    int i;
+
+    if (g && strchr(g, 'n'))
+        return FALSE;
+    if (g && strchr(g, 'e'))
+        return TRUE;
+    for (i = 0; initials[i]; ++i)
+        if (!strncmp(phrase, initials[i], strlen(initials[i])))
+            return TRUE;
+    return FALSE;
+}
+
+/* translation of an adjective qualifying a noun of the given gender */
+staticfn const char *
+i18n_adjective(const char *adj, boolean fem)
+{
+    return fem ? C_("feminine", adj) : _(adj);
+}
+
+/* is the translated name of mtmp, as given by x_monnam(), feminine?
+   (for agreement of the rest of a translated message) */
+boolean
+monnam_is_feminine(struct monst *mtmp)
+{
+    if (!i18n_active() || mtmp == &gy.youmonst)
+        return FALSE;
+    if (has_mgivenname(mtmp) && mtmp->data != &mons[PM_GHOST])
+        return mtmp->female ? TRUE : FALSE;
+    return i18n_feminine(mon_pmname(mtmp));
+}
+
+/* x_monnam() when messages are translated: the English composition
+   ("the invisible saddled newt") is replaced by article + noun +
+   adjectives, the article agreeing with the noun and the adjectives
+   placed before or after it as the "adjective-position" entries say */
+staticfn char *
+x_monnam_i18n(
+    struct monst *mtmp,
+    char *buf,
+    int article,
+    const char *adjective,
+    boolean do_invis,
+    boolean do_saddle,
+    boolean do_hallu,
+    boolean do_name,
+    boolean called,
+    const char *pm_name)
+{
+    struct permonst *mdat = mtmp->data;
+    char noun[BUFSZ], before[BUFSZ], after[BUFSZ], phrase[BUFSZ];
+    const char *english = pm_name, *pos;
+    boolean fem = FALSE, name_at_start, has_adjectives;
+
+    if (do_hallu) {
+        char rnamecode;
+
+        english = rndmonnam(&rnamecode);
+        Strcpy(noun, C_("monster", english));
+        name_at_start = bogon_is_pname(rnamecode);
+    } else if (do_name && has_mgivenname(mtmp)) {
+        char *name = MGIVENNAME(mtmp);
+
+        if (mdat == &mons[PM_GHOST]) {
+            Snprintf(noun, sizeof noun, _("%s ghost"), name);
+            name_at_start = FALSE;
+        } else if (called) {
+            Snprintf(noun, sizeof noun, _("%s called %s"),
+                     C_("monster", pm_name), name);
+            name_at_start = (boolean) type_is_pname(mdat);
+        } else {
+            Strcpy(noun, name);
+            name_at_start = TRUE;
+            english = 0;
+        }
+    } else if (is_mplayer(mdat) && !In_endgame(&u.uz)) {
+        Strcpy(noun, gendered_word(rank_of((int) mtmp->m_lev,
+                                           monsndx(mdat),
+                                           (boolean) mtmp->female),
+                                   mtmp->female ? 1 : 0));
+        english = 0;
+        fem = mtmp->female;
+        name_at_start = FALSE;
+    } else {
+        Strcpy(noun, C_("monster", pm_name));
+        name_at_start = (boolean) type_is_pname(mdat);
+    }
+    if (english)
+        fem = i18n_feminine(english);
+    else if (!is_mplayer(mdat))
+        fem = mtmp->female ? TRUE : FALSE;
+
+    /* adjectives before and after the noun */
+    before[0] = after[0] = '\0';
+    if (adjective) {
+        pos = i18n_lookup("adjective-position", adjective);
+        Strcat((pos && !strcmp(pos, "before")) ? before : after,
+               i18n_adjective(adjective, fem));
+    }
+    if (do_invis) {
+        if (after[0])
+            Strcat(after, " ");
+        Strcat(after, i18n_adjective("invisible", fem));
+    }
+    if (do_saddle && (mtmp->misc_worn_check & W_SADDLE) && !Blind
+        && !Hallucination) {
+        if (after[0])
+            Strcat(after, " ");
+        Strcat(after, i18n_adjective("saddled", fem));
+    }
+    has_adjectives = (before[0] || after[0]);
+    Snprintf(phrase, sizeof phrase, "%s%s%s%s%s",
+             before, before[0] ? " " : "", noun, after[0] ? " " : "", after);
+
+    if (name_at_start && (article == ARTICLE_YOUR || !has_adjectives)) {
+        if (mdat == &mons[PM_WIZARD_OF_YENDOR])
+            article = ARTICLE_THE;
+        else
+            article = ARTICLE_NONE;
+    } else if ((mdat->geno & G_UNIQ) != 0 && article == ARTICLE_A) {
+        article = ARTICLE_THE;
+    }
+
+    switch (article) {
+    case ARTICLE_THE:
+        if (i18n_elides(phrase, before[0] ? 0 : english))
+            Snprintf(buf, BUFSZ, C_("elided", "the %s"), phrase);
+        else if (fem)
+            Snprintf(buf, BUFSZ, C_("feminine", "the %s"), phrase);
+        else
+            Snprintf(buf, BUFSZ, _("the %s"), phrase);
+        break;
+    case ARTICLE_A:
+        if (fem)
+            Snprintf(buf, BUFSZ, C_("feminine", "a %s"), phrase);
+        else
+            Snprintf(buf, BUFSZ, _("a %s"), phrase);
+        break;
+    case ARTICLE_YOUR:
+        if (fem)
+            Snprintf(buf, BUFSZ, C_("feminine", "your %s"), phrase);
+        else
+            Snprintf(buf, BUFSZ, _("your %s"), phrase);
+        break;
+    case ARTICLE_NONE:
+    default:
+        Strcpy(buf, phrase);
+        break;
+    }
+    return buf;
+}
+#endif /* NHI18N */
+
 /*
  * article
  *
@@ -841,7 +1045,7 @@ x_monnam(
     char *bp, buf2[BUFSZ];
 
     if (mtmp == &gy.youmonst)
-        return strcpy(buf, "you"); /* ignore article, "invisible", &c */
+        return strcpy(buf, _("you")); /* ignore article, "invisible", &c */
 
     if (program_state.gameover)
         suppress |= SUPPRESS_HALLUCINATION;
@@ -877,9 +1081,9 @@ x_monnam(
         /* !is_animal excludes all Y; !mindless excludes Z, M, \' */
         boolean s_one = humanoid(mdat) && !is_animal(mdat) && !mindless(mdat);
 
-        Strcpy(buf, !augment_it ? "it"
-                    : (!do_hallu ? s_one : !rn2(2)) ? "someone"
-                      : "something");
+        Strcpy(buf, !augment_it ? _("it")
+                    : (!do_hallu ? s_one : !rn2(2)) ? _("someone")
+                      : _("something"));
         return buf;
     }
 
@@ -934,6 +1138,12 @@ x_monnam(
         }
         return buf;
     }
+
+#ifdef NHI18N
+    if (i18n_active())
+        return x_monnam_i18n(mtmp, buf, article, adjective, do_invis,
+                             do_saddle, do_hallu, do_name, called, pm_name);
+#endif
 
     /* Put the adjectives in the buffer */
     if (adjective)

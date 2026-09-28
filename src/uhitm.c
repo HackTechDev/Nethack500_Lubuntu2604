@@ -1647,15 +1647,20 @@ hmon_hitmon_msg_hit(
             hit(mshot_xname(obj), mon, exclam(hmd->dmg));
         else if (!flags.verbose)
             You("hit it.");
-        else /* hand_to_hand */
-            You("%s %s%s",
-                (obj && (is_shield(obj)
-                         || obj->otyp == HEAVY_IRON_BALL)) ? "bash"
-                : (obj && (objects[obj->otyp].oc_skill == P_WHIP
-                           || is_wet_towel(obj))) ? "lash"
-                  : Role_if(PM_BARBARIAN) ? "smite"
-                    : "hit",
-                mon_nam(mon), canseemon(mon) ? exclam(hmd->dmg) : ".");
+        else { /* hand_to_hand */
+            const char *punct = canseemon(mon) ? exclam(hmd->dmg) : ".";
+
+            /* one sentence per verb, so that each can be translated */
+            if (obj && (is_shield(obj) || obj->otyp == HEAVY_IRON_BALL))
+                You("bash %s%s", mon_nam(mon), punct);
+            else if (obj && (objects[obj->otyp].oc_skill == P_WHIP
+                             || is_wet_towel(obj)))
+                You("lash %s%s", mon_nam(mon), punct);
+            else if (Role_if(PM_BARBARIAN))
+                You("smite %s%s", mon_nam(mon), punct);
+            else
+                You("hit %s%s", mon_nam(mon), punct);
+        }
     }
 }
 

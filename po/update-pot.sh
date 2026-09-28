@@ -48,4 +48,14 @@ for spec in "You:You " "Your:Your " "You_feel:You feel " \
     mv "$tmp/$fn.pot.new" "$tmp/$fn.pot"
 done
 
+# monster names (include/monsters.h) are translated with the context
+# "monster"; the "gender" entry of a name gives the grammatical gender of
+# its translation ("f" for feminine, empty for masculine; see do_name.c)
+grep -o 'NAMS\{0,1\}([^)]*)' include/monsters.h | grep -o '"[^"]*"' \
+    | sort -u | sed 's/.*/NC_("monster", &); NC_("gender", &);/' \
+    > "$tmp/monsters.c"
+# shellcheck disable=SC2086
+$XGETTEXT $COMMON --no-location -k --keyword=NC_:1c,2 \
+    -o "$tmp/1monsters.pot" "$tmp/monsters.c"
+
 $MSGCAT --no-wrap --sort-by-file --use-first -o po/nethack.pot "$tmp"/*.pot

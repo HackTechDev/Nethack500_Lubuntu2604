@@ -3383,9 +3383,26 @@ monkilled(
 
     if (fltxt && (mdef->wormno ? worm_known(mdef)
                                : cansee(mdef->mx, mdef->my)))
-        pline_mon(mdef, "%s is %s%s%s!", Monnam(mdef),
-              nonliving(mptr) ? "destroyed" : "killed",
-              *fltxt ? " by the " : "", fltxt);
+    {
+        /* one sentence per case, with feminine forms for agreement in
+           translations */
+        boolean fem = i18n_mon_fem(mdef);
+
+        if (nonliving(mptr) && *fltxt)
+            pline_mon(mdef, fem ? C_("feminine", "%s is destroyed by the %s!")
+                                : _("%s is destroyed by the %s!"),
+                      Monnam(mdef), fltxt);
+        else if (nonliving(mptr))
+            pline_mon(mdef, fem ? C_("feminine", "%s is destroyed!")
+                                : _("%s is destroyed!"), Monnam(mdef));
+        else if (*fltxt)
+            pline_mon(mdef, fem ? C_("feminine", "%s is killed by the %s!")
+                                : _("%s is killed by the %s!"),
+                      Monnam(mdef), fltxt);
+        else
+            pline_mon(mdef, fem ? C_("feminine", "%s is killed!")
+                                : _("%s is killed!"), Monnam(mdef));
+    }
     else
         /* sad feeling is deferred until after potential life-saving */
         iflags.sad_feeling = mdef->mtame ? TRUE : FALSE;
@@ -3503,12 +3520,17 @@ xkilled(
     if (!nomsg) {
         boolean namedpet = has_mgivenname(mtmp) && !Hallucination;
 
-        You("%s %s!",
-            nonliving(mtmp->data) ? "destroy" : "kill",
-            !(wasinside || canspotmon(mtmp)) ? "it"
+        const char *victim
+            = !(wasinside || canspotmon(mtmp)) ? _("it")
               : !mtmp->mtame ? mon_nam(mtmp)
                 : x_monnam(mtmp, namedpet ? ARTICLE_NONE : ARTICLE_THE,
-                           "poor", namedpet ? SUPPRESS_SADDLE : 0, FALSE));
+                           "poor", namedpet ? SUPPRESS_SADDLE : 0, FALSE);
+
+        /* one sentence per verb, so that each can be translated */
+        if (nonliving(mtmp->data))
+            You("destroy %s!", victim);
+        else
+            You("kill %s!", victim);
     }
 
     if (mtmp->mtrapped && (t = t_at(x, y)) != 0 && is_pit(t->ttyp)) {

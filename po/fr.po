@@ -1,3 +1,3355 @@
+msgctxt "gender"
+msgid "Aleax"
+msgstr ""
+
+msgctxt "monster"
+msgid "Aleax"
+msgstr "Aleax"
+
+msgctxt "gender"
+msgid "Angel"
+msgstr ""
+
+msgctxt "monster"
+msgid "Angel"
+msgstr "Ange"
+
+msgctxt "gender"
+msgid "Arch Priest"
+msgstr ""
+
+msgctxt "monster"
+msgid "Arch Priest"
+msgstr "Archiprêtre"
+
+msgctxt "gender"
+msgid "Archon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Archon"
+msgstr "Archonte"
+
+msgctxt "gender"
+msgid "Ashikaga Takauji"
+msgstr ""
+
+msgctxt "monster"
+msgid "Ashikaga Takauji"
+msgstr "Ashikaga Takauji"
+
+msgctxt "gender"
+msgid "Asmodeus"
+msgstr ""
+
+msgctxt "monster"
+msgid "Asmodeus"
+msgstr "Asmodée"
+
+msgctxt "gender"
+msgid "Baalzebub"
+msgstr ""
+
+msgctxt "monster"
+msgid "Baalzebub"
+msgstr "Belzébuth"
+
+msgctxt "gender"
+msgid "Cerberus"
+msgstr ""
+
+msgctxt "monster"
+msgid "Cerberus"
+msgstr "Cerbère"
+
+msgctxt "gender"
+msgid "Charon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Charon"
+msgstr "Charon"
+
+msgctxt "gender"
+msgid "Chromatic Dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Chromatic Dragon"
+msgstr "Dragon Chromatique"
+
+msgctxt "gender"
+msgid "Croesus"
+msgstr ""
+
+msgctxt "monster"
+msgid "Croesus"
+msgstr "Crésus"
+
+msgctxt "gender"
+msgid "Cyclops"
+msgstr ""
+
+msgctxt "monster"
+msgid "Cyclops"
+msgstr "Cyclope"
+
+msgctxt "gender"
+msgid "Dark One"
+msgstr ""
+
+msgctxt "monster"
+msgid "Dark One"
+msgstr "Ténébreux"
+
+msgctxt "gender"
+msgid "Death"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Death"
+msgstr "Mort"
+
+msgctxt "gender"
+msgid "Demogorgon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Demogorgon"
+msgstr "Démogorgon"
+
+msgctxt "gender"
+msgid "Dispater"
+msgstr ""
+
+msgctxt "monster"
+msgid "Dispater"
+msgstr "Dispater"
+
+msgctxt "gender"
+msgid "Earendil"
+msgstr ""
+
+msgctxt "monster"
+msgid "Earendil"
+msgstr "Eärendil"
+
+msgctxt "gender"
+msgid "Elvenking"
+msgstr ""
+
+msgctxt "monster"
+msgid "Elvenking"
+msgstr "Roi elfe"
+
+msgctxt "gender"
+msgid "Elvenqueen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Elvenqueen"
+msgstr "Reine elfe"
+
+msgctxt "gender"
+msgid "Elwing"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Elwing"
+msgstr "Elwing"
+
+msgctxt "gender"
+msgid "Famine"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Famine"
+msgstr "Famine"
+
+msgctxt "gender"
+msgid "Geryon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Geryon"
+msgstr "Géryon"
+
+msgctxt "gender"
+msgid "Goblin King"
+msgstr ""
+
+msgctxt "monster"
+msgid "Goblin King"
+msgstr "Roi gobelin"
+
+msgctxt "gender"
+msgid "Grand Master"
+msgstr ""
+
+msgctxt "monster"
+msgid "Grand Master"
+msgstr "Grand Maître"
+
+msgctxt "gender"
+msgid "Green-elf"
+msgstr ""
+
+msgctxt "monster"
+msgid "Green-elf"
+msgstr "Elfe vert"
+
+msgctxt "gender"
+msgid "Grey-elf"
+msgstr ""
+
+msgctxt "monster"
+msgid "Grey-elf"
+msgstr "Elfe gris"
+
+msgctxt "gender"
+msgid "High-elf"
+msgstr "n"
+
+msgctxt "monster"
+msgid "High-elf"
+msgstr "Haut-elfe"
+
+msgctxt "gender"
+msgid "Hippocrates"
+msgstr ""
+
+msgctxt "monster"
+msgid "Hippocrates"
+msgstr "Hippocrate"
+
+msgctxt "gender"
+msgid "Ixoth"
+msgstr ""
+
+msgctxt "monster"
+msgid "Ixoth"
+msgstr "Ixoth"
+
+msgctxt "gender"
+msgid "Juiblex"
+msgstr ""
+
+msgctxt "monster"
+msgid "Juiblex"
+msgstr "Juiblex"
+
+msgctxt "gender"
+msgid "Keystone Kop"
+msgstr ""
+
+msgctxt "monster"
+msgid "Keystone Kop"
+msgstr "Keystone Kop"
+
+msgctxt "gender"
+msgid "King Arthur"
+msgstr ""
+
+msgctxt "monster"
+msgid "King Arthur"
+msgstr "Roi Arthur"
+
+msgctxt "gender"
+msgid "Kop Kaptain"
+msgstr ""
+
+msgctxt "monster"
+msgid "Kop Kaptain"
+msgstr "Kop Kapitaine"
+
+msgctxt "gender"
+msgid "Kop Lieutenant"
+msgstr ""
+
+msgctxt "monster"
+msgid "Kop Lieutenant"
+msgstr "Kop Lieutenant"
+
+msgctxt "gender"
+msgid "Kop Sergeant"
+msgstr ""
+
+msgctxt "monster"
+msgid "Kop Sergeant"
+msgstr "Kop Sergent"
+
+msgctxt "gender"
+msgid "Lord Carnarvon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Lord Carnarvon"
+msgstr "Lord Carnarvon"
+
+msgctxt "gender"
+msgid "Lord Sato"
+msgstr ""
+
+msgctxt "monster"
+msgid "Lord Sato"
+msgstr "Seigneur Sato"
+
+msgctxt "gender"
+msgid "Lord Surtur"
+msgstr ""
+
+msgctxt "monster"
+msgid "Lord Surtur"
+msgstr "Seigneur Surt"
+
+msgctxt "gender"
+msgid "Master Assassin"
+msgstr ""
+
+msgctxt "monster"
+msgid "Master Assassin"
+msgstr "Maître Assassin"
+
+msgctxt "gender"
+msgid "Master Kaen"
+msgstr ""
+
+msgctxt "monster"
+msgid "Master Kaen"
+msgstr "Maître Kaen"
+
+msgctxt "gender"
+msgid "Master of Thieves"
+msgstr ""
+
+msgctxt "monster"
+msgid "Master of Thieves"
+msgstr "Maître des Voleurs"
+
+msgctxt "gender"
+msgid "Medusa"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Medusa"
+msgstr "Méduse"
+
+msgctxt "gender"
+msgid "Minion of Huhetotl"
+msgstr ""
+
+msgctxt "monster"
+msgid "Minion of Huhetotl"
+msgstr "Serviteur de Huhetotl"
+
+msgctxt "gender"
+msgid "Mordor orc"
+msgstr ""
+
+msgctxt "monster"
+msgid "Mordor orc"
+msgstr "orque du Mordor"
+
+msgctxt "gender"
+msgid "Nalzok"
+msgstr ""
+
+msgctxt "monster"
+msgid "Nalzok"
+msgstr "Nalzok"
+
+msgctxt "gender"
+msgid "Nazgul"
+msgstr ""
+
+msgctxt "monster"
+msgid "Nazgul"
+msgstr "Nazgûl"
+
+msgctxt "gender"
+msgid "Neferet the Green"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Neferet the Green"
+msgstr "Néferet la Verte"
+
+msgctxt "gender"
+msgid "Norn"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Norn"
+msgstr "Norne"
+
+msgctxt "gender"
+msgid "Olog-hai"
+msgstr ""
+
+msgctxt "monster"
+msgid "Olog-hai"
+msgstr "Olog-hai"
+
+msgctxt "gender"
+msgid "Oracle"
+msgstr ""
+
+msgctxt "monster"
+msgid "Oracle"
+msgstr "Oracle"
+
+msgctxt "gender"
+msgid "Orcus"
+msgstr ""
+
+msgctxt "monster"
+msgid "Orcus"
+msgstr "Orcus"
+
+msgctxt "gender"
+msgid "Orion"
+msgstr ""
+
+msgctxt "monster"
+msgid "Orion"
+msgstr "Orion"
+
+msgctxt "gender"
+msgid "Pelias"
+msgstr ""
+
+msgctxt "monster"
+msgid "Pelias"
+msgstr "Pélias"
+
+msgctxt "gender"
+msgid "Pestilence"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Pestilence"
+msgstr "Pestilence"
+
+msgctxt "gender"
+msgid "Scorpius"
+msgstr ""
+
+msgctxt "monster"
+msgid "Scorpius"
+msgstr "Scorpius"
+
+msgctxt "gender"
+msgid "Shaman Karnov"
+msgstr ""
+
+msgctxt "monster"
+msgid "Shaman Karnov"
+msgstr "Chaman Karnov"
+
+msgctxt "gender"
+msgid "Thoth Amon"
+msgstr ""
+
+msgctxt "monster"
+msgid "Thoth Amon"
+msgstr "Thoth Amon"
+
+msgctxt "gender"
+msgid "Twoflower"
+msgstr ""
+
+msgctxt "monster"
+msgid "Twoflower"
+msgstr "Deuxfleurs"
+
+msgctxt "gender"
+msgid "Uruk-hai"
+msgstr ""
+
+msgctxt "monster"
+msgid "Uruk-hai"
+msgstr "Uruk-hai"
+
+msgctxt "gender"
+msgid "Vlad the Impaler"
+msgstr ""
+
+msgctxt "monster"
+msgid "Vlad the Impaler"
+msgstr "Vlad l'Empaleur"
+
+msgctxt "gender"
+msgid "Wizard of Yendor"
+msgstr ""
+
+msgctxt "monster"
+msgid "Wizard of Yendor"
+msgstr "Magicien de Yendor"
+
+msgctxt "gender"
+msgid "Woodland-elf"
+msgstr ""
+
+msgctxt "monster"
+msgid "Woodland-elf"
+msgstr "Elfe sylvain"
+
+msgctxt "gender"
+msgid "Yeenoghu"
+msgstr ""
+
+msgctxt "monster"
+msgid "Yeenoghu"
+msgstr "Yeenoghu"
+
+msgctxt "gender"
+msgid "abbot"
+msgstr ""
+
+msgctxt "monster"
+msgid "abbot"
+msgstr "abbé"
+
+msgctxt "gender"
+msgid "acid blob"
+msgstr "f"
+
+msgctxt "monster"
+msgid "acid blob"
+msgstr "goutte d'acide"
+
+msgctxt "gender"
+msgid "acolyte"
+msgstr ""
+
+msgctxt "monster"
+msgid "acolyte"
+msgstr "acolyte"
+
+msgctxt "gender"
+msgid "air elemental"
+msgstr ""
+
+msgctxt "monster"
+msgid "air elemental"
+msgstr "élémentaire d'air"
+
+msgctxt "gender"
+msgid "aligned cleric"
+msgstr ""
+
+msgctxt "monster"
+msgid "aligned cleric"
+msgstr "clerc aligné"
+
+msgctxt "gender"
+msgid "amorous demon"
+msgstr ""
+
+msgctxt "monster"
+msgid "amorous demon"
+msgstr "démon amoureux"
+
+msgctxt "gender"
+msgid "ape"
+msgstr ""
+
+msgctxt "monster"
+msgid "ape"
+msgstr "singe"
+
+msgctxt "gender"
+msgid "apprentice"
+msgstr ""
+
+msgctxt "monster"
+msgid "apprentice"
+msgstr "apprenti"
+
+msgctxt "gender"
+msgid "arch-lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "arch-lich"
+msgstr "archi-liche"
+
+msgctxt "gender"
+msgid "archeologist"
+msgstr ""
+
+msgctxt "monster"
+msgid "archeologist"
+msgstr "archéologue"
+
+msgctxt "gender"
+msgid "attendant"
+msgstr ""
+
+msgctxt "monster"
+msgid "attendant"
+msgstr "assistant"
+
+msgctxt "gender"
+msgid "baby black dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby black dragon"
+msgstr "bébé dragon noir"
+
+msgctxt "gender"
+msgid "baby blue dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby blue dragon"
+msgstr "bébé dragon bleu"
+
+msgctxt "gender"
+msgid "baby crocodile"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby crocodile"
+msgstr "bébé crocodile"
+
+msgctxt "gender"
+msgid "baby gold dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby gold dragon"
+msgstr "bébé dragon d'or"
+
+msgctxt "gender"
+msgid "baby gray dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby gray dragon"
+msgstr "bébé dragon gris"
+
+msgctxt "gender"
+msgid "baby green dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby green dragon"
+msgstr "bébé dragon vert"
+
+msgctxt "gender"
+msgid "baby long worm"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby long worm"
+msgstr "bébé ver long"
+
+msgctxt "gender"
+msgid "baby orange dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby orange dragon"
+msgstr "bébé dragon orange"
+
+msgctxt "gender"
+msgid "baby purple worm"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby purple worm"
+msgstr "bébé ver pourpre"
+
+msgctxt "gender"
+msgid "baby red dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby red dragon"
+msgstr "bébé dragon rouge"
+
+msgctxt "gender"
+msgid "baby shimmering dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby shimmering dragon"
+msgstr "bébé dragon chatoyant"
+
+msgctxt "gender"
+msgid "baby silver dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby silver dragon"
+msgstr "bébé dragon d'argent"
+
+msgctxt "gender"
+msgid "baby white dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby white dragon"
+msgstr "bébé dragon blanc"
+
+msgctxt "gender"
+msgid "baby yellow dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "baby yellow dragon"
+msgstr "bébé dragon jaune"
+
+msgctxt "gender"
+msgid "balrog"
+msgstr ""
+
+msgctxt "monster"
+msgid "balrog"
+msgstr "balrog"
+
+msgctxt "gender"
+msgid "baluchitherium"
+msgstr ""
+
+msgctxt "monster"
+msgid "baluchitherium"
+msgstr "baluchithérium"
+
+msgctxt "gender"
+msgid "barbarian"
+msgstr ""
+
+msgctxt "monster"
+msgid "barbarian"
+msgstr "barbare"
+
+msgctxt "gender"
+msgid "barbed devil"
+msgstr ""
+
+msgctxt "monster"
+msgid "barbed devil"
+msgstr "diable barbelé"
+
+msgctxt "gender"
+msgid "barrow wight"
+msgstr ""
+
+msgctxt "monster"
+msgid "barrow wight"
+msgstr "être des galgals"
+
+msgctxt "gender"
+msgid "bat"
+msgstr "f"
+
+msgctxt "monster"
+msgid "bat"
+msgstr "chauve-souris"
+
+msgctxt "gender"
+msgid "beholder"
+msgstr ""
+
+msgctxt "monster"
+msgid "beholder"
+msgstr "tyrannoeil"
+
+msgctxt "gender"
+msgid "black dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "black dragon"
+msgstr "dragon noir"
+
+msgctxt "gender"
+msgid "black light"
+msgstr "f"
+
+msgctxt "monster"
+msgid "black light"
+msgstr "lumière noire"
+
+msgctxt "gender"
+msgid "black naga"
+msgstr ""
+
+msgctxt "monster"
+msgid "black naga"
+msgstr "naga noir"
+
+msgctxt "gender"
+msgid "black naga hatchling"
+msgstr ""
+
+msgctxt "monster"
+msgid "black naga hatchling"
+msgstr "jeune naga noir"
+
+msgctxt "gender"
+msgid "black pudding"
+msgstr ""
+
+msgctxt "monster"
+msgid "black pudding"
+msgstr "pudding noir"
+
+msgctxt "gender"
+msgid "black unicorn"
+msgstr "f"
+
+msgctxt "monster"
+msgid "black unicorn"
+msgstr "licorne noire"
+
+msgctxt "gender"
+msgid "blue dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "blue dragon"
+msgstr "dragon bleu"
+
+msgctxt "gender"
+msgid "blue jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "blue jelly"
+msgstr "gelée bleue"
+
+msgctxt "gender"
+msgid "bone devil"
+msgstr ""
+
+msgctxt "monster"
+msgid "bone devil"
+msgstr "diable osseux"
+
+msgctxt "gender"
+msgid "brown mold"
+msgstr "f"
+
+msgctxt "monster"
+msgid "brown mold"
+msgstr "moisissure brune"
+
+msgctxt "gender"
+msgid "brown pudding"
+msgstr ""
+
+msgctxt "monster"
+msgid "brown pudding"
+msgstr "pudding brun"
+
+msgctxt "gender"
+msgid "bugbear"
+msgstr ""
+
+msgctxt "monster"
+msgid "bugbear"
+msgstr "gobelours"
+
+msgctxt "gender"
+msgid "captain"
+msgstr ""
+
+msgctxt "monster"
+msgid "captain"
+msgstr "capitaine"
+
+msgctxt "gender"
+msgid "carnivorous ape"
+msgstr ""
+
+msgctxt "monster"
+msgid "carnivorous ape"
+msgstr "singe carnivore"
+
+msgctxt "gender"
+msgid "cave dweller"
+msgstr ""
+
+msgctxt "monster"
+msgid "cave dweller"
+msgstr "troglodyte"
+
+msgctxt "gender"
+msgid "cave spider"
+msgstr "f"
+
+msgctxt "monster"
+msgid "cave spider"
+msgstr "araignée des cavernes"
+
+msgctxt "gender"
+msgid "caveman"
+msgstr "e"
+
+msgctxt "monster"
+msgid "caveman"
+msgstr "homme des cavernes"
+
+msgctxt "gender"
+msgid "cavewoman"
+msgstr "f"
+
+msgctxt "monster"
+msgid "cavewoman"
+msgstr "femme des cavernes"
+
+msgctxt "gender"
+msgid "centipede"
+msgstr ""
+
+msgctxt "monster"
+msgid "centipede"
+msgstr "mille-pattes"
+
+msgctxt "gender"
+msgid "chameleon"
+msgstr ""
+
+msgctxt "monster"
+msgid "chameleon"
+msgstr "caméléon"
+
+msgctxt "gender"
+msgid "chickatrice"
+msgstr "f"
+
+msgctxt "monster"
+msgid "chickatrice"
+msgstr "poussatrice"
+
+msgctxt "gender"
+msgid "chieftain"
+msgstr ""
+
+msgctxt "monster"
+msgid "chieftain"
+msgstr "chef"
+
+msgctxt "gender"
+msgid "clay golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "clay golem"
+msgstr "golem d'argile"
+
+msgctxt "gender"
+msgid "cleric"
+msgstr ""
+
+msgctxt "monster"
+msgid "cleric"
+msgstr "clerc"
+
+msgctxt "gender"
+msgid "cobra"
+msgstr ""
+
+msgctxt "monster"
+msgid "cobra"
+msgstr "cobra"
+
+msgctxt "gender"
+msgid "cockatrice"
+msgstr "f"
+
+msgctxt "monster"
+msgid "cockatrice"
+msgstr "cocatrix"
+
+msgctxt "gender"
+msgid "couatl"
+msgstr ""
+
+msgctxt "monster"
+msgid "couatl"
+msgstr "couatl"
+
+msgctxt "gender"
+msgid "coyote"
+msgstr ""
+
+msgctxt "monster"
+msgid "coyote"
+msgstr "coyote"
+
+msgctxt "gender"
+msgid "crocodile"
+msgstr ""
+
+msgctxt "monster"
+msgid "crocodile"
+msgstr "crocodile"
+
+msgctxt "gender"
+msgid "demilich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "demilich"
+msgstr "demi-liche"
+
+msgctxt "gender"
+msgid "dingo"
+msgstr ""
+
+msgctxt "monster"
+msgid "dingo"
+msgstr "dingo"
+
+msgctxt "gender"
+msgid "disenchanter"
+msgstr ""
+
+msgctxt "monster"
+msgid "disenchanter"
+msgstr "désenchanteur"
+
+msgctxt "gender"
+msgid "displacer beast"
+msgstr "f"
+
+msgctxt "monster"
+msgid "displacer beast"
+msgstr "bête éclipsante"
+
+msgctxt "gender"
+msgid "djinni"
+msgstr ""
+
+msgctxt "monster"
+msgid "djinni"
+msgstr "djinn"
+
+msgctxt "gender"
+msgid "dog"
+msgstr ""
+
+msgctxt "monster"
+msgid "dog"
+msgstr "chien"
+
+msgctxt "gender"
+msgid "doppelganger"
+msgstr ""
+
+msgctxt "monster"
+msgid "doppelganger"
+msgstr "doppelganger"
+
+msgctxt "gender"
+msgid "dust vortex"
+msgstr ""
+
+msgctxt "monster"
+msgid "dust vortex"
+msgstr "tourbillon de poussière"
+
+msgctxt "gender"
+msgid "dwarf"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf"
+msgstr "nain"
+
+msgctxt "gender"
+msgid "dwarf king"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf king"
+msgstr "roi nain"
+
+msgctxt "gender"
+msgid "dwarf lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "dwarf lady"
+msgstr "dame naine"
+
+msgctxt "gender"
+msgid "dwarf leader"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf leader"
+msgstr "chef nain"
+
+msgctxt "gender"
+msgid "dwarf lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf lord"
+msgstr "seigneur nain"
+
+msgctxt "gender"
+msgid "dwarf mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "dwarf mummy"
+msgstr "momie naine"
+
+msgctxt "gender"
+msgid "dwarf queen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "dwarf queen"
+msgstr "reine naine"
+
+msgctxt "gender"
+msgid "dwarf ruler"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf ruler"
+msgstr "souverain nain"
+
+msgctxt "gender"
+msgid "dwarf zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "dwarf zombie"
+msgstr "zombie nain"
+
+msgctxt "gender"
+msgid "earth elemental"
+msgstr ""
+
+msgctxt "monster"
+msgid "earth elemental"
+msgstr "élémentaire de terre"
+
+msgctxt "gender"
+msgid "electric eel"
+msgstr "f"
+
+msgctxt "monster"
+msgid "electric eel"
+msgstr "anguille électrique"
+
+msgctxt "gender"
+msgid "elf"
+msgstr ""
+
+msgctxt "monster"
+msgid "elf"
+msgstr "elfe"
+
+msgctxt "gender"
+msgid "elf mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "elf mummy"
+msgstr "momie elfe"
+
+msgctxt "gender"
+msgid "elf zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "elf zombie"
+msgstr "zombie elfe"
+
+msgctxt "gender"
+msgid "elf-lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "elf-lady"
+msgstr "dame elfe"
+
+msgctxt "gender"
+msgid "elf-lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "elf-lord"
+msgstr "seigneur elfe"
+
+msgctxt "gender"
+msgid "elf-noble"
+msgstr ""
+
+msgctxt "monster"
+msgid "elf-noble"
+msgstr "noble elfe"
+
+msgctxt "gender"
+msgid "elven monarch"
+msgstr ""
+
+msgctxt "monster"
+msgid "elven monarch"
+msgstr "monarque elfe"
+
+msgctxt "gender"
+msgid "energy vortex"
+msgstr ""
+
+msgctxt "monster"
+msgid "energy vortex"
+msgstr "tourbillon d'énergie"
+
+msgctxt "gender"
+msgid "erinys"
+msgstr "f"
+
+msgctxt "monster"
+msgid "erinys"
+msgstr "érinye"
+
+msgctxt "gender"
+msgid "ettin"
+msgstr ""
+
+msgctxt "monster"
+msgid "ettin"
+msgstr "ettin"
+
+msgctxt "gender"
+msgid "ettin mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ettin mummy"
+msgstr "momie d'ettin"
+
+msgctxt "gender"
+msgid "ettin zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "ettin zombie"
+msgstr "zombie d'ettin"
+
+msgctxt "gender"
+msgid "fire ant"
+msgstr "f"
+
+msgctxt "monster"
+msgid "fire ant"
+msgstr "fourmi de feu"
+
+msgctxt "gender"
+msgid "fire elemental"
+msgstr ""
+
+msgctxt "monster"
+msgid "fire elemental"
+msgstr "élémentaire de feu"
+
+msgctxt "gender"
+msgid "fire giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "fire giant"
+msgstr "géant du feu"
+
+msgctxt "gender"
+msgid "fire vortex"
+msgstr ""
+
+msgctxt "monster"
+msgid "fire vortex"
+msgstr "tourbillon de feu"
+
+msgctxt "gender"
+msgid "flaming sphere"
+msgstr "f"
+
+msgctxt "monster"
+msgid "flaming sphere"
+msgstr "sphère enflammée"
+
+msgctxt "gender"
+msgid "flesh golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "flesh golem"
+msgstr "golem de chair"
+
+msgctxt "gender"
+msgid "floating eye"
+msgstr ""
+
+msgctxt "monster"
+msgid "floating eye"
+msgstr "œil flottant"
+
+msgctxt "gender"
+msgid "fog cloud"
+msgstr ""
+
+msgctxt "monster"
+msgid "fog cloud"
+msgstr "nuage de brouillard"
+
+msgctxt "gender"
+msgid "forest centaur"
+msgstr ""
+
+msgctxt "monster"
+msgid "forest centaur"
+msgstr "centaure sylvestre"
+
+msgctxt "gender"
+msgid "fox"
+msgstr ""
+
+msgctxt "monster"
+msgid "fox"
+msgstr "renard"
+
+msgctxt "gender"
+msgid "freezing sphere"
+msgstr "f"
+
+msgctxt "monster"
+msgid "freezing sphere"
+msgstr "sphère glaciale"
+
+msgctxt "gender"
+msgid "frost giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "frost giant"
+msgstr "géant du givre"
+
+msgctxt "gender"
+msgid "gargoyle"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gargoyle"
+msgstr "gargouille"
+
+msgctxt "gender"
+msgid "garter snake"
+msgstr "f"
+
+msgctxt "monster"
+msgid "garter snake"
+msgstr "couleuvre"
+
+msgctxt "gender"
+msgid "gas spore"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gas spore"
+msgstr "spore gazeuse"
+
+msgctxt "gender"
+msgid "gecko"
+msgstr ""
+
+msgctxt "monster"
+msgid "gecko"
+msgstr "gecko"
+
+msgctxt "gender"
+msgid "gelatinous cube"
+msgstr ""
+
+msgctxt "monster"
+msgid "gelatinous cube"
+msgstr "cube gélatineux"
+
+msgctxt "gender"
+msgid "genetic engineer"
+msgstr ""
+
+msgctxt "monster"
+msgid "genetic engineer"
+msgstr "généticien"
+
+msgctxt "gender"
+msgid "ghost"
+msgstr ""
+
+msgctxt "monster"
+msgid "ghost"
+msgstr "fantôme"
+
+msgctxt "gender"
+msgid "ghoul"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ghoul"
+msgstr "goule"
+
+msgctxt "gender"
+msgid "giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "giant"
+msgstr "géant"
+
+msgctxt "gender"
+msgid "giant ant"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant ant"
+msgstr "fourmi géante"
+
+msgctxt "gender"
+msgid "giant bat"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant bat"
+msgstr "chauve-souris géante"
+
+msgctxt "gender"
+msgid "giant beetle"
+msgstr ""
+
+msgctxt "monster"
+msgid "giant beetle"
+msgstr "scarabée géant"
+
+msgctxt "gender"
+msgid "giant eel"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant eel"
+msgstr "anguille géante"
+
+msgctxt "gender"
+msgid "giant mimic"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant mimic"
+msgstr "mimique géante"
+
+msgctxt "gender"
+msgid "giant mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant mummy"
+msgstr "momie de géant"
+
+msgctxt "gender"
+msgid "giant rat"
+msgstr ""
+
+msgctxt "monster"
+msgid "giant rat"
+msgstr "rat géant"
+
+msgctxt "gender"
+msgid "giant spider"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant spider"
+msgstr "araignée géante"
+
+msgctxt "gender"
+msgid "giant zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "giant zombie"
+msgstr "zombie de géant"
+
+msgctxt "gender"
+msgid "glass golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "glass golem"
+msgstr "golem de verre"
+
+msgctxt "gender"
+msgid "glass piercer"
+msgstr ""
+
+msgctxt "monster"
+msgid "glass piercer"
+msgstr "perceur de verre"
+
+msgctxt "gender"
+msgid "gnome"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome"
+msgstr "gnome"
+
+msgctxt "gender"
+msgid "gnome king"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome king"
+msgstr "roi gnome"
+
+msgctxt "gender"
+msgid "gnome lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome lady"
+msgstr "dame gnome"
+
+msgctxt "gender"
+msgid "gnome leader"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome leader"
+msgstr "chef gnome"
+
+msgctxt "gender"
+msgid "gnome lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome lord"
+msgstr "seigneur gnome"
+
+msgctxt "gender"
+msgid "gnome mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome mummy"
+msgstr "momie de gnome"
+
+msgctxt "gender"
+msgid "gnome queen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome queen"
+msgstr "reine gnome"
+
+msgctxt "gender"
+msgid "gnome ruler"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome ruler"
+msgstr "souverain gnome"
+
+msgctxt "gender"
+msgid "gnome zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnome zombie"
+msgstr "zombie de gnome"
+
+msgctxt "gender"
+msgid "gnomish wizard"
+msgstr ""
+
+msgctxt "monster"
+msgid "gnomish wizard"
+msgstr "magicien gnome"
+
+msgctxt "gender"
+msgid "goblin"
+msgstr ""
+
+msgctxt "monster"
+msgid "goblin"
+msgstr "gobelin"
+
+msgctxt "gender"
+msgid "gold dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "gold dragon"
+msgstr "dragon d'or"
+
+msgctxt "gender"
+msgid "gold golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "gold golem"
+msgstr "golem d'or"
+
+msgctxt "gender"
+msgid "golden naga"
+msgstr ""
+
+msgctxt "monster"
+msgid "golden naga"
+msgstr "naga doré"
+
+msgctxt "gender"
+msgid "golden naga hatchling"
+msgstr ""
+
+msgctxt "monster"
+msgid "golden naga hatchling"
+msgstr "jeune naga doré"
+
+msgctxt "gender"
+msgid "gray dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "gray dragon"
+msgstr "dragon gris"
+
+msgctxt "gender"
+msgid "gray ooze"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gray ooze"
+msgstr "vase grise"
+
+msgctxt "gender"
+msgid "gray unicorn"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gray unicorn"
+msgstr "licorne grise"
+
+msgctxt "gender"
+msgid "green dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "green dragon"
+msgstr "dragon vert"
+
+msgctxt "gender"
+msgid "green mold"
+msgstr "f"
+
+msgctxt "monster"
+msgid "green mold"
+msgstr "moisissure verte"
+
+msgctxt "gender"
+msgid "green slime"
+msgstr "f"
+
+msgctxt "monster"
+msgid "green slime"
+msgstr "bave verte"
+
+msgctxt "gender"
+msgid "gremlin"
+msgstr ""
+
+msgctxt "monster"
+msgid "gremlin"
+msgstr "gremlin"
+
+msgctxt "gender"
+msgid "grid bug"
+msgstr ""
+
+msgctxt "monster"
+msgid "grid bug"
+msgstr "insecte quadrillé"
+
+msgctxt "gender"
+msgid "guard"
+msgstr ""
+
+msgctxt "monster"
+msgid "guard"
+msgstr "garde"
+
+msgctxt "gender"
+msgid "guardian naga"
+msgstr ""
+
+msgctxt "monster"
+msgid "guardian naga"
+msgstr "naga gardien"
+
+msgctxt "gender"
+msgid "guardian naga hatchling"
+msgstr ""
+
+msgctxt "monster"
+msgid "guardian naga hatchling"
+msgstr "jeune naga gardien"
+
+msgctxt "gender"
+msgid "guide"
+msgstr ""
+
+msgctxt "monster"
+msgid "guide"
+msgstr "guide"
+
+msgctxt "gender"
+msgid "healer"
+msgstr ""
+
+msgctxt "monster"
+msgid "healer"
+msgstr "guérisseur"
+
+msgctxt "gender"
+msgid "hell hound"
+msgstr ""
+
+msgctxt "monster"
+msgid "hell hound"
+msgstr "chien de l'enfer"
+
+msgctxt "gender"
+msgid "hell hound pup"
+msgstr ""
+
+msgctxt "monster"
+msgid "hell hound pup"
+msgstr "chiot de l'enfer"
+
+msgctxt "gender"
+msgid "hezrou"
+msgstr ""
+
+msgctxt "monster"
+msgid "hezrou"
+msgstr "hezrou"
+
+msgctxt "gender"
+msgid "high cleric"
+msgstr ""
+
+msgctxt "monster"
+msgid "high cleric"
+msgstr "grand clerc"
+
+msgctxt "gender"
+msgid "high priest"
+msgstr ""
+
+msgctxt "monster"
+msgid "high priest"
+msgstr "grand prêtre"
+
+msgctxt "gender"
+msgid "high priestess"
+msgstr "f"
+
+msgctxt "monster"
+msgid "high priestess"
+msgstr "grande prêtresse"
+
+msgctxt "gender"
+msgid "hill giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "hill giant"
+msgstr "géant des collines"
+
+msgctxt "gender"
+msgid "hill orc"
+msgstr ""
+
+msgctxt "monster"
+msgid "hill orc"
+msgstr "orque des collines"
+
+msgctxt "gender"
+msgid "hobbit"
+msgstr ""
+
+msgctxt "monster"
+msgid "hobbit"
+msgstr "hobbit"
+
+msgctxt "gender"
+msgid "hobgoblin"
+msgstr ""
+
+msgctxt "monster"
+msgid "hobgoblin"
+msgstr "hobgobelin"
+
+msgctxt "gender"
+msgid "homunculus"
+msgstr "e"
+
+msgctxt "monster"
+msgid "homunculus"
+msgstr "homoncule"
+
+msgctxt "gender"
+msgid "horned devil"
+msgstr ""
+
+msgctxt "monster"
+msgid "horned devil"
+msgstr "diable cornu"
+
+msgctxt "gender"
+msgid "horse"
+msgstr ""
+
+msgctxt "monster"
+msgid "horse"
+msgstr "cheval"
+
+msgctxt "gender"
+msgid "housecat"
+msgstr ""
+
+msgctxt "monster"
+msgid "housecat"
+msgstr "chat domestique"
+
+msgctxt "gender"
+msgid "human"
+msgstr ""
+
+msgctxt "monster"
+msgid "human"
+msgstr "humain"
+
+msgctxt "gender"
+msgid "human mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "human mummy"
+msgstr "momie humaine"
+
+msgctxt "gender"
+msgid "human zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "human zombie"
+msgstr "zombie humain"
+
+msgctxt "gender"
+msgid "hunter"
+msgstr ""
+
+msgctxt "monster"
+msgid "hunter"
+msgstr "chasseur"
+
+msgctxt "gender"
+msgid "ice devil"
+msgstr ""
+
+msgctxt "monster"
+msgid "ice devil"
+msgstr "diable de glace"
+
+msgctxt "gender"
+msgid "ice troll"
+msgstr ""
+
+msgctxt "monster"
+msgid "ice troll"
+msgstr "troll des glaces"
+
+msgctxt "gender"
+msgid "ice vortex"
+msgstr ""
+
+msgctxt "monster"
+msgid "ice vortex"
+msgstr "tourbillon de glace"
+
+msgctxt "gender"
+msgid "iguana"
+msgstr ""
+
+msgctxt "monster"
+msgid "iguana"
+msgstr "iguane"
+
+msgctxt "gender"
+msgid "imp"
+msgstr ""
+
+msgctxt "monster"
+msgid "imp"
+msgstr "diablotin"
+
+msgctxt "gender"
+msgid "incubus"
+msgstr ""
+
+msgctxt "monster"
+msgid "incubus"
+msgstr "incube"
+
+msgctxt "gender"
+msgid "iron golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "iron golem"
+msgstr "golem de fer"
+
+msgctxt "gender"
+msgid "iron piercer"
+msgstr ""
+
+msgctxt "monster"
+msgid "iron piercer"
+msgstr "perceur de fer"
+
+msgctxt "gender"
+msgid "jabberwock"
+msgstr ""
+
+msgctxt "monster"
+msgid "jabberwock"
+msgstr "jabberwock"
+
+msgctxt "gender"
+msgid "jackal"
+msgstr ""
+
+msgctxt "monster"
+msgid "jackal"
+msgstr "chacal"
+
+msgctxt "gender"
+msgid "jaguar"
+msgstr ""
+
+msgctxt "monster"
+msgid "jaguar"
+msgstr "jaguar"
+
+msgctxt "gender"
+msgid "jellyfish"
+msgstr "f"
+
+msgctxt "monster"
+msgid "jellyfish"
+msgstr "méduse"
+
+msgctxt "gender"
+msgid "ki-rin"
+msgstr ""
+
+msgctxt "monster"
+msgid "ki-rin"
+msgstr "ki-rin"
+
+msgctxt "gender"
+msgid "killer bee"
+msgstr "f"
+
+msgctxt "monster"
+msgid "killer bee"
+msgstr "abeille tueuse"
+
+msgctxt "gender"
+msgid "kitten"
+msgstr ""
+
+msgctxt "monster"
+msgid "kitten"
+msgstr "chaton"
+
+msgctxt "gender"
+msgid "knight"
+msgstr ""
+
+msgctxt "monster"
+msgid "knight"
+msgstr "chevalier"
+
+msgctxt "gender"
+msgid "kobold"
+msgstr ""
+
+msgctxt "monster"
+msgid "kobold"
+msgstr "kobold"
+
+msgctxt "gender"
+msgid "kobold lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kobold lady"
+msgstr "dame kobold"
+
+msgctxt "gender"
+msgid "kobold leader"
+msgstr ""
+
+msgctxt "monster"
+msgid "kobold leader"
+msgstr "chef kobold"
+
+msgctxt "gender"
+msgid "kobold lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "kobold lord"
+msgstr "seigneur kobold"
+
+msgctxt "gender"
+msgid "kobold mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kobold mummy"
+msgstr "momie de kobold"
+
+msgctxt "gender"
+msgid "kobold shaman"
+msgstr ""
+
+msgctxt "monster"
+msgid "kobold shaman"
+msgstr "chaman kobold"
+
+msgctxt "gender"
+msgid "kobold zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "kobold zombie"
+msgstr "zombie de kobold"
+
+msgctxt "gender"
+msgid "kraken"
+msgstr ""
+
+msgctxt "monster"
+msgid "kraken"
+msgstr "kraken"
+
+msgctxt "gender"
+msgid "large cat"
+msgstr ""
+
+msgctxt "monster"
+msgid "large cat"
+msgstr "gros chat"
+
+msgctxt "gender"
+msgid "large dog"
+msgstr ""
+
+msgctxt "monster"
+msgid "large dog"
+msgstr "grand chien"
+
+msgctxt "gender"
+msgid "large kobold"
+msgstr ""
+
+msgctxt "monster"
+msgid "large kobold"
+msgstr "grand kobold"
+
+msgctxt "gender"
+msgid "large mimic"
+msgstr "f"
+
+msgctxt "monster"
+msgid "large mimic"
+msgstr "grande mimique"
+
+msgctxt "gender"
+msgid "leather golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "leather golem"
+msgstr "golem de cuir"
+
+msgctxt "gender"
+msgid "lemure"
+msgstr ""
+
+msgctxt "monster"
+msgid "lemure"
+msgstr "lémure"
+
+msgctxt "gender"
+msgid "leocrotta"
+msgstr ""
+
+msgctxt "monster"
+msgid "leocrotta"
+msgstr "léocrotta"
+
+msgctxt "gender"
+msgid "leprechaun"
+msgstr ""
+
+msgctxt "monster"
+msgid "leprechaun"
+msgstr "farfadet"
+
+msgctxt "gender"
+msgid "lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "lich"
+msgstr "liche"
+
+msgctxt "gender"
+msgid "lichen"
+msgstr ""
+
+msgctxt "monster"
+msgid "lichen"
+msgstr "lichen"
+
+msgctxt "gender"
+msgid "lieutenant"
+msgstr ""
+
+msgctxt "monster"
+msgid "lieutenant"
+msgstr "lieutenant"
+
+msgctxt "gender"
+msgid "little dog"
+msgstr ""
+
+msgctxt "monster"
+msgid "little dog"
+msgstr "petit chien"
+
+msgctxt "gender"
+msgid "lizard"
+msgstr ""
+
+msgctxt "monster"
+msgid "lizard"
+msgstr "lézard"
+
+msgctxt "gender"
+msgid "long worm"
+msgstr ""
+
+msgctxt "monster"
+msgid "long worm"
+msgstr "ver long"
+
+msgctxt "gender"
+msgid "long worm tail"
+msgstr "f"
+
+msgctxt "monster"
+msgid "long worm tail"
+msgstr "queue de ver long"
+
+msgctxt "gender"
+msgid "lurker above"
+msgstr ""
+
+msgctxt "monster"
+msgid "lurker above"
+msgstr "rôdeur d'en haut"
+
+msgctxt "gender"
+msgid "lynx"
+msgstr ""
+
+msgctxt "monster"
+msgid "lynx"
+msgstr "lynx"
+
+msgctxt "gender"
+msgid "mail daemon"
+msgstr ""
+
+msgctxt "monster"
+msgid "mail daemon"
+msgstr "démon postier"
+
+msgctxt "gender"
+msgid "manes"
+msgstr ""
+
+msgctxt "monster"
+msgid "manes"
+msgstr "mânes"
+
+msgctxt "gender"
+msgid "marilith"
+msgstr "f"
+
+msgctxt "monster"
+msgid "marilith"
+msgstr "marilith"
+
+msgctxt "gender"
+msgid "master lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "master lich"
+msgstr "liche maîtresse"
+
+msgctxt "gender"
+msgid "master mind flayer"
+msgstr ""
+
+msgctxt "monster"
+msgid "master mind flayer"
+msgstr "maître flagelleur mental"
+
+msgctxt "gender"
+msgid "mastodon"
+msgstr ""
+
+msgctxt "monster"
+msgid "mastodon"
+msgstr "mastodonte"
+
+msgctxt "gender"
+msgid "mind flayer"
+msgstr ""
+
+msgctxt "monster"
+msgid "mind flayer"
+msgstr "flagelleur mental"
+
+msgctxt "gender"
+msgid "minotaur"
+msgstr ""
+
+msgctxt "monster"
+msgid "minotaur"
+msgstr "minotaure"
+
+msgctxt "gender"
+msgid "monk"
+msgstr ""
+
+msgctxt "monster"
+msgid "monk"
+msgstr "moine"
+
+msgctxt "gender"
+msgid "monkey"
+msgstr ""
+
+msgctxt "monster"
+msgid "monkey"
+msgstr "singe"
+
+msgctxt "gender"
+msgid "mountain centaur"
+msgstr ""
+
+msgctxt "monster"
+msgid "mountain centaur"
+msgstr "centaure des montagnes"
+
+msgctxt "gender"
+msgid "mountain nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "mountain nymph"
+msgstr "nymphe des montagnes"
+
+msgctxt "gender"
+msgid "mumak"
+msgstr ""
+
+msgctxt "monster"
+msgid "mumak"
+msgstr "mûmak"
+
+msgctxt "gender"
+msgid "nalfeshnee"
+msgstr ""
+
+msgctxt "monster"
+msgid "nalfeshnee"
+msgstr "nalfeshnie"
+
+msgctxt "gender"
+msgid "neanderthal"
+msgstr ""
+
+msgctxt "monster"
+msgid "neanderthal"
+msgstr "néandertalien"
+
+msgctxt "gender"
+msgid "newt"
+msgstr ""
+
+msgctxt "monster"
+msgid "newt"
+msgstr "triton"
+
+msgctxt "gender"
+msgid "ninja"
+msgstr ""
+
+msgctxt "monster"
+msgid "ninja"
+msgstr "ninja"
+
+msgctxt "gender"
+msgid "nurse"
+msgstr "f"
+
+msgctxt "monster"
+msgid "nurse"
+msgstr "infirmière"
+
+msgctxt "gender"
+msgid "ochre jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ochre jelly"
+msgstr "gelée ocre"
+
+msgctxt "gender"
+msgid "ogre"
+msgstr ""
+
+msgctxt "monster"
+msgid "ogre"
+msgstr "ogre"
+
+msgctxt "gender"
+msgid "ogre king"
+msgstr ""
+
+msgctxt "monster"
+msgid "ogre king"
+msgstr "roi ogre"
+
+msgctxt "gender"
+msgid "ogre lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ogre lady"
+msgstr "dame ogresse"
+
+msgctxt "gender"
+msgid "ogre leader"
+msgstr ""
+
+msgctxt "monster"
+msgid "ogre leader"
+msgstr "chef ogre"
+
+msgctxt "gender"
+msgid "ogre lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "ogre lord"
+msgstr "seigneur ogre"
+
+msgctxt "gender"
+msgid "ogre queen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ogre queen"
+msgstr "reine ogresse"
+
+msgctxt "gender"
+msgid "ogre tyrant"
+msgstr ""
+
+msgctxt "monster"
+msgid "ogre tyrant"
+msgstr "tyran ogre"
+
+msgctxt "gender"
+msgid "orange dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "orange dragon"
+msgstr "dragon orange"
+
+msgctxt "gender"
+msgid "orc"
+msgstr ""
+
+msgctxt "monster"
+msgid "orc"
+msgstr "orque"
+
+msgctxt "gender"
+msgid "orc mummy"
+msgstr "f"
+
+msgctxt "monster"
+msgid "orc mummy"
+msgstr "momie d'orque"
+
+msgctxt "gender"
+msgid "orc shaman"
+msgstr ""
+
+msgctxt "monster"
+msgid "orc shaman"
+msgstr "chaman orque"
+
+msgctxt "gender"
+msgid "orc zombie"
+msgstr ""
+
+msgctxt "monster"
+msgid "orc zombie"
+msgstr "zombie d'orque"
+
+msgctxt "gender"
+msgid "orc-captain"
+msgstr ""
+
+msgctxt "monster"
+msgid "orc-captain"
+msgstr "capitaine orque"
+
+msgctxt "gender"
+msgid "owlbear"
+msgstr ""
+
+msgctxt "monster"
+msgid "owlbear"
+msgstr "ours-hibou"
+
+msgctxt "gender"
+msgid "page"
+msgstr ""
+
+msgctxt "monster"
+msgid "page"
+msgstr "page"
+
+msgctxt "gender"
+msgid "panther"
+msgstr "f"
+
+msgctxt "monster"
+msgid "panther"
+msgstr "panthère"
+
+msgctxt "gender"
+msgid "paper golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "paper golem"
+msgstr "golem de papier"
+
+msgctxt "gender"
+msgid "piranha"
+msgstr ""
+
+msgctxt "monster"
+msgid "piranha"
+msgstr "piranha"
+
+msgctxt "gender"
+msgid "pit fiend"
+msgstr ""
+
+msgctxt "monster"
+msgid "pit fiend"
+msgstr "diantrefosse"
+
+msgctxt "gender"
+msgid "pit viper"
+msgstr "f"
+
+msgctxt "monster"
+msgid "pit viper"
+msgstr "vipère des fosses"
+
+msgctxt "gender"
+msgid "plains centaur"
+msgstr ""
+
+msgctxt "monster"
+msgid "plains centaur"
+msgstr "centaure des plaines"
+
+msgctxt "gender"
+msgid "pony"
+msgstr ""
+
+msgctxt "monster"
+msgid "pony"
+msgstr "poney"
+
+msgctxt "gender"
+msgid "priest"
+msgstr ""
+
+msgctxt "monster"
+msgid "priest"
+msgstr "prêtre"
+
+msgctxt "gender"
+msgid "priestess"
+msgstr "f"
+
+msgctxt "monster"
+msgid "priestess"
+msgstr "prêtresse"
+
+msgctxt "gender"
+msgid "prisoner"
+msgstr ""
+
+msgctxt "monster"
+msgid "prisoner"
+msgstr "prisonnier"
+
+msgctxt "gender"
+msgid "purple worm"
+msgstr ""
+
+msgctxt "monster"
+msgid "purple worm"
+msgstr "ver pourpre"
+
+msgctxt "gender"
+msgid "pyrolisk"
+msgstr ""
+
+msgctxt "monster"
+msgid "pyrolisk"
+msgstr "pyrolisque"
+
+msgctxt "gender"
+msgid "python"
+msgstr ""
+
+msgctxt "monster"
+msgid "python"
+msgstr "python"
+
+msgctxt "gender"
+msgid "quantum mechanic"
+msgstr ""
+
+msgctxt "monster"
+msgid "quantum mechanic"
+msgstr "mécanicien quantique"
+
+msgctxt "gender"
+msgid "quasit"
+msgstr ""
+
+msgctxt "monster"
+msgid "quasit"
+msgstr "quasit"
+
+msgctxt "gender"
+msgid "queen bee"
+msgstr "f"
+
+msgctxt "monster"
+msgid "queen bee"
+msgstr "reine des abeilles"
+
+msgctxt "gender"
+msgid "quivering blob"
+msgstr "f"
+
+msgctxt "monster"
+msgid "quivering blob"
+msgstr "goutte tremblotante"
+
+msgctxt "gender"
+msgid "rabid rat"
+msgstr ""
+
+msgctxt "monster"
+msgid "rabid rat"
+msgstr "rat enragé"
+
+msgctxt "gender"
+msgid "ranger"
+msgstr ""
+
+msgctxt "monster"
+msgid "ranger"
+msgstr "rôdeur"
+
+msgctxt "gender"
+msgid "raven"
+msgstr ""
+
+msgctxt "monster"
+msgid "raven"
+msgstr "corbeau"
+
+msgctxt "gender"
+msgid "red dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "red dragon"
+msgstr "dragon rouge"
+
+msgctxt "gender"
+msgid "red mold"
+msgstr "f"
+
+msgctxt "monster"
+msgid "red mold"
+msgstr "moisissure rouge"
+
+msgctxt "gender"
+msgid "red naga"
+msgstr ""
+
+msgctxt "monster"
+msgid "red naga"
+msgstr "naga rouge"
+
+msgctxt "gender"
+msgid "red naga hatchling"
+msgstr ""
+
+msgctxt "monster"
+msgid "red naga hatchling"
+msgstr "jeune naga rouge"
+
+msgctxt "gender"
+msgid "rock mole"
+msgstr "f"
+
+msgctxt "monster"
+msgid "rock mole"
+msgstr "taupe des roches"
+
+msgctxt "gender"
+msgid "rock piercer"
+msgstr ""
+
+msgctxt "monster"
+msgid "rock piercer"
+msgstr "perceur de roche"
+
+msgctxt "gender"
+msgid "rock troll"
+msgstr ""
+
+msgctxt "monster"
+msgid "rock troll"
+msgstr "troll des roches"
+
+msgctxt "gender"
+msgid "rogue"
+msgstr ""
+
+msgctxt "monster"
+msgid "rogue"
+msgstr "roublard"
+
+msgctxt "gender"
+msgid "rope golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "rope golem"
+msgstr "golem de corde"
+
+msgctxt "gender"
+msgid "roshi"
+msgstr ""
+
+msgctxt "monster"
+msgid "roshi"
+msgstr "roshi"
+
+msgctxt "gender"
+msgid "rothe"
+msgstr ""
+
+msgctxt "monster"
+msgid "rothe"
+msgstr "rothé"
+
+msgctxt "gender"
+msgid "rust monster"
+msgstr ""
+
+msgctxt "monster"
+msgid "rust monster"
+msgstr "monstre de la rouille"
+
+msgctxt "gender"
+msgid "salamander"
+msgstr "f"
+
+msgctxt "monster"
+msgid "salamander"
+msgstr "salamandre"
+
+msgctxt "gender"
+msgid "samurai"
+msgstr ""
+
+msgctxt "monster"
+msgid "samurai"
+msgstr "samouraï"
+
+msgctxt "gender"
+msgid "sandestin"
+msgstr ""
+
+msgctxt "monster"
+msgid "sandestin"
+msgstr "sandestin"
+
+msgctxt "gender"
+msgid "sasquatch"
+msgstr ""
+
+msgctxt "monster"
+msgid "sasquatch"
+msgstr "sasquatch"
+
+msgctxt "gender"
+msgid "scorpion"
+msgstr ""
+
+msgctxt "monster"
+msgid "scorpion"
+msgstr "scorpion"
+
+msgctxt "gender"
+msgid "sergeant"
+msgstr ""
+
+msgctxt "monster"
+msgid "sergeant"
+msgstr "sergent"
+
+msgctxt "gender"
+msgid "sewer rat"
+msgstr ""
+
+msgctxt "monster"
+msgid "sewer rat"
+msgstr "rat d'égout"
+
+msgctxt "gender"
+msgid "shade"
+msgstr "f"
+
+msgctxt "monster"
+msgid "shade"
+msgstr "ombre"
+
+msgctxt "gender"
+msgid "shark"
+msgstr ""
+
+msgctxt "monster"
+msgid "shark"
+msgstr "requin"
+
+msgctxt "gender"
+msgid "shimmering dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "shimmering dragon"
+msgstr "dragon chatoyant"
+
+msgctxt "gender"
+msgid "shocking sphere"
+msgstr "f"
+
+msgctxt "monster"
+msgid "shocking sphere"
+msgstr "sphère électrique"
+
+msgctxt "gender"
+msgid "shopkeeper"
+msgstr ""
+
+msgctxt "monster"
+msgid "shopkeeper"
+msgstr "marchand"
+
+msgctxt "gender"
+msgid "shrieker"
+msgstr ""
+
+msgctxt "monster"
+msgid "shrieker"
+msgstr "hurleur"
+
+msgctxt "gender"
+msgid "silver dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "silver dragon"
+msgstr "dragon d'argent"
+
+msgctxt "gender"
+msgid "skeleton"
+msgstr ""
+
+msgctxt "monster"
+msgid "skeleton"
+msgstr "squelette"
+
+msgctxt "gender"
+msgid "small mimic"
+msgstr "f"
+
+msgctxt "monster"
+msgid "small mimic"
+msgstr "petite mimique"
+
+msgctxt "gender"
+msgid "snake"
+msgstr ""
+
+msgctxt "monster"
+msgid "snake"
+msgstr "serpent"
+
+msgctxt "gender"
+msgid "soldier"
+msgstr ""
+
+msgctxt "monster"
+msgid "soldier"
+msgstr "soldat"
+
+msgctxt "gender"
+msgid "soldier ant"
+msgstr "f"
+
+msgctxt "monster"
+msgid "soldier ant"
+msgstr "fourmi soldat"
+
+msgctxt "gender"
+msgid "spotted jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "spotted jelly"
+msgstr "gelée tachetée"
+
+msgctxt "gender"
+msgid "stalker"
+msgstr ""
+
+msgctxt "monster"
+msgid "stalker"
+msgstr "traqueur"
+
+msgctxt "gender"
+msgid "steam vortex"
+msgstr ""
+
+msgctxt "monster"
+msgid "steam vortex"
+msgstr "tourbillon de vapeur"
+
+msgctxt "gender"
+msgid "stone giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "stone giant"
+msgstr "géant des pierres"
+
+msgctxt "gender"
+msgid "stone golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "stone golem"
+msgstr "golem de pierre"
+
+msgctxt "gender"
+msgid "storm giant"
+msgstr ""
+
+msgctxt "monster"
+msgid "storm giant"
+msgstr "géant des tempêtes"
+
+msgctxt "gender"
+msgid "straw golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "straw golem"
+msgstr "golem de paille"
+
+msgctxt "gender"
+msgid "student"
+msgstr ""
+
+msgctxt "monster"
+msgid "student"
+msgstr "étudiant"
+
+msgctxt "gender"
+msgid "succubus"
+msgstr "f"
+
+msgctxt "monster"
+msgid "succubus"
+msgstr "succube"
+
+msgctxt "gender"
+msgid "tengu"
+msgstr ""
+
+msgctxt "monster"
+msgid "tengu"
+msgstr "tengu"
+
+msgctxt "gender"
+msgid "thug"
+msgstr "f"
+
+msgctxt "monster"
+msgid "thug"
+msgstr "brute"
+
+msgctxt "gender"
+msgid "tiger"
+msgstr ""
+
+msgctxt "monster"
+msgid "tiger"
+msgstr "tigre"
+
+msgctxt "gender"
+msgid "titan"
+msgstr ""
+
+msgctxt "monster"
+msgid "titan"
+msgstr "titan"
+
+msgctxt "gender"
+msgid "titanothere"
+msgstr ""
+
+msgctxt "monster"
+msgid "titanothere"
+msgstr "titanothère"
+
+msgctxt "gender"
+msgid "tourist"
+msgstr ""
+
+msgctxt "monster"
+msgid "tourist"
+msgstr "touriste"
+
+msgctxt "gender"
+msgid "trapper"
+msgstr ""
+
+msgctxt "monster"
+msgid "trapper"
+msgstr "trappeur"
+
+msgctxt "gender"
+msgid "troll"
+msgstr ""
+
+msgctxt "monster"
+msgid "troll"
+msgstr "troll"
+
+msgctxt "gender"
+msgid "umber hulk"
+msgstr ""
+
+msgctxt "monster"
+msgid "umber hulk"
+msgstr "mastodonte des profondeurs"
+
+msgctxt "gender"
+msgid "valkyrie"
+msgstr "f"
+
+msgctxt "monster"
+msgid "valkyrie"
+msgstr "valkyrie"
+
+msgctxt "gender"
+msgid "vampire"
+msgstr ""
+
+msgctxt "monster"
+msgid "vampire"
+msgstr "vampire"
+
+msgctxt "gender"
+msgid "vampire bat"
+msgstr "f"
+
+msgctxt "monster"
+msgid "vampire bat"
+msgstr "chauve-souris vampire"
+
+msgctxt "gender"
+msgid "vampire lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "vampire lady"
+msgstr "dame vampire"
+
+msgctxt "gender"
+msgid "vampire leader"
+msgstr ""
+
+msgctxt "monster"
+msgid "vampire leader"
+msgstr "chef vampire"
+
+msgctxt "gender"
+msgid "vampire lord"
+msgstr ""
+
+msgctxt "monster"
+msgid "vampire lord"
+msgstr "seigneur vampire"
+
+msgctxt "gender"
+msgid "vampire mage"
+msgstr ""
+
+msgctxt "monster"
+msgid "vampire mage"
+msgstr "mage vampire"
+
+msgctxt "gender"
+msgid "violet fungus"
+msgstr ""
+
+msgctxt "monster"
+msgid "violet fungus"
+msgstr "champignon violet"
+
+msgctxt "gender"
+msgid "vorpal jabberwock"
+msgstr ""
+
+msgctxt "monster"
+msgid "vorpal jabberwock"
+msgstr "jabberwock vorpal"
+
+msgctxt "gender"
+msgid "vrock"
+msgstr ""
+
+msgctxt "monster"
+msgid "vrock"
+msgstr "vrock"
+
+msgctxt "gender"
+msgid "warg"
+msgstr ""
+
+msgctxt "monster"
+msgid "warg"
+msgstr "warg"
+
+msgctxt "gender"
+msgid "warhorse"
+msgstr ""
+
+msgctxt "monster"
+msgid "warhorse"
+msgstr "destrier"
+
+msgctxt "gender"
+msgid "warrior"
+msgstr ""
+
+msgctxt "monster"
+msgid "warrior"
+msgstr "guerrier"
+
+msgctxt "gender"
+msgid "watch captain"
+msgstr ""
+
+msgctxt "monster"
+msgid "watch captain"
+msgstr "capitaine du guet"
+
+msgctxt "gender"
+msgid "watchman"
+msgstr "e"
+
+msgctxt "monster"
+msgid "watchman"
+msgstr "homme du guet"
+
+msgctxt "gender"
+msgid "water demon"
+msgstr ""
+
+msgctxt "monster"
+msgid "water demon"
+msgstr "démon des eaux"
+
+msgctxt "gender"
+msgid "water elemental"
+msgstr ""
+
+msgctxt "monster"
+msgid "water elemental"
+msgstr "élémentaire d'eau"
+
+msgctxt "gender"
+msgid "water moccasin"
+msgstr ""
+
+msgctxt "monster"
+msgid "water moccasin"
+msgstr "mocassin d'eau"
+
+msgctxt "gender"
+msgid "water nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "water nymph"
+msgstr "nymphe des eaux"
+
+msgctxt "gender"
+msgid "water troll"
+msgstr ""
+
+msgctxt "monster"
+msgid "water troll"
+msgstr "troll des eaux"
+
+msgctxt "gender"
+msgid "werejackal"
+msgstr ""
+
+msgctxt "monster"
+msgid "werejackal"
+msgstr "chacal-garou"
+
+msgctxt "gender"
+msgid "wererat"
+msgstr ""
+
+msgctxt "monster"
+msgid "wererat"
+msgstr "rat-garou"
+
+msgctxt "gender"
+msgid "werewolf"
+msgstr ""
+
+msgctxt "monster"
+msgid "werewolf"
+msgstr "loup-garou"
+
+msgctxt "gender"
+msgid "white dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "white dragon"
+msgstr "dragon blanc"
+
+msgctxt "gender"
+msgid "white unicorn"
+msgstr "f"
+
+msgctxt "monster"
+msgid "white unicorn"
+msgstr "licorne blanche"
+
+msgctxt "gender"
+msgid "winged gargoyle"
+msgstr "f"
+
+msgctxt "monster"
+msgid "winged gargoyle"
+msgstr "gargouille ailée"
+
+msgctxt "gender"
+msgid "winter wolf"
+msgstr ""
+
+msgctxt "monster"
+msgid "winter wolf"
+msgstr "loup d'hiver"
+
+msgctxt "gender"
+msgid "winter wolf cub"
+msgstr ""
+
+msgctxt "monster"
+msgid "winter wolf cub"
+msgstr "louveteau d'hiver"
+
+msgctxt "gender"
+msgid "wizard"
+msgstr ""
+
+msgctxt "monster"
+msgid "wizard"
+msgstr "magicien"
+
+msgctxt "gender"
+msgid "wolf"
+msgstr ""
+
+msgctxt "monster"
+msgid "wolf"
+msgstr "loup"
+
+msgctxt "gender"
+msgid "wood golem"
+msgstr ""
+
+msgctxt "monster"
+msgid "wood golem"
+msgstr "golem de bois"
+
+msgctxt "gender"
+msgid "wood nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "wood nymph"
+msgstr "nymphe des bois"
+
+msgctxt "gender"
+msgid "woodchuck"
+msgstr "f"
+
+msgctxt "monster"
+msgid "woodchuck"
+msgstr "marmotte"
+
+msgctxt "gender"
+msgid "wraith"
+msgstr "f"
+
+msgctxt "monster"
+msgid "wraith"
+msgstr "âme en peine"
+
+msgctxt "gender"
+msgid "wumpus"
+msgstr ""
+
+msgctxt "monster"
+msgid "wumpus"
+msgstr "wumpus"
+
+msgctxt "gender"
+msgid "xan"
+msgstr ""
+
+msgctxt "monster"
+msgid "xan"
+msgstr "xan"
+
+msgctxt "gender"
+msgid "xorn"
+msgstr ""
+
+msgctxt "monster"
+msgid "xorn"
+msgstr "xorn"
+
+msgctxt "gender"
+msgid "yellow dragon"
+msgstr ""
+
+msgctxt "monster"
+msgid "yellow dragon"
+msgstr "dragon jaune"
+
+msgctxt "gender"
+msgid "yellow light"
+msgstr "f"
+
+msgctxt "monster"
+msgid "yellow light"
+msgstr "lumière jaune"
+
+msgctxt "gender"
+msgid "yellow mold"
+msgstr "f"
+
+msgctxt "monster"
+msgid "yellow mold"
+msgstr "moisissure jaune"
+
+msgctxt "gender"
+msgid "yeti"
+msgstr "n"
+
+msgctxt "monster"
+msgid "yeti"
+msgstr "yéti"
+
+msgctxt "gender"
+msgid "zruty"
+msgstr ""
+
+msgctxt "monster"
+msgid "zruty"
+msgstr "zruty"
+
 #: src/allmain.c:59
 msgid "You are lucky!  Full moon tonight."
 msgstr "Vous avez de la chance ! C'est la pleine lune ce soir."
@@ -228,7 +3580,7 @@ msgstr ""
 #: src/invent.c:4560 src/mail.c:375 src/muse.c:3144 src/music.c:616
 #: src/objnam.c:3635 src/objnam.c:3684 src/objnam.c:3815 src/potion.c:1681
 #: src/pray.c:575 src/read.c:1356 src/read.c:2664 src/read.c:2868
-#: src/uhitm.c:3000 src/wield.c:1007 win/tty/wintty.c:2958
+#: src/uhitm.c:3005 src/wield.c:1007 win/tty/wintty.c:2958
 #, c-format
 msgid "%s."
 msgstr ""
@@ -238,7 +3590,7 @@ msgstr ""
 msgid "%s pulls free of %s leash!"
 msgstr ""
 
-#: src/apply.c:735 src/mhitm.c:1004
+#: src/apply.c:735 src/mhitm.c:1005
 msgid "Your leash falls slack."
 msgstr "Votre laisse se détend."
 
@@ -372,7 +3724,7 @@ msgid "You reflect %s %s."
 msgstr ""
 
 #: src/apply.c:1085 src/apply.c:2131 src/do.c:1800 src/do_wear.c:1167
-#: src/eat.c:1259 src/eat.c:3474 src/invent.c:2050 src/mhitu.c:1649
+#: src/eat.c:1259 src/eat.c:3474 src/invent.c:2050 src/mhitu.c:1657
 #: src/sit.c:502 src/teleport.c:1082 src/teleport.c:1379 src/wield.c:235
 #: src/wield.c:676 src/wield.c:910
 #, c-format
@@ -409,10 +3761,10 @@ msgstr ""
 msgid "%s doesn't have a reflection."
 msgstr ""
 
-#: src/apply.c:1136 src/mhitm.c:785 src/mhitu.c:1739
+#: src/apply.c:1136 src/mhitm.c:786 src/mhitu.c:1747
 #, c-format
 msgid "%s is turned to stone!"
-msgstr ""
+msgstr "%s se change en pierre !"
 
 #: src/apply.c:1144
 #, c-format
@@ -594,7 +3946,7 @@ msgstr ""
 msgid "%s %s out!"
 msgstr ""
 
-#: src/apply.c:1556 src/uhitm.c:2042
+#: src/apply.c:1556 src/uhitm.c:2047
 #, c-format
 msgid "%s %s%s%s."
 msgstr ""
@@ -747,7 +4099,7 @@ msgstr "Il faut nager ici, pas sauter !"
 #: src/apply.c:2028 src/hack.c:2686
 #, c-format
 msgid "You pull free from %s."
-msgstr ""
+msgstr "Vous vous dégagez de l'emprise de %s."
 
 #: src/apply.c:2032
 #, c-format
@@ -757,7 +4109,7 @@ msgstr ""
 #: src/apply.c:2035 src/hack.c:2675
 #, c-format
 msgid "You cannot escape from %s!"
-msgstr ""
+msgstr "Vous ne pouvez pas échapper à %s !"
 
 #: src/apply.c:2039
 msgid "You flail around a little."
@@ -1239,12 +4591,12 @@ msgid "You are already %s."
 msgstr ""
 
 #: src/apply.c:4319 src/dog.c:1335 src/dothrow.c:1962 src/engrave.c:862
-#: src/engrave.c:870 src/mcastu.c:699 src/mhitm.c:704 src/mhitu.c:1715
-#: src/mhitu.c:2579 src/mkobj.c:1605 src/mon.c:1028 src/mon.c:1808
+#: src/engrave.c:870 src/mcastu.c:699 src/mhitm.c:705 src/mhitu.c:1723
+#: src/mhitu.c:2587 src/mkobj.c:1605 src/mon.c:1028 src/mon.c:1808
 #: src/music.c:675 src/potion.c:473 src/potion.c:1557 src/pray.c:362
 #: src/pray.c:594 src/pray.c:1297 src/read.c:1288 src/read.c:1590
 #: src/shk.c:1386 src/shk.c:1864 src/shk.c:5327 src/sit.c:631 src/sounds.c:507
-#: src/trap.c:4524 src/trap.c:4532 src/trap.c:4645 src/uhitm.c:4647
+#: src/trap.c:4524 src/trap.c:4532 src/trap.c:4645 src/uhitm.c:4652
 #: src/wield.c:996
 #, c-format
 msgid "%s %s."
@@ -1361,11 +4713,11 @@ msgstr ""
 msgid "The %s is insightful."
 msgstr ""
 
-#: src/artifact.c:1414 src/hack.c:3082 src/lock.c:1317 src/mhitu.c:687
-#: src/mhitu.c:1008 src/mhitu.c:1335 src/mon.c:2941 src/shk.c:1487
+#: src/artifact.c:1414 src/hack.c:3082 src/lock.c:1317 src/mhitu.c:695
+#: src/mhitu.c:1016 src/mhitu.c:1343 src/mon.c:2941 src/shk.c:1487
 #: src/sounds.c:416 src/sounds.c:467 src/trap.c:834 src/trap.c:1696
-#: src/uhitm.c:2469 src/uhitm.c:2540 src/uhitm.c:2599 src/uhitm.c:4513
-#: src/uhitm.c:6429 src/weapon.c:878 src/wizard.c:867
+#: src/uhitm.c:2474 src/uhitm.c:2545 src/uhitm.c:2604 src/uhitm.c:4518
+#: src/uhitm.c:6434 src/weapon.c:878 src/wizard.c:867
 #, c-format
 msgid "%s %s!"
 msgstr ""
@@ -1613,13 +4965,12 @@ msgstr ""
 msgid "The poison doesn't seem to affect you."
 msgstr "Le poison ne semble pas vous affecter."
 
-#: src/attrib.c:369 src/mthrowu.c:413 src/uhitm.c:1900 src/uhitm.c:3117
+#: src/attrib.c:369 src/mthrowu.c:413 src/uhitm.c:1905 src/uhitm.c:3122
 msgid "The poison was deadly..."
 msgstr "Le poison était mortel..."
 
 #: src/attrib.c:664 src/dig.c:1307 src/eat.c:3043 src/hack.c:1720
-#: src/hack.c:2169 src/music.c:716 src/teleport.c:1123 src/uhitm.c:5025
-#: src/uhitm.c:5660
+#: src/music.c:716 src/teleport.c:1123 src/uhitm.c:5030 src/uhitm.c:5665
 #, c-format
 msgid "You %s %s."
 msgstr ""
@@ -1680,7 +5031,7 @@ msgstr "Vous sentez le boulet tirer."
 msgid "You are jerked back by the iron ball!"
 msgstr "Le boulet vous tire brusquement en arrière !"
 
-#: src/ball.c:900 src/ball.c:903 src/ball.c:909 src/ball.c:913 src/mhitu.c:1023
+#: src/ball.c:900 src/ball.c:903 src/ball.c:909 src/ball.c:913 src/mhitu.c:1031
 #, c-format
 msgid "%s%s!"
 msgstr ""
@@ -2310,7 +5661,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: src/cfgfiles.c:1587 src/mhitu.c:77
+#: src/cfgfiles.c:1587 src/mhitu.c:82
 #, c-format
 msgid "%s %s%s%s"
 msgstr ""
@@ -2385,7 +5736,7 @@ msgstr "Vous êtes maintenant en mode exploration, sans score."
 msgid "Continuing with %s."
 msgstr ""
 
-#: src/cmd.c:1291 src/trap.c:5037 src/uhitm.c:5581
+#: src/cmd.c:1291 src/trap.c:5037 src/uhitm.c:5586
 #, c-format
 msgid "You %s %s %s."
 msgstr ""
@@ -2752,7 +6103,7 @@ msgid "%s your mind!"
 msgstr ""
 
 #: src/detect.c:1246 src/detect.c:1322 src/dig.c:1068 src/dig.c:1074
-#: src/dothrow.c:1531 src/eat.c:2122 src/mon.c:3801 src/mthrowu.c:1467
+#: src/dothrow.c:1531 src/eat.c:2122 src/mon.c:3823 src/mthrowu.c:1467
 #: src/muse.c:218 src/shk.c:5452 src/sit.c:611 src/steed.c:429 src/trap.c:6364
 #, c-format
 msgid "%s!"
@@ -3372,8 +6723,8 @@ msgstr "Il coule sans laisser de trace !"
 msgid "%s boulder %s into the pit%s."
 msgstr ""
 
-#: src/do.c:216 src/explode.c:572 src/mhitm.c:953 src/mthrowu.c:456
-#: src/uhitm.c:2535 src/uhitm.c:2594 src/uhitm.c:5115
+#: src/do.c:216 src/explode.c:572 src/mhitm.c:954 src/mthrowu.c:456
+#: src/uhitm.c:2540 src/uhitm.c:2599 src/uhitm.c:5120
 #, c-format
 msgid "%s is %s!"
 msgstr ""
@@ -3622,7 +6973,7 @@ msgstr ""
 #: src/do.c:1124 src/end.c:751 src/hack.c:2653 src/zap.c:598
 #, c-format
 msgid "You release %s."
-msgstr ""
+msgstr "Vous relâchez %s."
 
 #: src/do.c:1173
 msgid "Your latent levitation ceases."
@@ -3843,7 +7194,7 @@ msgstr ""
 msgid "You feel %sless hassled."
 msgstr ""
 
-#: src/do.c:2338 src/dokick.c:1936 src/mon.c:4209 src/mon.c:4227
+#: src/do.c:2338 src/dokick.c:1936 src/mon.c:4231 src/mon.c:4249
 #: src/uhitm.c:1006
 #, c-format
 msgid "%s%s"
@@ -3874,111 +7225,293 @@ msgstr ""
 msgid "Your %s %s better."
 msgstr ""
 
-#: src/do_name.c:166
+#: src/do_name.c:174
 #, c-format
 msgid "%s would rather keep %s existing %s."
 msgstr ""
 
-#: src/do_name.c:182
+#: src/do_name.c:190
 #, c-format
 msgid "%s is already called that."
 msgstr ""
 
-#: src/do_name.c:184
+#: src/do_name.c:192
 #, c-format
 msgid "%s is already called %s."
 msgstr ""
 
-#: src/do_name.c:191
+#: src/do_name.c:199
 #, c-format
 msgid "%s doesn't like being called %s."
 msgstr ""
 
-#: src/do_name.c:208
+#: src/do_name.c:216
 msgid "You would never recognize it anyway."
 msgstr "Vous ne le reconnaîtriez jamais de toute façon."
 
-#: src/do_name.c:222
+#: src/do_name.c:230
 #, c-format
 msgid "This %s creature is called %s and cannot be renamed."
 msgstr ""
 
-#: src/do_name.c:246
+#: src/do_name.c:254
 msgid "I see no monster there."
 msgstr "Je ne vois aucun monstre là."
 
-#: src/do_name.c:267
+#: src/do_name.c:275
 #, c-format
 msgid "%s doesn't like being called names!"
 msgstr ""
 
-#: src/do_name.c:273
+#: src/do_name.c:281
 #, c-format
 msgid "I'm %s, not %s."
 msgstr ""
 
-#: src/do_name.c:278
+#: src/do_name.c:286
 #, c-format
 msgid "%s will not accept the name %s."
 msgstr ""
 
-#: src/do_name.c:298
+#: src/do_name.c:306
 #, c-format
 msgid "%s already has a published name."
 msgstr ""
 
-#: src/do_name.c:322
+#: src/do_name.c:330
 #, c-format
 msgid "%s resists the attempt."
 msgstr ""
 
-#: src/do_name.c:351
+#: src/do_name.c:359
 #, c-format
 msgid "While engraving, your %s slips."
 msgstr ""
 
-#: src/do_name.c:353
+#: src/do_name.c:361
 #, c-format
 msgid "You engrave: \"%s\"."
 msgstr ""
 
-#: src/do_name.c:567
+#: src/do_name.c:575
 msgctxt "verb"
 msgid "name"
 msgstr "nommer"
 
-#: src/do_name.c:572
+#: src/do_name.c:580
 msgctxt "verb"
 msgid "call"
 msgstr "appeler"
 
-#: src/do_name.c:580
+#: src/do_name.c:588
 msgid "You would never recognize another one."
 msgstr "Vous n'en reconnaîtriez jamais un autre."
 
-#: src/do_name.c:583
+#: src/do_name.c:591
 msgid "You know those as well as you ever will."
 msgstr "Vous les connaissez aussi bien que vous les connaîtrez jamais."
 
-#: src/do_name.c:706
+#: src/do_name.c:714
 #, c-format
 msgid "There doesn't seem to be any object %s."
 msgstr ""
 
-#: src/do_name.c:741
+#: src/do_name.c:749
 #, c-format
 msgid "%s %s to call you \"%s.\""
 msgstr ""
 
-#: src/do_name.c:745
+#: src/do_name.c:753
 #, c-format
 msgid "%s %s can't be assigned a type name."
 msgstr ""
 
-#: src/do_name.c:748
+#: src/do_name.c:756
 #, c-format
 msgid "You don't know %s %s well enough to name %s."
 msgstr ""
+
+#: src/do_name.c:813
+#, c-format
+msgctxt "feminine"
+msgid "invisible"
+msgstr "invisible"
+
+#: src/do_name.c:813
+#, c-format
+msgctxt "feminine"
+msgid "saddled"
+msgstr "sellée"
+
+#: src/do_name.c:814
+#, c-format
+msgctxt "feminine"
+msgid "angry"
+msgstr "en colère"
+
+#: src/do_name.c:814
+#, c-format
+msgctxt "feminine"
+msgid "poor"
+msgstr "pauvre"
+
+#: src/do_name.c:814
+#, c-format
+msgctxt "feminine"
+msgid "sleeping"
+msgstr "endormie"
+
+#: src/do_name.c:815
+#, c-format
+msgctxt "feminine"
+msgid "blind"
+msgstr "aveugle"
+
+#: src/do_name.c:815
+#, c-format
+msgctxt "feminine"
+msgid "blinded"
+msgstr "aveuglée"
+
+#: src/do_name.c:816
+#, c-format
+msgctxt "feminine"
+msgid "falling"
+msgstr "qui tombe"
+
+#: src/do_name.c:816
+#, c-format
+msgctxt "feminine"
+msgid "immobile"
+msgstr "immobile"
+
+#: src/do_name.c:817
+#, c-format
+msgctxt "feminine"
+msgid "beautiful"
+msgstr "belle"
+
+#: src/do_name.c:817
+#, c-format
+msgctxt "feminine"
+msgid "plain"
+msgstr "simple"
+
+#: src/do_name.c:818
+#, c-format
+msgctxt "feminine"
+msgid "peaceful"
+msgstr "pacifique"
+
+#: src/do_name.c:820
+msgctxt "adjective-position"
+msgid "angry"
+msgstr ""
+
+#: src/do_name.c:820
+msgctxt "adjective-position"
+msgid "poor"
+msgstr "before"
+
+#: src/do_name.c:821
+msgctxt "adjective-position"
+msgid "blind"
+msgstr ""
+
+#: src/do_name.c:821
+msgctxt "adjective-position"
+msgid "sleeping"
+msgstr ""
+
+#: src/do_name.c:822
+msgctxt "adjective-position"
+msgid "blinded"
+msgstr ""
+
+#: src/do_name.c:822
+msgctxt "adjective-position"
+msgid "immobile"
+msgstr ""
+
+#: src/do_name.c:823
+msgctxt "adjective-position"
+msgid "falling"
+msgstr ""
+
+#: src/do_name.c:824
+msgctxt "adjective-position"
+msgid "beautiful"
+msgstr "before"
+
+#: src/do_name.c:824
+msgctxt "adjective-position"
+msgid "plain"
+msgstr ""
+
+#: src/do_name.c:826 src/do_name.c:986
+#, c-format
+msgctxt "feminine"
+msgid "a %s"
+msgstr "une %s"
+
+#: src/do_name.c:826 src/do_name.c:978
+#, c-format
+msgctxt "elided"
+msgid "the %s"
+msgstr "l'%s"
+
+#: src/do_name.c:826 src/do_name.c:980
+#, c-format
+msgctxt "feminine"
+msgid "the %s"
+msgstr "la %s"
+
+#: src/do_name.c:827 src/do_name.c:992
+#, c-format
+msgctxt "feminine"
+msgid "your %s"
+msgstr "votre %s"
+
+#: src/do_name.c:916
+#, c-format
+msgid "%s ghost"
+msgstr "fantôme de %s"
+
+#: src/do_name.c:919
+#, c-format
+msgid "%s called %s"
+msgstr "%s nommé %s"
+
+#: src/do_name.c:982
+#, c-format
+msgid "the %s"
+msgstr "le %s"
+
+#: src/do_name.c:988
+#, c-format
+msgid "a %s"
+msgstr "un %s"
+
+#: src/do_name.c:994
+#, c-format
+msgid "your %s"
+msgstr "votre %s"
+
+#: src/do_name.c:1048
+msgid "you"
+msgstr "vous"
+
+#: src/do_name.c:1084 src/mon.c:3524
+msgid "it"
+msgstr "quelque chose"
+
+#: src/do_name.c:1085
+msgid "someone"
+msgstr "quelqu'un"
+
+#: src/do_name.c:1086
+msgid "something"
+msgstr "quelque chose"
 
 #: src/do_wear.c:71
 #, c-format
@@ -4052,7 +7585,7 @@ msgstr ""
 msgid "%s for a moment."
 msgstr ""
 
-#: src/do_wear.c:480 src/uhitm.c:4397 src/uhitm.c:4415
+#: src/do_wear.c:480 src/uhitm.c:4402 src/uhitm.c:4420
 #, c-format
 msgid "%s %s for a moment."
 msgstr ""
@@ -4071,7 +7604,7 @@ msgstr ""
 msgid "You speed up%s."
 msgstr ""
 
-#: src/do_wear.c:826 src/mhitu.c:167
+#: src/do_wear.c:826 src/mhitu.c:175
 msgid "You slow down."
 msgstr "Vous ralentissez."
 
@@ -4497,7 +8030,7 @@ msgstr ""
 #: src/dog.c:839 src/muse.c:896 src/teleport.c:2059
 #, c-format
 msgid "%s seems very disoriented for a moment."
-msgstr ""
+msgstr "%s semble très désorienté un instant."
 
 #: src/dog.c:845
 #, c-format
@@ -4532,16 +8065,16 @@ msgstr ""
 #: src/dog.c:1323
 #, c-format
 msgid "%s avoids your gaze."
-msgstr ""
+msgstr "%s évite votre regard."
 
 #: src/dogmove.c:287
 #, c-format
 msgid "%s digs in."
-msgstr ""
+msgstr "%s s'arc-boute."
 
-#: src/dogmove.c:289 src/dokick.c:1938 src/makemon.c:2147 src/mhitm.c:84
-#: src/mhitm.c:670 src/mhitm.c:862 src/mthrowu.c:1222 src/muse.c:2928
-#: src/steal.c:329 src/trap.c:5006 src/zap.c:3573
+#: src/dogmove.c:289 src/dokick.c:1938 src/makemon.c:2147 src/mhitm.c:671
+#: src/mhitm.c:863 src/mthrowu.c:1222 src/muse.c:2928 src/steal.c:329
+#: src/trap.c:5006 src/zap.c:3573
 #, c-format
 msgid "%s %s %s."
 msgstr ""
@@ -4554,7 +8087,7 @@ msgstr ""
 #: src/dogmove.c:309 src/mon.c:1500
 #, c-format
 msgid "%s spits %s out in disgust!"
-msgstr ""
+msgstr "%s recrache %s avec dégoût !"
 
 #: src/dogmove.c:336
 #, c-format
@@ -4568,7 +8101,7 @@ msgstr "Votre laisse se détend."
 #: src/dogmove.c:353
 #, c-format
 msgid "%s starves."
-msgstr ""
+msgstr "%s meurt de faim."
 
 #: src/dogmove.c:355
 #, c-format
@@ -4578,17 +8111,17 @@ msgstr ""
 #: src/dogmove.c:381
 #, c-format
 msgid "%s is confused from hunger."
-msgstr ""
+msgstr "%s est désorienté par la faim."
 
 #: src/dogmove.c:385
 #, c-format
 msgid "You feel worried about %s."
-msgstr ""
+msgstr "Vous vous inquiétez pour %s."
 
 #: src/dogmove.c:460 src/mon.c:1898 src/priest.c:130 src/wizard.c:444
 #, c-format
 msgid "%s picks up %s."
-msgstr ""
+msgstr "%s ramasse %s."
 
 #: src/dogmove.c:1059 src/monmove.c:369
 msgid "You get released!"
@@ -5359,11 +8892,11 @@ msgstr "Votre cerveau est dévoré !"
 msgid "%s brain is eaten!"
 msgstr ""
 
-#: src/eat.c:645 src/mhitm.c:235 src/mhitm.c:1049 src/mhitu.c:2499
-#: src/mon.c:1437 src/uhitm.c:3962
+#: src/eat.c:645 src/mhitm.c:236 src/mhitm.c:1050 src/mhitu.c:2507
+#: src/mon.c:1437 src/uhitm.c:3967
 #, c-format
 msgid "%s turns to stone!"
-msgstr ""
+msgstr "%s se change en pierre !"
 
 #: src/eat.c:653
 msgid "You have a sad thought for a moment, then it passes."
@@ -5412,7 +8945,7 @@ msgstr ""
 msgid "Eating that is instantly fatal."
 msgstr "Manger cela est instantanément fatal."
 
-#: src/eat.c:853 src/uhitm.c:3569
+#: src/eat.c:853 src/uhitm.c:3574
 msgid "You don't feel very well."
 msgstr "Vous ne vous sentez pas très bien."
 
@@ -5621,7 +9154,7 @@ msgstr "Beurk, ça devait être empoisonné !"
 msgid "You seem unaffected by the poison."
 msgstr "Vous semblez insensible au poison."
 
-#: src/eat.c:1941 src/uhitm.c:5787
+#: src/eat.c:1941 src/uhitm.c:5792
 #, c-format
 msgid "You feel %ssick."
 msgstr ""
@@ -6371,7 +9904,7 @@ msgstr ""
 msgid "An endless stream of %s pours forth!"
 msgstr ""
 
-#: src/fountain.c:49 src/uhitm.c:4226
+#: src/fountain.c:49 src/uhitm.c:4231
 #, c-format
 msgid "You hear %s hissing!"
 msgstr ""
@@ -6434,7 +9967,7 @@ msgstr "Vous sentez une gemme ici !"
 #: src/fountain.c:184 src/monmove.c:121
 #, c-format
 msgid "%s yells:"
-msgstr ""
+msgstr "%s crie :"
 
 #: src/fountain.c:185
 msgid "Hey, stop using that fountain!"
@@ -6782,17 +10315,17 @@ msgstr ""
 #: src/hack.c:200
 #, c-format
 msgid "%s moves %s."
-msgstr ""
+msgstr "%s déplace %s."
 
 #: src/hack.c:253
 #, c-format
 msgid "%s tries to move %s, but cannot."
-msgstr ""
+msgstr "%s essaie de déplacer %s, sans succès."
 
 #: src/hack.c:256
 #, c-format
 msgid "You try to move %s, but in vain."
-msgstr ""
+msgstr "Vous essayez de déplacer %s, mais en vain."
 
 #: src/hack.c:279
 #, c-format
@@ -6854,12 +10387,12 @@ msgstr ""
 #: src/hack.c:462
 #, c-format
 msgid "There's %s on the other side."
-msgstr ""
+msgstr "Il y a %s de l'autre côté."
 
 #: src/hack.c:466
 #, c-format
 msgid "You hear a monster behind %s."
-msgstr ""
+msgstr "Vous entendez un monstre derrière %s."
 
 #: src/hack.c:476
 #, c-format
@@ -6920,7 +10453,7 @@ msgstr "Vous vous écrasez au sol !"
 #: src/hack.c:869
 #, c-format
 msgid "You fell on %s."
-msgstr ""
+msgstr "Vous êtes tombé sur %s."
 
 #: src/hack.c:1034
 msgid "You cannot pass through the bars."
@@ -6954,7 +10487,7 @@ msgstr "Vous essayez de vous glisser sous la porte, mais vos affaires ne passent
 #: src/hack.c:1116
 #, c-format
 msgid "You can't lead %s through that closed door."
-msgstr ""
+msgstr "Vous ne pouvez pas mener %s à travers cette porte fermée."
 
 #: src/hack.c:1119
 msgid "Ouch!  You bump into a door."
@@ -6983,7 +10516,7 @@ msgstr "Votre corps est trop grand pour passer."
 #: src/hack.c:1175
 #, c-format
 msgid "%s is in your way."
-msgstr ""
+msgstr "%s vous bloque le passage."
 
 #: src/hack.c:1212
 msgid "You can't move diagonally out of an intact doorway."
@@ -7009,7 +10542,7 @@ msgstr "Dard tranche la toile !"
 #: src/hack.c:1604
 #, c-format
 msgid "%s breaks out of the web."
-msgstr ""
+msgstr "%s se libère de la toile."
 
 #: src/hack.c:1606
 msgid "You disentangle yourself."
@@ -7080,12 +10613,12 @@ msgstr ""
 #: src/hack.c:1942
 #, c-format
 msgid "Pardon me, %s."
-msgstr ""
+msgstr "Pardon, %s."
 
 #: src/hack.c:1944
 #, c-format
 msgid "You move right into %s."
-msgstr ""
+msgstr "Vous foncez droit sur %s."
 
 #: src/hack.c:2037
 #, c-format
@@ -7110,17 +10643,17 @@ msgstr ""
 #: src/hack.c:2126
 #, c-format
 msgid "You stop.  %s can't move diagonally."
-msgstr ""
+msgstr "Vous vous arrêtez. %s ne peut pas se déplacer en diagonale."
 
 #: src/hack.c:2132
 #, c-format
 msgid "You stop.  %s won't fit into the same spot that you're at."
-msgstr ""
+msgstr "Vous vous arrêtez. %s ne tiendra pas à l'endroit où vous êtes."
 
 #: src/hack.c:2139
 #, c-format
 msgid "You stop.  %s won't fit through."
-msgstr ""
+msgstr "Vous vous arrêtez. %s ne passera pas."
 
 #: src/hack.c:2151
 #, c-format
@@ -7130,7 +10663,12 @@ msgstr ""
 #: src/hack.c:2160
 #, c-format
 msgid "You stop.  %s doesn't want to swap places."
-msgstr ""
+msgstr "Vous vous arrêtez. %s ne veut pas échanger sa place."
+
+#: src/hack.c:2169
+#, c-format
+msgid "You swap places with %s."
+msgstr "Vous échangez votre place avec %s."
 
 #: src/hack.c:2214
 msgid "You feel guilty about losing your pet like this."
@@ -7160,7 +10698,7 @@ msgstr "Vous portez trop de choses pour sortir de l'eau."
 #: src/hack.c:2454
 #, c-format
 msgid "You stop in front of %s."
-msgstr ""
+msgstr "Vous vous arrêtez devant %s."
 
 #: src/hack.c:2484
 #, c-format
@@ -7183,7 +10721,7 @@ msgstr "Vous vous effondrez sous votre charge."
 #: src/hack.c:2899
 #, c-format
 msgid "%s swaps places with you..."
-msgstr ""
+msgstr "%s échange sa place avec vous..."
 
 #: src/hack.c:3043
 msgid "You pass out from exertion!"
@@ -7242,12 +10780,12 @@ msgstr ""
 #: src/hack.c:3429
 #, c-format
 msgid "You are almost hit by %s!"
-msgstr ""
+msgstr "Vous manquez d'être touché par %s !"
 
 #: src/hack.c:3434 src/read.c:2318
 #, c-format
 msgid "You are hit by %s!"
-msgstr ""
+msgstr "Vous êtes touché par %s !"
 
 #: src/hack.c:3444
 #, c-format
@@ -7257,12 +10795,12 @@ msgstr ""
 #: src/hack.c:3447
 #, c-format
 msgid "You surprise %s!"
-msgstr ""
+msgstr "Vous surprenez %s !"
 
 #: src/hack.c:3451
 #, c-format
 msgid "%s attacks you by surprise!"
-msgstr ""
+msgstr "%s vous attaque par surprise !"
 
 #: src/hack.c:3671
 msgid "Welcome to David's treasure zoo!"
@@ -7407,7 +10945,7 @@ msgstr "Vous ne pouvez pas vous déplacer en diagonale."
 #: src/hack.c:3936
 #, c-format
 msgid "%s blocks your path."
-msgstr ""
+msgstr "%s vous barre le chemin."
 
 #: src/hack.c:3970
 msgid "You stop in front of the door."
@@ -7420,7 +10958,7 @@ msgstr "Le couloir s'élargit ici."
 #: src/hack.c:4228
 #, c-format
 msgid "%s is about to die."
-msgstr ""
+msgstr "%s est sur le point de mourir."
 
 #: src/hack.c:4234
 #, c-format
@@ -7773,7 +11311,7 @@ msgstr ""
 msgid "There are %s%s objects here."
 msgstr ""
 
-#: src/invent.c:4299 src/mhitu.c:2114 src/monmove.c:41 src/pray.c:1182
+#: src/invent.c:4299 src/mhitu.c:2122 src/monmove.c:41 src/pray.c:1182
 #: src/zap.c:3950
 #, c-format
 msgid "%s %s%s."
@@ -8408,7 +11946,7 @@ msgstr "Vous ne semblez pas plus mort qu'avant."
 msgid "You have an out of body experience."
 msgstr "Vous vivez une expérience hors du corps."
 
-#: src/mcastu.c:406 src/uhitm.c:3880
+#: src/mcastu.c:406 src/uhitm.c:3885
 msgid "Lucky for you, it didn't work!"
 msgstr "Heureusement pour vous, ça n'a pas marché !"
 
@@ -8562,178 +12100,218 @@ msgstr ""
 msgid "You hear %s%s."
 msgstr ""
 
-#: src/mhitm.c:135
+#: src/mhitm.c:85
+#, c-format
+msgid "%s misses %s."
+msgstr "%s rate %s."
+
+#: src/mhitm.c:87
+#, c-format
+msgid "%s pretends to be friendly to %s."
+msgstr "%s fait semblant d'être amical avec %s."
+
+#: src/mhitm.c:136
 #, c-format
 msgid "%s releases you!"
-msgstr ""
+msgstr "%s vous relâche !"
 
-#: src/mhitm.c:232
+#: src/mhitm.c:233
 #, c-format
 msgid "%s tries to move %s out of %s way."
 msgstr ""
 
-#: src/mhitm.c:260
+#: src/mhitm.c:261
 #, c-format
 msgid "%s moves %s out of %s way!"
 msgstr ""
 
-#: src/mhitm.c:340
+#: src/mhitm.c:341
 #, c-format
 msgid "You dream of %s."
-msgstr ""
+msgstr "Vous rêvez de %s."
 
-#: src/mhitm.c:344
+#: src/mhitm.c:345
 #, c-format
 msgid "%s emerges from hiding."
-msgstr ""
+msgstr "%s sort de sa cachette."
 
-#: src/mhitm.c:346
+#: src/mhitm.c:347
 #, c-format
 msgid "You notice %s."
-msgstr ""
+msgstr "Vous remarquez %s."
 
-#: src/mhitm.c:348
+#: src/mhitm.c:349
 #, c-format
 msgid "Suddenly, you notice %s."
-msgstr ""
+msgstr "Soudain, vous remarquez %s."
 
-#: src/mhitm.c:465
+#: src/mhitm.c:466
 #, c-format
 msgid "%s divides as %s hits it!"
-msgstr ""
+msgstr "%s se divise quand %s le frappe !"
 
-#: src/mhitm.c:513
+#: src/mhitm.c:514
 #, c-format
 msgid "%s attempt to engulf %s is futile."
 msgstr ""
 
-#: src/mhitm.c:633
+#: src/mhitm.c:634
 #, c-format
 msgid "%.99s %s attempt %s %.99s!"
 msgstr ""
 
-#: src/mhitm.c:724
+#: src/mhitm.c:677
+#, c-format
+msgid "%s bites"
+msgstr "%s mord"
+
+#: src/mhitm.c:680
+#, c-format
+msgid "%s stings"
+msgstr "%s pique"
+
+#: src/mhitm.c:683
+#, c-format
+msgid "%s butts"
+msgstr "%s encorne"
+
+#: src/mhitm.c:686
+#, c-format
+msgid "%s touches"
+msgstr "%s touche"
+
+#: src/mhitm.c:694
+#, c-format
+msgid "%s squeezes"
+msgstr "%s étreint"
+
+#: src/mhitm.c:701
+#, c-format
+msgid "%s hits"
+msgstr "%s frappe"
+
+#: src/mhitm.c:725
 #, c-format
 msgid "%s %s sears %s!"
 msgstr ""
 
-#: src/mhitm.c:754 src/mhitm.c:1414
+#: src/mhitm.c:755 src/mhitm.c:1415
 #, c-format
 msgid "%s %s..."
 msgstr ""
 
-#: src/mhitm.c:762
+#: src/mhitm.c:763
 msgid "but nothing happens."
 msgstr "mais rien ne se passe."
 
-#: src/mhitm.c:779 src/mhitu.c:1734
+#: src/mhitm.c:780 src/mhitu.c:1742
 #, c-format
 msgid "%s doesn't seem to notice that %s gaze was reflected."
 msgstr ""
 
-#: src/mhitm.c:878
+#: src/mhitm.c:879
 #, c-format
 msgid "%s expels %s."
 msgstr ""
 
-#: src/mhitm.c:881 src/uhitm.c:5000
+#: src/mhitm.c:882 src/uhitm.c:5005
 #, c-format
 msgid "It turns into %s."
 msgstr ""
 
-#: src/mhitm.c:978
+#: src/mhitm.c:979
 #, c-format
 msgid "%s explodes!"
 msgstr ""
 
-#: src/mhitm.c:1135
+#: src/mhitm.c:1136
 msgid "You are subjected to a freakish metamorphosis."
 msgstr "Vous subissez une métamorphose monstrueuse."
 
-#: src/mhitm.c:1138
+#: src/mhitm.c:1139
 msgid "You feel an unnatural urge coming on."
 msgstr "Vous sentez venir une envie contre nature."
 
-#: src/mhitm.c:1141
+#: src/mhitm.c:1142
 msgid "You feel a natural urge coming on."
 msgstr "Vous sentez venir une envie pressante."
 
-#: src/mhitm.c:1163 src/zap.c:292
+#: src/mhitm.c:1164 src/zap.c:292
 #, c-format
 msgid "%s shudders!"
 msgstr ""
 
-#: src/mhitm.c:1180
+#: src/mhitm.c:1181
 #, c-format
 msgid "%s%s%s turns into %s."
 msgstr ""
 
-#: src/mhitm.c:1186
+#: src/mhitm.c:1187
 #, c-format
 msgid "%s%s%s."
 msgstr ""
 
-#: src/mhitm.c:1254
+#: src/mhitm.c:1255
 #, c-format
 msgid "%s grip relaxes."
 msgstr ""
 
-#: src/mhitm.c:1293
+#: src/mhitm.c:1294
 #, c-format
 msgid "%s %s %s%s %s at %s."
 msgstr ""
 
-#: src/mhitm.c:1336
+#: src/mhitm.c:1337
 #, c-format
 msgid "%s is splashed by %s %s!"
 msgstr ""
 
-#: src/mhitm.c:1340 src/mhitu.c:2472 src/uhitm.c:2868 src/uhitm.c:2934
+#: src/mhitm.c:1341 src/mhitu.c:2480 src/uhitm.c:2873 src/uhitm.c:2939
 #, c-format
 msgid "%s is not affected."
 msgstr ""
 
-#: src/mhitm.c:1382
+#: src/mhitm.c:1383
 #, c-format
 msgid "%s is frozen by %s gaze!"
 msgstr ""
 
-#: src/mhitm.c:1390 src/uhitm.c:3471
+#: src/mhitm.c:1391 src/uhitm.c:3476
 #, c-format
 msgid "%s is frozen by %s."
 msgstr ""
 
-#: src/mhitm.c:1398 src/mhitu.c:2564
+#: src/mhitm.c:1399 src/mhitu.c:2572
 #, c-format
 msgid "%s is mildly chilly."
 msgstr ""
 
-#: src/mhitm.c:1405 src/mhitu.c:2569
+#: src/mhitm.c:1406 src/mhitu.c:2577
 #, c-format
 msgid "%s is suddenly very cold!"
 msgstr ""
 
-#: src/mhitm.c:1422
+#: src/mhitm.c:1423
 #, c-format
 msgid "%s is mildly warmed."
 msgstr ""
 
-#: src/mhitm.c:1429 src/mhitu.c:2592
+#: src/mhitm.c:1430 src/mhitu.c:2600
 #, c-format
 msgid "%s is suddenly very hot!"
 msgstr ""
 
-#: src/mhitm.c:1434
+#: src/mhitm.c:1435
 #, c-format
 msgid "%s is mildly tingled."
 msgstr ""
 
-#: src/mhitm.c:1441
+#: src/mhitm.c:1442
 #, c-format
 msgid "%s is jolted with electricity!"
 msgstr ""
 
-#: src/mhitm.c:1468 src/trap.c:2412
+#: src/mhitm.c:1469 src/trap.c:2412
 #, c-format
 msgid "%s seems lethargic."
 msgstr ""
@@ -8743,560 +12321,613 @@ msgstr ""
 msgid "%s %s you %s."
 msgstr ""
 
-#: src/mhitu.c:94
+#: src/mhitu.c:45
+msgctxt "monverb"
+msgid "bites"
+msgstr "mord"
+
+#: src/mhitu.c:50
+msgctxt "monverb"
+msgid "kicks"
+msgstr "donne un coup de pied"
+
+#: src/mhitu.c:53
+msgctxt "monverb"
+msgid "stings"
+msgstr "pique"
+
+#: src/mhitu.c:56
+msgctxt "monverb"
+msgid "butts"
+msgstr "donne un coup de corne"
+
+#: src/mhitu.c:59
+msgctxt "monverb"
+msgid "touches you"
+msgstr "vous touche"
+
+#: src/mhitu.c:67
+msgctxt "monverb"
+msgid "explodes"
+msgstr "explose"
+
+#: src/mhitu.c:70
+msgctxt "monverb"
+msgid "hits"
+msgstr "frappe"
+
+#: src/mhitu.c:79
+#, c-format
+msgid "%s sucks your brain with its tentacles%s!"
+msgstr "%s vous aspire le cerveau avec ses tentacules%s !"
+
+#: src/mhitu.c:80 src/mhitu.c:83
+msgid " again"
+msgstr " encore"
+
+#: src/mhitu.c:84 src/zap.c:3552
+msgid "!"
+msgstr " !"
+
+#: src/mhitu.c:101
 #, c-format
 msgid "%s pretends to be friendly."
-msgstr ""
+msgstr "%s fait semblant d'être amical."
 
-#: src/mhitu.c:96
+#: src/mhitu.c:103
 #, c-format
-msgid "%s %smisses!"
-msgstr ""
+msgid "%s just misses!"
+msgstr "%s vous rate de peu !"
 
-#: src/mhitu.c:136
+#: src/mhitu.c:105
+#, c-format
+msgid "%s misses!"
+msgstr "%s rate !"
+
+#: src/mhitu.c:144
 #, c-format
 msgid "%s %s %s%s %s."
 msgstr ""
 
-#: src/mhitu.c:169
+#: src/mhitu.c:177
 msgid "Your quickness feels less natural."
 msgstr "Votre rapidité vous semble moins naturelle."
 
-#: src/mhitu.c:216
+#: src/mhitu.c:224
 #, c-format
 msgid "%s tries to touch you and misses!"
 msgstr ""
 
-#: src/mhitu.c:220
+#: src/mhitu.c:228
 #, c-format
 msgid "%s %s wildly and misses!"
 msgstr ""
 
-#: src/mhitu.c:223
+#: src/mhitu.c:231
 #, c-format
 msgid "%s attacks a spot beside you."
 msgstr ""
 
-#: src/mhitu.c:226
+#: src/mhitu.c:234
 #, c-format
 msgid "%s strikes at %s!"
 msgstr ""
 
-#: src/mhitu.c:232
+#: src/mhitu.c:240
 #, c-format
 msgid "%s %s wildly!"
 msgstr ""
 
-#: src/mhitu.c:239
+#: src/mhitu.c:247
 #, c-format
 msgid "%s smiles %s at your %sdisplaced image..."
 msgstr ""
 
-#: src/mhitu.c:243
+#: src/mhitu.c:251
 #, c-format
 msgid "%s strikes at your %sdisplaced image and misses you!"
 msgstr ""
 
-#: src/mhitu.c:253
+#: src/mhitu.c:261
 #, c-format
 msgid "%s reaches towards your distorted image."
 msgstr ""
 
-#: src/mhitu.c:255
+#: src/mhitu.c:263
 #, c-format
 msgid "%s is fooled by water reflections and misses!"
 msgstr ""
 
-#: src/mhitu.c:272
+#: src/mhitu.c:280
 msgid "You get regurgitated!"
 msgstr "Vous êtes régurgité !"
 
-#: src/mhitu.c:274
+#: src/mhitu.c:282
 #, c-format
 msgid "%s unfolds and you are released!"
 msgstr ""
 
-#: src/mhitu.c:295
+#: src/mhitu.c:303
 #, c-format
 msgid "You get expelled from %s%s!"
 msgstr ""
 
-#: src/mhitu.c:304
+#: src/mhitu.c:312
 msgid "Brrooaa...  You land hard at some distance."
 msgstr "Brrouaa... Vous atterrissez durement un peu plus loin."
 
-#: src/mhitu.c:560
+#: src/mhitu.c:568
 #, c-format
 msgid "You fall from the %s!"
 msgstr ""
 
-#: src/mhitu.c:578
+#: src/mhitu.c:586
 #, c-format
 msgid "%s draws back as you drop!"
 msgstr ""
 
-#: src/mhitu.c:601
+#: src/mhitu.c:609
 #, c-format
 msgid "Your blow glances off %s %s."
 msgstr ""
 
-#: src/mhitu.c:605
+#: src/mhitu.c:613
 #, c-format
 msgid "%s is hit by a falling piercer (you)!"
 msgstr ""
 
-#: src/mhitu.c:610
+#: src/mhitu.c:618
 #, c-format
 msgid "%s is almost hit by a falling piercer (you)!"
 msgstr ""
 
-#: src/mhitu.c:617
+#: src/mhitu.c:625
 msgid "It tries to move where you are hiding."
 msgstr "Quelque chose essaie d'aller là où vous êtes caché."
 
-#: src/mhitu.c:642
+#: src/mhitu.c:650
 #, c-format
 msgid "Wait, %s!  There's a hidden %s named %s there!"
 msgstr ""
 
-#: src/mhitu.c:647
+#: src/mhitu.c:655
 #, c-format
 msgid "Wait, %s!  There's a %s named %s hiding under %s!"
 msgstr ""
 
-#: src/mhitu.c:670
+#: src/mhitu.c:678
 msgid "It gets stuck on you."
 msgstr "Ça se colle à vous."
 
-#: src/mhitu.c:672
+#: src/mhitu.c:680
 #, c-format
 msgid "Wait, %s!  That's a %s named %s!"
 msgstr ""
 
-#: src/mhitu.c:693
+#: src/mhitu.c:701
 #, c-format
 msgid "Wait, %s!  That %s is really %s named %s!"
 msgstr ""
 
-#: src/mhitu.c:746
+#: src/mhitu.c:754
 #, c-format
 msgid "%s loosens its grip slightly."
 msgstr ""
 
-#: src/mhitu.c:749
+#: src/mhitu.c:757
 #, c-format
 msgid "%s starts to attack you, but pulls back."
 msgstr ""
 
-#: src/mhitu.c:752
+#: src/mhitu.c:760
 #, c-format
 msgid "You feel %s move nearby."
 msgstr ""
 
-#: src/mhitu.c:857
+#: src/mhitu.c:865
 #, c-format
 msgid "%s gulps some air!"
 msgstr ""
 
-#: src/mhitu.c:860
+#: src/mhitu.c:868
 #, c-format
 msgid "%s lunges forward and recoils!"
 msgstr ""
 
-#: src/mhitu.c:866
+#: src/mhitu.c:874
 #, c-format
 msgid "You hear a %s nearby."
 msgstr ""
 
-#: src/mhitu.c:995
+#: src/mhitu.c:1003
 #, c-format
 msgid "%s summons help!"
 msgstr ""
 
-#: src/mhitu.c:1000 src/mhitu.c:1016
+#: src/mhitu.c:1008 src/mhitu.c:1024
 msgid "You feel hemmed in."
 msgstr "Vous vous sentez à l'étroit."
 
-#: src/mhitu.c:1002
+#: src/mhitu.c:1010
 msgid "But none comes."
 msgstr "Mais personne ne vient."
 
-#: src/mhitu.c:1036
+#: src/mhitu.c:1044
 msgid "You feel a slight illness."
 msgstr "Vous vous sentez légèrement malade."
 
-#: src/mhitu.c:1067
+#: src/mhitu.c:1075
 #, c-format
 msgid "%s %s your %s %s!"
 msgstr ""
 
-#: src/mhitu.c:1078 src/uhitm.c:2087
+#: src/mhitu.c:1086 src/uhitm.c:2092
 msgid "The grease wears off."
 msgstr "La graisse s'use."
 
-#: src/mhitu.c:1180
+#: src/mhitu.c:1188
 #, c-format
 msgid "%s was hidden under %s!"
 msgstr ""
 
-#: src/mhitu.c:1320
+#: src/mhitu.c:1328
 #, c-format
 msgid "%s %s forward and plucks you off %s!"
 msgstr ""
 
-#: src/mhitu.c:1344
+#: src/mhitu.c:1352
 #, c-format
 msgid "You are released from the %s!"
 msgstr ""
 
-#: src/mhitu.c:1353
+#: src/mhitu.c:1361
 #, c-format
 msgid "The %s %s loose."
 msgstr ""
 
-#: src/mhitu.c:1426
+#: src/mhitu.c:1434
 #, c-format
 msgid "%s totally digests you!"
 msgstr ""
 
-#: src/mhitu.c:1431
+#: src/mhitu.c:1439
 #, c-format
 msgid "%s%s digests you!"
 msgstr ""
 
-#: src/mhitu.c:1440
+#: src/mhitu.c:1448
 #, c-format
 msgid "You are laden with moisture and %s"
 msgstr ""
 
-#: src/mhitu.c:1450
+#: src/mhitu.c:1458
 #, c-format
 msgid "You are %s!"
 msgstr ""
 
-#: src/mhitu.c:1457
+#: src/mhitu.c:1465
 msgid "You are covered with a seemingly harmless goo."
 msgstr "Vous êtes couvert d'une gelée apparemment inoffensive."
 
-#: src/mhitu.c:1464
+#: src/mhitu.c:1472
 msgid "Ouch!  You've been slimed!"
 msgstr "Aïe ! Vous avez été englué !"
 
-#: src/mhitu.c:1466
+#: src/mhitu.c:1474
 msgid "You are covered in slime!  It burns!"
 msgstr "Vous êtes couvert de bave ! Ça brûle !"
 
-#: src/mhitu.c:1477
+#: src/mhitu.c:1485
 msgid "You can't see in here!"
 msgstr "Vous n'y voyez rien ici !"
 
-#: src/mhitu.c:1489
+#: src/mhitu.c:1497
 msgid "The air around you crackles with electricity."
 msgstr "L'air autour de vous crépite d'électricité."
 
-#: src/mhitu.c:1492
+#: src/mhitu.c:1500
 msgid "You seem unhurt."
 msgstr "Vous semblez indemne."
 
-#: src/mhitu.c:1506
+#: src/mhitu.c:1514
 msgid "You feel mildly chilly."
 msgstr "Vous avez un peu froid."
 
-#: src/mhitu.c:1511
+#: src/mhitu.c:1519
 msgid "You are freezing to death!"
 msgstr "Vous mourez de froid !"
 
-#: src/mhitu.c:1521
+#: src/mhitu.c:1529
 msgid "You feel mildly hot."
 msgstr "Vous avez un peu chaud."
 
-#: src/mhitu.c:1526
+#: src/mhitu.c:1534
 msgid "You are burning to a crisp!"
 msgstr "Vous êtes carbonisé !"
 
-#: src/mhitu.c:1568
+#: src/mhitu.c:1576
 #, c-format
 msgid "%s very hurriedly %s you!"
 msgstr ""
 
-#: src/mhitu.c:1578
+#: src/mhitu.c:1586
 #, c-format
 msgid "You get %s!"
 msgstr ""
 
-#: src/mhitu.c:1583
+#: src/mhitu.c:1591
 #, c-format
 msgid "Obviously %s doesn't like your taste."
 msgstr ""
 
-#: src/mhitu.c:1607
+#: src/mhitu.c:1615
 #, c-format
 msgid "%s explodes at a spot in %s!"
 msgstr ""
 
-#: src/mhitu.c:1628
+#: src/mhitu.c:1636
 msgid "You are blinded by a blast of light!"
 msgstr "Vous êtes aveuglé par un éclair de lumière !"
 
-#: src/mhitu.c:1633
+#: src/mhitu.c:1641
 msgid "You get the impression it was not terribly bright."
 msgstr "Vous avez l'impression que ce n'était pas très lumineux."
 
-#: src/mhitu.c:1643
+#: src/mhitu.c:1651
 msgid "You are caught in a blast of kaleidoscopic light!"
 msgstr "Vous êtes pris dans un éclair de lumière kaléidoscopique !"
 
-#: src/mhitu.c:1657
+#: src/mhitu.c:1665
 msgid "You seem unaffected by it."
 msgstr "Vous semblez ne pas en être affecté."
 
-#: src/mhitu.c:1713
+#: src/mhitu.c:1721
 msgid "Someone seems overdue for a serpent cut."
 msgstr "Quelqu'un aurait bien besoin d'une coupe de serpents."
 
-#: src/mhitu.c:1749
+#: src/mhitu.c:1757
 #, c-format
 msgid "You meet %s gaze."
 msgstr ""
 
-#: src/mhitu.c:1753 src/polyself.c:1761 src/trap.c:3850
+#: src/mhitu.c:1761 src/polyself.c:1761 src/trap.c:3850
 msgid "You turn to stone..."
 msgstr "Vous vous changez en pierre..."
 
-#: src/mhitu.c:1769
+#: src/mhitu.c:1777
 #, c-format
 msgid "%s gaze confuses you!"
 msgstr ""
 
-#: src/mhitu.c:1772
+#: src/mhitu.c:1780
 msgid "You are getting more and more confused."
 msgstr "Vous êtes de plus en plus confus."
 
-#: src/mhitu.c:1787
+#: src/mhitu.c:1795
 #, c-format
 msgid "%s stares piercingly at you!"
 msgstr ""
 
-#: src/mhitu.c:1806
+#: src/mhitu.c:1814
 #, c-format
 msgid "You are blinded by %s radiance!"
 msgstr ""
 
-#: src/mhitu.c:1831
+#: src/mhitu.c:1839
 #, c-format
 msgid "%s attacks you with a fiery gaze!"
 msgstr ""
 
-#: src/mhitu.c:1836 src/uhitm.c:2573
+#: src/mhitu.c:1844 src/uhitm.c:2578
 msgid "The fire doesn't feel hot!"
 msgstr "Le feu ne semble pas chaud !"
 
-#: src/mhitu.c:1863
+#: src/mhitu.c:1871
 #, c-format
 msgid "%s gaze makes you very sleepy..."
 msgstr ""
 
-#: src/mhitu.c:1892 src/uhitm.c:6034
+#: src/mhitu.c:1900 src/uhitm.c:6039
 #, c-format
 msgid "%s looks %s%s."
 msgstr ""
 
-#: src/mhitu.c:1995
+#: src/mhitu.c:2003
 #, c-format
 msgid "%s acts as though %s has got a %sheadache."
 msgstr ""
 
-#: src/mhitu.c:2000
+#: src/mhitu.c:2008
 #, c-format
 msgid "%s seems dismayed at your lack of response."
 msgstr ""
 
-#: src/mhitu.c:2006
+#: src/mhitu.c:2014
 msgid "Someone caresses you..."
 msgstr "Quelqu'un vous caresse..."
 
-#: src/mhitu.c:2008
+#: src/mhitu.c:2016
 #, c-format
 msgid "You feel very attracted to %s."
 msgstr ""
 
-#: src/mhitu.c:2041
+#: src/mhitu.c:2049
 #, c-format
 msgid "%s decides she'd like %s, and takes it."
 msgstr ""
 
-#: src/mhitu.c:2072
+#: src/mhitu.c:2080
 #, c-format
 msgid "%s decides you'd look prettier wearing %s,"
 msgstr ""
 
-#: src/mhitu.c:2074
+#: src/mhitu.c:2082
 msgid "and puts it on your finger."
 msgstr "et vous le passe au doigt."
 
-#: src/mhitu.c:2078
+#: src/mhitu.c:2086
 #, c-format
 msgid "%s puts %s on your right %s."
 msgstr ""
 
-#: src/mhitu.c:2082
+#: src/mhitu.c:2090
 #, c-format
 msgid "%s puts %s on your left %s."
 msgstr ""
 
-#: src/mhitu.c:2090 src/mhitu.c:2100
+#: src/mhitu.c:2098 src/mhitu.c:2108
 #, c-format
 msgid "%s replaces %s with %s."
 msgstr ""
 
-#: src/mhitu.c:2143
+#: src/mhitu.c:2151
 #, c-format
 msgid "You're such a %s; I wish..."
 msgstr ""
 
-#: src/mhitu.c:2152
+#: src/mhitu.c:2160
 #, c-format
 msgid "Well, then you owe me %s%s!"
 msgstr ""
 
-#: src/mhitu.c:2159
+#: src/mhitu.c:2167
 #, c-format
 msgid "%s appears to sigh."
 msgstr ""
 
-#: src/mhitu.c:2171
+#: src/mhitu.c:2179
 #, c-format
 msgid "Time stands still while you and %s lie in each other's arms..."
 msgstr ""
 
-#: src/mhitu.c:2180
+#: src/mhitu.c:2188
 #, c-format
 msgid "%s seems to have enjoyed it more than you..."
 msgstr ""
 
-#: src/mhitu.c:2184
+#: src/mhitu.c:2192
 msgid "You feel drained of energy."
 msgstr "Vous vous sentez vidé de votre énergie."
 
-#: src/mhitu.c:2192
+#: src/mhitu.c:2200
 msgid "You are down in the dumps."
 msgstr "Vous avez le moral à zéro."
 
-#: src/mhitu.c:2198
+#: src/mhitu.c:2206
 msgid "Your senses are dulled."
 msgstr "Vos sens sont émoussés."
 
-#: src/mhitu.c:2205
+#: src/mhitu.c:2213
 msgid "You feel out of shape."
 msgstr "Vous vous sentez en mauvaise forme."
 
-#: src/mhitu.c:2208
+#: src/mhitu.c:2216
 msgid "You have a curious feeling..."
 msgstr "Vous avez une curieuse sensation..."
 
-#: src/mhitu.c:2217
+#: src/mhitu.c:2225
 msgid "You feel exhausted."
 msgstr "Vous vous sentez épuisé."
 
-#: src/mhitu.c:2226
+#: src/mhitu.c:2234
 #, c-format
 msgid "You seem to have enjoyed it more than %s..."
 msgstr ""
 
-#: src/mhitu.c:2229
+#: src/mhitu.c:2237
 msgid "You feel raised to your full potential."
 msgstr "Vous vous sentez élevé à votre plein potentiel."
 
-#: src/mhitu.c:2236
+#: src/mhitu.c:2244
 msgid "You feel good enough to do it again."
 msgstr "Vous vous sentez assez bien pour recommencer."
 
-#: src/mhitu.c:2242
+#: src/mhitu.c:2250
 #, c-format
 msgid "You will always remember %s..."
 msgstr ""
 
-#: src/mhitu.c:2248
+#: src/mhitu.c:2256
 msgid "That was a very educational experience."
 msgstr "C'était une expérience très instructive."
 
-#: src/mhitu.c:2253
+#: src/mhitu.c:2261
 msgid "You feel restored to health!"
 msgstr "Vous vous sentez remis sur pied !"
 
-#: src/mhitu.c:2266
+#: src/mhitu.c:2274
 #, c-format
 msgid "%s demands that you pay %s, but you refuse..."
 msgstr ""
 
-#: src/mhitu.c:2269
+#: src/mhitu.c:2277
 #, c-format
 msgid "%s tries to take your gold, but fails..."
 msgstr ""
 
-#: src/mhitu.c:2289
+#: src/mhitu.c:2297
 msgid "It's on the house!"
 msgstr "C'est offert par la maison !"
 
-#: src/mhitu.c:2291
+#: src/mhitu.c:2299
 msgid "No charge."
 msgstr "Gratuit."
 
-#: src/mhitu.c:2294
+#: src/mhitu.c:2302
 #, c-format
 msgid "%s takes %ld %s for services rendered!"
 msgstr ""
 
-#: src/mhitu.c:2324
+#: src/mhitu.c:2332
 #, c-format
 msgid "%s takes off your %s."
 msgstr ""
 
-#: src/mhitu.c:2337
+#: src/mhitu.c:2345
 #, c-format
 msgid "Take off your %s; %s."
 msgstr ""
 
-#: src/mhitu.c:2358 src/muse.c:2946
+#: src/mhitu.c:2366 src/muse.c:2946
 #, c-format
 msgid "%s dies!"
 msgstr ""
 
-#: src/mhitu.c:2466
+#: src/mhitu.c:2474
 #, c-format
 msgid "%s is splashed by %s%s!"
 msgstr ""
 
-#: src/mhitu.c:2527 src/uhitm.c:5765
+#: src/mhitu.c:2535 src/uhitm.c:5770
 msgid "You explode!"
 msgstr "Vous explosez !"
 
-#: src/mhitu.c:2542
+#: src/mhitu.c:2550
 #, c-format
 msgid "As a blind %s, you cannot defend yourself."
 msgstr ""
 
-#: src/mhitu.c:2549
+#: src/mhitu.c:2557
 #, c-format
 msgid "%s is frozen by your gaze!"
 msgstr ""
 
-#: src/mhitu.c:2556
+#: src/mhitu.c:2564
 #, c-format
 msgid "%s is frozen by you."
 msgstr ""
 
-#: src/mhitu.c:2587
+#: src/mhitu.c:2595
 #, c-format
 msgid "%s is mildly warm."
 msgstr ""
 
-#: src/mhitu.c:2597
+#: src/mhitu.c:2605
 #, c-format
 msgid "%s is slightly tingled."
 msgstr ""
 
-#: src/mhitu.c:2602
+#: src/mhitu.c:2610
 #, c-format
 msgid "%s is jolted with your electricity!"
 msgstr ""
@@ -9575,7 +13206,7 @@ msgstr ""
 #: src/mon.c:1490 src/mon.c:1508 src/mon.c:1618 src/mon.c:1701
 #, c-format
 msgid "%s eats %s!"
-msgstr ""
+msgstr "%s mange %s !"
 
 #: src/mon.c:1513
 msgid "You hear a crunching sound."
@@ -9634,12 +13265,12 @@ msgstr ""
 msgid "The door is smashed%s"
 msgstr ""
 
-#: src/mon.c:2980 src/uhitm.c:3072
+#: src/mon.c:2980 src/mon.c:3397 src/uhitm.c:3077
 #, c-format
 msgid "%s is destroyed!"
-msgstr ""
+msgstr "%s est détruit !"
 
-#: src/mon.c:3101 src/mon.c:3564
+#: src/mon.c:3101 src/mon.c:3586
 msgid "You have a sad feeling for a moment, then it passes."
 msgstr "Vous vous sentez triste un instant, puis ça passe."
 
@@ -9672,243 +13303,281 @@ msgstr ""
 msgid "You %s through an opening in the new %s."
 msgstr ""
 
-#: src/mon.c:3386
+#: src/mon.c:3392
 #, c-format
-msgid "%s is %s%s%s!"
-msgstr ""
+msgctxt "feminine"
+msgid "%s is destroyed by the %s!"
+msgstr "%s est détruite par %s !"
 
-#: src/mon.c:3415
+#: src/mon.c:3393
+#, c-format
+msgid "%s is destroyed by the %s!"
+msgstr "%s est détruit par %s !"
+
+#: src/mon.c:3396
+#, c-format
+msgctxt "feminine"
+msgid "%s is destroyed!"
+msgstr "%s est détruite !"
+
+#: src/mon.c:3399
+#, c-format
+msgctxt "feminine"
+msgid "%s is killed by the %s!"
+msgstr "%s est tuée par %s !"
+
+#: src/mon.c:3400
+#, c-format
+msgid "%s is killed by the %s!"
+msgstr "%s est tué par %s !"
+
+#: src/mon.c:3403
+#, c-format
+msgctxt "feminine"
+msgid "%s is killed!"
+msgstr "%s est tuée !"
+
+#: src/mon.c:3404
+#, c-format
+msgid "%s is killed!"
+msgstr "%s est tué !"
+
+#: src/mon.c:3432
 #, c-format
 msgid "May %s %s in peace."
 msgstr ""
 
-#: src/mon.c:3506 src/polyself.c:805 src/trap.c:1913 src/uhitm.c:5187
-#: src/wizcmds.c:314
+#: src/mon.c:3531 src/music.c:281
 #, c-format
-msgid "You %s %s!"
-msgstr ""
+msgid "You destroy %s!"
+msgstr "Vous détruisez %s !"
 
-#: src/mon.c:3559
+#: src/mon.c:3533
+#, c-format
+msgid "You kill %s!"
+msgstr "Vous tuez %s !"
+
+#: src/mon.c:3581
 msgid "Maybe not..."
 msgstr "Peut-être pas..."
 
-#: src/mon.c:3627
+#: src/mon.c:3649
 #, c-format
 msgid "%s corpse ends up buried."
 msgstr ""
 
-#: src/mon.c:3660
+#: src/mon.c:3682
 msgid "You murderer!"
 msgstr "Meurtrier !"
 
-#: src/mon.c:3668
+#: src/mon.c:3690
 msgid "You feel guilty..."
 msgstr "Vous vous sentez coupable..."
 
-#: src/mon.c:3681
+#: src/mon.c:3703
 #, c-format
 msgid "That was %sa bad idea..."
 msgstr ""
 
-#: src/mon.c:3693
+#: src/mon.c:3715
 msgid "That was probably a bad idea..."
 msgstr "C'était probablement une mauvaise idée..."
 
-#: src/mon.c:3695
+#: src/mon.c:3717
 msgid "Whoopsie-daisy!"
 msgstr "Oups-là !"
 
-#: src/mon.c:3708
+#: src/mon.c:3730
 msgid "You hear the rumble of distant thunder..."
 msgstr "Vous entendez le grondement d'un tonnerre lointain..."
 
-#: src/mon.c:3711
+#: src/mon.c:3733
 msgid "You hear the studio audience applaud!"
 msgstr "Vous entendez le public du studio applaudir !"
 
-#: src/mon.c:3753
+#: src/mon.c:3775
 #, c-format
 msgid "%s solidifies..."
 msgstr ""
 
-#: src/mon.c:3756
+#: src/mon.c:3778
 #, c-format
 msgid "Now it's %s."
 msgstr ""
 
-#: src/mon.c:3759
+#: src/mon.c:3781
 msgid "... and returns to normal."
 msgstr "... et redevient normal."
 
-#: src/mon.c:3811
+#: src/mon.c:3833
 #, c-format
 msgid "%s rises from the %s with renewed agility!"
 msgstr ""
 
-#: src/mon.c:3888
+#: src/mon.c:3910
 msgid "You feel besieged."
 msgstr "Vous vous sentez assiégé."
 
-#: src/mon.c:4092
+#: src/mon.c:4114
 #, c-format
 msgid "%s shrieks."
 msgstr ""
 
-#: src/mon.c:4156
+#: src/mon.c:4178
 #, c-format
 msgid "The %s %s to be angry too..."
 msgstr ""
 
-#: src/mon.c:4184
+#: src/mon.c:4206
 msgid "Halt!  You're under arrest!"
 msgstr "Halte ! Vous êtes en état d'arrestation !"
 
-#: src/mon.c:4236 src/mon.c:4306 src/monmove.c:818 src/zap.c:1980
+#: src/mon.c:4258 src/mon.c:4328 src/monmove.c:818 src/zap.c:1980
 #, c-format
 msgid "%s gets angry!"
 msgstr ""
 
-#: src/mon.c:4252
+#: src/mon.c:4274
 msgid "And then starts to flee."
 msgstr "Puis se met à fuir."
 
-#: src/mon.c:4271
+#: src/mon.c:4293
 msgid "You feel like a hypocrite."
 msgstr "Vous vous sentez hypocrite."
 
-#: src/mon.c:4283
+#: src/mon.c:4305
 msgid "The engraving beneath you fades."
 msgstr "L'inscription sous vous s'efface."
 
-#: src/mon.c:4325
+#: src/mon.c:4347
 #, c-format
 msgid "%s wakes up%s%s"
 msgstr ""
 
-#: src/mon.c:4780
+#: src/mon.c:4802
 #, c-format
 msgid "You hide under %s."
 msgstr ""
 
-#: src/mon.c:4794
+#: src/mon.c:4816
 #, c-format
 msgid "You see %s %s under %s."
 msgstr ""
 
-#: src/mon.c:5136
+#: src/mon.c:5158
 msgid "It can't become that."
 msgstr "Il ne peut pas devenir cela."
 
-#: src/mon.c:5428 src/uhitm.c:4941
+#: src/mon.c:5450 src/uhitm.c:4946
 #, c-format
 msgid "You %s %s%s!"
 msgstr ""
 
-#: src/mon.c:5464
+#: src/mon.c:5486
 #, c-format
 msgid "%s disappears!"
 msgstr ""
 
-#: src/mon.c:5470 src/potion.c:1798
+#: src/mon.c:5492 src/potion.c:1798
 #, c-format
 msgid "%s appears!"
 msgstr ""
 
-#: src/mon.c:5472
+#: src/mon.c:5494
 #, c-format
 msgid "%s turns into %s!"
 msgstr ""
 
-#: src/mon.c:5704
+#: src/mon.c:5726
 #, c-format
 msgid "%s seems healthier."
 msgstr ""
 
-#: src/mon.c:5740
+#: src/mon.c:5762
 #, c-format
 msgid "The %s %s up."
 msgstr ""
 
-#: src/mon.c:5745
+#: src/mon.c:5767
 #, c-format
 msgid "The %s %s angry!"
 msgstr ""
 
-#: src/mon.c:5748
+#: src/mon.c:5770
 #, c-format
 msgid "%s %s %s approaching!"
 msgstr ""
 
-#: src/mon.c:5754
+#: src/mon.c:5776
 #, c-format
 msgid "You hear the shrill sound of %s whistle%s."
 msgstr ""
 
-#: src/mon.c:5787
+#: src/mon.c:5809
 #, c-format
 msgid "%s seems a more vivid %s than before."
 msgstr ""
 
-#: src/mon.c:5809
+#: src/mon.c:5831
 msgid "You notice a bovine smell."
 msgstr "Vous remarquez une odeur bovine."
 
-#: src/mon.c:5815
+#: src/mon.c:5837
 msgid "You smell body odor."
 msgstr "Vous sentez une odeur corporelle."
 
-#: src/mon.c:5838
+#: src/mon.c:5860
 msgid "You detect an odor reminiscent of an animal's den."
 msgstr "Vous décelez une odeur de tanière."
 
-#: src/mon.c:5846
+#: src/mon.c:5868
 msgid "You smell steam."
 msgstr "Vous sentez de la vapeur."
 
-#: src/mon.c:5850
+#: src/mon.c:5872
 #, c-format
 msgid "%s stinks."
 msgstr ""
 
-#: src/mon.c:5855
+#: src/mon.c:5877
 msgid "You smell mushrooms."
 msgstr "Vous sentez une odeur de champignons."
 
-#: src/mon.c:5873
+#: src/mon.c:5895
 msgid "You notice a dog smell."
 msgstr "Vous remarquez une odeur de chien."
 
-#: src/mon.c:5877
+#: src/mon.c:5899
 msgid "You smell a dragon!"
 msgstr "Vous sentez un dragon !"
 
-#: src/mon.c:5881
+#: src/mon.c:5903
 #, c-format
 msgid "%s smells moldy."
 msgstr ""
 
-#: src/mon.c:5885
+#: src/mon.c:5907
 #, c-format
 msgid "You detect a%s odor reminiscent of a stable."
 msgstr ""
 
-#: src/mon.c:5890
+#: src/mon.c:5912
 msgid "You smell rotting flesh."
 msgstr "Vous sentez de la chair en putréfaction."
 
-#: src/mon.c:5894
+#: src/mon.c:5916
 msgid "You smell fish."
 msgstr "Vous sentez une odeur de poisson."
 
-#: src/mon.c:5899
+#: src/mon.c:5921
 msgid "You notice an attractive smell."
 msgstr "Vous remarquez une odeur attirante."
 
-#: src/mon.c:5901
+#: src/mon.c:5923
 msgid "A foul stench makes you feel a little nauseated."
 msgstr "Une puanteur infecte vous donne un peu la nausée."
 
-#: src/mon.c:6063 src/steed.c:137
+#: src/mon.c:6085 src/steed.c:137
 #, c-format
 msgid "%s resists!"
 msgstr ""
@@ -9934,7 +13603,7 @@ msgstr "Le rocher tombe en morceaux."
 #: src/monmove.c:405
 #, c-format
 msgid "%s eats %s."
-msgstr ""
+msgstr "%s mange %s."
 
 #: src/monmove.c:493
 #, c-format
@@ -10098,7 +13767,7 @@ msgstr "Ça ne semble pas vous faire mal."
 msgid "It %s you."
 msgstr ""
 
-#: src/mthrowu.c:143 src/uhitm.c:4077
+#: src/mthrowu.c:143 src/uhitm.c:4082
 msgid "The silver sears your flesh!"
 msgstr "L'argent vous brûle la chair !"
 
@@ -10125,7 +13794,7 @@ msgstr ""
 msgid "%s%s is hit%s"
 msgstr ""
 
-#: src/mthrowu.c:406 src/uhitm.c:1898 src/uhitm.c:3112 src/uhitm.c:3134
+#: src/mthrowu.c:406 src/uhitm.c:1903 src/uhitm.c:3117 src/uhitm.c:3139
 #, c-format
 msgid "The poison doesn't seem to affect %s."
 msgstr ""
@@ -10749,11 +14418,6 @@ msgstr "Vous entendez un cri !"
 #: src/music.c:279
 msgid "It is destroyed!"
 msgstr "Il est détruit !"
-
-#: src/music.c:281
-#, c-format
-msgid "You destroy %s!"
-msgstr ""
 
 #: src/music.c:301
 msgid "Your chain breaks!"
@@ -11688,6 +15352,11 @@ msgstr ""
 msgid "You feel rather %s-ish."
 msgstr ""
 
+#: src/polyself.c:805 src/trap.c:1913 src/uhitm.c:5192 src/wizcmds.c:314
+#, c-format
+msgid "You %s %s!"
+msgstr ""
+
 #: src/polyself.c:840
 msgid "You no longer feel sick."
 msgstr "Vous ne vous sentez plus malade."
@@ -11967,7 +15636,7 @@ msgstr ""
 msgid "The fire doesn't burn %s!"
 msgstr ""
 
-#: src/polyself.c:1739 src/uhitm.c:6041
+#: src/polyself.c:1739 src/uhitm.c:6046
 #, c-format
 msgid "You are frozen by %s gaze!"
 msgstr ""
@@ -17208,7 +20877,7 @@ msgstr ""
 #: src/steal.c:836 src/weapon.c:766
 #, c-format
 msgid "%s drops %s."
-msgstr ""
+msgstr "%s lâche %s."
 
 #: src/steal.c:886
 #, c-format
@@ -17616,8 +21285,8 @@ msgstr ""
 msgid "%s seems disoriented."
 msgstr ""
 
-#: src/teleport.c:1998 src/uhitm.c:2852 src/uhitm.c:2877 src/uhitm.c:2947
-#: src/uhitm.c:4743
+#: src/teleport.c:1998 src/uhitm.c:2857 src/uhitm.c:2882 src/uhitm.c:2952
+#: src/uhitm.c:4748
 #, c-format
 msgid "%s suddenly disappears!"
 msgstr ""
@@ -17918,7 +21587,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 20:59+0200\n"
+"POT-Creation-Date: 2026-09-28 19:24+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -18214,8 +21883,8 @@ msgstr ""
 msgid "%s %s's right %s!"
 msgstr ""
 
-#: src/trap.c:1714 src/uhitm.c:2292 src/uhitm.c:2318 src/uhitm.c:2372
-#: src/uhitm.c:2398
+#: src/trap.c:1714 src/uhitm.c:2297 src/uhitm.c:2323 src/uhitm.c:2377
+#: src/uhitm.c:2403
 #, c-format
 msgid "%s %s to pieces!"
 msgstr ""
@@ -18834,7 +22503,7 @@ msgstr ""
 msgid "You sink like %s."
 msgstr ""
 
-#: src/trap.c:5091 src/uhitm.c:2306
+#: src/trap.c:5091 src/uhitm.c:2311
 msgid "You rust!"
 msgstr "Vous rouillez !"
 
@@ -19150,7 +22819,7 @@ msgstr "Vous ne semblez pas affecté."
 msgid "Suddenly you are frozen in place!"
 msgstr "Soudain, vous êtes figé sur place !"
 
-#: src/trap.c:6469 src/uhitm.c:3449 src/uhitm.c:6055
+#: src/trap.c:6469 src/uhitm.c:3454 src/uhitm.c:6060
 msgid "You momentarily stiffen."
 msgstr "Vous vous raidissez un instant."
 
@@ -19386,796 +23055,816 @@ msgstr ""
 msgid "You hit it."
 msgstr "Vous le frappez."
 
-#: src/uhitm.c:1651 src/uhitm.c:5724
+#: src/uhitm.c:1655
 #, c-format
-msgid "You %s %s%s"
-msgstr ""
+msgid "You bash %s%s"
+msgstr "Vous cognez %s%s"
 
-#: src/uhitm.c:1916
+#: src/uhitm.c:1658
+#, c-format
+msgid "You lash %s%s"
+msgstr "Vous fouettez %s%s"
+
+#: src/uhitm.c:1660
+#, c-format
+msgid "You smite %s%s"
+msgstr "Vous terrassez %s%s"
+
+#: src/uhitm.c:1662
+#, c-format
+msgid "You hit %s%s"
+msgstr "Vous frappez %s%s"
+
+#: src/uhitm.c:1921
 #, c-format
 msgid "%s appears confused."
 msgstr ""
 
-#: src/uhitm.c:1920
+#: src/uhitm.c:1925
 #, c-format
 msgid "Your %s %s no longer poisoned."
 msgstr ""
 
-#: src/uhitm.c:2039
+#: src/uhitm.c:2044
 #, c-format
 msgid "%s %s %s%s%s."
 msgstr ""
 
-#: src/uhitm.c:2076
+#: src/uhitm.c:2081
 #, c-format
 msgid "You %s %s %s %s!"
 msgstr ""
 
-#: src/uhitm.c:2139
+#: src/uhitm.c:2144
 msgid "Some hell-p has arrived!"
 msgstr "Des renforts infernaux sont arrivés !"
 
-#: src/uhitm.c:2210
+#: src/uhitm.c:2215
 #, c-format
 msgid "You charm %s.  %s gladly hands over %s%s possessions."
 msgstr ""
 
-#: src/uhitm.c:2214
+#: src/uhitm.c:2219
 #, c-format
 msgid "You seduce %s and %s starts to take off %s clothes."
 msgstr ""
 
-#: src/uhitm.c:2243
+#: src/uhitm.c:2248
 #, c-format
 msgid "%s finishes taking off %s suit."
 msgstr ""
 
-#: src/uhitm.c:2384
+#: src/uhitm.c:2389
 msgid "You rot!"
 msgstr "Vous pourrissez !"
 
-#: src/uhitm.c:2455 src/uhitm.c:2500
+#: src/uhitm.c:2460 src/uhitm.c:2505
 #, c-format
 msgid "%s becomes weaker!"
 msgstr ""
 
-#: src/uhitm.c:2544
+#: src/uhitm.c:2549
 #, c-format
 msgid "You smell burning%s."
 msgstr ""
 
-#: src/uhitm.c:2554
+#: src/uhitm.c:2559
 #, c-format
 msgid "The fire doesn't heat %s!"
 msgstr ""
 
-#: src/uhitm.c:2565
+#: src/uhitm.c:2570
 #, c-format
 msgid "You're %s!"
 msgstr ""
 
-#: src/uhitm.c:2567
+#: src/uhitm.c:2572
 msgid "You go up in flames!"
 msgstr "Vous vous embrasez !"
 
-#: src/uhitm.c:2615
+#: src/uhitm.c:2620
 #, c-format
 msgid "The fire doesn't seem to burn %s!"
 msgstr ""
 
-#: src/uhitm.c:2639 src/uhitm.c:2671
+#: src/uhitm.c:2644 src/uhitm.c:2676
 #, c-format
 msgid "%s is covered in frost!"
 msgstr ""
 
-#: src/uhitm.c:2643
+#: src/uhitm.c:2648
 #, c-format
 msgid "The frost doesn't chill %s!"
 msgstr ""
 
-#: src/uhitm.c:2652
+#: src/uhitm.c:2657
 msgid "You're covered in frost!"
 msgstr "Vous êtes couvert de givre !"
 
-#: src/uhitm.c:2654
+#: src/uhitm.c:2659
 msgid "The frost doesn't seem cold!"
 msgstr "Le givre ne semble pas froid !"
 
-#: src/uhitm.c:2674
+#: src/uhitm.c:2679
 #, c-format
 msgid "The frost doesn't seem to chill %s!"
 msgstr ""
 
-#: src/uhitm.c:2697
+#: src/uhitm.c:2702
 #, c-format
 msgid "%s is zapped!"
 msgstr ""
 
-#: src/uhitm.c:2700 src/uhitm.c:2732
+#: src/uhitm.c:2705 src/uhitm.c:2737
 #, c-format
 msgid "The zap doesn't shock %s!"
 msgstr ""
 
-#: src/uhitm.c:2710
+#: src/uhitm.c:2715
 msgid "You get zapped!"
 msgstr "Vous êtes électrocuté !"
 
-#: src/uhitm.c:2712
+#: src/uhitm.c:2717
 msgid "The zap doesn't shock you!"
 msgstr "La décharge ne vous électrocute pas !"
 
-#: src/uhitm.c:2729
+#: src/uhitm.c:2734
 #, c-format
 msgid "%s gets zapped!"
 msgstr ""
 
-#: src/uhitm.c:2755
+#: src/uhitm.c:2760
 #, c-format
 msgid "You're covered in %s, but it seems harmless."
 msgstr ""
 
-#: src/uhitm.c:2760
+#: src/uhitm.c:2765
 #, c-format
 msgid "You're covered in %s!  It burns!"
 msgstr ""
 
-#: src/uhitm.c:2774
+#: src/uhitm.c:2779
 #, c-format
 msgid "%s is covered in %s, but it seems harmless."
 msgstr ""
 
-#: src/uhitm.c:2778
+#: src/uhitm.c:2783
 #, c-format
 msgid "%s is covered in %s!"
 msgstr ""
 
-#: src/uhitm.c:2779
+#: src/uhitm.c:2784
 #, c-format
 msgid "It burns %s!"
 msgstr ""
 
-#: src/uhitm.c:2806
+#: src/uhitm.c:2811
 msgid "Your purse feels heavier."
 msgstr "Votre bourse semble plus lourde."
 
-#: src/uhitm.c:2808
+#: src/uhitm.c:2813
 #, c-format
 msgid "You grab %s's gold, but find no room in your knapsack."
 msgstr ""
 
-#: src/uhitm.c:2843
+#: src/uhitm.c:2848
 #, c-format
 msgid "%s steals some gold from %s."
 msgstr ""
 
-#: src/uhitm.c:2890
+#: src/uhitm.c:2895
 msgid "You are not affected."
 msgstr "Vous n'êtes pas affecté."
 
-#: src/uhitm.c:2893
+#: src/uhitm.c:2898
 #, c-format
 msgid "Your position suddenly seems %suncertain!"
 msgstr ""
 
-#: src/uhitm.c:2968
+#: src/uhitm.c:2973
 #, c-format
 msgid "%s is blinded."
 msgstr ""
 
-#: src/uhitm.c:2980
+#: src/uhitm.c:2985
 #, c-format
 msgid "%s blinds you!"
 msgstr ""
 
-#: src/uhitm.c:3027 src/uhitm.c:3070
+#: src/uhitm.c:3032 src/uhitm.c:3075
 #, c-format
 msgid "Some writing vanishes from %s head!"
 msgstr ""
 
-#: src/uhitm.c:3033
+#: src/uhitm.c:3038
 msgid "You chuckle."
 msgstr "Vous gloussez."
 
-#: src/uhitm.c:3046 src/uhitm.c:3090
+#: src/uhitm.c:3051 src/uhitm.c:3095
 msgid "You hear laughter."
 msgstr "Vous entendez des rires."
 
-#: src/uhitm.c:3048 src/uhitm.c:3092
+#: src/uhitm.c:3053 src/uhitm.c:3097
 #, c-format
 msgid "%s chuckles."
 msgstr ""
 
-#: src/uhitm.c:3052
+#: src/uhitm.c:3057
 msgid "Some writing vanishes from your head!"
 msgstr "Des écrits s'effacent de votre tête !"
 
-#: src/uhitm.c:3108
+#: src/uhitm.c:3113
 #, c-format
 msgid "%s %s was poisoned!"
 msgstr ""
 
-#: src/uhitm.c:3132
+#: src/uhitm.c:3137
 #, c-format
 msgid "Your %s was poisoned!"
 msgstr ""
 
-#: src/uhitm.c:3137
+#: src/uhitm.c:3142
 msgid "Your poison was deadly..."
 msgstr "Votre poison était mortel..."
 
-#: src/uhitm.c:3190 src/uhitm.c:3278
+#: src/uhitm.c:3195 src/uhitm.c:3283
 #, c-format
 msgid "%s doesn't seem harmed."
 msgstr ""
 
-#: src/uhitm.c:3198
+#: src/uhitm.c:3203
 msgid "You suck in some slime and don't feel very well."
 msgstr "Vous aspirez de la bave et ne vous sentez pas très bien."
 
-#: src/uhitm.c:3208
+#: src/uhitm.c:3213
 #, c-format
 msgid "%s %s blocks your attack to %s head."
 msgstr ""
 
-#: src/uhitm.c:3226
+#: src/uhitm.c:3231
 msgid "You don't seem harmed."
 msgstr "Vous ne semblez pas blessé."
 
-#: src/uhitm.c:3237
+#: src/uhitm.c:3242
 #, c-format
 msgid "Your %s blocks the attack to your head."
 msgstr ""
 
-#: src/uhitm.c:3289
+#: src/uhitm.c:3294
 #, c-format
 msgid "%s helmet blocks %s attack to %s head."
 msgstr ""
 
-#: src/uhitm.c:3319
+#: src/uhitm.c:3324
 #, c-format
 msgid "Your barbs stick to %s!"
 msgstr ""
 
-#: src/uhitm.c:3327
+#: src/uhitm.c:3332
 msgid "The barbs stick to you!"
 msgstr "Les barbes se plantent en vous !"
 
-#: src/uhitm.c:3353
+#: src/uhitm.c:3358
 #, c-format
 msgid "You %s yourself around %s!"
 msgstr ""
 
-#: src/uhitm.c:3360
+#: src/uhitm.c:3365
 #, c-format
 msgid "You drown %s..."
 msgstr ""
 
-#: src/uhitm.c:3363
+#: src/uhitm.c:3368
 #, c-format
 msgid "%s is being crushed."
 msgstr ""
 
-#: src/uhitm.c:3368
+#: src/uhitm.c:3373
 #, c-format
 msgid "You brush against %s."
 msgstr ""
 
-#: src/uhitm.c:3370
+#: src/uhitm.c:3375
 #, c-format
 msgid "You brush against %s %s."
 msgstr ""
 
-#: src/uhitm.c:3384
+#: src/uhitm.c:3389
 #, c-format
 msgid "%s %s itself around you!"
 msgstr ""
 
-#: src/uhitm.c:3396
+#: src/uhitm.c:3401
 #, c-format
 msgid "%s drowns you..."
 msgstr ""
 
-#: src/uhitm.c:3403
+#: src/uhitm.c:3408
 msgid "You are being crushed."
 msgstr "Vous êtes écrasé."
 
-#: src/uhitm.c:3409
+#: src/uhitm.c:3414
 #, c-format
 msgid "%s brushes against you."
 msgstr ""
 
-#: src/uhitm.c:3412
+#: src/uhitm.c:3417
 #, c-format
 msgid "%s brushes against your %s."
 msgstr ""
 
-#: src/uhitm.c:3424
+#: src/uhitm.c:3429
 #, c-format
 msgid "%s brushes against %s."
 msgstr ""
 
-#: src/uhitm.c:3440
+#: src/uhitm.c:3445
 #, c-format
 msgid "%s is frozen by you!"
 msgstr ""
 
-#: src/uhitm.c:3452
+#: src/uhitm.c:3457
 msgid "You are frozen!"
 msgstr "Vous êtes figé !"
 
-#: src/uhitm.c:3454 src/uhitm.c:6057
+#: src/uhitm.c:3459 src/uhitm.c:6062
 #, c-format
 msgid "You are frozen by %s!"
 msgstr ""
 
-#: src/uhitm.c:3489
+#: src/uhitm.c:3494
 #, c-format
 msgid "%s is put to sleep by you!"
 msgstr ""
 
-#: src/uhitm.c:3504
+#: src/uhitm.c:3509
 msgid "You are put to sleep!"
 msgstr "Vous êtes endormi !"
 
-#: src/uhitm.c:3506
+#: src/uhitm.c:3511
 #, c-format
 msgid "You are put to sleep by %s!"
 msgstr ""
 
-#: src/uhitm.c:3516
+#: src/uhitm.c:3521
 #, c-format
 msgid "%s is put to sleep by %s."
 msgstr ""
 
-#: src/uhitm.c:3541
+#: src/uhitm.c:3546
 #, c-format
 msgid "You turn %s into slime."
 msgstr ""
 
-#: src/uhitm.c:3558
+#: src/uhitm.c:3563
 msgid "You escape harm."
 msgstr "Vous vous en tirez indemne."
 
-#: src/uhitm.c:3562
+#: src/uhitm.c:3567
 msgid "The slime burns away!"
 msgstr "La bave brûle et disparaît !"
 
-#: src/uhitm.c:3566
+#: src/uhitm.c:3571
 msgid "You are unaffected."
 msgstr "Vous n'êtes pas affecté."
 
-#: src/uhitm.c:3574
+#: src/uhitm.c:3579
 msgid "Yuck!"
 msgstr "Beurk !"
 
-#: src/uhitm.c:3642 src/uhitm.c:6183
+#: src/uhitm.c:3647 src/uhitm.c:6188
 #, c-format
 msgid "%s less effective."
 msgstr ""
 
-#: src/uhitm.c:3669 src/uhitm.c:3684
+#: src/uhitm.c:3674 src/uhitm.c:3689
 #, c-format
 msgid "%s slows down."
 msgstr ""
 
-#: src/uhitm.c:3698 src/uhitm.c:3721
+#: src/uhitm.c:3703 src/uhitm.c:3726
 #, c-format
 msgid "%s looks confused."
 msgstr ""
 
-#: src/uhitm.c:3707
+#: src/uhitm.c:3712
 msgid "You are getting even more confused."
 msgstr "Vous êtes encore plus confus."
 
-#: src/uhitm.c:3709
+#: src/uhitm.c:3714
 msgid "You are getting confused."
 msgstr "Vous devenez confus."
 
-#: src/uhitm.c:3742
+#: src/uhitm.c:3747
 #, c-format
 msgid "%s is not transformed."
 msgstr ""
 
-#: src/uhitm.c:3757
+#: src/uhitm.c:3762
 msgid "You aren't transformed."
 msgstr "Vous n'êtes pas transformé."
 
-#: src/uhitm.c:3791
+#: src/uhitm.c:3796
 #, c-format
 msgid "%s reaches out, and your body shrivels."
 msgstr ""
 
-#: src/uhitm.c:3822
+#: src/uhitm.c:3827
 #, c-format
 msgid "%s reaches out, and you feel fever and chills."
 msgstr ""
 
-#: src/uhitm.c:3851
+#: src/uhitm.c:3856
 #, c-format
 msgid "%s reaches out with its deadly touch."
 msgstr ""
 
-#: src/uhitm.c:3855
+#: src/uhitm.c:3860
 msgid "Was that the touch of death?"
 msgstr "Était-ce le toucher de la mort ?"
 
-#: src/uhitm.c:3870
+#: src/uhitm.c:3875
 msgid "You feel your life force draining away..."
 msgstr "Vous sentez votre force vitale s'écouler..."
 
-#: src/uhitm.c:3914
+#: src/uhitm.c:3919
 #, c-format
 msgid "%s looks %sconfused."
 msgstr ""
 
-#: src/uhitm.c:4030
+#: src/uhitm.c:4035
 #, c-format
 msgid "%s grabs you!"
 msgstr ""
 
-#: src/uhitm.c:4035
+#: src/uhitm.c:4040
 #, c-format
 msgid "You are being %s."
 msgstr ""
 
-#: src/uhitm.c:4050
+#: src/uhitm.c:4055
 #, c-format
 msgid "%s hits you with the %s corpse."
 msgstr ""
 
-#: src/uhitm.c:4104
+#: src/uhitm.c:4109
 #, c-format
 msgid "You divide as %s hits you!"
 msgstr ""
 
-#: src/uhitm.c:4167 src/zap.c:4103
+#: src/uhitm.c:4172 src/zap.c:4103
 #, c-format
 msgid "%s hits %s."
 msgstr ""
 
-#: src/uhitm.c:4218
+#: src/uhitm.c:4223
 #, c-format
 msgid "You hear a cough from %s!"
 msgstr ""
 
-#: src/uhitm.c:4222
+#: src/uhitm.c:4227
 msgid "You hear hissing."
 msgstr "Vous entendez des sifflements."
 
-#: src/uhitm.c:4223
+#: src/uhitm.c:4228
 #, c-format
 msgid "%s appears to be blowing you a kiss..."
 msgstr ""
 
-#: src/uhitm.c:4228
+#: src/uhitm.c:4233
 #, c-format
 msgid "%s seems to grimace."
 msgstr ""
 
-#: src/uhitm.c:4282
+#: src/uhitm.c:4287
 msgid "You feel feverish."
 msgstr "Vous vous sentez fiévreux."
 
-#: src/uhitm.c:4321
+#: src/uhitm.c:4326
 #, c-format
 msgid "%s hits!  (I hope you don't mind.)"
 msgstr ""
 
-#: src/uhitm.c:4373
+#: src/uhitm.c:4378
 msgid "Doc, I can't help you unless you cooperate."
 msgstr "Docteur, je ne peux pas vous aider si vous ne coopérez pas."
 
-#: src/uhitm.c:4451
+#: src/uhitm.c:4456
 #, c-format
 msgid "%s tries to reach your %s %s!"
 msgstr ""
 
-#: src/uhitm.c:4454
+#: src/uhitm.c:4459
 #, c-format
 msgid "%s nuzzles against your %s %s!"
 msgstr ""
 
-#: src/uhitm.c:4461
+#: src/uhitm.c:4466
 #, c-format
 msgid "%s pricks the exposed part of your %s %s!"
 msgstr ""
 
-#: src/uhitm.c:4464
+#: src/uhitm.c:4469
 #, c-format
 msgid "%s pricks through your %s boot!"
 msgstr ""
 
-#: src/uhitm.c:4467
+#: src/uhitm.c:4472
 #, c-format
 msgid "%s scratches your %s boot!"
 msgstr ""
 
-#: src/uhitm.c:4473
+#: src/uhitm.c:4478
 #, c-format
 msgid "%s pricks your %s %s!"
 msgstr ""
 
-#: src/uhitm.c:4533
+#: src/uhitm.c:4538
 msgid "Burrrrp!"
 msgstr "Burrrp !"
 
-#: src/uhitm.c:4659
+#: src/uhitm.c:4664
 #, c-format
 msgid "%s tries to %s you, but you seem %s."
 msgstr ""
 
-#: src/uhitm.c:4685
+#: src/uhitm.c:4690
 #, c-format
 msgid "%s tries to %s away with %s."
 msgstr ""
 
-#: src/uhitm.c:4724
+#: src/uhitm.c:4729
 #, c-format
 msgid "%s steals %s from %s!"
 msgstr ""
 
-#: src/uhitm.c:4870
+#: src/uhitm.c:4875
 msgid "You feel embarrassed for a moment."
 msgstr "Vous vous sentez gêné un instant."
 
-#: src/uhitm.c:4874
+#: src/uhitm.c:4879
 msgid "You destroy it!"
 msgstr "Vous le détruisez !"
 
-#: src/uhitm.c:4898
+#: src/uhitm.c:4903
 #, c-format
 msgid "%s is blinded by your flash of light!"
 msgstr ""
 
-#: src/uhitm.c:4905
+#: src/uhitm.c:4910
 #, c-format
 msgid "%s is affected by your flash of light!"
 msgstr ""
 
-#: src/uhitm.c:4993
+#: src/uhitm.c:4998
 #, c-format
 msgid "You %s it, then %s it."
 msgstr ""
 
-#: src/uhitm.c:5038
+#: src/uhitm.c:5043
 msgid "Unfortunately, digesting any of it is fatal."
 msgstr "Malheureusement, en digérer la moindre partie est fatal."
 
-#: src/uhitm.c:5066
+#: src/uhitm.c:5071
 #, c-format
 msgid "You hurriedly regurgitate the sizzling in your %s."
 msgstr ""
 
-#: src/uhitm.c:5084
+#: src/uhitm.c:5089
 #, c-format
 msgid "You digest %s."
 msgstr ""
 
-#: src/uhitm.c:5109
+#: src/uhitm.c:5114
 #, c-format
 msgid "%s is laden with your moisture."
 msgstr ""
 
-#: src/uhitm.c:5112
+#: src/uhitm.c:5117
 #, c-format
 msgid "%s seems unharmed."
 msgstr ""
 
-#: src/uhitm.c:5121
+#: src/uhitm.c:5126
 #, c-format
 msgid "%s is covered with your goo!"
 msgstr ""
 
-#: src/uhitm.c:5123
+#: src/uhitm.c:5128
 #, c-format
 msgid "It seems harmless to %s."
 msgstr ""
 
-#: src/uhitm.c:5131
+#: src/uhitm.c:5136
 #, c-format
 msgid "%s can't see in there!"
 msgstr ""
 
-#: src/uhitm.c:5142
+#: src/uhitm.c:5147
 #, c-format
 msgid "The air around %s crackles with electricity."
 msgstr ""
 
-#: src/uhitm.c:5145
+#: src/uhitm.c:5150
 #, c-format
 msgid "%s seems unhurt."
 msgstr ""
 
-#: src/uhitm.c:5155
+#: src/uhitm.c:5160
 #, c-format
 msgid "%s seems mildly chilly."
 msgstr ""
 
-#: src/uhitm.c:5158
+#: src/uhitm.c:5163
 #, c-format
 msgid "%s is freezing to death!"
 msgstr ""
 
-#: src/uhitm.c:5166
+#: src/uhitm.c:5171
 #, c-format
 msgid "%s seems mildly hot."
 msgstr ""
 
-#: src/uhitm.c:5169
+#: src/uhitm.c:5174
 #, c-format
 msgid "%s is burning to a crisp!"
 msgstr ""
 
-#: src/uhitm.c:5189
+#: src/uhitm.c:5194
 #, c-format
 msgid "Obviously, you didn't like %s taste."
 msgstr ""
 
-#: src/uhitm.c:5204
+#: src/uhitm.c:5209
 msgid "Your armor is rather cumbersome..."
 msgstr "Votre armure est plutôt encombrante..."
 
-#: src/uhitm.c:5207
+#: src/uhitm.c:5212
 #, c-format
 msgid "You pretend to be friendly to %s."
 msgstr ""
 
-#: src/uhitm.c:5209
+#: src/uhitm.c:5214
 #, c-format
 msgid "You miss %s."
-msgstr ""
+msgstr "Vous ratez %s."
 
-#: src/uhitm.c:5211
+#: src/uhitm.c:5216
 msgid "You miss it."
 msgstr "Vous le ratez."
 
-#: src/uhitm.c:5348
+#: src/uhitm.c:5353
 #, c-format
 msgid "You %sdon't budge."
 msgstr ""
 
-#: src/uhitm.c:5350 src/zap.c:411
+#: src/uhitm.c:5355 src/zap.c:411
 #, c-format
 msgid "%s doesn't budge."
 msgstr ""
 
-#: src/uhitm.c:5372
+#: src/uhitm.c:5377
 #, c-format
 msgid "%s %s %s %s with a %s %s!"
 msgstr ""
 
-#: src/uhitm.c:5377
+#: src/uhitm.c:5382
 #, c-format
 msgid "You feel %s be knocked %s!"
 msgstr ""
 
-#: src/uhitm.c:5647
+#: src/uhitm.c:5652
 #, c-format
 msgid "Your %s %s harmlessly through %s."
 msgstr ""
 
-#: src/uhitm.c:5656
+#: src/uhitm.c:5661
 #, c-format
 msgid "Your tentacles suck %s."
 msgstr ""
 
 #: src/uhitm.c:5729
 #, c-format
+msgid "You %s %s%s"
+msgstr ""
+
+#: src/uhitm.c:5734
+#, c-format
 msgid "Your %s passes harmlessly through %s."
 msgstr ""
 
-#: src/uhitm.c:5739
+#: src/uhitm.c:5744
 #, c-format
 msgid "%s is being %s%s."
 msgstr ""
 
-#: src/uhitm.c:5753
+#: src/uhitm.c:5758
 #, c-format
 msgid "You grab %s!"
 msgstr ""
 
-#: src/uhitm.c:5778
+#: src/uhitm.c:5783
 #, c-format
 msgid "Your attempt to surround %s is harmless."
 msgstr ""
 
-#: src/uhitm.c:5909
+#: src/uhitm.c:5914
 msgid "You are splashed!"
 msgstr "Vous êtes éclaboussé !"
 
-#: src/uhitm.c:5911
+#: src/uhitm.c:5916
 #, c-format
 msgid "You are splashed by %s %s!"
 msgstr ""
 
-#: src/uhitm.c:5985
+#: src/uhitm.c:5990
 msgid "A hail of magic missiles narrowly misses you!"
 msgstr "Une grêle de projectiles magiques vous frôle !"
 
-#: src/uhitm.c:5987
+#: src/uhitm.c:5992
 msgid "You are hit by magic missiles appearing from thin air!"
 msgstr "Des projectiles magiques surgis de nulle part vous frappent !"
 
-#: src/uhitm.c:6038
+#: src/uhitm.c:6043
 #, c-format
 msgid "You momentarily stiffen under %s gaze!"
 msgstr ""
 
-#: src/uhitm.c:6049
+#: src/uhitm.c:6054
 #, c-format
 msgid "%s cannot defend itself."
 msgstr ""
 
-#: src/uhitm.c:6070
+#: src/uhitm.c:6075
 msgid "You feel a mild chill."
 msgstr "Vous sentez un léger froid."
 
-#: src/uhitm.c:6076
+#: src/uhitm.c:6081
 msgid "You are suddenly very cold!"
 msgstr "Vous avez soudain très froid !"
 
-#: src/uhitm.c:6093
+#: src/uhitm.c:6098
 msgid "You feel mildly warm."
 msgstr "Vous avez un peu chaud."
 
-#: src/uhitm.c:6099
+#: src/uhitm.c:6104
 msgid "You are suddenly very hot!"
 msgstr "Vous avez soudain très chaud !"
 
-#: src/uhitm.c:6106
+#: src/uhitm.c:6111
 msgid "You feel a mild tingle."
 msgstr "Vous sentez un léger picotement."
 
-#: src/uhitm.c:6112
+#: src/uhitm.c:6117
 msgid "You are jolted with electricity!"
 msgstr "Vous êtes secoué par l'électricité !"
 
-#: src/uhitm.c:6327
+#: src/uhitm.c:6332
 #, c-format
 msgid "Your %s stop tingling."
 msgstr ""
 
-#: src/uhitm.c:6329
+#: src/uhitm.c:6334
 #, c-format
 msgid "Your %s stop glowing %s."
 msgstr ""
 
-#: src/uhitm.c:6332
+#: src/uhitm.c:6337
 #, c-format
 msgid "The tingling in your %s lessens."
 msgstr ""
 
-#: src/uhitm.c:6334
+#: src/uhitm.c:6339
 #, c-format
 msgid "Your %s no longer glow so brightly %s."
 msgstr ""
 
-#: src/uhitm.c:6368
+#: src/uhitm.c:6373
 #, c-format
 msgid "That %s is really %s%c"
 msgstr ""
 
-#: src/uhitm.c:6380
+#: src/uhitm.c:6385
 #, c-format
 msgid "The flash awakens %s."
 msgstr ""
 
-#: src/uhitm.c:6387
+#: src/uhitm.c:6392
 #, c-format
 msgid "%s is blinded by the flash!"
 msgstr ""
 
-#: src/uhitm.c:6409
+#: src/uhitm.c:6414
 #, c-format
 msgid "The flash of light shines on %s."
 msgstr ""
 
-#: src/uhitm.c:6411
+#: src/uhitm.c:6416
 #, c-format
 msgid "%s is illuminated."
 msgstr ""
 
-#: src/uhitm.c:6433
+#: src/uhitm.c:6438
 #, c-format
 msgid "%s recoils from the light!"
 msgstr ""
@@ -21479,6 +25168,10 @@ msgstr ""
 #: src/zap.c:3425
 msgid "You feel shuddering vibrations."
 msgstr "Vous sentez des vibrations."
+
+#: src/zap.c:3552
+msgid "?"
+msgstr " ?"
 
 #: src/zap.c:3566
 #, c-format
