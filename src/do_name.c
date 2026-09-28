@@ -809,7 +809,10 @@ rndghostname(void)
 #ifdef NHI18N
 #if 0
 /* for xgettext: data used by x_monnam_i18n() */
-/* feminine forms of the adjectives given to x_monnam() */
+/* adjectives given to x_monnam(), and their feminine forms */
+N_("invisible"), N_("saddled"), N_("poor"), N_("angry"), N_("sleeping"),
+N_("blind"), N_("blinded"), N_("immobile"), N_("falling"),
+N_("beautiful"), N_("plain"), N_("peaceful"),
 C_("feminine", "invisible"), C_("feminine", "saddled"),
 C_("feminine", "poor"), C_("feminine", "angry"), C_("feminine", "sleeping"),
 C_("feminine", "blind"), C_("feminine", "blinded"),
@@ -843,23 +846,13 @@ i18n_feminine(const char *name)
 staticfn boolean
 i18n_elides(const char *phrase, const char *name)
 {
-    static const char *const initials[] = {
-        "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y",
-        "\303\240", "\303\242", "\303\251", "\303\250", "\303\252",
-        "\303\253", "\303\256", "\303\257", "\303\264", "\303\273",
-        "\303\211", 0 /* à â é è ê ë î ï ô û É */
-    };
     const char *g = name ? i18n_lookup("gender", name) : 0;
-    int i;
 
     if (g && strchr(g, 'n'))
         return FALSE;
     if (g && strchr(g, 'e'))
         return TRUE;
-    for (i = 0; initials[i]; ++i)
-        if (!strncmp(phrase, initials[i], strlen(initials[i])))
-            return TRUE;
-    return FALSE;
+    return i18n_vowel_start(phrase);
 }
 
 /* translation of an adjective qualifying a noun of the given gender */

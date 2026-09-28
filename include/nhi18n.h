@@ -18,6 +18,8 @@
  *              in static tables); translate it with _() where it is used.
  *  NC_("context", "text")
  *              same, for text translated with C_("context", ...).
+ *  NCP_("context", "text", "plural text")
+ *              same, for text with a plural form (see nh_npgettext()).
  *  i18n_active()
  *              TRUE when messages are being translated; for text that has
  *              to be composed differently then (English articles, etc.).
@@ -44,5 +46,6 @@
 #endif
 #define N_(msgid) msgid
 #define NC_(ctx, msgid) msgid
+#define NCP_(ctx, msgid, plural) msgid
 
 #endif /* NHI18N_H */

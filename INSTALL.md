@@ -219,7 +219,7 @@ ajouter son nom à cette ligne avant d'installer (ou modifier directement le
 
 ## 7. Traduction française
 
-La traduction est en cours (environ 2 800 textes sur 5 600). Sont traduits :
+La traduction est en cours (environ 4 000 textes sur 7 200). Sont traduits :
 la création du personnage, le message de bienvenue, la ligne de statut
 (avec accord au féminin des rangs et de l'alignement), les catégories de
 l'inventaire, les invites de choix d'objet (« Que voulez-vous manger ? »),
@@ -227,9 +227,10 @@ les questions pour quitter ou sauvegarder, et presque tous les messages
 qui ne contiennent pas de nom d'objet ou de monstre (portes, déplacements,
 nourriture, pièges, fontaines, trônes, prières, sorts, baguettes,
 boutiques...), les noms de monstres avec leur article (« le chacal »,
-« la vipère ») et les combats courants. Les noms d'objets, et donc les
-messages qui les contiennent, restent en anglais. Pour l'activer, ajouter
-dans
+« la vipère »), les combats courants et les noms d'objets avec leurs
+accords (« 4 potions de soins non maudites »). Les messages qui conjuguent
+un verbe anglais avec un nom d'objet restent en partie en anglais. Pour
+l'activer, ajouter dans
 `~/.nethackrc` :
 
 ```

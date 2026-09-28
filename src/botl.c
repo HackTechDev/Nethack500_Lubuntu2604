@@ -370,8 +370,16 @@ rank(void)
 staticfn const char *
 title_the(void)
 {
+    if (!Upolyd && i18n_active()
+        && i18n_vowel_start(gendered_word(rank(), flags.female)))
+        return C_("elided", " the ");
     return (!Upolyd && flags.female) ? C_("feminine", " the ") : _(" the ");
 }
+
+#if 0
+/* for xgettext: " the " before a rank title starting with a vowel */
+C_("elided", " the "),
+#endif
 
 #if 0
 /* for xgettext: feminine forms of the alignment on the status line */

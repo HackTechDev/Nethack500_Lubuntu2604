@@ -1801,8 +1801,16 @@ add_menu(
     }
 
     if (iflags.use_menu_color) {
-        if ((itemflags & MENU_ITEMFLAGS_SKIPMENUCOLORS) == 0)
-            (void) get_menu_coloring(str, &color, &attr);
+        if ((itemflags & MENU_ITEMFLAGS_SKIPMENUCOLORS) == 0
+            && !get_menu_coloring(str, &color, &attr)) {
+#ifdef NHI18N
+            /* a translated object name: the patterns may be English */
+            const char *english = i18n_active() ? objnam_english(str) : 0;
+
+            if (english)
+                (void) get_menu_coloring(english, &color, &attr);
+#endif
+        }
     }
     /* this is the only function that cared about this flag; remove it now */
     itemflags &= ~MENU_ITEMFLAGS_SKIPMENUCOLORS;

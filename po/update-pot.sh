@@ -26,6 +26,7 @@ trap 'rm -rf "$tmp"' 0
 $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
     --keyword=_ --keyword=N_ \
     --keyword=C_:1c,2 --flag=C_:2:c-format --keyword=NC_:1c,2 \
+    --keyword=NCP_:1c,2,3 \
     --keyword=pline --keyword=pline_dir:2 --keyword=pline_xy:3 \
     --keyword=pline_mon:2 --keyword=custompline:2 \
     --keyword=urgent_pline --keyword=Norep --keyword=verbalize \
@@ -57,5 +58,36 @@ grep -o 'NAMS\{0,1\}([^)]*)' include/monsters.h | grep -o '"[^"]*"' \
 # shellcheck disable=SC2086
 $XGETTEXT $COMMON --no-location -k --keyword=NC_:1c,2 \
     -o "$tmp/1monsters.pot" "$tmp/monsters.c"
+
+# object names and descriptions (include/objects.h) are translated with
+# the context "object" (with a plural form) and their grammatical gender
+# with the context "objgender"; descriptions of potions, rings, wands,
+# amulets, spellbooks, gems and scrolls are adjectives ("bubbly potion"),
+# translated without context (masculine) or with "feminine" (see objnam.c)
+awk '
+match($0, /^[ \t]*[A-Z_]+\((OBJ\()?"[^"]*"/) {
+    s = substr($0, RSTART, RLENGTH); rest = substr($0, RSTART + RLENGTH)
+    macro = s; sub(/^[ \t]*/, "", macro); sub(/\(.*/, "", macro)
+    name = s; sub(/^[^"]*/, "", name)
+    if (macro == "GENERIC" || macro == "XTRA_SCROLL_LABEL")
+        next
+    plural = substr(name, 1, length(name) - 1) "s\""
+    printf "NCP_(\"object\", %s, %s); NC_(\"objgender\", %s);\n", \
+           name, plural, name
+    if (match(rest, /^[ \t]*,[ \t]*"[^"]*"/)) {
+        desc = substr(rest, RSTART, RLENGTH); sub(/^[^"]*/, "", desc)
+        if (macro ~ /^(POTION|RING|WAND|AMULET|SPELL|GEM|ROCK|SCROLL)$/) {
+            printf "N_(%s); C_(\"feminine\", %s);\n", desc, desc
+        } else {
+            plural = substr(desc, 1, length(desc) - 1) "s\""
+            printf "NCP_(\"object\", %s, %s); NC_(\"objgender\", %s);\n", \
+                   desc, plural, desc
+        }
+    }
+}' include/objects.h > "$tmp/objects.c"
+# shellcheck disable=SC2086
+$XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
+    --keyword=NC_:1c,2 --keyword=N_ --keyword=C_:1c,2 \
+    -o "$tmp/2objects.pot" "$tmp/objects.c"
 
 $MSGCAT --no-wrap --sort-by-file --use-first -o po/nethack.pot "$tmp"/*.pot

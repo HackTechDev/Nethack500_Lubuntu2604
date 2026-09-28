@@ -8,7 +8,7 @@
 > texte. Il faut compter de nombreuses sessions de travail, et des tests
 > en jeu à chaque étape.
 
-État actuel : 2 844 textes traduits sur 5 638 dans `po/fr.po` (dont les
+État actuel : 4 042 textes traduits sur 7 169 dans `po/fr.po` (dont les
 entrées de genre laissées vides, qui valent masculin). Le
 fonctionnement de la traduction et la façon d'ajouter des traductions sont
 décrits dans la section 7 de [INSTALL.md](INSTALL.md).
@@ -30,14 +30,18 @@ C'est ce qui bloque la plupart des messages restants.
   traduit est féminin, pour choisir une forme `C_("feminine", ...)` du
   message (fait pour « %s is killed! »). Ailleurs, préférer des tournures
   sans participe (« %s se change en pierre ! »).
-- **Noms d'objets** : 380 entrées dans `include/objects.h`, plus les
-  descriptions des objets non identifiés (« bubbly potion », « scroll
-  labeled FOOBIE BLETCH »), les matériaux et les appellations données par
-  le joueur.
-- **Composition des noms** (`src/objnam.c`) : `xname()`, `doname()`,
-  `an()`, `the()`, `makeplural()`, et l'ordre des adjectifs
-  (« uncursed +0 long sword » → « épée longue +0 non maudite »), avec les
-  accords en genre et en nombre.
+- **Fait : noms d'objets.** Les 547 noms, descriptions et motifs de
+  `include/objects.h` sont traduits (contexte `object`, avec pluriel ;
+  genre dans `objgender`), ainsi que les apparences (« potion
+  pétillante », « anneau en bois »). `xname()` et `doname()` composent le
+  nom en français (« 4 potions de soins non maudites », « une paire de
+  gants de cuir +1 non maudite (portée) »), avec élision (« parchemin
+  d'identification »). `an()`, `the()` et `yname()` choisissent l'article
+  selon le genre et le nombre. Les couleurs `MENUCOLOR` écrites en anglais
+  s'appliquent toujours (jumeau anglais de chaque nom). Restent : les noms
+  d'artefacts, le texte des fruits nommés par le joueur, `minimal_xname()`
+  et `distant_name()` en partie, et les messages qui conjuguent un verbe
+  anglais avec le nom d'objet (`otense()`, `yobjnam()`, `Tobjnam()`).
 - **Possessif** : `s_suffix()` (« the fox's » → « du renard ») ; les
   phrases qui l'utilisent sont à reformuler.
 - **Articles et contractions** : le/la/l'/les, de + le = du,

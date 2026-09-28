@@ -48,9 +48,14 @@ staticfn const char *mo_string(struct mo_catalog *, unsigned long,
                                unsigned long);
 staticfn int fmt_conversions(const char *, char[FMT_MAXCONV][FMT_CODELEN]);
 staticfn boolean fmt_compatible(const char *, const char *);
+staticfn long mo_find(const char *);
 staticfn const char *mo_lookup(const char *);
 
 static struct mo_catalog catalog;
+static int suspended = 0; /* i18n_suspend() */
+
+/* is there a catalog in use right now? */
+#define TRANSLATING() (catalog.data && !suspended)
 static char cur_language[8] = "en";
 
 /* 32-bit number at offset off of the file, in the file's byte order */
@@ -242,39 +247,51 @@ fmt_compatible(const char *msgid, const char *translation)
     return TRUE;
 }
 
-/* translation of key (a msgid, or "context\004msgid") that can be used
-   in place of msgid; Null if there is none */
-staticfn const char *
-mo_lookup(const char *key)
+/* index of key (a msgid, or "context\004msgid") in the catalog, or -1;
+   the original string of an entry with a plural form is "msgid\0plural",
+   which strcmp() compares as just msgid */
+staticfn long
+mo_find(const char *key)
 {
     unsigned long lo, hi, mid;
-    const char *translation, *msgid;
     int cmp;
 
     lo = 0, hi = catalog.count;
     while (lo < hi) {
         mid = lo + (hi - lo) / 2;
         cmp = strcmp(key, mo_string(&catalog, catalog.origtab, mid));
-        if (cmp < 0) {
+        if (cmp < 0)
             hi = mid;
-        } else if (cmp > 0) {
+        else if (cmp > 0)
             lo = mid + 1;
-        } else {
-            translation = mo_string(&catalog, catalog.transtab, mid);
-            if (catalog.fmtcheck[mid] == fmt_unchecked) {
-                boolean ok;
-
-                if ((msgid = strchr(key, '\004')) != 0)
-                    ++msgid;
-                else
-                    msgid = key;
-                ok = (*translation && fmt_compatible(msgid, translation));
-                catalog.fmtcheck[mid] = ok ? fmt_ok : fmt_bad;
-            }
-            return (catalog.fmtcheck[mid] == fmt_ok) ? translation : 0;
-        }
+        else
+            return (long) mid;
     }
-    return (const char *) 0;
+    return -1L;
+}
+
+/* translation of key (a msgid, or "context\004msgid") that can be used
+   in place of msgid; Null if there is none */
+staticfn const char *
+mo_lookup(const char *key)
+{
+    long i = mo_find(key);
+    const char *translation, *msgid;
+
+    if (i < 0)
+        return (const char *) 0;
+    translation = mo_string(&catalog, catalog.transtab, (unsigned long) i);
+    if (catalog.fmtcheck[i] == fmt_unchecked) {
+        boolean ok;
+
+        if ((msgid = strchr(key, '\004')) != 0)
+            ++msgid;
+        else
+            msgid = key;
+        ok = (*translation && fmt_compatible(msgid, translation));
+        catalog.fmtcheck[i] = ok ? fmt_ok : fmt_bad;
+    }
+    return (catalog.fmtcheck[i] == fmt_ok) ? translation : 0;
 }
 
 /* translation of msgid in the current language, or msgid itself */
@@ -283,7 +300,7 @@ nh_gettext(const char *msgid)
 {
     const char *translation;
 
-    if (!catalog.data || !msgid || !*msgid)
+    if (!TRANSLATING() || !msgid || !*msgid)
         return msgid;
     translation = mo_lookup(msgid);
     return translation ? translation : msgid;
@@ -296,7 +313,7 @@ nh_pgettext(const char *ctx, const char *msgid)
     char key[BUFSZ];
     const char *translation;
 
-    if (!catalog.data || !msgid || !*msgid)
+    if (!TRANSLATING() || !msgid || !*msgid)
         return msgid;
     if (strlen(ctx) + strlen(msgid) + 2 <= sizeof key) {
         Sprintf(key, "%s\004%s", ctx, msgid);
@@ -313,18 +330,84 @@ i18n_lookup(const char *ctx, const char *msgid)
 {
     char key[BUFSZ];
 
-    if (!catalog.data || !*msgid
+    if (!TRANSLATING() || !*msgid
         || strlen(ctx) + strlen(msgid) + 2 > sizeof key)
         return (const char *) 0;
     Sprintf(key, "%s\004%s", ctx, msgid);
     return mo_lookup(key);
 }
 
+/* translation of msgid for context ctx (none if ctx is Null), in its
+   plural form if 'plural'; without a translation, msgid itself (the
+   caller has to supply English plurals) */
+const char *
+nh_npgettext(const char *ctx, const char *msgid, boolean plural)
+{
+    char key[BUFSZ];
+    const char *translation, *form;
+    unsigned long len;
+    long i;
+
+    if (!TRANSLATING() || !*msgid)
+        return msgid;
+    if (!ctx)
+        Strcpy(key, "");
+    else if (strlen(ctx) + 2 < sizeof key)
+        Sprintf(key, "%s\004", ctx);
+    else
+        return msgid;
+    if (strlen(key) + strlen(msgid) >= sizeof key)
+        return msgid;
+    Strcat(key, msgid);
+    if ((translation = mo_lookup(key)) == 0)
+        return msgid;
+    if (!plural)
+        return translation;
+    /* the translation of an entry with a plural form is "form0\0form1" */
+    i = mo_find(key);
+    len = mo_u32(&catalog, catalog.transtab + (unsigned long) i * 8);
+    form = translation + strlen(translation) + 1;
+    if ((unsigned long) (form - translation) >= len || !*form
+        || !fmt_compatible(msgid, form))
+        return translation;
+    return form;
+}
+
 /* are messages being translated? */
 boolean
 i18n_translating(void)
 {
-    return catalog.data ? TRUE : FALSE;
+    return TRANSLATING() ? TRUE : FALSE;
+}
+
+/* stop translating (suspend TRUE) until resumed (suspend FALSE), to
+   format some text in English as well as translated; nests */
+void
+i18n_suspend(boolean suspend)
+{
+    if (suspend)
+        ++suspended;
+    else if (suspended > 0)
+        --suspended;
+}
+
+/* does text start with a vowel, as far as elision of an article goes?
+   (ASCII vowels and y, and the accented vowels of Latin-1 in UTF-8) */
+boolean
+i18n_vowel_start(const char *text)
+{
+    static const char *const initials[] = {
+        "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y",
+        "\303\240", "\303\242", "\303\251", "\303\250", "\303\252",
+        "\303\253", "\303\256", "\303\257", "\303\264", "\303\273",
+        "\303\211", 0 /* à â é è ê ë î ï ô û É */
+    };
+    int i;
+
+    for (i = 0; initials[i]; ++i)
+        if (!strncmp(text, initials[i], strlen(initials[i])))
+            return TRUE;
+    return FALSE;
 }
 
 /* switch to language lang ("en" or a code like "fr" or "pt_BR" whose

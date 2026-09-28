@@ -944,6 +944,8 @@ int windows_early_options(const char *);
 
 /* ### eat.c ### */
 
+extern int tin_kind(struct obj *) NONNULLARG1;
+extern const char *tin_preparation(int);
 extern void eatmupdate(void);
 extern boolean is_edible(struct obj *) NONNULLARG1;
 extern void init_uhunger(void);
@@ -2087,6 +2089,10 @@ extern const char *nh_gettext(const char *) FORMAT_ARG(1);
 extern const char *nh_pgettext(const char *, const char *) FORMAT_ARG(2);
 extern boolean i18n_translating(void);
 extern const char *i18n_lookup(const char *, const char *) NONNULLARG12;
+extern const char *nh_npgettext(const char *, const char *, boolean)
+                                                            NONNULLARG2;
+extern void i18n_suspend(boolean);
+extern boolean i18n_vowel_start(const char *) NONNULLARG1;
 extern boolean i18n_set_language(const char *) NONNULLARG1;
 extern const char *i18n_language(void);
 #endif
@@ -2219,6 +2225,9 @@ extern void objects_globals_init(void);
 
 /* ### objnam.c ### */
 
+#ifdef NHI18N
+extern const char *objnam_english(const char *) NONNULLARG1;
+#endif
 extern void maybereleaseobuf(char *) NONNULLARG1;
 extern char *obj_typename(int);
 extern char *simple_typename(int);

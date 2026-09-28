@@ -10,6 +10,10 @@
 #define SCHAR_LIM 127
 #define NUMOBUF 12
 
+#define DONAME_WITH_PRICE 1
+#define DONAME_VAGUE_QUAN 2
+#define DONAME_FOR_MENU   4 /* [not used anywhere yet] */
+
 struct _readobjnam_data {
     struct obj *otmp;
     char *bp;
@@ -137,11 +141,22 @@ strprepend(char *s, const char *pref)
 /* manage a pool of BUFSZ buffers, so callers don't have to */
 static char NEARDATA obufs[NUMOBUF][BUFSZ];
 static int obufidx = 0;
+#ifdef NHI18N
+/* per obuf[] (see xname_i18n()): where a translated name starts and its
+   grammar; English counterpart of the translated doname() there */
+static const char *obuf_gram_at[NUMOBUF];
+static unsigned char obuf_gram[NUMOBUF];
+static const char *obuf_twin_of[NUMOBUF];
+static char obuf_twin[NUMOBUF][BUFSZ];
+#endif
 
 staticfn char *
 nextobuf(void)
 {
     obufidx = (obufidx + 1) % NUMOBUF;
+#ifdef NHI18N
+    obuf_gram_at[obufidx] = obuf_twin_of[obufidx] = (const char *) 0;
+#endif
     return obufs[obufidx];
 }
 
@@ -571,6 +586,996 @@ xcalled(
     Sprintf(eos(buf), "%s called %.*s", pfx, bufsiz - pfxlen, sfx);
 }
 
+
+#ifdef NHI18N
+/*
+ * Translated object names.
+ *
+ * When messages are translated, xname() and doname() compose the name
+ * from the object rather than from the English text: xname_i18n() gives
+ * the translated noun phrase ("potion de soins") and doname_i18n() adds
+ * the article or count and the other details.  The grammatical gender
+ * and number of the phrase are kept with the obuf[] holding it, so that
+ * an() and the() can pick the right article.  doname_i18n() also keeps
+ * the English doname() of the object, which add_menu() uses for the
+ * MENUCOLOR patterns of the player's configuration.
+ *
+ * Catalog entries (see po/update-pot.sh):
+ *  msgctxt "object": object names, descriptions and name patterns
+ *      such as "potion of %s", with their plural forms;
+ *  msgctxt "objgender": grammatical gender of those ('f' feminine,
+ *      'p' plural noun, 'e'/'n' force or prevent elision);
+ *  adjectives ("blessed", "rusty"...) and phrase patterns (" named %s")
+ *      without context for the masculine singular, with the contexts
+ *      "feminine", "plural" and "feminine plural" for the other forms.
+ */
+
+#define OGRAM_FEM 1
+#define OGRAM_PLURAL 2
+#define OGRAM_ELIDE 4
+#define OGRAM_NOELIDE 8
+#define OGRAM_SET 16 /* grammar known */
+
+/* xname_i18n() flag: leave out "poisoned" (doname_i18n() adds it) */
+#define CXN_NOPOISON 0x100
+
+staticfn int obuf_index(const char *);
+staticfn void set_objgram(const char *, unsigned);
+staticfn unsigned get_objgram(const char *);
+staticfn const char *obj_agree(const char *, unsigned) FORMAT_ARG(1);
+staticfn const char *obj_noun(const char *, boolean, unsigned *)
+                                                        FORMAT_ARG(1);
+staticfn void erosion_i18n(struct obj *, char *, unsigned);
+staticfn char *xname_i18n(struct obj *, unsigned);
+staticfn char *doname_i18n(struct obj *, unsigned);
+staticfn char *article_i18n(const char *, unsigned, boolean);
+staticfn const char *obj_pattern(const char *, boolean, unsigned *,
+                                 const char *) FORMAT_ARG(1);
+staticfn char *corpse_xname_i18n(struct obj *, unsigned);
+
+#if 0
+/* for xgettext: words and patterns used by the functions below */
+N_("blessed"), N_("uncursed"), N_("cursed"), N_("empty"), N_("trapped"),
+N_("broken"), N_("locked"), N_("unlocked"), N_("greased"), N_("poisoned"),
+N_("partly used"), N_("partly eaten"), N_("diluted"), N_("moist"),
+N_("wet"), N_("historic"), N_("next"), N_("small"), N_("medium"),
+N_("large"), N_("very large"), N_("rusty"), N_("cracked"), N_("burnt"),
+N_("corroded"), N_("rotted"), N_("fixed"), N_("rustproof"),
+N_("corrodeproof"), N_("fireproof"), N_("tempered"), N_("rotproof"),
+N_("very "), N_("thoroughly "), N_(" named %s"), N_("%s called %s"),
+N_("the %s"), N_("a %s"), N_("some %s"),
+C_("elided", "the %s"), C_("plural", "the %s"), C_("plural", "a %s"),
+C_("feminine plural", "the %s"), C_("feminine plural", "a %s"),
+C_("feminine", "some %s"), C_("plural", "some %s"),
+C_("feminine plural", "some %s"),
+C_("feminine", " named %s"), C_("plural", " named %s"),
+C_("feminine plural", " named %s"), C_("feminine", "%s called %s"),
+C_("plural", "%s called %s"), C_("feminine plural", "%s called %s"),
+C_("plural", "your %s"),
+/* feminine forms of the adjectives */
+C_("feminine", "blessed"), C_("feminine", "uncursed"),
+C_("feminine", "cursed"), C_("feminine", "empty"), C_("feminine", "trapped"),
+C_("feminine", "broken"), C_("feminine", "locked"),
+C_("feminine", "unlocked"), C_("feminine", "greased"),
+C_("feminine", "poisoned"), C_("feminine", "partly used"),
+C_("feminine", "partly eaten"), C_("feminine", "diluted"),
+C_("feminine", "moist"), C_("feminine", "wet"), C_("feminine", "historic"),
+C_("feminine", "next"), C_("feminine", "small"), C_("feminine", "medium"),
+C_("feminine", "large"), C_("feminine", "very large"),
+C_("feminine", "rusty"), C_("feminine", "cracked"), C_("feminine", "burnt"),
+C_("feminine", "corroded"), C_("feminine", "rotted"),
+C_("feminine", "fixed"), C_("feminine", "rustproof"),
+C_("feminine", "corrodeproof"), C_("feminine", "fireproof"),
+C_("feminine", "tempered"), C_("feminine", "rotproof"),
+/* name patterns, with their gender */
+NCP_("object", "amulet", "amulets"),
+NCP_("object", "%s amulet", "%s amulets"),
+NCP_("object", "pair of %s", "pairs of %s"),
+NCP_("object", "set of %s", "sets of %s"),
+NCP_("object", "shield", "shields"),
+NCP_("object", "smooth shield", "smooth shields"),
+NCP_("object", "tin of spinach", "tins of spinach"),
+NCP_("object", "empty tin", "empty tins"),
+NCP_("object", "tin of %s", "tins of %s"),
+NCP_("object", "tin of %s meat", "tins of %s meat"),
+NCP_("object", "statue of %s", "statues of %s"),
+NCP_("object", "heavy iron ball", "heavy iron balls"),
+NCP_("object", "very heavy iron ball", "very heavy iron balls"),
+NCP_("object", "potion", "potions"),
+NCP_("object", "potion of %s", "potions of %s"),
+NCP_("object", "holy water", "holy water"),
+NCP_("object", "unholy water", "unholy water"),
+NCP_("object", "%s potion", "%s potions"),
+NCP_("object", "scroll", "scrolls"),
+NCP_("object", "scroll of %s", "scrolls of %s"),
+NCP_("object", "scroll labeled %s", "scrolls labeled %s"),
+NCP_("object", "%s scroll", "%s scrolls"), NCP_("object", "wand", "wands"),
+NCP_("object", "wand of %s", "wands of %s"),
+NCP_("object", "%s wand", "%s wands"), NCP_("object", "book", "books"),
+NCP_("object", "novel", "novels"), NCP_("object", "%s book", "%s books"),
+NCP_("object", "spellbook", "spellbooks"),
+NCP_("object", "spellbook of %s", "spellbooks of %s"),
+NCP_("object", "%s spellbook", "%s spellbooks"),
+NCP_("object", "ring", "rings"), NCP_("object", "ring of %s", "rings of %s"),
+NCP_("object", "%s ring", "%s rings"), NCP_("object", "stone", "stones"),
+NCP_("object", "gem", "gems"), NCP_("object", "%s stone", "%s stones"),
+NCP_("object", "%s gem", "%s gems"),
+NCP_("object", "%s corpse", "%s corpses"),
+NCP_("object", "object?", "objects?"),
+/* translated suffixes agreeing with the object */
+N_(" (being worn)"), N_(" (embedded in your skin)"), N_(" (lit)"),
+N_(" (wielded)"), N_(" (at the ready)"), N_(" (unpaid, %ld %s)"),
+C_("feminine", " (being worn)"),
+C_("plural", " (being worn)"),
+C_("feminine plural", " (being worn)"),
+C_("feminine", " (embedded in your skin)"),
+C_("plural", " (embedded in your skin)"),
+C_("feminine plural", " (embedded in your skin)"),
+C_("feminine", " (lit)"),
+C_("plural", " (lit)"),
+C_("feminine plural", " (lit)"),
+C_("feminine", " (wielded)"),
+C_("plural", " (wielded)"),
+C_("feminine plural", " (wielded)"),
+C_("feminine", " (at the ready)"),
+C_("plural", " (at the ready)"),
+C_("feminine plural", " (at the ready)"),
+C_("feminine", " (unpaid, %ld %s)"),
+C_("plural", " (unpaid, %ld %s)"),
+C_("feminine plural", " (unpaid, %ld %s)"),
+NCP_("object-elided", "potion of %s", "potions of %s"),
+NCP_("object-elided", "scroll of %s", "scrolls of %s"),
+NCP_("object-elided", "wand of %s", "wands of %s"),
+NCP_("object-elided", "ring of %s", "rings of %s"),
+NCP_("object-elided", "spellbook of %s", "spellbooks of %s"),
+NCP_("object-elided", "tin of %s", "tins of %s"),
+NCP_("object-elided", "tin of %s meat", "tins of %s meat"),
+NCP_("object-elided", "statue of %s", "statues of %s"),
+NCP_("object-elided", "set of %s", "sets of %s"),
+NCP_("object-elided", "pair of %s", "pairs of %s"),
+NCP_("object-elided", "%s corpse", "%s corpses"),
+C_("elided", " of %s"),
+/* genders of the patterns ("f" and such, not formats) */
+NC_("objgender", "amulet"),
+/* xgettext:no-c-format */ NC_("objgender", "%s amulet"),
+/* xgettext:no-c-format */ NC_("objgender", "pair of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "set of %s"),
+NC_("objgender", "shield"),
+NC_("objgender", "smooth shield"),
+NC_("objgender", "tin of spinach"),
+NC_("objgender", "empty tin"),
+/* xgettext:no-c-format */ NC_("objgender", "tin of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "tin of %s meat"),
+/* xgettext:no-c-format */ NC_("objgender", "statue of %s"),
+NC_("objgender", "heavy iron ball"),
+NC_("objgender", "very heavy iron ball"),
+NC_("objgender", "potion"),
+/* xgettext:no-c-format */ NC_("objgender", "potion of %s"),
+NC_("objgender", "holy water"),
+NC_("objgender", "unholy water"),
+/* xgettext:no-c-format */ NC_("objgender", "%s potion"),
+NC_("objgender", "scroll"),
+/* xgettext:no-c-format */ NC_("objgender", "scroll of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "scroll labeled %s"),
+/* xgettext:no-c-format */ NC_("objgender", "%s scroll"),
+NC_("objgender", "wand"),
+/* xgettext:no-c-format */ NC_("objgender", "wand of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "%s wand"),
+NC_("objgender", "book"),
+NC_("objgender", "novel"),
+/* xgettext:no-c-format */ NC_("objgender", "%s book"),
+NC_("objgender", "spellbook"),
+/* xgettext:no-c-format */ NC_("objgender", "spellbook of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "%s spellbook"),
+NC_("objgender", "ring"),
+/* xgettext:no-c-format */ NC_("objgender", "ring of %s"),
+/* xgettext:no-c-format */ NC_("objgender", "%s ring"),
+NC_("objgender", "stone"),
+NC_("objgender", "gem"),
+/* xgettext:no-c-format */ NC_("objgender", "%s stone"),
+/* xgettext:no-c-format */ NC_("objgender", "%s gem"),
+/* xgettext:no-c-format */ NC_("objgender", "%s corpse"),
+NC_("objgender", "object?"),
+#endif
+
+/* index of the obuf[] holding p, or -1 */
+staticfn int
+obuf_index(const char *p)
+{
+    int i;
+
+    for (i = 0; i < NUMOBUF; ++i)
+        if (p >= obufs[i] && p < obufs[i] + BUFSZ)
+            return i;
+    return -1;
+}
+
+/* remember the grammar of the translated name starting at p */
+staticfn void
+set_objgram(const char *p, unsigned gram)
+{
+    int i = obuf_index(p);
+
+    if (i >= 0)
+        obuf_gram_at[i] = p,
+        obuf_gram[i] = (unsigned char) (gram | OGRAM_SET);
+}
+
+/* grammar of the translated name starting at p, or 0 if unknown */
+staticfn unsigned
+get_objgram(const char *p)
+{
+    int i = obuf_index(p);
+
+    return (i >= 0 && obuf_gram_at[i] == p) ? obuf_gram[i] : 0U;
+}
+
+/* English doname() text for translated text str from doname(), if
+   known (used by add_menu() to match MENUCOLOR patterns) */
+const char *
+objnam_english(const char *str)
+{
+    int i = obuf_index(str);
+
+    return (i >= 0 && obuf_twin_of[i] == str) ? obuf_twin[i] : (char *) 0;
+}
+
+/* translation of adjective or pattern en agreeing with gender and number
+   'gram'; a missing plural form is made by adding 's' to the last word of
+   the singular, unless that starts with a preposition ("en bois") */
+staticfn const char *
+obj_agree(const char *en, unsigned gram)
+{
+    static const char *const invariable[] = {
+        "en ", "de ", "d'", "\303\240 " /* à */, "au ", "aux ", "sans ", 0
+    };
+    static char pbuf[4][BUFSZ];
+    static int pidx = 0;
+    boolean fem = (gram & OGRAM_FEM) != 0, pl = (gram & OGRAM_PLURAL) != 0;
+    const char *t, *sing;
+    char *res;
+    size_t len;
+    int i;
+
+    if (pl && (t = i18n_lookup(fem ? "feminine plural" : "plural", en)) != 0)
+        return t;
+    sing = fem ? C_("feminine", en) : _(en);
+    if (!pl || sing == en || strchr(sing, '%'))
+        return sing;
+    for (i = 0; invariable[i]; ++i)
+        if (!strncmp(sing, invariable[i], strlen(invariable[i])))
+            return sing;
+    len = strlen(sing);
+    if (len && strchr("sxz)", sing[len - 1]))
+        return sing;
+    res = pbuf[pidx = (pidx + 1) % 4];
+    Snprintf(res, BUFSZ, "%ss", sing);
+    return res;
+}
+
+/* translation of object noun or name pattern en, plural if pl; *gram
+   (if not Null) gets its grammar */
+staticfn const char *
+obj_noun(const char *en, boolean pl, unsigned *gram)
+{
+    const char *g = i18n_lookup("objgender", en);
+
+    if (gram) {
+        *gram = 0U;
+        if (g && strchr(g, 'f'))
+            *gram |= OGRAM_FEM;
+        if (pl || (g && strchr(g, 'p')))
+            *gram |= OGRAM_PLURAL;
+        if (g && strchr(g, 'e'))
+            *gram |= OGRAM_ELIDE;
+        if (g && strchr(g, 'n'))
+            *gram |= OGRAM_NOELIDE;
+    }
+    return nh_npgettext("object", en, pl);
+}
+
+/* translation of name pattern en ("potion of %s") that will get arg: the
+   "object-elided" form ("potion d'%s") if arg starts with a vowel and the
+   catalog has one, else as obj_noun() */
+staticfn const char *
+obj_pattern(const char *en, boolean pl, unsigned *gram, const char *arg)
+{
+    const char *res = obj_noun(en, pl, gram), *elided;
+
+    if (arg && i18n_vowel_start(arg)
+        && (elided = nh_npgettext("object-elided", en, pl)) != en)
+        res = elided;
+    return res;
+}
+
+/* append the translated erosion words of obj to buf (after the noun) */
+staticfn void
+erosion_i18n(struct obj *obj, char *buf, unsigned gram)
+{
+    boolean iscrys = (obj->otyp == CRYSKNIFE);
+    boolean rknown = (iflags.override_ID == 0) ? obj->rknown : TRUE;
+    const char *word;
+
+    if (!is_damageable(obj) && !iscrys)
+        return;
+    if (obj->oeroded && !iscrys) {
+        word = is_rustprone(obj) ? "rusty"
+               : is_crackable(obj) ? "cracked" : "burnt";
+        Sprintf(eos(buf), " %s%s",
+                (obj->oeroded == 2) ? _("very ")
+                : (obj->oeroded == 3) ? _("thoroughly ") : "",
+                obj_agree(word, gram));
+    }
+    if (obj->oeroded2 && !iscrys) {
+        word = is_corrodeable(obj) ? "corroded" : "rotted";
+        Sprintf(eos(buf), " %s%s",
+                (obj->oeroded2 == 2) ? _("very ")
+                : (obj->oeroded2 == 3) ? _("thoroughly ") : "",
+                obj_agree(word, gram));
+    }
+    if (rknown && obj->oerodeproof) {
+        word = iscrys ? "fixed"
+               : is_rustprone(obj) ? "rustproof"
+                 : is_corrodeable(obj) ? "corrodeproof"
+                   : is_flammable(obj) ? "fireproof"
+                     : is_crackable(obj) ? "tempered"
+                       : is_rottable(obj) ? "rotproof" : 0;
+        if (word)
+            Sprintf(eos(buf), " %s", obj_agree(word, gram));
+    }
+}
+
+DISABLE_WARNING_FORMAT_NONLITERAL
+
+/* xname() when messages are translated */
+staticfn char *
+xname_i18n(struct obj *obj, unsigned cxn_flags)
+{
+    char *buf, tmp[BUFSZ], after[BUFSZ];
+    int typ = obj->otyp, omndx = obj->corpsenm;
+    struct objclass *ocl = &objects[typ];
+    int nn = ocl->oc_name_known;
+    const char *actualn = OBJ_NAME(*ocl), *dn = OBJ_DESCR(*ocl),
+               *un = ocl->oc_uname;
+    boolean pl = (obj->quan != 1L) && !(cxn_flags & CXN_SINGULAR);
+    boolean known, dknown, bknown;
+    /* the name is one of: 'noun'; 'called' + " called " + un;
+       'pattern' ("potion of %s") with the name 'ofnoun' or the adjective
+       'descr', or the label 'label'; possibly inside 'wrapper' */
+    const char *noun = 0, *called = 0, *pattern = 0, *ofnoun = 0,
+               *descr = 0, *label = 0, *wrapper = 0;
+    unsigned gram = 0U, g2;
+
+    gx.xnamep = nextobuf();
+    buf = gx.xnamep + PREFIX;
+    buf[0] = after[0] = '\0';
+
+    if (Role_if(PM_SAMURAI))
+        actualn = Japanese_item_name(typ, actualn);
+    if (!actualn)
+        actualn = "object?";
+    if (!dn)
+        dn = actualn;
+    if (iflags.override_ID) {
+        known = dknown = bknown = TRUE;
+        nn = 1;
+    } else {
+        known = obj->known;
+        dknown = obj->dknown;
+        bknown = obj->bknown;
+    }
+
+    if (obj_is_pname(obj)) {
+        Strcpy(buf, ONAME(obj));
+        set_objgram(buf, 0U);
+        return buf;
+    }
+
+    switch (obj->oclass) {
+    case AMULET_CLASS:
+        if (!dknown)
+            noun = "amulet";
+        else if (typ == AMULET_OF_YENDOR || typ == FAKE_AMULET_OF_YENDOR)
+            noun = known ? actualn : dn;
+        else if (nn)
+            noun = actualn;
+        else if (un)
+            called = "amulet";
+        else
+            pattern = "%s amulet", descr = dn;
+        break;
+    case WEAPON_CLASS:
+    case VENOM_CLASS:
+    case TOOL_CLASS:
+        if (typ == LENSES)
+            wrapper = "pair of %s";
+        if (dknown && !nn && un)
+            called = dn;
+        else
+            noun = (dknown && nn) ? actualn : dn;
+        if (obj->oclass == WEAPON_CLASS && is_poisonable(obj)
+            && obj->opoisoned && !(cxn_flags & CXN_NOPOISON))
+            Strcat(after, "\001poisoned");
+        if (is_wet_towel(obj))
+            Strcat(after, (obj->spe < 3) ? "\001moist" : "\001wet");
+        break;
+    case ARMOR_CLASS:
+        if (typ >= GRAY_DRAGON_SCALES && typ <= YELLOW_DRAGON_SCALES) {
+            pattern = "set of %s", ofnoun = actualn;
+            break;
+        } else if (is_boots(obj) || is_gloves(obj)) {
+            wrapper = "pair of %s";
+        } else if (is_shield(obj) && !dknown) {
+            if (obj->otyp >= ELVEN_SHIELD && obj->otyp <= ORCISH_SHIELD) {
+                noun = "shield";
+                break;
+            } else if (obj->otyp == SHIELD_OF_REFLECTION) {
+                noun = "smooth shield";
+                break;
+            }
+        }
+        if (nn)
+            noun = actualn;
+        else if (un)
+            called = armor_simple_name(obj);
+        else
+            noun = dn;
+        break;
+    case FOOD_CLASS:
+        if (typ == SLIME_MOLD) {
+            struct fruit *f = fruit_from_indx(obj->spe);
+
+            /* the player's own name for the fruit */
+            Strcpy(buf, f ? f->fname : "fruit");
+            if (pl) {
+                char *p = makeplural(buf);
+
+                Strcpy(buf, p);
+                releaseobuf(p);
+            }
+            set_objgram(buf, pl ? OGRAM_PLURAL : 0U);
+            return buf;
+        }
+        if (iflags.partly_eaten_hack && obj->oeaten)
+            Strcat(after, "\001partly eaten");
+        if (obj->globby)
+            Strcat(after, (obj->owt <= 100) ? "\001small"
+                          : (obj->owt <= 300) ? "\001medium"
+                            : (obj->owt <= 500) ? "\001large"
+                              : "\001very large");
+        if (typ == TIN && known) {
+            int r = tin_kind(obj);
+
+            if (r == SPINACH_TIN) {
+                noun = "tin of spinach";
+            } else if (omndx == NON_PM) {
+                noun = "empty tin";
+            } else {
+                pattern = vegetarian(&mons[omndx]) ? "tin of %s"
+                                                   : "tin of %s meat";
+                ofnoun = mons[omndx].pmnames[NEUTRAL];
+                if ((obj->cknown || iflags.override_ID) && obj->spe < 0)
+                    label = tin_preparation(r);
+            }
+            break;
+        }
+        noun = actualn;
+        break;
+    case COIN_CLASS:
+    case CHAIN_CLASS:
+        noun = actualn;
+        break;
+    case ROCK_CLASS:
+        noun = actualn;
+        if (typ == STATUE && omndx != NON_PM) {
+            pattern = "statue of %s", ofnoun = obj_pmname(obj), noun = 0;
+            if (Role_if(PM_ARCHEOLOGIST)
+                && (obj->spe & CORPSTAT_HISTORIC) != 0)
+                Strcat(after, "\001historic");
+        } else if (typ == BOULDER && obj->next_boulder == 1) {
+            Strcat(after, "\001next");
+            obj->next_boulder = 0;
+        }
+        break;
+    case BALL_CLASS:
+        noun = (obj->owt > ocl->oc_weight) ? "very heavy iron ball"
+                                           : "heavy iron ball";
+        break;
+    case POTION_CLASS:
+        if (dknown && obj->odiluted)
+            Strcat(after, "\001diluted");
+        if (!dknown)
+            noun = "potion";
+        else if (nn)
+            pattern = "potion of %s",
+            ofnoun = (typ == POT_WATER && bknown
+                      && (obj->blessed || obj->cursed))
+                         ? (obj->blessed ? "holy water" : "unholy water")
+                         : actualn;
+        else if (un)
+            called = "potion";
+        else
+            pattern = "%s potion", descr = dn;
+        break;
+    case SCROLL_CLASS:
+        if (!dknown)
+            noun = "scroll";
+        else if (nn)
+            pattern = "scroll of %s", ofnoun = actualn;
+        else if (un)
+            called = "scroll";
+        else if (ocl->oc_magic)
+            pattern = "scroll labeled %s", label = dn;
+        else
+            pattern = "%s scroll", descr = dn;
+        break;
+    case WAND_CLASS:
+        if (!dknown)
+            noun = "wand";
+        else if (nn)
+            pattern = "wand of %s", ofnoun = actualn;
+        else if (un)
+            called = "wand";
+        else
+            pattern = "%s wand", descr = dn;
+        break;
+    case SPBOOK_CLASS:
+        if (typ == SPE_NOVEL) {
+            if (!dknown)
+                noun = "book";
+            else if (nn)
+                noun = actualn;
+            else if (un)
+                called = "novel";
+            else
+                pattern = "%s book", descr = dn;
+        } else if (!dknown) {
+            noun = "spellbook";
+        } else if (nn) {
+            if (typ == SPE_BOOK_OF_THE_DEAD)
+                noun = actualn;
+            else
+                pattern = "spellbook of %s", ofnoun = actualn;
+        } else if (un) {
+            called = "spellbook";
+        } else {
+            pattern = "%s spellbook", descr = dn;
+        }
+        break;
+    case RING_CLASS:
+        if (!dknown)
+            noun = "ring";
+        else if (nn)
+            pattern = "ring of %s", ofnoun = actualn;
+        else if (un)
+            called = "ring";
+        else
+            pattern = "%s ring", descr = dn;
+        break;
+    case GEM_CLASS: {
+        const char *rock = (ocl->oc_material == MINERAL) ? "stone" : "gem";
+
+        if (!dknown)
+            noun = rock;
+        else if (nn)
+            noun = actualn;
+        else if (un)
+            called = rock;
+        else
+            pattern = (ocl->oc_material == MINERAL) ? "%s stone" : "%s gem",
+            descr = dn;
+        break;
+    }
+    default:
+        noun = actualn;
+        break;
+    }
+
+    /* the name itself */
+    if (wrapper)
+        pl = FALSE; /* "pair of" is what gets pluralized */
+    if (called) {
+        const char *head = obj_noun(called, pl, &gram);
+
+        Snprintf(buf, BUFSZ - PREFIX, obj_agree("%s called %s", gram),
+                 head, un);
+    } else if (pattern) {
+        const char *pat, *arg;
+
+        if (descr) {
+            pat = obj_noun(pattern, pl, &gram);
+            Snprintf(buf, BUFSZ - PREFIX, pat, obj_agree(descr, gram));
+        } else {
+            arg = (label && !ofnoun) ? label
+                  : (obj->oclass == ROCK_CLASS || typ == TIN)
+                    ? C_("monster", ofnoun)
+                    : obj_noun(ofnoun, FALSE, 0);
+            pat = obj_pattern(pattern, pl, &gram, arg);
+            Snprintf(buf, BUFSZ - PREFIX, pat, arg);
+        }
+        if (label && ofnoun) /* tin preparation, as an adjective */
+            Sprintf(eos(buf), " %s", obj_agree(label, gram));
+    } else {
+        Snprintf(buf, BUFSZ - PREFIX, "%s",
+                 obj_noun(noun ? noun : "object?", pl, &gram));
+    }
+    if (wrapper) {
+        Strcpy(tmp, buf);
+        pl = (obj->quan != 1L) && !(cxn_flags & CXN_SINGULAR);
+        Snprintf(buf, BUFSZ - PREFIX, obj_noun(wrapper, pl, &g2), tmp);
+        gram = g2;
+    }
+    if (typ == FIGURINE && omndx != NON_PM) {
+        const char *mnam = C_("monster", obj_pmname(obj));
+
+        Snprintf(eos(buf), BUFSZ - PREFIX - strlen(buf),
+                 i18n_vowel_start(mnam) ? C_("elided", " of %s")
+                                        : _(" of %s"), mnam);
+    }
+
+    /* adjectives, placed after the noun */
+    if (after[0]) {
+        char *p, *q;
+
+        for (p = after; p && *p; p = q) {
+            ++p; /* skip \001 */
+            if ((q = strchr(p, '\001')) != 0)
+                *q = '\0';
+            Sprintf(eos(buf), " %s", obj_agree(p, gram));
+            if (q)
+                *q = '\001';
+        }
+    }
+    if (has_oname(obj) && dknown)
+        Snprintf(eos(buf), BUFSZ - PREFIX - strlen(buf),
+                 obj_agree(" named %s", gram), ONAME(obj));
+
+    set_objgram(buf, gram);
+    return buf;
+}
+
+/* prepend the definite ('the') or indefinite article to name, whose
+   grammar is 'gram'; result in a new obuf[] */
+staticfn char *
+article_i18n(const char *name, unsigned gram, boolean the)
+{
+    char *buf = nextobuf();
+    boolean fem = (gram & OGRAM_FEM) != 0, pl = (gram & OGRAM_PLURAL) != 0;
+
+    if (the && !pl
+        && ((gram & OGRAM_ELIDE)
+            || (!(gram & OGRAM_NOELIDE) && i18n_vowel_start(name))))
+        Snprintf(buf, BUFSZ, C_("elided", "the %s"), name);
+    else if (the && pl && fem)
+        Snprintf(buf, BUFSZ, C_("feminine plural", "the %s"), name);
+    else if (the && pl)
+        Snprintf(buf, BUFSZ, C_("plural", "the %s"), name);
+    else if (the && fem)
+        Snprintf(buf, BUFSZ, C_("feminine", "the %s"), name);
+    else if (the)
+        Snprintf(buf, BUFSZ, _("the %s"), name);
+    else if (pl && fem)
+        Snprintf(buf, BUFSZ, C_("feminine plural", "a %s"), name);
+    else if (pl)
+        Snprintf(buf, BUFSZ, C_("plural", "a %s"), name);
+    else if (fem)
+        Snprintf(buf, BUFSZ, C_("feminine", "a %s"), name);
+    else
+        Snprintf(buf, BUFSZ, _("a %s"), name);
+    set_objgram(buf, gram);
+    return buf;
+}
+
+/* doname() when messages are translated */
+staticfn char *
+doname_i18n(struct obj *obj, unsigned doname_flags)
+{
+    boolean with_price = (doname_flags & DONAME_WITH_PRICE) != 0,
+            vague_quan = (doname_flags & DONAME_VAGUE_QUAN) != 0;
+    boolean known, dknown, cknown, bknown, lknown, the_article = FALSE,
+            no_article = FALSE;
+    char english[BUFSZ], adjs[BUFSZ], sfx[BUFSZ], name[BUFSZ];
+    char *bp, *res;
+    const char *count = 0;
+    unsigned gram;
+    int omndx = obj->corpsenm;
+
+    /* the English text, for the MENUCOLOR patterns */
+    i18n_suspend(TRUE);
+    copynchars(english, doname_base(obj, doname_flags), BUFSZ - 1);
+    i18n_suspend(FALSE);
+
+    if (iflags.override_ID) {
+        known = dknown = cknown = bknown = lknown = TRUE;
+    } else {
+        known = obj->known;
+        dknown = obj->dknown;
+        cknown = obj->cknown;
+        bknown = obj->bknown;
+        lknown = obj->lknown;
+    }
+
+    if (obj->otyp == CORPSE) {
+        /* "cadavre de chacal" */
+        const char *mnam = (omndx == NON_PM)
+                              ? _("thing") : C_("monster", obj_pmname(obj)),
+                   *pat = obj_pattern("%s corpse", obj->quan != 1L, &gram,
+                                      mnam);
+
+        Snprintf(name, sizeof name, pat, mnam);
+    } else {
+        bp = xname_i18n(obj, CXN_NOPOISON); /* "poisoned" added below */
+        gram = get_objgram(bp);
+        copynchars(name, bp, BUFSZ - 1);
+        releaseobuf(bp);
+    }
+
+    /* count or article */
+    if (obj->quan != 1L)
+        count = (dknown || !vague_quan) ? "" : "some";
+    else if (obj_is_pname(obj))
+        no_article = TRUE;
+    else if (the_unique_obj(obj))
+        the_article = TRUE;
+
+    /* adjectives, after the noun (and its enchantment) */
+    adjs[0] = sfx[0] = '\0';
+    if ((obj->oclass == WEAPON_CLASS || obj->oclass == ARMOR_CLASS
+         || is_weptool(obj)
+         || (obj->oclass == RING_CLASS && objects[obj->otyp].oc_charged))
+        && known)
+        Sprintf(eos(adjs), " %+d", obj->spe);
+    if (cknown
+        && ((obj->otyp == BAG_OF_TRICKS || obj->otyp == HORN_OF_PLENTY)
+             ? (obj->spe == 0 && !known)
+             : ((Is_container(obj) || obj->otyp == STATUE)
+                && !Has_contents(obj))))
+        Sprintf(eos(adjs), " %s", obj_agree("empty", gram));
+    if (bknown && obj->oclass != COIN_CLASS
+        && (obj->otyp != POT_WATER || !objects[POT_WATER].oc_name_known
+            || (!obj->cursed && !obj->blessed))) {
+        if (obj->cursed)
+            Sprintf(eos(adjs), " %s", obj_agree("cursed", gram));
+        else if (obj->blessed)
+            Sprintf(eos(adjs), " %s", obj_agree("blessed", gram));
+        else if (!flags.implicit_uncursed
+                 || ((!known || !objects[obj->otyp].oc_charged
+                      || obj->oclass == ARMOR_CLASS
+                      || obj->oclass == RING_CLASS)
+#ifdef MAIL_STRUCTURES
+                     && obj->otyp != SCR_MAIL
+#endif
+                     && obj->otyp != FAKE_AMULET_OF_YENDOR
+                     && obj->otyp != AMULET_OF_YENDOR
+                     && !Role_if(PM_CLERIC)))
+            Sprintf(eos(adjs), " %s", obj_agree("uncursed", gram));
+    }
+    if (Is_box(obj) && obj->otrapped && obj->tknown && obj->dknown)
+        Sprintf(eos(adjs), " %s", obj_agree("trapped", gram));
+    if (lknown && Is_box(obj))
+        Sprintf(eos(adjs), " %s",
+                obj_agree(obj->obroken ? "broken"
+                          : obj->olocked ? "locked" : "unlocked", gram));
+    if (obj->greased)
+        Sprintf(eos(adjs), " %s", obj_agree("greased", gram));
+    if ((obj->oclass == WEAPON_CLASS || is_weptool(obj))
+        && is_poisonable(obj) && obj->opoisoned)
+        Sprintf(eos(adjs), " %s", obj_agree("poisoned", gram));
+    if (obj->oclass == WEAPON_CLASS || obj->oclass == ARMOR_CLASS
+        || obj->oclass == BALL_CLASS || obj->oclass == CHAIN_CLASS
+        || is_weptool(obj))
+        erosion_i18n(obj, adjs, gram);
+    if (obj->oclass == FOOD_CLASS && obj->oeaten)
+        Sprintf(eos(adjs), " %s", obj_agree("partly eaten", gram));
+    if (Is_candle(obj)) {
+        long full_burn_time = 20L * (long) objects[obj->otyp].oc_cost,
+             turns_left = obj->age;
+
+        if (obj->lamplit) {
+            anything timer;
+
+            timer = cg.zeroany;
+            timer.a_obj = obj;
+            turns_left += peek_timer(BURN_OBJECT, &timer) - svm.moves;
+        }
+        if (turns_left < full_burn_time)
+            Sprintf(eos(adjs), " %s", obj_agree("partly used", gram));
+    }
+
+    /* suffixes */
+    if (cknown && Has_contents(obj)) {
+        long itemcount = count_contents(obj, FALSE, FALSE, TRUE, FALSE);
+
+        Sprintf(eos(sfx), _(" containing %ld item%s"), itemcount,
+                plur(itemcount));
+    }
+    if (obj->otyp == EGG && ismnum(omndx)
+        && (known || (svm.mvitals[omndx].mvflags & MV_KNOWS_EGG))) {
+        const char *mnam = C_("monster", mons[omndx].pmnames[NEUTRAL]);
+
+        Sprintf(eos(sfx), i18n_vowel_start(mnam) ? C_("elided", " of %s")
+                                                 : _(" of %s"), mnam);
+        if (obj->spe == 1)
+            Strcat(sfx, _(" (laid by you)"));
+    }
+    if ((obj->owornmask & W_AMUL)
+        || (obj->owornmask & (W_TOOL | W_SADDLE)))
+        Strcat(sfx, obj_agree(" (being worn)", gram));
+    if (obj->oclass == ARMOR_CLASS && (obj->owornmask & W_ARMOR))
+        Strcat(sfx, (obj == uskin) ? obj_agree(" (embedded in your skin)",
+                                               gram)
+                    : doffing(obj) ? _(" (being doffed)")
+                      : donning(obj) ? _(" (being donned)")
+                        : obj_agree(" (being worn)", gram));
+    if (obj->otyp == LEASH && obj->leashmon != 0) {
+        struct monst *mlsh = find_mid(obj->leashmon, FM_FMON);
+
+        if (mlsh && !DEADMONSTER(mlsh))
+            Sprintf(eos(sfx), _(" (attached to %s)"), noit_mon_nam(mlsh));
+    }
+    if (obj->otyp == CANDELABRUM_OF_INVOCATION)
+        Sprintf(eos(sfx), obj->lamplit ? _(" (%d of 7 candles, lit)")
+                                       : _(" (%d of 7 candles attached)"),
+                obj->spe);
+    else if ((obj->otyp == OIL_LAMP || obj->otyp == MAGIC_LAMP
+              || obj->otyp == BRASS_LANTERN || Is_candle(obj)
+              || obj->otyp == POT_OIL) && obj->lamplit)
+        Strcat(sfx, obj_agree(" (lit)", gram));
+    if (known && (obj->oclass == WAND_CLASS
+                  || (obj->oclass == TOOL_CLASS && !is_weptool(obj)
+                      && objects[obj->otyp].oc_charged
+                      && obj->otyp != CANDELABRUM_OF_INVOCATION)))
+        Sprintf(eos(sfx), " (%d:%d)", (int) obj->recharged, obj->spe);
+    if (obj->owornmask & W_RINGR)
+        Strcat(sfx, _(" (on right hand)"));
+    if (obj->owornmask & W_RINGL)
+        Strcat(sfx, _(" (on left hand)"));
+    if (obj->owornmask & (W_BALL | W_CHAIN))
+        Strcat(sfx, (obj->owornmask & W_BALL) ? _(" (chained to you)")
+                                              : _(" (attached to you)"));
+    if ((obj->owornmask & W_WEP) && !gm.mrg_to_wielded) {
+        boolean twoweap_primary = (obj == uwep && u.twoweap),
+                tethered = (obj->otyp == AKLYS);
+
+        if ((obj->quan != 1L
+             || ((obj->oclass == WEAPON_CLASS)
+                 ? (is_ammo(obj) || is_missile(obj))
+                 : !is_weptool(obj)))
+            && !twoweap_primary)
+            Strcat(sfx, obj_agree(" (wielded)", gram));
+        else if (bimanual(obj))
+            Strcat(sfx, tethered ? _(" (tethered to hands)")
+                        : twoweap_primary ? _(" (wielded in hands)")
+                          : _(" (weapon in hands)"));
+        else if (URIGHTY)
+            Strcat(sfx, tethered ? _(" (tethered to right hand)")
+                        : twoweap_primary ? _(" (wielded in right hand)")
+                          : _(" (weapon in right hand)"));
+        else
+            Strcat(sfx, tethered ? _(" (tethered to left hand)")
+                        : twoweap_primary ? _(" (wielded in left hand)")
+                          : _(" (weapon in left hand)"));
+    }
+    if (obj->owornmask & W_SWAPWEP)
+        Strcat(sfx, !u.twoweap ? _(" (alternate weapon; not wielded)")
+                    : URIGHTY ? _(" (wielded in left hand)")
+                      : _(" (wielded in right hand)"));
+    if (obj->owornmask & W_QUIVER) {
+        int Qtyp;
+
+        switch (obj->oclass) {
+        case WEAPON_CLASS:
+            Qtyp = !is_ammo(obj) ? 3
+                   : (objects[obj->otyp].oc_skill != -P_BOW) ? 2 : 1;
+            break;
+        case RING_CLASS:
+        case AMULET_CLASS:
+        case WAND_CLASS:
+        case COIN_CLASS:
+        case GEM_CLASS:
+            Qtyp = 2;
+            break;
+        default:
+            Qtyp = 3;
+            break;
+        }
+        Strcat(sfx, (Qtyp == 1) ? _(" (in quiver)")
+                    : (Qtyp == 2) ? _(" (in quiver pouch)")
+                      : obj_agree(" (at the ready)", gram));
+    }
+    if (iflags.suppress_price || program_state.restoring) {
+        ; /* no shop pricing */
+    } else if (is_unpaid(obj)) {
+        long quotedprice = unpaid_cost(obj, COST_CONTENTS);
+
+        Sprintf(eos(sfx), obj->unpaid ? obj_agree(" (unpaid, %ld %s)", gram)
+                                      : _(" (contents, %ld %s)"),
+                quotedprice, currency(quotedprice));
+        record_price_quote(obj->otyp, quotedprice / obj->quan, TRUE);
+    } else if (with_price) {
+        int nochrg = 0;
+        long price = get_cost_of_shop_item(obj, &nochrg);
+
+        if (price > 0L) {
+            Sprintf(eos(sfx), nochrg ? _(" (contents, %ld %s)")
+                                     : _(" (for sale, %ld %s)"),
+                    price, currency(price));
+            record_price_quote(obj->otyp, price / obj->quan, TRUE);
+        } else if (nochrg > 0) {
+            Strcat(sfx, _(" (no charge)"));
+        }
+    }
+
+    /* article or count + name + adjectives + suffixes */
+    Snprintf(eos(name), sizeof name - strlen(name), "%s%s", adjs, sfx);
+    if (count && *count) { /* "some" */
+        res = nextobuf();
+        if (gram & OGRAM_FEM)
+            Snprintf(res, BUFSZ, C_("feminine plural", "some %s"), name);
+        else
+            Snprintf(res, BUFSZ, C_("plural", "some %s"), name);
+    } else if (count) {
+        res = nextobuf();
+        Snprintf(res, BUFSZ, "%ld %s", obj->quan, name);
+    } else if (no_article) {
+        res = nextobuf();
+        Strcpy(res, name);
+    } else {
+        res = article_i18n(name, gram, the_article);
+    }
+    set_objgram(res, gram);
+    /* keep the English text alongside, for add_menu() */
+    {
+        int i = obuf_index(res);
+
+        if (i >= 0) {
+            Strcpy(obuf_twin[i], english);
+            obuf_twin_of[i] = res;
+        }
+    }
+    return res;
+}
+
+/* corpse_xname() when messages are translated: "cadavre de chacal",
+   with an article if the flags ask for one (the adjective that
+   doname() passes isn't used: doname_i18n() doesn't come here) */
+staticfn char *
+corpse_xname_i18n(struct obj *otmp, unsigned cxn_flags)
+{
+    char *nambuf, *p;
+    int omndx = otmp->corpsenm;
+    boolean pl = otmp->quan > 1L && !(cxn_flags & CXN_SINGULAR),
+            no_prefix = (cxn_flags & CXN_NO_PFX) != 0,
+            the_prefix = (cxn_flags & CXN_PFX_THE) != 0,
+            any_prefix = (cxn_flags & CXN_ARTICLE) != 0;
+    const char *mnam = (omndx == NON_PM) ? _("thing")
+                                         : C_("monster", obj_pmname(otmp)),
+               *pat;
+    unsigned gram;
+
+    if (omndx != NON_PM && type_is_pname(&mons[omndx]))
+        no_prefix = TRUE;
+    else if (omndx != NON_PM && the_unique_pm(&mons[omndx]) && !no_prefix)
+        the_prefix = TRUE;
+    gx.xnamep = nextobuf();
+    nambuf = gx.xnamep + PREFIX;
+    if (cxn_flags & CXN_NOCORPSE)
+        pat = "%s", gram = pl ? OGRAM_PLURAL : 0U;
+    else
+        pat = obj_pattern("%s corpse", pl, &gram, mnam);
+    Snprintf(nambuf, BUFSZ - PREFIX, pat, mnam);
+    if (!no_prefix && (the_prefix || (any_prefix && !pl))) {
+        p = article_i18n(nambuf, gram, the_prefix);
+        Strcpy(nambuf, p);
+        releaseobuf(p);
+    }
+    set_objgram(nambuf, gram);
+    return nambuf;
+}
+
+RESTORE_WARNING_FORMAT_NONLITERAL
+#endif /* NHI18N */
+
 char *
 xname(struct obj *obj)
 {
@@ -660,6 +1665,12 @@ xname_flags(
     if (obj->oartifact && obj->dknown)
         find_artifact(obj);
 
+#ifdef NHI18N
+    if (i18n_active()) {
+        releaseobuf(buf);
+        return xname_i18n(obj, cxn_flags);
+    }
+#endif
     if (obj_is_pname(obj))
         goto nameit;
 
@@ -1214,10 +2225,6 @@ erosion_matters(struct obj *obj)
     return FALSE;
 }
 
-#define DONAME_WITH_PRICE 1
-#define DONAME_VAGUE_QUAN 2
-#define DONAME_FOR_MENU   4 /* [not used anywhere yet] */
-
 /* core of doname() */
 staticfn char *
 doname_base(
@@ -1240,6 +2247,10 @@ doname_base(
     char *bp_eos, *bp_end;
     size_t bpspaceleft;
 
+#ifdef NHI18N
+    if (i18n_active())
+        return doname_i18n(obj, doname_flags);
+#endif
     /* 'bp' will be within an obuf[] rather than at the start of one,
        usually (but not always) pointing at &obuf[PREFIX];
        gx.xnamep always points to the start of that buffer;
@@ -1841,6 +2852,10 @@ corpse_xname(
         glob = (otmp->otyp != CORPSE && otmp->globby);
     const char *mnam;
 
+#ifdef NHI18N
+    if (i18n_active() && !glob)
+        return corpse_xname_i18n(otmp, cxn_flags);
+#endif
     /* some callers [aobjnam()] rely on prefix area that xname() sets aside */
     gx.xnamep = nextobuf();
     nambuf = gx.xnamep + PREFIX;
@@ -2150,6 +3165,12 @@ an(const char *str)
         impossible("Alphabet soup: 'an(%s)'.", str ? "\"\"" : "<null>");
         return strcpy(buf, "an []");
     }
+#ifdef NHI18N
+    if (i18n_active() && (get_objgram(str) & OGRAM_SET)) {
+        releaseobuf(buf);
+        return article_i18n(str, get_objgram(str), FALSE);
+    }
+#endif
     (void) just_an(buf, str);
     return strncat(buf, str, BUFSZ - 1 - Strlen(buf));
 }
@@ -2178,6 +3199,12 @@ the(const char *str)
         impossible("Alphabet soup: 'the(%s)'.", str ? "\"\"" : "<null>");
         return strcpy(buf, "the []");
     }
+#ifdef NHI18N
+    if (i18n_active() && (get_objgram(str) & OGRAM_SET)) {
+        releaseobuf(buf);
+        return article_i18n(str, get_objgram(str), TRUE);
+    }
+#endif
     if (!strncmpi(str, "the ", 4)) {
         buf[0] = lowc(*str);
         Strcpy(&buf[1], str + 1);
@@ -2362,6 +3389,26 @@ yname(struct obj *obj)
 
     /* leave off "your" for most of your artifacts, but prepend
      * "your" for unique objects and "foo of bar" quest artifacts */
+#ifdef NHI18N
+    if (i18n_active() && (get_objgram(s) & OGRAM_SET)
+        && (!carried(obj) || !obj_is_pname(obj)
+            || obj->oartifact >= ART_ORB_OF_DETECTION)) {
+        unsigned gram = get_objgram(s);
+        char *outbuf;
+
+        if (!carried(obj))
+            return article_i18n(s, gram, TRUE);
+        outbuf = nextobuf();
+        if (gram & OGRAM_PLURAL)
+            Snprintf(outbuf, BUFSZ, C_("plural", "your %s"), s);
+        else if (gram & OGRAM_FEM)
+            Snprintf(outbuf, BUFSZ, C_("feminine", "your %s"), s);
+        else
+            Snprintf(outbuf, BUFSZ, _("your %s"), s);
+        set_objgram(outbuf, gram);
+        return outbuf;
+    }
+#endif
     if (!carried(obj) || !obj_is_pname(obj)
         || obj->oartifact >= ART_ORB_OF_DETECTION) {
         char *outbuf = shk_your(nextobuf(), obj);

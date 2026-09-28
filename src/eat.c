@@ -158,6 +158,20 @@ static const struct {
                 { "", 0, 0, 0 } };
 #define TTSZ SIZE(tintxts)
 
+/* kind of tin (SPINACH_TIN, ROTTEN_TIN...), for naming it */
+int
+tin_kind(struct obj *obj)
+{
+    return tin_variety(obj, TRUE);
+}
+
+/* how the contents of a tin of kind r were prepared ("pickled"...) */
+const char *
+tin_preparation(int r)
+{
+    return (r >= 0 && r < (int) TTSZ) ? tintxts[r].txt : "";
+}
+
 /* called after mimicking is over */
 staticfn int
 eatmdone(void)
