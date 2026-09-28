@@ -3005,7 +3005,7 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	status line, inventory class headings, object prompts, common
 	messages, monster names with their gender and articles, combat,
 	object names with gender, number and articles, verbs agreeing with
-	objects
+	objects; translated data files dat/<file>.<lang> (help, hh, keyhelp)
 
 
 NetHack Community Patches (or Variation) Included

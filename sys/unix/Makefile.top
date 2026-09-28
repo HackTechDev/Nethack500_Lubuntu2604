@@ -136,6 +136,10 @@ MSGCAT = msgcat
 MSGMERGE = msgmerge
 XGETTEXT = xgettext
 MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
+# translated data files (dat/help.fr...), installed next to nhdat and used
+# instead of the English ones when the language is in use (nhi18n.c)
+I18NLANGS = $(patsubst po/%.po,%,$(wildcard po/*.po))
+DATI18N = $(foreach l,$(I18NLANGS),$(wildcard dat/*.$(l)))
 
 ALLDEP = $(PRECHECK) $(GAME) recover Guidebook $(VARDAT) spec_levs check-dlb \
 	$(MOFILES)
@@ -315,6 +319,9 @@ dofiles:
 	if test -n '$(MOFILES)'; then \
 		cp $(MOFILES) $(INSTDIR) && \
 		( cd $(INSTDIR) ; chmod $(FILEPERM) $(notdir $(MOFILES)) ) ; fi
+	if test -n '$(DATI18N)'; then \
+		cp $(DATI18N) $(INSTDIR) && \
+		( cd $(INSTDIR) ; chmod $(FILEPERM) $(notdir $(DATI18N)) ) ; fi
 	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
 	if test -n '$(SHELLDIR)'; then \
 		sed -e 's;/usr/games/lib/nethackdir;$(HACKDIR);' \

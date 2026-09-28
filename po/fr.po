@@ -10007,7 +10007,7 @@ msgstr ""
 #: src/timeout.c:568 src/trap.c:5280 src/vault.c:959 src/version.c:163
 #: src/windows.c:455 src/windows.c:513 src/wizcmds.c:438 src/zap.c:5063
 #: src/zap.c:5207 win/curses/cursdial.c:298 win/curses/cursdial.c:366
-#: win/tty/topl.c:420 win/tty/topl.c:425 win/tty/wintty.c:2824
+#: win/tty/topl.c:420 win/tty/topl.c:425 win/tty/wintty.c:2826
 #, c-format
 msgid "%s"
 msgstr ""
@@ -10172,10 +10172,10 @@ msgstr ""
 
 #: src/apply.c:685 src/apply.c:1651 src/cmd.c:1361 src/display.c:2069
 #: src/dog.c:1209 src/explode.c:796 src/getpos.c:986 src/invent.c:3147
-#: src/invent.c:4579 src/mail.c:375 src/muse.c:3144 src/music.c:616
+#: src/invent.c:4587 src/mail.c:375 src/muse.c:3144 src/music.c:616
 #: src/objnam.c:4752 src/objnam.c:4801 src/objnam.c:4932 src/potion.c:1681
 #: src/pray.c:575 src/read.c:1356 src/read.c:2664 src/read.c:2868
-#: src/uhitm.c:3005 src/wield.c:1007 win/tty/wintty.c:2958
+#: src/uhitm.c:3005 src/wield.c:1007 win/tty/wintty.c:2960
 #, c-format
 msgid "%s."
 msgstr ""
@@ -11682,549 +11682,549 @@ msgstr ""
 msgid "You make adjustments to %s to suit your %s hand."
 msgstr ""
 
-#: src/botl.c:375 src/botl.c:381
+#: src/botl.c:376 src/botl.c:383
 #, c-format
 msgctxt "elided"
 msgid " the "
 msgstr " l'"
 
-#: src/botl.c:376
+#: src/botl.c:378
 msgid " the "
 msgstr " le "
 
-#: src/botl.c:376
+#: src/botl.c:378
 #, c-format
 msgctxt "feminine"
 msgid " the "
 msgstr " la "
 
-#: src/botl.c:386
+#: src/botl.c:388
 #, c-format
 msgctxt "feminine"
 msgid "Chaotic"
 msgstr "Chaotique"
 
-#: src/botl.c:386
+#: src/botl.c:388
 #, c-format
 msgctxt "feminine"
 msgid "Neutral"
 msgstr "Neutre"
 
-#: src/botl.c:387
+#: src/botl.c:389
 #, c-format
 msgctxt "feminine"
 msgid "Lawful"
 msgstr "Loyale"
 
-#: src/botl.c:392
+#: src/botl.c:394
 msgid "Fainted"
 msgstr "Évanoui"
 
-#: src/botl.c:392
+#: src/botl.c:394
 msgid "Fainting"
 msgstr "Défaillant"
 
-#: src/botl.c:392
+#: src/botl.c:394
 msgid "Hungry"
 msgstr "Affamé"
 
-#: src/botl.c:392
+#: src/botl.c:394
 msgid "Satiated"
 msgstr "Repu"
 
-#: src/botl.c:392
+#: src/botl.c:394
 msgid "Weak"
 msgstr "Faible"
 
-#: src/botl.c:393
+#: src/botl.c:395
 msgid "Burdened"
 msgstr "Chargé"
 
-#: src/botl.c:393
+#: src/botl.c:395
 msgid "Starved"
 msgstr "Mort de faim"
 
-#: src/botl.c:393
+#: src/botl.c:395
 msgid "Strained"
 msgstr "Éreinté"
 
-#: src/botl.c:393
+#: src/botl.c:395
 msgid "Stressed"
 msgstr "Encombré"
 
-#: src/botl.c:394
+#: src/botl.c:396
 msgid "Overloaded"
 msgstr "Écrasé"
 
-#: src/botl.c:394
+#: src/botl.c:396
 msgid "Overtaxed"
 msgstr "Surchargé"
 
-#: src/botl.c:499
+#: src/botl.c:501
 #, c-format
 msgid "Home %d"
 msgstr "Quête %d"
 
-#: src/botl.c:510
+#: src/botl.c:512
 msgid "Dlvl"
 msgstr "Niv"
 
-#: src/botl.c:510
+#: src/botl.c:512
 msgid "Tutorial"
 msgstr "Tutoriel"
 
-#: src/botl.c:752
+#: src/botl.c:754
 #, c-format
 msgid " St:%s"
 msgstr " Fo:%s"
 
-#: src/botl.c:753
+#: src/botl.c:755
 #, c-format
 msgid " Dx:%s"
 msgstr " Dx:%s"
 
-#: src/botl.c:754
+#: src/botl.c:756
 #, c-format
 msgid " Co:%s"
 msgstr " Co:%s"
 
-#: src/botl.c:755
+#: src/botl.c:757
 #, c-format
 msgid " In:%s"
 msgstr " In:%s"
 
-#: src/botl.c:756
+#: src/botl.c:758
 #, c-format
 msgid " Wi:%s"
 msgstr " Sa:%s"
 
-#: src/botl.c:757
+#: src/botl.c:759
 #, c-format
 msgid " Ch:%s"
 msgstr " Ch:%s"
 
-#: src/botl.c:759
+#: src/botl.c:761
 #, c-format
 msgid " S:%s"
 msgstr " S:%s"
 
-#: src/botl.c:762
+#: src/botl.c:764
 #, c-format
 msgid " Pw:%s"
 msgstr " Pm:%s"
 
-#: src/botl.c:764
+#: src/botl.c:766
 #, c-format
 msgid " Xp:%s"
 msgstr " Xp:%s"
 
-#: src/botl.c:766
+#: src/botl.c:768
 #, c-format
 msgid " AC:%s"
 msgstr " CA:%s"
 
-#: src/botl.c:767
+#: src/botl.c:769
 #, c-format
 msgid " HD:%s"
 msgstr " DV:%s"
 
-#: src/botl.c:768
+#: src/botl.c:770
 #, c-format
 msgid " T:%s"
 msgstr " T:%s"
 
-#: src/botl.c:771
+#: src/botl.c:773
 #, c-format
 msgid " HP:%s"
 msgstr " PV:%s"
 
-#: src/botl.c:832
+#: src/botl.c:834
 msgid "Bar"
 msgstr "MNu"
 
-#: src/botl.c:832
+#: src/botl.c:834
 msgid "Bare"
 msgstr "MainsNues"
 
-#: src/botl.c:832
+#: src/botl.c:834
 msgid "Bh"
 msgstr "Mn"
 
-#: src/botl.c:834
+#: src/botl.c:836
 msgid "Bl"
 msgstr "Av"
 
-#: src/botl.c:834
+#: src/botl.c:836
 msgid "Blind"
 msgstr "Aveugle"
 
-#: src/botl.c:834
+#: src/botl.c:836
 msgid "Blnd"
 msgstr "Aveu"
 
-#: src/botl.c:836
+#: src/botl.c:838
 msgid "Bsy"
 msgstr "Occ"
 
-#: src/botl.c:836
+#: src/botl.c:838
 msgid "Busy"
 msgstr "Occupé"
 
-#: src/botl.c:836
+#: src/botl.c:838
 msgid "By"
 msgstr "Oc"
 
-#: src/botl.c:838
+#: src/botl.c:840
 msgid "Cf"
 msgstr "Cf"
 
-#: src/botl.c:838
+#: src/botl.c:840
 msgid "Cnf"
 msgstr "Cnf"
 
-#: src/botl.c:838
+#: src/botl.c:840
 msgid "Conf"
 msgstr "Confus"
 
-#: src/botl.c:840
+#: src/botl.c:842
 msgid "Deaf"
 msgstr "Sourd"
 
-#: src/botl.c:840
+#: src/botl.c:842
 msgid "Def"
 msgstr "Srd"
 
-#: src/botl.c:840
+#: src/botl.c:842
 msgid "Df"
 msgstr "Sd"
 
-#: src/botl.c:842
+#: src/botl.c:844
 msgid "Fe"
 msgstr "Fe"
 
-#: src/botl.c:842
+#: src/botl.c:844
 msgid "Irn"
 msgstr "Fer"
 
-#: src/botl.c:842
+#: src/botl.c:844
 msgid "Iron"
 msgstr "Fer"
 
-#: src/botl.c:844
+#: src/botl.c:846
 msgid "Fl"
 msgstr "Vl"
 
-#: src/botl.c:844
+#: src/botl.c:846
 msgid "Fly"
 msgstr "Vol"
 
-#: src/botl.c:846
+#: src/botl.c:848
 msgid "FoodPois"
 msgstr "Intox"
 
-#: src/botl.c:846
+#: src/botl.c:848
 msgid "Fpois"
 msgstr "Itx"
 
-#: src/botl.c:846
+#: src/botl.c:848
 msgid "Poi"
 msgstr "It"
 
-#: src/botl.c:848
+#: src/botl.c:850
 msgid "Gl"
 msgstr "Lu"
 
-#: src/botl.c:848
+#: src/botl.c:850
 msgid "Glo"
 msgstr "Lue"
 
-#: src/botl.c:848
+#: src/botl.c:850
 msgid "Glow"
 msgstr "Lueur"
 
-#: src/botl.c:850
+#: src/botl.c:852
 msgid "Gr"
 msgstr "Ag"
 
-#: src/botl.c:850
+#: src/botl.c:852
 msgid "Grab"
 msgstr "Agrippé"
 
-#: src/botl.c:850
+#: src/botl.c:852
 msgid "Grb"
 msgstr "Agr"
 
-#: src/botl.c:852
+#: src/botl.c:854
 msgid "Hal"
 msgstr "Hal"
 
-#: src/botl.c:852
+#: src/botl.c:854
 msgid "Hallu"
 msgstr "Hallu"
 
-#: src/botl.c:852
+#: src/botl.c:854
 msgid "Hl"
 msgstr "Hl"
 
-#: src/botl.c:854
+#: src/botl.c:856
 msgid "Hd"
 msgstr "Tn"
 
-#: src/botl.c:854
+#: src/botl.c:856
 msgid "Held"
 msgstr "Tenu"
 
-#: src/botl.c:854
+#: src/botl.c:856
 msgid "Hld"
 msgstr "Ten"
 
-#: src/botl.c:856
+#: src/botl.c:858
 msgid "Ic"
 msgstr "Gc"
 
-#: src/botl.c:856
+#: src/botl.c:858
 msgid "Icy"
 msgstr "Glace"
 
-#: src/botl.c:858
+#: src/botl.c:860
 msgid "InLava"
 msgstr "DansLave"
 
-#: src/botl.c:858
+#: src/botl.c:860
 msgid "La"
 msgstr "La"
 
-#: src/botl.c:858
+#: src/botl.c:860
 msgid "Lav"
 msgstr "Lav"
 
-#: src/botl.c:860
+#: src/botl.c:862
 msgid "Lev"
 msgstr "Lévit"
 
-#: src/botl.c:860
+#: src/botl.c:862
 msgid "Lv"
 msgstr "Lv"
 
-#: src/botl.c:862
+#: src/botl.c:864
 msgid "Par"
 msgstr "Par"
 
-#: src/botl.c:862
+#: src/botl.c:864
 msgid "Para"
 msgstr "Para"
 
-#: src/botl.c:862
+#: src/botl.c:864
 msgid "Parlyz"
 msgstr "Paralysé"
 
-#: src/botl.c:864
+#: src/botl.c:866
 msgid "Rd"
 msgstr "Mt"
 
-#: src/botl.c:864
+#: src/botl.c:866
 msgid "Rid"
 msgstr "Mnt"
 
-#: src/botl.c:864
+#: src/botl.c:866
 msgid "Ride"
 msgstr "Monte"
 
-#: src/botl.c:866
+#: src/botl.c:868
 msgid "Zz"
 msgstr "Zz"
 
-#: src/botl.c:866
+#: src/botl.c:868
 msgid "Zzz"
 msgstr "Zzz"
 
-#: src/botl.c:868
+#: src/botl.c:870
 msgid "Slim"
 msgstr "Visq"
 
-#: src/botl.c:868
+#: src/botl.c:870
 msgid "Slime"
 msgstr "Visqueux"
 
-#: src/botl.c:868
+#: src/botl.c:870
 msgid "Slm"
 msgstr "Vis"
 
-#: src/botl.c:870
+#: src/botl.c:872
 msgid "Sl"
 msgstr "Gs"
 
-#: src/botl.c:870
+#: src/botl.c:872
 msgid "Slip"
 msgstr "Glisse"
 
-#: src/botl.c:870
+#: src/botl.c:872
 msgid "Slp"
 msgstr "Gls"
 
-#: src/botl.c:872
+#: src/botl.c:874
 msgid "Sto"
 msgstr "Pét"
 
-#: src/botl.c:872
+#: src/botl.c:874
 msgid "Ston"
 msgstr "Pétr"
 
-#: src/botl.c:872
+#: src/botl.c:874
 msgid "Stone"
 msgstr "Pétrif"
 
-#: src/botl.c:874
+#: src/botl.c:876
 msgid "Stngl"
 msgstr "Étrg"
 
-#: src/botl.c:874
+#: src/botl.c:876
 msgid "Str"
 msgstr "Étr"
 
-#: src/botl.c:874
+#: src/botl.c:876
 msgid "Strngl"
 msgstr "Étrangl"
 
-#: src/botl.c:876
+#: src/botl.c:878
 msgid "St"
 msgstr "Ét"
 
-#: src/botl.c:876
+#: src/botl.c:878
 msgid "Stun"
 msgstr "Étourdi"
 
-#: src/botl.c:878
+#: src/botl.c:880
 msgid "Sm"
 msgstr "Im"
 
-#: src/botl.c:878
+#: src/botl.c:880
 msgid "Subm"
 msgstr "Imm"
 
-#: src/botl.c:878
+#: src/botl.c:880
 msgid "Submrg"
 msgstr "Immergé"
 
-#: src/botl.c:880
+#: src/botl.c:882
 msgid "Ill"
 msgstr "Mal"
 
-#: src/botl.c:880
+#: src/botl.c:882
 msgid "TermIll"
 msgstr "MalMortel"
 
-#: src/botl.c:882
+#: src/botl.c:884
 msgid "Te"
 msgstr "At"
 
-#: src/botl.c:882
+#: src/botl.c:884
 msgid "Teth"
 msgstr "Attaché"
 
-#: src/botl.c:882
+#: src/botl.c:884
 msgid "Tth"
 msgstr "Att"
 
-#: src/botl.c:884
+#: src/botl.c:886
 msgid "Tr"
 msgstr "Pg"
 
-#: src/botl.c:884
+#: src/botl.c:886
 msgid "Trap"
 msgstr "Piégé"
 
-#: src/botl.c:884
+#: src/botl.c:886
 msgid "Trp"
 msgstr "Pgé"
 
-#: src/botl.c:886
+#: src/botl.c:888
 msgid "KO"
 msgstr "KO"
 
-#: src/botl.c:886
+#: src/botl.c:888
 msgid "Out"
 msgstr "KO"
 
-#: src/botl.c:888
+#: src/botl.c:890
 msgid "Leg"
 msgstr "Jmb"
 
-#: src/botl.c:888
+#: src/botl.c:890
 msgid "Lg"
 msgstr "Jb"
 
-#: src/botl.c:888
+#: src/botl.c:890
 msgid "WLegs"
 msgstr "Jambes"
 
-#: src/botl.c:890
+#: src/botl.c:892
 msgid "UHd"
 msgstr "Tt"
 
-#: src/botl.c:890
+#: src/botl.c:892
 msgid "UHld"
 msgstr "Tnt"
 
-#: src/botl.c:890
+#: src/botl.c:892
 msgid "UHold"
 msgstr "Tient"
 
-#: src/botl.c:1104
+#: src/botl.c:1106
 msgid "Chaotic"
 msgstr "Chaotique"
 
-#: src/botl.c:1105
+#: src/botl.c:1107
 msgid "Neutral"
 msgstr "Neutre"
 
-#: src/botl.c:1106
+#: src/botl.c:1108
 msgid "Lawful"
 msgstr "Loyal"
 
-#: src/botl.c:4021 src/spell.c:761
+#: src/botl.c:4023 src/spell.c:761
 msgid "That's enough tries."
 msgstr "Assez d'essais."
 
-#: src/botl.c:4071
+#: src/botl.c:4073
 msgid "Not expecting a percentage."
 msgstr "Pas de pourcentage attendu ici."
 
-#: src/botl.c:4077
+#: src/botl.c:4079
 #, c-format
 msgid "\"%s\" is not a recognized number."
 msgstr ""
 
-#: src/botl.c:4081
+#: src/botl.c:4083
 msgid "Is that an invisible number?"
 msgstr "C'est un nombre invisible ?"
 
-#: src/botl.c:4098
+#: src/botl.c:4100
 #, c-format
 msgid "Field '%s' does not support percentage values."
 msgstr ""
 
-#: src/botl.c:4112
+#: src/botl.c:4114
 #, c-format
 msgid "'%s%d%%' is not a valid percent value."
 msgstr ""
 
-#: src/botl.c:4124
+#: src/botl.c:4126
 #, c-format
 msgid "%s'%s%d'%s"
 msgstr ""
 
-#: src/botl.c:4130
+#: src/botl.c:4132
 #, c-format
 msgid "%s'%s%ld'%s"
 msgstr ""
 
-#: src/botl.c:4359
+#: src/botl.c:4361
 #, c-format
 msgid "Added hilite condition/%s/%s"
 msgstr ""
 
-#: src/botl.c:4373 src/botl.c:4382
+#: src/botl.c:4375 src/botl.c:4384
 #, c-format
 msgid "Added hilite %s"
 msgstr ""
@@ -17754,7 +17754,7 @@ msgstr "Vous ne maniez rien."
 msgid "You are not wearing rings."
 msgstr "Vous ne portez pas d'anneaux."
 
-#: src/invent.c:2326 src/invent.c:4733
+#: src/invent.c:2326 src/invent.c:4741
 msgid "You are not wearing an amulet."
 msgstr "Vous ne portez pas d'amulette."
 
@@ -17915,11 +17915,11 @@ msgstr "une échelle montante"
 msgid "You %s to %s what is lying in %s."
 msgstr ""
 
-#: src/invent.c:4177 src/invent.c:4276
+#: src/invent.c:4177 src/invent.c:4284
 msgid "You feel no objects here."
 msgstr "Vous ne sentez aucun objet ici."
 
-#: src/invent.c:4179 src/invent.c:4278
+#: src/invent.c:4179 src/invent.c:4286
 msgid "You see no objects here."
 msgstr "Vous ne voyez aucun objet ici."
 
@@ -17950,248 +17950,248 @@ msgstr "Mais vous ne pouvez pas l'atteindre !"
 msgid "There is %s here."
 msgstr "Il y a %s ici."
 
-#: src/invent.c:4290
+#: src/invent.c:4298
 msgid "There is another object here."
 msgstr "Il y a un autre objet ici."
 
-#: src/invent.c:4292
+#: src/invent.c:4300
 msgid "There is an object here."
 msgstr "Il y a un objet ici."
 
-#: src/invent.c:4296
+#: src/invent.c:4304
 msgid "There are two objects here."
 msgstr "Il y a deux objets ici."
 
-#: src/invent.c:4297
+#: src/invent.c:4305
 msgid "There are a few objects here."
 msgstr "Il y a quelques objets ici."
 
-#: src/invent.c:4298
+#: src/invent.c:4306
 msgid "There are several objects here."
 msgstr "Il y a plusieurs objets ici."
 
-#: src/invent.c:4299
+#: src/invent.c:4307
 msgid "There are many objects here."
 msgstr "Il y a beaucoup d'objets ici."
 
-#: src/invent.c:4300
+#: src/invent.c:4308
 msgid "There are two more objects here."
 msgstr "Il y a deux autres objets ici."
 
-#: src/invent.c:4301
+#: src/invent.c:4309
 msgid "There are a few more objects here."
 msgstr "Il y a quelques autres objets ici."
 
-#: src/invent.c:4302
+#: src/invent.c:4310
 msgid "There are several more objects here."
 msgstr "Il y a plusieurs autres objets ici."
 
-#: src/invent.c:4303
+#: src/invent.c:4311
 msgid "There are many more objects here."
 msgstr "Il y a beaucoup d'autres objets ici."
 
-#: src/invent.c:4313 src/mhitu.c:2122 src/monmove.c:41 src/pray.c:1182
+#: src/invent.c:4321 src/mhitu.c:2122 src/monmove.c:41 src/pray.c:1182
 #: src/zap.c:3950
 #, c-format
 msgid "%s %s%s."
 msgstr ""
 
-#: src/invent.c:4329
+#: src/invent.c:4337
 #, c-format
 msgid "You feel here %s."
 msgstr "Vous sentez ici %s."
 
-#: src/invent.c:4331
+#: src/invent.c:4339
 #, c-format
 msgid "You see here %s."
 msgstr "Vous voyez ici %s."
 
-#: src/invent.c:4345
+#: src/invent.c:4353
 msgid "Other things that you feel here:"
 msgstr "Autres objets que vous sentez ici :"
 
-#: src/invent.c:4346
+#: src/invent.c:4354
 msgid "Other things that are here:"
 msgstr "Autres objets présents ici :"
 
-#: src/invent.c:4348
+#: src/invent.c:4356
 msgid "Things that you feel here:"
 msgstr "Objets que vous sentez ici :"
 
-#: src/invent.c:4349
+#: src/invent.c:4357
 msgid "Things that are here:"
 msgstr "Objets présents ici :"
 
-#: src/invent.c:4403
+#: src/invent.c:4411
 #, c-format
 msgid "You touched %s with your bare %s."
 msgstr ""
 
-#: src/invent.c:4406
+#: src/invent.c:4414
 #, c-format
 msgid "Touching %s is a fatal mistake..."
 msgstr ""
 
-#: src/invent.c:4583
+#: src/invent.c:4591
 #, c-format
 msgid "You are carrying a total of %ld %s."
 msgstr ""
 
-#: src/invent.c:4585
+#: src/invent.c:4593
 msgid "You have no money."
 msgstr "Vous n'avez pas d'argent."
 
-#: src/invent.c:4632
+#: src/invent.c:4640
 msgid "You are not wearing any armor."
 msgstr "Vous ne portez aucune armure."
 
-#: src/invent.c:4645
+#: src/invent.c:4653
 #, c-format
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4696
+#: src/invent.c:4704
 msgid "You are not wearing any rings."
 msgstr "Vous ne portez aucun anneau."
 
-#: src/invent.c:4782
+#: src/invent.c:4790
 msgid "You are not using any tools."
 msgstr "Vous n'utilisez aucun outil."
 
-#: src/invent.c:4804
+#: src/invent.c:4812
 msgid "You are not wearing or wielding anything."
 msgstr "Vous ne portez ni ne maniez rien."
 
-#: src/invent.c:4841
+#: src/invent.c:4849
 msgid "Armor"
 msgstr "Armures"
 
-#: src/invent.c:4841
+#: src/invent.c:4849
 msgid "Illegal objects"
 msgstr "Objets illégaux"
 
-#: src/invent.c:4841
+#: src/invent.c:4849
 msgid "Rings"
 msgstr "Anneaux"
 
-#: src/invent.c:4841
+#: src/invent.c:4849
 msgid "Weapons"
 msgstr "Armes"
 
-#: src/invent.c:4842
+#: src/invent.c:4850
 msgid "Amulets"
 msgstr "Amulettes"
 
-#: src/invent.c:4842
+#: src/invent.c:4850
 msgid "Comestibles"
 msgstr "Comestibles"
 
-#: src/invent.c:4842
+#: src/invent.c:4850
 msgid "Potions"
 msgstr "Potions"
 
-#: src/invent.c:4842
+#: src/invent.c:4850
 msgid "Tools"
 msgstr "Outils"
 
-#: src/invent.c:4843
+#: src/invent.c:4851
 msgid "Coins"
 msgstr "Pièces"
 
-#: src/invent.c:4843
+#: src/invent.c:4851
 msgid "Scrolls"
 msgstr "Parchemins"
 
-#: src/invent.c:4843
+#: src/invent.c:4851
 msgid "Spellbooks"
 msgstr "Livres de sorts"
 
-#: src/invent.c:4843
+#: src/invent.c:4851
 msgid "Wands"
 msgstr "Baguettes"
 
-#: src/invent.c:4844
+#: src/invent.c:4852
 msgid "Boulders/Statues"
 msgstr "Rochers/Statues"
 
-#: src/invent.c:4844
+#: src/invent.c:4852
 msgid "Gems/Stones"
 msgstr "Gemmes/Pierres"
 
-#: src/invent.c:4844
+#: src/invent.c:4852
 msgid "Iron balls"
 msgstr "Boulets"
 
-#: src/invent.c:4845
+#: src/invent.c:4853
 msgid "Chains"
 msgstr "Chaînes"
 
-#: src/invent.c:4845
+#: src/invent.c:4853
 msgid "Venoms"
 msgstr "Venins"
 
-#: src/invent.c:4848
+#: src/invent.c:4856
 msgid "Bagged/Boxed items"
 msgstr "Objets en sac ou en coffre"
 
-#: src/invent.c:4869 src/invent.c:4878
+#: src/invent.c:4877 src/invent.c:4886
 #, c-format
 msgid "Unpaid %s"
 msgstr "%s non payés"
 
-#: src/invent.c:5042
+#: src/invent.c:5050
 #, c-format
 msgid "You aren't carrying anything %s."
 msgstr ""
 
-#: src/invent.c:5054
+#: src/invent.c:5062
 msgctxt "verb"
 msgid "adjust"
 msgstr "ajuster"
 
-#: src/invent.c:5069
+#: src/invent.c:5077
 msgctxt "verb"
 msgid "split"
 msgstr "séparer"
 
-#: src/invent.c:5077
+#: src/invent.c:5085
 msgid "Split off how many?"
 msgstr "En séparer combien ?"
 
-#: src/invent.c:5107
+#: src/invent.c:5115
 #, c-format
 msgid "%s at least 1."
 msgstr ""
 
-#: src/invent.c:5109
+#: src/invent.c:5117
 #, c-format
 msgid "%s less than %ld."
 msgstr ""
 
-#: src/invent.c:5218
+#: src/invent.c:5226
 #, c-format
 msgid "Only gold coins may be moved into the '%c' slot."
 msgstr ""
 
-#: src/invent.c:5230
+#: src/invent.c:5238
 msgid "Select an inventory slot letter."
 msgstr "Choisissez une lettre d'inventaire."
 
-#: src/invent.c:5303
+#: src/invent.c:5311
 msgid "Your pack is too full."
 msgstr "Votre sac est trop plein."
 
-#: src/invent.c:5563
+#: src/invent.c:5571
 #, c-format
 msgid "There %s %s under the %s here."
 msgstr ""
 
-#: src/invent.c:5685
+#: src/invent.c:5693
 #, c-format
 msgid "%s could not be enabled."
 msgstr ""
 
-#: src/invent.c:5686
+#: src/invent.c:5694
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
@@ -22932,6 +22932,80 @@ msgstr ""
 #, c-format
 msgid "No such command '%s', char code %d (0%03o or 0x%02x)."
 msgstr ""
+
+#: src/pager.c:2834
+msgid "About NetHack (version information)."
+msgstr "À propos de NetHack (version)."
+
+#: src/pager.c:2835
+msgid "Long description of the game and commands."
+msgstr "Description détaillée du jeu et des commandes."
+
+#: src/pager.c:2836
+msgid "List of game commands."
+msgstr "Liste des commandes du jeu."
+
+#: src/pager.c:2837
+msgid "Concise history of NetHack."
+msgstr "Brève histoire de NetHack."
+
+#: src/pager.c:2838
+msgid "Info on a character in the game display."
+msgstr "Signification d'un symbole de l'écran."
+
+#: src/pager.c:2839
+msgid "Info on what a given key does."
+msgstr "Effet d'une touche donnée."
+
+#: src/pager.c:2840
+msgid "List of game options."
+msgstr "Liste des options du jeu."
+
+#: src/pager.c:2841
+msgid "Longer explanation of game options."
+msgstr "Explication détaillée des options."
+
+#: src/pager.c:2842
+#, c-format
+msgid "Using the %s command to set options."
+msgstr "Régler les options avec la commande %s."
+
+#: src/pager.c:2843
+msgid "Full list of keyboard commands."
+msgstr "Liste complète des commandes au clavier."
+
+#: src/pager.c:2844
+msgid "List of extended commands."
+msgstr "Liste des commandes étendues."
+
+#: src/pager.c:2845
+msgid "List menu control keys."
+msgstr "Touches de contrôle des menus."
+
+#: src/pager.c:2846
+msgid "Description of NetHack's command line."
+msgstr "Description de la ligne de commande de NetHack."
+
+#: src/pager.c:2847
+msgid "The NetHack license."
+msgstr "La licence de NetHack."
+
+#: src/pager.c:2848
+msgid "Support information."
+msgstr "Assistance."
+
+#: src/pager.c:2850
+#, c-format
+msgid "%s-specific help and commands."
+msgstr "Aide et commandes propres à %s."
+
+#: src/pager.c:2852
+msgid "List of wizard-mode commands."
+msgstr "Liste des commandes du mode magicien."
+
+#: src/pager.c:2891
+msgid "Select one item:"
+msgstr "Choisissez une entrée :"
 
 #: src/pickup.c:241
 #, c-format
@@ -29572,7 +29646,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 20:02+0200\n"
+"POT-Creation-Date: 2026-09-28 20:17+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -33432,6 +33506,11 @@ msgstr ""
 msgid "%s%s: unknown extended command."
 msgstr ""
 
+#: win/curses/cursdial.c:1352
+#, c-format
+msgid " (Page %d of %d) "
+msgstr " (Page %d sur %d) "
+
 #: win/curses/cursmisc.c:673
 #, c-format
 msgid "Cannot open \"%s\" for reading!"
@@ -33447,17 +33526,30 @@ msgstr ""
 msgid "%s%.60s: unknown extended command."
 msgstr ""
 
-#: win/tty/wintty.c:2437
+#: win/tty/wintty.c:184 win/tty/wintty.c:3637
+msgid "--More--"
+msgstr "--Plus--"
+
+#: win/tty/wintty.c:1540
+#, c-format
+msgid "(%d of %d)"
+msgstr "(%d sur %d)"
+
+#: win/tty/wintty.c:2439
 #, c-format
 msgid "Cannot open %s."
 msgstr ""
 
-#: win/tty/wintty.c:2478
+#: win/tty/wintty.c:2480
 #, c-format
 msgid "Cannot open \"%s\"."
 msgstr ""
 
-#: win/tty/wintty.c:2959
+#: win/tty/wintty.c:2751
+msgid "(end) "
+msgstr "(fin) "
+
+#: win/tty/wintty.c:2961
 #, c-format
 msgid "tty perm_invent needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""

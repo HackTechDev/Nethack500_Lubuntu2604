@@ -20,6 +20,7 @@
  */
 
 #include "hack.h"
+#include "dlb.h"
 
 #ifdef NHI18N
 
@@ -371,6 +372,28 @@ nh_npgettext(const char *ctx, const char *msgid, boolean plural)
         || !fmt_compatible(msgid, form))
         return translation;
     return form;
+}
+
+/* name of the translated version of data file fname ("help.fr" for the
+   language "fr") if there is one, in the data library or as a file of its
+   own, else fname itself */
+const char *
+i18n_datafile(const char *fname)
+{
+    static char buf[4][BUFSZ];
+    static int idx = 0;
+    char *res;
+    dlb *f;
+
+    if (!TRANSLATING()
+        || strlen(fname) + strlen(cur_language) + 2 > sizeof buf[0])
+        return fname;
+    res = buf[idx = (idx + 1) % 4];
+    Sprintf(res, "%s.%s", fname, cur_language);
+    if ((f = dlb_fopen(res, "r")) == 0)
+        return fname;
+    (void) dlb_fclose(f);
+    return res;
 }
 
 /* are messages being translated? */

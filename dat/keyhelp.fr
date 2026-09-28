@@ -1,0 +1,52 @@
+	Selon le matériel, le système d'exploitation ou l'interface de NetHack,
+	certaines touches peuvent être inutilisables.
+
+	Par exemple, ^S et ^Q servent souvent au contrôle de flux XON/XOFF :
+	^S suspend l'affichage et ^Q le reprend.  Dans ce cas, aucun de ces
+	caractères n'arrive à NetHack quand il attend une commande.  Ils ne
+	servent donc pas de commandes, mais 'whatdoes' ne pourra peut-être pas
+	vous le dire s'ils ne parviennent pas jusqu'à NetHack.
+
+	^M, <retour> ou <entrée> est probablement transformé en ^J, <saut de
+	ligne> ou 'newline' avant d'être transmis à NetHack.  Il ne sert donc
+	pas de commande, et 'whatdoes' peut sembler se tromper de caractère,
+	mais il fonctionne correctement s'il décrit ^J quand vous tapez ^M.
+
+	Le caractère NUL, qui se tape ^<espace> sur certains claviers, ^@ sur
+	d'autres, et parfois pas du tout, ne sert pas de commande et est
+	converti en Échap avant d'atteindre 'whatdoes'.  Contrairement à ^M,
+	cette conversion se fait dans NetHack.  Mais comme pour ^M, si vous
+	tapez NUL et obtenez une réponse sur Échap, c'est normal.
+
+	Échap est lui-même un synonyme de ^[, et une autre source de bizarreries.
+	Diverses touches de fonction, dont les flèches, peuvent envoyer une
+	« séquence d'échappement » Échap + [ + autre chose, ce qui embrouille
+	NetHack sur la commande voulue : l'Échap est traité, puis la suite
+	semble avoir été tapée par l'utilisateur, et est utilisée comme telle.
+	(Si vous appuyez sur une touche de fonction et que le menu de l'armure
+	portée par votre héros apparaît, c'est qu'une séquence d'échappement a
+	été envoyée : son Échap a annulé l'opération en cours, son '[' a été
+	pris pour la commande qui montre l'armure portée, et le reste a
+	probablement été ignoré comme choix invalide pendant que vous fermiez
+	le menu.)
+
+	Si l'option 'altmeta' de NetHack est activée, la touche <alt> ou
+	<option>, utilisée comme Maj avec un autre caractère, envoie Échap puis
+	ce caractère, que NetHack traite comme un méta-caractère ; Échap devient
+	alors encore plus source de confusion.  Pour traiter une séquence de
+	deux caractères Échap + autre chose, NetHack doit, quand il voit Échap,
+	attendre un autre caractère avant de décider.  Si vous tapez Échap à la
+	main, il faudra donc le taper une seconde fois, sinon NetHack restera à
+	attendre.  (Il sera alors traité comme Échap et non comme M-Échap.)
+
+	Sur certains systèmes, taper ^\ envoie un signal QUIT au processus
+	courant, ce qui le tue probablement et peut produire un fichier core.
+	Il ne sert à aucune commande de NetHack : ne tapez pas ce caractère.
+
+	Une dernière remarque : les caractères notés ^x signifient qu'il faut
+	maintenir la touche <contrôle> ou <ctrl> comme une touche Maj, puis
+	taper 'x'.  Les caractères de contrôle sont tous implicitement en
+	majuscules, mais il n'est pas nécessaire d'appuyer sur Maj.  C'est
+	l'inverse pour les méta-caractères : ils peuvent être majuscules ou
+	minuscules, il faut donc Maj en plus de <méta> ou <alt> pour obtenir
+	un méta-caractère majuscule.

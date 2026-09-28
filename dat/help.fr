@@ -1,0 +1,217 @@
+        Bienvenue dans NetHack !
+
+        NetHack est un jeu dans l'esprit de Donjons et Dragons où vous
+(l'aventurier) descendez dans les profondeurs du donjon à la recherche de
+l'Amulette de Yendor, qui serait cachée quelque part sous le vingtième niveau.
+Vous commencez l'aventure avec un animal de compagnie qui peut vous aider de
+bien des façons et que l'on peut dresser à toutes sortes de choses.  En chemin,
+vous trouverez des objets utiles (ou inutiles), parfois dotés de propriétés
+magiques, et des monstres variés.  Vous pouvez attaquer un monstre en essayant
+d'aller sur la case qu'il occupe (mais il est souvent bien plus sage de le
+laisser tranquille).
+
+        Contrairement à la plupart des jeux d'aventure, qui décrivent votre
+position par du texte, NetHack vous montre une image du niveau du donjon où
+vous vous trouvez.
+
+        NetHack utilise les symboles suivants :
+
+        - et |   Les murs d'une pièce, parfois des portes ouvertes ou une tombe.
+        .        Le sol d'une pièce ou une embrasure de porte.
+        #        Un couloir, des barreaux, un arbre, peut-être un évier (si
+                 votre donjon en a) ou un pont-levis.
+        >        Escalier descendant : vers le niveau suivant.
+        <        Escalier montant : vers le niveau précédent.
+        @        Vous (en général), ou un autre humain.
+        )        Une arme.
+        [        Une armure ou une pièce d'armure.
+        %        Quelque chose de comestible (pas forcément bon pour la santé).
+        /        Une baguette.
+        =        Un anneau.
+        ?        Un parchemin.
+        !        Une potion.
+        (        Un autre objet utile (pioche, clé, lampe...).
+        $        Un tas d'or.
+        *        Une gemme ou une pierre (précieuse ou sans valeur).
+        +        Une porte fermée, ou un livre de sorts contenant un sort
+                 que vous pouvez apprendre.
+        ^        Un piège (une fois détecté).
+        "        Une amulette, ou une toile d'araignée.
+        0        Un boulet de fer.
+        _        Un autel, ou une chaîne de fer.
+        {        Une fontaine.
+        }        Une mare, des douves ou de la lave.
+        \        Un trône somptueux.
+        `        Un rocher ou une statue.
+        A à Z, a à z, et quelques autres :  Des monstres.
+        I        Dernière position connue d'un monstre invisible ou caché.
+
+                 Pour savoir ce que représente un symbole, tapez '/'
+                 et suivez les instructions pour placer le curseur sur
+                 ce symbole.  Par exemple, un 'd' peut se révéler être
+                 un chien.
+
+        (Avec config/nethackrc, certains symboles sont remplacés par des
+        caractères Unicode : voir INSTALL.md.)
+
+
+y k u   7 8 9   Déplacements :
+ \|/     \|/            yuhjklbn : un pas dans la direction indiquée
+h-.-l   4-.-6           YUHJKLBN : avancer dans la direction indiquée jusqu'à
+ /|\     /|\                        heurter un mur ou rencontrer quelque chose
+b j n   1 2 3           g<dir> :  courir dans la direction <dir> jusqu'à voir
+    pavé numérique                  quelque chose d'intéressant
+                        G<dir>,   pareil, mais un embranchement de couloir
+ <  monter              ^<dir> :    n'est pas jugé intéressant (ici ^ désigne
+                                    la touche Contrôle, pas un accent)
+ >  descendre           m<dir> :  se déplacer sans ramasser d'objet
+                        F<dir> :  combattre même sans détecter de monstre
+                Avec l'option number_pad, ce sont les chiffres qui déplacent.
+                Selon la plate-forme, Maj+chiffre (pavé numérique), Méta+
+                chiffre ou Alt+chiffre lancent les commandes YUHJKLBN.
+                Contrôle+<dir> peut ne pas fonctionner avec number_pad, selon
+                les possibilités de la plate-forme.
+                Le chiffre '5' agit comme le préfixe 'G', sauf si number_pad
+                vaut 2 : il agit alors comme 'g'.
+                Si number_pad vaut 3, les rôles de 1,2,3 et 7,8,9 sont
+                inversés ; avec 4, comme 3 combiné à 2.
+                Si number_pad vaut -1, les lettres servent aux déplacements,
+                mais 'y' et 'z' sont échangés.
+
+Commandes :
+        NetHack connaît les commandes suivantes :
+        ?       Menu d'aide.
+        /       Qu'est-ce que c'est : dire ce que représente un symbole.  Vous
+                pouvez désigner un endroit ou donner un symbole.  Avec
+                l'option autodescribe, le symbole est décrit à chaque endroit
+                où vous déplacez le curseur.
+        &       Dire ce que fait une commande.
+        <       Monter un escalier (si vous êtes dessus).
+        >       Descendre un escalier (si vous êtes dessus).
+        .       Se reposer, ne rien faire pendant un tour.
+        _       Aller à un point de la carte par le plus court chemin.
+        a       Utiliser un outil (pioche, clé, lampe...).
+        A       Retirer toute l'armure.
+        ^A      Refaire la commande précédente.
+        c       Fermer une porte.
+        C       Nommer un monstre, un objet précis ou un type d'objet.
+        d       Lâcher quelque chose.  d7a : lâcher sept exemplaires de a.
+        D       Lâcher plusieurs objets.  Cette commande fonctionne de deux
+                façons.  La première :
+                "D" affiche la liste de tous vos objets, parmi lesquels vous
+                choisissez ce qu'il faut lâcher.  Un "+" à côté d'un objet
+                signifie qu'il sera lâché, un "-" qu'il ne le sera pas.
+                Cochez ou décochez un objet en tapant la lettre à côté de sa
+                description.  "+" coche tout, "=" décoche tout.  La touche
+                <ESPACE> passe d'une page de la liste à la suivante.
+                La seconde :
+                "D" pose la question "Quels types de choses voulez-vous
+                lâcher ? [!%= au]".  Tapez zéro ou plusieurs symboles
+                d'objets, éventuellement suivis de 'a' et/ou 'u'.
+                Da - lâcher tous les objets, sans confirmation.
+                Du - lâcher seulement les objets impayés (dans une boutique).
+                D%u - lâcher seulement la nourriture impayée.
+        ^D      Donner un coup de pied (dans une porte, en général).
+        e       Manger.
+        E       Graver un message sur le sol.
+                E- - écrire dans la poussière avec les doigts.
+        f       Tirer les munitions du carquois.
+        F       Suivi d'une direction, combattre un monstre (même sans le
+                détecter).
+        i       Afficher l'inventaire.
+        I       Afficher une partie de l'inventaire, par exemple
+                I* - toutes les gemmes de l'inventaire.
+                Iu - tous les objets impayés.
+                Ix - les objets épuisés qui figurent sur votre facture.
+                I$ - compter votre argent.
+        o       Ouvrir une porte.
+        O       Voir les options et éventuellement les modifier.
+                Un menu affiche les réglages ; la plupart se changent en
+                sélectionnant simplement leur ligne.
+                Les options se règlent en général avant la partie, avec la
+                variable d'environnement NETHACKOPTIONS ou un fichier de
+                configuration (~/.nethackrc, etc.) plutôt qu'avec 'O'.
+        p       Payer votre facture dans une boutique.
+        P       Mettre un accessoire (anneau, amulette, etc.).
+        ^P      Répéter le dernier message (des ^P successifs remontent plus
+                loin).  L'option msg_window modifie ce comportement.
+        q       Boire quelque chose (potion, eau, etc.).
+        Q       Choisir les munitions du carquois.
+        #quit   Quitter le programme sans sauvegarder la partie en cours.
+        r       Lire un parchemin ou un livre de sorts.
+        R       Retirer un accessoire (anneau, amulette, etc.).
+        ^R      Redessiner l'écran.
+        s       Chercher des portes secrètes et des pièges autour de vous.
+        S       Sauvegarder la partie.  Quitte aussi le programme.
+                [Pour reprendre, rejouez simplement avec le même nom.]
+                [Il n'est pas possible de sauvegarder et continuer à jouer.]
+        t       Lancer un objet ou tirer un projectile.
+        T       Enlever une armure.
+        ^T      Se téléporter, si vous le pouvez.
+        v       Afficher le numéro de version.
+        V       Afficher une identification plus complète de la version,
+                avec l'historique du jeu.
+        w       Manier une arme.  w- : ne rien manier, combattre à mains nues.
+        W       Porter une armure.
+        x       Échanger l'arme maniée et l'arme secondaire.
+        X       Activer ou désactiver le combat à deux armes.
+        ^X      Afficher vos caractéristiques.
+        #explore  Passer en mode exploration (ou découverte), où l'on peut
+                refuser de mourir et garder la sauvegarde en la reprenant.
+        z       Utiliser une baguette.  (y au lieu de z si number_pad vaut -1.)
+        Z       Lancer un sort.  (Y au lieu de Z si number_pad vaut -1.)
+        ^Z      Suspendre le jeu.  (^Y au lieu de ^Z si number_pad vaut -1.)
+                [Pour reprendre, utilisez la commande shell 'fg'.]
+        :       Regarder ce qui se trouve ici.
+        ;       Regarder ce qui se trouve ailleurs.
+        ,       Ramasser des objets.
+        @       Activer ou désactiver l'option de ramassage automatique.
+        ^       Demander le type d'un piège trouvé plus tôt.
+        )       Dire quelle arme vous maniez.
+        [       Dire quelle armure vous portez.
+        =       Dire quels anneaux vous portez.
+        "       Dire quelle amulette vous portez.
+        (       Dire quels outils vous utilisez.
+        *       Dire quel équipement vous utilisez ; combine les cinq
+                précédentes.
+        $       Compter vos pièces d'or.
+        +       Lister les sorts connus ; permet aussi de les réordonner.
+        \       Montrer quels types d'objets ont été découverts.
+        `       Montrer les types découverts d'une catégorie d'objets.
+        !       Ouvrir un shell, si votre version et votre système le
+                permettent.  [Pour reprendre, terminez le shell par 'exit'.]
+        #       Introduit une des commandes "étendues".  Pour obtenir la
+                liste des commandes utilisables avec "#", tapez "#?".  Les
+                commandes étendues disponibles dépendent des options de
+                compilation du jeu, de votre rôle et du type de monstre que
+                vous êtes à un moment donné.  Si votre clavier a une touche
+                Méta (qui modifie une autre touche en activant le 8e bit),
+                ces commandes étendues peuvent être lancées avec Méta et
+                la première lettre de la commande.  La touche Alt peut avoir
+                le même effet.
+
+        Si l'option "number_pad" est activée, quelques commandes par
+        lettre supplémentaires sont disponibles :
+
+        h       affiche le menu d'aide, comme '?'
+        j       Sauter à un autre endroit.
+        k       Donner un coup de pied (dans une porte, en général).
+        l       Piller une boîte au sol.
+        n       suivi du nombre de répétitions de la commande suivante.
+        N       Nommer un monstre, un objet précis ou un type d'objet.
+        u       Désamorcer un objet ou une porte piégés.
+
+        Vous pouvez taper un nombre avant une commande pour la répéter
+        autant de fois, par exemple "40." ou "20s".  Avec l'option
+        number_pad, il faut taper 'n' avant le nombre : "n40." ou "n20s".
+
+
+        Certaines informations s'affichent en bas de l'écran, ou dans un
+        cadre selon la plate-forme.  Vous y voyez vos caractéristiques,
+        votre alignement, le niveau du donjon où vous êtes, vos points de
+        vie actuels (et maximaux), votre classe d'armure (plus elle est
+        basse, mieux c'est), votre niveau d'expérience et l'état de votre
+        estomac.  Selon les options, d'autres informations peuvent
+        apparaître, comme vos points de magie ou votre or.
+
+        Amusez-vous bien, et bon Hack !

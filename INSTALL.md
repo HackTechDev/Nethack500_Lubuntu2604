@@ -237,10 +237,14 @@ l'activer, ajouter dans
 OPTIONS=language:fr
 ```
 
-Les traductions sont dans `po/fr.po`. `make` le compile en `dat/fr.mo`, que
-`make install` copie dans le dossier du jeu. Si le catalogue est absent, le
-jeu affiche « No message catalog for language 'fr' » au démarrage et reste
-en anglais.
+Les traductions des messages sont dans `po/fr.po` : `make` le compile en
+`dat/fr.mo`, que `make install` copie dans le dossier du jeu. Si le
+catalogue est absent, le jeu affiche « No message catalog for language
+'fr' » au démarrage et reste en anglais.
+
+Les fichiers d'aide traduits (`dat/help.fr`, `dat/hh.fr`,
+`dat/keyhelp.fr`) sont copiés par `make install` à côté des fichiers
+anglais ; le jeu les utilise à leur place quand la langue est `fr`.
 
 Pour traduire de nouveaux messages :
 

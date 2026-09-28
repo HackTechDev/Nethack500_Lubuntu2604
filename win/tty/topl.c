@@ -223,7 +223,7 @@ more(void)
 
     if (flags.standout)
         standoutbeg();
-    putsyms(defmorestr);
+    putsyms(_(defmorestr));
     if (flags.standout)
         standoutend();
 

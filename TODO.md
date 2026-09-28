@@ -8,7 +8,7 @@
 > texte. Il faut compter de nombreuses sessions de travail, et des tests
 > en jeu à chaque étape.
 
-État actuel : 4 172 textes traduits sur 7 273 dans `po/fr.po` (dont les
+État actuel : 4 194 textes traduits sur 7 295 dans `po/fr.po` (dont les
 entrées de genre laissées vides, qui valent masculin). Le
 fonctionnement de la traduction et la façon d'ajouter des traductions sont
 décrits dans la section 7 de [INSTALL.md](INSTALL.md).
@@ -76,9 +76,13 @@ C'est ce qui bloque la plupart des messages restants.
 
 ## 3. Fichiers de données (`dat/`)
 
-Ces textes ne passent pas par `po/fr.po` : il faut un mécanisme pour
-charger une version française de chaque fichier (par exemple `help.fr`,
-choisi selon l'option `language`).
+Mécanisme en place : `I18N_FILE(nom)` (nhi18n.c) ouvre `nom.<langue>`
+(`dat/help.fr`...) s'il est installé, sinon le fichier anglais.
+`make install` copie les `dat/*.<langue>` à côté de `nhdat`.
+
+Fait : `help` (aide détaillée), `hh` (liste des commandes), `keyhelp`
+(touches), ainsi que le menu de l'aide `?` et « --More-- », « (end) »
+de l'interface tty.  Restent :
 
 | Fichier | Lignes | Contenu |
 |---|---:|---|
@@ -89,7 +93,7 @@ choisi selon l'option `language`).
 | `history`, `epitaph.txt` | 401 chacun | Historique, épitaphes |
 | `rumors.tru`, `rumors.fal` | environ 390 chacun | Rumeurs (biscuits de fortune) |
 | `opthelp` | 393 | Aide des options |
-| `cmdhelp`, `help`, `hh`, `keyhelp` | 658 au total | Aide des commandes et des touches |
+| `cmdhelp` | 226 | Description de chaque touche (format « touche<TAB>texte ») |
 | `oracles.txt` | 105 | Consultations de l'Oracle |
 | `engrave.txt` | 93 | Inscriptions au sol |
 

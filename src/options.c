@@ -8943,7 +8943,7 @@ doset(void) /* changing options via menu by Per Liboriussen */
         for (pick_idx = 0; pick_idx < pick_cnt; ++pick_idx) {
             opt_indx = pick_list[pick_idx].item.a_int - 1;
             if (opt_indx == HELP_IDX) {
-                display_file(OPTMENUHELP, FALSE);
+                display_file(I18N_FILE(OPTMENUHELP), FALSE);
                 gavehelp = TRUE;
                 continue; /* just handled '?'; there might be more picks */
             }

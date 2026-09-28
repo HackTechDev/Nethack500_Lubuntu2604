@@ -843,7 +843,7 @@ checkfile(
     winid datawin = WIN_ERR;
     boolean res = FALSE;
 
-    fp = dlb_fopen(DATAFILE, "r");
+    fp = dlb_fopen(I18N_FILE(DATAFILE), "r");
     if (!fp) {
         pline("Cannot open 'data' file!");
         return res;
@@ -2424,7 +2424,7 @@ whatdoes_help(void)
     char *p, buf[BUFSZ];
     winid tmpwin;
 
-    fp = dlb_fopen(KEYHELP, "r");
+    fp = dlb_fopen(I18N_FILE(KEYHELP), "r");
     if (!fp) {
         pline("Cannot open \"%s\" data file!", KEYHELP);
         display_nhwindow(WIN_MESSAGE, TRUE);
@@ -2596,7 +2596,7 @@ dowhatdoes_core(char q, char *cbuf)
     }
     return 0;
 #if 0
-    fp = dlb_fopen(CMDHELPFILE, "r");
+    fp = dlb_fopen(I18N_FILE(CMDHELPFILE), "r");
     if (!fp) {
         pline("Cannot open \"%s\" data file!", CMDHELPFILE);
         return 0;
@@ -2747,25 +2747,25 @@ docontact(void)
 staticfn void
 dispfile_help(void)
 {
-    display_file(HELP, TRUE);
+    display_file(I18N_FILE(HELP), TRUE);
 }
 
 staticfn void
 dispfile_shelp(void)
 {
-    display_file(SHELP, TRUE);
+    display_file(I18N_FILE(SHELP), TRUE);
 }
 
 staticfn void
 dispfile_optionfile(void)
 {
-    display_file(OPTIONFILE, TRUE);
+    display_file(I18N_FILE(OPTIONFILE), TRUE);
 }
 
 staticfn void
 dispfile_optmenu(void)
 {
-    display_file(OPTMENUHELP, TRUE);
+    display_file(I18N_FILE(OPTMENUHELP), TRUE);
 }
 
 staticfn void
@@ -2777,13 +2777,13 @@ dispfile_license(void)
 staticfn void
 dispfile_debughelp(void)
 {
-    display_file(DEBUGHELP, TRUE);
+    display_file(I18N_FILE(DEBUGHELP), TRUE);
 }
 
 staticfn void
 dispfile_usagehelp(void)
 {
-    display_file(USAGEHELP, TRUE);
+    display_file(I18N_FILE(USAGEHELP), TRUE);
 }
 
 staticfn void
@@ -2831,25 +2831,25 @@ static const struct {
     void (*f)(void);
     const char *text;
 } help_menu_items[] = {
-    { hmenu_doextversion, "About NetHack (version information)." },
-    { dispfile_help, "Long description of the game and commands." },
-    { dispfile_shelp, "List of game commands." },
-    { hmenu_dohistory, "Concise history of NetHack." },
-    { hmenu_dowhatis, "Info on a character in the game display." },
-    { hmenu_dowhatdoes, "Info on what a given key does." },
-    { option_help, "List of game options." },
-    { dispfile_optionfile, "Longer explanation of game options." },
-    { dispfile_optmenu, "Using the %s command to set options." },
-    { dokeylist, "Full list of keyboard commands." },
-    { hmenu_doextlist, "List of extended commands." },
-    { domenucontrols, "List menu control keys." },
-    { dispfile_usagehelp, "Description of NetHack's command line." },
-    { dispfile_license, "The NetHack license." },
-    { docontact, "Support information." },
+    { hmenu_doextversion, N_("About NetHack (version information).") },
+    { dispfile_help, N_("Long description of the game and commands.") },
+    { dispfile_shelp, N_("List of game commands.") },
+    { hmenu_dohistory, N_("Concise history of NetHack.") },
+    { hmenu_dowhatis, N_("Info on a character in the game display.") },
+    { hmenu_dowhatdoes, N_("Info on what a given key does.") },
+    { option_help, N_("List of game options.") },
+    { dispfile_optionfile, N_("Longer explanation of game options.") },
+    { dispfile_optmenu, N_("Using the %s command to set options.") },
+    { dokeylist, N_("Full list of keyboard commands.") },
+    { hmenu_doextlist, N_("List of extended commands.") },
+    { domenucontrols, N_("List menu control keys.") },
+    { dispfile_usagehelp, N_("Description of NetHack's command line.") },
+    { dispfile_license, N_("The NetHack license.") },
+    { docontact, N_("Support information.") },
 #ifdef PORT_HELP
-    { port_help, "%s-specific help and commands." },
+    { port_help, N_("%s-specific help and commands.") },
 #endif
-    { dispfile_debughelp, "List of wizard-mode commands." },
+    { dispfile_debughelp, N_("List of wizard-mode commands.") },
     { (void (*)(void)) 0, (char *) 0 }
 };
 
@@ -2877,17 +2877,18 @@ dohelp(void)
             continue;
 
         if (help_menu_items[i].text[0] == '%') {
-            Sprintf(helpbuf, help_menu_items[i].text, PORT_ID);
+            Sprintf(helpbuf, _(help_menu_items[i].text), PORT_ID);
         } else if (help_menu_items[i].f == dispfile_optmenu) {
-            Sprintf(helpbuf, help_menu_items[i].text, setopt_cmd(tmpbuf));
+            Sprintf(helpbuf, _(help_menu_items[i].text),
+                    setopt_cmd(tmpbuf));
         } else {
-            Strcpy(helpbuf, help_menu_items[i].text);
+            Strcpy(helpbuf, _(help_menu_items[i].text));
         }
         any.a_int = i + 1;
         add_menu(tmpwin, &nul_glyphinfo, &any, 0, 0, ATR_NONE, clr,
                  helpbuf, MENU_ITEMFLAGS_NONE);
     }
-    end_menu(tmpwin, "Select one item:");
+    end_menu(tmpwin, _("Select one item:"));
     n = select_menu(tmpwin, PICK_ONE, &selected);
     destroy_nhwindow(tmpwin);
     if (n > 0) {
@@ -2960,7 +2961,7 @@ setopt_cmd(char *outbuf)
 int
 dohistory(void)
 {
-    display_file(HISTORY, TRUE);
+    display_file(I18N_FILE(HISTORY), TRUE);
     return ECMD_OK;
 }
 

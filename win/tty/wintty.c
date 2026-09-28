@@ -179,7 +179,9 @@ static char obuf[BUFSIZ]; /* BUFSIZ is defined in stdio.h */
 
 static const char winpanicstr[] = "Bad window Id %d (%s)";
 #define ttywindowpanic() panic(winpanicstr, window, __func__)
-char defmorestr[] = "--More--";
+/* translations should keep its length: the message line saves room for
+   "--More--" (topl.c) */
+char defmorestr[] = N_("--More--");
 
 #ifdef CLIPPING
 #if defined(TILES_IN_GLYPHMAP) && defined(MSDOS)
@@ -1155,7 +1157,7 @@ dmore(
     struct WinDesc *cw,
     const char *s) /* valid responses */
 {
-    const char *prompt = cw->morestr ? cw->morestr : defmorestr;
+    const char *prompt = cw->morestr ? cw->morestr : _(defmorestr);
     int offset = (cw->type == NHW_TEXT) ? 1 : 2;
 
     HUPSKIP();
@@ -1535,12 +1537,12 @@ process_menu_window(winid window, struct WinDesc *cw)
             Strcat(resp, default_menu_cmds);
 
             if (cw->npages > 1)
-                Sprintf(cw->morestr, "(%d of %d)", curr_page + 1,
+                Sprintf(cw->morestr, _("(%d of %d)"), curr_page + 1,
                         (int) cw->npages);
             else if (msave)
                 Strcpy(cw->morestr, msave);
             else
-                Strcpy(cw->morestr, defmorestr);
+                Strcpy(cw->morestr, _(defmorestr));
 
             tty_curs(window, 1, page_lines);
             cl_end();
@@ -2746,7 +2748,7 @@ tty_end_menu(
         len = strlen(buf);
         cw->morestr = dupstr("");
     } else {
-        cw->morestr = dupstr("(end) ");
+        cw->morestr = dupstr(_("(end) "));
         len = strlen(cw->morestr);
     }
 
@@ -3632,7 +3634,7 @@ tty_wait_synch(void)
     } else {
         tty_display_nhwindow(WIN_MAP, FALSE);
         if (ttyDisplay->inmore) {
-            addtopl("--More--");
+            addtopl(_("--More--"));
             (void) fflush(stdout);
         } else if (ttyDisplay->inread > program_state.gameover) {
             /* this can only happen if we were reading and got interrupted */

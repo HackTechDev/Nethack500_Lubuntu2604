@@ -2093,6 +2093,7 @@ extern const char *nh_npgettext(const char *, const char *, boolean)
                                                             NONNULLARG2;
 extern void i18n_suspend(boolean);
 extern boolean i18n_vowel_start(const char *) NONNULLARG1;
+extern const char *i18n_datafile(const char *) NONNULLARG1;
 extern boolean i18n_set_language(const char *) NONNULLARG1;
 extern const char *i18n_language(void);
 #endif

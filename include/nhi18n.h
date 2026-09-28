@@ -23,6 +23,9 @@
  *  i18n_active()
  *              TRUE when messages are being translated; for text that has
  *              to be composed differently then (English articles, etc.).
+ *  I18N_FILE(fname)
+ *              name of the data file to open for fname: its translation
+ *              "fname.<lang>" if installed, else fname.
  *  i18n_has("text")
  *              TRUE when "text" has a translation in use.
  *  i18n_mon_fem(mon)
@@ -41,12 +44,14 @@
 #define i18n_active() i18n_translating()
 #define i18n_mon_fem(mon) monnam_is_feminine(mon)
 #define i18n_has(msgid) (nh_gettext(msgid) != (msgid))
+#define I18N_FILE(fname) i18n_datafile(fname)
 #else
 #define _(msgid) (msgid)
 #define C_(ctx, msgid) (msgid)
 #define i18n_active() FALSE
 #define i18n_mon_fem(mon) FALSE
 #define i18n_has(msgid) FALSE
+#define I18N_FILE(fname) (fname)
 #endif
 #define N_(msgid) msgid
 #define NC_(ctx, msgid) msgid

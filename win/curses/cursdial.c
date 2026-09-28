@@ -1349,7 +1349,7 @@ menu_display_page(
             mvwaddstr(win, menu->height, footer_x, "<=");
             curses_toggle_color_attr(win, HIGHLIGHT_COLOR, NONE, OFF);
         }
-        mvwprintw(win, menu->height, footer_x + 2, " (Page %d of %d) ",
+        mvwprintw(win, menu->height, footer_x + 2, _(" (Page %d of %d) "),
                   page_num, menu->num_pages);
         if (page_num != menu->num_pages) {
             curses_toggle_color_attr(win, HIGHLIGHT_COLOR, NONE, ON);
