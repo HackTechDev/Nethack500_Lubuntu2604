@@ -145,6 +145,21 @@ wipeout_text(
             if (*s == ' ')
                 continue;
 
+            /* a multibyte (UTF-8) character of a translated text becomes
+               a single '?' so that no partial character is left over */
+            if (*s & 0x80) {
+                char *e;
+
+                while (s > engr && (*s & 0xc0) == 0x80)
+                    --s;
+                for (e = s + 1; (*e & 0xc0) == 0x80; ++e)
+                    continue;
+                *s++ = '?';
+                (void) memmove(s, e, strlen(e) + 1);
+                lth = (unsigned) strlen(engr);
+                continue;
+            }
+
             /* rub out unreadable & small punctuation marks */
             if (strchr("?.,'`-|_", *s)) {
                 *s = ' ';

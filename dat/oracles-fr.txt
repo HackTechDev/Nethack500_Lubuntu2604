@@ -1,0 +1,126 @@
+# NetHack 5.0  oracles-fr.txt
+# NetHack may be freely redistributed.  See license for details.
+# Traduction française de oracles.txt, compilée en oracles.fr
+# (MAKEDEFS_LANG=fr ../util/makedefs -h).
+# Contrairement à oracles.txt, la première entrée est l'oracle spécial
+# (codé dans makedefs.c pour l'anglais) ; les autres doivent rester dans
+# le même ordre que dans oracles.txt, car les positions des oracles déjà
+# consultés sont celles du fichier anglais (voir outoracle() dans rumors.c).
+-----
+« ...il est plutôt déconcertant de se trouver face au théorème suivant
+[Baker, Gill et Solovay, 1975].
+
+Théorème 7.18  Il existe des langages récursifs A et B tels que
+  (1)  P(A) == NP(A), et
+  (2)  P(B) != NP(B)
+
+Ce qui montre de façon frappante que les techniques dont on dispose
+actuellement ne suffiront pas à prouver que P != NP ou
+que P == NP. »  [Garey et Johnson, p. 185.]
+-----
+Si ta baguette a épuisé ses charges, tu peux t'en servir encore et encore ;
+bien que rien ne se passe d'abord, en vérité, ta persévérance sera
+récompensée, car une dernière charge peut encore lui être arrachée !
+-----
+Bien que les marchands soient méfiants, les voleurs ont néanmoins beaucoup
+dérobé en usant de leurs baguettes de creusement pour hâter leur sortie à
+travers le dallage.
+-----
+Si tu as eu maille à partir avec la rouille sur tes armures ou tes armes,
+sache que tu peux l'empêcher en lisant, l'esprit confus, les parchemins
+magiques qui servent d'ordinaire à les enchanter.  Les onguents de
+lubrification peuvent offrir une protection semblable, quoique passagère.
+-----
+Contemple la cocatrix, dont la petite taille dissimule une puissance
+cachée.  La cocatrix peut pétrifier tout être ordinaire qu'elle touche,
+hormis les sages aventuriers qui mangent un lézard mort ou une goutte
+d'acide quand ils se sentent lentement changer en pierre.
+-----
+Si certains voyageurs comptent sur les armures toutes faites trouvées dans
+le donjon, les plus ingénieux connaissent le moyen mystique de façonner
+une armure à partir des écailles d'une peau de dragon.
+-----
+Les voyageurs savent bien que les breuvages de soins importants peuvent
+éclaircir tes sens quand tu es troublé par des visions trompeuses.  Mais
+n'oublie jamais que l'humble potion qui rend malade peut servir au même
+usage.
+-----
+Si la chair de lézard ou l'eau chère aux dieux peuvent éclaircir un esprit
+embrouillé, la corne d'une créature d'une pureté absolue peut aussi
+soulager bien d'autres maux.
+-----
+Si tu veux voyager vite entre des lieux lointains, il te faut maîtriser
+tes téléportations et, l'esprit confus, mal lire le parchemin qui
+d'ordinaire te téléporte non loin.  Des aventuriers audacieux ont aussi
+accompli le même exploit sans parchemin ni potion, en marchant dans un
+certain guet-apens.
+-----
+Presque tous les aventuriers qui passent par ici espèrent franchir la
+redoutable Méduse.  Pour ce faire, le meilleur conseil est de garder les
+yeux bandés et de faire en sorte que la créature aperçoive son propre
+reflet dans un miroir.
+-----
+Et là où il est écrit « ad aerarium », une fouille diligente révèle
+souvent le chemin d'un piège qui mène au Coffre de la Mémoire Magique, où
+sont gardées les richesses de Crésus ; mais s'échapper du coffre avec son
+or est bien plus difficile que d'y entrer.
+-----
+Il est bien connu que les marchands rusés augmentent leurs prix dès qu'ils
+aperçoivent la tenue criarde du touriste qui approche ou la mine d'un
+client en disgrâce.  Ils favorisent les manières douces et les beaux
+visages.  Le rustre peut s'attendre à des affaires peu profitables.
+-----
+Le cliché de l'évier de cuisine qui avale les anneaux infortunés touchant
+sa surface pernicieuse reflète une vérité plus grande que bien des
+homélies ; et pourtant, rares sont ceux qui savent identifier les anneaux
+enchantés par les transformations qu'ils font subir à ce vorace appareil.
+-----
+La chair des créatures enchantées transmet souvent des propriétés
+magiques à qui la consomme.  Un cadavre frais d'œil flottant se vend cher
+parmi les magiciens, car il confère la Télépathie, par laquelle les
+aveugles peuvent situer les esprits qui les entourent.
+-----
+La détection des bénédictions et des malédictions est du ressort des
+dieux.  Ils offrent cette connaissance aux mortels qui la demandent en
+leurs lieux de culte, ou ailleurs à ceux qui se consacrent à leur service.
+-----
+Parfois, les dieux accordent aux fidèles méritants des lames nommées dont
+les pouvoirs résonnent dans toutes les légendes.  Les voyageurs instruits
+savent reproduire les lames de lignée elfique, haïes des orques, sans
+avoir besoin d'une telle intervention.
+-----
+Il existe bien des récits d'une puissante amulette, dont on dit qu'elle
+vient de l'antique Yendor.  Cette amulette a un pouvoir redoutable, et les
+dieux la désirent ardemment.  Les mortels ne peuvent puiser qu'une partie
+de ses terribles facultés.  Les récits parlent de mortels voyant ce que
+leurs yeux ne peuvent voir et cherchant les lieux de transport magique,
+tant qu'ils possédaient cette amulette.  D'autres disent qu'un mortel doit
+porter l'amulette pour obtenir ces pouvoirs.  Mais en vérité, un tel
+pouvoir se paie cher, afin de préserver l'équilibre.
+-----
+On dit que tu peux entrer dans le sanctuaire de Moloch, si tu l'oses,
+depuis un lieu où le sol vibre au plus profond de la Géhenne.  Il te
+faudra l'aide de trois objets magiques.  Le son pur d'une cloche d'argent
+t'annoncera.  Les runes terribles, lues dans le livre de Moloch, feront
+puissamment trembler la terre.  La lumière d'un candélabre enchanté te
+montrera le chemin.
+-----
+Dans les tréfonds des Donjons du Destin, gardant l'accès aux régions
+infernales, se dresse un château où repose une baguette de souhaits.  Si
+tu veux y entrer, emporte un instrument de musique, car le pont-levis
+peut être charmé par la bonne mélodie.  Les dieux seuls savent de quelles
+notes elle est faite, mais un cerveau musical peut réussir par une
+improvisation habile.  Les moins perspicaces ne sont pourtant pas sans
+recours, s'ils sont prêts à faire le tour du château jusqu'à la poterne.
+-----
+On dit que les dieux sont contents quand on fait des offrandes aux
+prêtres qui servent dans leurs temples, et qu'ils peuvent accorder
+diverses faveurs à ceux qui le font.  Mais prends garde !  Mieux vaut
+être jeune et économe que vieux et avare.
+-----
+Le nom d'Elbereth peut frapper de terreur le cœur de tes ennemis, si tu
+l'écris sur le sol à tes pieds.  Si tu gardes le plus grand calme, ta
+sécurité en sera grandement accrue, mais prends garde que tes pieds
+maladroits n'effacent l'inscription, annulant sa puissance, ou que ton
+bras armé indocile ne rompe la trêve.
+-----

@@ -3005,7 +3005,11 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	status line, inventory class headings, object prompts, common
 	messages, monster names with their gender and articles, combat,
 	object names with gender, number and articles, verbs agreeing with
-	objects; translated data files dat/<file>.<lang> (help, hh, keyhelp)
+	objects; translated data files dat/<file>.<lang> (help, hh, keyhelp);
+	makedefs compiles translated rumors, oracles, engravings and
+	epitaphs (MAKEDEFS_LANG=<lang>, from dat/<name>-<lang>.txt &c);
+	hallucinatory monster names are translated in the catalog
+wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 
 NetHack Community Patches (or Variation) Included

@@ -2102,6 +2102,13 @@ garlic_breath(struct monst *mtmp)
         monflee(mtmp, 0, FALSE, FALSE);
 }
 
+#if 0
+/* for xgettext: feminine forms of the tastes given by fprefx() */
+C_("feminine", "grody!"), C_("feminine", "terrible!"),
+C_("feminine", "bland."), C_("feminine", "gnarly!"),
+C_("feminine", "delicious!"),
+#endif
+
 /*
  * Called on "first bite" of (non-corpse) food, after touchfood() has
  * marked it 'partly eaten'.  Used for non-rotten non-tin non-corpse food.
@@ -2216,14 +2223,26 @@ fprefx(struct obj *otmp)
 #endif
         } else {
  give_feedback:
-            pline("This %s is %s", singular(otmp, xname),
-                  otmp->cursed
-                     ? (Hallucination ? "grody!" : "terrible!")
+            {
+                const char *nam = singular(otmp, xname),
+                           *taste = otmp->cursed
+                     ? (Hallucination ? N_("grody!") : N_("terrible!"))
                      : (otmp->otyp == CRAM_RATION
                         || otmp->otyp == K_RATION
                         || otmp->otyp == C_RATION)
-                        ? "bland."
-                        : Hallucination ? "gnarly!" : "delicious!");
+                        ? N_("bland.")
+                        : Hallucination ? N_("gnarly!") : N_("delicious!");
+
+#ifdef NHI18N
+                if (i18n_active() && objnam_feminine(nam))
+                    pline(C_("feminine", "This %s is %s"), nam,
+                          C_("feminine", taste));
+                else if (i18n_active() && i18n_vowel_start(nam))
+                    pline(C_("elided", "This %s is %s"), nam, _(taste));
+                else
+#endif
+                    pline("This %s is %s", nam, _(taste));
+            }
         }
         break; /* default */
     } /* switch */

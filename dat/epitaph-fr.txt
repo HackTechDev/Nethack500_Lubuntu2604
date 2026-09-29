@@ -1,0 +1,401 @@
+# NetHack 5.0  epitaph-fr.txt
+# Copyright (c) 2015 by Pasi Kallinen
+# NetHack may be freely redistributed.  See license for details.
+# Épitaphes des pierres tombales aléatoires : traduction française de
+# epitaph.txt, compilée en epitaph.fr (MAKEDEFS_LANG=fr ../util/makedefs -1)
+#
+Repose en paix
+R.I.P.
+Repose en pièces
+Note : il n'y a AUCUN objet de valeur dans cette tombe
+1994-1995. Le hacker qui a vécu le plus longtemps
+La tombe du hacker inconnu
+On ne savait pas trop qui c'était, mais on l'a enterré ici quand même
+Sparky : c'était un très bon chien
+Attention au troisième rail électrifié
+Fabriqué à Taïwan
+Og ami. Og brave type. Og mort. Og maintenant nourriture.
+Beetlejuice Beetlejuice Beetlejuice
+Attention en dessous !
+Ne me déterrez pas, s'il vous plaît.  Je suis très bien ici. -- L'occupant
+Facteur, merci de noter ma nouvelle adresse : Géhenne, forteresse d'Asmodée, cinquième lémure à gauche
+Marie avait un petit agneau/Sa toison était blanche comme neige/Quand Marie avait des ennuis/L'agneau partait le premier
+Prudence, ou cela pourrait vous arriver !
+Tu rejoindras bientôt ce gaillard en enfer ! -- le Magicien de Yendor
+Attention ! Cette tombe contient des déchets toxiques
+Sum quod eris
+Ci-gît un athée, tout habillé et nulle part où aller
+Ci-gît Ézéchiel, 102 ans.  Seuls les bons meurent jeunes.
+Ci-gît ma femme : qu'elle y reste ! Elle repose en paix, et moi aussi.
+Ci-gît Jean Levure.  Pardonnez-moi de ne pas lever.
+Il mentait sans cesse sur terre, et maintenant il y gît
+J'ai fini en cendres
+Bientôt mûr.  Bientôt pourri.  Bientôt parti.  Mais pas oublié.
+Ci-gît le corps de Jonathan Blake.  Il a pris l'accélérateur pour le frein.
+Allez-vous-en !
+Hélas, douce Mort, ce qui m'a manqué dans la vie : un peu de calme loin de ma femme
+Applaudissez, mes amis, la comédie est finie.
+Enfin... un bon long somme.
+Audi Partem Alteram
+Basile, agressé par des ours
+Burninated
+La confusion sera mon épitaphe
+Ne pas ouvrir avant Noël
+Ne soyez pas bêtes, ils ne toucheraient pas un éléphant à cette dist-
+N'oubliez pas de vous arrêter pour sentir les roses
+Que cela ne vous arrive pas !
+Dulce et decorum est pro patria mori
+Et in Arcadia ego
+Le gros et le maigre sont allés au lit.  Le gros s'est retourné et le maigre était mort.  Maigre Smith 1983-2000.
+Enfin je cesse de devenir plus bête
+Suivez-moi en enfer
+...car les hommes illustres ont la terre entière pour tombeau
+Game over, mec.  Game over.
+Allez-vous-en !  J'essaie de faire la sieste !  Maudits aventuriers...
+Parti à la pêche
+Bonne nuit, doux prince : que des essaims d'anges te bercent de leurs chants !
+Allez l'équipe des Fourmis !
+Il a farmé jusqu'ici
+Ci-gît un programmeur.  Tué par une erreur fatale.
+Ci-gît Bob, qui a voulu goûter une goutte d'acide
+Ci-gît Dudley, tué par encore un %&#@#& de triton.
+Ci-gît Grégoire, étouffé par une poire
+Ci-gît Mensonge.  C'est la Vérité.
+Ci-gît la servante de la Dame, morte d'une Lame Vorpale
+Ci-gît le pied gauche de Jack, tué par une mine.  Prévenez-nous si vous trouvez d'autres morceaux
+Il a attendu trop longtemps
+J'aimerais mieux être en mer
+Si les actes d'un homme ne lui survivent pas, que vaut une marque dans la pierre ?
+Je vais m'en sortir !
+J'ai pris les deux pilules !
+Je survivrai !
+Tué par un dragon noir -- Cette tombe est vide
+Sortez-moi de là !
+Tu es en beauté, Méduse.
+Mme Smith, étouffée par une pomme.  Elle laisse un mari, une fille et une petite-fille éplorés.
+Personne ne la croyait quand elle disait que ses pieds la tuaient
+Non !  Je ne veux pas voir ma satanée conduite !
+Un cadavre, sans tête
+Tout compte fait, j'aimerais mieux être à Minetown
+En vacances
+Oups.
+Parti déjeuner
+VENDU
+Quelqu'un nous a posé la bombe !
+Prenez mes affaires, je n'en ai plus besoin
+Mort pour un an, pour raisons fiscales
+Les rumeurs de ma mort sont parfaitement exactes
+(Espace publicitaire à vendre)
+Ce n'était qu'une fosse, mais comme il y avait un cadavre, on l'a comblée
+Vers la crypte
+Tu quoque, Brute?
+À LOUER
+Bienvenue !
+J'aimerais que tu sois là !
+Ouais, moi aussi, ça m'a eu
+Si vous voyiez l'autre
+...et en plus, ils m'ont fait graver ma propre pierre tombale !
+...mais le sang a cessé de couler et il ne me reste qu'à pourrir...
+<Juron supprimé>
+Un masochiste n'est jamais satisfait.
+Och, c'était un p'tit monstre dans le loch
+S'adapter.  Profiter.  Survivre.
+L'aventure, ha !  L'excitation, ha !
+Après tout, à quoi servent les amis...
+Après ça, plus rien ne me choquera
+Au bout de trois jours, le poisson et les invités puent
+L'âge et la ruse l'emporteront toujours sur la jeunesse et le talent
+Vieillir n'est pas si terrible.  Ce qui tue, c'est de s'arrêter.
+Je suis pas une petite peste, moi ?
+Algernon
+Tout le reste a échoué...
+Gloire au RNG
+D'accord, disons match nul !
+Tout est bien qui finit bien
+Enfin seul !
+Attaquez toujours un œil flottant par derrière !
+Est-ce que je m'amuse, là ?
+Et je peux encore ramper, je ne suis pas encore mort !
+Et moi qui voulais juste un repas gratuit
+Et tous les signes étaient là, sur ton visage
+Et ne me fais pas ces yeux innocents !
+Et tout le monde est mort.  Snif snif.
+Et c'est reparti...
+Et personne ne s'en soucie jusqu'à ce qu'une célébrité meure...
+Et c'est ainsi que ça finit ?
+Et ainsi... tout commence.
+Et parfois, c'est l'ours qui vous mange.
+Et puis il m'a cloué la tête au plancher !
+Et ils disaient que c'était impossible !
+Et j'ai l'air de quoi ?  D'un vivant ?
+Et oui, tout était de SA faute !
+Et tu disais que c'était joli ici...
+Encore une âme perdue
+Chaque jour passé au-dessus du sol est un bon jour !
+Encore un peu de ça et je meurs d'une attaque avant 30 ans.
+Quelqu'un a vu ma tête ?
+Quelqu'un pour un deathmatch ?
+Tout plutôt que la routine.
+Tout ce qui vous tue vous rend... eh bien, mort
+Tout ce qui vaut la peine d'être fait vaut la peine d'être trop fait.
+Les licornes sont censées être paisibles si on est vierge ?  Ha !
+Est-ce qu'on est tous désintégrés, ou c'est juste moi ?
+Au moins, je suis doué pour quelque chose
+Tentative de suicide
+Auri sacra fames
+Auribus teneo lupum
+Toujours prêt
+La beauté survit
+Passé par là.  Reparti.  Me suis bien amusé.
+Revenu de l'enfer, hein ?  Tu m'as rapporté quoi ?
+Pardon, je ne vous avais pas reconnu, j'ai beaucoup changé.
+Être mort forge le caractère
+Fille bien-aimée, un trésor, enterrée ici.
+Les meilleurs amis vont et viennent...  Les miens meurent, c'est tout.
+Plutôt mort qu'esclave gras
+Plus de chance la prochaine fois
+Méfiez-vous des discordiens porteurs de réponses
+Méfiez-vous du...
+Bon sang...
+Maudits barbares !
+Soufflé hors de vue : il cherchait la fuite de gaz à la bougie
+Cerveaux... Cerveaux... Cerveaux humains frais...
+Enterré le chat.  Ça a pris une heure.  Cette sale bête n'arrêtait pas de se débattre.
+Mais j'avais désamorcé le piège !
+CONNECT 1964 - NO CARRIER 1994
+Appelle-moi si tu as besoin de mon numéro !
+Et TOI, tu sais voler ?
+Vous vous rendez compte que ce truc BOUGE ENCORE ?
+Vous pourriez trouver une meilleure fin pour ceci ?
+Vous sentez quelque chose quand je fais ça ?
+Un bouche-à-bouche ?  Vous m'avez coupé le souffle.
+Je ne pourrais pas avoir juste un PETIT danger ?
+Je ne mange plus, je ne dors plus, j'ai dû enterrer mon mari ici.
+Tu ne peux pas me toucher ?!
+Chaos, panique et désordre.  Ma mission ici est accomplie.
+Chèque ci-joint.
+Regardez ça !  C'est mon cerveau !
+La chevalerie n'est qu'à moitié morte
+Cercueil à vendre.  Garanti à vie.
+Lundi, j'irai mieux.
+Venez voir la violence inhérente au système
+Reviens ici !  Je vais te mordre les genoux !
+Commodore Business Machines, Inc.  Mort pour nos péchés.
+Plaignez-vous à quelqu'un qui peut vous aider
+Confesser mes péchés à Dieu ?  Lequel ?
+La confusion sera mon épitaphe
+Des poux ?  J'ai pas de poux, moi !
+Quelqu'un pourrait m'enlever ce nœud coulant ?
+Vous pourriez vérifier encore ?  Mon nom DOIT y être.
+Vous pourriez prendre une pastille à la menthe ?
+On ne pouvait pas m'anesthésier pour ça ?
+Le courage, c'est regarder ses échecs avec sérénité
+Couvrez-moi, j'y vais !
+Cours accéléré de chirurgie du cerveau
+Croisez les doigts pour moi.
+Maudis Dieu, et meurs
+Coupé sur mesure
+De'Ath
+Encore mort ?  Pardon de ne pas avoir réussi du premier coup !
+Mort, et j'en savoure chaque instant !
+Ma chère épouse.  Morte d'un cœur brisé, après que je le lui ai arraché.
+Ne me marchez pas dessus !
+Un dragon ?  Quel dragon ?
+Écartelé
+Soit je suis mort, soit ma montre s'est arrêtée.
+Eliza -- Étais-je vraiment vivante, ou croyais-je seulement l'être ?
+Elvis
+N'entre pas dans le sentier des méchants
+Éris ?  Pas besoin d'Éris
+Damnation éternelle, venez et restez longtemps !
+Même les morts paient des impôts (et ils ne sont pas Grateful).
+Même une pierre tombale dit du bien de vous quand vous êtes sous terre !
+Vous avez remarqué qu'on ne peut pas écrire « survivre » sans « vivre » ?
+Tous les jours commencent à ressembler à des lundis
+Tous les jours, à tous points de vue, je vais de mieux en mieux.
+Toute trousse de survie devrait contenir le sens de l'humour
+J'ai vécu dans le mal ; j'ai vécu dans le vice
+Ex post fucto
+Excellente journée pour passer une journée pourrie.
+Excusez-moi de ne pas me lever.
+L'expérience n'est pas tout.  D'abord, il faut survivre.
+D'abord tu retireras la Sainte Goupille
+Encore un souffle, et je m'attarde...
+À usage récréatif uniquement.
+À vendre : une âme, peu servie.  Prix demandé : 3 souhaits.
+Il est des moments de la vie où les mots manquent.
+Oubliez Disneyland, je vais en enfer !
+Oubliez le chien, méfiez-vous de ma femme.
+Funérailles : on s'y amuse à mourir.
+Bon sang, que c'est déprimant ici, non ?
+Authentique pierre tombale explosive.  (c)Acme Pierres Tombales Inc.
+Reviens ici !  Je n'ai pas fini...
+Vas-y, chiche !
+Vas-y, c'est toi ou lui.
+Boucle d'Or -- Ce cercueil est juste comme il faut
+Disparu mais pas oublié
+Parti sous terre pour de bon
+Parti en devant plus qu'il ne pouvait payer.
+Disparu, mais pas pardonné
+J'avais une vie.  Je ne savais pas quoi en faire.
+Une tombe ?  Mais j'ai été incinéré !
+Bons baisers de l'enfer - J'aimerais que tu sois là.
+AU SECOURS ! Il fait noir ici...  Ah, j'ai les yeux fermés, pardon
+Ha ! Je n'ai JAMAIS payé d'impôt sur le revenu !
+Vous êtes venu ressusciter les morts ?
+S'amuser peut être mortel.
+Je m'amuse beaucoup.  Où suis-je exactement ??
+Il est mort de la dysenterie.
+Il est mort aujourd'hui...  Puissions-nous reposer en paix !
+Il a eu le dessus, moi le dessous.
+Il a perdu la face quand on l'a décapité.
+Il m'a raté le premier.
+Il n'est pas mort, il sent juste comme s'il l'était.
+Au secours ! Je suis tombé et je ne peux pas me relever !
+Au secours, je n'arrive pas à me réveiller !
+Ci-gît Pinocchio
+Ci-gît le corps de Jean Rond.  Perdu en mer, jamais retrouvé.
+Ici vivent des dragons
+Hé, ce n'est pas moi qui ai écrit ça !
+Hodie mihi, cras tibi
+Ne me passez aucun appel
+Enfer, doux enfer
+Humpty Dumpty, un sale œuf.  On l'a poussé du mur.
+Je SAVAIS que ça arriverait si je vivais assez longtemps.
+Je vous AVAIS dit que j'étais malade !
+Je ne suis pas cassé, mais sacrément tordu.
+Je ne suis pas vieux.  Je suis chronologiquement avantagé.
+Je ne suis PAS un vampire.  J'aime juste mordre... mordiller, plutôt !
+Je suis là.  J'aimerais que tu ailles bien.
+Je ne suis pas encore mort, mais attendez la suite.
+Je crois bien que ces os-là, c'est moi.
+Je lui ai cassé le cerveau.
+Je le sens.  Mon esprit.  Il s'en va.  Je le sens.
+Je ne peux pas aller en enfer.  Ils ont peur que je prenne le pouvoir !
+Je ne peux pas aller en enfer, ils ne veulent pas de moi.
+Je ne croyais pas à la réincarnation la dernière fois non plus.
+Je ne le pensais pas quand j'ai dit « Mords-moi »
+Je suis mort de rire
+Dans ma vie antérieure, je ne croyais pas non plus à la réincarnation.
+Je me suis haché à mort
+J'ai tout mon temps
+#"reached Mine's End" : pas forcément vrai ; jeu de mots sur "my end"
+J'ai atteint le Bout de la Mine, et ma fin
+Je savais bien que cette pierre tombale me servirait !
+Je sais ce que je pense.  Et c'est quelque part par ici.
+J'ai menti !  Je n'irai jamais bien !
+Je préfère le noir.
+J'aime être ici quand je le peux.
+Je veux bien me lever, mais pas briller.
+Moi non plus, je n'en ai jamais.
+J'ai dit de LUI envoyer la boule de feu, pas à moi !
+Je t'avais dit que je ne dirais jamais adieu.
+J'étais amusant.  Maintenant, je suis juste dégoûtant.
+J'ai épuisé mes jours de maladie, alors je me déclare mort.
+J'ai été tué par <gribouillis illisible>
+J'étais quelqu'un.  Qui, ça ne vous regarde pas.
+Je ne partirai pas sans bruit.
+Je vous dirais bien ma façon de penser... mais je ne la trouve plus.
+J'aimerais mieux respirer
+Je reviendrai !
+Je serai calme quand je serai mort.  En attendant, la FÊTE !
+Je fais ça uniquement pour des raisons fiscales.
+Je n'ai pas peur de la Mort !  Qu'est-ce qu'elle va faire ?  Me tuer ?
+On ne me paie pas assez, alors je ne graverai rien d'utile ici.
+Je ne dis rien.
+Je souis avec oune idiote --->
+Et vous croyiez avoir des problèmes...
+L'ignorance tue tous les jours.
+Ne faites pas attention à moi... Je suis là pour décorer !
+Jean Bon -- Tombé d'une falaise
+C'est tout ?
+Y a-t-il une vie avant la Mort ?
+C'est une blague, ou une affaire grave ?
+Ça arrive parfois.  Les gens explosent, tout simplement.
+On doit être jeudi.  Je n'ai jamais rien compris aux jeudis.
+Ce n'était pas un combat loyal
+Ce n'était pas si facile.
+D'abord on pille, on saccage, et ENSUITE on brûle...
+Je fais juste mon travail
+Tué par une diarrhée verbale et une constipation cérébrale.
+Laissez-la R.I.P.
+Qu'il en soit ainsi ; je suis mort.
+Jouons à cache-cadavre
+La vie n'est PAS un rêve
+Madge Ination -- Ce n'était pas que dans ma tête
+Rendez-vous au paradis
+Circulez, il n'y a rien à voir.
+M. Pierrafeu -- Yabba-dabba-doux
+Le cœur n'y est pas
+Personne n'en est jamais mort
+Non, vous voulez la chambre 12A, à côté.
+Non.  Pas de piège sur ce coffre.  Juré.
+Pas encore !
+Toute terre ne peut pas tout porter
+Maintenant, j'ai une vie
+Maintenant je t'étends pour dormir... tu viens avec moi ?
+Bon, une question : où SONT vos marques de bronzage ?
+Obesa Cantavit
+Oh ! Une mort prématurée.
+Au fait, c'était comment, mon enterrement ?
+« Oh, chéri... tu m'as manqué ! » dit-elle en tirant à nouveau.
+Bon, la lumière s'éteint vraiment.  Maintenant, laissez-moi sortir.
+Un cerveau de pierre
+Ooh ! Que quelqu'un m'ARRÊTE !
+Oups !
+Sorti pour la nuit.  Laissez un message.
+Aïe !  Refais-le !
+Pardon pour la poussière.
+Une partie de moi fonctionne encore.
+Pas devant ces orques, s'il vous plaît !
+Préparez-vous à me retrouver au paradis
+R2D2 -- Repose, Tas de Ferraille
+Détendez-vous.  Il ne se passe jamais rien au premier niveau.
+Res omnia mea culpa est
+Repose en pièces
+Repose, repose, esprit troublé.
+Rip Torn
+Elle disait toujours que ses pieds la tuaient, mais personne ne la croyait.
+Elle est morte d'un rhume de poitrine.
+Qu'il en soit écrit ainsi, qu'il en soit fait ainsi !
+Alors je lui dis : comment je sais que c'est vous, le vrai ange de la mort ?
+Certains patients tiennent absolument à mourir.
+Pour certains, c'est mortellement facile, pas vrai ?
+Certaines choses sont mieux enterrées.
+Mais oui, faites-moi confiance, je suis avocat...
+Heureusement que je portais mon corset, je crois que je me suis tordu de rire.
+C'est tout
+Les dieux ONT le sens de l'humour : j'en suis la preuve vivante !
+La grenouille est morte.  Kermit s'est suicidé.
+Ce donjon, c'est du gâteau
+Cet ascenseur ne monte pas au paradis
+Cette pierre tombale est un partagiciel.  Pour l'enregistrer, envoyez-moi 10 zorkmids
+Pierre tombale fournie par les Pompes Funèbres Yendoriennes Inc.
+Ce n'est pas une partie importante de ma vie.
+Celle-ci, c'est ma tournée.
+Haut
+Tim Burr -- Écrasé par un arbre
+Moins de bruit, j'essaie de me reposer.
+Virtuellement vivant
+Nous nous reverrons.
+Ne pleurez pas, il repose en paix
+Bienvenue chez Dante.  Quel étage, je vous prie ?
+Au moins, ils ont écouté mon sermon...
+Parti devenir un ange.
+Qu'est-ce que vous faites là-bas ?
+Qu'est-ce qui vous fait sourire ?
+Que voulez-vous, la Mort a du charme... !
+Quelle couverture maladie ?
+Quelle fosse ?
+Quand les dieux veulent vous punir, ils exaucent vos prières.
+Où que tu sois, laisse tes vents s'échapper.  Les retenir m'a été fatal !
+Où est mon remboursement ?
+Je vous dirai ça avec certitude dans un jour ou deux...
+Les magiciens sont des mauviettes
+Vers au travail, ne pas déranger !
+Vous pourriez vous pousser un peu ?  Je manque d'air, là-dessous.
+Vous pourriez arrêter d'être maléfique par-dessus mon épaule ?
+Tu m'as vraiment fait marcher, bébé, mais maintenant je suis parti.
+Oui chérie, encore quelques minutes...
+Tu disais que ce n'était pas venimeux !
+Tu as enflammé mon cœur.  Tu m'as donné des brûlures d'estomac.

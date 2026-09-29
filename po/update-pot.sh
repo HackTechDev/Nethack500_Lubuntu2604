@@ -55,6 +55,11 @@ done
 grep -o 'NAMS\{0,1\}([^)]*)' include/monsters.h | grep -o '"[^"]*"' \
     | sort -u | sed 's/.*/NC_("monster", &); NC_("gender", &);/' \
     > "$tmp/monsters.c"
+# hallucinatory monsters (dat/bogusmon.txt, without their prefix code)
+# are translated the same way
+grep -v '^#' dat/bogusmon.txt | sed -n 's/^[-_+|=]\{0,1\}\(..*\)$/"\1"/p' \
+    | sort -u | sed 's/.*/NC_("monster", &); NC_("gender", &);/' \
+    >> "$tmp/monsters.c"
 # shellcheck disable=SC2086
 $XGETTEXT $COMMON --no-location -k --keyword=NC_:1c,2 \
     -o "$tmp/1monsters.pot" "$tmp/monsters.c"

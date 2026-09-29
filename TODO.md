@@ -82,20 +82,25 @@ Mécanisme en place : `I18N_FILE(nom)` (nhi18n.c) ouvre `nom.<langue>`
 
 Fait : `help` (aide détaillée), `hh` (liste des commandes), `keyhelp`
 (touches), ainsi que le menu de l'aide `?` et « --More-- », « (end) »
-de l'interface tty.  Restent :
+de l'interface tty.
+
+Fait aussi : les rumeurs, l'Oracle, les gravures et les épitaphes.
+`makedefs` les compile depuis `dat/rumors-fr.tru` et `.fal`,
+`dat/oracles-fr.txt`, `dat/engrave-fr.txt` et `dat/epitaph-fr.txt`
+(`MAKEDEFS_LANG=fr`).  `oracles-fr.txt` commence par l'oracle spécial et
+garde l'ordre de `oracles.txt` : la sauvegarde retient les positions du
+fichier anglais.  Les monstres hallucinés (`bogusmon.txt`) sont traduits
+dans `po/fr.po` (contexte `monster` et genre), pas par un fichier.
+Restent :
 
 | Fichier | Lignes | Contenu |
 |---|---:|---|
 | `data.base` | 6 528 | Encyclopédie (commande `;` puis `?`) |
 | `tribute` | 9 942 | Citations des romans de Terry Pratchett (livres dans le jeu) |
 | `quest.lua` | 3 087 | Textes des quêtes de chaque rôle |
-| `bogusmon.txt` | 562 | Noms de monstres hallucinés |
-| `history`, `epitaph.txt` | 401 chacun | Historique, épitaphes |
-| `rumors.tru`, `rumors.fal` | environ 390 chacun | Rumeurs (biscuits de fortune) |
+| `history` | 401 | Historique du jeu |
 | `opthelp` | 393 | Aide des options |
 | `cmdhelp` | 226 | Description de chaque touche (format « touche<TAB>texte ») |
-| `oracles.txt` | 105 | Consultations de l'Oracle |
-| `engrave.txt` | 93 | Inscriptions au sol |
 
 Il faut aussi traduire les messages des niveaux spéciaux, écrits en Lua
 dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).

@@ -43,10 +43,12 @@
 
 #ifndef SFCTOOL
 staticfn void unpadline(char *);
+staticfn const char *rumorfile(void);
 staticfn void init_rumors(dlb *);
 staticfn char *get_rnd_line(dlb *, char *, unsigned, int (*)(int),
                           long, long, unsigned);
 staticfn void init_oracles(dlb *);
+staticfn dlb *oracle_i18n(dlb *, unsigned long *);
 staticfn void others_check(const char *ftype, const char *, winid *);
 staticfn void couldnt_open_file(const char *);
 staticfn void init_CapMons(void);
@@ -56,6 +58,10 @@ staticfn void init_CapMons(void);
 static unsigned CapMonstCnt = 0, CapBogonCnt = 0,
                 CapMonSiz = 0; /* CapMonstCnt+CapBogonCnt+1 when non-zero */
 static const char **CapMons = 0;
+
+/* the rumors file whose offsets are in gt.true_rumor_* &c: RUMORFILE or
+   its translation, which is used instead when the language changes */
+static char rumorfile_used[BUFSZ] = "";
 
 /* list of bogusmons prefixes used to indicate special monster type such as
    unique or always a particular gender; see dat/bogusmon.txt */
@@ -77,6 +83,20 @@ unpadline(char *line)
         --p;
 
     *p = '\0';
+}
+
+/* name of the rumors file to use; forget the offsets read from another
+   one (the language has changed) */
+staticfn const char *
+rumorfile(void)
+{
+    const char *fname = I18N_FILE(RUMORFILE);
+
+    if (strcmp(fname, rumorfile_used)) {
+        gt.true_rumor_size = 0L;
+        (void) strncpy(rumorfile_used, fname, sizeof rumorfile_used - 1);
+    }
+    return fname;
 }
 
 DISABLE_WARNING_FORMAT_NONLITERAL
@@ -120,16 +140,18 @@ getrumor(
     boolean exclude_cookie)
 {
     dlb *rumors;
+    const char *fname;
     long beginning, ending;
     char line[BUFSZ];
     static const char *cookie_marker = "[cookie] ";
     const int marklen = strlen(cookie_marker);
 
     rumor_buf[0] = '\0';
+    fname = rumorfile();
     if (gt.true_rumor_size < 0L) /* a previous try failed to open RUMORFILE */
         return rumor_buf;
 
-    rumors = dlb_fopen(RUMORFILE, "r");
+    rumors = dlb_fopen(fname, "r");
     if (rumors) {
         int count = 0;
         int adjtruth;
@@ -198,8 +220,9 @@ rumor_check(void)
     dlb *rumors;
     winid tmpwin = WIN_ERR;
     char *endp, line[BUFSZ], xbuf[BUFSZ], rumor_buf[BUFSZ];
+    const char *fname = rumorfile();
 
-    rumors = (gt.true_rumor_size >= 0) ? dlb_fopen(RUMORFILE, "r") : 0;
+    rumors = (gt.true_rumor_size >= 0) ? dlb_fopen(fname, "r") : 0;
     if (rumors) {
         long ftell_rumor_start = 0L;
 
@@ -316,7 +339,7 @@ others_check(
     winid tmpwin = *winptr;
     int entrycount = 0;
 
-    fh = dlb_fopen(fname, "r");
+    fh = dlb_fopen(I18N_FILE(fname), "r");
     if (fh) {
         if (tmpwin == WIN_ERR) {
             *winptr = tmpwin = create_nhwindow(NHW_TEXT);
@@ -502,7 +525,7 @@ get_rnd_text(
     int (*rng)(int),
     unsigned padlength)
 {
-    dlb *fh = dlb_fopen(fname, "r");
+    dlb *fh = dlb_fopen(I18N_FILE(fname), "r");
 
     buf[0] = '\0';
     if (fh) {
@@ -530,8 +553,12 @@ outrumor(
     int truth, /* 1=true, -1=false, 0=either */
     int mechanism)
 {
-    static const char fortune_msg[] =
-        "This cookie has a scrap of paper inside.";
+    static const char *const oracle_says[] = {
+        N_("True to her word, the Oracle offhandedly says: "),
+        N_("True to her word, the Oracle casually says: "),
+        N_("True to her word, the Oracle nonchalantly says: "),
+        N_("True to her word, the Oracle says: "),
+    };
     const char *line;
     char buf[BUFSZ];
     boolean reading = (mechanism == BY_COOKIE || mechanism == BY_PAPER);
@@ -542,7 +569,7 @@ outrumor(
             return;
         } else if (Blind) {
             if (mechanism == BY_COOKIE)
-                pline(fortune_msg);
+                pline("This cookie has a scrap of paper inside.");
             pline("What a pity that you cannot read it!");
             return;
         }
@@ -550,20 +577,19 @@ outrumor(
 
     line = getrumor(truth, buf, reading ? FALSE : TRUE);
     if (!*line)
-        line = "NetHack rumors file closed for renovation.";
+        line = N_("NetHack rumors file closed for renovation.");
     switch (mechanism) {
     case BY_ORACLE:
         /* Oracle delivers the rumor */
-        pline("True to her word, the Oracle %ssays: ",
-              (!rn2(4) ? "offhandedly "
-                       : (!rn2(3) ? "casually "
-                                  : (rn2(2) ? "nonchalantly " : ""))));
+        pline("%s", oracle_says[!rn2(4) ? 0
+                                : !rn2(3) ? 1
+                                  : rn2(2) ? 2 : 3]);
         SetVoice((struct monst *) 0, 0, 80, voice_oracle);
         verbalize1(line);
         /* [WIS exercised by getrumor()] */
         return;
     case BY_COOKIE:
-        pline(fortune_msg);
+        pline("This cookie has a scrap of paper inside.");
         FALLTHROUGH;
     /* FALLTHRU */
     case BY_PAPER:
@@ -636,13 +662,64 @@ restore_oracles(NHFILE *nhfp)
 }
 
 #ifndef SFCTOOL
+/* the oracle offsets kept in svo.oracle_loc[] (and in save files) are
+   those of ORACLEFILE; when a translation of it is in use, find the
+   offset in the translation of the oracle at offset *offp in 'engfp' and
+   return the translated file, or Null to use the English oracle; the
+   translation has the oracles in the same order, the special one first */
+staticfn dlb *
+oracle_i18n(dlb *engfp, unsigned long *offp)
+{
+    const char *fname = I18N_FILE(ORACLEFILE);
+    char line[BUFSZ];
+    unsigned long loc = 0UL;
+    int cnt = 0, trcnt = 0, i, idx = -1;
+    dlb *fp;
+
+    if (!strcmp(fname, ORACLEFILE))
+        return (dlb *) 0;
+    /* index of the oracle in ORACLEFILE */
+    (void) dlb_fseek(engfp, 0L, SEEK_SET);
+    (void) dlb_fgets(line, sizeof line, engfp); /* "don't edit" comment */
+    if (!dlb_fgets(line, sizeof line, engfp)
+        || sscanf(line, "%5d", &cnt) != 1)
+        return (dlb *) 0;
+    for (i = 0; i < cnt; i++) {
+        if (!dlb_fgets(line, sizeof line, engfp)
+            || sscanf(line, "%5lx", &loc) != 1)
+            return (dlb *) 0;
+        if (loc == *offp) {
+            idx = i;
+            break;
+        }
+    }
+    if (idx < 0 || !(fp = dlb_fopen(fname, "r")))
+        return (dlb *) 0;
+    /* offset of the oracle with the same index in the translation */
+    (void) dlb_fgets(line, sizeof line, fp);
+    if (dlb_fgets(line, sizeof line, fp)
+        && sscanf(line, "%5d", &trcnt) == 1 && trcnt == cnt) {
+        for (i = 0; i <= idx; i++)
+            if (!dlb_fgets(line, sizeof line, fp)
+                || sscanf(line, "%5lx", &loc) != 1)
+                break;
+        if (i > idx) {
+            *offp = loc;
+            return fp;
+        }
+    }
+    (void) dlb_fclose(fp);
+    return (dlb *) 0;
+}
+
 void
 outoracle(boolean special, boolean delphi)
 {
     winid tmpwin;
-    dlb *oracles;
+    dlb *oracles, *troracles;
     int oracle_idx;
-    char *endp, line[COLNO], xbuf[BUFSZ];
+    unsigned long offset;
+    char *endp, line[BUFSZ], xbuf[BUFSZ];
 
     /* early return if we couldn't open ORACLEFILE on previous attempt,
        or if all the oracularities are already exhausted */
@@ -663,21 +740,29 @@ outoracle(boolean special, boolean delphi)
         if (svo.oracle_cnt <= 1 && !special)
             goto close_oracles; /*(shouldn't happen)*/
         oracle_idx = special ? 0 : rnd((int) svo.oracle_cnt - 1);
-        (void) dlb_fseek(oracles, (long) svo.oracle_loc[oracle_idx], SEEK_SET);
+        offset = svo.oracle_loc[oracle_idx];
         if (!special) /* move offset of very last one into this slot */
             svo.oracle_loc[oracle_idx] = svo.oracle_loc[--svo.oracle_cnt];
+        if ((troracles = oracle_i18n(oracles, &offset)) != 0) {
+            (void) dlb_fclose(oracles);
+            oracles = troracles;
+        }
+        (void) dlb_fseek(oracles, (long) offset, SEEK_SET);
 
         tmpwin = create_nhwindow(NHW_TEXT);
         if (delphi)
             putstr(tmpwin, 0,
                    special
-                     ? "The Oracle scornfully takes all your gold and says:"
-                     : "The Oracle meditates for a moment and then intones:");
+                     ? _("The Oracle scornfully takes all your gold "
+                         "and says:")
+                     : _("The Oracle meditates for a moment and then "
+                         "intones:"));
         else
-            putstr(tmpwin, 0, "The message reads:");
+            putstr(tmpwin, 0, _("The message reads:"));
         putstr(tmpwin, 0, "");
 
-        while (dlb_fgets(line, COLNO, oracles) && strcmp(line, "---\n")) {
+        while (dlb_fgets(line, sizeof line, oracles)
+               && strcmp(line, "---\n")) {
             if ((endp = strchr(line, '\n')) != 0)
                 *endp = 0;
             putstr(tmpwin, 0, xcrypt(line, xbuf));
@@ -714,8 +799,9 @@ doconsult(struct monst *oracl)
         return ECMD_OK;
     }
 
-    Sprintf(qbuf, "\"Wilt thou settle for a minor consultation?\" (%d %s)",
-            minor_cost, currency((long) minor_cost));
+    Snprintf(qbuf, sizeof qbuf,
+             _("\"Wilt thou settle for a minor consultation?\" (%d %s)"),
+             minor_cost, currency((long) minor_cost));
     switch (ynq(qbuf)) {
     default:
     case 'q':
@@ -731,8 +817,9 @@ doconsult(struct monst *oracl)
         if (umoney <= (long) minor_cost /* don't even ask */
             || (svo.oracle_cnt == 1 || go.oracle_flg < 0))
             return ECMD_OK;
-        Sprintf(qbuf, "\"Then dost thou desire a major one?\" (%d %s)",
-                major_cost, currency((long) major_cost));
+        Snprintf(qbuf, sizeof qbuf,
+                 _("\"Then dost thou desire a major one?\" (%d %s)"),
+                 major_cost, currency((long) major_cost));
         if (y_n(qbuf) != 'y')
             return ECMD_OK;
         u_pay = (umoney < (long) major_cost) ? (int) umoney : major_cost;

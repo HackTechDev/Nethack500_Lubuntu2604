@@ -2228,6 +2228,7 @@ extern void objects_globals_init(void);
 
 #ifdef NHI18N
 extern const char *objnam_english(const char *) NONNULLARG1;
+extern boolean objnam_feminine(const char *) NONNULLARG1;
 #endif
 extern void maybereleaseobuf(char *) NONNULLARG1;
 extern char *obj_typename(int);

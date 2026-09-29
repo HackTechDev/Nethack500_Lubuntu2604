@@ -821,6 +821,14 @@ objnam_english(const char *str)
     return (i >= 0 && obuf_twin_of[i] == str) ? obuf_twin[i] : (char *) 0;
 }
 
+/* is the translated object name str (from xname(), doname() &c)
+   feminine?  (for agreement of the rest of a translated message) */
+boolean
+objnam_feminine(const char *str)
+{
+    return (get_objgram(str) & OGRAM_FEM) != 0;
+}
+
 /* translation of adjective or pattern en agreeing with gender and number
    'gram'; a missing plural form is made by adding 's' to the last word of
    the singular, unless that starts with a preposition ("en bois") */

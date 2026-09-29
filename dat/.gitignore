@@ -26,3 +26,9 @@ NetHack.ad
 gitinfo.txt
 
 *.mo
+# translated files compiled by makedefs (from rumors-<lang>.tru &c)
+rumors.??
+oracles.??
+engrave.??
+epitaph.??
+bogusmon.??

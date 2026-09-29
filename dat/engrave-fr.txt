@@ -1,0 +1,95 @@
+# NetHack 5.0  engrave-fr.txt
+# Copyright (c) 2015 by Pasi Kallinen
+# NetHack may be freely redistributed.  See license for details.
+# Gravures aléatoires sur le sol : traduction française de engrave.txt,
+# compilée en engrave.fr (MAKEDEFS_LANG=fr ../util/makedefs -2)
+#
+# "Elbereth" n'est pas traduit : c'est le mot qui effraie les monstres
+Elbereth
+# gravures de pièges
+Vlad est passé par là
+ad aerarium
+
+# parodies et autres gravures célèbres
+Owlbreath
+Galadriel
+Kilroy est passé par là
+Frodon est vivant
+
+# Voyage au centre de la Terre
+A.S. ->
+<- A.S.
+# Adventure
+Tu ne le monteras pas dans l'escalier
+# L'Enfer
+Lasciate ogni speranza o voi ch'entrate.
+# Le Prisonnier
+Bien venu
+# Dernier message de Dieu à sa création (d'après « Salut, et encore
+# merci pour le poisson » de Douglas Adams) :
+Nous vous prions de nous excuser pour la gêne occasionnée.
+# Thriller
+À mercredi prochain
+# Smokey Stover
+notary sojak
+
+Pour passer du bon temps, appelez le 8?7-5309
+# Divers zoos du monde entier
+Merci de ne pas nourrir les animaux.
+# Un palindrome
+Ésope reste ici et se repose.
+# Siskel et Ebert
+Deux pouces levés !
+# Le premier programme en C
+Hello, World!
+^?MAIL
+# AOL
+Vous avez du courrier !
+^.
+# Clueless
+C'est ça, oui !
+# Doctor Who, version des années 2000
+GRAND MÉCHANT LOUP
+
+# Signature de gang
+Aouuuh !  Les loups-garous de Yendor !
+
+# Stratégie et jeu de mots
+Creusez ici pour la victoire
+
+# Pompéi
+Gaius Julius Primigenius est passé par là.  Pourquoi es-tu en retard ?
+
+# Conseils utiles
+N'allez pas par là
+À gauche --->
+<--- À droite
+X marque l'emplacement
+X <--- Vous êtes ici.
+Ici vivent des dragons
+Sauvegardez maintenant, et faites vos devoirs !
+Il y avait un trou ici.  Il n'y est plus.
+Le Carré Vibrant
+Ceci est une fosse !
+Ce n'est pas le donjon que vous cherchez.
+Attention, il y a un gnome avec une baguette de mort derrière cette porte !
+
+# Divers
+Cette case a été laissée vide intentionnellement.
+
+# Graffiti viking
+Haermund Hardaxe a gravé ces runes
+
+# Publicité
+Besoin de lumière ?  Visitez la succursale de Minetown du Magasin de luminaires d'Izchak !
+Des serpents sur le Plan Astral - bientôt dans un donjon près de chez vous
+Vous êtes le millionième visiteur de ce lieu !  Veuillez patienter 200 tours pour recevoir votre baguette de souhait.
+
+# DnD
+Attention, runes explosives !
+
+# « Whispers Underground » de Ben Aaronovitch
+Si vous pouvez lire ces mots, vous n'êtes pas seulement un geek, mais sans doute mort.
+
+# Portal
+Le gâteau est un mensonge

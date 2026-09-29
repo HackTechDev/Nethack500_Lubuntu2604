@@ -139,10 +139,19 @@ MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
 # translated data files (dat/help.fr...), installed next to nhdat and used
 # instead of the English ones when the language is in use (nhi18n.c)
 I18NLANGS = $(patsubst po/%.po,%,$(wildcard po/*.po))
-DATI18N = $(foreach l,$(I18NLANGS),$(wildcard dat/*.$(l)))
+# translated sources compiled by makedefs (dat/rumors-<lang>.tru and .fal,
+# dat/{engrave,epitaph,oracles}-<lang>.txt) give dat/<name>.<lang>;
+# hallucinatory monsters (bogusmon) are translated in po/<lang>.po
+RNDI18N = engrave epitaph oracles
+VARDATI18N = $(foreach l,$(I18NLANGS), \
+	$(if $(wildcard dat/rumors-$(l).tru),dat/rumors.$(l)) \
+	$(foreach f,$(RNDI18N), \
+		$(if $(wildcard dat/$(f)-$(l).txt),dat/$(f).$(l))))
+DATI18N = $(sort $(foreach l,$(I18NLANGS),$(wildcard dat/*.$(l))) \
+	$(VARDATI18N))
 
 ALLDEP = $(PRECHECK) $(GAME) recover Guidebook $(VARDAT) spec_levs check-dlb \
-	$(MOFILES)
+	$(MOFILES) $(VARDATI18N)
 
 # first target is also the default target for 'make' without any arguments
 all:    $(ALLDEP)
@@ -449,7 +458,8 @@ stripbs:
 # 'make update' can be used to install a revised version after making
 # customizations or such.  Unlike 'make install', it doesn't delete everything
 # from the target directory to have a clean start.
-update: $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf
+update: $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf \
+	$(MOFILES) $(VARDATI18N)
 #	(don't yank the old version out from under people who're playing it)
 	-mv $(INSTDIR)/$(GAME) $(INSTDIR)/$(GAME).old
 	-mv $(INSTDIR)/nhdat $(INSTDIR)/nhdat.old
@@ -468,7 +478,7 @@ rootcheck:
 	@true; $(ROOTCHECK)
 
 install: rootcheck $(PRECHECK) $(GAME) recover $(VARDAT) spec_levs sys/unix/sysconf \
-	$(MOFILES)
+	$(MOFILES) $(VARDATI18N)
 	true; $(PREINSTALL)
 # set up the directories
 # not all mkdirs have -p; those that don't will create a -p directory
@@ -511,7 +521,7 @@ clean-keep-lib:
 	( cd util ; $(MAKE) clean )
 	( cd dat ; $(MAKE) clean )
 	( cd doc ; $(MAKE) clean )
-	rm -f $(MOFILES)
+	rm -f $(MOFILES) $(VARDATI18N)
 
 # 'make spotless' returns the source tree to near-distribution condition.
 # it removes .o files, executables, and compiled data files
@@ -529,6 +539,17 @@ spotless-keep-lib: clean-keep-lib
 
 dat/%.mo: po/%.po
 	$(MSGFMT) --check -o $@ $<
+
+dat/rumors.%: dat/rumors-%.tru dat/rumors-%.fal $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -r )
+dat/oracles.%: dat/oracles-%.txt $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -h )
+dat/epitaph.%: dat/epitaph-%.txt $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -1 )
+dat/engrave.%: dat/engrave-%.txt $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -2 )
+dat/bogusmon.%: dat/bogusmon-%.txt $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -3 )
 
 # 'make update-po' extracts the translatable strings (marked with _() &c,
 # or given to pline() and the other message functions) into po/nethack.pot

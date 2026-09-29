@@ -137,6 +137,11 @@ static char filename[MAXFNAMELEN];
 char *file_prefix = "";
 #endif
 
+/* language of translated data files: with MAKEDEFS_LANG=<lang> in the
+ * environment, -r -h -1 -2 -3 read <name>-<lang>.{txt,tru,fal} and
+ * write <name>.<lang> (used by the game with OPTIONS=language:<lang>) */
+static const char *datlang = "";
+
 #ifdef MACsansMPWTOOL
 int main(void);
 #else
@@ -169,6 +174,8 @@ static char *padline(char *, unsigned);
 static unsigned long read_rumors_file(const char *, int *,
                                       long *, unsigned long, unsigned);
 static void rafile(int);
+static void set_datlang(void);
+static void add_lang(char *, const char *);
 static void do_rnd_access_file(const char *, const char *,
                                const char *, unsigned);
 static boolean d_filter(char *);
@@ -308,6 +315,7 @@ do_makedefs(char *options)
     /* construct the current version number */
     make_version();
 
+    set_datlang();
     more_than_one = strlen(options) > 1;
     while (*options) {
         if (more_than_one)
@@ -437,6 +445,31 @@ rafile(int whichone)
                                "grue", MD_PAD_BOGONS);
             break;
     }
+}
+
+/* pick up MAKEDEFS_LANG; ignored unless it is a short alphabetic code */
+static void
+set_datlang(void)
+{
+    const char *lang = getenv("MAKEDEFS_LANG");
+    const char *p;
+
+    if (!lang || !*lang || strlen(lang) > 8)
+        return;
+    for (p = lang; *p; ++p)
+        if (!((*p >= 'a' && *p <= 'z') || (*p >= 'A' && *p <= 'Z')
+              || *p == '_'))
+            return;
+    datlang = lang;
+}
+
+/* append the language to an input file name ("-fr") or to an output
+   one (".fr"), depending on sep */
+static void
+add_lang(char *fname, const char *sep)
+{
+    if (*datlang)
+        Sprintf(eos(fname), "%s%s", sep, datlang);
 }
 
 static char namebuf[1000];
@@ -1045,6 +1078,7 @@ read_rumors_file(
     unsigned long rumor_offset;
 
     Sprintf(infile, DATA_IN_TEMPLATE, RUMOR_FILE);
+    add_lang(infile, "-");
     Strcat(infile, file_ext);
     if (!(ifp = fopen(infile, RDTMODE))) {
         perror(infile);
@@ -1086,9 +1120,11 @@ do_rnd_access_file(
 {
     char *line, buf[BUFSZ], xbuf[BUFSZ],
          greptmp[8 + 1 + 3 + 1];
+    int entries = 0;
 
     Sprintf(greptmp, "grep-%.3s.tmp", basefname);
     Sprintf(filename, DATA_IN_TEMPLATE, fname);
+    add_lang(filename, "-");
     Strcat(filename, ".txt");
     if (!(ifp = fopen(filename, RDTMODE))) {
         perror(filename);
@@ -1100,6 +1136,7 @@ do_rnd_access_file(
     Strcat(filename, file_prefix);
 #endif
     Sprintf(eos(filename), DATA_TEMPLATE, fname);
+    add_lang(filename, ".");
     if (!(ofp = fopen(filename, WRTMODE))) {
         perror(filename);
         makedefs_exit(EXIT_FAILURE);
@@ -1109,11 +1146,13 @@ do_rnd_access_file(
     /* write out the default content entry unconditionally instead of
        waiting to see whether there are no regular output lines; if it
        matches a regular entry (bogusmon "grue"), that entry will become
-       more likely to be picked than normal but it's nothing to worry about */
+       more likely to be picked than normal but it's nothing to worry about;
+       the English default isn't added to a translation unless it's empty */
     Strcpy(buf, deflt_content);
     if (!strchr(buf, '\n')) /* lines from the file include trailing newline +*/
         Strcat(buf, "\n"); /* so make sure that the default one does too    */
-    (void) fputs(xcrypt(padline(buf, padlength), xbuf), ofp);
+    if (!*datlang)
+        (void) fputs(xcrypt(padline(buf, padlength), xbuf), ofp);
 
     tfp = getfp(DATA_TEMPLATE, greptmp, WRTMODE, FLG_TEMPFILE);
     grep0(ifp, tfp, FLG_TEMPFILE);
@@ -1128,9 +1167,12 @@ do_rnd_access_file(
         if (line[0] != '#' && line[0] != '\n') {
             (void) padline(line, padlength);
             (void) fputs(xcrypt(line, xbuf), ofp);
+            ++entries;
         }
         free((genericptr_t) line);
     }
+    if (*datlang && !entries)
+        (void) fputs(xcrypt(padline(buf, padlength), xbuf), ofp);
     Fclose(ifp);
     Fclose(ofp);
 
@@ -1153,12 +1195,15 @@ do_rumors(void)
     long true_rumor_size, false_rumor_size;
     unsigned long true_rumor_offset, false_rumor_offset, eof_offset;
 
-    Sprintf(tempfile, DATA_TEMPLATE, "rumors.tmp");
+    Sprintf(tempfile, DATA_TEMPLATE, "rumors");
+    add_lang(tempfile, "-");
+    Strcat(tempfile, ".tmp");
     filename[0] = '\0';
 #ifdef FILE_PREFIX
     Strcat(filename, file_prefix);
 #endif
     Sprintf(eos(filename), DATA_TEMPLATE, RUMOR_FILE);
+    add_lang(filename, ".");
     if (!(ofp = fopen(filename, WRTMODE))) {
         perror(filename);
         makedefs_exit(EXIT_FAILURE);
@@ -1430,13 +1475,17 @@ do_oracles(void)
     int i;
     char *line;
 
-    Sprintf(tempfile, DATA_TEMPLATE, "oracles.tmp");
+    Sprintf(tempfile, DATA_TEMPLATE, "oracles");
+    add_lang(tempfile, "-");
+    Strcat(tempfile, ".tmp");
     filename[0] = '\0';
 #ifdef FILE_PREFIX
     Strcat(filename, file_prefix);
 #endif
     Sprintf(eos(filename), DATA_TEMPLATE, ORACLE_FILE);
+    add_lang(filename, ".");
     Sprintf(infile, DATA_IN_TEMPLATE, ORACLE_FILE);
+    add_lang(infile, "-");
     Strcat(infile, ".txt");
     if (!(ifp = fopen(infile, RDTMODE))) {
         perror(infile);
@@ -1465,16 +1514,22 @@ do_oracles(void)
     (void) fputs("---\n", tfp);
     offset = (unsigned long) ftell(tfp);
     Fprintf(ofp, "%05lx\n", offset); /* start pos of special oracle */
-    for (i = 0; i < SIZE(special_oracle); i++) {
-        (void) fputs(xcrypt(special_oracle[i], xbuf), tfp);
-        (void) fputc('\n', tfp);
-    }
-    SpinCursor(3);
+    if (*datlang) {
+        /* a translation supplies the special oracle as its first entry
+           and must keep the other ones in the same order as oracles.txt */
+        oracle_cnt = 0;
+    } else {
+        for (i = 0; i < SIZE(special_oracle); i++) {
+            (void) fputs(xcrypt(special_oracle[i], xbuf), tfp);
+            (void) fputc('\n', tfp);
+        }
+        SpinCursor(3);
 
-    oracle_cnt = 1;
-    (void) fputs("---\n", tfp);
-    offset = (unsigned long) ftell(tfp);
-    Fprintf(ofp, "%05lx\n", offset); /* start pos of first oracle */
+        oracle_cnt = 1;
+        (void) fputs("---\n", tfp);
+        offset = (unsigned long) ftell(tfp);
+        Fprintf(ofp, "%05lx\n", offset); /* start pos of first oracle */
+    }
     in_oracle = FALSE;
 
     set_fgetline_context(infile, TRUE, FALSE);
@@ -1658,6 +1713,8 @@ filter_nonascii(char *line)
             break;
         if (*p == '\t' && ascii_ctx.tabok)
             continue;
+        if (*p > 126 && *datlang)
+            continue; /* translations are UTF-8 */
         reason = (*p > 126) ? 3 : (*p == '\t') ? 2 : (*p < ' ');
         if (reason != 0) {
             if (!warned)
