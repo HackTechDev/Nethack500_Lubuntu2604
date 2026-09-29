@@ -206,6 +206,23 @@ static const char *const shkhealthfoods[] = {
  * The second, usually shorter, store type name is used in automatically
  * generated annotations for #overview.  If Null, the first name gets used.
  */
+#if 0
+/* for xgettext: shop type names, translated with their gender (see
+   shop_name_i18n() in shk.c) */
+NC_("noun", "general store"), NC_("noun", "used armor dealership"),
+NC_("noun", "second-hand bookstore"), NC_("noun", "liquor emporium"),
+NC_("noun", "antique weapons outlet"), NC_("noun", "delicatessen"),
+NC_("noun", "jewelers"), NC_("noun", "quality apparel and accessories"),
+NC_("noun", "hardware store"), NC_("noun", "rare books"),
+NC_("noun", "health food store"), NC_("noun", "lighting store"),
+NC_("gender", "general store"), NC_("gender", "used armor dealership"),
+NC_("gender", "second-hand bookstore"), NC_("gender", "liquor emporium"),
+NC_("gender", "antique weapons outlet"), NC_("gender", "delicatessen"),
+NC_("gender", "jewelers"), NC_("gender", "quality apparel and accessories"),
+NC_("gender", "hardware store"), NC_("gender", "rare books"),
+NC_("gender", "health food store"), NC_("gender", "lighting store"),
+#endif
+
 const struct shclass shtypes[] = {
     { "general store", NULL,
       RANDOM_CLASS,

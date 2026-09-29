@@ -18,6 +18,12 @@ staticfn void mhitm_really_poison(struct monst *, struct attack *,
 staticfn void steal_it(struct monst *, struct attack *) NONNULLARG1;
 
 #if 0
+/* for xgettext: forms given by objnam_fmt() in that_is_a_mimic() */
+C_("feminine", "That %s is actually %%s!"),
+C_("plural", "That %s is actually %%s!"),
+C_("feminine plural", "That %s is actually %%s!"),
+#endif
+#if 0
 /* for xgettext: forms of messages about a female hero (see vpline()) */
 NC_("heroine", "You are frozen by %s!"),
 NC_("heroine", "You are put to sleep by %s!"),
@@ -6477,7 +6483,7 @@ that_is_a_mimic(
     boolean reveal_it = (mimic_flags & MIM_REVEAL) != 0,
             omit_wait = (mimic_flags & MIM_OMIT_WAIT) != 0;
 
-    Strcpy(fmtbuf, "Wait!  That's %s!");
+    Strcpy(fmtbuf, _("Wait!  That's %s!"));
     if (Blind) {
         if (!Blind_telepat)
             what = generic; /* with default fmt */
@@ -6502,6 +6508,11 @@ that_is_a_mimic(
             fakeobj = object_from_map(glyph, x, y, &otmp);
             otmp_name = (otmp && otmp->otyp != STRANGE_OBJECT)
                         ? simpleonames(otmp) : "strange object";
+            if (i18n_active())
+                Snprintf(fmtbuf, sizeof fmtbuf,
+                         objnam_fmt("That %s is actually %%s!", otmp_name,
+                                    otmp), otmp_name);
+            else
             Snprintf(fmtbuf, sizeof fmtbuf, "%s %s %s %%s!",
                      (otmp && is_plural(otmp)) ? "Those" : "That",
                      otmp_name, otmp ? otense(otmp, "are") : "is");
@@ -6516,7 +6527,8 @@ that_is_a_mimic(
             assert(mndx >= LOW_PM && mndx <= HIGH_PM);
             mtmp_name = pmname(&mons[mndx], Mgender(mtmp));
             Snprintf(fmtbuf, sizeof fmtbuf,
-                     "Wait!  That %s is really %%s!", mtmp_name);
+                     _("Wait!  That %s is really %%s!"),
+                     C_("monster", mtmp_name));
         }
 
         /* cloned Wiz starts out mimicking some other monster and
