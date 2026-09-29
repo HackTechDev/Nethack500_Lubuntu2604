@@ -19,6 +19,10 @@ msgid "%s %s, the%s, welcome back to NetHack!"
 msgstr ""
 
 #, c-format
+msgid "%s absorbs the deadly ray!"
+msgstr "%s absorbe le rayon mortel !"
+
+#, c-format
 msgid "%s back to you, landing %s your %s."
 msgstr ""
 
@@ -131,6 +135,10 @@ msgid "%s is dragged into %s pit!"
 msgstr "%s est entraîné dans %s fosse !"
 
 #, c-format
+msgid "%s is not carrying anything."
+msgstr "%s ne porte rien."
+
+#, c-format
 msgid "%s is there that you hadn't noticed."
 msgstr "%s est là, et vous ne l'aviez pas remarqué."
 
@@ -145,6 +153,10 @@ msgstr "%s est entièrement englouti par les flammes !"
 #, c-format
 msgid "%s looks numb."
 msgstr "%s semble engourdi."
+
+#, c-format
+msgid "%s looks rather fleshy for a moment."
+msgstr "%s semble plutôt charnu un instant."
 
 #, c-format
 msgid "%s looks rather numb."
@@ -189,6 +201,10 @@ msgstr "%s refuse de vous laisser entrer tant que vous chevauchez %s."
 #, c-format
 msgid "%s seems concerned that you want to sell that."
 msgstr "%s semble inquiet que vous vouliez vendre ça."
+
+#, c-format
+msgid "%s seems fleshier..."
+msgstr "%s semble plus charnu..."
 
 #, c-format
 msgid "%s seems mollified."
@@ -241,6 +257,14 @@ msgstr "%s frappe le vide !"
 #, c-format
 msgid "%s strikes at your displaced image and misses you!"
 msgstr "%s frappe votre image déplacée et vous rate !"
+
+#, c-format
+msgid "%s suddenly comes alive as %s!"
+msgstr "%s prend soudain vie en %s !"
+
+#, c-format
+msgid "%s suddenly comes alive!"
+msgstr "%s prend soudain vie !"
 
 #, c-format
 msgid "%s swings itself around you!"
@@ -463,6 +487,22 @@ msgstr[1] "Cloches d'Ouverture"
 msgctxt "objgender"
 msgid "Bell of Opening"
 msgstr "f"
+
+#, c-format
+msgid "Blood boils at your %s."
+msgstr "Du sang bout à vos %s."
+
+#, c-format
+msgid "Blood boils beneath your %s."
+msgstr "Du sang bout sous vos %s."
+
+#, c-format
+msgid "Blood pools at your %s."
+msgstr "Du sang s'accumule à vos %s."
+
+#, c-format
+msgid "Blood pools beneath your %s."
+msgstr "Du sang s'accumule sous vos %s."
 
 msgctxt "gender"
 msgid "Blork the orc"
@@ -1312,6 +1352,9 @@ msgctxt "monster"
 msgid "Orion"
 msgstr "Orion"
 
+msgid "Ow, that light hurts."
+msgstr "Aïe, cette lumière fait mal."
+
 msgid "PRATYAVAYAH"
 msgstr ""
 
@@ -1406,6 +1449,9 @@ msgctxt "monster"
 msgid "Smokey Bear"
 msgstr "Smokey l'ours"
 
+msgid "Some dust swirls beneath you."
+msgstr "De la poussière tourbillonne sous vous."
+
 msgid "Sorry, fire and water don't mix."
 msgstr "Désolé, le feu et l'eau ne font pas bon ménage."
 
@@ -1472,6 +1518,10 @@ msgstr "Ce %s est en réalité %s !"
 msgid "That was pure chewing satisfaction!"
 msgstr "Quel plaisir de mâcher ça !"
 
+#, c-format
+msgid "The %s reveals a secret door."
+msgstr "Le %s révèle une porte secrète."
+
 msgid "The Kops (disappointed) vanish into thin air."
 msgstr "Les Kops (déçus) se volatilisent."
 
@@ -1495,11 +1545,18 @@ msgstr "La pièce retombe miraculeusement sur la tranche !"
 msgid "The donated %s pays off your debt."
 msgstr "Le don de %s règle votre dette."
 
+#, c-format
+msgid "The door absorbs the %s!"
+msgstr "La porte absorbe le %s !"
+
 msgid "The edges on the floor get smoother."
 msgstr "Les bords du sol s'adoucissent."
 
 msgid "The eggs aren't alive any more..."
 msgstr "Les œufs ne sont plus vivants..."
+
+msgid "The figurine animates!"
+msgstr "La figurine s'anime !"
 
 #, c-format
 msgid "The flame of %s burns brightly!"
@@ -1520,6 +1577,12 @@ msgstr "Les flammes @de %s brûlent vivement !"
 #, c-format
 msgid "The ink in this spellbook is %s."
 msgstr "L'encre de ce grimoire est %s."
+
+msgid "The iron bars melt somewhat but remain intact."
+msgstr "Les barreaux de fer fondent un peu mais restent intacts."
+
+msgid "The iron bars melt."
+msgstr "Les barreaux de fer fondent."
 
 msgid "The leash slips loose."
 msgstr "La laisse se détache."
@@ -2042,6 +2105,9 @@ msgstr "Vous avez honte."
 msgid "You feel even worse."
 msgstr "Vous vous sentez encore plus mal."
 
+msgid "You feel frightened and stunned."
+msgstr "Vous vous sentez effrayé et étourdi."
+
 msgid "You feel healthy."
 msgstr "Vous vous sentez en bonne santé."
 
@@ -2053,6 +2119,9 @@ msgstr "Vous vous sentez en contact avec l'Unité Universelle."
 
 msgid "You feel less confused now."
 msgstr "Vous vous sentez moins confus maintenant."
+
+msgid "You feel light headed."
+msgstr "Vous vous sentez la tête légère."
 
 msgid "You feel like someone is helping you."
 msgstr "Vous avez l'impression que quelqu'un vous aide."
@@ -2296,6 +2365,9 @@ msgstr "Vous vous enfoncez dans la lave et êtes sur le point d'être immolé !"
 
 msgid "You sink like a rock."
 msgstr "Vous coulez comme une pierre."
+
+msgid "You smell a whiff of smoke."
+msgstr "Vous sentez une odeur de fumée."
 
 msgid "You smell burning straw."
 msgstr "Vous sentez une odeur de paille brûlée."
@@ -14197,7 +14269,7 @@ msgstr ""
 #: src/spell.c:2064 src/timeout.c:147 src/timeout.c:309 src/timeout.c:342
 #: src/timeout.c:420 src/timeout.c:542 src/timeout.c:568 src/trap.c:5833
 #: src/vault.c:959 src/version.c:163 src/windows.c:455 src/windows.c:513
-#: src/wizcmds.c:438 src/zap.c:5063 src/zap.c:5207 win/curses/cursdial.c:298
+#: src/wizcmds.c:438 src/zap.c:5308 src/zap.c:5452 win/curses/cursdial.c:298
 #: win/curses/cursdial.c:366 win/tty/topl.c:420 win/tty/topl.c:425
 #: win/tty/wintty.c:2826
 #, c-format
@@ -15524,7 +15596,7 @@ msgstr "Vous avez l'air %s."
 
 #: src/apply.c:1333 src/do_name.c:829 src/do_name.c:1015 src/hack.c:2242
 #: src/objnam.c:1299 src/trap.c:331 src/trap.c:6515 src/trap.c:6558
-#: src/trap.c:6827
+#: src/trap.c:6827 src/zap.c:2388 src/zap.c:3992
 #, c-format
 msgctxt "feminine"
 msgid "a %s"
@@ -15532,7 +15604,7 @@ msgstr "une %s"
 
 #: src/apply.c:1334 src/do_name.c:1017 src/hack.c:2242 src/objnam.c:647
 #: src/objnam.c:1301 src/trap.c:331 src/trap.c:6516 src/trap.c:6558
-#: src/trap.c:6827
+#: src/trap.c:6827 src/zap.c:2389 src/zap.c:3993
 #, c-format
 msgid "a %s"
 msgstr "un %s"
@@ -15982,7 +16054,7 @@ msgstr "frotter"
 msgid "Sorry, I don't know how to use that."
 msgstr "Désolé, je ne sais pas comment utiliser cela."
 
-#: src/apply.c:2216
+#: src/apply.c:2216 src/zap.c:5779
 msgid "You see a puff of smoke."
 msgstr "Vous voyez une bouffée de fumée."
 
@@ -16314,7 +16386,7 @@ msgstr "De la graisse se répand sur vos %s."
 msgid "You coat your %s with grease."
 msgstr "Vous vous enduisez les %s de graisse."
 
-#: src/apply.c:3086 src/zap.c:2238
+#: src/apply.c:3086 src/zap.c:2381
 #, c-format
 msgid "%s empty."
 msgstr "%s vide."
@@ -16916,7 +16988,7 @@ msgstr ""
 #: src/mon.c:2941 src/shk.c:1579 src/sounds.c:416 src/sounds.c:467
 #: src/trap.c:516 src/trap.c:1117 src/trap.c:2031 src/uhitm.c:2583
 #: src/uhitm.c:2713 src/uhitm.c:4728 src/uhitm.c:6710 src/weapon.c:878
-#: src/wizard.c:867
+#: src/wizard.c:867 src/zap.c:6217
 #, c-format
 msgid "%s %s!"
 msgstr "%s %s !"
@@ -17043,7 +17115,7 @@ msgstr "Vous sentez une montée de puissance, mais rien ne semble se passer."
 msgid "You feel better."
 msgstr "Vous vous sentez mieux."
 
-#: src/artifact.c:1790 src/zap.c:2913
+#: src/artifact.c:1790
 #, c-format
 msgid "You feel %sbetter."
 msgstr ""
@@ -18149,7 +18221,7 @@ msgid "You are already here."
 msgstr "Vous y êtes déjà."
 
 #: src/cmd.c:5459 src/shk.c:3856 src/sounds.c:1223 src/trap.c:613
-#: src/windows.c:1902 src/zap.c:505
+#: src/windows.c:1902
 #, c-format
 msgid "%s %s"
 msgstr ""
@@ -18508,20 +18580,20 @@ msgstr "Vous ne trouvez rien."
 msgid "Its mouth opens!"
 msgstr "Sa bouche s'ouvre !"
 
-#: src/detect.c:1912 src/zap.c:587
+#: src/detect.c:1912 src/zap.c:679
 #, c-format
 msgid "%s opens its mouth!"
-msgstr ""
+msgstr "%s ouvre la bouche !"
 
 #: src/detect.c:1916
 #, c-format
 msgid "%s unfolds!"
 msgstr ""
 
-#: src/detect.c:1956 src/detect.c:2008
+#: src/detect.c:1956 src/detect.c:2008 src/zap.c:3995
 #, c-format
 msgid "You find %s."
-msgstr ""
+msgstr "Vous trouvez %s."
 
 #: src/detect.c:1985
 #, c-format
@@ -19280,7 +19352,7 @@ msgstr "Vous n'avez rien à lâcher."
 msgid "You are %s, and cannot go %s."
 msgstr ""
 
-#: src/do.c:1124 src/end.c:754 src/hack.c:2763 src/zap.c:598
+#: src/do.c:1124 src/end.c:754 src/hack.c:2763 src/zap.c:690
 #, c-format
 msgid "You release %s."
 msgstr "Vous relâchez %s."
@@ -19467,7 +19539,7 @@ msgstr "%s disparaît%s !"
 msgid "Startled, %s drops %s as it %s!"
 msgstr ""
 
-#: src/do.c:2191 src/muse.c:2474 src/zap.c:1212
+#: src/do.c:2191 src/muse.c:2474 src/zap.c:1336
 #, c-format
 msgid "%s suddenly appears!"
 msgstr "%s apparaît soudain !"
@@ -19501,7 +19573,7 @@ msgstr "Vous entendez des grattements."
 msgid "%s vanishes."
 msgstr "%s disparaît."
 
-#: src/do.c:2271 src/trap.c:4283 src/zap.c:2386
+#: src/do.c:2271 src/trap.c:4283 src/zap.c:2548
 #, c-format
 msgid "%s appears."
 msgstr "%s apparaît."
@@ -19854,7 +19926,7 @@ msgstr "%s nommé %s"
 msgid "you"
 msgstr "vous"
 
-#: src/do_name.c:1113 src/mon.c:3524 src/pray.c:1857
+#: src/do_name.c:1113 src/mon.c:3524 src/pray.c:1857 src/zap.c:3424
 msgid "it"
 msgstr "quelque chose"
 
@@ -20556,7 +20628,7 @@ msgstr "%s s'arc-boute."
 
 #: src/dogmove.c:289 src/dokick.c:1938 src/makemon.c:2147 src/mhitm.c:671
 #: src/mhitm.c:863 src/mthrowu.c:1244 src/muse.c:2928 src/steal.c:329
-#: src/trap.c:5529 src/zap.c:3573
+#: src/trap.c:5529 src/zap.c:3770
 #, c-format
 msgid "%s %s %s."
 msgstr ""
@@ -22834,11 +22906,11 @@ msgstr "Une volute de vapeur s'échappe de la fontaine..."
 msgid "The cool draught refreshes you."
 msgstr "La gorgée fraîche vous revigore."
 
-#: src/fountain.c:288 src/zap.c:2527
+#: src/fountain.c:288 src/zap.c:2691
 msgid "You feel self-knowledgeable..."
 msgstr "Vous vous connaissez mieux..."
 
-#: src/fountain.c:292 src/zap.c:2530
+#: src/fountain.c:292 src/zap.c:2694
 msgid "The feeling subsides."
 msgstr "La sensation s'estompe."
 
@@ -24475,7 +24547,7 @@ msgstr "Il y a plusieurs autres objets ici."
 msgid "There are many more objects here."
 msgstr "Il y a beaucoup d'autres objets ici."
 
-#: src/invent.c:4321 src/monmove.c:41 src/pray.c:1248 src/zap.c:3950
+#: src/invent.c:4321 src/monmove.c:41 src/pray.c:1248
 #, c-format
 msgid "%s %s%s."
 msgstr ""
@@ -24966,10 +25038,6 @@ msgstr "BOUM !! Vous voyez une porte exploser."
 msgid "You hear a %s explosion."
 msgstr ""
 
-#: src/lock.c:1241
-msgid "The door crashes open!"
-msgstr "La porte s'ouvre avec fracas !"
-
 #: src/lock.c:1244
 msgid "You hear a crashing sound."
 msgstr "Vous entendez un fracas."
@@ -25108,14 +25176,14 @@ msgstr "Vous êtes couvert de givre."
 msgid "You are hit by a shower of missiles!"
 msgstr "Une pluie de projectiles vous frappe !"
 
-#: src/mcastu.c:286 src/zap.c:4413
+#: src/mcastu.c:286 src/zap.c:4620
 msgid "The missiles bounce off!"
 msgstr "Les projectiles rebondissent !"
 
 #: src/mcastu.c:312 src/muse.c:1170
 #, c-format
 msgid "%s looks better."
-msgstr ""
+msgstr "%s semble aller mieux."
 
 #: src/mcastu.c:391
 #, c-format
@@ -25284,7 +25352,7 @@ msgstr ""
 msgid "You hear %s%s."
 msgstr ""
 
-#: src/mhitm.c:85
+#: src/mhitm.c:85 src/zap.c:3765
 #, c-format
 msgid "%s misses %s."
 msgstr "%s rate %s."
@@ -25420,10 +25488,10 @@ msgstr "Vous sentez venir une envie contre nature."
 msgid "You feel a natural urge coming on."
 msgstr "Vous sentez venir une envie pressante."
 
-#: src/mhitm.c:1164 src/zap.c:292
+#: src/mhitm.c:1164 src/zap.c:372
 #, c-format
 msgid "%s shudders!"
-msgstr ""
+msgstr "%s frissonne !"
 
 #: src/mhitm.c:1181
 #, c-format
@@ -25632,7 +25700,7 @@ msgstr "%s vous aspire le cerveau avec ses tentacules%s !"
 msgid " again"
 msgstr " encore"
 
-#: src/mhitu.c:112 src/zap.c:3552
+#: src/mhitu.c:112 src/zap.c:3732
 msgid "!"
 msgstr " !"
 
@@ -26042,7 +26110,7 @@ msgstr "Visiblement, %s n'aime pas votre goût."
 msgid "%s explodes at a spot in empty water!"
 msgstr "%s explose à un endroit de l'eau vide !"
 
-#: src/mhitu.c:1705
+#: src/mhitu.c:1705 src/zap.c:1317
 msgid "It"
 msgstr "Il"
 
@@ -26569,10 +26637,10 @@ msgstr ""
 msgid "Since you desire conflict, have some more!"
 msgstr "Puisque vous désirez le conflit, en voici davantage !"
 
-#: src/minion.c:481 src/teleport.c:1666 src/zap.c:366
+#: src/minion.c:481 src/teleport.c:1666 src/zap.c:446
 #, c-format
 msgid "%s vanishes!"
-msgstr ""
+msgstr "%s disparaît !"
 
 #: src/minion.c:508
 msgid "A voice booms:"
@@ -26963,10 +27031,10 @@ msgstr ""
 msgid "Halt!  You're under arrest!"
 msgstr "Halte ! Vous êtes en état d'arrestation !"
 
-#: src/mon.c:4258 src/mon.c:4328 src/monmove.c:818 src/zap.c:1980
+#: src/mon.c:4258 src/mon.c:4328 src/monmove.c:818 src/zap.c:2116
 #, c-format
 msgid "%s gets angry!"
-msgstr ""
+msgstr "%s se fâche !"
 
 #: src/mon.c:4274
 msgid "And then starts to flee."
@@ -27155,7 +27223,7 @@ msgstr "Vous entendez quelqu'un crier :"
 msgid "%s mutters %s."
 msgstr ""
 
-#: src/monmove.c:160 src/zap.c:2283
+#: src/monmove.c:160 src/zap.c:2441
 msgid "The boulder falls apart."
 msgstr "Le rocher tombe en morceaux."
 
@@ -27722,17 +27790,17 @@ msgstr ""
 msgid "%s %s onto a %s!"
 msgstr ""
 
-#: src/muse.c:1184
+#: src/muse.c:1184 src/zap.c:548
 #, c-format
 msgid "%s looks much better."
-msgstr ""
+msgstr "%s semble aller beaucoup mieux."
 
 #: src/muse.c:1199
 #, c-format
 msgid "%s looks completely healed."
 msgstr ""
 
-#: src/muse.c:1616 src/muse.c:1635 src/zap.c:200 src/zap.c:2717
+#: src/muse.c:1616 src/muse.c:1635 src/zap.c:280 src/zap.c:2881
 msgid "Boing!"
 msgstr "Boïng !"
 
@@ -32733,7 +32801,7 @@ msgstr "Vous vous évanouissez."
 msgid "You have an uneasy feeling..."
 msgstr "Vous avez un sentiment de malaise..."
 
-#: src/potion.c:847 src/zap.c:2833
+#: src/potion.c:847 src/zap.c:2997
 #, c-format
 msgid "You feel rather itchy under %s."
 msgstr "Ça vous démange plutôt sous %s."
@@ -32846,7 +32914,7 @@ msgstr ""
 msgid "You have an uneasy feeling."
 msgstr "Vous avez un sentiment de malaise."
 
-#: src/potion.c:1170 src/pray.c:450
+#: src/potion.c:1170 src/pray.c:450 src/zap.c:3077
 msgid "You feel much better."
 msgstr "Vous vous sentez beaucoup mieux."
 
@@ -33097,7 +33165,7 @@ msgstr ""
 msgid "The towel soaks it up!"
 msgstr "La serviette l'absorbe !"
 
-#: src/potion.c:2700
+#: src/potion.c:2700 src/zap.c:127 src/zap.c:1286
 #, c-format
 msgid "One of %s"
 msgstr "L'une @de %s"
@@ -34686,7 +34754,7 @@ msgstr ""
 msgid "Wiped out all %s."
 msgstr ""
 
-#: src/read.c:2762 src/read.c:2779 src/zap.c:2899
+#: src/read.c:2762 src/read.c:2779 src/zap.c:3063
 msgid "You die."
 msgstr "Vous mourez."
 
@@ -39655,7 +39723,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 20:29+0200\n"
+"POT-Creation-Date: 2026-09-29 20:41+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -40871,10 +40939,6 @@ msgstr "Vous voyez une colonne de flammes jaillir @de %s !"
 msgid "You see a %s erupt from the %s!"
 msgstr ""
 
-#: src/trap.c:2153 src/trap.c:5045
-msgid "You smell smoke."
-msgstr "Vous sentez de la fumée."
-
 #: src/trap.c:2198
 #, c-format
 msgid "You see %s spiked pit below you."
@@ -41566,7 +41630,7 @@ msgstr "Une autre %s explose !"
 msgid "More %s explode!"
 msgstr "D'autres %s explosent !"
 
-#: src/trap.c:5174 src/zap.c:5909
+#: src/trap.c:5174 src/zap.c:6220
 #, c-format
 msgid "%s%s %s!"
 msgstr ""
@@ -42211,7 +42275,7 @@ msgstr "Vous tombez dans la lave !"
 msgid "You fall into the %s!"
 msgstr ""
 
-#: src/trap.c:7609 src/zap.c:5832
+#: src/trap.c:7609 src/zap.c:6124
 #, c-format
 msgid "%s glows a strange %s, but remains intact."
 msgstr "%s luit d'un étrange %s, mais reste intact."
@@ -42761,12 +42825,12 @@ msgstr "%s vous aveugle !"
 msgid "%s is blinded by the radiance of %s."
 msgstr "%s est aveuglé par le rayonnement @de %s."
 
-#: src/uhitm.c:3150 src/uhitm.c:3196
+#: src/uhitm.c:3150 src/uhitm.c:3196 src/zap.c:3370
 #, c-format
 msgid "Some writing vanishes from the head of %s!"
 msgstr "Une inscription s'efface de la tête @de %s !"
 
-#: src/uhitm.c:3151 src/uhitm.c:3197
+#: src/uhitm.c:3151 src/uhitm.c:3197 src/zap.c:3352
 #, c-format
 msgid "Some writing vanishes from %s head!"
 msgstr ""
@@ -43058,7 +43122,7 @@ msgstr "%s vous frappe avec le cadavre @de %s."
 msgid "You divide as %s hits you!"
 msgstr "Vous vous divisez quand %s vous frappe !"
 
-#: src/uhitm.c:4343 src/zap.c:4103
+#: src/uhitm.c:4343 src/zap.c:4310
 #, c-format
 msgid "%s hits %s."
 msgstr "%s frappe %s."
@@ -43362,7 +43426,7 @@ msgstr "%s et vous ne bougez pas d'un pouce."
 msgid "You don't budge."
 msgstr "Vous ne bougez pas d'un pouce."
 
-#: src/uhitm.c:5570 src/zap.c:411
+#: src/uhitm.c:5570 src/zap.c:491
 #, c-format
 msgid "%s doesn't budge."
 msgstr "%s ne bouge pas d'un pouce."
@@ -44567,588 +44631,1246 @@ msgstr "Vous ne parvenez pas à écrire correctement le parchemin et il dispara�
 msgid "The spellbook warps strangely, then turns %s."
 msgstr ""
 
-#: src/zap.c:227
-#, c-format
-msgid "You disrupt %s!"
+#: src/zap.c:90
+msgctxt "gender"
+msgid "magic missile"
 msgstr ""
 
-#: src/zap.c:228
+#: src/zap.c:90
+msgctxt "zap"
+msgid "magic missile"
+msgstr "projectile magique"
+
+#: src/zap.c:91
+msgctxt "gender"
+msgid "bolt of fire"
+msgstr ""
+
+#: src/zap.c:91
+msgctxt "zap"
+msgid "bolt of fire"
+msgstr "éclair de feu"
+
+#: src/zap.c:92
+msgctxt "gender"
+msgid "bolt of cold"
+msgstr ""
+
+#: src/zap.c:92
+msgctxt "zap"
+msgid "bolt of cold"
+msgstr "éclair de froid"
+
+#: src/zap.c:93
+msgctxt "gender"
+msgid "sleep ray"
+msgstr ""
+
+#: src/zap.c:93
+msgctxt "zap"
+msgid "sleep ray"
+msgstr "rayon de sommeil"
+
+#: src/zap.c:94
+msgctxt "gender"
+msgid "death ray"
+msgstr ""
+
+#: src/zap.c:94
+msgctxt "zap"
+msgid "death ray"
+msgstr "rayon de mort"
+
+#: src/zap.c:95
+msgctxt "gender"
+msgid "bolt of lightning"
+msgstr ""
+
+#: src/zap.c:95
+msgctxt "zap"
+msgid "bolt of lightning"
+msgstr "éclair de foudre"
+
+#: src/zap.c:96
+msgctxt "gender"
+msgid "fireball"
+msgstr "f"
+
+#: src/zap.c:96
+msgctxt "zap"
+msgid "fireball"
+msgstr "boule de feu"
+
+#: src/zap.c:97
+msgctxt "gender"
+msgid "cone of cold"
+msgstr ""
+
+#: src/zap.c:97
+msgctxt "zap"
+msgid "cone of cold"
+msgstr "cône de froid"
+
+#: src/zap.c:98
+msgctxt "gender"
+msgid "finger of death"
+msgstr ""
+
+#: src/zap.c:98
+msgctxt "zap"
+msgid "finger of death"
+msgstr "doigt de mort"
+
+#: src/zap.c:99
+msgctxt "gender"
+msgid "blast of missiles"
+msgstr "f"
+
+#: src/zap.c:99
+msgctxt "zap"
+msgid "blast of missiles"
+msgstr "salve de projectiles"
+
+#: src/zap.c:100
+msgctxt "gender"
+msgid "blast of fire"
+msgstr ""
+
+#: src/zap.c:100
+msgctxt "zap"
+msgid "blast of fire"
+msgstr "souffle de feu"
+
+#: src/zap.c:101
+msgctxt "gender"
+msgid "blast of frost"
+msgstr ""
+
+#: src/zap.c:101
+msgctxt "zap"
+msgid "blast of frost"
+msgstr "souffle de givre"
+
+#: src/zap.c:102
+msgctxt "gender"
+msgid "blast of sleep gas"
+msgstr ""
+
+#: src/zap.c:102
+msgctxt "zap"
+msgid "blast of sleep gas"
+msgstr "souffle de gaz soporifique"
+
+#: src/zap.c:103
+msgctxt "zap"
+msgid "blast of disintegration"
+msgstr "souffle désintégrateur"
+
+#: src/zap.c:104
+msgctxt "gender"
+msgid "blast of disintegration"
+msgstr ""
+
+#: src/zap.c:105
+msgctxt "gender"
+msgid "blast of lightning"
+msgstr ""
+
+#: src/zap.c:105
+msgctxt "zap"
+msgid "blast of lightning"
+msgstr "souffle de foudre"
+
+#: src/zap.c:106
+msgctxt "gender"
+msgid "blast of poison gas"
+msgstr ""
+
+#: src/zap.c:106
+msgctxt "zap"
+msgid "blast of poison gas"
+msgstr "souffle de gaz toxique"
+
+#: src/zap.c:107
+msgctxt "gender"
+msgid "blast of acid"
+msgstr ""
+
+#: src/zap.c:107
+msgctxt "zap"
+msgid "blast of acid"
+msgstr "souffle d'acide"
+
+#: src/zap.c:108
+msgctxt "gender"
+msgid "spell"
+msgstr ""
+
+#: src/zap.c:108
+msgctxt "zap"
+msgid "spell"
+msgstr "sort"
+
+#: src/zap.c:109
+msgctxt "gender"
+msgid "wand"
+msgstr "f"
+
+#: src/zap.c:109
+msgctxt "zap"
+msgid "wand"
+msgstr "baguette"
+
+#: src/zap.c:110
+msgctxt "gender"
+msgid "acid"
+msgstr ""
+
+#: src/zap.c:110
+msgctxt "noun"
+msgid "acid"
+msgstr "acide"
+
+#: src/zap.c:111
+msgctxt "gender"
+msgid "moat"
+msgstr "f"
+
+#: src/zap.c:111
+msgctxt "noun"
+msgid "moat"
+msgstr "douve"
+
+#: src/zap.c:112
+msgctxt "gender"
+msgid "pond"
+msgstr ""
+
+#: src/zap.c:112
+msgctxt "noun"
+msgid "pond"
+msgstr "étang"
+
+#: src/zap.c:113
+msgctxt "gender"
+msgid "swamp"
+msgstr ""
+
+#: src/zap.c:113
+msgctxt "noun"
+msgid "swamp"
+msgstr "marais"
+
+#: src/zap.c:114
+msgctxt "gender"
+msgid "shallow sea"
+msgstr "f"
+
+#: src/zap.c:114
+msgctxt "noun"
+msgid "shallow sea"
+msgstr "mer peu profonde"
+
+#: src/zap.c:115
+msgctxt "gender"
+msgid "deep water"
+msgstr "f"
+
+#: src/zap.c:115
+msgctxt "noun"
+msgid "deep water"
+msgstr "eau profonde"
+
+#: src/zap.c:116
+#, c-format
+msgctxt "feminine"
+msgid "%s of %s is disintegrated!"
+msgstr "%s @de %s est désintégrée !"
+
+#: src/zap.c:117
+#, c-format
+msgctxt "plural"
+msgid "%s of %s is disintegrated!"
+msgstr "%s @de %s sont désintégrés !"
+
+#: src/zap.c:118
+#, c-format
+msgctxt "feminine plural"
+msgid "%s of %s is disintegrated!"
+msgstr "%s @de %s sont désintégrées !"
+
+#: src/zap.c:119
+msgctxt "zapverb"
+msgid "blast"
+msgstr "souffle"
+
+#: src/zap.c:119
+msgctxt "zapverb"
+msgid "bolt"
+msgstr "éclair"
+
+#: src/zap.c:119
+msgctxt "zapverb"
+msgid "spell"
+msgstr "sort"
+
+#: src/zap.c:121
+msgid "The door is consumed in flames!"
+msgstr "La porte est dévorée par les flammes !"
+
+#: src/zap.c:121
+msgid "You smell smoke."
+msgstr "Vous sentez de la fumée."
+
+#: src/zap.c:122
+msgid "The door freezes and shatters!"
+msgstr "La porte gèle et vole en éclats !"
+
+#: src/zap.c:122
+msgid "You hear a deep cracking sound."
+msgstr "Vous entendez un craquement sourd."
+
+#: src/zap.c:123
+msgid "The door disintegrates!"
+msgstr "La porte se désintègre !"
+
+#: src/zap.c:123
+msgid "You hear crashing wood."
+msgstr "Vous entendez du bois se fracasser."
+
+#: src/zap.c:124
+msgid "The door splinters!"
+msgstr "La porte vole en éclats !"
+
+#: src/zap.c:124
+msgid "You hear crackling."
+msgstr "Vous entendez des crépitements."
+
+#: src/zap.c:125
+msgid "The door crashes open!"
+msgstr "La porte s'ouvre avec fracas !"
+
+#: src/zap.c:125
+msgid "You feel a burst of cool air."
+msgstr "Vous sentez une bouffée d'air frais."
+
+#: src/zap.c:127
+#, c-format
+msgid "All of %s"
+msgstr "Tous %s"
+
+#: src/zap.c:127
+#, c-format
+msgid "Both of %s"
+msgstr "%s"
+
+#: src/zap.c:127
+#, c-format
+msgid "Some of %s"
+msgstr "Certains @de %s"
+
+#: src/zap.c:128
+#, c-format
+msgctxt "feminine"
+msgid "One of %s"
+msgstr "L'une @de %s"
+
+#: src/zap.c:128
+#, c-format
+msgctxt "feminine"
+msgid "Some of %s"
+msgstr "Certaines @de %s"
+
+#: src/zap.c:129
+#, c-format
+msgctxt "feminine"
+msgid "All of %s"
+msgstr "Toutes %s"
+
+#: src/zap.c:129
+#, c-format
+msgctxt "feminine"
+msgid "Both of %s"
+msgstr "%s"
+
+#: src/zap.c:130
+msgctxt "destroy"
+msgid "freeze and shatter"
+msgstr "gèlent et volent en éclats"
+
+#: src/zap.c:130
+msgctxt "destroy"
+msgid "freezes and shatters"
+msgstr "gèle et vole en éclats"
+
+#: src/zap.c:131
+msgctxt "destroy"
+msgid "boil and explode"
+msgstr "bouillent et explosent"
+
+#: src/zap.c:131
+msgctxt "destroy"
+msgid "boils and explodes"
+msgstr "bout et explose"
+
+#: src/zap.c:132
+msgctxt "destroy"
+msgid "ignites and explodes"
+msgstr "s'enflamme et explose"
+
+#: src/zap.c:133
+msgctxt "destroy"
+msgid "ignite and explode"
+msgstr "s'enflamment et explosent"
+
+#: src/zap.c:134
+msgctxt "destroy"
+msgid "catches fire and burns"
+msgstr "prend feu et brûle"
+
+#: src/zap.c:135
+msgctxt "destroy"
+msgid "catch fire and burn"
+msgstr "prennent feu et brûlent"
+
+#: src/zap.c:136
+msgctxt "destroy"
+msgid "turns to dust and vanishes"
+msgstr "tombe en poussière et disparaît"
+
+#: src/zap.c:137
+msgctxt "destroy"
+msgid "breaks apart and explodes"
+msgstr "se brise et explose"
+
+#: src/zap.c:138
+msgid "The ice crackles and melts."
+msgstr "La glace craque et fond."
+
+#: src/zap.c:140
+msgctxt "material"
+msgid "lithic"
+msgstr "de pierre"
+
+#: src/zap.c:140
+msgctxt "material"
+msgid "metal"
+msgstr "métalliques"
+
+#: src/zap.c:141
+msgctxt "material"
+msgid "organic"
+msgstr "organiques"
+
+#: src/zap.c:141
+msgctxt "material"
+msgid "wood"
+msgstr "en bois"
+
+#: src/zap.c:142
+msgctxt "material"
+msgid "cloth"
+msgstr "en tissu"
+
+#: src/zap.c:142
+msgctxt "material"
+msgid "leather"
+msgstr "en cuir"
+
+#: src/zap.c:143
+msgctxt "material"
+msgid "bony"
+msgstr "en os"
+
+#: src/zap.c:143
+msgctxt "material"
+msgid "gold"
+msgstr "en or"
+
+#: src/zap.c:144
+msgctxt "material"
+msgid "glassy"
+msgstr "en verre"
+
+#: src/zap.c:144
+msgctxt "material"
+msgid "paper"
+msgstr "en papier"
+
+#: src/zap.c:145
+#, c-format
+msgctxt "heroine"
+msgid "You are released from the grasp of %s."
+msgstr "Vous êtes libérée de l'étreinte @de %s."
+
+#: src/zap.c:146
+#, c-format
+msgctxt "heroine"
+msgid "You are released by %s."
+msgstr "Vous êtes libérée par %s."
+
+#: src/zap.c:147
+msgctxt "heroine"
+msgid "You feel frightened and even more stunned."
+msgstr "Vous vous sentez effrayée et encore plus étourdie."
+
+#: src/zap.c:148
+msgctxt "heroine"
+msgid "You feel frightened and stunned."
+msgstr "Vous vous sentez effrayée et étourdie."
+
+#: src/zap.c:149
+msgctxt "heroine"
+msgid "For some reason you are not affected."
+msgstr "Pour une raison inconnue, vous n'êtes pas affectée."
+
+#: src/zap.c:150
+msgctxt "heroine"
+msgid "You aren't hurt!"
+msgstr "Vous n'êtes pas blessée !"
+
+#: src/zap.c:152
+msgid " but does no harm."
+msgstr " mais ne fait aucun mal."
+
+#: src/zap.c:152
+msgid " but doesn't hurt."
+msgstr " mais ne fait pas mal."
+
+#: src/zap.c:307
+#, c-format
+msgid "You disrupt %s!"
+msgstr "Vous désagrégez %s !"
+
+#: src/zap.c:308
 msgid "A huge hole opens up..."
 msgstr "Un énorme trou s'ouvre..."
 
-#: src/zap.c:359
+#: src/zap.c:439
 #, c-format
 msgid "%s turns transparent!"
-msgstr ""
+msgstr "%s devient transparent !"
 
-#: src/zap.c:406
+#: src/zap.c:486
 #, c-format
 msgid "%s is knocked back!"
-msgstr ""
+msgstr "%s est projeté en arrière !"
 
-#: src/zap.c:425
+#: src/zap.c:501
+#, c-format
+msgid "The saddle of %s"
+msgstr "La selle @de %s"
+
+#: src/zap.c:511
+#, c-format
+msgid "%s falls to %s."
+msgstr "%s tombe sur %s."
+
+#: src/zap.c:514
 #, c-format
 msgid "%s falls to the %s."
 msgstr ""
 
-#: src/zap.c:428
+#: src/zap.c:517
 #, c-format
 msgid "%s falls off."
-msgstr ""
+msgstr "%s tombe."
 
-#: src/zap.c:458
+#: src/zap.c:595
 #, c-format
-msgid "%s looks%s better."
-msgstr ""
+msgid "%s turns to flesh!"
+msgstr "%s se change en chair !"
 
-#: src/zap.c:541
+#: src/zap.c:633
 #, c-format
 msgid "%s suddenly seems weaker!"
-msgstr ""
+msgstr "%s semble soudain plus faible !"
 
-#: src/zap.c:589
+#: src/zap.c:681
 msgid "You feel a sudden rush of air!"
 msgstr "Vous sentez une soudaine bouffée d'air !"
 
-#: src/zap.c:607
+#: src/zap.c:697
+#, c-format
+msgid "You are released from the grasp of %s."
+msgstr "Vous êtes libéré de l'étreinte @de %s."
+
+#: src/zap.c:699
+#, c-format
+msgid "You are released by %s."
+msgstr "Vous êtes libéré par %s."
+
+#: src/zap.c:705
 #, c-format
 msgid "You are released %s."
 msgstr ""
 
-#: src/zap.c:637
+#: src/zap.c:736
 #, c-format
-msgid "%s is not carrying anything%s."
-msgstr ""
+msgid "%s is not carrying anything besides you."
+msgstr "%s ne porte rien d'autre que vous."
 
-#: src/zap.c:970
+#: src/zap.c:1070
 #, c-format
 msgid "%s twitches feebly."
-msgstr ""
+msgstr "%s tressaille faiblement."
 
-#: src/zap.c:1048
+#: src/zap.c:1137
+#, c-format
+msgid "One of %s glows iridescently."
+msgstr "L'un @de %s luit d'un éclat irisé."
+
+#: src/zap.c:1140 src/zap.c:1156
 #, c-format
 msgid "%s glows iridescently."
-msgstr ""
+msgstr "%s luit d'un éclat irisé."
 
-#: src/zap.c:1053
+#: src/zap.c:1161
 msgid "A corpse is resuscitated."
 msgstr "Un cadavre est ressuscité."
 
-#: src/zap.c:1074
+#: src/zap.c:1182
 #, c-format
 msgid "%s is suddenly drawn into its former body!"
-msgstr ""
+msgstr "%s est soudain attiré dans son ancien corps !"
 
-#: src/zap.c:1207
+#: src/zap.c:1323
+#, c-format
+msgid "%s suddenly reanimates as %s!"
+msgstr "%s se réanime soudain en %s !"
+
+#: src/zap.c:1328
+#, c-format
+msgid "%s suddenly reanimates!"
+msgstr "%s se réanime soudain !"
+
+#: src/zap.c:1331
 #, c-format
 msgid "%s%s suddenly %s%s%s!"
 msgstr ""
 
-#: src/zap.c:1230
-#, c-format
-msgid "You feel frightened and %sstunned."
-msgstr ""
+#: src/zap.c:1354
+msgid "You feel frightened and even more stunned."
+msgstr "Vous vous sentez effrayé et encore plus étourdi."
 
-#: src/zap.c:1233
+#: src/zap.c:1358
 msgid "You shudder in dread."
 msgstr "Vous frissonnez d'effroi."
 
-#: src/zap.c:1630
+#: src/zap.c:1760
+#, c-format
+msgid "Some %s objects meld, and %s arises from the pile!"
+msgstr "Des objets %s fusionnent, et %s surgit du tas !"
+
+#: src/zap.c:1763
+#, c-format
+msgid "Some objects meld, and %s arises from the pile!"
+msgstr "Des objets fusionnent, et %s surgit du tas !"
+
+#: src/zap.c:1766
 #, c-format
 msgid "Some %sobjects meld, and %s arises from the pile!"
 msgstr ""
 
-#: src/zap.c:1984
+#: src/zap.c:2120
 #, c-format
 msgid "%s is furious!"
-msgstr ""
+msgstr "%s est furieux !"
 
-#: src/zap.c:2048
-#, c-format
-msgid "The figurine %sanimates!"
-msgstr ""
+#: src/zap.c:2185
+msgid "The figurine turns to flesh and animates!"
+msgstr "La figurine se change en chair et s'anime !"
 
-#: src/zap.c:2106
+#: src/zap.c:2243
 msgid "You smell the odor of meat."
 msgstr "Vous sentez une odeur de viande."
 
-#: src/zap.c:2108
+#: src/zap.c:2245
 msgid "You smell a delicious smell."
 msgstr "Vous sentez une délicieuse odeur."
 
-#: src/zap.c:2233
+#: src/zap.c:2374
+#, c-format
+msgid "%s is trapped!"
+msgstr "%s est piégé !"
+
+#: src/zap.c:2376
 #, c-format
 msgid "%s trapped!"
 msgstr ""
 
-#: src/zap.c:2243
+#: src/zap.c:2391 src/zap.c:2401
 #, c-format
 msgid "You aren't sure whether %s has %s or its corpse inside."
-msgstr ""
+msgstr "Vous ne savez pas si %s contient %s ou son cadavre."
 
-#: src/zap.c:2285 src/zap.c:2295
+#: src/zap.c:2394
+#, c-format
+msgid "You aren't sure whether %s has a cat or its corpse inside."
+msgstr "Vous ne savez pas si %s contient un chat ou son cadavre."
+
+#: src/zap.c:2443 src/zap.c:2457
 msgid "You hear a crumbling sound."
 msgstr "Vous entendez un bruit d'effritement."
 
-#: src/zap.c:2291
+#: src/zap.c:2449
+#, c-format
+msgid "%s shatters."
+msgstr "%s vole en éclats."
+
+#: src/zap.c:2453
 #, c-format
 msgid "The %s shatters."
 msgstr ""
 
-#: src/zap.c:2293
+#: src/zap.c:2455
 msgid "The statue shatters."
 msgstr "La statue vole en éclats."
 
-#: src/zap.c:2359
+#: src/zap.c:2521
 #, c-format
 msgid "%s is resurrected!"
-msgstr ""
+msgstr "%s est ressuscité !"
 
-#: src/zap.c:2368
+#: src/zap.c:2530
 #, c-format
 msgid "%s disappears."
-msgstr ""
+msgstr "%s disparaît."
 
-#: src/zap.c:2377
+#: src/zap.c:2539
 #, c-format
 msgid "You hear %s reviving."
-msgstr ""
+msgstr "Vous entendez %s revenir à la vie."
 
-#: src/zap.c:2379
+#: src/zap.c:2541
 msgid "You hear a defibrillator."
 msgstr "Vous entendez un défibrillateur."
 
-#: src/zap.c:2519
+#: src/zap.c:2683
 msgid "You wrest one last charge from the worn-out wand."
 msgstr "Vous arrachez une dernière charge à la baguette usée."
 
-#: src/zap.c:2577
+#: src/zap.c:2741
 msgid "Unfortunately, nothing happens."
 msgstr "Malheureusement, rien ne se passe."
 
-#: src/zap.c:2610
+#: src/zap.c:2774
 #, c-format
 msgid "%s suddenly explodes!"
-msgstr ""
+msgstr "%s explose soudain !"
 
-#: src/zap.c:2633
+#: src/zap.c:2797
 msgid "You aren't able to zap anything in your current form."
 msgstr "Vous ne pouvez pas utiliser de baguette sous votre forme actuelle."
 
-#: src/zap.c:2638
+#: src/zap.c:2802
 msgctxt "verb"
 msgid "zap"
 msgstr "utiliser (zap)"
 
-#: src/zap.c:2655
+#: src/zap.c:2819
 #, c-format
 msgid "%s glows and fades."
-msgstr ""
+msgstr "%s luit puis s'éteint."
 
-#: src/zap.c:2678
+#: src/zap.c:2842
 #, c-format
 msgid "%s to dust."
-msgstr ""
+msgstr "%s poussière."
 
-#: src/zap.c:2721
+#: src/zap.c:2885
 msgid "You bash yourself!"
 msgstr "Vous vous frappez vous-même !"
 
-#: src/zap.c:2734
+#: src/zap.c:2898
 msgid "You shock yourself!"
 msgstr "Vous vous électrocutez !"
 
-#: src/zap.c:2740
+#: src/zap.c:2904
 msgid "You zap yourself, but seem unharmed."
 msgstr "Vous vous visez vous-même, mais semblez indemne."
 
-#: src/zap.c:2749
+#: src/zap.c:2913
 msgid "You explode a fireball on top of yourself!"
 msgstr "Vous faites exploser une boule de feu sur vous-même !"
 
-#: src/zap.c:2758
+#: src/zap.c:2922
 msgid "You feel rather warm."
 msgstr "Vous avez plutôt chaud."
 
-#: src/zap.c:2762
+#: src/zap.c:2926
 msgid "You've set yourself afire!"
 msgstr "Vous avez mis le feu à vous-même !"
 
-#: src/zap.c:2779
+#: src/zap.c:2943
 msgid "You feel a little chill."
 msgstr "Vous sentez un léger frisson."
 
-#: src/zap.c:2783
+#: src/zap.c:2947
 msgid "You imitate a popsicle!"
 msgstr "Vous imitez un esquimau glacé !"
 
-#: src/zap.c:2795
+#: src/zap.c:2959
 msgid "The missiles bounce!"
 msgstr "Les projectiles rebondissent !"
 
-#: src/zap.c:2799
+#: src/zap.c:2963
 msgid "Idiot!  You've shot yourself!"
 msgstr "Idiot ! Vous vous êtes tiré dessus !"
 
-#: src/zap.c:2856
+#: src/zap.c:3020
 msgid "You don't feel sleepy!"
 msgstr "Vous n'avez pas sommeil !"
 
-#: src/zap.c:2860
+#: src/zap.c:3024
 msgid "The sleep ray hits you!"
 msgstr "Le rayon de sommeil vous frappe !"
 
-#: src/zap.c:2862
+#: src/zap.c:3026
 msgid "You fall asleep!"
 msgstr "Vous vous endormez !"
 
-#: src/zap.c:2889
+#: src/zap.c:3053
 msgid "The wand shoots an apparently harmless beam at you."
 msgstr "La baguette vous envoie un rayon apparemment inoffensif."
 
-#: src/zap.c:2898
+#: src/zap.c:3062
 msgid "You irradiate yourself with pure energy!"
 msgstr "Vous vous irradiez d'énergie pure !"
 
-#: src/zap.c:3042
-#, c-format
-msgid "Ow, that light hurts%c"
-msgstr ""
+#: src/zap.c:3207
+msgid "Ow, that light hurts!"
+msgstr "Aïe, cette lumière fait mal !"
 
-#: src/zap.c:3188
-#, c-format
-msgid "You feel %s headed."
-msgstr ""
+#: src/zap.c:3354
+msgid "You feel dark headed."
+msgstr "Vous vous sentez la tête sombre."
 
-#: src/zap.c:3192
+#: src/zap.c:3359
 msgid "Your amulet grows hot for a moment, then cools."
 msgstr "Votre amulette chauffe un instant, puis refroidit."
 
-#: src/zap.c:3239
+#: src/zap.c:3410
+#, c-format
+msgid "You probe towards %s."
+msgstr "Vous sondez vers %s."
+
+#: src/zap.c:3412
 #, c-format
 msgid "You probe towards the %s."
 msgstr ""
 
-#: src/zap.c:3257
+#: src/zap.c:3431
 #, c-format
 msgid "You probe beneath %s."
-msgstr ""
+msgstr "Vous sondez sous %s."
 
-#: src/zap.c:3261
+#: src/zap.c:3435
 msgid "Your probe reveals nothing."
 msgstr "Votre sondage ne révèle rien."
 
-#: src/zap.c:3279
+#: src/zap.c:3453
 msgid "The stairs seem to ripple momentarily."
 msgstr "L'escalier semble onduler un instant."
 
-#: src/zap.c:3312
+#: src/zap.c:3487
+#, c-format
+msgid "A rock is dislodged from %s and falls on your %s."
+msgstr "Une pierre se détache @de %s et tombe sur votre %s."
+
+#: src/zap.c:3490
 #, c-format
 msgid "A rock is dislodged from the %s and falls on your %s."
 msgstr ""
 
-#: src/zap.c:3327
-#, c-format
-msgid "%s beneath you shatters."
-msgstr ""
+#: src/zap.c:3505
+msgid "Something beneath you shatters."
+msgstr "Quelque chose se brise sous vous."
 
-#: src/zap.c:3329
+#: src/zap.c:3507
 msgid "There's a trapdoor beneath you; it shatters."
 msgstr "Il y a une trappe sous vous ; elle vole en éclats."
 
-#: src/zap.c:3331
+#: src/zap.c:3509
 msgid "The trapdoor beneath you shatters."
 msgstr "La trappe sous vous vole en éclats."
 
-#: src/zap.c:3343
-#, c-format
-msgid "Some %s swirls beneath you."
-msgstr ""
+#: src/zap.c:3521
+msgid "Some frost swirls beneath you."
+msgstr "Du givre tourbillonne sous vous."
 
-#: src/zap.c:3348
+#: src/zap.c:3526
 msgid "A trapdoor appears beneath you."
 msgstr "Une trappe apparaît sous vous."
 
-#: src/zap.c:3360
+#: src/zap.c:3538
 #, c-format
 msgid "Blood drips on your %s."
-msgstr ""
+msgstr "Du sang coule sur votre %s."
 
-#: src/zap.c:3371
-#, c-format
-msgid "Blood %ss %s your %s."
-msgstr ""
-
-#: src/zap.c:3425
+#: src/zap.c:3605
 msgid "You feel shuddering vibrations."
 msgstr "Vous sentez des vibrations."
 
-#: src/zap.c:3552
+#: src/zap.c:3732
 msgid "?"
 msgstr " ?"
 
-#: src/zap.c:3566
+#: src/zap.c:3748
+#, c-format
+msgid "%s hits %s%s"
+msgstr "%s touche %s%s"
+
+#: src/zap.c:3750
+#, c-format
+msgid "%s hits it%s"
+msgstr "%s le touche%s"
+
+#: src/zap.c:3753
 #, c-format
 msgid "%s %s %s%s"
 msgstr ""
 
-#: src/zap.c:3671
+#: src/zap.c:3767
+#, c-format
+msgid "%s misses it."
+msgstr "%s le rate."
+
+#: src/zap.c:3867
 msgid "The floor runs like butter!"
 msgstr "Le sol coule comme du beurre !"
 
-#: src/zap.c:3743
+#: src/zap.c:3939
 msgid "Probing reveals a secret door."
 msgstr "Le sondage révèle une porte secrète."
 
-#: src/zap.c:3756
+#: src/zap.c:3952
 msgid "Probing exposes a secret corridor."
 msgstr "Le sondage dévoile un couloir secret."
 
-#: src/zap.c:3790
+#: src/zap.c:3987
+#, c-format
+msgid "You find %s!"
+msgstr "Vous trouvez %s !"
+
+#: src/zap.c:3997
 #, c-format
 msgid "You find %s%c"
 msgstr ""
 
-#: src/zap.c:3932
+#: src/zap.c:4139
 #, c-format
 msgid "%s gets stuck in a web!"
-msgstr ""
+msgstr "%s se prend dans une toile !"
 
-#: src/zap.c:3953
+#: src/zap.c:4157
+#, c-format
+msgid "%s %s again."
+msgstr "%s %s de nouveau."
+
+#: src/zap.c:4160
 #, c-format
 msgid "You hear %s skip."
-msgstr ""
+msgstr "Vous entendez %s ricocher."
 
-#: src/zap.c:3966
+#: src/zap.c:4173
 #, c-format
 msgid "%s %s over %s."
-msgstr ""
+msgstr "%s %s au-dessus @de %s."
 
-#: src/zap.c:4110
+#: src/zap.c:4317
 #, c-format
 msgid "%s jerks to an abrupt halt."
-msgstr ""
+msgstr "%s s'arrête brusquement."
 
-#: src/zap.c:4213
+#: src/zap.c:4420
 msgid "You skillfully catch the boomerang."
 msgstr "Vous rattrapez habilement le boomerang."
 
-#: src/zap.c:4222
+#: src/zap.c:4429
 msgid "Klonk!"
 msgstr "Klonk !"
 
-#: src/zap.c:4425
+#: src/zap.c:4632
 msgid "You don't feel hot!"
 msgstr "Vous n'avez pas chaud !"
 
-#: src/zap.c:4444
+#: src/zap.c:4651
 msgid "You don't feel cold."
 msgstr "Vous n'avez pas froid."
 
-#: src/zap.c:4457
+#: src/zap.c:4664
 msgid "You don't feel sleepy."
 msgstr "Vous n'avez pas sommeil."
 
-#: src/zap.c:4469
+#: src/zap.c:4676
 msgid "You are not disintegrated."
 msgstr "Vous n'êtes pas désintégré."
 
-#: src/zap.c:4495
+#: src/zap.c:4702
 msgid "You seem unaffected."
 msgstr "Vous semblez indemne."
 
-#: src/zap.c:4500 src/zap.c:4514
+#: src/zap.c:4707 src/zap.c:4721
 msgid "You aren't affected."
 msgstr "Vous n'êtes pas affecté."
 
-#: src/zap.c:4530
+#: src/zap.c:4737
+#, c-format
+msgid "%s doesn't hurt."
+msgstr "%s ne fait pas mal."
+
+#: src/zap.c:4741
 #, c-format
 msgid "The %s doesn't hurt."
 msgstr ""
 
-#: src/zap.c:4534
+#: src/zap.c:4746
+#, c-format
+msgid "%s burns!"
+msgstr "%s brûle !"
+
+#: src/zap.c:4748
 #, c-format
 msgid "The %s burns!"
 msgstr ""
 
-#: src/zap.c:4645
+#: src/zap.c:4863
 #, c-format
 msgid "%ld %s burn."
-msgstr ""
+msgstr "%ld %s brûlent."
 
-#: src/zap.c:4647
+#: src/zap.c:4865
 #, c-format
 msgid "%s burns."
-msgstr ""
+msgstr "%s brûle."
 
-#: src/zap.c:4732
+#: src/zap.c:4950
 #, c-format
 msgid "%s is disintegrated!"
-msgstr ""
+msgstr "%s est désintégré !"
 
-#: src/zap.c:4811
+#: src/zap.c:5031
 #, c-format
 msgid "%s rips into %s%s"
-msgstr ""
+msgstr "%s transperce %s%s"
 
-#: src/zap.c:4891
+#: src/zap.c:5112
 #, c-format
 msgid "%s disintegrates."
-msgstr ""
+msgstr "%s se désintègre."
 
-#: src/zap.c:4892
+#: src/zap.c:5115
+#, c-format
+msgid "The body of %s reintegrates before your %s!"
+msgstr "Le corps @de %s se reconstitue sous vos %s !"
+
+#: src/zap.c:5121
 #, c-format
 msgid "%s body reintegrates before your %s!"
 msgstr ""
 
-#: src/zap.c:4897
+#: src/zap.c:5126
 #, c-format
 msgid "%s resurrects!"
-msgstr ""
+msgstr "%s ressuscite !"
 
-#: src/zap.c:4905
+#: src/zap.c:5135
 #, c-format
-msgid "%s absorbs the deadly %s!"
-msgstr ""
+msgid "%s absorbs the deadly blast!"
+msgstr "%s absorbe le souffle mortel !"
 
-#: src/zap.c:4908
+#: src/zap.c:5138
 msgid "It seems even stronger than before."
 msgstr "Ça semble encore plus solide qu'avant."
 
-#: src/zap.c:4940
+#: src/zap.c:5173
+#, c-format
+msgid "%s of %s is disintegrated!"
+msgstr "%s @de %s est désintégré !"
+
+#: src/zap.c:5176
 #, c-format
 msgid "%s %s is disintegrated!"
 msgstr ""
 
-#: src/zap.c:4964
+#: src/zap.c:5200
 #, c-format
 msgid "%s hits you!"
-msgstr ""
+msgstr "%s vous touche !"
 
-#: src/zap.c:4971
+#: src/zap.c:5207
 msgid "For some reason you are not affected."
 msgstr "Pour une raison quelconque, vous n'êtes pas affecté."
 
-#: src/zap.c:4984
+#: src/zap.c:5220
 #, c-format
 msgid "%s whizzes by you!"
-msgstr ""
+msgstr "%s vous frôle en sifflant !"
 
-#: src/zap.c:4986
+#: src/zap.c:5223
 #, c-format
 msgid "Your %s tingles."
-msgstr ""
+msgstr "Votre %s picote."
 
-#: src/zap.c:5009
+#: src/zap.c:5247
+#, c-format
+msgid "%s vanishes into the aether!"
+msgstr "%s se dissipe dans l'éther !"
+
+#: src/zap.c:5250
 #, c-format
 msgid "The %s vanishes into the aether!"
 msgstr ""
 
-#: src/zap.c:5019
+#: src/zap.c:5260
+#, c-format
+msgid "%s bounces!"
+msgstr "%s rebondit !"
+
+#: src/zap.c:5262
 #, c-format
 msgid "The %s bounces!"
 msgstr ""
 
-#: src/zap.c:5066
+#: src/zap.c:5311
 #, c-format
 msgid "%s settles..."
-msgstr ""
+msgstr "%s se stabilise..."
 
-#: src/zap.c:5168
+#: src/zap.c:5413
 msgid "A web bursts into flames!"
 msgstr "Une toile s'embrase !"
 
-#: src/zap.c:5232
+#: src/zap.c:5477
 msgid "Steam billows from the fountain."
 msgstr "De la vapeur s'échappe en volutes de la fontaine."
 
-#: src/zap.c:5248
+#: src/zap.c:5493
+#, c-format
+msgid "%s freezes for a moment."
+msgstr "%s gèle un instant."
+
+#: src/zap.c:5497
 #, c-format
 msgid "The %s freezes for a moment."
 msgstr ""
 
-#: src/zap.c:5251
+#: src/zap.c:5500
 msgid "You hear a soft crackling."
 msgstr "Vous entendez un léger crépitement."
 
-#: src/zap.c:5283
+#: src/zap.c:5532
+#, c-format
+msgid "%s cools and solidifies."
+msgstr "%s refroidit et se solidifie."
+
+#: src/zap.c:5535
+#, c-format
+msgid "%s is bridged with ice!"
+msgstr "%s est franchi par un pont de glace !"
+
+#: src/zap.c:5538
+#, c-format
+msgid "%s freezes."
+msgstr "%s gèle."
+
+#: src/zap.c:5543
 #, c-format
 msgid "The %s cools and solidifies."
 msgstr ""
 
-#: src/zap.c:5286
+#: src/zap.c:5546
 #, c-format
 msgid "The %s is bridged with ice!"
 msgstr ""
 
-#: src/zap.c:5288
+#: src/zap.c:5548
 #, c-format
 msgid "The %s freezes."
 msgstr ""
 
-#: src/zap.c:5291
+#: src/zap.c:5551
 msgid "You hear a crackling sound."
 msgstr "Vous entendez un crépitement."
 
-#: src/zap.c:5302
+#: src/zap.c:5562
 msgid "You pass through the now-solid rock."
 msgstr "Vous traversez la roche désormais solide."
 
-#: src/zap.c:5306
+#: src/zap.c:5566
 msgid "You are firmly stuck in the cooling rock."
 msgstr "Vous êtes solidement coincé dans la roche qui refroidit."
 
-#: src/zap.c:5353
+#: src/zap.c:5614
+msgid "The iron bars corrode somewhat but remain intact."
+msgstr "Les barreaux de fer se corrodent un peu mais restent intacts."
+
+#: src/zap.c:5617
 #, c-format
 msgid "The %s %s somewhat but remain intact."
 msgstr ""
 
-#: src/zap.c:5360
+#: src/zap.c:5625
+msgid "The iron bars corrode away."
+msgstr "Les barreaux de fer se désagrègent."
+
+#: src/zap.c:5628
 #, c-format
 msgid "The %s %s."
 msgstr ""
 
-#: src/zap.c:5405
+#: src/zap.c:5673
+#, c-format
+msgid "Your %s reveals a secret door."
+msgstr "Votre %s révèle une porte secrète."
+
+#: src/zap.c:5677
 #, c-format
 msgid "%s %s reveals a secret door."
 msgstr ""
 
-#: src/zap.c:5457
+#: src/zap.c:5729
 msgid "The door remains intact."
 msgstr "La porte reste intacte."
 
-#: src/zap.c:5459
+#: src/zap.c:5731
+#, c-format
+msgid "The door absorbs your %s!"
+msgstr "La porte absorbe votre %s !"
+
+#: src/zap.c:5735
 #, c-format
 msgid "The door absorbs %s %s!"
 msgstr ""
 
-#: src/zap.c:5462
+#: src/zap.c:5738
 msgid "You feel vibrations."
 msgstr "Vous sentez des vibrations."
 
-#: src/zap.c:5492
+#: src/zap.c:5837
 #, c-format
-msgid "You %s of smoke."
-msgstr ""
+msgid "You fracture %s of %s."
+msgstr "Vous fracturez %s @de %s."
 
-#: src/zap.c:5549
+#: src/zap.c:5839
 #, c-format
 msgid "You fracture %s %s."
 msgstr ""
 
-#: src/zap.c:5599
+#: src/zap.c:5889
 msgid "You feel guilty about damaging such a historic statue."
 msgstr "Vous vous sentez coupable d'endommager une statue aussi historique."
 
-#: src/zap.c:5940
+#: src/zap.c:6251
 msgid "You aren't hurt!"
 msgstr "Vous n'êtes pas blessé !"
 
-#: src/zap.c:6327
+#: src/zap.c:6640
 msgid "You may wish for an object."
 msgstr "Vous pouvez souhaiter un objet."
 
-#: src/zap.c:6362
+#: src/zap.c:6675
 msgid "Nothing fitting that description exists in the game."
 msgstr "Rien ne correspond à cette description dans le jeu."
 

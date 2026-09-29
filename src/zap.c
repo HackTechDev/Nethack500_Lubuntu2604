@@ -12,6 +12,7 @@
  */
 #define MAGIC_COOKIE 1000
 
+staticfn const char *The_zaptxt(const char *) NONNULLARG1;
 staticfn int zaptype(int);
 staticfn void probe_objchain(struct obj *) NO_NNARGS;
 staticfn boolean zombie_can_dig(coordxy x, coordxy y);
@@ -83,6 +84,85 @@ static const char *const flash_types[] = {
     "blast of disintegration", "blast of lightning",
     "blast of poison gas", "blast of acid", "", ""
 };
+
+#if 0
+/* for xgettext: names of rays (msgctxt "zap") and their gender */
+NC_("zap", "magic missile"), NC_("gender", "magic missile"),
+NC_("zap", "bolt of fire"), NC_("gender", "bolt of fire"),
+NC_("zap", "bolt of cold"), NC_("gender", "bolt of cold"),
+NC_("zap", "sleep ray"), NC_("gender", "sleep ray"),
+NC_("zap", "death ray"), NC_("gender", "death ray"),
+NC_("zap", "bolt of lightning"), NC_("gender", "bolt of lightning"),
+NC_("zap", "fireball"), NC_("gender", "fireball"),
+NC_("zap", "cone of cold"), NC_("gender", "cone of cold"),
+NC_("zap", "finger of death"), NC_("gender", "finger of death"),
+NC_("zap", "blast of missiles"), NC_("gender", "blast of missiles"),
+NC_("zap", "blast of fire"), NC_("gender", "blast of fire"),
+NC_("zap", "blast of frost"), NC_("gender", "blast of frost"),
+NC_("zap", "blast of sleep gas"), NC_("gender", "blast of sleep gas"),
+NC_("zap", "blast of disintegration"),
+NC_("gender", "blast of disintegration"),
+NC_("zap", "blast of lightning"), NC_("gender", "blast of lightning"),
+NC_("zap", "blast of poison gas"), NC_("gender", "blast of poison gas"),
+NC_("zap", "blast of acid"), NC_("gender", "blast of acid"),
+NC_("zap", "spell"), NC_("gender", "spell"),
+NC_("zap", "wand"), NC_("gender", "wand"),
+NC_("noun", "acid"), NC_("gender", "acid"),
+NC_("noun", "moat"), NC_("gender", "moat"),
+NC_("noun", "pond"), NC_("gender", "pond"),
+NC_("noun", "swamp"), NC_("gender", "swamp"),
+NC_("noun", "shallow sea"), NC_("gender", "shallow sea"),
+NC_("noun", "deep water"), NC_("gender", "deep water"),
+C_("feminine", "%s of %s is disintegrated!"),
+C_("plural", "%s of %s is disintegrated!"),
+C_("feminine plural", "%s of %s is disintegrated!"),
+NC_("zapverb", "blast"), NC_("zapverb", "bolt"), NC_("zapverb", "spell"),
+/* zap_over_floor(), doors */
+N_("The door is consumed in flames!"), N_("You smell smoke."),
+N_("The door freezes and shatters!"), N_("You hear a deep cracking sound."),
+N_("The door disintegrates!"), N_("You hear crashing wood."),
+N_("The door splinters!"), N_("You hear crackling."),
+N_("The door crashes open!"), N_("You feel a burst of cool air."),
+/* maybe_destroy_item() */
+N_("One of %s"), N_("Some of %s"), N_("Both of %s"), N_("All of %s"),
+C_("feminine", "One of %s"), C_("feminine", "Some of %s"),
+C_("feminine", "Both of %s"), C_("feminine", "All of %s"),
+NC_("destroy", "freezes and shatters"), NC_("destroy", "freeze and shatter"),
+NC_("destroy", "boils and explodes"), NC_("destroy", "boil and explode"),
+NC_("destroy", "ignites and explodes"),
+NC_("destroy", "ignite and explode"),
+NC_("destroy", "catches fire and burns"),
+NC_("destroy", "catch fire and burn"),
+NC_("destroy", "turns to dust and vanishes"),
+NC_("destroy", "breaks apart and explodes"),
+N_("The ice crackles and melts."),
+/* create_polymon() */
+NC_("material", "metal"), NC_("material", "lithic"),
+NC_("material", "organic"), NC_("material", "wood"),
+NC_("material", "leather"), NC_("material", "cloth"),
+NC_("material", "bony"), NC_("material", "gold"),
+NC_("material", "glassy"), NC_("material", "paper"),
+NC_("heroine", "You are released from the grasp of %s."),
+NC_("heroine", "You are released by %s."),
+NC_("heroine", "You feel frightened and even more stunned."),
+NC_("heroine", "You feel frightened and stunned."),
+NC_("heroine", "For some reason you are not affected."),
+NC_("heroine", "You aren't hurt!"),
+/* hit() endings */
+N_(" but doesn't hurt."), N_(" but does no harm."),
+#endif
+
+/* ray name str (from flash_str() &c) or object name with its definite
+   article, capitalized; translated when it is a known ray */
+staticfn const char *
+The_zaptxt(const char *str)
+{
+#ifdef NHI18N
+    if (i18n_active() && i18n_lookup("zap", str))
+        return upstart(i18n_the_ctx("zap", str));
+#endif
+    return The(str);
+}
 
 /* convert monster zap/spell/breath value to hero zap/spell/breath value */
 staticfn int
@@ -417,13 +497,22 @@ bhitm(struct monst *mtmp, struct obj *otmp)
         } else if ((obj = which_armor(mtmp, W_SADDLE)) != 0) {
             char buf[BUFSZ];
 
-            Sprintf(buf, "%s %s", s_suffix(Monnam(mtmp)),
-                    distant_name(obj, xname));
+            if (i18n_active())
+                Snprintf(buf, sizeof buf, _("The saddle of %s"),
+                         mon_nam(mtmp));
+            else
+                Sprintf(buf, "%s %s", s_suffix(Monnam(mtmp)),
+                        distant_name(obj, xname));
             if (cansee(mtmp->mx, mtmp->my)) {
                 if (!canspotmon(mtmp))
-                    Strcpy(buf, An(distant_name(obj, xname)));
-                pline("%s falls to the %s.", buf,
-                      surface(mtmp->mx, mtmp->my));
+                    Snprintf(buf, sizeof buf, "%s",
+                             An(distant_name(obj, xname)));
+                if (i18n_active())
+                    pline("%s falls to %s.", buf,
+                          i18n_the(surface(mtmp->mx, mtmp->my)));
+                else
+                    pline("%s falls to the %s.", buf,
+                          surface(mtmp->mx, mtmp->my));
             } else if (canspotmon(mtmp)) {
                 pline("%s falls off.", buf);
             }
@@ -455,8 +544,9 @@ bhitm(struct monst *mtmp, struct obj *otmp)
                     } else
                         mimic_hit_msg(mtmp, otyp);
                 } else
-                    pline("%s looks%s better.", Monnam(mtmp),
-                          otyp == SPE_EXTRA_HEALING ? " much" : "");
+                    pline((otyp == SPE_EXTRA_HEALING)
+                              ? "%s looks much better."
+                              : "%s looks better.", Monnam(mtmp));
             }
             if (mtmp->mtame && Role_if(PM_HEALER) && (delta > 0)) {
                 more_experienced(min(delta, healamt), 0);
@@ -489,20 +579,22 @@ bhitm(struct monst *mtmp, struct obj *otmp)
         break;
     case SPE_STONE_TO_FLESH:
         if (mtmp->data->mlet == S_GOLEM) {
-            const char *mesg;
+            int mesg;
             char *name = Monnam(mtmp); /* before possible polymorph */
 
             /* turn stone golem into flesh golem */
             if (monsndx(mtmp->data) == PM_STONE_GOLEM
                 && newcham(mtmp, &mons[PM_FLESH_GOLEM], NO_NC_FLAGS))
-                mesg = "turns to flesh!";
+                mesg = 0;
             else if (monsndx(mtmp->data) == PM_FLESH_GOLEM)
-                mesg = "seems fleshier...";
+                mesg = 1;
             else
-                mesg = "looks rather fleshy for a moment.";
+                mesg = 2;
 
             if (canseemon(mtmp))
-                pline("%s %s", name, mesg);
+                pline((mesg == 0) ? "%s turns to flesh!"
+                      : (mesg == 1) ? "%s seems fleshier..."
+                        : "%s looks rather fleshy for a moment.", name);
         } else if (mtmp->data->mlet == S_MIMIC
                    && ((M_AP_TYPE(mtmp) == M_AP_FURNITURE
                         && stone_furniture_type(mtmp->mappearance))
@@ -600,11 +692,18 @@ release_hold(void)
         char relbuf[BUFSZ];
 
         unstuck(u.ustuck);
-        if (!nohands(mtmp->data))
-            Sprintf(relbuf, "from %s grasp", s_suffix(mon_nam(mtmp)));
-        else
-            Sprintf(relbuf, "by %s", mon_nam(mtmp));
-        You("are released %s.", relbuf);
+        if (i18n_active()) {
+            if (!nohands(mtmp->data))
+                You("are released from the grasp of %s.", mon_nam(mtmp));
+            else
+                You("are released by %s.", mon_nam(mtmp));
+        } else {
+            if (!nohands(mtmp->data))
+                Sprintf(relbuf, "from %s grasp", s_suffix(mon_nam(mtmp)));
+            else
+                Sprintf(relbuf, "by %s", mon_nam(mtmp));
+            You("are released %s.", relbuf);
+        }
     }
 }
 
@@ -634,8 +733,9 @@ probe_monster(struct monst *mtmp)
         (void) display_minventory(mtmp, MINV_ALL | MINV_NOLET | PICK_NONE,
                                   (char *) 0);
     } else {
-        pline("%s is not carrying anything%s.", noit_Monnam(mtmp),
-              engulfing_u(mtmp) ? " besides you" : "");
+        pline(engulfing_u(mtmp) ? "%s is not carrying anything besides you."
+                                : "%s is not carrying anything.",
+              noit_Monnam(mtmp));
     }
 }
 
@@ -1031,7 +1131,15 @@ revive(struct obj *corpse, boolean by_hero)
             && (carried(corpse) ? corpse->unpaid : !corpse->no_charge))
             shkp = shop_keeper(*in_rooms(x, y, SHOPBASE));
 
-        if (cansee(x, y)) {
+        if (cansee(x, y) && i18n_active()) {
+            if (one_of) {
+                corpse->quan++; /* force plural */
+                pline("One of %s glows iridescently.", yname(corpse));
+                corpse->quan--;
+            } else
+                pline("%s glows iridescently.", upstart(yname(corpse)));
+            iflags.last_msg = PLNMSG_OBJ_GLOWS;
+        } else if (cansee(x, y)) {
             char buf[BUFSZ];
 
             Strcpy(buf, one_of ? "one of " : "");
@@ -1173,7 +1281,13 @@ unturn_dead(struct monst *mon)
         if (otmp->otyp != CORPSE)
             continue;
         /* save the name; the object is liable to go away */
-        if (youseeit) {
+        if (youseeit && i18n_active()) {
+            if (otmp->quan > 1L)
+                Snprintf(corpse, sizeof corpse, _("One of %s"), yname(otmp));
+            else
+                Snprintf(corpse, sizeof corpse, "%s", upstart(yname(otmp)));
+            owner[0] = '\0';
+        } else if (youseeit) {
             Strcpy(corpse, corpse_xname(otmp, (const char *) 0, CXN_NORMAL));
             /* shk_your/Shk_Your produces a value with a trailing space */
             if (otmp->quan > 1L) {
@@ -1200,10 +1314,20 @@ unturn_dead(struct monst *mon)
                    and owner names to say "It comes alive" [note: we did
                    earlier setup because corpse gets used up but need to
                    do the override here after revive() sets 'last_msg'] */
-                Strcpy(corpse, "It");
+                Strcpy(corpse, _("It"));
                 owner[0] = '\0';
             }
-            if (youseeit)
+            if (youseeit && i18n_active()) {
+                if (different_type)
+                    pline(nonliving(mtmp2->data)
+                              ? "%s suddenly reanimates as %s!"
+                              : "%s suddenly comes alive as %s!",
+                          corpse, a_monnam(mtmp2));
+                else
+                    pline(nonliving(mtmp2->data)
+                              ? "%s suddenly reanimates!"
+                              : "%s suddenly comes alive!", corpse);
+            } else if (youseeit)
                 pline("%s%s suddenly %s%s%s!", owner, corpse,
                       nonliving(mtmp2->data) ? "reanimates" : "comes alive",
                       different_type ? " as " : "",
@@ -1227,7 +1351,8 @@ unturn_you(void)
     (void) unturn_dead(&gy.youmonst); /* hit carried corpses and eggs */
 
     if (is_undead(gy.youmonst.data)) {
-        You_feel("frightened and %sstunned.", Stunned ? "even more " : "");
+        You_feel(Stunned ? "frightened and even more stunned."
+                         : "frightened and stunned.");
         make_stunned((HStun & TIMEOUT) + (long) rnd(30), FALSE);
     } else {
         You("shudder in dread.");
@@ -1626,7 +1751,18 @@ create_polymon(struct obj *obj, int okind)
     mtmp = makemon(mdat, obj->ox, obj->oy, MM_NOMSG);
     polyuse(obj, okind, (int) mons[pm_index].cwt);
 
-    if (mtmp && cansee(mtmp->mx, mtmp->my)) {
+    if (mtmp && cansee(mtmp->mx, mtmp->my) && i18n_active()) {
+        char matbuf[BUFSZ];
+
+        copynchars(matbuf, material, (int) sizeof matbuf - 1);
+        (void) trimspaces(matbuf);
+        if (*matbuf)
+            pline("Some %s objects meld, and %s arises from the pile!",
+                  C_("material", matbuf), a_monnam(mtmp));
+        else
+            pline("Some objects meld, and %s arises from the pile!",
+                  a_monnam(mtmp));
+    } else if (mtmp && cansee(mtmp->mx, mtmp->my)) {
         pline("Some %sobjects meld, and %s arises from the pile!", material,
               a_monnam(mtmp));
     }
@@ -2045,8 +2181,9 @@ stone_to_flesh_obj(struct obj *obj) /* nonnull */
                     else
                         delobj(obj);
                     if (cansee(mon->mx, mon->my))
-                        pline_The("figurine %sanimates!",
-                                  golem_xform ? "turns to flesh and " : "");
+                        pline_The(golem_xform
+                                  ? "figurine turns to flesh and animates!"
+                                  : "figurine animates!");
                 }
             }
             if (mon) {
@@ -2110,6 +2247,8 @@ stone_to_flesh_obj(struct obj *obj) /* nonnull */
     newsym(oox, ooy);
     return res;
 }
+
+DISABLE_WARNING_FORMAT_NONLITERAL
 
 /*
  * Object obj was hit by the effect of the wand/spell otmp.  Return
@@ -2229,13 +2368,32 @@ bhito(struct obj *obj, struct obj *otmp)
                     /* obj->tknown applies to boxes and chests, not bags or
                        statues; plural handling here and the "empty" case
                        below are superfluous because containers don't stack */
-                    if (obj->otrapped)
+                    if (obj->otrapped && i18n_active()) {
+                        const char *nm = The(xname(obj));
+
+                        pline(objnam_fmt("%s is trapped!", nm, obj), nm);
+                    } else if (obj->otrapped)
                         pline("%s trapped!", Tobjnam(obj, "are"));
                     obj->tknown = 1;
                 }
 
                 if (!obj->cobj) {
                     pline("%s empty.", Tobjnam(obj, "are"));
+                } else if (SchroedingersBox(obj) && i18n_active()) {
+                    if (Hallucination) {
+                        const char *pm = rndmonnam((char *) 0);
+                        char anbuf[BUFSZ];
+
+                        Snprintf(anbuf, sizeof anbuf,
+                                 i18n_noun_fem(pm) ? C_("feminine", "a %s")
+                                                   : _("a %s"),
+                                 C_("monster", pm));
+                        You("aren't sure whether %s has %s or its corpse "
+                            "inside.", the(xname(obj)), anbuf);
+                    } else
+                        You("aren't sure whether %s has a cat or its corpse "
+                            "inside.", the(xname(obj)));
+                    obj->cknown = 0;
                 } else if (SchroedingersBox(obj)) {
                     /* we don't want to force alive vs dead
                        determination for Schroedinger's Cat here,
@@ -2287,7 +2445,11 @@ bhito(struct obj *obj, struct obj *otmp)
             } else if (obj->otyp == STATUE) {
                 if (break_statue(obj)) {
                     if (cansee(obj->ox, obj->oy)) {
-                        if (Hallucination)
+                        if (Hallucination && i18n_active())
+                            pline("%s shatters.",
+                                  upstart(i18n_the_ctx("monster",
+                                                       rndmonnam(NULL))));
+                        else if (Hallucination)
                             pline_The("%s shatters.", rndmonnam(NULL));
                         else
                             pline_The("statue shatters.");
@@ -2422,6 +2584,8 @@ bhito(struct obj *obj, struct obj *otmp)
         learnwand(otmp);
     return res;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* returns nonzero if something was hit */
 int
@@ -2910,7 +3074,8 @@ zapyourself(struct obj *obj, boolean ordinary)
         learn_it = TRUE; /* (no effect for spells...) */
         healup(d(6, obj->otyp == SPE_EXTRA_HEALING ? 8 : 4), 0, FALSE,
                (obj->blessed || obj->otyp == SPE_EXTRA_HEALING));
-        You_feel("%sbetter.", obj->otyp == SPE_EXTRA_HEALING ? "much " : "");
+        You_feel((obj->otyp == SPE_EXTRA_HEALING) ? "much better."
+                                                  : "better.");
         break;
     case WAN_LIGHT: /* (broken wand) */
         /* assert( !ordinary ); */
@@ -3039,7 +3204,8 @@ lightdamage(
             dmg = 10 + rnd(dmg - 10);
         if (dmg > 20)
             dmg = 20;
-        pline("Ow, that light hurts%c", (dmg > 2 || u.mh <= 5) ? '!' : '.');
+        pline((dmg > 2 || u.mh <= 5) ? "Ow, that light hurts!"
+                                     : "Ow, that light hurts.");
         /* [composing killer/reason is superfluous here; if fatal, cause
            of death will always be "killed while stuck in creature form"] */
         if (obj->oclass == SCROLL_CLASS || obj->oclass == SPBOOK_CLASS)
@@ -3183,9 +3349,10 @@ cancel_monst(struct monst *mdef, struct obj *obj, boolean youattack,
              */
             if (u.umonnum == PM_CLAY_GOLEM) {
                 if (!Blind)
-                    pline(writing_vanishes, your);
+                    pline("Some writing vanishes from %s head!", your);
                 else /* note: "dark" rather than "heavy" is intentional... */
-                    You_feel("%s headed.", Hallucination ? "dark" : "light");
+                    You_feel(Hallucination ? "dark headed."
+                                           : "light headed.");
                 u.mh = 0; /* fatal; death handled by rehumanize() */
             }
             if (Unchanging && u.mh > 0)
@@ -3199,7 +3366,10 @@ cancel_monst(struct monst *mdef, struct obj *obj, boolean youattack,
         normal_shape(mdef);
 
         if (mdef->data == &mons[PM_CLAY_GOLEM]) {
-            if (canseemon(mdef))
+            if (canseemon(mdef) && i18n_active())
+                pline("Some writing vanishes from the head of %s!",
+                      mon_nam(mdef));
+            else if (canseemon(mdef))
                 pline(writing_vanishes, s_suffix(mon_nam(mdef)));
             /* !allow_cancel_kill is for Magicbane, where clay golem
                will be killed somewhere back up the call/return chain... */
@@ -3236,7 +3406,10 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
     case WAN_PROBING:
         ptmp = 0;
         if (u.dz < 0) {
-            You("probe towards the %s.", ceiling(x, y));
+            if (i18n_active())
+                You("probe towards %s.", i18n_the(ceiling(x, y)));
+            else
+                You("probe towards the %s.", ceiling(x, y));
         } else { /* down */
             const char *surf;
             schar ltyp, rememberedltyp = update_mapseen_for(x, y);
@@ -3248,11 +3421,12 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
             zap_map(x, y, obj);
             /*map_zapped = TRUE; // not needed due to early return*/
             if (ltyp == ICE || IS_FURNITURE(ltyp)) {
-                surf = "it";
+                surf = _("it");
                 if (svl.lastseentyp[x][y] != rememberedltyp)
                     ptmp += 1;
             } else {
-                surf = the(surface(x, y));
+                surf = i18n_active() ? i18n_the(surface(x, y))
+                                     : the(surface(x, y));
             }
             You("probe beneath %s.", surf);
             ptmp += display_binventory(x, y, TRUE);
@@ -3309,8 +3483,12 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
                    && !Is_qstart(&u.uz)) {
             int dmg;
             /* similar to zap_dig() */
-            pline("A rock is dislodged from the %s and falls on your %s.",
-                  ceiling(x, y), body_part(HEAD));
+            if (i18n_active())
+                pline("A rock is dislodged from %s and falls on your %s.",
+                      i18n_the(ceiling(x, y)), body_part(HEAD));
+            else
+                pline("A rock is dislodged from the %s and falls on your %s.",
+                      ceiling(x, y), body_part(HEAD));
             dmg = rnd(hard_helmet(uarmh) ? 2 : 6);
             losehp(Maybe_Half_Phys(dmg), "falling rock", KILLED_BY_AN);
             if ((otmp = mksobj_at(ROCK, x, y, FALSE, FALSE)) != 0) {
@@ -3324,7 +3502,7 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
             } else if (striking && ttmp->ttyp == TRAPDOOR) {
                 /* striking transforms trapdoor into hole */
                 if (Blind && !ttmp->tseen) {
-                    pline("%s beneath you shatters.", Something);
+                    pline("Something beneath you shatters.");
                 } else if (!ttmp->tseen) { /* => !Blind */
                     pline("There's a trapdoor beneath you; it shatters.");
                 } else {
@@ -3340,8 +3518,8 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
                 /* locking transforms hole into trapdoor */
                 ttmp->ttyp = TRAPDOOR;
                 if (Blind || !ttmp->tseen) {
-                    pline("Some %s swirls beneath you.",
-                          is_ice(x, y) ? "frost" : "dust");
+                    pline(is_ice(x, y) ? "Some frost swirls beneath you."
+                                       : "Some dust swirls beneath you.");
                 } else {
                     ttmp->tseen = 1;
                     newsym(x, y);
@@ -3368,9 +3546,11 @@ zap_updown(struct obj *obj) /* wand or spell, nonnull */
                 if (is_pool(u.ux, u.uy) || is_ice(u.ux, u.uy))
                     pline1(nothing_happens);
                 else
-                    pline("Blood %ss %s your %s.",
-                          is_lava(u.ux, u.uy) ? "boil" : "pool",
-                          Levitation ? "beneath" : "at",
+                    pline(is_lava(u.ux, u.uy)
+                              ? (Levitation ? "Blood boils beneath your %s."
+                                            : "Blood boils at your %s.")
+                              : (Levitation ? "Blood pools beneath your %s."
+                                            : "Blood pools at your %s."),
                           makeplural(body_part(FOOT)));
             }
         }
@@ -3563,6 +3743,13 @@ hit(
                              && (cansee(gb.bhitpos.x, gb.bhitpos.y)
                                  || canspotmon(mtmp) || engulfing_u(mtmp))));
 
+    if (i18n_active()) {
+        if (verbosely)
+            pline("%s hits %s%s", The_zaptxt(str), mon_nam(mtmp), _(force));
+        else
+            pline("%s hits it%s", The_zaptxt(str), _(force));
+        return;
+    }
     pline("%s %s %s%s", The(str), vtense(str, "hit"),
           verbosely ? mon_nam(mtmp) : "it", force);
 }
@@ -3570,9 +3757,18 @@ hit(
 void
 miss(const char *str, struct monst *mtmp)
 {
+    boolean verbosely = ((cansee(gb.bhitpos.x, gb.bhitpos.y)
+                          || canspotmon(mtmp)) && flags.verbose);
+
+    if (i18n_active()) {
+        if (verbosely)
+            pline("%s misses %s.", The_zaptxt(str), mon_nam(mtmp));
+        else
+            pline("%s misses it.", The_zaptxt(str));
+        return;
+    }
     pline("%s %s %s.", The(str), vtense(str, "miss"),
-          ((cansee(gb.bhitpos.x, gb.bhitpos.y) || canspotmon(mtmp))
-           && flags.verbose) ? mon_nam(mtmp) : "it");
+          verbosely ? mon_nam(mtmp) : "it");
 }
 
 staticfn void
@@ -3787,9 +3983,20 @@ zap_map(
                 use_the = !hallu ? (ttmp->ttyp == VIBRATING_SQUARE
                                     && Invocation_lev(&u.uz))
                                  : !rn2(4);
-                You("find %s%c",
-                    use_the ? the(ttmpname) : an(ttmpname),
-                    use_the ? '!' : '.');
+                if (i18n_active() && use_the) {
+                    You("find %s!", i18n_the_ctx("trap", ttmpname));
+                } else if (i18n_active()) {
+                    char anbuf[BUFSZ];
+
+                    Snprintf(anbuf, sizeof anbuf,
+                             i18n_noun_fem(ttmpname) ? C_("feminine", "a %s")
+                                                     : _("a %s"),
+                             C_("trap", ttmpname));
+                    You("find %s.", anbuf);
+                } else
+                    You("find %s%c",
+                        use_the ? the(ttmpname) : an(ttmpname),
+                        use_the ? '!' : '.');
                 learn_it = !hallu;
             }
         } /* t_at() */
@@ -3947,8 +4154,8 @@ bhit(
             if (is_pool(x, y) && !mtmp) {
                 in_skip = TRUE;
                 if (!Blind)
-                    pline("%s %s%s.", Yname2(obj), otense(obj, "skip"),
-                          skipcount ? " again" : "");
+                    pline(skipcount ? "%s %s again." : "%s %s.",
+                          Yname2(obj), otense(obj, "skip"));
                 else
                     You_hear("%s skip.", yname(obj));
                 skipcount++;
@@ -4526,12 +4733,19 @@ zhitu(
         poisoned("blast", A_DEX, "poisoned blast", 15, FALSE);
         break;
     case ZT_ACID:
-        if (Acid_resistance) {
+        if (Acid_resistance && i18n_active()) {
+            pline("%s doesn't hurt.", upstart(i18n_the(hliquid("acid"))));
+            monstseesu(M_SEEN_ACID);
+            dam = 0;
+        } else if (Acid_resistance) {
             pline_The("%s doesn't hurt.", hliquid("acid"));
             monstseesu(M_SEEN_ACID);
             dam = 0;
         } else {
-            pline_The("%s burns!", hliquid("acid"));
+            if (i18n_active())
+                pline("%s burns!", upstart(i18n_the(hliquid("acid"))));
+            else
+                pline_The("%s burns!", hliquid("acid"));
             dam = d(nd, 6);
             exercise(A_STR, FALSE);
             monstunseesu(M_SEEN_ACID);
@@ -4625,6 +4839,10 @@ burn_floor_objects(
                     Strcpy(buf1, u_at(x, y)
                                      ? xname(obj)
                                      : distant_name(obj, xname));
+                    if (i18n_active()) /* article while grammar is known */
+                        Snprintf(buf1, sizeof buf1, "%s",
+                                 An(u_at(x, y) ? xname(obj)
+                                               : distant_name(obj, xname)));
                     obj->quan = 2L;
                     Strcpy(buf2, u_at(x, y)
                                      ? xname(obj)
@@ -4644,7 +4862,7 @@ burn_floor_objects(
                     if (delquan > 1L)
                         pline("%ld %s burn.", delquan, buf2);
                     else
-                        pline("%s burns.", An(buf1));
+                        pline("%s burns.", i18n_active() ? buf1 : An(buf1));
                 }
             }
         }
@@ -4767,6 +4985,8 @@ buzz(int type, int nd, coordxy sx, coordxy sy, int dx, int dy)
     dobuzz(type, nd, sx, sy, dx, dy, TRUE, FALSE, FALSE);
 }
 
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 /*
  * type ==   0 to   9 : you zapping a wand
  * type ==  10 to  19 : you casting a spell
@@ -4808,7 +5028,8 @@ dobuzz(
         if (!u.ustuck) {
             u.uswallow = 0;
         } else {
-            pline("%s rips into %s%s", The(flash_str(fltyp, FALSE)),
+            pline("%s rips into %s%s",
+                  The_zaptxt(flash_str(fltyp, FALSE)),
                   mon_nam(u.ustuck), exclam(tmp));
             /* Using disintegration from the inside only makes a hole... */
             if (tmp == MAGIC_COOKIE)
@@ -4889,6 +5110,14 @@ dobuzz(
                         if (canseemon(mon)) {
                             hit(flash_str(fltyp, FALSE), mon, ".");
                             pline("%s disintegrates.", Monnam(mon));
+                            if (i18n_active())
+                                pline(
+                                "The body of %s reintegrates before your %s!",
+                                      mon_nam(mon),
+                                      (eyecount(gy.youmonst.data) == 1)
+                                          ? body_part(EYE)
+                                          : makeplural(body_part(EYE)));
+                            else
                             pline("%s body reintegrates before your %s!",
                                   s_suffix(Monnam(mon)),
                                   (eyecount(gy.youmonst.data) == 1)
@@ -4902,9 +5131,10 @@ dobuzz(
                     if (mon->data == &mons[PM_DEATH] && damgtype == ZT_DEATH) {
                         if (canseemon(mon)) {
                             hit(flash_str(fltyp, FALSE), mon, ".");
-                            pline("%s absorbs the deadly %s!", Monnam(mon),
-                                  type == ZT_BREATH(ZT_DEATH) ? "blast"
-                                                              : "ray");
+                            pline((type == ZT_BREATH(ZT_DEATH))
+                                      ? "%s absorbs the deadly blast!"
+                                      : "%s absorbs the deadly ray!",
+                                  Monnam(mon));
                             pline("It seems even stronger than before.");
                         }
                         break; /* Out of while loop */
@@ -4936,7 +5166,13 @@ dobuzz(
                                 hit(flash_str(fltyp, FALSE), mon, exclam(tmp));
                         } else {
                             /* some armor was destroyed; no damage done */
-                            if (canseemon(mon))
+                            if (canseemon(mon) && i18n_active()) {
+                                const char *nm = The(distant_name(otmp,
+                                                                  xname));
+
+                                pline(objnam_fmt("%s of %s is disintegrated!",
+                                                 nm, otmp), nm, mon_nam(mon));
+                            } else if (canseemon(mon))
                                 pline("%s %s is disintegrated!",
                                       s_suffix(Monnam(mon)),
                                       distant_name(otmp, xname));
@@ -4962,7 +5198,7 @@ dobuzz(
             } else if (!forcemiss && zap_hit((int) u.uac, 0)) {
                 range -= 2;
                 pline_dir(xytodir(-dx, -dy), "%s hits you!",
-                          The(flash_str(fltyp, FALSE)));
+                          The_zaptxt(flash_str(fltyp, FALSE)));
                 if (Reflecting) {
                     if (!Blind) {
                         (void) ureflects("But %s reflects from your %s!",
@@ -4981,7 +5217,8 @@ dobuzz(
                     monstunseesu(M_SEEN_REFL);
                 }
             } else if (!Blind) {
-                pline("%s whizzes by you!", The(flash_str(fltyp, FALSE)));
+                pline("%s whizzes by you!",
+                      The_zaptxt(flash_str(fltyp, FALSE)));
             } else if (damgtype == ZT_LIGHTNING) {
                 Your("%s tingles.", body_part(ARM));
             }
@@ -5006,8 +5243,12 @@ dobuzz(
             if ((--range > 0 && isok(lsx, lsy) && cansee(lsx, lsy))
                 || fireball) {
                 if (Is_airlevel(&u.uz)) { /* nothing to bounce off of */
-                    pline_The("%s vanishes into the aether!",
-                              flash_str(fltyp, FALSE));
+                    if (i18n_active())
+                        pline("%s vanishes into the aether!",
+                              The_zaptxt(flash_str(fltyp, FALSE)));
+                    else
+                        pline_The("%s vanishes into the aether!",
+                                  flash_str(fltyp, FALSE));
                     if (fireball)
                         type = ZT_WAND(ZT_FIRE); /* skip pending fireball */
                     break;
@@ -5015,7 +5256,9 @@ dobuzz(
                     sx = lsx;
                     sy = lsy;
                     break; /* fireballs explode before the obstacle */
-                } else
+                } else if (i18n_active())
+                    pline("%s bounces!", The_zaptxt(flash_str(fltyp, FALSE)));
+                else
                     pline_The("%s bounces!", flash_str(fltyp, FALSE));
             }
             bounce_dir(sx, sy, &dx, &dy, bchance);
@@ -5035,6 +5278,8 @@ dobuzz(
                        FALSE);
     gb.bhitpos = save_bhitpos;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 void
 melt_ice(coordxy x, coordxy y, const char *msg)
@@ -5244,7 +5489,11 @@ zap_over_floor(
             if (IS_WATERWALL(lev->typ) || (lavawall && rn2(chance))) {
                 /* For now, don't let WATER freeze. */
                 Soundeffect(se_soft_crackling, 100);
-                if (see_it)
+                if (see_it && i18n_active())
+                    pline("%s freezes for a moment.",
+                          upstart(i18n_the(hliquid(lavawall ? "lava"
+                                                            : "water"))));
+                else if (see_it)
                     pline_The("%s freezes for a moment.",
                               hliquid(lavawall ? "lava" : "water"));
                 else
@@ -5278,7 +5527,18 @@ zap_over_floor(
                 if (!lava) {
                     Soundeffect(se_soft_crackling, 30);
                 }
-                if (see_it) {
+                if (see_it && i18n_active()) {
+                    if (lava)
+                        Norep("%s cools and solidifies.",
+                              upstart(i18n_the(hliquid("lava"))));
+                    else if (moat)
+                        Norep("%s is bridged with ice!",
+                              upstart(i18n_the(buf)));
+                    else
+                        Norep("%s freezes.",
+                              upstart(i18n_the(hliquid("water"))));
+                    newsym(x, y);
+                } else if (see_it) {
                     if (lava)
                         Norep("The %s cools and solidifies.",
                               hliquid("lava"));
@@ -5349,14 +5609,22 @@ zap_over_floor(
             if (damgtype == ZT_LIGHTNING && rn2(10))
                 break;
             if ((lev->wall_info & W_NONDIGGABLE) != 0) {
-                if (see_it)
+                if (see_it && i18n_active())
+                    Norep((damgtype == ZT_ACID)
+                     ? "The iron bars corrode somewhat but remain intact."
+                     : "The iron bars melt somewhat but remain intact.");
+                else if (see_it)
                     Norep("The %s %s somewhat but remain intact.",
                           defsyms[S_bars].explanation,
                           (damgtype == ZT_ACID) ? "corrode" : "melt");
                 /* but nothing actually happens... */
             } else {
                 rangemod -= 3;
-                if (see_it)
+                if (see_it && i18n_active())
+                    Norep((damgtype == ZT_ACID)
+                              ? "The iron bars corrode away."
+                              : "The iron bars melt.");
+                else if (see_it)
                     Norep("The %s %s.", defsyms[S_bars].explanation,
                           (damgtype == ZT_ACID) ? "corrode away" : "melt");
                 dissolve_bars(x, y);
@@ -5401,7 +5669,11 @@ zap_over_floor(
         /* target spot will now pass closed_door() test below
            (except on rogue level) */
         newsym(x, y);
-        if (see_it)
+        if (see_it && i18n_active())
+            pline(yourzap ? "Your %s reveals a secret door."
+                          : "The %s reveals a secret door.",
+                  C_("zapverb", zapverb));
+        else if (see_it)
             pline("%s %s reveals a secret door.",
                   yourzap ? "Your" : "The", zapverb);
         else if (Is_rogue_level(&u.uz))
@@ -5455,6 +5727,10 @@ zap_over_floor(
                    other adjacent locations still get hit */
                 if (exploding_wand_typ)
                     pline_The("door remains intact.");
+                else if (i18n_active())
+                    pline_The(yourzap ? "door absorbs your %s!"
+                                      : "door absorbs the %s!",
+                              C_("zapverb", zapverb));
                 else
                     pline_The("door absorbs %s %s!", yourzap ? "your" : "the",
                               zapverb);
@@ -5475,8 +5751,19 @@ zap_over_floor(
             if (see_it) {
                 pline1(see_txt);
                 newsym(x, y);
+            } else if (sense_txt && i18n_active()) {
+                char txtbuf[BUFSZ];
+
+                /* whole sentence, translated by pline() */
+                Snprintf(txtbuf, sizeof txtbuf, "You %s", sense_txt);
+                pline1(txtbuf);
             } else if (sense_txt) {
                 You1(sense_txt);
+            } else if (hear_txt && i18n_active()) {
+                char txtbuf[BUFSZ];
+
+                Snprintf(txtbuf, sizeof txtbuf, "You hear %s", hear_txt);
+                pline1(txtbuf);
             } else if (hear_txt)
                 You_hear1(hear_txt);
             if (picking_at(x, y)) {
@@ -5489,7 +5776,7 @@ zap_over_floor(
     if (OBJ_AT(x, y) && damgtype == ZT_FIRE)
         if (burn_floor_objects(x, y, FALSE, type > 0) && couldsee(x, y)) {
             newsym(x, y);
-            You("%s of smoke.", !Blind ? "see a puff" : "smell a whiff");
+            You(!Blind ? "see a puff of smoke." : "smell a whiff of smoke.");
         }
     if (!ignoremon && (mon = m_at(x, y)) != 0)
         wakeup(mon, (type >= 0) ? TRUE : FALSE);
@@ -5546,7 +5833,10 @@ fracture_rock(struct obj *obj) /* no texts here! */
         if (billable(&shkp, obj, objroom, FALSE)) {
             /* shop message says "you owe <shk> <$> for it!" so we need
                to precede that with a message explaining what "it" is */
-            You("fracture %s %s.", s_suffix(shkname(shkp)), xname(obj));
+            if (i18n_active())
+                You("fracture %s of %s.", the(xname(obj)), shkname(shkp));
+            else
+                You("fracture %s %s.", s_suffix(shkname(shkp)), xname(obj));
             /* breakobj won't destroy fracturing statue or boulder but
                will charge for shop goods */
             (void) breakobj(obj, x, y, TRUE, FALSE);
@@ -5786,6 +6076,8 @@ const char *const destroy_strings[][3] = {
     { "breaks apart and explodes", "", "exploding wand" },
 };
 
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 /* guts of destroy_items();
    caller must decide whether obj is eligible, though there's one case (Book
    of the Dead) in which an eligible item shouldn't be destroyed (it prints a
@@ -5901,11 +6193,30 @@ maybe_destroy_item(
             return 0;
 
         if (u_carry || vis) {
+            if (i18n_active()) /* formats for the translation */
+                mult = (cnt == 1L) ? ((quan == 1L) ? "" : "One of %s")
+                       : ((cnt < quan) ? "Some of %s"
+                          : (quan == 2L) ? "Both of %s" : "All of %s");
+            else
             mult = (cnt == 1L) ? ((quan == 1L) ? "" /* 1 of 1 */
                                   : "One of ")      /* 1 of N */
                    : ((cnt < quan) ? "Some of "     /* n of N */
                       : (quan == 2L) ? "Both of "   /* 2 of 2 */
                         : "All of ");               /* N of N */
+            if (i18n_active()) {
+                char namebuf[BUFSZ];
+                const char *nm = yname(obj);
+                boolean fem = objnam_feminine(nm);
+
+                if (!*mult)
+                    Snprintf(namebuf, sizeof namebuf, "%s", upstart(
+                                                    (char *) Yname2(obj)));
+                else
+                    Snprintf(namebuf, sizeof namebuf,
+                             fem ? C_("feminine", mult) : _(mult), nm);
+                pline("%s %s!", namebuf,
+                      C_("destroy", destroy_strings[dindx][(cnt > 1L)]));
+            } else
             pline("%s%s %s!", mult,
                   (cnt == 1L && quan == 1L) ? Yname2(obj) : yname(obj),
                   destroy_strings[dindx][(cnt > 1L)]);
@@ -5952,6 +6263,8 @@ maybe_destroy_item(
     }
     return dmg;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* scaling factor; dmg/5 stacks will be subjected to destroy_items() */
 #define DMG_DESTROY_SCALE 5

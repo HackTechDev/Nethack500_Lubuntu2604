@@ -83,11 +83,12 @@ paiement, ventes, dégâts ; types de boutique traduits avec leur genre,
 « au magasin de luminaires d'Izchak »), les prières et sacrifices
 (`pray.c`), les potions (`potion.c`) et l'utilisation des outils
 (`apply.c` : miroir, sifflets, laisse, bougies, lampes, fouet, pierre de
-touche...), sauf quelques verbes de
+touche...), les baguettes et rayons (`zap.c` : noms des rayons traduits
+avec leur genre, destruction des objets), sauf quelques verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
 (accord au féminin).  Restent, par nombre de messages non traduits :
-`zap.c`, `muse.c`, `read.c`, `do.c`, `do_wear.c`,
+`muse.c`, `read.c`, `do.c`, `do_wear.c`,
 `attrib.c` (« You feel foolish! »)...
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes

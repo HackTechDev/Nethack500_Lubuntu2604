@@ -4997,7 +4997,7 @@ fire_damage(
         dindx = (obj->oclass == SCROLL_CLASS) ? 3 : 4;
         if (in_sight)
             pline("%s %s.", Yname2(obj),
-                  destroy_strings[dindx][(obj->quan > 1L)]);
+                  C_("destroy", destroy_strings[dindx][(obj->quan > 1L)]));
         setnotworn(obj);
         delobj(obj);
         return TRUE;
@@ -5005,7 +5005,7 @@ fire_damage(
         dindx = (obj->otyp != POT_OIL) ? 1 : 2;
         if (in_sight)
             pline("%s %s.", Yname2(obj),
-                  destroy_strings[dindx][(obj->quan > 1L)]);
+                  C_("destroy", destroy_strings[dindx][(obj->quan > 1L)]));
         setnotworn(obj);
         delobj(obj);
         return TRUE;

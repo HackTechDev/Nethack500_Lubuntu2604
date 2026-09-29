@@ -3017,7 +3017,7 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	(mhitu.c), poisoning and end of game questions; shopkeepers (shk.c),
 	with translated shop type names; prayer and potion messages, colors
 	translated with their agreement; messages about applying tools
-	(apply.c)
+	(apply.c); wand, ray and item destruction messages (zap.c)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 
