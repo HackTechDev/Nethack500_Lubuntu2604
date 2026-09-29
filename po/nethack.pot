@@ -131,6 +131,10 @@ msgid "%s is dragged into %s pit!"
 msgstr ""
 
 #, c-format
+msgid "%s is there that you hadn't noticed."
+msgstr ""
+
+#, c-format
 msgid "%s is too heavy for you to lift."
 msgstr ""
 
@@ -168,6 +172,10 @@ msgstr ""
 
 #, c-format
 msgid "%s nimbly reaches over and catches %s."
+msgstr ""
+
+#, c-format
+msgid "%s now has seven candles attached."
 msgstr ""
 
 #, c-format
@@ -315,6 +323,10 @@ msgid "(key:%s)"
 msgstr ""
 
 msgid "(userinput)"
+msgstr ""
+
+#, c-format
+msgid "A sharp crack shatters %s."
 msgstr ""
 
 #, c-format
@@ -944,6 +956,12 @@ msgstr ""
 msgid "It burns up!"
 msgstr ""
 
+msgid "It comes up tails."
+msgstr ""
+
+msgid "It goes out."
+msgstr ""
+
 msgid "It hits!"
 msgstr ""
 
@@ -1388,6 +1406,9 @@ msgctxt "monster"
 msgid "Smokey Bear"
 msgstr ""
 
+msgid "Sorry, fire and water don't mix."
+msgstr ""
+
 msgctxt "gender"
 msgid "Strong Bad"
 msgstr ""
@@ -1457,6 +1478,16 @@ msgstr ""
 msgid "The air currents set it off!"
 msgstr ""
 
+msgid "The candle flickers for a moment, then dies."
+msgstr ""
+
+msgid "The candle is being rapidly consumed!"
+msgstr ""
+
+#, c-format
+msgid "The candles of %s burn brightly!"
+msgstr ""
+
 msgid "The coin miraculously lands on its edge!"
 msgstr ""
 
@@ -1468,6 +1499,26 @@ msgid "The edges on the floor get smoother."
 msgstr ""
 
 msgid "The eggs aren't alive any more..."
+msgstr ""
+
+#, c-format
+msgid "The flame of %s burns brightly!"
+msgstr ""
+
+#, c-format
+msgid "The flame of %s is extinguished."
+msgstr ""
+
+#, c-format
+msgid "The flame of the candle of %s is extinguished."
+msgstr ""
+
+#, c-format
+msgid "The flames of %s burn brightly!"
+msgstr ""
+
+#, c-format
+msgid "The ink in this spellbook is %s."
 msgstr ""
 
 msgid "The leash slips loose."
@@ -1483,6 +1534,12 @@ msgid "The mixture evaporates."
 msgstr ""
 
 msgid "The munchies are interfering with your motor capabilities."
+msgstr ""
+
+msgid "The new candle magically ignites!"
+msgstr ""
+
+msgid "The pages feel rough and dry."
 msgstr ""
 
 msgid "The potion explodes!"
@@ -1502,6 +1559,14 @@ msgid "There is a spider web here."
 msgstr ""
 
 msgid "There is a trigger in a pile of soil below you."
+msgstr ""
+
+#, c-format
+msgid "There's sticky goop all over your %s."
+msgstr ""
+
+#, c-format
+msgid "They are lit.  %s dimly."
 msgstr ""
 
 msgid "They explode!"
@@ -1526,6 +1591,9 @@ msgid "This shop seems to be deserted."
 msgstr ""
 
 msgid "This shop seems to be untended."
+msgstr ""
+
+msgid "This spellbook has nothing written in it."
 msgstr ""
 
 #, c-format
@@ -1713,6 +1781,12 @@ msgctxt "monster"
 msgid "Yeenoghu"
 msgstr ""
 
+msgid "You are already wearing a blindfold."
+msgstr ""
+
+msgid "You are already wearing lenses."
+msgstr ""
+
 #, c-format
 msgid "You are confronted by %s."
 msgstr ""
@@ -1761,6 +1835,14 @@ msgstr ""
 msgid "You ascend to the status of Demigod..."
 msgstr ""
 
+#, c-format
+msgid "You attach %ld candle to %s."
+msgstr ""
+
+#, c-format
+msgid "You attach %ld more candle to %s."
+msgstr ""
+
 msgid "You avoid stepping into the water."
 msgstr ""
 
@@ -1782,6 +1864,9 @@ msgstr ""
 
 #, c-format
 msgid "You brush against a leg of %s."
+msgstr ""
+
+msgid "You burn it, you bought it!"
 msgstr ""
 
 msgid "You burn to a crisp..."
@@ -1837,6 +1922,9 @@ msgid "You continue chewing on the tree."
 msgstr ""
 
 msgid "You crawl to the edge of the pit."
+msgstr ""
+
+msgid "You decide not to jump after all."
 msgstr ""
 
 msgid "You deliberately drop down into the gaping hole!"
@@ -2095,6 +2183,9 @@ msgstr ""
 msgid "You hear the howling of the CwnAnnwn..."
 msgstr ""
 
+msgid "You hear the pages make an unpleasant rustling sound."
+msgstr ""
+
 msgid "You hear the quarterback calling the play."
 msgstr ""
 
@@ -2115,7 +2206,14 @@ msgstr ""
 msgid "You joust %s."
 msgstr ""
 
+msgid "You jump up and fly back down."
+msgstr ""
+
 msgid "You land on a set of sharp iron spikes!"
+msgstr ""
+
+#, c-format
+msgid "You light %s.  It gives off a dim light."
 msgstr ""
 
 #, c-format
@@ -2144,6 +2242,27 @@ msgstr ""
 msgid "You plunge into the water."
 msgstr ""
 
+msgid "You produce a high whistling sound."
+msgstr ""
+
+msgid "You produce a high-frequency vibration."
+msgstr ""
+
+msgid "You produce a high-pitched humming noise."
+msgstr ""
+
+msgid "You produce a strange whistling sound."
+msgstr ""
+
+msgid "You produce a strange, high-pitched whistling sound."
+msgstr ""
+
+msgid "You produce a strange, high-pitched, sharp vibration."
+msgstr ""
+
+msgid "You produce a strange, sharp vibration."
+msgstr ""
+
 msgid "You punch through the web."
 msgstr ""
 
@@ -2151,6 +2270,9 @@ msgid "You realize you have made a mistake."
 msgstr ""
 
 msgid "You reel..."
+msgstr ""
+
+msgid "You reflect the murky water."
 msgstr ""
 
 msgid "You ride to the edge of the pit."
@@ -2188,6 +2310,9 @@ msgstr ""
 msgid "You smile at %s seductively."
 msgstr ""
 
+msgid "You snuff the candle."
+msgstr ""
+
 msgid "You squeeze yourself against the boulder."
 msgstr ""
 
@@ -2218,6 +2343,9 @@ msgstr ""
 msgid "You stumble over debris."
 msgstr ""
 
+msgid "You suddenly feel confused."
+msgstr ""
+
 msgid "You suddenly yearn for your distant homeland."
 msgstr ""
 
@@ -2239,6 +2367,9 @@ msgid "You trigger a rolling boulder trap!"
 msgstr ""
 
 msgid "You trigger a trap!"
+msgstr ""
+
+msgid "You use it, you bought it!"
 msgstr ""
 
 msgid "You're such a nice guy; I wish..."
@@ -7688,12 +7819,6 @@ msgstr[1] ""
 msgctxt "objgender"
 msgid "identify"
 msgstr ""
-
-msgctxt "objverb"
-msgid "ignite"
-msgid_plural "ignite"
-msgstr[0] ""
-msgstr[1] ""
 
 msgctxt "gender"
 msgid "iguana"
@@ -14060,9 +14185,9 @@ msgstr ""
 msgid "%s %s, welcome to NetHack!  You are a%s."
 msgstr ""
 
-#: src/allmain.c:1003 src/apply.c:1036 src/apply.c:1663 src/apply.c:1678
-#: src/apply.c:2299 src/apply.c:2387 src/apply.c:3657 src/apply.c:3676
-#: src/artifact.c:2032 src/artifact.c:2064 src/artifact.c:2077
+#: src/allmain.c:1003 src/apply.c:1291 src/apply.c:2021 src/apply.c:2041
+#: src/apply.c:2689 src/apply.c:2777 src/apply.c:3000 src/apply.c:4197
+#: src/apply.c:4221 src/artifact.c:2032 src/artifact.c:2064 src/artifact.c:2077
 #: src/artifact.c:2081 src/cmd.c:4219 src/cmd.c:5079 src/do.c:2038
 #: src/eat.c:2171 src/engrave.c:1262 src/hack.c:135 src/hack.c:3529
 #: src/hack.c:4335 src/nhlua.c:639 src/nhlua.c:655 src/pager.c:2700
@@ -14079,1180 +14204,2596 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
+#: src/apply.c:71
+msgctxt "your"
+msgid "blindfold"
+msgstr ""
+
+#: src/apply.c:71
+msgctxt "your"
+msgid "lenses"
+msgstr ""
+
+#: src/apply.c:71
+msgctxt "your"
+msgid "other towel"
+msgstr ""
+
+#: src/apply.c:72
+msgid "gauntlets"
+msgstr ""
+
+#: src/apply.c:72
+msgid "gloves"
+msgstr ""
+
+#: src/apply.c:73
+msgctxt "health"
+msgid "extraordinary"
+msgstr ""
+
+#: src/apply.c:73
+msgctxt "health"
+msgid "fine"
+msgstr ""
+
+#: src/apply.c:74
+msgctxt "health"
+msgid "remarkable"
+msgstr ""
+
+#: src/apply.c:75
+msgctxt "how many"
+msgid "four"
+msgstr ""
+
+#: src/apply.c:75
+msgctxt "how many"
+msgid "three"
+msgstr ""
+
+#: src/apply.c:75
+msgctxt "how many"
+msgid "two"
+msgstr ""
+
+#: src/apply.c:76
+msgctxt "how many"
+msgid "many"
+msgstr ""
+
+#: src/apply.c:76
+msgctxt "how many"
+msgid "several"
+msgstr ""
+
+#: src/apply.c:78 src/do_name.c:815
+msgid "beautiful"
+msgstr ""
+
+#: src/apply.c:78
+msgid "handsome"
+msgstr ""
+
+#: src/apply.c:78
+msgid "splendorous"
+msgstr ""
+
+#: src/apply.c:78
+msgid "sublime"
+msgstr ""
+
+#: src/apply.c:79
+msgid "amiable"
+msgstr ""
+
+#: src/apply.c:79
+msgid "cute"
+msgstr ""
+
+#: src/apply.c:79
+msgid "homely"
+msgstr ""
+
+#: src/apply.c:79 src/do_name.c:815
+msgid "plain"
+msgstr ""
+
+#: src/apply.c:79
+msgid "winsome"
+msgstr ""
+
+#: src/apply.c:80
+msgid "hideous"
+msgstr ""
+
+#: src/apply.c:80
+#, c-format
+msgctxt "feminine"
+msgid "sublime"
+msgstr ""
+
+#: src/apply.c:80
+msgid "ugly"
+msgstr ""
+
+#: src/apply.c:81 src/do_name.c:820
+#, c-format
+msgctxt "feminine"
+msgid "beautiful"
+msgstr ""
+
+#: src/apply.c:81
+#, c-format
+msgctxt "feminine"
+msgid "splendorous"
+msgstr ""
+
 #: src/apply.c:82
-msgid "Using your camera underwater would void the warranty."
+#, c-format
+msgctxt "feminine"
+msgid "handsome"
+msgstr ""
+
+#: src/apply.c:82
+#, c-format
+msgctxt "feminine"
+msgid "winsome"
+msgstr ""
+
+#: src/apply.c:83
+#, c-format
+msgctxt "feminine"
+msgid "amiable"
+msgstr ""
+
+#: src/apply.c:83
+#, c-format
+msgctxt "feminine"
+msgid "cute"
+msgstr ""
+
+#: src/apply.c:83 src/do_name.c:820
+#, c-format
+msgctxt "feminine"
+msgid "plain"
+msgstr ""
+
+#: src/apply.c:84
+#, c-format
+msgctxt "feminine"
+msgid "hideous"
+msgstr ""
+
+#: src/apply.c:84
+#, c-format
+msgctxt "feminine"
+msgid "homely"
+msgstr ""
+
+#: src/apply.c:84
+#, c-format
+msgctxt "feminine"
+msgid "ugly"
+msgstr ""
+
+#: src/apply.c:85
+msgid "peaked"
+msgstr ""
+
+#: src/apply.c:85
+#, c-format
+msgctxt "feminine"
+msgid "peaked"
+msgstr ""
+
+#: src/apply.c:85
+msgid "undernourished"
+msgstr ""
+
+#: src/apply.c:86
+#, c-format
+msgctxt "feminine"
+msgid "undernourished"
+msgstr ""
+
+#: src/apply.c:87
+#, c-format
+msgid "You make, but cannot pick up, %s."
+msgstr ""
+
+#: src/apply.c:87
+msgid "You tin it, you bought it!"
+msgstr ""
+
+#: src/apply.c:88
+msgctxt "heroine"
+msgid "You suddenly feel trippy."
+msgstr ""
+
+#: src/apply.c:89
+msgctxt "heroine"
+msgid "You suddenly feel confused."
+msgstr ""
+
+#: src/apply.c:90
+msgctxt "heroine"
+msgid "Yikes!  You've frozen yourself!"
+msgstr ""
+
+#: src/apply.c:91
+#, c-format
+msgctxt "heroine"
+msgid "You strain your %s, but you're still stuck in the floor."
+msgstr ""
+
+#: src/apply.c:92
+#, c-format
+msgctxt "heroine"
+msgid "You strain your %s, but you're still attached to %s."
+msgstr ""
+
+#: src/apply.c:93
+msgctxt "heroine"
+msgid "You are already covered by a towel."
+msgstr ""
+
+#: src/apply.c:94
+#, c-format
+msgctxt "heroine"
+msgid "You are yanked toward %s!"
+msgstr ""
+
+#: src/apply.c:96
+msgctxt "verb"
+msgid "rub on the stone"
+msgstr ""
+
+#: src/apply.c:96
+msgctxt "verb"
+msgid "rub on the stones"
 msgstr ""
 
 #: src/apply.c:97
 #, c-format
-msgid "You take a picture of %s %s."
+msgctxt "feminine"
+msgid "%s looks a little more polished now."
+msgstr ""
+
+#: src/apply.c:98
+#, c-format
+msgctxt "plural"
+msgid "%s looks a little more polished now."
+msgstr ""
+
+#: src/apply.c:99
+#, c-format
+msgctxt "feminine plural"
+msgid "%s looks a little more polished now."
 msgstr ""
 
 #: src/apply.c:100
 #, c-format
-msgid "You take a picture of the %s."
+msgctxt "feminine"
+msgid "%s is a little wetter now."
 msgstr ""
 
-#: src/apply.c:117
+#: src/apply.c:101
 #, c-format
-msgid "You have no free %s!"
+msgctxt "plural"
+msgid "%s is a little wetter now."
+msgstr ""
+
+#: src/apply.c:102
+#, c-format
+msgctxt "feminine plural"
+msgid "%s is a little wetter now."
+msgstr ""
+
+#: src/apply.c:103
+#, c-format
+msgctxt "feminine plural"
+msgid "black"
+msgstr ""
+
+#: src/apply.c:103
+#, c-format
+msgctxt "feminine plural"
+msgid "red"
+msgstr ""
+
+#: src/apply.c:104
+#, c-format
+msgctxt "feminine plural"
+msgid "brown"
+msgstr ""
+
+#: src/apply.c:104
+#, c-format
+msgctxt "feminine plural"
+msgid "green"
+msgstr ""
+
+#: src/apply.c:105
+#, c-format
+msgctxt "feminine plural"
+msgid "blue"
+msgstr ""
+
+#: src/apply.c:105
+#, c-format
+msgctxt "feminine plural"
+msgid "magenta"
+msgstr ""
+
+#: src/apply.c:106
+#, c-format
+msgctxt "feminine plural"
+msgid "cyan"
+msgstr ""
+
+#: src/apply.c:106
+#, c-format
+msgctxt "feminine plural"
+msgid "gray"
+msgstr ""
+
+#: src/apply.c:107
+#, c-format
+msgctxt "feminine plural"
+msgid "orange"
+msgstr ""
+
+#: src/apply.c:107
+#, c-format
+msgctxt "feminine plural"
+msgid "transparent"
+msgstr ""
+
+#: src/apply.c:108
+#, c-format
+msgctxt "feminine plural"
+msgid "bright green"
+msgstr ""
+
+#: src/apply.c:108
+#, c-format
+msgctxt "feminine plural"
+msgid "yellow"
+msgstr ""
+
+#: src/apply.c:109
+#, c-format
+msgctxt "feminine plural"
+msgid "bright blue"
+msgstr ""
+
+#: src/apply.c:109
+#, c-format
+msgctxt "feminine plural"
+msgid "bright magenta"
+msgstr ""
+
+#: src/apply.c:110
+#, c-format
+msgctxt "feminine plural"
+msgid "bright cyan"
+msgstr ""
+
+#: src/apply.c:110
+#, c-format
+msgctxt "feminine plural"
+msgid "white"
+msgstr ""
+
+#: src/apply.c:111
+#, c-format
+msgctxt "feminine plural"
+msgid "waxy"
+msgstr ""
+
+#: src/apply.c:111
+#, c-format
+msgctxt "feminine plural"
+msgid "wooden"
+msgstr ""
+
+#: src/apply.c:112
+#, c-format
+msgctxt "feminine plural"
+msgid "golden"
+msgstr ""
+
+#: src/apply.c:112
+#, c-format
+msgctxt "feminine plural"
+msgid "silvery"
+msgstr ""
+
+#: src/apply.c:113
+msgid "But nothing else happens..."
+msgstr ""
+
+#: src/apply.c:114
+#, c-format
+msgctxt "feminine"
+msgid "Raising %s high above your %s, you snap it in two!"
+msgstr ""
+
+#: src/apply.c:115
+#, c-format
+msgctxt "feminine"
+msgid "Raising %s high above your %s, you break it in two!"
+msgstr ""
+
+#: src/apply.c:116
+msgctxt "heroine"
+msgid "You've got the glop off."
+msgstr ""
+
+#: src/apply.c:118
+msgid "extremely faded"
+msgstr ""
+
+#: src/apply.c:118
+msgid "fresh"
+msgstr ""
+
+#: src/apply.c:118
+msgid "slightly faded"
+msgstr ""
+
+#: src/apply.c:118
+msgid "very faded"
+msgstr ""
+
+#: src/apply.c:119
+msgid "barely visible"
+msgstr ""
+
+#: src/apply.c:119
+#, c-format
+msgctxt "feminine"
+msgid "fresh"
 msgstr ""
 
 #: src/apply.c:120
-msgid "You cannot use it while you're wearing it!"
+#, c-format
+msgctxt "feminine"
+msgid "slightly faded"
 msgstr ""
 
-#: src/apply.c:129 src/polyself.c:1382 src/potion.c:2016
+#: src/apply.c:120
 #, c-format
-msgid "Your %s %s!"
+msgctxt "feminine"
+msgid "very faded"
+msgstr ""
+
+#: src/apply.c:121
+#, c-format
+msgctxt "feminine"
+msgid "barely visible"
+msgstr ""
+
+#: src/apply.c:121
+#, c-format
+msgctxt "feminine"
+msgid "extremely faded"
+msgstr ""
+
+#: src/apply.c:123
+#, c-format
+msgctxt "feminine"
+msgid "%s quivers feebly."
+msgstr ""
+
+#: src/apply.c:123
+#, c-format
+msgctxt "plural"
+msgid "%s quivers feebly."
+msgstr ""
+
+#: src/apply.c:124
+#, c-format
+msgctxt "feminine plural"
+msgid "%s quivers feebly."
+msgstr ""
+
+#: src/apply.c:125
+#, c-format
+msgctxt "feminine"
+msgid "%s quivers briefly."
+msgstr ""
+
+#: src/apply.c:125
+#, c-format
+msgctxt "plural"
+msgid "%s quivers briefly."
+msgstr ""
+
+#: src/apply.c:126
+#, c-format
+msgctxt "feminine plural"
+msgid "%s quivers briefly."
+msgstr ""
+
+#: src/apply.c:128
+msgid "Snap!"
+msgstr ""
+
+#: src/apply.c:128
+msgid "The bullwhip slips free."
+msgstr ""
+
+#: src/apply.c:129
+#, c-format
+msgctxt "feminine"
+msgid "%s is welded to %s of %s%c"
+msgstr ""
+
+#: src/apply.c:130
+#, c-format
+msgctxt "plural"
+msgid "%s is welded to %s of %s%c"
+msgstr ""
+
+#: src/apply.c:131
+#, c-format
+msgctxt "feminine plural"
+msgid "%s is welded to %s of %s%c"
+msgstr ""
+
+#: src/apply.c:133
+msgid "while stunned"
+msgstr ""
+
+#: src/apply.c:133
+msgid "while swallowed"
+msgstr ""
+
+#: src/apply.c:133
+msgid "without hands"
+msgstr ""
+
+#: src/apply.c:134
+msgid "underwater"
+msgstr ""
+
+#: src/apply.c:134
+msgid "while engulfed"
+msgstr ""
+
+#: src/apply.c:134
+msgid "while levitating"
+msgstr ""
+
+#: src/apply.c:135
+msgid "in lava"
+msgstr ""
+
+#: src/apply.c:135
+msgid "in water"
+msgstr ""
+
+#: src/apply.c:135
+msgid "on the ladder"
+msgstr ""
+
+#: src/apply.c:135
+msgid "on the stairs"
+msgstr ""
+
+#: src/apply.c:136 src/trap.c:6510
+msgid "here"
+msgstr ""
+
+#: src/apply.c:136
+msgid "in a cloud"
+msgstr ""
+
+#: src/apply.c:136
+msgid "in midair"
+msgstr ""
+
+#: src/apply.c:136
+msgid "in this place"
 msgstr ""
 
 #: src/apply.c:138
 #, c-format
-msgid "Yecch!  Your %s %s gunk on it!"
+msgctxt "feminine"
+msgid "%s goes out!"
+msgstr ""
+
+#: src/apply.c:138
+#, c-format
+msgctxt "plural"
+msgid "%s goes out!"
+msgstr ""
+
+#: src/apply.c:139
+#, c-format
+msgctxt "feminine plural"
+msgid "%s goes out!"
+msgstr ""
+
+#: src/apply.c:140
+#, c-format
+msgctxt "feminine"
+msgid "%s crackles."
+msgstr ""
+
+#: src/apply.c:140
+#, c-format
+msgctxt "plural"
+msgid "%s crackles."
+msgstr ""
+
+#: src/apply.c:141
+#, c-format
+msgctxt "feminine plural"
+msgid "%s crackles."
+msgstr ""
+
+#: src/apply.c:142
+#, c-format
+msgctxt "feminine"
+msgid "%s flickers."
+msgstr ""
+
+#: src/apply.c:142
+#, c-format
+msgctxt "plural"
+msgid "%s flickers."
+msgstr ""
+
+#: src/apply.c:143
+#, c-format
+msgctxt "feminine plural"
+msgid "%s flickers."
+msgstr ""
+
+#: src/apply.c:144
+#, c-format
+msgctxt "feminine"
+msgid "%s crackles and flickers."
+msgstr ""
+
+#: src/apply.c:145
+#, c-format
+msgctxt "plural"
+msgid "%s crackles and flickers."
+msgstr ""
+
+#: src/apply.c:146
+#, c-format
+msgctxt "feminine plural"
+msgid "%s crackles and flickers."
+msgstr ""
+
+#: src/apply.c:147
+#, c-format
+msgctxt "feminine"
+msgid "%s feels warm."
+msgstr ""
+
+#: src/apply.c:147
+#, c-format
+msgctxt "plural"
+msgid "%s feels warm."
+msgstr ""
+
+#: src/apply.c:148
+#, c-format
+msgctxt "feminine plural"
+msgid "%s feels warm."
 msgstr ""
 
 #: src/apply.c:149
 #, c-format
-msgid "You push your %s %s."
+msgctxt "feminine"
+msgid "%s catches light!"
+msgstr ""
+
+#: src/apply.c:149
+#, c-format
+msgctxt "plural"
+msgid "%s catches light!"
+msgstr ""
+
+#: src/apply.c:150
+#, c-format
+msgctxt "feminine plural"
+msgid "%s catches light!"
+msgstr ""
+
+#: src/apply.c:151
+#, c-format
+msgctxt "feminine"
+msgid "%s is now off."
+msgstr ""
+
+#: src/apply.c:151
+#, c-format
+msgctxt "plural"
+msgid "%s is now off."
+msgstr ""
+
+#: src/apply.c:152
+#, c-format
+msgctxt "feminine plural"
+msgid "%s is now off."
 msgstr ""
 
 #: src/apply.c:153
 #, c-format
-msgid "You push your %s off."
+msgctxt "feminine"
+msgid "%s is now on."
 msgstr ""
 
-#: src/apply.c:168
+#: src/apply.c:153
 #, c-format
-msgid "You wipe off your %s."
+msgctxt "plural"
+msgid "%s is now on."
 msgstr ""
 
-#: src/apply.c:177 src/do.c:2375
-msgid "You've got the glop off."
-msgstr ""
-
-#: src/apply.c:183 src/do.c:2383
+#: src/apply.c:154
 #, c-format
-msgid "Your %s feels clean now."
+msgctxt "feminine plural"
+msgid "%s is now on."
 msgstr ""
 
-#: src/apply.c:190
+#: src/apply.c:155
 #, c-format
-msgid "Your %s and %s are already clean."
+msgctxt "feminine"
+msgid "%s flickers for a moment, then dies."
+msgstr ""
+
+#: src/apply.c:156
+#, c-format
+msgctxt "plural"
+msgid "%s flickers for a moment, then dies."
+msgstr ""
+
+#: src/apply.c:157
+#, c-format
+msgctxt "feminine plural"
+msgid "%s flickers for a moment, then dies."
+msgstr ""
+
+#: src/apply.c:158 src/apply.c:572
+#, c-format
+msgctxt "feminine"
+msgid "That %s is really %s."
+msgstr ""
+
+#: src/apply.c:159
+#, c-format
+msgctxt "plural"
+msgid "That %s is really %s."
+msgstr ""
+
+#: src/apply.c:160
+#, c-format
+msgctxt "feminine plural"
+msgid "That %s is really %s."
+msgstr ""
+
+#: src/apply.c:185
+msgid "Using your camera underwater would void the warranty."
+msgstr ""
+
+#: src/apply.c:200
+#, c-format
+msgid "You take a picture of %s of %s."
+msgstr ""
+
+#: src/apply.c:203
+#, c-format
+msgid "You take a picture of %s %s."
+msgstr ""
+
+#: src/apply.c:206
+#, c-format
+msgid "You take a picture of %s."
+msgstr ""
+
+#: src/apply.c:210
+#, c-format
+msgid "You take a picture of the %s."
+msgstr ""
+
+#: src/apply.c:227
+#, c-format
+msgid "You have no free %s!"
+msgstr ""
+
+#: src/apply.c:230
+msgid "You cannot use it while you're wearing it!"
+msgstr ""
+
+#: src/apply.c:240
+#, c-format
+msgid "Your %s are filthier than ever!"
+msgstr ""
+
+#: src/apply.c:243
+#, c-format
+msgid "Your %s get slimy!"
 msgstr ""
 
 #: src/apply.c:252
 #, c-format
+msgid "Yecch!  Your %s has more gunk on it!"
+msgstr ""
+
+#: src/apply.c:255
+#, c-format
+msgid "Yecch!  Your %s now has gunk on it!"
+msgstr ""
+
+#: src/apply.c:270
+#, c-format
+msgid "You push %s cock-eyed."
+msgstr ""
+
+#: src/apply.c:272
+#, c-format
+msgid "You push %s crooked."
+msgstr ""
+
+#: src/apply.c:275
+#, c-format
+msgid "You push %s off."
+msgstr ""
+
+#: src/apply.c:280
+#, c-format
+msgid "You push your %s %s."
+msgstr ""
+
+#: src/apply.c:284
+#, c-format
+msgid "You push your %s off."
+msgstr ""
+
+#: src/apply.c:299
+#, c-format
+msgid "You wipe off your %s."
+msgstr ""
+
+#: src/apply.c:309 src/do.c:2375
+msgid "You've got the glop off."
+msgstr ""
+
+#: src/apply.c:315 src/do.c:2383
+#, c-format
+msgid "Your %s feels clean now."
+msgstr ""
+
+#: src/apply.c:322
+#, c-format
+msgid "Your %s and %s are already clean."
+msgstr ""
+
+#: src/apply.c:361
+msgid "You're both stoned"
+msgstr ""
+
+#: src/apply.c:380
+msgid "He's dead"
+msgstr ""
+
+#: src/apply.c:381
+msgid "It's dead"
+msgstr ""
+
+#: src/apply.c:381
+msgid "She's dead"
+msgstr ""
+
+#: src/apply.c:387
+msgid "They're dead"
+msgstr ""
+
+#: src/apply.c:390
+#, c-format
 msgid "You hear a voice say, \"%s, Jim.\""
 msgstr ""
 
-#: src/apply.c:276
+#: src/apply.c:416
+msgid "You determine that this unfortunate being is mostly dead."
+msgstr ""
+
+#: src/apply.c:418
+msgid "You determine that this unfortunate being is dead."
+msgstr ""
+
+#: src/apply.c:421
+msgid "You determine that these unfortunate beings are mostly dead."
+msgstr ""
+
+#: src/apply.c:423
+msgid "You determine that these unfortunate beings are dead."
+msgstr ""
+
+#: src/apply.c:425
 #, c-format
 msgid "You determine that %s unfortunate being%s %s%s dead."
 msgstr ""
 
-#: src/apply.c:305
+#: src/apply.c:436
+msgid "This person"
+msgstr ""
+
+#: src/apply.c:437
+msgid "This creature"
+msgstr ""
+
+#: src/apply.c:438
+msgid "That person"
+msgstr ""
+
+#: src/apply.c:439
+msgid "That creature"
+msgstr ""
+
+#: src/apply.c:465
 #, c-format
 msgid "%s is in %s health for a statue."
 msgstr ""
 
-#: src/apply.c:328 src/pickup.c:2207 src/pickup.c:2954
+#: src/apply.c:491 src/pickup.c:2207 src/pickup.c:2954
 msgid "You have no hands!"
 msgstr ""
 
-#: src/apply.c:331
+#: src/apply.c:494
 msgid "You can't hear anything!"
 msgstr ""
 
-#: src/apply.c:334 src/pickup.c:2957
+#: src/apply.c:497 src/pickup.c:2957
 #, c-format
 msgid "You have no free %s."
 msgstr ""
 
-#: src/apply.c:347 src/apply.c:356
+#: src/apply.c:510 src/apply.c:519
 #, c-format
 msgid "%s interferes."
 msgstr ""
 
-#: src/apply.c:362
+#: src/apply.c:525
 msgid "You hear faint splashing."
 msgstr ""
 
-#: src/apply.c:369
+#: src/apply.c:532
 msgid "You hear the crackling of hellfire."
 msgstr ""
 
-#: src/apply.c:371
+#: src/apply.c:534
+#, c-format
+msgid "%s seems healthy enough."
+msgstr ""
+
+#: src/apply.c:537
 #, c-format
 msgid "The %s seems healthy enough."
 msgstr ""
 
-#: src/apply.c:376
+#: src/apply.c:542
 msgid "You hear your heart beat."
 msgstr ""
 
-#: src/apply.c:388
+#: src/apply.c:554
 msgid "You hear a faint typing noise."
 msgstr ""
 
-#: src/apply.c:401
+#: src/apply.c:567
 #, c-format
 msgid "There is %s hidden there."
 msgstr ""
 
-#: src/apply.c:435
+#: src/apply.c:595 src/apply.c:601 src/apply.c:607 src/uhitm.c:6649
+#, c-format
+msgid "That %s is really %s."
+msgstr ""
+
+#: src/apply.c:615
 #, c-format
 msgid "%s %s %s really %s."
 msgstr ""
 
-#: src/apply.c:439
+#: src/apply.c:619
 #, c-format
 msgid "There is %s there."
 msgstr ""
 
-#: src/apply.c:448
+#: src/apply.c:628
 msgid "The invisible monster must have moved."
 msgstr ""
 
-#: src/apply.c:468
+#: src/apply.c:635
+msgid "You hear a hollow sound.  This must be a secret door!"
+msgstr ""
+
+#: src/apply.c:644
+msgid "You hear a hollow sound.  This must be a secret passage!"
+msgstr ""
+
+#: src/apply.c:654
 msgid "You hear nothing special."
 msgstr ""
 
-#: src/apply.c:479 src/apply.c:498
+#: src/apply.c:667 src/apply.c:689
 msgid "You are incapable of using the whistle."
 msgstr ""
 
-#: src/apply.c:481
+#: src/apply.c:669
 #, c-format
 msgid "You blow bubbles through %s."
 msgstr ""
 
-#: src/apply.c:484
+#: src/apply.c:672
 #, c-format
 msgid "You feel rushing air tickle your %s."
 msgstr ""
 
-#: src/apply.c:500
+#: src/apply.c:674
+msgid "You produce a shrill whistling sound."
+msgstr ""
+
+#: src/apply.c:692
 #, c-format
 msgid "You produce a %shigh-%s."
 msgstr ""
 
-#: src/apply.c:685 src/apply.c:1651 src/cmd.c:1361 src/display.c:2069
-#: src/dog.c:1209 src/explode.c:796 src/getpos.c:986 src/invent.c:3147
-#: src/invent.c:4587 src/mail.c:375 src/muse.c:3144 src/music.c:616
-#: src/objnam.c:4799 src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1729
-#: src/pray.c:608 src/read.c:1356 src/read.c:2664 src/read.c:2868
-#: src/uhitm.c:3121 src/wield.c:1007 win/tty/wintty.c:2960
+#: src/apply.c:695
+msgid "You produce a very high-frequency vibration."
+msgstr ""
+
+#: src/apply.c:698
+msgid "You produce a very high-pitched humming noise."
+msgstr ""
+
+#: src/apply.c:707
+msgid "You produce a normal, sharp vibration."
+msgstr ""
+
+#: src/apply.c:713
+msgid "You produce a normal whistling sound."
+msgstr ""
+
+#: src/apply.c:810
+#, c-format
+msgid "%s shifts location"
+msgstr ""
+
+#: src/apply.c:814
+#, c-format
+msgid "%s appears"
+msgstr ""
+
+#: src/apply.c:819
+#, c-format
+msgid "%s disappears"
+msgstr ""
+
+#: src/apply.c:852
+#, c-format
+msgctxt "how many"
+msgid "sqrt(-1)"
+msgstr ""
+
+#: src/apply.c:864
+#, c-format
+msgid "%s creatures shift locations"
+msgstr ""
+
+#: src/apply.c:873
+#, c-format
+msgid "%s creatures appear"
+msgstr ""
+
+#: src/apply.c:874
+#, c-format
+msgid "%s other creatures appear"
+msgstr ""
+
+#: src/apply.c:875
+#, c-format
+msgid "%s others appear"
+msgstr ""
+
+#: src/apply.c:884
+msgid " and"
+msgstr ""
+
+#: src/apply.c:890
+#, c-format
+msgid "%s creatures disappear"
+msgstr ""
+
+#: src/apply.c:892
+#, c-format
+msgid "%s other creatures disappear"
+msgstr ""
+
+#: src/apply.c:893
+#, c-format
+msgid "%s others disappear"
+msgstr ""
+
+#: src/apply.c:897
+#, c-format
+msgid "%s and %s"
+msgstr ""
+
+#: src/apply.c:902 src/cmd.c:1361 src/display.c:2069 src/dog.c:1209
+#: src/explode.c:796 src/getpos.c:986 src/invent.c:3147 src/invent.c:4587
+#: src/mail.c:375 src/muse.c:3144 src/music.c:616 src/objnam.c:4799
+#: src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1729 src/pray.c:608
+#: src/read.c:1356 src/read.c:2664 src/read.c:2868 src/uhitm.c:3121
+#: src/wield.c:1007 win/tty/wintty.c:2960
 #, c-format
 msgid "%s."
 msgstr ""
 
-#: src/apply.c:732
+#: src/apply.c:949
+#, c-format
+msgid "%s pulls free of its leash!"
+msgstr ""
+
+#: src/apply.c:951
 #, c-format
 msgid "%s pulls free of %s leash!"
 msgstr ""
 
-#: src/apply.c:735 src/mhitm.c:1005
+#: src/apply.c:954 src/mhitm.c:1005
 msgid "Your leash falls slack."
 msgstr ""
 
-#: src/apply.c:789
+#: src/apply.c:1008
 msgid "You cannot leash any more pets."
 msgstr ""
 
-#: src/apply.c:802
+#: src/apply.c:1021
 msgid "Leash yourself?  Very funny..."
 msgstr ""
 
-#: src/apply.c:811
+#: src/apply.c:1030
 msgid "There is no creature there."
 msgstr ""
 
-#: src/apply.c:826
-#, c-format
-msgid "You fail to %sleash something."
+#: src/apply.c:1046
+msgid "You fail to unleash something."
 msgstr ""
 
-#: src/apply.c:831
-#, c-format
-msgid "%s %s leashed!"
+#: src/apply.c:1048
+msgid "You fail to leash something."
 msgstr ""
 
-#: src/apply.c:836
+#: src/apply.c:1054
+#, c-format
+msgid "%s cannot be leashed!"
+msgstr ""
+
+#: src/apply.c:1056
+#, c-format
+msgid "%s is not leashed!"
+msgstr ""
+
+#: src/apply.c:1061 src/apply.c:1065
 #, c-format
 msgid "This %s is already leashed."
 msgstr ""
 
-#: src/apply.c:839
+#: src/apply.c:1062
+#, c-format
+msgctxt "feminine"
+msgid "This %s is already leashed."
+msgstr ""
+
+#: src/apply.c:1063
+msgid "creature"
+msgstr ""
+
+#: src/apply.c:1068
 msgid "The leash would just fall off."
-msgstr ""
-
-#: src/apply.c:841
-#, c-format
-msgid "%s has no extremities the leash would fit."
-msgstr ""
-
-#: src/apply.c:851
-#, c-format
-msgid "The leash won't fit onto %s%s."
-msgstr ""
-
-#: src/apply.c:854
-#, c-format
-msgid "You slip the leash around %s%s."
-msgstr ""
-
-#: src/apply.c:864
-msgid "This leash is not attached to that creature."
-msgstr ""
-
-#: src/apply.c:866
-msgid "The leash would not come off!"
-msgstr ""
-
-#: src/apply.c:872
-#, c-format
-msgid "You remove the leash from %s%s."
-msgstr ""
-
-#: src/apply.c:909
-#, c-format
-msgid "You feel %s leash go slack."
-msgstr ""
-
-#: src/apply.c:954
-#, c-format
-msgid "Your leash chokes %s to death!"
-msgstr ""
-
-#: src/apply.c:964
-#, c-format
-msgid "%s is choked by the leash!"
-msgstr ""
-
-#: src/apply.c:972
-#, c-format
-msgid "%s leash snaps loose!"
-msgstr ""
-
-#: src/apply.c:975
-msgid "You pull on the leash."
-msgstr ""
-
-#: src/apply.c:1034
-#, c-format
-msgid "The %s fogs up and doesn't reflect!"
-msgstr ""
-
-#: src/apply.c:1041
-#, c-format
-msgid "You can't see your %s %s."
-msgstr ""
-
-#: src/apply.c:1045
-msgid "You stiffen momentarily under your gaze."
-msgstr ""
-
-#: src/apply.c:1048
-#, c-format
-msgid "Yow!  The %s stares back!"
-msgstr ""
-
-#: src/apply.c:1050
-msgid "Yikes!  You've frozen yourself!"
-msgstr ""
-
-#: src/apply.c:1059
-msgid "You don't have a reflection."
-msgstr ""
-
-#: src/apply.c:1061
-msgid "Huh?  That doesn't look like you!"
 msgstr ""
 
 #: src/apply.c:1070
 #, c-format
+msgid "%s has no extremities the leash would fit."
+msgstr ""
+
+#: src/apply.c:1080 src/do_name.c:1023 src/objnam.c:1636 src/objnam.c:3499
+#: src/shk.c:955 src/shk.c:968 src/trap.c:328 src/trap.c:6088 src/trap.c:6822
+#, c-format
+msgid "your %s"
+msgstr ""
+
+#: src/apply.c:1085
+#, c-format
+msgid "the tail of %s"
+msgstr ""
+
+#: src/apply.c:1089
+#, c-format
+msgid "The leash won't fit onto %s."
+msgstr ""
+
+#: src/apply.c:1095
+#, c-format
+msgid "The leash won't fit onto %s%s."
+msgstr ""
+
+#: src/apply.c:1100
+#, c-format
+msgid "You slip the leash around your %s."
+msgstr ""
+
+#: src/apply.c:1102
+#, c-format
+msgid "You slip the leash around %s."
+msgstr ""
+
+#: src/apply.c:1111
+msgid "This leash is not attached to that creature."
+msgstr ""
+
+#: src/apply.c:1113
+msgid "The leash would not come off!"
+msgstr ""
+
+#: src/apply.c:1120
+#, c-format
+msgid "You remove the leash from your %s."
+msgstr ""
+
+#: src/apply.c:1122
+#, c-format
+msgid "You remove the leash from %s."
+msgstr ""
+
+#: src/apply.c:1159
+msgid "You feel a leash go slack."
+msgstr ""
+
+#: src/apply.c:1161
+msgid "You feel the leash go slack."
+msgstr ""
+
+#: src/apply.c:1205
+#, c-format
+msgid "Your leash chokes %s to death!"
+msgstr ""
+
+#: src/apply.c:1215
+#, c-format
+msgid "%s is choked by the leash!"
+msgstr ""
+
+#: src/apply.c:1224
+#, c-format
+msgid "The leash of %s snaps loose!"
+msgstr ""
+
+#: src/apply.c:1226
+#, c-format
+msgid "%s leash snaps loose!"
+msgstr ""
+
+#: src/apply.c:1230
+msgid "You pull on the leash."
+msgstr ""
+
+#: src/apply.c:1289
+#, c-format
+msgid "The %s fogs up and doesn't reflect!"
+msgstr ""
+
+#: src/apply.c:1296
+#, c-format
+msgid "You can't see your %s %s."
+msgstr ""
+
+#: src/apply.c:1300
+msgid "You stiffen momentarily under your gaze."
+msgstr ""
+
+#: src/apply.c:1303
+#, c-format
+msgid "Yow!  The %s stares back!"
+msgstr ""
+
+#: src/apply.c:1305
+msgid "Yikes!  You've frozen yourself!"
+msgstr ""
+
+#: src/apply.c:1314
+msgid "You don't have a reflection."
+msgstr ""
+
+#: src/apply.c:1316
+msgid "Huh?  That doesn't look like you!"
+msgstr ""
+
+#: src/apply.c:1319 src/apply.c:1324 src/apply.c:1326
+#, c-format
+msgid "You look %s."
+msgstr ""
+
+#: src/apply.c:1333 src/do_name.c:829 src/do_name.c:1015 src/hack.c:2242
+#: src/objnam.c:1299 src/trap.c:331 src/trap.c:6515 src/trap.c:6558
+#: src/trap.c:6827
+#, c-format
+msgctxt "feminine"
+msgid "a %s"
+msgstr ""
+
+#: src/apply.c:1334 src/do_name.c:1017 src/hack.c:2242 src/objnam.c:647
+#: src/objnam.c:1301 src/trap.c:331 src/trap.c:6516 src/trap.c:6558
+#: src/trap.c:6827
+#, c-format
+msgid "a %s"
+msgstr ""
+
+#: src/apply.c:1335 src/apply.c:1337
+#, c-format
 msgid "You look like %s."
 msgstr ""
 
-#: src/apply.c:1072
+#: src/apply.c:1339
 #, c-format
 msgid "You look as %s as ever."
 msgstr ""
 
-#: src/apply.c:1079
+#: src/apply.c:1347
+#, c-format
+msgid "You reflect %s of %s."
+msgstr ""
+
+#: src/apply.c:1350
 #, c-format
 msgid "You reflect %s %s."
 msgstr ""
 
-#: src/apply.c:1085 src/apply.c:2131 src/do.c:1800 src/do_wear.c:1167
-#: src/eat.c:1273 src/eat.c:3507 src/invent.c:2050 src/sit.c:502
-#: src/teleport.c:1082 src/teleport.c:1379 src/wield.c:235 src/wield.c:676
-#: src/wield.c:910
-#, c-format
-msgid "You %s."
+#: src/apply.c:1357
+msgid "You give the fish a chance to fix their makeup."
 msgstr ""
 
-#: src/apply.c:1092
+#: src/apply.c:1363
+#, c-format
+msgid "You reflect %s."
+msgstr ""
+
+#: src/apply.c:1367
 #, c-format
 msgid "You reflect the %s."
 msgstr ""
 
-#: src/apply.c:1114
+#: src/apply.c:1389
 #, c-format
 msgid "%s is too tired to look at your %s."
 msgstr ""
 
-#: src/apply.c:1118
+#: src/apply.c:1393
 #, c-format
 msgid "%s can't see anything right now."
 msgstr ""
 
-#: src/apply.c:1121
+#: src/apply.c:1396
 #, c-format
 msgid "%s fails to notice your %s."
 msgstr ""
 
-#: src/apply.c:1125
+#: src/apply.c:1400
+#, c-format
+msgid "%s is too far away to see itself in the dark."
+msgstr ""
+
+#: src/apply.c:1403
 #, c-format
 msgid "%s in the dark."
 msgstr ""
 
-#: src/apply.c:1131
+#: src/apply.c:1409
 #, c-format
 msgid "%s doesn't have a reflection."
 msgstr ""
 
-#: src/apply.c:1136 src/mhitm.c:786 src/mhitu.c:1836
+#: src/apply.c:1414 src/mhitm.c:786 src/mhitu.c:1836
 #, c-format
 msgid "%s is turned to stone!"
 msgstr ""
 
-#: src/apply.c:1144
+#: src/apply.c:1422
 #, c-format
 msgid "%s is frozen by its reflection."
 msgstr ""
 
-#: src/apply.c:1146
+#: src/apply.c:1424
 #, c-format
 msgid "You hear %s stop moving."
 msgstr ""
 
-#: src/apply.c:1150
+#: src/apply.c:1428
 #, c-format
 msgid "%s confuses itself!"
 msgstr ""
 
-#: src/apply.c:1157
+#: src/apply.c:1433
+#, c-format
+msgid "%s admires itself in your %s."
+msgstr ""
+
+#: src/apply.c:1434
+#, c-format
+msgctxt "feminine"
+msgid "It takes it!"
+msgstr ""
+
+#: src/apply.c:1435
+msgid "It takes it!"
+msgstr ""
+
+#: src/apply.c:1439
 #, c-format
 msgid "%s in your %s."
 msgstr ""
 
-#: src/apply.c:1160
+#: src/apply.c:1442
 #, c-format
 msgid "%s takes it!"
 msgstr ""
 
-#: src/apply.c:1162
+#: src/apply.c:1444
 #, c-format
 msgid "It steals your %s!"
 msgstr ""
 
-#: src/apply.c:1175
+#: src/apply.c:1457
 #, c-format
 msgid "You discern no obvious reaction from %s."
 msgstr ""
 
-#: src/apply.c:1178
+#: src/apply.c:1460
 msgid "You feel a bit silly gesturing the mirror in that direction."
 msgstr ""
 
-#: src/apply.c:1183
+#: src/apply.c:1465
 #, c-format
 msgid "%s is frightened by its reflection."
 msgstr ""
 
-#: src/apply.c:1192
+#: src/apply.c:1475
+#, c-format
+msgid "%s doesn't seem to notice its reflection."
+msgstr ""
+
+#: src/apply.c:1478
 #, c-format
 msgid "%s doesn't seem to notice %s reflection."
 msgstr ""
 
-#: src/apply.c:1195
+#: src/apply.c:1481
+#, c-format
+msgid "%s ignores its reflection."
+msgstr ""
+
+#: src/apply.c:1483
 #, c-format
 msgid "%s ignores %s reflection."
 msgstr ""
 
-#: src/apply.c:1213
+#: src/apply.c:1503
 #, c-format
 msgid "You ring %s."
 msgstr ""
 
-#: src/apply.c:1216
+#: src/apply.c:1506
 msgid "But the sound is muffled."
 msgstr ""
 
-#: src/apply.c:1220
+#: src/apply.c:1510
 msgid "But it makes no sound."
 msgstr ""
 
-#: src/apply.c:1231
+#: src/apply.c:1521
 #, c-format
 msgid "You summon %s!"
 msgstr ""
 
-#: src/apply.c:1233
+#: src/apply.c:1523
 #, c-format
 msgid "%s shattered!"
 msgstr ""
 
-#: src/apply.c:1271
+#: src/apply.c:1561
 #, c-format
 msgid "%s an unsettling shrill sound..."
 msgstr ""
 
-#: src/apply.c:1292
+#: src/apply.c:1582
 #, c-format
 msgid "%s opens..."
 msgstr ""
 
-#: src/apply.c:1296
+#: src/apply.c:1586
 msgid "Things open around you..."
 msgstr ""
 
-#: src/apply.c:1324
-#, c-format
-msgid "You snuff the %s."
+#: src/apply.c:1614
+msgid "You snuff the candles."
 msgstr ""
 
-#: src/apply.c:1331
+#: src/apply.c:1621
 #, c-format
-msgid "This %s has no %s."
+msgid "This %s has no candles."
 msgstr ""
 
-#: src/apply.c:1337
+#: src/apply.c:1627
+#, c-format
+msgid "To attach candles, apply them instead of %s."
+msgstr ""
+
+#: src/apply.c:1630
 #, c-format
 msgid "To attach candles, apply them instead of the %s."
 msgstr ""
 
-#: src/apply.c:1342
+#: src/apply.c:1635
 msgid "You cannot make fire under water."
 msgstr ""
 
-#: src/apply.c:1347
-#, c-format
-msgid "The %s %s for a moment, then %s."
+#: src/apply.c:1641
+msgid "The candles flicker for a moment, then die."
 msgstr ""
 
-#: src/apply.c:1352
+#: src/apply.c:1647
 #, c-format
-msgid "There %s only %d %s in %s."
+msgid "There is only %d candle in %s."
 msgstr ""
 
-#: src/apply.c:1355
+#: src/apply.c:1649
 #, c-format
-msgid "%s lit.  %s dimly."
+msgid "There are only %d candles in %s."
 msgstr ""
 
-#: src/apply.c:1358
+#: src/apply.c:1651
+#, c-format
+msgid "It is lit.  %s dimly."
+msgstr ""
+
+#: src/apply.c:1655
+#, c-format
+msgid "The candles of %s burn."
+msgstr ""
+
+#: src/apply.c:1659
 #, c-format
 msgid "%s's %s burn%s"
 msgstr ""
 
-#: src/apply.c:1362
-#, c-format
-msgid "The %s %s being rapidly consumed!"
+#: src/apply.c:1663
+msgid "The candles are being rapidly consumed!"
 msgstr ""
 
-#: src/apply.c:1377
+#: src/apply.c:1679
 #, c-format
 msgid "%s a strange warmth!"
 msgstr ""
 
-#: src/apply.c:1379
+#: src/apply.c:1681
 #, c-format
 msgid "%s with a strange light!"
 msgstr ""
 
-#: src/apply.c:1436
+#: src/apply.c:1710
 #, c-format
-msgid "You attach %ld%s %s to %s."
+msgid "Attach %s to %s?"
 msgstr ""
 
-#: src/apply.c:1442
+#: src/apply.c:1746
 #, c-format
-msgid "The new %s magically %s!"
+msgid "You attach %ld candles to %s."
 msgstr ""
 
-#: src/apply.c:1444 src/steal.c:650
+#: src/apply.c:1750
 #, c-format
-msgid "%s out."
+msgid "You attach %ld more candles to %s."
 msgstr ""
 
-#: src/apply.c:1450
-#, c-format
-msgid "You %s %s, you bought %s!"
+#: src/apply.c:1757
+msgid "The new candles magically ignite!"
 msgstr ""
 
-#: src/apply.c:1456
-#, c-format
-msgid "%s now has seven%s candles attached."
+#: src/apply.c:1760
+msgid "They go out."
 msgstr ""
 
-#: src/apply.c:1484
+#: src/apply.c:1767 src/apply.c:2070
+msgid "You burn them, you bought them!"
+msgstr ""
+
+#: src/apply.c:1770
+msgid "You use them, you bought them!"
+msgstr ""
+
+#: src/apply.c:1774
+#, c-format
+msgid "%s now has seven lit candles attached."
+msgstr ""
+
+#: src/apply.c:1805
+#, c-format
+msgid "The flames of %s are extinguished."
+msgstr ""
+
+#: src/apply.c:1810
+#, c-format
+msgid "The flames of the candles of %s are extinguished."
+msgstr ""
+
+#: src/apply.c:1814
 #, c-format
 msgid "%s%scandle%s flame%s extinguished."
 msgstr ""
 
-#: src/apply.c:1506
+#: src/apply.c:1841
+#, c-format
+msgid "%s goes out!"
+msgstr ""
+
+#: src/apply.c:1843
 #, c-format
 msgid "%s %s out!"
 msgstr ""
 
-#: src/apply.c:1556 src/uhitm.c:2136
+#: src/apply.c:1895
+#, c-format
+msgid "%s crackles."
+msgstr ""
+
+#: src/apply.c:1899 src/uhitm.c:2136
 #, c-format
 msgid "%s %s%s%s."
 msgstr ""
 
-#: src/apply.c:1601
+#: src/apply.c:1947
+#, c-format
+msgid "%s feels warm."
+msgstr ""
+
+#: src/apply.c:1951
 #, c-format
 msgid "%s %s %s"
 msgstr ""
 
-#: src/apply.c:1615
+#: src/apply.c:1966
+#, c-format
+msgid "That's in addition to the cost of %s, of course."
+msgstr ""
+
+#: src/apply.c:1970
 #, c-format
 msgid "That's in addition to the cost of %s %s, of course."
 msgstr ""
 
-#: src/apply.c:1644
+#: src/apply.c:2001
+#, c-format
+msgid "%s is now off."
+msgstr ""
+
+#: src/apply.c:2003
 #, c-format
 msgid "%s%s is now off."
 msgstr ""
 
-#: src/apply.c:1646
+#: src/apply.c:2005
 #, c-format
 msgid "You snuff out %s."
 msgstr ""
 
-#: src/apply.c:1661
+#: src/apply.c:2010
+msgid "This is not a diving lamp."
+msgstr ""
+
+#: src/apply.c:2019
 msgid "Your lantern is out of power."
 msgstr ""
 
-#: src/apply.c:1665
+#: src/apply.c:2023
 #, c-format
 msgid "This %s has no oil."
 msgstr ""
 
-#: src/apply.c:1671
+#: src/apply.c:2029
 #, c-format
 msgid "The lamp spills and covers your %s with oil."
 msgstr ""
 
-#: src/apply.c:1675
+#: src/apply.c:2035
+#, c-format
+msgid "%s flickers for a moment, then dies."
+msgstr ""
+
+#: src/apply.c:2038
 #, c-format
 msgid "%s for a moment, then %s."
 msgstr ""
 
-#: src/apply.c:1683
+#: src/apply.c:2049
+#, c-format
+msgid "%s is now on."
+msgstr ""
+
+#: src/apply.c:2051
 #, c-format
 msgid "%s%s is now on."
 msgstr ""
 
-#: src/apply.c:1685
+#: src/apply.c:2054
+#, c-format
+msgid "The flames of %s burn."
+msgstr ""
+
+#: src/apply.c:2058
+#, c-format
+msgid "The flame of %s burns."
+msgstr ""
+
+#: src/apply.c:2062
 #, c-format
 msgid "%s flame%s %s%s"
 msgstr ""
 
-#: src/apply.c:1694
-#, c-format
-msgid "You burn %s, you bought %s!"
-msgstr ""
-
-#: src/apply.c:1715
+#: src/apply.c:2092
 msgid "You snuff the lit potion."
 msgstr ""
 
-#: src/apply.c:1730
+#: src/apply.c:2107
 msgid "There is not enough oxygen to sustain a fire."
 msgstr ""
 
-#: src/apply.c:1738
+#: src/apply.c:2116
+#, c-format
+msgid "You light %s."
+msgstr ""
+
+#: src/apply.c:2119
 #, c-format
 msgid "You light %spotion.%s"
 msgstr ""
 
-#: src/apply.c:1750
+#: src/apply.c:2131
 msgid "That's in addition to the cost of the potion, of course."
 msgstr ""
 
-#: src/apply.c:1790
+#: src/apply.c:2173
 msgid "You aren't able to rub anything without hands."
 msgstr ""
 
-#: src/apply.c:1793
+#: src/apply.c:2176
 msgctxt "verb"
 msgid "rub"
 msgstr ""
 
-#: src/apply.c:1802 src/apply.c:4417
+#: src/apply.c:2185 src/apply.c:5010
 msgid "Sorry, I don't know how to use that."
 msgstr ""
 
-#: src/apply.c:1833
-#, c-format
-msgid "You %s smoke."
+#: src/apply.c:2216
+msgid "You see a puff of smoke."
 msgstr ""
 
-#: src/apply.c:1838
+#: src/apply.c:2221
 msgid "Rubbing the electric lamp is not particularly rewarding."
 msgstr ""
 
-#: src/apply.c:1839
+#: src/apply.c:2222
 msgid "Anyway, nothing exciting happens."
 msgstr ""
 
-#: src/apply.c:1900
+#: src/apply.c:2283
 msgid "Illegal move!"
 msgstr ""
 
-#: src/apply.c:1904 src/apply.c:3473 src/apply.c:3766
+#: src/apply.c:2287 src/apply.c:3993 src/apply.c:4313
 msgid "Too far!"
 msgstr ""
 
-#: src/apply.c:1908
+#: src/apply.c:2291
 msgid "You cannot jump there!"
 msgstr ""
 
-#: src/apply.c:1912
+#: src/apply.c:2295
 msgid "You cannot see where to land!"
 msgstr ""
 
-#: src/apply.c:1944
+#: src/apply.c:2327
 msgid "You can't jump diagonally out of a doorway."
 msgstr ""
 
-#: src/apply.c:1951
+#: src/apply.c:2334
 msgid "There is an obstacle preventing that jump."
 msgstr ""
 
-#: src/apply.c:1999
+#: src/apply.c:2382
 msgid "You can't jump; you have no legs!"
 msgstr ""
 
-#: src/apply.c:2002
+#: src/apply.c:2385
 msgid "You can't jump very far."
 msgstr ""
 
-#: src/apply.c:2011
+#: src/apply.c:2394
 msgid "You bounce around a little."
 msgstr ""
 
-#: src/apply.c:2014
+#: src/apply.c:2397
 msgid "You've got to be kidding!"
 msgstr ""
 
-#: src/apply.c:2018
+#: src/apply.c:2401
 msgid "You swish around a little."
 msgstr ""
 
-#: src/apply.c:2021
+#: src/apply.c:2404
 msgid "This calls for swimming, not jumping!"
 msgstr ""
 
-#: src/apply.c:2028 src/hack.c:2796
+#: src/apply.c:2411 src/hack.c:2796
 #, c-format
 msgid "You pull free from %s."
 msgstr ""
 
-#: src/apply.c:2032
+#: src/apply.c:2415
 #, c-format
 msgid "You writhe a little in the grasp of %s!"
 msgstr ""
 
-#: src/apply.c:2035 src/hack.c:2785
+#: src/apply.c:2418 src/hack.c:2785
 #, c-format
 msgid "You cannot escape from %s!"
 msgstr ""
 
-#: src/apply.c:2039
+#: src/apply.c:2422
 msgid "You flail around a little."
 msgstr ""
 
-#: src/apply.c:2042
+#: src/apply.c:2425
 msgid "You don't have enough traction to jump."
 msgstr ""
 
-#: src/apply.c:2045
+#: src/apply.c:2428
 msgid "You are carrying too much to jump!"
 msgstr ""
 
-#: src/apply.c:2048
+#: src/apply.c:2431
 msgid "You lack the strength to jump!"
 msgstr ""
 
-#: src/apply.c:2054
+#: src/apply.c:2437
 #, c-format
 msgid "%s is stuck in a trap."
 msgstr ""
 
-#: src/apply.c:2058
+#: src/apply.c:2441
 msgid "Where do you want to jump?"
 msgstr ""
 
-#: src/apply.c:2068
+#: src/apply.c:2451
 #, c-format
 msgid "%s isn't capable of jumping in place."
 msgstr ""
 
-#: src/apply.c:2081
+#: src/apply.c:2464
 msgid "You rip yourself free of the bear trap!  Ouch!"
 msgstr ""
 
-#: src/apply.c:2087
+#: src/apply.c:2470
 msgid "You leap from the pit!"
 msgstr ""
 
-#: src/apply.c:2090
+#: src/apply.c:2473
 msgid "You tear the web apart as you pull yourself free!"
 msgstr ""
 
-#: src/apply.c:2094
+#: src/apply.c:2478
+#, c-format
+msgid "You pull yourself above %s!"
+msgstr ""
+
+#: src/apply.c:2481
 #, c-format
 msgid "You pull yourself above the %s!"
 msgstr ""
 
-#: src/apply.c:2099
+#: src/apply.c:2488
 #, c-format
-msgid "You strain your %s, but you're still %s."
+msgid "You strain your %s, but you're still stuck in the floor."
 msgstr ""
 
-#: src/apply.c:2126
+#: src/apply.c:2491
 #, c-format
-msgid "You jump up and %s back down."
+msgid "You strain your %s, but you're still attached to %s."
 msgstr ""
 
-#: src/apply.c:2186
+#: src/apply.c:2492
+msgid "the buried ball"
+msgstr ""
+
+#: src/apply.c:2515
+msgid "You jump up and come back down."
+msgstr ""
+
+#: src/apply.c:2521
+msgid "You hop up and down a bit."
+msgstr ""
+
+#: src/apply.c:2576
 msgid "You seem to be out of tins."
 msgstr ""
 
-#: src/apply.c:2192
+#: src/apply.c:2582
 #, c-format
 msgid "You cannot tin %s which is partly eaten."
 msgstr ""
 
-#: src/apply.c:2201
+#: src/apply.c:2591
 #, c-format
 msgid "You tin %s without wearing gloves."
 msgstr ""
 
-#: src/apply.c:2204
+#: src/apply.c:2594
 #, c-format
 msgid "Tinning %s without wearing gloves is a fatal mistake..."
 msgstr ""
 
-#: src/apply.c:2212
+#: src/apply.c:2602
 msgid "Yes...  But War does not preserve its enemies..."
 msgstr ""
 
-#: src/apply.c:2214
+#: src/apply.c:2604
 msgid "The corpse evades your grasp."
 msgstr ""
 
-#: src/apply.c:2218
+#: src/apply.c:2608
 msgid "That's too insubstantial to tin."
 msgstr ""
 
-#: src/apply.c:2280
-#, c-format
-msgid "You suddenly feel %s."
+#: src/apply.c:2670
+msgid "You suddenly feel trippy."
 msgstr ""
 
-#: src/apply.c:2451 src/timeout.c:1113
+#: src/apply.c:2835
+#, c-format
+msgid " and hide under %s"
+msgstr ""
+
+#: src/apply.c:2843
+msgid " and vanish"
+msgstr ""
+
+#: src/apply.c:2849
+msgid "You feel something drop from your pack!"
+msgstr ""
+
+#: src/apply.c:2851
+#, c-format
+msgid "You see %s drop out of your pack%s!"
+msgstr ""
+
+#: src/apply.c:2854 src/timeout.c:1113
 #, c-format
 msgid "You feel %s %s from your pack!"
 msgstr ""
 
-#: src/apply.c:2454
+#: src/apply.c:2857
 #, c-format
 msgid "You see %s %s out of your pack%s!"
 msgstr ""
 
-#: src/apply.c:2462
+#: src/apply.c:2865
 #, c-format
 msgid "%s suddenly vanishes!"
 msgstr ""
 
-#: src/apply.c:2464
+#: src/apply.c:2867
 #, c-format
 msgid "You see a figurine transform into %s%s!"
 msgstr ""
 
-#: src/apply.c:2483
+#: src/apply.c:2883
+#, c-format
+msgid "the pack of %s"
+msgstr ""
+
+#: src/apply.c:2888
+msgid "empty water"
+msgstr ""
+
+#: src/apply.c:2890 src/hack.c:2412
+msgid "thin air"
+msgstr ""
+
+#: src/apply.c:2892
+#, c-format
+msgid "You see %s drop out of %s%s!"
+msgstr ""
+
+#: src/apply.c:2895
 #, c-format
 msgid "You see %s %s out of %s%s!"
 msgstr ""
 
-#: src/apply.c:2517
+#: src/apply.c:2929
 msgid "You don't have enough room in here."
 msgstr ""
 
-#: src/apply.c:2524
+#: src/apply.c:2936
 msgid "You cannot put the figurine there."
 msgstr ""
 
-#: src/apply.c:2530
+#: src/apply.c:2942
 #, c-format
 msgid "You cannot place a figurine in %s!"
 msgstr ""
 
-#: src/apply.c:2537
+#: src/apply.c:2943 src/invent.c:4114
+msgid "a tree"
+msgstr ""
+
+#: src/apply.c:2943
+msgid "solid rock"
+msgstr ""
+
+#: src/apply.c:2949
 msgid "You cannot fit the figurine on the boulder."
 msgstr ""
 
-#: src/apply.c:2566
+#: src/apply.c:2983
+msgid "You set the figurine beside you and it transforms."
+msgstr ""
+
+#: src/apply.c:2984
+msgid "You set the figurine beside you and it supposedly transforms."
+msgstr ""
+
+#: src/apply.c:2986
+msgid "You release the figurine and it transforms."
+msgstr ""
+
+#: src/apply.c:2987
+msgid "You release the figurine and it supposedly transforms."
+msgstr ""
+
+#: src/apply.c:2988
+msgid "You toss the figurine into the air and it transforms."
+msgstr ""
+
+#: src/apply.c:2989
+msgid "You toss the figurine into the air and it supposedly transforms."
+msgstr ""
+
+#: src/apply.c:2991
+msgid "You set the figurine on the ground and it transforms."
+msgstr ""
+
+#: src/apply.c:2992
+msgid "You set the figurine on the ground and it supposedly transforms."
+msgstr ""
+
+#: src/apply.c:3002
 #, c-format
 msgid "You %s and it %stransforms."
 msgstr ""
 
-#: src/apply.c:2609 src/apply.c:2621 src/write.c:91
+#: src/apply.c:3047 src/apply.c:3059 src/write.c:91
 #, c-format
 msgid "%s from your %s."
 msgstr ""
 
-#: src/apply.c:2626
+#: src/apply.c:3064
 msgctxt "verb"
 msgid "grease"
 msgstr ""
 
-#: src/apply.c:2635
+#: src/apply.c:3073
 #, c-format
 msgid "You cover %s with a thick layer of grease."
 msgstr ""
 
-#: src/apply.c:2639
+#: src/apply.c:3077
 #, c-format
 msgid "Some of the grease gets all over your %s."
 msgstr ""
 
-#: src/apply.c:2644
+#: src/apply.c:3082
 #, c-format
 msgid "You coat your %s with grease."
 msgstr ""
 
-#: src/apply.c:2648 src/zap.c:2238
+#: src/apply.c:3086 src/zap.c:2238
 #, c-format
 msgid "%s empty."
 msgstr ""
 
-#: src/apply.c:2650
+#: src/apply.c:3088
 #, c-format
 msgid "%s to be empty."
 msgstr ""
 
-#: src/apply.c:2703
+#: src/apply.c:3141
 #, c-format
 msgid "You can't rub %s on itself."
 msgstr ""
 
-#: src/apply.c:2711
+#: src/apply.c:3149
 msgid "You feel something shatter."
 msgstr ""
 
-#: src/apply.c:2713
+#: src/apply.c:3151
 msgid "Oh, wow, look at the pretty shards."
 msgstr ""
 
-#: src/apply.c:2715
+#: src/apply.c:3153
 #, c-format
-msgid "A sharp crack shatters %s%s."
+msgid "A sharp crack shatters one of %s."
 msgstr ""
 
-#: src/apply.c:2725
+#: src/apply.c:3164
 msgid "Oh wow, man: Fractals!"
 msgstr ""
 
-#: src/apply.c:2765
+#: src/apply.c:3207
+#, c-format
+msgid "%s looks a little more polished now."
+msgstr ""
+
+#: src/apply.c:3210
 #, c-format
 msgid "%s a little more polished now."
 msgstr ""
 
-#: src/apply.c:2769
+#: src/apply.c:3215
 msgid "You must think this is a wetstone, do you?"
-msgstr ""
-
-#: src/apply.c:2771
-#, c-format
-msgid "%s a little wetter now."
-msgstr ""
-
-#: src/apply.c:2802
-#, c-format
-msgid "You make %s%sscratch marks on the %s."
-msgstr ""
-
-#: src/apply.c:2806
-#, c-format
-msgid "You see %s streaks on the %s."
-msgstr ""
-
-#: src/apply.c:2856
-#, c-format
-msgid "You can't set a trap %s!"
-msgstr ""
-
-#: src/apply.c:2862
-#, c-format
-msgid "You resume setting %s%s."
-msgstr ""
-
-#: src/apply.c:2886
-#, c-format
-msgid "You aren't very skilled at reaching from %s."
-msgstr ""
-
-#: src/apply.c:2898
-#, c-format
-msgid "You drop %s!"
-msgstr ""
-
-#: src/apply.c:2908
-#, c-format
-msgid "You begin setting %s%s."
-msgstr ""
-
-#: src/apply.c:2940
-#, c-format
-msgid "You finish arming %s."
-msgstr ""
-
-#: src/apply.c:2947
-msgid "Your trap setting attempt fails."
-msgstr ""
-
-#: src/apply.c:2984
-msgid "You miss."
-msgstr ""
-
-#: src/apply.c:3006
-msgid "There is not enough room to flick your bullwhip."
-msgstr ""
-
-#: src/apply.c:3009
-msgid "There is too much resistance to flick your bullwhip."
-msgstr ""
-
-#: src/apply.c:3012
-#, c-format
-msgid "You flick a bug off of the %s."
-msgstr ""
-
-#: src/apply.c:3016 src/apply.c:3032
-msgid "You cause a small splash."
-msgstr ""
-
-#: src/apply.c:3025
-#, c-format
-msgid "You whip %s!"
-msgstr ""
-
-#: src/apply.c:3046
-msgid "Why beat a dead horse?"
-msgstr ""
-
-#: src/apply.c:3050
-#, c-format
-msgid "You wrap your bullwhip around %s on the %s."
-msgstr ""
-
-#: src/apply.c:3060
-#, c-format
-msgid "You hit your %s with your bullwhip."
-msgstr ""
-
-#: src/apply.c:3066
-#, c-format
-msgid "The bullwhip slips out of your %s."
-msgstr ""
-
-#: src/apply.c:3109 src/apply.c:3166
-#, c-format
-msgid "You wrap your bullwhip around %s."
-msgstr ""
-
-#: src/apply.c:3112
-msgid "You yank yourself out of the pit!"
-msgstr ""
-
-#: src/apply.c:3139
-#, c-format
-msgid "%s is there that you %s."
-msgstr ""
-
-#: src/apply.c:3168
-#, c-format
-msgid "%s welded to %s %s%c"
-msgstr ""
-
-#: src/apply.c:3182
-#, c-format
-msgid "You yank %s to the %s!"
-msgstr ""
-
-#: src/apply.c:3200
-#, c-format
-msgid "The %s hits you as you try to snatch it!"
-msgstr ""
-
-#: src/apply.c:3209
-#, c-format
-msgid "You snatch %s!"
 msgstr ""
 
 #: src/apply.c:3219
 #, c-format
+msgid "%s is a little wetter now."
+msgstr ""
+
+#: src/apply.c:3222
+#, c-format
+msgid "%s a little wetter now."
+msgstr ""
+
+#: src/apply.c:3252
+msgid "the stones"
+msgstr ""
+
+#: src/apply.c:3253
+msgid "the stone"
+msgstr ""
+
+#: src/apply.c:3256
+#, c-format
+msgid "You make %s scratch marks on %s."
+msgstr ""
+
+#: src/apply.c:3259
+#, c-format
+msgid "You make scratch marks on %s."
+msgstr ""
+
+#: src/apply.c:3261
+#, c-format
+msgid "You see %s streaks on %s."
+msgstr ""
+
+#: src/apply.c:3264
+msgid "\"scritch, scritch\""
+msgstr ""
+
+#: src/apply.c:3269
+#, c-format
+msgid "You make %s%sscratch marks on the %s."
+msgstr ""
+
+#: src/apply.c:3273
+#, c-format
+msgid "You see %s streaks on the %s."
+msgstr ""
+
+#: src/apply.c:3323
+#, c-format
+msgid "You can't set a trap %s!"
+msgstr ""
+
+#: src/apply.c:3330
+#, c-format
+msgid "You resume setting %s."
+msgstr ""
+
+#: src/apply.c:3332
+#, c-format
+msgid "You resume setting %s%s."
+msgstr ""
+
+#: src/apply.c:3356
+#, c-format
+msgid "You aren't very skilled at reaching from %s."
+msgstr ""
+
+#: src/apply.c:3357
+#, c-format
+msgid "Continue your attempt to set %s?"
+msgstr ""
+
+#: src/apply.c:3368
+#, c-format
+msgid "You drop %s!"
+msgstr ""
+
+#: src/apply.c:3379
+#, c-format
+msgid "You begin setting %s."
+msgstr ""
+
+#: src/apply.c:3381
+#, c-format
+msgid "You begin setting %s%s."
+msgstr ""
+
+#: src/apply.c:3414
+#, c-format
+msgid "You finish arming %s."
+msgstr ""
+
+#: src/apply.c:3421
+msgid "Your trap setting attempt fails."
+msgstr ""
+
+#: src/apply.c:3434 src/do_name.c:884 src/objnam.c:648 src/objnam.c:1289
+#, c-format
+msgctxt "plural"
+msgid "the %s"
+msgstr ""
+
+#: src/apply.c:3470
+msgid "You miss."
+msgstr ""
+
+#: src/apply.c:3492
+msgid "There is not enough room to flick your bullwhip."
+msgstr ""
+
+#: src/apply.c:3495
+msgid "There is too much resistance to flick your bullwhip."
+msgstr ""
+
+#: src/apply.c:3499
+#, c-format
+msgid "You flick a bug off of %s."
+msgstr ""
+
+#: src/apply.c:3501
+#, c-format
+msgid "You flick a bug off of the %s."
+msgstr ""
+
+#: src/apply.c:3505 src/apply.c:3521
+msgid "You cause a small splash."
+msgstr ""
+
+#: src/apply.c:3514
+#, c-format
+msgid "You whip %s!"
+msgstr ""
+
+#: src/apply.c:3535
+msgid "Why beat a dead horse?"
+msgstr ""
+
+#: src/apply.c:3539
+#, c-format
+msgid "You wrap your bullwhip around %s on %s."
+msgstr ""
+
+#: src/apply.c:3546
+#, c-format
+msgid "You wrap your bullwhip around %s on the %s."
+msgstr ""
+
+#: src/apply.c:3556
+#, c-format
+msgid "You hit your %s with your bullwhip."
+msgstr ""
+
+#: src/apply.c:3562
+#, c-format
+msgid "The bullwhip slips out of your %s."
+msgstr ""
+
+#: src/apply.c:3585
+msgid "a boulder"
+msgstr ""
+
+#: src/apply.c:3605 src/apply.c:3662
+#, c-format
+msgid "You wrap your bullwhip around %s."
+msgstr ""
+
+#: src/apply.c:3608
+msgid "You yank yourself out of the pit!"
+msgstr ""
+
+#: src/apply.c:3635
+#, c-format
+msgid "%s is there that you couldn't see."
+msgstr ""
+
+#: src/apply.c:3637
+msgid "A monster"
+msgstr ""
+
+#: src/apply.c:3666
+#, c-format
+msgid "%s is welded to %s of %s%c"
+msgstr ""
+
+#: src/apply.c:3673
+#, c-format
+msgid "%s welded to %s %s%c"
+msgstr ""
+
+#: src/apply.c:3688
+#, c-format
+msgid "You yank %s to %s!"
+msgstr ""
+
+#: src/apply.c:3691
+#, c-format
+msgid "You yank %s to the %s!"
+msgstr ""
+
+#: src/apply.c:3709
+#, c-format
+msgid "The %s hits you as you try to snatch it!"
+msgstr ""
+
+#: src/apply.c:3718
+#, c-format
+msgid "You snatch %s!"
+msgstr ""
+
+#: src/apply.c:3728
+#, c-format
 msgid "Snatching %s is a fatal mistake."
 msgstr ""
 
-#: src/apply.c:3235
+#: src/apply.c:3748
+#, c-format
+msgid "You yank %s from %s of %s!"
+msgstr ""
+
+#: src/apply.c:3753
 #, c-format
 msgid "You yank %s from %s %s!"
 msgstr ""
 
-#: src/apply.c:3253
+#: src/apply.c:3771
 #, c-format
 msgid "You flick your bullwhip towards %s."
 msgstr ""
 
-#: src/apply.c:3265
+#: src/apply.c:3783
 msgid "You snap your whip through thin air."
 msgstr ""
 
-#: src/apply.c:3477
+#: src/apply.c:3997
 msgid "Don't know what to hit."
 msgstr ""
 
-#: src/apply.c:3479
+#: src/apply.c:3999
 msgid "Too close!"
 msgstr ""
 
-#: src/apply.c:3504
+#: src/apply.c:4024
 msgid "The blade doesn't reach there!"
 msgstr ""
 
-#: src/apply.c:3517
+#: src/apply.c:4037
 msgid "Shkinng!"
 msgstr ""
 
-#: src/apply.c:3550
+#: src/apply.c:4056
+msgid "Thump!  Your blow bounces harmlessly off the statue."
+msgstr ""
+
+#: src/apply.c:4069
+msgid "Thump!  Your blow bounces harmlessly off the boulder."
+msgstr ""
+
+#: src/apply.c:4077
 #, c-format
 msgid "You uselessly attack %s."
 msgstr ""
 
-#: src/apply.c:3558
+#: src/apply.c:4080
+msgid "stone"
+msgstr ""
+
+#: src/apply.c:4085 src/hack.c:2326
+msgid "an unknown obstacle"
+msgstr ""
+
+#: src/apply.c:4087
 msgid "You miss; there is no one there to hit."
 msgstr ""
 
-#: src/apply.c:3579
+#: src/apply.c:4108
 msgid "You give yourself a facial."
 msgstr ""
 
-#: src/apply.c:3581
+#: src/apply.c:4110
+#, c-format
+msgid "You immerse your %s in %s."
+msgstr ""
+
+#: src/apply.c:4112
 #, c-format
 msgid "You immerse your %s in %s%s."
 msgstr ""
 
-#: src/apply.c:3590
+#: src/apply.c:4121
 #, c-format
-msgid "There's %ssticky goop all over your %s."
+msgid "There's more sticky goop all over your %s."
 msgstr ""
 
-#: src/apply.c:3593
+#: src/apply.c:4125
 #, c-format
 msgid "You can't see through all the sticky goop on your %s."
 msgstr ""
 
-#: src/apply.c:3630
+#: src/apply.c:4164
 msgctxt "verb"
 msgid "rub the royal jelly on"
 msgstr ""
 
-#: src/apply.c:3643
+#: src/apply.c:4177
 #, c-format
 msgid "You smear royal jelly all over %s."
 msgstr ""
 
-#: src/apply.c:3655
+#: src/apply.c:4192
+#, c-format
+msgid "%s quivers feebly."
+msgstr ""
+
+#: src/apply.c:4194
 #, c-format
 msgid "The %s %s feebly."
 msgstr ""
 
-#: src/apply.c:3674
+#: src/apply.c:4217
+#, c-format
+msgid "%s quivers briefly."
+msgstr ""
+
+#: src/apply.c:4219
 #, c-format
 msgid "The %s %s briefly."
 msgstr ""
 
-#: src/apply.c:3820
+#: src/apply.c:4337
+#, c-format
+msgid "an object on %s"
+msgstr ""
+
+#: src/apply.c:4345
+msgid "a monster"
+msgstr ""
+
+#: src/apply.c:4353
+msgid "Aim for what?"
+msgstr ""
+
+#: src/apply.c:4375
+#, c-format
+msgid "You snag an object from %s!"
+msgstr ""
+
+#: src/apply.c:4378
 #, c-format
 msgid "You snag an object from the %s!"
 msgstr ""
 
-#: src/apply.c:3839
+#: src/apply.c:4397
 #, c-format
 msgid "You pull in %s!"
 msgstr ""
 
-#: src/apply.c:3856
+#: src/apply.c:4415
+#, c-format
+msgid "The hook slices through %s."
+msgstr ""
+
+#: src/apply.c:4418
 #, c-format
 msgid "The hook slices through the %s."
 msgstr ""
 
-#: src/apply.c:3858
+#: src/apply.c:4421
+#, c-format
+msgid "You are yanked toward %s!"
+msgstr ""
+
+#: src/apply.c:4423
 #, c-format
 msgid "You are yanked toward the %s!"
 msgstr ""
 
-#: src/apply.c:3865
+#: src/apply.c:4430
 msgid "You hook yourself!"
 msgstr ""
 
-#: src/apply.c:3926
+#: src/apply.c:4493
 #, c-format
 msgid "You can't break %s without hands!"
 msgstr ""
 
-#: src/apply.c:3929
+#: src/apply.c:4496
 #, c-format
 msgid "Your %s are occupied!"
 msgstr ""
 
-#: src/apply.c:3932
+#: src/apply.c:4499
 #, c-format
 msgid "You don't have the strength to break %s!"
 msgstr ""
 
-#: src/apply.c:3940
+#: src/apply.c:4504
 #, c-format
-msgid "Raising %s high above your %s, you %s it in two!"
+msgid "Are you really sure you want to break %s?"
 msgstr ""
 
-#: src/apply.c:4012
+#: src/apply.c:4516 src/apply.c:4523
+#, c-format
+msgid "Raising %s high above your %s, you snap it in two!"
+msgstr ""
+
+#: src/apply.c:4520 src/apply.c:4526
+#, c-format
+msgid "Raising %s high above your %s, you break it in two!"
+msgstr ""
+
+#: src/apply.c:4598
 msgid "A wall of force smashes down around you!"
 msgstr ""
 
-#: src/apply.c:4221
+#: src/apply.c:4809
 msgid "You aren't able to use or apply tools in your current form."
 msgstr ""
 
-#: src/apply.c:4227
+#: src/apply.c:4815
 msgctxt "verb"
 msgid "use or apply"
 msgstr ""
 
-#: src/apply.c:4253 src/wield.c:182
-#, c-format
-msgid "You are already %s."
+#: src/apply.c:4841
+msgid "You are already covered by a towel."
 msgstr ""
 
-#: src/apply.c:4319 src/dog.c:1335 src/dothrow.c:1962 src/engrave.c:877
+#: src/apply.c:4908 src/potion.c:1596 src/pray.c:379 src/pray.c:382
+#: src/pray.c:1376
+#, c-format
+msgid "%s with a %s light."
+msgstr ""
+
+#: src/apply.c:4911 src/dog.c:1335 src/dothrow.c:1962 src/engrave.c:877
 #: src/engrave.c:885 src/mcastu.c:699 src/mhitm.c:705 src/mhitu.c:2727
 #: src/mkobj.c:1605 src/mon.c:1028 src/mon.c:1808 src/music.c:675
 #: src/potion.c:1605 src/pray.c:386 src/pray.c:627 src/pray.c:1380
@@ -15264,77 +16805,73 @@ msgstr ""
 msgid "%s %s."
 msgstr ""
 
-#: src/apply.c:4403
+#: src/apply.c:4996
 msgid "It rings! ... But no-one answers."
 msgstr ""
 
-#: src/apply.c:4477
+#: src/apply.c:5070
 msgid "You don't want to get the pages even more soggy, do you?"
 msgstr ""
 
-#: src/apply.c:4481
+#: src/apply.c:5074
 #, c-format
 msgid "You flip through the pages of %s."
 msgstr ""
 
-#: src/apply.c:4488
-#, c-format
-msgid "You hear the pages make an unpleasant %s sound."
+#: src/apply.c:5082
+msgid "You hear the pages make an unpleasant chuckling sound."
 msgstr ""
 
-#: src/apply.c:4492
+#: src/apply.c:5085
 #, c-format
 msgid "You see the pages glow faintly %s."
 msgstr ""
 
-#: src/apply.c:4494
+#: src/apply.c:5089
 msgid "You feel the pages tremble."
 msgstr ""
 
-#: src/apply.c:4497
-#, c-format
-msgid "The pages feel %s."
+#: src/apply.c:5092
+msgid "The pages feel freshly picked."
 msgstr ""
 
-#: src/apply.c:4501
-#, c-format
-msgid "This spellbook %s."
+#: src/apply.c:5095
+msgid "This spellbook doesn't have much of a plot."
 msgstr ""
 
-#: src/apply.c:4506
+#: src/apply.c:5099
 msgid "You enjoy the animated initials."
 msgstr ""
 
-#: src/apply.c:4508
+#: src/apply.c:5101
 msgid "This looks like it might be interesting to read."
 msgstr ""
 
-#: src/apply.c:4519
+#: src/apply.c:5113
 #, c-format
-msgid "The%s ink in this spellbook is %s."
+msgid "The magical ink in this spellbook is %s."
 msgstr ""
 
-#: src/apply.c:4533
+#: src/apply.c:5127
 #, c-format
 msgid "You flip %s."
 msgstr ""
 
-#: src/apply.c:4535
+#: src/apply.c:5129
 msgid "It tumbles away."
 msgstr ""
 
-#: src/apply.c:4539
+#: src/apply.c:5133
 #, c-format
 msgid "It slips between your %s."
 msgstr ""
 
-#: src/apply.c:4550
+#: src/apply.c:5144
 msgid "Wow, a double header!"
 msgstr ""
 
-#: src/apply.c:4554
-#, c-format
-msgid "It comes up %s."
+#: src/apply.c:5148
+msgid "It comes up heads."
 msgstr ""
 
 #: src/artifact.c:951
@@ -17856,6 +19393,13 @@ msgstr ""
 msgid "Falling, you"
 msgstr ""
 
+#: src/do.c:1800 src/do_wear.c:1167 src/eat.c:1273 src/eat.c:3507
+#: src/invent.c:2050 src/sit.c:502 src/teleport.c:1082 src/teleport.c:1379
+#: src/wield.c:235 src/wield.c:676 src/wield.c:910
+#, c-format
+msgid "You %s."
+msgstr ""
+
 #: src/do.c:1864
 msgid "You arrive at the Valley of the Dead..."
 msgstr ""
@@ -18163,15 +19707,7 @@ msgid "immobile"
 msgstr ""
 
 #: src/do_name.c:815
-msgid "beautiful"
-msgstr ""
-
-#: src/do_name.c:815
 msgid "peaceful"
-msgstr ""
-
-#: src/do_name.c:815
-msgid "plain"
 msgstr ""
 
 #: src/do_name.c:816
@@ -18228,18 +19764,6 @@ msgctxt "feminine"
 msgid "immobile"
 msgstr ""
 
-#: src/do_name.c:820
-#, c-format
-msgctxt "feminine"
-msgid "beautiful"
-msgstr ""
-
-#: src/do_name.c:820
-#, c-format
-msgctxt "feminine"
-msgid "plain"
-msgstr ""
-
 #: src/do_name.c:821
 #, c-format
 msgctxt "feminine"
@@ -18291,13 +19815,6 @@ msgctxt "adjective-position"
 msgid "plain"
 msgstr ""
 
-#: src/do_name.c:829 src/do_name.c:1015 src/hack.c:2242 src/objnam.c:1299
-#: src/trap.c:331 src/trap.c:6515 src/trap.c:6558 src/trap.c:6827
-#, c-format
-msgctxt "feminine"
-msgid "a %s"
-msgstr ""
-
 #: src/do_name.c:829 src/do_name.c:886 src/do_name.c:1007 src/objnam.c:648
 #: src/objnam.c:1285
 #, c-format
@@ -18318,12 +19835,6 @@ msgctxt "feminine"
 msgid "your %s"
 msgstr ""
 
-#: src/do_name.c:884 src/objnam.c:648 src/objnam.c:1289
-#, c-format
-msgctxt "plural"
-msgid "the %s"
-msgstr ""
-
 #: src/do_name.c:890 src/do_name.c:1011 src/objnam.c:647 src/objnam.c:1293
 #, c-format
 msgid "the %s"
@@ -18337,18 +19848,6 @@ msgstr ""
 #: src/do_name.c:948 src/objnam.c:646
 #, c-format
 msgid "%s called %s"
-msgstr ""
-
-#: src/do_name.c:1017 src/hack.c:2242 src/objnam.c:647 src/objnam.c:1301
-#: src/trap.c:331 src/trap.c:6516 src/trap.c:6558 src/trap.c:6827
-#, c-format
-msgid "a %s"
-msgstr ""
-
-#: src/do_name.c:1023 src/objnam.c:1636 src/objnam.c:3499 src/shk.c:955
-#: src/shk.c:968 src/trap.c:328 src/trap.c:6088 src/trap.c:6822
-#, c-format
-msgid "your %s"
 msgstr ""
 
 #: src/do_name.c:1077 src/uhitm.c:2123 src/uhitm.c:2130 src/uhitm.c:5598
@@ -22207,20 +23706,12 @@ msgstr ""
 msgid "You feel guilty about losing your pet like this."
 msgstr ""
 
-#: src/hack.c:2326
-msgid "an unknown obstacle"
-msgstr ""
-
 #: src/hack.c:2391
 msgid "an air bubble"
 msgstr ""
 
 #: src/hack.c:2392
 msgid "nothing"
-msgstr ""
-
-#: src/hack.c:2412
-msgid "thin air"
 msgstr ""
 
 #: src/hack.c:2417
@@ -22882,10 +24373,6 @@ msgstr ""
 
 #: src/invent.c:4114
 msgid "a raised drawbridge"
-msgstr ""
-
-#: src/invent.c:4114
-msgid "a tree"
 msgstr ""
 
 #: src/invent.c:4115
@@ -25943,6 +27430,11 @@ msgstr ""
 msgid "%s as %s throws it!"
 msgstr ""
 
+#: src/mthrowu.c:765
+#, c-format
+msgid "The %s was poisoned!"
+msgstr ""
+
 #: src/mthrowu.c:785
 msgid "Yecch!  You've been creamed."
 msgstr ""
@@ -28942,6 +30434,11 @@ msgstr ""
 msgid "You find you must %s %s %s!"
 msgstr ""
 
+#: src/polyself.c:1382 src/potion.c:2016
+#, c-format
+msgid "Your %s %s!"
+msgstr ""
+
 #: src/polyself.c:1400
 msgid "Your old form was not healthy enough to survive."
 msgstr ""
@@ -31414,11 +32911,6 @@ msgstr ""
 msgid "%s with a %s aura."
 msgstr ""
 
-#: src/potion.c:1596 src/pray.c:379 src/pray.c:382 src/pray.c:1376
-#, c-format
-msgid "%s with a %s light."
-msgstr ""
-
 #: src/potion.c:1603
 #, c-format
 msgid "%s with %s aura."
@@ -31635,9 +33127,24 @@ msgstr ""
 msgid "%s %s oily."
 msgstr ""
 
+#: src/potion.c:2751
+#, c-format
+msgid "%s is less %s."
+msgstr ""
+
+#: src/potion.c:2752
+#, c-format
+msgid "%s feels less %s."
+msgstr ""
+
 #: src/potion.c:2759
 #, c-format
 msgid "%s %s less %s."
+msgstr ""
+
+#: src/potion.c:2795
+#, c-format
+msgid "%s is full."
 msgstr ""
 
 #: src/potion.c:2798
@@ -35700,6 +37207,21 @@ msgstr ""
 msgid "\"For you,"
 msgstr ""
 
+#: src/shk.c:3760
+#, c-format
+msgid "per %s"
+msgstr ""
+
+#: src/shk.c:3763
+#, c-format
+msgid "for the contents of this %s"
+msgstr ""
+
+#: src/shk.c:3767
+#, c-format
+msgid "for this %s"
+msgstr ""
+
 #: src/shk.c:3769
 #, c-format
 msgid "%s %ld %s %s%s.\""
@@ -37410,6 +38932,11 @@ msgstr ""
 msgid "%s stole %s."
 msgstr ""
 
+#: src/steal.c:650
+#, c-format
+msgid "%s out."
+msgstr ""
+
 #: src/steal.c:790
 #, c-format
 msgid "%s pulls %s away from you and absorbs %s!"
@@ -38131,7 +39658,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 20:00+0200\n"
+"POT-Creation-Date: 2026-09-29 20:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38862,9 +40389,19 @@ msgctxt "feminine plural"
 msgid "%s is protected by the layer of grease!"
 msgstr ""
 
+#: src/trap.c:443
+#, c-format
+msgid "%s is not affected by %s."
+msgstr ""
+
 #: src/trap.c:449
 #, c-format
 msgid "%s %s %s not affected by %s."
+msgstr ""
+
+#: src/trap.c:457
+#, c-format
+msgid "Somehow, %s is not affected by %s."
 msgstr ""
 
 #: src/trap.c:463
@@ -38887,6 +40424,16 @@ msgstr ""
 msgid "%s %s %s!"
 msgstr ""
 
+#: src/trap.c:563
+#, c-format
+msgid "%s feels completely %s."
+msgstr ""
+
+#: src/trap.c:564
+#, c-format
+msgid "%s looks completely %s."
+msgstr ""
+
 #: src/trap.c:571
 #, c-format
 msgid "Your %s %s completely %s."
@@ -38895,6 +40442,11 @@ msgstr ""
 #: src/trap.c:574
 #, c-format
 msgid "%s %s %s completely %s."
+msgstr ""
+
+#: src/trap.c:601
+#, c-format
+msgid "%s is protected by the layer of grease!"
 msgstr ""
 
 #: src/trap.c:608
@@ -40363,7 +41915,7 @@ msgstr ""
 msgid "You disarm it!"
 msgstr ""
 
-#: src/trap.c:6405
+#: src/trap.c:6402 src/trap.c:6405
 #, c-format
 msgid "That %s was not trapped."
 msgstr ""
@@ -40389,10 +41941,6 @@ msgstr ""
 
 #: src/trap.c:6478
 msgid "The perils lurking there are beyond your grasp."
-msgstr ""
-
-#: src/trap.c:6510
-msgid "here"
 msgstr ""
 
 #: src/trap.c:6510
@@ -40991,6 +42539,11 @@ msgstr ""
 #: src/uhitm.c:1993
 #, c-format
 msgid "%s appears confused."
+msgstr ""
+
+#: src/uhitm.c:1997
+#, c-format
+msgid "%s is no longer poisoned."
 msgstr ""
 
 #: src/uhitm.c:2000
@@ -41978,6 +43531,11 @@ msgstr ""
 msgid "Wait!  That's %s!"
 msgstr ""
 
+#: src/uhitm.c:6513
+#, c-format
+msgid "That %s is actually %%s!"
+msgstr ""
+
 #: src/uhitm.c:6530
 #, c-format
 msgid "Wait!  That %s is really %%s!"
@@ -42001,11 +43559,6 @@ msgstr ""
 #: src/uhitm.c:6615
 #, c-format
 msgid "Your %s no longer glow so brightly %s."
-msgstr ""
-
-#: src/uhitm.c:6649
-#, c-format
-msgid "That %s is really %s."
 msgstr ""
 
 #: src/uhitm.c:6661
@@ -42359,6 +43912,11 @@ msgstr ""
 #: src/wield.c:147
 #, c-format
 msgid "You wield %s in your bare %s."
+msgstr ""
+
+#: src/wield.c:182
+#, c-format
+msgid "You are already %s."
 msgstr ""
 
 #: src/wield.c:187

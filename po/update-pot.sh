@@ -32,7 +32,7 @@ $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
     --keyword=urgent_pline --keyword=Norep --keyword=verbalize \
     --keyword=yn_function --keyword=getlin --keyword=yn --keyword=y_n \
     --keyword=ynq --keyword=paranoid_query:2 --keyword=paranoid_ynq:2 \
-    --keyword=selftouch --keyword=mselftouch:2 \
+    --keyword=selftouch --keyword=mselftouch:2 --keyword=objnam_fmt \
     -o "$tmp/0base.pot" $SRC
 
 # function:prefix

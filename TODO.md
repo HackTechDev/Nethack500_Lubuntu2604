@@ -81,11 +81,13 @@ monstres, engloutissement, séduction), l'empoisonnement (`poisoned()`) et
 les questions de fin de partie, les marchands (`shk.c` : accueil, prix,
 paiement, ventes, dégâts ; types de boutique traduits avec leur genre,
 « au magasin de luminaires d'Izchak »), les prières et sacrifices
-(`pray.c`) et les potions (`potion.c`), sauf quelques verbes de
+(`pray.c`), les potions (`potion.c`) et l'utilisation des outils
+(`apply.c` : miroir, sifflets, laisse, bougies, lampes, fouet, pierre de
+touche...), sauf quelques verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
 (accord au féminin).  Restent, par nombre de messages non traduits :
-`apply.c`, `zap.c`, `muse.c`, `read.c`, `do.c`, `do_wear.c`,
+`zap.c`, `muse.c`, `read.c`, `do.c`, `do_wear.c`,
 `attrib.c` (« You feel foolish! »)...
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
@@ -99,9 +101,9 @@ la première (`You(c ? "a" : "b")`).
 - **Morceaux de phrase** assemblés par le code (« You feel %s. » avec un
   adjectif, « %s %s %s » ...) : réécrire en phrases complètes quand c'est
   possible.
-- **Verbes de `getobj()` passés par variable** (non traduits) : frotter une
-  pierre de touche (`apply.c`, `stonebuf`), tremper un objet dans une
-  potion (`potion.c`), ouvrir une boîte de conserve (`eat.c`).
+- **Verbes de `getobj()` passés par variable** (non traduits) : tremper un
+  objet dans une potion (`potion.c`), ouvrir une boîte de conserve
+  (`eat.c`).
 - **Descriptions d'escaliers** (`stairs_description()` dans `stairs.c`) :
   « staircase down to level 3 », « staircase up out of the dungeon ». Pour
   l'instant, la phrase entière reste en anglais.
