@@ -177,9 +177,11 @@ vpline(const char *line, va_list the_args)
 
     /* translate the whole format, including the "You " &c prefix added
        by You() and similar; for "%s" alone, its argument is translated
-       below */
+       below; a message about a female hero uses its "heroine" form if
+       there is one (for the agreement of adjectives and participles) */
     if (i18n_active() && !(line[0] == '%' && line[1] == 's' && !line[2])) {
-        const char *translation = _(line);
+        const char *translation = flags.female ? C_("heroine", line)
+                                               : _(line);
 
         if (translation != line) {
             english = line;
@@ -237,6 +239,16 @@ vpline(const char *line, va_list the_args)
     }
     if (ln > (int) sizeof pbuf - 1) /* extremely too long */
         panic("pline attempting to print %d characters!", ln);
+#ifdef NHI18N
+    /* contractions marked with '@' in a translation ("@de %s") */
+    if (i18n_active() && ln < BUFSZ && strchr(line, '@')) {
+        if (line != pbuf)
+            Strcpy(pbuf, line);
+        i18n_contract(pbuf);
+        line = pbuf;
+        ln = (int) strlen(line);
+    }
+#endif
 
     if (ln > BUFSZ - 1) {
         /* too long but modestly so; allow but truncate, preserving final

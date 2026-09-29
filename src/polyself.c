@@ -1969,7 +1969,7 @@ skinback(boolean silently)
 }
 
 const char *
-mbodypart(struct monst *mon, int part)
+mbodypart_english(struct monst *mon, int part)
 {
     static NEARDATA const char
         *humanoid_parts[] = { "arm",       "eye",  "face",         "finger",
@@ -2138,6 +2138,250 @@ mbodypart(struct monst *mon, int part)
         return humanoid_parts[part];
     return animal_parts[part];
 }
+
+#ifdef NHI18N
+#if 0
+/* for xgettext: the body parts of mbodypart_english(), with the plural
+   used by makeplural() */
+NCP_("bodypart", "arm", "arms"), NCP_("bodypart", "eye", "eyes"),
+NCP_("bodypart", "face", "faces"), NCP_("bodypart", "finger", "fingers"),
+NCP_("bodypart", "fingertip", "fingertips"),
+NCP_("bodypart", "foot", "foots"), NCP_("bodypart", "hand", "hands"),
+NCP_("bodypart", "handed", "handed"), NCP_("bodypart", "head", "heads"),
+NCP_("bodypart", "leg", "legs"),
+NCP_("bodypart", "light headed", "light headed"),
+NCP_("bodypart", "neck", "necks"), NCP_("bodypart", "spine", "spines"),
+NCP_("bodypart", "toe", "toes"), NCP_("bodypart", "hair", "hair"),
+NCP_("bodypart", "blood", "blood"), NCP_("bodypart", "lung", "lungs"),
+NCP_("bodypart", "nose", "noses"), NCP_("bodypart", "stomach", "stomachs"),
+NCP_("bodypart", "pseudopod", "pseudopods"),
+NCP_("bodypart", "dark spot", "dark spots"),
+NCP_("bodypart", "front", "fronts"),
+NCP_("bodypart", "pseudopod extension", "pseudopod extensions"),
+NCP_("bodypart", "pseudopod extremity", "pseudopod extremitys"),
+NCP_("bodypart", "pseudopod root", "pseudopod roots"),
+NCP_("bodypart", "grasp", "grasps"), NCP_("bodypart", "grasped", "grasped"),
+NCP_("bodypart", "cerebral area", "cerebral areas"),
+NCP_("bodypart", "lower pseudopod", "lower pseudopods"),
+NCP_("bodypart", "viscous", "viscous"),
+NCP_("bodypart", "middle", "middles"),
+NCP_("bodypart", "surface", "surfaces"),
+NCP_("bodypart", "ripples", "ripples"), NCP_("bodypart", "juices", "juices"),
+NCP_("bodypart", "sensor", "sensors"),
+NCP_("bodypart", "forelimb", "forelimbs"),
+NCP_("bodypart", "foreclaw", "foreclaws"),
+NCP_("bodypart", "claw tip", "claw tips"),
+NCP_("bodypart", "rear claw", "rear claws"),
+NCP_("bodypart", "clawed", "clawed"),
+NCP_("bodypart", "rear limb", "rear limbs"),
+NCP_("bodypart", "rear claw tip", "rear claw tips"),
+NCP_("bodypart", "fur", "fur"), NCP_("bodypart", "wing", "wings"),
+NCP_("bodypart", "wing tip", "wing tips"),
+NCP_("bodypart", "winged", "winged"),
+NCP_("bodypart", "feathers", "feathers"), NCP_("bodypart", "bill", "bills"),
+NCP_("bodypart", "foreleg", "forelegs"),
+NCP_("bodypart", "forehoof", "forehoofs"),
+NCP_("bodypart", "hoof tip", "hoof tips"),
+NCP_("bodypart", "rear hoof", "rear hoofs"),
+NCP_("bodypart", "hooved", "hooved"),
+NCP_("bodypart", "rear leg", "rear legs"),
+NCP_("bodypart", "backbone", "backbones"),
+NCP_("bodypart", "rear hoof tip", "rear hoof tips"),
+NCP_("bodypart", "mane", "mane"),
+NCP_("bodypart", "appendage", "appendages"),
+NCP_("bodypart", "optic nerve", "optic nerves"),
+NCP_("bodypart", "body", "bodys"), NCP_("bodypart", "tentacle", "tentacles"),
+NCP_("bodypart", "tentacle tip", "tentacle tips"),
+NCP_("bodypart", "lower appendage", "lower appendages"),
+NCP_("bodypart", "tentacled", "tentacled"),
+NCP_("bodypart", "lower tentacle", "lower tentacles"),
+NCP_("bodypart", "rotational", "rotational"),
+NCP_("bodypart", "equator", "equators"),
+NCP_("bodypart", "lower tentacle tip", "lower tentacle tips"),
+NCP_("bodypart", "cilia", "cilias"),
+NCP_("bodypart", "life force", "life force"),
+NCP_("bodypart", "retina", "retinas"),
+NCP_("bodypart", "olfactory nerve", "olfactory nerves"),
+NCP_("bodypart", "interior", "interiors"),
+NCP_("bodypart", "mycelium", "myceliums"),
+NCP_("bodypart", "visual area", "visual areas"),
+NCP_("bodypart", "hypha", "hyphas"), NCP_("bodypart", "root", "roots"),
+NCP_("bodypart", "strand", "strands"),
+NCP_("bodypart", "stranded", "stranded"),
+NCP_("bodypart", "cap area", "cap areas"),
+NCP_("bodypart", "rhizome", "rhizomes"),
+NCP_("bodypart", "sporulated", "sporulated"),
+NCP_("bodypart", "stalk", "stalks"),
+NCP_("bodypart", "rhizome tip", "rhizome tips"),
+NCP_("bodypart", "spores", "spores"), NCP_("bodypart", "gill", "gills"),
+NCP_("bodypart", "region", "regions"),
+NCP_("bodypart", "minor current", "minor currents"),
+NCP_("bodypart", "lower current", "lower currents"),
+NCP_("bodypart", "swirl", "swirls"), NCP_("bodypart", "swirled", "swirled"),
+NCP_("bodypart", "central core", "central cores"),
+NCP_("bodypart", "addled", "addled"), NCP_("bodypart", "center", "centers"),
+NCP_("bodypart", "currents", "currents"), NCP_("bodypart", "edge", "edges"),
+NCP_("bodypart", "leading edge", "leading edges"),
+NCP_("bodypart", "vestigial limb", "vestigial limbs"),
+NCP_("bodypart", "large scale", "large scales"),
+NCP_("bodypart", "large scale tip", "large scale tips"),
+NCP_("bodypart", "rear region", "rear regions"),
+NCP_("bodypart", "scale gap", "scale gaps"),
+NCP_("bodypart", "scale gapped", "scale gapped"),
+NCP_("bodypart", "length", "lengths"),
+NCP_("bodypart", "rear scale", "rear scales"),
+NCP_("bodypart", "scales", "scales"),
+NCP_("bodypart", "forked tongue", "forked tongues"),
+NCP_("bodypart", "anterior segment", "anterior segments"),
+NCP_("bodypart", "light sensitive cell", "light sensitive cells"),
+NCP_("bodypart", "clitellum", "clitellums"),
+NCP_("bodypart", "setae", "setaes"),
+NCP_("bodypart", "posterior segment", "posterior segments"),
+NCP_("bodypart", "segment", "segments"),
+NCP_("bodypart", "segmented", "segmented"),
+NCP_("bodypart", "posterior", "posteriors"),
+NCP_("bodypart", "over stretched", "over stretched"),
+NCP_("bodypart", "posterior setae", "posterior setaes"),
+NCP_("bodypart", "skin", "skins"),
+NCP_("bodypart", "prostomium", "prostomiums"),
+NCP_("bodypart", "pedipalp", "pedipalps"),
+NCP_("bodypart", "tarsus", "tarsus"), NCP_("bodypart", "claw", "claws"),
+NCP_("bodypart", "palped", "palped"),
+NCP_("bodypart", "cephalothorax", "cephalothoraxs"),
+NCP_("bodypart", "spun out", "spun out"),
+NCP_("bodypart", "abdomen", "abdomens"),
+NCP_("bodypart", "hemolymph", "hemolymph"),
+NCP_("bodypart", "book lung", "book lungs"),
+NCP_("bodypart", "labrum", "labrums"),
+NCP_("bodypart", "digestive tract", "digestive tracts"),
+NCP_("bodypart", "fin", "fins"),
+NCP_("bodypart", "premaxillary", "premaxillarys"),
+NCP_("bodypart", "pelvic axillary", "pelvic axillarys"),
+NCP_("bodypart", "pelvic fin", "pelvic fins"),
+NCP_("bodypart", "anal fin", "anal fins"),
+NCP_("bodypart", "pectoral fin", "pectoral fins"),
+NCP_("bodypart", "finned", "finned"),
+NCP_("bodypart", "peduncle", "peduncles"),
+NCP_("bodypart", "played out", "played out"),
+NCP_("bodypart", "gills", "gills"),
+NCP_("bodypart", "dorsal fin", "dorsal fins"),
+NCP_("bodypart", "caudal fin", "caudal fins"),
+NCP_("bodypart", "nostril", "nostrils"), NCP_("bodypart", "paw", "paws"),
+NCP_("bodypart", "pawed", "pawed"),
+NCP_("bodypart", "rear paw", "rear paws"),
+NCP_("bodypart", "trunk", "trunks"), NCP_("bodypart", "cornea", "corneas"),
+NCP_("bodypart", "rayed", "rayed"), NCP_("bodypart", "ray", "rays"),
+NCP_("bodypart", "beam", "beams"),
+/* and their grammatical gender */
+NC_("gender", "arm"), NC_("gender", "eye"), NC_("gender", "face"),
+NC_("gender", "finger"), NC_("gender", "fingertip"), NC_("gender", "foot"),
+NC_("gender", "hand"), NC_("gender", "handed"), NC_("gender", "head"),
+NC_("gender", "leg"), NC_("gender", "light headed"), NC_("gender", "neck"),
+NC_("gender", "spine"), NC_("gender", "toe"), NC_("gender", "hair"),
+NC_("gender", "blood"), NC_("gender", "lung"), NC_("gender", "nose"),
+NC_("gender", "stomach"), NC_("gender", "pseudopod"),
+NC_("gender", "dark spot"), NC_("gender", "front"),
+NC_("gender", "pseudopod extension"), NC_("gender", "pseudopod extremity"),
+NC_("gender", "pseudopod root"), NC_("gender", "grasp"),
+NC_("gender", "grasped"), NC_("gender", "cerebral area"),
+NC_("gender", "lower pseudopod"), NC_("gender", "viscous"),
+NC_("gender", "middle"), NC_("gender", "surface"), NC_("gender", "ripples"),
+NC_("gender", "juices"), NC_("gender", "sensor"), NC_("gender", "forelimb"),
+NC_("gender", "foreclaw"), NC_("gender", "claw tip"),
+NC_("gender", "rear claw"), NC_("gender", "clawed"),
+NC_("gender", "rear limb"), NC_("gender", "rear claw tip"),
+NC_("gender", "fur"), NC_("gender", "wing"), NC_("gender", "wing tip"),
+NC_("gender", "winged"), NC_("gender", "feathers"), NC_("gender", "bill"),
+NC_("gender", "foreleg"), NC_("gender", "forehoof"),
+NC_("gender", "hoof tip"), NC_("gender", "rear hoof"),
+NC_("gender", "hooved"), NC_("gender", "rear leg"),
+NC_("gender", "backbone"), NC_("gender", "rear hoof tip"),
+NC_("gender", "mane"), NC_("gender", "appendage"),
+NC_("gender", "optic nerve"), NC_("gender", "body"),
+NC_("gender", "tentacle"), NC_("gender", "tentacle tip"),
+NC_("gender", "lower appendage"), NC_("gender", "tentacled"),
+NC_("gender", "lower tentacle"), NC_("gender", "rotational"),
+NC_("gender", "equator"), NC_("gender", "lower tentacle tip"),
+NC_("gender", "cilia"), NC_("gender", "life force"), NC_("gender", "retina"),
+NC_("gender", "olfactory nerve"), NC_("gender", "interior"),
+NC_("gender", "mycelium"), NC_("gender", "visual area"),
+NC_("gender", "hypha"), NC_("gender", "root"), NC_("gender", "strand"),
+NC_("gender", "stranded"), NC_("gender", "cap area"),
+NC_("gender", "rhizome"), NC_("gender", "sporulated"),
+NC_("gender", "stalk"), NC_("gender", "rhizome tip"),
+NC_("gender", "spores"), NC_("gender", "gill"), NC_("gender", "region"),
+NC_("gender", "minor current"), NC_("gender", "lower current"),
+NC_("gender", "swirl"), NC_("gender", "swirled"),
+NC_("gender", "central core"), NC_("gender", "addled"),
+NC_("gender", "center"), NC_("gender", "currents"), NC_("gender", "edge"),
+NC_("gender", "leading edge"), NC_("gender", "vestigial limb"),
+NC_("gender", "large scale"), NC_("gender", "large scale tip"),
+NC_("gender", "rear region"), NC_("gender", "scale gap"),
+NC_("gender", "scale gapped"), NC_("gender", "length"),
+NC_("gender", "rear scale"), NC_("gender", "scales"),
+NC_("gender", "forked tongue"), NC_("gender", "anterior segment"),
+NC_("gender", "light sensitive cell"), NC_("gender", "clitellum"),
+NC_("gender", "setae"), NC_("gender", "posterior segment"),
+NC_("gender", "segment"), NC_("gender", "segmented"),
+NC_("gender", "posterior"), NC_("gender", "over stretched"),
+NC_("gender", "posterior setae"), NC_("gender", "skin"),
+NC_("gender", "prostomium"), NC_("gender", "pedipalp"),
+NC_("gender", "tarsus"), NC_("gender", "claw"), NC_("gender", "palped"),
+NC_("gender", "cephalothorax"), NC_("gender", "spun out"),
+NC_("gender", "abdomen"), NC_("gender", "hemolymph"),
+NC_("gender", "book lung"), NC_("gender", "labrum"),
+NC_("gender", "digestive tract"), NC_("gender", "fin"),
+NC_("gender", "premaxillary"), NC_("gender", "pelvic axillary"),
+NC_("gender", "pelvic fin"), NC_("gender", "anal fin"),
+NC_("gender", "pectoral fin"), NC_("gender", "finned"),
+NC_("gender", "peduncle"), NC_("gender", "played out"),
+NC_("gender", "gills"), NC_("gender", "dorsal fin"),
+NC_("gender", "caudal fin"), NC_("gender", "nostril"), NC_("gender", "paw"),
+NC_("gender", "pawed"), NC_("gender", "rear paw"), NC_("gender", "trunk"),
+NC_("gender", "cornea"), NC_("gender", "rayed"), NC_("gender", "ray"),
+NC_("gender", "beam"),
+#endif
+
+/* the English body parts translated by mbodypart(), for makeplural() */
+static const char *bodyparts_seen[64];
+#endif
+
+/* name of a body part of mon, translated when messages are */
+const char *
+mbodypart(struct monst *mon, int part)
+{
+    const char *en = mbodypart_english(mon, part);
+#ifdef NHI18N
+    int i;
+
+    if (!i18n_active())
+        return en;
+    for (i = 0; i < SIZE(bodyparts_seen) && bodyparts_seen[i]; ++i)
+        if (bodyparts_seen[i] == en)
+            break;
+    if (i < SIZE(bodyparts_seen) && !bodyparts_seen[i])
+        bodyparts_seen[i] = en;
+    return nh_npgettext("bodypart", en, FALSE);
+#else
+    return en;
+#endif
+}
+
+#ifdef NHI18N
+/* plural of translated body part str, given by mbodypart(), or Null */
+const char *
+bodypart_plural_i18n(const char *str)
+{
+    int i;
+
+    for (i = 0; i < SIZE(bodyparts_seen) && bodyparts_seen[i]; ++i)
+        if (i18n_lookup("bodypart", bodyparts_seen[i])
+            && !strcmp(str, nh_npgettext("bodypart", bodyparts_seen[i],
+                                         FALSE)))
+            return nh_npgettext("bodypart", bodyparts_seen[i], TRUE);
+    return (const char *) 0;
+}
+#endif
 
 const char *
 body_part(int part)

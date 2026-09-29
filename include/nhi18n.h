@@ -31,6 +31,15 @@
  *  i18n_mon_fem(mon)
  *              TRUE when the translated name of monster mon is feminine,
  *              to pick C_("feminine", ...) forms of the rest of a message.
+ *  i18n_the("noun"), i18n_the_ctx("context", "noun")
+ *              translation of an English common noun (msgctxt "noun" or
+ *              context) with the definite article agreeing with its
+ *              "gender" entry: "le sol", "la glace", "l'autel".
+ *
+ * A translation can mark a contraction with '@' ("@de %s", "@\303\240 %s"):
+ * the contraction rules of the catalog (msgctxt "grammar", "contractions")
+ * make "@de le gnome" "du gnome" once the message is formatted.
+ * Messages about a female hero use their msgctxt "heroine" form if any.
  *
  * Catalogs are GNU .mo files compiled from po/<lang>.po and installed in
  * HACKDIR as <lang>.mo.  A translation whose printf conversions do not
@@ -52,6 +61,10 @@
 #define i18n_mon_fem(mon) FALSE
 #define i18n_has(msgid) FALSE
 #define I18N_FILE(fname) (fname)
+/* do_name.c helpers, only called when i18n_active() */
+#define i18n_the(en) the(en)
+#define i18n_the_ctx(ctx, en) the(en)
+#define i18n_noun_fem(en) FALSE
 #endif
 #define N_(msgid) msgid
 #define NC_(ctx, msgid) msgid

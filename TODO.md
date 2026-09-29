@@ -48,14 +48,37 @@ C'est ce qui bloque la plupart des messages restants.
   entourent, souvent composées de morceaux (« %s %s for a moment. »).
 - **Possessif** : `s_suffix()` (« the fox's » → « du renard ») ; les
   phrases qui l'utilisent sont à reformuler.
-- **Articles et contractions** : le/la/l'/les, de + le = du,
-  à + le = au, élision devant voyelle ou h muet.
+- **Fait : contractions.** Une traduction marque « de » ou « à » devant un
+  argument avec `@` (« @de %s ») : une fois le message formaté, les règles
+  du catalogue (contexte `grammar`, `contractions`) donnent « du gnome »,
+  « de la naine », « d'un orque », « des gnomes », « au pied ».
+- **Fait : noms communs avec article.** `i18n_the()` (contexte `noun`) et
+  `i18n_the_ctx()` donnent « le sol », « la glace », « l'autel » selon le
+  genre (`gender`) ; utilisés pour les surfaces (`surface()`,
+  `ceiling()`), les noms de pièges (contexte `trap`) et les parties du
+  corps.
+- **Fait : parties du corps.** `mbodypart()` renvoie le nom traduit
+  (contexte `bodypart`, avec pluriel pour `makeplural()`) ;
+  `mbodypart_english()` garde l'anglais pour les causes de mort.
+- **Fait : héroïne.** `vpline()` prend la forme `heroine` d'un message
+  quand le personnage est féminin (« Vous êtes prise dans une toile »).
+  Seuls quelques messages de `trap.c` en ont une pour l'instant.
+- **Accord avec l'objet sujet** : `objnam_fmt()` choisit la forme
+  `feminine`, `plural` ou `feminine plural` d'un message dont le sujet est
+  un objet ; `objnam_adj()` accorde un adjectif. À utiliser ailleurs que
+  dans `trap.c`.
 - **Conjugaison** : `vtense()` et `otense()` accordent le verbe anglais avec
   le sujet ; il faut une solution pour les verbes français.
 - **Vœux** (`readobjnam()` dans `objnam.c`) : comprendre un vœu tapé en
   français (« 2 potions bénies de vitesse »), en gardant l'anglais possible.
 
 ## 2. Messages composés
+
+Fait : `trap.c` (pièges, érosion des objets, lévitation, noyade, lave,
+désamorçage), sauf quelques phrases de `u_locomotion()` (« float », « fly »)
+simplifiées en français.  Restent, par nombre de messages non traduits :
+`apply.c`, `uhitm.c`, `shk.c`, `mhitu.c`, `zap.c`, `muse.c`, `pray.c`,
+`read.c`, `potion.c`, `hack.c`, `do.c`, `do_wear.c`...
 
 - **Messages construits avec `Sprintf`** puis affichés : ils ne sont pas
   trouvés dans le catalogue. Exemples : « Really step onto that falling

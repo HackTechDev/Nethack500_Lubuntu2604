@@ -694,6 +694,9 @@ extern void docall(struct obj *) NONNULLARG1;
 extern const char *rndghostname(void);
 #ifdef NHI18N
 extern boolean monnam_is_feminine(struct monst *) NONNULLARG1;
+extern char *i18n_the(const char *) NONNULLARG1;
+extern char *i18n_the_ctx(const char *, const char *) NONNULLARG12;
+extern boolean i18n_noun_fem(const char *) NONNULLARG1;
 #endif
 extern char *x_monnam(struct monst *, int, const char *, int, boolean) NONNULLARG1;
 extern char *l_monnam(struct monst *) NONNULLARG1;
@@ -2094,6 +2097,7 @@ extern const char *nh_npgettext(const char *, const char *, boolean)
 extern void i18n_suspend(boolean);
 extern boolean i18n_vowel_start(const char *) NONNULLARG1;
 extern const char *i18n_datafile(const char *) NONNULLARG1;
+extern void i18n_contract(char *) NONNULLARG1;
 extern boolean i18n_set_language(const char *) NONNULLARG1;
 extern const char *i18n_language(void);
 #endif
@@ -2229,6 +2233,9 @@ extern void objects_globals_init(void);
 #ifdef NHI18N
 extern const char *objnam_english(const char *) NONNULLARG1;
 extern boolean objnam_feminine(const char *) NONNULLARG1;
+extern const char *objnam_fmt(const char *, const char *, struct obj *)
+                                                FORMAT_ARG(1) NONNULLARG1;
+extern const char *objnam_adj(const char *, const char *) NONNULLARG12;
 #endif
 extern void maybereleaseobuf(char *) NONNULLARG1;
 extern char *obj_typename(int);
@@ -2541,7 +2548,11 @@ extern int dopoly(void);
 extern int domindblast(void);
 extern void uunstick(void);
 extern void skinback(boolean);
+extern const char *mbodypart_english(struct monst *, int) NONNULLARG1;
 extern const char *mbodypart(struct monst *, int) NONNULLARG1;
+#ifdef NHI18N
+extern const char *bodypart_plural_i18n(const char *) NONNULLARG1;
+#endif
 extern const char *body_part(int);
 extern int poly_gender(void);
 extern void ugolemeffects(int, int);

@@ -862,6 +862,42 @@ i18n_adjective(const char *adj, boolean fem)
     return fem ? C_("feminine", adj) : _(adj);
 }
 
+/* translation of the English common noun en (msgctxt "noun"; its
+   grammatical gender is its "gender" entry) with the definite article:
+   "floor" -> "le sol", "ice" -> "la glace", "altar" -> "l'autel" */
+char *
+i18n_the(const char *en)
+{
+    return i18n_the_ctx("noun", en);
+}
+
+/* i18n_the() for a noun translated with msgctxt ctx ("bodypart"...) */
+char *
+i18n_the_ctx(const char *ctx, const char *en)
+{
+    static char buf[4][BUFSZ];
+    static int idx = 0;
+    char *res = buf[idx = (idx + 1) % 4];
+    const char *noun = C_(ctx, en), *g = i18n_lookup("gender", en);
+
+    if (g && strchr(g, 'p')) /* plural noun */
+        Snprintf(res, BUFSZ, C_("plural", "the %s"), noun);
+    else if (i18n_elides(noun, en))
+        Snprintf(res, BUFSZ, C_("elided", "the %s"), noun);
+    else if (i18n_feminine(en))
+        Snprintf(res, BUFSZ, C_("feminine", "the %s"), noun);
+    else
+        Snprintf(res, BUFSZ, _("the %s"), noun);
+    return res;
+}
+
+/* is the translation of the English noun en feminine? */
+boolean
+i18n_noun_fem(const char *en)
+{
+    return i18n_feminine(en);
+}
+
 /* is the translated name of mtmp, as given by x_monnam(), feminine?
    (for agreement of the rest of a translated message) */
 boolean

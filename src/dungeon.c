@@ -1746,6 +1746,33 @@ ceiling(coordxy x, coordxy y)
     return what;
 }
 
+#if 0
+/* for xgettext: nouns given by ceiling() and surface() */
+NC_("noun", "vault's ceiling"), NC_("noun", "temple's ceiling"),
+NC_("noun", "shop's ceiling"), NC_("noun", "water above"),
+NC_("noun", "sky"), NC_("noun", "flames above"),
+NC_("noun", "expanse above"), NC_("noun", "water's surface"),
+NC_("noun", "ceiling"), NC_("noun", "rock cavern"),
+NC_("noun", "maw"), NC_("noun", "husk"), NC_("noun", "air bubble"),
+NC_("noun", "cloud"), NC_("noun", "air"), NC_("noun", "bottom"),
+NC_("noun", "water"), NC_("noun", "ice"), NC_("noun", "lava"),
+NC_("noun", "bridge"), NC_("noun", "altar"), NC_("noun", "headstone"),
+NC_("noun", "fountain"), NC_("noun", "stairs"), NC_("noun", "wall"),
+NC_("noun", "doorway"), NC_("noun", "floor"), NC_("noun", "ground"),
+NC_("gender", "vault's ceiling"), NC_("gender", "temple's ceiling"),
+NC_("gender", "shop's ceiling"), NC_("gender", "water above"),
+NC_("gender", "sky"), NC_("gender", "flames above"),
+NC_("gender", "expanse above"), NC_("gender", "water's surface"),
+NC_("gender", "ceiling"), NC_("gender", "rock cavern"),
+NC_("gender", "maw"), NC_("gender", "husk"), NC_("gender", "air bubble"),
+NC_("gender", "cloud"), NC_("gender", "air"), NC_("gender", "bottom"),
+NC_("gender", "water"), NC_("gender", "ice"), NC_("gender", "lava"),
+NC_("gender", "bridge"), NC_("gender", "altar"),
+NC_("gender", "headstone"), NC_("gender", "fountain"),
+NC_("gender", "stairs"), NC_("gender", "wall"), NC_("gender", "doorway"),
+NC_("gender", "floor"), NC_("gender", "ground"),
+#endif
+
 const char *
 surface(coordxy x, coordxy y)
 {

@@ -829,6 +829,34 @@ objnam_feminine(const char *str)
     return (get_objgram(str) & OGRAM_FEM) != 0;
 }
 
+/* translation of message format fmt whose subject is the object named
+   str (from xname() &c) or obj if str's grammar isn't known: its form for
+   a subject of that gender and number, msgctxt "feminine", "plural" or
+   "feminine plural", if there is one */
+const char *
+objnam_fmt(const char *fmt, const char *str, struct obj *obj)
+{
+    unsigned gram = str ? get_objgram(str) : 0U;
+    boolean fem = (gram & OGRAM_FEM) != 0,
+            pl = (gram & OGRAM_SET) ? (gram & OGRAM_PLURAL) != 0
+                                    : (obj && is_plural(obj));
+
+    if (fem && pl)
+        return C_("feminine plural", fmt);
+    else if (pl)
+        return C_("plural", fmt);
+    else if (fem)
+        return C_("feminine", fmt);
+    return _(fmt);
+}
+
+/* translation of adjective en agreeing with the object named str */
+const char *
+objnam_adj(const char *en, const char *str)
+{
+    return obj_agree(en, get_objgram(str));
+}
+
 /* translation of adjective or pattern en agreeing with gender and number
    'gram'; a missing plural form is made by adding 's' to the last word of
    the singular, unless that starts with a preposition ("en bois") */
@@ -3968,6 +3996,17 @@ makeplural(const char *oldstr)
     if (oldstr)
         while (*oldstr == ' ')
             oldstr++;
+#ifdef NHI18N
+    {
+        const char *bp;
+
+        /* translated body part from mbodypart() */
+        if (oldstr && i18n_active() && (bp = bodypart_plural_i18n(oldstr))) {
+            copynchars(str, bp, BUFSZ - 1);
+            return str;
+        }
+    }
+#endif
     if (!oldstr || !*oldstr) {
         impossible("plural of null?");
         Strcpy(str, "s");

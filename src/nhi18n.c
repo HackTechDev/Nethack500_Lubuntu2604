@@ -433,6 +433,59 @@ i18n_vowel_start(const char *text)
     return FALSE;
 }
 
+/* apply the contractions of the language where a translation has an '@'
+ * marker: "@de %s" gives "du gnome", "de la naine", "d'un orque"...
+ * The rules are the translation of msgctxt "grammar" msgid "contractions",
+ * a list of "words>replacement" separated by '|'; a '+' ending the words
+ * makes the rule apply only before a vowel ("de +>d'").  An '@' followed
+ * by none of the rules' words is left alone.  The rules must not lengthen
+ * the text.
+ */
+#if 0
+/* for xgettext: the contraction rules of the language */
+NC_("grammar", "contractions"),
+#endif
+
+void
+i18n_contract(char *buf)
+{
+    const char *rules, *r, *sep, *end;
+    char *src, *dst;
+    size_t flen, tlen;
+    boolean vowel;
+
+    if (!strchr(buf, '@'))
+        return;
+    rules = i18n_lookup("grammar", "contractions");
+    for (src = dst = buf; *src; ) {
+        if (*src != '@') {
+            *dst++ = *src++;
+            continue;
+        }
+        for (r = rules; r && *r; r = *end ? end + 1 : end) {
+            if (!(end = strchr(r, '|')))
+                end = eos((char *) r);
+            if (!(sep = strchr(r, '>')) || sep > end)
+                continue;
+            flen = (size_t) (sep - r);
+            vowel = (flen > 0 && r[flen - 1] == '+');
+            if (vowel)
+                --flen;
+            tlen = (size_t) (end - sep - 1);
+            if (tlen > flen || strncmp(src + 1, r, flen)
+                || (vowel && !i18n_vowel_start(src + 1 + flen)))
+                continue;
+            (void) memmove(dst, sep + 1, tlen);
+            dst += tlen;
+            src += 1 + flen;
+            break;
+        }
+        if (!r || !*r) /* no rule applies */
+            *dst++ = *src++;
+    }
+    *dst = '\0';
+}
+
 /* switch to language lang ("en" or a code like "fr" or "pt_BR" whose
    catalog is <lang>.mo); FALSE, keeping the current language, if lang
    isn't a valid code or its catalog can't be loaded */

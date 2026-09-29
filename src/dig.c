@@ -400,7 +400,7 @@ dig(void)
                     dmg = (dmg + 1) / 2;
                 You("hit yourself in the %s.", body_part(FOOT));
                 Sprintf(kbuf, "chopping off %s own %s", uhis(),
-                        body_part(FOOT));
+                        mbodypart_english(&gy.youmonst, FOOT));
                 losehp(Maybe_Half_Phys(dmg), kbuf, KILLED_BY);
             } else {
                 You("destroy the bear trap with %s.",

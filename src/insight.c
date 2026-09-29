@@ -591,7 +591,7 @@ background_enlightenment(int unused_mode UNUSED, int final)
     /* "You are left-handed." won't work well if polymorphed into something
        without hands; use "You are normally left-handed." in that situation */
     Sprintf(buf, "%s%s-handed",
-            !strcmp(body_part(HANDED), "handed") ? "" : "normally ",
+            !strcmp(mbodypart_english(&gy.youmonst, HANDED), "handed") ? "" : "normally ",
             URIGHTY ? "right" : "left");
     you_are(buf, "");
 
