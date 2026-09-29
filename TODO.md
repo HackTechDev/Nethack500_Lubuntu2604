@@ -75,10 +75,16 @@ C'est ce qui bloque la plupart des messages restants.
 ## 2. Messages composés
 
 Fait : `trap.c` (pièges, érosion des objets, lévitation, noyade, lave,
-désamorçage), sauf quelques phrases de `u_locomotion()` (« float », « fly »)
-simplifiées en français.  Restent, par nombre de messages non traduits :
-`apply.c`, `uhitm.c`, `shk.c`, `mhitu.c`, `zap.c`, `muse.c`, `pray.c`,
-`read.c`, `potion.c`, `hack.c`, `do.c`, `do_wear.c`...
+désamorçage), `hack.c` (déplacements, rochers, salles spéciales) et
+`uhitm.c` (combat du héros, attaques spéciales), sauf quelques verbes de
+`u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
+français.  Restent, par nombre de messages non traduits : `apply.c`,
+`shk.c`, `mhitu.c`, `zap.c`, `muse.c`, `pray.c`, `read.c`, `potion.c`,
+`do.c`, `do_wear.c`...
+
+`po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
+d'une condition passée à `pline()`, `You()`... : xgettext ne prenait que
+la première (`You(c ? "a" : "b")`).
 
 - **Messages construits avec `Sprintf`** puis affichés : ils ne sont pas
   trouvés dans le catalogue. Exemples : « Really step onto that falling

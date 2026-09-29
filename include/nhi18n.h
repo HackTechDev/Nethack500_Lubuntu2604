@@ -65,6 +65,7 @@
 #define i18n_the(en) the(en)
 #define i18n_the_ctx(ctx, en) the(en)
 #define i18n_noun_fem(en) FALSE
+#define objnam_fmt(fmt, str, obj) (fmt)
 #endif
 #define N_(msgid) msgid
 #define NC_(ctx, msgid) msgid

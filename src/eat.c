@@ -1952,7 +1952,7 @@ eatcorpse(struct obj *otmp)
     /* now any corpse left too long will make you mildly ill */
     } else if ((rotted > 5L || (rotted > 3L && rn2(5))) && !Sick_resistance) {
         tp++;
-        You_feel("%ssick.", (Sick) ? "very " : "");
+        You_feel((Sick) ? "very sick." : "sick.");
         losehp(rnd(8), !glob ? "cadaver" : "rotted glob", KILLED_BY_AN);
     }
 

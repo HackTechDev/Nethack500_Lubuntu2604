@@ -1417,16 +1417,16 @@ on_fire(struct permonst *mptr, struct attack *mattk)
     case PM_FIRE_VORTEX:
     case PM_FIRE_ELEMENTAL:
     case PM_SALAMANDER:
-        what = "already on fire";
+        what = N_("already on fire");
         break;
     case PM_WATER_ELEMENTAL:
     case PM_FOG_CLOUD:
     case PM_STEAM_VORTEX:
-        what = "boiling";
+        what = N_("boiling");
         break;
     case PM_ICE_VORTEX:
     case PM_GLASS_GOLEM:
-        what = "melting";
+        what = N_("melting");
         break;
     case PM_STONE_GOLEM:
     case PM_CLAY_GOLEM:
@@ -1435,10 +1435,11 @@ on_fire(struct permonst *mptr, struct attack *mattk)
     case PM_EARTH_ELEMENTAL:
     case PM_DUST_VORTEX:
     case PM_ENERGY_VORTEX:
-        what = "heating up";
+        what = N_("heating up");
         break;
     default:
-        what = (mattk->aatyp == AT_HUGS) ? "being roasted" : "on fire";
+        what = (mattk->aatyp == AT_HUGS) ? N_("being roasted")
+                                          : N_("on fire");
         break;
     }
     return what;

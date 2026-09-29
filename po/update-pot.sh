@@ -107,4 +107,12 @@ grep -ohE '(Yobjnam2|yobjnam|Tobjnam|aobjnam|otense|vtense)\([^;()]*, *"[^"]+"\)
 $XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
     -o "$tmp/3verbs.pot" "$tmp/verbs.c"
 
+# xgettext only takes the first string of "cond ? "a" : "b"" given to the
+# message functions; po/msgargs.py lists all of them
+# shellcheck disable=SC2086
+python3 po/msgargs.py $SRC > "$tmp/msgargs.c"
+# shellcheck disable=SC2086
+$XGETTEXT $COMMON --no-location -k --keyword=N_ \
+    -o "$tmp/zz_msgargs.pot" "$tmp/msgargs.c"
+
 $MSGCAT --no-wrap --sort-by-file --use-first -o po/nethack.pot "$tmp"/*.pot

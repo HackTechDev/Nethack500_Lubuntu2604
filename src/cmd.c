@@ -4313,8 +4313,9 @@ const char *
 directionname(int dir)
 {
     static NEARDATA const char *const dirnames[N_DIRS_Z] = {
-        "west",      "northwest", "north",     "northeast", "east",
-        "southeast", "south",     "southwest", "down",      "up",
+        N_("west"),      N_("northwest"), N_("north"),     N_("northeast"),
+        N_("east"),      N_("southeast"), N_("south"),     N_("southwest"),
+        N_("down"),      N_("up"),
     };
 
     if (dir < 0 || dir >= N_DIRS_Z)
