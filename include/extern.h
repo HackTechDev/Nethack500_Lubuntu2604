@@ -721,6 +721,7 @@ extern char *minimal_monnam(struct monst *, boolean);
 extern char *bogusmon(char *, char *) NONNULLARG1;
 extern char *rndmonnam(char *);
 extern const char *hcolor(const char *);
+extern const char *hcolor_i18n(const char *, boolean);
 extern const char *rndcolor(void);
 extern const char *hliquid(const char *);
 extern const char *roguename(void);

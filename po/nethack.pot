@@ -1,6 +1,15 @@
 msgid "\"Hello stranger, who are you?\" -"
 msgstr ""
 
+msgid "\"Then die, creature!\""
+msgstr ""
+
+msgid "\"Thou art arrogant, creature.\""
+msgstr ""
+
+msgid "\"Thou hast strayed from the path, creature.\""
+msgstr ""
+
 #, c-format
 msgid "%ld %s added to your credit; total is now %ld %s."
 msgstr ""
@@ -174,11 +183,23 @@ msgid "%s seems concerned that you want to sell that."
 msgstr ""
 
 #, c-format
+msgid "%s seems mollified."
+msgstr ""
+
+#, c-format
+msgid "%s seems slightly mollified."
+msgstr ""
+
+#, c-format
 msgid "%s seems to murmur into your ear, while helping you undress."
 msgstr ""
 
 #, c-format
 msgid "%s seems to murmur into your ear."
+msgstr ""
+
+#, c-format
+msgid "%s shrieks in pain!"
 msgstr ""
 
 #, c-format
@@ -625,6 +646,10 @@ msgctxt "monster"
 msgid "Demogorgon"
 msgstr ""
 
+#, c-format
+msgid "Despite your deafness, you seem to hear %s say:"
+msgstr ""
+
 msgctxt "gender"
 msgid "Dispater"
 msgstr ""
@@ -738,6 +763,12 @@ msgctxt "monster"
 msgid "Famine"
 msgstr ""
 
+msgid "Far out, man!  You can see right through yourself."
+msgstr ""
+
+msgid "Far out, man!  You can't see yourself."
+msgstr ""
+
 msgctxt "gender"
 msgid "Flying Spaghetti Monster"
 msgstr ""
@@ -749,7 +780,16 @@ msgstr ""
 msgid "Fool!"
 msgstr ""
 
+msgid "For an instant you couldn't see yourself!"
+msgstr ""
+
 msgid "Fortunately, you don't move onto it."
+msgstr ""
+
+msgid "Gee!  All of a sudden, you can see right through yourself."
+msgstr ""
+
+msgid "Gee!  All of a sudden, you can't see yourself."
 msgstr ""
 
 msgctxt "gender"
@@ -823,6 +863,9 @@ msgctxt "feminine"
 msgid "HACKEM MUCHE"
 msgstr ""
 
+msgid "Hark, creature!"
+msgstr ""
+
 msgctxt "object"
 msgid "Hawaiian shirt"
 msgid_plural "Hawaiian shirts"
@@ -853,10 +896,16 @@ msgstr ""
 msgid "How dare you %s my door?"
 msgstr ""
 
+msgid "How darest thou desecrate my altar!"
+msgstr ""
+
 msgid "However, you maneuver over it and could pick it up."
 msgstr ""
 
 msgid "However, you maneuver over it."
+msgstr ""
+
+msgid "I believe it not!"
 msgstr ""
 
 msgid "I'll be back."
@@ -1148,6 +1197,9 @@ msgctxt "monster"
 msgid "Morgoth"
 msgstr ""
 
+msgid "Mortal, thou hast done well!"
+msgstr ""
+
 msgid "NR 9"
 msgstr ""
 
@@ -1204,6 +1256,18 @@ msgstr ""
 
 msgctxt "monster"
 msgid "Olog-hai"
+msgstr ""
+
+msgid "Ooph!  This tastes like dandelion wine!"
+msgstr ""
+
+msgid "Ooph!  This tastes like liquid fire!"
+msgstr ""
+
+msgid "Ooph!  This tastes like watered down dandelion wine!"
+msgstr ""
+
+msgid "Ooph!  This tastes like watered down liquid fire!"
 msgstr ""
 
 msgctxt "gender"
@@ -1332,6 +1396,9 @@ msgctxt "monster"
 msgid "Strong Bad"
 msgstr ""
 
+msgid "Suffer, infidel!"
+msgstr ""
+
 msgctxt "object"
 msgid "T-shirt"
 msgid_plural "T-shirts"
@@ -1409,6 +1476,12 @@ msgstr ""
 msgid "The leash snaps loose."
 msgstr ""
 
+msgid "The mixture bubbles, then clears."
+msgstr ""
+
+msgid "The mixture evaporates."
+msgstr ""
+
 msgid "The munchies are interfering with your motor capabilities."
 msgstr ""
 
@@ -1417,6 +1490,9 @@ msgstr ""
 
 #, c-format
 msgid "The venom blinds %s further!"
+msgstr ""
+
+msgid "The very idea of praying to a neutral god is repugnant to you."
 msgstr ""
 
 msgid "Their flames die."
@@ -1428,7 +1504,16 @@ msgstr ""
 msgid "There is a trigger in a pile of soil below you."
 msgstr ""
 
+msgid "They explode!"
+msgstr ""
+
 msgid "They shriek!"
+msgstr ""
+
+msgid "This burns a lot!"
+msgstr ""
+
+msgid "This burns like acid!"
 msgstr ""
 
 msgid "This shop is deserted."
@@ -1444,7 +1529,10 @@ msgid "This shop seems to be untended."
 msgstr ""
 
 #, c-format
-msgid "This tastes like %s%s."
+msgid "This tastes like 10%% real %s all-natural beverage."
+msgstr ""
+
+msgid "This tastes sour."
 msgstr ""
 
 msgctxt "gender"
@@ -1453,6 +1541,18 @@ msgstr ""
 
 msgctxt "monster"
 msgid "Thoth Amon"
+msgstr ""
+
+msgid "Thou art chosen to steal souls for My Glory!"
+msgstr ""
+
+msgid "Thou durst call upon me?"
+msgstr ""
+
+msgid "Thou hast angered me."
+msgstr ""
+
+msgid "Thou hast pleased me with thy progress,"
 msgstr ""
 
 msgctxt "gender"
@@ -1489,6 +1589,9 @@ msgctxt "objgender"
 msgid "Uruk-hai shield"
 msgstr ""
 
+msgid "Use my gift wisely!"
+msgstr ""
+
 msgid "VE FORBRYDERNE"
 msgstr ""
 
@@ -1525,6 +1628,9 @@ msgctxt "monster"
 msgid "Vendor of Yizard"
 msgstr ""
 
+msgid "Vile creature, thou durst call upon me?"
+msgstr ""
+
 msgctxt "gender"
 msgid "Vlad the Impaler"
 msgstr ""
@@ -1539,6 +1645,9 @@ msgstr ""
 
 msgctxt "monster"
 msgid "Vorlon"
+msgstr ""
+
+msgid "Walk no more, perversion of nature!"
 msgstr ""
 
 msgid "What do you want to call this dungeon level?"
@@ -1568,6 +1677,9 @@ msgctxt "monster"
 msgid "Woodland-elf"
 msgstr ""
 
+msgid "Wow!  This makes you feel better!"
+msgstr ""
+
 msgid "XIXAXA XOXAXA XUXAXA"
 msgstr ""
 
@@ -1588,6 +1700,9 @@ msgstr ""
 
 msgctxt "feminine"
 msgid "YUM YUM"
+msgstr ""
+
+msgid "Yecch!  This tastes rotten."
 msgstr ""
 
 msgctxt "gender"
@@ -1605,6 +1720,10 @@ msgstr ""
 msgid "You are getting the munchies."
 msgstr ""
 
+#, c-format
+msgid "You are incapable of calling upon %s to turn aside evilness."
+msgstr ""
+
 msgid "You are laden with moisture and can barely breathe!"
 msgstr ""
 
@@ -1612,6 +1731,9 @@ msgid "You are laden with moisture and feel comforted."
 msgstr ""
 
 msgid "You are laden with moisture and find it mildly uncomfortable."
+msgstr ""
+
+msgid "You are not on an altar."
 msgstr ""
 
 msgid "You are pummeled with debris!"
@@ -1626,11 +1748,17 @@ msgstr ""
 msgid "You are still in a pit."
 msgstr ""
 
+msgid "You are suddenly moving much faster."
+msgstr ""
+
 msgid "You are unable to hear anything."
 msgstr ""
 
 #, c-format
 msgid "You aren't skilled enough to push aside %s from %s."
+msgstr ""
+
+msgid "You ascend to the status of Demigod..."
 msgstr ""
 
 msgid "You avoid stepping into the water."
@@ -1723,6 +1851,9 @@ msgstr ""
 msgid "You discover that your other head makes boring conversation."
 msgstr ""
 
+msgid "You disintegrate into a pile of dust!"
+msgstr ""
+
 #, c-format
 msgid "You dissolve %s spider web!"
 msgstr ""
@@ -1799,13 +1930,28 @@ msgstr ""
 msgid "You fall into the water."
 msgstr ""
 
+msgid "You feel a bit steadier now."
+msgstr ""
+
 msgid "You feel a little more hidden now."
+msgstr ""
+
+msgid "You feel a little strange."
 msgstr ""
 
 msgid "You feel a momentary chill."
 msgstr ""
 
 msgid "You feel a strange mental acuity."
+msgstr ""
+
+msgid "You feel an urge to return to the surface."
+msgstr ""
+
+msgid "You feel ashamed."
+msgstr ""
+
+msgid "You feel even worse."
 msgstr ""
 
 msgid "You feel healthy."
@@ -1815,6 +1961,9 @@ msgid "You feel in control of yourself."
 msgstr ""
 
 msgid "You feel in touch with the Universal Oneness."
+msgstr ""
+
+msgid "You feel less confused now."
 msgstr ""
 
 msgid "You feel like someone is helping you."
@@ -1833,6 +1982,13 @@ msgid "You feel sick."
 msgstr ""
 
 msgid "You feel sluggish."
+msgstr ""
+
+msgid "You feel stronger."
+msgstr ""
+
+#, c-format
+msgid "You feel that %s is displeased."
 msgstr ""
 
 msgid "You feel the power of the Force against you!"
@@ -1901,6 +2057,9 @@ msgstr ""
 msgid "You grab, but cannot hold onto %s!"
 msgstr ""
 
+msgid "You have a peculiar feeling for a moment, then it passes."
+msgstr ""
+
 #, c-format
 msgid "You have established %ld %s credit."
 msgstr ""
@@ -1949,6 +2108,9 @@ msgstr ""
 msgid "You hurt your teeth on the tree."
 msgstr ""
 
+msgid "You intuit diabolical laughter all around you..."
+msgstr ""
+
 #, c-format
 msgid "You joust %s."
 msgstr ""
@@ -1983,6 +2145,9 @@ msgid "You plunge into the water."
 msgstr ""
 
 msgid "You punch through the web."
+msgstr ""
+
+msgid "You realize you have made a mistake."
 msgstr ""
 
 msgid "You reel..."
@@ -2083,10 +2248,20 @@ msgstr ""
 msgid "Your debt has increased by %ld %s."
 msgstr ""
 
+#, c-format
+msgid "Your knowledge of spell '%c' - %s is refreshed."
+msgstr ""
+
 msgid "Your medallion feels warm!"
 msgstr ""
 
 msgid "Your position suddenly seems very uncertain!"
+msgstr ""
+
+msgid "Your sacrifice is consumed in a burst of flame!"
+msgstr ""
+
+msgid "Your sacrifice is consumed in a plume of smoke!"
 msgstr ""
 
 msgid "ZELGO MER"
@@ -3060,13 +3235,6 @@ msgctxt "objgender"
 msgid "bill-guisarme"
 msgstr ""
 
-msgid "black"
-msgstr ""
-
-msgctxt "feminine"
-msgid "black"
-msgstr ""
-
 msgctxt "gender"
 msgid "black dragon"
 msgstr ""
@@ -3188,13 +3356,6 @@ msgstr[1] ""
 
 msgctxt "objgender"
 msgid "blindness"
-msgstr ""
-
-msgid "blue"
-msgstr ""
-
-msgctxt "feminine"
-msgid "blue"
 msgstr ""
 
 msgctxt "object"
@@ -3460,13 +3621,6 @@ msgstr[1] ""
 
 msgctxt "objgender"
 msgid "bronze plate mail"
-msgstr ""
-
-msgid "brown"
-msgstr ""
-
-msgctxt "feminine"
-msgid "brown"
 msgstr ""
 
 msgctxt "gender"
@@ -6269,10 +6423,6 @@ msgctxt "gender"
 msgid "ghost"
 msgstr ""
 
-msgctxt "monster"
-msgid "ghost"
-msgstr ""
-
 msgctxt "gender"
 msgid "ghoti"
 msgstr ""
@@ -6724,13 +6874,6 @@ msgctxt "objgender"
 msgid "gold piece"
 msgstr ""
 
-msgid "golden"
-msgstr ""
-
-msgctxt "feminine"
-msgid "golden"
-msgstr ""
-
 msgctxt "gender"
 msgid "golden naga"
 msgstr ""
@@ -6786,13 +6929,6 @@ msgstr[1] ""
 
 msgctxt "objgender"
 msgid "grappling hook"
-msgstr ""
-
-msgid "gray"
-msgstr ""
-
-msgctxt "feminine"
-msgid "gray"
 msgstr ""
 
 msgctxt "gender"
@@ -6853,13 +6989,6 @@ msgstr ""
 
 msgctxt "monster"
 msgid "greater snake"
-msgstr ""
-
-msgid "green"
-msgstr ""
-
-msgctxt "feminine"
-msgid "green"
 msgstr ""
 
 msgctxt "gender"
@@ -8436,13 +8565,6 @@ msgctxt "objgender"
 msgid "light"
 msgstr ""
 
-msgid "light blue"
-msgstr ""
-
-msgctxt "feminine"
-msgid "light blue"
-msgstr ""
-
 msgid "light brown"
 msgstr ""
 
@@ -9590,13 +9712,6 @@ msgctxt "objgender"
 msgid "opera cloak"
 msgstr ""
 
-msgid "orange"
-msgstr ""
-
-msgctxt "feminine"
-msgid "orange"
-msgstr ""
-
 msgctxt "object"
 msgid "orange"
 msgid_plural "oranges"
@@ -10380,13 +10495,6 @@ msgctxt "objgender"
 msgid "punishment"
 msgstr ""
 
-msgid "purple"
-msgstr ""
-
-msgctxt "feminine"
-msgid "purple"
-msgstr ""
-
 msgctxt "gender"
 msgid "purple worm"
 msgstr ""
@@ -10634,13 +10742,6 @@ msgstr ""
 
 msgctxt "monster"
 msgid "rebus"
-msgstr ""
-
-msgid "red"
-msgstr ""
-
-msgctxt "feminine"
-msgid "red"
 msgstr ""
 
 msgctxt "gender"
@@ -11470,13 +11571,6 @@ msgstr[1] ""
 
 msgctxt "objgender"
 msgid "sickness"
-msgstr ""
-
-msgid "silver"
-msgstr ""
-
-msgctxt "feminine"
-msgid "silver"
 msgstr ""
 
 msgctxt "object"
@@ -13377,13 +13471,6 @@ msgctxt "objgender"
 msgid "whistle"
 msgstr ""
 
-msgid "white"
-msgstr ""
-
-msgctxt "feminine"
-msgid "white"
-msgstr ""
-
 msgctxt "gender"
 msgid "white dragon"
 msgstr ""
@@ -13980,12 +14067,12 @@ msgstr ""
 #: src/eat.c:2171 src/engrave.c:1262 src/hack.c:135 src/hack.c:3529
 #: src/hack.c:4335 src/nhlua.c:639 src/nhlua.c:655 src/pager.c:2700
 #: src/pickup.c:413 src/pickup.c:415 src/pline.c:648 src/pline.c:660
-#: src/pline.c:715 src/potion.c:207 src/potion.c:234 src/questpgr.c:434
-#: src/rumors.c:584 src/sit.c:55 src/sounds.c:1533 src/spell.c:2064
-#: src/timeout.c:147 src/timeout.c:309 src/timeout.c:342 src/timeout.c:420
-#: src/timeout.c:542 src/timeout.c:568 src/trap.c:5833 src/vault.c:959
-#: src/version.c:163 src/windows.c:455 src/windows.c:513 src/wizcmds.c:438
-#: src/zap.c:5063 src/zap.c:5207 win/curses/cursdial.c:298
+#: src/pline.c:715 src/potion.c:226 src/potion.c:253 src/pray.c:1869
+#: src/questpgr.c:434 src/rumors.c:584 src/sit.c:55 src/sounds.c:1533
+#: src/spell.c:2064 src/timeout.c:147 src/timeout.c:309 src/timeout.c:342
+#: src/timeout.c:420 src/timeout.c:542 src/timeout.c:568 src/trap.c:5833
+#: src/vault.c:959 src/version.c:163 src/windows.c:455 src/windows.c:513
+#: src/wizcmds.c:438 src/zap.c:5063 src/zap.c:5207 win/curses/cursdial.c:298
 #: win/curses/cursdial.c:366 win/tty/topl.c:420 win/tty/topl.c:425
 #: win/tty/wintty.c:2826
 #, c-format
@@ -14015,7 +14102,7 @@ msgstr ""
 msgid "You cannot use it while you're wearing it!"
 msgstr ""
 
-#: src/apply.c:129 src/polyself.c:1382 src/potion.c:1960
+#: src/apply.c:129 src/polyself.c:1382 src/potion.c:2016
 #, c-format
 msgid "Your %s %s!"
 msgstr ""
@@ -14153,8 +14240,8 @@ msgstr ""
 #: src/apply.c:685 src/apply.c:1651 src/cmd.c:1361 src/display.c:2069
 #: src/dog.c:1209 src/explode.c:796 src/getpos.c:986 src/invent.c:3147
 #: src/invent.c:4587 src/mail.c:375 src/muse.c:3144 src/music.c:616
-#: src/objnam.c:4799 src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1681
-#: src/pray.c:575 src/read.c:1356 src/read.c:2664 src/read.c:2868
+#: src/objnam.c:4799 src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1729
+#: src/pray.c:608 src/read.c:1356 src/read.c:2664 src/read.c:2868
 #: src/uhitm.c:3121 src/wield.c:1007 win/tty/wintty.c:2960
 #, c-format
 msgid "%s."
@@ -15168,8 +15255,8 @@ msgstr ""
 #: src/apply.c:4319 src/dog.c:1335 src/dothrow.c:1962 src/engrave.c:877
 #: src/engrave.c:885 src/mcastu.c:699 src/mhitm.c:705 src/mhitu.c:2727
 #: src/mkobj.c:1605 src/mon.c:1028 src/mon.c:1808 src/music.c:675
-#: src/potion.c:473 src/potion.c:1557 src/pray.c:362 src/pray.c:594
-#: src/pray.c:1297 src/read.c:1288 src/read.c:1590 src/shk.c:5631 src/sit.c:631
+#: src/potion.c:1605 src/pray.c:386 src/pray.c:627 src/pray.c:1380
+#: src/read.c:1288 src/read.c:1590 src/shk.c:5631 src/sit.c:631
 #: src/sounds.c:507 src/trap.c:4999 src/trap.c:5007 src/trap.c:5117
 #: src/trap.c:5121 src/trap.c:5275 src/trap.c:5301 src/trap.c:5324
 #: src/trap.c:5337 src/wield.c:996
@@ -15415,7 +15502,7 @@ msgstr ""
 msgid "You feel a surge of power, but nothing seems to happen."
 msgstr ""
 
-#: src/artifact.c:1788 src/potion.c:1121 src/pray.c:414
+#: src/artifact.c:1788 src/potion.c:1161 src/pray.c:439
 msgid "You feel better."
 msgstr ""
 
@@ -16737,7 +16824,6 @@ msgid "Monsters sense the presence of you."
 msgstr ""
 
 #: src/detect.c:998 src/do_wear.c:496 src/eat.c:1099 src/eat.c:1106
-#: src/pray.c:1491
 #, c-format
 msgid "You feel %s."
 msgstr ""
@@ -17866,7 +17952,7 @@ msgstr ""
 msgid "You hear scratching noises."
 msgstr ""
 
-#: src/do.c:2269 src/muse.c:124 src/potion.c:2860 src/shk.c:5037 src/shk.c:5053
+#: src/do.c:2269 src/muse.c:124 src/potion.c:2962 src/shk.c:5037 src/shk.c:5053
 #, c-format
 msgid "%s vanishes."
 msgstr ""
@@ -18001,6 +18087,23 @@ msgstr ""
 
 #: src/do_name.c:591
 msgid "You know those as well as you ever will."
+msgstr ""
+
+#: src/do_name.c:656
+#, c-format
+msgid "Call a stream of %s fluid:"
+msgstr ""
+
+#: src/do_name.c:659
+msgid ":"
+msgstr ""
+
+#: src/do_name.c:659
+msgid "Call "
+msgstr ""
+
+#: src/do_name.c:660 src/objnam.c:1338 src/objnam.c:1588 src/shk.c:6267
+msgid "thing"
 msgstr ""
 
 #: src/do_name.c:714
@@ -18252,7 +18355,7 @@ msgstr ""
 msgid "you"
 msgstr ""
 
-#: src/do_name.c:1113 src/mon.c:3524
+#: src/do_name.c:1113 src/mon.c:3524 src/pray.c:1857
 msgid "it"
 msgstr ""
 
@@ -18262,6 +18365,126 @@ msgstr ""
 
 #: src/do_name.c:1115
 msgid "something"
+msgstr ""
+
+#: src/do_name.c:1709
+msgid "amber"
+msgstr ""
+
+#: src/do_name.c:1709
+msgid "black"
+msgstr ""
+
+#: src/do_name.c:1709
+msgid "golden"
+msgstr ""
+
+#: src/do_name.c:1709
+msgid "light blue"
+msgstr ""
+
+#: src/do_name.c:1709
+msgid "red"
+msgstr ""
+
+#: src/do_name.c:1710
+msgid "blue"
+msgstr ""
+
+#: src/do_name.c:1710
+msgid "green"
+msgstr ""
+
+#: src/do_name.c:1710
+msgid "purple"
+msgstr ""
+
+#: src/do_name.c:1710
+msgid "silver"
+msgstr ""
+
+#: src/do_name.c:1710
+msgid "white"
+msgstr ""
+
+#: src/do_name.c:1711 src/pray.c:1776
+msgid "gray"
+msgstr ""
+
+#: src/do_name.c:1711
+msgid "orange"
+msgstr ""
+
+#: src/do_name.c:1712
+#, c-format
+msgctxt "feminine"
+msgid "amber"
+msgstr ""
+
+#: src/do_name.c:1712
+#, c-format
+msgctxt "feminine"
+msgid "black"
+msgstr ""
+
+#: src/do_name.c:1712
+#, c-format
+msgctxt "feminine"
+msgid "golden"
+msgstr ""
+
+#: src/do_name.c:1713
+#, c-format
+msgctxt "feminine"
+msgid "light blue"
+msgstr ""
+
+#: src/do_name.c:1713
+#, c-format
+msgctxt "feminine"
+msgid "red"
+msgstr ""
+
+#: src/do_name.c:1714
+#, c-format
+msgctxt "feminine"
+msgid "blue"
+msgstr ""
+
+#: src/do_name.c:1714
+#, c-format
+msgctxt "feminine"
+msgid "green"
+msgstr ""
+
+#: src/do_name.c:1714
+#, c-format
+msgctxt "feminine"
+msgid "silver"
+msgstr ""
+
+#: src/do_name.c:1715
+#, c-format
+msgctxt "feminine"
+msgid "purple"
+msgstr ""
+
+#: src/do_name.c:1715
+#, c-format
+msgctxt "feminine"
+msgid "white"
+msgstr ""
+
+#: src/do_name.c:1716
+#, c-format
+msgctxt "feminine"
+msgid "gray"
+msgstr ""
+
+#: src/do_name.c:1716
+#, c-format
+msgctxt "feminine"
+msgid "orange"
 msgstr ""
 
 #: src/do_wear.c:71
@@ -18445,7 +18668,7 @@ msgstr ""
 msgid "You can't see anything now!"
 msgstr ""
 
-#: src/do_wear.c:1528 src/potion.c:282
+#: src/do_wear.c:1528 src/potion.c:301
 msgid "You can see again."
 msgstr ""
 
@@ -18802,7 +19025,7 @@ msgstr ""
 msgid "%s leash goes slack."
 msgstr ""
 
-#: src/dog.c:1170 src/pray.c:2039 src/pray.c:2045
+#: src/dog.c:1170
 #, c-format
 msgid "%s seems %s."
 msgstr ""
@@ -18907,7 +19130,7 @@ msgstr ""
 msgid "You sense that %s feels rather %s-ish."
 msgstr ""
 
-#: src/dokick.c:59 src/pray.c:1762
+#: src/dokick.c:59
 #, c-format
 msgid "The %s."
 msgstr ""
@@ -19058,8 +19281,7 @@ msgstr ""
 msgid "Thump!"
 msgstr ""
 
-#: src/dokick.c:704 src/pray.c:696 src/shk.c:4122 src/sit.c:714
-#: src/timeout.c:255
+#: src/dokick.c:704 src/shk.c:4122 src/sit.c:714 src/timeout.c:255
 #, c-format
 msgid "You %s!"
 msgstr ""
@@ -20079,7 +20301,7 @@ msgstr ""
 msgid "It's full of %s."
 msgstr ""
 
-#: src/eat.c:1568 src/potion.c:2822
+#: src/eat.c:1568 src/potion.c:2924
 msgid "It turns out to be empty."
 msgstr ""
 
@@ -21226,7 +21448,7 @@ msgstr ""
 msgid "You wash your %s%s in the %s."
 msgstr ""
 
-#: src/fountain.c:568 src/pray.c:357
+#: src/fountain.c:568 src/pray.c:373
 #, c-format
 msgid "Your %s are no longer slippery."
 msgstr ""
@@ -22766,7 +22988,7 @@ msgstr ""
 msgid "There are many more objects here."
 msgstr ""
 
-#: src/invent.c:4321 src/monmove.c:41 src/pray.c:1182 src/zap.c:3950
+#: src/invent.c:4321 src/monmove.c:41 src/pray.c:1248 src/zap.c:3950
 #, c-format
 msgid "%s %s%s."
 msgstr ""
@@ -23544,7 +23766,7 @@ msgstr ""
 msgid "You stiffen briefly."
 msgstr ""
 
-#: src/mcastu.c:758 src/potion.c:889
+#: src/mcastu.c:758 src/potion.c:922
 msgid "You are frozen in place!"
 msgstr ""
 
@@ -24995,7 +25217,7 @@ msgstr ""
 msgid "%s recently regrown horn crumbles to dust."
 msgstr ""
 
-#: src/mon.c:997 src/potion.c:1859
+#: src/mon.c:997 src/potion.c:1915
 #, c-format
 msgid "%s rusts."
 msgstr ""
@@ -25300,7 +25522,7 @@ msgstr ""
 msgid "%s disappears!"
 msgstr ""
 
-#: src/mon.c:5492 src/potion.c:1798
+#: src/mon.c:5492 src/potion.c:1853
 #, c-format
 msgid "%s appears!"
 msgstr ""
@@ -25823,17 +26045,17 @@ msgstr ""
 msgid "%s is frightened to death, and unable to move."
 msgstr ""
 
-#: src/muse.c:112 src/potion.c:2827
+#: src/muse.c:112 src/potion.c:2929
 #, c-format
 msgid "In a cloud of smoke, %s emerges!"
 msgstr ""
 
-#: src/muse.c:113 src/potion.c:2828 src/potion.c:2831
+#: src/muse.c:113 src/potion.c:2930 src/potion.c:2933
 #, c-format
 msgid "%s speaks."
 msgstr ""
 
-#: src/muse.c:118 src/potion.c:2853
+#: src/muse.c:118 src/potion.c:2955
 msgid "You freed me!"
 msgstr ""
 
@@ -26120,7 +26342,7 @@ msgstr ""
 msgid "Suddenly you cannot see %s."
 msgstr ""
 
-#: src/muse.c:2466 src/potion.c:1793
+#: src/muse.c:2466 src/potion.c:1848
 #, c-format
 msgid "%s briefly seems to be transparent."
 msgstr ""
@@ -26610,7 +26832,7 @@ msgstr ""
 msgid "large"
 msgstr ""
 
-#: src/objnam.c:643
+#: src/objnam.c:643 src/potion.c:60
 msgid "rusty"
 msgstr ""
 
@@ -26618,7 +26840,7 @@ msgstr ""
 msgid "very large"
 msgstr ""
 
-#: src/objnam.c:644 src/trap.c:274
+#: src/objnam.c:644 src/potion.c:60 src/trap.c:274
 msgid "corroded"
 msgstr ""
 
@@ -26650,7 +26872,7 @@ msgstr ""
 msgid "tempered"
 msgstr ""
 
-#: src/objnam.c:646
+#: src/objnam.c:646 src/pray.c:1920
 #, c-format
 msgid " named %s"
 msgstr ""
@@ -26885,13 +27107,13 @@ msgctxt "feminine"
 msgid "cracked"
 msgstr ""
 
-#: src/objnam.c:666
+#: src/objnam.c:666 src/potion.c:61
 #, c-format
 msgctxt "feminine"
 msgid "rusty"
 msgstr ""
 
-#: src/objnam.c:667 src/trap.c:276
+#: src/objnam.c:667 src/potion.c:62 src/trap.c:276
 #, c-format
 msgctxt "feminine"
 msgid "corroded"
@@ -27693,10 +27915,6 @@ msgstr ""
 msgid " of %s"
 msgstr ""
 
-#: src/objnam.c:1338 src/objnam.c:1588 src/shk.c:6267
-msgid "thing"
-msgstr ""
-
 #: src/objnam.c:1426
 #, c-format
 msgid " containing %ld item%s"
@@ -28434,7 +28652,7 @@ msgstr ""
 msgid "You %s %s disappear!"
 msgstr ""
 
-#: src/pickup.c:2861 src/pray.c:2111
+#: src/pickup.c:2861 src/pray.c:2218
 #, c-format
 msgid "You think %s brushed your %s."
 msgstr ""
@@ -30768,1103 +30986,1553 @@ msgstr ""
 msgid "Strangely, you feel better than before."
 msgstr ""
 
-#: src/potion.c:98
+#: src/potion.c:51
 #, c-format
-msgid "You feel less %s now."
+msgctxt "feminine"
+msgid "%s is less %s."
 msgstr ""
 
-#: src/potion.c:116
+#: src/potion.c:51
 #, c-format
-msgid "You feel %s now."
+msgctxt "plural"
+msgid "%s is less %s."
 msgstr ""
 
-#: src/potion.c:122
+#: src/potion.c:52
+#, c-format
+msgctxt "feminine plural"
+msgid "%s is less %s."
+msgstr ""
+
+#: src/potion.c:53
+#, c-format
+msgctxt "feminine"
+msgid "%s feels less %s."
+msgstr ""
+
+#: src/potion.c:53
+#, c-format
+msgctxt "plural"
+msgid "%s feels less %s."
+msgstr ""
+
+#: src/potion.c:54
+#, c-format
+msgctxt "feminine plural"
+msgid "%s feels less %s."
+msgstr ""
+
+#: src/potion.c:55
+#, c-format
+msgctxt "feminine"
+msgid "%s is full."
+msgstr ""
+
+#: src/potion.c:55
+#, c-format
+msgctxt "plural"
+msgid "%s is full."
+msgstr ""
+
+#: src/potion.c:56
+#, c-format
+msgctxt "feminine plural"
+msgid "%s is full."
+msgstr ""
+
+#: src/potion.c:57
+msgctxt "heroine"
+msgid "You feel less trippy now."
+msgstr ""
+
+#: src/potion.c:58
+msgctxt "heroine"
+msgid "You feel less confused now."
+msgstr ""
+
+#: src/potion.c:59
+msgctxt "heroine"
+msgid "You feel a little normal."
+msgstr ""
+
+#: src/potion.c:60
+msgid "corroded and rusty"
+msgstr ""
+
+#: src/potion.c:61
+#, c-format
+msgctxt "feminine"
+msgid "corroded and rusty"
+msgstr ""
+
+#: src/potion.c:62 src/potion.c:1571
+msgid "brown"
+msgstr ""
+
+#: src/potion.c:62
+#, c-format
+msgctxt "feminine"
+msgid "brown"
+msgstr ""
+
+#: src/potion.c:114
+msgid "You feel less trippy now."
+msgstr ""
+
+#: src/potion.c:133
+msgid "You feel less wobbly now."
+msgstr ""
+
+#: src/potion.c:139
 msgid "You wobble in the saddle."
 msgstr ""
 
-#: src/potion.c:124
+#: src/potion.c:141 src/trap.c:7182
+msgid "You stagger..."
+msgstr ""
+
+#: src/potion.c:143
 #, c-format
 msgid "You %s..."
 msgstr ""
 
-#: src/potion.c:154
+#: src/potion.c:173
 msgid "You feel deathly sick."
 msgstr ""
 
-#: src/potion.c:158
-#, c-format
-msgid "You feel %s worse."
+#: src/potion.c:177
+msgid "You feel much worse."
 msgstr ""
 
-#: src/potion.c:168
+#: src/potion.c:187
 msgid "You feel somewhat better."
 msgstr ""
 
-#: src/potion.c:172
+#: src/potion.c:191
 msgid "You feel cured.  What a relief!"
 msgstr ""
 
-#: src/potion.c:254
+#: src/potion.c:273
 msgid "You feel much less nauseated now."
 msgstr ""
 
-#: src/potion.c:280
+#: src/potion.c:299
 msgid "Far out!  Everything is all cosmic again!"
 msgstr ""
 
-#: src/potion.c:303
+#: src/potion.c:322
 msgid "Oh, bummer!  Everything is dark!  Help!"
 msgstr ""
 
-#: src/potion.c:305
+#: src/potion.c:324
 msgid "A cloud of darkness falls upon you."
 msgstr ""
 
-#: src/potion.c:454
+#: src/potion.c:473
 msgid "You can hear again."
 msgstr ""
 
-#: src/potion.c:486
+#: src/potion.c:507
 msgid "This bottle turns out to be empty."
 msgstr ""
 
-#: src/potion.c:490
+#: src/potion.c:511
 #, c-format
 msgid "As you open the bottle, %s emerges."
 msgstr ""
 
-#: src/potion.c:493
+#: src/potion.c:514
 #, c-format
 msgid "As you open the bottle, an enormous %s emerges!"
 msgstr ""
 
-#: src/potion.c:496 src/priest.c:532
+#: src/potion.c:516
+#, c-format
+msgctxt "monster"
+msgid "ghost"
+msgstr ""
+
+#: src/potion.c:518 src/priest.c:532
 msgid "You are frightened to death, and unable to move."
 msgstr ""
 
-#: src/potion.c:531
+#: src/potion.c:553
 msgid "If you can't breathe air, how can you drink liquid?"
 msgstr ""
 
-#: src/potion.c:545
+#: src/potion.c:567
 msgid "Drink from the fountain?"
 msgstr ""
 
-#: src/potion.c:555
+#: src/potion.c:577
 msgid "Drink from the sink?"
 msgstr ""
 
-#: src/potion.c:563
+#: src/potion.c:585
 msgid "Drink the water around you?"
 msgstr ""
 
-#: src/potion.c:564
+#: src/potion.c:586
 msgid "Do you know what lives in this water?"
 msgstr ""
 
-#: src/potion.c:571
+#: src/potion.c:593
 msgctxt "verb"
 msgid "drink"
 msgstr ""
 
-#: src/potion.c:629 src/potion.c:1464
-#, c-format
-msgid "You have a %s feeling for a moment, then it passes."
+#: src/potion.c:652
+msgid "You have a normal feeling for a moment, then it passes."
 msgstr ""
 
-#: src/potion.c:650
+#: src/potion.c:673
 msgid "Ulch!  This makes you feel mediocre!"
 msgstr ""
 
-#: src/potion.c:658
-#, c-format
-msgid "Wow!  This makes you feel %s!"
+#: src/potion.c:681
+msgid "Wow!  This makes you feel good!"
 msgstr ""
 
-#: src/potion.c:708
+#: src/potion.c:731
 msgid "You perceive yourself..."
 msgstr ""
 
-#: src/potion.c:711
+#: src/potion.c:734
 msgid "Your awareness re-normalizes."
 msgstr ""
 
-#: src/potion.c:720
+#: src/potion.c:743
 #, c-format
 msgid "This tastes like %s."
 msgstr ""
 
-#: src/potion.c:729 src/potion.c:758
+#: src/potion.c:752 src/potion.c:784
 #, c-format
 msgid "This burns like %s!"
 msgstr ""
 
-#: src/potion.c:732
+#: src/potion.c:755
 #, c-format
 msgid "Your affinity to %s disappears!"
 msgstr ""
 
-#: src/potion.c:741
+#: src/potion.c:767
 msgid "You feel quite proud of yourself."
 msgstr ""
 
-#: src/potion.c:749
+#: src/potion.c:775
 msgid "You feel full of awe."
 msgstr ""
 
-#: src/potion.c:762
+#: src/potion.c:788
 msgid "You feel full of dread."
 msgstr ""
 
-#: src/potion.c:774
-#, c-format
-msgid "Ooph!  This tastes like %s%s!"
-msgstr ""
-
-#: src/potion.c:788
+#: src/potion.c:818
 msgid "You pass out."
 msgstr ""
 
-#: src/potion.c:799
+#: src/potion.c:829
 msgid "You have an uneasy feeling..."
 msgstr ""
 
-#: src/potion.c:817 src/zap.c:2833
+#: src/potion.c:847 src/zap.c:2833
 #, c-format
 msgid "You feel rather itchy under %s."
 msgstr ""
 
-#: src/potion.c:831
+#: src/potion.c:861
 msgid "For some reason, you feel your presence is known."
 msgstr ""
 
-#: src/potion.c:848
+#: src/potion.c:878
+msgid "Yecch!  This tastes overripe."
+msgstr ""
+
+#: src/potion.c:882
 #, c-format
-msgid "Yecch!  This tastes %s."
-msgstr ""
-
-#: src/potion.c:853
-#, c-format
-msgid "This tastes like 10%% real %s%s all-natural beverage."
-msgstr ""
-
-#: src/potion.c:875
-msgid "You can see through yourself, but you are visible!"
-msgstr ""
-
-#: src/potion.c:884 src/potion.c:2050
-msgid "You stiffen momentarily."
+msgid "This tastes like 10%% real reconstituted %s all-natural beverage."
 msgstr ""
 
 #: src/potion.c:887
+#, c-format
+msgid "This tastes like reconstituted %s."
+msgstr ""
+
+#: src/potion.c:908
+msgid "You can see through yourself, but you are visible!"
+msgstr ""
+
+#: src/potion.c:917 src/potion.c:2106
+msgid "You stiffen momentarily."
+msgstr ""
+
+#: src/potion.c:920
 msgid "You are motionlessly suspended."
 msgstr ""
 
-#: src/potion.c:891
+#: src/potion.c:925
+#, c-format
+msgid "Your %s are frozen to %s!"
+msgstr ""
+
+#: src/potion.c:928
 #, c-format
 msgid "Your %s are frozen to the %s!"
 msgstr ""
 
-#: src/potion.c:905 src/potion.c:2061 src/timeout.c:273
+#: src/potion.c:942 src/potion.c:2117 src/timeout.c:273
 msgid "You yawn."
 msgstr ""
 
-#: src/potion.c:907
+#: src/potion.c:944
 msgid "You suddenly fall asleep!"
 msgstr ""
 
-#: src/potion.c:944
+#: src/potion.c:981
 msgid "You feel lonely."
 msgstr ""
 
-#: src/potion.c:966
+#: src/potion.c:1003
 msgid "Yecch!  This stuff tastes like poison."
 msgstr ""
 
-#: src/potion.c:968
+#: src/potion.c:1005
 #, c-format
 msgid "(But in fact it was mildly stale %s.)"
 msgstr ""
 
-#: src/potion.c:975
+#: src/potion.c:1012
 #, c-format
 msgid "(But in fact it was biologically contaminated %s.)"
 msgstr ""
 
-#: src/potion.c:978
+#: src/potion.c:1015
 msgid "Fortunately, you have been immunized."
 msgstr ""
 
-#: src/potion.c:1008
+#: src/potion.c:1045
 msgid "You are shocked back to your senses!"
 msgstr ""
 
-#: src/potion.c:1018
+#: src/potion.c:1055
 msgid "What a trippy feeling!"
 msgstr ""
 
-#: src/potion.c:1021
+#: src/potion.c:1058
 msgid "Huh, What?  Where am I?"
 msgstr ""
 
-#: src/potion.c:1033
+#: src/potion.c:1070
 msgid "Ulch!  That potion tasted foul!"
 msgstr ""
 
-#: src/potion.c:1067
+#: src/potion.c:1104
 msgid "Your quickness feels very natural."
 msgstr ""
 
-#: src/potion.c:1100
+#: src/potion.c:1137
 msgid "It tasted bad."
 msgstr ""
 
-#: src/potion.c:1104
+#: src/potion.c:1142
+#, c-format
+msgid "You rise up, through %s!"
+msgstr ""
+
+#: src/potion.c:1144
 #, c-format
 msgid "You rise up, through the %s!"
 msgstr ""
 
-#: src/potion.c:1107
+#: src/potion.c:1147
 msgid "You have an uneasy feeling."
 msgstr ""
 
-#: src/potion.c:1130 src/pray.c:425
+#: src/potion.c:1170 src/pray.c:450
 msgid "You feel much better."
 msgstr ""
 
-#: src/potion.c:1146
+#: src/potion.c:1186
 msgid "You feel completely healed."
 msgstr ""
 
-#: src/potion.c:1202
+#: src/potion.c:1243
+#, c-format
+msgid "You hit your %s on %s."
+msgstr ""
+
+#: src/potion.c:1246
 #, c-format
 msgid "You hit your %s on the %s."
 msgstr ""
 
-#: src/potion.c:1229
+#: src/potion.c:1273
 msgid "You feel lackluster."
 msgstr ""
 
-#: src/potion.c:1231
+#: src/potion.c:1275
 msgid "Magical energies course through your body."
 msgstr ""
 
-#: src/potion.c:1266
+#: src/potion.c:1310
 msgid "Ahh, a refreshing drink."
 msgstr ""
 
-#: src/potion.c:1274
+#: src/potion.c:1318
 #, c-format
 msgid "You burn your %s."
 msgstr ""
 
-#: src/potion.c:1289
+#: src/potion.c:1333
 msgid "This tastes like castor oil."
 msgstr ""
 
-#: src/potion.c:1291
+#: src/potion.c:1335
 msgid "That was smooth!"
 msgstr ""
 
-#: src/potion.c:1301
-#, c-format
-msgid "This tastes %s."
+#: src/potion.c:1345
+msgid "This tastes tangy."
 msgstr ""
 
-#: src/potion.c:1305 src/potion.c:1698
-#, c-format
-msgid "This burns%s!"
+#: src/potion.c:1349
+msgid "This burns a little!"
 msgstr ""
 
-#: src/potion.c:1320 src/potion.c:1690
-#, c-format
-msgid "You feel a little %s."
+#: src/potion.c:1363 src/potion.c:1738
+msgid "You feel a little normal."
 msgstr ""
 
-#: src/potion.c:1555
+#: src/potion.c:1507
+#, c-format
+msgid "You have a %s feeling for a moment, then it passes."
+msgstr ""
+
+#: src/potion.c:1596
+#, c-format
+msgid "%s with a %s aura."
+msgstr ""
+
+#: src/potion.c:1596 src/pray.c:379 src/pray.c:382 src/pray.c:1376
+#, c-format
+msgid "%s with a %s light."
+msgstr ""
+
+#: src/potion.c:1603
 #, c-format
 msgid "%s with %s aura."
 msgstr ""
 
-#: src/potion.c:1636
+#: src/potion.c:1684
 #, c-format
 msgid "The %s crashes on your %s and breaks into shards."
 msgstr ""
 
-#: src/potion.c:1655
+#: src/potion.c:1703
 msgid "Crash!"
 msgstr ""
 
-#: src/potion.c:1672
+#: src/potion.c:1720
 #, c-format
 msgid "The %s crashes on %s and breaks into shards."
 msgstr ""
 
-#: src/potion.c:1726
+#: src/potion.c:1747
 #, c-format
-msgid "%s %s wet."
-msgstr ""
-
-#: src/potion.c:1754
-#, c-format
-msgid "%s looks sound and hale again."
+msgid "This burns%s!"
 msgstr ""
 
 #: src/potion.c:1768
 #, c-format
+msgid "The saddle of %s glows"
+msgstr ""
+
+#: src/potion.c:1779
+#, c-format
+msgid "The saddle of %s gets wet."
+msgstr ""
+
+#: src/potion.c:1781
+#, c-format
+msgid "%s %s wet."
+msgstr ""
+
+#: src/potion.c:1809
+#, c-format
+msgid "%s looks sound and hale again."
+msgstr ""
+
+#: src/potion.c:1823
+#, c-format
 msgid "%s looks unharmed."
 msgstr ""
 
-#: src/potion.c:1775
+#: src/potion.c:1830
 #, c-format
 msgid "%s looks rather ill."
 msgstr ""
 
-#: src/potion.c:1805
+#: src/potion.c:1860
 #, c-format
 msgid "%s falls asleep."
 msgstr ""
 
-#: src/potion.c:1835 src/potion.c:1872
+#: src/potion.c:1890
 #, c-format
-msgid "%s %s in pain!"
+msgid "%s writhes in pain!"
 msgstr ""
 
-#: src/potion.c:1848
+#: src/potion.c:1904
 #, c-format
 msgid "%s looks healthier."
 msgstr ""
 
-#: src/potion.c:1948
+#: src/potion.c:1928
+#, c-format
+msgid "%s %s in pain!"
+msgstr ""
+
+#: src/potion.c:2004
 msgid "Some vapor passes harmlessly around you."
 msgstr ""
 
-#: src/potion.c:1954
+#: src/potion.c:2010
 msgid "Ulch!  That potion smells terrible!"
 msgstr ""
 
-#: src/potion.c:2025
+#: src/potion.c:2081
 msgid "You have a momentary vision."
 msgstr ""
 
-#: src/potion.c:2030
+#: src/potion.c:2086
 msgid "You feel somewhat dizzy."
 msgstr ""
 
-#: src/potion.c:2036
-#, c-format
-msgid "For an instant you %s!"
+#: src/potion.c:2093
+msgid "For an instant you could see right through yourself!"
 msgstr ""
 
-#: src/potion.c:2044
+#: src/potion.c:2100
 #, c-format
 msgid "%s seems to be holding you."
 msgstr ""
 
-#: src/potion.c:2055
+#: src/potion.c:2111
 msgid "You feel rather tired."
 msgstr ""
 
-#: src/potion.c:2067
+#: src/potion.c:2123
 msgid "Your knees seem more flexible now."
 msgstr ""
 
-#: src/potion.c:2074
+#: src/potion.c:2130
 msgid "It suddenly gets dark."
 msgstr ""
 
-#: src/potion.c:2279 src/potion.c:2393
+#: src/potion.c:2335 src/potion.c:2449
 msgctxt "verb"
 msgid "dip"
 msgstr ""
 
-#: src/potion.c:2428
-#, c-format
-msgid "%sThey explode!"
+#: src/potion.c:2484
+msgid "BOOM!  They explode!"
 msgstr ""
 
-#: src/potion.c:2450
+#: src/potion.c:2506
 msgid "That is a potion bottle, not a Klein bottle!"
 msgstr ""
 
-#: src/potion.c:2454
+#: src/potion.c:2510
 #, c-format
 msgid "You can't fit your %s into the mouth of the bottle!"
 msgstr ""
 
-#: src/potion.c:2535
+#: src/potion.c:2597
+#, c-format
+msgid "%ld of %s mix with one of %s..."
+msgstr ""
+
+#: src/potion.c:2598
+#, c-format
+msgid "%ld of %s mix with %s..."
+msgstr ""
+
+#: src/potion.c:2601
+#, c-format
+msgid "%s %s with one of %s..."
+msgstr ""
+
+#: src/potion.c:2602
+#, c-format
+msgid "%s %s with %s..."
+msgstr ""
+
+#: src/potion.c:2606
 #, c-format
 msgid "%s %s %s with %s%s..."
 msgstr ""
 
-#: src/potion.c:2572
-#, c-format
-msgid "The mixture %sevaporates."
+#: src/potion.c:2643
+msgid "The mixture glows brightly and evaporates."
 msgstr ""
 
-#: src/potion.c:2580
-#, c-format
-msgid "The mixture bubbles%s."
+#: src/potion.c:2651
+msgid "The mixture bubbles."
 msgstr ""
 
-#: src/potion.c:2582
+#: src/potion.c:2654
 #, c-format
 msgid "The mixture looks %s."
 msgstr ""
 
-#: src/potion.c:2599
+#: src/potion.c:2672
+#, c-format
+msgid "%s wrinkles around the edges."
+msgstr ""
+
+#: src/potion.c:2673
+#, c-format
+msgid "%s turns %s around the edges."
+msgstr ""
+
+#: src/potion.c:2678
 #, c-format
 msgid "%s %s %s around the edges."
 msgstr ""
 
-#: src/potion.c:2610
+#: src/potion.c:2689
 msgid "The towel soaks it up!"
 msgstr ""
 
-#: src/potion.c:2624
+#: src/potion.c:2700
+#, c-format
+msgid "One of %s"
+msgstr ""
+
+#: src/potion.c:2704
 #, c-format
 msgid "%s forms a coating on %s."
 msgstr ""
 
-#: src/potion.c:2632
+#: src/potion.c:2712
 #, c-format
 msgid "A coating wears off %s."
 msgstr ""
 
-#: src/potion.c:2652
+#: src/potion.c:2732
 #, c-format
 msgid "The potion spills and covers your %s with oil."
 msgstr ""
 
-#: src/potion.c:2666
+#: src/potion.c:2746
 #, c-format
 msgid "%s %s with an oily sheen."
 msgstr ""
 
-#: src/potion.c:2669
+#: src/potion.c:2749
 #, c-format
 msgid "%s %s oily."
 msgstr ""
 
-#: src/potion.c:2671
+#: src/potion.c:2759
 #, c-format
 msgid "%s %s less %s."
 msgstr ""
 
-#: src/potion.c:2706
+#: src/potion.c:2798
 #, c-format
 msgid "%s %s full."
 msgstr ""
 
-#: src/potion.c:2709
+#: src/potion.c:2801
 #, c-format
 msgid "You fill %s with oil."
 msgstr ""
 
-#: src/potion.c:2766
+#: src/potion.c:2860
+msgid "The potion that you dipped into clears."
+msgstr ""
+
+#: src/potion.c:2861
+msgid "The potion clears."
+msgstr ""
+
+#: src/potion.c:2864
+#, c-format
+msgid "The potion that you dipped into turns %s."
+msgstr ""
+
+#: src/potion.c:2865
+#, c-format
+msgid "The potion turns %s."
+msgstr ""
+
+#: src/potion.c:2868
 #, c-format
 msgid "The %spotion%s %s."
 msgstr ""
 
-#: src/potion.c:2770
+#: src/potion.c:2872
 msgid "Something happens."
 msgstr ""
 
-#: src/potion.c:2791
+#: src/potion.c:2893
 msgid "Interesting..."
 msgstr ""
 
-#: src/potion.c:2830
+#: src/potion.c:2932
 msgid "You smell acrid fumes."
 msgstr ""
 
-#: src/potion.c:2844
+#: src/potion.c:2946
 msgid "I am in your debt.  I will grant one wish!"
 msgstr ""
 
-#: src/potion.c:2849
+#: src/potion.c:2951
 msgid "Thank you for freeing me!"
 msgstr ""
 
-#: src/potion.c:2858
+#: src/potion.c:2960
 msgid "It is about time!"
 msgstr ""
 
-#: src/potion.c:2864
+#: src/potion.c:2966
 msgid "You disturbed me, fool!"
 msgstr ""
 
-#: src/potion.c:2898
+#: src/potion.c:2986
+#, c-format
+msgid " from your heat%.0s"
+msgstr ""
+
+#: src/potion.c:2987
+#, c-format
+msgid " from the heat of %s"
+msgstr ""
+
+#: src/potion.c:3005
 #, c-format
 msgid "You multiply%s!"
 msgstr ""
 
-#: src/potion.c:2912
+#: src/potion.c:3019
 #, c-format
 msgid "%s multiplies%s!"
 msgstr ""
 
-#: src/potion.c:2923
-#, c-format
-msgid "You are suddenly moving %sfaster."
+#: src/potion.c:3030
+msgid "You are suddenly moving faster."
 msgstr ""
 
-#: src/potion.c:2925
+#: src/potion.c:3033
 #, c-format
 msgid "Your %s get new energy."
 msgstr ""
 
-#: src/pray.c:390 src/timeout.c:898
+#: src/pray.c:41
+#, c-format
+msgctxt "heroine"
+msgid "You are surrounded by a %s glow."
+msgstr ""
+
+#: src/pray.c:42
+#, c-format
+msgctxt "heroine"
+msgid "You are surrounded by a %s aura."
+msgstr ""
+
+#: src/pray.c:43
+msgctxt "heroine"
+msgid "You feel much stronger."
+msgstr ""
+
+#: src/pray.c:44
+msgctxt "heroine"
+msgid "You feel stronger."
+msgstr ""
+
+#: src/pray.c:45
+msgctxt "heroine"
+msgid "You fry to a crisp!"
+msgstr ""
+
+#: src/pray.c:46
+msgctxt "heroine"
+msgid "You feel ashamed."
+msgstr ""
+
+#: src/pray.c:47
+#, c-format
+msgctxt "heroine"
+msgid "You are not able to call upon %s to turn aside evilness."
+msgstr ""
+
+#: src/pray.c:49
+#, c-format
+msgctxt "heroine"
+msgid "You are incapable of calling upon %s to turn aside evilness."
+msgstr ""
+
+#: src/pray.c:74
+msgid "booms"
+msgstr ""
+
+#: src/pray.c:74
+msgid "booms out"
+msgstr ""
+
+#: src/pray.c:74
+msgid "rings out"
+msgstr ""
+
+#: src/pray.c:74
+msgid "thunders"
+msgstr ""
+
+#: src/pray.c:371
+#, c-format
+msgid "%s are no longer slippery."
+msgstr ""
+
+#: src/pray.c:403
+msgid "Your left ring softly glows"
+msgstr ""
+
+#: src/pray.c:404
+msgid "Your right ring softly glows"
+msgstr ""
+
+#: src/pray.c:415 src/timeout.c:898
 msgid "Your amulet vanishes!"
 msgstr ""
 
-#: src/pray.c:393
+#: src/pray.c:418
 msgid "You can breathe again."
 msgstr ""
 
-#: src/pray.c:409
+#: src/pray.c:434
 #, c-format
 msgid "Your %s feels content."
 msgstr ""
 
-#: src/pray.c:442
-#, c-format
-msgid "You feel %sstronger."
+#: src/pray.c:467
+msgid "You feel much stronger."
 msgstr ""
 
-#: src/pray.c:464
+#: src/pray.c:489
 msgid "Your surroundings change."
 msgstr ""
 
-#: src/pray.c:476
+#: src/pray.c:501
 msgid "You feel much slimmer."
 msgstr ""
 
-#: src/pray.c:499
+#: src/pray.c:524
 msgid "Your shape becomes uncertain."
 msgstr ""
 
-#: src/pray.c:520
+#: src/pray.c:545
 msgid "Your chain disappears."
 msgstr ""
 
-#: src/pray.c:544
+#: src/pray.c:569
 msgid "There's a tiger in your tank."
 msgstr ""
 
-#: src/pray.c:546
+#: src/pray.c:571
 msgid "You feel in good health again."
 msgstr ""
 
-#: src/pray.c:588
+#: src/pray.c:604
+#, c-format
+msgid "Your %s feel better and you can hear again."
+msgstr ""
+
+#: src/pray.c:605
+#, c-format
+msgid "Your %s feel better."
+msgstr ""
+
+#: src/pray.c:606
+#, c-format
+msgid "You can hear again%.0s."
+msgstr ""
+
+#: src/pray.c:621
 msgid "Looks like you are back in Kansas."
 msgstr ""
 
-#: src/pray.c:614
+#: src/pray.c:647
 msgid "Suddenly a bolt of lightning comes down at you from the heavens!"
-msgstr ""
-
-#: src/pray.c:615
-#, c-format
-msgid "It strikes %s!"
-msgstr ""
-
-#: src/pray.c:617
-#, c-format
-msgid "%s fries to a crisp!"
-msgstr ""
-
-#: src/pray.c:625 src/pray.c:654
-#, c-format
-msgid "%s seems unaffected."
-msgstr ""
-
-#: src/pray.c:627
-msgid "Suddenly, a bolt of lightning strikes you!"
-msgstr ""
-
-#: src/pray.c:631
-msgid "For some reason you're unaffected."
-msgstr ""
-
-#: src/pray.c:637
-msgid "It seems not to affect you."
-msgstr ""
-
-#: src/pray.c:646
-#, c-format
-msgid "%s is not deterred..."
 msgstr ""
 
 #: src/pray.c:648
 #, c-format
+msgid "It strikes %s!"
+msgstr ""
+
+#: src/pray.c:650
+#, c-format
+msgid "%s fries to a crisp!"
+msgstr ""
+
+#: src/pray.c:658 src/pray.c:687
+#, c-format
+msgid "%s seems unaffected."
+msgstr ""
+
+#: src/pray.c:660
+msgid "Suddenly, a bolt of lightning strikes you!"
+msgstr ""
+
+#: src/pray.c:664
+msgid "For some reason you're unaffected."
+msgstr ""
+
+#: src/pray.c:670
+msgid "It seems not to affect you."
+msgstr ""
+
+#: src/pray.c:679
+#, c-format
+msgid "%s is not deterred..."
+msgstr ""
+
+#: src/pray.c:681
+#, c-format
 msgid "A wide-angle disintegration beam aimed at you hits %s!"
 msgstr ""
 
-#: src/pray.c:651
+#: src/pray.c:684
 #, c-format
 msgid "%s disintegrates into a pile of dust!"
 msgstr ""
 
-#: src/pray.c:656
+#: src/pray.c:689
 msgid "A wide-angle disintegration beam hits you!"
 msgstr ""
 
-#: src/pray.c:676
+#: src/pray.c:710 src/pray.c:713
 #, c-format
 msgid "You bask in its %s glow for a minute..."
 msgstr ""
 
-#: src/pray.c:683
+#: src/pray.c:720
 msgid "Thou cannot escape my wrath, mortal!"
 msgstr ""
 
-#: src/pray.c:688
+#: src/pray.c:725
 #, c-format
 msgid "Destroy %s, my servants!"
 msgstr ""
 
-#: src/pray.c:728 src/pray.c:1077
-#, c-format
-msgid "You feel that %s is %s."
+#: src/pray.c:733
+msgid "You fry to a crisp!"
 msgstr ""
 
-#: src/pray.c:734
+#: src/pray.c:765
 #, c-format
-msgid "\"Thou %s, %s.\""
+msgid "You feel that %s is bummed."
 msgstr ""
 
-#: src/pray.c:740
+#: src/pray.c:774
+msgid "\"Thou hast strayed from the path, mortal.\""
+msgstr ""
+
+#: src/pray.c:778
+msgid "\"Thou art arrogant, mortal.\""
+msgstr ""
+
+#: src/pray.c:781
 msgid "Thou must relearn thy lessons!"
-msgstr ""
-
-#: src/pray.c:756
-#, c-format
-msgid "%s glow surrounds you."
-msgstr ""
-
-#: src/pray.c:764
-#, c-format
-msgid "Thou durst %s me?"
-msgstr ""
-
-#: src/pray.c:769
-#, c-format
-msgid "\"Then die, %s!\""
-msgstr ""
-
-#: src/pray.c:794
-#, c-format
-msgid "%s %s into %s %s."
 msgstr ""
 
 #: src/pray.c:797
 #, c-format
-msgid "%s %s %s your %s!"
+msgid "A %s glow surrounds you."
+msgstr ""
+
+#: src/pray.c:799
+#, c-format
+msgid "%s glow surrounds you."
+msgstr ""
+
+#: src/pray.c:808
+msgid "Thou durst scorn me?"
+msgstr ""
+
+#: src/pray.c:812
+msgid "\"Then die, mortal!\""
+msgstr ""
+
+#: src/pray.c:836
+#, c-format
+msgid "%s drops into the %s of %s."
+msgstr ""
+
+#: src/pray.c:839
+#, c-format
+msgid "%s lands beneath your %s!"
+msgstr ""
+
+#: src/pray.c:840
+#, c-format
+msgid "%s lands at your %s!"
 msgstr ""
 
 #: src/pray.c:841
+#, c-format
+msgid "%s appears beneath your %s!"
+msgstr ""
+
+#: src/pray.c:842
+#, c-format
+msgid "%s appears at your %s!"
+msgstr ""
+
+#: src/pray.c:848
+#, c-format
+msgid "%s %s into %s %s."
+msgstr ""
+
+#: src/pray.c:851
+#, c-format
+msgid "%s %s %s your %s!"
+msgstr ""
+
+#: src/pray.c:895
 msgid "I crown thee...  The Hand of Elbereth!"
 msgstr ""
 
-#: src/pray.c:852
+#: src/pray.c:906
 msgid "Thou shalt be my Envoy of Balance!"
 msgstr ""
 
-#: src/pray.c:865
-#, c-format
-msgid "Thou art chosen to %s for My Glory!"
+#: src/pray.c:920
+msgid "Thou art chosen to take lives for My Glory!"
 msgstr ""
 
-#: src/pray.c:906
+#: src/pray.c:962
 msgid "Your sword shines brightly for a moment."
 msgstr ""
 
-#: src/pray.c:925
+#: src/pray.c:981
 #, c-format
 msgid "Your %s goes snicker-snack!"
 msgstr ""
 
-#: src/pray.c:951
+#: src/pray.c:988
+msgid "A sword"
+msgstr ""
+
+#: src/pray.c:1008
+msgid "Your black sword hums ominously!"
+msgstr ""
+
+#: src/pray.c:1010
 #, c-format
 msgid "Your %s hums ominously!"
 msgstr ""
 
-#: src/pray.c:988 src/sit.c:329
+#: src/pray.c:1017
+msgid "A black sword"
+msgstr ""
+
+#: src/pray.c:1047 src/sit.c:329
 msgid "You feel unworthy."
 msgstr ""
 
-#: src/pray.c:1045
+#: src/pray.c:1104
 #, c-format
 msgid "Divine knowledge of %s fills your mind!  Spell '%c'."
 msgstr ""
 
-#: src/pray.c:1048
+#: src/pray.c:1108
 #, c-format
-msgid "Your knowledge of spell '%c' - %s is %s."
+msgid "Your knowledge of spell '%c' - %s is restored."
 msgstr ""
 
-#: src/pray.c:1186
+#: src/pray.c:1136
+#, c-format
+msgid "You feel that %s is %s."
+msgstr ""
+
+#: src/pray.c:1138
+msgid "pleased as punch"
+msgstr ""
+
+#: src/pray.c:1138
+msgid "well-pleased"
+msgstr ""
+
+#: src/pray.c:1140
+msgid "pleased"
+msgstr ""
+
+#: src/pray.c:1140
+msgid "ticklish"
+msgstr ""
+
+#: src/pray.c:1141
+msgid "full"
+msgstr ""
+
+#: src/pray.c:1141
+msgid "satisfied"
+msgstr ""
+
+#: src/pray.c:1236
+msgid " and is now as good as new"
+msgstr ""
+
+#: src/pray.c:1244
+#, c-format
+msgid "%s with a %s light%s."
+msgstr ""
+
+#: src/pray.c:1252
 #, c-format
 msgid "You feel the power of %s over %s."
 msgstr ""
 
-#: src/pray.c:1193
+#: src/pray.c:1260
+#, c-format
+msgid "%s with a %s aura%s."
+msgstr ""
+
+#: src/pray.c:1265
 #, c-format
 msgid "%s with %s aura%s."
 msgstr ""
 
-#: src/pray.c:1198
+#: src/pray.c:1270
 #, c-format
 msgid "You feel the blessing of %s over %s."
 msgstr ""
 
-#: src/pray.c:1212 src/read.c:1153 src/read.c:1657
+#: src/pray.c:1284 src/read.c:1153 src/read.c:1657
 #, c-format
 msgid "%s as good as new!"
 msgstr ""
 
-#: src/pray.c:1227
-#, c-format
-msgid "Hark, %s!"
+#: src/pray.c:1299
+msgid "Hark, mortal!"
 msgstr ""
 
-#: src/pray.c:1232
+#: src/pray.c:1303
 msgid "To enter the castle, thou must play the right tune!"
 msgstr ""
 
-#: src/pray.c:1237
+#: src/pray.c:1308
 msgid "You hear a divine music..."
 msgstr ""
 
-#: src/pray.c:1238
+#: src/pray.c:1309
 #, c-format
 msgid "It sounds like:  \"%s\"."
 msgstr ""
 
-#: src/pray.c:1248
+#: src/pray.c:1319
+#, c-format
+msgid "You are surrounded by a %s glow."
+msgstr ""
+
+#: src/pray.c:1322
 #, c-format
 msgid "You are surrounded by %s glow."
 msgstr ""
 
-#: src/pray.c:1288
+#: src/pray.c:1362
 #, c-format
 msgid "You feel the power of %s."
 msgstr ""
 
-#: src/pray.c:1290
+#: src/pray.c:1365
+#, c-format
+msgid "You are surrounded by a %s aura."
+msgstr ""
+
+#: src/pray.c:1368
 #, c-format
 msgid "You are surrounded by %s aura."
 msgstr ""
 
-#: src/pray.c:1337
+#: src/pray.c:1420
 msgid "Use it wisely in my name!"
 msgstr ""
 
-#: src/pray.c:1405
+#: src/pray.c:1492
+#, c-format
+msgid "Some of the potions on the altar glow %s for a moment."
+msgstr ""
+
+#: src/pray.c:1493
+#, c-format
+msgid "One of the potions on the altar glows %s for a moment."
+msgstr ""
+
+#: src/pray.c:1496
+#, c-format
+msgid "The potions on the altar glow %s for a moment."
+msgstr ""
+
+#: src/pray.c:1497
+#, c-format
+msgid "The potion on the altar glows %s for a moment."
+msgstr ""
+
+#: src/pray.c:1500
 #, c-format
 msgid "%s potion%s on the altar glow%s %s for a moment."
 msgstr ""
 
-#: src/pray.c:1424
+#: src/pray.c:1520
+#, c-format
+msgid "The voice of %s %s: \"%s\""
+msgstr ""
+
+#: src/pray.c:1521
+#, c-format
+msgid "The voice of %s %s:"
+msgstr ""
+
+#: src/pray.c:1524
 #, c-format
 msgid "The voice of %s %s: %s%s%s"
 msgstr ""
 
-#: src/pray.c:1451
+#: src/pray.c:1551
 msgid "Your sacrifice sprouts wings and a propeller and roars away!"
 msgstr ""
 
-#: src/pray.c:1454
+#: src/pray.c:1554
 msgid "Your sacrifice puffs up, swelling bigger and bigger, and pops!"
 msgstr ""
 
-#: src/pray.c:1458
+#: src/pray.c:1558
 msgid "Your sacrifice collapses into a cloud of dancing particles and fades away!"
 msgstr ""
 
-#: src/pray.c:1462
+#: src/pray.c:1562
 msgid "Your sacrifice disappears!"
 msgstr ""
 
-#: src/pray.c:1464
-#, c-format
-msgid "Your sacrifice is consumed in a %s!"
+#: src/pray.c:1565
+msgid "Your sacrifice is consumed in a flash of light!"
 msgstr ""
 
-#: src/pray.c:1515
+#: src/pray.c:1591
+msgid "You feel homesick."
+msgstr ""
+
+#: src/pray.c:1614
 msgid "You feel the air around you grow charged..."
 msgstr ""
 
-#: src/pray.c:1516
+#: src/pray.c:1615
 #, c-format
 msgid "Suddenly, you realize that %s has noticed you..."
 msgstr ""
 
-#: src/pray.c:1542
+#: src/pray.c:1641
 #, c-format
 msgid "You offer the Amulet of Yendor to %s..."
 msgstr ""
 
-#: src/pray.c:1548
+#: src/pray.c:1647
 msgid "An invisible choir chants, and you are bathed in darkness..."
 msgstr ""
 
-#: src/pray.c:1550
+#: src/pray.c:1649
 #, c-format
 msgid "%s shrugs and retains dominion over %s,"
 msgstr ""
 
-#: src/pray.c:1551
+#: src/pray.c:1650
 msgid "then mercilessly snuffs out your life."
 msgstr ""
 
-#: src/pray.c:1556
+#: src/pray.c:1655
 #, c-format
 msgid "%s snarls and tries again..."
 msgstr ""
 
-#: src/pray.c:1566
+#: src/pray.c:1665
 #, c-format
 msgid "%s accepts your gift, and gains dominion over %s..."
 msgstr ""
 
-#: src/pray.c:1568
+#: src/pray.c:1667
 #, c-format
 msgid "%s is enraged..."
 msgstr ""
 
-#: src/pray.c:1569
+#: src/pray.c:1668
 #, c-format
 msgid "Fortunately, %s permits you to live..."
 msgstr ""
 
-#: src/pray.c:1577
+#: src/pray.c:1676
 msgid "An invisible choir sings, and you are bathed in radiance..."
 msgstr ""
 
-#: src/pray.c:1582
+#: src/pray.c:1681
 msgid "In return for thy service, I grant thee the gift of Immortality!"
 msgstr ""
 
-#: src/pray.c:1583
-#, c-format
-msgid "You ascend to the status of Demigod%s..."
+#: src/pray.c:1682
+msgid "You ascend to the status of Demigoddess..."
 msgstr ""
 
-#: src/pray.c:1612
+#: src/pray.c:1711
 msgid "You hear a nearby thunderclap."
 msgstr ""
 
-#: src/pray.c:1614
-#, c-format
-msgid "You realize you have made a %s."
+#: src/pray.c:1713
+msgid "You realize you have made a boo-boo."
 msgstr ""
 
-#: src/pray.c:1621
+#: src/pray.c:1720
 msgid "Oh, no."
 msgstr ""
 
-#: src/pray.c:1640
+#: src/pray.c:1739
 #, c-format
 msgid "You have a strong feeling that %s is angry..."
 msgstr ""
 
-#: src/pray.c:1642
+#: src/pray.c:1741
 #, c-format
 msgid "%s accepts your allegiance."
 msgstr ""
 
-#: src/pray.c:1651
+#: src/pray.c:1750
 #, c-format
 msgid "%s rejects your sacrifice!"
 msgstr ""
 
-#: src/pray.c:1660
+#: src/pray.c:1759
 #, c-format
 msgid "You sense a conflict between %s and %s."
 msgstr ""
 
-#: src/pray.c:1665
+#: src/pray.c:1764
 #, c-format
 msgid "You feel the power of %s increase."
 msgstr ""
 
-#: src/pray.c:1674
+#: src/pray.c:1773
 #, c-format
 msgid "The altar glows %s."
 msgstr ""
 
-#: src/pray.c:1687
+#: src/pray.c:1786
 #, c-format
 msgid "Unluckily, you feel the power of %s decrease."
 msgstr ""
 
-#: src/pray.c:1706
+#: src/pray.c:1805
 msgid "You find the idea very satisfying."
 msgstr ""
 
-#: src/pray.c:1709
+#: src/pray.c:1808
 msgid "You'll regret this infamous offense!"
 msgstr ""
 
-#: src/pray.c:1719
+#: src/pray.c:1819
 #, c-format
 msgid "The altar is stained with %s blood."
 msgstr ""
 
-#: src/pray.c:1731
+#: src/pray.c:1834
+#, c-format
+msgid "The blood floods the altar, which vanishes in a %s cloud!"
+msgstr ""
+
+#: src/pray.c:1838
 #, c-format
 msgid "The blood floods the altar, which vanishes in %s cloud!"
 msgstr ""
 
-#: src/pray.c:1740
+#: src/pray.c:1844
+msgid "The cloud dissipates."
+msgstr ""
+
+#: src/pray.c:1847
 msgid "The blood covers the altar!"
 msgstr ""
 
-#: src/pray.c:1754
-#, c-format
-msgid "You have summoned %s!"
+#: src/pray.c:1849
+msgid "The blood coagulates."
 msgstr ""
 
-#: src/pray.c:1757
-msgid "You are terrified, and unable to move."
-msgstr ""
-
-#: src/pray.c:1790
-msgid "Gift an artifact?"
+#: src/pray.c:1858
+msgid "something dreadful"
 msgstr ""
 
 #: src/pray.c:1861
 #, c-format
-msgid "You are not %s an altar."
+msgid "You have summoned %s!"
 msgstr ""
 
-#: src/pray.c:1865
+#: src/pray.c:1864
+msgid "You are terrified, and unable to move."
+msgstr ""
+
+#: src/pray.c:1897
+msgid "Gift an artifact?"
+msgstr ""
+
+#: src/pray.c:1916
+msgid "a doodad"
+msgstr ""
+
+#: src/pray.c:1917
+msgid "an object"
+msgstr ""
+
+#: src/pray.c:1968
+msgid "You are not over an altar."
+msgstr ""
+
+#: src/pray.c:1972
 msgid "You are too impaired to perform the rite."
 msgstr ""
 
-#: src/pray.c:1926
+#: src/pray.c:2033
 #, c-format
 msgid "Such an action is an insult to %s!"
 msgstr ""
 
-#: src/pray.c:1936
+#: src/pray.c:2043
 #, c-format
 msgid "You feel appropriately %s."
 msgstr ""
 
-#: src/pray.c:1938
+#: src/pray.c:2045
 msgid "You feel you are thoroughly on the right path."
 msgstr ""
 
-#: src/pray.c:2002
+#: src/pray.c:2109
 msgid "So this is how you repay loyalty?"
 msgstr ""
 
-#: src/pray.c:2054
+#: src/pray.c:2146
+#, c-format
+msgid "%s seems groovy."
+msgstr ""
+
+#: src/pray.c:2153
+#, c-format
+msgid "%s seems cosmic (not a new fact)."
+msgstr ""
+
+#: src/pray.c:2161
 msgid "The gods seem tall."
 msgstr ""
 
-#: src/pray.c:2056
+#: src/pray.c:2163
 msgid "You have a feeling of inadequacy."
 msgstr ""
 
-#: src/pray.c:2064
+#: src/pray.c:2171
 msgid "You feel partially absolved."
 msgstr ""
 
-#: src/pray.c:2074
+#: src/pray.c:2181
 msgid "You realize that the gods are not like you and I."
 msgstr ""
 
-#: src/pray.c:2076
+#: src/pray.c:2183
 msgid "You have a hopeful feeling."
 msgstr ""
 
-#: src/pray.c:2081
+#: src/pray.c:2188
 msgid "Overall, there is a smell of fried onions."
 msgstr ""
 
-#: src/pray.c:2083
+#: src/pray.c:2190
 msgid "You have a feeling of reconciliation."
 msgstr ""
 
-#: src/pray.c:2115
+#: src/pray.c:2222
 #, c-format
 msgid "You see crabgrass at your %s.  A funny thing in a dungeon."
 msgstr ""
 
-#: src/pray.c:2134
-#, c-format
-msgid "The very idea of praying to a %s god is repugnant to you."
+#: src/pray.c:2242
+msgid "The very idea of praying to a lawful god is repugnant to you."
 msgstr ""
 
-#: src/pray.c:2140
+#: src/pray.c:2250
 #, c-format
 msgid "You begin praying to %s."
 msgstr ""
 
-#: src/pray.c:2210
+#: src/pray.c:2320
 msgid "Are you sure you want to pray?"
 msgstr ""
 
-#: src/pray.c:2268
+#: src/pray.c:2372
+msgid "You finish your prayer."
+msgstr ""
+
+#: src/pray.c:2378
 msgid "You are surrounded by a shimmering light."
 msgstr ""
 
-#: src/pray.c:2283
-#, c-format
-msgid "You %s diabolical laughter all around you..."
+#: src/pray.c:2393
+msgid "You hear diabolical laughter all around you..."
 msgstr ""
 
-#: src/pray.c:2290
+#: src/pray.c:2400
 msgid "Nothing else happens."
 msgstr ""
 
-#: src/pray.c:2299
+#: src/pray.c:2409
 msgid "You feel like you are falling apart."
 msgstr ""
 
-#: src/pray.c:2308
+#: src/pray.c:2418
 #, c-format
 msgid "Since you are in Gehennom, %s can't help you."
 msgstr ""
 
-#: src/pray.c:2362
+#: src/pray.c:2472
 msgid "Unfortunately, your voice falters."
 msgstr ""
 
-#: src/pray.c:2423
+#: src/pray.c:2533
 msgid "You don't know how to turn undead!"
 msgstr ""
 
-#: src/pray.c:2434
+#: src/pray.c:2544
 #, c-format
-msgid "You are %s upon %s to turn aside evilness."
+msgid "You are not able to call upon %s to turn aside evilness."
 msgstr ""
 
-#: src/pray.c:2445
+#: src/pray.c:2556
 #, c-format
 msgid "For some reason, %s seems to ignore you."
 msgstr ""
 
-#: src/pray.c:2451
+#: src/pray.c:2565
 #, c-format
-msgid "Since you are in Gehennom, %s %s help you."
+msgid "Since you are in Gehennom, %s won't help you."
 msgstr ""
 
-#: src/pray.c:2458
+#: src/pray.c:2570
 #, c-format
 msgid "Calling upon %s, you chant an arcane formula."
 msgstr ""
 
-#: src/pray.c:2661
+#: src/pray.c:2773
 #, c-format
-msgid "%s %s%s:"
+msgid "A voice (could it be %s?) whispers:"
 msgstr ""
 
-#: src/pray.c:2667
+#: src/pray.c:2777
 msgid "Thou shalt pay, infidel!"
 msgstr ""
 
@@ -37463,7 +38131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 19:41+0200\n"
+"POT-Creation-Date: 2026-09-29 20:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39953,10 +40621,6 @@ msgstr ""
 
 #: src/trap.c:7180
 msgid "What a groovy feeling!"
-msgstr ""
-
-#: src/trap.c:7182
-msgid "You stagger..."
 msgstr ""
 
 #: src/trap.c:7186

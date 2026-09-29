@@ -22,6 +22,7 @@ FUNCS = {
     'getlin': (1, ''), 'yn': (1, ''), 'y_n': (1, ''), 'ynq': (1, ''),
     'paranoid_query': (2, ''), 'paranoid_ynq': (2, ''),
     'selftouch': (1, ''), 'mselftouch': (2, ''),
+    'godvoice': (2, ''),
     'You': (1, 'You '), 'Your': (1, 'Your '), 'You_feel': (1, 'You feel '),
     'You_cant': (1, "You can't "), 'pline_The': (1, 'The '),
     'There': (1, 'There '), 'You_hear': (1, 'You hear '),

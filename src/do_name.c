@@ -653,11 +653,11 @@ docall(struct obj *obj)
 
     if (obj->oclass == POTION_CLASS && obj->fromsink)
         /* fromsink: kludge, meaning it's sink water */
-        Sprintf(qbuf, "Call a stream of %s fluid:",
-                OBJ_DESCR(objects[obj->otyp]));
+        Snprintf(qbuf, sizeof qbuf, _("Call a stream of %s fluid:"),
+                 _(OBJ_DESCR(objects[obj->otyp])));
     else
-        (void) safe_qbuf(qbuf, "Call ", ":", obj,
-                         docall_xname, simpleonames, "thing");
+        (void) safe_qbuf(qbuf, _("Call "), _(":"), obj,
+                         docall_xname, simpleonames, _("thing"));
     /* pointer to old name */
     uname_p = &(objects[obj->otyp].oc_uname);
     /* use getlin() to get a name string from the player */
@@ -1702,6 +1702,28 @@ hcolor(const char *colorpref)
     return (Hallucination || !colorpref)
         ? hcolors[rn2_on_display_rng(SIZE(hcolors))]
         : colorpref;
+}
+
+#if 0
+/* for xgettext: the colors of c_color_names (decl.c) as adjectives */
+N_("black"), N_("amber"), N_("golden"), N_("light blue"), N_("red"),
+N_("green"), N_("silver"), N_("blue"), N_("purple"), N_("white"),
+N_("orange"), N_("gray"),
+C_("feminine", "black"), C_("feminine", "amber"), C_("feminine", "golden"),
+C_("feminine", "light blue"), C_("feminine", "red"),
+C_("feminine", "green"), C_("feminine", "silver"), C_("feminine", "blue"),
+C_("feminine", "purple"), C_("feminine", "white"),
+C_("feminine", "orange"), C_("feminine", "gray"),
+#endif
+
+/* hcolor() translated as an adjective qualifying a masculine or feminine
+   noun (msgctxt "feminine") */
+const char *
+hcolor_i18n(const char *colorpref, boolean fem)
+{
+    const char *color = hcolor(colorpref);
+
+    return fem ? C_("feminine", color) : _(color);
 }
 
 /* return a random real color unless hallucinating */

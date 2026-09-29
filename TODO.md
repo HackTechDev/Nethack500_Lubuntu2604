@@ -80,11 +80,13 @@ désamorçage), `hack.c` (déplacements, rochers, salles spéciales) et
 monstres, engloutissement, séduction), l'empoisonnement (`poisoned()`) et
 les questions de fin de partie, les marchands (`shk.c` : accueil, prix,
 paiement, ventes, dégâts ; types de boutique traduits avec leur genre,
-« au magasin de luminaires d'Izchak »), sauf quelques verbes de
+« au magasin de luminaires d'Izchak »), les prières et sacrifices
+(`pray.c`) et les potions (`potion.c`), sauf quelques verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
-français.  Restent, par nombre de messages non traduits : `apply.c`,
-`zap.c`, `muse.c`, `pray.c`, `read.c`, `potion.c`, `do.c`,
-`do_wear.c`...
+français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
+(accord au féminin).  Restent, par nombre de messages non traduits :
+`apply.c`, `zap.c`, `muse.c`, `read.c`, `do.c`, `do_wear.c`,
+`attrib.c` (« You feel foolish! »)...
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
 d'une condition passée à `pline()`, `You()`... : xgettext ne prenait que
