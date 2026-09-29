@@ -669,14 +669,17 @@ disclose(int how, boolean taken)
         if (should_query_disclose_option('c', &defquery)) {
             int acnt = count_achievements();
 
-            Sprintf(qbuf, "Do you want to see your conduct%s?",
-                    /* this was distinguishing between one achievement and
-                       multiple achievements, but "conduct and achievement"
-                       looked strange if multiple conducts got shown (which
-                       is usual for an early game death); we could switch
-                       to plural vs singular for conducts but the less
-                       specific "conduct and achievements" is sufficient */
-                    (acnt > 0) ? " and achievements" : "");
+            /* this was distinguishing between one achievement and
+               multiple achievements, but "conduct and achievement"
+               looked strange if multiple conducts got shown (which
+               is usual for an early game death); we could switch
+               to plural vs singular for conducts but the less
+               specific "conduct and achievements" is sufficient */
+            copynchars(qbuf, (acnt > 0)
+                               ? _("Do you want to see your conduct and "
+                                   "achievements?")
+                               : _("Do you want to see your conduct?"),
+                       (int) sizeof qbuf - 1);
             c = yn_function(qbuf, ynqchars, defquery, TRUE);
         } else {
             c = defquery;
@@ -724,7 +727,7 @@ savelife(int how)
     if ((Sick & TIMEOUT) == 1L) {
         make_sick(0L, (char *) 0, FALSE, SICK_ALL);
     }
-    gn.nomovemsg = "You survived that attempt on your life.";
+    gn.nomovemsg = N_("You survived that attempt on your life.");
     svc.context.move = 0;
 
     gm.multi = -1; /* can't move again during the current turn */
@@ -1082,7 +1085,7 @@ done(int how)
         pline("But wait...");
         /* assumes that only one type of item confers LifeSaved property */
         makeknown(AMULET_OF_LIFE_SAVING);
-        Your("medallion %s!", !Blind ? "begins to glow" : "feels warm");
+        Your(!Blind ? "medallion begins to glow!" : "medallion feels warm!");
         if (how == CHOKING)
             You("vomit ...");
         You_feel("much better!");
@@ -1110,7 +1113,8 @@ done(int how)
         && !(program_state.done_hup && gd.done_seq++ == gh.hero_seq)
 #endif
         && !paranoid_query(ParanoidDie, "Die?")) {
-        pline("OK, so you don't %s.", (how == CHOKING) ? "choke" : "die");
+        pline((how == CHOKING) ? "OK, so you don't choke."
+                               : "OK, so you don't die.");
         iflags.last_msg = PLNMSG_OK_DONT_DIE;
         savelife(how);
         survive = TRUE;

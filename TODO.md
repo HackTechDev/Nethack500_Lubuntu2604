@@ -76,11 +76,13 @@ C'est ce qui bloque la plupart des messages restants.
 
 Fait : `trap.c` (pièges, érosion des objets, lévitation, noyade, lave,
 désamorçage), `hack.c` (déplacements, rochers, salles spéciales) et
-`uhitm.c` (combat du héros, attaques spéciales), sauf quelques verbes de
-`u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
-français.  Restent, par nombre de messages non traduits : `apply.c`,
-`shk.c`, `mhitu.c`, `zap.c`, `muse.c`, `pray.c`, `read.c`, `potion.c`,
-`do.c`, `do_wear.c`...
+`uhitm.c` (combat du héros, attaques spéciales), `mhitu.c` (attaques des
+monstres, engloutissement, séduction), l'empoisonnement (`poisoned()`) et
+les questions de fin de partie, sauf quelques verbes de `u_locomotion()`
+et `stagger()` (« float », « slither »...) simplifiés en français.
+Restent, par nombre de messages non traduits : `apply.c`, `shk.c`,
+`zap.c`, `muse.c`, `pray.c`, `read.c`, `potion.c`, `do.c`,
+`do_wear.c`...
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
 d'une condition passée à `pline()`, `You()`... : xgettext ne prenait que

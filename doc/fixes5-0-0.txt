@@ -3013,7 +3013,8 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	and trap names with their gender; '@' marks contractions in
 	translations; messages can have a form for a female hero; movement
 	(hack.c) and hero combat (uhitm.c) messages; po/msgargs.py extracts
-	every string of a conditional message argument
+	every string of a conditional message argument; monster attacks
+	(mhitu.c), poisoning and end of game questions
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

@@ -18,6 +18,12 @@ staticfn void return_from_mtoss(struct monst *, struct obj *, boolean);
 #define URETREATING(x, y) \
     (distmin(u.ux, u.uy, x, y) > distmin(u.ux0, u.uy0, x, y))
 
+
+#if 0
+/* for xgettext: forms of "The %s was poisoned!" (objnam_fmt()) */
+C_("feminine", "The %s was poisoned!"), C_("plural", "The %s was poisoned!"),
+C_("feminine plural", "The %s was poisoned!"),
+#endif
 /*
  * Keep consistent with breath weapons in zap.c, and AD_* in monattk.h.
  */
@@ -745,6 +751,22 @@ m_throw(
             if (hitu && singleobj->opoisoned && is_poisonable(singleobj)) {
                 char onmbuf[BUFSZ], knmbuf[BUFSZ];
 
+#ifdef NHI18N
+                if (i18n_active()) {
+                    /* poisoned() doesn't know the gender of the name */
+                    const char *nm;
+                    boolean said;
+
+                    i18n_suspend(TRUE);
+                    said = strstri(xname(singleobj), "poison") != 0;
+                    i18n_suspend(FALSE);
+                    nm = xname(singleobj);
+                    if (!said)
+                        pline(objnam_fmt("The %s was poisoned!", nm,
+                                         singleobj), nm);
+                    Strcpy(onmbuf, "poison"); /* message given */
+                } else
+#endif
                 Strcpy(onmbuf, xname(singleobj));
                 Strcpy(knmbuf, killer_xname(singleobj));
                 poisoned(onmbuf, A_STR, knmbuf,

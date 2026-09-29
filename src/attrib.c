@@ -312,6 +312,15 @@ poisontell(int typ,         /* which attribute */
     (*func)("%s%c", msg_txt, exclaim ? '!' : '.');
 }
 
+#if 0
+/* for xgettext: things poisoning the hero, given to poisoned() */
+NC_("noun", "dart"), NC_("noun", "spikes"), NC_("noun", "gas cloud"),
+NC_("noun", "needle"), NC_("gender", "dart"), NC_("gender", "spikes"),
+NC_("gender", "gas cloud"), NC_("gender", "needle"),
+C_("feminine", "%s was poisoned!"), C_("plural", "%s was poisoned!"),
+C_("feminine plural", "%s was poisoned!"),
+#endif
+
 /* called when an attack or trap has poisoned hero (used to be in mon.c) */
 void
 poisoned(
@@ -327,6 +336,21 @@ poisoned(
     /* inform player about being poisoned unless that's already been done;
        "blast" has given a "blast of poison gas" message; "poison arrow",
        "poison dart", etc have implicitly given poison messages too... */
+#ifdef NHI18N
+    /* translated: callers giving a monster's attack or an object print
+       their own message and pass "poison"; the others give an English
+       noun ("dart", "spikes"...), msgctxt "noun" with its "gender" */
+    if (i18n_active() && !blast && !strstri(reason, "poison")) {
+        const char *g = i18n_lookup("gender", reason);
+        boolean fem = g && strchr(g, 'f'), pl = g && strchr(g, 'p');
+
+        pline(pl ? (fem ? C_("feminine plural", "%s was poisoned!")
+                        : C_("plural", "%s was poisoned!"))
+                 : fem ? C_("feminine", "%s was poisoned!")
+                       : _("%s was poisoned!"),
+              upstart(i18n_the(reason)));
+    } else
+#endif
     if (!blast && !strstri(reason, "poison")) {
         boolean plural = (reason[strlen(reason) - 1] == 's') ? 1 : 0;
 

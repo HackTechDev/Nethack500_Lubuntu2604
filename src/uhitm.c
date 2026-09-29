@@ -3287,8 +3287,17 @@ mhitm_ad_drst(
         }
         hitmsg(magr, mattk);
         if (!negated && !rn2(8)) {
-            Sprintf(buf, "%s %s", s_suffix(Monnam(magr)),
-                    mpoisons_subj(magr, mattk));
+            if (i18n_active()) {
+                const char *subj = mpoisons_subj(magr, mattk);
+
+                pline(i18n_noun_fem(subj)
+                        ? C_("feminine", "%s of %s was poisoned!")
+                        : _("%s of %s was poisoned!"),
+                      upstart(i18n_the_ctx("attack", subj)), mon_nam(magr));
+                Strcpy(buf, "poison"); /* message given */
+            } else
+                Sprintf(buf, "%s %s", s_suffix(Monnam(magr)),
+                        mpoisons_subj(magr, mattk));
             poisoned(buf, ptmp, pmname(pa, Mgender(magr)), 30, FALSE);
         }
     } else {
@@ -4261,8 +4270,18 @@ mhitm_ad_phys(
                     /* similar to mhitm_really_poison, but we don't use the
                      * exact same values, nor do we want same 1/8 chance of
                      * poison taking (use 1/4, same as in the mhitm case). */
-                    Sprintf(buf, "%s %s", s_suffix(Monnam(magr)),
-                            mpoisons_subj(magr, mattk));
+                    if (i18n_active()) {
+                        const char *subj = mpoisons_subj(magr, mattk);
+
+                        pline(i18n_noun_fem(subj)
+                                ? C_("feminine", "%s of %s was poisoned!")
+                                : _("%s of %s was poisoned!"),
+                              upstart(i18n_the_ctx("attack", subj)),
+                              mon_nam(magr));
+                        Strcpy(buf, "poison"); /* message given */
+                    } else
+                        Sprintf(buf, "%s %s", s_suffix(Monnam(magr)),
+                                mpoisons_subj(magr, mattk));
                     /* arbitrary, but most poison sources in the game are
                      * strength-based. With hpdamchance = 10, HP damage occurs
                      * 1/2 of the time and it will hit Str rest of the time.
