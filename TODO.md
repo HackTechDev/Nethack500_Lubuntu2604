@@ -95,12 +95,15 @@ enchantements d'armure et d'arme, aussi dans `wield.c`), `do.c`
 artefacts (`artifact.c`), les délais (`timeout.c` : lampes et bougies qui
 s'éteignent, œufs, chutes), les coups de pied (`dokick.c`), les
 gravures (`engrave.c`), la musique (`music.c`), les serrures
-(`lock.c`), la détection (`detect.c`), les montures (`steed.c`) et la
-téléportation (`teleport.c`), sauf quelques
+(`lock.c`), la détection (`detect.c`), les montures (`steed.c`), la
+téléportation (`teleport.c`), l'inventaire (`invent.c`), s'asseoir
+(`sit.c`), le menu d'actions sur un objet (`iactions.c`) et les menus de
+catégories et d'objets (`query_category()`, `query_objlist()`), sauf
+quelques
 verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Restent notamment : `invent.c`, `sit.c`, `sounds.c`, `vault.c`, `spell.c`...
+(accord au féminin).  Restent notamment : `sounds.c`, `vault.c`, `spell.c`...
 et `attrib.c` (« You feel foolish! »).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes

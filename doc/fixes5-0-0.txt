@@ -3028,7 +3028,9 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	engraving (engrave.c), music (music.c), locks (lock.c), detection
 	(detect.c), riding (steed.c) and teleportation (teleport.c);
 	pline() translates a whole sentence given as the argument of
-	You("%s") and similar
+	You("%s") and similar; inventory messages (invent.c), sitting
+	(sit.c), the item actions menu (iactions.c), category and object
+	menu titles and entries (query_category(), query_objlist())
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

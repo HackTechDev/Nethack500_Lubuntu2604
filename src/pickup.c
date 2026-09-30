@@ -93,6 +93,18 @@ static const char
     nearloadpfx[] = "You have much trouble",
     overloadpfx[] = "You have extreme difficulty";
 
+#if 0
+/* prefixes of pickup_prinv(), translated by prinv() */
+N_("You have a little trouble lifting")
+N_("You have trouble lifting")
+N_("You have much trouble lifting")
+N_("You have extreme difficulty lifting")
+N_("You have a little trouble removing")
+N_("You have trouble removing")
+N_("You have much trouble removing")
+N_("You have extreme difficulty removing")
+#endif
+
 /* BUG: this lets you look at cockatrice corpses while blind without
    touching them */
 /* much simpler version of the look-here code; used by query_classes() */
@@ -796,7 +808,7 @@ pickup(int what) /* should be a long */
         if (count) { /* looking for N of something */
             char qbuf[QBUFSZ];
 
-            Sprintf(qbuf, "Pick %d of what?", count);
+            Sprintf(qbuf, _("Pick %d of what?"), count);
             gv.val_for_n_or_more = count; /* set up callback selector */
             n = query_objlist(qbuf, objchain_p, traverse_how,
                               &pick_list, PICK_ONE, n_or_more);
@@ -1199,7 +1211,7 @@ query_objlist(const char *qstr,        /* query string */
                  MENU_ITEMFLAGS_NONE);
     }
 
-    end_menu(win, qstr);
+    end_menu(win, qstr ? _(qstr) : qstr);
     n = select_menu(win, how, pick_list);
     destroy_nhwindow(win);
 
@@ -1356,18 +1368,20 @@ query_category(
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
                  /* note: menu_remarm() doesn't pass the CHOOSE_ALL flag,
                     so do_worn handling here is moot */
-                 do_worn ? "Auto-select every item being worn or wielded"
-                         : "Auto-select every relevant item",
+                 do_worn ? _("Auto-select every item being worn or wielded")
+                         : _("Auto-select every relevant item"),
                  MENU_ITEMFLAGS_SKIPINVERT);
         verify_All = (how == PICK_ANY) && ParanoidAutoAll;
         if (!verify_All) {
             if (!ga.A_first_hint++ || iflags.cmdassist)
                 add_menu_str(win,
-                   "    (ignored unless some other choices are also picked)");
+                   _("    (ignored unless some other choices are also "
+                     "picked)"));
         } else if (show_a) {
             if (!ga.A_second_hint++ || iflags.cmdassist)
                 add_menu_str(win,
-                      "    (if no other choices are picked, 'a' is implied)");
+                      _("    (if no other choices are picked, 'a' is "
+                        "implied)"));
         }
         /* blank separator */
         add_menu_str(win, "");
@@ -1378,7 +1392,7 @@ query_category(
         any = cg.zeroany;
         any.a_int = ALL_TYPES_SELECTED;
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 do_worn ? "All worn and wielded types" : "All types",
+                 do_worn ? _("All worn and wielded types") : _("All types"),
                  MENU_ITEMFLAGS_SKIPINVERT);
         ++invlet; /* invlet = 'b'; */
     }
@@ -1424,7 +1438,8 @@ query_category(
         any = cg.zeroany;
         any.a_int = 'u';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0,
-                 ATR_NONE, clr, "Unpaid items", MENU_ITEMFLAGS_SKIPINVERT);
+                 ATR_NONE, clr, _("Unpaid items"),
+                 MENU_ITEMFLAGS_SKIPINVERT);
     }
     /* billed items: checked by caller, so always include if BILLED_TYPES */
     if (do_usedup) {
@@ -1432,7 +1447,8 @@ query_category(
         any = cg.zeroany;
         any.a_int = 'x';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 "Unpaid items already used up", MENU_ITEMFLAGS_SKIPINVERT);
+                 _("Unpaid items already used up"),
+                 MENU_ITEMFLAGS_SKIPINVERT);
     }
 
     /* items with b/u/c/unknown if there are any;
@@ -1443,45 +1459,45 @@ query_category(
         any = cg.zeroany;
         any.a_int = 'B';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 "Items known to be Blessed", MENU_ITEMFLAGS_SKIPINVERT);
+                 _("Items known to be Blessed"), MENU_ITEMFLAGS_SKIPINVERT);
     }
     if (do_cursed) {
         invlet = 'C';
         any = cg.zeroany;
         any.a_int = 'C';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 "Items known to be Cursed", MENU_ITEMFLAGS_SKIPINVERT);
+                 _("Items known to be Cursed"), MENU_ITEMFLAGS_SKIPINVERT);
     }
     if (do_uncursed) {
         invlet = 'U';
         any = cg.zeroany;
         any.a_int = 'U';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 "Items known to be Uncursed", MENU_ITEMFLAGS_SKIPINVERT);
+                 _("Items known to be Uncursed"), MENU_ITEMFLAGS_SKIPINVERT);
     }
     if (do_buc_unknown) {
         invlet = 'X';
         any = cg.zeroany;
         any.a_int = 'X';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
-                 "Items of unknown Bless/Curse status",
+                 _("Items of unknown Bless/Curse status"),
                  MENU_ITEMFLAGS_SKIPINVERT);
     }
     if (num_justpicked) {
         char tmpbuf[BUFSZ];
 
         if (num_justpicked == 1)
-            Sprintf(tmpbuf, "Just picked up: %s",
+            Snprintf(tmpbuf, sizeof tmpbuf, _("Just picked up: %s"),
                     doname(find_justpicked(olist)));
         else
-            Strcpy(tmpbuf, "Items you just picked up");
+            Strcpy(tmpbuf, _("Items you just picked up"));
         invlet = 'P';
         any = cg.zeroany;
         any.a_int = 'P';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
                  tmpbuf, MENU_ITEMFLAGS_SKIPINVERT);
     }
-    end_menu(win, qstr);
+    end_menu(win, _(qstr));
     n = select_menu(win, how, pick_list);
     if (n > 0) {
         assert(*pick_list != NULL);
@@ -3400,7 +3416,6 @@ menu_loot(int retry, boolean put_in)
     boolean all_categories = TRUE, loot_everything = FALSE, autopick = FALSE;
     char buf[BUFSZ];
     boolean loot_justpicked = FALSE;
-    const char *action = put_in ? "Put in" : "Take out";
     struct obj *otmp, *otmp2;
     menu_item *pick_list;
     int mflags, res;
@@ -3412,7 +3427,9 @@ menu_loot(int retry, boolean put_in)
         all_categories = (retry == -2);
     } else if (flags.menu_style == MENU_FULL) {
         all_categories = FALSE;
-        Sprintf(buf, "%s what type of objects?", action);
+        /* query_category() translates it as a whole */
+        Strcpy(buf, put_in ? N_("Put in what type of objects?")
+                           : N_("Take out what type of objects?"));
         mflags = (ALL_TYPES | UNPAID_TYPES | BUCX_TYPES | CHOOSE_ALL
                   | JUSTPICKED );
         n = query_category(buf,
@@ -3490,7 +3507,8 @@ menu_loot(int retry, boolean put_in)
             mflags |= JUSTPICKED;
         if (!put_in)
             gc.current_container->cknown = 1;
-        Sprintf(buf, "%s what?", action);
+        /* whole titles; query_objlist() translates them */
+        Strcpy(buf, put_in ? N_("Put in what?") : N_("Take out what?"));
         n = query_objlist(buf,
                           put_in ? &gi.invent : &(gc.current_container->cobj),
                           mflags, &pick_list, PICK_ANY,

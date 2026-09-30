@@ -8,6 +8,7 @@
 
 staticfn void throne_sit_effect(void);
 staticfn int lay_an_egg(void);
+staticfn void sit_on(const char *);
 
 /* take away the hero's money */
 void
@@ -74,8 +75,9 @@ throne_sit_effect(void)
             (void) adjattrib(rn2(A_MAX), 1, FALSE);
             break;
         case 3:
-            pline("A%s electric shock shoots through your body!",
-                  (Shock_resistance) ? "n" : " massive");
+            pline(Shock_resistance
+                  ? "An electric shock shoots through your body!"
+                  : "A massive electric shock shoots through your body!");
             losehp(Shock_resistance ? rnd(6) : rnd(30), "electric chair",
                    KILLED_BY_AN);
             exercise(A_CON, FALSE);
@@ -117,7 +119,7 @@ throne_sit_effect(void)
                 pline("A voice echoes:");
                 SetVoice((struct monst *) 0, 0, 80, voice_throne);
                 verbalize("Thine audience hath been summoned, %s!",
-                          flags.female ? "Dame" : "Sire");
+                          flags.female ? _("Dame") : _("Sire"));
                 while (cnt--)
                     (void) makemon(courtmon(), tx, ty, NO_MM_FLAGS);
                 break;
@@ -127,7 +129,7 @@ throne_sit_effect(void)
             pline("A voice echoes:");
             SetVoice((struct monst *) 0, 0, 80, voice_throne);
             verbalize("By thine Imperious order, %s...",
-                      flags.female ? "Dame" : "Sire");
+                      flags.female ? _("Dame") : _("Sire"));
             do_genocide(5); /* REALLY|ONTHRONE, see do_genocide() */
             break;
         case 9:
@@ -170,7 +172,11 @@ throne_sit_effect(void)
                         FALLTHROUGH;
                         /*FALLTHRU*/
                     case 1: /* one eye (Cyclops, floating eye) */
-                        Your("%s %s...", eye, vtense(eye, "tingle"));
+                        if (i18n_active())
+                            Your((num_of_eyes == 1) ? "%s tingles..."
+                                                    : "%s tingle...", eye);
+                        else
+                            Your("%s %s...", eye, vtense(eye, "tingle"));
                         break;
                     case 0: /* no eyes */
                         You("have a very strange feeling in your %s.",
@@ -228,8 +234,8 @@ throne_sit_effect(void)
         newsym_force(tx, ty);
         /* "[God] promptly vanishes in a puff of logic" is from
            Douglas Adams' _The_Hitchhiker's_Guide_to_the_Galaxy_. */
-        pline_The("throne %s in a puff of logic.",
-                  cansee(tx, ty) ? "vanishes" : "has vanished");
+        pline_The(cansee(tx, ty) ? "throne vanishes in a puff of logic."
+                  : "throne has vanished in a puff of logic.");
     }
 }
 
@@ -360,10 +366,10 @@ lay_an_egg(void)
     struct obj *uegg;
 
     if (!flags.female) {
-        pline("%s can't lay eggs!",
-              Hallucination
-              ? "You may think you are a platypus, but a male still"
-              : "Males");
+        pline(Hallucination
+              ? "You may think you are a platypus, but a male still "
+                "can't lay eggs!"
+              : "Males can't lay eggs!");
         return ECMD_OK;
     } else if (u.uhunger < (int) objects[EGG].oc_nutrition) {
         You("don't have enough energy to lay an egg.");
@@ -388,18 +394,33 @@ lay_an_egg(void)
     set_corpsenm(uegg, egg_type_from_parent(u.umonnum, FALSE));
     uegg->known = 1;
     observe_object(uegg);
-    You("%s an egg.", eggs_in_water(gy.youmonst.data) ? "spawn" : "lay");
+    You(eggs_in_water(gy.youmonst.data) ? "spawn an egg." : "lay an egg.");
     dropy(uegg);
     stackobj(uegg);
     morehungry((int) objects[EGG].oc_nutrition);
     return ECMD_TIME;
 }
 
+#if 0
+/* forms for a female hero */
+NC_("heroine", "You are already sitting on %s.")
+NC_("heroine", "You are burned by %s!")
+#endif
+
+/* "You sit on the <place>." */
+staticfn void
+sit_on(const char *place)
+{
+    if (i18n_active())
+        You("sit on %s.", i18n_the(place));
+    else
+        You("sit on the %s.", place);
+}
+
 /* #sit command */
 int
 dosit(void)
 {
-    static const char sit_message[] = "sit on the %s.";
     struct trap *trap = t_at(u.ux, u.uy);
     int typ = levl[u.ux][u.uy].typ;
 
@@ -422,7 +443,9 @@ dosit(void)
     } else if (u.ustuck && !sticks(gy.youmonst.data)) {
         /* holding monster is next to hero rather than beneath, but
            hero is in no condition to actually sit at has/her own spot */
-        if (humanoid(u.ustuck->data))
+        if (humanoid(u.ustuck->data) && i18n_active())
+            pline("%s won't offer you a lap.", Monnam(u.ustuck));
+        else if (humanoid(u.ustuck->data))
             pline("%s won't offer %s lap.", Monnam(u.ustuck), mhis(u.ustuck));
         else
             pline("%s has no lap.", Monnam(u.ustuck));
@@ -441,9 +464,9 @@ dosit(void)
 
         obj = svl.level.objects[u.ux][u.uy];
         if (gy.youmonst.data->mlet == S_DRAGON && obj->oclass == COIN_CLASS) {
-            You("coil up around your %shoard.",
-                (obj->quan + money_cnt(gi.invent) < u.ulevel * 1000)
-                ? "meager " : "");
+            You((obj->quan + money_cnt(gi.invent) < u.ulevel * 1000)
+                ? "coil up around your meager hoard."
+                : "coil up around your hoard.");
         } else if (obj->otyp == TOWEL) {
             pline("It's probably not a good time for a picnic...");
         } else {
@@ -484,7 +507,10 @@ dosit(void)
                 u.utrap += rn1(10, 5);
             } else if (u.utraptype == TT_LAVA) {
                 /* Must have fire resistance or they'd be dead already */
-                You("sit in the %s!", hliquid("lava"));
+                if (i18n_active())
+                    You("sit in %s!", i18n_the(hliquid("lava")));
+                else
+                    You("sit in the %s!", hliquid("lava"));
                 if (Slimed)
                     burn_away_slime();
                 u.utrap += rnd(4);
@@ -499,7 +525,7 @@ dosit(void)
             /* when flying, "you land" might need some refinement; it sounds
                as if you're staying on the ground but you will immediately
                take off again unless you become stuck in a holding trap */
-            You("%s.", Flying ? "land" : "sit down");
+            You(Flying ? "land." : "sit down.");
             dotrap(trap, VIASITTING);
         }
     } else if ((Underwater || Is_waterlevel(&u.uz))
@@ -510,7 +536,10 @@ dosit(void)
             You("sit down on the muddy bottom.");
     } else if (is_pool(u.ux, u.uy) && !eggs_in_water(gy.youmonst.data)) {
  in_water:
-        You("sit in the %s.", hliquid("water"));
+        if (i18n_active())
+            You("sit in %s.", i18n_the(hliquid("water")));
+        else
+            You("sit in the %s.", hliquid("water"));
         if (Upolyd && u.umonnum == PM_GREMLIN) {
             if (split_mon(&gy.youmonst, (struct monst *) 0)) {
                 if (levl[u.ux][u.uy].typ == FOUNTAIN)
@@ -524,42 +553,52 @@ dosit(void)
                 (void) water_damage(uarm, "armor", TRUE);
         }
     } else if (IS_SINK(typ)) {
-        You(sit_message, defsyms[S_sink].explanation);
-        Your("%s gets wet.",
-             humanoid(gy.youmonst.data) ? "rump" : "underside");
+        sit_on(defsyms[S_sink].explanation);
+        Your(humanoid(gy.youmonst.data) ? "rump gets wet."
+                                        : "underside gets wet.");
     } else if (IS_ALTAR(typ)) {
-        You(sit_message, defsyms[S_altar].explanation);
+        sit_on(defsyms[S_altar].explanation);
         altar_wrath(u.ux, u.uy);
     } else if (IS_GRAVE(typ)) {
-        You(sit_message, defsyms[S_grave].explanation);
+        sit_on(defsyms[S_grave].explanation);
     } else if (typ == STAIRS) {
-        You(sit_message, "stairs");
+        sit_on("stairs");
     } else if (typ == LADDER) {
-        You(sit_message, "ladder");
+        sit_on("ladder");
     } else if (is_lava(u.ux, u.uy)) {
         /* must be WWalking */
-        You(sit_message, hliquid("lava"));
+        sit_on(hliquid("lava"));
         burn_away_slime();
         if (likes_lava(gy.youmonst.data)) {
-            pline_The("%s feels warm.", hliquid("lava"));
+            if (i18n_active())
+                You("feel the warmth of %s.", i18n_the(hliquid("lava")));
+            else
+                pline_The("%s feels warm.", hliquid("lava"));
             return ECMD_TIME;
         }
-        pline_The("%s burns you!", hliquid("lava"));
+        if (i18n_active())
+            You("are burned by %s!", i18n_the(hliquid("lava")));
+        else
+            pline_The("%s burns you!", hliquid("lava"));
         losehp(d((Fire_resistance ? 2 : 10), 10), /* lava damage */
                "sitting on lava", KILLED_BY);
     } else if (is_ice(u.ux, u.uy)) {
-        You(sit_message, defsyms[S_ice].explanation);
+        sit_on(defsyms[S_ice].explanation);
         if (!Cold_resistance)
             pline_The("ice feels cold.");
     } else if (typ == DRAWBRIDGE_DOWN) {
-        You(sit_message, "drawbridge");
+        sit_on("drawbridge");
     } else if (IS_THRONE(typ)) {
-        You(sit_message, defsyms[S_throne].explanation);
+        sit_on(defsyms[S_throne].explanation);
         throne_sit_effect();
     } else if (lays_eggs(gy.youmonst.data)) {
         return lay_an_egg();
     } else {
-        pline("Having fun sitting on the %s?", surface(u.ux, u.uy));
+        if (i18n_active())
+            pline("Having fun sitting on %s?",
+                  i18n_the(surface(u.ux, u.uy)));
+        else
+            pline("Having fun sitting on the %s?", surface(u.ux, u.uy));
     }
     return ECMD_TIME;
 }
@@ -711,8 +750,8 @@ attrcurse(void)
                 /* might not be able to see self anymore */
                 newsym(u.ux, u.uy);
             }
-            You("%s!", Hallucination ? "tawt you taw a puttie tat"
-                                     : "thought you saw something");
+            You(Hallucination ? "tawt you taw a puttie tat!"
+                              : "thought you saw something!");
             ret = SEE_INVIS;
             break;
         }

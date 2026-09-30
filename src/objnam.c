@@ -3569,6 +3569,11 @@ simpleonames(struct obj *obj)
     char *obufp, *simpleoname = minimal_xname(obj);
 
     if (obj->quan != 1L) {
+#ifdef NHI18N
+        /* keep the grammar of the translated name, now plural */
+        unsigned gram = get_objgram(simpleoname);
+#endif
+
         /* 'simpleoname' points to an obuf; makeplural() will allocate
            another one and only that one can be explicitly released for
            re-use, so this is slightly convoluted to cope with that;
@@ -3576,6 +3581,10 @@ simpleonames(struct obj *obj)
            argument before strcpy() touches its output argument */
         Strcpy(simpleoname, obufp = makeplural(simpleoname));
         releaseobuf(obufp);
+#ifdef NHI18N
+        if (gram)
+            set_objgram(simpleoname, gram | OGRAM_PLURAL);
+#endif
     }
     return simpleoname;
 }
