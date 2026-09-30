@@ -23,6 +23,9 @@
 
 #define spellev(spell) svs.spl_book[spell].sp_lev
 #define spellname(spell) OBJ_NAME(objects[spellid(spell)])
+/* translated name of the spell of book type otyp */
+#define spl_name_i18n(otyp) \
+    nh_npgettext("object", OBJ_NAME(objects[otyp]), FALSE)
 #define spellet(spell) \
     ((char) ((spell < 26) ? ('a' + spell) : ('A' + spell - 26)))
 
@@ -49,6 +52,7 @@ staticfn void cast_chain_lightning(void);
 staticfn void spell_backfire(int);
 staticfn boolean spelleffects_check(int, int *, int *);
 staticfn const char *spelltypemnemonic(int);
+staticfn char *spl_pad(char *, const char *, int);
 staticfn boolean can_center_spell_location(coordxy, coordxy);
 staticfn void display_spell_target_positions(boolean);
 staticfn boolean spell_aim_step(genericptr_t, coordxy, coordxy);
@@ -107,8 +111,6 @@ staticfn void propagate_chain_lightning(struct chain_lightning_queue *,
 #define uarmgbon 6 /* Casting channels through the hands */
 #define uarmfbon 2 /* All metal interferes to some degree */
 
-/* since the spellbook itself doesn't blow up, don't say just "explodes" */
-static const char explodes[] = "radiates explosive energy";
 
 /* convert a letter into a number in the range 0..51, or -1 if not a letter */
 staticfn int
@@ -169,10 +171,13 @@ cursed_book(struct obj *bp)
     case 6:
         if (Antimagic) {
             shieldeff(u.ux, u.uy);
-            pline_The("book %s, but you are unharmed!", explodes);
+            /* since the spellbook itself doesn't blow up, don't say just
+               "explodes" */
+            pline_The("book radiates explosive energy, but you are "
+                      "unharmed!");
         } else {
-            pline("As you read the book, it %s in your %s!", explodes,
-                  body_part(FACE));
+            pline("As you read the book, it radiates explosive energy in "
+                  "your %s!", body_part(FACE));
             dmg = 2 * rnd(10) + 5;
             losehp(Maybe_Half_Phys(dmg), "exploding rune", KILLED_BY_AN);
         }
@@ -200,8 +205,9 @@ confused_book(struct obj *spellbook)
         useup(spellbook);
         gone = TRUE;
     } else {
-        You("find yourself reading the %s line over and over again.",
-            spellbook == svc.context.spbook.book ? "next" : "first");
+        You(spellbook == svc.context.spbook.book
+            ? "find yourself reading the next line over and over again."
+            : "find yourself reading the first line over and over again.");
     }
     return gone;
 }
@@ -244,9 +250,9 @@ deadbook(struct obj *book2)
                          arti_cursed = FALSE;
 
         if (book2->cursed) {
-            pline_The("%s!",
-                      Blind ? "Book seems to be ignoring you"
-                            : "runes appear scrambled.  You can't read them");
+            pline_The(Blind
+                      ? "Book seems to be ignoring you!"
+                      : "runes appear scrambled.  You can't read them!");
             return;
         }
 
@@ -296,7 +302,7 @@ deadbook(struct obj *book2)
             if (!u.udg_cnt || u.udg_cnt > soon)
                 u.udg_cnt = soon;
         } else { /* at least one relic not prepared properly */
-            You("have a feeling that %s is amiss...", something);
+            You("have a feeling that %s is amiss...", _(something));
             goto raise_dead;
         }
         return;
@@ -344,7 +350,13 @@ book_cursed(struct obj *book)
 {
     if (book->cursed && gm.multi >= 0
         && go.occupation == learn && svc.context.spbook.book == book) {
-        pline("%s shut!", Tobjnam(book, "slam"));
+        if (i18n_active()) {
+            const char *nm = The(xname(book));
+
+            pline(objnam_fmt("%s slams shut!", nm, book), nm);
+        } else {
+            pline("%s shut!", Tobjnam(book, "slam"));
+        }
         set_bknown(book, 1);
         stop_occupation();
     }
@@ -387,9 +399,15 @@ learn(void)
         return 0;
     }
 
-    Sprintf(splname,
-            objects[booktype].oc_name_known ? "\"%s\"" : "the \"%s\" spell",
-            OBJ_NAME(objects[booktype]));
+    if (i18n_active())
+        Snprintf(splname, sizeof splname,
+                 objects[booktype].oc_name_known ? _("\"%s\"")
+                                                 : _("the \"%s\" spell"),
+                 spl_name_i18n(booktype));
+    else
+        Sprintf(splname, objects[booktype].oc_name_known ? "\"%s\""
+                                                         : "the \"%s\" spell",
+                OBJ_NAME(objects[booktype]));
     for (i = 0; i < MAXSPELL; i++)
         if (spellid(i) == booktype || spellid(i) == NO_SPELL)
             break;
@@ -405,8 +423,8 @@ learn(void)
             /* reset spestudied as if polymorph had taken place */
             book->spestudied = rn2(book->spestudied);
         } else {
-            Your("knowledge of %s is %s.", splname,
-                 spellknow(i) ? "keener" : "restored");
+            Your(spellknow(i) ? "knowledge of %s is keener."
+                              : "knowledge of %s is restored.", splname);
             incrnknow(i, 1);
             book->spestudied++;
             exercise(A_WIS, TRUE); /* extra study */
@@ -498,9 +516,9 @@ study_book(struct obj *spellbook)
         /* handle the sequence: start reading, get interrupted, have
            svc.context.spbook.book become erased somehow, resume reading it */
         && booktype != SPE_BLANK_PAPER) {
-        You("continue your efforts to %s.",
-            (booktype == SPE_NOVEL) ? "read the novel"
-                                    : "memorize the spell");
+        You((booktype == SPE_NOVEL)
+            ? "continue your efforts to read the novel."
+            : "continue your efforts to memorize the spell.");
     } else {
         /* KMH -- Simplified this code */
         if (booktype == SPE_BLANK_PAPER) {
@@ -564,7 +582,7 @@ study_book(struct obj *spellbook)
                 break;
         if (spellid(i) == booktype && spellknow(i) > KEEN / 10) {
             You("know \"%s\" quite well already.",
-                OBJ_NAME(objects[booktype]));
+                spl_name_i18n(booktype));
             /* hero has just been told what spell this book is for; it may
                have been undiscovered if spell was learned via divine gift */
             makeknown(booktype);
@@ -587,9 +605,12 @@ study_book(struct obj *spellbook)
                 if (Role_if(PM_WIZARD) && read_ability < 20 && !confused) {
                     char qbuf[QBUFSZ];
 
-                    Sprintf(qbuf,
-                    "This spellbook is %sdifficult to comprehend.  Continue?",
-                            (read_ability < 12 ? "very " : ""));
+                    /* y_n() translates it */
+                    Strcpy(qbuf, (read_ability < 12)
+                                 ? N_("This spellbook is very difficult to "
+                                      "comprehend.  Continue?")
+                                 : N_("This spellbook is difficult to "
+                                      "comprehend.  Continue?"));
                     if (y_n(qbuf) != 'y') {
                         spellbook->in_use = FALSE;
                         return 1;
@@ -629,8 +650,9 @@ study_book(struct obj *spellbook)
         }
         spellbook->in_use = FALSE;
 
-        You("begin to %s the runes.",
-            spellbook->otyp == SPE_BOOK_OF_THE_DEAD ? "recite" : "memorize");
+        You(spellbook->otyp == SPE_BOOK_OF_THE_DEAD
+            ? "begin to recite the runes."
+            : "begin to memorize the runes.");
     }
 
     svc.context.spbook.book = spellbook;
@@ -752,7 +774,7 @@ getspell(int *spell_no)
         else
             Sprintf(lets, "a-zA-%c", 'A' + nspells - 27);
 
-        Snprintf(qbuf, sizeof qbuf, "Cast which spell? [%s *?]", lets);
+        Snprintf(qbuf, sizeof qbuf, _("Cast which spell? [%s *?]"), lets);
         for (retry_limit = 0; ; ++retry_limit) {
             if (retry_limit == 10) {
                 /* limit is mainly to prevent the fuzzer from getting stuck
@@ -778,7 +800,7 @@ getspell(int *spell_no)
             return TRUE;
         }
     }
-    return dospellmenu("Choose which spell to cast", SPELLMENU_CAST,
+    return dospellmenu(N_("Choose which spell to cast"), SPELLMENU_CAST,
                        spell_no);
 }
 
@@ -801,9 +823,9 @@ dowizcast(void)
             break;
         any.a_int = n;
         add_menu(win, &nul_glyphinfo, &any, 0, 0, ATR_NONE, NO_COLOR,
-                 OBJ_NAME(objects[n]), MENU_ITEMFLAGS_NONE);
+                 spl_name_i18n(n), MENU_ITEMFLAGS_NONE);
     }
-    end_menu(win, "Cast which spell?");
+    end_menu(win, _("Cast which spell?"));
     n = select_menu(win, PICK_ONE, &selected);
     destroy_nhwindow(win);
     if (n > 0) {
@@ -826,6 +848,39 @@ docast(void)
         return spelleffects(svs.spl_book[spell_no].sp_id, FALSE, FALSE);
     }
     return ECMD_FAIL;
+}
+
+#if 0
+/* spell skill names shown in the spell menu */
+NC_("spell skill", "attack") NC_("spell skill", "healing")
+NC_("spell skill", "divination") NC_("spell skill", "enchantment")
+NC_("spell skill", "clerical") NC_("spell skill", "escape")
+NC_("spell skill", "matter")
+/* what surrounds the hero in cast_protection() */
+NC_("noun", "mist") NC_("noun", "maelstrom") NC_("noun", "folds")
+NC_("noun", "ooze") NC_("noun", "vegetation") NC_("noun", "stone")
+NC_("gender", "mist") NC_("gender", "maelstrom") NC_("gender", "folds")
+NC_("gender", "ooze") NC_("gender", "vegetation") NC_("gender", "stone")
+/* forms given by objnam_fmt() */
+N_("%s slams shut!") C_("feminine", "%s slams shut!")
+C_("plural", "%s slams shut!") C_("feminine plural", "%s slams shut!")
+#endif
+
+/* copy s into buf, padded with spaces to width characters (not bytes,
+   for UTF-8 translations) */
+staticfn char *
+spl_pad(char *buf, const char *s, int width)
+{
+    int n = 0;
+    const char *p;
+
+    for (p = s; *p; ++p)
+        if ((*p & 0xc0) != 0x80) /* not a UTF-8 continuation byte */
+            ++n;
+    Strcpy(buf, s);
+    for (; n < width; ++n)
+        Strcat(buf, " ");
+    return buf;
 }
 
 staticfn const char *
@@ -1048,7 +1103,12 @@ cast_chain_lightning(void)
                     if (DEADMONSTER(mon)) {
                         xkilled(mon, XKILL_GIVEMSG);
                     } else {
-                        pline("You shock %s%s", mon_nam(mon), exclam(dmg));
+                        if (i18n_active())
+                            pline((dmg > 4) ? "You shock %s!"
+                                            : "You shock %s.", mon_nam(mon));
+                        else
+                            pline("You shock %s%s", mon_nam(mon),
+                                  exclam(dmg));
                         /* if a long worm, only map 'I' for its head */
                         if (!canseemon(mon) && !gn.notonhead)
                             /* FIXME: this doesn't work, possibly because
@@ -1145,7 +1205,9 @@ cast_protection(void)
             const char *hgolden = hcolor(NH_GOLDEN), *atmosphere;
 
             if (u.uspellprot) {
-                pline_The("%s haze around you becomes more dense.", hgolden);
+                pline_The("%s haze around you becomes more dense.",
+                          i18n_active() ? hcolor_i18n(NH_GOLDEN, TRUE)
+                                        : hgolden);
             } else {
                 struct permonst *pm = u.ustuck ? u.ustuck->data : 0;
 
@@ -1161,8 +1223,13 @@ cast_protection(void)
                                      : IS_TREE(rmtyp) ? "vegetation"
                                        : IS_STWALL(rmtyp) ? "stone"
                                          : "air");
-                pline_The("%s around you begins to shimmer with %s haze.",
-                          atmosphere, an(hgolden));
+                if (i18n_active())
+                    pline("A %s haze begins to shimmer in %s around you.",
+                          hcolor_i18n(NH_GOLDEN, TRUE),
+                          i18n_the(atmosphere));
+                else
+                    pline_The("%s around you begins to shimmer with %s haze.",
+                              atmosphere, an(hgolden));
             }
         }
         u.uspellprot += gain;
@@ -1312,10 +1379,13 @@ spelleffects_check(int spell, int *res, int *energy)
          * isn't now (lost energy when losing levels or polymorphing into
          * new person or had some stripped away by traps or monsters).
          */
-        You("don't have enough energy to cast that spell%s.",
-            (u.uen < u.uenmax) ? "" /* not at full energy => normal message */
-            : (*energy > u.uenpeak) ? " yet" /* haven't ever had enough */
-              : " anymore"); /* once had enough but have lost some since */
+        /* not at full energy => normal message; "yet": haven't ever had
+           enough; "anymore": once had enough but have lost some since */
+        You((u.uen < u.uenmax)
+            ? "don't have enough energy to cast that spell."
+            : (*energy > u.uenpeak)
+              ? "don't have enough energy to cast that spell yet."
+              : "don't have enough energy to cast that spell anymore.");
         return TRUE;
     } else {
         if (spellid(spell) != SPE_DETECT_FOOD) {
@@ -1561,7 +1631,7 @@ spelleffects(int spell_otyp, boolean atme, boolean force)
          *  Sick +  Slimed -- You are no longer ill.  The slime disappears.
          */
         if (was_sick || !was_slimed)
-            You("are %s ill.", was_sick ? "no longer" : "not");
+            You(was_sick ? "are no longer ill." : "are not ill.");
         if (was_slimed)
             make_slimed(0L, "The slime disappears!");
         break;
@@ -1853,16 +1923,16 @@ enum spl_sort_types {
 };
 
 static const char *const spl_sortchoices[NUM_SPELL_SORTBY] = {
-    "by casting letter",
-    "alphabetically",
-    "by level, low to high",
-    "by level, high to low",
-    "by skill group, alphabetized within each group",
-    "by skill group, low to high level within group",
-    "by skill group, high to low level within group",
-    "maintain current ordering",
+    N_("by casting letter"),
+    N_("alphabetically"),
+    N_("by level, low to high"),
+    N_("by level, high to low"),
+    N_("by skill group, alphabetized within each group"),
+    N_("by skill group, low to high level within group"),
+    N_("by skill group, high to low level within group"),
+    N_("maintain current ordering"),
     /* a menu choice rather than a sort choice */
-    "reassign casting letters to retain current order",
+    N_("reassign casting letters to retain current order"),
 };
 
 /* qsort callback routine */
@@ -1996,11 +2066,11 @@ spellsortmenu(void)
         }
         any.a_int = i + 1;
         add_menu(tmpwin, &nul_glyphinfo, &any, let, 0,
-                 ATR_NONE, clr, spl_sortchoices[i],
+                 ATR_NONE, clr, _(spl_sortchoices[i]),
                  (i == gs.spl_sortmode) ? MENU_ITEMFLAGS_SELECTED
                                         : MENU_ITEMFLAGS_NONE);
     }
-    end_menu(tmpwin, "View known spells list sorted");
+    end_menu(tmpwin, _("View known spells list sorted"));
 
     n = select_menu(tmpwin, PICK_ONE, &selected);
     destroy_nhwindow(tmpwin);
@@ -2027,13 +2097,13 @@ dovspell(void)
     if (spellid(0) == NO_SPELL) {
         You("don't know any spells right now.");
     } else {
-        while (dospellmenu("Currently known spells",
+        while (dospellmenu(N_("Currently known spells"),
                            SPELLMENU_VIEW, &splnum)) {
             if (splnum == SPELLMENU_SORT) {
                 if (spellsortmenu())
                     sortspells();
             } else {
-                Sprintf(qbuf, "Reordering spells; swap '%c' with",
+                Sprintf(qbuf, _("Reordering spells; swap '%c' with"),
                         spellet(splnum));
                 if (!dospellmenu(qbuf, splnum, &othnum))
                     break;
@@ -2099,7 +2169,27 @@ dospellmenu(
      * For SPELLMENU_DUMP, (2) is untrue, so four spaces
      * need to be subtracted.
      */
-    if (!iflags.menu_tab_sep) {
+    if (i18n_active()) {
+        char nam[BUFSZ], lvl[BUFSZ], cat[BUFSZ], fail[BUFSZ];
+
+        /* translated headings; columns padded by characters, not bytes */
+        if (!iflags.menu_tab_sep)
+            Sprintf(buf, "%s%s %s %s %s %s",
+                    splaction == SPELLMENU_DUMP ? "" : "    ",
+                    spl_pad(nam, C_("spell menu", "Name"), 20),
+                    spl_pad(lvl, C_("spell menu", "Level"), 5),
+                    spl_pad(cat, C_("spell menu", "Category"), 12),
+                    spl_pad(fail, C_("spell menu", "Fail"), 4),
+                    C_("spell menu", "Retention"));
+        else
+            Sprintf(buf, "%s\t%s\t%s\t%s\t%s",
+                    C_("spell menu", "Name"), C_("spell menu", "Level"),
+                    C_("spell menu", "Category"), C_("spell menu", "Fail"),
+                    C_("spell menu", "Retention"));
+        fmt = !iflags.menu_tab_sep ? "%s  %2d   %s %3d%% %9s"
+                                   : "%s\t%-d\t%s\t%-d%%\t%s";
+        sep = !iflags.menu_tab_sep ? ' ' : '\t';
+    } else if (!iflags.menu_tab_sep) {
         Sprintf(buf, "%s%-20s Level %-12s Fail Retention",
                 splaction == SPELLMENU_DUMP ? "" : "    ",
                 "Name",
@@ -2117,10 +2207,23 @@ dospellmenu(
     add_menu_heading(tmpwin, buf);
     for (i = 0; i < MAXSPELL && spellid(i) != NO_SPELL; i++) {
         splnum = !gs.spl_orderindx ? i : gs.spl_orderindx[i];
-        Sprintf(buf, fmt, spellname(splnum), spellev(splnum),
-                spelltypemnemonic(spell_skilltype(spellid(splnum))),
-                100 - percent_success(splnum),
-                spellretention(splnum, retentionbuf));
+        if (i18n_active()) {
+            char nam[BUFSZ], cat[BUFSZ];
+            const char *sn = spl_name_i18n(spellid(splnum)),
+                       *st = C_("spell skill", spelltypemnemonic(
+                                    spell_skilltype(spellid(splnum))));
+
+            Snprintf(buf, sizeof buf, fmt,
+                     iflags.menu_tab_sep ? sn : spl_pad(nam, sn, 20),
+                     spellev(splnum),
+                     iflags.menu_tab_sep ? st : spl_pad(cat, st, 12),
+                     100 - percent_success(splnum),
+                     spellretention(splnum, retentionbuf));
+        } else
+            Sprintf(buf, fmt, spellname(splnum), spellev(splnum),
+                    spelltypemnemonic(spell_skilltype(spellid(splnum))),
+                    100 - percent_success(splnum),
+                    spellretention(splnum, retentionbuf));
         if (wizard)
             Sprintf(eos(buf), "%c%6d", sep, spellknow(i));
 
@@ -2139,10 +2242,10 @@ dospellmenu(
             /* more than 1 spell, add an extra menu entry */
             any.a_int = SPELLMENU_SORT + 1;
             add_menu(tmpwin, &nul_glyphinfo, &any, '+', 0,
-                     ATR_NONE, clr, "[sort spells]", MENU_ITEMFLAGS_NONE);
+                     ATR_NONE, clr, _("[sort spells]"), MENU_ITEMFLAGS_NONE);
         }
     }
-    end_menu(tmpwin, prompt);
+    end_menu(tmpwin, *prompt ? _(prompt) : prompt);
 
     n = select_menu(tmpwin, how, &selected);
     destroy_nhwindow(tmpwin);
@@ -2304,7 +2407,7 @@ spellretention(int idx, char * outbuf)
 
     if (turnsleft < 1L) {
         /* spell has expired; hero can't successfully cast it anymore */
-        Strcpy(outbuf, "(gone)");
+        Strcpy(outbuf, _("(gone)"));
     } else if (turnsleft >= (long) KEEN) {
         /* full retention, first turn or immediately after reading book */
         Strcpy(outbuf, "100%");

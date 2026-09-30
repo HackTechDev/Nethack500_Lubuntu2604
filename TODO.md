@@ -98,12 +98,14 @@ gravures (`engrave.c`), la musique (`music.c`), les serrures
 (`lock.c`), la détection (`detect.c`), les montures (`steed.c`), la
 téléportation (`teleport.c`), l'inventaire (`invent.c`), s'asseoir
 (`sit.c`), le menu d'actions sur un objet (`iactions.c`) et les menus de
-catégories et d'objets (`query_category()`, `query_objlist()`), sauf
+catégories et d'objets (`query_category()`, `query_objlist()`), les cris
+et répliques des monstres (`sounds.c`), les gardes du coffre (`vault.c`)
+et les sorts (`spell.c`, menu des sorts aligné par caractères), sauf
 quelques
 verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Restent notamment : `sounds.c`, `vault.c`, `spell.c`...
+(accord au féminin).  Restent notamment : `worn.c`, `mhitm.c`, `mcastu.c`, `polyself.c`...
 et `attrib.c` (« You feel foolish! »).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes

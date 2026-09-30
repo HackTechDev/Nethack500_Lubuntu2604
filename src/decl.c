@@ -41,7 +41,7 @@ const struct c_common_strings c_common_strings =
     { N_("Nothing happens."),
       N_("Nothing seems to happen."),
       N_("That's enough tries!"),
-      "That is a silly thing to %s.",
+      N_("That is a silly thing to %s."),
       "shudder for a moment.",
       "something",
       "Something",

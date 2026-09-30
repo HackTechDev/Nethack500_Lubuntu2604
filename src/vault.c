@@ -441,7 +441,10 @@ invault(void)
                     (bcnt == 1) ? an(bname) : makeplural(bname));
         }
         spotted = canspotmon(guard);
-        if (spotted) {
+        if (spotted && i18n_active()) {
+            pline("Suddenly one of the Vault's guards enters!");
+            newsym(guard->mx, guard->my);
+        } else if (spotted) {
             pline("Suddenly one of the Vault's %s enters!",
                   makeplural(pmname(guard->data, Mgender(guard))));
             newsym(guard->mx, guard->my);
@@ -473,7 +476,8 @@ invault(void)
                               mimic_obj_name(&gy.youmonst));
                 }
             /* You're mimicking some object or you're hidden. */
-            pline("Puzzled, %s turns around and leaves.", mhe(guard));
+            pline("Puzzled, %s turns around and leaves.",
+                  i18n_active() ? noit_mon_nam(guard) : mhe(guard));
             mongone(guard);
             return;
         }
@@ -542,8 +546,9 @@ invault(void)
             return;
         }
         if (Deaf) {
-            pline("%s doesn't %srecognize you.", noit_Monnam(guard),
-                    (Blind) ? "" : "appear to ");
+            pline(Blind ? "%s doesn't recognize you."
+                        : "%s doesn't appear to recognize you.",
+                  noit_Monnam(guard));
         } else {
             SetVoice(guard, 0, 80, 0);
             verbalize("I don't know you.");
@@ -551,8 +556,8 @@ invault(void)
         umoney = money_cnt(gi.invent);
         if (!umoney && !hidden_gold(TRUE)) {
             if (Deaf) {
-                pline("%s stomps%s.", noit_Monnam(guard),
-                      (Blind) ? "" : " and beckons");
+                pline(Blind ? "%s stomps." : "%s stomps and beckons.",
+                      noit_Monnam(guard));
             } else {
                 SetVoice(guard, 0, 80, 0);
                 verbalize("Please follow me.");
@@ -561,14 +566,19 @@ invault(void)
             if (!umoney) {
                 if (Deaf) {
                     if (!Blind)
-                        pline("%s glares at you%s.", noit_Monnam(guard),
-                              gi.invent ? "r stuff" : "");
+                        pline(gi.invent ? "%s glares at your stuff."
+                                        : "%s glares at you.",
+                              noit_Monnam(guard));
                 } else {
                    SetVoice(guard, 0, 80, 0);
                    verbalize("You have hidden gold.");
                 }
             }
-            if (Deaf) {
+            if (Deaf && i18n_active()) {
+                if (!Blind)
+                    pline("%s holds out a palm and beckons with the other "
+                          "hand.", noit_Monnam(guard));
+            } else if (Deaf) {
                 if (!Blind)
                     pline(
                        "%s holds out %s palm and beckons with %s other hand.",
@@ -814,10 +824,15 @@ gd_pick_corridor_gold(struct monst *grd, int goldx, int goldy)
     }
 
     if (see_it) { /* cansee(goldx, goldy) */
-        pline("%s%s picks up the gold%s.", Some_Monnam(grd),
-              (grd->mpeaceful && EGD(grd)->warncnt > 5)
-                 ? " calms down and" : "",
-              under_u ? " from beneath you" : "");
+        /* whole sentences, so that each can be translated */
+        if (grd->mpeaceful && EGD(grd)->warncnt > 5)
+            pline(under_u
+                  ? "%s calms down and picks up the gold from beneath you."
+                  : "%s calms down and picks up the gold.",
+                  Some_Monnam(grd));
+        else
+            pline(under_u ? "%s picks up the gold from beneath you."
+                          : "%s picks up the gold.", Some_Monnam(grd));
     }
 
     /* if guard was moved to get the gold, move him back */
@@ -865,14 +880,18 @@ gd_move_cleanup(
     return -2;
 }
 
+#if 0
+/* form for a female hero */
+NC_("heroine", "You are confronted by %s.")
+#endif
+
 staticfn void
 gd_letknow(struct monst *grd)
 {
     if (!cansee(grd->mx, grd->my) || !mon_visible(grd))
-        You_hear("%s.",
-                    m_carrying(grd, TIN_WHISTLE)
-                        ? "the shrill sound of a guard's whistle"
-                        : "angry shouting");
+        You_hear(m_carrying(grd, TIN_WHISTLE)
+                 ? "the shrill sound of a guard's whistle."
+                 : "angry shouting.");
     else
         You(um_dist(grd->mx, grd->my, 2)
                 ? "see %s approaching."
@@ -933,8 +952,9 @@ gd_move(struct monst *grd)
     if (egrd->witness) {
         if (!Deaf) {
             SetVoice(grd, 0, 80, 0);
-            verbalize("How dare you %s that gold, scoundrel!",
-                      (egrd->witness & GD_EATGOLD) ? "consume" : "destroy");
+            verbalize((egrd->witness & GD_EATGOLD)
+                      ? "How dare you consume that gold, scoundrel!"
+                      : "How dare you destroy that gold, scoundrel!");
         }
         egrd->witness = 0;
         grd->mpeaceful = 0;
@@ -948,10 +968,12 @@ gd_move(struct monst *grd)
             if (egrd->warncnt == 3 && !Deaf) {
                 char buf[BUFSZ];
 
-                Sprintf(buf, "%sfollow me!",
-                        u_carry_gold ? (!umoney ? "drop that hidden gold and "
-                                                : "drop that gold and ")
-                                     : "");
+                /* whole sentences, so that each can be translated */
+                Strcpy(buf, u_carry_gold
+                            ? (!umoney ? _("drop that hidden gold and "
+                                           "follow me!")
+                                       : _("drop that gold and follow me!"))
+                            : _("follow me!"));
                 SetVoice(grd, 0, 80, 0);
                 if (egrd->dropgoldcnt || !u_carry_gold)
                     verbalize("I repeat, %s", buf);
@@ -1024,9 +1046,14 @@ gd_move(struct monst *grd)
             if (egrd->warncnt < 6) {
                 egrd->warncnt = 6;
                 if (Deaf) {
-                    if (!Blind)
-                        pline("%s holds out %s palm demandingly!",
-                              noit_Monnam(grd), noit_mhis(grd));
+                    if (!Blind) {
+                        if (i18n_active())
+                            pline("%s holds out a palm demandingly!",
+                                  noit_Monnam(grd));
+                        else
+                            pline("%s holds out %s palm demandingly!",
+                                  noit_Monnam(grd), noit_mhis(grd));
+                    }
                 } else {
                     SetVoice(grd, 0, 80, 0);
                     verbalize("Drop all your gold, scoundrel!");
@@ -1034,9 +1061,14 @@ gd_move(struct monst *grd)
                 return 0;
             } else {
                 if (Deaf) {
-                    if (!Blind)
-                        pline("%s rubs %s hands with enraged delight!",
-                              noit_Monnam(grd), noit_mhis(grd));
+                    if (!Blind) {
+                        if (i18n_active())
+                            pline("%s rubs its hands with enraged delight!",
+                                  noit_Monnam(grd));
+                        else
+                            pline("%s rubs %s hands with enraged delight!",
+                                  noit_Monnam(grd), noit_mhis(grd));
+                    }
                 } else {
                     SetVoice(grd, 0, 80, 0);
                     verbalize("So be it, rogue!");
@@ -1228,9 +1260,11 @@ paygd(boolean silently)
             pline("%s remits your gold to the vault.", Monnam(grd));
         gdx = svr.rooms[EGD(grd)->vroom].lx + rn2(2);
         gdy = svr.rooms[EGD(grd)->vroom].ly + rn2(2);
-        Sprintf(buf, "To Croesus: here's the gold recovered from %s the %s.",
-                svp.plname,
-                pmname(&mons[u.umonster], flags.female ? FEMALE : MALE));
+        Snprintf(buf, sizeof buf,
+                 _("To Croesus: here's the gold recovered from %s the %s."),
+                 svp.plname,
+                 C_("monster", pmname(&mons[u.umonster],
+                                      flags.female ? FEMALE : MALE)));
         make_grave(gdx, gdy, buf);
     }
     for (coins = gi.invent; coins; coins = nextcoins) {

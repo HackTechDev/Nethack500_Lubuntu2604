@@ -2139,7 +2139,7 @@ silly_thing(const char *word,
             || (otmp->otyp == FAKE_AMULET_OF_YENDOR && !otmp->known)))
         pline_The("Amulet doesn't like being called names.");
     else
-        pline(silly_thing_to, word);
+        pline(silly_thing_to, C_("verb", word));
 }
 
 RESTORE_WARNING_FORMAT_NONLITERAL

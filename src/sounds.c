@@ -76,8 +76,8 @@ beehive_mon_sound(struct monst *mtmp)
             break;
         case 2:
             Soundeffect(se_bees, 100);
-            You_hear("bees in your %sbonnet!",
-                     uarmh ? "" : "(nonexistent) ");
+            You_hear(uarmh ? "bees in your bonnet!"
+                           : "bees in your (nonexistent) bonnet!");
             break;
         }
         return TRUE;
@@ -98,12 +98,24 @@ morgue_mon_sound(struct monst *mtmp)
             You("suddenly realize it is unnaturally quiet.");
             break;
         case 1:
-            pline_The("%s on the back of your %s %s up.", hair,
-                      body_part(NECK), vtense(hair, "stand"));
+            if (i18n_active())
+                You("feel %s on the back of your %s stand up.",
+                    i18n_the_ctx("bodypart",
+                                 mbodypart_english(&gy.youmonst, HAIR)),
+                    body_part(NECK));
+            else
+                pline_The("%s on the back of your %s %s up.", hair,
+                          body_part(NECK), vtense(hair, "stand"));
             break;
         case 2:
-            pline_The("%s on your %s %s to stand up.", hair,
-                      body_part(HEAD), vtense(hair, "seem"));
+            if (i18n_active())
+                You("seem to feel %s on your %s stand up.",
+                    i18n_the_ctx("bodypart",
+                                 mbodypart_english(&gy.youmonst, HAIR)),
+                    body_part(HEAD));
+            else
+                pline_The("%s on your %s %s to stand up.", hair,
+                          body_part(HEAD), vtense(hair, "seem"));
             break;
         }
         return TRUE;
@@ -673,6 +685,119 @@ mon_is_gecko(struct monst *mon)
     return (boolean) (glyph_to_mon(glyph) == PM_GECKO);
 }
 
+#if 0
+/* monster noises: predicates after the name (msgctxt "monnoise") */
+NC_("monnoise", "whispers inaudibly.  All you can make out is \"moon\".")
+NC_("monnoise", "howls.")
+NC_("monnoise", "whines.")
+NC_("monnoise", "yips.")
+NC_("monnoise", "barks.")
+NC_("monnoise", "growls.")
+NC_("monnoise", "yowls.")
+NC_("monnoise", "meows.")
+NC_("monnoise", "purrs.")
+NC_("monnoise", "mews.")
+NC_("monnoise", "snarls.")
+NC_("monnoise", "growls!")
+NC_("monnoise", "roars!")
+NC_("monnoise", "squeaks.")
+NC_("monnoise", "squawks.")
+NC_("monnoise", "hisses!")
+NC_("monnoise", "drones.")
+NC_("monnoise", "buzzes angrily.")
+NC_("monnoise", "grunts.")
+NC_("monnoise", "neighs.")
+NC_("monnoise", "whinnies.")
+NC_("monnoise", "whickers.")
+NC_("monnoise", "moos.")
+NC_("monnoise", "bellows!")
+NC_("monnoise", "chirps.")
+NC_("monnoise", "wails mournfully.")
+NC_("monnoise", "groans.")
+NC_("monnoise", "gurgles.")
+NC_("monnoise", "burbles.")
+NC_("monnoise", "trumpets!")
+NC_("monnoise", "shrieks.")
+NC_("monnoise", "imitates you.")
+NC_("monnoise", "mumbles incomprehensibly.")
+NC_("monnoise", "complains about a diet of mutton.")
+NC_("monnoise", "shouts \"Fee Fie Foe Foo!\" and guffaws.")
+NC_("monnoise", "threatens you.")
+NC_("monnoise", "wants nothing to do with you.")
+NC_("monnoise", "moans.")
+NC_("monnoise", "asks for a potion of healing.")
+NC_("monnoise", "curses orcs.")
+NC_("monnoise", "talks about mining.")
+NC_("monnoise", "talks about spellcraft.")
+NC_("monnoise", "discusses hunting.")
+NC_("monnoise", "complains about unpleasant dungeon conditions.")
+NC_("monnoise", "asks you about the One Ring.")
+NC_("monnoise", "describes a recent article in \"Spelunker Today\" magazine.")
+NC_("monnoise", "discusses dungeon exploration.")
+NC_("monnoise", "comes on to you.")
+NC_("monnoise", "cajoles you.")
+NC_("monnoise", "seems to mutter a cantrip.")
+NC_("monnoise", "is busy reading a copy of Sandman #8.")
+NC_("monnoise", "giggles.")
+NC_("monnoise", "chuckles.")
+NC_("monnoise", "snickers.")
+NC_("monnoise", "laughs.")
+/* speech given through verbalize1(), which translates it */
+N_("Good evening to you Master!")
+N_("Good day to you Master.  Why do we not rest?")
+N_("Child of the night, I can stand this craving no longer!")
+N_("Child of the night, I beg you, help me satisfy this growing craving!")
+N_("Child of the night, I find myself growing a little weary.")
+N_("I can stand this craving no longer!")
+N_("I beg you, help me satisfy this growing craving!")
+N_("I find myself growing a little weary.")
+N_("Good feeding sister!")
+N_("Good feeding brother!")
+N_("How nice to hear you, child of the night!")
+N_("I only drink... potions.")
+N_("This is my hunting ground that you dare to prowl!")
+N_("Fool!  Your silver sheen does not frighten me!")
+N_("Young Fool!  Your silver sheen does not frighten me!")
+N_("Nevermore!")
+N_("Sorry, I'm all out of wishes.")
+N_("I'm free!")
+N_("This will teach you not to disturb me!")
+N_("Get me out of here.")
+N_("Huh?")
+N_("What?")
+N_("Eh?")
+N_("I can't see!")
+N_("I'm trapped!")
+N_("I'm hungry.")
+N_("Phase one, collect underpants.")
+N_("Phase three, profit!")
+N_("Many enter the dungeon, and few return to the sunlit lands.")
+N_("Aloha.")
+N_("Hello, sailor.")
+N_("It's not too late.")
+N_("We're all doomed.")
+N_("I hate this job!")
+N_("Put that weapon away before you hurt someone!")
+N_("Doc, I can't help you unless you cooperate.")
+N_("Please undress so I can examine you.")
+N_("Take off your shirt, please.")
+N_("Relax, this won't hurt a bit.")
+N_("Please drop that gold and follow me.")
+N_("Please follow me.")
+N_("Who do you think you are, War?")
+N_("Anything you say can be used against you.")
+N_("You're under arrest!")
+N_("Stop in the name of the Law!")
+N_("Resistance is useless!")
+N_("You're dog meat!")
+N_("Surrender!")
+N_("What lousy pay we're getting here!")
+N_("The food's not fit for Orcs!")
+N_("My feet hurt, I've been on them all day!")
+/* race nouns in "I vill come after %s without regret!" */
+NC_("monster", "man") NC_("monster", "woman") NC_("gender", "woman")
+#endif
+
 DISABLE_WARNING_FORMAT_NONLITERAL
 
 int /* check calls to this */
@@ -736,7 +861,7 @@ domonnoise(struct monst *mtmp)
         } else {
             /* approximation of GEICO's advertising slogan (it actually
                concludes with "save you 15% or more on car insurance.") */
-            Sprintf(verbuf, "15 minutes could save you 15 %s.",
+            Sprintf(verbuf, _("15 minutes could save you 15 %s."),
                     currency(15L)); /* "zorkmids" */
             verbl_msg = verbuf;
         }
@@ -758,35 +883,39 @@ domonnoise(struct monst *mtmp)
 
         if (mtmp->mtame) {
             if (kindred) {
-                Sprintf(verbuf, "Good %s to you Master%s",
-                        isnight ? "evening" : "day",
-                        isnight ? "!" : ".  Why do we not rest?");
-                verbl_msg = verbuf;
+                /* whole sentences, so that each can be translated */
+                verbl_msg = isnight
+                            ? "Good evening to you Master!"
+                            : "Good day to you Master.  Why do we not rest?";
+            } else if (nightchild) {
+                verbl_msg = midnight()
+                    ? "Child of the night, I can stand this craving no "
+                      "longer!"
+                    : isnight
+                      ? "Child of the night, I beg you, help me satisfy "
+                        "this growing craving!"
+                      : "Child of the night, I find myself growing a "
+                        "little weary.";
             } else {
-                Sprintf(verbuf, "%s%s",
-                        nightchild ? "Child of the night, " : "",
-                        midnight()
-                         ? "I can stand this craving no longer!"
-                         : isnight
-                          ? "I beg you, help me satisfy this growing craving!"
-                          : "I find myself growing a little weary.");
-                verbl_msg = verbuf;
+                verbl_msg = midnight()
+                    ? "I can stand this craving no longer!"
+                    : isnight
+                      ? "I beg you, help me satisfy this growing craving!"
+                      : "I find myself growing a little weary.";
             }
         } else if (mtmp->mpeaceful) {
             if (kindred && isnight) {
-                Sprintf(verbuf, "Good feeding %s!",
-                        flags.female ? "sister" : "brother");
-                verbl_msg = verbuf;
+                verbl_msg = flags.female ? "Good feeding sister!"
+                                         : "Good feeding brother!";
             } else if (nightchild && isnight) {
-                Sprintf(verbuf, "How nice to hear you, child of the night!");
-                verbl_msg = verbuf;
+                verbl_msg = "How nice to hear you, child of the night!";
             } else
                 verbl_msg = "I only drink... potions.";
         } else {
             static const char *const vampmsg[] = {
                 /* These first two (0 and 1) are specially handled below */
-                "I vant to suck your %s!",
-                "I vill come after %s without regret!",
+                N_("I vant to suck your %s!"),
+                N_("I vill come after %s without regret!"),
                 /* other famous vampire quotes can follow here if desired */
             };
             int vampindex;
@@ -797,16 +926,22 @@ domonnoise(struct monst *mtmp)
             } else if (gy.youmonst.data == &mons[PM_SILVER_DRAGON]
                        || gy.youmonst.data == &mons[PM_BABY_SILVER_DRAGON]) {
                 /* Silver dragons are silver in color, not made of silver */
-                Sprintf(verbuf,
-                        "%s!  Your silver sheen"" does not frighten me!",
-                        (gy.youmonst.data == &mons[PM_SILVER_DRAGON])
-                            ? "Fool"
-                            : "Young Fool");
-                verbl_msg = verbuf;
+                verbl_msg = (gy.youmonst.data == &mons[PM_SILVER_DRAGON])
+                        ? "Fool!  Your silver sheen does not frighten me!"
+                        : "Young Fool!  Your silver sheen does not "
+                          "frighten me!";
             } else {
                 vampindex = rn2(SIZE(vampmsg));
                 if (vampindex == 0) {
-                    Sprintf(verbuf, vampmsg[vampindex], body_part(BLOOD));
+                    Sprintf(verbuf, _(vampmsg[vampindex]), body_part(BLOOD));
+                    verbl_msg = verbuf;
+                } else if (vampindex == 1 && i18n_active()) {
+                    /* no article: "I will come after you, human" */
+                    Sprintf(verbuf, _(vampmsg[vampindex]),
+                            Upolyd ? C_("monster",
+                                        pmname(&mons[u.umonnum],
+                                               flags.female ? FEMALE : MALE))
+                                   : _(racenoun));
                     verbl_msg = verbuf;
                 } else if (vampindex == 1) {
                     Sprintf(verbuf, vampmsg[vampindex],
@@ -822,9 +957,16 @@ domonnoise(struct monst *mtmp)
     }
     case MS_WERE:
         if (flags.moonphase == FULL_MOON && (night() ^ !rn2(13))) {
-            pline("%s throws back %s head and lets out a blood curdling %s!",
-                  Monnam(mtmp), mhis(mtmp),
-                  (ptr == &mons[PM_HUMAN_WERERAT]) ? "shriek" : "howl");
+            if (i18n_active())
+                pline((ptr == &mons[PM_HUMAN_WERERAT])
+                      ? "%s throws back its head and lets out a blood "
+                        "curdling shriek!"
+                      : "%s throws back its head and lets out a blood "
+                        "curdling howl!", Monnam(mtmp));
+            else
+                pline("%s throws back %s head and lets out a blood "
+                      "curdling %s!", Monnam(mtmp), mhis(mtmp),
+                      (ptr == &mons[PM_HUMAN_WERERAT]) ? "shriek" : "howl");
             Soundeffect((ptr == &mons[PM_HUMAN_WERERAT]) ? se_scream
                                                          : se_canine_howl,
                         80);
@@ -1007,8 +1149,12 @@ domonnoise(struct monst *mtmp)
         if (!mtmp->mpeaceful) {
             switch (rn2(4)) {
             case 0:
-                pline("%s boasts about %s gem collection.", Monnam(mtmp),
-                      mhis(mtmp));
+                if (i18n_active())
+                    pline("%s boasts about its gem collection.",
+                          Monnam(mtmp));
+                else
+                    pline("%s boasts about %s gem collection.", Monnam(mtmp),
+                          mhis(mtmp));
                 break;
             case 1:
                 pline_msg = "complains about a diet of mutton.";
@@ -1129,7 +1275,8 @@ domonnoise(struct monst *mtmp)
     case MS_ARREST:
         if (mtmp->mpeaceful) {
             SetVoice(mtmp, 0, 80, 0);
-            verbalize("Just the facts, %s.", flags.female ? "Ma'am" : "Sir");
+            verbalize("Just the facts, %s.",
+                      flags.female ? _("Ma'am") : _("Sir"));
         } else {
             static const char *const arrest_msg[3] = {
                 "Anything you say can be used against you.",
@@ -1199,11 +1346,12 @@ domonnoise(struct monst *mtmp)
         if (ms_Death && !svc.context.tribute.Deathnotice
             && (book = u_have_novel()) != 0) {
             if ((tribtitle = noveltitle(&book->novelidx)) != 0) {
-                Sprintf(verbuf, "Ah, so you have a copy of /%s/.", tribtitle);
+                Sprintf(verbuf, _("Ah, so you have a copy of /%s/."),
+                        tribtitle);
                 /* no Death featured in these two, so exclude them */
                 if (strcmpi(tribtitle, "Snuff")
                     && strcmpi(tribtitle, "The Wee Free Men"))
-                    Strcat(verbuf, "  I may have been misquoted there.");
+                    Strcat(verbuf, _("  I may have been misquoted there."));
                 verbl_msg = verbuf;
             }
             svc.context.tribute.Deathnotice = 1;
@@ -1220,7 +1368,8 @@ domonnoise(struct monst *mtmp)
     } /* switch */
 
     if (pline_msg) {
-        pline("%s %s", Monnam(mtmp), pline_msg);
+        /* the predicate after the monster's name is translated as is */
+        pline("%s %s", Monnam(mtmp), C_("monnoise", pline_msg));
     } else if (mtmp->mcan && verbl_msg_mcan) {
         SetVoice(mtmp, 0, 80, 0);
         verbalize1(verbl_msg_mcan);
@@ -1230,7 +1379,7 @@ domonnoise(struct monst *mtmp)
             /* Death talks in CAPITAL LETTERS
                and without quotation marks */
             char tmpbuf[BUFSZ];
-            pline1(ucase(strcpy(tmpbuf, verbl_msg)));
+            pline1(ucase(strcpy(tmpbuf, _(verbl_msg))));
             SetVoice((struct monst *) 0, 0, 80, voice_death);
             sound_speak(tmpbuf);
         } else {
@@ -1261,8 +1410,12 @@ dochat(void)
     struct obj *otmp;
 
     if (is_silent(gy.youmonst.data)) {
+        const char *pm = pmname(gy.youmonst.data,
+                                flags.female ? FEMALE : MALE);
+
+        /* no article in the translation: "En tant que chien" */
         pline("As %s, you cannot speak.",
-              an(pmname(gy.youmonst.data, flags.female ? FEMALE : MALE)));
+              i18n_active() ? C_("monster", pm) : an(pm));
         return ECMD_OK;
     }
     if (Strangled) {
@@ -1303,7 +1456,8 @@ dochat(void)
     }
 
     if (u.dz) {
-        pline("They won't hear you %s there.", u.dz < 0 ? "up" : "down");
+        pline(u.dz < 0 ? "They won't hear you up there."
+                       : "They won't hear you down there.");
         return ECMD_OK;
     }
 
@@ -1333,9 +1487,14 @@ dochat(void)
     if (!mtmp || mtmp->mundetected) {
         if ((otmp = vobj_at(tx, ty)) != 0 && otmp->otyp == STATUE) {
             /* Talking to a statue */
-            if (!Blind)
+            /* if hallucinating, you can't tell it's a statue */
+            if (!Blind && i18n_active())
+                pline("%s seems not to notice you.",
+                      upstart(Hallucination
+                              ? i18n_the_ctx("monster", rndmonnam((char *) 0))
+                              : i18n_the("statue")));
+            else if (!Blind)
                 pline_The("%s seems not to notice you.",
-                          /* if hallucinating, you can't tell it's a statue */
                           Hallucination ? rndmonnam((char *) 0) : "statue");
             return ECMD_OK;
         }
@@ -1351,21 +1510,22 @@ dochat(void)
             } else if (!Hallucination) {
                 pline("It's like talking to a wall.");
             } else {
+                /* whole sentences, so that each can be translated */
                 static const char *const walltalk[] = {
-                    "gripes about its job.",
-                    "tells you a funny joke!",
-                    "insults your heritage!",
-                    "chuckles.",
-                    "guffaws merrily!",
-                    "deprecates your exploration efforts.",
-                    "suggests a stint of rehab...",
-                    "doesn't seem to be interested.",
+                    N_("The wall gripes about its job."),
+                    N_("The wall tells you a funny joke!"),
+                    N_("The wall insults your heritage!"),
+                    N_("The wall chuckles."),
+                    N_("The wall guffaws merrily!"),
+                    N_("The wall deprecates your exploration efforts."),
+                    N_("The wall suggests a stint of rehab..."),
+                    N_("The wall doesn't seem to be interested."),
                 };
                 int idx = rn2(10);
 
                 if (idx >= SIZE(walltalk))
                     idx = SIZE(walltalk) - 1;
-                pline_The("wall %s", walltalk[idx]);
+                pline("%s", walltalk[idx]);
             }
             return ECMD_OK;
         }
@@ -1395,14 +1555,15 @@ dochat(void)
         return ECMD_OK;
     }
     if (Deaf) {
-        const char *xresponse = humanoid(gy.youmonst.data)
-                    ? "falls on deaf ears"
-                    : "is inaudible";
-
-        pline("Any response%s%s %s.",
-              canspotmon(mtmp) ? " from " : "",
-              canspotmon(mtmp) ? mon_nam(mtmp) : "",
-              xresponse);
+        /* whole sentences, so that each can be translated */
+        if (canspotmon(mtmp))
+            pline(humanoid(gy.youmonst.data)
+                  ? "Any response from %s falls on deaf ears."
+                  : "Any response from %s is inaudible.", mon_nam(mtmp));
+        else
+            pline(humanoid(gy.youmonst.data)
+                  ? "Any response falls on deaf ears."
+                  : "Any response is inaudible.");
         return ECMD_OK;
     }
     return domonnoise(mtmp);
@@ -1446,7 +1607,7 @@ tiphat(void)
     /* most helmets have a short wear/take-off delay and we could set
        'multi' to account for that, but we'll pretend that no extra time
        beyond the current move is necessary */
-    You("briefly doff your %s.", helm_simple_name(uarmh));
+    You("briefly doff your %s.", C_("noun", helm_simple_name(uarmh)));
 
     if (!u.dx && !u.dy) {
         if (u.usteed && u.dz > 0) {
@@ -1455,7 +1616,8 @@ tiphat(void)
             else
                 (void) domonnoise(u.usteed);
         } else if (u.dz) {
-            pline("There's no one %s there.", (u.dz < 0) ? "up" : "down");
+            pline((u.dz < 0) ? "There's no one up there."
+                             : "There's no one down there.");
         } else {
             pline_The("lout here doesn't acknowledge you...");
         }
@@ -1493,7 +1655,8 @@ tiphat(void)
     }
 
     if (unseen || (statue && Hallucination)) {
-        pline("That %screature is ignoring you!", unseen ? "unseen " : "");
+        pline(unseen ? "That unseen creature is ignoring you!"
+                     : "That creature is ignoring you!");
     } else if (!mtmp || !responsive_mon_at(x, y)) {
         if (vismon) /* 'vismon' is only True when 'mtmp' is non-Null */
             pline("%s seems not to notice you.", Monnam(mtmp));
@@ -1507,9 +1670,16 @@ tiphat(void)
             if ((otmp = which_armor(mtmp, W_ARMH)) == 0) {
                 pline("%s waves.", Monnam(mtmp));
             } else if (otmp->cursed) {
-                pline("%s grasps %s %s but can't remove it.", Monnam(mtmp),
-                      mhis(mtmp), helm_simple_name(otmp));
+                if (i18n_active())
+                    pline("%s grasps its %s but can't remove it.",
+                          Monnam(mtmp), C_("noun", helm_simple_name(otmp)));
+                else
+                    pline("%s grasps %s %s but can't remove it.",
+                          Monnam(mtmp), mhis(mtmp), helm_simple_name(otmp));
                 otmp->bknown = 1;
+            } else if (i18n_active()) {
+                pline("%s tips its %s in response.", Monnam(mtmp),
+                      C_("noun", helm_simple_name(otmp)));
             } else {
                 pline("%s tips %s %s in response.", Monnam(mtmp),
                       mhis(mtmp), helm_simple_name(otmp));
@@ -1521,8 +1691,19 @@ tiphat(void)
             int which = !Deaf ? rn2(3) : rn1(2, 1),
                 twice = (Deaf || which > 0 || rn2(3)) ? 0 : rn1(2, 1);
 
-            pline("%s %s%s%s at you...", Monnam(mtmp), reaction[which],
-                  twice ? " and " : "", twice ? reaction[twice] : "");
+            if (i18n_active())
+                /* whole sentences, so that each can be translated */
+                pline(!twice
+                      ? ((which == 0) ? "%s curses at you..."
+                         : (which == 1) ? "%s gestures rudely at you..."
+                           : "%s gestures offensively at you...")
+                      : (twice == 1)
+                        ? "%s curses and gestures rudely at you..."
+                        : "%s curses and gestures offensively at you...",
+                      Monnam(mtmp));
+            else
+                pline("%s %s%s%s at you...", Monnam(mtmp), reaction[which],
+                      twice ? " and " : "", twice ? reaction[twice] : "");
         } else if (next2u(x, y) && !Deaf && domonnoise(mtmp)) {
             if (!vismon)
                 map_invisible(x, y);
