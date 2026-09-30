@@ -4,6 +4,21 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+
+#if 0
+/* for xgettext */
+N_(" next to you"), N_(" close by"), N_(" closer to you"),
+N_(" farther away"),
+N_("You shudder for a moment."), N_("You float gently down to earth."),
+N_("You fly down to the ground."),
+N_("You find yourself back on the surface."),
+NC_("heroine", "You feel even more disoriented."),
+NC_("heroine", "You feel disoriented."),
+NC_("heroine", "You briefly feel oriented."),
+NC_("heroine", "You briefly feel centered."),
+NC_("heroine", "You are too weak from hunger for a teleport spell."),
+NC_("heroine", "You are too weak from hunger to teleport."),
+#endif
 #define NEW_ENEXTO
 
 staticfn boolean goodpos_onscary(coordxy, coordxy, struct permonst *);
@@ -543,8 +558,9 @@ teleds(coordxy nux, coordxy nuy, int teleds_flags)
     /* this used to take place sooner, but if a --More-- prompt was issued
        then the old map display was shown instead of the new one */
     if (is_teleport && flags.verbose)
-        You("materialize in %s location!",
-            (nux == u.ux0 && nuy == u.uy0) ? "the same" : "a different");
+        You((nux == u.ux0 && nuy == u.uy0)
+                ? "materialize in the same location!"
+                : "materialize in a different location!");
     /* if terrain type changes, levitation or flying might become blocked
        or unblocked; might issue message, so do this after map+vision has
        been updated for new location instead of right after u_on_newpos() */
@@ -877,9 +893,16 @@ scrolltele(struct obj *scroll)
             char whobuf[BUFSZ];
 
             Strcpy(whobuf, "you");
-            if (u.usteed)
-                Sprintf(eos(whobuf), " and %s", mon_nam(u.usteed));
-            pline("Where do %s want to be teleported?", whobuf);
+            if (u.usteed && i18n_active())
+                pline("Where do you and %s want to be teleported?",
+                      mon_nam(u.usteed));
+            else if (i18n_active())
+                pline("Where do you want to be teleported?");
+            else {
+                if (u.usteed)
+                    Sprintf(eos(whobuf), " and %s", mon_nam(u.usteed));
+                pline("Where do %s want to be teleported?", whobuf);
+            }
             if (scroll)
                 learnscroll(scroll);
             cc.x = u.ux;
@@ -1062,8 +1085,11 @@ dotele(
                     newsym(u.ux, u.uy);
                 }
             }
-            if (trap)
-                You("%s onto the teleportation trap.", u_locomotion("jump"));
+            if (trap && i18n_active())
+                You("jump onto the teleportation trap.");
+            else if (trap)
+                You("%s onto the teleportation trap.",
+                    u_locomotion("jump"));
         } else
             trap = 0;
     }
@@ -1079,10 +1105,10 @@ dotele(
             /* casting isn't inhibited by being Stunned (...it ought to be) */
             castit = (knownsp >= spe_Fresh && !Confusion);
             if (!castit && !break_the_rules) {
-                You("%s.", (!Teleportation ? ((knownsp != spe_Unknown)
-                                              ? "can't cast that spell"
-                                              : "don't know that spell")
-                            : "are not able to teleport at will"));
+                You(!Teleportation ? ((knownsp != spe_Unknown)
+                                          ? "can't cast that spell."
+                                          : "don't know that spell.")
+                                   : "are not able to teleport at will.");
                 return 0;
             }
         }
@@ -1120,8 +1146,15 @@ dotele(
             cantdoit = "lack the energy";
         }
         if (cantdoit) {
-            You("%s %s.", cantdoit,
-                castit ? "for a teleport spell" : "to teleport");
+            if (!strcmp(cantdoit, "are too weak from hunger"))
+                You(castit ? "are too weak from hunger for a teleport spell."
+                           : "are too weak from hunger to teleport.");
+            else if (!strcmp(cantdoit, "lack the strength"))
+                You(castit ? "lack the strength for a teleport spell."
+                           : "lack the strength to teleport.");
+            else
+                You(castit ? "lack the energy for a teleport spell."
+                           : "lack the energy to teleport.");
             return 0;
         } else if (check_capacity(
                        "Your concentration falters from carrying so much.")) {
@@ -1256,19 +1289,22 @@ level_tele(void)
                 goto random_levtport;
             if (ynq("Go to Nowhere.  Are you sure?") != 'y')
                 return;
-            You("%s in agony as your body begins to warp...",
-                is_silent(gy.youmonst.data) ? "writhe" : "scream");
+            You(is_silent(gy.youmonst.data)
+                    ? "writhe in agony as your body begins to warp..."
+                    : "scream in agony as your body begins to warp...");
             display_nhwindow(WIN_MESSAGE, FALSE);
             You("cease to exist.");
             if (gi.invent)
-                Your("possessions land on the %s with a thud.",
-                     surface(u.ux, u.uy));
+                Your("possessions land on %s with a thud.",
+                     i18n_active() ? i18n_the(surface(u.ux, u.uy))
+                                   : the(surface(u.ux, u.uy)));
             svk.killer.format = NO_KILLER_PREFIX;
             Strcpy(svk.killer.name, "committed suicide");
             done(DIED);
             pline("An energized cloud of dust begins to coalesce.");
-            Your("body rematerializes%s.",
-                 gi.invent ? ", and you gather up all your possessions" : "");
+            Your(gi.invent ? "body rematerializes, and you gather up all "
+                             "your possessions."
+                           : "body rematerializes.");
             return;
         }
 
@@ -1545,7 +1581,11 @@ level_tele_trap(struct trap *trap, unsigned int trflags)
         intentional = TRUE;
     } else
         Sprintf(verbbuf, "%s onto", u_locomotion("step"));
-    You("%s a level teleport trap!", verbbuf);
+    if (i18n_active())
+        You(intentional ? "trigger a level teleport trap!"
+                        : "step onto a level teleport trap!");
+    else
+        You("%s a level teleport trap!", verbbuf);
 
     if (Antimagic && !intentional) {
         shieldeff(u.ux, u.uy);
@@ -1559,9 +1599,10 @@ level_tele_trap(struct trap *trap, unsigned int trflags)
     level_tele();
 
     if (Hallucination || Teleport_control)
-        You("briefly feel %s.", Hallucination ? "oriented" : "centered");
+        You(Hallucination ? "briefly feel oriented."
+                          : "briefly feel centered.");
     else
-        You_feel("%sdisoriented.", Confusion ? "even more " : "");
+        You_feel(Confusion ? "even more disoriented." : "disoriented.");
     /* magic portal traversal causes brief Stun; for level teleport, use
        confusion instead, and only when hero lacks control; do this after
        processing the level teleportation attempt because being confused
@@ -1710,19 +1751,26 @@ rloc_to_core(
         if (mtmp == u.ustuck && !u_at(u.ux0, u.uy0)) {
             You("and %s teleport together.", mon_nam(mtmp));
         } else if (telemsg && (couldsee(x, y) || sensemon(mtmp))) {
-            pline("%s vanishes and reappears%s.",
-                  Monnam(mtmp),
-                  next ? next
-                  : nearu ? nearu
-                    : ((olddu = distu(oldx, oldy)) == du) ? ""
-                      : (du < olddu) ? " closer to you"
-                        : " farther away");
+            const char *where = next ? next
+                                : nearu ? nearu
+                                  : ((olddu = distu(oldx, oldy)) == du) ? ""
+                                    : (du < olddu) ? " closer to you"
+                                      : " farther away";
+
+            pline("%s vanishes and reappears%s.", Monnam(mtmp),
+                  *where ? _(where) : "");
         } else {
-            pline("%s %s%s%s!",
-                  appearmsg ? Amonnam(mtmp) : Monnam(mtmp),
-                  appearmsg ? "suddenly " : "",
-                  !Blind ? "appears" : "arrives",
-                  next ? next : nearu ? nearu : "");
+            const char *where = next ? next : nearu ? nearu : "";
+
+            if (*where)
+                where = _(where);
+            if (appearmsg)
+                pline(!Blind ? "%s suddenly appears%s!"
+                             : "%s suddenly arrives%s!",
+                      Amonnam(mtmp), where);
+            else
+                pline(!Blind ? "%s appears%s!" : "%s arrives%s!",
+                      Monnam(mtmp), where);
         }
         /* wand discovery only happens if a messaage is delivered (bug?);
            if spell or q.mechanic attack or artifact #invoke for banish
@@ -2022,9 +2070,9 @@ mlevel_tele_trap(
                 assign_level(&tolevel, &valley_level);
             } else if (Is_botlevel(&u.uz)) {
                 if (in_sight && trap->tseen)
-                    pline_mon(mtmp, "%s avoids the %s.",
-                              Monnam(mtmp),
-                             (tt == HOLE) ? "hole" : "trap");
+                    pline_mon(mtmp, (tt == HOLE) ? "%s avoids the hole."
+                                                 : "%s avoids the trap.",
+                              Monnam(mtmp));
                 return Trap_Effect_Finished;
             } else {
                 assign_level(&tolevel, &trap->dst);
@@ -2082,10 +2130,11 @@ mlevel_tele_trap(
         }
 
         if (in_sight) {
-            pline_mon(mtmp, "Suddenly, %s %s.", mon_nam(mtmp),
-                     (tt == HOLE) ? "falls into a hole"
-                   : (tt == TRAPDOOR) ? "falls through a trap door"
-                   : "disappears out of sight");
+            pline_mon(mtmp, (tt == HOLE) ? "Suddenly, %s falls into a hole."
+                            : (tt == TRAPDOOR)
+                              ? "Suddenly, %s falls through a trap door."
+                              : "Suddenly, %s disappears out of sight.",
+                      mon_nam(mtmp));
             if (trap)
                 seetrap(trap);
         }

@@ -1519,6 +1519,40 @@ strange_feeling(struct obj *obj, const char *txt)
     useup(obj);
 }
 
+#if 0
+/* for xgettext: bottle names and their gender */
+NC_("bottle", "bottle"), NC_("gender", "bottle"),
+NC_("bottle", "phial"), NC_("gender", "phial"),
+NC_("bottle", "flagon"), NC_("gender", "flagon"),
+NC_("bottle", "carafe"), NC_("gender", "carafe"),
+NC_("bottle", "flask"), NC_("gender", "flask"),
+NC_("bottle", "jar"), NC_("gender", "jar"),
+NC_("bottle", "vial"), NC_("gender", "vial"),
+NC_("bottle", "jug"), NC_("gender", "jug"),
+NC_("bottle", "pitcher"), NC_("gender", "pitcher"),
+NC_("bottle", "barrel"), NC_("gender", "barrel"),
+NC_("bottle", "tin"), NC_("gender", "tin"),
+NC_("bottle", "bag"), NC_("gender", "bag"),
+NC_("bottle", "box"), NC_("gender", "box"),
+NC_("bottle", "glass"), NC_("gender", "glass"),
+NC_("bottle", "beaker"), NC_("gender", "beaker"),
+NC_("bottle", "tumbler"), NC_("gender", "tumbler"),
+NC_("bottle", "vase"), NC_("gender", "vase"),
+NC_("bottle", "flowerpot"), NC_("gender", "flowerpot"),
+NC_("bottle", "pan"), NC_("gender", "pan"),
+NC_("bottle", "thingy"), NC_("gender", "thingy"),
+NC_("bottle", "mug"), NC_("gender", "mug"),
+NC_("bottle", "teacup"), NC_("gender", "teacup"),
+NC_("bottle", "teapot"), NC_("gender", "teapot"),
+NC_("bottle", "keg"), NC_("gender", "keg"),
+NC_("bottle", "bucket"), NC_("gender", "bucket"),
+NC_("bottle", "thermos"), NC_("gender", "thermos"),
+NC_("bottle", "amphora"), NC_("gender", "amphora"),
+NC_("bottle", "wineskin"), NC_("gender", "wineskin"),
+NC_("bottle", "parcel"), NC_("gender", "parcel"),
+NC_("bottle", "bowl"), NC_("gender", "bowl"),
+NC_("bottle", "ampoule"), NC_("gender", "ampoule"),
+#endif
 static const char *bottlenames[] = { "bottle", "phial", "flagon", "carafe",
                               "flask",  "jar",   "vial" };
 static const char *hbottlenames[] = {
@@ -1673,7 +1707,7 @@ impact_arti_light(
 void
 potionhit(struct monst *mon, struct obj *obj, int how)
 {
-    const char *botlnam = bottlename();
+    const char *botlnam = C_("bottle", bottlename());
     boolean isyou = (mon == &gy.youmonst);
     int distance, tx, ty;
     struct obj *saddle = (struct obj *) 0;

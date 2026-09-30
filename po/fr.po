@@ -39,6 +39,14 @@ msgid "%s appears to be angry too..."
 msgstr "%s semble aussi en colère..."
 
 #, c-format
+msgid "%s appears%s."
+msgstr "%s apparaît%s."
+
+#, c-format
+msgid "%s arrives%s!"
+msgstr "%s arrive%s !"
+
+#, c-format
 msgid "%s back to you, landing at your %s."
 msgstr "%s vers vous et atterrit à vos %s."
 
@@ -107,6 +115,10 @@ msgid "%s disturbs you!"
 msgstr "%s vous dérange !"
 
 #, c-format
+msgid "%s dusty."
+msgstr "%s poussiéreux."
+
+#, c-format
 msgid "%s engulfs you!"
 msgstr "%s vous engloutit !"
 
@@ -147,8 +159,16 @@ msgid "%s folds itself around you!"
 msgstr "%s s'enroule autour de vous !"
 
 #, c-format
+msgid "%s freezes, then sways with the music, and now seems quieter."
+msgstr "%s se fige, puis se balance au rythme de la musique, et semble maintenant plus calme."
+
+#, c-format
 msgid "%s gazes ineffectually."
 msgstr "%s regarde sans effet."
+
+#, c-format
+msgid "%s glows violently, then turns to dust."
+msgstr "%s brille violemment, puis tombe en poussière."
 
 #, c-format
 msgid "%s grabs your backpack!"
@@ -323,6 +343,10 @@ msgid "%s pit opens up under you!"
 msgstr "%s fosse s'ouvre sous vous !"
 
 #, c-format
+msgid "%s produces a lilting melody."
+msgstr "%s produit une mélodie chantante."
+
+#, c-format
 msgid "%s rattle your chain and fall %s."
 msgstr "%s font cliqueter votre chaîne et tombent %s."
 
@@ -439,6 +463,10 @@ msgid "%s strikes at your displaced image and misses you!"
 msgstr "%s frappe votre image déplacée et vous rate !"
 
 #, c-format
+msgid "%s suddenly arrives%s!"
+msgstr "%s arrive soudain%s !"
+
+#, c-format
 msgid "%s suddenly comes alive as %s!"
 msgstr "%s prend soudain vie en %s !"
 
@@ -495,6 +523,14 @@ msgid "%s tumbles into the pit."
 msgstr "%s dégringole dans la fosse."
 
 #, c-format
+msgid "%s twangs a familiar tune."
+msgstr "%s égrène un air familier."
+
+#, c-format
+msgid "%s twangs."
+msgstr "%s vibre."
+
+#, c-format
 msgid "%s utterly digests you!"
 msgstr "%s vous digère entièrement !"
 
@@ -505,6 +541,10 @@ msgstr "%s disparaît dans %s."
 #, c-format
 msgid "%s vanishes into the currents of %s."
 msgstr "%s disparaît dans les courants @de %s."
+
+#, c-format
+msgid "%s very attractive music."
+msgstr "%s une musique très attirante."
 
 #, c-format
 msgid "%s very hurriedly expels you!"
@@ -529,6 +569,10 @@ msgstr "%s vous coûtera %ld %s."
 #, c-format
 msgid "%s won't fit over your horns."
 msgstr "%s ne passe pas par-dessus vos cornes."
+
+#, c-format
+msgid "%s would get too dirty."
+msgstr "%s se salirait trop."
 
 #, c-format
 msgid "%s!  Don't you leave without paying!"
@@ -564,6 +608,12 @@ msgstr ""
 
 msgid "(userinput)"
 msgstr ""
+
+msgid "A ghost appears next to you!"
+msgstr "Un fantôme apparaît à côté de vous !"
+
+msgid "A ghost appears next to you."
+msgstr "Un fantôme apparaît à côté de vous."
 
 msgid "A lit field surrounds you!"
 msgstr "Un champ lumineux vous entoure !"
@@ -624,6 +674,12 @@ msgstr "f"
 
 msgid "An avalanche of boulders materializes above you!"
 msgstr "Une avalanche de rochers se matérialise au-dessus de vous !"
+
+msgid "An enormous ghost appears next to you!"
+msgstr "Un énorme fantôme apparaît à côté de vous !"
+
+msgid "An enormous ghost appears next to you."
+msgstr "Un énorme fantôme apparaît à côté de vous."
 
 msgid "An object spills out."
 msgstr "Un objet se renverse."
@@ -1364,6 +1420,9 @@ msgstr "KAABLAMM !!!  Les courants d'air font exploser %s mine !"
 msgid "KAABLAMM!!!  The air currents set it off!"
 msgstr "KAABLAMM !!!  Les courants d'air la font exploser !"
 
+msgid "KADOOM!  The boulder falls into a chasm!"
+msgstr "KABOUM !  Le rocher tombe dans un gouffre !"
+
 msgid "KERNOD WEL"
 msgstr ""
 
@@ -1745,6 +1804,9 @@ msgctxt "monster"
 msgid "Scorpius"
 msgstr "Scorpius"
 
+msgid "Seems like something lootable over there."
+msgstr "On dirait qu'il y a quelque chose à piller là-bas."
+
 msgctxt "gender"
 msgid "Semigorgon"
 msgstr ""
@@ -1784,6 +1846,13 @@ msgstr "De la poussière tourbillonne sous vous."
 msgid "Some of the adjacent objects fall %s."
 msgstr "Certains des objets voisins tombent %s."
 
+#, c-format
+msgid "Some text has been burned into %s here."
+msgstr "Un texte a été gravé au feu ici dans %s."
+
+msgid "Something is written here in the dust."
+msgstr "Quelque chose est écrit ici dans la poussière."
+
 msgid "Sorry, fire and water don't mix."
 msgstr "Désolé, le feu et l'eau ne font pas bon ménage."
 
@@ -1805,6 +1874,14 @@ msgstr ""
 
 msgid "Such creatures no longer exist in this world."
 msgstr "De telles créatures n'existent plus en ce monde."
+
+#, c-format
+msgid "Suddenly, %s disappears out of sight."
+msgstr "Soudain, %s disparaît de la vue."
+
+#, c-format
+msgid "Suddenly, %s falls through a trap door."
+msgstr "Soudain, %s tombe par une trappe."
 
 msgid "Suffer, infidel!"
 msgstr "Souffre, infidèle !"
@@ -2105,6 +2182,10 @@ msgid "There are no %c's inside."
 msgstr "Il n'y a pas de %c à l'intérieur."
 
 #, c-format
+msgid "There is %s here, but its lock is already unlocked."
+msgstr "Il y a %s ici, mais sa serrure est déjà ouverte."
+
+#, c-format
 msgid "There is a large splash as %s falls into %s."
 msgstr "Il y a une grande éclaboussure quand %s tombe dans %s."
 
@@ -2113,6 +2194,9 @@ msgstr "Il y a une toile d'araignée ici."
 
 msgid "There is a trigger in a pile of soil below you."
 msgstr "Il y a un détonateur dans un tas de terre sous vous."
+
+msgid "There isn't any sort of lock up there."
+msgstr "Il n'y a aucune serrure là-haut."
 
 #, c-format
 msgid "There's sticky goop all over your %s."
@@ -2217,6 +2301,12 @@ msgstr "Deuxfleurs"
 #, c-format
 msgid "Ulch - that %s was tainted!"
 msgstr "Beurk - cette %s était avariée !"
+
+msgid "Unfortunately, you can no longer hold the key."
+msgstr "Malheureusement, vous ne pouvez plus tenir la clé."
+
+msgid "Unfortunately, you can no longer hold the pick."
+msgstr "Malheureusement, vous ne pouvez plus tenir le crochet."
 
 msgid "Unfortunately, you can't chop while entangled in a web."
 msgstr "Malheureusement, vous ne pouvez pas couper pris dans une toile."
@@ -2381,6 +2471,10 @@ msgctxt "monster"
 msgid "Yeenoghu"
 msgstr "Yeenoghu"
 
+#, c-format
+msgid "You %s %s with %s."
+msgstr "Vous %s %s avec %s."
+
 msgid "You are already wearing a blindfold."
 msgstr "Vous portez déjà un bandeau."
 
@@ -2433,6 +2527,9 @@ msgstr "Vous êtes imprégné d'humidité et vous sentez réconforté."
 msgid "You are laden with moisture and find it mildly uncomfortable."
 msgstr "Vous êtes imprégné d'humidité et trouvez ça un peu inconfortable."
 
+msgid "You are not going to get anywhere trying to write in the dust with your dust."
+msgstr "Vous n'arriverez à rien en essayant d'écrire dans la poussière avec votre poussière."
+
 msgid "You are not on an altar."
 msgstr "Vous n'êtes pas sur un autel."
 
@@ -2460,6 +2557,9 @@ msgstr "Vous êtes soudain très masculin !"
 msgid "You are swallowed, and cannot go down."
 msgstr "Vous êtes avalé et ne pouvez pas descendre."
 
+msgid "You are too weak from hunger to teleport."
+msgstr "Vous êtes trop affaibli par la faim pour vous téléporter."
+
 msgid "You are unable to hear anything."
 msgstr "Vous n'entendez plus rien."
 
@@ -2484,6 +2584,9 @@ msgstr "Vous fixez %ld bougie de plus sur %s."
 
 msgid "You avoid stepping into the water."
 msgstr "Vous évitez de marcher dans l'eau."
+
+msgid "You beat a deafening row!"
+msgstr "Vous battez un vacarme assourdissant !"
 
 #, c-format
 msgid "You begin bashing monsters with your bare %s."
@@ -2513,6 +2616,9 @@ msgstr "Vous vous libérez @de %s%s !"
 msgid "You break out of the stomach of %s!"
 msgstr "Vous vous libérez de l'estomac @de %s !"
 
+msgid "You briefly feel centered."
+msgstr "Vous vous sentez brièvement centré."
+
 #, c-format
 msgid "You brush against a leg of %s."
 msgstr "Vous frôlez une patte @de %s."
@@ -2540,12 +2646,21 @@ msgstr "Vous ne pouvez %s qu'une partie des %s %s."
 msgid "You can see yourself!"
 msgstr "Vous vous voyez !"
 
+msgid "You can't cast that spell."
+msgstr "Vous ne pouvez pas lancer ce sort."
+
 #, c-format
 msgid "You can't do much about %s while standing on the edge of it."
 msgstr "Vous ne pouvez pas faire grand-chose contre %s en vous tenant au bord."
 
 msgid "You can't even move a handspan with this load!"
 msgstr "Vous ne pouvez même pas bouger d'un pouce avec cette charge !"
+
+msgid "You can't force anything with that weapon."
+msgstr "Vous ne pouvez rien forcer avec cette arme."
+
+msgid "You can't force anything without a proper weapon."
+msgstr "Vous ne pouvez rien forcer sans arme adéquate."
 
 msgid "You can't go down here."
 msgstr "Vous ne pouvez pas descendre ici."
@@ -2568,6 +2683,10 @@ msgid "You can't leash %s from inside."
 msgstr "Vous ne pouvez pas tenir %s en laisse de l'intérieur."
 
 #, c-format
+msgid "You can't lock or unlock %s."
+msgstr "Vous ne pouvez ni verrouiller ni déverrouiller %s."
+
+#, c-format
 msgid "You can't loot anything there with %s in the way."
 msgstr "Vous ne pouvez rien piller là avec %s dans le chemin."
 
@@ -2582,8 +2701,14 @@ msgstr "Vous ne pouvez pas détacher %s de l'intérieur."
 msgid "You can't unleash anything from inside %s."
 msgstr "Vous ne pouvez rien détacher de l'intérieur @de %s."
 
+msgid "You can't write in thin air!"
+msgstr "Vous ne pouvez pas écrire dans le vide !"
+
 msgid "You can't.  It is cursed."
 msgstr "Vous ne pouvez pas.  Il est maudit."
+
+msgid "You can't.  The saddle seems to be cursed."
+msgstr "Vous ne pouvez pas.  La selle semble maudite."
 
 #, c-format
 msgid "You cannot %s a two-handed tool while wearing a shield."
@@ -2606,6 +2731,14 @@ msgstr "Vous ne pouvez pas rester assez longtemps sous la lave."
 #, c-format
 msgid "You cannot take off your %s to remove the ring."
 msgstr "Vous ne pouvez pas retirer vos %s pour retirer l'anneau."
+
+#, c-format
+msgid "You cannot wipe out the message that is burned into %s here."
+msgstr "Vous ne pouvez pas effacer le message gravé au feu ici dans %s."
+
+#, c-format
+msgid "You cannot wipe out the message that is melted into %s here."
+msgstr "Vous ne pouvez pas effacer le message fondu ici dans %s."
 
 #, c-format
 msgid "You charm %s, who gladly hands over almost everything."
@@ -2659,6 +2792,10 @@ msgstr "Vous descendez l'escalier."
 
 msgid "You detect a strong odor reminiscent of a stable."
 msgstr "Vous détectez une forte odeur qui rappelle une écurie."
+
+#, c-format
+msgid "You detect the absence of %s."
+msgstr "Vous détectez l'absence @de %s."
 
 #, c-format
 msgid "You dig a pit in %s."
@@ -2752,6 +2889,10 @@ msgstr "Vous entrez dans une somptueuse salle du trône !"
 msgid "You expel %s!"
 msgstr "Vous expulsez %s !"
 
+#, c-format
+msgid "You extract a loud noise from %s."
+msgstr "Vous tirez un bruit fort @de %s."
+
 msgid "You fall down a deep shaft!"
 msgstr "Vous tombez dans un puits profond !"
 
@@ -2766,6 +2907,14 @@ msgstr "Vous tombez dans l'eau !"
 
 msgid "You fall into the water."
 msgstr "Vous tombez dans l'eau."
+
+#, c-format
+msgid "You fall off of %s!"
+msgstr "Vous tombez @de %s !"
+
+#, c-format
+msgid "You feel %s toot."
+msgstr "Vous sentez %s tuter."
 
 msgid "You feel a bit steadier now."
 msgstr "Vous vous sentez un peu plus stable maintenant."
@@ -2791,6 +2940,12 @@ msgstr "Vous ressentez l'envie de retourner à la surface."
 
 msgid "You feel ashamed."
 msgstr "Vous avez honte."
+
+msgid "You feel disoriented."
+msgstr "Vous vous sentez désorienté."
+
+msgid "You feel entrapped."
+msgstr "Vous vous sentez pris au piège."
 
 msgid "You feel even worse."
 msgstr "Vous vous sentez encore plus mal."
@@ -2824,6 +2979,9 @@ msgstr "Vous vous sentez moins confus maintenant."
 
 msgid "You feel less hassled."
 msgstr "Vous vous sentez moins harcelé."
+
+msgid "You feel less paranoid."
+msgstr "Vous vous sentez moins paranoïaque."
 
 #, c-format
 msgid "You feel lettering on %s.  It reads:  %s."
@@ -2862,6 +3020,9 @@ msgstr "Vous sentez que les monstres n'ont plus de mal à vous localiser."
 
 msgid "You feel the power of the Force against you!"
 msgstr "Vous sentez la puissance de la Force contre vous !"
+
+msgid "You feel the shock of an explosion!"
+msgstr "Vous sentez le choc d'une explosion !"
 
 msgid "You feel very firm."
 msgstr "Vous vous sentez très ferme."
@@ -2974,6 +3135,30 @@ msgid "You have no gold or credit."
 msgstr "Vous n'avez ni or ni crédit."
 
 #, c-format
+msgid "You hear %d gears turn."
+msgstr "Vous entendez %d engrenages tourner."
+
+#, c-format
+msgid "You hear %d tumbler click and %d gear turn."
+msgstr "Vous entendez %d goupille cliqueter et %d engrenage tourner."
+
+#, c-format
+msgid "You hear %d tumbler click and %d gears turn."
+msgstr "Vous entendez %d goupille cliqueter et %d engrenages tourner."
+
+#, c-format
+msgid "You hear %d tumblers click and %d gear turn."
+msgstr "Vous entendez %d goupilles cliqueter et %d engrenage tourner."
+
+#, c-format
+msgid "You hear %d tumblers click and %d gears turn."
+msgstr "Vous entendez %d goupilles cliqueter et %d engrenages tourner."
+
+#, c-format
+msgid "You hear %d tumblers click."
+msgstr "Vous entendez %d goupilles cliqueter."
+
+#, c-format
 msgid "You hear %s reading %s."
 msgstr "Vous entendez %s lire %s."
 
@@ -2999,11 +3184,17 @@ msgstr "Vous entendez un grand fracas : un rocher en heurte un autre !"
 msgid "You hear a loud crash as one boulder sets another in motion!"
 msgstr "Vous entendez un grand fracas : un rocher en met un autre en mouvement !"
 
+msgid "You hear a nearby explosion."
+msgstr "Vous entendez une explosion toute proche."
+
 msgid "You hear a splat nearby."
 msgstr "Vous entendez un floc tout près."
 
 msgid "You hear a zap and an explosion in the distance."
 msgstr "Vous entendez un zap et une explosion au loin."
+
+msgid "You hear an explosion!"
+msgstr "Vous entendez une explosion !"
 
 msgid "You hear chewing."
 msgstr "Vous entendez mastiquer."
@@ -3061,6 +3252,12 @@ msgstr "Vous sautez par la trappe."
 msgid "You jump up and fly back down."
 msgstr "Vous sautez et redescendez en volant."
 
+msgid "You lack the energy to teleport."
+msgstr "Vous manquez d'énergie pour vous téléporter."
+
+msgid "You lack the strength to teleport."
+msgstr "Vous manquez de force pour vous téléporter."
+
 msgid "You land on a set of sharp iron spikes!"
 msgstr "Vous tombez sur des pointes de fer acérées !"
 
@@ -3068,8 +3265,15 @@ msgstr "Vous tombez sur des pointes de fer acérées !"
 msgid "You light %s.  It gives off a dim light."
 msgstr "Vous allumez %s.  Elle diffuse une faible lumière."
 
+#, c-format
+msgid "You manage a %s."
+msgstr "Vous réussissez un %s."
+
 msgid "You manage to squeeze through the trap door."
 msgstr "Vous parvenez à vous faufiler par la trappe."
+
+msgid "You materialize in a different location!"
+msgstr "Vous vous matérialisez à un autre endroit !"
 
 msgid "You no longer have a second weapon readied."
 msgstr "Vous n'avez plus de seconde arme prête."
@@ -3100,6 +3304,9 @@ msgstr "Vous plongez dans l'eau !"
 msgid "You plunge into the water."
 msgstr "Vous plongez dans l'eau."
 
+msgid "You produce a frightful, grave sound."
+msgstr "Vous produisez un son effrayant et grave."
+
 msgid "You produce a high whistling sound."
 msgstr "Vous produisez un sifflement aigu."
 
@@ -3121,11 +3328,31 @@ msgstr "Vous produisez une étrange vibration aiguë et vive."
 msgid "You produce a strange, sharp vibration."
 msgstr "Vous produisez une étrange vibration vive."
 
+msgid "You produce piped music."
+msgstr "Vous jouez une musique flûtée."
+
+msgid "You produce piped, familiar music."
+msgstr "Vous jouez une musique flûtée et familière."
+
+msgid "You produce soft music."
+msgstr "Vous jouez une musique douce."
+
+msgid "You produce soft, familiar music."
+msgstr "Vous jouez une musique douce et familière."
+
 msgid "You pronounce the formula on the scroll."
 msgstr "Vous prononcez la formule du parchemin."
 
+#, c-format
+msgid "You pull off a %s."
+msgstr "Vous exécutez un %s."
+
 msgid "You punch through the web."
 msgstr "Vous crevez la toile à coups de poing."
+
+#, c-format
+msgid "You read: \"%s\"%s"
+msgstr "Vous lisez : « %s »%s"
 
 msgid "You realize you have made a mistake."
 msgstr "Vous vous rendez compte que vous avez commis une erreur."
@@ -3138,6 +3365,9 @@ msgstr "Vous reflétez l'eau trouble."
 
 msgid "You ride to the edge of the pit."
 msgstr "Vous chevauchez jusqu'au bord de la fosse."
+
+msgid "You scream in agony as your body begins to warp..."
+msgstr "Vous hurlez de douleur tandis que votre corps commence à se distordre..."
 
 #, c-format
 msgid "You see %s consumed!"
@@ -3154,6 +3384,10 @@ msgstr "Vous voyez %s vaciller."
 #, c-format
 msgid "You see %s pit below you."
 msgstr "Vous voyez %s fosse sous vous."
+
+#, c-format
+msgid "You see %s shatter!"
+msgstr "Vous voyez %s se briser !"
 
 msgid "You see a candelabrum's candle getting short."
 msgstr "Vous voyez la bougie d'un candélabre raccourcir."
@@ -3182,6 +3416,9 @@ msgstr "Vous voyez une porte voler en éclats."
 msgid "You see no door there."
 msgstr "Vous ne voyez pas de porte à cet endroit."
 
+msgid "You see no lock on the drawbridge."
+msgstr "Vous ne voyez aucune serrure sur le pont-levis."
+
 msgid "You see some air in the sink."
 msgstr "Vous voyez un peu d'air dans l'évier."
 
@@ -3190,6 +3427,18 @@ msgstr "Vous voyez le sol vibrer au loin."
 
 msgid "You seem to have no gold or credit."
 msgstr "Vous semblez n'avoir ni or ni crédit."
+
+msgid "You seem to produce piped music."
+msgstr "Vous semblez jouer une musique flûtée."
+
+msgid "You seem to produce piped, familiar music."
+msgstr "Vous semblez jouer une musique flûtée et familière."
+
+msgid "You seem to produce soft music."
+msgstr "Vous semblez jouer une musique douce."
+
+msgid "You seem to produce soft, familiar music."
+msgstr "Vous semblez jouer une musique douce et familière."
 
 msgid "You sense smoke..."
 msgstr "Vous percevez de la fumée..."
@@ -3252,6 +3501,9 @@ msgstr "Vous commencez à mâchonner un barreau."
 msgid "You start chewing on a tree."
 msgstr "Vous commencez à mâchonner un arbre."
 
+msgid "You step onto a level teleport trap!"
+msgstr "Vous marchez sur un piège de téléportation de niveau !"
+
 msgid "You still have hidden gold.  Drop it now."
 msgstr "Vous avez encore de l'or caché.  Lâchez-le maintenant."
 
@@ -3264,6 +3516,18 @@ msgstr "Vous cessez de lancer après le %de%.0s lancer."
 
 msgid "You stumble over debris."
 msgstr "Vous trébuchez sur des débris."
+
+#, c-format
+msgid "You succeed in disarming the trap.  %s is still locked."
+msgstr "Vous réussissez à désamorcer le piège.  %s est toujours verrouillé."
+
+#, c-format
+msgid "You succeed in disarming the trap.  %s is still unlocked."
+msgstr "Vous réussissez à désamorcer le piège.  %s est toujours déverrouillé."
+
+#, c-format
+msgid "You succeed in disarming the trap.  The %s is still locked."
+msgstr "Vous réussissez à désamorcer le piège.  Le %s est toujours verrouillé."
 
 msgid "You suddenly feel confused."
 msgstr "Vous vous sentez soudain confus."
@@ -3301,6 +3565,15 @@ msgstr "Vous l'utilisez, vous l'achetez !"
 msgid "You were unable to fit through."
 msgstr "Vous n'avez pas réussi à passer au travers."
 
+msgid "You wipe out the message that was written here."
+msgstr "Vous effacez le message qui était écrit ici."
+
+msgid "You wipe out the message that was written in the dust here."
+msgstr "Vous effacez le message qui était écrit ici dans la poussière."
+
+msgid "You wipe out the message that was written in the frost here."
+msgstr "Vous effacez le message qui était écrit ici dans le givre."
+
 msgid "You're back to your unusual self again."
 msgstr "Vous êtes de nouveau vous-même, inhabituellement."
 
@@ -3319,6 +3592,10 @@ msgid "Your %s are too slippery to take off."
 msgstr "Vos %s sont trop glissants pour être retirés."
 
 #, c-format
+msgid "Your %s broke!"
+msgstr "Votre %s s'est cassé !"
+
+#, c-format
 msgid "Your %s glow a brilliant %s."
 msgstr "Vos %s brillent d'un %s éclatant."
 
@@ -3335,6 +3612,10 @@ msgid "Your %s is much sharper now."
 msgstr "Votre %s est bien plus tranchant maintenant."
 
 #, c-format
+msgid "Your %s starts to tingle and you smell %s."
+msgstr "Votre %s se met à picoter et vous sentez l'odeur @de %s."
+
+#, c-format
 msgid "Your %s tingle very sharply."
 msgstr "Vos %s picotent très vivement."
 
@@ -3346,8 +3627,18 @@ msgstr "Vos %s picotent."
 msgid "Your %s turns to dust and falls to %s!"
 msgstr "Votre %s tombe en poussière sur %s !"
 
+msgid "Your body rematerializes."
+msgstr "Votre corps se rematérialise."
+
 msgid "Your body takes on a strange transparency..."
 msgstr "Votre corps prend une étrange transparence..."
+
+#, c-format
+msgid "Your corroded armor is too stiff to be able to mount %s."
+msgstr "Votre armure corrodée est trop raide pour monter %s."
+
+msgid "Your danger sense causes you to take a second look close by."
+msgstr "Votre sens du danger vous pousse à regarder de plus près."
 
 #, c-format
 msgid "Your debt has increased by %ld %s."
@@ -15106,10 +15397,10 @@ msgstr "Le donjon capitule."
 msgid "The Amulet is bestowing a wish upon you!"
 msgstr "L'Amulette vous accorde un vœu !"
 
-#: src/allmain.c:688 src/lock.c:132
+#: src/allmain.c:688 src/lock.c:166
 #, c-format
 msgid "You stop %s."
-msgstr ""
+msgstr "Vous cessez de %s."
 
 #: src/allmain.c:865
 #, c-format
@@ -15139,17 +15430,18 @@ msgstr ""
 #: src/apply.c:2689 src/apply.c:2777 src/apply.c:3000 src/apply.c:4197
 #: src/apply.c:4221 src/artifact.c:2113 src/artifact.c:2145 src/artifact.c:2158
 #: src/artifact.c:2162 src/cmd.c:4219 src/cmd.c:5079 src/do.c:2201
-#: src/dokick.c:738 src/eat.c:2256 src/engrave.c:1262 src/hack.c:135
-#: src/hack.c:3529 src/hack.c:4335 src/nhlua.c:639 src/nhlua.c:655
-#: src/pager.c:2700 src/pickup.c:441 src/pickup.c:443 src/pline.c:648
-#: src/pline.c:660 src/pline.c:715 src/potion.c:226 src/potion.c:253
-#: src/pray.c:1869 src/questpgr.c:434 src/read.c:607 src/rumors.c:584
-#: src/sit.c:55 src/sounds.c:1533 src/spell.c:2064 src/timeout.c:147
-#: src/timeout.c:309 src/timeout.c:342 src/timeout.c:420 src/timeout.c:542
-#: src/timeout.c:568 src/trap.c:5833 src/vault.c:959 src/version.c:163
-#: src/windows.c:455 src/windows.c:513 src/wizcmds.c:438 src/zap.c:5311
-#: src/zap.c:5455 win/curses/cursdial.c:298 win/curses/cursdial.c:366
-#: win/tty/topl.c:420 win/tty/topl.c:425 win/tty/wintty.c:2826
+#: src/dokick.c:738 src/eat.c:2256 src/engrave.c:1380 src/hack.c:135
+#: src/hack.c:3529 src/hack.c:4335 src/lock.c:917 src/nhlua.c:639
+#: src/nhlua.c:655 src/pager.c:2700 src/pickup.c:441 src/pickup.c:443
+#: src/pline.c:218 src/pline.c:674 src/pline.c:686 src/pline.c:741
+#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:434
+#: src/read.c:607 src/rumors.c:584 src/sit.c:55 src/sounds.c:1533
+#: src/spell.c:2064 src/timeout.c:147 src/timeout.c:309 src/timeout.c:342
+#: src/timeout.c:420 src/timeout.c:542 src/timeout.c:568 src/trap.c:5833
+#: src/vault.c:959 src/version.c:163 src/windows.c:455 src/windows.c:513
+#: src/wizcmds.c:438 src/zap.c:5311 src/zap.c:5455 win/curses/cursdial.c:298
+#: win/curses/cursdial.c:366 win/tty/topl.c:420 win/tty/topl.c:425
+#: win/tty/wintty.c:2826
 #, c-format
 msgid "%s"
 msgstr ""
@@ -16279,8 +16571,8 @@ msgstr "%.0s et %s"
 
 #: src/apply.c:902 src/cmd.c:1361 src/display.c:2069 src/dog.c:1209
 #: src/explode.c:796 src/getpos.c:986 src/invent.c:3147 src/invent.c:4587
-#: src/mail.c:375 src/muse.c:3283 src/music.c:616 src/objnam.c:4799
-#: src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1730 src/pray.c:608
+#: src/mail.c:375 src/muse.c:3283 src/music.c:634 src/objnam.c:4799
+#: src/objnam.c:4848 src/objnam.c:4979 src/potion.c:1764 src/pray.c:608
 #: src/read.c:1516 src/read.c:2896 src/read.c:3104 src/uhitm.c:3121
 #: src/wield.c:1162 win/tty/wintty.c:2960
 #, c-format
@@ -16355,8 +16647,9 @@ msgstr "La laisse tomberait tout simplement."
 msgid "%s has no extremities the leash would fit."
 msgstr "%s n'a aucune extrémité à laquelle attacher la laisse."
 
-#: src/apply.c:1080 src/do_name.c:1041 src/objnam.c:1636 src/objnam.c:3499
-#: src/shk.c:955 src/shk.c:968 src/trap.c:328 src/trap.c:6088 src/trap.c:6822
+#: src/apply.c:1080 src/do_name.c:1041 src/engrave.c:1089 src/objnam.c:1636
+#: src/objnam.c:3499 src/shk.c:955 src/shk.c:968 src/trap.c:328 src/trap.c:6088
+#: src/trap.c:6822
 #, c-format
 msgid "your %s"
 msgstr "votre %s"
@@ -17739,20 +18032,19 @@ msgstr "utiliser"
 msgid "You are already covered by a towel."
 msgstr "Vous êtes déjà couvert d'une serviette."
 
-#: src/apply.c:4908 src/potion.c:1597 src/pray.c:379 src/pray.c:382
+#: src/apply.c:4908 src/potion.c:1631 src/pray.c:379 src/pray.c:382
 #: src/pray.c:1376
 #, c-format
 msgid "%s with a %s light."
 msgstr "%s d'une lumière %s."
 
-#: src/apply.c:4911 src/dog.c:1335 src/dothrow.c:1995 src/engrave.c:877
-#: src/engrave.c:885 src/mcastu.c:699 src/mhitm.c:705 src/mhitu.c:2727
-#: src/mkobj.c:1605 src/mon.c:1032 src/mon.c:1816 src/music.c:675
-#: src/potion.c:1606 src/pray.c:386 src/pray.c:627 src/pray.c:1380
-#: src/read.c:1446 src/read.c:1759 src/shk.c:5631 src/sit.c:631
-#: src/sounds.c:507 src/trap.c:4999 src/trap.c:5007 src/trap.c:5117
-#: src/trap.c:5121 src/trap.c:5275 src/trap.c:5301 src/trap.c:5324
-#: src/trap.c:5337 src/wield.c:1148
+#: src/apply.c:4911 src/dog.c:1335 src/dothrow.c:1995 src/engrave.c:975
+#: src/mcastu.c:699 src/mhitm.c:705 src/mhitu.c:2727 src/mkobj.c:1605
+#: src/mon.c:1032 src/mon.c:1816 src/potion.c:1640 src/pray.c:386
+#: src/pray.c:627 src/pray.c:1380 src/read.c:1446 src/read.c:1759
+#: src/shk.c:5631 src/sit.c:631 src/sounds.c:507 src/trap.c:4999
+#: src/trap.c:5007 src/trap.c:5117 src/trap.c:5121 src/trap.c:5275
+#: src/trap.c:5301 src/trap.c:5324 src/trap.c:5337 src/wield.c:1148
 #, c-format
 msgid "%s %s."
 msgstr "%s %s."
@@ -17874,11 +18166,11 @@ msgstr "Vous relâchez %s !"
 msgid "The %s is insightful."
 msgstr "Le %s est perspicace."
 
-#: src/artifact.c:1422 src/hack.c:3190 src/lock.c:1317 src/mhitu.c:1085
-#: src/mon.c:2954 src/shk.c:1579 src/sounds.c:416 src/sounds.c:467
-#: src/trap.c:516 src/trap.c:1117 src/trap.c:2031 src/uhitm.c:2583
-#: src/uhitm.c:2713 src/uhitm.c:4728 src/uhitm.c:6710 src/weapon.c:878
-#: src/wizard.c:867 src/zap.c:6220
+#: src/artifact.c:1422 src/hack.c:3190 src/lock.c:1362 src/lock.c:1365
+#: src/mhitu.c:1085 src/mon.c:2954 src/shk.c:1579 src/sounds.c:416
+#: src/sounds.c:467 src/trap.c:516 src/trap.c:1117 src/trap.c:2031
+#: src/uhitm.c:2583 src/uhitm.c:2713 src/uhitm.c:4728 src/uhitm.c:6710
+#: src/weapon.c:878 src/wizard.c:867 src/zap.c:6220
 #, c-format
 msgid "%s %s!"
 msgstr "%s %s !"
@@ -18090,7 +18382,7 @@ msgctxt "verb"
 msgid "charge"
 msgstr "recharger"
 
-#: src/artifact.c:1999 src/teleport.c:1187
+#: src/artifact.c:1999 src/teleport.c:1220
 msgid "You feel very disoriented for a moment."
 msgstr "Vous êtes très désorienté un instant."
 
@@ -18447,8 +18739,7 @@ msgstr "Le poison ne semble pas vous affecter."
 msgid "The poison was deadly..."
 msgstr "Le poison était mortel..."
 
-#: src/attrib.c:688 src/dig.c:1388 src/music.c:716 src/teleport.c:1123
-#: src/uhitm.c:5912
+#: src/attrib.c:688 src/dig.c:1388 src/music.c:749 src/uhitm.c:5912
 #, c-format
 msgid "You %s %s."
 msgstr ""
@@ -19519,260 +19810,405 @@ msgstr "Tant pis."
 #: src/detect.c:410
 #, c-format
 msgid "You notice some gold between your %s."
-msgstr ""
+msgstr "Vous remarquez de l'or entre vos %s."
 
 #: src/detect.c:468
 msgid "You feel very greedy, and sense gold!"
 msgstr "Vous vous sentez très avide, et flairez de l'or !"
 
+#: src/detect.c:486 src/detect.c:1208 src/eat.c:176
+msgid "food"
+msgstr "nourriture"
+
 #: src/detect.c:516
 #, c-format
 msgid "You sense a lack of %s nearby."
-msgstr ""
+msgstr "Vous sentez une absence @de %s alentour."
 
 #: src/detect.c:519 src/detect.c:545
 #, c-format
 msgid "Your %s starts to tingle."
-msgstr ""
+msgstr "Votre %s se met à picoter."
 
 #: src/detect.c:542
 #, c-format
-msgid "You %s %s nearby."
-msgstr ""
+msgid "You smell %s nearby."
+msgstr "Vous sentez l'odeur @de %s alentour."
 
-#: src/detect.c:580
+#: src/detect.c:581
 #, c-format
-msgid "Your %s %s to tingle and you smell %s."
-msgstr ""
-
-#: src/detect.c:584
-#, c-format
-msgid "Your %s tingles and you smell %s."
-msgstr ""
+msgid "Your %s continues to tingle and you smell %s."
+msgstr "Votre %s continue de picoter et vous sentez l'odeur @de %s."
 
 #: src/detect.c:586
 #, c-format
+msgid "Your %s tingles and you smell %s."
+msgstr "Votre %s picote et vous sentez l'odeur @de %s."
+
+#: src/detect.c:588
+#, c-format
 msgid "You sense %s."
-msgstr ""
+msgstr "Vous percevez %s."
 
-#: src/detect.c:689
+#: src/detect.c:637 src/detect.c:1208
+msgid "objects"
+msgstr "objets"
+
+#: src/detect.c:639
+msgid " and/or large stones"
+msgstr " et/ou de gros rochers"
+
+#: src/detect.c:691
 msgid "You feel a lack of something."
-msgstr ""
+msgstr "Vous sentez qu'il manque quelque chose."
 
-#: src/detect.c:692
+#: src/detect.c:694
 #, c-format
 msgid "You sense %s nearby."
-msgstr ""
+msgstr "Vous percevez %s alentour."
 
-#: src/detect.c:780
+#: src/detect.c:782
 #, c-format
-msgid "You detect the %s of %s."
-msgstr ""
+msgid "You detect the presence of %s."
+msgstr "Vous détectez la présence @de %s."
 
-#: src/detect.c:819
+#: src/detect.c:822
 msgid "You get the heebie jeebies."
-msgstr ""
+msgstr "Vous avez la chair de poule."
 
-#: src/detect.c:844
+#: src/detect.c:847
 msgid "You sense the presence of monsters."
 msgstr "Vous sentez la présence de monstres."
 
-#: src/detect.c:846
+#: src/detect.c:849
 msgid "Monsters sense the presence of you."
 msgstr "Les monstres sentent votre présence."
 
-#: src/detect.c:998
-#, c-format
-msgid "You feel %s."
-msgstr ""
+#: src/detect.c:1001
+msgid "You feel very greedy."
+msgstr "Vous vous sentez très avide."
 
-#: src/detect.c:1086
+#: src/detect.c:1089
 #, c-format
 msgid "Your %s itch."
-msgstr ""
+msgstr "Vos %s vous démangent."
 
-#: src/detect.c:1119
+#: src/detect.c:1122
 msgid "There seems to be nothing of interest on this level."
 msgstr "Il ne semble rien y avoir d'intéressant à ce niveau."
 
-#: src/detect.c:1123
+#: src/detect.c:1126
 msgid "Your map already shows all relevant locations."
 msgstr "Votre carte montre déjà tous les endroits utiles."
 
+#: src/detect.c:1204
+msgid "Delphi"
+msgstr "Delphes"
+
+#: src/detect.c:1204
+msgid "Medusa's lair"
+msgstr "l'antre de Méduse"
+
+#: src/detect.c:1204
+msgid "a castle"
+msgstr "un château"
+
+#: src/detect.c:1205
+msgid "far away"
+msgstr "très loin"
+
+#: src/detect.c:1205
+msgid "far below"
+msgstr "loin en dessous"
+
+#: src/detect.c:1205
+msgid "the Wizard of Yendor's tower"
+msgstr "la tour du Magicien de Yendor"
+
+#: src/detect.c:1206
+msgid "away below you"
+msgstr "au loin sous vous"
+
+#: src/detect.c:1206
+msgid "below you"
+msgstr "sous vous"
+
+#: src/detect.c:1206
+msgid "in the distance"
+msgstr "au loin"
+
+#: src/detect.c:1207
+msgid "away above you"
+msgstr "au loin au-dessus de vous"
+
+#: src/detect.c:1207
+msgid "far above"
+msgstr "loin au-dessus"
+
+#: src/detect.c:1207
+msgid "just below"
+msgstr "juste en dessous"
+
+#: src/detect.c:1208
+msgid "above you"
+msgstr "au-dessus de vous"
+
+#: src/detect.c:1208
+msgid "just above"
+msgstr "juste au-dessus"
+
+#: src/detect.c:1209
+msgid "armor"
+msgstr "armures"
+
+#: src/detect.c:1209
+msgid "illegal objects"
+msgstr "objets illégaux"
+
+#: src/detect.c:1209
+msgid "rings"
+msgstr "anneaux"
+
+#: src/detect.c:1209
+msgid "weapons"
+msgstr "armes"
+
+#: src/detect.c:1210
+msgid "amulets"
+msgstr "amulettes"
+
+#: src/detect.c:1210
+msgid "potions"
+msgstr "potions"
+
+#: src/detect.c:1210
+msgid "scrolls"
+msgstr "parchemins"
+
+#: src/detect.c:1210
+msgid "tools"
+msgstr "outils"
+
+#: src/detect.c:1211
+msgid "coins"
+msgstr "pièces"
+
+#: src/detect.c:1211
+msgid "rocks"
+msgstr "pierres"
+
+#: src/detect.c:1211
+msgid "spellbooks"
+msgstr "livres de sorts"
+
+#: src/detect.c:1211
+msgid "wands"
+msgstr "baguettes"
+
+#: src/detect.c:1212
+msgid "chains"
+msgstr "chaînes"
+
+#: src/detect.c:1212
+msgid "iron balls"
+msgstr "boulets"
+
+#: src/detect.c:1212
+msgid "large stones"
+msgstr "gros rochers"
+
+#: src/detect.c:1212
+msgid "venoms"
+msgstr "venins"
+
+#: src/detect.c:1213 src/detect.c:1294
+msgid "babe"
+msgstr "ma belle"
+
+#: src/detect.c:1213 src/detect.c:1294
+msgid "dude"
+msgstr "mec"
+
+#: src/detect.c:1213
+msgid "near you"
+msgstr "près de vous"
+
 #: src/detect.c:1214
-#, c-format
-msgid "Too bad you can't see %s."
-msgstr ""
-
-#: src/detect.c:1223
-#, c-format
-msgid "%s too much to comprehend!"
-msgstr ""
-
-#: src/detect.c:1226 src/trap.c:1948
-#, c-format
-msgid "%s you!"
-msgstr ""
+msgctxt "heroine"
+msgid "You feel entrapped."
+msgstr "Vous vous sentez prise au piège."
 
 #: src/detect.c:1231
 #, c-format
-msgid "%s your vision!"
-msgstr ""
+msgid "Too bad you can't see %s."
+msgstr "Dommage que vous ne puissiez pas voir %s."
 
-#: src/detect.c:1236
+#: src/detect.c:1240
+#, c-format
+msgid "%s too much to comprehend!"
+msgstr "%s trop à comprendre !"
+
+#: src/detect.c:1243 src/trap.c:1948
+#, c-format
+msgid "%s you!"
+msgstr "%s vous !"
+
+#: src/detect.c:1248
+#, c-format
+msgid "%s your vision!"
+msgstr "%s votre vue !"
+
+#: src/detect.c:1253
 #, c-format
 msgid "%s your vision."
-msgstr ""
+msgstr "%s votre vue."
 
-#: src/detect.c:1237
+#: src/detect.c:1254
 msgid "You are unaffected!"
 msgstr "Vous n'êtes pas affecté !"
 
-#: src/detect.c:1241
+#: src/detect.c:1258
 #, c-format
 msgid "%s your mind!"
-msgstr ""
+msgstr "%s votre esprit !"
 
-#: src/detect.c:1246 src/detect.c:1322 src/dig.c:1127 src/dig.c:1133
+#: src/detect.c:1263 src/detect.c:1343 src/dig.c:1127 src/dig.c:1133
 #: src/dothrow.c:1548 src/eat.c:2228 src/mon.c:3849 src/mthrowu.c:1489
-#: src/muse.c:226 src/shk.c:5764 src/sit.c:611 src/steed.c:429 src/trap.c:7061
+#: src/muse.c:226 src/shk.c:5764 src/sit.c:611 src/steed.c:440 src/trap.c:7061
 #, c-format
 msgid "%s!"
 msgstr "%s !"
 
-#: src/detect.c:1265
+#: src/detect.c:1282
 #, c-format
 msgid "All you see is funky %s haze."
-msgstr ""
+msgstr "Vous ne voyez qu'une brume %s bizarre."
 
-#: src/detect.c:1271
+#: src/detect.c:1290
 msgid "You grok some groovy globs of incandescent lava."
 msgstr "Vous captez de superbes globules de lave incandescente."
 
-#: src/detect.c:1274
+#: src/detect.c:1293
 #, c-format
 msgid "Whoa!  Psychedelic colors, %s!"
-msgstr ""
+msgstr "Waouh !  Des couleurs psychédéliques, %s !"
 
-#: src/detect.c:1278
+#: src/detect.c:1297
 #, c-format
 msgid "The crystal pulses with sinister %s light!"
-msgstr ""
+msgstr "Le cristal pulse d'une sinistre lumière %s !"
 
-#: src/detect.c:1282
+#: src/detect.c:1303
 msgid "You see goldfish swimming above fluorescent rocks."
 msgstr "Vous voyez des poissons rouges nager au-dessus de roches fluorescentes."
 
-#: src/detect.c:1286
+#: src/detect.c:1307
 msgid "You see tiny snowflakes spinning around a miniature farmhouse."
 msgstr "Vous voyez de minuscules flocons tourbillonner autour d'une ferme miniature."
 
-#: src/detect.c:1289
+#: src/detect.c:1310
 msgid "Oh wow... like a kaleidoscope!"
 msgstr "Oh là là... comme un kaléidoscope !"
 
-#: src/detect.c:1299
+#: src/detect.c:1320
 msgid "You may look for an object, monster, or special map symbol."
 msgstr "Vous pouvez chercher un objet, un monstre ou un symbole de la carte."
 
-#: src/detect.c:1300
+#: src/detect.c:1321
 msgid "What do you look for?"
 msgstr "Que cherchez-vous ?"
 
-#: src/detect.c:1312
+#: src/detect.c:1333
 #, c-format
 msgid "You peer into %s..."
-msgstr ""
+msgstr "Vous scrutez %s..."
 
-#: src/detect.c:1318 src/detect.c:1364
+#: src/detect.c:1339 src/detect.c:1385
 msgid "The vision is unclear."
 msgstr "La vision est floue."
 
-#: src/detect.c:1355
+#: src/detect.c:1376
 #, c-format
 msgid "You see %s, %s."
-msgstr ""
+msgstr "Vous voyez %s, %s."
 
-#: src/detect.c:1362
+#: src/detect.c:1383
 msgid "You see the Wizard of Yendor gazing out at you."
 msgstr "Vous voyez le Magicien de Yendor qui vous observe."
 
-#: src/detect.c:1555
+#: src/detect.c:1576
 msgid "You sense your surroundings."
 msgstr "Vous percevez votre environnement."
 
-#: src/detect.c:1755
-#, c-format
-msgid "You %s an explosion!"
-msgstr ""
+#: src/detect.c:1776
+msgid "You see an explosion!"
+msgstr "Vous voyez une explosion !"
 
-#: src/detect.c:1865
+#: src/detect.c:1886
 #, c-format
 msgid "You reveal %s!"
-msgstr ""
+msgstr "Vous révélez %s !"
 
-#: src/detect.c:1874
+#: src/detect.c:1895
 #, c-format
 msgid "You detect %s!"
-msgstr ""
+msgstr "Vous détectez %s !"
 
-#: src/detect.c:1881
-#, c-format
-msgid "You feel %sless paranoid."
-msgstr ""
+#: src/detect.c:1902
+msgid "You feel somewhat less paranoid."
+msgstr "Vous vous sentez un peu moins paranoïaque."
 
-#: src/detect.c:1888
+#: src/detect.c:1909
 msgid "You don't find anything."
 msgstr "Vous ne trouvez rien."
 
-#: src/detect.c:1910
+#: src/detect.c:1931
 msgid "Its mouth opens!"
 msgstr "Sa bouche s'ouvre !"
 
-#: src/detect.c:1912 src/zap.c:682
+#: src/detect.c:1933 src/zap.c:682
 #, c-format
 msgid "%s opens its mouth!"
 msgstr "%s ouvre la bouche !"
 
-#: src/detect.c:1916
+#: src/detect.c:1937
 #, c-format
 msgid "%s unfolds!"
-msgstr ""
+msgstr "%s se déploie !"
 
-#: src/detect.c:1956 src/detect.c:2008 src/zap.c:3998
+#: src/detect.c:1977 src/detect.c:2032 src/zap.c:3998
 #, c-format
 msgid "You find %s."
 msgstr "Vous trouvez %s."
 
-#: src/detect.c:1985
-#, c-format
-msgid "Your danger sense causes you to take a second %s."
-msgstr ""
+#: src/detect.c:2007
+msgid "Your danger sense causes you to take a second to check nearby."
+msgstr "Votre sens du danger vous pousse à prendre un instant pour vérifier alentour."
 
-#: src/detect.c:2005
+#: src/detect.c:2029
 msgid "You feel an unseen monster!"
 msgstr "Vous sentez un monstre invisible !"
 
-#: src/detect.c:2024
+#: src/detect.c:2048
 msgid "What are you looking for?  The exit?"
 msgstr "Que cherchez-vous ? La sortie ?"
 
-#: src/detect.c:2051
+#: src/detect.c:2075
 msgid "You find a hidden door."
 msgstr "Vous trouvez une porte cachée."
 
-#: src/detect.c:2061
+#: src/detect.c:2085
 msgid "You find a hidden passage."
 msgstr "Vous trouvez un passage caché."
 
-#: src/detect.c:2363
+#: src/detect.c:2387
 msgid "You are too disoriented for this."
 msgstr "Vous êtes trop désorienté pour cela."
 
-#: src/detect.c:2404
+#: src/detect.c:2428
 #, c-format
 msgid "Showing %s only..."
-msgstr ""
+msgstr "Affichage @de %s uniquement..."
 
 #: src/dig.c:98
 msgid "Crash!  The ceiling collapses around you!"
@@ -21233,7 +21669,7 @@ msgstr "Vous descendez le long de l'échelle en volant."
 msgid "You fall down the ladder."
 msgstr "Vous tombez de l'échelle."
 
-#: src/do.c:1961 src/do.c:1973 src/eat.c:3569 src/hack.c:929 src/music.c:316
+#: src/do.c:1961 src/do.c:1973 src/eat.c:3569 src/hack.c:929 src/music.c:317
 #: src/trap.c:2333
 msgid "Falling, you"
 msgstr "En tombant, vous"
@@ -21340,7 +21776,7 @@ msgstr "%s s'extirpe du sol à coups de griffes !"
 msgid "You hear scratching noises."
 msgstr "Vous entendez des grattements."
 
-#: src/do.c:2437 src/muse.c:126 src/potion.c:2963 src/shk.c:5037 src/shk.c:5053
+#: src/do.c:2437 src/muse.c:126 src/potion.c:2997 src/shk.c:5037 src/shk.c:5053
 #, c-format
 msgid "%s vanishes."
 msgstr "%s disparaît."
@@ -22845,7 +23281,7 @@ msgstr "Vous le sentez mal."
 msgid "%s is still %s."
 msgstr ""
 
-#: src/dog.c:839 src/muse.c:940 src/teleport.c:2059
+#: src/dog.c:839 src/muse.c:940 src/teleport.c:2107
 #, c-format
 msgid "%s seems very disoriented for a moment."
 msgstr "%s semble très désorienté un instant."
@@ -22890,7 +23326,7 @@ msgstr "%s évite votre regard."
 msgid "%s digs in."
 msgstr "%s s'arc-boute."
 
-#: src/dogmove.c:289 src/dokick.c:2003 src/dothrow.c:640 src/makemon.c:2147
+#: src/dogmove.c:289 src/dokick.c:2003 src/dothrow.c:640 src/makemon.c:2156
 #: src/mhitm.c:671 src/mhitm.c:863 src/mthrowu.c:1244 src/muse.c:3056
 #: src/steal.c:329 src/trap.c:5529 src/zap.c:3773
 #, c-format
@@ -22912,7 +23348,7 @@ msgstr "%s recrache %s avec dégoût !"
 msgid "That %s will cost you %ld %s."
 msgstr ""
 
-#: src/dogmove.c:351 src/dogmove.c:1528 src/teleport.c:803
+#: src/dogmove.c:351 src/dogmove.c:1528 src/teleport.c:819
 msgid "Your leash goes slack."
 msgstr "Votre laisse se détend."
 
@@ -22941,7 +23377,7 @@ msgstr "Vous vous inquiétez pour %s."
 msgid "%s picks up %s."
 msgstr "%s ramasse %s."
 
-#: src/dogmove.c:1059 src/monmove.c:369
+#: src/dogmove.c:1059 src/monmove.c:379
 msgid "You get released!"
 msgstr "Vous êtes relâché !"
 
@@ -23339,7 +23775,7 @@ msgstr "Vous sentez une odeur de miel rance."
 msgid "Klunk!  The pipes vibrate noisily."
 msgstr "Klonk ! Les tuyaux vibrent bruyamment."
 
-#: src/dokick.c:1243 src/lock.c:1065
+#: src/dokick.c:1243 src/lock.c:1107
 msgid "Klunk!"
 msgstr "Klonk !"
 
@@ -23773,11 +24209,6 @@ msgstr "Vos %s larmoient."
 #, c-format
 msgid "Your %s waters."
 msgstr "Votre %s larmoie."
-
-#: src/dothrow.c:2683
-#, c-format
-msgid "You hear %s shatter!"
-msgstr "Vous entendez %s se briser !"
 
 #: src/dothrow.c:2694 src/uhitm.c:1294 src/uhitm.c:1317 src/uhitm.c:1358
 msgid "Splat!"
@@ -24222,10 +24653,6 @@ msgid "grody"
 msgstr "dégueu"
 
 #: src/eat.c:176
-msgid "food"
-msgstr "nourriture"
-
-#: src/eat.c:176
 msgid "liquid"
 msgstr "liquide"
 
@@ -24551,7 +24978,7 @@ msgstr "Vous vous sentez coupable."
 msgid "It's full of %s."
 msgstr "C'est plein de %s."
 
-#: src/eat.c:1610 src/potion.c:2925
+#: src/eat.c:1610 src/potion.c:2959
 msgid "It turns out to be empty."
 msgstr "Elle se révèle vide."
 
@@ -25148,253 +25575,596 @@ msgstr "Demi-déesse"
 msgid "%s is empty."
 msgstr "%s est vide."
 
-#: src/engrave.c:236
+#: src/engrave.c:46
+msgctxt "gender"
+msgid "bottom of the pit"
+msgstr ""
+
+#: src/engrave.c:46
+msgctxt "noun"
+msgid "bottom of the pit"
+msgstr "fond de la fosse"
+
+#: src/engrave.c:47
+msgctxt "engrave"
+msgid "add to the weird writing on"
+msgstr "ajouter à l'étrange écriture sur"
+
+#: src/engrave.c:48
+msgctxt "engrave you"
+msgid "add to the weird writing on"
+msgstr "ajoutez à l'étrange écriture sur"
+
+#: src/engrave.c:49
+msgctxt "engrave"
+msgid "write strangely on"
+msgstr "écrire étrangement sur"
+
+#: src/engrave.c:50
+msgctxt "engrave you"
+msgid "write strangely on"
+msgstr "écrivez étrangement sur"
+
+#: src/engrave.c:51
+msgctxt "engrave"
+msgid "add to the writing in"
+msgstr "ajouter à l'écriture dans"
+
+#: src/engrave.c:52
+msgctxt "engrave you"
+msgid "add to the writing in"
+msgstr "ajoutez à l'écriture dans"
+
+#: src/engrave.c:53
+msgctxt "engrave"
+msgid "write in"
+msgstr "écrire dans"
+
+#: src/engrave.c:54
+msgctxt "engrave you"
+msgid "write in"
+msgstr "écrivez dans"
+
+#: src/engrave.c:55
+msgctxt "engrave"
+msgid "add to the epitaph on"
+msgstr "ajouter à l'épitaphe sur"
+
+#: src/engrave.c:56
+msgctxt "engrave you"
+msgid "add to the epitaph on"
+msgstr "ajoutez à l'épitaphe sur"
+
+#: src/engrave.c:57
+msgctxt "engrave"
+msgid "engrave on"
+msgstr "graver sur"
+
+#: src/engrave.c:58
+msgctxt "engrave you"
+msgid "engrave on"
+msgstr "gravez sur"
+
+#: src/engrave.c:59
+msgctxt "engrave"
+msgid "add to the engraving in"
+msgstr "ajouter à la gravure dans"
+
+#: src/engrave.c:60
+msgctxt "engrave you"
+msgid "add to the engraving in"
+msgstr "ajoutez à la gravure dans"
+
+#: src/engrave.c:61
+msgctxt "engrave"
+msgid "engrave in"
+msgstr "graver dans"
+
+#: src/engrave.c:62
+msgctxt "engrave you"
+msgid "engrave in"
+msgstr "gravez dans"
+
+#: src/engrave.c:63
+msgctxt "engrave"
+msgid "add to the text melted into"
+msgstr "ajouter au texte fondu dans"
+
+#: src/engrave.c:64
+msgctxt "engrave you"
+msgid "add to the text melted into"
+msgstr "ajoutez au texte fondu dans"
+
+#: src/engrave.c:65
+msgctxt "engrave"
+msgid "add to the text burned into"
+msgstr "ajouter au texte gravé au feu dans"
+
+#: src/engrave.c:66
+msgctxt "engrave you"
+msgid "add to the text burned into"
+msgstr "ajoutez au texte gravé au feu dans"
+
+#: src/engrave.c:67
+msgctxt "engrave"
+msgid "melt into"
+msgstr "faire fondre dans"
+
+#: src/engrave.c:68
+msgctxt "engrave you"
+msgid "melt into"
+msgstr "faites fondre dans"
+
+#: src/engrave.c:69
+msgctxt "engrave"
+msgid "burn into"
+msgstr "graver au feu dans"
+
+#: src/engrave.c:70
+msgctxt "engrave you"
+msgid "burn into"
+msgstr "gravez au feu dans"
+
+#: src/engrave.c:71
+msgctxt "engrave"
+msgid "add to the graffiti on"
+msgstr "ajouter aux graffitis sur"
+
+#: src/engrave.c:72
+msgctxt "engrave you"
+msgid "add to the graffiti on"
+msgstr "ajoutez aux graffitis sur"
+
+#: src/engrave.c:73
+msgctxt "engrave"
+msgid "scribble on"
+msgstr "griffonner sur"
+
+#: src/engrave.c:74
+msgctxt "engrave you"
+msgid "scribble on"
+msgstr "griffonnez sur"
+
+#: src/engrave.c:75
+msgctxt "engrave"
+msgid "add to the scrawl on"
+msgstr "ajouter au gribouillis sur"
+
+#: src/engrave.c:76
+msgctxt "engrave you"
+msgid "add to the scrawl on"
+msgstr "ajoutez au gribouillis sur"
+
+#: src/engrave.c:77
+msgctxt "engrave"
+msgid "scrawl on"
+msgstr "gribouiller sur"
+
+#: src/engrave.c:78
+msgctxt "engrave you"
+msgid "scrawl on"
+msgstr "gribouillez sur"
+
+#: src/engrave.c:79
+msgctxt "engrave finish"
+msgid "your weird engraving"
+msgstr "votre étrange gravure"
+
+#: src/engrave.c:80
+msgctxt "engrave finish"
+msgid "writing in the frost"
+msgstr "d'écrire dans le givre"
+
+#: src/engrave.c:81
+msgctxt "engrave finish"
+msgid "writing in the dust"
+msgstr "d'écrire dans la poussière"
+
+#: src/engrave.c:82
+msgctxt "engrave finish"
+msgid "engraving"
+msgstr "de graver"
+
+#: src/engrave.c:83
+msgctxt "engrave finish"
+msgid "melting your message into the ice"
+msgstr "de faire fondre votre message dans la glace"
+
+#: src/engrave.c:84
+msgctxt "engrave finish"
+msgid "burning your message into the floor"
+msgstr "de graver votre message au feu dans le sol"
+
+#: src/engrave.c:85
+msgctxt "engrave finish"
+msgid "defacing the dungeon"
+msgstr "de dégrader le donjon"
+
+#: src/engrave.c:86
+msgctxt "engrave finish"
+msgid "scrawling"
+msgstr "de gribouiller"
+
+#: src/engrave.c:87
+msgctxt "gender"
+msgid "frost"
+msgstr ""
+
+#: src/engrave.c:87
+msgctxt "noun"
+msgid "frost"
+msgstr "givre"
+
+#: src/engrave.c:88
+msgctxt "gender"
+msgid "dust"
+msgstr "f"
+
+#: src/engrave.c:88
+msgctxt "noun"
+msgid "dust"
+msgstr "poussière"
+
+#: src/engrave.c:292
+#, c-format
+msgid "The wand does nothing more, and the tip of the wand can't reach %s."
+msgstr "La baguette ne fait rien de plus, et son extrémité n'atteint pas %s."
+
+#: src/engrave.c:296
 #, c-format
 msgid "%s can't reach the %s."
 msgstr ""
 
-#: src/engrave.c:347
-#, c-format
-msgid "%s is written here in the %s."
-msgstr ""
+#: src/engrave.c:405
+msgid "Something is written here in the frost."
+msgstr "Quelque chose est écrit ici dans le givre."
 
-#: src/engrave.c:355
+#: src/engrave.c:414
+#, c-format
+msgid "Something is engraved here on %s."
+msgstr "Quelque chose est gravé ici sur %s."
+
+#: src/engrave.c:417
 #, c-format
 msgid "%s is engraved here on the %s."
 msgstr ""
 
-#: src/engrave.c:361
+#: src/engrave.c:425
+#, c-format
+msgid "Some text has been melted into %s here."
+msgstr "Un texte a été fondu ici dans %s."
+
+#: src/engrave.c:429
 #, c-format
 msgid "Some text has been %s into the %s here."
 msgstr ""
 
-#: src/engrave.c:368
+#: src/engrave.c:437
+#, c-format
+msgid "There's some graffiti on %s here."
+msgstr "Il y a des graffitis ici sur %s."
+
+#: src/engrave.c:440
 #, c-format
 msgid "There's some graffiti on the %s here."
 msgstr ""
 
-#: src/engrave.c:378
+#: src/engrave.c:450
 msgid "You see a message scrawled in blood here."
 msgstr "Vous voyez un message griffonné avec du sang ici."
 
-#: src/engrave.c:411
+#: src/engrave.c:483
 #, c-format
-msgid "You %s: \"%s\"%s"
-msgstr ""
+msgid "You feel the words: \"%s\"%s"
+msgstr "Vous sentez les mots : « %s »%s"
 
-#: src/engrave.c:524
+#: src/engrave.c:596
 msgid "What would you write?  \"Jonah was here\"?"
 msgstr "Qu'écririez-vous ? « Jonas était ici » ?"
 
-#: src/engrave.c:533 src/engrave.c:536
+#: src/engrave.c:605 src/engrave.c:608
 #, c-format
-msgid "You can't write on the %s!"
-msgstr ""
+msgid "You can't write on %s!"
+msgstr "Vous ne pouvez pas écrire sur %s !"
 
-#: src/engrave.c:540
-#, c-format
-msgid "You can't write in %s!"
-msgstr ""
+#: src/engrave.c:612
+msgid "You can't write in cloud vapor!"
+msgstr "Vous ne pouvez pas écrire dans la vapeur d'un nuage !"
 
-#: src/engrave.c:545
+#: src/engrave.c:617
 msgid "You can't write here."
 msgstr "Vous ne pouvez pas écrire ici."
 
-#: src/engrave.c:550
+#: src/engrave.c:622
 msgid "You can't even hold anything!"
 msgstr "Vous ne pouvez même rien tenir !"
 
-#: src/engrave.c:685 src/engrave.c:693
-#, c-format
-msgid "The engraving on the %s vanishes!"
-msgstr ""
+#: src/engrave.c:691
+msgid "The wand unsuccessfully fights your attempt to write!"
+msgstr "La baguette combat en vain votre tentative d'écrire !"
 
-#: src/engrave.c:704
+#: src/engrave.c:697
+#, c-format
+msgid "The bugs on %s slow down!"
+msgstr "Les insectes sur %s ralentissent !"
+
+#: src/engrave.c:708
+#, c-format
+msgid "The bugs on %s speed up!"
+msgstr "Les insectes sur %s accélèrent !"
+
+#: src/engrave.c:744
+#, c-format
+msgid "%s is riddled by bullet holes!"
+msgstr "%s est criblé d'impacts de balles !"
+
+#: src/engrave.c:758
+#, c-format
+msgid "The bugs on %s stop moving!"
+msgstr "Les insectes sur %s s'immobilisent !"
+
+#: src/engrave.c:768
+msgid "A few ice cubes drop from the wand."
+msgstr "Quelques glaçons tombent de la baguette."
+
+#: src/engrave.c:777 src/engrave.c:784
+#, c-format
+msgid "The engraving on %s vanishes!"
+msgstr "La gravure sur %s disparaît !"
+
+#: src/engrave.c:794
 #, c-format
 msgid "This %s is a wand of digging!"
-msgstr ""
+msgstr "Cette %s est une baguette de creusement !"
 
-#: src/engrave.c:727
+#: src/engrave.c:799
+msgid "You hear drilling!"
+msgstr "Vous entendez un bruit de perceuse !"
+
+#: src/engrave.c:801
+msgid "You feel tremors."
+msgstr "Vous sentez des tremblements."
+
+#: src/engrave.c:803
+msgid "Chips fly out from the headstone."
+msgstr "Des éclats jaillissent de la pierre tombale."
+
+#: src/engrave.c:805
+msgid "Ice chips fly up from the ice surface!"
+msgstr "Des éclats de glace jaillissent de la surface gelée !"
+
+#: src/engrave.c:808
+msgid "Splinters fly up from the bridge."
+msgstr "Des échardes jaillissent du pont."
+
+#: src/engrave.c:809
+msgid "Gravel flies up from the floor."
+msgstr "Du gravier jaillit du sol."
+
+#: src/engrave.c:817
 #, c-format
 msgid "This %s is a wand of fire!"
-msgstr ""
+msgstr "Cette %s est une baguette de feu !"
 
-#: src/engrave.c:738
+#: src/engrave.c:820
+msgid "You feel the wand heat up."
+msgstr "Vous sentez la baguette chauffer."
+
+#: src/engrave.c:821
+msgid "Flames fly from the wand."
+msgstr "Des flammes jaillissent de la baguette."
+
+#: src/engrave.c:828
 #, c-format
 msgid "This %s is a wand of lightning!"
-msgstr ""
+msgstr "Cette %s est une baguette de foudre !"
 
-#: src/engrave.c:785
+#: src/engrave.c:832
+msgid "Lightning arcs from the wand."
+msgstr "Des éclairs jaillissent de la baguette."
+
+#: src/engrave.c:836
+msgid "You hear crackling!"
+msgstr "Vous entendez des crépitements !"
+
+#: src/engrave.c:837
+msgid "Your hair stands up!"
+msgstr "Vos cheveux se dressent !"
+
+#: src/engrave.c:875
 msgid "You can't engrave with such a large object!"
 msgstr "Vous ne pouvez pas graver avec un objet aussi grand !"
 
-#: src/engrave.c:792
+#: src/engrave.c:882
 #, c-format
-msgid "%s would get %s."
-msgstr ""
+msgid "%s would get all frosty."
+msgstr "%s serait tout givré."
 
-#: src/engrave.c:829
+#: src/engrave.c:919
 msgid "The wand is too worn out to engrave."
 msgstr "La baguette est trop usée pour graver."
 
-#: src/engrave.c:841
+#: src/engrave.c:931
 #, c-format
-msgid "%s can only scratch the %s."
-msgstr ""
+msgid "%s can only scratch %s."
+msgstr "%s ne peut qu'égratigner %s."
 
-#: src/engrave.c:844
+#: src/engrave.c:934
 #, c-format
 msgid "%s too dull for engraving."
-msgstr ""
+msgstr "%s trop émoussé pour graver."
 
-#: src/engrave.c:854
+#: src/engrave.c:944
 msgid "That is a bit difficult to engrave with, don't you think?"
 msgstr "C'est un peu difficile de graver avec cela, vous ne trouvez pas ?"
 
-#: src/engrave.c:861
+#: src/engrave.c:951
 msgid "Your marker has dried out."
 msgstr "Votre marqueur est sec."
 
-#: src/engrave.c:875
+#: src/engrave.c:965
 msgid "You wipe out the message here."
 msgstr "Vous effacez le message ici."
 
-#: src/engrave.c:881
+#: src/engrave.c:967
+#, c-format
+msgid "%s frosty."
+msgstr "%s givré."
+
+#: src/engrave.c:971
 #, c-format
 msgid "%s can't wipe out this engraving."
-msgstr ""
+msgstr "%s ne peut pas effacer cette gravure."
 
-#: src/engrave.c:898
+#: src/engrave.c:988
 msgid "Writing a poison pen letter?"
 msgstr "Vous écrivez une lettre empoisonnée ?"
 
-#: src/engrave.c:992
+#: src/engrave.c:1082
 msgctxt "verb"
 msgid "write with"
 msgstr "utiliser pour écrire"
 
-#: src/engrave.c:1009
+#: src/engrave.c:1100
 #, c-format
 msgid "You have no free %s to write with!"
-msgstr ""
+msgstr "Vous n'avez pas de %s libre pour écrire !"
 
-#: src/engrave.c:1014
+#: src/engrave.c:1105
 #, c-format
 msgid "You tickle %s with %s."
-msgstr ""
+msgstr "Vous chatouillez %s avec %s."
 
-#: src/engrave.c:1015
+#: src/engrave.c:1106
 msgid "Your message dissolves..."
 msgstr "Votre message se dissout..."
 
-#: src/engrave.c:1023
+#: src/engrave.c:1114
 #, c-format
-msgid "You gesture, with your wand, towards the %s below you."
-msgstr ""
+msgid "You gesture, with your wand, towards %s below you."
+msgstr "Vous faites un geste avec votre baguette vers %s sous vous."
 
-#: src/engrave.c:1030
+#: src/engrave.c:1121
 #, c-format
 msgid "You make a motion towards the altar with %s."
-msgstr ""
+msgstr "Vous faites un geste vers l'autel avec %s."
 
-#: src/engrave.c:1036
+#: src/engrave.c:1127
 #, c-format
-msgid "You would only make a small smudge on the %s."
-msgstr ""
+msgid "You would only make a small smudge on %s."
+msgstr "Vous ne feriez qu'une petite trace sur %s."
 
-#: src/engrave.c:1094
+#: src/engrave.c:1185
 #, c-format
 msgid "The engraving now reads: \"%s\"."
-msgstr ""
+msgstr "La gravure dit maintenant : « %s »."
 
-#: src/engrave.c:1103
+#: src/engrave.c:1195
+#, c-format
+msgid "%s turns to dust."
+msgstr "%s tombe en poussière."
+
+#: src/engrave.c:1199
 #, c-format
 msgid "%s %sturns to dust."
 msgstr ""
 
-#: src/engrave.c:1107
-#, c-format
-msgid "You are not going to get anywhere trying to write in the %s with your dust."
-msgstr ""
+#: src/engrave.c:1203
+msgid "You are not going to get anywhere trying to write in the frost with your dust."
+msgstr "Vous n'arriverez à rien en essayant d'écrire dans le givre avec votre poussière."
 
-#: src/engrave.c:1135
+#: src/engrave.c:1233
 msgid "Do you want to add to the current engraving?"
 msgstr "Voulez-vous compléter l'inscription actuelle ?"
 
-#: src/engrave.c:1148
-#, c-format
-msgid "You wipe out the message that was %s here."
-msgstr ""
+#: src/engrave.c:1253
+msgid "You wipe out the message that was scrawled in blood here."
+msgstr "Vous effacez le message qui était griffonné ici avec du sang."
 
-#: src/engrave.c:1165
+#: src/engrave.c:1271
 #, c-format
-msgid "You cannot wipe out the message that is %s the %s here."
-msgstr ""
+msgid "You cannot wipe out the message that is engraved in %s here."
+msgstr "Vous ne pouvez pas effacer le message gravé ici dans %s."
 
-#: src/engrave.c:1174
+#: src/engrave.c:1278
 msgid "You will overwrite the current message."
 msgstr "Vous allez écraser le message actuel."
 
-#: src/engrave.c:1179
+#: src/engrave.c:1283
 msgid "There is no room to add anything else here."
 msgstr "Il n'y a plus de place pour ajouter quoi que ce soit ici."
 
-#: src/engrave.c:1191
+#: src/engrave.c:1297
+#, c-format
+msgid "You %s %s with 1 of %s."
+msgstr "Vous %s %s avec 1 de %s."
+
+#: src/engrave.c:1301
+#, c-format
+msgid "You %s %s with your %s."
+msgstr "Vous %s %s avec votre %s."
+
+#: src/engrave.c:1304
+#, c-format
+msgid "What do you want to %s %s here?"
+msgstr "Que voulez-vous %s %s ici ?"
+
+#: src/engrave.c:1308
 #, c-format
 msgid "You %s the %s with %s%s."
 msgstr ""
 
-#: src/engrave.c:1198
+#: src/engrave.c:1315
 #, c-format
 msgid "You %s the %s with your %s."
 msgstr ""
 
-#: src/engrave.c:1217
+#: src/engrave.c:1335
 #, c-format
 msgid "%s, then %s."
-msgstr ""
+msgstr "%s, puis %s."
 
-#: src/engrave.c:1264
+#: src/engrave.c:1382
 msgid "You are blinded by the flash!"
 msgstr "Vous êtes aveuglé par l'éclair !"
 
-#: src/engrave.c:1303 src/engrave.c:1316
+#: src/engrave.c:1421 src/engrave.c:1434
 msgid "You are unable to continue engraving."
 msgstr "Vous êtes incapable de continuer à graver."
 
-#: src/engrave.c:1362
+#: src/engrave.c:1480
 #, c-format
 msgid "One of %s gets dull."
-msgstr ""
+msgstr "L'un @de %s s'émousse."
 
-#: src/engrave.c:1370
+#: src/engrave.c:1488
 #, c-format
 msgid "%s gets dull."
-msgstr ""
+msgstr "%s s'émousse."
 
-#: src/engrave.c:1421
+#: src/engrave.c:1539
 msgid "Your marker dries out."
 msgstr "Votre marqueur se dessèche."
 
-#: src/engrave.c:1458
+#: src/engrave.c:1576
 msgid "You run out of room to write."
 msgstr "Vous manquez de place pour écrire."
 
-#: src/engrave.c:1467
+#: src/engrave.c:1585
 #, c-format
 msgid "You are only able to write \"%s\"."
-msgstr ""
+msgstr "Vous ne parvenez à écrire que « %s »."
 
-#: src/engrave.c:1496
+#: src/engrave.c:1614
 msgid "You cannot write any more."
 msgstr "Vous ne pouvez plus écrire."
 
-#: src/engrave.c:1499
+#: src/engrave.c:1617
 #, c-format
 msgid "You finish %s."
-msgstr ""
+msgstr "Vous finissez %s."
 
-#: src/engrave.c:1731
+#: src/engrave.c:1849
 msgid "You disturb the undead!"
 msgstr "Vous dérangez les morts-vivants !"
 
@@ -25664,7 +26434,7 @@ msgstr "Vous repérez une gemme dans l'eau scintillante !"
 msgid "You feel a gem here!"
 msgstr "Vous sentez une gemme ici !"
 
-#: src/fountain.c:200 src/monmove.c:121
+#: src/fountain.c:200 src/monmove.c:131
 #, c-format
 msgid "%s yells:"
 msgstr "%s crie :"
@@ -25949,7 +26719,7 @@ msgstr "Vous sentez un anneau perdu dans le siphon."
 msgid "A wisp of vapor rises up..."
 msgstr "Une volute de vapeur s'élève..."
 
-#: src/fountain.c:831 src/music.c:602 src/objnam.c:4740
+#: src/fountain.c:831 src/objnam.c:4740
 #, c-format
 msgid "%s%s."
 msgstr ""
@@ -26934,7 +27704,7 @@ msgstr "Vous ne pouvez pas atteindre le bord du trou."
 msgid "You cannot reach the trap door."
 msgstr "Vous ne pouvez pas atteindre la trappe."
 
-#: src/hack.c:4014 src/steed.c:330
+#: src/hack.c:4014 src/steed.c:339
 #, c-format
 msgid "You cannot reach %s."
 msgstr "Vous ne pouvez pas atteindre %s."
@@ -26984,7 +27754,7 @@ msgstr "[PV %i, reste %i]"
 msgid "You die..."
 msgstr "Vous mourez..."
 
-#: src/hack.c:4554 src/steed.c:249
+#: src/hack.c:4554 src/steed.c:254
 msgid "You can't do that while carrying so much stuff."
 msgstr "Vous ne pouvez pas faire cela en portant autant de choses."
 
@@ -27071,8 +27841,8 @@ msgstr "Le fisc serait très intéressé de savoir que vous avez autant."
 msgid "You only have %ld%s%s."
 msgstr ""
 
-#: src/invent.c:2050 src/sit.c:502 src/teleport.c:1082 src/teleport.c:1379
-#: src/wield.c:286 src/wield.c:771 src/wield.c:1038
+#: src/invent.c:2050 src/sit.c:502 src/teleport.c:1415 src/wield.c:286
+#: src/wield.c:771 src/wield.c:1038
 #, c-format
 msgid "You %s."
 msgstr ""
@@ -27349,7 +28119,7 @@ msgstr "Il y a plusieurs autres objets ici."
 msgid "There are many more objects here."
 msgstr "Il y a beaucoup d'autres objets ici."
 
-#: src/invent.c:4321 src/monmove.c:41 src/pray.c:1248
+#: src/invent.c:4321 src/monmove.c:54 src/pray.c:1248
 #, c-format
 msgid "%s %s%s."
 msgstr ""
@@ -27554,300 +28324,416 @@ msgstr ""
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
 
-#: src/lock.c:81 src/lock.c:596 src/lock.c:1021
+#: src/lock.c:38
+msgctxt "lock action"
+msgid "unlocking the door"
+msgstr "déverrouiller la porte"
+
+#: src/lock.c:39
+msgctxt "lock action"
+msgid "unlocking the chest"
+msgstr "déverrouiller le coffre"
+
+#: src/lock.c:40
+msgctxt "lock action"
+msgid "unlocking the box"
+msgstr "déverrouiller la boîte"
+
+#: src/lock.c:41
+msgctxt "lock action"
+msgid "picking the lock"
+msgstr "crocheter la serrure"
+
+#: src/lock.c:42
+msgctxt "lock action"
+msgid "locking the door"
+msgstr "verrouiller la porte"
+
+#: src/lock.c:43
+msgctxt "lock action"
+msgid "locking the chest"
+msgstr "verrouiller le coffre"
+
+#: src/lock.c:44
+msgctxt "lock action"
+msgid "locking the box"
+msgstr "verrouiller la boîte"
+
+#: src/lock.c:45
+msgctxt "gender"
+msgid "chest"
+msgstr ""
+
+#: src/lock.c:45
+msgctxt "noun"
+msgid "chest"
+msgstr "coffre"
+
+#: src/lock.c:46 src/potion.c:1536
+msgctxt "gender"
+msgid "box"
+msgstr "f"
+
+#: src/lock.c:46
+msgctxt "noun"
+msgid "box"
+msgstr "boîte"
+
+#: src/lock.c:47
+msgctxt "disposition"
+msgid "is crushed"
+msgstr "est écrasé"
+
+#: src/lock.c:47
+msgctxt "disposition"
+msgid "is torn to shreds"
+msgstr "est réduit en lambeaux"
+
+#: src/lock.c:48
+msgctxt "disposition"
+msgid "is mashed"
+msgstr "est broyé"
+
+#: src/lock.c:48
+msgctxt "disposition"
+msgid "is pulped"
+msgstr "est réduit en bouillie"
+
+#: src/lock.c:49
+msgctxt "disposition"
+msgid "shatters"
+msgstr "vole en éclats"
+
+#: src/lock.c:49
+msgctxt "disposition"
+msgid "splinters to fragments"
+msgstr "éclate en morceaux"
+
+#: src/lock.c:50
+msgctxt "disposition"
+msgid "is destroyed"
+msgstr "est détruit"
+
+#: src/lock.c:98 src/lock.c:633 src/lock.c:906 src/lock.c:1063
 msgid "This doorway has no door."
 msgstr "Cette embrasure n'a pas de porte."
 
-#: src/lock.c:84 src/lock.c:599
+#: src/lock.c:101 src/lock.c:636
 msgid "You cannot lock an open door."
 msgstr "Vous ne pouvez pas verrouiller une porte ouverte."
 
-#: src/lock.c:87 src/lock.c:602 src/lock.c:1026 src/trap.c:6704
+#: src/lock.c:104 src/lock.c:639 src/lock.c:903 src/lock.c:1068 src/trap.c:6704
 msgid "This door is broken."
 msgstr "Cette porte est cassée."
 
-#: src/lock.c:93
+#: src/lock.c:110
 #, c-format
 msgid "You give up your attempt at %s."
-msgstr ""
+msgstr "Vous abandonnez votre tentative de %s."
 
-#: src/lock.c:110
+#: src/lock.c:127
 msgid "You find a trap!"
 msgstr "Vous trouvez un piège !"
 
-#: src/lock.c:113
+#: src/lock.c:130
 msgid "Do you want to try to disarm it?"
 msgstr "Voulez-vous essayer de le désamorcer ?"
 
-#: src/lock.c:128
+#: src/lock.c:148
 #, c-format
-msgid "You succeed in disarming the trap.  The %s is still %slocked."
-msgstr ""
+msgctxt "feminine"
+msgid "You succeed in disarming the trap.  %s is still unlocked."
+msgstr "Vous réussissez à désamorcer le piège.  %s est toujours déverrouillée."
 
-#: src/lock.c:138
+#: src/lock.c:150
+#, c-format
+msgctxt "feminine"
+msgid "You succeed in disarming the trap.  %s is still locked."
+msgstr "Vous réussissez à désamorcer le piège.  %s est toujours verrouillée."
+
+#: src/lock.c:160
+#, c-format
+msgid "You succeed in disarming the trap.  The %s is still unlocked."
+msgstr "Vous réussissez à désamorcer le piège.  Le %s est toujours déverrouillé."
+
+#: src/lock.c:172
 #, c-format
 msgid "You succeed in %s."
-msgstr ""
+msgstr "Vous réussissez à %s."
 
-#: src/lock.c:182
+#: src/lock.c:216
 #, c-format
 msgid "In fact, you've totally destroyed %s."
-msgstr ""
+msgstr "En fait, vous avez détruit %s."
 
-#: src/lock.c:209 src/trap.c:7099
+#: src/lock.c:243 src/trap.c:7099
 #, c-format
 msgid "You owe %ld %s for objects destroyed."
 msgstr "Vous devez %ld %s pour les objets détruits."
 
-#: src/lock.c:222 src/lock.c:237
+#: src/lock.c:256 src/lock.c:271
 msgid "You give up your attempt to force the lock."
 msgstr "Vous renoncez à forcer la serrure."
 
-#: src/lock.c:234
+#: src/lock.c:268
 #, c-format
-msgid "%sour %s broke!"
-msgstr ""
+msgid "One of your %s broke!"
+msgstr "L'un de vos %s s'est cassé !"
 
-#: src/lock.c:247
+#: src/lock.c:281
 msgid "You succeed in forcing the lock."
 msgstr "Vous réussissez à forcer la serrure."
 
-#: src/lock.c:398
+#: src/lock.c:417
+msgid "Unfortunately, you can no longer hold the card."
+msgstr "Malheureusement, vous ne pouvez plus tenir la carte."
+
+#: src/lock.c:424
+msgid "Unfortunately, you can no longer reach the lock."
+msgstr "Malheureusement, vous ne pouvez plus atteindre la serrure."
+
+#: src/lock.c:430
 #, c-format
 msgid "You resume your attempt at %s."
-msgstr ""
+msgstr "Vous reprenez votre tentative de %s."
 
-#: src/lock.c:406
+#: src/lock.c:438
 #, c-format
 msgid "You can't hold %s -- you have no hands!"
-msgstr ""
+msgstr "Vous ne pouvez pas tenir %s -- vous n'avez pas de mains !"
 
-#: src/lock.c:409
+#: src/lock.c:441
 #, c-format
-msgid "You can't %sunlock %s."
-msgstr ""
+msgid "You can't unlock %s."
+msgstr "Vous ne pouvez pas déverrouiller %s."
 
-#: src/lock.c:436
-#, c-format
-msgid "There isn't any sort of lock up %s."
-msgstr ""
+#: src/lock.c:469
+msgid "There isn't any sort of lock up here."
+msgstr "Il n'y a aucune serrure là-haut."
 
-#: src/lock.c:440
+#: src/lock.c:473
 #, c-format
 msgid "Doing that would probably melt %s."
-msgstr ""
+msgstr "Faire ça ferait sans doute fondre %s."
 
-#: src/lock.c:443
+#: src/lock.c:477
+#, c-format
+msgid "%s has no lock."
+msgstr "%s n'a pas de serrure."
+
+#: src/lock.c:479
 #, c-format
 msgid "The %s has no lock."
 msgstr ""
 
-#: src/lock.c:458
+#: src/lock.c:494
 #, c-format
 msgid "You can't reach %s from up here."
-msgstr ""
-
-#: src/lock.c:507
-#, c-format
-msgid "You can't fix its broken lock with %s."
-msgstr ""
-
-#: src/lock.c:512
-#, c-format
-msgid "You can't do that with %s."
-msgstr ""
+msgstr "Vous ne pouvez pas atteindre %s d'ici."
 
 #: src/lock.c:543
+#, c-format
+msgid "You can't fix its broken lock with %s."
+msgstr "Vous ne pouvez pas réparer sa serrure cassée avec %s."
+
+#: src/lock.c:548
+#, c-format
+msgid "You can't do that with %s."
+msgstr "Vous ne pouvez pas faire ça avec %s."
+
+#: src/lock.c:579
 msgid "There doesn't seem to be any sort of lock here."
 msgstr "Il ne semble y avoir aucune serrure ici."
 
-#: src/lock.c:552 src/lock.c:816 src/lock.c:970
+#: src/lock.c:588 src/lock.c:858 src/lock.c:1012
 msgid "You can't reach over the edge of the pit."
 msgstr "Vous ne pouvez pas atteindre au-delà du bord de la fosse."
 
-#: src/lock.c:565
+#: src/lock.c:601
 msgid "No checks, no credit, no problem."
 msgstr "Pas de chèques, pas de crédit, pas de problème."
 
-#: src/lock.c:567
+#: src/lock.c:603
 #, c-format
 msgid "I don't think %s would appreciate that."
-msgstr ""
+msgstr "Je ne pense pas que %s apprécierait."
 
-#: src/lock.c:589
-#, c-format
-msgid "You %s no lock on the drawbridge."
-msgstr ""
+#: src/lock.c:625
+msgid "You feel no lock on the drawbridge."
+msgstr "Vous ne sentez aucune serrure sur le pont-levis."
 
-#: src/lock.c:591 src/lock.c:851 src/lock.c:1015
-#, c-format
-msgid "You %s no door there."
-msgstr ""
+#: src/lock.c:628 src/lock.c:893 src/lock.c:1057 src/trap.c:6698
+msgid "You feel no door there."
+msgstr "Vous ne sentez pas de porte à cet endroit."
 
-#: src/lock.c:607
+#: src/lock.c:644
 msgid "Check this door for a trap?"
 msgstr "Chercher un piège sur cette porte ?"
 
-#: src/lock.c:616
+#: src/lock.c:653
 msgid "You can't lock a door with a credit card."
 msgstr "On ne verrouille pas une porte avec une carte de crédit."
 
-#: src/lock.c:688
+#: src/lock.c:725
 msgid "You can't force anything from inside here."
 msgstr "Vous ne pouvez rien forcer d'ici, de l'intérieur."
 
-#: src/lock.c:694
-#, c-format
-msgid "You can't force anything %s weapon%s."
-msgstr ""
+#: src/lock.c:732
+msgid "You can't force anything when not wielding a weapon."
+msgstr "Vous ne pouvez rien forcer sans manier d'arme."
 
-#: src/lock.c:709
+#: src/lock.c:735
+msgid "You can't force anything without proper weapons."
+msgstr "Vous ne pouvez rien forcer sans armes adéquates."
+
+#: src/lock.c:738
+msgid "You can't force anything with those weapons."
+msgstr "Vous ne pouvez rien forcer avec ces armes."
+
+#: src/lock.c:749
 msgid "You resume your attempt to force the lock."
 msgstr "Vous reprenez vos efforts pour forcer la serrure."
 
-#: src/lock.c:724
+#: src/lock.c:765
 #, c-format
-msgid "There is %s here, but its lock is already %s."
-msgstr ""
+msgid "There is %s here, but its lock is already broken."
+msgstr "Il y a %s ici, mais sa serrure est déjà cassée."
 
-#: src/lock.c:740
+#: src/lock.c:782
 #, c-format
 msgid "You force %s into a crack and pry."
-msgstr ""
+msgstr "Vous glissez %s dans une fente et faites levier."
 
-#: src/lock.c:742
+#: src/lock.c:784
 #, c-format
 msgid "You start bashing it with %s."
-msgstr ""
+msgstr "Vous commencez à le frapper avec %s."
 
-#: src/lock.c:754
+#: src/lock.c:796
 msgid "You decide not to force the issue."
 msgstr "Vous décidez de ne pas insister."
 
-#: src/lock.c:789
+#: src/lock.c:831
 msgid "You can't open anything -- you have no hands!"
 msgstr "Vous ne pouvez rien ouvrir : vous n'avez pas de mains !"
 
-#: src/lock.c:844
+#: src/lock.c:886
 msgid "There is no obvious way to open the drawbridge."
 msgstr "Aucun moyen évident d'ouvrir le pont-levis."
 
-#: src/lock.c:846
+#: src/lock.c:888
 msgid "The drawbridge is already open."
 msgstr "Le pont-levis est déjà ouvert."
 
-#: src/lock.c:848
-#, c-format
-msgid "%s like something lootable over there."
-msgstr ""
+#: src/lock.c:890
+msgid "Feels like something lootable over there."
+msgstr "On dirait qu'il y a quelque chose à piller là-bas."
 
-#: src/lock.c:875
-#, c-format
-msgid "This door%s."
-msgstr ""
+#: src/lock.c:909
+msgid "This door is already open."
+msgstr "Cette porte est déjà ouverte."
 
-#: src/lock.c:886
+#: src/lock.c:912
+msgid "This door is locked."
+msgstr "Cette porte est verrouillée."
+
+#: src/lock.c:928
 msgid "Kick it?"
 msgstr "Lui donner un coup de pied ?"
 
-#: src/lock.c:899
+#: src/lock.c:941
 msgid "You're too small to pull the door open."
 msgstr "Vous êtes trop petit pour tirer la porte."
 
-#: src/lock.c:906
+#: src/lock.c:948
 msgid "The door opens."
 msgstr "La porte s'ouvre."
 
-#: src/lock.c:919 src/lock.c:1046
+#: src/lock.c:961 src/lock.c:1088
 msgid "The door resists!"
 msgstr "La porte résiste !"
 
-#: src/lock.c:940
+#: src/lock.c:982
 #, c-format
 msgid "%s blocks the way!"
-msgstr ""
+msgstr "%s bloque le passage !"
 
-#: src/lock.c:949
-#, c-format
-msgid "%s's in the way."
-msgstr ""
+#: src/lock.c:991
+msgid "Something's in the way."
+msgstr "Quelque chose bloque le passage."
 
-#: src/lock.c:965
+#: src/lock.c:1007
 msgid "You can't close anything -- you have no hands!"
 msgstr "Vous ne pouvez rien fermer : vous n'avez pas de mains !"
 
-#: src/lock.c:980
+#: src/lock.c:1022
 msgid "You are in the way!"
 msgstr "Vous êtes dans le passage !"
 
-#: src/lock.c:1010
+#: src/lock.c:1052
 msgid "The drawbridge is already closed."
 msgstr "Le pont-levis est déjà fermé."
 
-#: src/lock.c:1012
+#: src/lock.c:1054
 msgid "There is no obvious way to close the drawbridge."
 msgstr "Aucun moyen évident de fermer le pont-levis."
 
-#: src/lock.c:1029
+#: src/lock.c:1071
 msgid "This door is already closed."
 msgstr "Cette porte est déjà fermée."
 
-#: src/lock.c:1035
+#: src/lock.c:1077
 msgid "You're too small to push the door closed."
 msgstr "Vous êtes trop petit pour pousser la porte."
 
-#: src/lock.c:1040
+#: src/lock.c:1082
 msgid "The door closes."
 msgstr "La porte se ferme."
 
-#: src/lock.c:1079
+#: src/lock.c:1121
 msgid "Klick!"
 msgstr "Clic !"
 
-#: src/lock.c:1123
+#: src/lock.c:1163
 msgid "A door appears in the wall!"
 msgstr "Une porte apparaît dans le mur !"
 
-#: src/lock.c:1142
-#, c-format
-msgid "%s springs up in the older, more primitive doorway."
-msgstr ""
+#: src/lock.c:1182
+msgid "A cloud of dust springs up in the older, more primitive doorway."
+msgstr "Un nuage de poussière s'élève dans l'embrasure, plus ancienne et plus primitive."
 
-#: src/lock.c:1146
+#: src/lock.c:1186
 msgid "You hear a swoosh."
 msgstr "Vous entendez un bruissement."
 
-#: src/lock.c:1150
-#, c-format
-msgid "The cloud %s."
-msgstr ""
+#: src/lock.c:1190
+msgid "The cloud quickly dissipates."
+msgstr "Le nuage se dissipe rapidement."
 
-#: src/lock.c:1156
+#: src/lock.c:1196
 msgid "The doorway vanishes!"
 msgstr "L'embrasure disparaît !"
 
-#: src/lock.c:1166
-#, c-format
-msgid "%s springs up in the doorway, but %s."
-msgstr ""
+#: src/lock.c:1206
+msgid "A cloud of dust springs up in the doorway, but quickly dissipates."
+msgstr "Un nuage de poussière s'élève dans l'embrasure, mais se dissipe rapidement."
 
-#: src/lock.c:1223 src/monmove.c:58
+#: src/lock.c:1263 src/monmove.c:68
 msgid "KABOOM!!  You see a door explode."
 msgstr "BOUM !! Vous voyez une porte exploser."
 
-#: src/lock.c:1226 src/monmove.c:60
-#, c-format
-msgid "You hear a %s explosion."
-msgstr ""
+#: src/lock.c:1267
+msgid "You hear a distant explosion."
+msgstr "Vous entendez une explosion lointaine."
 
-#: src/lock.c:1244
+#: src/lock.c:1284
 msgid "You hear a crashing sound."
 msgstr "Vous entendez un fracas."
 
-#: src/lock.c:1283
+#: src/lock.c:1323
 #, c-format
-msgid "You %s %s shatter!"
-msgstr ""
+msgid "You hear %s shatter!"
+msgstr "Vous entendez %s se briser !"
 
 #: src/mail.c:135
 #, c-format
@@ -27928,12 +28814,17 @@ msgstr "Cela semble n'être que du charabia."
 msgid "cnt=%d using %d, cnttmp=%d, cntdiv=%d"
 msgstr ""
 
-#: src/makemon.c:1492
+#: src/makemon.c:1499 src/teleport.c:1768
+#, c-format
+msgid "%s suddenly appears%s!"
+msgstr "%s apparaît soudain%s !"
+
+#: src/makemon.c:1503
 #, c-format
 msgid "%s%s %s%s%c"
 msgstr ""
 
-#: src/makemon.c:2127
+#: src/makemon.c:2136
 #, c-format
 msgid "As %s grows up into %s, %s %s!"
 msgstr ""
@@ -29439,7 +30330,7 @@ msgstr ""
 msgid "Since you desire conflict, have some more!"
 msgstr "Puisque vous désirez le conflit, en voici davantage !"
 
-#: src/minion.c:481 src/teleport.c:1666 src/zap.c:449
+#: src/minion.c:481 src/teleport.c:1707 src/zap.c:449
 #, c-format
 msgid "%s vanishes!"
 msgstr "%s disparaît !"
@@ -29579,7 +30470,7 @@ msgstr "La corne récemment repoussée @de %s tombe en poussière."
 msgid "%s recently regrown horn crumbles to dust."
 msgstr ""
 
-#: src/mon.c:1001 src/potion.c:1916
+#: src/mon.c:1001 src/potion.c:1950
 #, c-format
 msgid "%s rusts."
 msgstr "%s rouille."
@@ -29761,7 +30652,7 @@ msgstr "%s est tué !"
 msgid "May %s roast in peace."
 msgstr "Que %s rôtisse en paix."
 
-#: src/mon.c:3549 src/music.c:281
+#: src/mon.c:3549 src/music.c:282
 #, c-format
 msgid "You destroy %s!"
 msgstr "Vous détruisez %s !"
@@ -29856,7 +30747,7 @@ msgstr ""
 msgid "Halt!  You're under arrest!"
 msgstr "Halte ! Vous êtes en état d'arrestation !"
 
-#: src/mon.c:4295 src/mon.c:4365 src/monmove.c:818 src/zap.c:2119
+#: src/mon.c:4295 src/mon.c:4365 src/monmove.c:828 src/zap.c:2119
 #, c-format
 msgid "%s gets angry!"
 msgstr "%s se fâche !"
@@ -29922,7 +30813,7 @@ msgstr "Vous sortez @de %s%s !"
 msgid "%s disappears!"
 msgstr "%s disparaît !"
 
-#: src/mon.c:5543 src/potion.c:1854
+#: src/mon.c:5543 src/potion.c:1888
 #, c-format
 msgid "%s appears!"
 msgstr "%s apparaît !"
@@ -30020,7 +30911,7 @@ msgstr "Vous remarquez une odeur attirante."
 msgid "A foul stench makes you feel a little nauseated."
 msgstr "Une puanteur infecte vous donne un peu la nausée."
 
-#: src/mon.c:6133 src/steed.c:137
+#: src/mon.c:6133 src/steed.c:142
 #, c-format
 msgid "%s resists!"
 msgstr "%s résiste !"
@@ -30049,150 +30940,176 @@ msgstr "en train de rôtir"
 msgid "on fire"
 msgstr "en feu"
 
-#: src/monmove.c:113
+#: src/monmove.c:33
+msgid " closer"
+msgstr " plus près"
+
+#: src/monmove.c:33
+msgid " further away"
+msgstr " plus loin"
+
+#: src/monmove.c:33
+msgid " in the distance"
+msgstr " au loin"
+
+#: src/monmove.c:33 src/teleport.c:10
+msgid " next to you"
+msgstr " à côté de vous"
+
+#: src/monmove.c:52
+#, c-format
+msgid "%s moves%s."
+msgstr "%s se déplace%s."
+
+#: src/monmove.c:70
+#, c-format
+msgid "You hear a %s explosion."
+msgstr ""
+
+#: src/monmove.c:123
 #, c-format
 msgid "%s angrily %s %s %s!"
 msgstr ""
 
-#: src/monmove.c:124
+#: src/monmove.c:134
 msgid "You hear someone yell:"
 msgstr "Vous entendez quelqu'un crier :"
 
-#: src/monmove.c:152
+#: src/monmove.c:162
 #, c-format
 msgid "%s mutters %s."
 msgstr ""
 
-#: src/monmove.c:160 src/zap.c:2444
+#: src/monmove.c:170 src/zap.c:2444
 msgid "The boulder falls apart."
 msgstr "Le rocher tombe en morceaux."
 
-#: src/monmove.c:405
+#: src/monmove.c:415
 #, c-format
 msgid "%s eats %s."
 msgstr "%s mange %s."
 
-#: src/monmove.c:493
+#: src/monmove.c:503
 #, c-format
 msgid "%s seems to flinch."
 msgstr ""
 
-#: src/monmove.c:498
+#: src/monmove.c:508
 #, c-format
 msgid "%s is frightened."
 msgstr ""
 
-#: src/monmove.c:510
+#: src/monmove.c:520
 #, c-format
 msgid "%s flees from the painful light of %s."
 msgstr ""
 
-#: src/monmove.c:514
+#: src/monmove.c:524
 msgid "Bright light!"
 msgstr "Lumière vive !"
 
-#: src/monmove.c:517
+#: src/monmove.c:527
 #, c-format
 msgid "%s turns to flee."
 msgstr ""
 
-#: src/monmove.c:588
+#: src/monmove.c:598
 #, c-format
 msgid "%s concentrates."
 msgstr ""
 
-#: src/monmove.c:590
+#: src/monmove.c:600
 msgid "You sense a faint wave of psychic energy."
 msgstr "Vous percevez une faible vague d'énergie psychique."
 
-#: src/monmove.c:593
+#: src/monmove.c:603
 msgid "A wave of psychic energy pours over you!"
 msgstr "Une vague d'énergie psychique déferle sur vous !"
 
-#: src/monmove.c:596
+#: src/monmove.c:606
 msgid "It feels quite soothing."
 msgstr "C'est plutôt apaisant."
 
-#: src/monmove.c:615
+#: src/monmove.c:625
 #, c-format
 msgid "It locks on to your %s!"
 msgstr ""
 
-#: src/monmove.c:639
+#: src/monmove.c:649
 #, c-format
 msgid "It locks on to %s."
 msgstr ""
 
-#: src/monmove.c:806
+#: src/monmove.c:816
 #, c-format
 msgid "%s whispers at thin air."
 msgstr ""
 
-#: src/monmove.c:1056
+#: src/monmove.c:1066
 #, c-format
 msgid "%s cannot escape from you!"
 msgstr ""
 
-#: src/monmove.c:1286
+#: src/monmove.c:1296
 #, c-format
 msgid "%s spins a web."
 msgstr ""
 
-#: src/monmove.c:1551
+#: src/monmove.c:1561
 #, c-format
 msgid "%s %s under the door."
 msgstr ""
 
-#: src/monmove.c:1567
+#: src/monmove.c:1577
 #, c-format
 msgid "%s unlocks and opens a door."
 msgstr ""
 
-#: src/monmove.c:1570
+#: src/monmove.c:1580
 msgid "You see a door unlock and open."
 msgstr "Vous voyez une porte se déverrouiller et s'ouvrir."
 
-#: src/monmove.c:1572
+#: src/monmove.c:1582
 msgid "You hear a door unlock and open."
 msgstr "Vous entendez une porte se déverrouiller et s'ouvrir."
 
-#: src/monmove.c:1585
+#: src/monmove.c:1595
 #, c-format
 msgid "%s opens a door."
 msgstr ""
 
-#: src/monmove.c:1587
+#: src/monmove.c:1597
 msgid "You see a door open."
 msgstr "Vous voyez une porte s'ouvrir."
 
-#: src/monmove.c:1589
+#: src/monmove.c:1599
 msgid "You hear a door open."
 msgstr "Vous entendez une porte s'ouvrir."
 
-#: src/monmove.c:1609
+#: src/monmove.c:1619
 #, c-format
 msgid "%s smashes down a door."
 msgstr ""
 
-#: src/monmove.c:1612
+#: src/monmove.c:1622
 msgid "You see a door crash open."
 msgstr "Vous voyez une porte s'ouvrir avec fracas."
 
-#: src/monmove.c:1614
+#: src/monmove.c:1624
 msgid "You hear a door crash open."
 msgstr "Vous entendez une porte s'ouvrir avec fracas."
 
-#: src/monmove.c:1632
+#: src/monmove.c:1642
 #, c-format
 msgid "%s eats through the iron bars."
 msgstr ""
 
-#: src/monmove.c:1637
+#: src/monmove.c:1647
 #, c-format
 msgid "%s %s %s the iron bars."
 msgstr ""
 
-#: src/monmove.c:1833
+#: src/monmove.c:1843
 msgid "I'm late!"
 msgstr "Je suis en retard !"
 
@@ -30456,17 +31373,17 @@ msgstr "fantôme"
 msgid "%s is frightened to death, and unable to move."
 msgstr "%s est mort de peur et incapable de bouger."
 
-#: src/muse.c:114 src/potion.c:2930
+#: src/muse.c:114 src/potion.c:2964
 #, c-format
 msgid "In a cloud of smoke, %s emerges!"
 msgstr "Dans un nuage de fumée, %s surgit !"
 
-#: src/muse.c:115 src/potion.c:2931 src/potion.c:2934
+#: src/muse.c:115 src/potion.c:2965 src/potion.c:2968
 #, c-format
 msgid "%s speaks."
 msgstr "%s parle."
 
-#: src/muse.c:120 src/potion.c:2956
+#: src/muse.c:120 src/potion.c:2990
 msgid "You freed me!"
 msgstr "Tu m'as libéré !"
 
@@ -30594,7 +31511,7 @@ msgstr "%s joue @de %s !"
 msgid "You hear a bugle playing reveille!"
 msgstr "Vous entendez un clairon sonner le réveil !"
 
-#: src/muse.c:944 src/teleport.c:2073
+#: src/muse.c:944 src/teleport.c:2121
 #, c-format
 msgid "%s shudders for a moment."
 msgstr "%s frissonne un instant."
@@ -30830,7 +31747,7 @@ msgstr ""
 msgid "Suddenly you cannot see %s."
 msgstr "Soudain, vous ne voyez plus %s."
 
-#: src/muse.c:2560 src/potion.c:1849
+#: src/muse.c:2560 src/potion.c:1883
 #, c-format
 msgid "%s briefly seems to be transparent."
 msgstr "%s semble brièvement transparent."
@@ -31039,107 +31956,101 @@ msgstr ""
 #: src/music.c:124
 #, c-format
 msgid "You notice %s, swaying with the music."
-msgstr ""
+msgstr "Vous remarquez %s, qui se balance au rythme de la musique."
 
-#: src/music.c:126
+#: src/music.c:127
 #, c-format
-msgid "%s freezes, then sways with the music%s."
-msgstr ""
+msgid "%s freezes, then sways with the music."
+msgstr "%s se fige, puis se balance au rythme de la musique."
 
-#: src/music.c:154
+#: src/music.c:155
 #, c-format
 msgid "%s listens cheerfully to the music, then seems quieter."
-msgstr ""
+msgstr "%s écoute joyeusement la musique, puis semble plus calme."
 
-#: src/music.c:181
+#: src/music.c:182
 #, c-format
 msgid "%s is now ready for battle!"
-msgstr ""
+msgstr "%s est maintenant prêt au combat !"
 
-#: src/music.c:183
-#, c-format
-msgid "%s the rattle of battle gear being readied."
-msgstr ""
+#: src/music.c:184
+msgid "You hear the rattle of battle gear being readied."
+msgstr "Vous entendez le cliquetis d'un équipement de combat qu'on prépare."
 
-#: src/music.c:236
-#, c-format
-msgid "KADOOM!  The boulder falls into a chasm%s!"
-msgstr ""
+#: src/music.c:237
+msgid "KADOOM!  The boulder falls into a chasm below you!"
+msgstr "KABOUM !  Le rocher tombe dans un gouffre sous vous !"
 
-#: src/music.c:266
+#: src/music.c:267
 #, c-format
 msgid "%s falls into a chasm!"
-msgstr ""
+msgstr "%s tombe dans un gouffre !"
 
-#: src/music.c:269
+#: src/music.c:270
 msgid "You hear a scream!"
 msgstr "Vous entendez un cri !"
 
-#: src/music.c:274 src/trap.c:2378
+#: src/music.c:275 src/trap.c:2378
 msgid "Falling, "
 msgstr "En tombant, "
 
-#: src/music.c:279
+#: src/music.c:280
 msgid "It is destroyed!"
 msgstr "Il est détruit !"
 
-#: src/music.c:301
+#: src/music.c:302
 msgid "Your chain breaks!"
 msgstr "Votre chaîne se brise !"
 
-#: src/music.c:306
+#: src/music.c:307
 msgid "A chasm opens up under you!"
 msgstr "Un gouffre s'ouvre sous vous !"
 
-#: src/music.c:307 src/trap.c:2206
+#: src/music.c:308 src/trap.c:2206
 msgid "You don't fall in!"
 msgstr "Vous ne tombez pas dedans !"
 
-#: src/music.c:312
+#: src/music.c:313
 msgid "You fall into a chasm!"
 msgstr "Vous tombez dans un gouffre !"
 
-#: src/music.c:323
+#: src/music.c:324
 msgid "You are jostled around violently!"
 msgstr "Vous êtes violemment secoué !"
 
-#: src/music.c:332
+#: src/music.c:333
 msgid "Shaken, you"
-msgstr ""
+msgstr "Secoué, vous"
 
 #: src/music.c:375
 #, c-format
 msgid "%s is shaken loose from the ceiling!"
-msgstr ""
+msgstr "%s est délogé du plafond !"
 
 #: src/music.c:379
 msgid "You hear a thump."
 msgstr "Vous entendez un bruit sourd."
 
 #: src/music.c:411
-#, c-format
-msgid "The fountain falls%s."
-msgstr ""
+msgid "The fountain falls into a chasm."
+msgstr "La fontaine tombe dans un gouffre."
 
 #: src/music.c:416
-#, c-format
-msgid "The kitchen sink falls%s."
-msgstr ""
+msgid "The kitchen sink falls into a chasm."
+msgstr "L'évier tombe dans un gouffre."
 
 #: src/music.c:426
 #, c-format
-msgid "The %s altar falls%s."
-msgstr ""
+msgid "The %s altar falls into a chasm."
+msgstr "L'autel %s tombe dans un gouffre."
 
 #: src/music.c:433
-#, c-format
-msgid "The headstone topples%s."
-msgstr ""
+msgid "The headstone topples into a chasm."
+msgstr "La pierre tombale bascule dans un gouffre."
 
 #: src/music.c:438
-#, c-format
-msgid "The throne falls%s."
-msgstr ""
+msgid "The throne falls into a chasm."
+msgstr "Le trône tombe dans un gouffre."
 
 #: src/music.c:445
 msgid "A secret corridor is revealed."
@@ -31153,139 +32064,209 @@ msgstr "Une porte secrète est révélée."
 msgid "The door collapses."
 msgstr "La porte s'effondre."
 
-#: src/music.c:554
+#: src/music.c:496
+msgid "one drop"
+msgstr "one drop"
+
+#: src/music.c:496
+msgid "slow two"
+msgstr "slow à deux temps"
+
+#: src/music.c:496
+msgid "stepper"
+msgstr "pas chassé"
+
+#: src/music.c:496
+msgid "triple stroke roll"
+msgstr "roulement triple"
+
+#: src/music.c:497
+msgid "double shuffle"
+msgstr "double shuffle"
+
+#: src/music.c:497
+msgid "half-time shuffle"
+msgstr "shuffle en demi-temps"
+
+#: src/music.c:497
+msgid "second line"
+msgstr "second line"
+
+#: src/music.c:498
+msgid "train"
+msgstr "rythme de train"
+
+#: src/music.c:499
+msgctxt "entire level"
+msgid "astral plane"
+msgstr "Tout le plan astral"
+
+#: src/music.c:499
+msgctxt "entire level"
+msgid "plane"
+msgstr "Tout le plan"
+
+#: src/music.c:500
+msgctxt "entire level"
+msgid "puzzle"
+msgstr "Tout le casse-tête"
+
+#: src/music.c:500
+msgctxt "entire level"
+msgid "sanctum"
+msgstr "Tout le sanctuaire"
+
+#: src/music.c:501
+msgctxt "entire level"
+msgid "dungeon"
+msgstr "Tout le donjon"
+
+#: src/music.c:501
+msgctxt "entire level"
+msgid "tower"
+msgstr "Toute la tour"
+
+#: src/music.c:563
 #, c-format
 msgid "You start playing %s."
-msgstr ""
+msgstr "Vous commencez à jouer @de %s."
 
-#: src/music.c:558
+#: src/music.c:567
 msgid "You radiate an obnoxious droning sound."
 msgstr "Vous émettez un bourdonnement insupportable."
 
-#: src/music.c:560
+#: src/music.c:569
 msgid "You feel a monotonous vibration."
 msgstr "Vous sentez une vibration monotone."
 
-#: src/music.c:564
+#: src/music.c:573
 msgid "You generate a raucous noise."
 msgstr "Vous produisez un bruit rauque."
 
-#: src/music.c:566
+#: src/music.c:575
 msgid "You feel a jarring vibration."
 msgstr "Vous sentez une vibration désagréable."
 
-#: src/music.c:569
+#: src/music.c:578
 msgid "You disseminate a kaleidoscopic display of floating butterflies."
 msgstr "Vous répandez un kaléidoscope de papillons flottants."
 
-#: src/music.c:578
+#: src/music.c:587
 msgid "What you perform is quite far from music..."
 msgstr "Ce que vous jouez est assez loin de la musique..."
 
-#: src/music.c:592
+#: src/music.c:620
 #, c-format
-msgid "You %sproduce %s%s music."
-msgstr ""
+msgid "%s a familiar tune."
+msgstr "%s un air familier."
 
-#: src/music.c:605
+#: src/music.c:623
 #, c-format
-msgid "You feel %s %s."
-msgstr ""
+msgid "You feel %s trill."
+msgstr "Vous sentez %s triller."
 
-#: src/music.c:631
+#: src/music.c:649
 #, c-format
 msgid "A %s blasts out of the horn!"
-msgstr ""
+msgstr "Un %s jaillit du cor !"
 
-#: src/music.c:641
-#, c-format
-msgid "You produce a frightful, grave%s sound."
-msgstr ""
+#: src/music.c:661
+msgid "You produce a frightful, grave, yet familiar, sound."
+msgstr "Vous produisez un son effrayant, grave, et pourtant familier."
 
-#: src/music.c:644
+#: src/music.c:664
 msgid "You blow into the horn."
 msgstr "Vous soufflez dans le cor."
 
-#: src/music.c:651
+#: src/music.c:671
 #, c-format
-msgid "You extract a loud%s noise from %s."
-msgstr ""
+msgid "You extract a loud, familiar noise from %s."
+msgstr "Vous tirez un bruit fort et familier @de %s."
 
-#: src/music.c:654
+#: src/music.c:675
 msgid "You blow into the bugle."
 msgstr "Vous soufflez dans le clairon."
 
-#: src/music.c:663
+#: src/music.c:684
 #, c-format
-msgid "%s very attractive%s music."
-msgstr ""
+msgid "%s very attractive and familiar music."
+msgstr "%s une musique très attirante et familière."
 
-#: src/music.c:667
+#: src/music.c:688
 msgid "You feel very soothing vibrations."
 msgstr "Vous sentez des vibrations très apaisantes."
 
-#: src/music.c:682
+#: src/music.c:697
+#, c-format
+msgid "%s produces a familiar, lilting melody."
+msgstr "%s produit une mélodie chantante et familière."
+
+#: src/music.c:702
 msgid "You feel soothing vibrations."
 msgstr "Vous sentez des vibrations apaisantes."
 
-#: src/music.c:695
+#: src/music.c:715
 msgid "You produce a heavy, thunderous rolling!"
 msgstr "Vous produisez un roulement lourd et tonitruant !"
 
-#: src/music.c:697
+#: src/music.c:718
+#, c-format
+msgid "%s is shaking around you!"
+msgstr "%s tremble autour de vous !"
+
+#: src/music.c:721
 #, c-format
 msgid "The entire %s is shaking around you!"
 msgstr ""
 
-#: src/music.c:706
-#, c-format
-msgid "You beat a %sdeafening row!"
-msgstr ""
+#: src/music.c:731
+msgid "You beat a familiar deafening row!"
+msgstr "Vous battez un vacarme assourdissant et familier !"
 
-#: src/music.c:711
+#: src/music.c:736
 msgid "You pound on the drum."
 msgstr "Vous tapez sur le tambour."
 
-#: src/music.c:767
+#: src/music.c:745
+#, c-format
+msgid "You butcher a %s."
+msgstr "Vous massacrez un %s."
+
+#: src/music.c:801
 msgid "You can't play music underwater!"
 msgstr "Vous ne pouvez pas jouer de musique sous l'eau !"
 
-#: src/music.c:773
+#: src/music.c:807
 #, c-format
 msgid "You are incapable of playing %s."
-msgstr ""
+msgstr "Vous êtes incapable de jouer @de %s."
 
-#: src/music.c:778
+#: src/music.c:812
 msgid "Improvise?"
 msgstr "Improviser ?"
 
-#: src/music.c:787
+#: src/music.c:821
 msgid "Play the passtune?"
 msgstr "Jouer l'air de passage ?"
 
-#: src/music.c:793
+#: src/music.c:827
 msgid "What tune are you playing? [5 notes, A-G]"
 msgstr "Quel air jouez-vous ? [5 notes, A-G]"
 
-#: src/music.c:806
+#: src/music.c:840
 #, c-format
 msgid "You extract a strange sound from %s!"
-msgstr ""
+msgstr "Vous tirez un son étrange @de %s !"
 
-#: src/music.c:873
+#: src/music.c:917
 #, c-format
-msgid "You hear %d tumbler%s click and %d gear%s turn."
-msgstr ""
+msgid "You hear %d tumbler click."
+msgstr "Vous entendez %d goupille cliqueter."
 
-#: src/music.c:878
+#: src/music.c:922
 #, c-format
-msgid "You hear %d tumbler%s click."
-msgstr ""
-
-#: src/music.c:882
-#, c-format
-msgid "You hear %d gear%s turn."
-msgstr ""
+msgid "You hear %d gear turn."
+msgstr "Vous entendez %d engrenage tourner."
 
 #: src/nhi18n.c:446
 msgctxt "grammar"
@@ -33561,17 +34542,17 @@ msgstr "%s est maintenant vide."
 msgid "%sbox is now empty."
 msgstr ""
 
-#: src/pline.c:661
+#: src/pline.c:687
 #, c-format
 msgid "Please report these messages to %s."
 msgstr ""
 
-#: src/pline.c:663
+#: src/pline.c:689
 #, c-format
 msgid "Alternatively, contact local support: %s"
 msgstr ""
 
-#: src/pline.c:668
+#: src/pline.c:694
 msgid "Report now?"
 msgstr ""
 
@@ -33764,7 +34745,7 @@ msgstr ""
 msgid "You find you must %s %s %s!"
 msgstr ""
 
-#: src/polyself.c:1382 src/potion.c:2017
+#: src/polyself.c:1382 src/potion.c:2051
 #, c-format
 msgid "Your %s %s!"
 msgstr ""
@@ -35892,7 +36873,7 @@ msgctxt "feminine"
 msgid "corroded and rusty"
 msgstr "corrodée et rouillée"
 
-#: src/potion.c:62 src/potion.c:1572
+#: src/potion.c:62 src/potion.c:1606
 msgid "brown"
 msgstr "brun"
 
@@ -35973,11 +36954,11 @@ msgstr "Quand vous ouvrez la bouteille, %s en sort."
 msgid "As you open the bottle, an enormous %s emerges!"
 msgstr "Quand vous ouvrez la bouteille, un énorme %s en sort !"
 
-#: src/potion.c:518 src/priest.c:532
+#: src/potion.c:518 src/priest.c:534
 msgid "You are frightened to death, and unable to move."
 msgstr "Vous êtes mort de peur et incapable de bouger."
 
-#: src/potion.c:521 src/priest.c:535
+#: src/potion.c:521 src/priest.c:537
 msgid "You regain your composure."
 msgstr "Vous retrouvez votre calme."
 
@@ -36092,7 +37073,7 @@ msgstr "Ça a le goût de jus de %s reconstitué."
 msgid "You can see through yourself, but you are visible!"
 msgstr "Vous voyez à travers vous-même, mais vous êtes visible !"
 
-#: src/potion.c:917 src/potion.c:2107
+#: src/potion.c:917 src/potion.c:2141
 msgid "You stiffen momentarily."
 msgstr "Vous vous raidissez un instant."
 
@@ -36110,7 +37091,7 @@ msgstr "Vos %s sont collés @à %s !"
 msgid "Your %s are frozen to the %s!"
 msgstr ""
 
-#: src/potion.c:942 src/potion.c:2118 src/timeout.c:273
+#: src/potion.c:942 src/potion.c:2152 src/timeout.c:273
 msgid "You yawn."
 msgstr "Vous bâillez."
 
@@ -36229,337 +37210,642 @@ msgstr "Ça a un goût acidulé."
 msgid "This burns a little!"
 msgstr "Ça brûle un peu !"
 
-#: src/potion.c:1363 src/potion.c:1739
+#: src/potion.c:1363 src/potion.c:1773
 msgid "You feel a little normal."
 msgstr "Vous vous sentez un peu normal."
 
-#: src/potion.c:1597
+#: src/potion.c:1524
+msgctxt "bottle"
+msgid "bottle"
+msgstr "bouteille"
+
+#: src/potion.c:1524
+msgctxt "gender"
+msgid "bottle"
+msgstr "f"
+
+#: src/potion.c:1525
+msgctxt "bottle"
+msgid "phial"
+msgstr "fiole"
+
+#: src/potion.c:1525
+msgctxt "gender"
+msgid "phial"
+msgstr "f"
+
+#: src/potion.c:1526
+msgctxt "bottle"
+msgid "flagon"
+msgstr "flacon"
+
+#: src/potion.c:1526
+msgctxt "gender"
+msgid "flagon"
+msgstr ""
+
+#: src/potion.c:1527
+msgctxt "bottle"
+msgid "carafe"
+msgstr "carafe"
+
+#: src/potion.c:1527
+msgctxt "gender"
+msgid "carafe"
+msgstr "f"
+
+#: src/potion.c:1528
+msgctxt "bottle"
+msgid "flask"
+msgstr "gourde"
+
+#: src/potion.c:1528
+msgctxt "gender"
+msgid "flask"
+msgstr "f"
+
+#: src/potion.c:1529
+msgctxt "bottle"
+msgid "jar"
+msgstr "jarre"
+
+#: src/potion.c:1529
+msgctxt "gender"
+msgid "jar"
+msgstr "f"
+
+#: src/potion.c:1530
+msgctxt "bottle"
+msgid "vial"
+msgstr "fiole"
+
+#: src/potion.c:1530
+msgctxt "gender"
+msgid "vial"
+msgstr "f"
+
+#: src/potion.c:1531
+msgctxt "bottle"
+msgid "jug"
+msgstr "cruche"
+
+#: src/potion.c:1531
+msgctxt "gender"
+msgid "jug"
+msgstr "f"
+
+#: src/potion.c:1532
+msgctxt "bottle"
+msgid "pitcher"
+msgstr "pichet"
+
+#: src/potion.c:1532
+msgctxt "gender"
+msgid "pitcher"
+msgstr ""
+
+#: src/potion.c:1533
+msgctxt "bottle"
+msgid "barrel"
+msgstr "tonneau"
+
+#: src/potion.c:1533
+msgctxt "gender"
+msgid "barrel"
+msgstr ""
+
+#: src/potion.c:1534
+msgctxt "bottle"
+msgid "tin"
+msgstr "boîte de conserve"
+
+#: src/potion.c:1534
+msgctxt "gender"
+msgid "tin"
+msgstr "f"
+
+#: src/potion.c:1535
+msgctxt "bottle"
+msgid "bag"
+msgstr "sac"
+
+#: src/potion.c:1535
+msgctxt "gender"
+msgid "bag"
+msgstr ""
+
+#: src/potion.c:1536
+msgctxt "bottle"
+msgid "box"
+msgstr "boîte"
+
+#: src/potion.c:1537
+msgctxt "bottle"
+msgid "glass"
+msgstr "verre"
+
+#: src/potion.c:1537
+msgctxt "gender"
+msgid "glass"
+msgstr ""
+
+#: src/potion.c:1538
+msgctxt "bottle"
+msgid "beaker"
+msgstr "bécher"
+
+#: src/potion.c:1538
+msgctxt "gender"
+msgid "beaker"
+msgstr ""
+
+#: src/potion.c:1539
+msgctxt "bottle"
+msgid "tumbler"
+msgstr "gobelet"
+
+#: src/potion.c:1539
+msgctxt "gender"
+msgid "tumbler"
+msgstr ""
+
+#: src/potion.c:1540
+msgctxt "bottle"
+msgid "vase"
+msgstr "vase"
+
+#: src/potion.c:1540
+msgctxt "gender"
+msgid "vase"
+msgstr ""
+
+#: src/potion.c:1541
+msgctxt "bottle"
+msgid "flowerpot"
+msgstr "pot de fleurs"
+
+#: src/potion.c:1541
+msgctxt "gender"
+msgid "flowerpot"
+msgstr ""
+
+#: src/potion.c:1542
+msgctxt "bottle"
+msgid "pan"
+msgstr "casserole"
+
+#: src/potion.c:1542
+msgctxt "gender"
+msgid "pan"
+msgstr "f"
+
+#: src/potion.c:1543
+msgctxt "bottle"
+msgid "thingy"
+msgstr "bidule"
+
+#: src/potion.c:1543
+msgctxt "gender"
+msgid "thingy"
+msgstr ""
+
+#: src/potion.c:1544
+msgctxt "bottle"
+msgid "mug"
+msgstr "chope"
+
+#: src/potion.c:1544
+msgctxt "gender"
+msgid "mug"
+msgstr "f"
+
+#: src/potion.c:1545
+msgctxt "bottle"
+msgid "teacup"
+msgstr "tasse"
+
+#: src/potion.c:1545
+msgctxt "gender"
+msgid "teacup"
+msgstr "f"
+
+#: src/potion.c:1546
+msgctxt "bottle"
+msgid "teapot"
+msgstr "théière"
+
+#: src/potion.c:1546
+msgctxt "gender"
+msgid "teapot"
+msgstr "f"
+
+#: src/potion.c:1547
+msgctxt "bottle"
+msgid "keg"
+msgstr "tonnelet"
+
+#: src/potion.c:1547
+msgctxt "gender"
+msgid "keg"
+msgstr ""
+
+#: src/potion.c:1548
+msgctxt "bottle"
+msgid "bucket"
+msgstr "seau"
+
+#: src/potion.c:1548
+msgctxt "gender"
+msgid "bucket"
+msgstr ""
+
+#: src/potion.c:1549
+msgctxt "bottle"
+msgid "thermos"
+msgstr "thermos"
+
+#: src/potion.c:1549
+msgctxt "gender"
+msgid "thermos"
+msgstr ""
+
+#: src/potion.c:1550
+msgctxt "bottle"
+msgid "amphora"
+msgstr "amphore"
+
+#: src/potion.c:1550
+msgctxt "gender"
+msgid "amphora"
+msgstr "f"
+
+#: src/potion.c:1551
+msgctxt "bottle"
+msgid "wineskin"
+msgstr "outre"
+
+#: src/potion.c:1551
+msgctxt "gender"
+msgid "wineskin"
+msgstr "f"
+
+#: src/potion.c:1552
+msgctxt "bottle"
+msgid "parcel"
+msgstr "colis"
+
+#: src/potion.c:1552
+msgctxt "gender"
+msgid "parcel"
+msgstr ""
+
+#: src/potion.c:1553
+msgctxt "bottle"
+msgid "bowl"
+msgstr "bol"
+
+#: src/potion.c:1553
+msgctxt "gender"
+msgid "bowl"
+msgstr ""
+
+#: src/potion.c:1554
+msgctxt "bottle"
+msgid "ampoule"
+msgstr "ampoule"
+
+#: src/potion.c:1554
+msgctxt "gender"
+msgid "ampoule"
+msgstr "f"
+
+#: src/potion.c:1631
 #, c-format
 msgid "%s with a %s aura."
 msgstr "%s d'une aura %s."
 
-#: src/potion.c:1604
+#: src/potion.c:1638
 #, c-format
 msgid "%s with %s aura."
 msgstr ""
 
-#: src/potion.c:1685
+#: src/potion.c:1719
 #, c-format
 msgid "The %s crashes on your %s and breaks into shards."
 msgstr "La %s s'écrase sur votre %s et vole en éclats."
 
-#: src/potion.c:1704
+#: src/potion.c:1738
 msgid "Crash!"
 msgstr "Crac !"
 
-#: src/potion.c:1721
+#: src/potion.c:1755
 #, c-format
 msgid "The %s crashes on %s and breaks into shards."
 msgstr "La %s s'écrase sur %s et vole en éclats."
 
-#: src/potion.c:1748
+#: src/potion.c:1782
 #, c-format
 msgid "This burns%s!"
 msgstr ""
 
-#: src/potion.c:1769
+#: src/potion.c:1803
 #, c-format
 msgid "The saddle of %s glows"
 msgstr "La selle @de %s brille"
 
-#: src/potion.c:1780
+#: src/potion.c:1814
 #, c-format
 msgid "The saddle of %s gets wet."
 msgstr "La selle @de %s est mouillée."
 
-#: src/potion.c:1782
+#: src/potion.c:1816
 #, c-format
 msgid "%s %s wet."
 msgstr ""
 
-#: src/potion.c:1810
+#: src/potion.c:1844
 #, c-format
 msgid "%s looks sound and hale again."
 msgstr "%s semble de nouveau sain et vigoureux."
 
-#: src/potion.c:1824
+#: src/potion.c:1858
 #, c-format
 msgid "%s looks unharmed."
 msgstr "%s semble indemne."
 
-#: src/potion.c:1831
+#: src/potion.c:1865
 #, c-format
 msgid "%s looks rather ill."
 msgstr "%s semble plutôt malade."
 
-#: src/potion.c:1861
+#: src/potion.c:1895
 #, c-format
 msgid "%s falls asleep."
 msgstr "%s s'endort."
 
-#: src/potion.c:1891
+#: src/potion.c:1925
 #, c-format
 msgid "%s writhes in pain!"
 msgstr "%s se tord de douleur !"
 
-#: src/potion.c:1905
+#: src/potion.c:1939
 #, c-format
 msgid "%s looks healthier."
 msgstr "%s semble en meilleure santé."
 
-#: src/potion.c:1929
+#: src/potion.c:1963
 #, c-format
 msgid "%s %s in pain!"
 msgstr ""
 
-#: src/potion.c:2005
+#: src/potion.c:2039
 msgid "Some vapor passes harmlessly around you."
 msgstr "De la vapeur passe autour de vous sans danger."
 
-#: src/potion.c:2011
+#: src/potion.c:2045
 msgid "Ulch!  That potion smells terrible!"
 msgstr "Beurk ! Cette potion sent affreusement mauvais !"
 
-#: src/potion.c:2082
+#: src/potion.c:2116
 msgid "You have a momentary vision."
 msgstr "Vous avez une brève vision."
 
-#: src/potion.c:2087
+#: src/potion.c:2121
 msgid "You feel somewhat dizzy."
 msgstr "Vous avez un peu le vertige."
 
-#: src/potion.c:2094
+#: src/potion.c:2128
 msgid "For an instant you could see right through yourself!"
 msgstr "Pendant un instant, vous avez pu voir à travers vous-même !"
 
-#: src/potion.c:2101
+#: src/potion.c:2135
 #, c-format
 msgid "%s seems to be holding you."
 msgstr "%s semble vous retenir."
 
-#: src/potion.c:2112
+#: src/potion.c:2146
 msgid "You feel rather tired."
 msgstr "Vous vous sentez plutôt fatigué."
 
-#: src/potion.c:2124
+#: src/potion.c:2158
 msgid "Your knees seem more flexible now."
 msgstr "Vos genoux semblent plus souples maintenant."
 
-#: src/potion.c:2131
+#: src/potion.c:2165
 msgid "It suddenly gets dark."
 msgstr "Il fait soudain sombre."
 
-#: src/potion.c:2336 src/potion.c:2450
+#: src/potion.c:2370 src/potion.c:2484
 msgctxt "verb"
 msgid "dip"
 msgstr "tremper"
 
-#: src/potion.c:2485
+#: src/potion.c:2519
 msgid "BOOM!  They explode!"
 msgstr "BOUM !  Elles explosent !"
 
-#: src/potion.c:2507
+#: src/potion.c:2541
 msgid "That is a potion bottle, not a Klein bottle!"
 msgstr "C'est une fiole de potion, pas une bouteille de Klein !"
 
-#: src/potion.c:2511
+#: src/potion.c:2545
 #, c-format
 msgid "You can't fit your %s into the mouth of the bottle!"
 msgstr "Vous ne pouvez pas faire entrer votre %s dans le goulot de la bouteille !"
 
-#: src/potion.c:2598
+#: src/potion.c:2632
 #, c-format
 msgid "%ld of %s mix with one of %s..."
 msgstr "%ld @de %s se mélangent à une @de %s..."
 
-#: src/potion.c:2599
+#: src/potion.c:2633
 #, c-format
 msgid "%ld of %s mix with %s..."
 msgstr "%ld @de %s se mélangent à %s..."
 
-#: src/potion.c:2602
+#: src/potion.c:2636
 #, c-format
 msgid "%s %s with one of %s..."
 msgstr "%s %s à une @de %s..."
 
-#: src/potion.c:2603
+#: src/potion.c:2637
 #, c-format
 msgid "%s %s with %s..."
 msgstr "%s %s à %s..."
 
-#: src/potion.c:2607
+#: src/potion.c:2641
 #, c-format
 msgid "%s %s %s with %s%s..."
 msgstr ""
 
-#: src/potion.c:2644
+#: src/potion.c:2678
 msgid "The mixture glows brightly and evaporates."
 msgstr "Le mélange brille vivement et s'évapore."
 
-#: src/potion.c:2652
+#: src/potion.c:2686
 msgid "The mixture bubbles."
 msgstr "Le mélange bouillonne."
 
-#: src/potion.c:2655
+#: src/potion.c:2689
 #, c-format
 msgid "The mixture looks %s."
 msgstr "Le mélange semble %s."
 
-#: src/potion.c:2673
+#: src/potion.c:2707
 #, c-format
 msgid "%s wrinkles around the edges."
 msgstr "%s se ride sur les bords."
 
-#: src/potion.c:2674
+#: src/potion.c:2708
 #, c-format
 msgid "%s turns %s around the edges."
 msgstr "%s devient %s sur les bords."
 
-#: src/potion.c:2679
+#: src/potion.c:2713
 #, c-format
 msgid "%s %s %s around the edges."
 msgstr ""
 
-#: src/potion.c:2690
+#: src/potion.c:2724
 msgid "The towel soaks it up!"
 msgstr "La serviette l'absorbe !"
 
-#: src/potion.c:2701 src/zap.c:127 src/zap.c:1289
+#: src/potion.c:2735 src/zap.c:127 src/zap.c:1289
 #, c-format
 msgid "One of %s"
 msgstr "L'une @de %s"
 
-#: src/potion.c:2705
+#: src/potion.c:2739
 #, c-format
 msgid "%s forms a coating on %s."
 msgstr "%s forme un enduit sur %s."
 
-#: src/potion.c:2713
+#: src/potion.c:2747
 #, c-format
 msgid "A coating wears off %s."
 msgstr "Un enduit s'en va @de %s."
 
-#: src/potion.c:2733
+#: src/potion.c:2767
 #, c-format
 msgid "The potion spills and covers your %s with oil."
 msgstr "La potion se renverse et vous couvre les %s d'huile."
 
-#: src/potion.c:2747
+#: src/potion.c:2781
 #, c-format
 msgid "%s %s with an oily sheen."
 msgstr "%s %s d'un éclat huileux."
 
-#: src/potion.c:2750
+#: src/potion.c:2784
 #, c-format
 msgid "%s %s oily."
 msgstr "%s %s huileux."
 
-#: src/potion.c:2752
+#: src/potion.c:2786
 #, c-format
 msgid "%s is less %s."
 msgstr ""
 
-#: src/potion.c:2753
+#: src/potion.c:2787
 #, c-format
 msgid "%s feels less %s."
 msgstr ""
 
-#: src/potion.c:2760
+#: src/potion.c:2794
 #, c-format
 msgid "%s %s less %s."
 msgstr ""
 
-#: src/potion.c:2796
+#: src/potion.c:2830
 #, c-format
 msgid "%s is full."
 msgstr ""
 
-#: src/potion.c:2799
+#: src/potion.c:2833
 #, c-format
 msgid "%s %s full."
 msgstr ""
 
-#: src/potion.c:2802
+#: src/potion.c:2836
 #, c-format
 msgid "You fill %s with oil."
 msgstr "Vous remplissez %s d'huile."
 
-#: src/potion.c:2861
+#: src/potion.c:2895
 msgid "The potion that you dipped into clears."
 msgstr "La potion dans laquelle vous avez trempé devient limpide."
 
-#: src/potion.c:2862
+#: src/potion.c:2896
 msgid "The potion clears."
 msgstr "La potion devient limpide."
 
-#: src/potion.c:2865
+#: src/potion.c:2899
 #, c-format
 msgid "The potion that you dipped into turns %s."
 msgstr "La potion dans laquelle vous avez trempé devient %s."
 
-#: src/potion.c:2866
+#: src/potion.c:2900
 #, c-format
 msgid "The potion turns %s."
 msgstr "La potion devient %s."
 
-#: src/potion.c:2869
+#: src/potion.c:2903
 #, c-format
 msgid "The %spotion%s %s."
 msgstr ""
 
-#: src/potion.c:2873
+#: src/potion.c:2907
 msgid "Something happens."
 msgstr "Il se passe quelque chose."
 
-#: src/potion.c:2894
+#: src/potion.c:2928
 msgid "Interesting..."
 msgstr "Intéressant..."
 
-#: src/potion.c:2933
+#: src/potion.c:2967
 msgid "You smell acrid fumes."
 msgstr "Vous sentez des vapeurs âcres."
 
-#: src/potion.c:2947
+#: src/potion.c:2981
 msgid "I am in your debt.  I will grant one wish!"
 msgstr "Je suis ton obligé. Je t'accorde un vœu !"
 
-#: src/potion.c:2952
+#: src/potion.c:2986
 msgid "Thank you for freeing me!"
 msgstr "Merci de m'avoir libéré !"
 
-#: src/potion.c:2961
+#: src/potion.c:2995
 msgid "It is about time!"
 msgstr "Il était temps !"
 
-#: src/potion.c:2967
+#: src/potion.c:3001
 msgid "You disturbed me, fool!"
 msgstr "Tu m'as dérangé, imbécile !"
 
-#: src/potion.c:2987
+#: src/potion.c:3021
 #, c-format
 msgid " from your heat%.0s"
 msgstr " sous l'effet de votre chaleur%.0s"
 
-#: src/potion.c:2988
+#: src/potion.c:3022
 #, c-format
 msgid " from the heat of %s"
 msgstr " sous l'effet de la chaleur @de %s"
 
-#: src/potion.c:3006
+#: src/potion.c:3040
 #, c-format
 msgid "You multiply%s!"
 msgstr "Vous vous multipliez%s !"
 
-#: src/potion.c:3020
+#: src/potion.c:3054
 #, c-format
 msgid "%s multiplies%s!"
 msgstr "%s se multiplie%s !"
 
-#: src/potion.c:3031
+#: src/potion.c:3065
 msgid "You are suddenly moving faster."
 msgstr "Vous vous déplacez soudain plus vite."
 
-#: src/potion.c:3034
+#: src/potion.c:3068
 #, c-format
 msgid "Your %s get new energy."
 msgstr "Vos %s retrouvent de l'énergie."
@@ -37393,93 +38679,88 @@ msgstr "Vous avez l'impression d'être observé."
 msgid "A shiver runs down your %s."
 msgstr ""
 
-#: src/priest.c:524
-#, c-format
-msgid "A%s ghost appears next to you%c"
-msgstr ""
-
-#: src/priest.c:528
+#: src/priest.c:530
 msgid "You sense a presence close by!"
 msgstr "Vous sentez une présence toute proche !"
 
-#: src/priest.c:578
+#: src/priest.c:580
 #, c-format
 msgid "%s doesn't want anything to do with you!"
 msgstr ""
 
-#: src/priest.c:592
+#: src/priest.c:594
 #, c-format
 msgid "%s breaks out of %s reverie!"
 msgstr ""
 
-#: src/priest.c:608
+#: src/priest.c:610
 msgid "Begone!  Thou desecratest this holy place with thy presence."
 msgstr "Va-t'en ! Tu profanes ce lieu saint par ta présence."
 
-#: src/priest.c:620
+#: src/priest.c:622
 #, c-format
 msgid "%s gives you %s%s for an ale."
 msgstr ""
 
-#: src/priest.c:624
+#: src/priest.c:626
 #, c-format
 msgid "%s preaches the virtues of poverty."
 msgstr ""
 
-#: src/priest.c:627
+#: src/priest.c:629
 #, c-format
 msgid "%s is not interested."
 msgstr ""
 
-#: src/priest.c:649
+#: src/priest.c:651
 #, c-format
 msgid "%s asks you for a contribution for the temple (base %ld)."
 msgstr ""
 
-#: src/priest.c:652
+#: src/priest.c:654
 #, c-format
 msgid "%s asks you for a contribution for the temple."
 msgstr ""
 
-#: src/priest.c:656
+#: src/priest.c:658
 msgid "Thou shalt regret thine action!"
 msgstr "Tu regretteras ton acte !"
 
-#: src/priest.c:663
+#: src/priest.c:665
 msgid "Cheapskate."
 msgstr "Radin."
 
-#: src/priest.c:667
+#: src/priest.c:669
 msgid "I thank thee for thy contribution."
 msgstr "Je te remercie de ta contribution."
 
-#: src/priest.c:673
+#: src/priest.c:675
 msgid "Thou art indeed a pious individual."
 msgstr "Tu es vraiment une personne pieuse."
 
-#: src/priest.c:678
+#: src/priest.c:680
 msgid "I bestow upon thee a blessing."
 msgstr "Je t'accorde une bénédiction."
 
-#: src/priest.c:702
+#: src/priest.c:704
 msgid "Thou hast been rewarded for thy devotion."
 msgstr "Tu as été récompensé de ta dévotion."
 
-#: src/priest.c:704 src/priest.c:708
+#: src/priest.c:706 src/priest.c:710
 msgid "Thy selfless generosity is deeply appreciated."
 msgstr "Ta générosité désintéressée est profondément appréciée."
 
-#: src/priest.c:852
+#: src/priest.c:854
 #, c-format
 msgid "%s roars in anger:  \"Thou shalt suffer!\""
 msgstr ""
 
-#: src/priest.c:856
+#: src/priest.c:858
 #, c-format
 msgid "%s voice booms:  \"How darest thou harm my servant!\""
 msgstr ""
 
-#: src/priest.c:860
+#: src/priest.c:862
 #, c-format
 msgid "%s roars:  \"Thou dost profane my shrine!\""
 msgstr ""
@@ -40463,7 +41744,7 @@ msgstr "Le prix est déduit de votre crédit."
 msgid "The price is partially covered by your credit."
 msgstr "Le prix est en partie couvert par votre crédit."
 
-#: src/shk.c:1475 src/steed.c:845
+#: src/shk.c:1475 src/steed.c:863
 #, c-format
 msgid "%s wakes up."
 msgstr "%s se réveille."
@@ -41814,7 +43095,7 @@ msgstr ""
 msgid "You feel threatened."
 msgstr "Vous vous sentez menacé."
 
-#: src/sit.c:190 src/spell.c:138 src/teleport.c:1505 src/teleport.c:1554
+#: src/sit.c:190 src/spell.c:138 src/teleport.c:1541 src/teleport.c:1594
 msgid "You feel a wrenching sensation."
 msgstr "Vous ressentez un arrachement."
 
@@ -42598,212 +43879,227 @@ msgstr "%s lâche %s."
 msgid "%s gold %s."
 msgstr ""
 
-#: src/steed.c:19
+#: src/steed.c:9
+#, c-format
+msgctxt "heroine"
+msgid "You are thrown off of %s!"
+msgstr "Vous êtes désarçonnée @de %s !"
+
+#: src/steed.c:24
 #, c-format
 msgid "You aren't skilled enough to reach from %s."
-msgstr ""
+msgstr "Vous n'êtes pas assez habile pour atteindre le sol depuis %s."
 
-#: src/steed.c:51
+#: src/steed.c:56
 msgid "Saddle yourself?  Very funny..."
 msgstr "Vous seller vous-même ? Très drôle..."
 
-#: src/steed.c:56 src/steed.c:257
+#: src/steed.c:61 src/steed.c:262
 msgid "I see nobody there."
 msgstr "Je ne vois personne là."
 
-#: src/steed.c:63
+#: src/steed.c:68
 #, c-format
 msgid "%s doesn't need another one."
-msgstr ""
+msgstr "%s n'en a pas besoin d'une autre."
 
-#: src/steed.c:70 src/steed.c:291 src/worn.c:1327
+#: src/steed.c:75 src/steed.c:296 src/worn.c:1327
 #, c-format
 msgid "You touch %s."
-msgstr ""
+msgstr "Vous touchez %s."
 
-#: src/steed.c:78
+#: src/steed.c:83
 msgid "Shame on you!"
 msgstr "Honte à vous !"
 
-#: src/steed.c:84 src/steed.c:297
+#: src/steed.c:89 src/steed.c:302
 #, c-format
 msgid "I think %s would mind."
-msgstr ""
+msgstr "Je crois que %s n'apprécierait pas."
 
-#: src/steed.c:88
+#: src/steed.c:93
 msgid "You can't saddle such a creature."
 msgstr "Vous ne pouvez pas seller une telle créature."
 
-#: src/steed.c:130
+#: src/steed.c:135
 #, c-format
 msgid "You put the saddle on %s."
-msgstr ""
+msgstr "Vous mettez la selle sur %s."
 
-#: src/steed.c:185
+#: src/steed.c:190
 msgid "Force the mount to succeed?"
 msgstr "Forcer la réussite de la monte ?"
 
-#: src/steed.c:207
+#: src/steed.c:212
 #, c-format
 msgid "You are already riding %s."
-msgstr ""
+msgstr "Vous chevauchez déjà %s."
 
-#: src/steed.c:213
+#: src/steed.c:218
 msgid "Maybe you should find a designated driver."
 msgstr "Vous devriez peut-être trouver un conducteur désigné."
 
-#: src/steed.c:245
+#: src/steed.c:250
 msgid "You won't fit on a saddle."
 msgstr "Vous ne tiendrez pas sur une selle."
 
-#: src/steed.c:267
+#: src/steed.c:272
 #, c-format
 msgid "You couldn't ride %s, let alone its tail."
-msgstr ""
+msgstr "Vous ne pourriez pas chevaucher %s, encore moins sa queue."
 
-#: src/steed.c:274
+#: src/steed.c:279
 #, c-format
 msgid "You are unable to swing your %s over."
-msgstr ""
+msgstr "Vous n'arrivez pas à passer votre %s par-dessus."
 
-#: src/steed.c:276
+#: src/steed.c:281
 msgid "You are stuck here for now."
 msgstr "Vous êtes coincé ici pour l'instant."
 
-#: src/steed.c:283
+#: src/steed.c:288
 #, c-format
 msgid "%s is not saddled."
-msgstr ""
+msgstr "%s n'est pas sellé."
 
-#: src/steed.c:303
+#: src/steed.c:309
+#, c-format
+msgid "You can't mount %s while it's trapped in %s."
+msgstr "Vous ne pouvez pas monter %s tant qu'il est pris dans %s."
+
+#: src/steed.c:312
 #, c-format
 msgid "You can't mount %s while %s's trapped in %s."
 msgstr ""
 
-#: src/steed.c:311
+#: src/steed.c:320
 #, c-format
-msgid "%s resists%s!"
-msgstr ""
+msgid "%s resists and its leash comes off!"
+msgstr "%s résiste et sa laisse se détache !"
 
-#: src/steed.c:318
+#: src/steed.c:327
 #, c-format
 msgid "You can't ride that creature while under %s."
-msgstr ""
+msgstr "Vous ne pouvez pas chevaucher cette créature sous l'%s."
 
-#: src/steed.c:323
+#: src/steed.c:332
 msgid "You can't ride such a creature."
 msgstr "Vous ne pouvez pas monter une telle créature."
 
-#: src/steed.c:334
+#: src/steed.c:344
 #, c-format
-msgid "Your %s armor is too stiff to be able to mount %s."
-msgstr ""
+msgid "Your rusty armor is too stiff to be able to mount %s."
+msgstr "Votre armure rouillée est trop raide pour monter %s."
 
-#: src/steed.c:343
+#: src/steed.c:354
 #, c-format
 msgid "%s slips away from you."
-msgstr ""
+msgstr "%s vous échappe."
 
-#: src/steed.c:346
+#: src/steed.c:357
 #, c-format
 msgid "You slip while trying to get on %s."
-msgstr ""
+msgstr "Vous glissez en essayant de monter sur %s."
 
-#: src/steed.c:363 src/trap.c:4444
+#: src/steed.c:374 src/trap.c:4444
 #, c-format
 msgid "%s magically floats up!"
 msgstr "%s s'élève par magie !"
 
-#: src/steed.c:364
+#: src/steed.c:375
 #, c-format
 msgid "You mount %s."
-msgstr ""
-
-#: src/steed.c:366
-#, c-format
-msgid "You and %s take flight together."
-msgstr ""
+msgstr "Vous montez %s."
 
 #: src/steed.c:377
+#, c-format
+msgid "You and %s take flight together."
+msgstr "Vous et %s prenez votre envol ensemble."
+
+#: src/steed.c:388
 msgid "You aren't stealthy anymore."
 msgstr "Vous n'êtes plus furtif."
 
-#: src/steed.c:425 src/trap.c:6353
+#: src/steed.c:436 src/trap.c:6353
 #, c-format
 msgid "%s stirs."
 msgstr "%s remue."
 
-#: src/steed.c:431
+#: src/steed.c:442
 #, c-format
 msgid "%s does not respond."
-msgstr ""
+msgstr "%s ne réagit pas."
 
-#: src/steed.c:447
+#: src/steed.c:458
 #, c-format
 msgid "%s gallops!"
-msgstr ""
+msgstr "%s galope !"
 
-#: src/steed.c:608
+#: src/steed.c:620
+#, c-format
+msgid "You are thrown off of %s!"
+msgstr "Vous êtes désarçonné @de %s !"
+
+#: src/steed.c:624
 #, c-format
 msgid "You %s off of %s!"
 msgstr ""
 
-#: src/steed.c:619 src/worn.c:1323
+#: src/steed.c:635 src/worn.c:1323
 #, c-format
 msgid "You can no longer ride %s."
-msgstr ""
+msgstr "Vous ne pouvez plus chevaucher %s."
 
-#: src/steed.c:635
-#, c-format
-msgid "You can't.  The saddle %s cursed."
-msgstr ""
+#: src/steed.c:651
+msgid "You can't.  The saddle is cursed."
+msgstr "Vous ne pouvez pas.  La selle est maudite."
 
-#: src/steed.c:641
+#: src/steed.c:657
 msgid "You can't.  There isn't anywhere for you to stand."
 msgstr "Impossible. Il n'y a nulle part où vous tenir."
 
-#: src/steed.c:645
+#: src/steed.c:661
 #, c-format
 msgid "You've been through the dungeon on %s with no name."
-msgstr ""
+msgstr "Vous avez traversé le donjon sur %s sans nom."
 
-#: src/steed.c:648
+#: src/steed.c:664
 msgid "It felt good to get out of the rain."
 msgstr "C'était bon de se mettre à l'abri de la pluie."
 
-#: src/steed.c:650
+#: src/steed.c:666
 #, c-format
 msgid "You dismount %s."
-msgstr ""
+msgstr "Vous descendez @de %s."
 
-#: src/steed.c:665
+#: src/steed.c:681
 msgid "You seem less noisy now."
 msgstr "Vous semblez moins bruyant maintenant."
 
-#: src/steed.c:727
+#: src/steed.c:743
 #, c-format
-msgid "%s falls into the %s!"
-msgstr ""
+msgid "%s falls into %s!"
+msgstr "%s tombe dans %s !"
 
-#: src/steed.c:734
+#: src/steed.c:751
 #, c-format
-msgid "%s is pulled into the %s!"
-msgstr ""
+msgid "%s is pulled into %s!"
+msgstr "%s est entraîné dans %s !"
 
-#: src/steed.c:868
+#: src/steed.c:886
 #, c-format
 msgid "You adjust yourself in the saddle on %s."
-msgstr ""
+msgstr "Vous vous installez sur la selle @de %s."
 
-#: src/steed.c:885
+#: src/steed.c:903
 #, c-format
 msgid "%s won't move!"
-msgstr ""
+msgstr "%s refuse de bouger !"
 
-#: src/steed.c:890
+#: src/steed.c:908
 #, c-format
 msgid "%s is still eating."
-msgstr ""
+msgstr "%s est encore en train de manger."
 
 #: src/symbols.c:960
 #, c-format
@@ -42820,210 +44116,296 @@ msgstr ""
 msgid "There were no symbol sets found in \"%s\"."
 msgstr ""
 
-#: src/teleport.c:546
-#, c-format
-msgid "You materialize in %s location!"
-msgstr ""
+#: src/teleport.c:10
+msgid " close by"
+msgstr " tout près"
 
-#: src/teleport.c:855
+#: src/teleport.c:10
+msgid " closer to you"
+msgstr " plus près de vous"
+
+#: src/teleport.c:11
+msgid " farther away"
+msgstr " plus loin"
+
+#: src/teleport.c:12
+msgid "You float gently down to earth."
+msgstr "Vous redescendez doucement sur terre."
+
+#: src/teleport.c:12
+msgid "You shudder for a moment."
+msgstr "Vous frissonnez un instant."
+
+#: src/teleport.c:13
+msgid "You fly down to the ground."
+msgstr "Vous descendez en volant jusqu'au sol."
+
+#: src/teleport.c:14
+msgid "You find yourself back on the surface."
+msgstr "Vous vous retrouvez à la surface."
+
+#: src/teleport.c:15
+msgctxt "heroine"
+msgid "You feel even more disoriented."
+msgstr "Vous vous sentez encore plus désorientée."
+
+#: src/teleport.c:16
+msgctxt "heroine"
+msgid "You feel disoriented."
+msgstr "Vous vous sentez désorientée."
+
+#: src/teleport.c:17
+msgctxt "heroine"
+msgid "You briefly feel oriented."
+msgstr "Vous vous sentez brièvement orientée."
+
+#: src/teleport.c:18
+msgctxt "heroine"
+msgid "You briefly feel centered."
+msgstr "Vous vous sentez brièvement centrée."
+
+#: src/teleport.c:19
+msgctxt "heroine"
+msgid "You are too weak from hunger for a teleport spell."
+msgstr "Vous êtes trop affaiblie par la faim pour un sort de téléportation."
+
+#: src/teleport.c:20
+msgctxt "heroine"
+msgid "You are too weak from hunger to teleport."
+msgstr "Vous êtes trop affaiblie par la faim pour vous téléporter."
+
+#: src/teleport.c:562
+msgid "You materialize in the same location!"
+msgstr "Vous vous matérialisez au même endroit !"
+
+#: src/teleport.c:871
 msgid "A mysterious force prevents you from teleporting!"
 msgstr "Une force mystérieuse vous empêche de vous téléporter !"
 
-#: src/teleport.c:866
+#: src/teleport.c:882
 msgid "You feel disoriented for a moment."
 msgstr "Vous êtes désorienté un instant."
 
-#: src/teleport.c:869
+#: src/teleport.c:885
 msgid "Override?"
 msgstr "Forcer ?"
 
-#: src/teleport.c:875
+#: src/teleport.c:891
 msgid "Being unconscious, you cannot control your teleport."
 msgstr "Inconscient, vous ne pouvez pas contrôler votre téléportation."
 
-#: src/teleport.c:882
+#: src/teleport.c:897
+#, c-format
+msgid "Where do you and %s want to be teleported?"
+msgstr "Où voulez-vous être téléportés, vous et %s ?"
+
+#: src/teleport.c:900
+msgid "Where do you want to be teleported?"
+msgstr "Où voulez-vous être téléporté ?"
+
+#: src/teleport.c:904
 #, c-format
 msgid "Where do %s want to be teleported?"
 msgstr ""
 
-#: src/teleport.c:903 src/teleport.c:1408
+#: src/teleport.c:926 src/teleport.c:1444
 msgid "Sorry..."
 msgstr "Désolé..."
 
-#: src/teleport.c:1047
+#: src/teleport.c:1070
 msgid "There is a level teleporter here. Trigger it?"
 msgstr "Il y a un téléporteur de niveau ici. Le déclencher ?"
 
-#: src/teleport.c:1057
+#: src/teleport.c:1080
 msgid "This is a vault teleport, usable once only."
 msgstr "C'est un téléporteur de chambre forte, utilisable une seule fois."
 
-#: src/teleport.c:1058
+#: src/teleport.c:1081
 msgid "Jump in?"
 msgstr "Sauter dedans ?"
 
-#: src/teleport.c:1066
+#: src/teleport.c:1089
+msgid "You jump onto the teleportation trap."
+msgstr "Vous sautez sur le piège de téléportation."
+
+#: src/teleport.c:1091
 #, c-format
 msgid "You %s onto the teleportation trap."
 msgstr ""
 
+#: src/teleport.c:1111
+msgid "You are not able to teleport at will."
+msgstr "Vous n'êtes pas capable de vous téléporter à volonté."
+
+#: src/teleport.c:1150
+msgid "You are too weak from hunger for a teleport spell."
+msgstr "Vous êtes trop affaibli par la faim pour un sort de téléportation."
+
+#: src/teleport.c:1153
+msgid "You lack the strength for a teleport spell."
+msgstr "Vous manquez de force pour un sort de téléportation."
+
 #: src/teleport.c:1156
+msgid "You lack the energy for a teleport spell."
+msgstr "Vous manquez d'énergie pour un sort de téléportation."
+
+#: src/teleport.c:1189
 #, c-format
 msgid "You %s"
 msgstr ""
 
-#: src/teleport.c:1216
+#: src/teleport.c:1249
 msgid "Oops..."
 msgstr "Oups..."
 
-#: src/teleport.c:1257
+#: src/teleport.c:1290
 msgid "Go to Nowhere.  Are you sure?"
 msgstr "Aller nulle part. Êtes-vous sûr ?"
 
-#: src/teleport.c:1259
-#, c-format
-msgid "You %s in agony as your body begins to warp..."
-msgstr ""
+#: src/teleport.c:1293
+msgid "You writhe in agony as your body begins to warp..."
+msgstr "Vous vous tordez de douleur tandis que votre corps commence à se distordre..."
 
-#: src/teleport.c:1262
+#: src/teleport.c:1296
 msgid "You cease to exist."
 msgstr "Vous cessez d'exister."
 
-#: src/teleport.c:1264
+#: src/teleport.c:1298
 #, c-format
-msgid "Your possessions land on the %s with a thud."
-msgstr ""
+msgid "Your possessions land on %s with a thud."
+msgstr "Vos affaires tombent sur %s avec un bruit sourd."
 
-#: src/teleport.c:1269
+#: src/teleport.c:1304
 msgid "An energized cloud of dust begins to coalesce."
 msgstr "Un nuage de poussière chargé d'énergie commence à se former."
 
-#: src/teleport.c:1270
-#, c-format
-msgid "Your body rematerializes%s."
-msgstr ""
+#: src/teleport.c:1305
+msgid "Your body rematerializes, and you gather up all your possessions."
+msgstr "Votre corps se rematérialise, et vous ramassez toutes vos affaires."
 
-#: src/teleport.c:1335
+#: src/teleport.c:1371
 msgid "You arrive in heaven."
 msgstr "Vous arrivez au paradis."
 
-#: src/teleport.c:1337
+#: src/teleport.c:1373
 msgid "Thou art early, but we'll admit thee."
 msgstr "Tu es en avance, mais nous t'admettrons."
 
-#: src/teleport.c:1341
+#: src/teleport.c:1377
 msgid "You feel deliriously happy."
 msgstr "Vous vous sentez follement heureux."
 
-#: src/teleport.c:1342
+#: src/teleport.c:1378
 msgid "(In fact, you're on Cloud 9!)"
 msgstr "(En fait, vous êtes sur un petit nuage !)"
 
-#: src/teleport.c:1345
+#: src/teleport.c:1381
 msgid "You are now high above the clouds..."
 msgstr "Vous êtes maintenant bien au-dessus des nuages..."
 
-#: src/teleport.c:1354
+#: src/teleport.c:1390
 msgid "Unfortunately, you don't know how to fly."
 msgstr "Malheureusement, vous ne savez pas voler."
 
-#: src/teleport.c:1355
+#: src/teleport.c:1391
 msgid "You plummet a few thousand feet to your death."
 msgstr "Vous chutez de quelques centaines de mètres et mourez."
 
-#: src/teleport.c:1463
+#: src/teleport.c:1499
 msgid "You activated a magic portal!"
 msgstr "Vous avez activé un portail magique !"
 
-#: src/teleport.c:1470
+#: src/teleport.c:1506
 msgid "You feel dizzy for a moment, but nothing happens..."
 msgstr "Vous avez un vertige passager, mais rien ne se passe..."
 
-#: src/teleport.c:1548
+#: src/teleport.c:1585
+msgid "You trigger a level teleport trap!"
+msgstr "Vous déclenchez un piège de téléportation de niveau !"
+
+#: src/teleport.c:1588
 #, c-format
 msgid "You %s a level teleport trap!"
 msgstr ""
 
-#: src/teleport.c:1562
-#, c-format
-msgid "You briefly feel %s."
-msgstr ""
+#: src/teleport.c:1602
+msgid "You briefly feel oriented."
+msgstr "Vous vous sentez brièvement orienté."
 
-#: src/teleport.c:1564
-#, c-format
-msgid "You feel %sdisoriented."
-msgstr ""
+#: src/teleport.c:1605
+msgid "You feel even more disoriented."
+msgstr "Vous vous sentez encore plus désorienté."
 
-#: src/teleport.c:1711
+#: src/teleport.c:1752
 #, c-format
 msgid "You and %s teleport together."
-msgstr ""
+msgstr "Vous et %s vous téléportez ensemble."
 
-#: src/teleport.c:1713
+#: src/teleport.c:1760
 #, c-format
 msgid "%s vanishes and reappears%s."
-msgstr ""
+msgstr "%s disparaît et réapparaît%s."
 
-#: src/teleport.c:1721
+#: src/teleport.c:1772
 #, c-format
-msgid "%s %s%s%s!"
-msgstr ""
+msgid "%s appears%s!"
+msgstr "%s apparaît%s !"
 
-#: src/teleport.c:1916
+#: src/teleport.c:1964
 #, c-format
 msgid "Teleport %s @ <%d,%d> where?"
-msgstr ""
+msgstr "Téléporter %s @ <%d,%d> où ?"
 
-#: src/teleport.c:1932
+#: src/teleport.c:1980
 #, c-format
 msgid "%s destination."
-msgstr ""
+msgstr "%s destination."
 
-#: src/teleport.c:1954
+#: src/teleport.c:2002
 #, c-format
 msgid "A mysterious force prevents %s from teleporting!"
-msgstr ""
+msgstr "Une force mystérieuse empêche %s de se téléporter !"
 
-#: src/teleport.c:1996
+#: src/teleport.c:2044
 #, c-format
 msgid "%s seems disoriented."
-msgstr ""
+msgstr "%s semble désorienté."
 
-#: src/teleport.c:1998 src/uhitm.c:2966 src/uhitm.c:2991 src/uhitm.c:3061
+#: src/teleport.c:2046 src/uhitm.c:2966 src/uhitm.c:2991 src/uhitm.c:3061
 #: src/uhitm.c:4963
 #, c-format
 msgid "%s suddenly disappears!"
 msgstr "%s disparaît soudain !"
 
-#: src/teleport.c:2025
+#: src/teleport.c:2073
 #, c-format
-msgid "%s avoids the %s."
-msgstr ""
+msgid "%s avoids the hole."
+msgstr "%s évite le trou."
 
-#: src/teleport.c:2039
+#: src/teleport.c:2087
 #, c-format
 msgid "%s seems to shimmer for a moment."
-msgstr ""
+msgstr "%s semble scintiller un instant."
 
-#: src/teleport.c:2085
+#: src/teleport.c:2133
 #, c-format
-msgid "Suddenly, %s %s."
-msgstr ""
+msgid "Suddenly, %s falls into a hole."
+msgstr "Soudain, %s tombe dans un trou."
 
-#: src/teleport.c:2271
+#: src/teleport.c:2320
 #, c-format
 msgid "A mysterious force prevents you teleporting %s!"
-msgstr ""
+msgstr "Une force mystérieuse vous empêche de téléporter %s !"
 
-#: src/teleport.c:2276
+#: src/teleport.c:2325
 #, c-format
 msgid "%s resists your magic!"
-msgstr ""
+msgstr "%s résiste à votre magie !"
 
-#: src/teleport.c:2280
+#: src/teleport.c:2329
 #, c-format
 msgid "You are no longer inside %s!"
-msgstr ""
+msgstr "Vous n'êtes plus à l'intérieur @de %s !"
 
 #: src/timeout.c:255
 msgid "You vomit!"
@@ -43456,7 +44838,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-30 21:12+0200\n"
+"POT-Creation-Date: 2026-09-30 21:40+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -45839,10 +47221,6 @@ msgstr "Il n'y a pas d'autres coffres ou boîtes ici."
 #: src/trap.c:6692
 msgid "You know of no traps there."
 msgstr "Vous ne connaissez aucun piège là."
-
-#: src/trap.c:6698
-msgid "You feel no door there."
-msgstr "Vous ne sentez pas de porte à cet endroit."
 
 #: src/trap.c:6701
 msgid "This door is safely open."

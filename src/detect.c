@@ -483,7 +483,7 @@ food_detect(struct obj *sobj)
     int ct = 0, ctu = 0;
     boolean confused = (Confusion || (sobj && sobj->cursed)), stale;
     char oclass = confused ? POTION_CLASS : FOOD_CLASS;
-    const char *what = confused ? something : "food";
+    const char *what = confused ? _(something) : _("food");
 
     stale = clear_stale_map(oclass, 0);
     if (u.usteed) /* some situations leave steed with stale coordinates */
@@ -539,7 +539,7 @@ food_detect(struct obj *sobj)
         return !stale;
     } else if (!ct) {
         gk.known = TRUE;
-        You("%s %s nearby.", sobj ? "smell" : "sense", what);
+        You(sobj ? "smell %s nearby." : "sense %s nearby.", what);
         if (sobj && sobj->blessed) {
             if (!u.uedibility)
                 Your("%s starts to tingle.", body_part(NOSE));
@@ -577,8 +577,10 @@ food_detect(struct obj *sobj)
         }
         if (sobj) {
             if (sobj->blessed) {
-                Your("%s %s to tingle and you smell %s.", body_part(NOSE),
-                     u.uedibility ? "continues" : "starts", what);
+                Your(u.uedibility
+                         ? "%s continues to tingle and you smell %s."
+                         : "%s starts to tingle and you smell %s.",
+                     body_part(NOSE), what);
                 u.uedibility = 1;
             } else
                 Your("%s tingles and you smell %s.", body_part(NOSE), what);
@@ -630,11 +632,11 @@ object_detect(struct obj *detector, /* object doing the detecting */
         boulder = ROCK_CLASS;
 
     if (Hallucination || (Confusion && class == SCROLL_CLASS))
-        Strcpy(stuff, something);
+        Strcpy(stuff, _(something));
     else
-        Strcpy(stuff, class ? def_oc_syms[class].name : "objects");
+        Strcpy(stuff, _(class ? def_oc_syms[class].name : "objects"));
     if (boulder && class != ROCK_CLASS)
-        Strcat(stuff, " and/or large stones");
+        Strcat(stuff, _(" and/or large stones"));
 
     if (do_dknown)
         for (obj = gi.invent; obj; obj = obj->nobj)
@@ -777,7 +779,8 @@ object_detect(struct obj *detector, /* object doing the detecting */
         newsym(u.ux, u.uy);
         ter_typ |= TER_MON;
     }
-    You("detect the %s of %s.", ct ? "presence" : "absence", stuff);
+    You(ct ? "detect the presence of %s." : "detect the absence of %s.",
+        stuff);
 
     if (!ct)
         display_nhwindow(WIN_MAP, TRUE);
@@ -995,7 +998,7 @@ display_trap_map(int cursed_src)
         newsym(u.ux, u.uy);
         ter_typ |= TER_MON; /* for autodescribe at <u.ux,u.uy> */
     }
-    You_feel("%s.", cursed_src ? "very greedy" : "entrapped");
+    You_feel(cursed_src ? "very greedy." : "entrapped.");
 
     browse_map(ter_typ, cursed_src ? "gold" : "trap of interest");
 
@@ -1196,6 +1199,20 @@ static const struct crystalballlevels {
     const char *what;
     d_level *where;
 } level_detects[] = {
+#if 0
+    /* for xgettext */
+    N_("Delphi"), N_("Medusa's lair"), N_("a castle"),
+    N_("the Wizard of Yendor's tower"), N_("far away"), N_("far below"),
+    N_("away below you"), N_("below you"), N_("in the distance"),
+    N_("just below"), N_("far above"), N_("away above you"),
+    N_("above you"), N_("just above"), N_("objects"), N_("food"),
+    N_("illegal objects"), N_("weapons"), N_("armor"), N_("rings"),
+    N_("amulets"), N_("tools"), N_("potions"), N_("scrolls"),
+    N_("spellbooks"), N_("wands"), N_("coins"), N_("rocks"),
+    N_("large stones"), N_("iron balls"), N_("chains"), N_("venoms"),
+    N_("near you"), N_("babe"), N_("dude"),
+    NC_("heroine", "You feel entrapped."),
+#endif
     { "Delphi", &oracle_level },
     { "Medusa's lair", &medusa_level },
     { "a castle", &stronghold_level },
@@ -1262,7 +1279,9 @@ use_crystal_ball(struct obj **optr)
         gn.nomovemsg = "";
 
         if (!charged) {
-            pline("All you see is funky %s haze.", hcolor((char *) 0));
+            pline("All you see is funky %s haze.",
+                  i18n_active() ? hcolor_i18n(hcolor((char *) 0), TRUE)
+                                : hcolor((char *) 0));
             if (obj->spe < 0)
                 goto implode; /* destroy it when it has been cancelled */
         } else {
@@ -1272,11 +1291,13 @@ use_crystal_ball(struct obj **optr)
                 break;
             case 2:
                 pline("Whoa!  Psychedelic colors, %s!",
-                      poly_gender() == 1 ? "babe" : "dude");
+                      poly_gender() == 1 ? _("babe") : _("dude"));
                 break;
             case 3:
                 pline_The("crystal pulses with sinister %s light!",
-                          hcolor((char *) 0));
+                          i18n_active()
+                              ? hcolor_i18n(hcolor((char *) 0), TRUE)
+                              : hcolor((char *) 0));
                 break;
             case 4:
                 You_see("goldfish swimming above fluorescent rocks.");
@@ -1352,8 +1373,8 @@ use_crystal_ball(struct obj **optr)
             ret = trap_detect((struct obj *) 0);
         } else {
             i = rn2(SIZE(level_detects));
-            You_see("%s, %s.", level_detects[i].what,
-                    level_distance(level_detects[i].where));
+            You_see("%s, %s.", _(level_detects[i].what),
+                    _(level_distance(level_detects[i].where)));
             ret = 0;
         }
 
@@ -1752,9 +1773,9 @@ openone(coordxy zx, coordxy zy, genericptr_t num)
             if (distu(zx, zy) < 3)
                 b_trapped("door", NO_PART);
             else
-                Norep("You %s an explosion!",
-                      cansee(zx, zy) ? "see" : (!Deaf ? "hear"
-                                                      : "feel the shock of"));
+                Norep(cansee(zx, zy) ? "You see an explosion!"
+                      : !Deaf ? "You hear an explosion!"
+                        : "You feel the shock of an explosion!");
             wake_nearto(zx, zy, 11 * 11);
             levl[zx][zy].doormask = D_NODOOR;
         } else
@@ -1878,8 +1899,8 @@ findit(void)
     if (found.num_cleared_invis) {
         /* at least 1 "remembered, unseen monster" marker has been removed */
         if (!num)
-            You_feel("%sless paranoid.",
-                     found.num_kept_invis ? "somewhat " : "");
+            You_feel(found.num_kept_invis ? "somewhat less paranoid."
+                                          : "less paranoid.");
         num += found.num_cleared_invis;
     }
     /* note: num_kept_invis is not included in the final result */
@@ -1982,8 +2003,11 @@ mfind0(struct monst *mtmp, boolean via_warning)
                                   || mtmp->data->mlet == S_EEL)) {
             if (via_warning && found_something) {
                 set_msg_xy(x, y);
-                Your("danger sense causes you to take a second %s.",
-                     Blind ? "to check nearby" : "look close by");
+                Your(Blind
+                     ? "danger sense causes you to take a second to check "
+                       "nearby."
+                     : "danger sense causes you to take a second look "
+                       "close by.");
                 display_nhwindow(WIN_MESSAGE, FALSE); /* flush messages */
             }
             mtmp->mundetected = 0;

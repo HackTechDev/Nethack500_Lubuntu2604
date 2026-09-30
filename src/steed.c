@@ -4,6 +4,11 @@
 
 #include "hack.h"
 
+#if 0
+/* for xgettext */
+NC_("heroine", "You are thrown off of %s!"),
+#endif
+
 /* Monsters that might be ridden */
 static NEARDATA const char steeds[] = { S_QUADRUPED, S_UNICORN, S_ANGEL,
                                         S_CENTAUR,   S_DRAGON,  S_JABBERWOCK,
@@ -300,23 +305,27 @@ mount_steed(
     if (mtmp->mtrapped) {
         struct trap *t = t_at(mtmp->mx, mtmp->my);
 
-        You_cant("mount %s while %s's trapped in %s.", mon_nam(mtmp),
-                 mhe(mtmp), an(trapname(t->ttyp, FALSE)));
+        if (i18n_active())
+            You_cant("mount %s while it's trapped in %s.", mon_nam(mtmp),
+                     i18n_an_ctx("trap", trapname(t->ttyp, FALSE)));
+        else
+            You_cant("mount %s while %s's trapped in %s.", mon_nam(mtmp),
+                     mhe(mtmp), an(trapname(t->ttyp, FALSE)));
         return (FALSE);
     }
 
     if (!force && !Role_if(PM_KNIGHT) && !(--mtmp->mtame)) {
         /* no longer tame */
         newsym(mtmp->mx, mtmp->my);
-        pline("%s resists%s!", Monnam(mtmp),
-              mtmp->mleashed ? " and its leash comes off" : "");
+        pline(mtmp->mleashed ? "%s resists and its leash comes off!"
+                             : "%s resists!", Monnam(mtmp));
         if (mtmp->mleashed)
             m_unleash(mtmp, FALSE);
         return (FALSE);
     }
     if (!force && Underwater && !is_swimmer(ptr)) {
         You_cant("ride that creature while under %s.",
-                 hliquid("water"));
+                 _(hliquid("water")));
         return (FALSE);
     }
     if (!can_saddle(mtmp) || !can_ride(mtmp)) {
@@ -331,8 +340,10 @@ mount_steed(
         return (FALSE);
     }
     if (!force && uarm && is_metallic(uarm) && greatest_erosion(uarm)) {
-        Your("%s armor is too stiff to be able to mount %s.",
-             uarm->oeroded ? "rusty" : "corroded", mon_nam(mtmp));
+        Your(uarm->oeroded
+                 ? "rusty armor is too stiff to be able to mount %s."
+                 : "corroded armor is too stiff to be able to mount %s.",
+             mon_nam(mtmp));
         return (FALSE);
     }
     if (!force
@@ -605,7 +616,12 @@ dismount_steed(
         /*FALLTHRU*/
     case DISMOUNT_KNOCKED:
     case DISMOUNT_FELL:
-        You("%s off of %s!", verb, mon_nam(mtmp));
+        if (i18n_active())
+            You((reason == DISMOUNT_THROWN) ? "are thrown off of %s!"
+                                            : "fall off of %s!",
+                mon_nam(mtmp));
+        else
+            You("%s off of %s!", verb, mon_nam(mtmp));
         if (!have_spot)
             have_spot = landing_spot(&cc, reason, 1);
         if (!ulev && !ufly) {
@@ -632,8 +648,8 @@ dismount_steed(
     case DISMOUNT_BYCHOICE:
     default:
         if (otmp && otmp->cursed) {
-            You("can't.  The saddle %s cursed.",
-                otmp->bknown ? "is" : "seems to be");
+            You(otmp->bknown ? "can't.  The saddle is cursed."
+                             : "can't.  The saddle seems to be cursed.");
             otmp->bknown = 1; /* ok to skip set_bknown() here */
             return;
         }
@@ -724,15 +740,17 @@ dismount_steed(
             if (grounded(mdat)) {
                 if (is_pool(u.ux, u.uy)) {
                     if (!Underwater)
-                        pline("%s falls into the %s!", Monnam(mtmp),
-                              surface(u.ux, u.uy));
+                        pline("%s falls into %s!", Monnam(mtmp),
+                              i18n_active() ? i18n_the(surface(u.ux, u.uy))
+                                            : the(surface(u.ux, u.uy)));
                     if (!cant_drown(mdat)) {
                         killed(mtmp);
                         adjalign(-1);
                     }
                 } else if (is_lava(u.ux, u.uy)) {
-                    pline("%s is pulled into the %s!", Monnam(mtmp),
-                          hliquid("lava"));
+                    pline("%s is pulled into %s!", Monnam(mtmp),
+                          i18n_active() ? i18n_the(hliquid("lava"))
+                                        : the(hliquid("lava")));
                     if (!likes_lava(mdat)) {
                         killed(mtmp);
                         adjalign(-1);

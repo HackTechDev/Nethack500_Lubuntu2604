@@ -3024,7 +3024,11 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	and removing armor and accessories (do_wear.c); digging (dig.c),
 	wielding (wield.c), picking up and containers (pickup.c), monster
 	events (mon.c), throwing (dothrow.c), eating (eat.c), artifacts
-	(artifact.c), timed events (timeout.c) and kicking (dokick.c)
+	(artifact.c), timed events (timeout.c), kicking (dokick.c),
+	engraving (engrave.c), music (music.c), locks (lock.c), detection
+	(detect.c), riding (steed.c) and teleportation (teleport.c);
+	pline() translates a whole sentence given as the argument of
+	You("%s") and similar
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

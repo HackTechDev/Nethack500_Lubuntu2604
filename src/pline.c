@@ -194,6 +194,32 @@ vpline(const char *line, va_list the_args)
                 english = ebuf;
             }
             line = translation;
+        } else {
+            /* "You %s" &c with a whole sentence given as argument (You1()
+               and similar, or a variable holding the rest of a sentence):
+               translate the complete sentence */
+            const char *pct = strchr(line, '%');
+
+            if (pct && pct[1] == 's' && !strchr(pct + 2, '%')
+                && (pct != line || pct[2])) {
+                va_list cargs;
+                const char *arg;
+                char cand[BUFSZ];
+
+                va_copy(cargs, the_args);
+                arg = va_arg(cargs, const char *);
+                va_end(cargs);
+                if (arg && strlen(line) + strlen(arg) < sizeof cand) {
+                    Snprintf(cand, sizeof cand, "%.*s%s%s",
+                             (int) (pct - line), line, arg, pct + 2);
+                    translation = flags.female ? C_("heroine", cand)
+                                               : _(cand);
+                    if (translation != cand) {
+                        pline("%s", translation);
+                        return;
+                    }
+                }
+            }
         }
     }
 

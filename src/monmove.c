@@ -28,6 +28,12 @@ staticfn boolean stuff_prevents_passage(struct monst *);
 staticfn int vamp_shift(struct monst *, struct permonst *, boolean);
 staticfn void maybe_spin_web(struct monst *);
 
+#if 0
+/* for xgettext: msg_mon_movement() */
+N_(" next to you"), N_(" closer"), N_(" further away"),
+N_(" in the distance"),
+#endif
+
 /* a11y: give a message when monster moved */
 staticfn void
 msg_mon_movement(struct monst *mtmp, coordxy omx, coordxy omy)
@@ -38,12 +44,17 @@ msg_mon_movement(struct monst *mtmp, coordxy omx, coordxy omy)
             close = !n2u && (distu(nix, niy) <= (BOLT_LIM * BOLT_LIM)),
             closer = !n2u && (distu(nix, niy) <= distu(omx, omy));
 
-        pline_xy(nix, niy, "%s %s%s.", Monnam(mtmp),
-                 vtense((char *) 0, locomotion(mtmp->data, "move")),
-                 n2u ? " next to you"
-                 : (close && closer) ? " closer"
-                 : (close && !closer) ? " further away"
-                 : " in the distance");
+        const char *where = n2u ? " next to you"
+                            : (close && closer) ? " closer"
+                              : (close && !closer) ? " further away"
+                                : " in the distance";
+
+        if (i18n_active())
+            pline_xy(nix, niy, "%s moves%s.", Monnam(mtmp), _(where));
+        else
+            pline_xy(nix, niy, "%s %s%s.", Monnam(mtmp),
+                     vtense((char *) 0, locomotion(mtmp->data, "move")),
+                     where);
     }
 }
 

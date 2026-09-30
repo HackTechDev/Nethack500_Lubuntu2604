@@ -521,9 +521,11 @@ intemple(int roomno)
                    != 0) {
             int ngen = svm.mvitals[PM_GHOST].born;
             if (canspotmon(mtmp))
-                pline("A%s ghost appears next to you%c",
-                      ngen < 5 ? "n enormous" : "",
-                      ngen < 10 ? '!' : '.');
+                pline(ngen < 5 ? (ngen < 10
+                                  ? "An enormous ghost appears next to you!"
+                                  : "An enormous ghost appears next to you.")
+                      : (ngen < 10 ? "A ghost appears next to you!"
+                                   : "A ghost appears next to you."));
             else
                 You("sense a presence close by!");
             mtmp->mpeaceful = 0;

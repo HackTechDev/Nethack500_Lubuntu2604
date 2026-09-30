@@ -1489,14 +1489,23 @@ makemon(
             }
             if (what) {
                 set_msg_xy(mtmp->mx, mtmp->my);
+            {
+                const char *where
+                    = next2u(x, y) ? " next to you"
+                      : (distu(x, y) <= (BOLT_LIM * BOLT_LIM)) ? " close by"
+                        : "";
+
+                if (i18n_active())
+                    Norep(exclaim ? "%s suddenly appears%s!"
+                                  : "%s appears%s.",
+                          what, *where ? _(where) : "");
+                else
                 Norep("%s%s %s%s%c", what,
                       exclaim ? " suddenly" : "",
                       /* 'what' might be "gold pieces" so need plural verb */
-                      vtense(what, "appear"),
-                      next2u(x, y) ? " next to you"
-                      : (distu(x, y) <= (BOLT_LIM * BOLT_LIM)) ? " close by"
-                        : "",
+                      vtense(what, "appear"), where,
                       exclaim ? '!' : '.');
+            }
             }
         }
         /* if discernable and a threat, stop fiddling while Rome burns */
