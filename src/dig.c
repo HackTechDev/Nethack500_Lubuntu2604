@@ -97,8 +97,9 @@ mkcavearea(boolean rockit)
         Soundeffect(se_crashing_rock, 100);
         pline("Crash!  The ceiling collapses around you!");
     } else {
-        pline("A mysterious force %s cave around you!",
-              (levl[u.ux][u.uy].typ == CORR) ? "creates a" : "extends the");
+        pline((levl[u.ux][u.uy].typ == CORR)
+                  ? "A mysterious force creates a cave around you!"
+                  : "A mysterious force extends the cave around you!");
     }
     display_nhwindow(WIN_MESSAGE, TRUE);
 
@@ -255,8 +256,8 @@ void
 digcheck_fail_message(enum digcheck_result digresult, struct monst *madeby,
                       coordxy x, coordxy y)
 {
-    const char *verb =
-        (madeby == BY_YOU && uwep && is_axe(uwep)) ? "chop" : "dig in";
+    const char *verb = C_("dig verb",
+        (madeby == BY_YOU && uwep && is_axe(uwep)) ? "chop" : "dig in");
 
     if (digresult < DIGCHECK_FAILED)
         return;
@@ -283,10 +284,18 @@ digcheck_fail_message(enum digcheck_result digresult, struct monst *madeby,
     case DIGCHECK_FAIL_CANTDIG:
     case DIGCHECK_FAIL_TOOHARD:
     case DIGCHECK_FAIL_UNDESTROYABLETRAP:
-        pline_The("%s here is too hard to %s.", surface(x, y), verb);
+        if (i18n_active())
+            pline("%s here is too hard to %s.",
+                  upstart(i18n_the(surface(x, y))), verb);
+        else
+            pline_The("%s here is too hard to %s.", surface(x, y), verb);
         break;
     case DIGCHECK_FAIL_WATERLEVEL:
-        pline_The("%s splashes and subsides.", hliquid("water"));
+        if (i18n_active())
+            pline("%s splashes and subsides.",
+                  upstart(i18n_the(hliquid("water"))));
+        else
+            pline_The("%s splashes and subsides.", hliquid("water"));
         break;
     case DIGCHECK_FAIL_OBJ_POOL_OR_TRAP:
     case DIGCHECK_PASSED:
@@ -302,7 +311,8 @@ dig(void)
     struct rm *lev;
     coordxy dpx = svc.context.digging.pos.x, dpy = svc.context.digging.pos.y;
     boolean ispick = uwep && is_pick(uwep);
-    const char *verb = (!uwep || is_pick(uwep)) ? "dig into" : "chop through";
+    const char *verb = C_("dig verb", (!uwep || is_pick(uwep))
+                                          ? "dig into" : "chop through");
     enum digcheck_result dcresult = DIGCHECK_PASSED;
 
     lev = &levl[dpx][dpy];
@@ -329,7 +339,8 @@ dig(void)
         if (IS_OBSTRUCTED(lev->typ) && !may_dig(dpx, dpy)
             && dig_typ(uwep, dpx, dpy) == DIGTYP_ROCK) {
             pline("This %s is too hard to %s.",
-                  is_db_wall(dpx, dpy) ? "drawbridge" : "wall", verb);
+                  C_("noun", is_db_wall(dpx, dpy) ? "drawbridge" : "wall"),
+                  verb);
             return 0;
         }
     }
@@ -416,7 +427,10 @@ dig(void)
 
             if (ispick)
                 You("destroy %s with %s.",
-                    ttmp->tseen ? the(ttmpname) : an(ttmpname),
+                    !i18n_active() ? (ttmp->tseen ? the(ttmpname)
+                                                  : an(ttmpname))
+                    : ttmp->tseen ? i18n_the_ctx("trap", ttmpname)
+                                  : i18n_an_ctx("trap", ttmpname),
                     yobjnam(uwep, (const char *) 0));
             deltrap(ttmp);
             /* we haven't made any progress toward a pit yet */
@@ -551,7 +565,7 @@ dig(void)
         if (IS_WALL(lev->typ) || dig_target == DIGTYP_DOOR) {
             if (*in_rooms(dpx, dpy, SHOPBASE)) {
                 pline("This %s seems too hard to %s.",
-                      IS_DOOR(lev->typ) ? "door" : "wall", verb);
+                      C_("noun", IS_DOOR(lev->typ) ? "door" : "wall"), verb);
                 return 0;
             }
         } else if (dig_target == DIGTYP_UNDIGGABLE
@@ -559,7 +573,11 @@ dig(void)
             return 0; /* statue or boulder got taken */
 
         if (!gd.did_dig_msg) {
-            You("hit the %s with all your might.", d_target[dig_target]);
+            if (i18n_active())
+                You("hit %s with all your might.",
+                    i18n_the(d_target[dig_target]));
+            else
+                You("hit the %s with all your might.", d_target[dig_target]);
             wake_nearby(FALSE);
             gd.did_dig_msg = TRUE;
         }
@@ -700,6 +718,32 @@ digactualhole(coordxy x, coordxy y, struct monst *madeby, int ttyp)
 
     tname = trapname(ttyp, TRUE);
     in_thru = (ttyp == HOLE ? "through" : "in");
+    if (i18n_active()) {
+        boolean hole = (ttyp == HOLE);
+        char *surf = i18n_the(surface_type);
+
+        if (madeby_u) {
+            if (x != u.ux || y != u.uy)
+                You(hole ? "dig an adjacent hole." : "dig an adjacent pit.");
+            else
+                You(hole ? "dig a hole through %s." : "dig a pit in %s.",
+                    surf);
+        } else if (!madeby_obj && canseemon(madeby)) {
+            pline(hole ? "%s digs a hole through %s."
+                       : "%s digs a pit in %s.",
+                  Monnam(madeby), surf);
+        } else if (cansee(x, y) && flags.verbose) {
+            if (IS_STWALL(old_typ))
+                pline(hole ? "%s crumbles into a hole."
+                           : "%s crumbles into a pit.", upstart(surf));
+            else
+                pline(hole ? "A hole appears in %s." : "A pit appears in %s.",
+                      surf);
+        }
+        if (IS_FURNITURE(old_typ) && cansee(x, y))
+            pline(hole ? "%s falls into the hole!" : "%s falls into the pit!",
+                  upstart(i18n_the(furniture)));
+    } else {
     if (madeby_u) {
         if (x != u.ux || y != u.uy)
             You("dig an adjacent %s.", tname);
@@ -716,6 +760,7 @@ digactualhole(coordxy x, coordxy y, struct monst *madeby, int ttyp)
     }
     if (IS_FURNITURE(old_typ) && cansee(x, y))
         pline_The("%s falls into the %s!", furniture, tname);
+    }
     /* wrath should immediately follow altar destruction message */
     if (heros_fault && old_typ == ALTAR)
         desecrate_altar(FALSE, old_aligntyp);
@@ -745,8 +790,9 @@ digactualhole(coordxy x, coordxy y, struct monst *madeby, int ttyp)
         } else if (mtmp) {
             if (is_flyer(mtmp->data) || is_floater(mtmp->data)) {
                 if (canseemon(mtmp))
-                    pline("%s %s over the pit.", Monnam(mtmp),
-                          (is_flyer(mtmp->data)) ? "flies" : "floats");
+                    pline(is_flyer(mtmp->data) ? "%s flies over the pit."
+                                               : "%s floats over the pit.",
+                          Monnam(mtmp));
             } else if (mtmp != madeby)
                 (void) mintrap(mtmp, NO_TRAP_FLAGS);
         }
@@ -913,15 +959,27 @@ dighole(boolean pit_only, boolean by_magic, coord *cc)
     if ((ttmp && (undestroyable_trap(ttmp->ttyp) || nohole))
         || (IS_OBSTRUCTED(old_typ) && old_typ != SDOOR
             && (lev->wall_info & W_NONDIGGABLE) != 0)) {
-        pline_The("%s %shere is too hard to dig in.", surface(dig_x, dig_y),
-                  (dig_x != u.ux || dig_y != u.uy) ? "t" : "");
+        if (i18n_active())
+            pline((dig_x != u.ux || dig_y != u.uy)
+                      ? "%s there is too hard to dig in."
+                      : "%s here is too hard to dig in.",
+                  upstart(i18n_the(surface(dig_x, dig_y))));
+        else
+            pline_The("%s %shere is too hard to dig in.",
+                      surface(dig_x, dig_y),
+                      (dig_x != u.ux || dig_y != u.uy) ? "t" : "");
     } else if (ttmp && is_magical_trap(ttmp->ttyp)) {
         explode(dig_x, dig_y, 0, 20 + d(3, 6), TRAP_EXPLODE, EXPL_MAGICAL);
         deltrap(ttmp);
         newsym(dig_x, dig_y);
     } else if (is_pool_or_lava(dig_x, dig_y)) {
-        pline_The("%s sloshes furiously for a moment, then subsides.",
-                  hliquid(is_lava(dig_x, dig_y) ? "lava" : "water"));
+        if (i18n_active())
+            pline("%s sloshes furiously for a moment, then subsides.",
+                  upstart(i18n_the(hliquid(is_lava(dig_x, dig_y)
+                                           ? "lava" : "water"))));
+        else
+            pline_The("%s sloshes furiously for a moment, then subsides.",
+                      hliquid(is_lava(dig_x, dig_y) ? "lava" : "water"));
         wake_nearby(FALSE); /* splashing */
 
     } else if (old_typ == DRAWBRIDGE_DOWN
@@ -942,8 +1000,9 @@ dighole(boolean pit_only, boolean by_magic, coord *cc)
     } else if ((boulder_here = sobj_at(BOULDER, dig_x, dig_y)) != 0) {
         if (ttmp && is_pit(ttmp->ttyp)
             && rn2(2)) {
-            pline_The("boulder settles into the %spit.",
-                      (dig_x != u.ux || dig_y != u.uy) ? "adjacent " : "");
+            pline_The((dig_x != u.ux || dig_y != u.uy)
+                          ? "boulder settles into the adjacent pit."
+                          : "boulder settles into the pit.");
             ttmp->ttyp = PIT; /* crush spikes */
         } else {
             /*
@@ -1111,10 +1170,15 @@ use_pick_axe(struct obj *obj)
     verb = ispick ? "dig" : "chop";
 
     if (u.utrap && u.utraptype == TT_WEB) {
-        pline("%s you can't %s while entangled in a web.",
-              /* res==0 => no prior message;
-                 res==1 => just got "You now wield a pick-axe." message */
-              !res ? "Unfortunately," : "But", verb);
+        /* res==0 => no prior message;
+           res==1 => just got "You now wield a pick-axe." message */
+        if (!res)
+            pline(ispick
+              ? "Unfortunately, you can't dig while entangled in a web."
+              : "Unfortunately, you can't chop while entangled in a web.");
+        else
+            pline(ispick ? "But you can't dig while entangled in a web."
+                         : "But you can't chop while entangled in a web.");
         return res;
     }
 
@@ -1148,7 +1212,9 @@ use_pick_axe(struct obj *obj)
         *dsp++ = dirch;
     }
     *dsp = 0;
-    Sprintf(qbuf, "In what direction do you want to %s? [%s]", verb, dirsyms);
+    Snprintf(qbuf, sizeof qbuf,
+             _("In what direction do you want to %s? [%s]"),
+             C_("dig verb", verb), dirsyms);
     if (!getdir(qbuf))
         return (res|ECMD_CANCEL);
 
@@ -1171,10 +1237,13 @@ use_pick_axe2(struct obj *obj)
     if (u.uswallow && do_attack(u.ustuck)) {
         ; /* return 1 */
     } else if (Underwater) {
-        pline("Turbulence torpedoes your %s attempts.", verbing);
+        pline(ispick ? "Turbulence torpedoes your digging attempts."
+                     : "Turbulence torpedoes your chopping attempts.");
     } else if (u.dz < 0) {
         if (Levitation)
             You("don't have enough leverage.");
+        else if (i18n_active())
+            You_cant("reach %s.", i18n_the(ceiling(u.ux, u.uy)));
         else
             You_cant("reach the %s.", ceiling(u.ux, u.uy));
     } else if (!u.dx && !u.dy && !u.dz) {
@@ -1217,7 +1286,7 @@ use_pick_axe2(struct obj *obj)
                 /* (maybe `move_into_trap()' would be better) */
                 nomul(-d(2, 2));
                 gm.multi_reason = "stuck in a spider web";
-                gn.nomovemsg = "You pull free.";
+                gn.nomovemsg = N_("You pull free.");
             } else if (lev->typ == IRONBARS) {
                 pline("Clang!");
                 wake_nearby(FALSE);
@@ -1239,9 +1308,15 @@ use_pick_axe2(struct obj *obj)
                 if (!ispick) {
                     boolean vibrate = !rn2(3);
 
-                    pline("Sparks fly as you whack the %s.%s", what,
-                          vibrate ? "  The axe-handle vibrates violently!"
-                                  : "");
+                    if (i18n_active())
+                        pline(vibrate ? "Sparks fly as you whack %s.  "
+                                        "The axe-handle vibrates violently!"
+                                      : "Sparks fly as you whack %s.",
+                              i18n_the(what));
+                    else
+                        pline("Sparks fly as you whack the %s.%s", what,
+                              vibrate ? "  The axe-handle vibrates violently!"
+                                      : "");
                     if (vibrate)
                         losehp(Maybe_Half_Phys(2), "axing a hard object",
                                KILLED_BY);
@@ -1250,7 +1325,10 @@ use_pick_axe2(struct obj *obj)
                     /* using a pick but dig_target is DIGTYPE_UNDIGGABLE
                        and there is at least one boulder or statue or both
                        present; pick_can_reach() returned false */
-                    You_cant("reach the %s.", what);
+                    if (i18n_active())
+                        You_cant("reach %s.", i18n_the(what));
+                    else
+                        You_cant("reach the %s.", what);
                 }
             } else if (u.utrap && u.utraptype == TT_PIT && trap
                        && (trap_with_u = t_at(u.ux, u.uy))
@@ -1302,7 +1380,10 @@ use_pick_axe2(struct obj *obj)
                 assign_level(&svc.context.digging.level, &u.uz);
                 svc.context.digging.effort = 0;
                 if (!svc.context.digging.quiet)
-                    You("start %s.", d_action[dig_target]);
+                    You("start %s.", C_("dig action", d_action[dig_target]));
+            } else if (i18n_active()) {
+                You(svc.context.digging.chew ? "begin %s." : "continue %s.",
+                    C_("dig action", d_action[dig_target]));
             } else {
                 You("%s %s.", svc.context.digging.chew ? "begin" : "continue",
                     d_action[dig_target]);
@@ -1317,8 +1398,8 @@ use_pick_axe2(struct obj *obj)
         cant_reach_floor(u.ux, u.uy, FALSE, FALSE, FALSE);
     } else if (is_pool_or_lava(u.ux, u.uy)) {
         /* Monsters which swim also happen not to be able to dig */
-        You("cannot stay under%s long enough.",
-            is_pool(u.ux, u.uy) ? "water" : " the lava");
+        You(is_pool(u.ux, u.uy) ? "cannot stay underwater long enough."
+                                : "cannot stay under the lava long enough.");
     } else if ((trap = t_at(u.ux, u.uy)) != 0
                && (uteetering_at_seen_pit(trap) || uescaped_shaft(trap))) {
         dotrap(trap, FORCEBUNGLE);
@@ -1330,8 +1411,12 @@ use_pick_axe2(struct obj *obj)
                   trigger or disarm a trap here */
                && (!trap || (trap->ttyp != LANDMINE
                              && trap->ttyp != BEAR_TRAP))) {
-        pline("%s merely scratches the %s.", Yobjnam2(obj, (char *) 0),
-              surface(u.ux, u.uy));
+        if (i18n_active())
+            pline("%s merely scratches %s.", Yobjnam2(obj, (char *) 0),
+                  i18n_the(surface(u.ux, u.uy)));
+        else
+            pline("%s merely scratches the %s.", Yobjnam2(obj, (char *) 0),
+                  surface(u.ux, u.uy));
         u_wipe_engr(3);
     } else {
         if (svc.context.digging.pos.x != u.ux
@@ -1345,18 +1430,44 @@ use_pick_axe2(struct obj *obj)
             svc.context.digging.pos.y = u.uy;
             assign_level(&svc.context.digging.level, &u.uz);
             svc.context.digging.effort = 0;
-            You("start %s downward.", verbing);
+            You("start %s downward.", C_("dig action", verbing));
             if (*u.ushops) {
                 shopdig(0);
                 add_damage(u.ux, u.uy, SHOP_PIT_COST);
             }
         } else
-            You("continue %s downward.", verbing);
+            You("continue %s downward.", C_("dig action", verbing));
         gd.did_dig_msg = FALSE;
         set_occupation(dig, verbing, 0);
     }
     return ECMD_TIME;
 }
+
+#if 0
+/* for xgettext */
+N_("enlisting"), N_("marching"), N_("protesting"), N_("fleeing"),
+C_("feminine", "Hey, stop damaging that %s!"),
+C_("feminine", "%s rots away!"), C_("plural", "%s rots away!"),
+C_("feminine plural", "%s rots away!"),
+C_("feminine", "%s rots away."), C_("plural", "%s rots away."),
+C_("feminine plural", "%s rots away."),
+NC_("noun", "fountain"), NC_("gender", "fountain"),
+NC_("noun", "wall"), NC_("gender", "wall"),
+NC_("dig verb", "dig in"), NC_("dig verb", "chop"),
+NC_("dig verb", "dig into"), NC_("dig verb", "chop through"),
+NC_("dig verb", "dig"),
+NC_("dig action", "swinging"), NC_("dig action", "digging"),
+NC_("dig action", "chipping the statue"),
+NC_("dig action", "hitting the boulder"),
+NC_("dig action", "chopping at the door"),
+NC_("dig action", "cutting the tree"), NC_("dig action", "chopping"),
+NC_("noun", "rock"), NC_("gender", "rock"),
+NC_("noun", "statue"), NC_("gender", "statue"),
+NC_("noun", "boulder"), NC_("gender", "boulder"),
+NC_("noun", "door"), NC_("gender", "door"),
+NC_("noun", "tree"), NC_("gender", "tree"),
+NC_("noun", "drawbridge"), NC_("gender", "drawbridge"),
+#endif
 
 staticfn boolean
 watchman_canseeu(struct monst *mtmp)
@@ -1366,6 +1477,8 @@ watchman_canseeu(struct monst *mtmp)
         return TRUE;
     return FALSE;
 }
+
+DISABLE_WARNING_FORMAT_NONLITERAL
 
 /*
  * Town Watchmen frown on damage to the town walls, trees or fountains.
@@ -1400,7 +1513,14 @@ watch_dig(struct monst *mtmp, coordxy x, coordxy y, boolean zap)
                     str = "wall";
                 else
                     str = "fountain";
-                verbalize("Hey, stop damaging that %s!", str);
+                if (i18n_active())
+                    verbalize(i18n_noun_fem(str)
+                                  ? C_("feminine",
+                                       "Hey, stop damaging that %s!")
+                                  : "Hey, stop damaging that %s!",
+                              C_("noun", str));
+                else
+                    verbalize("Hey, stop damaging that %s!", str);
                 svc.context.digging.warned = TRUE;
             }
             if (is_digging())
@@ -1408,6 +1528,8 @@ watch_dig(struct monst *mtmp, coordxy x, coordxy y, boolean zap)
         }
     }
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* Return TRUE if monster died, FALSE otherwise.  Called from m_move(). */
 boolean
@@ -1538,7 +1660,7 @@ draft_message(boolean unexpected)
             if (u.ualign.record < STRIDENT)
                 /* L: +(0..2), N: +(-1..1), C: +(-2..0); all: 0..3 */
                 dridx += rn1(3, sgn(u.ualign.type) - 1);
-            You_feel("like %s.", draft_reaction[dridx]);
+            You_feel("like %s.", _(draft_reaction[dridx]));
         }
     }
 }
@@ -1569,7 +1691,12 @@ zap_dig(void)
         mtmp = u.ustuck;
 
         if (!is_whirly(mtmp->data)) {
-            if (digests(mtmp->data))
+            if (digests(mtmp->data) && i18n_active())
+                You("pierce the wall of %s of %s!",
+                    i18n_the_ctx("bodypart",
+                                 mbodypart_english(mtmp, STOMACH)),
+                    mon_nam(mtmp));
+            else if (digests(mtmp->data))
                 You("pierce %s %s wall!", s_suffix(mon_nam(mtmp)),
                     mbodypart(mtmp, STOMACH));
             if (unique_corpstat(mtmp->data))
@@ -1587,11 +1714,21 @@ zap_dig(void)
                 int dmg;
                 if (On_stairs(u.ux, u.uy)) {
                     stairway *stway = stairway_at(u.ux, u.uy);
+                    if (i18n_active())
+                        pline_The(stway->isladder
+                              ? "beam bounces off the ladder and hits %s."
+                              : "beam bounces off the stairs and hits %s.",
+                                  i18n_the(ceiling(u.ux, u.uy)));
+                    else
                     pline_The("beam bounces off the %s and hits the %s.",
                               stway->isladder ? "ladder" : "stairs",
                               ceiling(u.ux, u.uy));
                 }
-                You("loosen a rock from the %s.", ceiling(u.ux, u.uy));
+                if (i18n_active())
+                    You("loosen a rock from %s.",
+                        i18n_the(ceiling(u.ux, u.uy)));
+                else
+                    You("loosen a rock from the %s.", ceiling(u.ux, u.uy));
                 pline("It falls on your %s!", body_part(HEAD));
                 dmg = rnd(hard_helmet(uarmh) ? 2 : 6);
                 losehp(Maybe_Half_Phys(dmg), "falling rock", KILLED_BY_AN);
@@ -2139,6 +2276,8 @@ rot_organic(anything *arg, long timeout UNUSED)
     obfree(obj, (struct obj *) 0);
 }
 
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 /*
  * Called when a corpse has rotted completely away.
  */
@@ -2157,6 +2296,13 @@ rot_corpse(anything *arg, long timeout)
         if (flags.verbose) {
             char *cname = corpse_xname(obj, (const char *) 0, CXN_NO_PFX);
 
+            if (i18n_active()) {
+                const char *nm = Yname2(obj);
+
+                pline(objnam_fmt(obj == uwep ? "%s rots away!"
+                                             : "%s rots away.", nm, obj),
+                      nm);
+            } else
             Your("%s%s %s away%c", obj == uwep ? "wielded " : "", cname,
                  otense(obj, "rot"), obj == uwep ? '!' : '.');
         }
@@ -2187,6 +2333,8 @@ rot_corpse(anything *arg, long timeout)
     } else if (in_invent)
         update_inventory();
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 #if 0
 void

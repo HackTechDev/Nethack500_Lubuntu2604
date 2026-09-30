@@ -24,6 +24,7 @@ staticfn boolean m_sees_sleepy_soldier(struct monst *);
 staticfn void m_tele(struct monst *, boolean, boolean, int);
 staticfn boolean m_next2m(struct monst *);
 staticfn void reveal_trap(struct trap *, boolean);
+staticfn const char *an_trap_i18n(int);
 staticfn int mon_escape(struct monst *, boolean);
 staticfn boolean linedup_chk_corpse(coordxy, coordxy);
 staticfn void m_use_undead_turning(struct monst *, struct obj *);
@@ -85,8 +86,9 @@ precheck(struct monst *mon, struct obj *obj)
                         pline(
                             "As %s opens the bottle, an enormous %s emerges!",
                               mon_nam(mon),
-                              Hallucination ? rndmonnam(NULL)
-                                            : (const char *) "ghost");
+                              C_("monster", Hallucination
+                                                ? rndmonnam(NULL)
+                                                : (const char *) "ghost"));
                         pline("%s is frightened to death,"
                               " and unable to move.",
                               Monnam(mon));
@@ -143,9 +145,9 @@ precheck(struct monst *mon, struct obj *obj)
                            ? (BOLT_LIM + 1) : (BOLT_LIM - 3);
 
             Soundeffect(se_zap_then_explosion, 100);
-            You_hear("a zap and an explosion %s.",
-                     (mdistu(mon) <= range * range)
-                        ? "nearby" : "in the distance");
+            You_hear((mdistu(mon) <= range * range)
+                         ? "a zap and an explosion nearby."
+                         : "a zap and an explosion in the distance.");
         }
         m_useup(mon, obj);
         mon->mhp -= dam;
@@ -176,9 +178,11 @@ mzapwand(
                        ? (BOLT_LIM + 1) : (BOLT_LIM - 3);
 
         Soundeffect(se_zap, 100);
-        You_hear("a %s zap.", (mdistu(mtmp) <= range * range)
-                                 ? "nearby" : "distant");
+        You_hear((mdistu(mtmp) <= range * range) ? "a nearby zap."
+                                                 : "a distant zap.");
         unknow_object(otmp); /* hero loses info when unseen obj is used */
+    } else if (self && i18n_active()) {
+        pline("%s zaps itself with %s!", Monnam(mtmp), doname(otmp));
     } else if (self) {
         pline("%s with %s!",
               monverbself(mtmp, Monnam(mtmp), "zap", (char *) 0),
@@ -204,24 +208,33 @@ mplayhorn(
                        ? (BOLT_LIM + 1) : (BOLT_LIM - 3);
 
         Soundeffect(se_horn_being_played, 50);
-        You_hear("a horn being played %s.",
-                 (mdistu(mtmp) <= range * range)
-                    ? "nearby" : "in the distance");
+        You_hear((mdistu(mtmp) <= range * range)
+                     ? "a horn being played nearby."
+                     : "a horn being played in the distance.");
         unknow_object(otmp); /* hero loses info when unseen obj is used */
     } else if (self) {
         observe_object(otmp);
         objnamp = xname(otmp);
         if (strlen(objnamp) >= QBUFSZ)
             objnamp = simpleonames(otmp);
-        Sprintf(objbuf, "a %s directed at", objnamp);
-        /* "<mon> plays a <horn> directed at himself!" */
-        pline("%s!", monverbself(mtmp, Monnam(mtmp), "play", objbuf));
+        if (i18n_active()) {
+            pline("%s plays %s directed at itself!", Monnam(mtmp),
+                  an(objnamp));
+        } else {
+            Sprintf(objbuf, "a %s directed at", objnamp);
+            /* "<mon> plays a <horn> directed at himself!" */
+            pline("%s!", monverbself(mtmp, Monnam(mtmp), "play", objbuf));
+        }
         makeknown(otmp->otyp); /* (wands handle this slightly differently) */
     } else {
         observe_object(otmp);
         objnamp = xname(otmp);
         if (strlen(objnamp) >= QBUFSZ)
             objnamp = simpleonames(otmp);
+        if (i18n_active())
+            pline("%s plays %s directed at you!", Monnam(mtmp),
+                  an(objnamp));
+        else
         pline("%s %s %s directed at you!",
               /* monverbself() would adjust the verb if hallucination made
                  subject plural; stick with singular here, at least for now */
@@ -275,6 +288,15 @@ mreadmsg(struct monst *mtmp, struct obj *otmp)
             map_invisible(mtmp->mx, mtmp->my);
         }
 
+        if (i18n_active()) {
+            You_hear(mtmp->mconf ? "%s attempting to read %s."
+                                 : "%s reading %s.",
+                     x_monnam(mtmp, ARTICLE_A, (char *) 0, mflags, FALSE),
+                     onambuf);
+            if (tpindicator)
+                flash_mon(mtmp);
+            goto mreadmsg_conf;
+        }
         Snprintf(blindbuf, sizeof blindbuf, "reading %s", onambuf);
         strsubst(blindbuf, "reading a scroll labeled",
                  mtmp->mconf ? "attempting to incant" : "incant");
@@ -284,7 +306,11 @@ mreadmsg(struct monst *mtmp, struct obj *otmp)
         if (tpindicator)
             flash_mon(mtmp);
     }
-    if (mtmp->mconf) /* (note: won't get if not seen and hero can't hear) */
+ mreadmsg_conf:
+    if (mtmp->mconf && !vismon && i18n_active())
+        pline("Being confused, it mispronounces the magic words...");
+    else if (mtmp->mconf) /* (note: won't get if not seen and hero can't
+                           * hear) */
         pline("Being confused, %s mispronounces the magic words...",
               vismon ? mon_nam(mtmp) : mhe(mtmp));
 }
@@ -766,6 +792,24 @@ reveal_trap(struct trap *t, boolean seeit)
         seetrap(t);
 }
 
+#if 0
+/* for xgettext */
+NC_("heroine", "You feel aggravated at %s."),
+#endif
+
+/* translated trap name with its indefinite article: "une trappe" */
+staticfn const char *
+an_trap_i18n(int ttyp)
+{
+    static char buf[BUFSZ];
+    const char *tn = trapname(ttyp, FALSE);
+
+    Snprintf(buf, sizeof buf,
+             i18n_noun_fem(tn) ? C_("feminine", "a %s") : _("a %s"),
+             C_("trap", tn));
+    return buf;
+}
+
 /* Monsters without the Amulet escape the dungeon and
  * are gone for good when they leave up the up stairs.
  * A monster with the Amulet would leave it behind
@@ -933,7 +977,10 @@ use_defensive(struct monst *mtmp)
                here, or if pit creation fails for some reason */
             if (t_at(mtmp->mx, mtmp->my)
                 || !(t = maketrap(mtmp->mx, mtmp->my, PIT))) {
-                if (vismon) {
+                if (vismon && i18n_active()) {
+                    pline("%s here is too hard to dig in.",
+                          upstart(i18n_the(surface(mtmp->mx, mtmp->my))));
+                } else if (vismon) {
                     pline_The("%s here is too hard to dig in.",
                               surface(mtmp->mx, mtmp->my));
                 }
@@ -942,8 +989,12 @@ use_defensive(struct monst *mtmp)
             /* pit creation succeeded */
             if (vis) {
                 seetrap(t);
-                pline_mon(mtmp, "%s has made a pit in the %s.", Monnam(mtmp),
-                      surface(mtmp->mx, mtmp->my));
+                if (i18n_active())
+                    pline_mon(mtmp, "%s has made a pit in %s.", Monnam(mtmp),
+                              i18n_the(surface(mtmp->mx, mtmp->my)));
+                else
+                    pline_mon(mtmp, "%s has made a pit in the %s.",
+                              Monnam(mtmp), surface(mtmp->mx, mtmp->my));
             }
             fill_pit(mtmp->mx, mtmp->my);
             recalc_block_point(mtmp->mx, mtmp->my);
@@ -955,14 +1006,23 @@ use_defensive(struct monst *mtmp)
         recalc_block_point(mtmp->mx, mtmp->my);
         seetrap(t);
         if (vis) {
-            pline_mon(mtmp, "%s has made a hole in the %s.", Monnam(mtmp),
-                  surface(mtmp->mx, mtmp->my));
-            pline_mon(mtmp, "%s %s through...", Monnam(mtmp),
-                  is_flyer(mtmp->data) ? "dives" : "falls");
+            if (i18n_active())
+                pline_mon(mtmp, "%s has made a hole in %s.", Monnam(mtmp),
+                          i18n_the(surface(mtmp->mx, mtmp->my)));
+            else
+                pline_mon(mtmp, "%s has made a hole in the %s.",
+                          Monnam(mtmp), surface(mtmp->mx, mtmp->my));
+            pline_mon(mtmp, is_flyer(mtmp->data) ? "%s dives through..."
+                                                 : "%s falls through...",
+                      Monnam(mtmp));
         } else if (!Deaf) {
             Soundeffect(se_crash_through_floor, 100);
-            You_hear("%s crash through the %s.", something,
-                     surface(mtmp->mx, mtmp->my));
+            if (i18n_active())
+                You_hear("something crash through %s.",
+                         i18n_the(surface(mtmp->mx, mtmp->my)));
+            else
+                You_hear("%s crash through the %s.", something,
+                         surface(mtmp->mx, mtmp->my));
         }
         fill_pit(mtmp->mx, mtmp->my);
         /* we made sure that there is a level for mtmp to go to */
@@ -1044,6 +1104,10 @@ use_defensive(struct monst *mtmp)
         m_flee(mtmp);
         t = t_at(gt.trapx, gt.trapy);
         if (vis) {
+            if (i18n_active())
+                pline_mon(mtmp, "%s jumps into %s!", Monnam(mtmp),
+                          an_trap_i18n(t->ttyp));
+            else
             pline_mon(mtmp, "%s %s into a %s!", Monnam(mtmp),
                   vtense(fakename[0], locomotion(mtmp->data, "jump")),
                   trapname(t->ttyp, FALSE));
@@ -1072,7 +1136,10 @@ use_defensive(struct monst *mtmp)
             return mon_escape(mtmp, vismon);
         if (Inhell && mon_has_amulet(mtmp) && !rn2(4)
             && (dunlev(&u.uz) < dunlevs_in_dungeon(&u.uz) - 3)) {
-            if (vismon)
+            if (vismon && i18n_active())
+                pline("As %s climbs the stairs, a mysterious force"
+                      " momentarily surrounds it...", mon_nam(mtmp));
+            else if (vismon)
                 pline("As %s climbs the stairs, a mysterious force"
                       " momentarily surrounds %s...",
                       mon_nam(mtmp), mhim(mtmp));
@@ -1128,8 +1195,9 @@ use_defensive(struct monst *mtmp)
             return mon_escape(mtmp, vismon);
         }
         if (vismon)
-            pline_mon(mtmp, "%s escapes %sstairs!", Monnam(mtmp),
-                  stway->up ? "up" : "down");
+            pline_mon(mtmp, stway->up ? "%s escapes upstairs!"
+                                      : "%s escapes downstairs!",
+                      Monnam(mtmp));
         /* going from the Valley to Castle (Stronghold) has no sstairs
            to target, but having gs.sstairs.<sx,sy> == <0,0> will work the
            same as specifying MIGR_RANDOM when mon_arrive() eventually
@@ -1141,6 +1209,10 @@ use_defensive(struct monst *mtmp)
         m_flee(mtmp);
         t = t_at(gt.trapx, gt.trapy);
         if (vis) {
+            if (i18n_active())
+                pline_mon(mtmp, "%s jumps onto %s!", Monnam(mtmp),
+                          an_trap_i18n(t->ttyp));
+            else
             pline_mon(mtmp, "%s %s onto a %s!", Monnam(mtmp),
                   vtense(fakename[0], locomotion(mtmp->data, "jump")),
                   trapname(t->ttyp, FALSE));
@@ -1898,14 +1970,25 @@ use_offensive(struct monst *mtmp)
 
         mreadmsg(mtmp, otmp);
         /* Identify the scroll */
-        if (canspotmon(mtmp)) {
+        if (canspotmon(mtmp) && i18n_active()) {
+            pline(otmp->blessed ? "%s rumbles around %s!"
+                                : "%s rumbles above %s!",
+                  upstart(i18n_the(ceiling(mtmp->mx, mtmp->my))),
+                  mon_nam(mtmp));
+            if (oseen)
+                makeknown(otmp->otyp);
+        } else if (canspotmon(mtmp)) {
             pline_The("%s rumbles %s %s!", ceiling(mtmp->mx, mtmp->my),
                       otmp->blessed ? "around" : "above", mon_nam(mtmp));
             if (oseen)
                 makeknown(otmp->otyp);
         } else if (cansee(mtmp->mx, mtmp->my)) {
-            pline_The("%s rumbles in the middle of nowhere!",
-                      ceiling(mtmp->mx, mtmp->my));
+            if (i18n_active())
+                pline("%s rumbles in the middle of nowhere!",
+                      upstart(i18n_the(ceiling(mtmp->mx, mtmp->my))));
+            else
+                pline_The("%s rumbles in the middle of nowhere!",
+                          ceiling(mtmp->mx, mtmp->my));
             if (mtmp->minvis)
                 map_invisible(mtmp->mx, mtmp->my);
             if (oseen)
@@ -2348,7 +2431,8 @@ mloot_container(
                     pline_mon(mon, "%s removes %s from %s.", Monnam(mon),
                           doname(xobj), contnr_nam);
                 else /* adjacent, additional items */
-                    pline("%s removes %s.", upstart(mpronounbuf),
+                    pline("%s removes %s.",
+                          i18n_active() ? Monnam(mon) : upstart(mpronounbuf),
                           doname(xobj));
             }
             if (container->otyp == ICE_BOX)
@@ -2410,9 +2494,14 @@ use_misc(struct monst *mtmp)
                 if (on_level(&tolevel, &u.uz))
                     goto skipmsg;
                 if (vismon) {
-                    pline_mon(mtmp, "%s rises up, through the %s!",
-                              Monnam(mtmp),
-                              ceiling(mtmp->mx, mtmp->my));
+                    if (i18n_active())
+                        pline_mon(mtmp, "%s rises up, through %s!",
+                                  Monnam(mtmp),
+                                  i18n_the(ceiling(mtmp->mx, mtmp->my)));
+                    else
+                        pline_mon(mtmp, "%s rises up, through the %s!",
+                                  Monnam(mtmp),
+                                  ceiling(mtmp->mx, mtmp->my));
                     trycall(otmp);
                 }
                 m_useup(mtmp, otmp);
@@ -2450,7 +2539,12 @@ use_misc(struct monst *mtmp)
         Strcpy(nambuf, mon_nam(mtmp));
         mon_set_minvis(mtmp, !otmp->cursed ? FALSE : TRUE);
         if (vismon && mtmp->minvis) { /* was seen, now invisible */
-            if (canspotmon(mtmp)) {
+            if (canspotmon(mtmp) && i18n_active()) {
+                pline(Hallucination
+                          ? "The body of %s takes on a normal transparency."
+                          : "The body of %s takes on a strange transparency.",
+                      nambuf);
+            } else if (canspotmon(mtmp)) {
                 pline("%s body takes on a %s transparency.",
                       upstart(s_suffix(nambuf)),
                       Hallucination ? "normal" : "strange");
@@ -2522,6 +2616,12 @@ use_misc(struct monst *mtmp)
         if (vis || vistrapspot)
             seetrap(t);
         if (vismon || vistrapspot) {
+            if (i18n_active())
+                pline_mon(mtmp, "%s deliberately jumps onto %s!",
+                          Some_Monnam(mtmp),
+                          t->tseen ? an_trap_i18n(t->ttyp)
+                                   : _("a hidden trap"));
+            else
             pline_mon(mtmp, "%s deliberately %s onto a %s!", Some_Monnam(mtmp),
                   vtense(fakename[0], locomotion(mtmp->data, "jump")),
                   t->tseen ? trapname(t->ttyp, FALSE) : "hidden trap");
@@ -2549,7 +2649,7 @@ use_misc(struct monst *mtmp)
     case MUSE_BULLWHIP:
         /* attempt to disarm hero */
         {
-            const char *The_whip = vismon ? "The bullwhip" : "A whip";
+            const char *The_whip = vismon ? _("The bullwhip") : _("A whip");
             int where_to = rn2(4);
             struct obj *obj = uwep;
             const char *hand;
@@ -2577,7 +2677,19 @@ use_misc(struct monst *mtmp)
             }
             urgent_pline("%s wraps around %s you're wielding!", The_whip,
                          the_weapon);
-            if (welded(obj)) {
+            if (welded(obj) && i18n_active()) {
+                boolean fem = objnam_feminine(xname(obj));
+
+                if (is_plural(obj))
+                    pline(fem ? C_("feminine", "They are welded to your %s%c")
+                              : "They are welded to your %s%c",
+                          hand_buf, !obj->bknown ? '!' : '.');
+                else
+                    pline(fem ? C_("feminine", "It is welded to your %s%c")
+                              : "It is welded to your %s%c",
+                          hand_buf, !obj->bknown ? '!' : '.');
+                where_to = 0;
+            } else if (welded(obj)) {
                 pline("%s welded to your %s%c",
                       !is_plural(obj) ? "It is" : "They are", hand_buf,
                       !obj->bknown ? '!' : '.');
@@ -2602,8 +2714,12 @@ use_misc(struct monst *mtmp)
                 place_object(obj, mtmp->mx, mtmp->my);
                 break;
             case 2: /* onto floor beneath you */
-                pline_mon(mtmp, "%s yanks %s to the %s!", Monnam(mtmp),
-                          the_weapon, surface(u.ux, u.uy));
+                if (i18n_active())
+                    pline_mon(mtmp, "%s yanks %s to %s!", Monnam(mtmp),
+                              the_weapon, i18n_the(surface(u.ux, u.uy)));
+                else
+                    pline_mon(mtmp, "%s yanks %s to the %s!", Monnam(mtmp),
+                              the_weapon, surface(u.ux, u.uy));
                 dropy(obj);
                 break;
             case 3: /* into mon's inventory */
@@ -2630,8 +2746,12 @@ RESTORE_WARNINGS
 staticfn void
 you_aggravate(struct monst *mtmp)
 {
-    pline("For some reason, %s presence is known to you.",
-          s_suffix(noit_mon_nam(mtmp)));
+    if (i18n_active())
+        pline("For some reason, the presence of %s is known to you.",
+              noit_mon_nam(mtmp));
+    else
+        pline("For some reason, %s presence is known to you.",
+              s_suffix(noit_mon_nam(mtmp)));
     cls();
 #ifdef CLIPPING
     cliparound(mtmp->mx, mtmp->my);
@@ -2643,7 +2763,8 @@ you_aggravate(struct monst *mtmp)
     docrt();
     if (unconscious()) {
         gm.multi = -1;
-        gn.nomovemsg = "Aggravated, you are jolted into full consciousness.";
+        gn.nomovemsg =
+            _("Aggravated, you are jolted into full consciousness.");
     }
     newsym(mtmp->mx, mtmp->my);
     if (!canspotmon(mtmp))
@@ -2925,15 +3046,21 @@ mon_consume_unstone(
         long save_quan = obj->quan;
 
         obj->quan = 1L;
-        pline_mon(mon, "%s %s %s.", Monnam(mon),
-              ((obj->oclass == POTION_CLASS) ? "quaffs"
-               : (obj->otyp == TIN) ? "opens and eats the contents of"
-                 : "eats"),
-              distant_name(obj, doname));
+        if (i18n_active())
+            pline_mon(mon, (obj->oclass == POTION_CLASS) ? "%s quaffs %s."
+                           : (obj->otyp == TIN)
+                             ? "%s opens and eats the contents of %s."
+                             : "%s eats %s.",
+                      Monnam(mon), distant_name(obj, doname));
+        else
+            pline_mon(mon, "%s %s %s.", Monnam(mon),
+                      ((obj->oclass == POTION_CLASS) ? "quaffs"
+                       : (obj->otyp == TIN) ? "opens and eats the contents of"
+                         : "eats"),
+                      distant_name(obj, doname));
         obj->quan = save_quan;
     } else if (!Deaf)
-        You_hear("%s.",
-                 (obj->oclass == POTION_CLASS) ? "drinking" : "chewing");
+        You_hear((obj->oclass == POTION_CLASS) ? "drinking." : "chewing.");
 
     m_useup(mon, obj);
     /* obj is now gone */
@@ -3111,9 +3238,12 @@ muse_unslime(
     int otyp = obj->otyp, dmg = 0;
     boolean vis = canseemon(mon), res = TRUE;
 
-    if (vis)
+    if (vis && green_mon(mon))
+        pline_mon(mon, "%s starts turning into ooze.", Monnam(mon));
+    else if (vis)
         pline_mon(mon, "%s starts turning %s.", Monnam(mon),
-              green_mon(mon) ? "into ooze" : hcolor(NH_GREEN));
+                  i18n_active() ? hcolor_i18n(hcolor(NH_GREEN), FALSE)
+                                : hcolor(NH_GREEN));
     /* -4 => sliming, causes quiet loss of enhanced speed */
     mon_adjust_speed(mon, -4, (struct obj *) 0);
 
@@ -3122,8 +3252,8 @@ muse_unslime(
 
         if (mon->mx == trap->tx && mon->my == trap->ty) {
             if (vis)
-                pline("%s triggers %s fire trap!", Mnam,
-                      trap->tseen ? "the" : "a");
+                pline(trap->tseen ? "%s triggers the fire trap!"
+                                  : "%s triggers a fire trap!", Mnam);
         } else {
             remove_monster(mon->mx, mon->my);
             newsym(mon->mx, mon->my);
@@ -3131,7 +3261,14 @@ muse_unslime(
             if (mon->wormno) /* won't happen; worms don't MUSE to unslime */
                 worm_move(mon);
             newsym(mon->mx, mon->my);
-            if (vis)
+            if (vis && i18n_active())
+                pline(is_floater(mon->data)
+                          ? (trap->tseen ? "%s moves over the fire trap!"
+                                         : "%s moves over a fire trap!")
+                          : (trap->tseen ? "%s moves onto the fire trap!"
+                                         : "%s moves onto a fire trap!"),
+                      Mnam);
+            else if (vis)
                 pline("%s %s %s %s fire trap!", Mnam,
                       vtense(fakename[0], locomotion(mon->data, "move")),
                       is_floater(mon->data) ? "over" : "onto",
@@ -3140,7 +3277,9 @@ muse_unslime(
         (void) mintrap(mon, FORCETRAP);
     } else if (otyp == STRANGE_OBJECT) {
         /* monster is using fire breath on self */
-        if (vis)
+        if (vis && i18n_active())
+            pline_mon(mon, "%s breathes fire on itself.", Monnam(mon));
+        else if (vis)
             pline_mon(mon, "%s.",
                       monverbself(mon, Monnam(mon), "breath", "fire on"));
         if (!rn2(3))
@@ -3191,9 +3330,14 @@ muse_unslime(
         if (vis) {
             if (!Unaware)
                 observe_object(obj); /* hero is watching mon drink obj */
-            pline("%s quaffs a burning %s",
-                  saw_lit ? upstart(strcpy(Pronoun, mhe(mon))) : Monnam(mon),
-                  simpleonames(obj));
+            if (i18n_active())
+                pline("%s quaffs a burning %s.", Monnam(mon),
+                      simpleonames(obj));
+            else
+                pline("%s quaffs a burning %s",
+                      saw_lit ? upstart(strcpy(Pronoun, mhe(mon)))
+                              : Monnam(mon),
+                      simpleonames(obj));
             makeknown(POT_OIL);
         }
         dmg = d(3, 4); /* [**TEMP** (different from hero)] */
@@ -3218,20 +3362,25 @@ muse_unslime(
                    for pacifist conduct); xkilled()'s message would say
                    "You killed/destroyed <mon>" so give our own message */
                 if (vis)
-                    pline_mon(mon, "%s is %s by the fire!", Monnam(mon),
-                          nonliving(mon->data) ? "destroyed" : "killed");
+                    pline_mon(mon, nonliving(mon->data)
+                                       ? "%s is destroyed by the fire!"
+                                       : "%s is killed by the fire!",
+                              Monnam(mon));
                 xkilled(mon, XKILL_NOMSG | XKILL_NOCONDUCT);
             } else
                 monkilled(mon, "fire", AD_FIRE);
         } else {
             /* non-fatal damage occurred */
             if (vis)
-                pline_mon(mon, "%s is burned%s", Monnam(mon), exclam(dmg));
+                pline_mon(mon, "%s is burned%s", Monnam(mon), _(exclam(dmg)));
         }
     }
     if (vis) {
-        if (res && !DEADMONSTER(mon))
-            pline_mon(mon, "%s slime is burned away!", s_suffix(Monnam(mon)));
+        if (res && !DEADMONSTER(mon) && i18n_active())
+            pline_mon(mon, "The slime of %s is burned away!", mon_nam(mon));
+        else if (res && !DEADMONSTER(mon))
+            pline_mon(mon, "%s slime is burned away!",
+                      s_suffix(Monnam(mon)));
         if (otyp != STRANGE_OBJECT)
             makeknown(otyp);
     }

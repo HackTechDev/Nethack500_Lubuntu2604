@@ -84,12 +84,23 @@ paiement, ventes, dégâts ; types de boutique traduits avec leur genre,
 (`pray.c`), les potions (`potion.c`) et l'utilisation des outils
 (`apply.c` : miroir, sifflets, laisse, bougies, lampes, fouet, pierre de
 touche...), les baguettes et rayons (`zap.c` : noms des rayons traduits
-avec leur genre, destruction des objets), sauf quelques verbes de
+avec leur genre, destruction des objets), les objets utilisés par les
+monstres (`muse.c`), les parchemins (`read.c` ; lueurs des
+enchantements d'armure et d'arme, aussi dans `wield.c`), `do.c`
+(escaliers, rochers, évier, autel, objets lâchés), `do_wear.c`
+(vêtements et accessoires ; noms d'armures avec leur genre et
+`i18n_an_ctx()`), le creusement (`dig.c`), le maniement des armes
+(`wield.c`), le ramassage et les conteneurs (`pickup.c`), les monstres
+(`mon.c`), les lancers (`dothrow.c`), les repas (`eat.c`), les
+artefacts (`artifact.c`), les délais (`timeout.c` : lampes et bougies qui
+s'éteignent, œufs, chutes) et les coups de pied (`dokick.c`), sauf quelques
+verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Restent, par nombre de messages non traduits :
-`muse.c`, `read.c`, `do.c`, `do_wear.c`,
-`attrib.c` (« You feel foolish! »)...
+(accord au féminin).  Restent notamment : `engrave.c`, `music.c`,
+`lock.c`, `detect.c`, `steed.c`, `teleport.c`, `invent.c`, `sit.c`,
+`sounds.c`, `vault.c`, `spell.c`...
+et `attrib.c` (« You feel foolish! »).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
 d'une condition passée à `pline()`, `You()`... : xgettext ne prenait que

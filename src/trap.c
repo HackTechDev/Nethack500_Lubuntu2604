@@ -3066,7 +3066,7 @@ trapeffect_landmine(
             trapkilled = TRUE;
         if (unconscious()) {
             gm.multi = -1;
-            gn.nomovemsg = "The explosion awakens you!";
+            gn.nomovemsg = N_("The explosion awakens you!");
         }
         return trapkilled ? Trap_Killed_Mon : mtmp->mtrapped
             ? Trap_Caught_Mon : Trap_Effect_Finished;

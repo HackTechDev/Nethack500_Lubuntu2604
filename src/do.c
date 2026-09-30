@@ -42,6 +42,42 @@ dodrop(void)
     return result;
 }
 
+#if 0
+/* for xgettext */
+N_(" in a whirl of spectral skulls"), N_(" in a churning pillar of flies"),
+N_(" in a ring of withered crops"),
+N_("Waiting"), N_("a no-op (to rest)"), N_("Are you waiting to get hit?"),
+N_("Searching"), N_("another search"), N_("You already found a monster."),
+N_("jumping"), N_("kicking"), N_("riding"),
+C_("feminine", "%s is instantly digested!"),
+C_("plural", "%s is instantly digested!"),
+C_("feminine plural", "%s is instantly digested!"),
+NC_("heroine", "You feel much less hassled."),
+NC_("heroine", "You feel less hassled."),
+NC_("heroine", "You are being held, and cannot go up."),
+NC_("heroine", "You are being held, and cannot go down."),
+NC_("heroine", "You are swallowed, and cannot go up."),
+NC_("heroine", "You are swallowed, and cannot go down."),
+NC_("heroine", "You are engulfed, and cannot go up."),
+NC_("heroine", "You are engulfed, and cannot go down."),
+C_("plural", "There is a %s flash as %s hits the altar."),
+C_("feminine plural", "There is a %s flash as %s hits the altar."),
+NC_("boulder", "drop"), NC_("boulder", "fall"), NC_("boulder", "land"),
+NC_("infinitive", "drop"), NC_("infinitive", "fall"),
+NC_("infinitive", "land"),
+/* waterbody_name() */
+NC_("noun", "moat"), NC_("gender", "moat"),
+NC_("noun", "pond"), NC_("gender", "pond"),
+NC_("noun", "swamp"), NC_("gender", "swamp"),
+NC_("noun", "shallow sea"), NC_("gender", "shallow sea"),
+NC_("noun", "deep water"), NC_("gender", "deep water"),
+NC_("noun", "pool of water"), NC_("gender", "pool of water"),
+NC_("noun", "molten lava"), NC_("gender", "molten lava"),
+NC_("noun", "limitless water"), NC_("gender", "limitless water"),
+NC_("noun", "wall of water"), NC_("gender", "wall of water"),
+NC_("noun", "wall of lava"), NC_("gender", "wall of lava"),
+#endif
+
 /* Called when a boulder is dropped, thrown, or pushed.  If it ends up
  * in a pool, it either fills the pool up or sinks away.  In either case,
  * it's gone for good...  If the destination is not a pool, returns FALSE.
@@ -100,8 +136,15 @@ boulder_hits_pool(
                 Strcpy(whobuf, "you");
                 if (u.usteed)
                     Strcpy(whobuf, y_monnam(u.usteed));
-                pline("%s %s %s into the %s.", upstart(whobuf),
-                      vtense(whobuf, "push"), the(xname(otmp)), what);
+                if (i18n_active() && u.usteed)
+                    pline("%s pushes %s into %s.", upstart(whobuf),
+                          the(xname(otmp)), i18n_the(what));
+                else if (i18n_active())
+                    You("push %s into %s.", the(xname(otmp)),
+                        i18n_the(what));
+                else
+                    pline("%s %s %s into the %s.", upstart(whobuf),
+                          vtense(whobuf, "push"), the(xname(otmp)), what);
                 if (flags.verbose && !Blind)
                     pline("Now you can cross it!");
                 /* no splashing in this case */
@@ -110,16 +153,22 @@ boulder_hits_pool(
         if (!fills_up || !pushing) { /* splashing occurs */
             if (!u.uinwater) {
                 if (pushing ? !Blind : cansee(rx, ry)) {
-                    There("is a large splash as %s %s the %s.",
-                          the(xname(otmp)), fills_up ? "fills" : "falls into",
-                          what);
+                    if (i18n_active())
+                        There(fills_up
+                                  ? "is a large splash as %s fills %s."
+                                  : "is a large splash as %s falls into %s.",
+                              the(xname(otmp)), i18n_the(what));
+                    else
+                        There("is a large splash as %s %s the %s.",
+                              the(xname(otmp)),
+                              fills_up ? "fills" : "falls into", what);
                 } else if (!Deaf) {
                     if (lava) {
                         Soundeffect(se_sizzling, 100);
                     } else {
                         Soundeffect(se_splash, 100);
                     }
-                    You_hear("a%s splash.", lava ? " sizzling" : "");
+                    You_hear(lava ? "a sizzling splash." : "a splash.");
                 }
                 wake_nearto(rx, ry, 40);
             }
@@ -132,8 +181,9 @@ boulder_hits_pool(
             } else if (lava && next2u(rx, ry)) {
                 int dmg;
 
-                You("are hit by molten %s%c",
-                    hliquid("lava"), Fire_resistance ? '.' : '!');
+                You(Fire_resistance ? "are hit by molten %s."
+                                    : "are hit by molten %s!",
+                    _(hliquid("lava")));
                 burn_away_slime();
                 dmg = d((Fire_resistance ? 1 : 3), 6);
                 losehp(Maybe_Half_Phys(dmg), /* lava damage */
@@ -190,11 +240,17 @@ flooreffects(
         tseen = t->tseen ? TRUE : FALSE;
         if (((mtmp = m_at(x, y)) && mtmp->mtrapped)
             || (u.utrap && u_at(x,y))) {
-            if (*verb && (cansee(x, y) || distu(x, y) == 0))
-                pline("%s boulder %s into the pit%s.",
-                      Blind ? "A" : "The",
-                      vtense((const char *) 0, verb),
-                      mtmp ? "" : " with you");
+            if (*verb && (cansee(x, y) || distu(x, y) == 0)
+                && i18n_active())
+                pline(mtmp ? "%s %s into the pit."
+                           : "%s %s into the pit with you.",
+                      Blind ? _("A boulder") : _("The boulder"),
+                      C_("boulder", verb));
+            else if (*verb && (cansee(x, y) || distu(x, y) == 0))
+                    pline("%s boulder %s into the pit%s.",
+                          Blind ? "A" : "The",
+                          vtense((const char *) 0, verb),
+                          mtmp ? "" : " with you");
             if (mtmp) {
                 if (!passes_walls(mtmp->data) && !throws_rocks(mtmp->data)) {
                     /* dieroll was rnd(20); 1: maximum chance to hit
@@ -213,10 +269,11 @@ flooreffects(
                         mtmp->mhp -= damage;
                         if (DEADMONSTER(mtmp)) {
                             if (canspotmon(mtmp))
-                                pline("%s is %s!", Monnam(mtmp),
-                                      (nonliving(mtmp->data)
-                                       || is_vampshifter(mtmp))
-                                      ? "destroyed" : "killed");
+                                pline((nonliving(mtmp->data)
+                                           || is_vampshifter(mtmp))
+                                              ? "%s is destroyed!"
+                                              : "%s is killed!",
+                                          Monnam(mtmp));
                             mondied(mtmp);
                         }
                     } else {
@@ -241,14 +298,15 @@ flooreffects(
                 Soundeffect(se_crashing_boulder, 100);
                 You_hear("a CRASH! beneath you.");
             } else if (!Blind && cansee(x, y)) {
-                pline_The("boulder %s%s.",
-                          (ttyp == TRAPDOOR && !tseen) ? "triggers and " : "",
-                          (ttyp == TRAPDOOR) ? "plugs a trap door"
-                          : (ttyp == HOLE) ? "plugs a hole"
-                            : "fills a pit");
+                pline_The((ttyp == TRAPDOOR && !tseen)
+                              ? "boulder triggers and plugs a trap door."
+                              : (ttyp == TRAPDOOR)
+                                ? "boulder plugs a trap door."
+                                : (ttyp == HOLE) ? "boulder plugs a hole."
+                                                 : "boulder fills a pit.");
             } else {
                 Soundeffect(se_boulder_drop, 100);
-                You_hear("a boulder %s.", verb);
+                You_hear("a boulder %s.", C_("infinitive", verb));
             }
         }
         /*
@@ -292,8 +350,13 @@ flooreffects(
                 Soundeffect(se_item_tumble_downwards, 50);
                 You_hear("%s tumble downwards.", the(xname(obj)));
             } else {
-                pline("%s into %s pit.", Tobjnam(obj, "tumble"),
-                      the_your[t->madeby_u]);
+                if (i18n_active())
+                    pline(t->madeby_u ? "%s tumbles into your pit."
+                                      : "%s tumbles into the pit.",
+                          The(xname(obj)));
+                else
+                    pline("%s into %s pit.", Tobjnam(obj, "tumble"),
+                          the_your[t->madeby_u]);
             }
         } else if (ship_object(obj, x, y, FALSE)) {
             /* ship_object will print an appropriate "the item falls
@@ -332,8 +395,14 @@ flooreffects(
         if (cansee(x,y)) {
             /* unconditional "ground" is safe as this only runs for
                room and corridor tiles */
-            pline("%s up as %s the hot ground.", Tobjnam(obj, "heat"),
-                  is_plural(obj) ? "they hit" : "it hits");
+            if (i18n_active())
+                pline(is_plural(obj)
+                          ? "%s heat up as they hit the hot ground."
+                          : "%s heats up as it hits the hot ground.",
+                      The(xname(obj)));
+            else
+                pline("%s up as %s the hot ground.", Tobjnam(obj, "heat"),
+                      is_plural(obj) ? "they hit" : "it hits");
         }
 
         int survival_chance = obj->blessed ? 70 : 50;
@@ -344,8 +413,8 @@ flooreffects(
 
         if (!obj_resists(obj, survival_chance, 100)) {
             if (cansee(x,y)) {
-                pline("%s from the heat!",
-                      is_plural(obj) ? "They shatter" : "It shatters");
+                pline(is_plural(obj) ? "They shatter from the heat!"
+                                     : "It shatters from the heat!");
             } else {
                 You_hear("a shattering noise.");
             }
@@ -357,6 +426,8 @@ flooreffects(
     gb.bhitpos = save_bhitpos;
     return res;
 }
+
+DISABLE_WARNING_FORMAT_NONLITERAL
 
 /* obj is an object dropped on an altar */
 void
@@ -376,7 +447,17 @@ doaltarobj(struct obj *obj)
         obj->blessed = obj->cursed = 0;
     }
 
-    if (obj->blessed || obj->cursed) {
+    if ((obj->blessed || obj->cursed) && i18n_active()) {
+        const char *nm = doname(obj);
+
+        /* the object is the subject of the verb */
+        pline(objnam_fmt("There is a %s flash as %s hits the altar.", nm,
+                         obj),
+              hcolor_i18n(hcolor(obj->blessed ? NH_AMBER : NH_BLACK),
+                          FALSE), nm);
+        if (!Hallucination)
+            obj->bknown = 1; /* ok to bypass set_bknown() */
+    } else if (obj->blessed || obj->cursed) {
         There("is %s flash as %s %s the altar.",
               an(hcolor(obj->blessed ? NH_AMBER : NH_BLACK)), doname(obj),
               otense(obj, "hit"));
@@ -388,6 +469,8 @@ doaltarobj(struct obj *obj)
             obj->bknown = 1; /* ok to bypass set_bknown() */
     }
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* If obj is neither formally identified nor informally called something
  * already, prompt the player to call its object type. */
@@ -447,7 +530,15 @@ polymorph_sink(void)
     }
     /* give message even if blind; we know we're not levitating,
        so can feel the outcome even if we can't directly see it */
-    if (levl[u.ux][u.uy].typ != ROOM)
+    if (levl[u.ux][u.uy].typ != ROOM && i18n_active()) {
+        const char *en = defsyms[sym].explanation;
+        char anbuf[BUFSZ];
+
+        Snprintf(anbuf, sizeof anbuf,
+                 i18n_noun_fem(en) ? C_("feminine", "a %s") : _("a %s"),
+                 C_("noun", en));
+        pline_The("sink transforms into %s!", anbuf);
+    } else if (levl[u.ux][u.uy].typ != ROOM)
         pline_The("sink transforms into %s!", an(defsyms[sym].explanation));
     else
         pline_The("sink vanishes.");
@@ -518,11 +609,17 @@ dosinkring(struct obj *obj)
         pline_The("sink quivers upward for a moment.");
         break;
     case RIN_POISON_RESISTANCE:
-        You("smell rotten %s.", makeplural(fruitname(FALSE)));
+        if (i18n_active())
+            You("smell rotten fruit.");
+        else
+            You("smell rotten %s.", makeplural(fruitname(FALSE)));
         break;
     case RIN_AGGRAVATE_MONSTER:
-        pline("Several %s buzz angrily around the sink.",
-              Hallucination ? makeplural(rndmonnam(NULL)) : "flies");
+        if (Hallucination && !i18n_active())
+            pline("Several %s buzz angrily around the sink.",
+                  makeplural(rndmonnam(NULL)));
+        else
+            pline("Several flies buzz angrily around the sink.");
         break;
     case RIN_SHOCK_RESISTANCE:
         pline("Static electricity surrounds the sink.");
@@ -532,26 +629,26 @@ dosinkring(struct obj *obj)
         You_hear("loud noises coming from the drain.");
         break;
     case RIN_SUSTAIN_ABILITY: /* KMH */
-        pline_The("%s flow seems fixed.", hliquid("water"));
+        pline_The("%s flow seems fixed.", _(hliquid("water")));
         break;
     case RIN_GAIN_STRENGTH:
-        pline_The("%s flow seems %ser now.",
-                  hliquid("water"),
-                  (obj->spe < 0) ? "weak" : "strong");
+        pline_The((obj->spe < 0) ? "%s flow seems weaker now."
+                                 : "%s flow seems stronger now.",
+                  _(hliquid("water")));
         break;
     case RIN_GAIN_CONSTITUTION:
-        pline_The("%s flow seems %ser now.",
-                  hliquid("water"),
-                  (obj->spe < 0) ? "less" : "great");
+        pline_The((obj->spe < 0) ? "%s flow seems lesser now."
+                                 : "%s flow seems greater now.",
+                  _(hliquid("water")));
         break;
     case RIN_INCREASE_ACCURACY: /* KMH */
-        pline_The("%s flow %s the drain.",
-                  hliquid("water"),
-                  (obj->spe < 0) ? "misses" : "hits");
+        pline_The((obj->spe < 0) ? "%s flow misses the drain."
+                                 : "%s flow hits the drain.",
+                  _(hliquid("water")));
         break;
     case RIN_INCREASE_DAMAGE:
-        pline_The("water's force seems %ser now.",
-                  (obj->spe < 0) ? "small" : "great");
+        pline_The((obj->spe < 0) ? "water's force seems smaller now."
+                                 : "water's force seems greater now.");
         break;
     case RIN_HUNGER:
         ideed = FALSE;
@@ -576,7 +673,7 @@ dosinkring(struct obj *obj)
         nosink = teleport_sink();
         /* give message even if blind; we know we're not levitating,
            so can feel the outcome even if we can't directly see it */
-        pline_The("sink %svanishes.", nosink ? "" : "momentarily ");
+        pline_The(nosink ? "sink vanishes." : "sink momentarily vanishes.");
         ideed = FALSE;
         break;
     case RIN_POLYMORPH:
@@ -605,29 +702,35 @@ dosinkring(struct obj *obj)
             You_see("the ring slide right down the drain!");
             break;
         case RIN_SEE_INVISIBLE:
-            You_see("some %s in the sink.",
-                    Hallucination ? "oxygen molecules" : "air");
+            You_see(Hallucination ? "some oxygen molecules in the sink."
+                                  : "some air in the sink.");
             break;
         case RIN_STEALTH:
             pline_The("sink seems to blend into the floor for a moment.");
             break;
         case RIN_FIRE_RESISTANCE:
             pline_The("hot %s faucet flashes brightly for a moment.",
-                      hliquid("water"));
+                      _(hliquid("water")));
             break;
         case RIN_COLD_RESISTANCE:
             pline_The("cold %s faucet flashes brightly for a moment.",
-                      hliquid("water"));
+                      _(hliquid("water")));
             break;
         case RIN_PROTECTION_FROM_SHAPE_CHAN:
             pline_The("sink looks nothing like a fountain.");
             break;
         case RIN_PROTECTION:
             pline_The("sink glows %s for a moment.",
-                      hcolor((obj->spe < 0) ? NH_BLACK : NH_SILVER));
+                      i18n_active()
+                          ? hcolor_i18n(hcolor((obj->spe < 0) ? NH_BLACK
+                                                              : NH_SILVER),
+                                        FALSE)
+                          : hcolor((obj->spe < 0) ? NH_BLACK : NH_SILVER));
             break;
         case RIN_WARNING:
-            pline_The("sink glows %s for a moment.", hcolor(NH_WHITE));
+            pline_The("sink glows %s for a moment.",
+                      i18n_active() ? hcolor_i18n(hcolor(NH_WHITE), FALSE)
+                                    : hcolor(NH_WHITE));
             break;
         case RIN_TELEPORT_CONTROL:
             pline_The("sink looks like it is being beamed aboard somewhere.");
@@ -666,7 +769,8 @@ canletgo(struct obj *obj, const char *word)
 {
     if (obj->owornmask & (W_ARMOR | W_ACCESSORY)) {
         if (*word)
-            Norep("You cannot %s %s you are wearing.", word, something);
+            Norep("You cannot %s %s you are wearing.", C_("verb", word),
+                  _(something));
         return FALSE;
     }
     if (obj == uwep && welded(uwep)) {
@@ -677,8 +781,8 @@ canletgo(struct obj *obj, const char *word)
 
             if (bimanual(uwep))
                 hand = makeplural(hand);
-            Norep("You cannot %s %s welded to your %s.", word, something,
-                  hand);
+            Norep("You cannot %s %s welded to your %s.", C_("verb", word),
+                  _(something), hand);
         }
         return FALSE;
     }
@@ -690,8 +794,17 @@ canletgo(struct obj *obj, const char *word)
                implicitly forced to be 1; replicate its kludge... */
             if (!strcmp(word, "throw") && obj->quan > 1L)
                 obj->corpsenm = 1;
-            pline("For some reason, you cannot %s%s the stone%s!", word,
-                  obj->corpsenm ? " any of" : "", plur(obj->quan));
+            if (i18n_active())
+                pline((obj->quan > 1L)
+                          ? (obj->corpsenm
+                             ? "For some reason, you cannot %s any of the "
+                               "stones!"
+                             : "For some reason, you cannot %s the stones!")
+                          : "For some reason, you cannot %s the stone!",
+                      C_("verb", word));
+            else
+                pline("For some reason, you cannot %s%s the stone%s!", word,
+                      obj->corpsenm ? " any of" : "", plur(obj->quan));
         }
         obj->corpsenm = 0; /* reset */
         set_bknown(obj, 1);
@@ -704,7 +817,8 @@ canletgo(struct obj *obj, const char *word)
     }
     if (obj->owornmask & W_SADDLE) {
         if (*word)
-            You("cannot %s %s you are sitting on.", word, something);
+            You("cannot %s %s you are sitting on.", C_("verb", word),
+                _(something));
         return FALSE;
     }
     return TRUE;
@@ -842,6 +956,8 @@ dropz(struct obj *obj, boolean with_impact)
     encumber_msg();
 }
 
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 /* when swallowed, move dropped object from OBJ_FREE to u.ustuck's inventory;
    for purple worm, immediately eat any corpse, glob, or special meat item
    from object polymorph; return True if object is used up, False otherwise */
@@ -867,7 +983,12 @@ engulfer_digests_food(struct obj *obj)
             could_slime = TRUE;
         }
         /* see or feel the effect */
-        pline("%s instantly digested!", Tobjnam(obj, "are"));
+        if (i18n_active()) {
+            const char *nm = The(xname(obj));
+
+            pline(objnam_fmt("%s is instantly digested!", nm, obj), nm);
+        } else
+            pline("%s instantly digested!", Tobjnam(obj, "are"));
 
         if (could_poly || could_slime) {
             (void) newcham(u.ustuck, could_slime ? &mons[PM_GREEN_SLIME] : 0,
@@ -886,6 +1007,8 @@ engulfer_digests_food(struct obj *obj)
     }
     return FALSE;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* things that must change when not held; recurse into containers.
    Called for both player and monsters */
@@ -1112,10 +1235,17 @@ u_stuck_cannot_go(const char *updn)
 {
     if (u.ustuck) {
         if (u.uswallow || !sticks(gy.youmonst.data)) {
-            You("are %s, and cannot go %s.",
-                !u.uswallow ? "being held"
-                : digests(u.ustuck->data) ? "swallowed"
-                : "engulfed", updn);
+            boolean up = !strcmp(updn, "up");
+
+            if (!u.uswallow)
+                You(up ? "are being held, and cannot go up."
+                       : "are being held, and cannot go down.");
+            else if (digests(u.ustuck->data))
+                You(up ? "are swallowed, and cannot go up."
+                       : "are swallowed, and cannot go down.");
+            else
+                You(up ? "are engulfed, and cannot go up."
+                       : "are engulfed, and cannot go down.");
             return TRUE;
         } else {
             struct monst *mtmp = u.ustuck;
@@ -1191,10 +1321,12 @@ dodown(void)
                 ladder_down = (glyph_to_cmap(glyph_at_uxuy) == S_dnladder);
         }
         if (Is_airlevel(&u.uz))
-            You("are floating in the %s.", surface(u.ux, u.uy));
+            You("are floating in %s.", i18n_active()
+                                           ? i18n_the(surface(u.ux, u.uy))
+                                           : the(surface(u.ux, u.uy)));
         else if (Is_waterlevel(&u.uz))
-            You("are floating in %s.",
-                is_pool(u.ux, u.uy) ? "the water" : "a bubble of air");
+            You(is_pool(u.ux, u.uy) ? "are floating in the water."
+                                    : "are floating in a bubble of air.");
         else
             floating_above(stairs_down ? "stairs"
                            : ladder_down ? "ladder"
@@ -1207,7 +1339,10 @@ dodown(void)
         if (Flying) { /* lurker above */
             You("fly out of hiding.");
         } else { /* piercer */
-            You("drop to the %s.", surface(u.ux, u.uy));
+            if (i18n_active())
+                You("drop to %s.", i18n_the(surface(u.ux, u.uy)));
+            else
+                You("drop to the %s.", surface(u.ux, u.uy));
             if (is_pool_or_lava(u.ux, u.uy)) {
                 pooleffects(FALSE);
             } else {
@@ -1233,9 +1368,9 @@ dodown(void)
                 && uwep && is_pick(uwep)) {
                 return use_pick_axe2(uwep);
             } else {
-                You_cant("go down here%s.",
-                         (trap && trap->ttyp == VIBRATING_SQUARE) ? " yet"
-                                                                  : "");
+                You_cant((trap && trap->ttyp == VIBRATING_SQUARE)
+                             ? "go down here yet."
+                             : "go down here.");
                 return ECMD_OK;
             }
         }
@@ -1255,29 +1390,39 @@ dodown(void)
     }
 
     if (trap) {
-        const char *down_or_thru = trap->ttyp == HOLE ? "down" : "through";
+        boolean hole = (trap->ttyp == HOLE), squeezed = FALSE;
+        const char *down_or_thru = hole ? "down" : "through";
         const char *actn = u_locomotion("jump");
 
         if (gy.youmonst.data->msize >= MZ_HUGE) {
-            char qbuf[QBUFSZ];
-
-            You("don't fit %s easily.", down_or_thru);
-            Sprintf(qbuf, "Try to squeeze %s?", down_or_thru);
-            if (y_n(qbuf) == 'y') {
+            You(hole ? "don't fit down easily."
+                     : "don't fit through easily.");
+            if (y_n(hole ? "Try to squeeze down?" : "Try to squeeze through?")
+                == 'y') {
                 if (!rn2(3)) {
                     actn = "manage to squeeze";
+                    squeezed = TRUE;
                     losehp(Maybe_Half_Phys(rnd(4)),
                            "contusion from a small passage", KILLED_BY);
                 } else {
-                    You("were unable to fit %s.", down_or_thru);
+                    You(hole ? "were unable to fit down."
+                             : "were unable to fit through.");
                     return ECMD_OK;
                 }
             } else {
                 return ECMD_OK;
             }
         }
-        You("%s %s the %s.", actn, down_or_thru,
-            trap->ttyp == HOLE ? "hole" : "trap door");
+        if (i18n_active()) {
+            if (squeezed)
+                You(hole ? "manage to squeeze down the hole."
+                         : "manage to squeeze through the trap door.");
+            else
+                You(hole ? "jump down the hole."
+                         : "jump through the trap door.");
+        } else
+            You("%s %s the %s.", actn, down_or_thru,
+                hole ? "hole" : "trap door");
     }
     if (trap && Is_stronghold(&u.uz)) {
         goto_hell(FALSE, TRUE);
@@ -1324,8 +1469,9 @@ doup(void)
 
     if (near_capacity() > SLT_ENCUMBER) {
         /* No levitation check; inv_weight() already allows for it */
-        Your("load is too heavy to climb the %s.",
-             levl[u.ux][u.uy].typ == STAIRS ? "stairs" : "ladder");
+        Your((levl[u.ux][u.uy].typ == STAIRS)
+                 ? "load is too heavy to climb the stairs."
+                 : "load is too heavy to climb the ladder.");
         return ECMD_TIME;
     }
     if (ledger_no(&u.uz) == 1) {
@@ -1757,7 +1903,24 @@ goto_level(
             /* you climb up the {stairs|ladder};
                fly up the stairs; fly up along the ladder */
             great_effort = (Punished && !Levitation);
-            if (flags.verbose || great_effort)
+            if ((flags.verbose || great_effort) && i18n_active()) {
+                if (great_effort)
+                    pline(!ga.at_ladder
+                          ? (Flying ? "With great effort, you fly up the "
+                                      "stairs."
+                                    : "With great effort, you climb up the "
+                                      "stairs.")
+                          : (Flying ? "With great effort, you fly up along "
+                                      "the ladder."
+                                    : "With great effort, you climb up the "
+                                      "ladder."));
+                else
+                    You(!ga.at_ladder
+                        ? (Flying ? "fly up the stairs."
+                                  : "climb up the stairs.")
+                        : (Flying ? "fly up along the ladder."
+                                  : "climb up the ladder."));
+            } else if (flags.verbose || great_effort)
                 pline("%s %s up%s the %s.",
                       great_effort ? "With great effort, you" : "You",
                       u_locomotion("climb"),
@@ -1776,11 +1939,12 @@ goto_level(
                 ; /* stayed on same level? (no transit effects) */
             } else if (Flying) {
                 if (flags.verbose)
-                    You("fly down %s.",
-                        ga.at_ladder ? "along the ladder" : "the stairs");
+                    You(ga.at_ladder ? "fly down along the ladder."
+                                     : "fly down the stairs.");
             } else if (near_capacity() > UNENCUMBERED
                        || Punished || Fumbling) {
-                You("fall down the %s.", ga.at_ladder ? "ladder" : "stairs");
+                You(ga.at_ladder ? "fall down the ladder."
+                                 : "fall down the stairs.");
                 if (Punished) {
                     drag_down();
                     if (!welded(uball))
@@ -1797,8 +1961,8 @@ goto_level(
                 selftouch("Falling, you");
             } else { /* ordinary descent */
                 if (flags.verbose)
-                    You("%s.", ga.at_ladder ? "climb down the ladder"
-                                         : "descend the stairs");
+                    You(ga.at_ladder ? "climb down the ladder."
+                                     : "descend the stairs.");
             }
         }
     } else { /* trap door or level_tele or In_endgame */
@@ -2004,12 +2168,12 @@ void
 hellish_smoke_mesg(void)
 {
     if (svl.level.flags.temperature)
-        pline("It is %s here.",
-              svl.level.flags.temperature > 0 ? "hot" : "cold");
+        pline((svl.level.flags.temperature > 0) ? "It is hot here."
+                                                : "It is cold here.");
 
     if (In_hell(&u.uz) && svl.level.flags.temperature > 0)
-        You("%s smoke...",
-              olfaction(gy.youmonst.data) ? "smell" : "sense");
+        You(olfaction(gy.youmonst.data) ? "smell smoke..."
+                                        : "sense smoke...");
 }
 
 /* give a message when the level temperature is different from previous */
@@ -2020,9 +2184,8 @@ temperature_change_msg(schar prev_temperature)
         if (svl.level.flags.temperature)
             hellish_smoke_mesg();
         else if (prev_temperature > 0)
-            pline_The("heat %s gone.",
-                      In_hell(&u.uz0)
-                      ? "and smoke are" : "is");
+            pline_The(In_hell(&u.uz0) ? "heat and smoke are gone."
+                                      : "heat is gone.");
         else if (prev_temperature < 0)
             You("are out of the cold.");
     }
@@ -2174,9 +2337,9 @@ revive_corpse(struct obj *corpse)
                     pline("%s rises from the dead%s!",
                           chewed ? Adjmonnam(mtmp, "bite-covered")
                                  : Monnam(mtmp),
-                          effect);
+                          _(effect));
                 } else {
-                    pline("%s disappears%s!", The(cname), effect);
+                    pline("%s disappears%s!", The(cname), _(effect));
                 }
             }
             break;
@@ -2184,9 +2347,10 @@ revive_corpse(struct obj *corpse)
         case OBJ_MINVENT: /* probably a nymph's */
             if (cansee(mtmp->mx, mtmp->my)) {
                 if (mcarry && canseemon(mcarry))
-                    pline("Startled, %s drops %s as it %s!",
-                          mon_nam(mcarry), an(cname),
-                          canspotmon(mtmp) ? "revives" : "disappears");
+                    pline(canspotmon(mtmp)
+                              ? "Startled, %s drops %s as it revives!"
+                              : "Startled, %s drops %s as it disappears!",
+                          mon_nam(mcarry), an(cname));
                 else if (canspotmon(mtmp))
                     pline("%s suddenly appears!",
                           chewed ? Adjmonnam(mtmp, "bite-covered")
@@ -2206,8 +2370,12 @@ revive_corpse(struct obj *corpse)
                 pline("%s writhes out of %s!", mnam, yname(container));
             } else if (container_where == OBJ_INVENT) {
                 Strcpy(sackname, an(xname(container)));
-                pline("%s %s out of %s in your pack!", mnam,
-                      locomotion(mtmp->data, "writhes"), sackname);
+                if (i18n_active())
+                    pline("%s writhes out of %s in your pack!", mnam,
+                          sackname);
+                else
+                    pline("%s %s out of %s in your pack!", mnam,
+                          locomotion(mtmp->data, "writhes"), sackname);
             } else if (container_where == OBJ_FLOOR
                        && cansee(corpsex, corpsey)) {
                 Strcpy(sackname, an(xname(container)));
@@ -2284,7 +2452,8 @@ revive_mon(anything *arg, long timeout UNUSED)
             when = rider_revival_time(body, TRUE);
         } else { /* rot this corpse away */
             if (!obj_has_timer(body, ROT_CORPSE))
-                You_feel("%sless hassled.", is_rider(mptr) ? "much " : "");
+                You_feel(is_rider(mptr) ? "much less hassled."
+                                        : "less hassled.");
             action = ROT_CORPSE;
             when = (long) d(5, 50) - (svm.moves - body->age);
             if (when < 1L)
@@ -2331,14 +2500,14 @@ cmd_safety_prevention(const char *ucverb, const char *cmddesc,
 
         buf[0] = '\0';
         if (iflags.cmdassist || !(*flagcounter)++)
-            Sprintf(buf, "  Use '%s' prefix to force %s.",
-                    visctrl(cmd_from_func(do_reqmenu)), cmddesc);
+            Snprintf(buf, sizeof buf, _("  Use '%s' prefix to force %s."),
+                     visctrl(cmd_from_func(do_reqmenu)), _(cmddesc));
 
         if (monster_nearby()) {
-            Norep("%s%s", act, buf);
+            Norep("%s%s", _(act), buf);
             return TRUE;
         } else if (danger_uprops()) {
-            Norep("%s doesn't feel like a good idea right now.", ucverb);
+            Norep("%s doesn't feel like a good idea right now.", _(ucverb));
             return TRUE;
         }
     }
@@ -2410,16 +2579,18 @@ legs_in_no_shape(const char *for_what, /* jumping, kicking, riding */
                  boolean by_steed)
 {
     if (by_steed && u.usteed) {
-        pline("%s is in no shape for %s.", Monnam(u.usteed), for_what);
+        pline("%s is in no shape for %s.", Monnam(u.usteed), _(for_what));
     } else {
         long wl = (EWounded_legs & BOTH_SIDES);
         const char *bp = body_part(LEG);
 
         if (wl == BOTH_SIDES)
             bp = makeplural(bp);
-        Your("%s%s %s in no shape for %s.",
-             (wl == LEFT_SIDE) ? "left " : (wl == RIGHT_SIDE) ? "right " : "",
-             bp, (wl == BOTH_SIDES) ? "are" : "is", for_what);
+        Your((wl == LEFT_SIDE) ? "left %s is in no shape for %s."
+             : (wl == RIGHT_SIDE) ? "right %s is in no shape for %s."
+               : (wl == BOTH_SIDES) ? "%s are in no shape for %s."
+                 : "%s is in no shape for %s.",
+             bp, _(for_what));
     }
 }
 
@@ -2466,7 +2637,10 @@ heal_legs(
                 legs = makeplural(legs);
             /* this used to say "somewhat better" but that was
                misleading since legs are being fully healed */
-            Your("%s %s better.", legs, vtense(legs, "feel"));
+            if ((EWounded_legs & BOTH_SIDES) == BOTH_SIDES)
+                Your("%s feel better.", legs);
+            else
+                Your("%s feels better.", legs);
         }
 
         HWounded_legs = EWounded_legs = 0L;

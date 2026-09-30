@@ -518,7 +518,7 @@ ghost_from_bottle(void)
         You("are frightened to death, and unable to move.");
     nomul(-3);
     gm.multi_reason = "being frightened to death";
-    gn.nomovemsg = "You regain your composure.";
+    gn.nomovemsg = N_("You regain your composure.");
 }
 
 /* getobj callback for object to drink from, which also does double duty as
@@ -817,7 +817,7 @@ peffect_booze(struct obj *otmp)
     if (otmp->cursed) {
         You("pass out.");
         gm.multi = -rnd(15);
-        gn.nomovemsg = "You awake with a headache.";
+        gn.nomovemsg = N_("You awake with a headache.");
     }
 }
 
@@ -1504,8 +1504,9 @@ void
 strange_feeling(struct obj *obj, const char *txt)
 {
     if (flags.beginner || !txt)
-        You("have a %s feeling for a moment, then it passes.",
-            Hallucination ? "normal" : "strange");
+        You(Hallucination
+                ? "have a normal feeling for a moment, then it passes."
+                : "have a strange feeling for a moment, then it passes.");
     else
         pline1(txt);
 

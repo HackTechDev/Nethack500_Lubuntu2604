@@ -3017,7 +3017,14 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	(mhitu.c), poisoning and end of game questions; shopkeepers (shk.c),
 	with translated shop type names; prayer and potion messages, colors
 	translated with their agreement; messages about applying tools
-	(apply.c); wand, ray and item destruction messages (zap.c)
+	(apply.c); wand, ray and item destruction messages (zap.c);
+	monsters using items (muse.c); scrolls (read.c), with the glow of
+	enchanted armor and weapons; hcolor_i18n() prefers msgctxt "color";
+	stairs, boulders, sinks, altars and dropped objects (do.c); wearing
+	and removing armor and accessories (do_wear.c); digging (dig.c),
+	wielding (wield.c), picking up and containers (pickup.c), monster
+	events (mon.c), throwing (dothrow.c), eating (eat.c), artifacts
+	(artifact.c), timed events (timeout.c) and kicking (dokick.c)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

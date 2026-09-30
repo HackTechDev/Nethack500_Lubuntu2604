@@ -4609,7 +4609,7 @@ int
 doprwep(void)
 {
     if (!uwep) {
-        You("are %s.", empty_handed());
+        You("are %s.", _(empty_handed()));
     } else if (!iflags.menu_requested) {
         prinv((char *) 0, uwep, 0L);
         if (u.twoweap)

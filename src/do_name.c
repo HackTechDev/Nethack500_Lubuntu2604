@@ -891,6 +891,24 @@ i18n_the_ctx(const char *ctx, const char *en)
     return res;
 }
 
+/* i18n_the_ctx() with the indefinite article: "une cape", "des bottes" */
+char *
+i18n_an_ctx(const char *ctx, const char *en)
+{
+    static char buf[4][BUFSZ];
+    static int idx = 0;
+    char *res = buf[idx = (idx + 1) % 4];
+    const char *noun = C_(ctx, en), *g = i18n_lookup("gender", en);
+
+    if (g && strchr(g, 'p')) /* plural noun */
+        Snprintf(res, BUFSZ, C_("plural", "a %s"), noun);
+    else if (i18n_feminine(en))
+        Snprintf(res, BUFSZ, C_("feminine", "a %s"), noun);
+    else
+        Snprintf(res, BUFSZ, _("a %s"), noun);
+    return res;
+}
+
 /* is the translation of the English noun en feminine? */
 boolean
 i18n_noun_fem(const char *en)
@@ -1714,15 +1732,24 @@ C_("feminine", "light blue"), C_("feminine", "red"),
 C_("feminine", "green"), C_("feminine", "silver"), C_("feminine", "blue"),
 C_("feminine", "purple"), C_("feminine", "white"),
 C_("feminine", "orange"), C_("feminine", "gray"),
+/* colors whose translation differs from that of the same word used for
+   objects ("silver" ring, "en argent") */
+NC_("color", "silver"), NC_("feminine color", "silver"),
 #endif
 
 /* hcolor() translated as an adjective qualifying a masculine or feminine
-   noun (msgctxt "feminine") */
+   noun (msgctxt "color" or "feminine color" if there is one, else no
+   msgctxt or "feminine") */
 const char *
 hcolor_i18n(const char *colorpref, boolean fem)
 {
     const char *color = hcolor(colorpref);
+#ifdef NHI18N
+    const char *res = i18n_lookup(fem ? "feminine color" : "color", color);
 
+    if (res)
+        return res;
+#endif
     return fem ? C_("feminine", color) : _(color);
 }
 

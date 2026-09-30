@@ -136,6 +136,9 @@ NC_("destroy", "catch fire and burn"),
 NC_("destroy", "turns to dust and vanishes"),
 NC_("destroy", "breaks apart and explodes"),
 N_("The ice crackles and melts."),
+/* hold_another_object() formats of makewish() */
+N_("Oops!  %s out of your reach!"), N_("Oops!  %s away from you!"),
+N_("Oops!  %s to the floor!"), N_("Careful! %s on the floor!"),
 /* create_polymon() */
 NC_("material", "metal"), NC_("material", "lithic"),
 NC_("material", "organic"), NC_("material", "wood"),

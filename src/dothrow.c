@@ -242,7 +242,7 @@ throw_obj(struct obj *obj, int shotlimit)
        attempted to specify a count */
     if (multishot > 1 || shotlimit > 0) {
         /* "You shoot N arrows." or "You throw N daggers." */
-        You("%s %d %s.", gm.m_shot.s ? "shoot" : "throw",
+        You(gm.m_shot.s ? "shoot %d %s." : "throw %d %s.",
             multishot, /* (might be 1 if player gave shotlimit) */
             (multishot == 1) ? singular(obj, xname) : xname(obj));
     }
@@ -592,10 +592,9 @@ endmultishot(boolean verbose)
 {
     if (gm.m_shot.i < gm.m_shot.n) {
         if (verbose && !svc.context.mon_moving) {
-            You("stop %s after the %d%s %s.",
-                gm.m_shot.s ? "firing" : "throwing",
-                gm.m_shot.i, ordin(gm.m_shot.i),
-                gm.m_shot.s ? "shot" : "toss");
+            You(gm.m_shot.s ? "stop firing after the %d%s shot."
+                            : "stop throwing after the %d%s toss.",
+                gm.m_shot.i, ordin(gm.m_shot.i));
         }
         gm.m_shot.n = gm.m_shot.i; /* make current shot be the last */
     }
@@ -637,7 +636,11 @@ hitfloor(
                 break;
             }
         }
-        pline("%s %s the %s.", Doname2(obj), otense(obj, verb), surf);
+        if (i18n_active())
+            pline("%s %s %s.", Doname2(obj), otense(obj, verb),
+                  i18n_the(surf));
+        else
+            pline("%s %s the %s.", Doname2(obj), otense(obj, verb), surf);
     }
 
     if (hero_breaks(obj, u.ux, u.uy, BRK_FROM_INV))
@@ -828,8 +831,9 @@ hurtle_step(genericptr_t arg, coordxy x, coordxy y)
 
             if (bigmonst(gy.youmonst.data) || too_much) {
                 why = "wedging into a narrow crevice";
-                You("%sget forcefully wedged into a crevice.",
-                    too_much ? "and all your belongings " : "");
+                You(too_much ? "and all your belongings get forcefully "
+                               "wedged into a crevice."
+                             : "get forcefully wedged into a crevice.");
             }
         }
         if (why) {
@@ -1114,8 +1118,8 @@ hurtle(int dx, int dy, int range, boolean verbose)
     gm.multi_reason = "moving through the air";
     gn.nomovemsg = ""; /* it just happens */
     if (verbose)
-        You("%s in the opposite direction.",
-            (range > 1) ? "hurtle" : "float");
+        You((range > 1) ? "hurtle in the opposite direction."
+                        : "float in the opposite direction.");
     /* if we're in the midst of shooting multiple projectiles, stop */
     endmultishot(TRUE);
     uc.x = u.ux;
@@ -1267,7 +1271,11 @@ toss_up(struct obj *obj, boolean hitsroof)
         action = "flies up into"; /* into "the sky" or "the water above" */
     } else if (hitsroof) {
         if (breaktest(obj)) {
-            pline("%s hits the %s.", Doname2(obj), ceiling(u.ux, u.uy));
+            if (i18n_active())
+                pline("%s hits %s.", Doname2(obj),
+                      i18n_the(ceiling(u.ux, u.uy)));
+            else
+                pline("%s hits the %s.", Doname2(obj), ceiling(u.ux, u.uy));
             breakmsg(obj, !Blind);
             /* crackable armor will return True for breaktest() but will
                usually return False for breakobj() */
@@ -1282,8 +1290,17 @@ toss_up(struct obj *obj, boolean hitsroof)
     } else {
         action = "almost hits";
     }
-    pline("%s %s the %s, then falls back on top of your %s.", Doname2(obj),
-          action, ceiling(u.ux, u.uy), body_part(HEAD));
+    if (i18n_active())
+        pline(!strcmp(action, "hits")
+                  ? "%s hits %s, then falls back on top of your %s."
+                  : !strcmp(action, "almost hits")
+                    ? "%s almost hits %s, then falls back on top of your %s."
+                    : "%s flies up into %s, then falls back on top of your "
+                      "%s.",
+              Doname2(obj), i18n_the(ceiling(u.ux, u.uy)), body_part(HEAD));
+    else
+        pline("%s %s the %s, then falls back on top of your %s.",
+              Doname2(obj), action, ceiling(u.ux, u.uy), body_part(HEAD));
 
     /* object now hits you */
 
@@ -1583,8 +1600,12 @@ throwit(
                aklys must we wielded as primary to return when thrown */
             && iflags.returning_missile
             && !impaired) {
-            pline("%s the %s and returns to your hand!", Tobjnam(obj, "hit"),
-                  ceiling(u.ux, u.uy));
+            if (i18n_active())
+                pline("%s hits %s and returns to your hand!",
+                      The(xname(obj)), i18n_the(ceiling(u.ux, u.uy)));
+            else
+                pline("%s the %s and returns to your hand!",
+                      Tobjnam(obj, "hit"), ceiling(u.ux, u.uy));
             obj = return_throw_to_inv(obj, wep_mask, twoweap, oldslot);
         } else if (u.dz < 0) {
             (void) toss_up(obj, rn2(5) && !Underwater);
@@ -1641,6 +1662,11 @@ throwit(
                     range++;
             } else if (obj->oclass != GEM_CLASS) {
                 range /= 2;
+                if (i18n_active())
+                    pline("You aren't wielding the right launcher, "
+                          "so you throw your %s by %s.",
+                          _(weapon_descr(obj)), body_part(HAND));
+                else
                 pline("You aren't wielding %s, so you throw your %s by %s.",
                       an(skill_name(weapon_type(obj))),
                       weapon_descr(obj),
@@ -1731,11 +1757,18 @@ throwit(
                     int dmg = rn2(2);
 
                     if (!dmg) {
-                        pline(Blind ? "%s lands %s your %s."
-                                    : "%s back to you, landing %s your %s.",
-                              Blind ? Something : Tobjnam(obj, "return"),
-                              Levitation ? "beneath" : "at",
-                              makeplural(body_part(FOOT)));
+                        if (Levitation)
+                            pline(Blind
+                              ? "%s lands beneath your %s."
+                              : "%s back to you, landing beneath your %s.",
+                                  Blind ? Something : Tobjnam(obj, "return"),
+                                  makeplural(body_part(FOOT)));
+                        else
+                            pline(Blind
+                                      ? "%s lands at your %s."
+                                      : "%s back to you, landing at your %s.",
+                                  Blind ? Something : Tobjnam(obj, "return"),
+                                  makeplural(body_part(FOOT)));
                     } else {
                         dmg += rnd(3);
                         pline(Blind ? "%s your %s!"
@@ -2122,8 +2155,12 @@ thitmonst(
                     /* just in case, identify the object so its name will
                        appear in the message */
                     fully_identify_obj(obj);
-                    verbalize("%s part in this is finished.",
-                              s_suffix(The(xname(obj))));
+                    if (i18n_active())
+                        verbalize("The part of %s in this is finished.",
+                                  the(xname(obj)));
+                    else
+                        verbalize("%s part in this is finished.",
+                                  s_suffix(The(xname(obj))));
                     verbalize(
                "We will guard it in case it is ever needed again, %s forbid.",
                               align_gname(u.ualignbase[A_ORIGINAL]));
@@ -2137,8 +2174,9 @@ thitmonst(
                 boolean next2u = monnear(mon, u.ux, u.uy);
 
                 finish_quest(obj); /* acknowledge quest completion */
-                pline("%s %s %s back to you.", Some_Monnam(mon),
-                      (next2u ? "hands" : "tosses"), the(xname(obj)));
+                pline(next2u ? "%s hands %s back to you."
+                             : "%s tosses %s back to you.",
+                      Some_Monnam(mon), the(xname(obj)));
                 if (!next2u)
                     sho_obj_return_to_u(obj);
                 obj = addinv(obj); /* back into your inventory */
@@ -2296,7 +2334,13 @@ thitmonst(
         monname = mon_nam(mon);
         if (*trail)
             monname = s_suffix(monname);
-        pline("%s into %s%s.", Tobjnam(obj, "vanish"), monname, trail);
+        if (i18n_active())
+            pline(digests(md) ? "%s vanishes into the entrails of %s."
+                  : is_whirly(md) ? "%s vanishes into the currents of %s."
+                    : "%s vanishes into %s.",
+                  The(xname(obj)), mon_nam(mon));
+        else
+            pline("%s into %s%s.", Tobjnam(obj, "vanish"), monname, trail);
     } else {
         tmiss(obj, mon, TRUE);
     }
@@ -2512,7 +2556,10 @@ breakobj(
 
                         if (eyecount(gy.youmonst.data) != 1)
                             eyes = makeplural(eyes);
-                        Your("%s %s.", eyes, vtense(eyes, "water"));
+                        if (eyecount(gy.youmonst.data) != 1)
+                            Your("%s water.", eyes);
+                        else
+                            Your("%s waters.", eyes);
                     }
                 }
                 potionbreathe(obj);
@@ -2635,8 +2682,12 @@ breakmsg(struct obj *obj, boolean in_view)
         if (!in_view)
             You_hear("%s shatter!", something);
         else
-            pline("%s shatter%s%s!", Doname2(obj),
-                  (obj->quan == 1L) ? "s" : "", to_pieces);
+            pline((obj->quan == 1L)
+                      ? (*to_pieces ? "%s shatters into a thousand pieces!"
+                                    : "%s shatters!")
+                      : (*to_pieces ? "%s shatter into a thousand pieces!"
+                                    : "%s shatter!"),
+                  Doname2(obj));
         break;
     case EGG:
     case MELON:
@@ -2683,8 +2734,12 @@ throw_gold(struct obj *obj)
     if (u.dz) {
         if (u.dz < 0 && !Is_airlevel(&u.uz) && !Underwater
             && !Is_waterlevel(&u.uz)) {
-            pline_The("gold hits the %s, then falls back on top of your %s.",
-                      ceiling(u.ux, u.uy), body_part(HEAD));
+            if (i18n_active())
+                pline_The("gold hits %s, then falls back on top of your %s.",
+                          i18n_the(ceiling(u.ux, u.uy)), body_part(HEAD));
+            else
+                pline_The("gold hits the %s, then falls back on top of "
+                          "your %s.", ceiling(u.ux, u.uy), body_part(HEAD));
             /* some self damage? */
             if (uarmh)
                 pline("Fortunately, you are wearing %s!",
@@ -2721,8 +2776,12 @@ throw_gold(struct obj *obj)
 
     if (flooreffects(obj, gb.bhitpos.x, gb.bhitpos.y, "fall"))
         return ECMD_TIME;
-    if (u.dz > 0)
-        pline_The("gold hits the %s.", surface(gb.bhitpos.x, gb.bhitpos.y));
+    if (u.dz > 0 && i18n_active())
+        pline_The("gold hits %s.",
+                  i18n_the(surface(gb.bhitpos.x, gb.bhitpos.y)));
+    else if (u.dz > 0)
+            pline_The("gold hits the %s.",
+                      surface(gb.bhitpos.x, gb.bhitpos.y));
     place_object(obj, gb.bhitpos.x, gb.bhitpos.y);
     if (*u.ushops)
         sellobj(obj, gb.bhitpos.x, gb.bhitpos.y);

@@ -28,8 +28,24 @@ floating_above(const char *what)
         umsg = "are trapped in the %s.";
         what = surface(u.ux, u.uy); /* probably redundant */
     }
+    if (i18n_active()) {
+        if (u.utrap
+            && (u.utraptype == TT_INFLOOR || u.utraptype == TT_LAVA))
+            You("are trapped in %s.", i18n_the(what));
+        else
+            You("are floating high above %s.", i18n_the(what));
+        return;
+    }
     You(umsg, what);
 }
+
+#if 0
+/* for xgettext: things the hero floats above */
+NC_("noun", "ladder"), NC_("gender", "ladder"),
+NC_("noun", "sink"), NC_("gender", "sink"),
+NC_("noun", "throne"), NC_("gender", "throne"),
+NC_("noun", "grave"), NC_("gender", "grave"),
+#endif
 
 RESTORE_WARNING_FORMAT_NONLITERAL
 
