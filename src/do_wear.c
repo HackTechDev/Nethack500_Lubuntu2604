@@ -109,7 +109,8 @@ const char *
 fingers_or_gloves(boolean check_gloves)
 {
     return ((check_gloves && uarmg)
-            ? gloves_simple_name(uarmg) /* "gloves" or "gauntlets" */
+            /* "gloves" or "gauntlets" */
+            ? C_("noun", gloves_simple_name(uarmg))
             : makeplural(body_part(FINGER))); /* "fingers" */
 }
 

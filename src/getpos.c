@@ -127,6 +127,20 @@ static const char *const gloc_descr[NUM_GLOCS][4] = {
       "valid locations" }
 };
 
+#if 0
+/* texts of getpos() and getpos_menu(), translated where displayed */
+N_("any monsters") N_("any items") N_("any doors")
+N_("any unexplored areas") N_("anything interesting")
+N_("any valid locations")
+NC_("getpos", "monster") NC_("getpos", "item") NC_("getpos", "door")
+NC_("getpos", "unexplored area") NC_("getpos", "interesting thing")
+NC_("getpos", "valid location")
+NC_("gender", "monster") NC_("gender", "item") NC_("gender", "door")
+NC_("gender", "unexplored area") NC_("gender", "interesting thing")
+NC_("gender", "valid location")
+N_(" in view") N_(" in this area") N_(" for travel destination")
+#endif
+
 static const char *const gloc_filtertxt[NUM_GFILTER] = {
     "",
     " in view",
@@ -653,7 +667,7 @@ auto_describe(coordxy cx, coordxy cy)
                     "%s%s%s%s%s", firstmatch, *tmpbuf ? " " : "", tmpbuf,
                     (iflags.autodescribe
                      && getpos_getvalid && !(*getpos_getvalid)(cx, cy))
-                      ? " (invalid target)" : "",
+                      ? _(" (invalid target)") : "",
                     (iflags.getloc_travelmode && !is_valid_travelpt(cx, cy))
                       ? " (no travel path)" : "");
         curs(WIN_MAP, cx, cy);
@@ -677,9 +691,9 @@ getpos_menu(coord *ccp, int gloc)
 
     if (gcount < 2) { /* gcount always includes the hero */
         free((genericptr_t) garr);
-        You("cannot %s %s.",
-            (iflags.getloc_filter == GFILTER_VIEW) ? "see" : "detect",
-            gloc_descr[gloc][0]);
+        You((iflags.getloc_filter == GFILTER_VIEW) ? "cannot see %s."
+                                                   : "cannot detect %s.",
+            _(gloc_descr[gloc][0]));
         return FALSE;
     }
 
@@ -708,10 +722,17 @@ getpos_menu(coord *ccp, int gloc)
         }
     }
 
-    Sprintf(tmpbuf, "Pick %s%s%s",
-            an(gloc_descr[gloc][1]),
-            gloc_filtertxt[iflags.getloc_filter],
-            iflags.getloc_travelmode ? " for travel destination" : "");
+    if (i18n_active())
+        Snprintf(tmpbuf, sizeof tmpbuf, _("Pick %s%s%s"),
+                 i18n_an_ctx("getpos", gloc_descr[gloc][1]),
+                 _(gloc_filtertxt[iflags.getloc_filter]),
+                 iflags.getloc_travelmode ? _(" for travel destination")
+                                          : "");
+    else
+        Sprintf(tmpbuf, "Pick %s%s%s",
+                an(gloc_descr[gloc][1]),
+                gloc_filtertxt[iflags.getloc_filter],
+                iflags.getloc_travelmode ? " for travel destination" : "");
     end_menu(tmpwin, tmpbuf);
     pick_cnt = select_menu(tmpwin, PICK_ONE, &picks);
     destroy_nhwindow(tmpwin);
@@ -839,7 +860,7 @@ getpos(coord *ccp, boolean force, const char *goal)
         show_goal_msg = TRUE; /* tip has overwritten prompt in mesg window */
 
     if (!goal)
-        goal = "desired location";
+        goal = N_("desired location");
     if (flags.verbose) {
         pline("(For instructions type a '%s')",
               visctrl(gc.Cmd.spkeys[NHKF_GETPOS_HELP]));
@@ -858,7 +879,7 @@ getpos(coord *ccp, boolean force, const char *goal)
     lock_mouse_buttons(TRUE);
     for (;;) {
         if (show_goal_msg) {
-            pline("Move cursor to %s:", goal);
+            pline("Move cursor to %s:", _(goal));
             curs(WIN_MAP, cx, cy);
             flush_screen(0);
             show_goal_msg = FALSE;
@@ -961,18 +982,25 @@ getpos(coord *ccp, boolean force, const char *goal)
             goto nxtc;
         } else if (c == gc.Cmd.spkeys[NHKF_GETPOS_AUTODESC]) {
             iflags.autodescribe = !iflags.autodescribe;
-            pline("Automatic description %sis %s.",
-                  flags.verbose ? "of features under cursor " : "",
-                  iflags.autodescribe ? "on" : "off");
+            /* whole sentences, so that each can be translated */
+            if (flags.verbose)
+                pline(iflags.autodescribe
+                      ? "Automatic description of features under cursor "
+                        "is on."
+                      : "Automatic description of features under cursor "
+                        "is off.");
+            else
+                pline(iflags.autodescribe ? "Automatic description is on."
+                                          : "Automatic description is off.");
             if (!iflags.autodescribe)
                 show_goal_msg = TRUE;
             msg_given = TRUE;
             goto nxtc;
         } else if (c == gc.Cmd.spkeys[NHKF_GETPOS_LIMITVIEW]) {
             static const char *const view_filters[NUM_GFILTER] = {
-                "Not limiting targets",
-                "Limiting targets to those in sight",
-                "Limiting targets to those in same area"
+                N_("Not limiting targets"),
+                N_("Limiting targets to those in sight"),
+                N_("Limiting targets to those in same area")
             };
 
             iflags.getloc_filter = (iflags.getloc_filter + 1) % NUM_GFILTER;
@@ -988,10 +1016,10 @@ getpos(coord *ccp, boolean force, const char *goal)
             goto nxtc;
         } else if (c == gc.Cmd.spkeys[NHKF_GETPOS_MENU]) {
             iflags.getloc_usemenu = !iflags.getloc_usemenu;
-            pline("%s a menu to show possible targets%s.",
-                  iflags.getloc_usemenu ? "Using" : "Not using",
-                  iflags.getloc_usemenu
-                      ? " for 'm|M', 'o|O', 'd|D', and 'x|X'" : "");
+            pline(iflags.getloc_usemenu
+                  ? "Using a menu to show possible targets for 'm|M', "
+                    "'o|O', 'd|D', and 'x|X'."
+                  : "Not using a menu to show possible targets.");
             msg_given = TRUE;
             goto nxtc;
         } else if (c == gc.Cmd.spkeys[NHKF_GETPOS_SELF]) {
@@ -1004,8 +1032,11 @@ getpos(coord *ccp, boolean force, const char *goal)
             goto nxtc;
         } else if (c == gc.Cmd.spkeys[NHKF_GETPOS_MOVESKIP]) {
             iflags.getloc_moveskip = !iflags.getloc_moveskip;
-            pline("%skipping over similar terrain when fastmoving the cursor.",
-                  iflags.getloc_moveskip ? "S" : "Not s");
+            pline(iflags.getloc_moveskip
+                  ? "Skipping over similar terrain when fastmoving the "
+                    "cursor."
+                  : "Not skipping over similar terrain when fastmoving the "
+                    "cursor.");
             msg_given = TRUE;
             goto nxtc;
         } else if ((cp = strchr(mMoOdDxX, c)) != 0) { /* 'm|M', 'o|O', &c */
@@ -1118,9 +1149,10 @@ getpos(coord *ccp, boolean force, const char *goal)
                     char note[QBUFSZ];
 
                     if (!force)
-                        Strcpy(note, "aborted");
+                        Strcpy(note, _("aborted"));
                     else /* hjkl */
-                        Sprintf(note, "use '%s', '%s', '%s', '%s' or '%s'",
+                        Snprintf(note, sizeof note,
+                                 _("use '%s', '%s', '%s', '%s' or '%s'"),
                                 visctrl(cmd_from_func(do_move_west)),
                                 visctrl(cmd_from_func(do_move_south)),
                                 visctrl(cmd_from_func(do_move_north)),

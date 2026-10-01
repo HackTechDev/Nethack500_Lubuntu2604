@@ -51,6 +51,7 @@ staticfn boolean muse_unslime(struct monst *, struct obj *, struct trap *,
                             boolean);
 staticfn int cures_sliming(struct monst *, struct obj *);
 staticfn boolean green_mon(struct monst *);
+staticfn void reflects_msg(const char *, struct monst *, const char *);
 
 /* Any preliminary checks which may result in the monster being unable to use
  * the item.  Returns 0 if nothing happened, 2 if the monster can't do
@@ -2912,7 +2913,35 @@ searches_for_item(struct monst *mon, struct obj *obj)
     return FALSE;
 }
 
+#if 0
+/* mon_reflects() messages: "%s %s" becomes "%s", "<the item> of <mon>" */
+N_("The gaze is reflected away by %s!")
+N_("The gaze is reflected away by %s.")
+N_("Your gaze is reflected by %s.") N_("But it reflects from %s!")
+NC_("noun", "scales")
+#endif
+
 DISABLE_WARNING_FORMAT_NONLITERAL
+
+/* give mon_reflects() message str about the reflecting item 'what' */
+staticfn void
+reflects_msg(const char *str, struct monst *mon, const char *what)
+{
+    char fmt[BUFSZ], np[BUFSZ], *p;
+
+    if (!i18n_active()) {
+        pline(str, s_suffix(mon_nam(mon)), what);
+        return;
+    }
+    /* translated: one "%s" for "<the item> of <mon>" (a caller can pass
+       a format already in that form) */
+    copynchars(fmt, str, BUFSZ - 1);
+    if ((p = strstr(fmt, "%s %s")) != 0)
+        (void) memmove(p + 2, p + 5, strlen(p + 5) + 1);
+    Snprintf(np, sizeof np, C_("reflects", "%s of %s"), i18n_the(what),
+             mon_nam(mon));
+    pline(_(fmt), np);
+}
 
 boolean
 mon_reflects(struct monst *mon, const char *str)
@@ -2921,19 +2950,19 @@ mon_reflects(struct monst *mon, const char *str)
 
     if (orefl && orefl->otyp == SHIELD_OF_REFLECTION) {
         if (str) {
-            pline(str, s_suffix(mon_nam(mon)), "shield");
+            reflects_msg(str, mon, "shield");
             makeknown(SHIELD_OF_REFLECTION);
         }
         return TRUE;
     } else if (arti_reflects(MON_WEP(mon))) {
         /* due to wielded artifact weapon */
         if (str)
-            pline(str, s_suffix(mon_nam(mon)), "weapon");
+            reflects_msg(str, mon, "weapon");
         return TRUE;
     } else if ((orefl = which_armor(mon, W_AMUL))
                && orefl->otyp == AMULET_OF_REFLECTION) {
         if (str) {
-            pline(str, s_suffix(mon_nam(mon)), "amulet");
+            reflects_msg(str, mon, "amulet");
             makeknown(AMULET_OF_REFLECTION);
         }
         return TRUE;
@@ -2941,13 +2970,13 @@ mon_reflects(struct monst *mon, const char *str)
                && (orefl->otyp == SILVER_DRAGON_SCALES
                    || orefl->otyp == SILVER_DRAGON_SCALE_MAIL)) {
         if (str)
-            pline(str, s_suffix(mon_nam(mon)), "armor");
+            reflects_msg(str, mon, "armor");
         return TRUE;
     } else if (mon->data == &mons[PM_SILVER_DRAGON]
                || mon->data == &mons[PM_CHROMATIC_DRAGON]) {
         /* Silver dragons only reflect when mature; babies do not */
         if (str)
-            pline(str, s_suffix(mon_nam(mon)), "scales");
+            reflects_msg(str, mon, "scales");
         return TRUE;
     }
     return FALSE;

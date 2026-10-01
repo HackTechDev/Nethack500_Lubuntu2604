@@ -105,7 +105,8 @@ dowrite(struct obj *pen)
                  : "scroll";
     if (Blind) {
         if (!paper->dknown) {
-            You("don't know whether that %s is blank or not.", typeword);
+            You("don't know whether that %s is blank or not.",
+                C_("noun", typeword));
             return ECMD_OK;
         } else if (paper->oclass == SPBOOK_CLASS) {
             /* can't write a magic book while blind */
@@ -116,7 +117,7 @@ dowrite(struct obj *pen)
     }
     observe_object(paper);
     if (paper->otyp != SCR_BLANK_PAPER && paper->otyp != SPE_BLANK_PAPER) {
-        pline("That %s is not blank!", typeword);
+        pline("That %s is not blank!", C_("noun", typeword));
         exercise(A_WIS, FALSE);
         return ECMD_TIME;
     }
@@ -204,7 +205,7 @@ dowrite(struct obj *pen)
         goto found;
     }
 
-    There("is no such %s!", typeword);
+    There("is no such %s!", C_("noun", typeword));
     return ECMD_TIME;
  found:
 
@@ -215,14 +216,28 @@ dowrite(struct obj *pen)
     } else if (i == SPE_NOVEL) {
         boolean fanfic = !rn2(3), tearup = !rn2(3);
 
+        /* whole sentences, so that each can be translated */
         if (!fanfic) {
-            You("%s to write the Great Yendorian Novel, but %s inspiration.",
-                !tearup ? "prepare" : "try",
-                !Hallucination ? "lack" : "have too much");
+            if (!tearup)
+                You(!Hallucination
+                    ? "prepare to write the Great Yendorian Novel, but lack "
+                      "inspiration."
+                    : "prepare to write the Great Yendorian Novel, but have "
+                      "too much inspiration.");
+            else
+                You(!Hallucination
+                    ? "try to write the Great Yendorian Novel, but lack "
+                      "inspiration."
+                    : "try to write the Great Yendorian Novel, but have too "
+                      "much inspiration.");
         } else {
-            You("%sproduce really %s fan-fiction.",
-                !tearup ? "start to " : "",
-                !Hallucination ? "lame" : "awesome");
+            if (!tearup)
+                You(!Hallucination
+                    ? "start to produce really lame fan-fiction."
+                    : "start to produce really awesome fan-fiction.");
+            else
+                You(!Hallucination ? "produce really lame fan-fiction."
+                                   : "produce really awesome fan-fiction.");
         }
         if (!tearup) {
             You("give up on the idea.");
@@ -319,7 +334,8 @@ dowrite(struct obj *pen)
         && rnl(((Role_if(PM_WIZARD) && paper->oclass != SPBOOK_CLASS)
                 || spell_knowledge == spe_GoingStale)
                ? 5 : 15)) {
-        You("%s to write that.", by_descr ? "fail" : "don't know how");
+        You(by_descr ? "fail to write that."
+                     : "don't know how to write that.");
         /* scrolls disappear, spellbooks don't */
         if (paper->oclass == SPBOOK_CLASS) {
             You(
@@ -330,7 +346,8 @@ dowrite(struct obj *pen)
                 Strcpy(namebuf, OBJ_DESCR(objects[new_obj->otyp]));
                 wipeout_text(namebuf, (6 + MAXULEV - u.ulevel) / 6, 0);
             } else
-                Sprintf(namebuf, "%s was here!", svp.plname);
+                Snprintf(namebuf, sizeof namebuf, _("%s was here!"),
+                         svp.plname);
             You("write \"%s\" and the scroll disappears.", namebuf);
             useup(paper);
         }
@@ -357,8 +374,18 @@ dowrite(struct obj *pen)
     /* success */
     if (new_obj->oclass == SPBOOK_CLASS) {
         /* acknowledge the change in the object's description... */
-        pline_The("spellbook warps strangely, then turns %s.",
-                  new_book_description(new_obj->otyp, namebuf));
+        if (i18n_active()) {
+            const char *descr = OBJ_DESCR(objects[new_obj->otyp]);
+
+            (void) new_book_description(new_obj->otyp, namebuf);
+            pline(!strncmp(namebuf, "into ", 5)
+                  ? "The spellbook warps strangely, then turns into %s."
+                  : "The spellbook warps strangely, then turns %s.",
+                  !strncmp(namebuf, "into ", 5) ? C_("noun", descr)
+                                                : _(descr));
+        } else
+            pline_The("spellbook warps strangely, then turns %s.",
+                      new_book_description(new_obj->otyp, namebuf));
     }
     new_obj->blessed = (curseval > 0);
     new_obj->cursed = (curseval < 0);
@@ -397,9 +424,9 @@ new_book_description(int booktype, char *outbuf)
     /* subset of description strings from objects.c; if it grows
        much, we may need to add a new flag field to objects[] instead */
     static const char *const compositions[] = {
-        "parchment",
-        "vellum",
-        "cloth",
+        NC_("noun", "parchment"),
+        NC_("noun", "vellum"),
+        NC_("noun", "cloth"),
 #if 0
         "canvas", "hardcover", /* not used */
         "papyrus", /* not applicable--can't be produced via writing */

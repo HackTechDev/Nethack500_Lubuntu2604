@@ -15,6 +15,7 @@
 #include "hack.h"
 
 staticfn void enlght_out(const char *);
+staticfn const char *pious_i18n(const char *);
 staticfn void enlght_line(const char *, const char *, const char *,
                           const char *);
 staticfn char *enlght_combatinc(const char *, int, int, char *);
@@ -3122,7 +3123,8 @@ list_genocided(char defquery, boolean ask)
     } else if (!program_state.gameover) {
         /* #genocided rather than final disclosure, so pline() is ok and
            extinction has been ignored */
-        pline("No creatures have been genocided%s.", genoing ? " yet" : "");
+        pline(genoing ? "No creatures have been genocided yet."
+                      : "No creatures have been genocided.");
 #ifdef DUMPLOG
     } else if (dumping) { /* 'gameover' is True if we make it here */
         putstr(0, 0, "No species were genocided or became extinct.");
@@ -3270,6 +3272,31 @@ piousness(boolean showneg, const char *suffix)
     return buf;
 }
 
+#if 0
+/* fragments of piousness() and size_str(), translated where displayed */
+N_("piously") N_("devoutly") N_("fervently") N_("stridently")
+N_("haltingly") N_("nominally") N_("insufficiently") N_("strayed")
+N_("sinned") N_("transgressed") N_("chaotic") N_("neutral") N_("lawful")
+N_("unaligned") N_("unknown") N_("tiny") N_("small") N_("medium")
+N_("large") N_("huge") N_("gigantic")
+#endif
+
+/* translation of piousness() "<adverb> <alignment>" about the hero */
+staticfn const char *
+pious_i18n(const char *str)
+{
+    static char buf[BUFSZ];
+    char adv[BUFSZ];
+    const char *sp = strchr(str, ' ');
+
+    if (!sp)
+        return gendered_word(str, flags.female ? 1 : 0);
+    copynchars(adv, str, min((int) (sp - str), BUFSZ - 1));
+    Snprintf(buf, sizeof buf, "%s %s", _(adv),
+             gendered_word(sp + 1, flags.female ? 1 : 0));
+    return buf;
+}
+
 /* stethoscope or probing applied to monster -- one-line feedback */
 void
 mstatusline(struct monst *mtmp)
@@ -3279,7 +3306,7 @@ mstatusline(struct monst *mtmp)
 
     info[0] = 0;
     if (mtmp->mtame) {
-        Strcat(info, ", tame");
+        Strcat(info, _(", tame"));
         if (wizard) {
             Sprintf(eos(info), " (%d", mtmp->mtame);
             if (!mtmp->isminion)
@@ -3288,7 +3315,7 @@ mstatusline(struct monst *mtmp)
             Strcat(info, ")");
         }
     } else if (mtmp->mpeaceful)
-        Strcat(info, ", peaceful");
+        Strcat(info, _(", peaceful"));
 
     if (mtmp->data == &mons[PM_LONG_WORM]) {
         int segndx, nsegs = count_wsegs(mtmp);
@@ -3297,21 +3324,24 @@ mstatusline(struct monst *mtmp)
            the worm's segments, but we count it as such when presenting
            worm feedback to the player */
         if (!nsegs) {
-            Strcat(info, ", single segment");
+            Strcat(info, _(", single segment"));
         } else {
             ++nsegs; /* include head in the segment count */
             segndx = wseg_at(mtmp, gb.bhitpos.x, gb.bhitpos.y);
-            Sprintf(eos(info), ", %d%s of %d segments",
-                    segndx, ordin(segndx), nsegs);
+            if (i18n_active())
+                Sprintf(eos(info), _(", segment %d of %d"), segndx, nsegs);
+            else
+                Sprintf(eos(info), ", %d%s of %d segments",
+                        segndx, ordin(segndx), nsegs);
         }
     }
     if (ismnum(mtmp->cham) && mtmp->data != &mons[mtmp->cham])
         /* don't reveal the innate form (chameleon, vampire, &c),
            just expose the fact that this current form isn't it */
-        Strcat(info, ", shapechanger");
+        Strcat(info, _(", shapechanger"));
     /* pets eating mimic corpses mimic while eating, so this comes first */
     if (mtmp->meating)
-        Strcat(info, ", eating");
+        Strcat(info, _(", eating"));
     /* a stethoscope exposes mimic before getting here so this
        won't be relevant for it, but wand of probing doesn't */
     if (mtmp->mundetected || mtmp->m_ap_type
@@ -3320,58 +3350,58 @@ mstatusline(struct monst *mtmp)
                        MHID_PREFIX | MHID_ARTICLE | MHID_ALTMON | MHID_REGION,
                             eos(info));
     if (mtmp->mcan)
-        Strcat(info, ", cancelled");
+        Strcat(info, _(", cancelled"));
     if (mtmp->mconf)
-        Strcat(info, ", confused");
+        Strcat(info, _(", confused"));
     if (mtmp->mblinded || !mtmp->mcansee)
-        Strcat(info, ", blind");
+        Strcat(info, _(", blind"));
     if (mtmp->mstun)
-        Strcat(info, ", stunned");
+        Strcat(info, _(", stunned"));
     if (mtmp->msleeping)
-        Strcat(info, ", asleep");
+        Strcat(info, _(", asleep"));
 #if 0 /* unfortunately mfrozen covers temporary sleep and being busy
        * (donning armor, for instance) as well as paralysis */
     else if (mtmp->mfrozen)
-        Strcat(info, ", paralyzed");
+        Strcat(info, _(", paralyzed"));
 #else
     else if (mtmp->mfrozen || !mtmp->mcanmove)
-        Strcat(info, ", can't move");
+        Strcat(info, _(", can't move"));
 #endif
     /* [arbitrary reason why it isn't moving] */
     else if ((mtmp->mstrategy & STRAT_WAITMASK) != 0)
-        Strcat(info, ", meditating");
+        Strcat(info, _(", meditating"));
     if (mtmp->mflee)
-        Strcat(info, ", scared");
+        Strcat(info, _(", scared"));
     if (mtmp->mtrapped)
-        Strcat(info, ", trapped");
+        Strcat(info, _(", trapped"));
     if (mtmp->mspeed)
-        Strcat(info, (mtmp->mspeed == MFAST) ? ", fast"
-                      : (mtmp->mspeed == MSLOW) ? ", slow"
+        Strcat(info, (mtmp->mspeed == MFAST) ? _(", fast")
+                      : (mtmp->mspeed == MSLOW) ? _(", slow")
                          : ", [? speed]");
     if (mtmp->minvis)
-        Strcat(info, ", invisible");
+        Strcat(info, _(", invisible"));
     if (mtmp == u.ustuck) {
         struct permonst *pm = u.ustuck->data;
 
         /* being swallowed/engulfed takes priority over sticks(youmonst);
            this used to have that backwards and checked sticks() first */
         Strcat(info, u.uswallow ? (digests(pm)
-                                   ? ", digesting you"
+                                   ? _(", digesting you")
                                    /* note: the "swallowing you" case won't
                                       happen because all animal engulfers
                                       either digest their victims (purple
                                       worm) or enfold them (trappers and
                                       lurkers above) */
                                    : (is_animal(pm) && !enfolds(pm))
-                                     ? ", swallowing you"
-                                     : ", engulfing you")
+                                     ? _(", swallowing you")
+                                     : _(", engulfing you"))
                      /* !u.uswallow; if both youmonst and ustuck are holders,
                         youmonst wins */
-                     : (!sticks(gy.youmonst.data) ? ", holding you"
-                                                 : ", held by you"));
+                     : (!sticks(gy.youmonst.data) ? _(", holding you")
+                                                 : _(", held by you")));
     }
     if (mtmp == u.usteed) {
-        Strcat(info, ", carrying you");
+        Strcat(info, _(", carrying you"));
         if (Wounded_legs) {
             /* EWounded_legs is used to track left/right/both rather than
                some form of extrinsic impairment; HWounded_legs is used for
@@ -3381,11 +3411,11 @@ mstatusline(struct monst *mtmp)
 
             if (legs == BOTH_SIDES)
                 what = makeplural(what);
-            Sprintf(eos(info), ", injured %s", what);
+            Sprintf(eos(info), _(", injured %s"), what);
         }
     }
     if (mtmp->mleashed)
-        Strcat(info, ", leashed");
+        Strcat(info, _(", leashed"));
 
     /* avoid "Status of the invisible newt ..., invisible" */
     /* and unlike a normal mon_nam, use "saddled" even if it has a name */
@@ -3393,7 +3423,8 @@ mstatusline(struct monst *mtmp)
                                (SUPPRESS_IT | SUPPRESS_INVISIBLE), FALSE));
 
     pline("Status of %s (%s, %s):  Level %d  HP %d(%d)  AC %d%s.",
-          monnambuf, align_str(alignment), size_str(mtmp->data->msize),
+          monnambuf, _(align_str(alignment)),
+          _(size_str(mtmp->data->msize)),
           mtmp->m_lev, mtmp->mhp, mtmp->mhpmax, find_mac(mtmp), info);
 }
 
@@ -3407,36 +3438,43 @@ ustatusline(void)
 
     info[0] = '\0';
     if (Sick) {
-        Strcat(info, ", dying from");
+        Strcat(info, _(", dying from"));
         if (u.usick_type & SICK_VOMITABLE)
-            Strcat(info, " food poisoning");
+            Strcat(info, _(" food poisoning"));
         if (u.usick_type & SICK_NONVOMITABLE) {
             if (u.usick_type & SICK_VOMITABLE)
-                Strcat(info, " and");
-            Strcat(info, " illness");
+                Strcat(info, _(" and"));
+            Strcat(info, _(" illness"));
         }
     }
     if (Stoned)
-        Strcat(info, ", solidifying");
+        Strcat(info, _(", solidifying"));
     if (Slimed)
-        Strcat(info, ", becoming slimy");
+        Strcat(info, _(", becoming slimy"));
     if (Strangled)
-        Strcat(info, ", being strangled");
+        Strcat(info, _(", being strangled"));
     if (Vomiting)
-        Strcat(info, ", nauseated"); /* !"nauseous" */
+        Strcat(info, _(", nauseated")); /* !"nauseous" */
     if (Confusion)
-        Strcat(info, ", confused");
+        Strcat(info, _(", confused"));
     if (Blind) {
-        Strcat(info, ", blind");
+        Strcat(info, _(", blind"));
         if (u.ucreamed) {
-            if ((long) u.ucreamed < BlindedTimeout || Blindfolded
-                || !haseyes(gy.youmonst.data))
-                Strcat(info, ", cover");
-            Strcat(info, "ed by sticky goop");
+            boolean cover = ((long) u.ucreamed < BlindedTimeout
+                             || Blindfolded || !haseyes(gy.youmonst.data));
+
+            if (i18n_active()) {
+                Strcat(info, cover ? _(", covered by sticky goop")
+                                   : _(" by sticky goop"));
+            } else {
+                if (cover)
+                    Strcat(info, ", cover");
+                Strcat(info, "ed by sticky goop");
+            }
         } /* note: "goop" == "glop"; variation is intentional */
     }
     if (Stunned)
-        Strcat(info, ", stunned");
+        Strcat(info, _(", stunned"));
     if (Wounded_legs && !u.usteed) {
         /* EWounded_legs is used to track left/right/both rather than some
            form of extrinsic impairment; HWounded_legs is used for timeout;
@@ -3451,25 +3489,25 @@ ustatusline(void)
         Sprintf(eos(info), ", injured %s", what);
     }
     if (Glib)
-        Sprintf(eos(info), ", slippery %s", fingers_or_gloves(TRUE));
+        Sprintf(eos(info), _(", slippery %s"), fingers_or_gloves(TRUE));
     if (u.utrap)
-        Strcat(info, ", trapped");
+        Strcat(info, _(", trapped"));
     if (Fast)
-        Strcat(info, Very_fast ? ", very fast" : ", fast");
+        Strcat(info, Very_fast ? _(", very fast") : _(", fast"));
     if (u.uundetected)
-        Strcat(info, ", concealed");
+        Strcat(info, _(", concealed"));
     else if (U_AP_TYPE != M_AP_NOTHING)
-        Strcat(info, ", disguised");
+        Strcat(info, _(", disguised"));
     if (Invis)
-        Strcat(info, ", invisible");
+        Strcat(info, _(", invisible"));
     if (u.ustuck) {
         if (u.uswallow)
-            Strcat(info, digests(u.ustuck->data) ? ", being digested by "
-                                                 : ", engulfed by ");
+            Strcat(info, digests(u.ustuck->data) ? _(", being digested by ")
+                                                 : _(", engulfed by "));
         else if (!sticks(gy.youmonst.data))
-            Strcat(info, ", held by ");
+            Strcat(info, _(", held by "));
         else
-            Strcat(info, ", holding ");
+            Strcat(info, _(", holding "));
         /* FIXME? a_monnam() uses x_monnam() which has a special case that
            forces "the" instead of "a" when formatting u.ustuck while hero
            is swallowed; we don't really want that here but it isn't worth
@@ -3479,11 +3517,14 @@ ustatusline(void)
     if (!u.uswallow
         && (reg = visible_region_at(u.ux, u.uy)) != 0
         && (ln = strlen(info)) < sizeof info)
-        Snprintf(eos(info), sizeof info - ln, ", in a cloud of %s",
-                 reg_damg(reg) ? "poison gas" : "vapor");
+        Snprintf(eos(info), sizeof info - ln, "%s",
+                 reg_damg(reg) ? _(", in a cloud of poison gas")
+                               : _(", in a cloud of vapor"));
 
     pline("Status of %s (%s):  Level %d  HP %d(%d)  AC %d%s.", svp.plname,
-          piousness(FALSE, align_str(u.ualign.type)),
+          i18n_active() ? pious_i18n(piousness(FALSE,
+                                               align_str(u.ualign.type)))
+                        : piousness(FALSE, align_str(u.ualign.type)),
           Upolyd ? mons[u.umonnum].mlevel : u.ulevel, Upolyd ? u.mh : u.uhp,
           Upolyd ? u.mhmax : u.uhpmax, u.uac, info);
 }

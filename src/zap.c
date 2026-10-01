@@ -3320,8 +3320,7 @@ cancel_monst(struct monst *mdef, struct obj *obj, boolean youattack,
              boolean allow_cancel_kill, boolean self_cancel)
 {
     static const char
-        writing_vanishes[] = "Some writing vanishes from %s head!",
-        your[] = "your"; /* should be extern */
+        writing_vanishes[] = "Some writing vanishes from %s head!";
     boolean youdefend = (mdef == &gy.youmonst);
 
     if (youdefend ? (!youattack && Antimagic)
@@ -3352,7 +3351,7 @@ cancel_monst(struct monst *mdef, struct obj *obj, boolean youattack,
              */
             if (u.umonnum == PM_CLAY_GOLEM) {
                 if (!Blind)
-                    pline("Some writing vanishes from %s head!", your);
+                    pline("Some writing vanishes from your head!");
                 else /* note: "dark" rather than "heavy" is intentional... */
                     You_feel(Hallucination ? "dark headed."
                                            : "light headed.");

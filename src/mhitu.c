@@ -2724,8 +2724,11 @@ passiveum(
         case AD_STUN: /* Yellow mold */
             if (!mtmp->mstun) {
                 mtmp->mstun = 1;
-                pline_mon(mtmp, "%s %s.", Monnam(mtmp),
-                      makeplural(stagger(mtmp->data, "stagger")));
+                if (i18n_active())
+                    pline_mon(mtmp, "%s staggers.", Monnam(mtmp));
+                else
+                    pline_mon(mtmp, "%s %s.", Monnam(mtmp),
+                              makeplural(stagger(mtmp->data, "stagger")));
             }
             tmp = 0;
             break;

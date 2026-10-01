@@ -466,9 +466,8 @@ run_regions(void)
         gg.gas_cloud_diss_within = FALSE;
     }
     if (gg.gas_cloud_diss_seen) {
-        You_see("%s gas cloud%s dissipate.",
-                (gg.gas_cloud_diss_seen == 1) ? "a" : "some",
-                plur(gg.gas_cloud_diss_seen));
+        You_see((gg.gas_cloud_diss_seen == 1) ? "a gas cloud dissipate."
+                                              : "some gas clouds dissipate.");
         gg.gas_cloud_diss_seen = 0;
     }
 }
@@ -986,15 +985,14 @@ enter_force_field(genericptr_t p1, genericptr_t p2)
 
     if (p2 == (genericptr_t) 0) { /* That means the player */
         if (!Blind)
-            You("bump into %s.  Ouch!",
-                Hallucination ? "an invisible tree"
-                              : "some kind of invisible wall");
+            You(Hallucination ? "bump into an invisible tree.  Ouch!"
+                : "bump into some kind of invisible wall.  Ouch!");
         else
             pline("Ouch!");
     } else {
         mtmp = (struct monst *) p2;
         if (canseemon(mtmp))
-            pline("%s bumps into %s!", Monnam(mtmp), something);
+            pline("%s bumps into %s!", Monnam(mtmp), _(something));
     }
     return FALSE;
 }
@@ -1115,7 +1113,7 @@ inside_gas_cloud(genericptr_t p1, genericptr_t p2)
             make_blinded(1L, FALSE);
         }
         if (!Poison_resistance) {
-            pline("%s is burning your %s!", Something,
+            pline("%s is burning your %s!", _(Something),
                   makeplural(body_part(LUNG)));
             You("cough and spit blood!");
             wake_nearto(u.ux, u.uy, 2);
@@ -1195,11 +1193,11 @@ make_gas_cloud(
     add_region(cloud);
 
     if (!gi.in_mklev && !inside_cloud && is_hero_inside_gas_cloud()) {
-        You("are enveloped in a cloud of %s!",
-            /* FIXME: "steam" is wrong if this cloud is just the trail of
-               a fog cloud's movement; changing to "vapor" would handle
-               that but seems a step backward when it really is steam */
-            damage ? "noxious gas" : "steam");
+        /* FIXME: "steam" is wrong if this cloud is just the trail of
+           a fog cloud's movement; changing to "vapor" would handle
+           that but seems a step backward when it really is steam */
+        You(damage ? "are enveloped in a cloud of noxious gas!"
+                   : "are enveloped in a cloud of steam!");
         iflags.last_msg = PLNMSG_ENVELOPED_IN_GAS;
     }
 }

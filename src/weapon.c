@@ -51,13 +51,16 @@ static NEARDATA const short skill_names_indices[P_NUM_SKILLS] = {
 /* note: entry [0] isn't used */
 static NEARDATA const char *const odd_skill_names[] = {
     "no skill", "bare hands", /* use barehands_or_martial[] instead */
-    "two weapon combat", "riding", "polearms", "saber", "hammer", "whip",
-    "attack spells", "healing spells", "divination spells",
-    "enchantment spells", "clerical spells", "escape spells", "matter spells",
+    NC_("skill", "two weapon combat"), NC_("skill", "riding"),
+    NC_("skill", "polearms"), NC_("skill", "saber"), NC_("skill", "hammer"),
+    NC_("skill", "whip"), NC_("skill", "attack spells"),
+    NC_("skill", "healing spells"), NC_("skill", "divination spells"),
+    NC_("skill", "enchantment spells"), NC_("skill", "clerical spells"),
+    NC_("skill", "escape spells"), NC_("skill", "matter spells"),
 };
 /* indexed via is_martial() */
 static NEARDATA const char *const barehands_or_martial[] = {
-    "bare handed combat", "martial arts"
+    NC_("skill", "bare handed combat"), NC_("skill", "martial arts")
 };
 
 #define P_NAME(type)                                    \
@@ -67,6 +70,56 @@ static NEARDATA const char *const barehands_or_martial[] = {
                ? barehands_or_martial[martial_bonus()]  \
                : odd_skill_names[-skill_names_indices[type]])
 
+#if 0
+/* forms given by objnam_fmt() and objnam_adj() */
+C_("feminine", "%s is welded to its %s!")
+C_("plural", "%s is welded to its %s!")
+C_("feminine plural", "%s is welded to its %s!")
+C_("feminine", "%s welds itself to the %s of %s!")
+C_("plural", "%s welds itself to the %s of %s!")
+C_("feminine plural", "%s welds itself to the %s of %s!")
+C_("feminine", "%s shines %s in the %s of %s!")
+C_("plural", "%s shines %s in the %s of %s!")
+C_("feminine plural", "%s shines %s in the %s of %s!")
+C_("feminine", "%s gets %s.")
+C_("plural", "%s gets %s.")
+C_("feminine plural", "%s gets %s.")
+C_("feminine", "The %s of %s gets %s.")
+C_("plural", "The %s of %s gets %s.")
+C_("feminine plural", "The %s of %s gets %s.")
+C_("feminine", "%s dries out.")
+C_("plural", "%s dries out.")
+C_("feminine plural", "%s dries out.")
+C_("feminine", "%s dries.")
+C_("plural", "%s dries.")
+C_("feminine plural", "%s dries.")
+C_("feminine", "The %s of %s dries out.")
+C_("plural", "The %s of %s dries out.")
+C_("feminine plural", "The %s of %s dries out.")
+C_("feminine", "The %s of %s dries.")
+C_("plural", "The %s of %s dries.")
+C_("feminine plural", "The %s of %s dries.")
+C_("feminine", "%s in the %s of %s stops shining.")
+C_("plural", "%s in the %s of %s stops shining.")
+C_("feminine plural", "%s in the %s of %s stops shining.")
+N_("damp") N_("damper") N_("wet") N_("wetter")
+C_("feminine", "wet") C_("feminine", "wetter")
+/* forms for a female hero */
+NC_("heroine", "You feel more confident in your skills.")
+NC_("heroine", "You feel more confident in your weapon skills.")
+NC_("heroine", "You feel more confident in your spell casting skills.")
+NC_("heroine", "You feel more confident in your fighting skills.")
+NC_("heroine", "You are now more skilled in %s.")
+#endif
+
+/* translated name of a skill, for messages */
+#define P_NAME_I18N(type) \
+    ((skill_names_indices[type] > 0)                                   \
+         ? nh_npgettext("object",                                      \
+                        OBJ_NAME(objects[skill_names_indices[type]]),  \
+                        FALSE)                                         \
+         : C_("skill", P_NAME(type)))
+
 /* targets that provide attacker with small to-hit bonus when using a spear */
 static NEARDATA const char kebabable[] = {
     S_XORN, S_DRAGON, S_JABBERWOCK, S_NAGA, S_GIANT,  '\0'
@@ -75,11 +128,12 @@ static NEARDATA const char kebabable[] = {
 staticfn void
 give_may_advance_msg(int skill)
 {
-    You_feel("more confident in your %sskills.",
-             (skill == P_NONE) ? ""
-                 : (skill <= P_LAST_WEAPON) ? "weapon "
-                     : (skill <= P_LAST_SPELL) ? "spell casting "
-                         : "fighting ");
+    You_feel((skill == P_NONE) ? "more confident in your skills."
+             : (skill <= P_LAST_WEAPON)
+               ? "more confident in your weapon skills."
+               : (skill <= P_LAST_SPELL)
+                 ? "more confident in your spell casting skills."
+                 : "more confident in your fighting skills.");
     (void) handle_tip(TIP_ENHANCE);
 }
 
@@ -456,12 +510,13 @@ silver_sears(struct monst *magr UNUSED, struct monst *mdef,
            silver [see hmonas(uhitm.c) for explanation of 'multi_claw'] */
         both = ((ltyp == rtyp && l_dknown == r_dknown) || (l_ag && r_ag));
         Sprintf(rings, "ring%s", both ? "s" : "");
-        Your("%s%s %s %s!",
-             (l_ag || r_ag) ? "silver "
-             : both ? ""
-               : ((silverhit & W_RINGL) != 0L) ? "left "
-                 : "right ",
-             rings, vtense(rings, "sear"), mon_nam(mdef));
+        /* whole sentences, so that each can be translated */
+        nhUse(rings);
+        Your((l_ag || r_ag) ? (both ? "silver rings sear %s!"
+                                    : "silver ring sears %s!")
+             : both ? "rings sear %s!"
+               : ((silverhit & W_RINGL) != 0L) ? "left ring sears %s!"
+                 : "right ring sears %s!", mon_nam(mdef));
     }
 }
 
@@ -868,7 +923,24 @@ mon_wield_item(struct monst *mon)
                 Sprintf(welded_buf, "%s welded to %s %s",
                         otense(mw_tmp, "are"), mhis(mon), mon_hand);
 
-                if (obj->otyp == PICK_AXE) {
+                if (i18n_active()) {
+                    const char *nm = Yname2(mw_tmp);
+
+                    if (obj->otyp == PICK_AXE) {
+                        pline((mw_tmp->quan > 1L)
+                              ? "Since the weapons of %s are welded to its "
+                                "%s,"
+                              : "Since the weapon of %s is welded to its %s,",
+                              mon_nam(mon), mon_hand);
+                        pline("%s cannot wield that %s.", mon_nam(mon),
+                              xname(obj));
+                    } else {
+                        pline_mon(mon, "%s tries to wield %s.", Monnam(mon),
+                                  doname(obj));
+                        pline(objnam_fmt("%s is welded to its %s!", nm,
+                                         mw_tmp), nm, mon_hand);
+                    }
+                } else if (obj->otyp == PICK_AXE) {
                     pline("Since %s weapon%s %s,", s_suffix(mon_nam(mon)),
                           plur(mw_tmp->quan), welded_buf);
                     pline("%s cannot wield that %s.", mon_nam(mon),
@@ -889,9 +961,8 @@ mon_wield_item(struct monst *mon)
             boolean newly_welded;
             const struct throw_and_return_weapon *arw;
 
-            pline_mon(mon, "%s wields %s%c",
-                      Monnam(mon), doname(obj),
-                      exclaim ? '!' : '.');
+            pline_mon(mon, exclaim ? "%s wields %s!" : "%s wields %s.",
+                      Monnam(mon), doname(obj));
             if ((arw = autoreturn_weapon(obj)) != 0 && arw->tethered != 0)
                 pline_mon(mon, "%s secures the tether on %s.", Monnam(mon),
                           the(xname(obj)));
@@ -909,22 +980,35 @@ mon_wield_item(struct monst *mon)
 
                 if (bimanual(obj))
                     mon_hand = makeplural(mon_hand);
-                pline("%s %s to %s %s!", Tobjnam(obj, "weld"),
-                      is_plural(obj) ? "themselves" : "itself",
-                      s_suffix(mon_nam(mon)), mon_hand);
+                if (i18n_active()) {
+                    const char *nm = The(xname(obj));
+
+                    pline(objnam_fmt("%s welds itself to the %s of %s!", nm,
+                                     obj), nm, mon_hand, mon_nam(mon));
+                } else
+                    pline("%s %s to %s %s!", Tobjnam(obj, "weld"),
+                          is_plural(obj) ? "themselves" : "itself",
+                          s_suffix(mon_nam(mon)), mon_hand);
                 obj->bknown = 1;
             }
         }
         if (artifact_light(obj) && !obj->lamplit) {
             begin_burn(obj, FALSE);
-            if (canseemon(mon))
+            if (canseemon(mon) && i18n_active()) {
+                const char *nm = The(xname(obj));
+
+                pline(objnam_fmt("%s shines %s in the %s of %s!", nm, obj),
+                      nm, _(arti_light_description(obj)),
+                      mbodypart(mon, HAND), mon_nam(mon));
+            } else if (canseemon(mon))
                 pline("%s %s in %s %s!", Tobjnam(obj, "shine"),
                       arti_light_description(obj), s_suffix(mon_nam(mon)),
                       mbodypart(mon, HAND));
             /* 3.6.3: artifact might be getting wielded by invisible monst */
             else if (cansee(mon->mx, mon->my))
-                pline("Light begins shining %s.",
-                      (mdistu(mon) <= 5 * 5) ? "nearby" : "in the distance");
+                pline((mdistu(mon) <= 5 * 5)
+                      ? "Light begins shining nearby."
+                      : "Light begins shining in the distance.");
         }
         obj->owornmask = W_WEP;
         return 1;
@@ -1049,7 +1133,17 @@ wet_a_towel(
                                      ? (!obj->spe ? "damp" : "damper")
                                      : (!obj->spe ? "wet" : "wetter");
 
-            if (carried(obj))
+            if (i18n_active() && (carried(obj) || (mcarried(obj)
+                                    && canseemon(obj->ocarry)))) {
+                const char *nm = carried(obj) ? Yname2(obj) : xname(obj);
+
+                if (carried(obj))
+                    pline(objnam_fmt("%s gets %s.", nm, obj), nm,
+                          objnam_adj(wetness, nm));
+                else
+                    pline(objnam_fmt("The %s of %s gets %s.", nm, obj), nm,
+                          mon_nam(obj->ocarry), objnam_adj(wetness, nm));
+            } else if (carried(obj))
                 pline("%s gets %s.", Yobjnam2(obj, (const char *) 0),
                       wetness);
             else if (mcarried(obj) && canseemon(obj->ocarry))
@@ -1074,7 +1168,18 @@ dry_a_towel(
     /* new state is only reported if it's a decrease */
     if (newspe < obj->spe) {
         if (verbose) {
-            if (carried(obj))
+            if (i18n_active() && (carried(obj) || (mcarried(obj)
+                                    && canseemon(obj->ocarry)))) {
+                const char *nm = carried(obj) ? Yname2(obj) : xname(obj);
+
+                if (carried(obj))
+                    pline(objnam_fmt(!newspe ? "%s dries out." : "%s dries.",
+                                     nm, obj), nm);
+                else
+                    pline(objnam_fmt(!newspe ? "The %s of %s dries out."
+                                             : "The %s of %s dries.",
+                                     nm, obj), nm, mon_nam(obj->ocarry));
+            } else if (carried(obj))
                 pline("%s dries%s.", Yobjnam2(obj, (const char *) 0),
                       !newspe ? " out" : "");
             else if (mcarried(obj) && canseemon(obj->ocarry))
@@ -1201,9 +1306,9 @@ skill_advance(int skill)
     P_SKILL(skill)++;
     u.skill_record[u.skills_advanced++] = skill;
     /* subtly change the advance message to indicate no more advancement */
-    You("are now %s skilled in %s.",
-        P_SKILL(skill) >= P_MAX_SKILL(skill) ? "most" : "more",
-        P_NAME(skill));
+    You(P_SKILL(skill) >= P_MAX_SKILL(skill) ? "are now most skilled in %s."
+                                             : "are now more skilled in %s.",
+        P_NAME_I18N(skill));
 
     /* wizards discover spellbook IDs depending on spell 'school' skill limits;
        this allows them to successfully write books for unknown spells without
@@ -1508,8 +1613,9 @@ drain_weapon_skill(int n) /* number of skills to drain */
 
     for (skill = 0; skill < P_NUM_SKILLS; skill++)
         if (tmpskills[skill]) {
-            You("forget %syour training in %s.",
-                P_SKILL(skill) >= P_BASIC ? "some of " : "", P_NAME(skill));
+            You(P_SKILL(skill) >= P_BASIC
+                ? "forget some of your training in %s."
+                : "forget your training in %s.", P_NAME_I18N(skill));
         }
 }
 
@@ -1817,7 +1923,12 @@ setmnotwielded(struct monst *mon, struct obj *obj)
         return;
     if (artifact_light(obj) && obj->lamplit) {
         end_burn(obj, FALSE);
-        if (canseemon(mon))
+        if (canseemon(mon) && i18n_active()) {
+            const char *nm = The(xname(obj));
+
+            pline(objnam_fmt("%s in the %s of %s stops shining.", nm, obj),
+                  nm, mbodypart(mon, HAND), mon_nam(mon));
+        } else if (canseemon(mon))
             pline("%s in %s %s %s shining.", The(xname(obj)),
                   s_suffix(mon_nam(mon)), mbodypart(mon, HAND),
                   otense(obj, "stop"));

@@ -286,11 +286,11 @@ dog_eat(struct monst *mtmp,
             if (tunnels(mtmp->data))
                 pline_mon(mtmp, "%s digs in.", noit_Monnam(mtmp));
             else
-                pline_mon(mtmp, "%s %s %s.", noit_Monnam(mtmp),
-                      devour ? "devours" : "eats", obj_name);
+                pline_mon(mtmp, devour ? "%s devours %s." : "%s eats %s.",
+                          noit_Monnam(mtmp), obj_name);
         } else if (seeobj) {
             obj_name = distant_name(obj, doname);
-            pline("It %s %s.", devour ? "devours" : "eats", obj_name);
+            pline(devour ? "It devours %s." : "It eats %s.", obj_name);
         }
     }
     if (obj->unpaid) {
@@ -352,8 +352,8 @@ dog_starve(struct monst *mtmp)
     else if (cansee(mtmp->mx, mtmp->my))
         pline_mon(mtmp, "%s starves.", Monnam(mtmp));
     else
-        You_feel("%s for a moment.",
-                    Hallucination ? "bummed" : "sad");
+        You_feel(Hallucination ? "bummed for a moment."
+                               : "sad for a moment.");
     mondied(mtmp);
 }
 
@@ -1279,8 +1279,12 @@ dog_move(
 
         if (mfp.info[chi] & ALLOW_U) {
             if (mtmp->mleashed) { /* play it safe */
-                pline_mon(mtmp, "%s breaks loose of %s leash!",
-                         Monnam(mtmp), mhis(mtmp));
+                if (i18n_active())
+                    pline_mon(mtmp, "%s breaks loose of its leash!",
+                              Monnam(mtmp));
+                else
+                    pline_mon(mtmp, "%s breaks loose of %s leash!",
+                              Monnam(mtmp), mhis(mtmp));
                 m_unleash(mtmp, FALSE);
             }
             (void) mattacku(mtmp);
@@ -1302,8 +1306,15 @@ dog_move(
             struct obj *o = (!Hallucination && svl.level.flags.hero_memory
                              && glyph_is_object(levl[nix][niy].glyph))
                                ? vobj_at(nix, niy) : 0;
-            const char *what = o ? distant_name(o, doname) : something;
+            const char *what = o ? distant_name(o, doname) : _(something);
 
+            if (i18n_active())
+                pline_mon(mtmp, (is_flyer(mtmp->data)
+                                 || is_floater(mtmp->data))
+                                ? "%s reluctantly moves over %s."
+                                : "%s reluctantly steps onto %s.",
+                          noit_Monnam(mtmp), what);
+            else
             pline_mon(mtmp, "%s %s reluctantly %s %s.", noit_Monnam(mtmp),
                   vtense((char *) 0, locomotion(mtmp->data, "step")),
                   (is_flyer(mtmp->data) || is_floater(mtmp->data)) ? "over"
@@ -1528,7 +1539,22 @@ quickmimic(struct monst *mtmp)
             Your("leash goes slack.");
             m_unleash(mtmp, FALSE);
         }
-        if (glyph_at(mtmp->mx, mtmp->my) != prev_glyph)
+        if (i18n_active()) {
+            /* whole sentences, so that each can be translated */
+            const char *nm = (what == something) ? _(something)
+                             : (M_AP_TYPE(mtmp) == M_AP_MONSTER)
+                               ? i18n_an_ctx("monster", what)
+                               : i18n_an_ctx("noun", what);
+
+            if (glyph_at(mtmp->mx, mtmp->my) != prev_glyph)
+                You(seeloc ? "see %s appear where %s was!"
+                           : "sense that %s has appeared where %s was!",
+                    nm, buf);
+            else
+                You("sense that %s feels rather %s-ish.", buf,
+                    (M_AP_TYPE(mtmp) == M_AP_MONSTER) ? C_("monster", what)
+                                                      : C_("noun", what));
+        } else if (glyph_at(mtmp->mx, mtmp->my) != prev_glyph)
             You("%s %s %s where %s was!",
                 seeloc ? "see" : "sense that",
                 (what != something) ? an(what) : what,

@@ -831,8 +831,9 @@ keepdogs(
                 mdrop_special_objs(mtmp); /* drop Amulet */
             } else if (mtmp->meating || mtmp->mtrapped) {
                 if (canseemon(mtmp))
-                    pline_mon(mtmp, "%s is still %s.", Monnam(mtmp),
-                             mtmp->meating ? "eating" : "trapped");
+                    pline_mon(mtmp, mtmp->meating ? "%s is still eating."
+                                                  : "%s is still trapped.",
+                              Monnam(mtmp));
                 stay_behind = TRUE;
             } else if (mon_has_amulet(mtmp)) {
                 if (canseemon(mtmp))
@@ -842,10 +843,14 @@ keepdogs(
             }
             if (stay_behind) {
                 if (mtmp->mleashed) {
-                    pline("%s leash suddenly comes loose.",
-                          humanoid(mtmp->data)
-                              ? (mtmp->female ? "Her" : "His")
-                              : "Its");
+                    if (i18n_active())
+                        pline("The leash of %s suddenly comes loose.",
+                              mon_nam(mtmp));
+                    else
+                        pline("%s leash suddenly comes loose.",
+                              humanoid(mtmp->data)
+                                  ? (mtmp->female ? "Her" : "His")
+                                  : "Its");
                     m_unleash(mtmp, FALSE);
                 }
                 if (mtmp == u.usteed) {
@@ -877,7 +882,10 @@ keepdogs(
         } else if (mtmp->mleashed) {
             /* this can happen if your quest leader ejects you from the
                "home" level while a leashed pet isn't next to you */
-            pline("%s leash goes slack.", s_suffix(Monnam(mtmp)));
+            if (i18n_active())
+                pline("The leash of %s goes slack.", mon_nam(mtmp));
+            else
+                pline("%s leash goes slack.", s_suffix(Monnam(mtmp)));
             m_unleash(mtmp, FALSE);
         }
     }
@@ -1167,8 +1175,9 @@ tamedog(
 
     /* worst case, at least it'll be peaceful. */
     if (givemsg && !mtmp->mpeaceful && canspotmon(mtmp)) {
-        pline_mon(mtmp, "%s seems %s.", Monnam(mtmp),
-              Hallucination ? "really chill" : "more amiable");
+        pline_mon(mtmp, Hallucination ? "%s seems really chill."
+                                      : "%s seems more amiable.",
+                  Monnam(mtmp));
         givemsg = FALSE; /* don't give another message below */
     }
     mtmp->mpeaceful = 1;
@@ -1202,9 +1211,9 @@ tamedog(
                 boolean big_corpse =
                     (obj->otyp == CORPSE && ismnum(obj->corpsenm)
                      && mons[obj->corpsenm].msize > mtmp->data->msize);
-                pline_mon(mtmp, "%s catches %s%s",
-                          Monnam(mtmp), the(xname(obj)),
-                         !big_corpse ? "." : ", or vice versa!");
+                pline_mon(mtmp, !big_corpse ? "%s catches %s."
+                                            : "%s catches %s, or vice versa!",
+                          Monnam(mtmp), the(xname(obj)));
             } else if (cansee(mtmp->mx, mtmp->my))
                 pline("%s.", Tobjnam(obj, "stop"));
             /* dog_eat expects a floor object */
@@ -1268,8 +1277,9 @@ tamedog(
     }
 
     if (givemsg && canspotmon(mtmp))
-        pline_mon(mtmp, "%s seems quite %s.", Monnam(mtmp),
-              Hallucination ? "approachable" : "friendly");
+        pline_mon(mtmp, Hallucination ? "%s seems quite approachable."
+                                      : "%s seems quite friendly.",
+                  Monnam(mtmp));
 
     newsym(mtmp->mx, mtmp->my);
     if (mtmp->wormno)
@@ -1316,9 +1326,10 @@ wary_dog(struct monst *mtmp, boolean was_dead)
             if (haseyes(gy.youmonst.data)) {
                 if (haseyes(mtmp->data))
                     pline_mon(mtmp,
-                             "%s %s to look you in the %s.", Monnam(mtmp),
-                             mtmp->mpeaceful ? "seems unable" : "refuses",
-                             body_part(EYE));
+                             mtmp->mpeaceful
+                             ? "%s seems unable to look you in the %s."
+                             : "%s refuses to look you in the %s.",
+                             Monnam(mtmp), body_part(EYE));
                 else
                     pline_mon(mtmp, "%s avoids your gaze.", Monnam(mtmp));
             }

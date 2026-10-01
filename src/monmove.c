@@ -68,8 +68,8 @@ mb_trapped(struct monst *mtmp, boolean canseeit)
         if (canseeit && !Unaware)
             pline_mon(mtmp, "KABOOM!!  You see a door explode.");
         else if (!Deaf)
-            You_hear("a %s explosion.",
-                     (mdistu(mtmp) > 7 * 7) ? "distant" : "nearby");
+            You_hear((mdistu(mtmp) > 7 * 7) ? "a distant explosion."
+                                            : "a nearby explosion.");
     }
     wake_nearto(mtmp->mx, mtmp->my, 7 * 7);
     mtmp->mstun = 1;
@@ -117,16 +117,25 @@ void
 mon_yells(struct monst *mon, const char *shout)
 {
     if (Deaf) {
-        if (canspotmon(mon))
+        if (canspotmon(mon)) {
             /* Sidenote on "A watchman angrily waves her arms!"
              * Female being called watchman is correct (career name).
              */
+            if (i18n_active() && nolimbs(mon->data))
+                pline_mon(mon, "%s angrily shakes %s!", Amonnam(mon),
+                          i18n_the_ctx("bodypart",
+                                       mbodypart_english(mon, HEAD)));
+            else if (i18n_active())
+                pline_mon(mon, "%s angrily waves its %s!", Amonnam(mon),
+                          makeplural(mbodypart(mon, ARM)));
+            else
             pline_mon(mon, "%s angrily %s %s %s!",
                 Amonnam(mon),
                 nolimbs(mon->data) ? "shakes" : "waves",
                 mhis(mon),
                 nolimbs(mon->data) ? mbodypart(mon, HEAD)
                                    : makeplural(mbodypart(mon, ARM)));
+        }
     } else {
         if (canspotmon(mon)) {
             pline_mon(mon, "%s yells:", Amonnam(mon));
@@ -160,9 +169,9 @@ m_break_boulder(struct monst *mtmp, coordxy x, coordxy y)
             if (!Deaf && (mdistu(mtmp) < 4*4)) {
                 if (canspotmon(mtmp))
                     set_msg_xy(mtmp->mx, mtmp->my);
-                pline("%s mutters %s.",
-                      Monnam(mtmp),
-                      mtmp->ispriest ? "a prayer" : "an incantation");
+                pline(mtmp->ispriest ? "%s mutters a prayer."
+                                     : "%s mutters an incantation.",
+                      Monnam(mtmp));
             }
             mtmp->mspec_used += rn1(20, 10);
         }
@@ -516,7 +525,7 @@ monflee(
                                        ? bare_artifactname(uwep)
                                        : (uarm && artifact_light(uarm))
                                          ? yname(uarm)
-                                         : "[its imagination?]";
+                                         : _("[its imagination?]");
 
                     pline_mon(mtmp, "%s flees from the painful light of %s.",
                           Monnam(mtmp), lsrc);
@@ -623,10 +632,10 @@ mind_blast(struct monst *mtmp)
                 gy.youmonst.mappearance = 0;
                 newsym(u.ux, u.uy);
             }
-            pline("It locks on to your %s!",
-                    m_sen ? "telepathy"
-                    : Blind_telepat ? "latent telepathy"
-                    : "mind"); /* note: hero is never mindless */
+            /* note: hero is never mindless */
+            pline(m_sen ? "It locks on to your telepathy!"
+                  : Blind_telepat ? "It locks on to your latent telepathy!"
+                    : "It locks on to your mind!");
             dmg = rnd(15);
             if (Half_spell_damage)
                 dmg = (dmg + 1) / 2;
@@ -815,7 +824,7 @@ dochug(struct monst *mtmp)
         && !u.uswallow) {
         if (mtmp->mux != u.ux || mtmp->muy != u.uy) {
             pline("%s whispers at thin air.",
-                  cansee(mtmp->mux, mtmp->muy) ? Monnam(mtmp) : "It");
+                  cansee(mtmp->mux, mtmp->muy) ? Monnam(mtmp) : _("It"));
 
             if (is_demon(gy.youmonst.data)) {
                 /* "Good hunting, brother" */
@@ -1293,7 +1302,8 @@ maybe_spin_web(struct monst *mtmp)
             if (cansee(mtmp->mx, mtmp->my)) {
                 char mbuf[BUFSZ];
 
-                Strcpy(mbuf, canspotmon(mtmp) ? y_monnam(mtmp) : something);
+                Strcpy(mbuf, canspotmon(mtmp) ? y_monnam(mtmp)
+                                              : _(something));
                 pline_mon(mtmp, "%s spins a web.", upstart(mbuf));
                 trap->tseen = 1;
             }
@@ -1559,9 +1569,11 @@ postmov(
             if ((here->doormask & (D_LOCKED | D_CLOSED)) != 0
                 && amorphous(ptr)) {
                 if (flags.verbose && canseemon(mtmp))
-                    pline_mon(mtmp, "%s %s under the door.", YMonnam(mtmp),
-                              (ptr == &mons[PM_FOG_CLOUD]
-                               || ptr->mlet == S_LIGHT) ? "flows" : "oozes");
+                    pline_mon(mtmp, (ptr == &mons[PM_FOG_CLOUD]
+                                     || ptr->mlet == S_LIGHT)
+                                    ? "%s flows under the door."
+                                    : "%s oozes under the door.",
+                              YMonnam(mtmp));
             } else if ((here->doormask & D_LOCKED) != 0 && can_unlock) {
                 /* like the vampshift hack, there are sequencing
                    issues when the monster is moved to the door's spot
@@ -1644,11 +1656,18 @@ postmov(
                               Monnam(mtmp));
                 dissolve_bars(mtmp->mx, mtmp->my);
                 return MMOVE_DONE;
-            } else if (flags.verbose && canseemon(mtmp))
+            } else if (flags.verbose && canseemon(mtmp)) {
+                if (i18n_active())
+                    Norep(passes_walls(ptr)
+                          ? "%s passes through the iron bars."
+                          : "%s passes between the iron bars.",
+                          Monnam(mtmp));
+                else
                 Norep("%s %s %s the iron bars.", Monnam(mtmp),
                       /* pluralization fakes verb conjugation */
                       makeplural(locomotion(ptr, "pass")),
                       passes_walls(ptr) ? "through" : "between");
+            }
         } /* doors and bars */
 
         /* possibly dig */

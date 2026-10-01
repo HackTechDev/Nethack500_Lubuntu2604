@@ -100,12 +100,29 @@ téléportation (`teleport.c`), l'inventaire (`invent.c`), s'asseoir
 (`sit.c`), le menu d'actions sur un objet (`iactions.c`) et les menus de
 catégories et d'objets (`query_category()`, `query_objlist()`), les cris
 et répliques des monstres (`sounds.c`), les gardes du coffre (`vault.c`)
-et les sorts (`spell.c`, menu des sorts aligné par caractères), sauf
+et les sorts (`spell.c`, menu des sorts aligné par caractères),
+l'équipement des monstres (`worn.c`), les combats entre monstres
+(`mhitm.c`), leurs sorts (`mcastu.c`), les reflets (`mon_reflects()`) et
+l'occupation interrompue (« Vous cessez de chercher »), la polymorphie
+(`polyself.c`), les projectiles et souffles des monstres (`mthrowu.c`),
+les fontaines et éviers (`fountain.c`), le reste des pièges (`trap.c`),
+les déplacements des monstres (`monmove.c`), `pager.c`, le pont-levis
+(`dbridge.c`), les armes et compétences (`weapon.c`), les démons
+(`minion.c`), les vols (`steal.c`), les caractéristiques (`attrib.c`),
+l'écriture (`write.c`), les familiers (`dog.c`, `dogmove.c`), les
+explosions (`explode.c`), `mkobj.c`, le Magicien de Yendor (`wizard.c`),
+les nuages (`region.c`), les prêtres (`priest.c`), le boulet (`ball.c`),
+les vers longs (`worm.c`), le choix d'une position (`getpos.c`, hors
+fenêtre d'aide), le courrier (`mail.c`), les lignes d'état du stéthoscope
+(`insight.c`) et `quest.c`
+— les noms de rayons hallucinatoires (`hallublasts[]`) restent en
+anglais —, sauf
 quelques
 verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Restent notamment : `worn.c`, `mhitm.c`, `mcastu.c`, `polyself.c`...
+(accord au féminin).  Restent notamment : `options.c`, `files.c`, `cfgfiles.c`, `bones.c`, `wizcmds.c` (mode
+magicien), les textes des menus et fenêtres (section 4).
 et `attrib.c` (« You feel foolish! »).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes

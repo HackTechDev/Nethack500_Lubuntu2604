@@ -6549,7 +6549,7 @@ readobjnam(char *bp, struct obj *no_wish)
         obfree(d.otmp, (struct obj *) 0);
         d.otmp = &hands_obj;
         pline("For a moment, you feel %s in your %s, but it disappears!",
-              something, makeplural(body_part(HAND)));
+              _(something), makeplural(body_part(HAND)));
         return d.otmp;
     }
 

@@ -6,6 +6,7 @@
 
 staticfn int explosionmask(struct monst *, uchar, char) NONNULLARG1;
 staticfn void engulfer_explosion_msg(uchar, char);
+staticfn const char *expl_the_i18n(const char *);
 
 /* Note: Arrays are column first, while the screen is row first */
 static const int explosion[3][3] = {
@@ -114,69 +115,111 @@ explosionmask(
     return res;
 }
 
+#if 0
+/* names of explosions (explode()) */
+NC_("explosion", "magical blast") NC_("explosion", "burning oil")
+NC_("explosion", "tower of flame") NC_("explosion", "fireball")
+NC_("explosion", "ball of cold") NC_("explosion", "death field")
+NC_("explosion", "disintegration field")
+NC_("explosion", "ball of lightning") NC_("explosion", "poison gas cloud")
+NC_("explosion", "splash of acid")
+NC_("gender", "magical blast") NC_("gender", "burning oil")
+NC_("gender", "tower of flame") NC_("gender", "fireball")
+NC_("gender", "ball of cold") NC_("gender", "death field")
+NC_("gender", "disintegration field") NC_("gender", "ball of lightning")
+NC_("gender", "poison gas cloud") NC_("gender", "splash of acid")
+#endif
+
+/* explosion str with its definite article, translated; str might be
+   "<monster>'s explosion" (from the killer name) */
+staticfn const char *
+expl_the_i18n(const char *str)
+{
+#ifdef NHI18N
+    static char buf[BUFSZ];
+    char mon[BUFSZ];
+    const char *p;
+
+    if (i18n_lookup("explosion", str))
+        return i18n_the_ctx("explosion", str);
+    if ((p = strstri(str, "'s explosion")) != 0
+        || ((p = strstri(str, "s' explosion")) != 0 && ++p)) {
+        copynchars(mon, str, min((int) (p - str), BUFSZ - 1));
+        Snprintf(buf, sizeof buf, _("the explosion of %s"),
+                 i18n_the_ctx("monster", mon));
+        return buf;
+    }
+#endif
+    return the(str);
+}
+
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 staticfn void
 engulfer_explosion_msg(uchar adtyp, char olet)
 {
-    const char *adj = (char *) 0;
+    const char *fmt; /* whole sentences, so that each can be translated */
 
     if (digests(u.ustuck->data)) {
         switch (adtyp) {
         case AD_FIRE:
-            adj = "heartburn";
+            fmt = N_("%s gets heartburn!");
             break;
         case AD_COLD:
-            adj = "chilly";
+            fmt = N_("%s gets chilly!");
             break;
         case AD_DISN:
             if (olet == WAND_CLASS)
-                adj = "irradiated by pure energy";
+                fmt = N_("%s gets irradiated by pure energy!");
             else
-                adj = "perforated";
+                fmt = N_("%s gets perforated!");
             break;
         case AD_ELEC:
-            adj = "shocked";
+            fmt = N_("%s gets shocked!");
             break;
         case AD_DRST:
-            adj = "poisoned";
+            fmt = N_("%s gets poisoned!");
             break;
         case AD_ACID:
-            adj = "an upset stomach";
+            fmt = N_("%s gets an upset stomach!");
             break;
         default:
-            adj = "fried";
+            fmt = N_("%s gets fried!");
             break;
         }
-        pline("%s gets %s!", Monnam(u.ustuck), adj);
+        pline(fmt, Monnam(u.ustuck));
     } else {
         switch (adtyp) {
         case AD_FIRE:
-            adj = "toasted";
+            fmt = N_("%s gets slightly toasted!");
             break;
         case AD_COLD:
-            adj = "chilly";
+            fmt = N_("%s gets slightly chilly!");
             break;
         case AD_DISN:
             if (olet == WAND_CLASS)
-                adj = "overwhelmed by pure energy";
+                fmt = N_("%s gets slightly overwhelmed by pure energy!");
             else
-                adj = "perforated";
+                fmt = N_("%s gets slightly perforated!");
             break;
         case AD_ELEC:
-            adj = "shocked";
+            fmt = N_("%s gets slightly shocked!");
             break;
         case AD_DRST:
-            adj = "intoxicated";
+            fmt = N_("%s gets slightly intoxicated!");
             break;
         case AD_ACID:
-            adj = "burned";
+            fmt = N_("%s gets slightly burned!");
             break;
         default:
-            adj = "fried";
+            fmt = N_("%s gets slightly fried!");
             break;
         }
-        pline("%s gets slightly %s!", Monnam(u.ustuck), adj);
+        pline(fmt, Monnam(u.ustuck));
     }
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* Note: I had to choose one of three possible kinds of "type" when writing
  * this function: a wand type (like in zap.c), an adtyp, or an object type.
@@ -505,7 +548,11 @@ explode(
                 } else if (cansee(xx, yy)) {
                     if (mtmp->m_ap_type)
                         seemimic(mtmp);
-                    pline("%s is caught in the %s!", Monnam(mtmp), str);
+                    if (i18n_active())
+                        pline("%s is caught in %s!", Monnam(mtmp),
+                              expl_the_i18n(str));
+                    else
+                        pline("%s is caught in the %s!", Monnam(mtmp), str);
                 }
 
                 itemdmg = destroy_items(mtmp, (int) adtyp, dam);
@@ -534,7 +581,10 @@ explode(
                     if (resist(mtmp, olet, 0, FALSE)) {
                         /* inside_engulfer: <xx,yy> == <u.ux,u.uy> */
                         if (cansee(xx, yy) || inside_engulfer)
-                            pline("%s resists the %s!", Monnam(mtmp), str);
+                            pline(i18n_active() ? "%s resists %s!"
+                                                : "%s resists the %s!",
+                                  Monnam(mtmp), i18n_active()
+                                                ? expl_the_i18n(str) : str);
                         mdam = (dam + 1) / 2;
                     }
                     /* if grabber is reaching into hero's spot and
@@ -599,7 +649,10 @@ explode(
                 } while (*hallu_buf != lowc(*hallu_buf));
                 str = hallu_buf;
             }
-            You("are caught in the %s!", str);
+            if (i18n_active())
+                You("are caught in %s!", expl_the_i18n(str));
+            else
+                You("are caught in the %s!", str);
             iflags.last_msg = PLNMSG_CAUGHT_IN_EXPLOSION;
         }
         /* do property damage first, in case we end up leaving bones */
@@ -669,7 +722,9 @@ explode(
                     || iflags.last_msg == PLNMSG_TOWER_OF_FLAME) /*seffects()*/
                     pline("It is fatal.");
                 else
-                    pline_The("%s is fatal.", str);
+                    pline(i18n_active() ? "%s is fatal." : "The %s is fatal.",
+                          i18n_active() ? upstart((char *) expl_the_i18n(str))
+                                        : str);
                 /* Known BUG: BURNING suppresses corpse in bones data,
                    but done does not handle killer reason correctly */
                 done((adtyp == AD_FIRE) ? BURNING : DIED);
@@ -775,7 +830,12 @@ scatter(
             && rn2(10)) {
             if (otmp->otyp == BOULDER) {
                 if (cansee(sx, sy)) {
-                    pline("%s apart.", Tobjnam(otmp, "break"));
+                    if (i18n_active()) {
+                        const char *nm = The(xname(otmp));
+
+                        pline(objnam_fmt("%s breaks apart.", nm, otmp), nm);
+                    } else
+                        pline("%s apart.", Tobjnam(otmp, "break"));
                 } else {
                     Soundeffect(se_stone_breaking, 100);
                     You_hear("stone breaking.");

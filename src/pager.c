@@ -1667,7 +1667,7 @@ add_quoted_engraving(
 }
 
 /* also used by getpos hack in getpos.c */
-const char what_is_a_location[] = "a monster, object or location";
+const char what_is_a_location[] = N_("a monster, object or location");
 
 int
 do_look(int mode, coord *click_cc)
@@ -1903,9 +1903,9 @@ do_look(int mode, coord *click_cc)
             if (from_screen) {
                 if (flags.verbose)
                     pline("Please move the cursor to %s.",
-                          what_is_a_location);
+                          _(what_is_a_location));
                 else
-                    pline("Pick %s.", what_is_a_location);
+                    pline("Pick %s.", _(what_is_a_location));
 
                 ans = getpos(&cc, quick, what_is_a_location);
                 if (ans < 0 || cc.x < 0)
@@ -2067,9 +2067,13 @@ look_all(
     if (count)
         display_nhwindow(win, TRUE);
     else
-        pline("No %s are currently shown %s.",
-              do_mons ? "monsters" : "objects",
-              nearby ? "nearby" : "on the map");
+        /* whole sentences, so that each can be translated */
+        pline(do_mons ? (nearby ? "No monsters are currently shown nearby."
+                                : "No monsters are currently shown on the "
+                                  "map.")
+                      : (nearby ? "No objects are currently shown nearby."
+                                : "No objects are currently shown on the "
+                                  "map."));
     destroy_nhwindow(win);
 }
 
@@ -2134,7 +2138,8 @@ look_traps(boolean nearby)
     if (count)
         display_nhwindow(win, TRUE);
     else
-        pline("No traps seen or remembered%s.", nearby ? " nearby" : "");
+        pline(nearby ? "No traps seen or remembered nearby."
+                     : "No traps seen or remembered.");
     destroy_nhwindow(win);
 }
 
@@ -2223,7 +2228,8 @@ look_engrs(boolean nearby)
     if (count)
         display_nhwindow(win, TRUE);
     else
-        pline("No engravings seen or remembered%s.", nearby ? " nearby" : "");
+        pline(nearby ? "No engravings seen or remembered nearby."
+                     : "No engravings seen or remembered.");
     destroy_nhwindow(win);
 }
 
@@ -2355,7 +2361,8 @@ doidtrap(void)
         boolean chesttrap = trapped_chest_at(tt, x, y);
 
         if (chesttrap || trapped_door_at(tt, x, y)) {
-            pline("That is a trapped %s.", chesttrap ? "chest" : "door");
+            pline(chesttrap ? "That is a trapped chest."
+                            : "That is a trapped door.");
             return ECMD_OK; /* trap ID'd, but no time elapses */
         }
     }
@@ -2368,6 +2375,16 @@ doidtrap(void)
             if (u.dz) {
                 if (u.dz < 0 ? is_hole(tt) : tt == ROCKTRAP)
                     break;
+            }
+            if (i18n_active()) {
+                /* whole sentences, so that each can be translated */
+                const char *tn = i18n_an_ctx("trap", trapname(tt, FALSE));
+
+                pline(!trap->madeby_u ? "That is %s."
+                      : (tt == WEB) ? "That is %s woven by you."
+                        : (tt == HOLE || tt == PIT) ? "That is %s dug by you."
+                          : "That is %s set by you.", tn);
+                return ECMD_OK;
             }
             pline("That is %s%s%s.",
                   an(trapname(tt, FALSE)),
@@ -2663,11 +2680,13 @@ dowhatdoes(void)
     char q, *reslt;
 
     if (!once) {
-        pline("Ask about '&' or '?' to get more info.%s",
 #ifdef ALTMETA
-              iflags.altmeta ? "  (For ESC, type it twice.)" :
+        if (iflags.altmeta)
+            pline("Ask about '&' or '?' to get more info.  "
+                  "(For ESC, type it twice.)");
+        else
 #endif
-              "");
+            pline("Ask about '&' or '?' to get more info.");
         once = TRUE;
     }
 #if defined(UNIX) || defined(VMS)

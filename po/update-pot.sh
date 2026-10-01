@@ -35,6 +35,7 @@ $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
     --keyword=selftouch --keyword=mselftouch:2 --keyword=objnam_fmt \
     --keyword=strange_feeling:2 --keyword=prinv:1 --keyword=query_category:1 \
     --keyword=query_objlist:1 --keyword=ia_addmenu:4 --keyword=getdir \
+    --keyword=getpos:3 \
     --keyword=hold_another_object:2 --keyword=hold_another_object:4 \
     -o "$tmp/0base.pot" $SRC
 

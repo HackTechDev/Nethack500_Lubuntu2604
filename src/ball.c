@@ -774,8 +774,9 @@ drag_ball(coordxy x, coordxy y, int *bc_control,
  drag:
 
     if (near_capacity() > SLT_ENCUMBER && dist2(x, y, u.ux, u.uy) <= 2) {
-        You("cannot %sdrag the heavy iron ball.",
-            gi.invent ? "carry all that and also " : "");
+        You(gi.invent
+            ? "cannot carry all that and also drag the heavy iron ball."
+            : "cannot drag the heavy iron ball.");
         nomul(0);
         return FALSE;
     }
@@ -878,6 +879,13 @@ drag_ball(coordxy x, coordxy y, int *bc_control,
  *
  *  Should not be called while swallowed.
  */
+#if 0
+/* forms given by objnam_fmt() */
+C_("feminine", "You drop %s and it falls down the stairs with you.")
+C_("plural", "You drop %s and it falls down the stairs with you.")
+C_("feminine plural", "You drop %s and it falls down the stairs with you.")
+#endif
+
 void
 drop_ball(coordxy x, coordxy y)
 {
@@ -889,7 +897,6 @@ drop_ball(coordxy x, coordxy y)
     }
 
     if (x != u.ux || y != u.uy) {
-        static const char pullmsg[] = "The ball pulls you out of the ";
         struct trap *t;
         long side;
 
@@ -897,24 +904,30 @@ drop_ball(coordxy x, coordxy y)
             && u.utraptype != TT_INFLOOR && u.utraptype != TT_BURIEDBALL) {
             switch (u.utraptype) {
             case TT_PIT:
-                pline("%s%s!", pullmsg, "pit");
+                pline("The ball pulls you out of the pit!");
                 break;
             case TT_WEB:
-                pline("%s%s!", pullmsg, "web");
+                pline("The ball pulls you out of the web!");
                 Soundeffect(se_destroy_web, 30);
                 pline_The("web is destroyed!");
                 deltrap(t_at(u.ux, u.uy));
                 break;
             case TT_LAVA:
-                pline("%s%s!", pullmsg, hliquid("lava"));
+                if (i18n_active())
+                    pline("The ball pulls you out of %s!",
+                          i18n_the(hliquid("lava")));
+                else
+                    pline("The ball pulls you out of the %s!",
+                          hliquid("lava"));
                 break;
             case TT_BEARTRAP:
                 side = rn2(3) ? LEFT_SIDE : RIGHT_SIDE;
-                pline("%s%s!", pullmsg, "bear trap");
+                pline("The ball pulls you out of the bear trap!");
                 set_wounded_legs(side, rn1(1000, 500));
                 if (!u.usteed) {
-                    Your("%s %s is severely damaged.",
-                         (side == LEFT_SIDE) ? "left" : "right",
+                    Your((side == LEFT_SIDE)
+                         ? "left %s is severely damaged."
+                         : "right %s is severely damaged.",
                          body_part(LEG));
                     losehp(Maybe_Half_Phys(2),
                            "leg damage from being pulled out of a bear trap",
@@ -971,9 +984,15 @@ litter(void)
         nextobj = otmp->nobj;
         if (otmp != uball && rnd(capacity) <= (int) otmp->owt) {
             if (canletgo(otmp, "")) {
-                You("drop %s and %s %s down the stairs with you.",
-                    yname(otmp), (otmp->quan == 1L) ? "it" : "they",
-                    otense(otmp, "fall"));
+                if (i18n_active()) {
+                    const char *nm = yname(otmp);
+
+                    pline(objnam_fmt("You drop %s and it falls down the "
+                                     "stairs with you.", nm, otmp), nm);
+                } else
+                    You("drop %s and %s %s down the stairs with you.",
+                        yname(otmp), (otmp->quan == 1L) ? "it" : "they",
+                        otense(otmp, "fall"));
                 setnotworn(otmp);
                 freeinv(otmp);
                 hitfloor(otmp, FALSE);

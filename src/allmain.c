@@ -15,6 +15,7 @@ staticfn void moveloop_preamble(boolean);
 staticfn void u_calc_moveamt(int);
 staticfn void maybe_generate_rnd_mon(void);
 staticfn void maybe_do_tutorial(void);
+staticfn const char *occtxt_i18n(const char *);
 #ifdef POSITIONBAR
 staticfn void do_positionbar(void);
 #endif
@@ -680,12 +681,49 @@ regen_hp(int wtcap)
 
 #undef U_CAN_REGEN
 
+#if 0
+/* occupations given to set_occupation() */
+NC_("occupation", "searching") NC_("occupation", "waiting")
+NC_("occupation", "digging") NC_("occupation", "chopping")
+NC_("occupation", "setting the trap") NC_("occupation", "disarming")
+NC_("occupation", "disrobing") NC_("occupation", "forcing the lock")
+NC_("occupation", "opening the tin") NC_("occupation", "eating non-food")
+NC_("occupation", "studying") NC_("occupation", "engraving")
+N_("eating %s") N_("wiping off your %s")
+#endif
+
+/* translation of occupation text txt, for "You stop <txt>." */
+staticfn const char *
+occtxt_i18n(const char *txt)
+{
+#ifdef NHI18N
+    static char buf[BUFSZ];
+    const char *res;
+
+    if (!i18n_active())
+        return txt;
+    if ((res = i18n_lookup("occupation", txt)) != 0
+        || (res = i18n_lookup("lock action", txt)) != 0)
+        return res;
+    /* composed by eatfood() and dowipe(); the rest is translated */
+    if (!strncmp(txt, "eating ", 7)) {
+        Snprintf(buf, sizeof buf, _("eating %s"), txt + 7);
+        return buf;
+    }
+    if (!strncmp(txt, "wiping off your ", 16)) {
+        Snprintf(buf, sizeof buf, _("wiping off your %s"), txt + 16);
+        return buf;
+    }
+#endif
+    return txt;
+}
+
 void
 stop_occupation(void)
 {
     if (go.occupation) {
         if (!maybe_finished_meal(TRUE))
-            You("stop %s.", go.occtxt);
+            You("stop %s.", occtxt_i18n(go.occtxt));
         go.occupation = (int (*)(void)) 0;
         disp.botl = TRUE; /* in case u.uhs changed */
         nomul(0);

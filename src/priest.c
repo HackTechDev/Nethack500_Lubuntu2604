@@ -585,14 +585,17 @@ priest_talk(struct monst *priest)
     /* priests don't chat unless peaceful and in their own temple */
     if (!inhistemple(priest) || !priest->mpeaceful || helpless(priest)) {
         static const char *const cranky_msg[3] = {
-            "Thou wouldst have words, eh?  I'll give thee a word or two!",
-            "Talk?  Here is what I have to say!",
-            "Pilgrim, I would speak no longer with thee."
+            N_("Thou wouldst have words, eh?  I'll give thee a word or two!"),
+            N_("Talk?  Here is what I have to say!"),
+            N_("Pilgrim, I would speak no longer with thee.")
         };
 
         if (helpless(priest)) {
-            pline("%s breaks out of %s reverie!", Monnam(priest),
-                  mhis(priest));
+            if (i18n_active())
+                pline("%s breaks out of its reverie!", Monnam(priest));
+            else
+                pline("%s breaks out of %s reverie!", Monnam(priest),
+                      mhis(priest));
             priest->mfrozen = priest->msleeping = 0;
             priest->mcanmove = 1;
         }
@@ -617,10 +620,16 @@ priest_talk(struct monst *priest)
             if (pmoney > 0L) {
                 const char *bits;
                 bits = (Hallucination) ? currency(pmoney)
-                                       : (pmoney == 1L) ? "bit" : "bits";
+                                       : (pmoney == 1L) ? N_("bit")
+                                                        : N_("bits");
                 /* Note: two bits is actually 25 cents.  Hmm. */
-                pline("%s gives you %s%s for an ale.", Monnam(priest),
-                      (pmoney == 1L) ? "one " : "two ", bits);
+                if (i18n_active())
+                    pline((pmoney == 1L) ? "%s gives you one %s for an ale."
+                                         : "%s gives you two %s for an ale.",
+                          Monnam(priest), Hallucination ? bits : _(bits));
+                else
+                    pline("%s gives you %s%s for an ale.", Monnam(priest),
+                          (pmoney == 1L) ? "one " : "two ", bits);
                 money2u(priest, pmoney > 1L ? 2 : 1);
             } else
                 pline("%s preaches the virtues of poverty.", Monnam(priest));
@@ -855,8 +864,12 @@ ghod_hitsu(struct monst *priest)
               a_gname_at(ax, ay));
         break;
     case 1:
-        pline("%s voice booms:  \"How darest thou harm my servant!\"",
-              s_suffix(a_gname_at(ax, ay)));
+        if (i18n_active())
+            pline("The voice of %s booms:  \"How darest thou harm my "
+                  "servant!\"", a_gname_at(ax, ay));
+        else
+            pline("%s voice booms:  \"How darest thou harm my servant!\"",
+                  s_suffix(a_gname_at(ax, ay)));
         break;
     default:
         pline("%s roars:  \"Thou dost profane my shrine!\"",

@@ -49,6 +49,11 @@ NC_("noun", "grave"), NC_("gender", "grave"),
 
 RESTORE_WARNING_FORMAT_NONLITERAL
 
+/* (possibly hallucinatory) water, translated: as is and with its
+   definite article */
+#define WATER_NOUN C_("noun", hliquid("water"))
+#define THE_WATER i18n_the(hliquid("water"))
+
 /* Fountain of snakes! */
 staticfn void
 dowatersnakes(void)
@@ -59,10 +64,10 @@ dowatersnakes(void)
     if (!(svm.mvitals[PM_WATER_MOCCASIN].mvflags & G_GONE)) {
         if (!Blind) {
             pline("An endless stream of %s pours forth!",
-                  Hallucination ? makeplural(rndmonnam(NULL)) : "snakes");
+                  Hallucination ? makeplural(rndmonnam(NULL)) : _("snakes"));
         } else {
             Soundeffect(se_snakes_hissing, 75);
-            You_hear("%s hissing!", something);
+            You_hear("%s hissing!", _(something));
         }
         while (num-- > 0)
             if ((mtmp = makemon(&mons[PM_WATER_MOCCASIN], u.ux, u.uy,
@@ -92,8 +97,12 @@ dowaterdemon(void)
             /* Give those on low levels a (slightly) better chance of survival
              */
             if (rnd(100) > (80 + level_difficulty())) {
-                pline("Grateful for %s release, %s grants you a wish!",
-                      mhis(mtmp), mhe(mtmp));
+                if (i18n_active())
+                    pline("Grateful for its release, %s grants you a wish!",
+                          mon_nam(mtmp));
+                else
+                    pline("Grateful for %s release, %s grants you a wish!",
+                          mhis(mtmp), mhe(mtmp));
                 /* give a wish and discard the monster (mtmp set to null) */
                 mongrantswish(&mtmp);
             } else if (t_at(mtmp->mx, mtmp->my))
@@ -199,6 +208,14 @@ watchman_warn_fountain(struct monst *mtmp)
         if (!Deaf) {
             pline("%s yells:", Amonnam(mtmp));
             verbalize("Hey, stop using that fountain!");
+        } else if (i18n_active()) {
+            if (nolimbs(mtmp->data))
+                pline("%s earnestly shakes %s!", Amonnam(mtmp),
+                      i18n_the_ctx("bodypart",
+                                   mbodypart_english(mtmp, HEAD)));
+            else
+                pline("%s earnestly waves its %s!", Amonnam(mtmp),
+                      makeplural(mbodypart(mtmp, ARM)));
         } else {
             pline("%s earnestly %s %s %s!",
                   Amonnam(mtmp),
@@ -366,8 +383,12 @@ drinkfountain(void)
             exercise(A_WIS, TRUE);
             break;
         case 26: /* See Monsters */
-            if (monster_detect((struct obj *) 0, 0))
-                pline_The("%s tastes like nothing.", hliquid("water"));
+            if (monster_detect((struct obj *) 0, 0)) {
+                if (i18n_active())
+                    pline("%s tastes like nothing.", upstart(THE_WATER));
+                else
+                    pline_The("%s tastes like nothing.", hliquid("water"));
+            }
             exercise(A_WIS, TRUE);
             break;
         case 27: /* Find a gem in the sparkling waters. */
@@ -384,8 +405,7 @@ drinkfountain(void)
         {
             struct monst *mtmp;
 
-            pline("This %s gives you bad breath!",
-                  hliquid("water"));
+            pline("This %s gives you bad breath!", WATER_NOUN);
             for (mtmp = fmon; mtmp; mtmp = mtmp->nmon) {
                 if (DEADMONSTER(mtmp))
                     continue;
@@ -397,8 +417,7 @@ drinkfountain(void)
             dogushforth(TRUE);
             break;
         default:
-            pline("This tepid %s is tasteless.",
-                  hliquid("water"));
+            pline("This tepid %s is tasteless.", WATER_NOUN);
             break;
         }
     }
@@ -426,9 +445,13 @@ dipfountain(struct obj *obj)
 
         if (u.ualign.type != A_LAWFUL) {
             /* Ha!  Trying to cheat her. */
-            pline("A freezing mist rises from the %s"
-                  " and envelopes the sword.",
-                  hliquid("water"));
+            if (i18n_active())
+                pline("A freezing mist rises from %s and envelopes the "
+                      "sword.", THE_WATER);
+            else
+                pline("A freezing mist rises from the %s"
+                      " and envelopes the sword.",
+                      hliquid("water"));
             pline_The("fountain disappears!");
             curse(obj);
             if (obj->spe > -6 && !rn2(3))
@@ -483,7 +506,7 @@ dipfountain(struct obj *obj)
     case 20: /* Uncurse the item */
         if (!is_hands && obj->cursed) {
             if (!Blind)
-                pline_The("%s glows for a moment.", hliquid("water"));
+                pline_The("%s glows for a moment.", WATER_NOUN);
             uncurse(obj);
         } else {
             pline("A feeling of loss comes over you.");
@@ -555,8 +578,10 @@ dipfountain(struct obj *obj)
                                    + 1) * 2) + 5),
                       u.ux, u.uy);
         if (!Blind)
-            pline("Far below you, you see coins glistening in the %s.",
-                  hliquid("water"));
+            pline(i18n_active()
+                  ? "Far below you, you see coins glistening in %s."
+                  : "Far below you, you see coins glistening in the %s.",
+                  i18n_active() ? THE_WATER : hliquid("water"));
         exercise(A_WIS, TRUE);
         newsym(u.ux, u.uy);
         break;
@@ -577,8 +602,12 @@ wash_hands(void)
     int res = ER_NOTHING;
     boolean was_glib = !!Glib;
 
-    You("wash your %s%s in the %s.", uarmg ? "gloved " : "", hands,
-        hliquid("water"));
+    if (i18n_active())
+        You(uarmg ? "wash your gloved %s in %s." : "wash your %s in %s.",
+            hands, THE_WATER);
+    else
+        You("wash your %s%s in the %s.", uarmg ? "gloved " : "", hands,
+            hliquid("water"));
     if (Glib) {
         make_glib(0);
         Your("%s are no longer slippery.", fingers_or_gloves(TRUE));
@@ -619,13 +648,13 @@ drinksink(void)
     }
     switch (rn2(20)) {
     case 0:
-        You("take a sip of very cold %s.", hliquid("water"));
+        You("take a sip of very cold %s.", WATER_NOUN);
         break;
     case 1:
-        You("take a sip of very warm %s.", hliquid("water"));
+        You("take a sip of very warm %s.", WATER_NOUN);
         break;
     case 2:
-        You("take a sip of scalding hot %s.", hliquid("water"));
+        You("take a sip of scalding hot %s.", WATER_NOUN);
         if (Fire_resistance) {
             pline("It seems quite tasty.");
             monstseesu(M_SEEN_FIRE);
@@ -642,7 +671,7 @@ drinksink(void)
             mtmp = makemon(&mons[PM_SEWER_RAT], u.ux, u.uy, MM_NOMSG);
             if (mtmp)
                 pline("Eek!  There's %s in the sink!",
-                      (Blind || !canspotmon(mtmp)) ? "something squirmy"
+                      (Blind || !canspotmon(mtmp)) ? _("something squirmy")
                                                    : a_monnam(mtmp));
         }
         break;
@@ -656,7 +685,8 @@ drinksink(void)
         }
         otmp->cursed = otmp->blessed = 0;
         pline("Some %s liquid flows from the faucet.",
-              Blind ? "odd" : hcolor(OBJ_DESCR(objects[otmp->otyp])));
+              Blind ? _("odd")
+                    : hcolor_i18n(OBJ_DESCR(objects[otmp->otyp]), FALSE));
         if(!(Blind || Hallucination))
             observe_object(otmp);
         otmp->quan++;       /* Avoid panic upon useup() */
@@ -672,19 +702,23 @@ drinksink(void)
             exercise(A_WIS, TRUE);
             newsym(u.ux, u.uy);
         } else
-            pline("Some dirty %s backs up in the drain.", hliquid("water"));
+            pline("Some dirty %s backs up in the drain.", WATER_NOUN);
         break;
     case 6:
         breaksink(u.ux, u.uy);
         break;
     case 7:
-        pline_The("%s moves as though of its own will!", hliquid("water"));
+        if (i18n_active())
+            pline("%s moves as though of its own will!", upstart(THE_WATER));
+        else
+            pline_The("%s moves as though of its own will!",
+                      hliquid("water"));
         if ((svm.mvitals[PM_WATER_ELEMENTAL].mvflags & G_GONE)
             || !makemon(&mons[PM_WATER_ELEMENTAL], u.ux, u.uy, MM_NOMSG))
             pline("But it quiets down.");
         break;
     case 8:
-        pline("Yuk, this %s tastes awful.", hliquid("water"));
+        pline("Yuk, this %s tastes awful.", WATER_NOUN);
         more_experienced(1, 0);
         newexplevel();
         break;
@@ -694,7 +728,7 @@ drinksink(void)
         vomit();
         break;
     case 10:
-        pline("This %s contains toxic wastes!", hliquid("water"));
+        pline("This %s contains toxic wastes!", WATER_NOUN);
         if (!Unchanging) {
             You("undergo a freakish metamorphosis!");
             polyself(POLY_NOFLAGS);
@@ -721,9 +755,10 @@ drinksink(void)
         FALLTHROUGH;
         /*FALLTHRU*/
     default:
-        You("take a sip of %s %s.",
-            rn2(3) ? (rn2(2) ? "cold" : "warm") : "hot",
-            hliquid("water"));
+        /* whole sentences, so that each can be translated */
+        You(rn2(3) ? (rn2(2) ? "take a sip of cold %s."
+                             : "take a sip of warm %s.")
+                   : "take a sip of hot %s.", WATER_NOUN);
     }
 }
 
@@ -753,8 +788,8 @@ dipsink(struct obj *obj)
     }
 
     /* at this point the object must be a potion */
-    You("pour %s%s down the drain.", (obj->quan > 1L ? "one of " : ""),
-        the(xname(obj)));
+    You((obj->quan > 1L) ? "pour one of %s down the drain."
+                         : "pour %s down the drain.", the(xname(obj)));
     switch (obj->otyp) {
     case POT_POLYMORPH:
         polymorph_sink();
@@ -820,15 +855,14 @@ dipsink(struct obj *obj)
 void
 sink_backs_up(coordxy x, coordxy y)
 {
-    char buf[BUFSZ];
-
+    /* whole sentences, so that each can be translated */
     if (!Blind)
-        Strcpy(buf, "Muddy waste pops up from the drain");
+        pline(!Deaf ? "Flupp!  Muddy waste pops up from the drain."
+                    : "Muddy waste pops up from the drain.");
     else if (!Deaf)
-        Strcpy(buf, "You hear a sloshing sound"); /* Deaf-aware */
+        pline("Flupp!  You hear a sloshing sound."); /* Deaf-aware */
     else
-        Sprintf(buf, "Something splashes you in the %s", body_part(FACE));
-    pline("%s%s.", !Deaf ? "Flupp!  " : "", buf);
+        pline("Something splashes you in the %s.", body_part(FACE));
 
     if (!(levl[x][y].looted & S_LRING)) { /* once per sink */
         if (!Blind)

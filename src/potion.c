@@ -1703,6 +1703,12 @@ impact_arti_light(
     return;
 }
 
+#if 0
+/* forms given by objnam_fmt() */
+C_("feminine", "%s evaporates.") C_("plural", "%s evaporates.")
+C_("feminine plural", "%s evaporates.")
+#endif
+
 /* potion obj hits monster mon, which might be youmonst; obj always used up */
 void
 potionhit(struct monst *mon, struct obj *obj, int how)
@@ -1761,7 +1767,14 @@ potionhit(struct monst *mon, struct obj *obj, int how)
 
     /* oil doesn't instantly evaporate; Neither does a saddle hit */
     if (obj->otyp != POT_OIL && !hit_saddle && cansee(tx, ty))
-        pline("%s.", Tobjnam(obj, "evaporate"));
+    {
+        if (i18n_active()) {
+            const char *nm = The(xname(obj));
+
+            pline(objnam_fmt("%s evaporates.", nm, obj), nm);
+        } else
+            pline("%s.", Tobjnam(obj, "evaporate"));
+    }
 
     if (isyou) {
         switch (obj->otyp) {
@@ -1779,9 +1792,8 @@ potionhit(struct monst *mon, struct obj *obj, int how)
             if (!Acid_resistance) {
                 int dmg;
 
-                pline("This burns%s!",
-                      obj->blessed ? " a little"
-                                   : obj->cursed ? " a lot" : "");
+                pline(obj->blessed ? "This burns a little!"
+                      : obj->cursed ? "This burns a lot!" : "This burns!");
                 dmg = d(obj->cursed ? 2 : 1, obj->blessed ? 4 : 8);
                 losehp(Maybe_Half_Phys(dmg), "potion of acid", KILLED_BY_AN);
             }
@@ -1960,8 +1972,9 @@ potionhit(struct monst *mon, struct obj *obj, int how)
             break;
         case POT_ACID:
             if (!resists_acid(mon) && !resist(mon, POTION_CLASS, 0, NOTELL)) {
-                pline("%s %s in pain!", Monnam(mon),
-                      is_silent(mon->data) ? "writhes" : "shrieks");
+                pline(is_silent(mon->data) ? "%s writhes in pain!"
+                                           : "%s shrieks in pain!",
+                      Monnam(mon));
                 if (!is_silent(mon->data))
                     wake_nearto(tx, ty, mon->data->mlevel * 10);
                 mon->mhp -= d(obj->cursed ? 2 : 1, obj->blessed ? 4 : 8);
@@ -2048,7 +2061,12 @@ potionbreathe(struct obj *obj)
 
                 if (eyecount(gy.youmonst.data) != 1)
                     eyes = makeplural(eyes);
-                Your("%s %s!", eyes, vtense(eyes, "sting"));
+                if (i18n_active())
+                    Your((eyecount(gy.youmonst.data) != 1) ? "%s sting!"
+                                                           : "%s stings!",
+                         eyes);
+                else
+                    Your("%s %s!", eyes, vtense(eyes, "sting"));
             }
             break;
         } else {

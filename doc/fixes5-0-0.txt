@@ -3033,7 +3033,22 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	menu titles and entries (query_category(), query_objlist());
 	monster noises and speech (sounds.c), vault guards (vault.c),
 	spellbooks, spell casting and the spell menu (spell.c), whose
-	columns are aligned by characters rather than bytes
+	columns are aligned by characters rather than bytes; monsters
+	putting on and losing armor (worn.c), fights between monsters
+	(mhitm.c), monster spellcasting (mcastu.c), reflection messages
+	(mon_reflects()) and the interrupted occupation in "You stop ...";
+	polymorphing (polyself.c), monster missiles and breath (mthrowu.c),
+	fountains and sinks (fountain.c), the rest of traps (trap.c);
+	monster movement (monmove.c), farlook and trap identification
+	(pager.c), drawbridges (dbridge.c), weapons and skills (weapon.c),
+	minions and demon bribes (minion.c), thefts (steal.c); attribute
+	changes (attrib.c, adjectives agreeing with the hero's gender),
+	writing scrolls (write.c), pets (dog.c, dogmove.c), explosions
+	(explode.c), shop charges for damaged objects and globs (mkobj.c),
+	the Wizard's taunts (wizard.c), gas clouds (region.c), temple
+	priests (priest.c), ball and chain (ball.c), long worms (worm.c);
+	choosing a position (getpos.c), mail (mail.c), stethoscope status
+	lines (insight.c), quest leader remarks (quest.c)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

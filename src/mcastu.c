@@ -65,19 +65,22 @@ cursetxt(struct monst *mtmp, boolean undirected)
     if (canseemon(mtmp) && couldsee(mtmp->mx, mtmp->my)) {
         const char *point_msg; /* spellcasting monsters are impolite */
 
+        /* whole sentences, so that each can be translated */
         if (undirected)
-            point_msg = "all around, then curses";
+            point_msg = N_("%s points all around, then curses.");
         else if ((Invis && !perceives(mtmp->data)
                   && (mtmp->mux != u.ux || mtmp->muy != u.uy))
                  || is_obj_mappear(&gy.youmonst, STRANGE_OBJECT)
                  || u.uundetected)
-            point_msg = "and curses in your general direction";
+            point_msg = N_("%s points and curses in your general direction.");
         else if (Displaced && (mtmp->mux != u.ux || mtmp->muy != u.uy))
-            point_msg = "and curses at your displaced image";
+            point_msg = N_("%s points and curses at your displaced image.");
         else
-            point_msg = "at you, then curses";
+            point_msg = N_("%s points at you, then curses.");
 
-        pline_mon(mtmp, "%s points %s.", Monnam(mtmp), point_msg);
+        DISABLE_WARNING_FORMAT_NONLITERAL;
+        pline_mon(mtmp, point_msg, Monnam(mtmp));
+        RESTORE_WARNING_FORMAT_NONLITERAL;
     } else if ((!(svm.moves % 4) || !rn2(4))) {
         if (!Deaf)
             Norep("You hear a mumbled curse.");   /* Deaf-aware */
@@ -197,10 +200,10 @@ castmu(
      */
     if (!foundyou && thinks_it_foundyou
         && !is_undirected_spell(spellnum)) {
-        pline_mon(mtmp, "%s casts a spell at %s!",
-                 canseemon(mtmp) ? Monnam(mtmp) : "Something",
-                 is_waterwall(mtmp->mux, mtmp->muy) ? "empty water"
-                                                    : "thin air");
+        pline_mon(mtmp, is_waterwall(mtmp->mux, mtmp->muy)
+                        ? "%s casts a spell at empty water!"
+                        : "%s casts a spell at thin air!",
+                  canseemon(mtmp) ? Monnam(mtmp) : _("Something"));
         return M_ATTK_MISS;
     }
 
@@ -214,15 +217,15 @@ castmu(
         return M_ATTK_MISS;
     }
     if (canspotmon(mtmp) || !is_undirected_spell(spellnum)) {
-        pline_mon(mtmp, "%s casts a spell%s!",
-                 canspotmon(mtmp) ? Monnam(mtmp) : "Something",
-                 is_undirected_spell(spellnum) ? ""
-                 : (Invis && !perceives(mtmp->data)
-                    && !u_at(mtmp->mux, mtmp->muy))
-                   ? " at a spot near you"
-                   : (Displaced && !u_at(mtmp->mux, mtmp->muy))
-                     ? " at your displaced image"
-                     : " at you");
+        /* whole sentences, so that each can be translated */
+        pline_mon(mtmp, is_undirected_spell(spellnum) ? "%s casts a spell!"
+                        : (Invis && !perceives(mtmp->data)
+                           && !u_at(mtmp->mux, mtmp->muy))
+                          ? "%s casts a spell at a spot near you!"
+                          : (Displaced && !u_at(mtmp->mux, mtmp->muy))
+                            ? "%s casts a spell at your displaced image!"
+                            : "%s casts a spell at you!",
+                  canspotmon(mtmp) ? Monnam(mtmp) : _("Something"));
     }
 
     /*
@@ -388,7 +391,10 @@ death_inflicted_by(
 staticfn void
 mcast_death_touch(struct monst *mtmp)
 {
-    pline("Oh no, %s's using the touch of death!", mhe(mtmp));
+    if (i18n_active())
+        pline("Oh no, %s is using the touch of death!", mon_nam(mtmp));
+    else
+        pline("Oh no, %s's using the touch of death!", mhe(mtmp));
     if (nonliving(gy.youmonst.data) || is_demon(gy.youmonst.data)) {
         You("seem no deader than before.");
     } else if (!Antimagic && rn2(mtmp->m_lev) > 12) {
@@ -426,23 +432,24 @@ mcast_summon_mons(struct monst *mtmp)
         ; /* nothing was created? */
     } else if (mtmp->iswiz) {
         SetVoice(mtmp, 0, 80, 0);
-        verbalize("Destroy the thief, my pet%s!", plur(count));
+        verbalize((count == 1) ? "Destroy the thief, my pet!"
+                               : "Destroy the thief, my pets!");
     } else {
         boolean one = (count == 1);
-        const char *mappear = one ? "A monster appears"
-                                  : "Monsters appear";
 
         /* messages not quite right if plural monsters created but
-           only a single monster is seen */
+           only a single monster is seen; whole sentences, so that each
+           can be translated */
         if (Invis && !perceives(mtmp->data)
             && (mtmp->mux != u.ux || mtmp->muy != u.uy))
-            pline("%s %s a spot near you!", mappear,
-                  one ? "at" : "around");
+            pline(one ? "A monster appears at a spot near you!"
+                      : "Monsters appear around a spot near you!");
         else if (Displaced && (mtmp->mux != u.ux || mtmp->muy != u.uy))
-            pline("%s %s your displaced image!", mappear,
-                  one ? "by" : "around");
+            pline(one ? "A monster appears by your displaced image!"
+                      : "Monsters appear around your displaced image!");
         else
-            pline("%s from nowhere!", mappear);
+            pline(one ? "A monster appears from nowhere!"
+                      : "Monsters appear from nowhere!");
     }
 }
 
@@ -491,8 +498,10 @@ mcast_disappear(struct monst *mtmp)
 {
     if (!mtmp->minvis && !mtmp->invis_blkd) {
         if (canseemon(mtmp))
-            pline_mon(mtmp, "%s suddenly %s!", Monnam(mtmp),
-                      !See_invisible ? "disappears" : "becomes transparent");
+            pline_mon(mtmp, !See_invisible
+                            ? "%s suddenly disappears!"
+                            : "%s suddenly becomes transparent!",
+                      Monnam(mtmp));
         mon_set_minvis(mtmp, FALSE);
         if (cansee(mtmp->mx, mtmp->my) && !canspotmon(mtmp))
             map_invisible(mtmp->mx, mtmp->my);
@@ -610,7 +619,10 @@ mcast_psi_bolt(int dmg)
         monstunseesu(M_SEEN_MAGR);
     }
     if (dmg <= 5)
-        You("get a slight %sache.", body_part(HEAD));
+        if (i18n_active())
+            You("get a slight ache in your %s.", body_part(HEAD));
+        else
+            You("get a slight %sache.", body_part(HEAD));
     else if (dmg <= 10)
         Your("brain is on fire!");
     else if (dmg <= 20)
@@ -676,6 +688,8 @@ mcast_insects(struct monst *mtmp)
     what = (let == S_SNAKE) ? "snakes" : "insects";
     if (Hallucination)
         what = makeplural(bogusmon(whatbuf, (char *) 0));
+    else if (i18n_active())
+        what = (let == S_SNAKE) ? _("snakes") : _("insects");
 
     fmt = 0;
     if (!seecaster) {
@@ -683,6 +697,25 @@ mcast_insects(struct monst *mtmp)
             /* unseen caster fails or summons unseen critters,
                or unconscious hero ("You dream that you hear...") */
             You_hear("someone summoning %s.", what);
+        } else if (i18n_active()) {
+            boolean one = (newseen == oldseen + 1);
+            char argbuf[QBUFSZ];
+
+            /* unseen caster summoned seen critter(s) */
+            copynchars(argbuf, !one ? what
+                               : Hallucination ? an(makesingular(what))
+                                 : (let == S_SNAKE) ? _("a snake")
+                                   : _("an insect"), QBUFSZ - 1);
+            if (!Deaf) {
+                Soundeffect(se_someone_summoning, 100);
+                You_hear(one ? "someone summoning something, and %s "
+                               "appears."
+                             : "someone summoning something, and %s "
+                               "appear.", argbuf);
+            } else {
+                pline(one ? "%s appears." : "%s appear.",
+                      one ? upstart(argbuf) : argbuf);
+            }
         } else {
             char *arg;
 
@@ -706,17 +739,17 @@ mcast_insects(struct monst *mtmp)
            words, no need to fuss with visibility or singularization;
            player is told what's happening even if hero is unconscious) */
     } else if (!success) {
-        fmt = "%s casts at a clump of sticks, but nothing happens.%s";
+        fmt = N_("%s casts at a clump of sticks, but nothing happens.%s");
         what = "";
     } else if (let == S_SNAKE) {
-        fmt = "%s transforms a clump of sticks into %s!";
+        fmt = N_("%s transforms a clump of sticks into %s!");
     } else if (Invis && !perceives(mtmp->data)
                && (mtmp->mux != u.ux || mtmp->muy != u.uy)) {
-        fmt = "%s summons %s around a spot near you!";
+        fmt = N_("%s summons %s around a spot near you!");
     } else if (Displaced && (mtmp->mux != u.ux || mtmp->muy != u.uy)) {
-        fmt = "%s summons %s around your displaced image!";
+        fmt = N_("%s summons %s around your displaced image!");
     } else {
-        fmt = "%s summons %s!";
+        fmt = N_("%s summons %s!");
     }
     if (fmt) {
         DISABLE_WARNING_FORMAT_NONLITERAL;
@@ -724,6 +757,11 @@ mcast_insects(struct monst *mtmp)
         RESTORE_WARNING_FORMAT_NONLITERAL;
     }
 }
+
+#if 0
+/* forms for a female hero */
+NC_("heroine", "You feel more confused!") NC_("heroine", "You feel confused!")
+#endif
 
 staticfn void
 mcast_blind_you(void)
@@ -782,9 +820,9 @@ mcast_confuse_you(struct monst *mtmp)
             dmg = (dmg + 1) / 2;
         make_confused(HConfusion + dmg, TRUE);
         if (Hallucination)
-            You_feel("%s!", oldprop ? "trippier" : "trippy");
+            You_feel(oldprop ? "trippier!" : "trippy!");
         else
-            You_feel("%sconfused!", oldprop ? "more " : "");
+            You_feel(oldprop ? "more confused!" : "confused!");
         monstunseesu(M_SEEN_MAGR);
     }
 }
@@ -999,7 +1037,11 @@ buzzmu(struct monst *mtmp, struct attack *mattk)
     }
     if (lined_up(mtmp) && rn2(3)) {
         nomul(0);
-        if (canseemon(mtmp))
+        if (canseemon(mtmp) && i18n_active())
+            pline_mon(mtmp, "%s zaps you with %s!", Monnam(mtmp),
+                      i18n_an_ctx("zap",
+                                  flash_str(BZ_OFS_AD(mattk->adtyp), FALSE)));
+        else if (canseemon(mtmp))
             pline_mon(mtmp, "%s zaps you with a %s!", Monnam(mtmp),
                   flash_str(BZ_OFS_AD(mattk->adtyp), FALSE));
         gb.buzzer = mtmp;

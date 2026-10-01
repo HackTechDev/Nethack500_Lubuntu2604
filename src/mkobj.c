@@ -747,6 +747,60 @@ static const char *const alteration_verbs[] = {
     "bite", "open", "break the lock on", "rust", "rot", "tarnish", "crack",
 };
 
+#if 0
+/* forms given by objnam_fmt() */
+C_("feminine", "%s becomes slightly lighter.")
+C_("plural", "%s becomes slightly lighter.")
+C_("feminine plural", "%s becomes slightly lighter.")
+C_("feminine", "%s becomes lighter.")
+C_("plural", "%s becomes lighter.")
+C_("feminine plural", "%s becomes lighter.")
+C_("feminine", "%s seems slightly lighter.")
+C_("plural", "%s seems slightly lighter.")
+C_("feminine plural", "%s seems slightly lighter.")
+C_("feminine", "%s seems lighter.")
+C_("plural", "%s seems lighter.")
+C_("feminine plural", "%s seems lighter.")
+C_("feminine", "%s shines much brighter.")
+C_("plural", "%s shines much brighter.")
+C_("feminine plural", "%s shines much brighter.")
+C_("feminine", "%s shines brighter.")
+C_("plural", "%s shines brighter.")
+C_("feminine plural", "%s shines brighter.")
+C_("feminine", "%s shines much less brightly.")
+C_("plural", "%s shines much less brightly.")
+C_("feminine plural", "%s shines much less brightly.")
+C_("feminine", "%s shines less brightly.")
+C_("plural", "%s shines less brightly.")
+C_("feminine plural", "%s shines less brightly.")
+#endif
+
+/* the same, as whole sentences for translation */
+static const char *const alteration_i18n[] = {
+    N_("You cancel %s, you pay for it!"),
+    N_("You drain %s, you pay for it!"),
+    N_("You uncharge %s, you pay for it!"),
+    N_("You unbless %s, you pay for it!"),
+    N_("You uncurse %s, you pay for it!"),
+    N_("You disenchant %s, you pay for it!"),
+    N_("You degrade %s, you pay for it!"),
+    N_("You dilute %s, you pay for it!"),
+    N_("You erase %s, you pay for it!"),
+    N_("You burn %s, you pay for it!"),
+    N_("You neutralize %s, you pay for it!"),
+    N_("You destroy %s, you pay for it!"),
+    N_("You splatter %s, you pay for it!"),
+    N_("You bite %s, you pay for it!"),
+    N_("You open %s, you pay for it!"),
+    N_("You break the lock on %s, you pay for it!"),
+    N_("You rust %s, you pay for it!"),
+    N_("You rot %s, you pay for it!"),
+    N_("You tarnish %s, you pay for it!"),
+    N_("You crack %s, you pay for it!")
+};
+
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 /* possibly bill for an object which the player has just modified */
 void
 costly_alteration(struct obj *obj, int alter_type)
@@ -803,9 +857,13 @@ costly_alteration(struct obj *obj, int alter_type)
         if (shkp) {
             SetVoice(shkp, 0, 80, 0);
         }
-        verbalize("You %s %s %s, you pay for %s!",
-                  alteration_verbs[alter_type], those, simpleonames(obj),
-                  them);
+        if (i18n_active())
+            verbalize(_(alteration_i18n[alter_type]),
+                      the(simpleonames(obj)));
+        else
+            verbalize("You %s %s %s, you pay for %s!",
+                      alteration_verbs[alter_type], those, simpleonames(obj),
+                      them);
         bill_dummy_object(obj);
         break;
     case OBJ_FLOOR:
@@ -815,8 +873,12 @@ costly_alteration(struct obj *obj, int alter_type)
             if (shkp) {
                 SetVoice(shkp, 0, 80, 0);
             }
-            verbalize("You %s %s, you pay for %s!",
-                      alteration_verbs[alter_type], those, them);
+            if (i18n_active())
+                verbalize(_(alteration_i18n[alter_type]),
+                          the(simpleonames(obj)));
+            else
+                verbalize("You %s %s, you pay for %s!",
+                          alteration_verbs[alter_type], those, them);
             bill_dummy_object(obj);
         } else {
             (void) stolen_value(obj, ox, oy, FALSE, FALSE);
@@ -824,6 +886,8 @@ costly_alteration(struct obj *obj, int alter_type)
         break;
     }
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 static const char dknowns[] = { WAND_CLASS,   RING_CLASS, POTION_CLASS,
                                 SCROLL_CLASS, GEM_CLASS,  SPBOOK_CLASS,
@@ -1629,6 +1693,18 @@ shrink_glob(
                however, always say the bag is lighter for the 'gone' case */
             if (gone || (shrink && topcontnr->owt != old_top_owt)
                 || near_capacity() != go.oldcap)
+            {
+                const char *nm = Yname2(topcontnr);
+                boolean becomes = (topcontnr->owt != old_top_owt);
+
+                if (i18n_active())
+                    pline(objnam_fmt(becomes
+                                     ? (!gone ? "%s becomes slightly lighter."
+                                              : "%s becomes lighter.")
+                                     : (!gone ? "%s seems slightly lighter."
+                                              : "%s seems lighter."),
+                                     nm, topcontnr), nm);
+                else
                 pline("%s %s%s lighter.", Yname2(topcontnr),
                       /* containers also always have quantity 1 */
                       (topcontnr->owt != old_top_owt) ? "becomes" : "seems",
@@ -1636,6 +1712,7 @@ shrink_glob(
                          is changing (from "very large" to "large",
                          "large" to "medium", or "medium to "small") */
                       !gone ? " slightly" : "");
+            }
             updinv = TRUE;
         }
     }
@@ -1727,6 +1804,18 @@ maybe_adjust_light(struct obj *obj, int old_range)
                    when changing intensity, using "less brightly" is
                    straightforward for dimming, but we need "brighter"
                    rather than "more brightly" for brightening; ugh */
+                if (i18n_active()) {
+                    const char *nm = Yname2(obj);
+
+                    pline(objnam_fmt((delta > 0)
+                                     ? ((abs(delta) > 1)
+                                        ? "%s shines much brighter."
+                                        : "%s shines brighter.")
+                                     : ((abs(delta) > 1)
+                                        ? "%s shines much less brightly."
+                                        : "%s shines less brightly."),
+                                     nm, obj), nm);
+                } else
                 pline("%s %s %s%s.", buf, otense(obj, "shine"),
                       (abs(delta) > 1) ? "much " : "",
                       (delta > 0) ? "brighter" : "less brightly");
@@ -2882,7 +2971,10 @@ hornoplenty(
             what = "Some food";
         }
         ++objcount;
-        pline("%s %s out.", what, vtense(what, "spill"));
+        /* whole sentences, so that each can be translated */
+        pline(!strcmp(what, "A potion") ? "A potion spills out."
+              : !strcmp(what, "Some potions") ? "Some potions spill out."
+                : "Some food spills out.");
         obj->blessed = horn->blessed;
         obj->cursed = horn->cursed;
         obj->owt = weight(obj);
@@ -2923,6 +3015,12 @@ hornoplenty(
                 if (IS_ALTAR(levl[u.ux][u.uy].typ))
                     doaltarobj(obj); /* does its own drop message */
                 else
+                if (i18n_active()) {
+                    const char *nm = Doname2(obj);
+
+                    pline(objnam_fmt("%s drops to %s.", nm, obj), nm,
+                          i18n_the(surface(u.ux, u.uy)));
+                } else
                     pline("%s %s to the %s.", Doname2(obj),
                           otense(obj, "drop"), surface(u.ux, u.uy));
                 dropy(obj);
@@ -3837,6 +3935,15 @@ pudding_merge_message(struct obj *otmp, struct obj *otmp2)
             boolean adj = ((otmp->ox != u.ux || otmp->oy != u.uy)
                            && (otmp2->ox != u.ux || otmp2->oy != u.uy));
 
+            if (i18n_active()) {
+                const char *nm = nh_npgettext("object",
+                                              OBJ_NAME(objects[otmp->otyp]),
+                                              TRUE);
+
+                pline(inpack ? "The %s coalesce inside your pack."
+                      : (onfloor && adj) ? "The adjacent %s coalesce."
+                        : "The %s coalesce.", nm);
+            } else
             pline("The %s%s coalesce%s.",
                   (onfloor && adj) ? "adjacent " : "",
                   makeplural(obj_typename(otmp->otyp)),

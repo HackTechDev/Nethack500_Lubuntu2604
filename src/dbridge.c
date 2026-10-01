@@ -26,6 +26,7 @@ staticfn void u_to_e(struct entity *);
 staticfn void set_entity(coordxy, coordxy, struct entity *);
 staticfn const char *e_nam(struct entity *);
 staticfn const char *E_phrase(struct entity *, const char *);
+staticfn void e_message(struct entity *, const char *, const char *);
 staticfn boolean e_survives_at(struct entity *, coordxy, coordxy);
 staticfn void e_died(struct entity *, int, int);
 staticfn boolean automiss(struct entity *);
@@ -373,6 +374,21 @@ E_phrase(struct entity *etmp, const char *verb)
     return wholebuf;
 }
 
+DISABLE_WARNING_FORMAT_NONLITERAL
+
+/* message about entity etmp, as a whole sentence: you_msg for the hero,
+   else mon_fmt with the monster's name */
+staticfn void
+e_message(struct entity *etmp, const char *you_msg, const char *mon_fmt)
+{
+    if (is_u(etmp))
+        pline("%s", you_msg);
+    else
+        pline(mon_fmt, Monnam(etmp->emon));
+}
+
+RESTORE_WARNING_FORMAT_NONLITERAL
+
 /*
  * Simple-minded "can it be here?" routine
  */
@@ -422,8 +438,9 @@ e_died(
             /* So, you didn't die */
             if (!e_survives_at(etmp, etmp->ex, etmp->ey)) {
                 if (enexto(&xy, etmp->ex, etmp->ey, etmp->edata)) {
-                    pline("A %s force teleports you away...",
-                          Hallucination ? "normal" : "strange");
+                    pline(Hallucination
+                          ? "A normal force teleports you away..."
+                          : "A strange force teleports you away...");
                     teleds(xy.x, xy.y, TELEDS_NO_FLAGS);
                 }
                 /* otherwise on top of the drawbridge is the
@@ -459,7 +476,10 @@ e_died(
                 xkilled(etmp->emon, xkill_flags);
 
             if (DEADMONSTER(etmp->emon)) {
-                if (seeit)
+                if (seeit && i18n_active())
+                    pline("Unfortunately for %s, it is still crushed.",
+                          mon_nam(etmp->emon));
+                else if (seeit)
                     pline("Unfortunately for %s, %s is still crushed.",
                           mon_nam(etmp->emon), mhe(etmp->emon));
             } else {
@@ -569,16 +589,19 @@ do_entity(struct entity *etmp)
 
     if (automiss(etmp) && e_survives_at(etmp, oldx, oldy)) {
         if (e_inview && (at_portcullis || IS_DRAWBRIDGE(crm->typ)))
-            pline_The("%s passes through %s!",
-                      at_portcullis ? "portcullis" : "drawbridge",
-                      e_nam(etmp));
+            e_message(etmp,
+                      at_portcullis ? N_("The portcullis passes through you!")
+                      : N_("The drawbridge passes through you!"),
+                      at_portcullis ? N_("The portcullis passes through %s!")
+                      : N_("The drawbridge passes through %s!"));
         if (is_u(etmp))
             spoteffects(FALSE);
         return;
     }
     if (e_missed(etmp, FALSE)) {
         if (at_portcullis) {
-            pline_The("portcullis misses %s!", e_nam(etmp));
+            e_message(etmp, N_("The portcullis misses you!"),
+                      N_("The portcullis misses %s!"));
         } else {
             debugpline1("The drawbridge misses %s!", e_nam(etmp));
         }
@@ -598,8 +621,9 @@ do_entity(struct entity *etmp)
                 Strcpy(svk.killer.name,
                        "crushed to death underneath a drawbridge");
             }
-            pline("%s crushed underneath the drawbridge.",
-                  E_phrase(etmp, "are"));             /* no jump */
+            e_message(etmp, /* no jump */
+                      N_("You are crushed underneath the drawbridge."),
+                      N_("%s is crushed underneath the drawbridge."));
             e_died(etmp,
                    XKILL_NOCORPSE | (e_inview ? XKILL_GIVEMSG : XKILL_NOMSG),
                    CRUSHING); /* no corpse */
@@ -614,8 +638,11 @@ do_entity(struct entity *etmp)
                 debugpline0("Jump succeeds!");
             } else {
                 if (e_inview) {
-                    pline("%s crushed by the falling portcullis!",
-                          E_phrase(etmp, "are"));
+                    e_message(etmp,
+                              N_("You are crushed by the falling "
+                                 "portcullis!"),
+                              N_("%s is crushed by the falling "
+                                 "portcullis!"));
                 } else if (!Deaf) {
                     Soundeffect(se_crushing_sound, 100);
                     You_hear("a crushing sound.");
@@ -710,8 +737,8 @@ do_entity(struct entity *etmp)
                 else
                     pline_The("drawbridge closes in...");
             } else
-                pline("%s behind the drawbridge.",
-                      E_phrase(etmp, "disappear"));
+                pline("%s disappears behind the drawbridge.",
+                      Monnam(etmp->emon));
         }
         if (!e_survives_at(etmp, etmp->ex, etmp->ey)) {
             svk.killer.format = KILLED_BY_AN;
@@ -730,7 +757,8 @@ do_entity(struct entity *etmp)
         if (e_survives_at(etmp, etmp->ex, etmp->ey)) {
             if (e_inview && !is_flyer(etmp->edata)
                 && !is_floater(etmp->edata))
-                pline("%s from the bridge.", E_phrase(etmp, "fall"));
+                e_message(etmp, N_("You fall from the bridge."),
+                          N_("%s falls from the bridge."));
             return;
         }
         debugpline1("%s cannot survive on the drawbridge square",
@@ -740,12 +768,19 @@ do_entity(struct entity *etmp)
                 /* drown() will supply msgs if nec. */
                 boolean lava = is_lava(etmp->ex, etmp->ey);
 
+                /* whole sentences, so that each can be translated */
                 if (Hallucination)
-                    pline("%s the %s and disappears.",
-                          E_phrase(etmp, "drink"), lava ? "lava" : "moat");
+                    pline(lava ? "%s drinks the lava and disappears."
+                               : "%s drinks the moat and disappears.",
+                          Monnam(etmp->emon));
+                else if (!lava)
+                    pline("%s falls into the moat.", Monnam(etmp->emon));
+                else if (i18n_active())
+                    pline("%s falls into %s.", Monnam(etmp->emon),
+                          i18n_the(hliquid("lava")));
                 else
-                    pline("%s into the %s.", E_phrase(etmp, "fall"),
-                          lava ? hliquid("lava") : "moat");
+                    pline("%s falls into the %s.", Monnam(etmp->emon),
+                          hliquid("lava"));
             }
         svk.killer.format = NO_KILLER_PREFIX;
         Strcpy(svk.killer.name, "fell from a drawbridge");
@@ -785,11 +820,10 @@ close_drawbridge(coordxy x, coordxy y)
     y2 = y;
     get_wall_for_db(&x2, &y2);
     if (cansee(x, y) || cansee(x2, y2)) {
-        You_see("a drawbridge %s up!",
-                (((u.ux == x || u.uy == y) && !Underwater)
+        You_see((((u.ux == x || u.uy == y) && !Underwater)
                  || distu(x2, y2) < distu(x, y))
-                    ? "coming"
-                    : "going");
+                    ? "a drawbridge coming up!"
+                    : "a drawbridge going up!");
     } else { /* "5 gears turn" for castle drawbridge tune */
         Soundeffect(se_chains_rattling_gears_turning, 75);
         You_hear("chains rattling and gears turning.");
@@ -850,8 +884,8 @@ open_drawbridge(coordxy x, coordxy y)
     y2 = y;
     get_wall_for_db(&x2, &y2);
     if (cansee(x, y) || cansee(x2, y2)) {
-        You_see("a drawbridge %s down!",
-                (distu(x2, y2) < distu(x, y)) ? "going" : "coming");
+        You_see((distu(x2, y2) < distu(x, y)) ? "a drawbridge going down!"
+                                              : "a drawbridge coming down!");
     } else { /* "5 gears turn" for castle drawbridge tune */
         Soundeffect(se_gears_turning_chains_rattling, 100);
         You_hear("gears turning and chains rattling.");
@@ -910,14 +944,27 @@ destroy_drawbridge(coordxy x, coordxy y)
         Soundeffect(se_loud_splash, 100);  /* Deaf-aware */
         if (lev1->typ == DRAWBRIDGE_UP) {
             if (cansee(x2, y2) || u_at(x2, y2))
-                pline_The("portcullis of the drawbridge falls into the %s!",
-                          lava ? hliquid("lava") : "moat");
+                if (!lava)
+                    pline_The("portcullis of the drawbridge falls into the "
+                              "moat!");
+                else if (i18n_active())
+                    pline("The portcullis of the drawbridge falls into %s!",
+                          i18n_the(hliquid("lava")));
+                else
+                    pline_The("portcullis of the drawbridge falls into the "
+                              "%s!", hliquid("lava"));
             else
                 You_hear("a loud *SPLASH*!");  /* Deaf-aware */
         } else {
             if (cansee(x, y) || u_at(x, y))
-                pline_The("drawbridge collapses into the %s!",
-                          lava ? hliquid("lava") : "moat");
+                if (!lava)
+                    pline_The("drawbridge collapses into the moat!");
+                else if (i18n_active())
+                    pline("The drawbridge collapses into %s!",
+                          i18n_the(hliquid("lava")));
+                else
+                    pline_The("drawbridge collapses into the %s!",
+                              hliquid("lava"));
             else
                 You_hear("a loud *SPLASH*!");  /* Deaf-aware */
         }
@@ -969,8 +1016,8 @@ destroy_drawbridge(coordxy x, coordxy y)
         e_inview = e_canseemon(etmp2);
         if (!automiss(etmp2)) {
             if (e_inview)
-                pline("%s blown apart by flying debris.",
-                      E_phrase(etmp2, "are"));
+                e_message(etmp2, N_("You are blown apart by flying debris."),
+                          N_("%s is blown apart by flying debris."));
             svk.killer.format = KILLED_BY_AN;
             Strcpy(svk.killer.name, "exploding drawbridge");
             e_died(etmp2,
@@ -991,11 +1038,12 @@ destroy_drawbridge(coordxy x, coordxy y)
         } else {
             if (e_inview) {
                 if (!is_u(etmp1) && Hallucination)
-                    pline("%s into some heavy metal!",
-                          E_phrase(etmp1, "get"));
+                    pline("%s gets into some heavy metal!",
+                          Monnam(etmp1->emon));
                 else
-                    pline("%s hit by a huge chunk of metal!",
-                          E_phrase(etmp1, "are"));
+                    e_message(etmp1,
+                              N_("You are hit by a huge chunk of metal!"),
+                              N_("%s is hit by a huge chunk of metal!"));
             } else {
                 if (!Deaf && !is_u(etmp1) && !is_pool(x, y)) {
                     Soundeffect(se_crushing_sound, 75);

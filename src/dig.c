@@ -2463,7 +2463,8 @@ wiz_debug_cmd_bury(void)
     else
         /* usual case; if uball got buried, uchain went away and won't be
            counted as buried */
-        pline("%d object%s buried.", diff, plur(diff));
+        pline((diff == 1) ? "%d object buried." : "%d objects buried.",
+              diff);
     return ECMD_OK;
 }
 #endif /* DEBUG */

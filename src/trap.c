@@ -80,6 +80,9 @@ staticfn char *erode_subject_i18n(struct obj *, const char *,
 
 #if 0
 /* for xgettext: forms of messages about objects (objnam_fmt()) */
+C_("feminine", "%s bursts into flame!"),
+C_("plural", "%s bursts into flame!"),
+C_("feminine plural", "%s bursts into flame!"),
 C_("feminine", "That %s was not trapped."),
 C_("plural", "That %s was not trapped."),
 C_("feminine plural", "That %s was not trapped."),
@@ -1116,7 +1119,12 @@ animate_statue(
                    : "statue");
         pline("%s %s!", upstart(statuename), comes_to_life);
     } else if (Hallucination) { /* They don't know it's a statue */
-        pline_The("%s suddenly seems more animated.", rndmonnam((char *) 0));
+        if (i18n_active())
+            pline("%s suddenly seems more animated.",
+                  upstart(i18n_the_ctx("monster", rndmonnam((char *) 0))));
+        else
+            pline_The("%s suddenly seems more animated.",
+                      rndmonnam((char *) 0));
     } else if (cause == ANIMATE_SHATTER) {
         if (cansee(x, y))
             Sprintf(statuename, "%s%s", shk_your(tmpbuf, statue),
@@ -7563,7 +7571,12 @@ lava_effects(void)
     if (uarmf && (uarmf->in_use
                   || (is_organic(uarmf) && !uarmf->oerodeproof))) {
         obj = uarmf;
-        pline("%s into flame!", Yobjnam2(obj, "burst"));
+        if (i18n_active()) {
+            const char *nm = Yname2(obj);
+
+            pline(objnam_fmt("%s bursts into flame!", nm, obj), nm);
+        } else
+            pline("%s into flame!", Yobjnam2(obj, "burst"));
         ++burnmesgcount;
         iflags.in_lava_effects++; /* (see above) */
         (void) Boots_off();

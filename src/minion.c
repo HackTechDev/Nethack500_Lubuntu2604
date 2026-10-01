@@ -173,8 +173,16 @@ msummon(struct monst *mon)
                 const char *cloud = 0,
                            *what = msummon_environ(mtmp->data, &cloud);
 
-                pline("%s appears in a %s of %s!", Amonnam(mtmp),
-                      cloud, what);
+                if (i18n_active()) {
+                    char key[BUFSZ];
+
+                    /* "cloud of smoke" &c, translated as a whole */
+                    Snprintf(key, sizeof key, "%s of %s", cloud, what);
+                    pline("%s appears in %s!", Amonnam(mtmp),
+                          C_("summon", key));
+                } else
+                    pline("%s appears in a %s of %s!", Amonnam(mtmp),
+                          cloud, what);
             }
         }
         cnt--;
@@ -243,8 +251,12 @@ summon_minion(aligntyp alignment, boolean talk)
             if (!Deaf)
                 pline_The("voice of %s booms:", align_gname(alignment));
             else
-                You_feel("%s booming voice:",
-                         s_suffix(align_gname(alignment)));
+                if (i18n_active())
+                    You_feel("the booming voice of %s:",
+                             align_gname(alignment));
+                else
+                    You_feel("%s booming voice:",
+                             s_suffix(align_gname(alignment)));
             SetVoice(mon, 0, 80, 0);
             verbalize("Thou shalt pay for thine indiscretion!");
             if (canspotmon(mon))
@@ -257,6 +269,14 @@ summon_minion(aligntyp alignment, boolean talk)
 }
 
 #define Athome (Inhell && (mtmp->cham == NON_PM))
+
+#if 0
+/* summoning clouds (msummon_environ()) */
+NC_("summon", "cloud of vapor") NC_("summon", "cloud of steam")
+NC_("summon", "shower of sparks") NC_("summon", "cloud of dust")
+NC_("summon", "ball of flame") NC_("summon", "flash of light")
+NC_("summon", "cloud of smoke")
+#endif
 
 /* returns 1 if it won't attack. */
 int
@@ -299,7 +319,7 @@ demon_talk(struct monst *mtmp)
     if (gy.youmonst.data->mlet == S_DEMON) { /* Won't blackmail their own. */
         if (!Deaf)
             pline("%s says, \"Good hunting, %s.\"", Amonnam(mtmp),
-                  flags.female ? "Sister" : "Brother");
+                  flags.female ? _("Sister") : _("Brother"));
         else if (canseemon(mtmp))
             pline("%s says something.", Amonnam(mtmp));
         if (!tele_restrict(mtmp))

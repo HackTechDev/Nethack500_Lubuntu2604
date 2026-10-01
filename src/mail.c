@@ -415,9 +415,10 @@ newmail(struct mail_info *info)
     message_seen = TRUE;
     if (!Deaf) {
         SetVoice(md, 0, 80, 0);
-        verbalize("%s, %s!  %s.", Hello(md), svp.plname, info->display_txt);
+        verbalize("%s, %s!  %s.", Hello(md), svp.plname,
+                  _(info->display_txt));
     } else {
-        pline("Message:  %s.", info->display_txt);
+        pline("Message:  %s.", _(info->display_txt));
     }
 
     if (info->message_typ) {
@@ -452,7 +453,7 @@ newmail(struct mail_info *info)
  give_up:
     /* deliver some classes of messages even if no daemon ever shows up */
     if (!message_seen && info->message_typ == MSG_OTHER)
-        pline("Hark!  \"%s.\"", info->display_txt);
+        pline("Hark!  \"%s.\"", _(info->display_txt));
 }
 
 #if !defined(UNIX) && !defined(VMS)
@@ -471,7 +472,7 @@ ckmailstatus(void)
     }
     if (--mustgetmail <= 0) {
         static struct mail_info deliver = {
-            MSG_MAIL, "I have some mail for you", 0, 0
+            MSG_MAIL, N_("I have some mail for you"), 0, 0
         };
         newmail(&deliver);
         mustgetmail = -1;
@@ -490,32 +491,32 @@ readmail(struct obj *otmp UNUSED)
     enum delivery_types delivery = normal_delivery;
     const char *recipient = 0;
     static const char *const junk_templates[] = {
-        "%sReport bugs to <%s>.%s", /*** must be first entry ***/
-        "Please disregard previous letter.",
-        "Welcome to NetHack.",
+        N_("%sReport bugs to <%s>.%s"), /*** must be first entry ***/
+        N_("Please disregard previous letter."),
+        N_("Welcome to NetHack."),
 #ifdef AMIGA
-        "Only Amiga makes it possible.",
-        "CATS have all the answers.",
+        N_("Only Amiga makes it possible."),
+        N_("CATS have all the answers."),
 #endif
-        "This mail complies with the Yendorian Anti-Spam Act (YASA)",
-        "Please find enclosed a small token to represent your Owlbear",
-        "**FR33 P0T10N 0F FULL H34L1NG**",
-        "Please return to sender (Asmodeus)",
+        N_("This mail complies with the Yendorian Anti-Spam Act (YASA)"),
+        N_("Please find enclosed a small token to represent your Owlbear"),
+        N_("**FR33 P0T10N 0F FULL H34L1NG**"),
+        N_("Please return to sender (Asmodeus)"),
         /* when enclosed by "It reads:  \"...\"", this is too long
            for an ordinary 80-column display so wraps to a second line
            (suboptimal but works correctly);
            dollar sign and fractional zorkmids are inappropriate within
            nethack but are suitable for typical dysfunctional spam mail */
-        ("Buy a potion of gain level for only $19.99! "
+        N_("Buy a potion of gain level for only $19.99! "
          " Guaranteed to be blessed!"),
         /* DEVTEAM_URL will be substituted for 2nd "%s";
            terminating punctuation (formerly "!") has deliberately been
            omitted so that it can't be mistaken for part of the URL
            (unfortunately that is still followed by a closing quote--in
            the pline below, not the data here) */
-        "%sInvitation: Visit the NetHack web site at %s%s"
+        N_("%sInvitation: Visit the NetHack web site at %s%s")
     };
-    const char *const it_reads = "It reads:  \"";
+    const char *const it_reads = _("It reads:  \"");
 
     i = rn2(SIZE(junk_templates));
     if (strchr(junk_templates[i], '%')) {
@@ -534,9 +535,9 @@ readmail(struct obj *otmp UNUSED)
         pline("Unfortunately you cannot see what it says.");
     } else {
         if (delivery == subst_delivery)
-            pline(junk_templates[i], it_reads, recipient, "\"");
+            pline(_(junk_templates[i]), it_reads, recipient, "\"");
         else if (delivery == normal_delivery)
-            pline("%s%s\"", it_reads, junk_templates[i]);
+            pline("%s%s\"", it_reads, _(junk_templates[i]));
     }
 }
 
@@ -570,7 +571,7 @@ ckmailstatus(void)
         if (nmstat.st_size) {
             static struct mail_info deliver = {
 #ifndef NO_MAILREADER
-                MSG_MAIL, "I have some mail for you",
+                MSG_MAIL, N_("I have some mail for you"),
 #else
                 /* suppress creation and delivery of scroll of mail */
                 MSG_OTHER, "You have some mail in the outside world",
@@ -623,8 +624,8 @@ read_simplemail(const char *mbox, boolean adminmsg)
             fl.l_type = F_UNLCK;
             fcntl(fileno(mb), F_UNLCK, &fl);
 #endif
-            There("is a%s message on this scroll.",
-                  seen_one_already ? "nother" : "");
+            There(seen_one_already ? "is another message on this scroll."
+                                   : "is a message on this scroll.");
         }
         msg = strchr(curline, ':');
 

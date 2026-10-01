@@ -20,6 +20,34 @@ const char
     *const attrname[] = { "strength", "intelligence", "wisdom",
                           "dexterity", "constitution", "charisma" };
 
+#if 0
+/* adjectives about the hero, translated with gendered_word() */
+N_("strong") N_("smart") N_("wise") N_("agile") N_("tough")
+N_("charismatic") N_("weak") N_("stupid") N_("foolish") N_("clumsy")
+N_("fragile") N_("repulsive") N_("awake") N_("conductive") N_("controlled")
+N_("cool") N_("cooler") N_("hardy") N_("healthy") N_("insulated")
+N_("perceptive") N_("quick") N_("sensitive") N_("slow") N_("stealthy")
+N_("tired") N_("unaware") N_("uncontrolled") N_("warm") N_("warmer")
+C_("feminine", "strong") C_("feminine", "smart") C_("feminine", "wise")
+C_("feminine", "agile") C_("feminine", "tough")
+C_("feminine", "charismatic") C_("feminine", "weak")
+C_("feminine", "stupid") C_("feminine", "foolish")
+C_("feminine", "clumsy") C_("feminine", "fragile")
+C_("feminine", "repulsive") C_("feminine", "awake")
+C_("feminine", "conductive") C_("feminine", "controlled")
+C_("feminine", "cool") C_("feminine", "cooler") C_("feminine", "hardy")
+C_("feminine", "healthy") C_("feminine", "insulated")
+C_("feminine", "perceptive") C_("feminine", "quick")
+C_("feminine", "sensitive") C_("feminine", "slow")
+C_("feminine", "stealthy") C_("feminine", "tired")
+C_("feminine", "unaware") C_("feminine", "uncontrolled")
+C_("feminine", "warm") C_("feminine", "warmer")
+N_("strength") N_("intelligence") N_("wisdom") N_("dexterity")
+N_("constitution") N_("charisma")
+#endif
+/* translated adjective about the hero, agreeing with the hero's gender */
+#define HERO_ADJ(adj) gendered_word((adj), flags.female ? 1 : 0)
+
 static const struct innate {
     schar ulevel;
     long *ability;
@@ -175,13 +203,15 @@ adjattrib(
     if (ACURR(ndx) == old_acurr) {
         if (msgflg == 0 && flags.verbose) {
             if (ABASE(ndx) == old_abase && AMAX(ndx) == old_amax) {
-                pline("You're %s as %s as you can get.",
-                      abonflg ? "currently" : "already", attrstr);
+                pline(abonflg ? "You're currently as %s as you can get."
+                              : "You're already as %s as you can get.",
+                      HERO_ADJ(attrstr));
             } else {
                 /* current stayed the same but base value changed, or
                    base is at minimum and reduction caused max to drop */
-                Your("innate %s has %s.", attrname[ndx],
-                     (incr > 0) ? "improved" : "declined");
+                Your((incr > 0) ? "innate %s has improved."
+                                : "innate %s has declined.",
+                     _(attrname[ndx]));
             }
         }
         return FALSE;
@@ -192,7 +222,8 @@ adjattrib(
 
     disp.botl = TRUE;
     if (msgflg <= 0)
-        You_feel("%s%s!", (incr > 1 || incr < -1) ? "very " : "", attrstr);
+        You_feel((incr > 1 || incr < -1) ? "very %s!" : "%s!",
+                 HERO_ADJ(attrstr));
     if (program_state.in_moveloop && (ndx == A_STR || ndx == A_CON))
         encumber_msg();
     return TRUE;
@@ -609,13 +640,18 @@ exerper(void)
 
 /* exercise/abuse text (must be in attribute order, not botl order);
    phrased as "You must have been [][0]." or "You haven't been [][1]." */
+/* whole sentences, so that each can be translated */
 static NEARDATA const char *const exertext[A_MAX][2] = {
-    { "exercising diligently", "exercising properly" },           /* Str */
-    { 0, 0 },                                                     /* Int */
-    { "very observant", "paying attention" },                     /* Wis */
-    { "working on your reflexes", "working on reflexes lately" }, /* Dex */
-    { "leading a healthy life-style", "watching your health" },   /* Con */
-    { 0, 0 },                                                     /* Cha */
+    { N_("You must have been exercising diligently."),          /* Str */
+      N_("You haven't been exercising properly.") },
+    { 0, 0 },                                                   /* Int */
+    { N_("You must have been very observant."),                 /* Wis */
+      N_("You haven't been paying attention.") },
+    { N_("You must have been working on your reflexes."),       /* Dex */
+      N_("You haven't been working on reflexes lately.") },
+    { N_("You must have been leading a healthy life-style."),   /* Con */
+      N_("You haven't been watching your health.") },
+    { 0, 0 },                                                   /* Cha */
 };
 
 void
@@ -685,9 +721,7 @@ exerchk(void)
                 /* if you actually changed an attrib - zero accumulation */
                 AEXE(i) = ax = 0;
                 /* then print an explanation */
-                You("%s %s.",
-                    (mod_val > 0) ? "must have been" : "haven't been",
-                    exertext[i][(mod_val > 0) ? 0 : 1]);
+                pline("%s", exertext[i][(mod_val > 0) ? 0 : 1]);
             }
  nextattrib:
             /* this used to be ``AEXE(i) /= 2'' but that would produce
@@ -1073,15 +1107,15 @@ adjabil(int oldlevel, int newlevel)
                 *(abil->ability) |= mask;
             if (!(*(abil->ability) & INTRINSIC & ~mask)) {
                 if (*(abil->gainstr))
-                    You_feel("%s!", abil->gainstr);
+                    You_feel("%s!", HERO_ADJ(abil->gainstr));
             }
         } else if (oldlevel >= abil->ulevel && newlevel < abil->ulevel) {
             *(abil->ability) &= ~mask;
             if (!(*(abil->ability) & INTRINSIC)) {
                 if (*(abil->losestr))
-                    You_feel("%s!", abil->losestr);
+                    You_feel("%s!", HERO_ADJ(abil->losestr));
                 else if (*(abil->gainstr))
-                    You_feel("less %s!", abil->gainstr);
+                    You_feel("less %s!", HERO_ADJ(abil->gainstr));
             }
         }
         if (prevabil != *(abil->ability)) /* it changed */
@@ -1359,14 +1393,16 @@ uchangealign(
         /* worn helm of opposite alignment might block change */
         if (!uarmh || uarmh->otyp != HELM_OF_OPPOSITE_ALIGNMENT)
             u.ualign.type = u.ualignbase[A_CURRENT];
-        You("have a %ssense of a new direction.",
-            (u.ualign.type != oldalign) ? "sudden " : "");
+        You((u.ualign.type != oldalign)
+            ? "have a sudden sense of a new direction."
+            : "have a sense of a new direction.");
     } else {
         /* putting on or taking off a helm of opposite alignment */
         u.ualign.type = (aligntyp) newalign;
         if (reason == A_CG_HELM_ON) {
             adjalign(-7); /* for abuse -- record will be cleared shortly */
-            Your("mind oscillates %s.", Hallucination ? "wildly" : "briefly");
+            Your(Hallucination ? "mind oscillates wildly."
+                               : "mind oscillates briefly.");
             make_confused(rn1(2, 3), FALSE);
             if (Is_astralevel(&u.uz) || ((unsigned) rn2(50) < u.ualign.abuse))
                 summon_furies(Is_astralevel(&u.uz) ? 0 : 1);
@@ -1374,9 +1410,8 @@ uchangealign(
             livelog_printf(LL_ALIGNMENT, "used a helm to turn %s",
                            aligns[1 - newalign].adj);
         } else if (reason == A_CG_HELM_OFF) {
-            Your("mind is %s.", Hallucination
-                                    ? "much of a muchness"
-                                    : "back in sync with your body");
+            Your(Hallucination ? "mind is much of a muchness."
+                               : "mind is back in sync with your body.");
         }
     }
     if (u.ualign.type != oldalign) {
