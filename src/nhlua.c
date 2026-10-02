@@ -55,6 +55,7 @@ staticfn int nhl_setmap(lua_State *);
 #endif
 staticfn int nhl_impossible(lua_State *);
 staticfn int nhl_pline(lua_State *);
+staticfn int nhl_gettext(lua_State *);
 staticfn int nhl_verbalize(lua_State *);
 staticfn int nhl_parse_config(lua_State *);
 staticfn int nhl_menu(lua_State *);
@@ -815,10 +816,22 @@ N_("Tip: Farlooking or selecting a map location\n"
    "\n"
    "When in this mode, you can press ESC to return to normal game mode,\n"
    "and pressing ? will show the key help.\n")
-/* texts given to nh.pline() by dat/nhlib.lua */
-N_("Looks like you're getting hungry.  You'll starve to death, unless you "
-   "eat something.")
 #endif
+
+/* local s = nh.gettext("Move around with %s");
+   the translation of a text of the Lua files (extracted by
+   po/update-pot.sh; dat/nhlib.lua's tr() formats it) */
+staticfn int
+nhl_gettext(lua_State *L)
+{
+    int argc = lua_gettop(L);
+
+    if (argc == 1)
+        lua_pushstring(L, _(luaL_checkstring(L, 1)));
+    else
+        nhl_error(L, "Wrong args");
+    return 1;
+}
 
 /* text("foo\nbar\nbaz") */
 staticfn int
@@ -1880,6 +1893,7 @@ static const struct luaL_Reg nhl_functions[] = {
 
     { "impossible", nhl_impossible },
     { "pline", nhl_pline },
+    { "gettext", nhl_gettext },
     { "verbalize", nhl_verbalize },
     { "menu", nhl_menu },
     { "text", nhl_text },

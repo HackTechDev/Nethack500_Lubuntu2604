@@ -2380,6 +2380,7 @@ extern void check_perm_invent_again(void);
 
 /* ### pager.c ### */
 
+extern const char *look_descr(const char *, int) NONNULLARG1;
 extern char *self_lookat(char *) NONNULL NONNULLARG1;
 extern char *monhealthdescr(struct monst *mon, boolean,
                             char *) NONNULL NONNULLARG3;

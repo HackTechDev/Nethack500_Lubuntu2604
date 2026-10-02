@@ -52,7 +52,6 @@ extern void port_help(void);
 staticfn char *setopt_cmd(char *) NONNULL NONNULLARG1;
 staticfn boolean add_quoted_engraving(coordxy, coordxy, char *, boolean)
                                                                   NONNULLARG3;
-staticfn const char *look_descr(const char *, int) NONNULLARG1;
 staticfn int screen_descr_core(coord, boolean, int, char *, const char **,
                                struct permonst **);
 
@@ -443,7 +442,7 @@ NC_("symbol the", "dark part of a room")
    terrain, with the article 'article' (0: none, 1: a/an, 2: the); when
    translating, its msgctxt "symbol" entry (or "symbol a", "symbol the"
    with the article), else its "trap" or "noun" entry */
-staticfn const char *
+const char *
 look_descr(const char *en, int article)
 {
 #ifdef NHI18N

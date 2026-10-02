@@ -1513,11 +1513,11 @@ domagicportal(struct trap *ttmp)
     if (In_tutorial(&u.uz) && !In_tutorial(&target_level)) {
         /* returning to normal play => arrive on level 1 stairs */
         totype = UTOTYPE_ATSTAIRS;
-        stunmsg = "Resuming regular play.";
+        stunmsg = N_("Resuming regular play.");
     } else {
         totype = UTOTYPE_PORTAL;
-        stunmsg = !Stunned ? "You feel slightly dizzy."
-                            : "You feel dizzier.";
+        stunmsg = !Stunned ? N_("You feel slightly dizzy.")
+                            : N_("You feel dizzier.");
         make_stunned((HStun & TIMEOUT) + 3L, FALSE);
     }
 

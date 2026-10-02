@@ -23,7 +23,6 @@ Par ordre de priorité (visibilité en jeu) :
 | Fichier | Lignes | Contenu | Remarque |
 |---|---:|---|---|
 | `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | Affichés par `deliver_by_pline()` / `deliver_by_window()` (`questpgr.c`) ; à extraire pour xgettext ou à fournir en `quest.lua` traduit |
-| `dat/tut-1.lua`, `dat/tut-2.lua` | 374 | Tutoriel : inscriptions et messages | Textes assemblés en Lua avec les touches (`"Move around with " .. movekeys`) : il faut une fonction de traduction appelable depuis Lua, ou des formats entiers |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`) : à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
@@ -214,8 +213,11 @@ Les fichiers restants sont listés dans la section 0.
 Les messages d'arrivée des niveaux spéciaux (`des.message()` des plans
 élémentaires et du Plan astral) sont traduits par `deliver_by_pline()`
 avant le remplacement de leurs codes `%` (liste pour xgettext dans
-`questpgr.c`).  Restent les inscriptions du tutoriel (`tut-1.lua`,
-composées de morceaux en Lua) et les textes des quêtes (`quest.lua`).
+`questpgr.c`).  Le tutoriel (`tut-1.lua`, `tut-2.lua`, messages de
+`nhlib.lua`) est traduit : ses textes passent par `tr(format, ...)`
+(`nhlib.lua`), qui formate la traduction rendue par `nh.gettext()` ;
+`po/update-pot.sh` extrait les textes donnés à `tr()` dans les fichiers
+Lua.  Restent les textes des quêtes (`quest.lua`).
 
 ## 4. Interface
 

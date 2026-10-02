@@ -112,6 +112,11 @@ grep -ohE '(Yobjnam2|yobjnam|Tobjnam|aobjnam|otense|vtense)\([^;()]*, *"[^"]+"\)
 $XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
     -o "$tmp/3verbs.pot" "$tmp/verbs.c"
 
+# texts of the Lua files given to tr() (dat/nhlib.lua), which formats their
+# translation (tutorial engravings and messages)
+$XGETTEXT --language=Lua --from-code=UTF-8 --no-wrap -k --keyword=tr \
+    --flag=tr:1:lua-format -o "$tmp/4lua.pot" dat/nhlib.lua dat/tut-*.lua
+
 # xgettext only takes the first string of "cond ? "a" : "b"" given to the
 # message functions; po/msgargs.py lists all of them
 # shellcheck disable=SC2086

@@ -1123,9 +1123,9 @@ test_move(
                                                    : -1;
 
                     if (sym == S_stone)
-                        Strcpy(buf, "solid stone");
+                        Strcpy(buf, _("solid stone"));
                     else if (sym >= 0)
-                        Strcpy(buf, an(defsyms[sym].explanation));
+                        Strcpy(buf, look_descr(defsyms[sym].explanation, 1));
                     else
                         Sprintf(buf, "impossible [background glyph=%d]",
                                 glyph);

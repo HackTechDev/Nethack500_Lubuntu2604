@@ -138,6 +138,13 @@ function hell_tweaks(protected_area)
 
 end
 
+-- translated text: tr("Move around with %s", keys) formats the
+-- translation of the format in the language of the messages
+-- (po/update-pot.sh extracts the texts given to tr())
+function tr(fmt, ...)
+   return string.format(nh.gettext(fmt), table.unpack({...}));
+end
+
 -- pline with variable number of arguments
 function pline(fmt, ...)
    nh.pline(string.format(fmt, table.unpack({...})));
@@ -221,8 +228,8 @@ local tutorial_events = {
          if (u.uhunger < 148) then
             local o = obj.new("blessed food ration");
             o:placeobj(u.ux, u.uy);
-            nh.pline("Looks like you're getting hungry.  You'll starve to death, unless you eat something.", true);
-            nh.pline("Comestibles are eaten with '" .. nh.eckey("eat") .. "'", true);
+            nh.pline(tr("Looks like you're getting hungry.  You'll starve to death, unless you eat something."), true);
+            nh.pline(tr("Comestibles are eaten with '%s'", nh.eckey("eat")), true);
             return true;
          end
       end

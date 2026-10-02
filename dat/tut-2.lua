@@ -19,7 +19,7 @@ des.region(selection.area(01,01, 73, 16), "lit");
 
 des.stair({ dir = "up", coord = { 2,2 } });
 
-des.engraving({ coord = { 1,1 }, type = "burn", text = "Use '" .. nh.eckey("up") .. "' to go up the stairs", degrade = false });
+des.engraving({ coord = { 1,1 }, type = "burn", text = tr("Use '%s' to go up the stairs", nh.eckey("up")), degrade = false });
 
 
 des.trap({ type = "magic portal", coord = { 11,5 }, seen = true });

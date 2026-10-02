@@ -16120,6 +16120,291 @@ msgctxt "monster"
 msgid "zruty"
 msgstr ""
 
+#: dat/nhlib.lua:231
+#, lua-format
+msgid "Looks like you're getting hungry.  You'll starve to death, unless you eat something."
+msgstr ""
+
+#: dat/nhlib.lua:232
+#, lua-format
+msgid "Comestibles are eaten with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:24
+#, lua-format
+msgid "Note: Outside the tutorial, Ctrl-key combinations are shown prefixed with a caret, like '^%s'"
+msgstr ""
+
+#: dat/tut-1.lua:80
+#, lua-format
+msgid "Move around with %s"
+msgstr ""
+
+#: dat/tut-1.lua:81
+#, lua-format
+msgid "Move diagonally with %s"
+msgstr ""
+
+#: dat/tut-1.lua:84
+#, lua-format
+msgid "Knights can jump with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:89
+#, lua-format
+msgid "Some actions may require multiple tries before succeeding"
+msgstr ""
+
+#: dat/tut-1.lua:90
+#, lua-format
+msgid "Open the door by moving into it"
+msgstr ""
+
+#: dat/tut-1.lua:93
+#, lua-format
+msgid "Close the door with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:98
+#, lua-format
+msgid "You can leave the tutorial via the magic portal."
+msgstr ""
+
+#: dat/tut-1.lua:103
+#, lua-format
+msgid "This door is locked. Kick it with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:110
+#, lua-format
+msgid "Look around the map with '%s', press ESC when you're done"
+msgstr ""
+
+#: dat/tut-1.lua:114
+#, lua-format
+msgid "Use '%s' to search for secret doors"
+msgstr ""
+
+#: dat/tut-1.lua:116
+#, lua-format
+msgid "Wrong secret"
+msgstr ""
+
+#: dat/tut-1.lua:120
+#, lua-format
+msgid "Behind this door is a dark corridor"
+msgstr ""
+
+#: dat/tut-1.lua:128
+#, lua-format
+msgid "There are four traps next to you! Search for them."
+msgstr ""
+
+#: dat/tut-1.lua:136
+#, lua-format
+msgid "Some traps can be disabled with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:143
+#, lua-format
+msgid "Pick up items with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:149
+#, lua-format
+msgid "Wear armor with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:153
+#, lua-format
+msgid "Wield weapons with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:156
+#, lua-format
+msgid "Hit monsters by walking into them."
+msgstr ""
+
+#: dat/tut-1.lua:162
+#, lua-format
+msgid "Now you know the very basics. You can leave the tutorial via the magic portal."
+msgstr ""
+
+#: dat/tut-1.lua:164
+#, lua-format
+msgid "Step into this portal to leave the tutorial"
+msgstr ""
+
+#: dat/tut-1.lua:169
+#, lua-format
+msgid "Push boulders by moving into them"
+msgstr ""
+
+#: dat/tut-1.lua:174
+#, lua-format
+msgid "Take off armor with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:179
+#, lua-format
+msgid "Some items have shuffled descriptions, different each game"
+msgstr ""
+
+#: dat/tut-1.lua:180
+#, lua-format
+msgid "Pick up this scroll, read it with '%s', and try to remove the armor again"
+msgstr ""
+
+#: dat/tut-1.lua:184
+#, lua-format
+msgid "Another magic portal, a way to leave this tutorial"
+msgstr ""
+
+#: dat/tut-1.lua:199
+#, lua-format
+msgid "Avoid being burdened, it slows you down"
+msgstr ""
+
+#: dat/tut-1.lua:200
+#, lua-format
+msgid "Drop items with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:201
+#, lua-format
+msgid "You can drop partial stacks by prefixing the item slot letter with a number"
+msgstr ""
+
+#: dat/tut-1.lua:207
+#, lua-format
+msgid "Throw items with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:215
+#, lua-format
+msgid "Missiles, such as rocks, work better when fired from appropriate launcher"
+msgstr ""
+
+#: dat/tut-1.lua:218
+#, lua-format
+msgid "Wield the sling"
+msgstr ""
+
+#: dat/tut-1.lua:219
+#, lua-format
+msgid "Use '%s' to fire missiles with the wielded launcher"
+msgstr ""
+
+#: dat/tut-1.lua:221
+#, lua-format
+msgid "Firing launches items from your quiver; Use '%s' to put items in it"
+msgstr ""
+
+#: dat/tut-1.lua:223
+#, lua-format
+msgid "You can wait a turn with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:230
+#, lua-format
+msgid "You loot containers with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:236
+#, lua-format
+msgid "Containers can also be emptied with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:238
+#, lua-format
+msgid "Magic wands are used with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:243
+#, lua-format
+msgid "You can run by prefixing a movement key with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:248
+#, lua-format
+msgid "Travel across the level with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:256
+#, lua-format
+msgid "Use '%s' to eat edible things"
+msgstr ""
+
+#: dat/tut-1.lua:267
+#, lua-format
+msgid "Use '%s' to use two weapons at once"
+msgstr ""
+
+#: dat/tut-1.lua:271
+#, lua-format
+msgid "Swap weapons quickly with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:279
+#, lua-format
+msgid "Put on accessories with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:281
+#, lua-format
+msgid "Remove accessories with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:288
+#, lua-format
+msgid "Use '%s' to go down the stairs"
+msgstr ""
+
+#: dat/tut-1.lua:296
+#, lua-format
+msgid "UNDER CONSTRUCTION"
+msgstr ""
+
+#: dat/tut-1.lua:304
+#, lua-format
+msgid "Can't get through?  You're carrying too much."
+msgstr ""
+
+#: dat/tut-1.lua:315
+#, lua-format
+msgid "Spellcasting"
+msgstr ""
+
+#: dat/tut-1.lua:319
+#, lua-format
+msgid "Unfortunately you don't have enough energy to cast spells."
+msgstr ""
+
+#: dat/tut-1.lua:321
+#, lua-format
+msgid "Pick up the spellbook with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:323
+#, lua-format
+msgid "Read the spellbook with '%s'"
+msgstr ""
+
+#: dat/tut-1.lua:324
+#, lua-format
+msgid "Use '%s' to cast a spell"
+msgstr ""
+
+#: dat/tut-1.lua:329
+#, lua-format
+msgid "You \"quaff\" potions with '%s'"
+msgstr ""
+
+#: dat/tut-2.lua:22
+#, lua-format
+msgid "Use '%s' to go up the stairs"
+msgstr ""
+
 #: include/optlist.h:119
 msgid "windowing system to use (should be specified first)"
 msgstr ""
@@ -17024,6 +17309,10 @@ msgstr ""
 msgid "The Amulet is bestowing a wish upon you!"
 msgstr ""
 
+#: src/allmain.c:579
+msgid "Entering the tutorial."
+msgstr ""
+
 #: src/allmain.c:686
 msgctxt "occupation"
 msgid "searching"
@@ -17129,8 +17418,8 @@ msgstr ""
 #: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4313 src/cmd.c:5173
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
-#: src/invent.c:4070 src/lock.c:937 src/nhlua.c:639 src/nhlua.c:655
-#: src/pager.c:3368 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
+#: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
+#: src/pager.c:3367 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
 #: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
 #: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:442
 #: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
@@ -18244,7 +18533,7 @@ msgid "%s others appear"
 msgstr ""
 
 #: src/apply.c:884 src/insight.c:642 src/insight.c:649 src/insight.c:656
-#: src/insight.c:880 src/insight.c:4192
+#: src/insight.c:880 src/insight.c:4193
 msgid " and"
 msgstr ""
 
@@ -25211,12 +25500,12 @@ msgstr ""
 msgid "%s ghost"
 msgstr ""
 
-#: src/do_name.c:1059 src/objnam.c:646 src/pager.c:474
+#: src/do_name.c:1059 src/objnam.c:646 src/pager.c:473
 #, c-format
 msgid "%s called %s"
 msgstr ""
 
-#: src/do_name.c:1188 src/pager.c:1928 src/pager.c:2638 src/uhitm.c:2123
+#: src/do_name.c:1188 src/pager.c:1927 src/pager.c:2637 src/uhitm.c:2123
 #: src/uhitm.c:2130 src/uhitm.c:5598
 msgid "you"
 msgstr ""
@@ -27820,7 +28109,7 @@ msgstr ""
 msgid " <- You were here."
 msgstr ""
 
-#: src/dungeon.c:3671 src/end.c:1497 src/insight.c:1919
+#: src/dungeon.c:3671 src/end.c:1497 src/insight.c:1920
 #, c-format
 msgid " and %s"
 msgstr ""
@@ -29054,6 +29343,10 @@ msgstr ""
 
 #: src/end.c:136
 msgid "Really quit without saving?"
+msgstr ""
+
+#: src/end.c:152 src/teleport.c:1516
+msgid "Resuming regular play."
 msgstr ""
 
 #: src/end.c:162
@@ -31369,6 +31662,10 @@ msgstr ""
 msgid "The Sokoban walls resist your ability."
 msgstr ""
 
+#: src/hack.c:1126
+msgid "solid stone"
+msgstr ""
+
 #: src/hack.c:1132
 #, c-format
 msgid "It's %s."
@@ -33061,7 +33358,7 @@ msgstr ""
 msgid "could have been"
 msgstr ""
 
-#: src/insight.c:254 src/pager.c:1017 src/pager.c:1217
+#: src/insight.c:254 src/pager.c:1016 src/pager.c:1216
 msgid "infravision"
 msgstr ""
 
@@ -34653,950 +34950,950 @@ msgstr ""
 msgid " With two weapons, your skill in %s was limited to %s."
 msgstr ""
 
-#: src/insight.c:1893
+#: src/insight.c:1894
 #, c-format
 msgid " Your two weapon skill is limited by your skill in %s."
 msgstr ""
 
-#: src/insight.c:1895
+#: src/insight.c:1896
 #, c-format
 msgid " Your two weapon skill was limited by your skill in %s."
 msgstr ""
 
-#: src/insight.c:1904
+#: src/insight.c:1905
 #, c-format
 msgid " Your two weapon skill is: %s."
 msgstr ""
 
-#: src/insight.c:1905
+#: src/insight.c:1906
 #, c-format
 msgid " Your two weapon skill was: %s."
 msgstr ""
 
-#: src/insight.c:1912
+#: src/insight.c:1913
 msgid "two weapons"
-msgstr ""
-
-#: src/insight.c:1921
-#, c-format
-msgid " You can enhance your skill with %s."
 msgstr ""
 
 #: src/insight.c:1922
 #, c-format
+msgid " You can enhance your skill with %s."
+msgstr ""
+
+#: src/insight.c:1923
+#, c-format
 msgid " You could have enhanced your skill with %s."
 msgstr ""
 
-#: src/insight.c:2093
+#: src/insight.c:2094
 msgid "Attributes:"
 msgstr ""
 
-#: src/insight.c:2093
+#: src/insight.c:2094
 msgid "Final Attributes:"
 msgstr ""
 
-#: src/insight.c:2109
+#: src/insight.c:2110
 msgid " You have sinned."
 msgstr ""
 
-#: src/insight.c:2110
+#: src/insight.c:2111
 msgid " You had sinned."
 msgstr ""
 
-#: src/insight.c:2111
+#: src/insight.c:2112
 msgid " You have transgressed."
 msgstr ""
 
-#: src/insight.c:2112
+#: src/insight.c:2113
 msgid " You had transgressed."
-msgstr ""
-
-#: src/insight.c:2700
-msgctxt "heroine"
-msgid "You have been deaf from birth."
 msgstr ""
 
 #: src/insight.c:2701
 msgctxt "heroine"
-msgid "You were deaf from birth."
+msgid "You have been deaf from birth."
 msgstr ""
 
 #: src/insight.c:2702
 msgctxt "heroine"
-msgid "You have been vegetarian."
+msgid "You were deaf from birth."
 msgstr ""
 
 #: src/insight.c:2703
 msgctxt "heroine"
-msgid "You were vegetarian."
+msgid "You have been vegetarian."
 msgstr ""
 
 #: src/insight.c:2704
 msgctxt "heroine"
-msgid "You have been illiterate."
+msgid "You were vegetarian."
 msgstr ""
 
 #: src/insight.c:2705
 msgctxt "heroine"
-msgid "You were illiterate."
+msgid "You have been illiterate."
 msgstr ""
 
 #: src/insight.c:2706
 msgctxt "heroine"
-msgid "You have gone without food."
+msgid "You were illiterate."
 msgstr ""
 
 #: src/insight.c:2707
 msgctxt "heroine"
-msgid "You have gone without any armor."
-msgstr ""
-
-#: src/insight.c:2708
-msgid "You have been blind from birth."
-msgstr ""
-
-#: src/insight.c:2709
-msgid "You were blind from birth."
-msgstr ""
-
-#: src/insight.c:2710
-msgid "You have been deaf from birth."
-msgstr ""
-
-#: src/insight.c:2711
-msgid "You were deaf from birth."
-msgstr ""
-
-#: src/insight.c:2712
-msgid "You have been faithfully nudist."
-msgstr ""
-
-#: src/insight.c:2713
-msgid "You were faithfully nudist."
-msgstr ""
-
-#: src/insight.c:2714
-msgid "You have been vegetarian."
-msgstr ""
-
-#: src/insight.c:2715
-msgid "You were vegetarian."
-msgstr ""
-
-#: src/insight.c:2716
-msgid "You have been an atheist."
-msgstr ""
-
-#: src/insight.c:2717
-msgid "You were an atheist."
-msgstr ""
-
-#: src/insight.c:2718
-msgid "You have been a pacifist."
-msgstr ""
-
-#: src/insight.c:2719
-msgid "You were a pacifist."
-msgstr ""
-
-#: src/insight.c:2720
-msgid "You have been illiterate."
-msgstr ""
-
-#: src/insight.c:2721
-msgid "You were illiterate."
-msgstr ""
-
-#: src/insight.c:2722
-msgid "You have never hit with a wielded weapon."
-msgstr ""
-
-#: src/insight.c:2723
-msgid "You never hit with a wielded weapon."
-msgstr ""
-
-#: src/insight.c:2724
-msgid "You have never had a pet."
-msgstr ""
-
-#: src/insight.c:2725
-msgid "You never had a pet."
-msgstr ""
-
-#: src/insight.c:2726
-msgid "You have never genocided any monsters."
-msgstr ""
-
-#: src/insight.c:2727
-msgid "You never genocided any monsters."
-msgstr ""
-
-#: src/insight.c:2728
-msgid "You have never polymorphed an object."
-msgstr ""
-
-#: src/insight.c:2729
-msgid "You never polymorphed an object."
-msgstr ""
-
-#: src/insight.c:2730
-msgid "You have never changed form."
-msgstr ""
-
-#: src/insight.c:2731
-msgid "You never changed form."
-msgstr ""
-
-#: src/insight.c:2732
-msgid "You have followed a strict vegan diet."
-msgstr ""
-
-#: src/insight.c:2733
-msgid "You followed a strict vegan diet."
-msgstr ""
-
-#: src/insight.c:2734
-msgid "You have used no wishes."
-msgstr ""
-
-#: src/insight.c:2735
-msgid "You used no wishes."
-msgstr ""
-
-#: src/insight.c:2736
-msgid "You started without possessions."
-msgstr ""
-
-#: src/insight.c:2737
-msgid "You are without possessions."
-msgstr ""
-
-#: src/insight.c:2738
-msgid "You started out without possessions."
-msgstr ""
-
-#: src/insight.c:2739
 msgid "You have gone without food."
 msgstr ""
 
+#: src/insight.c:2708
+msgctxt "heroine"
+msgid "You have gone without any armor."
+msgstr ""
+
+#: src/insight.c:2709
+msgid "You have been blind from birth."
+msgstr ""
+
+#: src/insight.c:2710
+msgid "You were blind from birth."
+msgstr ""
+
+#: src/insight.c:2711
+msgid "You have been deaf from birth."
+msgstr ""
+
+#: src/insight.c:2712
+msgid "You were deaf from birth."
+msgstr ""
+
+#: src/insight.c:2713
+msgid "You have been faithfully nudist."
+msgstr ""
+
+#: src/insight.c:2714
+msgid "You were faithfully nudist."
+msgstr ""
+
+#: src/insight.c:2715
+msgid "You have been vegetarian."
+msgstr ""
+
+#: src/insight.c:2716
+msgid "You were vegetarian."
+msgstr ""
+
+#: src/insight.c:2717
+msgid "You have been an atheist."
+msgstr ""
+
+#: src/insight.c:2718
+msgid "You were an atheist."
+msgstr ""
+
+#: src/insight.c:2719
+msgid "You have been a pacifist."
+msgstr ""
+
+#: src/insight.c:2720
+msgid "You were a pacifist."
+msgstr ""
+
+#: src/insight.c:2721
+msgid "You have been illiterate."
+msgstr ""
+
+#: src/insight.c:2722
+msgid "You were illiterate."
+msgstr ""
+
+#: src/insight.c:2723
+msgid "You have never hit with a wielded weapon."
+msgstr ""
+
+#: src/insight.c:2724
+msgid "You never hit with a wielded weapon."
+msgstr ""
+
+#: src/insight.c:2725
+msgid "You have never had a pet."
+msgstr ""
+
+#: src/insight.c:2726
+msgid "You never had a pet."
+msgstr ""
+
+#: src/insight.c:2727
+msgid "You have never genocided any monsters."
+msgstr ""
+
+#: src/insight.c:2728
+msgid "You never genocided any monsters."
+msgstr ""
+
+#: src/insight.c:2729
+msgid "You have never polymorphed an object."
+msgstr ""
+
+#: src/insight.c:2730
+msgid "You never polymorphed an object."
+msgstr ""
+
+#: src/insight.c:2731
+msgid "You have never changed form."
+msgstr ""
+
+#: src/insight.c:2732
+msgid "You never changed form."
+msgstr ""
+
+#: src/insight.c:2733
+msgid "You have followed a strict vegan diet."
+msgstr ""
+
+#: src/insight.c:2734
+msgid "You followed a strict vegan diet."
+msgstr ""
+
+#: src/insight.c:2735
+msgid "You have used no wishes."
+msgstr ""
+
+#: src/insight.c:2736
+msgid "You used no wishes."
+msgstr ""
+
+#: src/insight.c:2737
+msgid "You started without possessions."
+msgstr ""
+
+#: src/insight.c:2738
+msgid "You are without possessions."
+msgstr ""
+
+#: src/insight.c:2739
+msgid "You started out without possessions."
+msgstr ""
+
 #: src/insight.c:2740
-msgid "You went without food."
+msgid "You have gone without food."
 msgstr ""
 
 #: src/insight.c:2741
-msgid "You haven't wished for any artifacts."
+msgid "You went without food."
 msgstr ""
 
 #: src/insight.c:2742
-msgid "You did not wish for any artifacts."
+msgid "You haven't wished for any artifacts."
 msgstr ""
 
 #: src/insight.c:2743
-msgid "You haven't violated any of the special Sokoban rules."
+msgid "You did not wish for any artifacts."
 msgstr ""
 
 #: src/insight.c:2744
-msgid "You did not violate any of the special Sokoban rules."
+msgid "You haven't violated any of the special Sokoban rules."
 msgstr ""
 
 #: src/insight.c:2745
-#, c-format
-msgid "You have genocided %ld type of monster."
+msgid "You did not violate any of the special Sokoban rules."
 msgstr ""
 
 #: src/insight.c:2746
 #, c-format
-msgid "You genocided %ld type of monster."
+msgid "You have genocided %ld type of monster."
 msgstr ""
 
 #: src/insight.c:2747
 #, c-format
-msgid "You have genocided %ld types of monsters."
+msgid "You genocided %ld type of monster."
 msgstr ""
 
 #: src/insight.c:2748
 #, c-format
-msgid "You genocided %ld types of monsters."
+msgid "You have genocided %ld types of monsters."
 msgstr ""
 
 #: src/insight.c:2749
 #, c-format
-msgid "You have used %ld wish."
+msgid "You genocided %ld types of monsters."
 msgstr ""
 
 #: src/insight.c:2750
 #, c-format
-msgid "You used %ld wish."
+msgid "You have used %ld wish."
 msgstr ""
 
 #: src/insight.c:2751
 #, c-format
-msgid "You have used %ld wishes."
+msgid "You used %ld wish."
 msgstr ""
 
 #: src/insight.c:2752
 #, c-format
-msgid "You used %ld wishes."
+msgid "You have used %ld wishes."
 msgstr ""
 
 #: src/insight.c:2753
 #, c-format
-msgid "You have used %ld wish (for an artifact)."
+msgid "You used %ld wishes."
 msgstr ""
 
 #: src/insight.c:2754
 #, c-format
-msgid "You used %ld wish (for an artifact)."
+msgid "You have used %ld wish (for an artifact)."
 msgstr ""
 
 #: src/insight.c:2755
 #, c-format
-msgid "You have used %ld wishes (both for artifacts)."
+msgid "You used %ld wish (for an artifact)."
 msgstr ""
 
 #: src/insight.c:2756
 #, c-format
-msgid "You used %ld wishes (both for artifacts)."
+msgid "You have used %ld wishes (both for artifacts)."
 msgstr ""
 
 #: src/insight.c:2757
 #, c-format
-msgid "You have used %ld wishes (all for artifacts)."
+msgid "You used %ld wishes (both for artifacts)."
 msgstr ""
 
 #: src/insight.c:2758
 #, c-format
+msgid "You have used %ld wishes (all for artifacts)."
+msgstr ""
+
+#: src/insight.c:2759
+#, c-format
 msgid "You used %ld wishes (all for artifacts)."
 msgstr ""
 
-#: src/insight.c:2769
+#: src/insight.c:2770
 msgid "Voluntary challenges:"
 msgstr ""
 
-#: src/insight.c:2776
+#: src/insight.c:2777
 msgid " Character rerolling was not enabled."
 msgstr ""
 
-#: src/insight.c:2778
+#: src/insight.c:2779
 msgid " Your character was not rerolled."
 msgstr ""
 
-#: src/insight.c:2781
+#: src/insight.c:2782
 #, c-format
 msgid " Your character was rerolled %ld time(s)."
 msgstr ""
 
-#: src/insight.c:2921
+#: src/insight.c:2922
 msgid "You have entered the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2922
+#: src/insight.c:2923
 msgid "You entered the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2923
+#: src/insight.c:2924
 msgid "You have entered Minetown."
 msgstr ""
 
-#: src/insight.c:2924
+#: src/insight.c:2925
 msgid "You entered Minetown."
 msgstr ""
 
-#: src/insight.c:2925
+#: src/insight.c:2926
 msgid "You have entered a shop."
 msgstr ""
 
-#: src/insight.c:2926
+#: src/insight.c:2927
 msgid "You entered a shop."
 msgstr ""
 
-#: src/insight.c:2927
+#: src/insight.c:2928
 msgid "You have entered a temple."
 msgstr ""
 
-#: src/insight.c:2928
+#: src/insight.c:2929
 msgid "You entered a temple."
 msgstr ""
 
-#: src/insight.c:2929
+#: src/insight.c:2930
 msgid "You have consulted the Oracle of Delphi."
 msgstr ""
 
-#: src/insight.c:2930
+#: src/insight.c:2931
 msgid "You consulted the Oracle of Delphi."
 msgstr ""
 
-#: src/insight.c:2931
+#: src/insight.c:2932
 msgid "You have read from a Discworld novel."
 msgstr ""
 
-#: src/insight.c:2932
+#: src/insight.c:2933
 msgid "You read from a Discworld novel."
 msgstr ""
 
-#: src/insight.c:2933
+#: src/insight.c:2934
 msgid "You have entered Sokoban."
 msgstr ""
 
-#: src/insight.c:2934
+#: src/insight.c:2935
 msgid "You entered Sokoban."
 msgstr ""
 
-#: src/insight.c:2935
+#: src/insight.c:2936
 msgid "You have completed Sokoban."
 msgstr ""
 
-#: src/insight.c:2936
+#: src/insight.c:2937
 msgid "You completed Sokoban."
 msgstr ""
 
-#: src/insight.c:2937
+#: src/insight.c:2938
 msgid "You have completed the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2938
+#: src/insight.c:2939
 msgid "You completed the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2939
+#: src/insight.c:2940
 msgid "You have entered the Big Room."
 msgstr ""
 
-#: src/insight.c:2940
+#: src/insight.c:2941
 msgid "You entered the Big Room."
 msgstr ""
 
-#: src/insight.c:2941
+#: src/insight.c:2942
 msgid "You have defeated Medusa."
 msgstr ""
 
-#: src/insight.c:2942
+#: src/insight.c:2943
 msgid "You defeated Medusa."
 msgstr ""
 
-#: src/insight.c:2943
+#: src/insight.c:2944
 msgid "You have learned the tune to open and close the Castle's drawbridge."
 msgstr ""
 
-#: src/insight.c:2944
+#: src/insight.c:2945
 msgid "You learned the tune to open and close the Castle's drawbridge."
 msgstr ""
 
-#: src/insight.c:2945
+#: src/insight.c:2946
 msgid "You have gained access to Moloch's Sanctum."
 msgstr ""
 
-#: src/insight.c:2946
+#: src/insight.c:2947
 msgid "You gained access to Moloch's Sanctum."
 msgstr ""
 
-#: src/insight.c:2947
+#: src/insight.c:2948
 msgid "You have reached the Elemental Planes."
 msgstr ""
 
-#: src/insight.c:2948
+#: src/insight.c:2949
 msgid "You reached the Elemental Planes."
 msgstr ""
 
-#: src/insight.c:2949
+#: src/insight.c:2950
 msgid "You have reached the Astral Plane."
 msgstr ""
 
-#: src/insight.c:2950
+#: src/insight.c:2951
 msgid "You reached the Astral Plane."
 msgstr ""
 
-#: src/insight.c:2951
+#: src/insight.c:2952
 msgid "You have entered Gehennom."
 msgstr ""
 
-#: src/insight.c:2952
+#: src/insight.c:2953
 msgid "You entered Gehennom."
 msgstr ""
 
-#: src/insight.c:2953
+#: src/insight.c:2954
 msgid "You are exploring without being able to see."
 msgstr ""
 
-#: src/insight.c:2954
+#: src/insight.c:2955
 msgid "You explored without being able to see."
 msgstr ""
 
-#: src/insight.c:2955
+#: src/insight.c:2956
 msgid "You have gone without any armor."
 msgstr ""
 
-#: src/insight.c:2956
+#: src/insight.c:2957
 msgid "You went without any armor."
 msgstr ""
 
-#: src/insight.c:2957
+#: src/insight.c:2958
 msgid "You have the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2958
+#: src/insight.c:2959
 msgid "You had the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2959
+#: src/insight.c:2960
 msgid "You have handled the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2960
+#: src/insight.c:2961
 msgid "You handled the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2961
+#: src/insight.c:2962
 msgid "You have the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2962
+#: src/insight.c:2963
 msgid "You had the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2963
+#: src/insight.c:2964
 msgid "You have handled the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2964
+#: src/insight.c:2965
 msgid "You handled the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2965
+#: src/insight.c:2966
 msgid "You have the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2966
+#: src/insight.c:2967
 msgid "You had the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2967
+#: src/insight.c:2968
 msgid "You have handled the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2968
+#: src/insight.c:2969
 msgid "You handled the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2969
+#: src/insight.c:2970
 msgid "You have the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2970
+#: src/insight.c:2971
 msgid "You have obtained the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2971
+#: src/insight.c:2972
 msgid "You delivered the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2972
+#: src/insight.c:2973
 msgid "You had the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2973
+#: src/insight.c:2974
 msgid "You had obtained the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2974
+#: src/insight.c:2975
 msgid "You ascended!"
 msgstr ""
 
-#: src/insight.c:3003
+#: src/insight.c:3004
 msgid "Achievement:"
 msgstr ""
 
-#: src/insight.c:3003
+#: src/insight.c:3004
 msgid "Achievements:"
 msgstr ""
 
-#: src/insight.c:3115
+#: src/insight.c:3116
 msgid " You ascended!"
-msgstr ""
-
-#: src/insight.c:3123
-#, c-format
-msgid " You attained the rank of %s."
 msgstr ""
 
 #: src/insight.c:3124
 #, c-format
+msgid " You attained the rank of %s."
+msgstr ""
+
+#: src/insight.c:3125
+#, c-format
 msgid " You have attained the rank of %s."
 msgstr ""
 
-#: src/insight.c:3283
+#: src/insight.c:3284
 msgid "No chronicled events."
 msgstr ""
 
-#: src/insight.c:3286
+#: src/insight.c:3287
 msgid "Chronicle was turned off during compile-time."
 msgstr ""
 
-#: src/insight.c:3347
+#: src/insight.c:3348
 msgid "traditional: by monster level"
 msgstr ""
 
-#: src/insight.c:3348
+#: src/insight.c:3349
 msgid "traditional: by monster level, by internal monster index"
 msgstr ""
 
-#: src/insight.c:3349
+#: src/insight.c:3350
 msgid "by monster difficulty rating"
 msgstr ""
 
-#: src/insight.c:3350
+#: src/insight.c:3351
 msgid "by monster difficulty rating, by internal monster index"
 msgstr ""
 
-#: src/insight.c:3351
+#: src/insight.c:3352
 msgid "alphabetically, unique monsters separate"
 msgstr ""
 
-#: src/insight.c:3352
+#: src/insight.c:3353
 msgid "alphabetically, first unique monsters, then others"
 msgstr ""
 
-#: src/insight.c:3353
+#: src/insight.c:3354
 msgid "alphabetically, unique monsters intermixed"
 msgstr ""
 
-#: src/insight.c:3354
+#: src/insight.c:3355
 msgid "alphabetically, unique monsters and others intermixed"
 msgstr ""
 
-#: src/insight.c:3355
+#: src/insight.c:3356
 msgid "by monster class, high to low level in class"
 msgstr ""
 
-#: src/insight.c:3356
+#: src/insight.c:3357
 msgid "by monster class, high to low level within class"
 msgstr ""
 
-#: src/insight.c:3357
+#: src/insight.c:3358
 msgid "by monster class, low to high level in class"
 msgstr ""
 
-#: src/insight.c:3358
+#: src/insight.c:3359
 msgid "by monster class, low to high level within class"
 msgstr ""
 
-#: src/insight.c:3359
+#: src/insight.c:3360
 msgid "by count, high to low"
 msgstr ""
 
-#: src/insight.c:3360
+#: src/insight.c:3361
 msgid "by count, high to low, by internal index within tied count"
 msgstr ""
 
-#: src/insight.c:3361
+#: src/insight.c:3362
 msgid "by count, low to high"
 msgstr ""
 
-#: src/insight.c:3362
+#: src/insight.c:3363
 msgid "by count, low to high, by internal index within tied count"
 msgstr ""
 
-#: src/insight.c:3487 src/spell.c:1927
+#: src/insight.c:3488 src/spell.c:1927
 msgid "alphabetically"
 msgstr ""
 
-#: src/insight.c:3495
+#: src/insight.c:3496
 msgid "Sort order for vanquished monster counts (also genocided types)"
 msgstr ""
 
-#: src/insight.c:3497
+#: src/insight.c:3498
 msgid "Sort order for genocided monster types (also vanquished counts)"
 msgstr ""
 
-#: src/insight.c:3589
+#: src/insight.c:3590
 msgid "Do you want an account of creatures vanquished?"
 msgstr ""
 
-#: src/insight.c:3690
+#: src/insight.c:3691
 msgid "No creatures have been vanquished."
 msgstr ""
 
-#: src/insight.c:3872
+#: src/insight.c:3873
 msgid "No creatures have been genocided yet."
 msgstr ""
 
-#: src/insight.c:4023
+#: src/insight.c:4024
 msgid "devoutly"
 msgstr ""
 
-#: src/insight.c:4023
+#: src/insight.c:4024
 msgid "fervently"
 msgstr ""
 
-#: src/insight.c:4023
+#: src/insight.c:4024
 msgid "piously"
 msgstr ""
 
-#: src/insight.c:4023
+#: src/insight.c:4024
 msgid "stridently"
 msgstr ""
 
-#: src/insight.c:4024
+#: src/insight.c:4025
 msgid "haltingly"
 msgstr ""
 
-#: src/insight.c:4024
+#: src/insight.c:4025
 msgid "insufficiently"
 msgstr ""
 
-#: src/insight.c:4024
+#: src/insight.c:4025
 msgid "nominally"
 msgstr ""
 
-#: src/insight.c:4024
+#: src/insight.c:4025
 msgid "strayed"
 msgstr ""
 
-#: src/insight.c:4025 src/role.c:765
+#: src/insight.c:4026 src/role.c:765
 msgid "chaotic"
 msgstr ""
 
-#: src/insight.c:4025 src/role.c:763
+#: src/insight.c:4026 src/role.c:763
 msgid "lawful"
 msgstr ""
 
-#: src/insight.c:4025 src/role.c:764
+#: src/insight.c:4026 src/role.c:764
 msgid "neutral"
 msgstr ""
 
-#: src/insight.c:4025
+#: src/insight.c:4026
 msgid "sinned"
 msgstr ""
 
-#: src/insight.c:4025
+#: src/insight.c:4026
 msgid "transgressed"
 msgstr ""
 
-#: src/insight.c:4026 src/objnam.c:642
+#: src/insight.c:4027 src/objnam.c:642
 msgid "medium"
 msgstr ""
 
-#: src/insight.c:4026 src/objnam.c:642
+#: src/insight.c:4027 src/objnam.c:642
 msgid "small"
 msgstr ""
 
-#: src/insight.c:4026
+#: src/insight.c:4027
 msgid "tiny"
 msgstr ""
 
-#: src/insight.c:4026 src/role.c:766
+#: src/insight.c:4027 src/role.c:766
 msgid "unaligned"
 msgstr ""
 
-#: src/insight.c:4026
+#: src/insight.c:4027
 msgid "unknown"
 msgstr ""
 
-#: src/insight.c:4027
+#: src/insight.c:4028
 msgid "gigantic"
 msgstr ""
 
-#: src/insight.c:4027
+#: src/insight.c:4028
 msgid "huge"
 msgstr ""
 
-#: src/insight.c:4027 src/objnam.c:643
+#: src/insight.c:4028 src/objnam.c:643
 msgid "large"
 msgstr ""
 
-#: src/insight.c:4055
+#: src/insight.c:4056
 msgid ", tame"
 msgstr ""
 
-#: src/insight.c:4064
+#: src/insight.c:4065
 msgid ", peaceful"
 msgstr ""
 
-#: src/insight.c:4073
+#: src/insight.c:4074
 msgid ", single segment"
 msgstr ""
 
-#: src/insight.c:4078
+#: src/insight.c:4079
 #, c-format
 msgid ", segment %d of %d"
 msgstr ""
 
-#: src/insight.c:4087
+#: src/insight.c:4088
 msgid ", shapechanger"
 msgstr ""
 
-#: src/insight.c:4090
+#: src/insight.c:4091
 msgid ", eating"
 msgstr ""
 
-#: src/insight.c:4099
+#: src/insight.c:4100
 msgid ", cancelled"
 msgstr ""
 
-#: src/insight.c:4101 src/insight.c:4205
+#: src/insight.c:4102 src/insight.c:4206
 msgid ", confused"
 msgstr ""
 
-#: src/insight.c:4103 src/insight.c:4207
+#: src/insight.c:4104 src/insight.c:4208
 msgid ", blind"
 msgstr ""
 
-#: src/insight.c:4105 src/insight.c:4223
+#: src/insight.c:4106 src/insight.c:4224
 msgid ", stunned"
 msgstr ""
 
-#: src/insight.c:4107 src/pager.c:894
+#: src/insight.c:4108 src/pager.c:893
 msgid ", asleep"
 msgstr ""
 
-#: src/insight.c:4111
+#: src/insight.c:4112
 msgid ", paralyzed"
 msgstr ""
 
-#: src/insight.c:4114
+#: src/insight.c:4115
 msgid ", can't move"
 msgstr ""
 
-#: src/insight.c:4118 src/pager.c:896
+#: src/insight.c:4119 src/pager.c:895
 msgid ", meditating"
 msgstr ""
 
-#: src/insight.c:4120
+#: src/insight.c:4121
 msgid ", scared"
 msgstr ""
 
-#: src/insight.c:4122 src/insight.c:4240
+#: src/insight.c:4123 src/insight.c:4241
 msgid ", trapped"
 msgstr ""
 
-#: src/insight.c:4124 src/insight.c:4242
+#: src/insight.c:4125 src/insight.c:4243
 msgid ", fast"
 msgstr ""
 
-#: src/insight.c:4125
+#: src/insight.c:4126
 msgid ", slow"
 msgstr ""
 
-#: src/insight.c:4128 src/insight.c:4248
+#: src/insight.c:4129 src/insight.c:4249
 msgid ", invisible"
 msgstr ""
 
-#: src/insight.c:4135
+#: src/insight.c:4136
 msgid ", digesting you"
 msgstr ""
 
-#: src/insight.c:4142 src/pager.c:884
+#: src/insight.c:4143 src/pager.c:883
 msgid ", swallowing you"
 msgstr ""
 
-#: src/insight.c:4143 src/pager.c:886
+#: src/insight.c:4144 src/pager.c:885
 msgid ", engulfing you"
 msgstr ""
 
-#: src/insight.c:4146 src/pager.c:890
+#: src/insight.c:4147 src/pager.c:889
 msgid ", holding you"
 msgstr ""
 
-#: src/insight.c:4147
+#: src/insight.c:4148
 msgid ", held by you"
 msgstr ""
 
-#: src/insight.c:4150
+#: src/insight.c:4151
 msgid ", carrying you"
 msgstr ""
 
-#: src/insight.c:4160
+#: src/insight.c:4161
 #, c-format
 msgid ", injured %s"
 msgstr ""
 
-#: src/insight.c:4164
+#: src/insight.c:4165
 msgid ", leashed"
 msgstr ""
 
-#: src/insight.c:4171
+#: src/insight.c:4172
 #, c-format
 msgid "Status of %s (%s, %s):  Level %d  HP %d(%d)  AC %d%s."
 msgstr ""
 
-#: src/insight.c:4187
+#: src/insight.c:4188
 msgid ", dying from"
 msgstr ""
 
-#: src/insight.c:4189
+#: src/insight.c:4190
 msgid " food poisoning"
 msgstr ""
 
-#: src/insight.c:4193
+#: src/insight.c:4194
 msgid " illness"
 msgstr ""
 
-#: src/insight.c:4197
+#: src/insight.c:4198
 msgid ", solidifying"
 msgstr ""
 
-#: src/insight.c:4199
+#: src/insight.c:4200
 msgid ", becoming slimy"
 msgstr ""
 
-#: src/insight.c:4201
+#: src/insight.c:4202
 msgid ", being strangled"
 msgstr ""
 
-#: src/insight.c:4203
+#: src/insight.c:4204
 msgid ", nauseated"
 msgstr ""
 
-#: src/insight.c:4213
+#: src/insight.c:4214
 msgid ", covered by sticky goop"
 msgstr ""
 
-#: src/insight.c:4214
+#: src/insight.c:4215
 msgid " by sticky goop"
 msgstr ""
 
-#: src/insight.c:4238
+#: src/insight.c:4239
 #, c-format
 msgid ", slippery %s"
 msgstr ""
 
-#: src/insight.c:4242
+#: src/insight.c:4243
 msgid ", very fast"
 msgstr ""
 
-#: src/insight.c:4244
+#: src/insight.c:4245
 msgid ", concealed"
 msgstr ""
 
-#: src/insight.c:4246
+#: src/insight.c:4247
 msgid ", disguised"
 msgstr ""
 
-#: src/insight.c:4251
+#: src/insight.c:4252
 msgid ", being digested by "
 msgstr ""
 
-#: src/insight.c:4252
+#: src/insight.c:4253
 msgid ", engulfed by "
 msgstr ""
 
-#: src/insight.c:4254
+#: src/insight.c:4255
 msgid ", held by "
 msgstr ""
 
-#: src/insight.c:4256
+#: src/insight.c:4257
 msgid ", holding "
 msgstr ""
 
-#: src/insight.c:4267 src/pager.c:688
+#: src/insight.c:4268 src/pager.c:687
 msgid ", in a cloud of poison gas"
 msgstr ""
 
-#: src/insight.c:4268 src/pager.c:689
+#: src/insight.c:4269 src/pager.c:688
 msgid ", in a cloud of vapor"
 msgstr ""
 
-#: src/insight.c:4270
+#: src/insight.c:4271
 #, c-format
 msgid "Status of %s (%s):  Level %d  HP %d(%d)  AC %d%s."
 msgstr ""
@@ -41301,7 +41598,7 @@ msgctxt "grammar"
 msgid "contractions"
 msgstr ""
 
-#: src/nhlua.c:810
+#: src/nhlua.c:811
 msgid ""
 "Tip: Farlooking or selecting a map location\n"
 "\n"
@@ -41313,16 +41610,12 @@ msgid ""
 "and pressing ? will show the key help.\n"
 msgstr ""
 
-#: src/nhlua.c:819
-msgid "Looks like you're getting hungry.  You'll starve to death, unless you eat something."
-msgstr ""
-
-#: src/nhlua.c:1430
+#: src/nhlua.c:1443
 #, c-format
 msgid "TEST:{ x=%i, y=%i, name=\"%s\" }"
 msgstr ""
 
-#: src/nhlua.c:1754
+#: src/nhlua.c:1767
 #, c-format
 msgid "Resetting time to move #%ld."
 msgstr ""
@@ -41516,7 +41809,7 @@ msgctxt "feminine plural"
 msgid " named %s"
 msgstr ""
 
-#: src/objnam.c:653 src/pager.c:476
+#: src/objnam.c:653 src/pager.c:475
 #, c-format
 msgctxt "feminine"
 msgid "%s called %s"
@@ -42901,2327 +43194,2327 @@ msgstr ""
 msgid "Autopickup: OFF."
 msgstr ""
 
-#: src/pager.c:95
+#: src/pager.c:94
 msgid " or "
+msgstr ""
+
+#: src/pager.c:120
+msgctxt "symbol"
+msgid "iron bars"
 msgstr ""
 
 #: src/pager.c:121
 msgctxt "symbol"
-msgid "iron bars"
+msgid "tree"
 msgstr ""
 
 #: src/pager.c:122
 msgctxt "symbol"
-msgid "tree"
+msgid "floor of a room"
 msgstr ""
 
 #: src/pager.c:123
 msgctxt "symbol"
-msgid "floor of a room"
+msgid "dark part of a room"
 msgstr ""
 
 #: src/pager.c:124
 msgctxt "symbol"
-msgid "dark part of a room"
+msgid "lit corridor"
 msgstr ""
 
 #: src/pager.c:125
 msgctxt "symbol"
-msgid "lit corridor"
+msgid "branch staircase up"
 msgstr ""
 
 #: src/pager.c:126
 msgctxt "symbol"
-msgid "branch staircase up"
+msgid "branch staircase down"
 msgstr ""
 
 #: src/pager.c:127
 msgctxt "symbol"
-msgid "branch staircase down"
+msgid "branch ladder up"
 msgstr ""
 
 #: src/pager.c:128
 msgctxt "symbol"
-msgid "branch ladder up"
+msgid "branch ladder down"
 msgstr ""
 
 #: src/pager.c:129
 msgctxt "symbol"
-msgid "branch ladder down"
+msgid "altar"
 msgstr ""
 
 #: src/pager.c:130
 msgctxt "symbol"
-msgid "altar"
+msgid "grave"
 msgstr ""
 
 #: src/pager.c:131
 msgctxt "symbol"
-msgid "grave"
+msgid "sink"
 msgstr ""
 
 #: src/pager.c:132
 msgctxt "symbol"
-msgid "sink"
+msgid "fountain"
 msgstr ""
 
 #: src/pager.c:133
 msgctxt "symbol"
-msgid "fountain"
+msgid "ice"
 msgstr ""
 
 #: src/pager.c:134
 msgctxt "symbol"
-msgid "ice"
+msgid "molten lava"
 msgstr ""
 
 #: src/pager.c:135
 msgctxt "symbol"
-msgid "molten lava"
+msgid "wall of lava"
 msgstr ""
 
 #: src/pager.c:136
 msgctxt "symbol"
-msgid "wall of lava"
+msgid "air"
 msgstr ""
 
 #: src/pager.c:137
 msgctxt "symbol"
-msgid "air"
+msgid "cloud"
 msgstr ""
 
 #: src/pager.c:138
 msgctxt "symbol"
-msgid "cloud"
+msgid "water"
 msgstr ""
 
 #: src/pager.c:139
 msgctxt "symbol"
-msgid "water"
+msgid "arrow trap"
 msgstr ""
 
 #: src/pager.c:140
 msgctxt "symbol"
-msgid "arrow trap"
+msgid "dart trap"
 msgstr ""
 
 #: src/pager.c:141
 msgctxt "symbol"
-msgid "dart trap"
+msgid "falling rock trap"
 msgstr ""
 
 #: src/pager.c:142
 msgctxt "symbol"
-msgid "falling rock trap"
+msgid "squeaky board"
 msgstr ""
 
 #: src/pager.c:143
 msgctxt "symbol"
-msgid "squeaky board"
+msgid "bear trap"
 msgstr ""
 
 #: src/pager.c:144
 msgctxt "symbol"
-msgid "bear trap"
+msgid "land mine"
 msgstr ""
 
 #: src/pager.c:145
 msgctxt "symbol"
-msgid "land mine"
+msgid "rolling boulder trap"
 msgstr ""
 
 #: src/pager.c:146
 msgctxt "symbol"
-msgid "rolling boulder trap"
+msgid "sleeping gas trap"
 msgstr ""
 
 #: src/pager.c:147
 msgctxt "symbol"
-msgid "sleeping gas trap"
+msgid "rust trap"
 msgstr ""
 
 #: src/pager.c:148
 msgctxt "symbol"
-msgid "rust trap"
+msgid "fire trap"
 msgstr ""
 
 #: src/pager.c:149
 msgctxt "symbol"
-msgid "fire trap"
+msgid "pit"
 msgstr ""
 
 #: src/pager.c:150
 msgctxt "symbol"
-msgid "pit"
+msgid "spiked pit"
 msgstr ""
 
 #: src/pager.c:151
 msgctxt "symbol"
-msgid "spiked pit"
+msgid "hole"
 msgstr ""
 
 #: src/pager.c:152
 msgctxt "symbol"
-msgid "hole"
+msgid "trap door"
 msgstr ""
 
 #: src/pager.c:153
 msgctxt "symbol"
-msgid "trap door"
+msgid "teleportation trap"
 msgstr ""
 
 #: src/pager.c:154
 msgctxt "symbol"
-msgid "teleportation trap"
+msgid "level teleporter"
 msgstr ""
 
 #: src/pager.c:155
 msgctxt "symbol"
-msgid "level teleporter"
+msgid "magic portal"
 msgstr ""
 
 #: src/pager.c:156
 msgctxt "symbol"
-msgid "magic portal"
+msgid "web"
 msgstr ""
 
 #: src/pager.c:157
 msgctxt "symbol"
-msgid "web"
+msgid "statue trap"
 msgstr ""
 
 #: src/pager.c:158
 msgctxt "symbol"
-msgid "statue trap"
+msgid "magic trap"
 msgstr ""
 
 #: src/pager.c:159
 msgctxt "symbol"
-msgid "magic trap"
+msgid "polymorph trap"
 msgstr ""
 
 #: src/pager.c:160
 msgctxt "symbol"
-msgid "polymorph trap"
+msgid "vibrating square"
 msgstr ""
 
 #: src/pager.c:161
 msgctxt "symbol"
-msgid "vibrating square"
+msgid "trapped door"
 msgstr ""
 
 #: src/pager.c:162
 msgctxt "symbol"
-msgid "trapped door"
+msgid "trapped chest"
 msgstr ""
 
 #: src/pager.c:163
 msgctxt "symbol"
-msgid "trapped chest"
+msgid "poison cloud"
 msgstr ""
 
 #: src/pager.c:164
 msgctxt "symbol"
-msgid "poison cloud"
+msgid "valid position"
 msgstr ""
 
 #: src/pager.c:165
 msgctxt "symbol"
-msgid "valid position"
+msgid "stone"
 msgstr ""
 
 #: src/pager.c:166
 msgctxt "symbol"
-msgid "stone"
+msgid "wall"
 msgstr ""
 
 #: src/pager.c:167
 msgctxt "symbol"
-msgid "wall"
+msgid "doorway"
 msgstr ""
 
 #: src/pager.c:168
 msgctxt "symbol"
-msgid "doorway"
+msgid "open door"
 msgstr ""
 
 #: src/pager.c:169
 msgctxt "symbol"
-msgid "open door"
+msgid "closed door"
 msgstr ""
 
 #: src/pager.c:170
 msgctxt "symbol"
-msgid "closed door"
+msgid "engraving"
 msgstr ""
 
 #: src/pager.c:171
 msgctxt "symbol"
-msgid "engraving"
+msgid "corridor"
 msgstr ""
 
 #: src/pager.c:172
 msgctxt "symbol"
-msgid "corridor"
+msgid "staircase up"
 msgstr ""
 
 #: src/pager.c:173
 msgctxt "symbol"
-msgid "staircase up"
+msgid "staircase down"
 msgstr ""
 
 #: src/pager.c:174
 msgctxt "symbol"
-msgid "staircase down"
+msgid "ladder up"
 msgstr ""
 
 #: src/pager.c:175
 msgctxt "symbol"
-msgid "ladder up"
+msgid "ladder down"
 msgstr ""
 
 #: src/pager.c:176
 msgctxt "symbol"
-msgid "ladder down"
+msgid "opulent throne"
 msgstr ""
 
 #: src/pager.c:177
 msgctxt "symbol"
-msgid "opulent throne"
+msgid "lowered drawbridge"
 msgstr ""
 
 #: src/pager.c:178
 msgctxt "symbol"
-msgid "lowered drawbridge"
+msgid "raised drawbridge"
 msgstr ""
 
 #: src/pager.c:179
 msgctxt "symbol"
-msgid "raised drawbridge"
+msgid "anti-magic field"
 msgstr ""
 
 #: src/pager.c:180
 msgctxt "symbol"
-msgid "anti-magic field"
+msgid "ant or other insect"
 msgstr ""
 
 #: src/pager.c:181
 msgctxt "symbol"
-msgid "ant or other insect"
+msgid "blob"
 msgstr ""
 
 #: src/pager.c:182
 msgctxt "symbol"
-msgid "blob"
+msgid "cockatrice"
 msgstr ""
 
 #: src/pager.c:183
 msgctxt "symbol"
-msgid "cockatrice"
+msgid "dog or other canine"
 msgstr ""
 
 #: src/pager.c:184
 msgctxt "symbol"
-msgid "dog or other canine"
+msgid "eye or sphere"
 msgstr ""
 
 #: src/pager.c:185
 msgctxt "symbol"
-msgid "eye or sphere"
+msgid "cat or other feline"
 msgstr ""
 
 #: src/pager.c:186
 msgctxt "symbol"
-msgid "cat or other feline"
+msgid "gremlin"
 msgstr ""
 
 #: src/pager.c:187
 msgctxt "symbol"
-msgid "gremlin"
+msgid "humanoid"
 msgstr ""
 
 #: src/pager.c:188
 msgctxt "symbol"
-msgid "humanoid"
+msgid "imp or minor demon"
 msgstr ""
 
 #: src/pager.c:189
 msgctxt "symbol"
-msgid "imp or minor demon"
+msgid "jelly"
 msgstr ""
 
 #: src/pager.c:190
 msgctxt "symbol"
-msgid "jelly"
+msgid "kobold"
 msgstr ""
 
 #: src/pager.c:191
 msgctxt "symbol"
-msgid "kobold"
+msgid "leprechaun"
 msgstr ""
 
 #: src/pager.c:192
 msgctxt "symbol"
-msgid "leprechaun"
+msgid "mimic"
 msgstr ""
 
 #: src/pager.c:193
 msgctxt "symbol"
-msgid "mimic"
+msgid "nymph"
 msgstr ""
 
 #: src/pager.c:194
 msgctxt "symbol"
-msgid "nymph"
+msgid "orc"
 msgstr ""
 
 #: src/pager.c:195
 msgctxt "symbol"
-msgid "orc"
+msgid "piercer"
 msgstr ""
 
 #: src/pager.c:196
 msgctxt "symbol"
-msgid "piercer"
+msgid "quadruped"
 msgstr ""
 
 #: src/pager.c:197
 msgctxt "symbol"
-msgid "quadruped"
+msgid "rodent"
 msgstr ""
 
 #: src/pager.c:198
 msgctxt "symbol"
-msgid "rodent"
+msgid "arachnid or centipede"
 msgstr ""
 
 #: src/pager.c:199
 msgctxt "symbol"
-msgid "arachnid or centipede"
+msgid "trapper or lurker above"
 msgstr ""
 
 #: src/pager.c:200
 msgctxt "symbol"
-msgid "trapper or lurker above"
+msgid "unicorn or horse"
 msgstr ""
 
 #: src/pager.c:201
 msgctxt "symbol"
-msgid "unicorn or horse"
+msgid "vortex"
 msgstr ""
 
 #: src/pager.c:202
 msgctxt "symbol"
-msgid "vortex"
+msgid "worm"
 msgstr ""
 
 #: src/pager.c:203
 msgctxt "symbol"
-msgid "worm"
+msgid "xan or other mythical/fantastic insect"
 msgstr ""
 
 #: src/pager.c:204
 msgctxt "symbol"
-msgid "xan or other mythical/fantastic insect"
+msgid "light"
 msgstr ""
 
 #: src/pager.c:205
 msgctxt "symbol"
-msgid "light"
+msgid "zruty"
 msgstr ""
 
 #: src/pager.c:206
 msgctxt "symbol"
-msgid "zruty"
+msgid "angelic being"
 msgstr ""
 
 #: src/pager.c:207
 msgctxt "symbol"
-msgid "angelic being"
+msgid "bat or bird"
 msgstr ""
 
 #: src/pager.c:208
 msgctxt "symbol"
-msgid "bat or bird"
+msgid "centaur"
 msgstr ""
 
 #: src/pager.c:209
 msgctxt "symbol"
-msgid "centaur"
+msgid "dragon"
 msgstr ""
 
 #: src/pager.c:210
 msgctxt "symbol"
-msgid "dragon"
+msgid "elemental"
 msgstr ""
 
 #: src/pager.c:211
 msgctxt "symbol"
-msgid "elemental"
+msgid "fungus or mold"
 msgstr ""
 
 #: src/pager.c:212
 msgctxt "symbol"
-msgid "fungus or mold"
+msgid "gnome"
 msgstr ""
 
 #: src/pager.c:213
 msgctxt "symbol"
-msgid "gnome"
+msgid "giant humanoid"
 msgstr ""
 
 #: src/pager.c:214
 msgctxt "symbol"
-msgid "giant humanoid"
+msgid "invisible monster"
 msgstr ""
 
 #: src/pager.c:215
 msgctxt "symbol"
-msgid "invisible monster"
+msgid "jabberwock"
 msgstr ""
 
 #: src/pager.c:216
 msgctxt "symbol"
-msgid "jabberwock"
+msgid "Keystone Kop"
 msgstr ""
 
 #: src/pager.c:217
 msgctxt "symbol"
-msgid "Keystone Kop"
+msgid "lich"
 msgstr ""
 
 #: src/pager.c:218
 msgctxt "symbol"
-msgid "lich"
+msgid "mummy"
 msgstr ""
 
 #: src/pager.c:219
 msgctxt "symbol"
-msgid "mummy"
+msgid "naga"
 msgstr ""
 
 #: src/pager.c:220
 msgctxt "symbol"
-msgid "naga"
+msgid "ogre"
 msgstr ""
 
 #: src/pager.c:221
 msgctxt "symbol"
-msgid "ogre"
+msgid "pudding or ooze"
 msgstr ""
 
 #: src/pager.c:222
 msgctxt "symbol"
-msgid "pudding or ooze"
+msgid "quantum mechanic"
 msgstr ""
 
 #: src/pager.c:223
 msgctxt "symbol"
-msgid "quantum mechanic"
+msgid "rust monster or disenchanter"
 msgstr ""
 
 #: src/pager.c:224
 msgctxt "symbol"
-msgid "rust monster or disenchanter"
+msgid "snake"
 msgstr ""
 
 #: src/pager.c:225
 msgctxt "symbol"
-msgid "snake"
+msgid "troll"
 msgstr ""
 
 #: src/pager.c:226
 msgctxt "symbol"
-msgid "troll"
+msgid "umber hulk"
 msgstr ""
 
 #: src/pager.c:227
 msgctxt "symbol"
-msgid "umber hulk"
+msgid "vampire"
 msgstr ""
 
 #: src/pager.c:228
 msgctxt "symbol"
-msgid "vampire"
+msgid "wraith"
 msgstr ""
 
 #: src/pager.c:229
 msgctxt "symbol"
-msgid "wraith"
+msgid "xorn"
 msgstr ""
 
 #: src/pager.c:230
 msgctxt "symbol"
-msgid "xorn"
+msgid "apelike creature"
 msgstr ""
 
 #: src/pager.c:231
 msgctxt "symbol"
-msgid "apelike creature"
+msgid "zombie"
 msgstr ""
 
 #: src/pager.c:232
 msgctxt "symbol"
-msgid "zombie"
+msgid "human or elf"
 msgstr ""
 
 #: src/pager.c:233
 msgctxt "symbol"
-msgid "human or elf"
+msgid "ghost"
 msgstr ""
 
 #: src/pager.c:234
 msgctxt "symbol"
-msgid "ghost"
+msgid "golem"
 msgstr ""
 
 #: src/pager.c:235
 msgctxt "symbol"
-msgid "golem"
+msgid "major demon"
 msgstr ""
 
 #: src/pager.c:236
 msgctxt "symbol"
-msgid "major demon"
+msgid "sea monster"
 msgstr ""
 
 #: src/pager.c:237
 msgctxt "symbol"
-msgid "sea monster"
+msgid "lizard"
 msgstr ""
 
 #: src/pager.c:238
 msgctxt "symbol"
-msgid "lizard"
+msgid "long worm tail"
 msgstr ""
 
 #: src/pager.c:239
 msgctxt "symbol"
-msgid "long worm tail"
+msgid "strange object"
 msgstr ""
 
 #: src/pager.c:240
 msgctxt "symbol"
-msgid "strange object"
+msgid "weapon"
 msgstr ""
 
 #: src/pager.c:241
 msgctxt "symbol"
-msgid "weapon"
+msgid "suit or piece of armor"
 msgstr ""
 
 #: src/pager.c:242
 msgctxt "symbol"
-msgid "suit or piece of armor"
+msgid "ring"
 msgstr ""
 
 #: src/pager.c:243
 msgctxt "symbol"
-msgid "ring"
+msgid "useful item (pick-axe, key, lamp...)"
 msgstr ""
 
 #: src/pager.c:244
 msgctxt "symbol"
-msgid "useful item (pick-axe, key, lamp...)"
+msgid "piece of food"
 msgstr ""
 
 #: src/pager.c:245
 msgctxt "symbol"
-msgid "piece of food"
+msgid "potion"
 msgstr ""
 
 #: src/pager.c:246
 msgctxt "symbol"
-msgid "potion"
+msgid "scroll"
 msgstr ""
 
 #: src/pager.c:247
 msgctxt "symbol"
-msgid "scroll"
+msgid "spellbook"
 msgstr ""
 
 #: src/pager.c:248
 msgctxt "symbol"
-msgid "spellbook"
+msgid "wand"
 msgstr ""
 
 #: src/pager.c:249
 msgctxt "symbol"
-msgid "wand"
+msgid "pile of coins"
 msgstr ""
 
 #: src/pager.c:250
 msgctxt "symbol"
-msgid "pile of coins"
+msgid "gem or rock"
 msgstr ""
 
 #: src/pager.c:251
 msgctxt "symbol"
-msgid "gem or rock"
+msgid "boulder or statue"
 msgstr ""
 
 #: src/pager.c:252
 msgctxt "symbol"
-msgid "boulder or statue"
+msgid "iron ball"
 msgstr ""
 
 #: src/pager.c:253
 msgctxt "symbol"
-msgid "iron ball"
+msgid "iron chain"
 msgstr ""
 
 #: src/pager.c:254
 msgctxt "symbol"
-msgid "iron chain"
+msgid "splash of venom"
 msgstr ""
 
 #: src/pager.c:255
 msgctxt "symbol"
-msgid "splash of venom"
+msgid "unknown creature causing you worry"
 msgstr ""
 
 #: src/pager.c:256
 msgctxt "symbol"
-msgid "unknown creature causing you worry"
+msgid "unknown creature causing you concern"
 msgstr ""
 
 #: src/pager.c:257
 msgctxt "symbol"
-msgid "unknown creature causing you concern"
+msgid "unknown creature causing you anxiety"
 msgstr ""
 
 #: src/pager.c:258
 msgctxt "symbol"
-msgid "unknown creature causing you anxiety"
+msgid "unknown creature causing you disquiet"
 msgstr ""
 
 #: src/pager.c:259
 msgctxt "symbol"
-msgid "unknown creature causing you disquiet"
+msgid "unknown creature causing you alarm"
 msgstr ""
 
 #: src/pager.c:260
 msgctxt "symbol"
-msgid "unknown creature causing you alarm"
+msgid "unknown creature causing you dread"
 msgstr ""
 
 #: src/pager.c:261
 msgctxt "symbol"
-msgid "unknown creature causing you dread"
+msgid "remembered, unseen, creature"
 msgstr ""
 
 #: src/pager.c:262
 msgctxt "symbol"
-msgid "remembered, unseen, creature"
+msgid "unseen creature"
 msgstr ""
 
 #: src/pager.c:263
 msgctxt "symbol"
-msgid "unseen creature"
+msgid "boulder"
 msgstr ""
 
 #: src/pager.c:264
 msgctxt "symbol"
-msgid "boulder"
+msgid "statue"
 msgstr ""
 
 #: src/pager.c:265
 msgctxt "symbol"
-msgid "statue"
+msgid "unreconnoitered"
 msgstr ""
 
 #: src/pager.c:266
 msgctxt "symbol"
-msgid "unreconnoitered"
+msgid "the interior of a monster"
 msgstr ""
 
 #: src/pager.c:267
 msgctxt "symbol"
-msgid "the interior of a monster"
+msgid "the dark part of a room"
 msgstr ""
 
 #: src/pager.c:268
 msgctxt "symbol"
-msgid "the dark part of a room"
+msgid "unexplored"
 msgstr ""
 
 #: src/pager.c:269
 msgctxt "symbol"
-msgid "unexplored"
+msgid "land"
 msgstr ""
 
 #: src/pager.c:270
 msgctxt "symbol"
-msgid "land"
+msgid "pool"
 msgstr ""
 
 #: src/pager.c:271
 msgctxt "symbol"
-msgid "pool"
+msgid "moat"
 msgstr ""
 
 #: src/pager.c:272
 msgctxt "symbol"
-msgid "moat"
+msgid "lava"
 msgstr ""
 
 #: src/pager.c:273
 msgctxt "symbol"
-msgid "lava"
+msgid "swamp"
 msgstr ""
 
 #: src/pager.c:274
 msgctxt "symbol"
-msgid "swamp"
+msgid "shallow sea"
 msgstr ""
 
 #: src/pager.c:275
 msgctxt "symbol"
-msgid "shallow sea"
+msgid "limitless water"
 msgstr ""
 
 #: src/pager.c:276
 msgctxt "symbol"
-msgid "limitless water"
+msgid "wall of water"
 msgstr ""
 
 #: src/pager.c:277
 msgctxt "symbol"
-msgid "wall of water"
+msgid "pond"
 msgstr ""
 
 #: src/pager.c:278
 msgctxt "symbol"
-msgid "pond"
+msgid "pool of water"
 msgstr ""
 
 #: src/pager.c:279
 msgctxt "symbol"
-msgid "pool of water"
+msgid "open drawbridge portcullis"
 msgstr ""
 
 #: src/pager.c:280
 msgctxt "symbol"
-msgid "open drawbridge portcullis"
+msgid "broken door"
 msgstr ""
 
 #: src/pager.c:281
 msgctxt "symbol"
-msgid "broken door"
+msgid "cloudy area"
 msgstr ""
 
 #: src/pager.c:282
 msgctxt "symbol"
-msgid "cloudy area"
+msgid "fog/vapor cloud"
 msgstr ""
 
 #: src/pager.c:283
 msgctxt "symbol"
-msgid "fog/vapor cloud"
+msgid "unknown"
 msgstr ""
 
 #: src/pager.c:284
 msgctxt "symbol"
-msgid "unknown"
+msgid "unexplored area"
 msgstr ""
 
 #: src/pager.c:285
 msgctxt "symbol"
-msgid "unexplored area"
+msgid "blocked staircase down"
 msgstr ""
 
 #: src/pager.c:286
 msgctxt "symbol"
-msgid "blocked staircase down"
+msgid "solid ice"
 msgstr ""
 
 #: src/pager.c:287
 msgctxt "symbol"
-msgid "solid ice"
+msgid "sturdy ice"
 msgstr ""
 
 #: src/pager.c:288
 msgctxt "symbol"
-msgid "sturdy ice"
+msgid "steady ice"
 msgstr ""
 
 #: src/pager.c:289
 msgctxt "symbol"
-msgid "steady ice"
+msgid "unsteady ice"
 msgstr ""
 
 #: src/pager.c:290
 msgctxt "symbol"
-msgid "unsteady ice"
+msgid "thin ice"
 msgstr ""
 
 #: src/pager.c:291
 msgctxt "symbol"
-msgid "thin ice"
+msgid "slushy ice"
 msgstr ""
 
 #: src/pager.c:292
 msgctxt "symbol"
-msgid "slushy ice"
+msgid "lawful altar"
 msgstr ""
 
 #: src/pager.c:293
 msgctxt "symbol"
-msgid "lawful altar"
+msgid "lawful high altar"
 msgstr ""
 
 #: src/pager.c:294
 msgctxt "symbol"
-msgid "lawful high altar"
+msgid "neutral altar"
 msgstr ""
 
 #: src/pager.c:295
 msgctxt "symbol"
-msgid "neutral altar"
+msgid "neutral high altar"
 msgstr ""
 
 #: src/pager.c:296
 msgctxt "symbol"
-msgid "neutral high altar"
+msgid "chaotic altar"
 msgstr ""
 
 #: src/pager.c:297
 msgctxt "symbol"
-msgid "chaotic altar"
+msgid "chaotic high altar"
 msgstr ""
 
 #: src/pager.c:298
 msgctxt "symbol"
-msgid "chaotic high altar"
+msgid "unaligned altar"
 msgstr ""
 
 #: src/pager.c:299
 msgctxt "symbol"
-msgid "unaligned altar"
+msgid "unaligned high altar"
 msgstr ""
 
 #: src/pager.c:300
 msgctxt "symbol"
-msgid "unaligned high altar"
+msgid "aligned altar"
 msgstr ""
 
 #: src/pager.c:301
 msgctxt "symbol"
-msgid "aligned altar"
-msgstr ""
-
-#: src/pager.c:302
-msgctxt "symbol"
 msgid "aligned high altar"
 msgstr ""
 
-#: src/pager.c:303
+#: src/pager.c:302
 msgctxt "symbol a"
 msgid "iron bars"
 msgstr ""
 
-#: src/pager.c:304
+#: src/pager.c:303
 msgctxt "symbol a"
 msgid "tree"
 msgstr ""
 
-#: src/pager.c:305
+#: src/pager.c:304
 msgctxt "symbol a"
 msgid "lit corridor"
 msgstr ""
 
-#: src/pager.c:306
+#: src/pager.c:305
 msgctxt "symbol a"
 msgid "branch staircase up"
 msgstr ""
 
-#: src/pager.c:307
+#: src/pager.c:306
 msgctxt "symbol a"
 msgid "branch staircase down"
 msgstr ""
 
-#: src/pager.c:308
+#: src/pager.c:307
 msgctxt "symbol a"
 msgid "branch ladder up"
 msgstr ""
 
-#: src/pager.c:309
+#: src/pager.c:308
 msgctxt "symbol a"
 msgid "branch ladder down"
 msgstr ""
 
-#: src/pager.c:310
+#: src/pager.c:309
 msgctxt "symbol a"
 msgid "altar"
 msgstr ""
 
-#: src/pager.c:311
+#: src/pager.c:310
 msgctxt "symbol a"
 msgid "grave"
 msgstr ""
 
-#: src/pager.c:312
+#: src/pager.c:311
 msgctxt "symbol a"
 msgid "sink"
 msgstr ""
 
-#: src/pager.c:313
+#: src/pager.c:312
 msgctxt "symbol a"
 msgid "fountain"
 msgstr ""
 
-#: src/pager.c:314
+#: src/pager.c:313
 msgctxt "symbol a"
 msgid "ice"
 msgstr ""
 
-#: src/pager.c:315
+#: src/pager.c:314
 msgctxt "symbol a"
 msgid "molten lava"
 msgstr ""
 
-#: src/pager.c:316
+#: src/pager.c:315
 msgctxt "symbol a"
 msgid "wall of lava"
 msgstr ""
 
-#: src/pager.c:317
+#: src/pager.c:316
 msgctxt "symbol a"
 msgid "cloud"
 msgstr ""
 
-#: src/pager.c:318
+#: src/pager.c:317
 msgctxt "symbol a"
 msgid "water"
 msgstr ""
 
-#: src/pager.c:319
+#: src/pager.c:318
 msgctxt "symbol a"
 msgid "arrow trap"
 msgstr ""
 
-#: src/pager.c:320
+#: src/pager.c:319
 msgctxt "symbol a"
 msgid "dart trap"
 msgstr ""
 
-#: src/pager.c:321
+#: src/pager.c:320
 msgctxt "symbol a"
 msgid "falling rock trap"
 msgstr ""
 
-#: src/pager.c:322
+#: src/pager.c:321
 msgctxt "symbol a"
 msgid "squeaky board"
 msgstr ""
 
-#: src/pager.c:323
+#: src/pager.c:322
 msgctxt "symbol a"
 msgid "bear trap"
 msgstr ""
 
-#: src/pager.c:324
+#: src/pager.c:323
 msgctxt "symbol a"
 msgid "land mine"
 msgstr ""
 
-#: src/pager.c:325
+#: src/pager.c:324
 msgctxt "symbol a"
 msgid "rolling boulder trap"
 msgstr ""
 
-#: src/pager.c:326
+#: src/pager.c:325
 msgctxt "symbol a"
 msgid "sleeping gas trap"
 msgstr ""
 
-#: src/pager.c:327
+#: src/pager.c:326
 msgctxt "symbol a"
 msgid "rust trap"
 msgstr ""
 
-#: src/pager.c:328
+#: src/pager.c:327
 msgctxt "symbol a"
 msgid "fire trap"
 msgstr ""
 
-#: src/pager.c:329
+#: src/pager.c:328
 msgctxt "symbol a"
 msgid "pit"
 msgstr ""
 
-#: src/pager.c:330
+#: src/pager.c:329
 msgctxt "symbol a"
 msgid "spiked pit"
 msgstr ""
 
-#: src/pager.c:331
+#: src/pager.c:330
 msgctxt "symbol a"
 msgid "hole"
 msgstr ""
 
-#: src/pager.c:332
+#: src/pager.c:331
 msgctxt "symbol a"
 msgid "trap door"
 msgstr ""
 
-#: src/pager.c:333
+#: src/pager.c:332
 msgctxt "symbol a"
 msgid "teleportation trap"
 msgstr ""
 
-#: src/pager.c:334
+#: src/pager.c:333
 msgctxt "symbol a"
 msgid "level teleporter"
 msgstr ""
 
-#: src/pager.c:335
+#: src/pager.c:334
 msgctxt "symbol a"
 msgid "magic portal"
 msgstr ""
 
-#: src/pager.c:336
+#: src/pager.c:335
 msgctxt "symbol a"
 msgid "web"
 msgstr ""
 
-#: src/pager.c:337
+#: src/pager.c:336
 msgctxt "symbol a"
 msgid "statue trap"
 msgstr ""
 
-#: src/pager.c:338
+#: src/pager.c:337
 msgctxt "symbol a"
 msgid "magic trap"
 msgstr ""
 
-#: src/pager.c:339
+#: src/pager.c:338
 msgctxt "symbol a"
 msgid "polymorph trap"
 msgstr ""
 
-#: src/pager.c:340
+#: src/pager.c:339
 msgctxt "symbol a"
 msgid "vibrating square"
 msgstr ""
 
-#: src/pager.c:341
+#: src/pager.c:340
 msgctxt "symbol a"
 msgid "trapped door"
 msgstr ""
 
-#: src/pager.c:342
+#: src/pager.c:341
 msgctxt "symbol a"
 msgid "trapped chest"
 msgstr ""
 
-#: src/pager.c:343
+#: src/pager.c:342
 msgctxt "symbol a"
 msgid "poison cloud"
 msgstr ""
 
-#: src/pager.c:344
+#: src/pager.c:343
 msgctxt "symbol a"
 msgid "valid position"
 msgstr ""
 
-#: src/pager.c:345
+#: src/pager.c:344
 msgctxt "symbol a"
 msgid "wall"
 msgstr ""
 
-#: src/pager.c:346
+#: src/pager.c:345
 msgctxt "symbol a"
 msgid "doorway"
 msgstr ""
 
-#: src/pager.c:347
+#: src/pager.c:346
 msgctxt "symbol a"
 msgid "open door"
 msgstr ""
 
-#: src/pager.c:348
+#: src/pager.c:347
 msgctxt "symbol a"
 msgid "closed door"
 msgstr ""
 
-#: src/pager.c:349
+#: src/pager.c:348
 msgctxt "symbol a"
 msgid "engraving"
 msgstr ""
 
-#: src/pager.c:350
+#: src/pager.c:349
 msgctxt "symbol a"
 msgid "corridor"
 msgstr ""
 
-#: src/pager.c:351
+#: src/pager.c:350
 msgctxt "symbol a"
 msgid "staircase up"
 msgstr ""
 
-#: src/pager.c:352
+#: src/pager.c:351
 msgctxt "symbol a"
 msgid "staircase down"
 msgstr ""
 
-#: src/pager.c:353
+#: src/pager.c:352
 msgctxt "symbol a"
 msgid "ladder up"
 msgstr ""
 
-#: src/pager.c:354
+#: src/pager.c:353
 msgctxt "symbol a"
 msgid "ladder down"
 msgstr ""
 
-#: src/pager.c:355
+#: src/pager.c:354
 msgctxt "symbol a"
 msgid "opulent throne"
 msgstr ""
 
-#: src/pager.c:356
+#: src/pager.c:355
 msgctxt "symbol a"
 msgid "lowered drawbridge"
 msgstr ""
 
-#: src/pager.c:357
+#: src/pager.c:356
 msgctxt "symbol a"
 msgid "raised drawbridge"
 msgstr ""
 
-#: src/pager.c:358
+#: src/pager.c:357
 msgctxt "symbol a"
 msgid "anti-magic field"
 msgstr ""
 
-#: src/pager.c:359
+#: src/pager.c:358
 msgctxt "symbol a"
 msgid "ant or other insect"
 msgstr ""
 
-#: src/pager.c:360
+#: src/pager.c:359
 msgctxt "symbol a"
 msgid "blob"
 msgstr ""
 
-#: src/pager.c:361
+#: src/pager.c:360
 msgctxt "symbol a"
 msgid "cockatrice"
 msgstr ""
 
-#: src/pager.c:362
+#: src/pager.c:361
 msgctxt "symbol a"
 msgid "dog or other canine"
 msgstr ""
 
-#: src/pager.c:363
+#: src/pager.c:362
 msgctxt "symbol a"
 msgid "eye or sphere"
 msgstr ""
 
-#: src/pager.c:364
+#: src/pager.c:363
 msgctxt "symbol a"
 msgid "cat or other feline"
 msgstr ""
 
-#: src/pager.c:365
+#: src/pager.c:364
 msgctxt "symbol a"
 msgid "gremlin"
 msgstr ""
 
-#: src/pager.c:366
+#: src/pager.c:365
 msgctxt "symbol a"
 msgid "humanoid"
 msgstr ""
 
-#: src/pager.c:367
+#: src/pager.c:366
 msgctxt "symbol a"
 msgid "imp or minor demon"
 msgstr ""
 
-#: src/pager.c:368
+#: src/pager.c:367
 msgctxt "symbol a"
 msgid "jelly"
 msgstr ""
 
-#: src/pager.c:369
+#: src/pager.c:368
 msgctxt "symbol a"
 msgid "kobold"
 msgstr ""
 
-#: src/pager.c:370
+#: src/pager.c:369
 msgctxt "symbol a"
 msgid "leprechaun"
 msgstr ""
 
-#: src/pager.c:371
+#: src/pager.c:370
 msgctxt "symbol a"
 msgid "mimic"
 msgstr ""
 
-#: src/pager.c:372
+#: src/pager.c:371
 msgctxt "symbol a"
 msgid "nymph"
 msgstr ""
 
-#: src/pager.c:373
+#: src/pager.c:372
 msgctxt "symbol a"
 msgid "orc"
 msgstr ""
 
-#: src/pager.c:374
+#: src/pager.c:373
 msgctxt "symbol a"
 msgid "piercer"
 msgstr ""
 
-#: src/pager.c:375
+#: src/pager.c:374
 msgctxt "symbol a"
 msgid "quadruped"
 msgstr ""
 
-#: src/pager.c:376
+#: src/pager.c:375
 msgctxt "symbol a"
 msgid "rodent"
 msgstr ""
 
-#: src/pager.c:377
+#: src/pager.c:376
 msgctxt "symbol a"
 msgid "arachnid or centipede"
 msgstr ""
 
-#: src/pager.c:378
+#: src/pager.c:377
 msgctxt "symbol a"
 msgid "trapper or lurker above"
 msgstr ""
 
-#: src/pager.c:379
+#: src/pager.c:378
 msgctxt "symbol a"
 msgid "unicorn or horse"
 msgstr ""
 
-#: src/pager.c:380
+#: src/pager.c:379
 msgctxt "symbol a"
 msgid "vortex"
 msgstr ""
 
-#: src/pager.c:381
+#: src/pager.c:380
 msgctxt "symbol a"
 msgid "worm"
 msgstr ""
 
-#: src/pager.c:382
+#: src/pager.c:381
 msgctxt "symbol a"
 msgid "xan or other mythical/fantastic insect"
 msgstr ""
 
-#: src/pager.c:383
+#: src/pager.c:382
 msgctxt "symbol a"
 msgid "light"
 msgstr ""
 
-#: src/pager.c:384
+#: src/pager.c:383
 msgctxt "symbol a"
 msgid "zruty"
 msgstr ""
 
-#: src/pager.c:385
+#: src/pager.c:384
 msgctxt "symbol a"
 msgid "angelic being"
 msgstr ""
 
-#: src/pager.c:386
+#: src/pager.c:385
 msgctxt "symbol a"
 msgid "bat or bird"
 msgstr ""
 
-#: src/pager.c:387
+#: src/pager.c:386
 msgctxt "symbol a"
 msgid "centaur"
 msgstr ""
 
-#: src/pager.c:388
+#: src/pager.c:387
 msgctxt "symbol a"
 msgid "dragon"
 msgstr ""
 
-#: src/pager.c:389
+#: src/pager.c:388
 msgctxt "symbol a"
 msgid "elemental"
 msgstr ""
 
-#: src/pager.c:390
+#: src/pager.c:389
 msgctxt "symbol a"
 msgid "fungus or mold"
 msgstr ""
 
-#: src/pager.c:391
+#: src/pager.c:390
 msgctxt "symbol a"
 msgid "gnome"
 msgstr ""
 
-#: src/pager.c:392
+#: src/pager.c:391
 msgctxt "symbol a"
 msgid "giant humanoid"
 msgstr ""
 
-#: src/pager.c:393
+#: src/pager.c:392
 msgctxt "symbol a"
 msgid "invisible monster"
 msgstr ""
 
-#: src/pager.c:394
+#: src/pager.c:393
 msgctxt "symbol a"
 msgid "jabberwock"
 msgstr ""
 
-#: src/pager.c:395
+#: src/pager.c:394
 msgctxt "symbol a"
 msgid "Keystone Kop"
 msgstr ""
 
-#: src/pager.c:396
+#: src/pager.c:395
 msgctxt "symbol a"
 msgid "lich"
 msgstr ""
 
-#: src/pager.c:397
+#: src/pager.c:396
 msgctxt "symbol a"
 msgid "mummy"
 msgstr ""
 
-#: src/pager.c:398
+#: src/pager.c:397
 msgctxt "symbol a"
 msgid "naga"
 msgstr ""
 
-#: src/pager.c:399
+#: src/pager.c:398
 msgctxt "symbol a"
 msgid "ogre"
 msgstr ""
 
-#: src/pager.c:400
+#: src/pager.c:399
 msgctxt "symbol a"
 msgid "pudding or ooze"
 msgstr ""
 
-#: src/pager.c:401
+#: src/pager.c:400
 msgctxt "symbol a"
 msgid "quantum mechanic"
 msgstr ""
 
-#: src/pager.c:402
+#: src/pager.c:401
 msgctxt "symbol a"
 msgid "rust monster or disenchanter"
 msgstr ""
 
-#: src/pager.c:403
+#: src/pager.c:402
 msgctxt "symbol a"
 msgid "snake"
 msgstr ""
 
-#: src/pager.c:404
+#: src/pager.c:403
 msgctxt "symbol a"
 msgid "troll"
 msgstr ""
 
-#: src/pager.c:405
+#: src/pager.c:404
 msgctxt "symbol a"
 msgid "umber hulk"
 msgstr ""
 
-#: src/pager.c:406
+#: src/pager.c:405
 msgctxt "symbol a"
 msgid "vampire"
 msgstr ""
 
-#: src/pager.c:407
+#: src/pager.c:406
 msgctxt "symbol a"
 msgid "wraith"
 msgstr ""
 
-#: src/pager.c:408
+#: src/pager.c:407
 msgctxt "symbol a"
 msgid "xorn"
 msgstr ""
 
-#: src/pager.c:409
+#: src/pager.c:408
 msgctxt "symbol a"
 msgid "apelike creature"
 msgstr ""
 
-#: src/pager.c:410
+#: src/pager.c:409
 msgctxt "symbol a"
 msgid "zombie"
 msgstr ""
 
-#: src/pager.c:411
+#: src/pager.c:410
 msgctxt "symbol a"
 msgid "human or elf"
 msgstr ""
 
-#: src/pager.c:412
+#: src/pager.c:411
 msgctxt "symbol a"
 msgid "ghost"
 msgstr ""
 
-#: src/pager.c:413
+#: src/pager.c:412
 msgctxt "symbol a"
 msgid "golem"
 msgstr ""
 
-#: src/pager.c:414
+#: src/pager.c:413
 msgctxt "symbol a"
 msgid "major demon"
 msgstr ""
 
-#: src/pager.c:415
+#: src/pager.c:414
 msgctxt "symbol a"
 msgid "sea monster"
 msgstr ""
 
-#: src/pager.c:416
+#: src/pager.c:415
 msgctxt "symbol a"
 msgid "lizard"
 msgstr ""
 
-#: src/pager.c:417
+#: src/pager.c:416
 msgctxt "symbol a"
 msgid "long worm tail"
 msgstr ""
 
-#: src/pager.c:418
+#: src/pager.c:417
 msgctxt "symbol a"
 msgid "strange object"
 msgstr ""
 
-#: src/pager.c:419
+#: src/pager.c:418
 msgctxt "symbol a"
 msgid "weapon"
 msgstr ""
 
-#: src/pager.c:420
+#: src/pager.c:419
 msgctxt "symbol a"
 msgid "suit or piece of armor"
 msgstr ""
 
-#: src/pager.c:421
+#: src/pager.c:420
 msgctxt "symbol a"
 msgid "ring"
 msgstr ""
 
-#: src/pager.c:422
+#: src/pager.c:421
 msgctxt "symbol a"
 msgid "useful item (pick-axe, key, lamp...)"
 msgstr ""
 
-#: src/pager.c:423
+#: src/pager.c:422
 msgctxt "symbol a"
 msgid "piece of food"
 msgstr ""
 
-#: src/pager.c:424
+#: src/pager.c:423
 msgctxt "symbol a"
 msgid "potion"
 msgstr ""
 
-#: src/pager.c:425
+#: src/pager.c:424
 msgctxt "symbol a"
 msgid "scroll"
 msgstr ""
 
-#: src/pager.c:426
+#: src/pager.c:425
 msgctxt "symbol a"
 msgid "spellbook"
 msgstr ""
 
-#: src/pager.c:427
+#: src/pager.c:426
 msgctxt "symbol a"
 msgid "wand"
 msgstr ""
 
-#: src/pager.c:428
+#: src/pager.c:427
 msgctxt "symbol a"
 msgid "pile of coins"
 msgstr ""
 
-#: src/pager.c:429
+#: src/pager.c:428
 msgctxt "symbol a"
 msgid "gem or rock"
 msgstr ""
 
-#: src/pager.c:430
+#: src/pager.c:429
 msgctxt "symbol a"
 msgid "boulder or statue"
 msgstr ""
 
-#: src/pager.c:431
+#: src/pager.c:430
 msgctxt "symbol a"
 msgid "iron ball"
 msgstr ""
 
-#: src/pager.c:432
+#: src/pager.c:431
 msgctxt "symbol a"
 msgid "iron chain"
 msgstr ""
 
-#: src/pager.c:433
+#: src/pager.c:432
 msgctxt "symbol a"
 msgid "splash of venom"
 msgstr ""
 
-#: src/pager.c:434
+#: src/pager.c:433
 msgctxt "symbol a"
 msgid "remembered, unseen, creature"
 msgstr ""
 
-#: src/pager.c:435
+#: src/pager.c:434
 msgctxt "symbol a"
 msgid "unseen creature"
 msgstr ""
 
-#: src/pager.c:436
+#: src/pager.c:435
 msgctxt "symbol a"
 msgid "boulder"
 msgstr ""
 
-#: src/pager.c:437
+#: src/pager.c:436
 msgctxt "symbol a"
 msgid "statue"
 msgstr ""
 
-#: src/pager.c:438
+#: src/pager.c:437
 msgctxt "symbol the"
 msgid "floor of a room"
 msgstr ""
 
-#: src/pager.c:439
+#: src/pager.c:438
 msgctxt "symbol the"
 msgid "dark part of a room"
 msgstr ""
 
-#: src/pager.c:474
+#: src/pager.c:473
 #, c-format
 msgid "invisible %s called %s"
 msgstr ""
 
-#: src/pager.c:475
+#: src/pager.c:474
 #, c-format
 msgid "%s %s called %s"
 msgstr ""
 
-#: src/pager.c:475
+#: src/pager.c:474
 #, c-format
 msgid "invisible %s %s called %s"
+msgstr ""
+
+#: src/pager.c:475
+#, c-format
+msgctxt "feminine"
+msgid "invisible %s called %s"
 msgstr ""
 
 #: src/pager.c:476
 #, c-format
 msgctxt "feminine"
-msgid "invisible %s called %s"
+msgid "invisible %s %s called %s"
 msgstr ""
 
 #: src/pager.c:477
 #, c-format
 msgctxt "feminine"
-msgid "invisible %s %s called %s"
-msgstr ""
-
-#: src/pager.c:478
-#, c-format
-msgctxt "feminine"
 msgid "%s %s called %s"
 msgstr ""
 
-#: src/pager.c:479 src/pager.c:649
+#: src/pager.c:478 src/pager.c:648
 #, c-format
 msgctxt "feminine"
 msgid ", hiding"
 msgstr ""
 
-#: src/pager.c:519
+#: src/pager.c:518
 #, c-format
 msgid ", mounted on %s"
 msgstr ""
 
-#: src/pager.c:527
+#: src/pager.c:526
 #, c-format
 msgid ", chained to %s"
 msgstr ""
 
-#: src/pager.c:528
+#: src/pager.c:527
 msgid "nothing?"
 msgstr ""
 
-#: src/pager.c:609
+#: src/pager.c:608
 msgid ", mimicking "
 msgstr ""
 
-#: src/pager.c:637
+#: src/pager.c:636
 msgid ", masquerading as "
 msgstr ""
 
-#: src/pager.c:649
+#: src/pager.c:648
 msgid ", hiding"
 msgstr ""
 
-#: src/pager.c:651
+#: src/pager.c:650
 msgid " under "
 msgstr ""
 
-#: src/pager.c:661
+#: src/pager.c:660
 #, c-format
 msgid " on %s"
 msgstr ""
 
-#: src/pager.c:667
+#: src/pager.c:666
 msgid " in murky water"
 msgstr ""
 
-#: src/pager.c:796
+#: src/pager.c:795
 msgid " (buried)"
 msgstr ""
 
-#: src/pager.c:796
+#: src/pager.c:795
 msgid " dangling in a tree"
 msgstr ""
 
-#: src/pager.c:796
+#: src/pager.c:795
 msgid " stuck in a tree"
 msgstr ""
 
-#: src/pager.c:797
+#: src/pager.c:796
 msgid " embedded in a door"
 msgstr ""
 
-#: src/pager.c:797
+#: src/pager.c:796
 msgid " embedded in a wall"
 msgstr ""
 
-#: src/pager.c:797
+#: src/pager.c:796
 msgid " embedded in stone"
 msgstr ""
 
-#: src/pager.c:798
+#: src/pager.c:797
 msgid " in molten lava"
 msgstr ""
 
-#: src/pager.c:798
+#: src/pager.c:797
 msgid " in water"
+msgstr ""
+
+#: src/pager.c:798
+#, c-format
+msgctxt "feminine"
+msgid " (buried)"
 msgstr ""
 
 #: src/pager.c:799
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " (buried)"
 msgstr ""
 
 #: src/pager.c:800
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " (buried)"
 msgstr ""
 
 #: src/pager.c:801
 #, c-format
-msgctxt "feminine plural"
-msgid " (buried)"
+msgctxt "feminine"
+msgid " dangling in a tree"
 msgstr ""
 
 #: src/pager.c:802
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " dangling in a tree"
 msgstr ""
 
 #: src/pager.c:803
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " dangling in a tree"
 msgstr ""
 
 #: src/pager.c:804
 #, c-format
-msgctxt "feminine plural"
-msgid " dangling in a tree"
+msgctxt "feminine"
+msgid " stuck in a tree"
 msgstr ""
 
 #: src/pager.c:805
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " stuck in a tree"
 msgstr ""
 
 #: src/pager.c:806
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " stuck in a tree"
 msgstr ""
 
 #: src/pager.c:807
 #, c-format
-msgctxt "feminine plural"
-msgid " stuck in a tree"
+msgctxt "feminine"
+msgid " embedded in stone"
 msgstr ""
 
 #: src/pager.c:808
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " embedded in stone"
 msgstr ""
 
 #: src/pager.c:809
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " embedded in stone"
 msgstr ""
 
 #: src/pager.c:810
 #, c-format
-msgctxt "feminine plural"
-msgid " embedded in stone"
+msgctxt "feminine"
+msgid " embedded in a wall"
 msgstr ""
 
 #: src/pager.c:811
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " embedded in a wall"
 msgstr ""
 
 #: src/pager.c:812
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " embedded in a wall"
 msgstr ""
 
 #: src/pager.c:813
 #, c-format
-msgctxt "feminine plural"
-msgid " embedded in a wall"
+msgctxt "feminine"
+msgid " embedded in a door"
 msgstr ""
 
 #: src/pager.c:814
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " embedded in a door"
 msgstr ""
 
 #: src/pager.c:815
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " embedded in a door"
 msgstr ""
 
 #: src/pager.c:816
 #, c-format
-msgctxt "feminine plural"
-msgid " embedded in a door"
+msgctxt "feminine"
+msgid " in water"
 msgstr ""
 
 #: src/pager.c:817
 #, c-format
-msgctxt "feminine"
+msgctxt "plural"
 msgid " in water"
 msgstr ""
 
 #: src/pager.c:818
 #, c-format
-msgctxt "plural"
+msgctxt "feminine plural"
 msgid " in water"
 msgstr ""
 
 #: src/pager.c:819
 #, c-format
-msgctxt "feminine plural"
-msgid " in water"
-msgstr ""
-
-#: src/pager.c:820
-#, c-format
 msgctxt "feminine"
 msgid " in molten lava"
 msgstr ""
 
-#: src/pager.c:821
+#: src/pager.c:820
 #, c-format
 msgctxt "plural"
 msgid " in molten lava"
 msgstr ""
 
-#: src/pager.c:822
+#: src/pager.c:821
 #, c-format
 msgctxt "feminine plural"
 msgid " in molten lava"
 msgstr ""
 
+#: src/pager.c:879
+#, c-format
+msgid "tame %s"
+msgstr ""
+
 #: src/pager.c:880
 #, c-format
+msgctxt "feminine"
 msgid "tame %s"
 msgstr ""
 
 #: src/pager.c:881
 #, c-format
-msgctxt "feminine"
-msgid "tame %s"
+msgid "peaceful %s"
 msgstr ""
 
 #: src/pager.c:882
 #, c-format
-msgid "peaceful %s"
-msgstr ""
-
-#: src/pager.c:883
-#, c-format
 msgctxt "feminine"
 msgid "peaceful %s"
 msgstr ""
 
-#: src/pager.c:885
+#: src/pager.c:884
 #, c-format
 msgctxt "feminine"
 msgid ", swallowing you"
 msgstr ""
 
-#: src/pager.c:887
+#: src/pager.c:886
 #, c-format
 msgctxt "feminine"
 msgid ", engulfing you"
 msgstr ""
 
-#: src/pager.c:888
+#: src/pager.c:887
 msgid ", being held"
 msgstr ""
 
-#: src/pager.c:889
+#: src/pager.c:888
 #, c-format
 msgctxt "feminine"
 msgid ", being held"
 msgstr ""
 
-#: src/pager.c:891
+#: src/pager.c:890
 #, c-format
 msgctxt "feminine"
 msgid ", holding you"
 msgstr ""
 
-#: src/pager.c:892
+#: src/pager.c:891
 msgid ", can't move (paralyzed or sleeping or busy)"
 msgstr ""
 
-#: src/pager.c:893
+#: src/pager.c:892
 #, c-format
 msgctxt "feminine"
 msgid ", can't move (paralyzed or sleeping or busy)"
 msgstr ""
 
-#: src/pager.c:895
+#: src/pager.c:894
 #, c-format
 msgctxt "feminine"
 msgid ", asleep"
 msgstr ""
 
-#: src/pager.c:897
+#: src/pager.c:896
 #, c-format
 msgctxt "feminine"
 msgid ", meditating"
 msgstr ""
 
+#: src/pager.c:897
+msgid ", leashed to you"
+msgstr ""
+
 #: src/pager.c:898
+#, c-format
+msgctxt "feminine"
 msgid ", leashed to you"
 msgstr ""
 
 #: src/pager.c:899
 #, c-format
-msgctxt "feminine"
-msgid ", leashed to you"
+msgid ", trapped in %s"
 msgstr ""
 
 #: src/pager.c:900
 #, c-format
-msgid ", trapped in %s"
-msgstr ""
-
-#: src/pager.c:901
-#, c-format
 msgctxt "feminine"
 msgid ", trapped in %s"
 msgstr ""
 
-#: src/pager.c:931
+#: src/pager.c:930
 #, c-format
 msgid "tail of %s"
 msgstr ""
 
-#: src/pager.c:1004
+#: src/pager.c:1003
 msgid "normal vision"
 msgstr ""
 
-#: src/pager.c:1011
+#: src/pager.c:1010
 msgid "see invisible"
 msgstr ""
 
-#: src/pager.c:1023 src/pager.c:1218
+#: src/pager.c:1022 src/pager.c:1217
 msgid "telepathy"
 msgstr ""
 
-#: src/pager.c:1030
+#: src/pager.c:1029
 msgid "astral vision"
 msgstr ""
 
-#: src/pager.c:1036 src/pager.c:1220
+#: src/pager.c:1035 src/pager.c:1219
 msgid "monster detection"
 msgstr ""
 
-#: src/pager.c:1043
+#: src/pager.c:1042
 msgid "paranoid delusion"
 msgstr ""
 
-#: src/pager.c:1057
+#: src/pager.c:1056
 #, c-format
 msgid "warned of %s"
 msgstr ""
 
-#: src/pager.c:1216 src/pager.c:2207
+#: src/pager.c:1215 src/pager.c:2206
 #, c-format
 msgid " [seen: %s]"
 msgstr ""
 
-#: src/pager.c:1219
+#: src/pager.c:1218
 msgid "infravision, telepathy"
 msgstr ""
 
-#: src/pager.c:1221
+#: src/pager.c:1220
 msgid "infravision, monster detection"
 msgstr ""
 
-#: src/pager.c:1222
+#: src/pager.c:1221
 msgid "telepathy, monster detection"
 msgstr ""
 
-#: src/pager.c:1223
+#: src/pager.c:1222
 msgid "infravision, telepathy, monster detection"
 msgstr ""
 
-#: src/pager.c:1237
+#: src/pager.c:1236
 #, c-format
 msgid "interior of %s"
 msgstr ""
 
-#: src/pager.c:1387
+#: src/pager.c:1386
 msgid "Cannot open 'data' file!"
 msgstr ""
 
-#: src/pager.c:1612
+#: src/pager.c:1611
 msgid "? Seek error on 'data' file!"
 msgstr ""
 
-#: src/pager.c:1655
+#: src/pager.c:1654
 msgid "You don't have any information on those things."
 msgstr ""
 
-#: src/pager.c:1759
+#: src/pager.c:1758
 msgid "a trap"
 msgstr ""
 
-#: src/pager.c:2101
+#: src/pager.c:2100
 msgid " co-located with a boulder"
 msgstr ""
 
-#: src/pager.c:2166
+#: src/pager.c:2165
 #, c-format
 msgid "%scan be many things"
 msgstr ""
 
-#: src/pager.c:2249
+#: src/pager.c:2248
 #, c-format
 msgid " with headstone reading: \"%s\""
 msgstr ""
 
-#: src/pager.c:2250
+#: src/pager.c:2249
 #, c-format
 msgid " with remembered text: \"%s\""
 msgstr ""
 
-#: src/pager.c:2254
+#: src/pager.c:2253
 msgid " whose headstone you haven't read"
 msgstr ""
 
-#: src/pager.c:2255
+#: src/pager.c:2254
 msgid " that you haven't read"
 msgstr ""
 
-#: src/pager.c:2269
+#: src/pager.c:2268
 msgid "a monster, object or location"
 msgstr ""
 
-#: src/pager.c:2334
+#: src/pager.c:2333
 msgid "something on the map"
 msgstr ""
 
-#: src/pager.c:2340
+#: src/pager.c:2339
 msgid "something you're carrying"
 msgstr ""
 
-#: src/pager.c:2346
+#: src/pager.c:2345
 msgid "something else (by symbol or name)"
 msgstr ""
 
-#: src/pager.c:2361
+#: src/pager.c:2360
 msgid "nearby monsters"
 msgstr ""
 
-#: src/pager.c:2366
+#: src/pager.c:2365
 msgid "all monsters shown on map"
 msgstr ""
 
-#: src/pager.c:2372
+#: src/pager.c:2371
 msgid "nearby objects"
 msgstr ""
 
-#: src/pager.c:2377
+#: src/pager.c:2376
 msgid "all objects shown on map"
 msgstr ""
 
-#: src/pager.c:2383
+#: src/pager.c:2382
 msgid "nearby traps"
 msgstr ""
 
-#: src/pager.c:2388
+#: src/pager.c:2387
 msgid "all seen or remembered traps"
 msgstr ""
 
-#: src/pager.c:2395
+#: src/pager.c:2394
 msgid "nearby engravings"
 msgstr ""
 
-#: src/pager.c:2400
+#: src/pager.c:2399
 msgid "all seen or remembered engravings"
 msgstr ""
 
-#: src/pager.c:2403
+#: src/pager.c:2402
 msgid "What do you want to look at:"
 msgstr ""
 
-#: src/pager.c:2444
+#: src/pager.c:2443
 msgid "Specify what? (type the word)"
 msgstr ""
 
-#: src/pager.c:2505
+#: src/pager.c:2504
 #, c-format
 msgid "Please move the cursor to %s."
 msgstr ""
 
-#: src/pager.c:2508
+#: src/pager.c:2507
 #, c-format
 msgid "Pick %s."
 msgstr ""
 
-#: src/pager.c:2558
+#: src/pager.c:2557
 msgid "I've never heard of such things."
 msgstr ""
 
-#: src/pager.c:2631
+#: src/pager.c:2630
 #, c-format
 msgid "Monsters currently shown near %s:"
 msgstr ""
 
-#: src/pager.c:2633
+#: src/pager.c:2632
 #, c-format
 msgid "Objects currently shown near %s:"
 msgstr ""
 
-#: src/pager.c:2637
+#: src/pager.c:2636
 msgid "your position"
 msgstr ""
 
-#: src/pager.c:2641
+#: src/pager.c:2640
 msgid "All monsters currently shown on the map:"
 msgstr ""
 
-#: src/pager.c:2643
+#: src/pager.c:2642
 msgid "All objects currently shown on the map:"
 msgstr ""
 
-#: src/pager.c:2730 src/pager.c:2837
+#: src/pager.c:2729 src/pager.c:2836
 #, c-format
 msgid ", obscured by %s"
 msgstr ""
 
-#: src/pager.c:2742
+#: src/pager.c:2741
 msgid "Nearby seen or remembered traps:"
 msgstr ""
 
-#: src/pager.c:2743
+#: src/pager.c:2742
 msgid "Seen or remembered traps on this level:"
 msgstr ""
 
-#: src/pager.c:2771
+#: src/pager.c:2770
 msgid "No traps seen or remembered nearby."
 msgstr ""
 
-#: src/pager.c:2813
+#: src/pager.c:2812
 #, c-format
 msgid " headstone reading: \"%s\""
 msgstr ""
 
-#: src/pager.c:2814
+#: src/pager.c:2813
 #, c-format
 msgid " remembered text: \"%s\""
 msgstr ""
 
-#: src/pager.c:2818
+#: src/pager.c:2817
 msgid " headstone you haven't read"
 msgstr ""
 
-#: src/pager.c:2819
+#: src/pager.c:2818
 msgid " engraving that you haven't read"
 msgstr ""
 
-#: src/pager.c:2849
+#: src/pager.c:2848
 msgid "Nearby seen or remembered engravings:"
 msgstr ""
 
-#: src/pager.c:2850
+#: src/pager.c:2849
 msgid "Seen or remembered engravings on this level:"
 msgstr ""
 
-#: src/pager.c:2880
+#: src/pager.c:2879
 msgid "No engravings seen or remembered nearby."
 msgstr ""
 
-#: src/pager.c:2997
+#: src/pager.c:2996
 msgid "^"
 msgstr ""
 
-#: src/pager.c:3013
+#: src/pager.c:3012
 msgid "That is a trapped chest."
 msgstr ""
 
-#: src/pager.c:3032
+#: src/pager.c:3031
 #, c-format
 msgid "That is %s."
 msgstr ""
 
-#: src/pager.c:3038
+#: src/pager.c:3037
 #, c-format
 msgid "That is %s%s%s."
 msgstr ""
 
-#: src/pager.c:3053
+#: src/pager.c:3052
 msgid "I can't see a trap there."
 msgstr ""
 
-#: src/pager.c:3095 src/pager.c:3267
+#: src/pager.c:3094 src/pager.c:3266
 #, c-format
 msgid "Cannot open \"%s\" data file!"
 msgstr ""
 
-#: src/pager.c:3334
+#: src/pager.c:3333
 msgid "Ask about '&' or '?' to get more info.  (For ESC, type it twice.)"
 msgstr ""
 
-#: src/pager.c:3338
+#: src/pager.c:3337
 msgid "Ask about '&' or '?' to get more info."
 msgstr ""
 
-#: src/pager.c:3344
+#: src/pager.c:3343
 msgid "What command?"
 msgstr ""
 
-#: src/pager.c:3351
+#: src/pager.c:3350
 msgid "]"
 msgstr ""
 
-#: src/pager.c:3374
+#: src/pager.c:3373
 #, c-format
 msgid "%s,"
 msgstr ""
 
-#: src/pager.c:3376
+#: src/pager.c:3375
 #, c-format
 msgid "%8.8s%s"
 msgstr ""
 
-#: src/pager.c:3379
+#: src/pager.c:3378
 #, c-format
 msgid "No such command '%s', char code %d (0%03o or 0x%02x)."
 msgstr ""
 
-#: src/pager.c:3502
+#: src/pager.c:3501
 msgid "About NetHack (version information)."
 msgstr ""
 
-#: src/pager.c:3503
+#: src/pager.c:3502
 msgid "Long description of the game and commands."
 msgstr ""
 
-#: src/pager.c:3504
+#: src/pager.c:3503
 msgid "List of game commands."
 msgstr ""
 
-#: src/pager.c:3505
+#: src/pager.c:3504
 msgid "Concise history of NetHack."
 msgstr ""
 
-#: src/pager.c:3506
+#: src/pager.c:3505
 msgid "Info on a character in the game display."
 msgstr ""
 
-#: src/pager.c:3507
+#: src/pager.c:3506
 msgid "Info on what a given key does."
 msgstr ""
 
-#: src/pager.c:3508
+#: src/pager.c:3507
 msgid "List of game options."
 msgstr ""
 
-#: src/pager.c:3509
+#: src/pager.c:3508
 msgid "Longer explanation of game options."
 msgstr ""
 
-#: src/pager.c:3510
+#: src/pager.c:3509
 #, c-format
 msgid "Using the %s command to set options."
 msgstr ""
 
-#: src/pager.c:3511
+#: src/pager.c:3510
 msgid "Full list of keyboard commands."
 msgstr ""
 
-#: src/pager.c:3512
+#: src/pager.c:3511
 msgid "List of extended commands."
 msgstr ""
 
-#: src/pager.c:3513
+#: src/pager.c:3512
 msgid "List menu control keys."
 msgstr ""
 
-#: src/pager.c:3514
+#: src/pager.c:3513
 msgid "Description of NetHack's command line."
 msgstr ""
 
-#: src/pager.c:3515
+#: src/pager.c:3514
 msgid "The NetHack license."
 msgstr ""
 
-#: src/pager.c:3516
+#: src/pager.c:3515
 msgid "Support information."
 msgstr ""
 
-#: src/pager.c:3518
+#: src/pager.c:3517
 #, c-format
 msgid "%s-specific help and commands."
 msgstr ""
 
-#: src/pager.c:3520
+#: src/pager.c:3519
 msgid "List of wizard-mode commands."
 msgstr ""
 
-#: src/pager.c:3559
+#: src/pager.c:3558
 msgid "Select one item:"
 msgstr ""
 
-#: src/pager.c:3596
+#: src/pager.c:3595
 msgid "' or '"
 msgstr ""
 
@@ -57569,6 +57862,14 @@ msgstr ""
 msgid "You feel dizzy for a moment, but nothing happens..."
 msgstr ""
 
+#: src/teleport.c:1519
+msgid "You feel slightly dizzy."
+msgstr ""
+
+#: src/teleport.c:1520
+msgid "You feel dizzier."
+msgstr ""
+
 #: src/teleport.c:1585
 msgid "You trigger a level teleport trap!"
 msgstr ""
@@ -58081,7 +58382,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-02 19:37+0200\n"
+"POT-Creation-Date: 2026-10-02 20:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
