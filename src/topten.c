@@ -63,6 +63,9 @@ static struct toptenentry zerott;
 staticfn void topten_print(const char *);
 staticfn void topten_print_bold(const char *);
 staticfn void outheader(void);
+staticfn const char *death_i18n(const char *, boolean);
+staticfn void outentry_i18n(struct toptenentry *, char *, size_t);
+staticfn int u8_extra(const char *);
 staticfn void outentry(int, struct toptenentry *, boolean);
 staticfn void discardexcess(FILE *);
 staticfn void readentry(FILE *, struct toptenentry *);
@@ -931,15 +934,216 @@ outheader(void)
     char linebuf[BUFSZ];
     char *bp;
 
-    Strcpy(linebuf, " No  Points     Name");
+    Strcpy(linebuf, _(" No  Points     Name"));
     bp = eos(linebuf);
-    while (bp < linebuf + COLNO - 9)
-        *bp++ = ' ';
-    Strcpy(bp, "Hp [max]");
+    while (bp < linebuf + COLNO - 9 + u8_extra(linebuf))
+        *bp++ = ' ', *bp = '\0';
+    Strcpy(bp, _("Hp [max]"));
     topten_print(linebuf);
 }
 
 DISABLE_WARNING_FORMAT_NONLITERAL
+
+#if 0
+/* score list texts translated by outentry_i18n() */
+N_("escaped the dungeon") N_("ascended to demigodhood") N_("quit")
+N_("starved to death") N_("choked on his food") N_("was poisoned")
+N_("was crushed to death") N_("turned to stone") N_("died")
+N_(" on the Astral Plane") N_(" on the Plane of Water")
+N_(" on the Plane of Fire") N_(" on the Plane of Air")
+N_(" on the Plane of Earth") N_(" in the Void")
+N_(" in %s") N_(" on level %d") N_(" [max %d]") N_(" [max level %d]")
+N_("escaped the dungeon with the Amulet")
+C_("feminine", "escaped the dungeon with the Amulet")
+NC_("while", ", while being frightened to death")
+NC_("while", ", while being scared stiff")
+NC_("while", ", while being terrified of a demon")
+NC_("while", ", while being terrified of a ghost")
+NC_("while", ", while digesting something")
+NC_("while", ", while disrobing")
+NC_("while", ", while dragging an iron ball")
+NC_("while", ", while dressing up")
+NC_("while", ", while fainted from lack of food")
+NC_("while", ", while frozen by a monster's gaze")
+NC_("while", ", while frozen by a potion")
+NC_("while", ", while frozen by a trap")
+NC_("while", ", while fumbling")
+NC_("while", ", while gazing into a crystal ball")
+NC_("while", ", while gazing into a Magic 8-Ball (tm)")
+NC_("while", ", while gazing into a mirror")
+NC_("while", ", while getting stoned")
+NC_("while", ", while hiding from thunderstorm")
+NC_("while", ", while jumping around")
+NC_("while", ", while moving through the air")
+NC_("while", ", while opening a container")
+NC_("while", ", while paralyzed by a monster")
+NC_("while", ", while praying")
+NC_("while", ", while pretending to be a pile of gold")
+NC_("while", ", while reading a book")
+NC_("while", ", while scared by rattling")
+NC_("while", ", while sleeping")
+NC_("while", ", while sleeping off a magical draught")
+NC_("while", ", while stuck in a spider web")
+NC_("while", ", while taking off clothes")
+NC_("while", ", while tipping a container")
+NC_("while", ", while trying to turn the monsters")
+NC_("while", ", while unconscious from rotten food")
+NC_("while", ", while vomiting")
+NC_("while", ", while helpless")
+NC_("while", ", while being toyed with by Fate")
+NC_("while", ", while attempting to cheat Death")
+C_("feminine", "escaped the dungeon")
+C_("feminine", "ascended to demigodhood") C_("feminine", "quit")
+C_("feminine", "starved to death") C_("feminine", "choked on his food")
+C_("feminine", "was poisoned") C_("feminine", "was crushed to death")
+C_("feminine", "turned to stone") C_("feminine", "died")
+#endif
+
+/* translated death reason of a score entry ("killed by a jackal"), or
+   the English one if a part of it has no translation */
+staticfn const char *
+death_i18n(const char *death, boolean fem)
+{
+    static char buf[BUFSZ];
+#ifdef NHI18N
+    static const char *const prefixes[] = {
+        "killed by ", "choked on ", "poisoned by ", "died of ",
+        "drowned in ", "burned by ", "dissolved in ", "crushed to death by ",
+        "petrified by ", "turned to slime by ", 0
+    };
+    char what[BUFSZ];
+    const char *pfx = "", *rest, *tr = 0, *why = "";
+    boolean an_art = FALSE;
+    int i;
+
+    /* ", while helpless" */
+    Strcpy(what, death);
+    if ((rest = strstri(what, ", while ")) != 0) {
+        why = C_("while", rest);
+        if (why == rest) /* no translation */
+            why = "";
+        else
+            what[rest - what] = '\0';
+    }
+    rest = death = what;
+
+    for (i = 0; prefixes[i]; ++i)
+        if (!strncmp(death, prefixes[i], strlen(prefixes[i]))) {
+            pfx = fem ? C_("feminine killed by", prefixes[i])
+                      : C_("killed by", prefixes[i]);
+            if (pfx == prefixes[i])
+                pfx = C_("killed by", prefixes[i]);
+            rest = death + strlen(prefixes[i]);
+            break;
+        }
+    if (!strncmp(rest, "a ", 2))
+        rest += 2, an_art = TRUE;
+    else if (!strncmp(rest, "an ", 3))
+        rest += 3, an_art = TRUE;
+    if (i18n_lookup("monster", rest))
+        tr = an_art ? i18n_an_ctx("monster", rest) : C_("monster", rest);
+    else if (an_art)
+        tr = i18n_lookup("killer a", rest);
+    else
+        tr = i18n_lookup("killer", rest);
+    if (tr) {
+        Snprintf(buf, sizeof buf, "%s%s%s", pfx, tr, why);
+        *buf = highc(*buf);
+        return buf;
+    }
+#else
+    nhUse(fem);
+#endif
+    Snprintf(buf, sizeof buf, "%s", death);
+    *buf = highc(*buf);
+    return buf;
+}
+
+/* number of bytes of s that don't take a column of their own (UTF-8
+   continuation bytes), to keep the hit points column aligned */
+staticfn int
+u8_extra(const char *s)
+{
+    int n = 0;
+
+    for (; *s; ++s)
+        if ((*s & 0xC0) == 0x80)
+            ++n;
+    return n;
+}
+
+/* translated description of score entry t1, appended to linebuf */
+staticfn void
+outentry_i18n(struct toptenentry *t1, char *linebuf, size_t bufsz)
+{
+    boolean fem = (t1->plgend[0] == 'F'), ended = FALSE;
+    const char *how;
+    size_t l;
+
+    if (!strncmp("escaped", t1->death, 7))
+        how = strstri(t1->death, "Amulet")
+                  ? "escaped the dungeon with the Amulet"
+                  : "escaped the dungeon", ended = TRUE;
+    else if (!strncmp("ascended", t1->death, 8))
+        how = "ascended to demigodhood", ended = TRUE;
+    else if (!strncmp(t1->death, "quit", 4))
+        how = "quit";
+    else if (!strncmp(t1->death, "died of st", 10))
+        how = "starved to death";
+    else if (!strncmp(t1->death, "choked", 6))
+        how = "choked on his food";
+    else if (!strncmp(t1->death, "poisoned", 8))
+        how = "was poisoned";
+    else if (!strncmp(t1->death, "crushed", 7))
+        how = "was crushed to death";
+    else if (!strncmp(t1->death, "petrified by ", 13))
+        how = "turned to stone";
+    else
+        how = "died";
+    l = strlen(linebuf);
+    Snprintf(linebuf + l, bufsz - l, "%s", gendered_word(how, fem));
+    if (ended) {
+        l = strlen(linebuf);
+        Snprintf(linebuf + l, bufsz - l, _(" [max level %d]"), t1->maxlvl);
+    } else if (t1->deathdnum == astral_level.dnum) {
+        static const char *const planes[] = {
+            " on the Astral Plane", " on the Plane of Water",
+            " on the Plane of Fire", " on the Plane of Air",
+            " on the Plane of Earth"
+        };
+        int pl = t1->deathlev + 5;
+
+        Strcat(linebuf, (pl >= 0 && pl < 5) ? _(planes[pl])
+                                            : _(" in the Void"));
+    } else {
+        char dnam[BUFSZ];
+
+        Strcpy(dnam, _(svd.dungeons[t1->deathdnum].dname));
+        /* "dans les Donjons du Destin" */
+        if (!strncmp(dnam, "Le ", 3) || !strncmp(dnam, "La ", 3)
+            || !strncmp(dnam, "Les ", 4))
+            *dnam = lowc(*dnam);
+        l = strlen(linebuf);
+        Snprintf(linebuf + l, bufsz - l, _(" in %s"), dnam);
+        if (t1->deathdnum != knox_level.dnum) {
+            l = strlen(linebuf);
+            Snprintf(linebuf + l, bufsz - l, _(" on level %d"),
+                     t1->deathlev);
+        }
+        if (t1->deathlev != t1->maxlvl) {
+            l = strlen(linebuf);
+            Snprintf(linebuf + l, bufsz - l, _(" [max %d]"), t1->maxlvl);
+        }
+    }
+    Strcat(linebuf, ".");
+    /* the death reason, except when it says the same thing */
+    if (strcmp(how, "quit") && strcmp(how, "starved to death") && !ended) {
+        l = strlen(linebuf);
+        Snprintf(linebuf + l, bufsz - l, "  %s.",
+                 death_i18n(t1->death, fem));
+        (void) strsubst(linebuf, "; the ", ", the ");
+    }
+}
 
 /* so>0: standout line; so=0: ordinary line */
 staticfn void
@@ -948,7 +1152,7 @@ outentry(int rank, struct toptenentry *t1, boolean so)
     boolean second_line = TRUE;
     char linebuf[BUFSZ];
     char *bp, hpbuf[24], linebuf3[BUFSZ];
-    int hppos, lngr;
+    int hppos, lngr, extra;
 
     linebuf[0] = '\0';
     if (rank)
@@ -970,7 +1174,10 @@ outentry(int rank, struct toptenentry *t1, boolean so)
         Sprintf(eos(linebuf), "-%s ", t1->plalign);
     else
         Strcat(linebuf, " ");
-    if (!strncmp("escaped", t1->death, 7)) {
+    if (i18n_active()) {
+        outentry_i18n(t1, linebuf, sizeof linebuf);
+        second_line = FALSE;
+    } else if (!strncmp("escaped", t1->death, 7)) {
         Sprintf(eos(linebuf), "escaped the dungeon %s[max level %d]",
                 !strncmp(" (", t1->death + 7, 2) ? t1->death + 7 + 2 : "",
                 t1->maxlvl);
@@ -1038,7 +1245,8 @@ outentry(int rank, struct toptenentry *t1, boolean so)
         if (!strncmp(t1->death, "quit ", 5))
             Strcat(linebuf, t1->death + 4);
     }
-    Strcat(linebuf, ".");
+    if (!i18n_active())
+        Strcat(linebuf, ".");
 
     /* Quit, starved, ascended, and escaped contain no second line */
     if (second_line) {
@@ -1050,7 +1258,8 @@ outentry(int rank, struct toptenentry *t1, boolean so)
         (void) strsubst(bp, "; the ", ", the ");
     }
 
-    lngr = (int) strlen(linebuf);
+    extra = u8_extra(linebuf);
+    lngr = (int) strlen(linebuf) - extra;
     if (t1->hp <= 0)
         hpbuf[0] = '-', hpbuf[1] = '\0';
     else
@@ -1058,7 +1267,8 @@ outentry(int rank, struct toptenentry *t1, boolean so)
     /* beginning of hp column after padding (not actually padded yet) */
     hppos = COLNO - (int) (sizeof "  Hp [max]" - sizeof "");
     while (lngr >= hppos) {
-        for (bp = eos(linebuf); !(*bp == ' ' && bp - linebuf < hppos); bp--)
+        for (bp = eos(linebuf);
+             !(*bp == ' ' && bp - linebuf < hppos + extra); bp--)
             ;
         /* special case: word is too long, wrap in the middle */
         if (linebuf + 15 >= bp)
@@ -1067,23 +1277,34 @@ outentry(int rank, struct toptenentry *t1, boolean so)
            dungeon depth reached, wrap in front of it instead */
         if (bp > linebuf + 5 && !strncmp(bp - 5, " [max", 5))
             bp -= 5;
+        /* same for a translated "[max level %d]" */
+        if (i18n_active()) {
+            char *ob = bp;
+
+            while (ob > linebuf + 15 && *ob != '[' && *ob != ']')
+                --ob;
+            if (*ob == '[' && ob[-1] == ' ')
+                bp = ob - 1;
+        }
         if (*bp != ' ')
             Strcpy(linebuf3, bp);
         else
             Strcpy(linebuf3, bp + 1);
         *bp = '\0';
         if (so) {
-            while (bp < linebuf + (COLNO - 1))
+            extra = u8_extra(linebuf);
+            while (bp < linebuf + (COLNO - 1) + extra)
                 *bp++ = ' ';
             *bp = '\0';
             topten_print_bold(linebuf);
         } else
             topten_print(linebuf);
         Snprintf(linebuf, sizeof(linebuf), "%15s %s", "", linebuf3);
-        lngr = Strlen(linebuf);
+        extra = u8_extra(linebuf);
+        lngr = Strlen(linebuf) - extra;
     }
     /* beginning of hp column not including padding */
-    hppos = COLNO - 7 - (int) strlen(hpbuf);
+    hppos = COLNO - 7 - (int) strlen(hpbuf) + extra;
     bp = eos(linebuf);
 
     if (bp <= linebuf + hppos) {
@@ -1098,7 +1319,7 @@ outentry(int rank, struct toptenentry *t1, boolean so)
 
     if (so) {
         bp = eos(linebuf);
-        while (bp < linebuf + (COLNO - 1))
+        while (bp < linebuf + (COLNO - 1) + extra)
             *bp++ = ' ';
         *bp = '\0';
         topten_print_bold(linebuf);

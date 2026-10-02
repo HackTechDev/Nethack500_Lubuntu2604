@@ -261,12 +261,12 @@ killer_i18n(char *buf, unsigned siz, int how)
     }
 #ifdef NHI18N
     if (svk.killer.format == KILLED_BY_AN) {
-        if (strcmp(C_("monster", kname), kname))
+        if (i18n_lookup("monster", kname))
             tr = i18n_an_ctx("monster", kname);
         else
             tr = i18n_lookup("killer a", kname);
     } else {
-        if (strcmp(C_("monster", kname), kname))
+        if (i18n_lookup("monster", kname))
             tr = C_("monster", kname);
         else
             tr = i18n_lookup("killer", kname);

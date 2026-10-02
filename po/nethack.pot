@@ -55463,7 +55463,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-02 18:43+0200\n"
+"POT-Creation-Date: 2026-10-02 18:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55479,6 +55479,343 @@ msgstr ""
 
 #: src/timeout.c:1999
 msgid "You hear a rumbling noise."
+msgstr ""
+
+#: src/topten.c:937
+msgid " No  Points     Name"
+msgstr ""
+
+#: src/topten.c:941
+msgid "Hp [max]"
+msgstr ""
+
+#: src/topten.c:949
+msgid "ascended to demigodhood"
+msgstr ""
+
+#: src/topten.c:949
+msgid "escaped the dungeon"
+msgstr ""
+
+#: src/topten.c:949
+msgid "quit"
+msgstr ""
+
+#: src/topten.c:950
+msgid "choked on his food"
+msgstr ""
+
+#: src/topten.c:950
+msgid "starved to death"
+msgstr ""
+
+#: src/topten.c:950
+msgid "was poisoned"
+msgstr ""
+
+#: src/topten.c:951
+msgid "died"
+msgstr ""
+
+#: src/topten.c:951
+msgid "turned to stone"
+msgstr ""
+
+#: src/topten.c:951
+msgid "was crushed to death"
+msgstr ""
+
+#: src/topten.c:952
+msgid " on the Astral Plane"
+msgstr ""
+
+#: src/topten.c:952
+msgid " on the Plane of Water"
+msgstr ""
+
+#: src/topten.c:953
+msgid " on the Plane of Air"
+msgstr ""
+
+#: src/topten.c:953
+msgid " on the Plane of Fire"
+msgstr ""
+
+#: src/topten.c:954 src/topten.c:1117
+msgid " in the Void"
+msgstr ""
+
+#: src/topten.c:954
+msgid " on the Plane of Earth"
+msgstr ""
+
+#: src/topten.c:955 src/topten.c:1129
+#, c-format
+msgid " [max %d]"
+msgstr ""
+
+#: src/topten.c:955 src/topten.c:1107
+#, c-format
+msgid " [max level %d]"
+msgstr ""
+
+#: src/topten.c:955 src/topten.c:1120
+#, c-format
+msgid " in %s"
+msgstr ""
+
+#: src/topten.c:955 src/topten.c:1124
+#, c-format
+msgid " on level %d"
+msgstr ""
+
+#: src/topten.c:956
+msgid "escaped the dungeon with the Amulet"
+msgstr ""
+
+#: src/topten.c:957
+#, c-format
+msgctxt "feminine"
+msgid "escaped the dungeon with the Amulet"
+msgstr ""
+
+#: src/topten.c:958
+msgctxt "while"
+msgid ", while being frightened to death"
+msgstr ""
+
+#: src/topten.c:959
+msgctxt "while"
+msgid ", while being scared stiff"
+msgstr ""
+
+#: src/topten.c:960
+msgctxt "while"
+msgid ", while being terrified of a demon"
+msgstr ""
+
+#: src/topten.c:961
+msgctxt "while"
+msgid ", while being terrified of a ghost"
+msgstr ""
+
+#: src/topten.c:962
+msgctxt "while"
+msgid ", while digesting something"
+msgstr ""
+
+#: src/topten.c:963
+msgctxt "while"
+msgid ", while disrobing"
+msgstr ""
+
+#: src/topten.c:964
+msgctxt "while"
+msgid ", while dragging an iron ball"
+msgstr ""
+
+#: src/topten.c:965
+msgctxt "while"
+msgid ", while dressing up"
+msgstr ""
+
+#: src/topten.c:966
+msgctxt "while"
+msgid ", while fainted from lack of food"
+msgstr ""
+
+#: src/topten.c:967
+msgctxt "while"
+msgid ", while frozen by a monster's gaze"
+msgstr ""
+
+#: src/topten.c:968
+msgctxt "while"
+msgid ", while frozen by a potion"
+msgstr ""
+
+#: src/topten.c:969
+msgctxt "while"
+msgid ", while frozen by a trap"
+msgstr ""
+
+#: src/topten.c:970
+msgctxt "while"
+msgid ", while fumbling"
+msgstr ""
+
+#: src/topten.c:971
+msgctxt "while"
+msgid ", while gazing into a crystal ball"
+msgstr ""
+
+#: src/topten.c:972
+msgctxt "while"
+msgid ", while gazing into a Magic 8-Ball (tm)"
+msgstr ""
+
+#: src/topten.c:973
+msgctxt "while"
+msgid ", while gazing into a mirror"
+msgstr ""
+
+#: src/topten.c:974
+msgctxt "while"
+msgid ", while getting stoned"
+msgstr ""
+
+#: src/topten.c:975
+msgctxt "while"
+msgid ", while hiding from thunderstorm"
+msgstr ""
+
+#: src/topten.c:976
+msgctxt "while"
+msgid ", while jumping around"
+msgstr ""
+
+#: src/topten.c:977
+msgctxt "while"
+msgid ", while moving through the air"
+msgstr ""
+
+#: src/topten.c:978
+msgctxt "while"
+msgid ", while opening a container"
+msgstr ""
+
+#: src/topten.c:979
+msgctxt "while"
+msgid ", while paralyzed by a monster"
+msgstr ""
+
+#: src/topten.c:980
+msgctxt "while"
+msgid ", while praying"
+msgstr ""
+
+#: src/topten.c:981
+msgctxt "while"
+msgid ", while pretending to be a pile of gold"
+msgstr ""
+
+#: src/topten.c:982
+msgctxt "while"
+msgid ", while reading a book"
+msgstr ""
+
+#: src/topten.c:983
+msgctxt "while"
+msgid ", while scared by rattling"
+msgstr ""
+
+#: src/topten.c:984
+msgctxt "while"
+msgid ", while sleeping"
+msgstr ""
+
+#: src/topten.c:985
+msgctxt "while"
+msgid ", while sleeping off a magical draught"
+msgstr ""
+
+#: src/topten.c:986
+msgctxt "while"
+msgid ", while stuck in a spider web"
+msgstr ""
+
+#: src/topten.c:987
+msgctxt "while"
+msgid ", while taking off clothes"
+msgstr ""
+
+#: src/topten.c:988
+msgctxt "while"
+msgid ", while tipping a container"
+msgstr ""
+
+#: src/topten.c:989
+msgctxt "while"
+msgid ", while trying to turn the monsters"
+msgstr ""
+
+#: src/topten.c:990
+msgctxt "while"
+msgid ", while unconscious from rotten food"
+msgstr ""
+
+#: src/topten.c:991
+msgctxt "while"
+msgid ", while vomiting"
+msgstr ""
+
+#: src/topten.c:992
+msgctxt "while"
+msgid ", while helpless"
+msgstr ""
+
+#: src/topten.c:993
+msgctxt "while"
+msgid ", while being toyed with by Fate"
+msgstr ""
+
+#: src/topten.c:994
+msgctxt "while"
+msgid ", while attempting to cheat Death"
+msgstr ""
+
+#: src/topten.c:995
+#, c-format
+msgctxt "feminine"
+msgid "escaped the dungeon"
+msgstr ""
+
+#: src/topten.c:996
+#, c-format
+msgctxt "feminine"
+msgid "ascended to demigodhood"
+msgstr ""
+
+#: src/topten.c:996
+#, c-format
+msgctxt "feminine"
+msgid "quit"
+msgstr ""
+
+#: src/topten.c:997
+#, c-format
+msgctxt "feminine"
+msgid "choked on his food"
+msgstr ""
+
+#: src/topten.c:997
+#, c-format
+msgctxt "feminine"
+msgid "starved to death"
+msgstr ""
+
+#: src/topten.c:998
+#, c-format
+msgctxt "feminine"
+msgid "was crushed to death"
+msgstr ""
+
+#: src/topten.c:998
+#, c-format
+msgctxt "feminine"
+msgid "was poisoned"
+msgstr ""
+
+#: src/topten.c:999
+#, c-format
+msgctxt "feminine"
+msgid "died"
+msgstr ""
+
+#: src/topten.c:999
+#, c-format
+msgctxt "feminine"
+msgid "turned to stone"
 msgstr ""
 
 #: src/trap.c:83

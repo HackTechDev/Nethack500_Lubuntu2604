@@ -184,11 +184,9 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
 - **Menus et fenêtres** : les textes passés à `add_menu()`, `putstr()`,
   `end_menu()` ne sont pas traduits automatiquement (menu complet des
   options `#optionsfull` (titres et descriptions traduits, noms d'options
-  en anglais), tableau des scores (cause de la mort enregistrée en
-  anglais)). L'aide du curseur et la pierre tombale sont traduites
-  (cette dernière à
-  l'affichage ; les causes de mort composées dynamiquement restent en
-  anglais). Le menu simple `O`, les
+  en anglais)). L'aide du curseur, la pierre tombale et le tableau des
+  scores sont traduits à l'affichage (les causes de mort composées
+  dynamiquement restent en anglais). Le menu simple `O`, les
   descriptions des commandes étendues, le résumé de fin de partie,
   `#conduct`, les exploits, `#overview` et l'illumination `^X` sont
   traduits (pour `^X`, les lignes rares — deux armes, mode magicien
@@ -200,9 +198,10 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
   sont décalées d'un caractère, par exemple « Pièces  ('$') » dans
   l'inventaire. Il faudrait compter les caractères UTF-8 et non les octets.
 - **Pierre tombale et tableau des scores** (`rip.c`, `topten.c`) : la cause
-  de la mort (« killed by a goblin ») est enregistrée dans `logfile`,
-  `xlogfile` et `record`. Elle doit rester en anglais dans ces fichiers,
-  mais pourrait être traduite à l'affichage.
+  de la mort (« killed by a goblin ») reste en anglais dans `logfile`,
+  `xlogfile` et `record` ; elle est traduite à l'affichage quand le nom
+  du tueur figure dans le catalogue (msgctxt `monster`, `killer`,
+  `killer a`, suffixe « , while … » en msgctxt `while`).
 
 ## 5. Laissé volontairement en anglais
 

@@ -3064,7 +3064,9 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	"There is <box> here; unlock it?" prompts; the cursor key help ('?'
 	when choosing a position) and position goals; nh.text() translates
 	its text as a whole (the getpos tip of nhcore.lua); death reasons on
-	the tombstone (msgctxt "killer", "killer a" with the article)
+	the tombstone (msgctxt "killer", "killer a" with the article); the
+	high score list (death reason and ", while ..." suffix translated
+	for display only, hit points column aligned by characters)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 
