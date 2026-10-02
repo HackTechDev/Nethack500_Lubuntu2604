@@ -804,9 +804,9 @@ fix_ghostly_obj(struct obj *obj)
         case ORCISH_BOW:
         case YUMI:
         case BOOMERANG:
-            You("make adjustments to %s to suit your %s hand.",
-                the(xname(obj)),
-                URIGHTY ? "right" : "left");
+            You(URIGHTY ? "make adjustments to %s to suit your right hand."
+                        : "make adjustments to %s to suit your left hand.",
+                the(xname(obj)));
             break;
         default:
             break;

@@ -76,6 +76,7 @@ staticfn void save_mapseen(NHFILE *, mapseen *);
 staticfn mapseen *find_mapseen(d_level *);
 staticfn mapseen *find_mapseen_by_str(const char *);
 staticfn void print_mapseen(winid, mapseen *, int, int, boolean);
+staticfn void ov_interest_i18n(char *, int *, int, const char *);
 staticfn boolean interest_mapseen(mapseen *);
 staticfn void count_feat_lastseentyp(mapseen *, coordxy, coordxy);
 staticfn void traverse_mapseenchn(int, winid, int, int, int *);
@@ -3494,10 +3495,11 @@ tunesuffix(
         char tmp[BUFSZ];
 
         if (u.uevent.uheard_tune == 2)
-            Sprintf(tmp, "notes \"%s\"", svt.tune);
+            Snprintf(tmp, sizeof tmp, _("notes \"%s\""), svt.tune);
         else
-            Strcpy(tmp, "5-note tune");
-        Snprintf(outbuf, bsz, " (play %s to open or close drawbridge)", tmp);
+            Strcpy(tmp, _("5-note tune"));
+        Snprintf(outbuf, bsz, _(" (play %s to open or close drawbridge)"),
+                 tmp);
     }
     return outbuf;
 }
@@ -3539,6 +3541,39 @@ tunesuffix(
         }                                                               \
     } while (0)
 
+#if 0
+/* #overview texts translated where displayed */
+N_("The Dungeons of Doom") N_("The Gnomish Mines") N_("Sokoban")
+N_("The Quest") N_("Fort Ludios") N_("Gehennom") N_("The Elemental Planes")
+N_("Vlad's Tower") N_("The Tutorial") N_("Astral Plane") N_("Plane of Water")
+N_("Plane of Fire") N_("Plane of Air") N_("Plane of Earth")
+N_("Sealed portal") N_("Portal") N_("Connection") N_("One way stairs up")
+N_("One way stairs down") N_("Stairs up") N_("Stairs down")
+NC_("noun plural", "shop") NC_("noun plural", "temple")
+NC_("noun plural", "altar") NC_("noun plural", "throne")
+NC_("noun plural", "fountain") NC_("noun plural", "sink")
+NC_("noun plural", "grave") NC_("noun plural", "tree")
+NC_("noun", "temple") NC_("gender", "temple") NC_("noun", "tree")
+NC_("gender", "tree") NC_("noun", "fountain") NC_("gender", "fountain")
+#endif
+
+/* translated "a fountain", "some fountains", "many fountains" &c,
+   appended to the #overview interests in buf */
+staticfn void
+ov_interest_i18n(char *buf, int *ip, int n, const char *noun)
+{
+    char tmp[BUFSZ];
+
+    if (!n)
+        return;
+    if (n == 1)
+        Strcpy(tmp, i18n_an_ctx("noun", noun));
+    else
+        Snprintf(tmp, sizeof tmp, (n == 2) ? _("some %s") : _("many %s"),
+                 C_("noun plural", noun));
+    Sprintf(eos(buf), "%s%s", ((*ip)++ > 0) ? ", " : PREFIX, tmp);
+}
+
 staticfn void
 print_mapseen(
     winid win, mapseen *mptr,
@@ -3566,16 +3601,16 @@ print_mapseen(
         if (svd.dungeons[dnum].dunlev_ureached == svd.dungeons[dnum].entry_lev
             /* suppress the negative numbers in the endgame */
             || In_endgame(&mptr->lev))
-            Sprintf(buf, "%s:", svd.dungeons[dnum].dname);
+            Snprintf(buf, sizeof buf, _("%s:"), _(svd.dungeons[dnum].dname));
         else if (builds_up(&mptr->lev))
-            Sprintf(buf, "%s: levels %d up to %d",
-                    svd.dungeons[dnum].dname,
-                    depthstart + svd.dungeons[dnum].entry_lev - 1,
-                    depthstart + svd.dungeons[dnum].dunlev_ureached - 1);
+            Snprintf(buf, sizeof buf, _("%s: levels %d up to %d"),
+                     _(svd.dungeons[dnum].dname),
+                     depthstart + svd.dungeons[dnum].entry_lev - 1,
+                     depthstart + svd.dungeons[dnum].dunlev_ureached - 1);
         else
-            Sprintf(buf, "%s: levels %d to %d",
-                    svd.dungeons[dnum].dname, depthstart,
-                    depthstart + svd.dungeons[dnum].dunlev_ureached - 1);
+            Snprintf(buf, sizeof buf, _("%s: levels %d to %d"),
+                     _(svd.dungeons[dnum].dname), depthstart,
+                     depthstart + svd.dungeons[dnum].dunlev_ureached - 1);
 
         add_menu_heading(win, buf);
     }
@@ -3584,9 +3619,10 @@ print_mapseen(
     i = depthstart + mptr->lev.dlevel - 1;
     if (In_endgame(&mptr->lev))
         Sprintf(buf, "%s%s:", (final != -1) ? TAB : "",
-                endgamelevelname(tmpbuf, i));
+                _(endgamelevelname(tmpbuf, i)));
     else
-        Sprintf(buf, "%sLevel %d:", (final != -1) ? TAB : "", i);
+        Snprintf(buf, sizeof buf, _("%sLevel %d:"),
+                 (final != -1) ? TAB : "", i);
 
     /* wizmode prints out proto dungeon names for clarity */
     if (wizard) {
@@ -3599,10 +3635,11 @@ print_mapseen(
     if (mptr->custom)
         Sprintf(eos(buf), " \"%s\"", mptr->custom);
     if (on_level(&u.uz, &mptr->lev))
-        Sprintf(eos(buf), " <- You %s here.",
-                (final <= 0 || (final == 1 && how == ASCENDED)) ? "are"
-                  : (final == 1 && how == ESCAPED) ? "left from"
-                    : "were");
+        Strcat(buf, (final <= 0 || (final == 1 && how == ASCENDED))
+                    ? _(" <- You are here.")
+                    : (final == 1 && how == ESCAPED)
+                      ? _(" <- You left from here.")
+                      : _(" <- You were here."));
 
     any = cg.zeroany;
     if (final == -1)
@@ -3613,7 +3650,50 @@ print_mapseen(
     if (mptr->flags.forgot)
         return;
 
-    if (OF_INTEREST(mptr->feat)) {
+    if (OF_INTEREST(mptr->feat) && i18n_active()) {
+        buf[0] = 0;
+        i = 0; /* interest counter */
+        if (mptr->feat.nshop == 1)
+            Sprintf(eos(buf), "%s%s", COMMA,
+                    i18n_an_ctx("noun", shop_string(mptr->feat.shoptype)));
+        else
+            ov_interest_i18n(buf, &i, mptr->feat.nshop, "shop");
+        if (mptr->feat.ntemple > 0 && mptr->feat.naltar > 0) {
+            int j = 0;
+            char tbuf[BUFSZ], abuf[BUFSZ];
+
+            tbuf[0] = abuf[0] = '\0';
+            ov_interest_i18n(tbuf, &j, mptr->feat.ntemple, "temple");
+            j = 0;
+            ov_interest_i18n(abuf, &j, mptr->feat.naltar, "altar");
+            Snprintf(eos(buf), sizeof buf - strlen(buf), "%s%s",
+                     COMMA, tbuf + strlen(PREFIX));
+            Snprintf(eos(buf), sizeof buf - strlen(buf), _(" and %s"),
+                     abuf + strlen(PREFIX));
+        } else {
+            ov_interest_i18n(buf, &i, mptr->feat.ntemple, "temple");
+            ov_interest_i18n(buf, &i, mptr->feat.naltar, "altar");
+        }
+        if (mptr->feat.naltar > 0 || mptr->feat.ntemple > 0) {
+            unsigned atmp = Msa2amask(mptr->feat.msalign);
+
+            if (Amask2align(atmp) == u.ualign.type)
+                Snprintf(eos(buf), sizeof buf - strlen(buf), _(" to %s"),
+                         align_gname(u.ualign.type));
+        }
+        ov_interest_i18n(buf, &i, mptr->feat.nthrone, "throne");
+        ov_interest_i18n(buf, &i, mptr->feat.nfount, "fountain");
+        ov_interest_i18n(buf, &i, mptr->feat.nsink, "sink");
+        ov_interest_i18n(buf, &i, mptr->feat.ngrave, "grave");
+        ov_interest_i18n(buf, &i, mptr->feat.ntree, "tree");
+        i = strlen(PREFIX);
+        buf[i] = highc(buf[i]);
+        Strcat(buf, ".");
+#ifdef NHI18N
+        i18n_contract(buf);
+#endif
+        add_menu_str(win, buf);
+    } else if (OF_INTEREST(mptr->feat)) {
         buf[0] = 0;
 
         i = 0; /* interest counter */
@@ -3665,56 +3745,61 @@ print_mapseen(
     /* we assume that these are mutually exclusive */
     *buf = '\0';
     if (mptr->flags.oracle) {
-        Sprintf(buf, "%sOracle of Delphi.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("Oracle of Delphi."));
     } else if (In_sokoban(&mptr->lev)) {
-        Sprintf(buf, "%s%s.", PREFIX,
-                mptr->flags.sokosolved ? "Solved" : "Unsolved");
+        Sprintf(buf, "%s%s", PREFIX,
+                mptr->flags.sokosolved ? _("Solved.") : _("Unsolved."));
     } else if (mptr->flags.bigroom) {
-        Sprintf(buf, "%sA very big room.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("A very big room."));
     } else if (mptr->flags.roguelevel) {
-        Sprintf(buf, "%sA primitive area.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("A primitive area."));
     } else if (on_level(&mptr->lev, &qstart_level)) {
-        Sprintf(buf, "%sHome%s.", PREFIX,
-                mptr->flags.notreachable ? " (no way back...)" : "");
+        Sprintf(buf, "%s%s", PREFIX,
+                mptr->flags.notreachable ? _("Home (no way back...).")
+                                         : _("Home."));
         if (u.uevent.qcompleted)
-            Sprintf(buf, "%sCompleted quest for %s.", PREFIX, ldrname());
+            Snprintf(buf, sizeof buf, _("%sCompleted quest for %s."),
+                     PREFIX, ldrname());
         else if (mptr->flags.questing)
-            Sprintf(buf, "%sGiven quest by %s.", PREFIX, ldrname());
+            Snprintf(buf, sizeof buf, _("%sGiven quest by %s."), PREFIX,
+                     ldrname());
     } else if (mptr->flags.ludios) {
         /* presence of the ludios branch in #overview output indicates that
            the player has made it onto the level; presence of this annotation
            indicates that the fort's entrance has been seen (or mapped) */
-        Sprintf(buf, "%sFort Ludios.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("Fort Ludios."));
     } else if (mptr->flags.castle) {
-        Snprintf(buf, sizeof buf, "%sThe castle%s.", PREFIX,
+        Snprintf(buf, sizeof buf, _("%sThe castle%s."), PREFIX,
                 tunesuffix(mptr, tmpbuf, sizeof tmpbuf));
     } else if (mptr->flags.valley) {
-        Sprintf(buf, "%sValley of the Dead.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("Valley of the Dead."));
     } else if (mptr->flags.vibrating_square) {
-        Sprintf(buf, "%sGateway to Moloch's Sanctum.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("Gateway to Moloch's Sanctum."));
     } else if (mptr->flags.msanctum) {
-        Sprintf(buf, "%sMoloch's Sanctum.", PREFIX);
+        Sprintf(buf, "%s%s", PREFIX, _("Moloch's Sanctum."));
     }
     if (*buf) {
         add_menu_str(win, buf);
     }
     /* quest entrance is not mutually-exclusive with bigroom or rogue level */
     if (mptr->flags.quest_summons) {
-        Sprintf(buf, "%sSummoned by %s.", PREFIX, ldrname());
+        Snprintf(buf, sizeof buf, _("%sSummoned by %s."), PREFIX,
+                 ldrname());
         add_menu_str(win, buf);
     }
 
     /* print out branches */
     if (mptr->br) {
-        Sprintf(buf, "%s%s to %s", PREFIX, br_string2(mptr->br),
-                svd.dungeons[mptr->br->end2.dnum].dname);
+        Snprintf(buf, sizeof buf, _("%s%s to %s"), PREFIX,
+                 _(br_string2(mptr->br)),
+                 _(svd.dungeons[mptr->br->end2.dnum].dname));
 
         /* Since mapseen objects are printed out in increasing order
          * of dlevel, clarify which level this branch is going to
          * if the branch goes upwards.  Unless it's the end game.
          */
         if (mptr->br->end1_up && !In_endgame(&(mptr->br->end2)))
-            Sprintf(eos(buf), ", level %d", depth(&(mptr->br->end2)));
+            Sprintf(eos(buf), _(", level %d"), depth(&(mptr->br->end2)));
         Strcat(buf, ".");
         add_menu_str(win, buf);
     }
@@ -3728,7 +3813,7 @@ print_mapseen(
             if (bp->bonesknown || wizard || final > 0)
                 ++kncnt;
         if (kncnt) {
-            Sprintf(buf, "%s%s", PREFIX, "Final resting place for");
+            Sprintf(buf, "%s%s", PREFIX, _("Final resting place for"));
             add_menu_str(win, buf);
             if (died_here) {
                 /* disclosure occurs before bones creation, so listing dead

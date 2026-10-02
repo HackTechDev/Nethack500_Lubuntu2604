@@ -112,7 +112,7 @@ static boolean opt_set_in_config[OPTCOUNT];
 static char *roleoptvals[MAX_ROLEOPT][num_opt_phases];
 
 static NEARDATA const char *OptS_type[OptS_Advanced+1] = {
-    "General", "Behavior", "Map", "Status", "Advanced"
+    N_("General"), N_("Behavior"), N_("Map"), N_("Status"), N_("Advanced")
 };
 
 static const char def_inv_order[MAXOCLASSES] = {
@@ -4028,12 +4028,11 @@ optfn_sortvanquished(
 
         /* return handler_sortvanquished(); */
         (void) set_vanq_order(TRUE); /* insight.c */
-        pline("'%s' %s \"%s: %s\".", optname,
-              (flags.vanq_sortmode == prev_sortmode)
-                 ? "not changed, still"
-                 : "changed to",
+        pline((flags.vanq_sortmode == prev_sortmode)
+                 ? "'%s' not changed, still \"%s: %s\"."
+                 : "'%s' changed to \"%s: %s\".", optname,
               vanqorders[flags.vanq_sortmode][0],
-              vanqorders[flags.vanq_sortmode][1]);
+              _(vanqorders[flags.vanq_sortmode][1]));
     }
     return optn_ok;
 }
@@ -4540,9 +4539,9 @@ optfn_versinfo(
     } else if (req == do_handler) {
         /* return handler_versinfo(); */
         (void) handler_versinfo();
-        pline("'%s' %s %u.", optname,
-              (flags.versinfo == vi) ? "not changed, still" : "changed to",
-              flags.versinfo);
+        pline((flags.versinfo == vi) ? "'%s' not changed, still %u."
+                                     : "'%s' changed to %u.",
+              optname, flags.versinfo);
     } else if (req == get_val) {
         char vbuf[QBUFSZ];
         boolean g = (vi & VI_NAME) != 0,
@@ -5465,8 +5464,9 @@ optfn_boolean(
            still be pending at this point (mainly for opt_need_redraw);
            give the toggled message now regardless */
         if (give_opt_msg)
-            pline("'%s' option toggled %s.", allopt[optidx].name,
-                  !negated ? "on" : "off");
+            pline(!negated ? "'%s' option toggled on."
+                           : "'%s' option toggled off.",
+                  allopt[optidx].name);
 
         return optn_ok;
     }
@@ -5606,7 +5606,8 @@ handler_menustyle(void)
     destroy_nhwindow(tmpwin);
     chngd = (flags.menu_style != old_menu_style);
     if (chngd || flags.verbose)
-        pline("'menustyle' %s \"%s\".", chngd ? "changed to" : "is still",
+        pline(chngd ? "'menustyle' changed to \"%s\"."
+                    : "'menustyle' is still \"%s\".",
               menutype[(int) flags.menu_style][0]);
     return optn_ok;
 }
@@ -5694,8 +5695,8 @@ handler_autounlock(int optidx)
     chngd = (flags.autounlock != oldflags);
     if ((chngd || flags.verbose) && give_opt_msg) {
         optfn_autounlock(optidx, get_val, FALSE, buf, (char *) NULL);
-        pline("'%s' %s '%s'.", optname,
-              chngd ? "changed to" : "is still", buf);
+        pline(chngd ? "'%s' changed to '%s'." : "'%s' is still '%s'.",
+              optname, buf);
     }
     return res;
 }
@@ -5908,8 +5909,8 @@ handler_msg_window(void)
         if (chngd || flags.verbose) {
             (void) optfn_msg_window(opt_msg_window, get_val,
                                     FALSE, buf, empty_optstr);
-            pline("'msg_window' %.20s \"%.20s\".",
-                  chngd ? "changed to" : "is still", buf);
+            pline(chngd ? "'msg_window' changed to \"%.20s\"."
+                        : "'msg_window' is still \"%.20s\".", buf);
         }
     } else
 #endif /* PREV_MSGS (for tty or curses) */
@@ -6087,8 +6088,8 @@ handler_perminv_mode(void)
     if (n >= 0) { /* not ESC */
         buf[0] = '\0';
         (void) optfn_perminv_mode(opt_perm_invent, get_val, FALSE, buf, NULL);
-        pline("'perminv_mode' %s '%s' (%s).",
-              (new_pi != old_pi) ? "changed to" : "is still",
+        pline((new_pi != old_pi) ? "'perminv_mode' changed to '%s' (%s)."
+                                 : "'perminv_mode' is still '%s' (%s).",
               perminv_modes[new_pi][0], buf);
         if (new_pi != InvOptNone && !old_perm_invent)
             iflags.perm_invent = can_set_perm_invent();
@@ -8597,20 +8598,20 @@ doset_simple_menu(void)
            and show that, or whether #reqmenu and #options are both still
            bound to keys and show those, but if meta keys are involved
            the player might not know how to type them; keep this simple */
-        Strcpy(buf, "Use command '#optionsfull'"
-                    " to get the complete options list.");
+        Strcpy(buf, _("Use command '#optionsfull'"
+                      " to get the complete options list."));
         add_menu_str(tmpwin, buf);
     }
     any = cg.zeroany;
     any.a_int = -2 + 1;
     add_menu(tmpwin, &nul_glyphinfo, &any, '?', 0, ATR_NONE, NO_COLOR,
-             gs.simple_options_help ? "hide help" : "show help",
+             gs.simple_options_help ? _("hide help") : _("show help"),
              MENU_ITEMFLAGS_NONE);
 
     for (section = OptS_General; section < OptS_Advanced; section++) {
         any = cg.zeroany;
         add_menu_str(tmpwin, "");
-        Sprintf(buf, " %-30s ", OptS_type[section]);
+        Sprintf(buf, " %-30s ", _(OptS_type[section]));
         add_menu_heading(tmpwin, buf);
         for (i = 0; (name = allopt[i].name) != 0; i++) {
             if (allopt[i].section != section)
@@ -8658,17 +8659,17 @@ doset_simple_menu(void)
                 || allopt[i].idx == opt_pickup_thrown
                 || allopt[i].idx == opt_pickup_stolen
                 || allopt[i].idx == opt_dropped_nopick)
-                Strcat(buf, "  (for autopickup)");
+                Strcat(buf, _("  (for autopickup)"));
             add_menu(tmpwin, &nul_glyphinfo, &any, 0, 0,
                      ATR_NONE, NO_COLOR, buf, MENU_ITEMFLAGS_NONE);
             if (gs.simple_options_help && allopt[i].descr) {
-                Sprintf(buf, "    %s", allopt[i].descr);
+                Snprintf(buf, sizeof buf, "    %s", _(allopt[i].descr));
                 add_menu_str(tmpwin, buf);
                 add_menu_str(tmpwin, "");
             }
         }
     }
-    end_menu(tmpwin, "Options");
+    end_menu(tmpwin, _("Options"));
 
     go.opt_need_redraw = FALSE;
     go.opt_need_glyph_reset = FALSE;
@@ -8698,7 +8699,8 @@ doset_simple_menu(void)
                 if (reslt == optn_ok && allopt[k].idx != pfx_cond_)
                     opt_set_in_config[k] = TRUE;
             } else {
-                Sprintf(buf, "Set %s to what?", allopt[k].name);
+                Snprintf(buf, sizeof buf, _("Set %s to what?"),
+                         allopt[k].name);
                 getlin(buf, abuf);
                 if (abuf[0] != '\033') { /* ESC */
                     Sprintf(buf, "%s:", allopt[k].name);
@@ -8970,7 +8972,8 @@ doset(void) /* changing options via menu by Per Liboriussen */
                 } else {
                     char abuf[BUFSZ];
 
-                    Sprintf(buf, "Set %s to what?", allopt[opt_indx].name);
+                    Snprintf(buf, sizeof buf, _("Set %s to what?"),
+                             allopt[opt_indx].name);
                     abuf[0] = '\0';
                     getlin(buf, abuf);
                     if (abuf[0] == '\033')
@@ -9284,21 +9287,29 @@ RESTORE_WARNING_FORMAT_NONLITERAL
 int
 dotogglepickup(void)
 {
-    char buf[BUFSZ], ocl[MAXOCLASSES + 1];
+    char ocl[MAXOCLASSES + 1];
 
     flags.pickup = !flags.pickup;
+    /* whole sentences, so that each can be translated */
     if (flags.pickup) {
+        int exc = !ga.apelist ? 0 : (count_apes() == 1) ? 1 : 2;
+
         oc_to_str(flags.pickup_types, ocl);
-        Sprintf(buf, "ON, for %s objects%s", ocl[0] ? ocl : "all",
-                (ga.apelist)
-                    ? ((count_apes() == 1)
-                           ? ", with one exception"
-                           : ", with some exceptions")
-                    : "");
+        if (ocl[0])
+            pline(!exc ? "Autopickup: ON, for %s objects."
+                  : (exc == 1)
+                    ? "Autopickup: ON, for %s objects, with one exception."
+                    : "Autopickup: ON, for %s objects, with some "
+                      "exceptions.", ocl);
+        else
+            pline(!exc ? "Autopickup: ON, for all objects."
+                  : (exc == 1)
+                    ? "Autopickup: ON, for all objects, with one exception."
+                    : "Autopickup: ON, for all objects, with some "
+                      "exceptions.");
     } else {
-        Strcpy(buf, "OFF");
+        pline("Autopickup: OFF.");
     }
-    pline("Autopickup: %s.", buf);
     return ECMD_OK;
 }
 
@@ -9532,7 +9543,7 @@ option_help(void)
             || (is_wc2_option(optname) && !wc2_supported(optname)))
             continue;
         Sprintf(buf2, "`%s'", optname);
-        Snprintf(buf, sizeof(buf), "%-20s - %s%c", buf2, allopt[i].descr,
+        Snprintf(buf, sizeof(buf), "%-20s - %s%c", buf2, _(allopt[i].descr),
                  allopt[i + 1].name ? ',' : '.');
         putstr(datawin, 0, buf);
     }

@@ -3480,7 +3480,7 @@ read_tribute(const char *tribsection, const char *tribtitle,
 
     int scope = 0;
     int linect = 0, passagecnt = 0, targetpassage = 0;
-    const char *badtranslation = "an incomprehensible foreign translation";
+    const char *badtranslation = _("an incomprehensible foreign translation");
     boolean matchedsection = FALSE, matchedtitle = FALSE;
     winid tribwin = WIN_ERR;
     boolean grasped = FALSE;

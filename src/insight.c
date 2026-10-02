@@ -15,6 +15,8 @@
 #include "hack.h"
 
 staticfn void enlght_out(const char *);
+staticfn boolean enlght_i18n(char *, size_t);
+staticfn const char *skill_name_i18n(const char *);
 staticfn const char *pious_i18n(const char *);
 staticfn void enlght_line(const char *, const char *, const char *,
                           const char *);
@@ -42,11 +44,12 @@ staticfn void item_resistance_message(int, const char *, int);
 extern const char *const hu_stat[];  /* hunger status from eat.c */
 extern const char *const enc_stat[]; /* encumbrance status from botl.c */
 
-static const char You_[] = "You ", are[] = "are ", were[] = "were ",
-                  have[] = "have ", had[] = "had ", can[] = "can ",
-                  could[] = "could ";
-static const char have_been[] = "have been ", have_never[] = "have never ",
-                  never[] = "never ";
+static const char You_[] = N_("You "), are[] = N_("are "),
+                  were[] = N_("were "), have[] = N_("have "),
+                  had[] = N_("had "), can[] = N_("can "),
+                  could[] = N_("could ");
+static const char have_been[] = N_("have been "),
+                  have_never[] = N_("have never "), never[] = N_("never ");
 
 /* for livelogging: */
 struct ll_achieve_msg {
@@ -147,6 +150,15 @@ enlght_line(
     char buf[BUFSZ];
 
     Sprintf(buf, " %s%s%s%s.", start, middle, end, ps);
+    if (i18n_active()) {
+        /* a whole sentence in the catalog, else one made of the
+           translated fragments ("Vous " "êtes " "rapide") */
+        if (!enlght_i18n(buf, sizeof buf))
+            Snprintf(buf, sizeof buf, " %s%s%s%s.", _(start), _(middle),
+                     gendered_word(end, flags.female ? 1 : 0), _(ps));
+        enlght_out(buf);
+        return;
+    }
 #ifndef NO_ENLGHT_CONTRACTIONS
     if (strstri(buf, " not ")) { /* TODO: switch to libc strstr() */
         for (i = 0; i < SIZE(contra); ++i)
@@ -154,6 +166,294 @@ enlght_line(
     }
 #endif
     enlght_out(buf);
+}
+
+/* translate the composed enlightenment/conduct line buf (" You ...."),
+   looked up as a whole sentence; a number in it is looked up as "%d" */
+staticfn boolean
+enlght_i18n(char *buf, size_t bufsz)
+{
+#ifdef NHI18N
+    char key[BUFSZ], *p, *q;
+    const char *tr = 0;
+    long num = 0L;
+
+    if (flags.female)
+        tr = i18n_lookup("heroine", buf + 1);
+    if (!tr && i18n_has(buf + 1))
+        tr = _(buf + 1);
+    if (tr) {
+        char tmp[BUFSZ];
+
+        Snprintf(tmp, sizeof tmp, " %s", tr);
+        copynchars(buf, tmp, (int) bufsz - 1);
+        return TRUE;
+    }
+    /* "You have genocided 3 types of monsters." */
+    for (p = buf + 1; *p && !digit(*p); ++p)
+        continue;
+    if (!*p)
+        return FALSE;
+    for (q = p; digit(*q); ++q)
+        num = num * 10L + (*q - '0');
+    if (p > buf + 1 && p[-1] == '-') /* "<-860>" */
+        --p, num = -num;
+    copynchars(key, buf + 1, min((int) (p - (buf + 1)), BUFSZ - 1));
+    Strcat(key, "%ld");
+    if (strlen(key) + strlen(q) >= sizeof key)
+        return FALSE;
+    Strcat(key, q);
+    if (flags.female)
+        tr = i18n_lookup("heroine", key);
+    if (!tr && i18n_has(key))
+        tr = _(key);
+    if (tr) {
+        char tmp[BUFSZ];
+
+        DISABLE_WARNING_FORMAT_NONLITERAL;
+        Snprintf(tmp, sizeof tmp, tr, num);
+        RESTORE_WARNING_FORMAT_NONLITERAL;
+        Snprintf(buf, bufsz, " %s", tmp);
+        return TRUE;
+    }
+#else
+    nhUse(buf);
+    nhUse(bufsz);
+#endif
+    return FALSE;
+}
+
+#if 0
+/* fragments of enlightenment lines, translated by enlght_line() */
+N_("take") N_("took") N_("haven't encountered") N_("didn't encounter")
+N_(" any bones levels") N_("Total elapsed playing time ") N_("is") N_("was")
+N_("just started your adventure") N_("entered ") N_("It ") N_("is ")
+N_("was ") N_("the midnight hour") N_("nighttime") N_("There ")
+N_("Your score ") N_("Your armor class ") N_("you ") N_("have ") N_("had ")
+N_("Autopickup ") N_("levitating, at will") N_("levitating") N_("flying")
+N_("underwater") N_("swimming") N_("in water") N_("turning to stone")
+N_("turning into slime") N_("buried") N_("terminally sick from illness")
+N_("terminally sick from food poisoning") N_("nauseated") N_("stunned")
+N_("confused") N_("hallucinating") N_("deaf") N_("are ") N_("were ")
+N_(" has ") N_(" had ") N_("fumble") N_("fumbled") N_("You ") N_("fall")
+N_("fell") N_(" asleep uncontrollably") N_("hunger") N_("hungered")
+N_(" rapidly") N_("do not wear") N_("did not wear") N_(" any armor")
+N_("not wearing any armor") N_("wielding two weapons at once")
+N_("can enhance") N_("could have enhanced") N_("Your items ")
+N_("are somewhat") N_("are") N_("were somewhat") N_("were")
+N_("Your alignment ") N_("invulnerable") N_("magic-protected")
+N_("fire resistant") N_("cold resistant") N_("sleep resistant")
+N_("disintegration resistant") N_("shock resistant") N_("poison resistant")
+N_("level-drain resistant") N_("immune to sickness") N_("resist")
+N_("resisted") N_(" hallucinations") N_("recognize detrimental food")
+N_("see") N_("not subject to light-induced blindness") N_("saw")
+N_(" invisible") N_("will see") N_("would have seen")
+N_(" invisible when not blind") N_("would see") N_(" invisible if not blind")
+N_("telepathic") N_("warned") N_("warned of undead") N_("automatic searching")
+N_("clairvoyant") N_("could be") N_("could have been") N_(" clairvoyant")
+N_("infravision") N_("will confuse") N_("would have confused") N_("invisible")
+N_("invisible to others") N_("visible") N_("displaced") N_("stealthy")
+N_("would be") N_("would have been") N_(" monsters")
+N_("aggravate") N_("aggravated") N_("cause") N_("caused") N_(" conflict")
+N_("regenerate") N_("regenerated") N_("jump") N_("teleport")
+N_("teleport control") N_("would levitate") N_("would have levitated")
+N_("would fly") N_("would have flown") N_("hadn't been") N_("weren't")
+N_("had permitted") N_("permitted") N_(" if you weren't levitating")
+N_(" if you weren't trapped") N_(" if circumstances permitted")
+N_("cling to the ceiling") N_("could cling") N_("could have clung")
+N_("walk on water") N_("swim") N_("survive without air") N_("breathe water")
+N_("walk through walls") N_("slower digestion")
+N_("damage") N_("defense") N_(" reduced poison gas damage")
+N_("Your spell casting ") N_("protected from shape changers")
+N_("not change from your current form")
+N_(" if not locked into your current form") N_("polymorphing periodically")
+N_("polymorph control") N_("lay eggs") N_("harmed by silver") N_("very fast")
+N_("fast") N_("reflection") N_("free action") N_("fixed abilities")
+N_("Your life ") N_("will be") N_(" saved") N_("Your luck ") N_(" zero")
+N_("extra luck") N_("reduced luck") N_("Bad luck ") N_("does not time out")
+N_("did not time out") N_(" for you") N_("Good luck ") N_(" is") N_(" was")
+N_("The current fruit ") N_("The made fruit flag ") N_("have been killed ")
+N_("blind from birth") N_("deaf from birth") N_("started") N_("started out")
+N_(" without possessions") N_("faithfully nudist") N_("have gone") N_("went")
+N_(" without food") N_("followed a strict vegan diet") N_("vegetarian")
+N_("an atheist") N_("hit with a wielded weapon") N_("a pacifist")
+N_("illiterate") N_("had a pet") N_("genocided any monsters")
+N_("polymorphed an object") N_("changed form") N_("used no wishes")
+N_("have not wished") N_("did not wish") N_(" for any artifacts")
+N_("are exploring") N_("explored") N_(" without being able to see")
+N_(" without any armor") N_("entered the Gnomish Mines")
+N_("entered Minetown") N_("entered a shop") N_("entered a temple")
+N_("consulted the Oracle of Delphi") N_("read from a Discworld novel")
+N_("entered Sokoban") N_("completed Sokoban")
+N_("completed the Gnomish Mines") N_("entered the Big Room")
+N_("defeated Medusa")
+N_("learned the tune to open and close the Castle's drawbridge") N_("have")
+N_("have handled") N_("had") N_("handled") N_(" the Bell of Opening")
+N_("entered Gehennom") N_(" the Candelabrum of Invocation")
+N_(" the Book of the Dead") N_("gained access to Moloch's Sanctum")
+N_("have obtained") N_("delivered") N_("had obtained")
+N_(" the Amulet of Yendor") N_("reached the Elemental Planes")
+N_("reached the Astral Plane")
+#endif
+
+#if 0
+/* feminine forms given by gendered_word() in enlght_line() */
+C_("feminine", "invulnerable")
+C_("feminine", "magic-protected")
+C_("feminine", "cold resistant")
+C_("feminine", "fire resistant")
+C_("feminine", "sleep resistant")
+C_("feminine", "disintegration resistant")
+C_("feminine", "poison resistant")
+C_("feminine", "shock resistant")
+C_("feminine", "immune to sickness")
+C_("feminine", "level-drain resistant")
+C_("feminine", "telepathic")
+C_("feminine", "warned")
+C_("feminine", "warned of undead")
+C_("feminine", "clairvoyant")
+C_("feminine", " clairvoyant")
+C_("feminine", "displaced")
+C_("feminine", "stealthy")
+C_("feminine", "buried")
+C_("feminine", "nauseated")
+C_("feminine", "deaf")
+C_("feminine", "very fast")
+C_("feminine", "protected from shape changers")
+C_("feminine", "terminally sick from illness")
+C_("feminine", "terminally sick from food poisoning")
+C_("feminine", "blind from birth")
+C_("feminine", "deaf from birth")
+C_("feminine", "vegetarian")
+C_("feminine", "illiterate")
+C_("feminine", "not subject to light-induced blindness")
+C_("feminine", "harmed by silver")
+C_("feminine", "invisible to others")
+C_("feminine", "visible")
+#endif
+
+#if 0
+/* whole status lines of enlightenment, looked up by enlght_i18n() */
+N_("You are not hungry.")
+N_("You are not hungry <%ld>.")
+N_("You are hungry.")
+N_("You are hungry <%ld>.")
+N_("You are satiated.")
+N_("You are satiated <%ld>.")
+N_("You are weak from severe hunger.")
+N_("You are weak from severe hunger <%ld>.")
+N_("You are fainting due to starvation.")
+N_("You are fainting due to starvation <%ld>.")
+N_("You are fainted due to starvation.")
+N_("You are fainted due to starvation <%ld>.")
+N_("You are burdened; movement is slightly slowed.")
+N_("You are burdened <%ld>; movement is slightly slowed.")
+N_("You are stressed; movement is moderately slowed.")
+N_("You are stressed <%ld>; movement is moderately slowed.")
+N_("You are strained; movement is very slowed.")
+N_("You are strained <%ld>; movement is very slowed.")
+N_("You are overtaxed; movement is extremely slowed.")
+N_("You are overtaxed <%ld>; movement is extremely slowed.")
+N_("You are overloaded; movement is not possible.")
+N_("You are unencumbered.")
+N_("You are overloaded <%ld>; movement is not possible.")
+N_("You are unencumbered <%ld>.")
+N_("You were not hungry.")
+N_("You were not hungry <%ld>.")
+N_("You were hungry.")
+N_("You were hungry <%ld>.")
+N_("You were satiated.")
+N_("You were satiated <%ld>.")
+N_("You were weak from severe hunger.")
+N_("You were weak from severe hunger <%ld>.")
+N_("You were fainting due to starvation.")
+N_("You were fainting due to starvation <%ld>.")
+N_("You were fainted due to starvation.")
+N_("You were fainted due to starvation <%ld>.")
+N_("You were burdened; movement was slightly slowed.")
+N_("You were burdened <%ld>; movement was slightly slowed.")
+N_("You were stressed; movement was moderately slowed.")
+N_("You were stressed <%ld>; movement was moderately slowed.")
+N_("You were strained; movement was very slowed.")
+N_("You were strained <%ld>; movement was very slowed.")
+N_("You were overtaxed; movement was extremely slowed.")
+N_("You were overtaxed <%ld>; movement was extremely slowed.")
+N_("You were overloaded; movement was not possible.")
+N_("You were unencumbered.")
+N_("You were overloaded <%ld>; movement was not possible.")
+N_("You were unencumbered <%ld>.")
+NC_("heroine", "You are not hungry.")
+NC_("heroine", "You are not hungry <%ld>.")
+NC_("heroine", "You are hungry.")
+NC_("heroine", "You are hungry <%ld>.")
+NC_("heroine", "You are satiated.")
+NC_("heroine", "You are satiated <%ld>.")
+NC_("heroine", "You are fainted due to starvation.")
+NC_("heroine", "You are fainted due to starvation <%ld>.")
+NC_("heroine", "You are burdened; movement is slightly slowed.")
+NC_("heroine", "You are burdened <%ld>; movement is slightly slowed.")
+NC_("heroine", "You are stressed; movement is moderately slowed.")
+NC_("heroine", "You are stressed <%ld>; movement is moderately slowed.")
+NC_("heroine", "You are strained; movement is very slowed.")
+NC_("heroine", "You are strained <%ld>; movement is very slowed.")
+NC_("heroine", "You are overtaxed; movement is extremely slowed.")
+NC_("heroine", "You are overtaxed <%ld>; movement is extremely slowed.")
+NC_("heroine", "You are overloaded; movement is not possible.")
+NC_("heroine", "You are overloaded <%ld>; movement is not possible.")
+NC_("heroine", "You were not hungry.")
+NC_("heroine", "You were not hungry <%ld>.")
+NC_("heroine", "You were hungry.")
+NC_("heroine", "You were hungry <%ld>.")
+NC_("heroine", "You were satiated.")
+NC_("heroine", "You were satiated <%ld>.")
+NC_("heroine", "You were fainted due to starvation.")
+NC_("heroine", "You were fainted due to starvation <%ld>.")
+NC_("heroine", "You were burdened; movement was slightly slowed.")
+NC_("heroine", "You were burdened <%ld>; movement was slightly slowed.")
+NC_("heroine", "You were stressed; movement was moderately slowed.")
+NC_("heroine", "You were stressed <%ld>; movement was moderately slowed.")
+NC_("heroine", "You were strained; movement was very slowed.")
+NC_("heroine", "You were strained <%ld>; movement was very slowed.")
+NC_("heroine", "You were overtaxed; movement was extremely slowed.")
+NC_("heroine", "You were overtaxed <%ld>; movement was extremely slowed.")
+NC_("heroine", "You were overloaded; movement was not possible.")
+NC_("heroine", "You were overloaded <%ld>; movement was not possible.")
+#endif
+
+#if 0
+/* ^X lines given by gendered_word() */
+N_(" You are normally right-handed.") N_(" You are normally left-handed.")
+N_(" You are right-handed.") N_(" You are left-handed.")
+N_(" You entered the dungeon %ld turns ago.")
+C_("feminine", " You are normally right-handed.")
+C_("feminine", " You are normally left-handed.")
+C_("feminine", " You are right-handed.")
+C_("feminine", " You are left-handed.")
+C_("feminine", " You entered the dungeon %ld turns ago.")
+#endif
+
+#if 0
+/* skill levels shown in enlightenment (lowercase skill_level_name()) */
+NC_("skill level", "unskilled") NC_("skill level", "basic")
+NC_("skill level", "skilled") NC_("skill level", "expert")
+NC_("skill level", "master") NC_("skill level", "grand master")
+N_(" You have strayed.") N_(" You had strayed.")
+C_("feminine", " You have strayed.") C_("feminine", " You had strayed.")
+N_("aligned") C_("feminine", "aligned")
+N_("empty handed") N_("bare handed") N_("not wielding anything")
+#endif
+
+/* translated name of skill (weapon.c's P_NAME()) */
+staticfn const char *
+skill_name_i18n(const char *name)
+{
+#ifdef NHI18N
+    const char *res = i18n_lookup("skill", name);
+
+    if (res)
+        return res;
+#endif
+    return nh_npgettext("object", name, FALSE);
 }
 
 /* format increased chance to hit or damage or defense (Protection) */
@@ -334,27 +634,31 @@ fmt_elapsed_time(char *outbuf, int final)
     edays = etim / 24L;
     fieldcnt = !!edays + !!ehours + !!eminutes + !!eseconds;
 
-    Strcpy(outbuf, fieldcnt ? "" : " none"); /* 'none' should never happen */
+    Strcpy(outbuf, fieldcnt ? "" : _(" none")); /* 'none' never happens */
     if (edays) {
-        Sprintf(eos(outbuf), " %ld day%s", edays, plur(edays));
+        Sprintf(eos(outbuf), (edays == 1L) ? _(" %ld day") : _(" %ld days"),
+                edays);
         if (fieldcnt > 1) /* hours and/or minutes and/or seconds to follow */
-            Strcat(outbuf, (fieldcnt == 2) ? " and" : ",");
+            Strcat(outbuf, (fieldcnt == 2) ? _(" and") : ",");
         --fieldcnt; /* edays has been processed */
     }
     if (ehours) {
-        Sprintf(eos(outbuf), " %ld hour%s", ehours, plur(ehours));
+        Sprintf(eos(outbuf), (ehours == 1L) ? _(" %ld hour")
+                                            : _(" %ld hours"), ehours);
         if (fieldcnt > 1) /* minutes and/or seconds to follow */
-            Strcat(outbuf, (fieldcnt == 2) ? " and" : ",");
+            Strcat(outbuf, (fieldcnt == 2) ? _(" and") : ",");
         --fieldcnt; /* ehours has been processed */
     }
     if (eminutes) {
-        Sprintf(eos(outbuf), " %ld minute%s", eminutes, plur(eminutes));
+        Sprintf(eos(outbuf), (eminutes == 1L) ? _(" %ld minute")
+                                              : _(" %ld minutes"), eminutes);
         if (fieldcnt > 1) /* seconds to follow */
-            Strcat(outbuf, " and");
+            Strcat(outbuf, _(" and"));
         /* eminutes has been processed but no need to decrement fieldcnt */
     }
     if (eseconds)
-        Sprintf(eos(outbuf), " %ld second%s", eseconds, plur(eseconds));
+        Sprintf(eos(outbuf), (eseconds == 1L) ? _(" %ld second")
+                                              : _(" %ld seconds"), eseconds);
     return outbuf;
 }
 
@@ -396,10 +700,10 @@ enlightenment(
     *tmpbuf = highc(*tmpbuf); /* same adjustment as bottom line */
     /* as in background_enlightenment, when poly'd we need to use the saved
        gender in u.mfemale rather than the current you-as-monster gender */
-    Snprintf(buf, sizeof(buf), "%s the %s's attributes:", tmpbuf,
-             ((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
+    Snprintf(buf, sizeof(buf), _("%s the %s's attributes:"), tmpbuf,
+             _(((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
                 ? gu.urole.name.f
-                : gu.urole.name.m);
+                : gu.urole.name.m));
 
     /* title */
     enlght_out(buf); /* "Conan the Archeologist's attributes:" */
@@ -424,12 +728,22 @@ enlightenment(
     }
 
     enlght_out(""); /* separator */
-    enlght_out("Miscellaneous:");
+    enlght_out(_("Miscellaneous:"));
     /* reminder to player and/or information for dumplog */
     if ((mode & BASICENLIGHTENMENT) != 0 && (wizard || discover || final)) {
         if (wizard || discover) {
-            Sprintf(buf, "running in %s mode", wizard ? "debug" : "explore");
-            you_are(buf, "");
+            if (i18n_active()) {
+                enlght_out(wizard
+                           ? (!final ? _(" You are running in debug mode.")
+                                     : _(" You were running in debug mode."))
+                           : (!final
+                              ? _(" You are running in explore mode.")
+                              : _(" You were running in explore mode.")));
+            } else {
+                Sprintf(buf, "running in %s mode",
+                        wizard ? "debug" : "explore");
+                you_are(buf, "");
+            }
         }
 
         if (!flags.bones) {
@@ -480,7 +794,7 @@ background_enlightenment(int unused_mode UNUSED, int final)
     rank_titl = rank_of(u.ulevel, Role_switch, innategend);
 
     enlght_out(""); /* separator after title */
-    enlght_out("Background:");
+    enlght_out(_("Background:"));
 
     /* if polymorphed, report current shape before underlying role;
        will be repeated as first status: "you are transformed" and also
@@ -515,6 +829,16 @@ background_enlightenment(int unused_mode UNUSED, int final)
             || innategend != flags.initgend))
         Sprintf(tmpbuf, "%s ", genders[innategend].adj);
     buf[0] = '\0';
+    if (i18n_active()) {
+        char rbuf[BUFSZ];
+
+        Snprintf(rbuf, sizeof rbuf,
+                 Upolyd ? _(" You are actually %s, %s %s of level %d.")
+                        : _(" You are %s, %s %s of level %d."),
+                 _(rank_titl), _(role_titl),
+                 gendered_word(gu.urace.adj, innategend), u.ulevel);
+        enlght_out(rbuf);
+    } else {
     if (Upolyd)
         Strcpy(buf, "actually "); /* "You are actually a ..." */
     if (!strcmpi(rank_titl, role_titl)) {
@@ -526,10 +850,41 @@ background_enlightenment(int unused_mode UNUSED, int final)
                 tmpbuf, gu.urace.adj, role_titl);
     }
     you_are(buf, "");
+    }
 
     /* report alignment (bypass you_are() in order to omit ending period);
        adverb is used to distinguish between temporary change (helm of opp.
        alignment), permanent change (one-time conversion), and original */
+    if (i18n_active()) {
+        const char *how = (u.ualign.type != u.ualignbase[A_CURRENT])
+                          ? (!final ? _("currently ") : _("temporarily "))
+                          : (u.ualign.type != u.ualignbase[A_ORIGINAL])
+                            ? (!final ? _("now ") : _("belatedly "))
+                            : (!u.uconduct.gnostic && svm.moves > 1000L)
+                              ? _("nominally ") : "";
+
+        Snprintf(buf, sizeof buf,
+                 !final ? _(" You are %s%s, on a mission for %s")
+                        : _(" You were %s%s, on a mission for %s"),
+                 how, gendered_word(align_str(u.ualign.type),
+                                    flags.female ? 1 : 0), u_gname());
+        enlght_out(buf);
+        Strcpy(buf, !final ? _(" who is opposed by")
+                           : _(" who was opposed by"));
+        if (u.ualign.type != A_LAWFUL)
+            Sprintf(eos(buf), _(" %s (%s) and"), align_gname(A_LAWFUL),
+                    _(align_str(A_LAWFUL)));
+        if (u.ualign.type != A_NEUTRAL)
+            Sprintf(eos(buf), " %s (%s)%s", align_gname(A_NEUTRAL),
+                    _(align_str(A_NEUTRAL)),
+                    (u.ualign.type != A_CHAOTIC) ? _(" and") : "");
+        if (u.ualign.type != A_CHAOTIC)
+            Sprintf(eos(buf), " %s (%s)", align_gname(A_CHAOTIC),
+                    _(align_str(A_CHAOTIC)));
+        Strcat(buf, ".");
+        enlght_out(buf);
+        goto align_done;
+    }
     Sprintf(buf, " %s%s%s, %son a mission for %s",
             You_, !final ? are : were,
             align_str(u.ualign.type),
@@ -567,6 +922,7 @@ background_enlightenment(int unused_mode UNUSED, int final)
                 align_str(A_CHAOTIC));
     Strcat(buf, "."); /* terminate sentence */
     enlght_out(buf);
+ align_done:
 
     /* show original alignment,gender,race,role if any have been changed;
        giving separate message for temporary alignment change bypasses need
@@ -591,10 +947,24 @@ background_enlightenment(int unused_mode UNUSED, int final)
 
     /* "You are left-handed." won't work well if polymorphed into something
        without hands; use "You are normally left-handed." in that situation */
-    Sprintf(buf, "%s%s-handed",
-            !strcmp(mbodypart_english(&gy.youmonst, HANDED), "handed") ? "" : "normally ",
-            URIGHTY ? "right" : "left");
-    you_are(buf, "");
+    {
+        boolean normally = strcmp(mbodypart_english(&gy.youmonst, HANDED),
+                                  "handed") != 0;
+
+        if (i18n_active()) {
+            Strcpy(buf, gendered_word(normally
+                        ? (URIGHTY ? " You are normally right-handed."
+                                   : " You are normally left-handed.")
+                        : (URIGHTY ? " You are right-handed."
+                                   : " You are left-handed."),
+                        flags.female ? 1 : 0));
+            enlght_out(buf);
+        } else {
+            Sprintf(buf, "%s%s-handed", normally ? "normally " : "",
+                    URIGHTY ? "right" : "left");
+            you_are(buf, "");
+        }
+    }
 
     /* As of 3.6.2: dungeon level, so that ^X really has all status info as
        claimed by the comment below; this reveals more information than
@@ -628,11 +998,42 @@ background_enlightenment(int unused_mode UNUSED, int final)
         else if (Is_bigroom(&u.uz) && !Blind)
             Strcat(tmpbuf, ", a very big room");
         Snprintf(buf, sizeof(buf), "in %s, on %s", dgnbuf, tmpbuf);
+        if (i18n_active()) {
+            const char *extra = Is_rogue_level(&u.uz)
+                                ? _(", a primitive area")
+                                : (Is_bigroom(&u.uz) && !Blind)
+                                  ? _(", a very big room") : "";
+
+            char dnam[BUFSZ];
+
+            Strcpy(dnam, _(svd.dungeons[u.uz.dnum].dname));
+            /* "dans les Donjons du Destin" */
+            if (!strncmp(dnam, "Le ", 3) || !strncmp(dnam, "La ", 3)
+                || !strncmp(dnam, "Les ", 4))
+                *dnam = lowc(*dnam);
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" You are in %s, on level %d%s.")
+                            : _(" You were in %s, on level %d%s."),
+                     dnam,
+                     In_quest(&u.uz) ? dunlev(&u.uz) : depth(&u.uz), extra);
+            enlght_out(buf);
+            *buf = '\0';
+        }
     }
-    you_are(buf, "");
+    if (*buf)
+        you_are(buf, "");
 
     /* this is shown even if the 'time' option is off */
-    if (svm.moves == 1L) {
+    if (svm.moves == 1L && i18n_active()) {
+        enlght_out(_(" You have just started your adventure."));
+    } else if (i18n_active()) {
+        DISABLE_WARNING_FORMAT_NONLITERAL;
+        Snprintf(buf, sizeof buf,
+                 gendered_word(" You entered the dungeon %ld turns ago.",
+                               flags.female ? 1 : 0), svm.moves);
+        RESTORE_WARNING_FORMAT_NONLITERAL;
+        enlght_out(buf);
+    } else if (svm.moves == 1L) {
         you_have("just started your adventure", "");
     } else {
         /* 'turns' grates on the nerves in this context... */
@@ -709,7 +1110,22 @@ background_enlightenment(int unused_mode UNUSED, int final)
                     /* "for": grammatically iffy but less likely to wrap */
                     (ulvl < 18) ? "to attain" : "for", (ulvl + 1));
         }
-        you_have(buf, "");
+        if (i18n_active()) {
+            if (ulvl < 30 && (final || wizard))
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" You have %ld experience points, %ld "
+                                    "needed for level %d.")
+                                : _(" You had %ld experience points, %ld "
+                                    "were needed for level %d."),
+                         u.uexp, newuexp(ulvl) - u.uexp, ulvl + 1);
+            else
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" You have %ld experience points.")
+                                : _(" You had %ld experience points."),
+                         u.uexp);
+            enlght_out(buf);
+        } else
+            you_have(buf, "");
     }
 #ifdef SCORE_ON_BOTL
     if (flags.showscore) {
@@ -734,11 +1150,41 @@ basics_enlightenment(int mode UNUSED, int final)
         pwmax = u.uenmax, hpmax = (Upolyd ? u.mhmax : u.uhpmax);
 
     enlght_out(""); /* separator after background */
-    enlght_out("Basics:");
+    enlght_out(_("Basics:"));
 
     if (hp < 0)
         hp = 0;
     /* "1 out of 1" rather than "all" if max is only 1; should never happen */
+    if (i18n_active()) {
+        if (hp == hpmax && hpmax > 1)
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" You have all %d hit points.")
+                            : _(" You had all %d hit points."), hpmax);
+        else
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" You have %d out of %d hit points.")
+                            : _(" You had %d out of %d hit points."),
+                     hp, hpmax);
+        enlght_out(buf);
+        if (!pwmax)
+            Strcpy(buf, !final
+                        ? _(" You have no energy points (spell power).")
+                        : _(" You had no energy points (spell power)."));
+        else if (pw == pwmax)
+            Snprintf(buf, sizeof buf,
+                     !final
+                     ? _(" You have all %d energy points (spell power).")
+                     : _(" You had all %d energy points (spell power)."),
+                     pwmax);
+        else
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" You have %d out of %d energy points (spell "
+                                "power).")
+                            : _(" You had %d out of %d energy points (spell "
+                                "power)."), pw, pwmax);
+        enlght_out(buf);
+        goto hp_pw_done;
+    }
     if (hp == hpmax && hpmax > 1)
         Sprintf(buf, "all %d hit points", hpmax);
     else
@@ -753,6 +1199,7 @@ basics_enlightenment(int mode UNUSED, int final)
     else
         Sprintf(buf, "%d out of %d %s", pw, pwmax, Power);
     you_have(buf, "");
+ hp_pw_done:
 
     if (Upolyd) {
         switch (mons[u.umonnum].mlevel) {
@@ -771,17 +1218,54 @@ basics_enlightenment(int mode UNUSED, int final)
     }
 
     find_ac(); /* enforces AC_MAX cap */
+    if (i18n_active()) {
+        Snprintf(buf, sizeof buf,
+                 (abs(u.uac) != AC_MAX)
+                 ? (!final ? _(" Your armor class is %d.")
+                           : _(" Your armor class was %d."))
+                 : (u.uac < 0)
+                   ? (!final
+                      ? _(" Your armor class is %d, the best possible.")
+                      : _(" Your armor class was %d, the best possible."))
+                   : (!final
+                      ? _(" Your armor class is %d, the worst possible.")
+                      : _(" Your armor class was %d, the worst possible.")),
+                 u.uac);
+        enlght_out(buf);
+        goto ac_done;
+    }
     Sprintf(buf, "%d", u.uac);
     if (abs(u.uac) == AC_MAX)
         Sprintf(eos(buf), ", the %s possible",
                 (u.uac < 0) ? "best" : "worst");
     enl_msg("Your armor class ", "is ", "was ", buf, "");
+ ac_done:
 
     /* gold; similar to doprgold (#showgold) but without shop billing info;
        includes container contents, unlike status line but like doprgold */
     {
         long umoney = money_cnt(gi.invent), hmoney = hidden_gold(final);
 
+        if (i18n_active()) {
+            /* whole sentences, so that each can be translated */
+            if (!umoney && !hmoney)
+                Strcpy(buf, !final ? _(" Your wallet is empty.")
+                                   : _(" Your wallet was empty."));
+            else if (!hmoney)
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" Your wallet contains %ld %s.")
+                                : _(" Your wallet contained %ld %s."),
+                         umoney, currency(umoney));
+            else
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" Your wallet contains %ld %s, and you "
+                                    "have %ld stashed away in your pack.")
+                                : _(" Your wallet contained %ld %s, and you "
+                                    "had %ld stashed away in your pack."),
+                         umoney, currency(umoney), hmoney);
+            enlght_out(buf);
+            goto wallet_done;
+        }
         if (!umoney) {
             Sprintf(buf, " Your wallet %s empty", !final ? "is" : "was");
         } else {
@@ -801,6 +1285,7 @@ basics_enlightenment(int mode UNUSED, int final)
             enl_msg("you ", "have ", "had ", buf, "");
         }
     }
+ wallet_done:
 
     if (flags.pickup) {
         char ocl[MAXOCLASSES + 1];
@@ -820,7 +1305,19 @@ basics_enlightenment(int mode UNUSED, int final)
         }
     } else
         Strcpy(buf, "off");
-    enl_msg("Autopickup ", "is ", "was ", buf, "");
+    if (i18n_active() && !flags.pickup)
+        enlght_out(!final ? _(" Autopickup is off.")
+                          : _(" Autopickup was off."));
+    else if (i18n_active() && costly_spot(u.ux, u.uy))
+        enlght_out(!final ? _(" Autopickup is on, but temporarily disabled "
+                              "while inside the shop.")
+                          : _(" Autopickup was on, but temporarily disabled "
+                              "while inside the shop."));
+    else if (i18n_active() && !strcmp(buf, "on for all types"))
+        enlght_out(!final ? _(" Autopickup is on for all types.")
+                          : _(" Autopickup was on for all types."));
+    else
+        enl_msg("Autopickup ", "is ", "was ", buf, "");
 }
 
 /* characteristics: expanded version of bottom line strength, dexterity, &c */
@@ -830,7 +1327,7 @@ characteristics_enlightenment(int mode, int final)
     char buf[BUFSZ];
 
     enlght_out("");
-    Sprintf(buf, "%sCharacteristics:", !final ? "" : "Final ");
+    Strcpy(buf, !final ? _("Characteristics:") : _("Final Characteristics:"));
     enlght_out(buf);
 
     /* bottom line order */
@@ -895,7 +1392,11 @@ one_characteristic(int mode, int final, int attrindx)
 
     acurrent = ACURR(attrindx);
     (void) attrval(attrindx, acurrent, valubuf); /* Sprintf(valubuf,"%d",) */
-    Sprintf(subjbuf, "Your %s ", attrname[attrindx]);
+    if (i18n_active())
+        Snprintf(subjbuf, sizeof subjbuf, _("Your %s "),
+                 _(attrname[attrindx]));
+    else
+        Sprintf(subjbuf, "Your %s ", attrname[attrindx]);
 
     if (!hide_innate_value) {
         /* show abase, amax, and/or attrmax if acurr doesn't match abase
@@ -960,7 +1461,7 @@ status_enlightenment(int mode, int final)
      *     should be discernible to the hero hence to the player)
     \*/
     enlght_out(""); /* separator after title or characteristics */
-    enlght_out(final ? "Final Status:" : "Status:");
+    enlght_out(final ? _("Final Status:") : _("Status:"));
 
     Strcpy(youtoo, You_);
     /* not a traditional status but inherently obvious to player; more
@@ -1260,7 +1761,7 @@ status_enlightenment(int mode, int final)
     /* report 'nudity' */
     if (!uarm && !uarmu && !uarmc && !uarms && !uarmg && !uarmf && !uarmh) {
         if (u.uroleplay.nudist)
-            enl_msg(You_, "do", "did", " not wear any armor", "");
+            enl_msg(You_, "do not wear", "did not wear", " any armor", "");
         else
             you_are("not wearing any armor", "");
     }
@@ -1295,14 +1796,22 @@ weapon_insight(int final)
         else if (is_wet_towel(uwep))
             what = /* (uwep->spe < 3) ? "moist towel" : */ "wet towel";
 
-        if (!strcmpi(what, "armor") || !strcmpi(what, "food")
+        if (i18n_active()) {
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" You are wielding %s.")
+                            : _(" You were wielding %s."),
+                     (uwep->quan == 1L) ? an(xname(uwep)) : xname(uwep));
+            enlght_out(buf);
+            *buf = '\0';
+        } else if (!strcmpi(what, "armor") || !strcmpi(what, "food")
             || !strcmpi(what, "venom"))
             Sprintf(buf, "wielding some %s", what);
         else
             /* [maybe include known blessed?] */
             Sprintf(buf, "wielding %s",
                     (uwep->quan == 1L) ? an(what) : makeplural(what));
-        you_are(buf, "");
+        if (*buf)
+            you_are(buf, "");
     }
 
     /*
@@ -1323,7 +1832,18 @@ weapon_insight(int final)
         Sprintf(buf, "%s %s %s", sklvlbuf,
                 hav ? "skill with" : "in", skill_name(wtype));
 
-        if (!u.twoweap) {
+        if (!u.twoweap && i18n_active()) {
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" Your skill in %s is: %s%s.")
+                            : _(" Your skill in %s was: %s%s."),
+                     skill_name_i18n(skill_name(wtype)),
+                     (sklvl == P_ISRESTRICTED) ? _("restricted")
+                                               : C_("skill level", sklvlbuf),
+                     !can_advance(wtype, FALSE) ? ""
+                     : !final ? _(" (you can enhance it)")
+                              : _(" (you could have enhanced it)"));
+            enlght_out(buf);
+        } else if (!u.twoweap) {
             if (can_advance(wtype, FALSE))
                 Sprintf(eos(buf), " and %s that",
                         !final ? "can enhance" : "could have enhanced");
@@ -1498,7 +2018,7 @@ attributes_enlightenment(
      *  Attributes
     \*/
     enlght_out("");
-    enlght_out(final ? "Final Attributes:" : "Attributes:");
+    enlght_out(final ? _("Final Attributes:") : _("Attributes:"));
 
     if (u.uevent.uhand_of_elbereth) {
         static const char *const hofe_titles[3] = { "the Hand of Elbereth",
@@ -1508,7 +2028,21 @@ attributes_enlightenment(
     }
 
     Sprintf(buf, "%s", piousness(TRUE, "aligned"));
-    if (u.ualign.record >= 0)
+    if (i18n_active() && u.ualign.record < 0) {
+        enlght_out(!strcmp(buf, "strayed")
+                   ? gendered_word(!final ? " You have strayed."
+                                          : " You had strayed.",
+                                   flags.female ? 1 : 0)
+                   : !strcmp(buf, "sinned")
+                     ? (!final ? _(" You have sinned.")
+                               : _(" You had sinned."))
+                     : (!final ? _(" You have transgressed.")
+                               : _(" You had transgressed.")));
+    } else if (i18n_active()) {
+        Snprintf(buf, sizeof buf, "%s",
+                 pious_i18n(piousness(TRUE, "aligned")));
+        you_are(buf, "");
+    } else if (u.ualign.record >= 0)
         you_are(buf, "");
     else
         you_have(buf, "");
@@ -1675,10 +2209,10 @@ attributes_enlightenment(
         enl_msg(You_, "would be", "would have been", buf, "");
     }
     if (Aggravate_monster)
-        enl_msg("You aggravate", "", "d", " monsters",
+        enl_msg(You_, "aggravate", "aggravated", " monsters",
                 from_what(AGGRAVATE_MONSTER));
     if (Conflict)
-        enl_msg("You cause", "", "d", " conflict", from_what(CONFLICT));
+        enl_msg(You_, "cause", "caused", " conflict", from_what(CONFLICT));
 
     /*** Transportation ***/
     if (Jumping)
@@ -1767,7 +2301,8 @@ attributes_enlightenment(
 
     /*** Physical attributes ***/
     if (Regeneration)
-        enl_msg("You regenerate", "", "d", "", from_what(REGENERATION));
+        enl_msg(You_, "regenerate", "regenerated", "",
+                from_what(REGENERATION));
     if (Slow_digestion)
         you_have("slower digestion", from_what(SLOW_DIGESTION));
     if (u.uhitinc) {
@@ -1924,9 +2459,11 @@ attributes_enlightenment(
     if (carrying(LUCKSTONE) || stone_luck(TRUE)) {
         ltmp = stone_luck(FALSE);
         if (ltmp <= 0)
-            enl_msg("Bad luck ", "does", "did", " not time out for you", "");
+            enl_msg("Bad luck ", "does not time out", "did not time out",
+                    " for you", "");
         if (ltmp >= 0)
-            enl_msg("Good luck ", "does", "did", " not time out for you", "");
+            enl_msg("Good luck ", "does not time out", "did not time out",
+                    " for you", "");
     }
 
     if (u.ugangr) {
@@ -2086,6 +2623,69 @@ doconduct(void)
 }
 
 /* display conducts; for doconduct(), also disclose() and dump_everything() */
+#if 0
+/* whole conduct sentences, translated by enlght_i18n() */
+NC_("heroine", "You have been deaf from birth.")
+NC_("heroine", "You were deaf from birth.")
+NC_("heroine", "You have been vegetarian.")
+NC_("heroine", "You were vegetarian.")
+NC_("heroine", "You have been illiterate.")
+NC_("heroine", "You were illiterate.")
+NC_("heroine", "You have gone without food.")
+NC_("heroine", "You have gone without any armor.")
+N_("You have been blind from birth.")
+N_("You were blind from birth.")
+N_("You have been deaf from birth.")
+N_("You were deaf from birth.")
+N_("You have been faithfully nudist.")
+N_("You were faithfully nudist.")
+N_("You have been vegetarian.")
+N_("You were vegetarian.")
+N_("You have been an atheist.")
+N_("You were an atheist.")
+N_("You have been a pacifist.")
+N_("You were a pacifist.")
+N_("You have been illiterate.")
+N_("You were illiterate.")
+N_("You have never hit with a wielded weapon.")
+N_("You never hit with a wielded weapon.")
+N_("You have never had a pet.")
+N_("You never had a pet.")
+N_("You have never genocided any monsters.")
+N_("You never genocided any monsters.")
+N_("You have never polymorphed an object.")
+N_("You never polymorphed an object.")
+N_("You have never changed form.")
+N_("You never changed form.")
+N_("You have followed a strict vegan diet.")
+N_("You followed a strict vegan diet.")
+N_("You have used no wishes.")
+N_("You used no wishes.")
+N_("You started without possessions.")
+N_("You are without possessions.")
+N_("You started out without possessions.")
+N_("You have gone without food.")
+N_("You went without food.")
+N_("You haven't wished for any artifacts.")
+N_("You did not wish for any artifacts.")
+N_("You haven't violated any of the special Sokoban rules.")
+N_("You did not violate any of the special Sokoban rules.")
+N_("You have genocided %ld type of monster.")
+N_("You genocided %ld type of monster.")
+N_("You have genocided %ld types of monsters.")
+N_("You genocided %ld types of monsters.")
+N_("You have used %ld wish.")
+N_("You used %ld wish.")
+N_("You have used %ld wishes.")
+N_("You used %ld wishes.")
+N_("You have used %ld wish (for an artifact).")
+N_("You used %ld wish (for an artifact).")
+N_("You have used %ld wishes (both for artifacts).")
+N_("You used %ld wishes (both for artifacts).")
+N_("You have used %ld wishes (all for artifacts).")
+N_("You used %ld wishes (all for artifacts).")
+#endif
+
 void
 show_conduct(int final)
 {
@@ -2094,16 +2694,20 @@ show_conduct(int final)
 
     /* Create the conduct window */
     ge.en_win = create_nhwindow(NHW_MENU);
-    putstr(ge.en_win, 0, "Voluntary challenges:");
+    putstr(ge.en_win, 0, _("Voluntary challenges:"));
 
     /* rerolling; "You <this or that>" is about the character, rerolling
        is about the player so phrase it differently;
        also, always use past tense since the chance to do something with it
        is gone by time player can issue #conduct command or see disclosure */
     if (!u.uroleplay.reroll)
-        Strcpy(buf, " Character rerolling was not enabled.");
+        Strcpy(buf, _(" Character rerolling was not enabled."));
     else if (!u.uroleplay.numrerolls)
-        Strcpy(buf, " Your character was not rerolled.");
+        Strcpy(buf, _(" Your character was not rerolled."));
+    else if (i18n_active())
+        Snprintf(buf, sizeof buf,
+                 _(" Your character was rerolled %ld time(s)."),
+                 (long) u.uroleplay.numrerolls);
     else
         Sprintf(buf, " Your character was rerolled %s.",
                 N_times(u.uroleplay.numrerolls, bufN));
@@ -2240,6 +2844,64 @@ show_conduct(int final)
  *      Achievements (see 'enum achievements' in you.h).
  */
 
+#if 0
+/* whole achievement sentences, translated by enlght_i18n() */
+N_("You have entered the Gnomish Mines.")
+N_("You entered the Gnomish Mines.")
+N_("You have entered Minetown.")
+N_("You entered Minetown.")
+N_("You have entered a shop.")
+N_("You entered a shop.")
+N_("You have entered a temple.")
+N_("You entered a temple.")
+N_("You have consulted the Oracle of Delphi.")
+N_("You consulted the Oracle of Delphi.")
+N_("You have read from a Discworld novel.")
+N_("You read from a Discworld novel.")
+N_("You have entered Sokoban.")
+N_("You entered Sokoban.")
+N_("You have completed Sokoban.")
+N_("You completed Sokoban.")
+N_("You have completed the Gnomish Mines.")
+N_("You completed the Gnomish Mines.")
+N_("You have entered the Big Room.")
+N_("You entered the Big Room.")
+N_("You have defeated Medusa.")
+N_("You defeated Medusa.")
+N_("You have learned the tune to open and close the Castle's drawbridge.")
+N_("You learned the tune to open and close the Castle's drawbridge.")
+N_("You have gained access to Moloch's Sanctum.")
+N_("You gained access to Moloch's Sanctum.")
+N_("You have reached the Elemental Planes.")
+N_("You reached the Elemental Planes.")
+N_("You have reached the Astral Plane.")
+N_("You reached the Astral Plane.")
+N_("You have entered Gehennom.")
+N_("You entered Gehennom.")
+N_("You are exploring without being able to see.")
+N_("You explored without being able to see.")
+N_("You have gone without any armor.")
+N_("You went without any armor.")
+N_("You have the Bell of Opening.")
+N_("You had the Bell of Opening.")
+N_("You have handled the Bell of Opening.")
+N_("You handled the Bell of Opening.")
+N_("You have the Candelabrum of Invocation.")
+N_("You had the Candelabrum of Invocation.")
+N_("You have handled the Candelabrum of Invocation.")
+N_("You handled the Candelabrum of Invocation.")
+N_("You have the Book of the Dead.")
+N_("You had the Book of the Dead.")
+N_("You have handled the Book of the Dead.")
+N_("You handled the Book of the Dead.")
+N_("You have the Amulet of Yendor.")
+N_("You have obtained the Amulet of Yendor.")
+N_("You delivered the Amulet of Yendor.")
+N_("You had the Amulet of Yendor.")
+N_("You had obtained the Amulet of Yendor.")
+N_("You ascended!")
+#endif
+
 staticfn void
 show_achievements(
     int final) /* 'final' is used "behind the curtain" by enl_foo() macros */
@@ -2266,7 +2928,7 @@ show_achievements(
     } else {
         awin = create_nhwindow(NHW_MENU);
     }
-    Sprintf(title, "Achievement%s:", plur(acnt));
+    Strcpy(title, (acnt == 1) ? _("Achievement:") : _("Achievements:"));
     putstr(awin, 0, title);
 
     /* display achievements in the order in which they were recorded;
@@ -2378,12 +3040,22 @@ show_achievements(
             break;
         case ACH_UWIN:
             /* the ultimate achievement... */
-            enlght_out(" You ascended!");
+            enlght_out(_(" You ascended!"));
             break;
 
         /* rank 0 is the starting condition, not an achievement; 8 is Xp 30 */
         case ACH_RNK1: case ACH_RNK2: case ACH_RNK3: case ACH_RNK4:
         case ACH_RNK5: case ACH_RNK6: case ACH_RNK7: case ACH_RNK8:
+            if (i18n_active()) {
+                Snprintf(buf, sizeof buf,
+                         final ? _(" You attained the rank of %s.")
+                               : _(" You have attained the rank of %s."),
+                         _(rank_of(rank_to_xlev(absidx - (ACH_RNK1 - 1)),
+                                   Role_switch,
+                                   (achidx < 0) ? TRUE : FALSE)));
+                enlght_out(buf);
+                break;
+            }
             Sprintf(buf, "attained the rank of %s",
                     rank_of(rank_to_xlev(absidx - (ACH_RNK1 - 1)),
                             Role_switch, (achidx < 0) ? TRUE : FALSE));
@@ -2600,22 +3272,22 @@ show_gamelog(int final)
 /* the two uppercase choices are implemented but suppressed from menu.
    also used in options.c */
 const char *const vanqorders[NUM_VANQ_ORDER_MODES][3] = {
-    { "t", "traditional: by monster level",
-           "traditional: by monster level, by internal monster index" },
-    { "d", "by monster difficulty rating",
-           "by monster difficulty rating, by internal monster index" },
-    { "a", "alphabetically, unique monsters separate",
-           "alphabetically, first unique monsters, then others" },
-    { "A", "alphabetically, unique monsters intermixed",
-           "alphabetically, unique monsters and others intermixed" },
-    { "C", "by monster class, high to low level in class",
-           "by monster class, high to low level within class" },
-    { "c", "by monster class, low to high level in class",
-           "by monster class, low to high level within class" },
-    { "n", "by count, high to low",
-           "by count, high to low, by internal index within tied count" },
-    { "z", "by count, low to high",
-           "by count, low to high, by internal index within tied count" },
+    { "t", N_("traditional: by monster level"),
+           N_("traditional: by monster level, by internal monster index") },
+    { "d", N_("by monster difficulty rating"),
+           N_("by monster difficulty rating, by internal monster index") },
+    { "a", N_("alphabetically, unique monsters separate"),
+           N_("alphabetically, first unique monsters, then others") },
+    { "A", N_("alphabetically, unique monsters intermixed"),
+           N_("alphabetically, unique monsters and others intermixed") },
+    { "C", N_("by monster class, high to low level in class"),
+           N_("by monster class, high to low level within class") },
+    { "c", N_("by monster class, low to high level in class"),
+           N_("by monster class, low to high level within class") },
+    { "n", N_("by count, high to low"),
+           N_("by count, high to low, by internal index within tied count") },
+    { "z", N_("by count, low to high"),
+           N_("by count, low to high, by internal index within tied count") },
 };
 
 staticfn int QSORTCALLBACK
@@ -2740,16 +3412,18 @@ set_vanq_order(boolean for_vanq)
            and "alpha, unique intermixed" are confusing descriptions when
            this menu is for #genocided rather than for #vanquished */
         if (!for_vanq && i == VANQ_ALPHA_SEP)
-            desc = "alphabetically";
+            desc = N_("alphabetically");
         any.a_int = i + 1;
         add_menu(tmpwin, &nul_glyphinfo, &any, *vanqorders[i][0], 0,
-                 ATR_NONE, clr, desc,
+                 ATR_NONE, clr, _(desc),
                  (i == flags.vanq_sortmode) ? MENU_ITEMFLAGS_SELECTED
                                             : MENU_ITEMFLAGS_NONE);
     }
-    Sprintf(buf, "Sort order for %s",
-            for_vanq ? "vanquished monster counts (also genocided types)"
-                     : "genocided monster types (also vanquished counts)");
+    Strcpy(buf, for_vanq
+                ? _("Sort order for vanquished monster counts (also "
+                    "genocided types)")
+                : _("Sort order for genocided monster types (also "
+                    "vanquished counts)"));
     end_menu(tmpwin, buf);
 
     n = select_menu(tmpwin, PICK_ONE, &selected);

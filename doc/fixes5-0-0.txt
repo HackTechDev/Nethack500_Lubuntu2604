@@ -3048,7 +3048,15 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	the Wizard's taunts (wizard.c), gas clouds (region.c), temple
 	priests (priest.c), ball and chain (ball.c), long worms (worm.c);
 	choosing a position (getpos.c), mail (mail.c), stethoscope status
-	lines (insight.c), quest leader remarks (quest.c)
+	lines (insight.c), quest leader remarks (quest.c); the simple options
+	menu ('O') with the option descriptions (extracted from optlist.h),
+	option change messages and autopickup toggling (options.c), the
+	vanquished/genocided sort menu, bones and tribute messages; the
+	#conduct and achievement lines (whole sentences looked up by
+	enlght_i18n(), a number standing for "%ld") and #overview; ^X
+	enlightenment: background, basics, characteristics, status and
+	weapon lines rewritten as whole sentences, other lines built from
+	translated fragments
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

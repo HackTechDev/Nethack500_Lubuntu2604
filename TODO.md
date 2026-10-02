@@ -114,7 +114,9 @@ explosions (`explode.c`), `mkobj.c`, le Magicien de Yendor (`wizard.c`),
 les nuages (`region.c`), les prêtres (`priest.c`), le boulet (`ball.c`),
 les vers longs (`worm.c`), le choix d'une position (`getpos.c`, hors
 fenêtre d'aide), le courrier (`mail.c`), les lignes d'état du stéthoscope
-(`insight.c`) et `quest.c`
+(`insight.c`), `quest.c`, le menu simple des options `O` avec les
+descriptions des options (extraites de `include/optlist.h`), les messages
+de changement d'option et le ramassage automatique (`@`)
 — les noms de rayons hallucinatoires (`hallublasts[]`) restent en
 anglais —, sauf
 quelques
@@ -180,9 +182,12 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
 ## 4. Interface
 
 - **Menus et fenêtres** : les textes passés à `add_menu()`, `putstr()`,
-  `end_menu()` ne sont pas traduits automatiquement (menu des options `O`,
-  aide `?`, `#overview`, `#conduct`, fin de partie, liste des commandes
-  étendues `#`).
+  `end_menu()` ne sont pas traduits automatiquement (menu complet des
+  options `#optionsfull`, aide `?`, fin de partie,
+  liste des commandes étendues `#`, aide du curseur). Le menu simple `O`,
+  `#conduct`, les exploits, `#overview` et l'illumination `^X` sont
+  traduits (pour `^X`, les lignes rares — deux armes, mode magicien
+  `from_what()` — restent composées de fragments, parfois en anglais).
 - **Noms des commandes étendues** : à garder en anglais pour la saisie ;
   seules leurs descriptions sont à traduire.
 - **Alignement des colonnes** : une lettre accentuée compte pour deux

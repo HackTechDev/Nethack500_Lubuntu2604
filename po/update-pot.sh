@@ -16,7 +16,7 @@ cd "$(dirname "$0")/.."
 
 XGETTEXT=${XGETTEXT:-xgettext}
 MSGCAT=${MSGCAT:-msgcat}
-SRC="src/*.c win/tty/*.c win/curses/*.c"
+SRC="src/*.c win/tty/*.c win/curses/*.c include/optlist.h"
 COMMON="--language=C --from-code=UTF-8 --no-wrap --add-comments=TRANSLATORS:"
 
 tmp=$(mktemp -d)
@@ -35,7 +35,8 @@ $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
     --keyword=selftouch --keyword=mselftouch:2 --keyword=objnam_fmt \
     --keyword=strange_feeling:2 --keyword=prinv:1 --keyword=query_category:1 \
     --keyword=query_objlist:1 --keyword=ia_addmenu:4 --keyword=getdir \
-    --keyword=getpos:3 \
+    --keyword=getpos:3 --keyword=NHOPTB:13 --keyword=NHOPTC:11 \
+    --keyword=NHOPTP:11 --keyword=NHOPTO:11 \
     --keyword=hold_another_object:2 --keyword=hold_another_object:4 \
     -o "$tmp/0base.pot" $SRC
 
