@@ -592,29 +592,30 @@ dxdy_to_dist_descr(coordxy dx, coordxy dy, boolean fulldir)
     int dst;
 
     if (!dx && !dy) {
-        Sprintf(buf, "here");
+        Sprintf(buf, "%s", _("here"));
     } else if ((dst = xytodir(dx, dy)) != -1) {
         /* explicit direction; 'one step' is implicit */
-        Sprintf(buf, "%s", directionname(dst));
+        Snprintf(buf, sizeof buf, "%s", _(directionname(dst)));
     } else {
         static const char *const dirnames[4][2] = {
-            { "n", "north" },
-            { "s", "south" },
-            { "w", "west" },
-            { "e", "east" } };
+            { NC_("compass", "n"), NC_("compass", "north") },
+            { NC_("compass", "s"), NC_("compass", "south") },
+            { NC_("compass", "w"), NC_("compass", "west") },
+            { NC_("compass", "e"), NC_("compass", "east") } };
         buf[0] = '\0';
         /* 9999: protect buf[] against overflow caused by invalid values */
         if (dy) {
             if (abs(dy) > 9999)
                 dy = sgn(dy) * 9999;
-            Sprintf(eos(buf), "%d%s%s", abs(dy), dirnames[(dy > 0)][fulldir],
+            Sprintf(eos(buf), "%d%s%s", abs(dy),
+                    C_("compass", dirnames[(dy > 0)][fulldir]),
                     dx ? "," : "");
         }
         if (dx) {
             if (abs(dx) > 9999)
                 dx = sgn(dx) * 9999;
-            Sprintf(eos(buf), "%d%s", abs(dx),
-                    dirnames[2 + (dx > 0)][fulldir]);
+            Snprintf(eos(buf), sizeof buf - strlen(buf), "%d%s", abs(dx),
+                     C_("compass", dirnames[2 + (dx > 0)][fulldir]));
         }
     }
     return buf;

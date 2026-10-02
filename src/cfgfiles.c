@@ -1580,11 +1580,12 @@ config_erradd(const char *buf)
         config_error_data->origline_shown = TRUE;
     }
     if (config_error_data->line_num > 0 && !config_error_data->secure) {
-        Sprintf(lineno, "Line %d: ", config_error_data->line_num);
+        Snprintf(lineno, sizeof lineno, _("Line %d: "),
+                 config_error_data->line_num);
     } else
         lineno[0] = '\0';
 
-    pline("%s %s%s%s", config_error_data->secure ? "Error:" : " *",
+    pline("%s %s%s%s", config_error_data->secure ? _("Error:") : " *",
           lineno, buf, punct);
 }
 
@@ -1609,6 +1610,15 @@ config_error_done(void)
     if (n) {
         boolean cmdline = !strcmp(config_error_data->source, "command line");
 
+        if (i18n_active())
+            pline(cmdline ? ((n > 1) ? _("\n%d errors on %s.\n")
+                                     : _("\n%d error on %s.\n"))
+                          : ((n > 1) ? _("\n%d errors in %s.\n")
+                                     : _("\n%d error in %s.\n")),
+                  n, cmdline ? _("command line")
+                     : *config_error_data->source ? config_error_data->source
+                                                  : configfile);
+        else
         pline("\n%d error%s %s %s.\n", n, plur(n), cmdline ? "on" : "in",
               *config_error_data->source ? config_error_data->source
                                          : configfile);

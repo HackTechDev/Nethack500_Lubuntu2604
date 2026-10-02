@@ -52,6 +52,9 @@ extern void port_help(void);
 staticfn char *setopt_cmd(char *) NONNULL NONNULLARG1;
 staticfn boolean add_quoted_engraving(coordxy, coordxy, char *, boolean)
                                                                   NONNULLARG3;
+staticfn const char *look_descr(const char *, int) NONNULLARG1;
+staticfn int screen_descr_core(coord, boolean, int, char *, const char **,
+                               struct permonst **);
 
 enum checkfileflags {
     chkfilNone     = 0,
@@ -62,6 +65,14 @@ enum checkfileflags {
 
 static const char invisexplain[] = "remembered, unseen, creature",
            altinvisexplain[] = "unseen creature"; /* for clairvoyance */
+
+/* when messages are translated, do_screen_description() describes a spot
+   twice: in English for do_look()'s lookup of the description in the
+   data file, then translated for display */
+static const char *look_english = 0;
+/* set by lookat() when its description is about terrain (or a trap),
+   to be translated as a whole for display */
+static boolean look_terrain = FALSE;
 
 /* Returns "true" for characters that could represent a monster's stomach. */
 staticfn boolean
@@ -81,7 +92,7 @@ is_swallow_sym(int c)
 staticfn int
 append_str(char *buf, const char *new_str)
 {
-    static const char sep[] = " or ";
+    const char *sep = _(" or ");
     size_t oldlen, space_left;
 
     if (strstri(buf, new_str))
@@ -98,10 +109,377 @@ append_str(char *buf, const char *new_str)
     /* some space available, but not necessarily enough for full append */
     space_left = BUFSZ - 1 - oldlen;  /* space remaining in buf */
     (void) strncat(buf, sep, space_left);
-    if (space_left > sizeof sep - 1)
-        (void) strncat(buf, new_str, space_left - (sizeof sep - 1));
+    if (space_left > strlen(sep))
+        (void) strncat(buf, new_str, space_left - strlen(sep));
     return 1; /* something was appended, possibly just part of " or " */
 }
+
+#if 0
+/* for xgettext: descriptions of map symbols, monster and object
+   classes, terrain and traps for look_descr(); msgctxt "symbol a"
+   and "symbol the" give them with their article */
+NC_("symbol", "iron bars")
+NC_("symbol", "tree")
+NC_("symbol", "floor of a room")
+NC_("symbol", "dark part of a room")
+NC_("symbol", "lit corridor")
+NC_("symbol", "branch staircase up")
+NC_("symbol", "branch staircase down")
+NC_("symbol", "branch ladder up")
+NC_("symbol", "branch ladder down")
+NC_("symbol", "altar")
+NC_("symbol", "grave")
+NC_("symbol", "sink")
+NC_("symbol", "fountain")
+NC_("symbol", "ice")
+NC_("symbol", "molten lava")
+NC_("symbol", "wall of lava")
+NC_("symbol", "air")
+NC_("symbol", "cloud")
+NC_("symbol", "water")
+NC_("symbol", "arrow trap")
+NC_("symbol", "dart trap")
+NC_("symbol", "falling rock trap")
+NC_("symbol", "squeaky board")
+NC_("symbol", "bear trap")
+NC_("symbol", "land mine")
+NC_("symbol", "rolling boulder trap")
+NC_("symbol", "sleeping gas trap")
+NC_("symbol", "rust trap")
+NC_("symbol", "fire trap")
+NC_("symbol", "pit")
+NC_("symbol", "spiked pit")
+NC_("symbol", "hole")
+NC_("symbol", "trap door")
+NC_("symbol", "teleportation trap")
+NC_("symbol", "level teleporter")
+NC_("symbol", "magic portal")
+NC_("symbol", "web")
+NC_("symbol", "statue trap")
+NC_("symbol", "magic trap")
+NC_("symbol", "polymorph trap")
+NC_("symbol", "vibrating square")
+NC_("symbol", "trapped door")
+NC_("symbol", "trapped chest")
+NC_("symbol", "poison cloud")
+NC_("symbol", "valid position")
+NC_("symbol", "stone")
+NC_("symbol", "wall")
+NC_("symbol", "doorway")
+NC_("symbol", "open door")
+NC_("symbol", "closed door")
+NC_("symbol", "engraving")
+NC_("symbol", "corridor")
+NC_("symbol", "staircase up")
+NC_("symbol", "staircase down")
+NC_("symbol", "ladder up")
+NC_("symbol", "ladder down")
+NC_("symbol", "opulent throne")
+NC_("symbol", "lowered drawbridge")
+NC_("symbol", "raised drawbridge")
+NC_("symbol", "anti-magic field")
+NC_("symbol", "ant or other insect")
+NC_("symbol", "blob")
+NC_("symbol", "cockatrice")
+NC_("symbol", "dog or other canine")
+NC_("symbol", "eye or sphere")
+NC_("symbol", "cat or other feline")
+NC_("symbol", "gremlin")
+NC_("symbol", "humanoid")
+NC_("symbol", "imp or minor demon")
+NC_("symbol", "jelly")
+NC_("symbol", "kobold")
+NC_("symbol", "leprechaun")
+NC_("symbol", "mimic")
+NC_("symbol", "nymph")
+NC_("symbol", "orc")
+NC_("symbol", "piercer")
+NC_("symbol", "quadruped")
+NC_("symbol", "rodent")
+NC_("symbol", "arachnid or centipede")
+NC_("symbol", "trapper or lurker above")
+NC_("symbol", "unicorn or horse")
+NC_("symbol", "vortex")
+NC_("symbol", "worm")
+NC_("symbol", "xan or other mythical/fantastic insect")
+NC_("symbol", "light")
+NC_("symbol", "zruty")
+NC_("symbol", "angelic being")
+NC_("symbol", "bat or bird")
+NC_("symbol", "centaur")
+NC_("symbol", "dragon")
+NC_("symbol", "elemental")
+NC_("symbol", "fungus or mold")
+NC_("symbol", "gnome")
+NC_("symbol", "giant humanoid")
+NC_("symbol", "invisible monster")
+NC_("symbol", "jabberwock")
+NC_("symbol", "Keystone Kop")
+NC_("symbol", "lich")
+NC_("symbol", "mummy")
+NC_("symbol", "naga")
+NC_("symbol", "ogre")
+NC_("symbol", "pudding or ooze")
+NC_("symbol", "quantum mechanic")
+NC_("symbol", "rust monster or disenchanter")
+NC_("symbol", "snake")
+NC_("symbol", "troll")
+NC_("symbol", "umber hulk")
+NC_("symbol", "vampire")
+NC_("symbol", "wraith")
+NC_("symbol", "xorn")
+NC_("symbol", "apelike creature")
+NC_("symbol", "zombie")
+NC_("symbol", "human or elf")
+NC_("symbol", "ghost")
+NC_("symbol", "golem")
+NC_("symbol", "major demon")
+NC_("symbol", "sea monster")
+NC_("symbol", "lizard")
+NC_("symbol", "long worm tail")
+NC_("symbol", "strange object")
+NC_("symbol", "weapon")
+NC_("symbol", "suit or piece of armor")
+NC_("symbol", "ring")
+NC_("symbol", "useful item (pick-axe, key, lamp...)")
+NC_("symbol", "piece of food")
+NC_("symbol", "potion")
+NC_("symbol", "scroll")
+NC_("symbol", "spellbook")
+NC_("symbol", "wand")
+NC_("symbol", "pile of coins")
+NC_("symbol", "gem or rock")
+NC_("symbol", "boulder or statue")
+NC_("symbol", "iron ball")
+NC_("symbol", "iron chain")
+NC_("symbol", "splash of venom")
+NC_("symbol", "unknown creature causing you worry")
+NC_("symbol", "unknown creature causing you concern")
+NC_("symbol", "unknown creature causing you anxiety")
+NC_("symbol", "unknown creature causing you disquiet")
+NC_("symbol", "unknown creature causing you alarm")
+NC_("symbol", "unknown creature causing you dread")
+NC_("symbol", "remembered, unseen, creature")
+NC_("symbol", "unseen creature")
+NC_("symbol", "boulder")
+NC_("symbol", "statue")
+NC_("symbol", "unreconnoitered")
+NC_("symbol", "the interior of a monster")
+NC_("symbol", "the dark part of a room")
+NC_("symbol", "unexplored")
+NC_("symbol", "land")
+NC_("symbol", "pool")
+NC_("symbol", "moat")
+NC_("symbol", "lava")
+NC_("symbol", "swamp")
+NC_("symbol", "shallow sea")
+NC_("symbol", "limitless water")
+NC_("symbol", "wall of water")
+NC_("symbol", "pond")
+NC_("symbol", "pool of water")
+NC_("symbol", "open drawbridge portcullis")
+NC_("symbol", "broken door")
+NC_("symbol", "cloudy area")
+NC_("symbol", "fog/vapor cloud")
+NC_("symbol", "unknown")
+NC_("symbol", "unexplored area")
+NC_("symbol", "blocked staircase down")
+NC_("symbol", "solid ice")
+NC_("symbol", "sturdy ice")
+NC_("symbol", "steady ice")
+NC_("symbol", "unsteady ice")
+NC_("symbol", "thin ice")
+NC_("symbol", "slushy ice")
+NC_("symbol", "lawful altar")
+NC_("symbol", "lawful high altar")
+NC_("symbol", "neutral altar")
+NC_("symbol", "neutral high altar")
+NC_("symbol", "chaotic altar")
+NC_("symbol", "chaotic high altar")
+NC_("symbol", "unaligned altar")
+NC_("symbol", "unaligned high altar")
+NC_("symbol", "aligned altar")
+NC_("symbol", "aligned high altar")
+NC_("symbol a", "iron bars")
+NC_("symbol a", "tree")
+NC_("symbol a", "lit corridor")
+NC_("symbol a", "branch staircase up")
+NC_("symbol a", "branch staircase down")
+NC_("symbol a", "branch ladder up")
+NC_("symbol a", "branch ladder down")
+NC_("symbol a", "altar")
+NC_("symbol a", "grave")
+NC_("symbol a", "sink")
+NC_("symbol a", "fountain")
+NC_("symbol a", "ice")
+NC_("symbol a", "molten lava")
+NC_("symbol a", "wall of lava")
+NC_("symbol a", "cloud")
+NC_("symbol a", "water")
+NC_("symbol a", "arrow trap")
+NC_("symbol a", "dart trap")
+NC_("symbol a", "falling rock trap")
+NC_("symbol a", "squeaky board")
+NC_("symbol a", "bear trap")
+NC_("symbol a", "land mine")
+NC_("symbol a", "rolling boulder trap")
+NC_("symbol a", "sleeping gas trap")
+NC_("symbol a", "rust trap")
+NC_("symbol a", "fire trap")
+NC_("symbol a", "pit")
+NC_("symbol a", "spiked pit")
+NC_("symbol a", "hole")
+NC_("symbol a", "trap door")
+NC_("symbol a", "teleportation trap")
+NC_("symbol a", "level teleporter")
+NC_("symbol a", "magic portal")
+NC_("symbol a", "web")
+NC_("symbol a", "statue trap")
+NC_("symbol a", "magic trap")
+NC_("symbol a", "polymorph trap")
+NC_("symbol a", "vibrating square")
+NC_("symbol a", "trapped door")
+NC_("symbol a", "trapped chest")
+NC_("symbol a", "poison cloud")
+NC_("symbol a", "valid position")
+NC_("symbol a", "wall")
+NC_("symbol a", "doorway")
+NC_("symbol a", "open door")
+NC_("symbol a", "closed door")
+NC_("symbol a", "engraving")
+NC_("symbol a", "corridor")
+NC_("symbol a", "staircase up")
+NC_("symbol a", "staircase down")
+NC_("symbol a", "ladder up")
+NC_("symbol a", "ladder down")
+NC_("symbol a", "opulent throne")
+NC_("symbol a", "lowered drawbridge")
+NC_("symbol a", "raised drawbridge")
+NC_("symbol a", "anti-magic field")
+NC_("symbol a", "ant or other insect")
+NC_("symbol a", "blob")
+NC_("symbol a", "cockatrice")
+NC_("symbol a", "dog or other canine")
+NC_("symbol a", "eye or sphere")
+NC_("symbol a", "cat or other feline")
+NC_("symbol a", "gremlin")
+NC_("symbol a", "humanoid")
+NC_("symbol a", "imp or minor demon")
+NC_("symbol a", "jelly")
+NC_("symbol a", "kobold")
+NC_("symbol a", "leprechaun")
+NC_("symbol a", "mimic")
+NC_("symbol a", "nymph")
+NC_("symbol a", "orc")
+NC_("symbol a", "piercer")
+NC_("symbol a", "quadruped")
+NC_("symbol a", "rodent")
+NC_("symbol a", "arachnid or centipede")
+NC_("symbol a", "trapper or lurker above")
+NC_("symbol a", "unicorn or horse")
+NC_("symbol a", "vortex")
+NC_("symbol a", "worm")
+NC_("symbol a", "xan or other mythical/fantastic insect")
+NC_("symbol a", "light")
+NC_("symbol a", "zruty")
+NC_("symbol a", "angelic being")
+NC_("symbol a", "bat or bird")
+NC_("symbol a", "centaur")
+NC_("symbol a", "dragon")
+NC_("symbol a", "elemental")
+NC_("symbol a", "fungus or mold")
+NC_("symbol a", "gnome")
+NC_("symbol a", "giant humanoid")
+NC_("symbol a", "invisible monster")
+NC_("symbol a", "jabberwock")
+NC_("symbol a", "Keystone Kop")
+NC_("symbol a", "lich")
+NC_("symbol a", "mummy")
+NC_("symbol a", "naga")
+NC_("symbol a", "ogre")
+NC_("symbol a", "pudding or ooze")
+NC_("symbol a", "quantum mechanic")
+NC_("symbol a", "rust monster or disenchanter")
+NC_("symbol a", "snake")
+NC_("symbol a", "troll")
+NC_("symbol a", "umber hulk")
+NC_("symbol a", "vampire")
+NC_("symbol a", "wraith")
+NC_("symbol a", "xorn")
+NC_("symbol a", "apelike creature")
+NC_("symbol a", "zombie")
+NC_("symbol a", "human or elf")
+NC_("symbol a", "ghost")
+NC_("symbol a", "golem")
+NC_("symbol a", "major demon")
+NC_("symbol a", "sea monster")
+NC_("symbol a", "lizard")
+NC_("symbol a", "long worm tail")
+NC_("symbol a", "strange object")
+NC_("symbol a", "weapon")
+NC_("symbol a", "suit or piece of armor")
+NC_("symbol a", "ring")
+NC_("symbol a", "useful item (pick-axe, key, lamp...)")
+NC_("symbol a", "piece of food")
+NC_("symbol a", "potion")
+NC_("symbol a", "scroll")
+NC_("symbol a", "spellbook")
+NC_("symbol a", "wand")
+NC_("symbol a", "pile of coins")
+NC_("symbol a", "gem or rock")
+NC_("symbol a", "boulder or statue")
+NC_("symbol a", "iron ball")
+NC_("symbol a", "iron chain")
+NC_("symbol a", "splash of venom")
+NC_("symbol a", "remembered, unseen, creature")
+NC_("symbol a", "unseen creature")
+NC_("symbol a", "boulder")
+NC_("symbol a", "statue")
+NC_("symbol the", "floor of a room")
+NC_("symbol the", "dark part of a room")
+#endif
+
+/* description en of a map symbol, monster class, object class, trap or
+   terrain, with the article 'article' (0: none, 1: a/an, 2: the); when
+   translating, its msgctxt "symbol" entry (or "symbol a", "symbol the"
+   with the article), else its "trap" or "noun" entry */
+staticfn const char *
+look_descr(const char *en, int article)
+{
+#ifdef NHI18N
+    if (i18n_active()) {
+        static const char *const ctxs[] = { "symbol", "trap", "noun", 0 };
+        const char *tr;
+        int i;
+
+        if (article
+            && (tr = i18n_lookup((article == 2) ? "symbol the" : "symbol a",
+                                 en)) != 0)
+            return tr;
+        for (i = 0; ctxs[i]; ++i)
+            if ((tr = i18n_lookup(ctxs[i], en)) != 0)
+                /* (a "symbol" entry without its article form is used
+                   without article) */
+                return (!article || i == 0) ? tr
+                       : (article == 2) ? i18n_the_ctx(ctxs[i], en)
+                         : i18n_an_ctx(ctxs[i], en);
+    }
+#endif
+    return (article == 2) ? the(en) : (article == 1) ? an(en) : en;
+}
+
+#if 0
+/* descriptions of the hero for self_lookat(): role or monster, race
+   adjective, name */
+N_("invisible %s called %s") N_("%s called %s")
+N_("invisible %s %s called %s") N_("%s %s called %s")
+C_("feminine", "invisible %s called %s") C_("feminine", "%s called %s")
+C_("feminine", "invisible %s %s called %s")
+C_("feminine", "%s %s called %s")
+C_("feminine", ", hiding")
+#endif
+
+DISABLE_WARNING_FORMAT_NONLITERAL
 
 /* shared by monster probing (via query_objlist!) as well as lookat() */
 char *
@@ -111,26 +489,49 @@ self_lookat(char *outbuf)
 
     /* include race with role unless polymorphed */
     race[0] = '\0';
+    if (i18n_active()) {
+        boolean invis = (Invis && (senseself() || !Blind)),
+                fem = (Ugender == FEMALE);
+        const char *fmt = Upolyd ? (invis ? "invisible %s called %s"
+                                          : "%s called %s")
+                                 : (invis ? "invisible %s %s called %s"
+                                          : "%s %s called %s");
+
+        /* "%s %s called %s": role or monster, race adjective, name */
+        fmt = fem ? C_("feminine", fmt) : _(fmt);
+        if (Upolyd)
+            Snprintf(outbuf, BUFSZ, fmt,
+                     C_("monster", pmname(&mons[u.umonnum], Ugender)),
+                     svp.plname);
+        else
+            Snprintf(outbuf, BUFSZ, fmt,
+                     C_("monster", pmname(&mons[u.umonnum], Ugender)),
+                     gendered_word(gu.urace.adj, fem), svp.plname);
+    } else {
     if (!Upolyd)
         Sprintf(race, "%s ", gu.urace.adj);
     Sprintf(outbuf, "%s%s%s called %s",
             /* being blinded may hide invisibility from self */
             (Invis && (senseself() || !Blind)) ? "invisible " : "", race,
             pmname(&mons[u.umonnum], Ugender), svp.plname);
+    }
     if (u.usteed)
-        Sprintf(eos(outbuf), ", mounted on %s", y_monnam(u.usteed));
+        Snprintf(eos(outbuf), BUFSZ - strlen(outbuf), _(", mounted on %s"),
+                 y_monnam(u.usteed));
     if (u.uundetected || (Upolyd && U_AP_TYPE)
         || visible_region_at(u.ux, u.uy))
         mhidden_description(&gy.youmonst,
                             MHID_PREFIX | MHID_ARTICLE | MHID_REGION,
                             eos(outbuf));
     if (Punished)
-        Sprintf(eos(outbuf), ", chained to %s",
-                uball ? ansimpleoname(uball) : "nothing?");
+        Snprintf(eos(outbuf), BUFSZ - strlen(outbuf), _(", chained to %s"),
+                 uball ? ansimpleoname(uball) : _("nothing?"));
     if (u.utrap) /* bear trap, pit, web, in-floor, in-lava, tethered */
         Sprintf(eos(outbuf), ", %s", trap_predicament(trapbuf, 0, FALSE));
     return outbuf;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* format a description of 'mon's health for look_at_monster(), done_in_by();
    result isn't Healer-specific (not trained for arbitrary creatures) */
@@ -205,11 +606,10 @@ mhidden_description(
     if (M_AP_TYPE(mon) == M_AP_FURNITURE
         || M_AP_TYPE(mon) == M_AP_OBJECT) {
         if (incl_prefix)
-            Strcpy(outbuf, ", mimicking ");
+            Strcpy(outbuf, _(", mimicking "));
         if (M_AP_TYPE(mon) == M_AP_FURNITURE) {
-            what = defsyms[mon->mappearance].explanation;
-            if (incl_article)
-                what = an(what);
+            what = look_descr(defsyms[mon->mappearance].explanation,
+                              incl_article ? 1 : 0);
             Strcat(outbuf, what);
         } else if (M_AP_TYPE(mon) == M_AP_OBJECT
                    /* remembered glyph, not glyph_at() which is 'mon' */
@@ -229,32 +629,42 @@ mhidden_description(
                 dealloc_obj(otmp); /* has no contents */
             }
         } else {
-            Strcat(outbuf, something);
+            Strcat(outbuf, _(something));
         }
     } else if (M_AP_TYPE(mon) == M_AP_MONSTER) {
         if (show_altmon) {
             if (incl_prefix)
-                Strcat(outbuf, ", masquerading as ");
+                Strcat(outbuf, _(", masquerading as "));
             what = pmname(&mons[mon->mappearance], Mgender(mon));
-            if (incl_prefix)
+            if (i18n_active())
+                what = incl_prefix ? i18n_an_ctx("monster", what)
+                                   : C_("monster", what);
+            else if (incl_prefix)
                 what = an(what);
             Strcat(outbuf, what);
         }
     } else if (isyou ? u.uundetected : mon->mundetected) {
-        Strcpy(outbuf, ", hiding");
+        boolean fem = isyou ? (Ugender == FEMALE) : i18n_mon_fem(mon);
+
+        Strcpy(outbuf, fem ? C_("feminine", ", hiding") : _(", hiding"));
         if (hides_under(mon->data)) {
-            Strcat(outbuf, " under ");
+            Strcat(outbuf, _(" under "));
             /* remembered glyph, not glyph_at() which is 'mon' */
             if (glyph_is_object(glyph))
                 goto objfrommap;
-            Strcat(outbuf, something);
+            Strcat(outbuf, _(something));
         } else if (is_hider(mon->data)) {
-            Sprintf(eos(outbuf), " on the %s",
-                    ceiling_hider(mon->data) ? "ceiling"
-                       : surface(x, y)); /* trapper */
+            const char *where = ceiling_hider(mon->data) ? "ceiling"
+                                : surface(x, y); /* trapper */
+
+            if (i18n_active())
+                Snprintf(eos(outbuf), BUFSZ - strlen(outbuf), _(" on %s"),
+                         i18n_the(where));
+            else
+                Sprintf(eos(outbuf), " on the %s", where);
         } else {
             if (mon->data->mlet == S_EEL && is_pool(x, y))
-                Strcat(outbuf, " in murky water");
+                Strcat(outbuf, _(" in murky water"));
         }
     }
 
@@ -273,6 +683,11 @@ mhidden_description(
             boolean poison_gas = (glyph_is_cmap(rglyph)
                                   && glyph_to_cmap(rglyph) == S_poisoncloud);
 
+            if (i18n_active())
+                Snprintf(eos(outbuf), BUFSZ - buflen, "%s",
+                         poison_gas ? _(", in a cloud of poison gas")
+                                    : _(", in a cloud of vapor"));
+            else
             Snprintf(eos(outbuf), BUFSZ - buflen, ", in a cloud of %s",
                      poison_gas ? "poison gas" : "vapor");
         }
@@ -376,6 +791,37 @@ object_from_map(
     return fakeobj; /* when True, caller needs to dealloc *obj_p */
 }
 
+#if 0
+/* where an object seen by look_at_object() is, given to objnam_fmt() */
+N_(" (buried)") N_(" dangling in a tree") N_(" stuck in a tree")
+N_(" embedded in stone") N_(" embedded in a wall") N_(" embedded in a door")
+N_(" in water") N_(" in molten lava")
+C_("feminine", " (buried)")
+C_("plural", " (buried)")
+C_("feminine plural", " (buried)")
+C_("feminine", " dangling in a tree")
+C_("plural", " dangling in a tree")
+C_("feminine plural", " dangling in a tree")
+C_("feminine", " stuck in a tree")
+C_("plural", " stuck in a tree")
+C_("feminine plural", " stuck in a tree")
+C_("feminine", " embedded in stone")
+C_("plural", " embedded in stone")
+C_("feminine plural", " embedded in stone")
+C_("feminine", " embedded in a wall")
+C_("plural", " embedded in a wall")
+C_("feminine plural", " embedded in a wall")
+C_("feminine", " embedded in a door")
+C_("plural", " embedded in a door")
+C_("feminine plural", " embedded in a door")
+C_("feminine", " in water")
+C_("plural", " in water")
+C_("feminine plural", " in water")
+C_("feminine", " in molten lava")
+C_("plural", " in molten lava")
+C_("feminine plural", " in molten lava")
+#endif
+
 staticfn void
 look_at_object(
     char *buf, /* output buffer */
@@ -384,12 +830,16 @@ look_at_object(
 {
     struct obj *otmp = 0;
     boolean fakeobj = object_from_map(glyph, x, y, &otmp);
+    /* the name, which keeps its grammar for the translation of what is
+       appended to it */
+    const char *nm = 0, *sfx = 0;
 
     if (otmp) {
-        Strcpy(buf, (otmp->otyp != STRANGE_OBJECT)
-                     ? distant_name(otmp, otmp->dknown ? doname_with_price
-                                                       : doname_vague_quan)
-                     : obj_descr[STRANGE_OBJECT].oc_name);
+        nm = (otmp->otyp != STRANGE_OBJECT)
+                 ? distant_name(otmp, otmp->dknown ? doname_with_price
+                                                   : doname_vague_quan)
+                 : obj_descr[STRANGE_OBJECT].oc_name;
+        Strcpy(buf, nm);
         if (fakeobj) {
             otmp->where = OBJ_FREE; /* object_from_map set it to OBJ_FLOOR */
             dealloc_obj(otmp), otmp = NULL; /* has no contents */
@@ -399,24 +849,59 @@ look_at_object(
     }
 
     if (otmp && otmp->where == OBJ_BURIED)
-        Strcat(buf, " (buried)");
+        sfx = " (buried)";
     /* check TREE before STONE due to level.flags.arboreal */
     else if (IS_TREE(levl[x][y].typ))
         /* "dangling": "hanging" could imply that it's growing on this tree */
-        Snprintf(eos(buf), BUFSZ - strlen(buf), " %s in a tree",
-                 (otmp && is_treefruit(otmp)) ? "dangling" : "stuck");
+        sfx = (otmp && is_treefruit(otmp)) ? " dangling in a tree"
+                                           : " stuck in a tree";
     else if (levl[x][y].typ == STONE || levl[x][y].typ == SCORR)
-        Strcat(buf, " embedded in stone");
+        sfx = " embedded in stone";
     else if (IS_WALL(levl[x][y].typ) || levl[x][y].typ == SDOOR)
-        Strcat(buf, " embedded in a wall");
+        sfx = " embedded in a wall";
     else if (closed_door(x, y))
-        Strcat(buf, " embedded in a door");
+        sfx = " embedded in a door";
     else if (is_pool(x, y))
-        Strcat(buf, " in water");
+        sfx = " in water";
     else if (is_lava(x, y))
-        Strcat(buf, " in molten lava"); /* [can this ever happen?] */
+        sfx = " in molten lava"; /* [can this ever happen?] */
+    if (sfx) {
+        if (i18n_active() && nm)
+            sfx = objnam_fmt(sfx, nm, (struct obj *) 0);
+        else
+            sfx = _(sfx);
+        (void) strncat(buf, sfx, BUFSZ - strlen(buf) - 1);
+    }
     return;
 }
+
+#if 0
+/* about a monster, for look_at_monster() */
+N_("tame %s")
+C_("feminine", "tame %s")
+N_("peaceful %s")
+C_("feminine", "peaceful %s")
+N_(", swallowing you")
+C_("feminine", ", swallowing you")
+N_(", engulfing you")
+C_("feminine", ", engulfing you")
+N_(", being held")
+C_("feminine", ", being held")
+N_(", holding you")
+C_("feminine", ", holding you")
+N_(", can't move (paralyzed or sleeping or busy)")
+C_("feminine", ", can't move (paralyzed or sleeping or busy)")
+N_(", asleep")
+C_("feminine", ", asleep")
+N_(", meditating")
+C_("feminine", ", meditating")
+N_(", leashed to you")
+C_("feminine", ", leashed to you")
+N_(", trapped in %s")
+C_("feminine", ", trapped in %s")
+#endif
+
+DISABLE_WARNING_FORMAT_NONLITERAL
 
 staticfn void
 look_at_monster(
@@ -425,8 +910,28 @@ look_at_monster(
     coordxy x, coordxy y)
 {
     char *name, monnambuf[BUFSZ], healthbuf[BUFSZ];
-    boolean accurate = !Hallucination;
+    boolean accurate = !Hallucination, fem = i18n_mon_fem(mtmp);
 
+#define MonSfx(s) (fem ? C_("feminine", s) : _(s))
+    if (i18n_active()) {
+        /* "tail of a tame newt": the adjective follows the name, the
+           article comes with it */
+        boolean tail = (mtmp->mx != x || mtmp->my != y);
+        char nbuf[BUFSZ];
+
+        name = (mtmp->data == &mons[PM_COYOTE] && accurate)
+                  ? coyotename(mtmp, monnambuf)
+                  : distant_monnam(mtmp, tail ? ARTICLE_A : ARTICLE_NONE,
+                                   monnambuf);
+        Snprintf(nbuf, sizeof nbuf,
+                 (mtmp->mtame && accurate) ? MonSfx("tame %s")
+                 : (mtmp->mpeaceful && accurate) ? MonSfx("peaceful %s")
+                   : "%s", name);
+        if (tail)
+            Snprintf(buf, BUFSZ, _("tail of %s"), nbuf);
+        else
+            Strcpy(buf, nbuf);
+    } else {
     name = (mtmp->data == &mons[PM_COYOTE] && accurate)
               ? coyotename(mtmp, monnambuf)
               : distant_monnam(mtmp, ARTICLE_NONE, monnambuf);
@@ -441,13 +946,14 @@ look_at_monster(
                     ? "peaceful "
                     : "",
             name);
+    }
     if (u.ustuck == mtmp) {
         if (u.uswallow || iflags.save_uswallow) /* monster detection */
-            Strcat(buf, digests(mtmp->data) ? ", swallowing you"
-                                            : ", engulfing you");
+            Strcat(buf, digests(mtmp->data) ? MonSfx(", swallowing you")
+                                            : MonSfx(", engulfing you"));
         else
             Strcat(buf, (Upolyd && sticks(gy.youmonst.data))
-                          ? ", being held" : ", holding you");
+                          ? MonSfx(", being held") : MonSfx(", holding you"));
     }
     /* if mtmp isn't able to move (other than because it is a type of
        monster that never moves), say so [excerpt from mstatusline() for
@@ -455,23 +961,30 @@ look_at_monster(
     if (mtmp->mfrozen)
         /* unfortunately mfrozen covers temporary sleep and being busy
            (donning armor, for instance) as well as paralysis */
-        Strcat(buf, ", can't move (paralyzed or sleeping or busy)");
+        Strcat(buf,
+               MonSfx(", can't move (paralyzed or sleeping or busy)"));
     else if (mtmp->msleeping)
         /* sleeping for an indeterminate duration */
-        Strcat(buf, ", asleep");
+        Strcat(buf, MonSfx(", asleep"));
     else if ((mtmp->mstrategy & STRAT_WAITMASK) != 0)
         /* arbitrary reason why it isn't moving */
-        Strcat(buf, ", meditating");
+        Strcat(buf, MonSfx(", meditating"));
 
     if (mtmp->mleashed)
-        Strcat(buf, ", leashed to you");
+        Strcat(buf, MonSfx(", leashed to you"));
     if (mtmp->mtrapped && cansee(mtmp->mx, mtmp->my)) {
         struct trap *t = t_at(mtmp->mx, mtmp->my);
         int tt = t ? t->ttyp : NO_TRAP;
 
         /* newsym lets you know of the trap, so mention it here */
         if (tt == BEAR_TRAP || is_pit(tt) || tt == WEB) {
-            Sprintf(eos(buf), ", trapped in %s", an(trapname(tt, FALSE)));
+            if (i18n_active())
+                Snprintf(eos(buf), BUFSZ - strlen(buf),
+                         MonSfx(", trapped in %s"),
+                         i18n_an_ctx("trap", trapname(tt, FALSE)));
+            else
+                Sprintf(eos(buf), ", trapped in %s",
+                        an(trapname(tt, FALSE)));
             t->tseen = 1;
         }
     }
@@ -488,46 +1001,46 @@ look_at_monster(
         monbuf[0] = '\0';
         if (how_seen != 0 && how_seen != MONSEEN_NORMAL) {
             if (how_seen & MONSEEN_NORMAL) {
-                Strcat(monbuf, "normal vision");
+                Strcat(monbuf, _("normal vision"));
                 how_seen &= ~MONSEEN_NORMAL;
                 /* how_seen can't be 0 yet... */
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_SEEINVIS) {
-                Strcat(monbuf, "see invisible");
+                Strcat(monbuf, _("see invisible"));
                 how_seen &= ~MONSEEN_SEEINVIS;
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_INFRAVIS) {
-                Strcat(monbuf, "infravision");
+                Strcat(monbuf, _("infravision"));
                 how_seen &= ~MONSEEN_INFRAVIS;
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_TELEPAT) {
-                Strcat(monbuf, "telepathy");
+                Strcat(monbuf, _("telepathy"));
                 how_seen &= ~MONSEEN_TELEPAT;
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_XRAYVIS) {
                 /* Eyes of the Overworld */
-                Strcat(monbuf, "astral vision");
+                Strcat(monbuf, _("astral vision"));
                 how_seen &= ~MONSEEN_XRAYVIS;
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_DETECT) {
-                Strcat(monbuf, "monster detection");
+                Strcat(monbuf, _("monster detection"));
                 how_seen &= ~MONSEEN_DETECT;
                 if (how_seen)
                     Strcat(monbuf, ", ");
             }
             if (how_seen & MONSEEN_WARNMON) {
                 if (Hallucination) {
-                    Strcat(monbuf, "paranoid delusion");
+                    Strcat(monbuf, _("paranoid delusion"));
                 } else {
                     unsigned long mW = (svc.context.warntype.obj
                                         | svc.context.warntype.polyd),
@@ -539,7 +1052,12 @@ look_at_monster(
                                               : pmname(mtmp->data,
                                                        Mgender(mtmp)));
 
-                    Sprintf(eos(monbuf), "warned of %s", makeplural(whom));
+                    if (i18n_active())
+                        Snprintf(eos(monbuf), BUFSZ - strlen(monbuf),
+                                 _("warned of %s"), i18n_mon_plural(whom));
+                    else
+                        Sprintf(eos(monbuf), "warned of %s",
+                                makeplural(whom));
                 }
                 how_seen &= ~MONSEEN_WARNMON;
                 if (how_seen)
@@ -552,7 +1070,10 @@ look_at_monster(
             }
         } /* seen by something other than normal vision */
     } /* monbuf is non-null */
+#undef MonSfx
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 /* describe a pool location's contents; might return a static buffer so
    caller should use it or copy it before calling waterbody_name() again
@@ -659,6 +1180,7 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
     struct monst *mtmp = (struct monst *) 0;
     struct permonst *pm = (struct permonst *) 0;
     int glyph;
+    boolean terrain = FALSE;
 
     buf[0] = monbuf[0] = '\0';
     glyph = glyph_at(x, y);
@@ -690,7 +1212,16 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
             if (Detect_monsters)
                 how |= 4;
 
-            if (how)
+            if (how && i18n_active())
+                Snprintf(eos(buf), BUFSZ - strlen(buf), _(" [seen: %s]"),
+                         (how == 1) ? _("infravision")
+                         : (how == 2) ? _("telepathy")
+                         : (how == 3) ? _("infravision, telepathy")
+                         : (how == 4) ? _("monster detection")
+                         : (how == 5) ? _("infravision, monster detection")
+                         : (how == 6) ? _("telepathy, monster detection")
+                         : _("infravision, telepathy, monster detection"));
+            else if (how)
                 Sprintf(eos(buf), " [seen: %s%s%s%s%s]",
                         (how & 1) ? "infravision" : "",
                         /* add comma if telep and infrav */
@@ -703,7 +1234,7 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
     } else if (u.uswallow) {
         /* when swallowed, we're only called for spots adjacent to hero,
            and blindness doesn't prevent hero from feeling what holds him */
-        Sprintf(buf, "interior of %s", mon_nam(u.ustuck));
+        Snprintf(buf, BUFSZ, _("interior of %s"), mon_nam(u.ustuck));
         pm = u.ustuck->data;
     } else if (glyph_is_monster(glyph)) {
         if ((mtmp = m_at(x, y)) != 0) {
@@ -718,16 +1249,21 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
     } else if (glyph_is_trap(glyph)) {
         int tnum = glyph_to_trap(glyph);
 
+        terrain = TRUE;
         trap_description(buf, tnum, x, y);
     } else if (glyph_is_warning(glyph)) {
         int warnindx = glyph_to_warning(glyph);
 
+        terrain = TRUE;
         Strcpy(buf, def_warnsyms[warnindx].explanation);
     } else if (glyph_is_invisible(glyph)) {
+        terrain = TRUE;
         Strcpy(buf, invisexplain); /* redundant; handled by caller */
     } else if (glyph_is_nothing(glyph)) {
+        terrain = TRUE;
         Strcpy(buf, "dark part of a room");
     } else if (glyph_is_unexplored(glyph)) {
+        terrain = TRUE;
         if (Underwater && !Is_waterlevel(&u.uz)) {
             /* "unknown" == previously mapped but not visible when
                submerged; better terminology appreciated... */
@@ -740,6 +1276,7 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
         aligntyp algn;
         short symidx = glyph_to_cmap(glyph);
 
+        terrain = TRUE;
         switch (symidx) {
         case S_altar:
             amsk = altarmask_at(x, y);
@@ -796,8 +1333,10 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
             break;
         }
     } else { /* not mon, obj, trap, or cmap */
+        terrain = TRUE;
         Strcpy(buf, "unexplored area");
     }
+    look_terrain = terrain;
     return (pm && !Hallucination) ? pm : (struct permonst *) 0;
 }
 
@@ -1217,14 +1756,13 @@ add_cmap_descr(
     if (!found) {
         /* this is the first match */
         if (is_cmap_trap(idx) && idx != S_vibrating_square) {
-            Sprintf(out_str, "%sa trap", prefix);
+            Sprintf(out_str, "%s%s", prefix, _("a trap"));
             *hit_trap = TRUE;
         } else {
-            Sprintf(out_str, "%s%s", prefix, (article == 2) ? the(x_str)
-                                             : (article == 1) ? an(x_str)
-                                               : x_str);
+            Snprintf(out_str, BUFSZ, "%s%s", prefix,
+                     look_descr(x_str, article));
         }
-        *firstmatch = x_str;
+        *firstmatch = look_descr(x_str, 0);
         found = 1;
     } else if (!(*hit_trap && is_cmap_trap(idx))
                && !(found >= 3 && is_cmap_drawbridge(idx))
@@ -1234,9 +1772,7 @@ add_cmap_descr(
                    || (glyph_is_trap(glyph)
                        && glyph_to_trap(glyph) == VIBRATING_SQUARE))) {
         /* append unless out_str already contains the string to append */
-        found += append_str(out_str, (article == 2) ? the(x_str)
-                                     : (article == 1) ? an(x_str)
-                                       : x_str);
+        found += append_str(out_str, look_descr(x_str, article));
         if (is_cmap_trap(idx) && idx != S_vibrating_square)
             *hit_trap = TRUE;
     }
@@ -1250,9 +1786,45 @@ do_screen_description(
     const char **firstmatch,
     struct permonst **for_supplement)
 {
+#ifdef NHI18N
+    static char english[BUFSZ];
+#endif
+    int found;
+
+    look_english = 0;
+#ifdef NHI18N
+    if (i18n_active()) {
+        /* in English for do_look()'s data file lookup, then translated */
+        i18n_suspend(TRUE);
+        found = screen_descr_core(cc, looked, sym, out_str, firstmatch,
+                                  for_supplement);
+        i18n_suspend(FALSE);
+        /* (copied: it might be in a buffer reused by the second pass) */
+        copynchars(english, *firstmatch, BUFSZ - 1);
+        look_english = english;
+        (void) screen_descr_core(cc, looked, sym, out_str, firstmatch,
+                                 (struct permonst **) 0);
+        return found;
+    }
+#endif
+    found = screen_descr_core(cc, looked, sym, out_str, firstmatch,
+                              for_supplement);
+    return found;
+}
+
+staticfn int
+screen_descr_core(
+    coord cc, boolean looked,
+    int sym, char *out_str,
+    const char **firstmatch,
+    struct permonst **for_supplement)
+{
     static const char mon_interior[] = "the interior of a monster",
                       unreconnoitered[] = "unreconnoitered";
-    static char look_buf[BUFSZ];
+    /* one for English, one for the translation (see above) */
+    static char look_bufs[2][BUFSZ], look_en[BUFSZ];
+    char *look_buf = look_bufs[i18n_active() ? 1 : 0];
+    boolean unrecon = FALSE;
     char prefix[BUFSZ];
     int i, j, alt_i, glyph = NO_GLYPH,
         skipped_venom = 0, found = 0; /* count of matching syms found */
@@ -1300,10 +1872,11 @@ do_screen_description(
                /* detection showing some category, so mostly background */
                || ((iflags.terrainmode & (TER_DETECT | TER_MAP)) == TER_DETECT
                    && glyph == cmap_to_glyph(S_stone))) {
-        x_str = unreconnoitered;
+        x_str = look_descr(unreconnoitered, 0);
+        unrecon = TRUE;
         need_to_look = FALSE;
     } else if (is_swallow_sym(sym)) {
-        x_str = mon_interior;
+        x_str = look_descr(mon_interior, 0);
         need_to_look = TRUE; /* for specific monster type */
     }
     if (x_str) {
@@ -1319,7 +1892,7 @@ do_screen_description(
         /* for is_swallow_sym(), we want to list the current symbol's
            other possibilities (wand for '/', throne for '\\', &c) so
            don't jump to the end for the x_str==mon_interior case */
-        if (x_str == unreconnoitered)
+        if (unrecon)
             goto didlook;
     }
 
@@ -1335,11 +1908,13 @@ do_screen_description(
                 need_to_look = TRUE;
                 if (!found) {
                     Sprintf(out_str, "%s%s",
-                            prefix, an(def_monsyms[i].explain));
-                    *firstmatch = def_monsyms[i].explain;
+                            prefix, look_descr(def_monsyms[i].explain, 1));
+                    *firstmatch = look_descr(def_monsyms[i].explain, 0);
                     found++;
                 } else {
-                    found += append_str(out_str, an(def_monsyms[i].explain));
+                    found += append_str(out_str,
+                                        look_descr(def_monsyms[i].explain,
+                                                   1));
                 }
             }
         }
@@ -1350,7 +1925,7 @@ do_screen_description(
                        && u_at(cc.x, cc.y))
                     : (sym == def_monsyms[S_HUMAN].sym && !flags.showrace))
             && !(Race_if(PM_HUMAN) || Race_if(PM_ELF)) && !Upolyd)
-            found += append_str(out_str, "you"); /* tack on "or you" */
+            found += append_str(out_str, _("you")); /* tack on "or you" */
     }
 
     /* Now check for objects */
@@ -1389,15 +1964,15 @@ do_screen_description(
                     continue;
                 }
                 if (!found) {
-                    Sprintf(out_str, "%s%s", prefix, an(oc_ptr));
+                    Sprintf(out_str, "%s%s", prefix, look_descr(oc_ptr, 1));
                     /* note: if the value assigned to *firstmatch ever
                        becomes dynamically constructed, it will need to be
                        copied into a static buffer; as of now, all alternate
                        values are string literals and implicitly static */
-                    *firstmatch = oc_ptr;
+                    *firstmatch = look_descr(oc_ptr, 0);
                     found++;
                 } else {
-                    found += append_str(out_str, an(oc_ptr));
+                    found += append_str(out_str, look_descr(oc_ptr, 1));
                 }
             }
         }
@@ -1410,16 +1985,16 @@ do_screen_description(
                                                        : invisexplain;
 
         if (!found) {
-            Sprintf(out_str, "%s%s", prefix, an(unseen_explain));
-            *firstmatch = unseen_explain;
+            Sprintf(out_str, "%s%s", prefix, look_descr(unseen_explain, 1));
+            *firstmatch = look_descr(unseen_explain, 0);
             found++;
         } else {
-            found += append_str(out_str, an(unseen_explain));
+            found += append_str(out_str, look_descr(unseen_explain, 1));
         }
     }
     if ((glyph && glyph_is_nothing(glyph))
         || (looked && sym == gs.showsyms[SYM_NOTHING + SYM_OFF_X])) {
-        x_str = "the dark part of a room";
+        x_str = look_descr("the dark part of a room", 0);
         if (!found) {
             Sprintf(out_str, "%s%s", prefix, x_str);
             *firstmatch = x_str;
@@ -1430,9 +2005,9 @@ do_screen_description(
     }
     if ((glyph && glyph_is_unexplored(glyph))
         || (looked && sym == gs.showsyms[SYM_UNEXPLORED + SYM_OFF_X])) {
-        x_str = "unexplored";
+        x_str = look_descr("unexplored", 0);
         if (submerged)
-            x_str = "land"; /* replace "unexplored" */
+            x_str = look_descr("land", 0); /* replace "unexplored" */
         if (!found) {
             Sprintf(out_str, "%s%s", prefix, x_str);
             *firstmatch = x_str;
@@ -1512,9 +2087,10 @@ do_screen_description(
     for (i = 1; i < WARNCOUNT; i++) {
         x_str = def_warnsyms[i].explanation;
         if (sym == (looked ? gw.warnsyms[i] : def_warnsyms[i].sym)) {
+            x_str = look_descr(x_str, 0);
             if (!found) {
                 Sprintf(out_str, "%s%s", prefix, x_str);
-                *firstmatch = x_str;;
+                *firstmatch = x_str;
                 found++;
             } else {
                 found += append_str(out_str, x_str);
@@ -1522,7 +2098,8 @@ do_screen_description(
             /* Kludge: warning trumps boulders on the display.
                Reveal the boulder too or player can get confused */
             if (looked && sobj_at(BOULDER, cc.x, cc.y))
-                Strcat(out_str, " co-located with a boulder");
+                (void) strncat(out_str, _(" co-located with a boulder"),
+                               BUFSZ - strlen(out_str) - 1);
             break; /* out of for loop*/
         }
     }
@@ -1531,11 +2108,11 @@ do_screen_description(
     if (skipped_venom && found < 2) {
         x_str = def_oc_syms[VENOM_CLASS].explain;
         if (!found) {
-            Sprintf(out_str, "%s%s", prefix, an(x_str));
-            *firstmatch = x_str;
+            Sprintf(out_str, "%s%s", prefix, look_descr(x_str, 1));
+            *firstmatch = look_descr(x_str, 0);
             found++;
         } else {
-            found += append_str(out_str, an(x_str));
+            found += append_str(out_str, look_descr(x_str, 1));
         }
     }
 
@@ -1586,7 +2163,7 @@ do_screen_description(
         /* 3.6.3: this used to be "That can be many things" (without prefix)
            which turned it into a sentence that lacked its terminating period;
            we could add one below but reinstating the prefix here is better */
-        Sprintf(out_str, "%scan be many things", prefix);
+        Snprintf(out_str, BUFSZ, _("%scan be many things"), prefix);
 
  didlook:
     if (looked) {
@@ -1596,6 +2173,7 @@ do_screen_description(
             char monbuf[BUFSZ];
             char temp_buf[BUFSZ];
 
+            look_terrain = FALSE;
             pm = lookat(cc.x, cc.y, look_buf, monbuf);
             if (pm && for_supplement)
                 *for_supplement = pm;
@@ -1604,19 +2182,30 @@ do_screen_description(
             if (!strcmp(look_buf, "staircase down")
                 && on_level(&u.uz, &qstart_level) && !ok_to_quest())
                 Strcpy(look_buf, "blocked staircase down");
+            /* the engraving text is added after the English name of
+               "engraving" or "grave" */
+            Strcpy(look_en, look_buf);
+            if (look_terrain && i18n_active())
+                copynchars(look_buf, look_descr(look_en, 0), BUFSZ - 1);
 
             if (look_buf[0] != '\0')
                 *firstmatch = look_buf;
             if (*(*firstmatch)) {
-                Sprintf(temp_buf, " (%s", *firstmatch);
-                (void) add_quoted_engraving(cc.x, cc.y, temp_buf, FALSE);
-                Strcat(temp_buf, ")");
+                char engr_buf[BUFSZ];
+
+                Snprintf(engr_buf, sizeof engr_buf, " (%s",
+                         look_en[0] ? look_en : *firstmatch);
+                (void) add_quoted_engraving(cc.x, cc.y, engr_buf, FALSE);
+                Snprintf(temp_buf, sizeof temp_buf, " (%s%s)", *firstmatch,
+                         engr_buf + 2 + strlen(look_en[0] ? look_en
+                                                          : *firstmatch));
                 (void) strncat(out_str, temp_buf,
                                BUFSZ - strlen(out_str) - 1);
                 found = 1; /* we have something to look up */
             }
             if (monbuf[0]) {
-                Snprintf(temp_buf, sizeof temp_buf, " [seen: %s]", monbuf);
+                Snprintf(temp_buf, sizeof temp_buf, _(" [seen: %s]"),
+                         monbuf);
                 (void) strncat(out_str, temp_buf,
                                BUFSZ - strlen(out_str) - 1);
             }
@@ -1654,7 +2243,17 @@ add_quoted_engraving(
     if (!floorengr && !headstone && !force)
         return FALSE;
 
-    if (ep->eread)
+    if (i18n_active()) {
+        if (ep->eread)
+            Snprintf(temp_buf, sizeof temp_buf,
+                     headstone ? _(" with headstone reading: \"%s\"")
+                               : _(" with remembered text: \"%s\""),
+                     ep->engr_txt[remembered_text]);
+        else
+            Strcpy(temp_buf,
+                   headstone ? _(" whose headstone you haven't read")
+                             : _(" that you haven't read"));
+    } else if (ep->eread)
         Snprintf(temp_buf, sizeof temp_buf, " with %s: \"%s\"",
                  headstone ? "headstone reading" : "remembered text",
                  ep->engr_txt[remembered_text]);
@@ -1732,18 +2331,19 @@ do_look(int mode, coord *click_cc)
             add_menu(win, &nul_glyphinfo, &any,
                      flags.lootabc ? 0 : any.a_char,
                      flags.lootabc ? '/' : 'y', ATR_NONE,
-                     clr, "something on the map", MENU_ITEMFLAGS_NONE);
+                     clr, _("something on the map"), MENU_ITEMFLAGS_NONE);
             any.a_char = 'i';
             add_menu(win, &nul_glyphinfo, &any,
                      /* [don't use 'i' as lootabc group accelerator because
                         it will make the regular 'i' choice inaccessible] */
                      flags.lootabc ? 0 : any.a_char, 0, ATR_NONE,
-                     clr, "something you're carrying", MENU_ITEMFLAGS_NONE);
+                     clr, _("something you're carrying"),
+                     MENU_ITEMFLAGS_NONE);
             any.a_char = '?';
             add_menu(win, &nul_glyphinfo, &any,
                      flags.lootabc ? 0 : any.a_char,
                      flags.lootabc ? '?' : 'n', ATR_NONE,
-                     clr, "something else (by symbol or name)",
+                     clr, _("something else (by symbol or name)"),
                      MENU_ITEMFLAGS_NONE);
             if (!u.uswallow && !Hallucination) {
                 any = cg.zeroany;
@@ -1758,49 +2358,49 @@ do_look(int mode, coord *click_cc)
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : 0, ATR_NONE,
-                         clr, "nearby monsters", MENU_ITEMFLAGS_NONE);
+                         clr, _("nearby monsters"), MENU_ITEMFLAGS_NONE);
                 any.a_char = 'M';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : 0, ATR_NONE,
-                         clr, "all monsters shown on map",
+                         clr, _("all monsters shown on map"),
                          MENU_ITEMFLAGS_NONE);
                 any.a_char = 'o';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : 0, ATR_NONE,
-                         clr, "nearby objects", MENU_ITEMFLAGS_NONE);
+                         clr, _("nearby objects"), MENU_ITEMFLAGS_NONE);
                 any.a_char = 'O';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : 0, ATR_NONE,
-                         clr, "all objects shown on map",
+                         clr, _("all objects shown on map"),
                          MENU_ITEMFLAGS_NONE);
                 any.a_char = 't';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : '^', ATR_NONE,
-                         clr, "nearby traps", MENU_ITEMFLAGS_NONE);
+                         clr, _("nearby traps"), MENU_ITEMFLAGS_NONE);
                 any.a_char = 'T';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : '\"', ATR_NONE,
-                         clr, "all seen or remembered traps",
+                         clr, _("all seen or remembered traps"),
                          MENU_ITEMFLAGS_NONE);
                 any.a_char = 'e';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          /* [don't use 'e' as lootabc group accelerator] */
                          flags.lootabc ? 0 : '`', ATR_NONE,
-                         clr, "nearby engravings", MENU_ITEMFLAGS_NONE);
+                         clr, _("nearby engravings"), MENU_ITEMFLAGS_NONE);
                 any.a_char = 'E';
                 add_menu(win, &nul_glyphinfo, &any,
                          flags.lootabc ? 0 : any.a_char,
                          flags.lootabc ? any.a_char : '|', ATR_NONE,
-                         clr, "all seen or remembered engravings",
+                         clr, _("all seen or remembered engravings"),
                          MENU_ITEMFLAGS_NONE);
             }
-            end_menu(win, "What do you want to look at:");
+            end_menu(win, _("What do you want to look at:"));
             if (select_menu(win, PICK_ONE, &pick_list) > 0) {
                 i = pick_list->item.a_char;
                 free((genericptr_t) pick_list);
@@ -1944,7 +2544,8 @@ do_look(int mode, coord *click_cc)
                 char temp_buf[BUFSZ], supplemental_name[BUFSZ];
 
                 supplemental_name[0] = '\0';
-                Strcpy(temp_buf, firstmatch);
+                /* the data file is looked up in English */
+                Strcpy(temp_buf, look_english ? look_english : firstmatch);
                 (void) checkfile(temp_buf, pm,
                                  (ans == LOOK_VERBOSE) ? chkfilDontAsk
                                                        : chkfilNone,
@@ -2004,12 +2605,13 @@ look_all(
                     }
                 } else if (glyph_is_invisible(glyph)) {
                     /* remembered, unseen, creature */
-                    Strcpy(lookbuf, invisexplain);
+                    Strcpy(lookbuf, look_descr(invisexplain, 0));
                     ++count;
                 } else if (glyph_is_warning(glyph)) {
                     int warnindx = glyph_to_warning(glyph);
 
-                    Strcpy(lookbuf, def_warnsyms[warnindx].explanation);
+                    Strcpy(lookbuf,
+                           look_descr(def_warnsyms[warnindx].explanation, 0));
                     ++count;
                 }
             } else { /* !do_mons */
@@ -2023,7 +2625,26 @@ look_all(
 
                 cmode = (iflags.getpos_coords != GPCOORDS_NONE)
                            ? iflags.getpos_coords : GPCOORDS_MAP;
-                if (count == 1) {
+                if (count == 1 && i18n_active()) {
+                    if (nearby)
+                        Snprintf(outbuf, sizeof outbuf,
+                                 do_mons ? _("Monsters currently shown near "
+                                             "%s:")
+                                         : _("Objects currently shown near "
+                                             "%s:"),
+                                 (cmode != GPCOORDS_COMPASS)
+                                   ? coord_desc(u.ux, u.uy, coordbuf, cmode)
+                                   : !canspotself() ? _("your position")
+                                                    : _("you"));
+                    else
+                        Strcpy(outbuf,
+                               do_mons ? _("All monsters currently shown on "
+                                           "the map:")
+                                       : _("All objects currently shown on "
+                                           "the map:"));
+                    putstr(win, 0, outbuf);
+                    putstr(win, 0, "    "); /* separator (see below) */
+                } else if (count == 1) {
                     Strcpy(which, do_mons ? "monsters" : "objects");
                     if (nearby)
                         Sprintf(outbuf, "%s currently shown near %s:",
@@ -2096,14 +2717,17 @@ look_traps(boolean nearby)
             if (glyph_is_trap(glyph)) {
                 tnum = glyph_to_trap(glyph);
                 trap_description(lookbuf, tnum, x, y);
+                if (i18n_active())
+                    copynchars(lookbuf, look_descr(lookbuf, 0), BUFSZ - 1);
                 ++count;
             } else if ((t = t_at(x, y)) != 0 && t->tseen
                        /* can't use /" to track traps moved by bubbles or
                           clouds except when hero has direct line of sight */
                        && ((!Is_waterlevel(&u.uz) && !Is_airlevel(&u.uz))
                            || couldsee(x, y))) {
-                Strcpy(lookbuf, trapname(t->ttyp, FALSE));
-                Sprintf(eos(lookbuf), ", obscured by %s", encglyph(glyph));
+                Strcpy(lookbuf, look_descr(trapname(t->ttyp, FALSE), 0));
+                Snprintf(eos(lookbuf), sizeof lookbuf - strlen(lookbuf),
+                         _(", obscured by %s"), encglyph(glyph));
                 glyph = trap_to_glyph(t);
                 ++count;
             }
@@ -2113,6 +2737,12 @@ look_traps(boolean nearby)
                 cmode = (iflags.getpos_coords != GPCOORDS_NONE)
                            ? iflags.getpos_coords : GPCOORDS_MAP;
                 if (count == 1) {
+                    if (i18n_active())
+                        Strcpy(outbuf,
+                               nearby ? _("Nearby seen or remembered traps:")
+                                      : _("Seen or remembered traps on this "
+                                          "level:"));
+                    else
                     Sprintf(outbuf, "%sseen or remembered traps%s:",
                             nearby ? "nearby " : "",
                             nearby ? "" : " on this level");
@@ -2176,7 +2806,19 @@ look_engrs(boolean nearby)
             (void) add_quoted_engraving(x, y, lookbuf, TRUE);
             /* the paren is used by farlook and add_quoted_engraving()
                expected to see it; we don't want it here */
-            if (is_headstone) {
+            if (i18n_active()) {
+                /* translated whole: " headstone reading: ..." */
+                if (e->eread)
+                    Snprintf(outbuf, sizeof outbuf,
+                             is_headstone ? _(" headstone reading: \"%s\"")
+                                          : _(" remembered text: \"%s\""),
+                             e->engr_txt[remembered_text]);
+                else
+                    Strcpy(outbuf, is_headstone
+                                     ? _(" headstone you haven't read")
+                                     : _(" engraving that you haven't read"));
+                Strcpy(lookbuf, outbuf);
+            } else if (is_headstone) {
                 (void) strsubst(lookbuf, "(grave with ", "");
                 (void) strsubst(lookbuf, "(grave whose ", "");
             } else {
@@ -2192,7 +2834,7 @@ look_engrs(boolean nearby)
             } else {
                 /* engraving or grave covered by object(s) */
                 Snprintf(eos(lookbuf), sizeof lookbuf - strlen(lookbuf),
-                         ", obscured by %s", encglyph(glyph));
+                         _(", obscured by %s"), encglyph(glyph));
                 glyph = is_headstone ? cmap_to_glyph(S_grave)
                                      : engraving_to_glyph(e);
                 ++count;
@@ -2202,10 +2844,17 @@ look_engrs(boolean nearby)
 
                 cmode = (iflags.getpos_coords != GPCOORDS_NONE)
                            ? iflags.getpos_coords : GPCOORDS_MAP;
-                if (count == 1) {
+                if (count == 1 && i18n_active()) {
+                    Strcpy(outbuf,
+                           nearby ? _("Nearby seen or remembered engravings:")
+                                  : _("Seen or remembered engravings on this "
+                                      "level:"));
+                } else if (count == 1) {
                     Sprintf(outbuf, "%sseen or remembered engravings%s:",
                             nearby ? "nearby " : "",
                             nearby ? "" : " on this level");
+                }
+                if (count == 1) {
                     putstr(win, 0, upstart(outbuf));
                     /* hack alert! Qt watches a text window for any line
                        with 4 consecutive spaces and renders the window

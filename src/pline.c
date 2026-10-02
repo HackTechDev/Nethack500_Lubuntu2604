@@ -231,6 +231,16 @@ vpline(const char *line, va_list the_args)
         dirstr = coord_desc(a11y_mesgxy.x, a11y_mesgxy.y, dirstrbuf,
                             ((iflags.getpos_coords == GPCOORDS_NONE)
                              ? GPCOORDS_COMFULL : iflags.getpos_coords));
+        if (i18n_active() && line[0] == '%' && line[1] == 's' && !line[2]) {
+            /* "%s" alone: translate its argument here, since the format
+               won't be "%s" alone any more once prefixed */
+            char abuf[BUFSZ];
+
+            Snprintf(abuf, sizeof abuf, "%s: %s", dirstr,
+                     _(va_arg(the_args, const char *)));
+            pline("%s", abuf);
+            return;
+        }
         tmp = (char *) alloc(strlen(line) + sizeof ": " + strlen(dirstr));
         Strcpy(tmp, dirstr);
         Strcat(tmp, ": ");

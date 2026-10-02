@@ -116,7 +116,15 @@ les vers longs (`worm.c`), le choix d'une position (`getpos.c`, hors
 fenêtre d'aide), le courrier (`mail.c`), les lignes d'état du stéthoscope
 (`insight.c`), `quest.c`, le menu simple des options `O` avec les
 descriptions des options (extraites de `include/optlist.h`), les messages
-de changement d'option et le ramassage automatique (`@`)
+de changement d'option et le ramassage automatique (`@`), la description
+d'un point de la carte (`;`, `/`, description automatique du curseur,
+`#lookaround` ; `pager.c` décrit le point deux fois, en anglais pour la
+recherche dans l'encyclopédie `data.base`, puis traduit pour l'affichage ;
+symboles en msgctxt `symbol`, `symbol a`, `symbol the`), les directions
+d'accessibilité (« (4sud,6ouest) »), le génocide (pluriels des monstres
+par `i18n_mon_plural()`, msgctxt `monster-plural` pour les exceptions),
+les vœux, le nommage (`do_name.c`), `#lookaround`, les erreurs du fichier
+de configuration
 — les noms de rayons hallucinatoires (`hallublasts[]`) restent en
 anglais —, sauf
 quelques

@@ -33,6 +33,10 @@ were_change(struct monst *mon)
                 }
                 if (howler) {
                     Soundeffect(se_canine_howl, 50);
+                    if (i18n_active())
+                        You_hear("%s howling at the moon.",
+                                 i18n_an_ctx("monster", howler));
+                    else
                     You_hear("a %s howling at the moon.", howler);
                     wake_nearto(mon->mx, mon->my, 4 * 4);
                 }
@@ -110,7 +114,11 @@ new_were(struct monst *mon)
         return;
     }
 
-    if (canseemon(mon) && !Hallucination)
+    if (canseemon(mon) && !Hallucination && i18n_active())
+        pline(is_human(&mons[pm]) ? _("%s changes into a human.")
+                                  : _("%s changes into %s."), Monnam(mon),
+              i18n_an_ctx("monster", pmname(&mons[pm], Mgender(mon)) + 4));
+    else if (canseemon(mon) && !Hallucination)
         pline("%s changes into a %s.", Monnam(mon),
               is_human(&mons[pm]) ? "human"
                                   /* pmname()+4: skip past "were" prefix */

@@ -6641,10 +6641,10 @@ makewish(void)
     if (flags.verbose)
         You("may wish for an object.");
  retry:
-    Strcpy(promptbuf, "For what do you wish");
-    if (iflags.cmdassist && tries > 0)
-        Strcat(promptbuf, " (enter 'help' for assistance)");
-    Strcat(promptbuf, "?");
+    Strcpy(promptbuf, (iflags.cmdassist && tries > 0)
+                      ? _("For what do you wish (enter 'help' for "
+                          "assistance)?")
+                      : _("For what do you wish?"));
 
     if (iflags.menu_requested && wish_history[0] && (tries == 0))
         wish_history_menu(buf);

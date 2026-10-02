@@ -37,6 +37,9 @@
  *              "gender" entry: "le sol", "la glace", "l'autel".
  *  i18n_an_ctx("context", "noun")
  *              the same with the indefinite article: "une cape".
+ *  i18n_mon_plural("monster")
+ *              translated plural of a monster name (msgctxt
+ *              "monster-plural", else made from msgctxt "monster").
  *
  * A translation can mark a contraction with '@' ("@de %s", "@\303\240 %s"):
  * the contraction rules of the catalog (msgctxt "grammar", "contractions")
@@ -68,6 +71,7 @@
 #define i18n_the_ctx(ctx, en) the(en)
 #define i18n_an_ctx(ctx, en) an(en)
 #define i18n_noun_fem(en) FALSE
+#define i18n_mon_plural(en) makeplural(en)
 #define objnam_fmt(fmt, str, obj) (fmt)
 #define objnam_adj(en, str) (en)
 #define objnam_feminine(str) FALSE

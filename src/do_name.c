@@ -171,6 +171,12 @@ alreadynamed(struct monst *mtmp, char *monnambuf, char *usrbuf)
         boolean name_not_title = (has_mgivenname(mtmp)
                                   || type_is_pname(mtmp->data)
                                   || mtmp->isshk);
+        if (i18n_active())
+            pline(name_not_title
+                      ? _("%s would rather keep the current name.")
+                      : _("%s would rather keep the current title."),
+                  upstart(monnambuf));
+        else
         pline("%s would rather keep %s existing %s.", upstart(monnambuf),
               is_rider(mtmp->data) ? "its" : mhis(mtmp),
               name_not_title ? "name" : "title");
@@ -185,7 +191,7 @@ alreadynamed(struct monst *mtmp, char *monnambuf, char *usrbuf)
                /* catch trying to name "the priest of Crom" as "Crom" */
                || ((p = strstri(monnambuf, " of ")) != 0
                    && fuzzymatch(usrbuf, p + 4, " -_", TRUE))) {
-        if (is_rider(mtmp->data)) {
+        if (is_rider(mtmp->data) || i18n_active()) {
             /* avoid gendered pronoun for riders */
             pline("%s is already called that.", upstart(monnambuf));
         } else {
@@ -227,6 +233,11 @@ do_mgivenname(void)
         if (u.usteed && canspotmon(u.usteed)) {
             mtmp = u.usteed;
         } else {
+            if (i18n_active())
+                pline(_("This %s creature is called %s and cannot be "
+                        "renamed."),
+                      C_("feminine", beautiful()), svp.plname);
+            else
             pline("This %s creature is called %s and cannot be renamed.",
                   beautiful(), svp.plname);
             return;
@@ -683,9 +694,20 @@ docall(struct obj *obj)
         update_inventory();
 }
 
+#if 0
+/* forms of the messages of namefloorobj() given to objnam_fmt() */
+C_("feminine", "That %s can't be assigned a type name.")
+C_("plural", "That %s can't be assigned a type name.")
+C_("feminine plural", "That %s can't be assigned a type name.")
+C_("feminine", "You don't know that %s well enough to name it.")
+C_("plural", "You don't know that %s well enough to name it.")
+C_("feminine plural", "You don't know that %s well enough to name it.")
+#endif
+
 staticfn void
 namefloorobj(void)
 {
+    const char *gram_nm;
     coord cc;
     int glyph;
     char buf[BUFSZ];
@@ -711,6 +733,11 @@ namefloorobj(void)
     }
     if (!obj) {
         /* "under you" is safe here since there's no object to hide under */
+        if (i18n_active())
+            pline(u_at(cc.x, cc.y)
+                      ? _("There doesn't seem to be any object under you.")
+                      : _("There doesn't seem to be any object there."));
+        else
         There("doesn't seem to be any object %s.",
               u_at(cc.x, cc.y) ? "under you" : "there");
         return;
@@ -720,9 +747,11 @@ namefloorobj(void)
        would yield "glorkum" so we need to handle it explicitly; it will
        always fail the Hallucination test and pass the !callable test,
        resulting in the "can't be assigned a type name" message */
-    Strcpy(buf, (obj->otyp != STRANGE_OBJECT)
-                 ? simpleonames(obj)
-                 : obj_descr[STRANGE_OBJECT].oc_name);
+    /* the name keeps its grammar (for translated messages) only where
+       simpleonames() put it, not in buf[] */
+    gram_nm = (obj->otyp != STRANGE_OBJECT) ? simpleonames(obj)
+                                             : (const char *) 0;
+    Strcpy(buf, gram_nm ? gram_nm : obj_descr[STRANGE_OBJECT].oc_name);
     use_plural = (obj->quan > 1L);
     if (Hallucination) {
         const char *unames[6];
@@ -746,13 +775,26 @@ namefloorobj(void)
         unames[4] = roguename();
         /* silly */
         unames[5] = "Wibbly Wobbly";
+        if (i18n_active())
+            pline(use_plural ? _("%s decide to call you \"%s.\"")
+                             : _("%s decides to call you \"%s.\""),
+                  The(buf), unames[rn2_on_display_rng(SIZE(unames))]);
+        else
         pline("%s %s to call you \"%s.\"",
               The(buf), use_plural ? "decide" : "decides",
               unames[rn2_on_display_rng(SIZE(unames))]);
     } else if (call_ok(obj) == GETOBJ_EXCLUDE) {
+        if (i18n_active())
+            pline(objnam_fmt("That %s can't be assigned a type name.",
+                             gram_nm, obj), buf);
+        else
         pline("%s %s can't be assigned a type name.",
               use_plural ? "Those" : "That", buf);
     } else if (!obj->dknown) {
+        if (i18n_active())
+            pline(objnam_fmt("You don't know that %s well enough to name it.",
+                             gram_nm, obj), buf);
+        else
         You("don't know %s %s well enough to name %s.",
             use_plural ? "those" : "that", buf, use_plural ? "them" : "it");
     } else {
@@ -914,6 +956,57 @@ boolean
 i18n_noun_fem(const char *en)
 {
     return i18n_feminine(en);
+}
+
+/* translated plural of the English monster name en: its msgctxt
+   "monster-plural" entry if there is one, else the translated name with
+   an 's' (an 'x' after "au", "eu") added to each word before a
+   complement ("loups-garous", "nymphes des eaux") */
+char *
+i18n_mon_plural(const char *en)
+{
+    static char buf[2][BUFSZ];
+    static int idx = 0;
+    static const char *const stops[] = {
+        " de ", " d'", " des ", " du ", " \303\240 " /* à */, " en ", 0
+    };
+    char *res = buf[idx = (idx + 1) % 2];
+    const char *tr, *rest = "", *end, *p, *q;
+    int i;
+
+    if ((tr = i18n_lookup("monster-plural", en)) != 0) {
+        Snprintf(res, BUFSZ, "%s", tr);
+        return res;
+    }
+    tr = C_("monster", en);
+    end = eos((char *) tr);
+    for (i = 0; stops[i]; ++i)
+        if ((p = strstr(tr, stops[i])) != 0 && p < end)
+            end = p, rest = p;
+    if (!*rest)
+        rest = end;
+    *res = '\0';
+    for (p = tr; p < end; p = q) {
+        size_t l = strlen(res);
+
+        for (q = p; q < end && *q != ' ' && *q != '-'; ++q)
+            continue;
+        Snprintf(res + l, BUFSZ - l, "%.*s", (int) (q - p), p);
+        l = strlen(res);
+        if (q - p >= 2 && !strchr("sxz", q[-1]))
+            Snprintf(res + l, BUFSZ - l, "%s",
+                     ((q[-1] == 'u' && strchr("ae", q[-2]))) ? "x" : "s");
+        if (q < end) {
+            l = strlen(res);
+            Snprintf(res + l, BUFSZ - l, "%c", *q++);
+        }
+    }
+    {
+        size_t l = strlen(res);
+
+        Snprintf(res + l, BUFSZ - l, "%s", rest);
+    }
+    return res;
 }
 
 /* is the translated name of mtmp, as given by x_monnam(), feminine?

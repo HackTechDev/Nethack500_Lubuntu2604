@@ -698,6 +698,7 @@ extern char *i18n_the(const char *) NONNULLARG1;
 extern char *i18n_the_ctx(const char *, const char *) NONNULLARG12;
 extern char *i18n_an_ctx(const char *, const char *) NONNULLARG12;
 extern boolean i18n_noun_fem(const char *) NONNULLARG1;
+extern char *i18n_mon_plural(const char *) NONNULLARG1;
 #endif
 extern char *x_monnam(struct monst *, int, const char *, int, boolean) NONNULLARG1;
 extern char *l_monnam(struct monst *) NONNULLARG1;

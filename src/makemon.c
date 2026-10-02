@@ -2132,7 +2132,13 @@ grow_up(struct monst *mtmp, struct monst *victim)
         fem = is_male(ptr) ? 0 : is_female(ptr) ? 1 : mtmp->female;
 
         if (svm.mvitals[newtype].mvflags & G_GENOD) { /* allow G_EXTINCT */
-            if (canspotmon(mtmp))
+            if (canspotmon(mtmp) && i18n_active())
+                pline(nonliving(ptr)
+                          ? _("As %s grows up into %s, it expires!")
+                          : _("As %s grows up into %s, it dies!"),
+                      mon_nam(mtmp),
+                      i18n_an_ctx("monster", pmname(ptr, Mgender(mtmp))));
+            else if (canspotmon(mtmp))
                 pline("As %s grows up into %s, %s %s!", mon_nam(mtmp),
                       an(pmname(ptr, Mgender(mtmp))), mhe(mtmp),
                       nonliving(ptr) ? "expires" : "dies");

@@ -3066,7 +3066,11 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	its text as a whole (the getpos tip of nhcore.lua); death reasons on
 	the tombstone (msgctxt "killer", "killer a" with the article); the
 	high score list (death reason and ", while ..." suffix translated
-	for display only, hit points column aligned by characters)
+	for display only, hit points column aligned by characters); the
+	description of a map location (';', '/', autodescribe, #lookaround;
+	still looked up in English in the data file), accessibility
+	direction prefixes, genocide (plural monster names), wish prompt,
+	naming messages, config file error summary
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

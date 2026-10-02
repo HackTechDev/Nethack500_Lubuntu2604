@@ -2882,23 +2882,24 @@ do_class_genocide(void)
             pline1(thats_enough_tries);
             return;
         }
-        Strcpy(promptbuf, "What class of monsters do you want to genocide?");
+        Strcpy(promptbuf,
+               _("What class of monsters do you want to genocide?"));
         if (j > 0)
             Snprintf(eos(promptbuf), sizeof promptbuf - strlen(promptbuf),
-                     " [enter %s]",
+                     _(" [enter %s]"),
                      iflags.cmdassist
-                       ? "the symbol or name representing a class, or '?'"
-                       : "'?' to see previous genocides");
+                       ? _("the symbol or name representing a class, or '?'")
+                       : _("'?' to see previous genocides"));
         getlin(promptbuf, buf);
         (void) mungspaces(buf);
         /* avoid 'that does not represent any monster' for empty input */
         if (!*buf) {
             pline("%s.", (j + 1 < 5)
-                         ? "Type letter (or punctuation)"
-                           " or name used for a class of monsters or 'none'"
+                         ? _("Type letter (or punctuation) or name used "
+                             "for a class of monsters or 'none'")
                          /* next iteration gives "that's enough tries"
                             so don't suggest typing anything this time */
-                         : "No class of monsters specified");
+                         : _("No class of monsters specified"));
             continue; /* try again */
         }
         /* choosing "none" preserves genocideless conduct */
@@ -2984,6 +2985,10 @@ do_class_genocide(void)
                     svm.mvitals[i].mvflags |= (G_GENOD | G_NOCORPSE);
                     kill_genocided_monsters();
                     update_inventory(); /* eggs & tins */
+                    if (i18n_active())
+                        pline(_("Wiped out all %s."),
+                              i18n_mon_plural(mons[i].pmnames[NEUTRAL]));
+                    else
                     pline("Wiped out all %s.", nam);
                     if (Upolyd && vampshifted(&gy.youmonst)
                         /* current shifted form or base vampire form */
@@ -3017,7 +3022,10 @@ do_class_genocide(void)
                         }
                     }
                 } else if (svm.mvitals[i].mvflags & G_GENOD) {
-                    if (!gameover)
+                    if (!gameover && i18n_active())
+                        pline(_("%s are already nonexistent."),
+                              i18n_mon_plural(mons[i].pmnames[NEUTRAL]));
+                    else if (!gameover)
                         pline("%s are already nonexistent.", upstart(nam));
                 } else if (!gameover) {
                     /* suppress feedback about quest beings except
@@ -3040,6 +3048,16 @@ do_class_genocide(void)
                         if (i == PM_HIGH_CLERIC)
                             uniq = FALSE;
 
+                        if (i18n_active())
+                            pline(_("You aren't permitted to genocide %s."),
+                                  (uniq && !named)
+                                  ? i18n_the_ctx("monster",
+                                                 mons[i].pmnames[NEUTRAL])
+                                  : named ? C_("monster",
+                                               mons[i].pmnames[NEUTRAL])
+                                          : i18n_mon_plural(
+                                                mons[i].pmnames[NEUTRAL]));
+                        else
                         You("aren't permitted to genocide %s%s.",
                             (uniq && !named) ? "the " : "",
                             (uniq || named) ? mons[i].pmnames[NEUTRAL] : nam);
@@ -3090,22 +3108,23 @@ do_genocide(
                 return;
             }
             Strcpy(promptbuf,
-                   "What type of monster do you want to genocide?");
+                   _("What type of monster do you want to genocide?"));
             if (i > 0)
                 Snprintf(eos(promptbuf), sizeof promptbuf - strlen(promptbuf),
-                         " [enter %s]",
+                         _(" [enter %s]"),
                          iflags.cmdassist
-                           ? "the name of a type of monster, or '?'"
-                           : "'?' to see previous genocides");
+                           ? _("the name of a type of monster, or '?'")
+                           : _("'?' to see previous genocides"));
             getlin(promptbuf, buf);
             (void) mungspaces(buf);
             /* avoid 'such creatures do not exist' for empty input */
             if (!*buf) {
                 pline("%s.", (i + 1 < 5)
-                             ? "Type the name of a type of monster or 'none'"
+                             ? _("Type the name of a type of monster or "
+                                 "'none'")
                              /* next iteration gives "that's enough tries"
                                 so don't suggest typing anything this time */
-                             : "No type of monster specified");
+                             : _("No type of monster specified"));
                 continue; /* try again */
             }
             /* choosing "none" preserves genocideless conduct */
@@ -3201,6 +3220,13 @@ do_genocide(
 
         /* setting no-corpse affects wishing and random tin generation */
         svm.mvitals[mndx].mvflags |= (G_GENOD | G_NOCORPSE);
+        if (i18n_active())
+            pline((*which == 'a') ? _("Wiped out all %s.")
+                                  : _("Wiped out %s."),
+                  (*which == 'a') ? i18n_mon_plural(buf)
+                  : *which ? i18n_the_ctx("monster", buf)
+                           : C_("monster", buf));
+        else
         pline("Wiped out %s%s.", which,
               (*which != 'a') ? buf : makeplural(buf));
 
@@ -3247,6 +3273,11 @@ do_genocide(
             /* accumulated 'cnt' doesn't take groups into account;
                assume bringing in new mon(s) didn't remove any old ones */
             cnt = monster_census(FALSE) - census;
+            if (i18n_active())
+                pline((cnt > 1) ? _("Sent in some %s.") : _("Sent in %s."),
+                      (cnt > 1) ? i18n_mon_plural(buf)
+                                : i18n_an_ctx("monster", buf));
+            else
             pline("Sent in %s%s.", (cnt > 1) ? "some " : "",
                   (cnt > 1) ? makeplural(buf) : an(buf));
         } else

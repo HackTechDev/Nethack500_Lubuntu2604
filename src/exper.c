@@ -303,6 +303,11 @@ newexplevel(void)
         pluslvl(TRUE);
 }
 
+#if 0
+/* for xgettext: message for a female hero */
+NC_("heroine", "You feel more experienced.")
+#endif
+
 void
 pluslvl(
     boolean incr) /* True: incremental experience growth;
@@ -347,6 +352,12 @@ pluslvl(
             u.uexp = newuexp(u.ulevel);
         }
         ++u.ulevel;
+        if (i18n_active())
+            pline((u.ulevelmax < u.ulevel)
+                      ? _("Welcome to experience level %d.")
+                      : _("Welcome back to experience level %d."),
+                  u.ulevel);
+        else
         pline("Welcome %sto experience level %d.",
               (u.ulevelmax < u.ulevel) ? "" : "back ",
               u.ulevel);

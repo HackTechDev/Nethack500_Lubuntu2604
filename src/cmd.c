@@ -117,6 +117,8 @@ staticfn boolean u_have_seen_whole_selection(struct selectionvar *);
 staticfn boolean u_have_seen_bounds_selection(struct selectionvar *);
 staticfn boolean u_can_see_whole_selection(struct selectionvar *);
 staticfn int dolookaround_floodfill_findroom(coordxy, coordxy);
+staticfn void lookaround_room_i18n(struct selectionvar *, coordxy, coordxy,
+                                   boolean);
 staticfn void lookaround_known_room(coordxy, coordxy);
 
 #if defined(__BORLANDC__) && !defined(_WIN32)
@@ -972,6 +974,13 @@ enter_explore_mode(void)
                 /* keep going */
             }
         }
+        if (i18n_active())
+            pline(!wizard
+                    ? _("Beware!  From explore mode there will be no return "
+                        "to normal game,")
+                    : _("Beware!  From explore mode there will be no return "
+                        "to debug mode,"));
+        else
         pline("Beware!  From explore mode there will be no return to %s,",
               oldmode);
         if (paranoid_query(ParanoidQuit,
@@ -982,6 +991,10 @@ enter_explore_mode(void)
             You("are now in non-scoring explore mode.");
         } else {
             clear_nhwindow(WIN_MESSAGE);
+            if (i18n_active())
+                pline(!wizard ? _("Continuing with normal game.")
+                              : _("Continuing with debug mode."));
+            else
             pline("Continuing with %s.", oldmode);
         }
     }
@@ -1277,6 +1290,57 @@ dolookaround_floodfill_findroom(coordxy x, coordxy y)
     return TRUE;
 }
 
+#if 0
+/* sizes of rooms and areas described by lookaround_room_i18n() */
+N_("an irregularly shaped %d by %d room") N_("a square %d by %d room")
+N_("a rectangular %d by %d room") N_("an irregularly shaped %d by %d area")
+N_("a square %d by %d area") N_("a rectangular %d by %d area")
+#endif
+
+DISABLE_WARNING_FORMAT_NONLITERAL
+
+/* the room or area at x,y for #lookaround, as a whole translated
+   sentence */
+staticfn void
+lookaround_room_i18n(
+    struct selectionvar *sel,
+    coordxy x, coordxy y,
+    boolean room)
+{
+    static const char *const sizes[2][3] = {
+        { "an irregularly shaped %d by %d area", "a square %d by %d area",
+          "a rectangular %d by %d area" },
+        { "an irregularly shaped %d by %d room", "a square %d by %d room",
+          "a rectangular %d by %d room" }
+    };
+    NhRect rect = cg.zeroNhRect;
+    char what[BUFSZ];
+    int dx, dy, shape;
+    boolean here = u_at(x, y);
+
+    selection_getbounds(sel, &rect);
+    dx = rect.hx - rect.lx + 1;
+    dy = rect.hy - rect.ly + 1;
+    shape = selection_is_irregular(sel) ? 0 : (dx == dy) ? 1 : 2;
+    Snprintf(what, sizeof what, _(sizes[room ? 1 : 0][shape]), dx, dy);
+    if (u_have_seen_whole_selection(sel)) {
+        if (here && selection_getpoint(x, y, sel)
+            && u_can_see_whole_selection(sel))
+            pline(_("You are in %s."), what);
+        else
+            pline(here ? _("You remember this as %s.")
+                       : _("You remember that as %s."), what);
+    } else if (u_have_seen_bounds_selection(sel)) {
+        pline(here ? _("You guess this to be %s.")
+                   : _("You guess that to be %s."), what);
+    } else {
+        pline(here ? _("You can't guess the size of this area.")
+                   : _("You can't guess the size of that area."));
+    }
+}
+
+RESTORE_WARNING_FORMAT_NONLITERAL
+
 /* describe the room at x,y */
 staticfn void
 lookaround_known_room(coordxy x, coordxy y)
@@ -1291,7 +1355,9 @@ lookaround_known_room(coordxy x, coordxy y)
     if (!u_at(x, y))
         set_msg_xy(x, y);
 
-    if (u_have_seen_whole_selection(sel)) {
+    if (i18n_active()) {
+        lookaround_room_i18n(sel, x, y, rmno >= 0);
+    } else if (u_have_seen_whole_selection(sel)) {
         boolean u_in = (boolean) selection_getpoint(x, y, sel);
 
         You("%s %s %s.",
@@ -3735,6 +3801,13 @@ rhack(int key)
                     boolean up = (ch == '<' || tlist->ef_funct == doup),
                             down = (ch == '>' || tlist->ef_funct == dodown);
 
+                    if (i18n_active())
+                        pline((up || down)
+                              ? _("The '%s' prefix should be followed by a "
+                                  "movement command other than up or down.")
+                              : _("The '%s' prefix should be followed by a "
+                                  "movement command."), which);
+                    else
                     pline(
                 "The '%s' prefix should be followed by a movement command%s.",
                           which,

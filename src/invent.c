@@ -2127,7 +2127,23 @@ silly_thing(const char *word,
         else if (!strcmp(word, "take off"))
             s1 = "R", s2 = "remove", s3 = "";
     }
-    if (s1)
+    if (s1 && i18n_active()) {
+        boolean pl = (is_plural(otmp) || pair_of(otmp));
+
+        /* "Use the 'W' command to wear that." */
+        pline(!strcmp(s2, "wear")
+                  ? (pl ? _("Use the '%s' command to wear those.")
+                        : _("Use the '%s' command to wear that."))
+              : !strcmp(s2, "take")
+                  ? (pl ? _("Use the '%s' command to take those off.")
+                        : _("Use the '%s' command to take that off."))
+              : !strcmp(s2, "put")
+                  ? (pl ? _("Use the '%s' command to put those on.")
+                        : _("Use the '%s' command to put that on."))
+                  : (pl ? _("Use the '%s' command to remove those.")
+                        : _("Use the '%s' command to remove that.")),
+              s1);
+    } else if (s1)
         pline("Use the '%s' command to %s %s%s.", s1, s2,
               !(is_plural(otmp) || pair_of(otmp)) ? "that" : "those", s3);
     else
