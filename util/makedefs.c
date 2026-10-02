@@ -138,8 +138,8 @@ char *file_prefix = "";
 #endif
 
 /* language of translated data files: with MAKEDEFS_LANG=<lang> in the
- * environment, -r -h -1 -2 -3 read <name>-<lang>.{txt,tru,fal} and
- * write <name>.<lang> (used by the game with OPTIONS=language:<lang>) */
+ * environment, -r -h -1 -2 -3 -d read <name>-<lang>.{txt,tru,fal,base}
+ * and write <name>.<lang> (used by the game with OPTIONS=language:<lang>) */
 static const char *datlang = "";
 
 #ifdef MACsansMPWTOOL
@@ -1298,12 +1298,16 @@ do_data(void)
     char *line;
 
     Sprintf(tempfile, DATA_TEMPLATE, "database.tmp");
+    add_lang(tempfile, "-");
     filename[0] = '\0';
 #ifdef FILE_PREFIX
     Strcat(filename, file_prefix);
 #endif
     Sprintf(eos(filename), DATA_TEMPLATE, DATA_FILE);
+    add_lang(filename, ".");
+    /* translated encyclopedia: data-<lang>.base gives data.<lang> */
     Sprintf(infile, DATA_IN_TEMPLATE, DATA_FILE);
+    add_lang(infile, "-");
 #ifdef SHORT_FILENAMES
     Strcat(infile, ".bas");
 #else

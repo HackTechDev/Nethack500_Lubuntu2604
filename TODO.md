@@ -24,7 +24,7 @@ Par ordre de priorité (visibilité en jeu) :
 | Fichier | Lignes | Contenu | Remarque |
 |---|---:|---|---|
 | `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | **Traduit** (octobre 2026) : 872 textes, msgctxt `quest` dans `po/fr.po`, extraits par `po/questtext.py` ; restent à tester en jeu les dialogues avec les chefs et ennemis |
-| `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
+| `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | En cours, par tranches : `dat/data-fr.base` (clés anglaises, compilé en `dat/data.fr` par `MAKEDEFS_LANG=fr makedefs -d`) ; la ligne `# --- suite non traduite : data.base ligne N ---` marque où reprendre. Fait : lignes 29-246 (abbot à ape) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
 | `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |

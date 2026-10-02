@@ -140,11 +140,13 @@ MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
 # instead of the English ones when the language is in use (nhi18n.c)
 I18NLANGS = $(patsubst po/%.po,%,$(wildcard po/*.po))
 # translated sources compiled by makedefs (dat/rumors-<lang>.tru and .fal,
-# dat/{engrave,epitaph,oracles}-<lang>.txt) give dat/<name>.<lang>;
+# dat/{engrave,epitaph,oracles}-<lang>.txt, dat/data-<lang>.base: the
+# encyclopedia, keeping the English keys) give dat/<name>.<lang>;
 # hallucinatory monsters (bogusmon) are translated in po/<lang>.po
 RNDI18N = engrave epitaph oracles
 VARDATI18N = $(foreach l,$(I18NLANGS), \
 	$(if $(wildcard dat/rumors-$(l).tru),dat/rumors.$(l)) \
+	$(if $(wildcard dat/data-$(l).base),dat/data.$(l)) \
 	$(foreach f,$(RNDI18N), \
 		$(if $(wildcard dat/$(f)-$(l).txt),dat/$(f).$(l))))
 DATI18N = $(sort $(foreach l,$(I18NLANGS),$(wildcard dat/*.$(l))) \
@@ -550,6 +552,8 @@ dat/engrave.%: dat/engrave-%.txt $(GAME)
 	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -2 )
 dat/bogusmon.%: dat/bogusmon-%.txt $(GAME)
 	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -3 )
+dat/data.%: dat/data-%.base $(GAME)
+	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -d )
 
 # 'make update-po' extracts the translatable strings (marked with _() &c,
 # or given to pline() and the other message functions) into po/nethack.pot
