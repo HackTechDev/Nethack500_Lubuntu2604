@@ -131,8 +131,10 @@ quelques
 verbes de
 `u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
 français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Restent notamment : `options.c`, `files.c`, `cfgfiles.c`, `bones.c`, `wizcmds.c` (mode
-magicien), les textes des menus et fenêtres (section 4).
+(accord au féminin).  Les messages de `options.c`, `files.c`,
+`cfgfiles.c`, `bones.c` et des commandes du mode magicien (`wizcmds.c`)
+sont traduits ; restent des messages de débogage et les menus du mode
+magicien (`^V`...).
 et `attrib.c` (« You feel foolish! »).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
@@ -184,8 +186,11 @@ Restent :
 | `opthelp` | 393 | Aide des options |
 | `cmdhelp` | 226 | Description de chaque touche (format « touche<TAB>texte ») |
 
-Il faut aussi traduire les messages des niveaux spéciaux, écrits en Lua
-dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
+Les messages d'arrivée des niveaux spéciaux (`des.message()` des plans
+élémentaires et du Plan astral) sont traduits par `deliver_by_pline()`
+avant le remplacement de leurs codes `%` (liste pour xgettext dans
+`questpgr.c`).  Restent les inscriptions du tutoriel (`tut-1.lua`,
+composées de morceaux en Lua) et les textes des quêtes (`quest.lua`).
 
 ## 4. Interface
 
@@ -197,8 +202,8 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
   dynamiquement restent en anglais). Le menu simple `O`, les
   descriptions des commandes étendues, le résumé de fin de partie,
   `#conduct`, les exploits, `#overview` et l'illumination `^X` sont
-  traduits (pour `^X`, les lignes rares — deux armes, mode magicien
-  `from_what()` — restent composées de fragments, parfois en anglais).
+  traduits (pour `^X`, les lignes du mode magicien `from_what()` restent
+  composées de fragments, parfois en anglais).
 - **Noms des commandes étendues** : à garder en anglais pour la saisie ;
   seules leurs descriptions sont à traduire.
 - **Alignement des colonnes** : une lettre accentuée compte pour deux
@@ -213,8 +218,8 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
 
 ## 5. Laissé volontairement en anglais
 
-- Commandes de débogage (`wizcmds.c`) et messages techniques internes
-  (`impossible()`, `panic()`, erreurs de fichiers).
+- Messages techniques internes (`impossible()`, `panic()`, traces de
+  débogage).
 - Fichiers `livelog`, `dumplog` et `xlogfile`, lus par des outils externes.
 - Noms des options et valeurs du fichier de configuration.
 

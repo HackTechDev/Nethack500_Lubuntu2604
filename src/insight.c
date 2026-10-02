@@ -1852,6 +1852,79 @@ weapon_insight(int final)
             else
                 you_are(buf, "");
 
+        } else if (i18n_active()) { /* two-weapon, whole sentences */
+            int wtype2 = weapon_type(uswapwep), sklvl2 = P_SKILL(wtype2),
+                twoskl = P_SKILL(P_TWO_WEAPON_COMBAT), w, i;
+            char sklvlbuf2[20], twobuf[20];
+            const char *enh[3];
+            int nenh = 0;
+
+            if (twoskl == P_ISRESTRICTED) {
+                twoskl = P_UNSKILLED;
+                Strcpy(twobuf, _("restricted"));
+            } else {
+                Strcpy(twobuf, C_("skill level",
+                                  lcase(skill_level_name(P_TWO_WEAPON_COMBAT,
+                                                         twobuf))));
+            }
+            for (w = 0; w < 2; ++w) {
+                int wt = w ? wtype2 : wtype, sk = w ? sklvl2 : sklvl;
+
+                if (w && wtype2 == wtype)
+                    break;
+                if (w)
+                    (void) lcase(skill_level_name(wt, sklvlbuf2));
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" Your skill in %s is: %s%s.")
+                                : _(" Your skill in %s was: %s%s."),
+                         skill_name_i18n(skill_name(wt)),
+                         (sk == P_ISRESTRICTED) ? _("restricted")
+                         : C_("skill level", w ? sklvlbuf2 : sklvlbuf), "");
+                enlght_out(buf);
+                if (twoskl < sk)
+                    Snprintf(buf, sizeof buf,
+                             !final ? _(" With two weapons, your skill in %s"
+                                        " is limited to %s.")
+                                    : _(" With two weapons, your skill in %s"
+                                        " was limited to %s."),
+                             skill_name_i18n(skill_name(wt)), twobuf);
+                else if (twoskl > sk)
+                    Snprintf(buf, sizeof buf,
+                             !final
+                               ? _(" Your two weapon skill is limited by"
+                                   " your skill in %s.")
+                               : _(" Your two weapon skill was limited by"
+                                   " your skill in %s."),
+                             skill_name_i18n(skill_name(wt)));
+                else
+                    *buf = '\0';
+                if (*buf)
+                    enlght_out(buf);
+            }
+            Snprintf(buf, sizeof buf,
+                     !final ? _(" Your two weapon skill is: %s.")
+                            : _(" Your two weapon skill was: %s."), twobuf);
+            enlght_out(buf);
+            if (can_advance(wtype, FALSE))
+                enh[nenh++] = skill_name_i18n(skill_name(wtype));
+            if (wtype2 != wtype && can_advance(wtype2, FALSE))
+                enh[nenh++] = skill_name_i18n(skill_name(wtype2));
+            if (can_advance(P_TWO_WEAPON_COMBAT, FALSE))
+                enh[nenh++] = _("two weapons");
+            if (nenh) {
+                char lst[BUFSZ];
+
+                Strcpy(lst, enh[0]);
+                for (i = 1; i < nenh; ++i)
+                    Snprintf(eos(lst), sizeof lst - strlen(lst),
+                             (i == nenh - 1) ? _(" and %s") : ", %s", enh[i]);
+                Snprintf(buf, sizeof buf,
+                         !final ? _(" You can enhance your skill with %s.")
+                                : _(" You could have enhanced your skill with"
+                                    " %s."), lst);
+                enlght_out(buf);
+            }
+            *buf = '\0';
         } else { /* two-weapon */
             static const char also_[] = "also ";
             char pfx[QBUFSZ], sfx[QBUFSZ],

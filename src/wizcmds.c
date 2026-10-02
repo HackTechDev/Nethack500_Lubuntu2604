@@ -925,8 +925,9 @@ wiz_smell(void)
             if (is_you)
                 You("surreptitiously sniff under your %s.", body_part(ARM));
             if (!usmellmon(mptr))
-                pline("%s to not give off any smell.",
-                      is_you ? "You seem" : "That monster seems");
+                pline(is_you ? "You seem to not give off any smell."
+                             : "That monster seems to not give off any "
+                               "smell.");
             if (!glyph_is_monster(glyph))
                 map_invisible(cc.x, cc.y);
         } else {

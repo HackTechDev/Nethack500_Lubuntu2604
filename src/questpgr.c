@@ -430,10 +430,33 @@ deliver_by_pline(const char *str)
         copynchars(in_line, msgp, (int) sizeof in_line - 1);
         msgp += strlen(in_line) + 1;
 
+        /* translated before its %-codes are replaced */
+        if (i18n_active()) {
+            const char *tr = flags.female ? C_("heroine", in_line) : in_line;
+
+            if (tr == in_line)
+                tr = _(in_line);
+            copynchars(in_line, tr, (int) sizeof in_line - 1);
+        }
         convert_line(in_line, out_line);
         pline("%s", out_line);
     }
 }
+
+#if 0
+/* for xgettext: des.message() texts of the special levels (dat/ Lua files) */
+N_("What a strange feeling!")
+N_("You notice that there is no gravity here.")
+N_("You arrive on the Astral Plane!")
+N_("Here the High Temple of %d is located.")
+N_("You sense alarm, hostility, and excitement in the air!")
+N_("Well done, mortal!")
+N_("But now thou must face the final Test...")
+N_("Prove thyself worthy or perish!")
+N_("You find yourself suspended in an air bubble surrounded by water.")
+NC_("heroine",
+    "You find yourself suspended in an air bubble surrounded by water.")
+#endif
 
 staticfn void
 deliver_by_window(const char *msg, int how)

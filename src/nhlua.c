@@ -815,6 +815,9 @@ N_("Tip: Farlooking or selecting a map location\n"
    "\n"
    "When in this mode, you can press ESC to return to normal game mode,\n"
    "and pressing ? will show the key help.\n")
+/* texts given to nh.pline() by dat/nhlib.lua */
+N_("Looks like you're getting hungry.  You'll starve to death, unless you "
+   "eat something.")
 #endif
 
 /* text("foo\nbar\nbaz") */
