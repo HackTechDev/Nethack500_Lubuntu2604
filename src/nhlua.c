@@ -805,6 +805,18 @@ nhl_menu(lua_State *L)
     return 1;
 }
 
+#if 0
+/* texts given to nh.text() by dat/nhcore.lua */
+N_("Tip: Farlooking or selecting a map location\n"
+   "\n"
+   "You are now in a \"farlook\" mode - the movement keys move the cursor,\n"
+   "not your character.  Game time does not advance.  This mode is used\n"
+   "to look around the map, or to select a location on it.\n"
+   "\n"
+   "When in this mode, you can press ESC to return to normal game mode,\n"
+   "and pressing ? will show the key help.\n")
+#endif
+
 /* text("foo\nbar\nbaz") */
 staticfn int
 nhl_text(lua_State *L)
@@ -819,7 +831,8 @@ nhl_text(lua_State *L)
         start_menu(tmpwin, MENU_BEHAVE_STANDARD);
 
         while (lua_gettop(L) > 0) {
-            char *ostr = dupstr(luaL_checkstring(L, 1));
+            /* translated as a whole (see the list before nhl_text()) */
+            char *ostr = dupstr(_(luaL_checkstring(L, 1)));
             char *ptr, *str = ostr;
             char *lstr = str + strlen(str) - 1;
 

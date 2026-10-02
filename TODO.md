@@ -185,7 +185,8 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
   `end_menu()` ne sont pas traduits automatiquement (menu complet des
   options `#optionsfull` (titres et descriptions traduits, noms d'options
   en anglais), tableau des scores (cause de la mort enregistrée en
-  anglais), aide du curseur). La pierre tombale est traduite à
+  anglais)). L'aide du curseur et la pierre tombale sont traduites
+  (cette dernière à
   l'affichage (les causes de mort autres qu'un monstre restent souvent en
   anglais). Le menu simple `O`, les
   descriptions des commandes étendues, le résumé de fin de partie,

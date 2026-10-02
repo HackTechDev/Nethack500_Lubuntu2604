@@ -18266,7 +18266,7 @@ msgid "%s and %s"
 msgstr ""
 
 #: src/apply.c:902 src/cmd.c:1367 src/display.c:2069 src/dog.c:1218
-#: src/explode.c:856 src/getpos.c:1014 src/invent.c:3156 src/mail.c:375
+#: src/explode.c:856 src/getpos.c:1032 src/invent.c:3156 src/mail.c:375
 #: src/muse.c:3312 src/music.c:634 src/objnam.c:4808 src/objnam.c:4857
 #: src/objnam.c:4988 src/potion.c:1776 src/pray.c:608 src/read.c:1516
 #: src/read.c:2896 src/read.c:3104 src/uhitm.c:3121 src/wield.c:1162
@@ -30545,7 +30545,7 @@ msgctxt "gender"
 msgid "valid location"
 msgstr ""
 
-#: src/getpos.c:141 src/getpos.c:729
+#: src/getpos.c:141 src/getpos.c:747
 msgid " for travel destination"
 msgstr ""
 
@@ -30557,87 +30557,268 @@ msgstr ""
 msgid " in view"
 msgstr ""
 
-#: src/getpos.c:667
+#: src/getpos.c:142
+msgid " in area"
+msgstr ""
+
+#: src/getpos.c:143
+msgctxt "getpos help"
+msgid "monsters"
+msgstr ""
+
+#: src/getpos.c:143
+msgctxt "getpos help"
+msgid "next/previous monster"
+msgstr ""
+
+#: src/getpos.c:144
+msgctxt "getpos help"
+msgid "next/previous object"
+msgstr ""
+
+#: src/getpos.c:144
+msgctxt "getpos help"
+msgid "objects"
+msgstr ""
+
+#: src/getpos.c:145
+msgctxt "getpos help"
+msgid "next/previous door or doorway"
+msgstr ""
+
+#: src/getpos.c:146
+msgctxt "getpos help"
+msgid "doors or doorways"
+msgstr ""
+
+#: src/getpos.c:147
+msgctxt "getpos help"
+msgid "unexplored location"
+msgstr ""
+
+#: src/getpos.c:148
+msgctxt "getpos help"
+msgid "locations next to unexplored locations"
+msgstr ""
+
+#: src/getpos.c:149
+msgctxt "getpos help"
+msgid "anything interesting"
+msgstr ""
+
+#: src/getpos.c:150
+msgctxt "getpos help"
+msgid "valid location"
+msgstr ""
+
+#: src/getpos.c:150
+msgctxt "getpos help"
+msgid "valid locations"
+msgstr ""
+
+#: src/getpos.c:166
+msgid "move the cursor to "
+msgstr ""
+
+#: src/getpos.c:172
+msgid "move the cursor next to an "
+msgstr ""
+
+#: src/getpos.c:179
+#, c-format
+msgid "Use '%s'/'%s' to %s%s%s."
+msgstr ""
+
+#: src/getpos.c:181
+msgid "get a menu of "
+msgstr ""
+
+#: src/getpos.c:193
+msgid "8 units at a time"
+msgstr ""
+
+#: src/getpos.c:194
+msgid "skipping same glyphs"
+msgstr ""
+
+#: src/getpos.c:200
+#, c-format
+msgid "Use '%s', '%s', '%s', '%s' to move the cursor to %s."
+msgstr ""
+
+#: src/getpos.c:208
+#, c-format
+msgid "Use '%s', '%s', '%s', '%s' to fast-move the cursor, %s."
+msgstr ""
+
+#: src/getpos.c:215
+#, c-format
+msgid "(or prefix normal move with '%s' or '%s' to fast-move)"
+msgstr ""
+
+#: src/getpos.c:219
+msgid "Or enter a background symbol (ex. '<')."
+msgstr ""
+
+#: src/getpos.c:220
+#, c-format
+msgid "Use '%s' to move the cursor on yourself."
+msgstr ""
+
+#: src/getpos.c:253
+#, c-format
+msgid "Use '%s' to change fast-move mode to %s."
+msgstr ""
+
+#: src/getpos.c:259
+#, c-format
+msgid "Use '%s' to toggle menu listing for possible targets."
+msgstr ""
+
+#: src/getpos.c:263
+#, c-format
+msgid "Use '%s' to change the mode of limiting possible targets."
+msgstr ""
+
+#: src/getpos.c:272
+#, c-format
+msgid "Use '%s' or '%s' to move to valid locations."
+msgstr ""
+
+#: src/getpos.c:278
+#, c-format
+msgid "Use '%s' to toggle marking of valid locations."
+msgstr ""
+
+#: src/getpos.c:282
+#, c-format
+msgid "Use '%s' to toggle automatic description."
+msgstr ""
+
+#: src/getpos.c:288
+#, c-format
+msgid "(Set 'whatis_coord' option to include coordinates with '%s' text.)"
+msgstr ""
+
+#: src/getpos.c:290
+#, c-format
+msgid "(Reset 'whatis_coord' option to omit coordinates from '%s' text.)"
+msgstr ""
+
+#: src/getpos.c:309
+#, c-format
+msgid "Type a %s when you are at the right place."
+msgstr ""
+
+#: src/getpos.c:313
+#, c-format
+msgid "  '%s' describe current spot, show 'more info', move to another spot."
+msgstr ""
+
+#: src/getpos.c:318
+#, c-format
+msgid "  '%s' describe current spot,%s move to another spot;"
+msgstr ""
+
+#: src/getpos.c:321
+msgid " prompt if 'more info',"
+msgstr ""
+
+#: src/getpos.c:324
+#, c-format
+msgid "  '%s' describe current spot, move to another spot;"
+msgstr ""
+
+#: src/getpos.c:328
+#, c-format
+msgid "  '%s' describe current spot, stop looking at things;"
+msgstr ""
+
+#: src/getpos.c:335
+msgid "Type Space or Escape when you're done."
+msgstr ""
+
+#: src/getpos.c:685
 #, c-format
 msgid "%s%s%s%s%s"
 msgstr ""
 
-#: src/getpos.c:670
+#: src/getpos.c:688
 msgid " (invalid target)"
 msgstr ""
 
-#: src/getpos.c:694
+#: src/getpos.c:712
 #, c-format
 msgid "You cannot see %s."
 msgstr ""
 
-#: src/getpos.c:726
+#: src/getpos.c:744
 #, c-format
 msgid "Pick %s%s%s"
 msgstr ""
 
-#: src/getpos.c:863
+#: src/getpos.c:881
 msgid "desired location"
 msgstr ""
 
-#: src/getpos.c:865
+#: src/getpos.c:883
 #, c-format
 msgid "(For instructions type a '%s')"
 msgstr ""
 
-#: src/getpos.c:882
+#: src/getpos.c:900
 #, c-format
 msgid "Move cursor to %s:"
 msgstr ""
 
-#: src/getpos.c:988
+#: src/getpos.c:1006
 msgid "Automatic description of features under cursor is on."
 msgstr ""
 
-#: src/getpos.c:993
+#: src/getpos.c:1011
 msgid "Automatic description is on."
 msgstr ""
 
-#: src/getpos.c:1001
+#: src/getpos.c:1019
 msgid "Not limiting targets"
 msgstr ""
 
-#: src/getpos.c:1002
+#: src/getpos.c:1020
 msgid "Limiting targets to those in sight"
 msgstr ""
 
-#: src/getpos.c:1003
+#: src/getpos.c:1021
 msgid "Limiting targets to those in same area"
 msgstr ""
 
-#: src/getpos.c:1020
+#: src/getpos.c:1038
 msgid "Using a menu to show possible targets for 'm|M', 'o|O', 'd|D', and 'x|X'."
 msgstr ""
 
-#: src/getpos.c:1036
+#: src/getpos.c:1054
 msgid "Skipping over similar terrain when fastmoving the cursor."
 msgstr ""
 
-#: src/getpos.c:1145
+#: src/getpos.c:1163
 #, c-format
 msgid "Can't find dungeon feature '%c'."
 msgstr ""
 
-#: src/getpos.c:1152
+#: src/getpos.c:1170
 msgid "aborted"
 msgstr ""
 
-#: src/getpos.c:1155
+#: src/getpos.c:1173
 #, c-format
 msgid "use '%s', '%s', '%s', '%s' or '%s'"
 msgstr ""
 
-#: src/getpos.c:1161
+#: src/getpos.c:1179
 #, c-format
 msgid "Unknown direction: '%s' (%s)."
 msgstr ""
 
-#: src/getpos.c:1168
+#: src/getpos.c:1186
 msgid "Done."
 msgstr ""
 
@@ -40755,12 +40936,24 @@ msgctxt "grammar"
 msgid "contractions"
 msgstr ""
 
-#: src/nhlua.c:1414
+#: src/nhlua.c:810
+msgid ""
+"Tip: Farlooking or selecting a map location\n"
+"\n"
+"You are now in a \"farlook\" mode - the movement keys move the cursor,\n"
+"not your character.  Game time does not advance.  This mode is used\n"
+"to look around the map, or to select a location on it.\n"
+"\n"
+"When in this mode, you can press ESC to return to normal game mode,\n"
+"and pressing ? will show the key help.\n"
+msgstr ""
+
+#: src/nhlua.c:1427
 #, c-format
 msgid "TEST:{ x=%i, y=%i, name=\"%s\" }"
 msgstr ""
 
-#: src/nhlua.c:1738
+#: src/nhlua.c:1751
 #, c-format
 msgid "Resetting time to move #%ld."
 msgstr ""
@@ -42511,6 +42704,10 @@ msgstr ""
 
 #: src/pager.c:2910
 msgid "Select one item:"
+msgstr ""
+
+#: src/pager.c:2947
+msgid "' or '"
 msgstr ""
 
 #: src/pickup.c:31
@@ -54831,7 +55028,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-02 18:30+0200\n"
+"POT-Creation-Date: 2026-10-02 18:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

@@ -3061,7 +3061,9 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	the descriptions of the commands (#? list, key list, #help); the
 	tombstone ("REPOSE EN PAIX", death description translated for display
 	only, centered by characters), "There is <food> here; eat it?" and
-	"There is <box> here; unlock it?" prompts
+	"There is <box> here; unlock it?" prompts; the cursor key help ('?'
+	when choosing a position) and position goals; nh.text() translates
+	its text as a whole (the getpos tip of nhcore.lua)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

@@ -2944,7 +2944,7 @@ setopt_cmd(char *outbuf)
         Sprintf(eos(outbuf), "%s%.31s", (*cmdnm != '#') ? "#" : "", cmdnm);
 
         /* since there's no key bound to #optionsfull, include 'm O' */
-        Strcat(outbuf, "\' or \'");
+        Strcat(outbuf, _("\' or \'"));
         /* m prefix plus #options */
         key = cmd_from_func(do_reqmenu);
         if (key) {
