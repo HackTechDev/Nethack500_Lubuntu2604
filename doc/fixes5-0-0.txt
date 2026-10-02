@@ -3056,7 +3056,9 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	enlght_i18n(), a number standing for "%ld") and #overview; ^X
 	enlightenment: background, basics, characteristics, status and
 	weapon lines rewritten as whole sentences, other lines built from
-	translated fragments
+	translated fragments; the end of game summary ("You died in ...",
+	gold, moves, valuables), the full options menu (#optionsfull) and
+	the descriptions of the commands (#? list, key list, #help)
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

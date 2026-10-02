@@ -570,8 +570,8 @@ doextlist(void)
     int n, pass;
     int menumode = 0, menushown[2], onelist = 0;
     boolean redisplay = TRUE, search = FALSE;
-    static const char *const headings[] = { "Extended commands",
-                                      "Debugging Extended Commands" };
+    static const char *const headings[] = { N_("Extended commands"),
+                                      N_("Debugging Extended Commands") };
     int clr = NO_COLOR;
 
     searchbuf[0] = '\0';
@@ -581,11 +581,14 @@ doextlist(void)
         redisplay = FALSE;
         any = cg.zeroany;
         start_menu(menuwin, MENU_BEHAVE_STANDARD);
-        add_menu_str(menuwin, "Extended Commands List");
+        add_menu_str(menuwin, _("Extended Commands List"));
         add_menu_str(menuwin, "");
 
-        Sprintf(buf, "Switch to %s commands that don't autocomplete",
-                menumode ? "including" : "excluding");
+        Strcpy(buf, menumode
+                    ? _("Switch to including commands that don't "
+                        "autocomplete")
+                    : _("Switch to excluding commands that don't "
+                        "autocomplete"));
         any.a_int = 1;
         add_menu(menuwin, &nul_glyphinfo, &any, 'a', 0, ATR_NONE, clr, buf,
                  MENU_ITEMFLAGS_NONE);
@@ -598,10 +601,10 @@ doextlist(void)
                having ':' as an explicit selector overrides the default
                menu behavior for it; we retain 's' as a group accelerator */
             add_menu(menuwin, &nul_glyphinfo, &any, ':', 's', ATR_NONE,
-                     clr, "Search extended commands",
+                     clr, _("Search extended commands"),
                      MENU_ITEMFLAGS_NONE);
         } else {
-            Strcpy(buf, "Switch back from search");
+            Strcpy(buf, _("Switch back from search"));
             if (strlen(buf) + strlen(searchbuf) + strlen(" (\"\")") < QBUFSZ)
                 Sprintf(eos(buf), " (\"%s\")", searchbuf);
             any.a_int = 3;
@@ -616,8 +619,10 @@ doextlist(void)
         if (wizard) {
             any.a_int = 4;
             add_menu(menuwin, &nul_glyphinfo, &any, 'z', 0, ATR_NONE, clr,
-          onelist ? "Switch to showing debugging commands in separate section"
-       : "Switch to showing all alphabetically, including debugging commands",
+          onelist
+          ? _("Switch to showing debugging commands in separate section")
+          : _("Switch to showing all alphabetically, including debugging "
+              "commands"),
                      MENU_ITEMFLAGS_NONE);
         }
         add_menu_str(menuwin, "");
@@ -670,14 +675,14 @@ doextlist(void)
                    heading with no subordinate entries on the search
                    results menu. */
                 if (!menushown[pass]) {
-                    Strcpy(buf, headings[pass]);
+                    Strcpy(buf, _(headings[pass]));
                     add_menu_heading(menuwin, buf);
                     menushown[pass] = 1;
                 }
                 /* longest ef_txt at present is "wizrumorcheck" (13 chars);
                    2nd field will be "    " or " [A]" or " [m]" or "[mA]" */
-                Sprintf(buf, " %-14s %4s %s", efp->ef_txt,
-                        doc_extcmd_flagstr(menuwin, efp), cmd_desc);
+                Snprintf(buf, sizeof buf, " %-14s %4s %s", efp->ef_txt,
+                         doc_extcmd_flagstr(menuwin, efp), _(cmd_desc));
                 add_menu_str(menuwin, buf);
                 ++n;
             }
@@ -685,7 +690,7 @@ doextlist(void)
                 add_menu_str(menuwin, "");
         }
         if (*searchbuf && !n)
-            add_menu_str(menuwin, "no matches");
+            add_menu_str(menuwin, _("no matches"));
         else
             (void) doc_extcmd_flagstr(menuwin, (struct ext_func_tab *) 0);
 
@@ -835,8 +840,9 @@ extcmd_via_menu(void)
             }
             prevaccelerator = accelerator;
             if (!acount || one_per_line) {
-                Sprintf(prompt, "%s%s [%s]", wastoolong ? "or " : "",
-                        choices[i]->ef_txt, choices[i]->ef_desc);
+                Snprintf(prompt, sizeof prompt, "%s%s [%s]",
+                         wastoolong ? "or " : "", choices[i]->ef_txt,
+                         _(choices[i]->ef_desc));
             } else if (acount == 1) {
                 Sprintf(prompt, "%s%s or %s", wastoolong ? "or " : "",
                         choices[i - 1]->ef_txt, choices[i]->ef_txt);
@@ -1665,101 +1671,109 @@ do_repeat(void)
    or control keystroke generally should not be; there are a few exceptions
    such as ^O/#overview and C/N/#name */
 struct ext_func_tab extcmdlist[] = {
-    { '#',    "#", "enter and perform an extended command",
+    { '#',    "#", N_("enter and perform an extended command"),
               doextcmd, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { M('?'), "?", "list all extended commands",
+    { M('?'), "?", N_("list all extended commands"),
               doextlist, IFBURIED | AUTOCOMPLETE | GENERALCMD | CMD_M_PREFIX,
               NULL },
-    { M('a'), "adjust", "adjust inventory letters",
+    { M('a'), "adjust", N_("adjust inventory letters"),
               doorganize, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { M('A'), "annotate", "name current level",
+    { M('A'), "annotate", N_("name current level"),
               donamelevel, IFBURIED | AUTOCOMPLETE | GENERALCMD | CMD_M_PREFIX, NULL },
-    { 'a',    "apply", "apply (use) a tool (pick-axe, key, lamp...)",
+    { 'a',    "apply", N_("apply (use) a tool (pick-axe, key, lamp...)"),
               doapply, CMD_M_PREFIX, NULL },
-    { C('x'), "attributes", "show your attributes",
+    { C('x'), "attributes", N_("show your attributes"),
               doattributes, IFBURIED | GENERALCMD, NULL },
-    { '@',    "autopickup", "toggle the 'autopickup' option on/off",
+    { '@',    "autopickup", N_("toggle the 'autopickup' option on/off"),
               dotogglepickup, IFBURIED | GENERALCMD, NULL },
 #ifdef CRASHREPORT
-    { '\0',   "bugreport", "file a bug report",
+    { '\0',   "bugreport", N_("file a bug report"),
               dobugreport, GENERALCMD | NOFUZZERCMD, NULL },
 #endif
-    { 'C',    "call", "name a monster, specific object, or type of object",
+    { 'C',    "call",
+              N_("name a monster, specific object, or type of object"),
               docallcmd, IFBURIED | GENERALCMD, NULL },
-    { 'Z',    "cast", "zap (cast) a spell",
+    { 'Z',    "cast", N_("zap (cast) a spell"),
               docast, IFBURIED, NULL },
-    { M('c'), "chat", "talk to someone",
+    { M('c'), "chat", N_("talk to someone"),
               dotalk, IFBURIED | AUTOCOMPLETE, NULL },
-    { 'v',    "chronicle", "show journal of major events",
+    { 'v',    "chronicle", N_("show journal of major events"),
               do_gamelog, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { 'c',    "close", "close a door",
+    { 'c',    "close", N_("close a door"),
               doclose, 0, NULL },
-    { M('C'), "conduct", "list voluntary challenges you have maintained",
+    { M('C'), "conduct", N_("list voluntary challenges you have maintained"),
               doconduct, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { '\0',   "debugfuzzer", "start the fuzz tester",
+    { '\0',   "debugfuzzer", N_("start the fuzz tester"),
               wiz_fuzzer, IFBURIED | WIZMODECMD | NOFUZZERCMD, NULL },
-    { M('d'), "dip", "dip an object into something",
+    { M('d'), "dip", N_("dip an object into something"),
               dodip, AUTOCOMPLETE | CMD_M_PREFIX, NULL },
-    { '>',    "down", "go down a staircase",
+    { '>',    "down", N_("go down a staircase"),
               /* allows 'm' prefix (for move without autopickup) but not the
                  g/G/F movement modifiers; not flagged as MOVEMENTCMD because
                  that would suppress it from dokeylist output */
               dodown, CMD_M_PREFIX, NULL },
-    { 'd',    "drop", "drop an item",
+    { 'd',    "drop", N_("drop an item"),
               dodrop, 0, NULL },
-    { 'D',    "droptype", "drop specific item types",
+    { 'D',    "droptype", N_("drop specific item types"),
               doddrop, 0, NULL },
-    { 'e',    "eat", "eat something",
+    { 'e',    "eat", N_("eat something"),
               doeat, CMD_M_PREFIX, NULL },
-    { 'E',    "engrave", "engrave writing on the floor",
+    { 'E',    "engrave", N_("engrave writing on the floor"),
               doengrave, 0, NULL },
-    { M('e'), "enhance", "advance or check weapon and spell skills",
+    { M('e'), "enhance", N_("advance or check weapon and spell skills"),
               enhance_weapon_skill, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
     /* #exploremode should be flagged AUTOCOMPETE but that would negatively
        impact frequently used #enhance by making #e become ambiguous */
-    { M('X'), "exploremode", "enter explore (discovery) mode",
+    { M('X'), "exploremode", N_("enter explore (discovery) mode"),
               enter_explore_mode, IFBURIED | GENERALCMD | NOFUZZERCMD, NULL },
-    { 'F',    "fight", "prefix: force fight even if you don't see a monster",
+    { 'F',    "fight",
+              N_("prefix: force fight even if you don't see a monster"),
               do_fight, PREFIXCMD, NULL },
-    { 'f',    "fire", "fire ammunition from quiver",
+    { 'f',    "fire", N_("fire ammunition from quiver"),
               dofire, 0, NULL },
-    { M('f'), "force", "force a lock",
+    { M('f'), "force", N_("force a lock"),
               doforce, AUTOCOMPLETE, NULL },
     { M('g'), "genocided",
-              "list monsters that have been genocided or become extinct",
+              N_("list monsters that have been genocided or become extinct"),
+#if 0
+              /* the same, for #genocided when not in wizard/explore mode */
+              N_("list monsters that have been genocided")
+#endif
               dogenocided,
               IFBURIED | AUTOCOMPLETE | GENERALCMD | CMD_M_PREFIX, NULL },
-    { ';',    "glance", "show what type of thing a map symbol corresponds to",
+    { ';',    "glance",
+              N_("show what type of thing a map symbol corresponds to"),
               doquickwhatis, IFBURIED | GENERALCMD, NULL },
-    { '?',    "help", "give a help message",
+    { '?',    "help", N_("give a help message"),
               dohelp, IFBURIED | GENERALCMD, NULL },
-    { '\0',   "herecmdmenu", "show menu of commands you can do here",
+    { '\0',   "herecmdmenu", N_("show menu of commands you can do here"),
               doherecmdmenu, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { '\0',    "history", "show a summary of the game's development",
+    { '\0',    "history", N_("show a summary of the game's development"),
               dohistory, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { 'i',    "inventory", "show your inventory",
+    { 'i',    "inventory", N_("show your inventory"),
               ddoinv, IFBURIED | GENERALCMD, NULL },
-    { 'I',    "inventtype", "show inventory of one specific item class",
+    { 'I',    "inventtype", N_("show inventory of one specific item class"),
               dotypeinv, IFBURIED | GENERALCMD, NULL },
-    { M('i'), "invoke", "invoke an object's special powers",
+    { M('i'), "invoke", N_("invoke an object's special powers"),
               doinvoke, IFBURIED | AUTOCOMPLETE, NULL },
-    { M('j'), "jump", "jump to another location",
+    { M('j'), "jump", N_("jump to another location"),
               dojump, AUTOCOMPLETE, NULL },
-    { C('d'), "kick", "kick something",
+    { C('d'), "kick", N_("kick something"),
               dokick, 0, NULL },
-    { '\\',   "known", "show what object types have been discovered",
+    { '\\',   "known", N_("show what object types have been discovered"),
               dodiscovered, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { '`',    "knownclass", "show discovered types for one class of objects",
+    { '`',    "knownclass",
+              N_("show discovered types for one class of objects"),
               doclassdisco, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "levelchange", "change experience level",
+    { '\0',   "levelchange", N_("change experience level"),
               wiz_level_change, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "lightsources", "show mobile light sources",
+    { '\0',   "lightsources", N_("show mobile light sources"),
               wiz_light_sources, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { ':',    "look", "look at what is here",
+    { ':',    "look", N_("look at what is here"),
               dolook, IFBURIED, NULL },
-    { '\0',   "lookaround", "describe what you can see",
+    { '\0',   "lookaround", N_("describe what you can see"),
               dolookaround, IFBURIED | GENERALCMD, NULL },
-    { M('l'), "loot", "loot a box on the floor",
+    { M('l'), "loot", N_("loot a box on the floor"),
               doloot, AUTOCOMPLETE | CMD_M_PREFIX, NULL },
     { '\0',   "migratemons",
 #ifdef DEBUG_MIGRATING_MONS
@@ -1768,292 +1782,296 @@ struct ext_func_tab extcmdlist[] = {
               "show migrating monsters",
 #endif
               wiz_migrate_mons, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { M('m'), "monster", "use monster's special ability",
+    { M('m'), "monster", N_("use monster's special ability"),
               domonability, IFBURIED | AUTOCOMPLETE, NULL },
-    { M('n'), "name", "same as call; name a monster or object or object type",
+    { M('n'), "name",
+              N_("same as call; name a monster or object or object type"),
               docallcmd, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { M('o'), "offer", "offer a sacrifice to the gods",
+    { M('o'), "offer", N_("offer a sacrifice to the gods"),
               dosacrifice, AUTOCOMPLETE | CMD_M_PREFIX, NULL },
-    { 'o',    "open", "open a door",
+    { 'o',    "open", N_("open a door"),
               doopen, 0, NULL },
     /* 'm #options' runs doset() */
-    { 'O',    "options", "show option settings",
+    { 'O',    "options", N_("show option settings"),
               doset_simple, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
     /* 'm #optionsfull' runs doset_simple() */
-    { '\0',   "optionsfull", "show all option settings, possibly change them",
+    { '\0',   "optionsfull",
+              N_("show all option settings, possibly change them"),
               doset, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
     /* #overview used to need autocomplete and has retained that even
        after being assigned to ^O [old wizard mode ^O is now #wizwhere];
        'm' prefix displays overview as a menu where player can choose a
        level to supply with an annotation */
-    { C('o'), "overview", "show a summary of the explored dungeon",
+    { C('o'), "overview", N_("show a summary of the explored dungeon"),
               dooverview,
               IFBURIED | AUTOCOMPLETE | GENERALCMD | CMD_M_PREFIX, NULL },
     /* [should #panic actually autocomplete?] */
-    { '\0',   "panic", "test panic routine (fatal to game)",
+    { '\0',   "panic", N_("test panic routine (fatal to game)"),
               wiz_panic, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { 'p',    "pay", "pay your shopping bill",
+    { 'p',    "pay", N_("pay your shopping bill"),
               dopay, CMD_M_PREFIX, NULL },
-    { '|',    "perminv", "scroll persistent inventory display",
+    { '|',    "perminv", N_("scroll persistent inventory display"),
               doperminv, IFBURIED | GENERALCMD | NOFUZZERCMD, NULL },
     { ',',    "pickup", "pick up things at the current location",
               dopickup, CMD_M_PREFIX, NULL },
-    { '\0',   "polyself", "polymorph self",
+    { '\0',   "polyself", N_("polymorph self"),
               wiz_polyself, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { M('p'), "pray", "pray to the gods for help",
+    { M('p'), "pray", N_("pray to the gods for help"),
               dopray, IFBURIED | AUTOCOMPLETE, NULL },
-    { C('p'), "prevmsg", "view recent game messages",
+    { C('p'), "prevmsg", N_("view recent game messages"),
               doprev_message, IFBURIED | GENERALCMD | CMD_INSANE, NULL },
-    { 'P',    "puton", "put on an accessory (ring, amulet, etc)",
+    { 'P',    "puton", N_("put on an accessory (ring, amulet, etc)"),
               doputon, 0, NULL },
-    { 'q',    "quaff", "quaff (drink) something",
+    { 'q',    "quaff", N_("quaff (drink) something"),
               dodrink, CMD_M_PREFIX, NULL },
-    { '\0',   "quit", "exit without saving current game",
+    { '\0',   "quit", N_("exit without saving current game"),
               done2, IFBURIED | AUTOCOMPLETE | GENERALCMD | NOFUZZERCMD,
               NULL },
-    { 'Q',    "quiver", "select ammunition for quiver",
+    { 'Q',    "quiver", N_("select ammunition for quiver"),
               dowieldquiver, 0, NULL },
-    { 'r',    "read", "read a scroll or spellbook",
+    { 'r',    "read", N_("read a scroll or spellbook"),
               doread, 0, NULL },
-    { C('r'), "redraw", "redraw screen",
+    { C('r'), "redraw", N_("redraw screen"),
               doredraw, IFBURIED | GENERALCMD | CMD_INSANE, NULL },
-    { 'R',    "remove", "remove an accessory (ring, amulet, etc)",
+    { 'R',    "remove", N_("remove an accessory (ring, amulet, etc)"),
               doremring, 0, NULL },
-    { C('a'), "repeat", "repeat a previous command",
+    { C('a'), "repeat", N_("repeat a previous command"),
               do_repeat, IFBURIED | GENERALCMD, NULL },
     /* "modify command" is a vague description for use as no-autopickup,
        no-attack movement as well as miscellaneous non-movement things;
        key2extcmddesc() constructs a more explicit two line description
        for display by the '&' command and expects to find "prefix:" as
        the start of the text here */
-    { 'm',    "reqmenu", "prefix: request menu or modify command",
+    { 'm',    "reqmenu", N_("prefix: request menu or modify command"),
               do_reqmenu, PREFIXCMD, NULL },
-    { C('_'), "retravel", "travel to previously selected travel location",
+    { C('_'), "retravel", N_("travel to previously selected travel location"),
               dotravel_target, 0, NULL },
-    { M('R'), "ride", "mount or dismount a saddled steed",
+    { M('R'), "ride", N_("mount or dismount a saddled steed"),
               doride, AUTOCOMPLETE, NULL },
-    { M('r'), "rub", "rub a lamp or a stone",
+    { M('r'), "rub", N_("rub a lamp or a stone"),
               dorub, AUTOCOMPLETE, NULL },
-    { 'G',    "run", "prefix: run until something interesting is seen",
+    { 'G',    "run", N_("prefix: run until something interesting is seen"),
               do_run, PREFIXCMD, NULL },
-    { 'g',    "rush", "prefix: rush until something interesting is seen",
+    { 'g',    "rush", N_("prefix: rush until something interesting is seen"),
               do_rush, PREFIXCMD, NULL },
-    { 'S',    "save", "save the game and exit",
+    { 'S',    "save", N_("save the game and exit"),
               dosave, IFBURIED | GENERALCMD | NOFUZZERCMD, NULL },
-    { '\0',   "saveoptions", "save the game configuration",
+    { '\0',   "saveoptions", N_("save the game configuration"),
               do_write_config_file,
               IFBURIED | GENERALCMD | NOFUZZERCMD, NULL },
-    { 's',    "search", "search for traps and secret doors",
+    { 's',    "search", N_("search for traps and secret doors"),
               dosearch, IFBURIED | CMD_M_PREFIX, "searching" },
-    { '*',    "seeall", "show all equipment in use",
+    { '*',    "seeall", N_("show all equipment in use"),
               doprinuse, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { AMULET_SYM, "seeamulet", "show the amulet currently worn",
+    { AMULET_SYM, "seeamulet", N_("show the amulet currently worn"),
               dopramulet, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { ARMOR_SYM, "seearmor", "show the armor currently worn",
+    { ARMOR_SYM, "seearmor", N_("show the armor currently worn"),
               doprarm, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { RING_SYM, "seerings", "show the ring(s) currently worn",
+    { RING_SYM, "seerings", N_("show the ring(s) currently worn"),
               doprring, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { TOOL_SYM, "seetools", "show the tools currently in use",
+    { TOOL_SYM, "seetools", N_("show the tools currently in use"),
               doprtool, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { WEAPON_SYM, "seeweapon", "show the weapon currently wielded",
+    { WEAPON_SYM, "seeweapon", N_("show the weapon currently wielded"),
               doprwep, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
     { '!',    "shell",
-              "leave game to enter a sub-shell ('exit' to come back)",
+              N_("leave game to enter a sub-shell ('exit' to come back)"),
               dosh_core, (IFBURIED | GENERALCMD | NOFUZZERCMD
 #ifndef SHELL
                         | CMD_NOT_AVAILABLE
 #endif /* SHELL */
                         ), NULL },
     /* $ is like ),=,&c but is not included with *, so not called "seegold" */
-    { GOLD_SYM, "showgold", "show gold, possibly shop credit or debt",
+    { GOLD_SYM, "showgold", N_("show gold, possibly shop credit or debt"),
               doprgold, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { SPBOOK_SYM, "showspells", "list and reorder known spells",
+    { SPBOOK_SYM, "showspells", N_("list and reorder known spells"),
               dovspell, IFBURIED | GENERALCMD, NULL },
-    { '^',    "showtrap", "describe an adjacent, discovered trap",
+    { '^',    "showtrap", N_("describe an adjacent, discovered trap"),
               doidtrap, IFBURIED | GENERALCMD, NULL },
-    { M('s'), "sit", "sit down",
+    { M('s'), "sit", N_("sit down"),
               dosit, AUTOCOMPLETE, NULL },
-    { '\0',   "stats", "show memory statistics",
+    { '\0',   "stats", N_("show memory statistics"),
               wiz_show_stats, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { C('z'), "suspend", "push game to background ('fg' to come back)",
+    { C('z'), "suspend", N_("push game to background ('fg' to come back)"),
               dosuspend_core, (IFBURIED | GENERALCMD | NOFUZZERCMD
 #ifndef SUSPEND
                                | CMD_NOT_AVAILABLE
 #endif /* SUSPEND */
                                ), NULL },
-    { 'x',    "swap", "swap wielded and secondary weapons",
+    { 'x',    "swap", N_("swap wielded and secondary weapons"),
               doswapweapon, 0, NULL },
-    { 'T',    "takeoff", "take off one piece of armor",
+    { 'T',    "takeoff", N_("take off one piece of armor"),
               dotakeoff, 0, NULL },
-    { 'A',    "takeoffall", "remove all armor",
+    { 'A',    "takeoffall", N_("remove all armor"),
               doddoremarm, 0, NULL },
-    { C('t'), "teleport", "teleport around the level",
+    { C('t'), "teleport", N_("teleport around the level"),
               dotelecmd, IFBURIED | CMD_M_PREFIX, NULL },
     /* \177 == <del> aka <delete> aka <rubout>; some terminals have an
        option to swap it with <backspace> so if there's a key labeled
        <delete> it may or may not actually invoke the #terrain command */
     { '\177', "terrain",
-              "view map without monsters or objects obstructing it",
+              N_("view map without monsters or objects obstructing it"),
               doterrain, IFBURIED | GENERALCMD | AUTOCOMPLETE, NULL },
     { '\0',   "therecmdmenu",
-              "menu of commands you can do from here to adjacent spot",
+              N_("menu of commands you can do from here to adjacent spot"),
               dotherecmdmenu, AUTOCOMPLETE | GENERALCMD | MOUSECMD, NULL },
-    { 't',    "throw", "throw something",
+    { 't',    "throw", N_("throw something"),
               dothrow, 0, NULL },
-    { '\0',   "timeout", "look at timeout queue and hero's timed intrinsics",
+    { '\0',   "timeout",
+              N_("look at timeout queue and hero's timed intrinsics"),
               wiz_timeout_queue, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { M('T'), "tip", "empty a container",
+    { M('T'), "tip", N_("empty a container"),
               dotip, AUTOCOMPLETE | CMD_M_PREFIX, NULL },
-    { '\0',   "toggle", "toggle boolean option",
+    { '\0',   "toggle", N_("toggle boolean option"),
               dotoggleoption, IFBURIED | GENERALCMD | CMD_PARAM, NULL },
-    { '_',    "travel", "travel to a specific location on the map",
+    { '_',    "travel", N_("travel to a specific location on the map"),
               dotravel, CMD_M_PREFIX, NULL },
-    { M('t'), "turn", "turn undead away",
+    { M('t'), "turn", N_("turn undead away"),
               doturn, IFBURIED | AUTOCOMPLETE, NULL },
-    { 'X',    "twoweapon", "toggle two-weapon combat",
+    { 'X',    "twoweapon", N_("toggle two-weapon combat"),
               dotwoweapon, 0, NULL },
-    { M('u'), "untrap", "untrap something",
+    { M('u'), "untrap", N_("untrap something"),
               dountrap, AUTOCOMPLETE, NULL },
-    { '<',    "up", "go up a staircase",
+    { '<',    "up", N_("go up a staircase"),
               /* (see comment for dodown() above */
               doup, CMD_M_PREFIX, NULL },
-    { M('V'), "vanquished", "list vanquished monsters",
+    { M('V'), "vanquished", N_("list vanquished monsters"),
               dovanquished,
               IFBURIED | AUTOCOMPLETE | GENERALCMD | CMD_M_PREFIX, NULL },
     { M('v'), "version",
-              "list compile time options for this version of NetHack",
+              N_("list compile time options for this version of NetHack"),
               doextversion, IFBURIED | AUTOCOMPLETE | GENERALCMD, NULL },
-    { 'V',    "versionshort", "show version and date+time program was built",
+    { 'V',    "versionshort",
+              N_("show version and date+time program was built"),
               doversion, IFBURIED | GENERALCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "vision", "show vision array",
+    { '\0',   "vision", N_("show vision array"),
               wiz_show_vision, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '.',    "wait", "rest one move while doing nothing",
+    { '.',    "wait", N_("rest one move while doing nothing"),
               donull, IFBURIED | CMD_M_PREFIX, "waiting" },
-    { 'W',    "wear", "wear a piece of armor",
+    { 'W',    "wear", N_("wear a piece of armor"),
               dowear, 0, NULL },
-    { '&',    "whatdoes", "tell what a command does",
+    { '&',    "whatdoes", N_("tell what a command does"),
               dowhatdoes, IFBURIED | GENERALCMD, NULL },
-    { '/',    "whatis", "show what type of thing a symbol corresponds to",
+    { '/',    "whatis", N_("show what type of thing a symbol corresponds to"),
               dowhatis, IFBURIED | GENERALCMD, NULL },
-    { 'w',    "wield", "wield (put in use) a weapon",
+    { 'w',    "wield", N_("wield (put in use) a weapon"),
               dowield, 0, NULL },
-    { M('w'), "wipe", "wipe off your face",
+    { M('w'), "wipe", N_("wipe off your face"),
               dowipe, AUTOCOMPLETE, NULL },
-    { '\0',   "wizborn", "show stats of monsters created",
+    { '\0',   "wizborn", N_("show stats of monsters created"),
               doborn, IFBURIED | WIZMODECMD, NULL },
 #ifdef DEBUG
-    { '\0',   "wizbury", "bury objs under and around you",
+    { '\0',   "wizbury", N_("bury objs under and around you"),
               wiz_debug_cmd_bury, IFBURIED | AUTOCOMPLETE | WIZMODECMD,
               NULL },
 #endif
-    { '\0',   "wizcast", "cast any spell",
+    { '\0',   "wizcast", N_("cast any spell"),
               dowizcast, IFBURIED | WIZMODECMD, NULL },
-    { '\0',   "wizcustom", "show customized glyphs",
+    { '\0',   "wizcustom", N_("show customized glyphs"),
               wiz_custom, IFBURIED | WIZMODECMD | NOFUZZERCMD, NULL },
-    { C('e'), "wizdetect", "reveal hidden things within a small radius",
+    { C('e'), "wizdetect", N_("reveal hidden things within a small radius"),
               wiz_detect, IFBURIED | WIZMODECMD, NULL },
 #if (NH_DEVEL_STATUS != NH_STATUS_RELEASED) || defined(DEBUG)
-    { '\0',   "wizdispmacros", "validate the display macro ranges",
+    { '\0',   "wizdispmacros", N_("validate the display macro ranges"),
               wiz_display_macros, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
 #endif
-    { '\0',   "wizfliplevel", "flip the level",
+    { '\0',   "wizfliplevel", N_("flip the level"),
               wiz_flip_level, IFBURIED | WIZMODECMD, NULL },
-    { C('g'), "wizgenesis", "create a monster",
+    { C('g'), "wizgenesis", N_("create a monster"),
               wiz_genesis, IFBURIED | WIZMODECMD, NULL },
-    { C('i'), "wizidentify", "identify all items in inventory",
+    { C('i'), "wizidentify", N_("identify all items in inventory"),
               wiz_identify, IFBURIED | WIZMODECMD, NULL },
-    { '\0',   "wizintrinsic", "set an intrinsic",
+    { '\0',   "wizintrinsic", N_("set an intrinsic"),
               wiz_intrinsic, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "wizkill", "slay a monster",
+    { '\0',   "wizkill", N_("slay a monster"),
               wiz_kill, (IFBURIED | AUTOCOMPLETE | WIZMODECMD
                          | CMD_M_PREFIX | NOFUZZERCMD), NULL },
-    { C('v'), "wizlevelport", "teleport to another level",
+    { C('v'), "wizlevelport", N_("teleport to another level"),
               wiz_level_tele, IFBURIED | WIZMODECMD | CMD_M_PREFIX, NULL },
-    { '\0',   "wizloaddes", "load and execute a des-file lua script",
+    { '\0',   "wizloaddes", N_("load and execute a des-file lua script"),
               wiz_load_splua, IFBURIED | WIZMODECMD | NOFUZZERCMD, NULL },
-    { '\0',   "wizloadlua", "load and execute a lua script",
+    { '\0',   "wizloadlua", N_("load and execute a lua script"),
               wiz_load_lua, IFBURIED | WIZMODECMD | NOFUZZERCMD, NULL },
 #if (NH_DEVEL_STATUS != NH_STATUS_RELEASED) || defined(DEBUG)
-    { '\0',   "wizobjprobs", "list object generation probabilities",
+    { '\0',   "wizobjprobs", N_("list object generation probabilities"),
               wiz_objprobs, IFBURIED | WIZMODECMD, NULL },
 #endif
-    { '\0',   "wizmakemap", "recreate the current level",
+    { '\0',   "wizmakemap", N_("recreate the current level"),
               wiz_makemap, IFBURIED | WIZMODECMD, NULL },
-    { C('f'), "wizmap", "map the level",
+    { C('f'), "wizmap", N_("map the level"),
               wiz_map, IFBURIED | WIZMODECMD, NULL },
 #if (NH_DEVEL_STATUS != NH_STATUS_RELEASED) || defined(DEBUG)
-    { '\0',   "wizmondiff", "validate the difficulty ratings of monsters",
+    { '\0',   "wizmondiff", N_("validate the difficulty ratings of monsters"),
               wiz_mon_diff, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
 #endif
-    { '\0',   "wizrumorcheck", "verify rumor boundaries",
+    { '\0',   "wizrumorcheck", N_("verify rumor boundaries"),
               wiz_rumor_check, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "wizseenv", "show map locations' seen vectors",
+    { '\0',   "wizseenv", N_("show map locations' seen vectors"),
               wiz_show_seenv, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0', "wizshownhuuid", "show NHUUID for this game",
+    { '\0', "wizshownhuuid", N_("show NHUUID for this game"),
               wiz_show_nhuuid, AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "wizsmell", "smell monster",
+    { '\0',   "wizsmell", N_("smell monster"),
               wiz_smell, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "wiztelekinesis", "telekinesis",
+    { '\0',   "wiztelekinesis", N_("telekinesis"),
               wiz_telekinesis, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { '\0',   "wizwhere", "show locations of special levels",
+    { '\0',   "wizwhere", N_("show locations of special levels"),
               wiz_where, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { C('w'), "wizwish", "wish for something",
+    { C('w'), "wizwish", N_("wish for something"),
               wiz_wish, IFBURIED | CMD_M_PREFIX | WIZMODECMD, NULL },
-    { '\0',   "wmode", "show wall modes",
+    { '\0',   "wmode", N_("show wall modes"),
               wiz_show_wmodes, IFBURIED | AUTOCOMPLETE | WIZMODECMD, NULL },
-    { 'z',    "zap", "zap a wand",
+    { 'z',    "zap", N_("zap a wand"),
               dozap, 0, NULL },
     /* movement commands will be bound by reset_commands() */
     /* move or attack; accept m/g/G/F prefixes */
-    { '\0',   "movewest", "move west (screen left)",
+    { '\0',   "movewest", N_("move west (screen left)"),
               do_move_west, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movenorthwest", "move northwest (screen upper left)",
+    { '\0',   "movenorthwest", N_("move northwest (screen upper left)"),
               do_move_northwest, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movenorth", "move north (screen up)",
+    { '\0',   "movenorth", N_("move north (screen up)"),
               do_move_north, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movenortheast", "move northeast (screen upper right)",
+    { '\0',   "movenortheast", N_("move northeast (screen upper right)"),
               do_move_northeast, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "moveeast", "move east (screen right)",
+    { '\0',   "moveeast", N_("move east (screen right)"),
               do_move_east, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movesoutheast", "move southeast (screen lower right)",
+    { '\0',   "movesoutheast", N_("move southeast (screen lower right)"),
               do_move_southeast, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movesouth", "move south (screen down)",
+    { '\0',   "movesouth", N_("move south (screen down)"),
               do_move_south, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
-    { '\0',   "movesouthwest", "move southwest (screen lower left)",
+    { '\0',   "movesouthwest", N_("move southwest (screen lower left)"),
               do_move_southwest, MOVEMENTCMD | CMD_MOVE_PREFIXES, NULL },
     /* rush; accept m prefix but not g/G/F */
-    { '\0',   "rushwest", "rush west (screen left)",
+    { '\0',   "rushwest", N_("rush west (screen left)"),
               do_rush_west, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushnorthwest", "rush northwest (screen upper left)",
+    { '\0',   "rushnorthwest", N_("rush northwest (screen upper left)"),
               do_rush_northwest, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushnorth", "rush north (screen up)",
+    { '\0',   "rushnorth", N_("rush north (screen up)"),
               do_rush_north, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushnortheast", "rush northeast (screen upper right)",
+    { '\0',   "rushnortheast", N_("rush northeast (screen upper right)"),
               do_rush_northeast, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rusheast", "rush east (screen right)",
+    { '\0',   "rusheast", N_("rush east (screen right)"),
               do_rush_east, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushsoutheast", "rush southeast (screen lower right)",
+    { '\0',   "rushsoutheast", N_("rush southeast (screen lower right)"),
               do_rush_southeast, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushsouth", "rush south (screen down)",
+    { '\0',   "rushsouth", N_("rush south (screen down)"),
               do_rush_south, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "rushsouthwest", "rush southwest (screen lower left)",
+    { '\0',   "rushsouthwest", N_("rush southwest (screen lower left)"),
               do_rush_southwest, MOVEMENTCMD | CMD_M_PREFIX, NULL },
     /* run; accept m prefix but not g/G/F */
-    { '\0',   "runwest", "run west (screen left)",
+    { '\0',   "runwest", N_("run west (screen left)"),
               do_run_west, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runnorthwest", "run northwest (screen upper left)",
+    { '\0',   "runnorthwest", N_("run northwest (screen upper left)"),
               do_run_northwest, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runnorth", "run north (screen up)",
+    { '\0',   "runnorth", N_("run north (screen up)"),
               do_run_north, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runnortheast", "run northeast (screen upper right)",
+    { '\0',   "runnortheast", N_("run northeast (screen upper right)"),
               do_run_northeast, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runeast", "run east (screen right)",
+    { '\0',   "runeast", N_("run east (screen right)"),
               do_run_east, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runsoutheast", "run southeast (screen lower right)",
+    { '\0',   "runsoutheast", N_("run southeast (screen lower right)"),
               do_run_southeast, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runsouth", "run south (screen down)",
+    { '\0',   "runsouth", N_("run south (screen down)"),
               do_run_south, MOVEMENTCMD | CMD_M_PREFIX, NULL },
-    { '\0',   "runsouthwest", "run southwest (screen lower left)",
+    { '\0',   "runsouthwest", N_("run southwest (screen lower left)"),
               do_run_southwest, MOVEMENTCMD | CMD_M_PREFIX, NULL },
 
     /* internal commands: only used by game core, not available for user */
@@ -2340,7 +2358,7 @@ handler_rebind_keys_add(boolean keyfirst)
             continue;
 
         any.a_int = (i + 1);
-        Sprintf(buf, "%s: %s", ec->ef_txt, ec->ef_desc);
+        Snprintf(buf, sizeof buf, "%s: %s", ec->ef_txt, _(ec->ef_desc));
         add_menu(win, &nul_glyphinfo, &any, '\0', 0, ATR_NONE, clr, buf,
              MENU_ITEMFLAGS_NONE);
     }
@@ -2469,9 +2487,9 @@ handler_change_autocompletions(void)
             continue;
 
         any.a_int = (i + 1);
-        Sprintf(buf, "%c %s: %s",
-                (ec->flags & AUTOCOMP_ADJ) ? '*' : ' ',
-                ec->ef_txt, ec->ef_desc);
+        Snprintf(buf, sizeof buf, "%c %s: %s",
+                 (ec->flags & AUTOCOMP_ADJ) ? '*' : ' ',
+                 ec->ef_txt, _(ec->ef_desc));
         add_menu(win, &nul_glyphinfo, &any, '\0', 0, ATR_NONE, clr, buf,
                  (ec->flags & AUTOCOMPLETE)
                  ? MENU_ITEMFLAGS_SELECTED :
@@ -2600,7 +2618,8 @@ key2extcmddesc(uchar key)
     if ((cmdbind = cmdbind_get(key)) != 0
         && cmdbind->cmd
         && (txt = cmdbind->cmd->ef_txt) != 0) {
-        Sprintf(key2cmdbuf, "%s (#%s)", cmdbind->cmd->ef_desc, txt);
+        Snprintf(key2cmdbuf, sizeof key2cmdbuf, "%s (#%s)",
+                 _(cmdbind->cmd->ef_desc), txt);
 
         /* special case: for reqmenu prefix (normally 'm'), replace
            "prefix: request menu or modify command (#reqmenu)"
@@ -2828,12 +2847,13 @@ keylist_putcmds(winid datawin, boolean docount,
                 continue;
             }
             if ((bind->cmd->flags & CMD_PARAM) != 0)
-                Sprintf(buf, "%-7s %-13s %s \"%s\"", key2txt(key, buf2),
-                        bind->cmd->ef_txt, bind->cmd->ef_desc,
-                        bind->param);
+                Snprintf(buf, sizeof buf, "%-7s %-13s %s \"%s\"",
+                         key2txt(key, buf2), bind->cmd->ef_txt,
+                         _(bind->cmd->ef_desc), bind->param);
             else
-                Sprintf(buf, "%-7s %-13s %s", key2txt(key, buf2),
-                        bind->cmd->ef_txt, bind->cmd->ef_desc);
+                Snprintf(buf, sizeof buf, "%-7s %-13s %s",
+                         key2txt(key, buf2), bind->cmd->ef_txt,
+                         _(bind->cmd->ef_desc));
             putstr(datawin, 0, buf);
             keys_used[i] = TRUE;
         }
@@ -2856,7 +2876,8 @@ keylist_putcmds(winid datawin, boolean docount,
             continue;
         }
         /* '#'+20 for one column here == 7+' '+13 for two columns above */
-        Sprintf(buf, "#%-20s %s", extcmd->ef_txt, extcmd->ef_desc);
+        Snprintf(buf, sizeof buf, "#%-20s %s", extcmd->ef_txt,
+                 _(extcmd->ef_desc));
         putstr(datawin, 0, buf);
     }
     return count;

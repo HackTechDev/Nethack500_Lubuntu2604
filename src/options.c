@@ -8819,22 +8819,24 @@ doset(void) /* changing options via menu by Per Liboriussen */
     if (!skiphelp) {
         /* help text surrounding '?' choice should have exactly one NULL */
         static const char *const helptext[] = {
-            "For a brief explanation of how this works, type '?' to select",
-            "the next menu choice, then press <enter> or <return>.",
+            N_("For a brief explanation of how this works, type '?' to "
+               "select"),
+            N_("the next menu choice, then press <enter> or <return>."),
             NULL, /* actual '?' menu entry gets inserted here */
-            ("[To suppress this menu help,"
-             " toggle off the 'cmdassist' option.]"),
+            N_("[To suppress this menu help,"
+               " toggle off the 'cmdassist' option.]"),
             "",
         };
         any = cg.zeroany;
         for (i = 0; i < SIZE(helptext); ++i) {
             if (helptext[i]) {
-                Sprintf(buf, "%4s%.75s", "", helptext[i]);
+                Sprintf(buf, "%4s%.75s", "", *helptext[i] ? _(helptext[i])
+                                                         : "");
                 add_menu_str(tmpwin, buf);
             } else {
                 any.a_int = HELP_IDX + 1; /* handling pick_list subtracts 1 */
                 add_menu(tmpwin, &nul_glyphinfo, &any, '?', '?', ATR_NONE,
-                         clr, "view help for options menu",
+                         clr, _("view help for options menu"),
                          MENU_ITEMFLAGS_SKIPINVERT);
             }
         }
@@ -8859,7 +8861,7 @@ doset(void) /* changing options via menu by Per Liboriussen */
 
     indexoffset = 1;
     any = cg.zeroany;
-    add_menu_heading(tmpwin, "Booleans (selecting will toggle value):");
+    add_menu_heading(tmpwin, _("Booleans (selecting will toggle value):"));
     any.a_int = 0;
     /* first list any other non-modifiable booleans, then modifiable ones */
     for (pass = 0; pass <= 1; pass++)
@@ -8892,7 +8894,7 @@ doset(void) /* changing options via menu by Per Liboriussen */
 
     add_menu_str(tmpwin, "");
     add_menu_heading(tmpwin,
-                     "Compounds (selecting will prompt for new value):");
+                     _("Compounds (selecting will prompt for new value):"));
 
     for (pass = startpass; pass <= endpass; pass++)
         for (i = 0; (name = allopt[i].name) != 0; i++) {
@@ -8909,7 +8911,7 @@ doset(void) /* changing options via menu by Per Liboriussen */
         }
 
     add_menu_str(tmpwin, "");
-    add_menu_heading(tmpwin, "Other settings:");
+    add_menu_heading(tmpwin, _("Other settings:"));
 
     for (pass = startpass; pass <= endpass; pass++)
         for (i = 0; (name = allopt[i].name) != 0; i++) {
@@ -8927,11 +8929,11 @@ doset(void) /* changing options via menu by Per Liboriussen */
 
 #ifdef PREFIXES_IN_USE
     add_menu_str(tmpwin, "");
-    add_menu_heading(tmpwin, "Variable playground locations:");
+    add_menu_heading(tmpwin, _("Variable playground locations:"));
     for (i = 0; i < PREFIX_COUNT; i++)
         doset_add_menu(tmpwin, fqn_prefix_names[i], fmtstr_doset, -1, 0);
 #endif
-    end_menu(tmpwin, "Set what options?");
+    end_menu(tmpwin, _("Set what options?"));
     go.opt_need_redraw = FALSE;
     go.opt_need_glyph_reset = FALSE;
 

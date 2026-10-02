@@ -14,6 +14,7 @@
 #ifndef SFCTOOL
 #ifndef NO_SIGNAL
 staticfn void done_intr(int);
+staticfn const char *end_i18n(const char *);
 # if defined(UNIX) || defined(VMS) || defined(__EMX__)
 staticfn void done_hangup(int);
 # endif
@@ -60,7 +61,43 @@ static NEARDATA const char *ends[] = {
     "escaped", "ascended"
 };
 
+#if 0
+/* ends[] translated by end_i18n() (msgctxt "ends", "feminine ends") */
+NC_("ends", "died") NC_("ends", "choked") NC_("ends", "were poisoned")
+NC_("ends", "starved") NC_("ends", "drowned") NC_("ends", "burned")
+NC_("ends", "dissolved in the lava") NC_("ends", "were crushed")
+NC_("ends", "turned to stone") NC_("ends", "turned into slime")
+NC_("ends", "were genocided") NC_("ends", "panicked")
+NC_("ends", "were tricked") NC_("ends", "quit") NC_("ends", "escaped")
+NC_("ends", "ascended") NC_("ends", "passed away")
+NC_("feminine ends", "died") NC_("feminine ends", "choked")
+NC_("feminine ends", "were poisoned") NC_("feminine ends", "starved")
+NC_("feminine ends", "drowned") NC_("feminine ends", "burned")
+NC_("feminine ends", "dissolved in the lava")
+NC_("feminine ends", "were crushed") NC_("feminine ends", "turned to stone")
+NC_("feminine ends", "turned into slime")
+NC_("feminine ends", "were genocided") NC_("feminine ends", "panicked")
+NC_("feminine ends", "were tricked") NC_("feminine ends", "quit")
+NC_("feminine ends", "escaped") NC_("feminine ends", "ascended")
+NC_("feminine ends", "passed away")
+#endif
+
 static boolean Schroedingers_cat = FALSE;
+
+/* translated "<verb>" of "when you <verb>", agreeing with the hero */
+staticfn const char *
+end_i18n(const char *how)
+{
+#ifdef NHI18N
+    const char *res = flags.female ? i18n_lookup("feminine ends", how) : 0;
+
+    if (!res)
+        res = i18n_lookup("ends", how);
+    if (res)
+        return res;
+#endif
+    return how;
+}
 
 /* called as signal() handler, so sent at least one arg */
 /*ARGSUSED*/
@@ -929,8 +966,9 @@ artifact_score(
                 /* not observe_object; dead characters don't observe */
                 otmp->known = otmp->dknown = otmp->bknown = otmp->rknown = 1;
                 /* assumes artifacts don't have quan > 1 */
-                Sprintf(pbuf, "%s%s (worth %ld %s and %ld points)",
-                        the_unique_obj(otmp) ? "The " : "",
+                Snprintf(pbuf, sizeof pbuf,
+                         _("%s%s (worth %ld %s and %ld points)"),
+                        the_unique_obj(otmp) ? _("The ") : "",
                         otmp->oartifact ? artiname(otmp->oartifact)
                                         : OBJ_NAME(objects[otmp->otyp]),
                         value, currency(value), points);
@@ -1356,10 +1394,9 @@ really_done(int how)
         /* give this feedback even if bones aren't going to be created,
            so that its presence or absence doesn't tip off the player to
            new bones or their lack; it might be a lie if makemon fails */
-        Your("%s as %s...",
-             (u.ugrave_arise != PM_GREEN_SLIME)
-                 ? "body rises from the dead"
-                 : "revenant persists",
+        Your((u.ugrave_arise != PM_GREEN_SLIME)
+             ? "body rises from the dead as %s..."
+             : "revenant persists as %s...",
              an(pmname(&mons[u.ugrave_arise], Ugender)));
         display_nhwindow(WIN_MESSAGE, FALSE);
     }
@@ -1454,10 +1491,10 @@ really_done(int how)
 
         gv.viz_array[0][0] |= IN_SIGHT; /* need visibility for naming */
         mtmp = gm.mydogs;
-        Strcpy(pbuf, "You");
+        Strcpy(pbuf, _("You"));
         if (mtmp || Schroedingers_cat) {
             while (mtmp) {
-                Sprintf(eos(pbuf), " and %s", mon_nam(mtmp));
+                Sprintf(eos(pbuf), _(" and %s"), mon_nam(mtmp));
                 if (mtmp->mtame)
                     u.urexp = nowrap_add(u.urexp, mtmp->mhp);
                 mtmp = mtmp->nmon;
@@ -1469,17 +1506,23 @@ really_done(int how)
 
                 mhp = d(m_lev, 8);
                 u.urexp = nowrap_add(u.urexp, mhp);
-                Strcat(eos(pbuf), " and Schroedinger's cat");
+                Strcat(eos(pbuf), _(" and Schroedinger's cat"));
             }
             dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
             pbuf[0] = '\0';
         } else {
             Strcat(pbuf, " ");
         }
-        Sprintf(eos(pbuf), "%s with %ld point%s,",
-                (how == ASCENDED) ? "went to your reward"
-                                  : "escaped from the dungeon",
-                u.urexp, plur(u.urexp));
+        if (i18n_active())
+            Sprintf(eos(pbuf), (how == ASCENDED)
+                                   ? _("went to your reward with %ld points,")
+                                   : _("escaped from the dungeon with %ld "
+                                       "points,"), u.urexp);
+        else
+            Sprintf(eos(pbuf), "%s with %ld point%s,",
+                    (how == ASCENDED) ? "went to your reward"
+                                      : "escaped from the dungeon",
+                    u.urexp, plur(u.urexp));
         dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
 
         if (!done_stopprint)
@@ -1510,13 +1553,17 @@ really_done(int how)
                     if (has_oname(otmp))
                         free_oname(otmp);
                     otmp->quan = count;
-                    Sprintf(pbuf, "%8ld %s (worth %ld %s),", count,
-                            xname(otmp), count * (long) objects[typ].oc_cost,
-                            currency(2L));
+                    Snprintf(pbuf, sizeof pbuf, _("%8ld %s (worth %ld %s),"),
+                             count, xname(otmp),
+                             count * (long) objects[typ].oc_cost,
+                             currency(2L));
                     obfree(otmp, (struct obj *) 0);
                 } else {
-                    Sprintf(pbuf, "%8ld worthless piece%s of colored glass,",
-                            count, plur(count));
+                    Snprintf(pbuf, sizeof pbuf,
+                             (count == 1L)
+                             ? _("%8ld worthless piece of colored glass,")
+                             : _("%8ld worthless pieces of colored glass,"),
+                             count);
                 }
                 dump_forward_putstr(endwin, 0, pbuf, 0);
             }
@@ -1527,30 +1574,53 @@ really_done(int how)
         if (u.uz.dnum == 0 && u.uz.dlevel <= 0) {
             /* level teleported out of the dungeon; `how' is DIED,
                due to falling or to "arriving at heaven prematurely" */
-            Sprintf(pbuf, "You %s beyond the confines of the dungeon",
-                    (u.uz.dlevel < 0) ? "passed away" : ends[how]);
+            Snprintf(pbuf, sizeof pbuf,
+                     _("You %s beyond the confines of the dungeon"),
+                     end_i18n((u.uz.dlevel < 0) ? "passed away" : ends[how]));
         } else {
             /* more conventional demise */
             const char *where = svd.dungeons[u.uz.dnum].dname;
+            char wbuf[BUFSZ];
 
             if (Is_astralevel(&u.uz))
-                where = "The Astral Plane";
-            Sprintf(pbuf, "You %s in %s", ends[how], where);
+                where = N_("The Astral Plane");
+            Strcpy(wbuf, _(where));
+            /* "dans les Donjons du Destin" */
+            if (i18n_active() && (!strncmp(wbuf, "Le ", 3)
+                                  || !strncmp(wbuf, "La ", 3)
+                                  || !strncmp(wbuf, "Les ", 4)))
+                *wbuf = lowc(*wbuf);
+            Snprintf(pbuf, sizeof pbuf, _("You %s in %s"),
+                     end_i18n(ends[how]), wbuf);
             if (!In_endgame(&u.uz) && !single_level_branch(&u.uz))
-                Sprintf(eos(pbuf), " on dungeon level %d",
+                Sprintf(eos(pbuf), _(" on dungeon level %d"),
                         In_quest(&u.uz) ? dunlev(&u.uz) : depth(&u.uz));
         }
 
-        Sprintf(eos(pbuf), " with %ld point%s,", u.urexp, plur(u.urexp));
+        if (i18n_active())
+            Sprintf(eos(pbuf), _(" with %ld points,"), u.urexp);
+        else
+            Sprintf(eos(pbuf), " with %ld point%s,", u.urexp,
+                    plur(u.urexp));
         dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
     }
 
-    Sprintf(pbuf, "and %ld piece%s of gold, after %ld move%s.", umoney,
-            plur(umoney), svm.moves, plur(svm.moves));
-    dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
-    Sprintf(pbuf,
-            "You were level %d with a maximum of %d hit point%s when you %s.",
-            u.ulevel, u.uhpmax, plur(u.uhpmax), ends[how]);
+    if (i18n_active()) {
+        Snprintf(pbuf, sizeof pbuf,
+                 _("and %ld pieces of gold, after %ld moves."), umoney,
+                 svm.moves);
+        dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
+        Snprintf(pbuf, sizeof pbuf,
+                 _("You were level %d with a maximum of %d hit points when "
+                   "you %s."), u.ulevel, u.uhpmax, end_i18n(ends[how]));
+    } else {
+        Sprintf(pbuf, "and %ld piece%s of gold, after %ld move%s.", umoney,
+                plur(umoney), svm.moves, plur(svm.moves));
+        dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
+        Sprintf(pbuf, "You were level %d with a maximum of %d hit point%s "
+                      "when you %s.",
+                u.ulevel, u.uhpmax, plur(u.uhpmax), ends[how]);
+    }
     dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
     dump_forward_putstr(endwin, 0, "", done_stopprint);
     if (!done_stopprint)
