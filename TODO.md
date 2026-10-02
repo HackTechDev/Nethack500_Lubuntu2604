@@ -1,17 +1,56 @@
 # Traduction française : reste à faire
 
-> **Attention : c'est un travail important.** Environ la moitié des textes
-> du jeu restent en anglais. La tâche principale (la grammaire française
-> des noms d'objets et de monstres, section 1) demande de modifier en
-> profondeur la façon dont NetHack compose ses phrases. Les fichiers de
-> données (section 3) représentent à eux seuls plus de 20 000 lignes de
-> texte. Il faut compter de nombreuses sessions de travail, et des tests
-> en jeu à chaque étape.
+> **Où en est-on ?** Les messages du jeu écrits en C sont presque tous
+> traduits. Ce qui reste est surtout du texte de données : les quêtes,
+> le tutoriel, l'encyclopédie et les livres (plus de 20 000 lignes, voir
+> le tableau ci-dessous), puis la documentation.
 
-État actuel : 4 194 textes traduits sur 7 295 dans `po/fr.po` (dont les
-entrées de genre laissées vides, qui valent masculin). Le
-fonctionnement de la traduction et la façon d'ajouter des traductions sont
-décrits dans la section 7 de [INSTALL.md](INSTALL.md).
+État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
+1 906 vides. Parmi ces vides, 1 099 sont des entrées de genre
+(`gender`, `objgender`) : vides, elles valent masculin, c'est voulu.
+Environ 800 autres sont des formats anglais remplacés à l'exécution par
+une phrase entière traduite (branche `i18n_active()`) : ils ne sont
+jamais cherchés dans le catalogue. Il reste donc environ 85 vrais textes
+du code à traduire, surtout des messages de débogage.
+
+Le fonctionnement de la traduction et la façon d'ajouter des traductions
+sont décrits dans la section 7 de [INSTALL.md](INSTALL.md).
+
+## 0. Fichiers restant à traduire
+
+Par ordre de priorité (visibilité en jeu) :
+
+| Fichier | Lignes | Contenu | Remarque |
+|---|---:|---|---|
+| `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | Affichés par `deliver_by_pline()` / `deliver_by_window()` (`questpgr.c`) ; à extraire pour xgettext ou à fournir en `quest.lua` traduit |
+| `dat/tut-1.lua`, `dat/tut-2.lua` | 374 | Tutoriel : inscriptions et messages | Textes assemblés en Lua avec les touches (`"Move around with " .. movekeys`) : il faut une fonction de traduction appelable depuis Lua, ou des formats entiers |
+| `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
+| `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`) : à brancher d'abord |
+| `dat/cmdhelp` | 226 | Description de chaque touche (`&`) | Format « touche<TAB>texte » ; `cmdhelp.fr` |
+| `dat/opthelp` | 393 | Aide des options | `opthelp.fr` |
+| `dat/history` | 401 | Historique du jeu | `history.fr` |
+| `dat/usagehlp` | 139 | Ligne de commande | `usagehlp.fr` |
+| `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
+| `dat/optmenu` | 43 | Aide du menu des options | `optmenu.fr` |
+| `dat/wizhelp` | 51 | Commandes du mode magicien | `wizhelp.fr` |
+| `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |
+| `doc/Guidebook.mn` | 6 951 | Guide du joueur | Voir section 6 |
+| `doc/nethack.6` | 586 | Page de manuel | |
+
+Déjà traduits : `help`, `hh`, `keyhelp`, rumeurs, oracles, gravures,
+épitaphes (section 3), monstres hallucinés (`bogusmon.txt`, dans
+`po/fr.po`).
+
+Restes dans le code (`po/fr.po`, environ 85 textes) : messages de
+débogage de `mkmaze.c`, `display.c`, `objnam.c`, `trap.c`, `dig.c`,
+`wizcmds.c`, `restore.c`, `sfstruct.c` ; quelques textes des interfaces
+`win/tty` (8) et `win/curses` (4) ; les menus du mode magicien (`^V`,
+`^O`...). Pour les retrouver, chercher dans `po/fr.po` les entrées vides
+qui ne sont ni des genres ni des formats remplacés par une branche
+`i18n_active()`.
+
+Interfaces non extraites : `win/X11` et `win/Qt` (`po/update-pot.sh` ne
+lit que `win/tty` et `win/curses`).
 
 ## 1. Grammaire française des noms (priorité haute)
 
@@ -124,18 +163,14 @@ symboles en msgctxt `symbol`, `symbol a`, `symbol the`), les directions
 d'accessibilité (« (4sud,6ouest) »), le génocide (pluriels des monstres
 par `i18n_mon_plural()`, msgctxt `monster-plural` pour les exceptions),
 les vœux, le nommage (`do_name.c`), `#lookaround`, les erreurs du fichier
-de configuration
-— les noms de rayons hallucinatoires (`hallublasts[]`) restent en
-anglais —, sauf
-quelques
-verbes de
-`u_locomotion()` et `stagger()` (« float », « slither »...) simplifiés en
-français.  Les couleurs de `hcolor()` sont traduites par `hcolor_i18n()`
-(accord au féminin).  Les messages de `options.c`, `files.c`,
-`cfgfiles.c`, `bones.c` et des commandes du mode magicien (`wizcmds.c`)
-sont traduits ; restent des messages de débogage et les menus du mode
-magicien (`^V`...).
-et `attrib.c` (« You feel foolish! »).
+de configuration, les messages de `options.c`, `files.c`, `cfgfiles.c`,
+`bones.c` et des commandes du mode magicien (`wizcmds.c`), et les lignes
+« deux armes » de `^X`.
+
+Exceptions : les noms de rayons hallucinatoires (`hallublasts[]`) restent
+en anglais ; quelques verbes de `u_locomotion()` et `stagger()`
+(« float », « slither »...) sont simplifiés en français.  Les couleurs de
+`hcolor()` sont traduites par `hcolor_i18n()` (accord au féminin).
 
 `po/msgargs.py` (lancé par `make update-po`) extrait toutes les chaînes
 d'une condition passée à `pline()`, `You()`... : xgettext ne prenait que
@@ -175,16 +210,7 @@ Fait aussi : les rumeurs, l'Oracle, les gravures et les épitaphes.
 garde l'ordre de `oracles.txt` : la sauvegarde retient les positions du
 fichier anglais.  Les monstres hallucinés (`bogusmon.txt`) sont traduits
 dans `po/fr.po` (contexte `monster` et genre), pas par un fichier.
-Restent :
-
-| Fichier | Lignes | Contenu |
-|---|---:|---|
-| `data.base` | 6 528 | Encyclopédie (commande `;` puis `?`) |
-| `tribute` | 9 942 | Citations des romans de Terry Pratchett (livres dans le jeu) |
-| `quest.lua` | 3 087 | Textes des quêtes de chaque rôle |
-| `history` | 401 | Historique du jeu |
-| `opthelp` | 393 | Aide des options |
-| `cmdhelp` | 226 | Description de chaque touche (format « touche<TAB>texte ») |
+Les fichiers restants sont listés dans la section 0.
 
 Les messages d'arrivée des niveaux spéciaux (`des.message()` des plans
 élémentaires et du Plan astral) sont traduits par `deliver_by_pline()`
