@@ -66,6 +66,8 @@
 #define i18n_mon_fem(mon) FALSE
 #define i18n_has(msgid) FALSE
 #define I18N_FILE(fname) (fname)
+#define i18n_text(ctx, msgid) ((const char *) 0)
+#define i18n_contract(buf) ((void) 0)
 /* do_name.c helpers, only called when i18n_active() */
 #define i18n_the(en) the(en)
 #define i18n_the_ctx(ctx, en) the(en)

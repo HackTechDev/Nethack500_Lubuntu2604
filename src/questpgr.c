@@ -21,6 +21,10 @@ staticfn const char *guardname(void);
 staticfn const char *homebase(void);
 staticfn void qtext_pronoun(char, char);
 staticfn void convert_arg(char);
+staticfn void quest_upper(char *);
+staticfn int quest_gend(char, const char *);
+staticfn boolean convert_arg_i18n(char, char);
+staticfn char *quest_i18n(char *);
 staticfn void convert_line(char *,char *);
 staticfn void deliver_by_pline(const char *);
 staticfn void deliver_by_window(const char *, int);
@@ -324,6 +328,256 @@ convert_arg(char c)
     Strcpy(gc.cvt_buf, str);
 }
 
+#if 0
+/* for xgettext: values of the %-codes of the translated quest texts */
+NC_("quest", "sister"), NC_("quest", "brother"),
+NC_("quest", "daughter"), NC_("quest", "son"),
+NC_("quest", "god"), NC_("quest", "goddess"),
+NC_("quest", "see"), NC_("quest", "sense"),
+NC_("quest", "the College of Archeology"),
+NC_("quest", "the Tomb of the Toltec Kings"),
+NC_("quest", "the Camp of the Duali Tribe"), NC_("quest", "the Duali Oasis"),
+NC_("quest", "the Caves of the Ancestors"), NC_("quest", "the Dragon's Lair"),
+NC_("quest", "the Temple of Epidaurus"), NC_("quest", "the Temple of Coeus"),
+NC_("quest", "Camelot Castle"), NC_("quest", "the Isle of Glass"),
+NC_("quest", "the Monastery of Chan-Sune"),
+NC_("quest", "the Monastery of the Earth-Lord"),
+NC_("quest", "the Great Temple"), NC_("quest", "the Temple of Nalzok"),
+NC_("quest", "the Thieves' Guild Hall"),
+NC_("quest", "the Assassins' Guild Hall"),
+NC_("quest", "Orion's camp"), NC_("quest", "the cave of the wumpus"),
+NC_("quest", "the Castle of the Taro Clan"),
+NC_("quest", "the Shogun's Castle"), NC_("quest", "Ankh-Morpork"),
+NC_("quest", "the Shrine of Destiny"), NC_("quest", "the cave of Surtur"),
+NC_("quest", "the Lonely Tower"), NC_("quest", "the Tower of Darkness"),
+NC_("quest", "the Orb of Detection"), NC_("quest", "the Orb"),
+NC_("quest", "the Heart of Ahriman"), NC_("quest", "the Heart"),
+NC_("quest", "the Sceptre of Might"), NC_("quest", "the Sceptre"),
+NC_("quest", "the Staff of Aesculapius"), NC_("quest", "the Staff"),
+NC_("quest", "the Magic Mirror of Merlin"), NC_("quest", "the Magic Mirror"),
+NC_("quest", "the Eyes of the Overworld"), NC_("quest", "the Eyes"),
+NC_("quest", "the Mitre of Holiness"), NC_("quest", "the Mitre"),
+NC_("quest", "the Longbow of Diana"), NC_("quest", "the Longbow"),
+NC_("quest", "the Master Key of Thievery"), NC_("quest", "the Master Key"),
+NC_("quest", "the Tsurugi of Muramasa"), NC_("quest", "the Tsurugi"),
+NC_("quest", "the Platinum Yendorian Express Card"),
+NC_("quest", "the Platinum Yendorian Express Card"),
+NC_("quest", "the Orb of Fate"),
+NC_("quest", "the Eye of the Aethiopica"), NC_("quest", "the Eye"),
+NC_("quest", "the Palantir of Westernesse"), NC_("quest", "the Palantir"),
+#endif
+
+/* capitalize the first letter of s, also an accented UTF-8 one */
+staticfn void
+quest_upper(char *s)
+{
+    unsigned char *us = (unsigned char *) s;
+
+    if (us[0] == 0xC3 && us[1] >= 0xA0 && us[1] <= 0xBE && us[1] != 0xB7)
+        us[1] -= 0x20;
+    else
+        s[0] = highc(s[0]);
+}
+
+/* the gender (as quest_status.ldrgend: 0 male, 1 female) of who, whose
+   translated value is name; an artifact is feminine if its translation
+   starts with "la " */
+staticfn int
+quest_gend(char who, const char *name)
+{
+    return (who == 'd') ? svq.quest_status.godgend
+           : (who == 'l') ? svq.quest_status.ldrgend
+           : (who == 'n') ? svq.quest_status.nemgend
+           : (who == 'o' || who == 'O') ? (!strncmpi(name, "la ", 3) ? 1 : 0)
+           : flags.female ? 1 : 0;
+}
+
+/* translation of the value of %-code c with modifier mod into
+   gc.cvt_buf; returns TRUE if mod was used.  The values are translated,
+   'a' gives the indefinite article, 'f' the feminine of an adjective,
+   pronouns are il/elle (h), lui/elle (i, after a preposition) and son (j:
+   the possessive agrees with the noun, write it), and 's' and 't' give the
+   name without possessive or article (write "@de %l" for "of the
+   leader": i18n_contract() turns "de le" into "du") */
+staticfn boolean
+convert_arg_i18n(char c, char mod)
+{
+    const char *en = 0, *str;
+    char lmod = lowc(mod);
+    int mndx = NON_PM, gend;
+    boolean fem, used = TRUE;
+
+    switch (c) {
+    case 'c':
+        fem = flags.female;
+        str = (fem && gu.urole.name.f) ? _(gu.urole.name.f)
+                                       : gendered_word(gu.urole.name.m, fem);
+        break;
+    case 'r':
+    case 'R':
+        str = gendered_word(rank_of((c == 'r') ? u.ulevel : MIN_QUEST_LEVEL,
+                                    Role_switch, flags.female),
+                            flags.female);
+        break;
+    case 's':
+        str = C_("quest", flags.female ? "sister" : "brother");
+        break;
+    case 'S':
+        str = C_("quest", flags.female ? "daughter" : "son");
+        break;
+    case 'l':
+    case 'n':
+    case 'g':
+        mndx = (c == 'l') ? gu.urole.ldrnum
+               : (c == 'n') ? gu.urole.neminum : gu.urole.guardnum;
+        en = mons[mndx].pmnames[NEUTRAL];
+        str = (c == 'g' || type_is_pname(&mons[mndx]))
+                  ? C_("monster", en) : i18n_the_ctx("monster", en);
+        break;
+    case 'i':
+        str = C_("quest", intermed());
+        break;
+    case 'H':
+        str = C_("quest", homebase());
+        break;
+    case 'o':
+    case 'O':
+        Strcpy(gc.cvt_buf, the(artiname(gu.urole.questarti)));
+        if (c == 'O') {
+            char *p = strstri(gc.cvt_buf, " of ");
+
+            if (p)
+                *p = '\0';
+        }
+        str = C_("quest", gc.cvt_buf);
+        break;
+    case 'G':
+        str = C_("quest", align_gtitle(u.ualignbase[A_ORIGINAL]));
+        break;
+    case 'a':
+    case 'A':
+    case 'C':
+    case 'N':
+    case 'L':
+        en = (c == 'C') ? "chaotic" : (c == 'N') ? "neutral"
+             : (c == 'L') ? "lawful"
+             : align_str((c == 'a') ? u.ualignbase[A_ORIGINAL]
+                                    : u.ualign.type);
+        str = (mod == 'f') ? C_("feminine", en) : _(en);
+        break;
+    case 'x':
+        str = C_("quest", Blind ? "sense" : "see");
+        break;
+    case 'Z':
+        str = _(svd.dungeons[0].dname);
+        break;
+    default:
+        convert_arg(c);
+        str = 0;
+        break;
+    }
+    if (str)
+        Strcpy(gc.cvt_buf, str);
+
+    switch (mod) {
+    case 'a':
+    case 'A':
+        if (mndx != NON_PM && c != 'l' && c != 'n') {
+            Strcpy(gc.cvt_buf, i18n_an_ctx("monster", en));
+        } else {
+            gend = quest_gend(c, gc.cvt_buf);
+            Strcpy(gc.cvt_buf, gend == 1 ? C_("feminine", "a %s")
+                                         : _("a %s"));
+            (void) strNsubst(gc.cvt_buf, "%s", str ? str : "", 1);
+        }
+        if (mod == 'A')
+            quest_upper(gc.cvt_buf);
+        break;
+    case 'C':
+        quest_upper(gc.cvt_buf);
+        break;
+    case 'f':
+        used = (strchr("aACNL", c) != 0);
+        break;
+    case 'h':
+    case 'H':
+    case 'i':
+    case 'I':
+    case 'j':
+    case 'J':
+        if (!strchr("dlno", c)) {
+            used = FALSE;
+            break;
+        }
+        gend = quest_gend(c, gc.cvt_buf);
+        Strcpy(gc.cvt_buf, (lmod == 'h') ? (gend == 1 ? "elle" : "il")
+                           : (lmod == 'i') ? (gend == 1 ? "elle" : "lui")
+                           : "son");
+        if (lmod != mod)
+            quest_upper(gc.cvt_buf);
+        break;
+    case 'p':
+    case 'P':
+        if (mndx != NON_PM)
+            Strcpy(gc.cvt_buf, i18n_mon_plural(en));
+        else
+            Strcpy(gc.cvt_buf, makeplural(gc.cvt_buf));
+        if (mod == 'P')
+            quest_upper(gc.cvt_buf);
+        break;
+    case 's':
+    case 'S':
+        if (mod == 'S')
+            quest_upper(gc.cvt_buf);
+        break;
+    case 't':
+        if (!strncmp(gc.cvt_buf, "le ", 3) || !strncmp(gc.cvt_buf, "la ", 3))
+            (void) memmove(gc.cvt_buf, gc.cvt_buf + 3,
+                           strlen(gc.cvt_buf + 3) + 1);
+        else if (!strncmp(gc.cvt_buf, "les ", 4))
+            (void) memmove(gc.cvt_buf, gc.cvt_buf + 4,
+                           strlen(gc.cvt_buf + 4) + 1);
+        else if (!strncmp(gc.cvt_buf, "l'", 2))
+            (void) memmove(gc.cvt_buf, gc.cvt_buf + 2,
+                           strlen(gc.cvt_buf + 2) + 1);
+        break;
+    default:
+        used = FALSE;
+        break;
+    }
+    return used;
+}
+
+/* the translation of quest text 'text' (msgctxt "quest"), its
+   "{masculine|feminine}" alternatives chosen for the hero; frees 'text'
+   if it returns a new string */
+staticfn char *
+quest_i18n(char *text)
+{
+    const char *tr, *p, *bar, *end;
+    char *res, *q;
+
+    if (!text || !i18n_active() || !(tr = i18n_text("quest", text)))
+        return text;
+    res = q = (char *) alloc(strlen(tr) + 1);
+    for (p = tr; *p; ) {
+        if (*p == '{' && (bar = strchr(p, '|')) != 0
+            && (end = strchr(bar, '}')) != 0) {
+            const char *from = flags.female ? bar + 1 : p + 1,
+                       *to = flags.female ? end : bar;
+
+            while (from < to)
+                *q++ = *from++;
+            p = end + 1;
+        } else {
+            *q++ = *p++;
+        }
+    }
+    *q = '\0';
+    free((genericptr_t) text);
+    return res;
+}
+
 staticfn void
 convert_line(char *in_line, char *out_line)
 {
@@ -336,9 +590,18 @@ convert_line(char *in_line, char *out_line)
         case '\r':
         case '\n':
             *(++cc) = 0;
-            return;
+            goto convert_done;
 
         case '%':
+            if (*(c + 1) && i18n_active()) {
+                /* translated values for a translated text */
+                ++c;
+                if (convert_arg_i18n(*c, *(c + 1)))
+                    ++c;
+                Strcat(cc, gc.cvt_buf);
+                cc += strlen(gc.cvt_buf);
+                break;
+            }
             if (*(c + 1)) {
                 convert_arg(*(++c));
                 switch (*(++c)) {
@@ -416,6 +679,9 @@ convert_line(char *in_line, char *out_line)
             panic("convert_line: overflow");
     }
     *cc = 0;
+ convert_done:
+    if (i18n_active())
+        i18n_contract(out_line);
     return;
 }
 
@@ -591,6 +857,8 @@ com_pager_core(
         lua_gettable(L, -2);
         text = dupstr(luaL_checkstring(L, -1));
     }
+    text = quest_i18n(text);
+    synopsis = quest_i18n(synopsis);
 
     /* switch from by_pline to by_window if line has multiple segments or
        is unreasonably long (the latter ought to checked after formatting

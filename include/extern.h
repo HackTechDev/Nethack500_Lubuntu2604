@@ -2095,6 +2095,7 @@ extern const char *nh_gettext(const char *) FORMAT_ARG(1);
 extern const char *nh_pgettext(const char *, const char *) FORMAT_ARG(2);
 extern boolean i18n_translating(void);
 extern const char *i18n_lookup(const char *, const char *) NONNULLARG12;
+extern const char *i18n_text(const char *, const char *) NONNULLARG12;
 extern const char *nh_npgettext(const char *, const char *, boolean)
                                                             NONNULLARG2;
 extern void i18n_suspend(boolean);

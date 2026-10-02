@@ -23,7 +23,7 @@ Par ordre de priorité (visibilité en jeu) :
 
 | Fichier | Lignes | Contenu | Remarque |
 |---|---:|---|---|
-| `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | Affichés par `deliver_by_pline()` / `deliver_by_window()` (`questpgr.c`) ; à extraire pour xgettext ou à fournir en `quest.lua` traduit |
+| `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | En cours, rôle par rôle : 872 textes, msgctxt `quest` dans `po/fr.po` (extraits par `po/questtext.py`). Fait : `common` |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |

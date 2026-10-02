@@ -338,6 +338,27 @@ i18n_lookup(const char *ctx, const char *msgid)
     return mo_lookup(key);
 }
 
+/* translation of the text msgid (of any length) for context ctx, or Null
+   if the catalog has none; the translation isn't a printf format, so its
+   %-codes aren't checked against those of msgid (quest texts) */
+const char *
+i18n_text(const char *ctx, const char *msgid)
+{
+    char *key;
+    long i;
+    const char *translation = 0;
+
+    if (!TRANSLATING() || !*msgid)
+        return (const char *) 0;
+    key = (char *) alloc(strlen(ctx) + strlen(msgid) + 2);
+    Sprintf(key, "%s\004%s", ctx, msgid);
+    if ((i = mo_find(key)) >= 0)
+        translation = mo_string(&catalog, catalog.transtab,
+                                (unsigned long) i);
+    free((genericptr_t) key);
+    return (translation && *translation) ? translation : (const char *) 0;
+}
+
 /* translation of msgid for context ctx (none if ctx is Null), in its
    plural form if 'plural'; without a translation, msgid itself (the
    caller has to supply English plurals) */

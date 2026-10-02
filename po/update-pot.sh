@@ -117,6 +117,12 @@ $XGETTEXT $COMMON --no-location -k --keyword=NCP_:1c,2,3 \
 $XGETTEXT --language=Lua --from-code=UTF-8 --no-wrap -k --keyword=tr \
     --flag=tr:1:lua-format -o "$tmp/4lua.pot" dat/nhlib.lua dat/tut-*.lua
 
+# quest texts of dat/quest.lua, translated whole by com_pager() (questpgr.c)
+python3 po/questtext.py dat/quest.lua > "$tmp/quest.c"
+# shellcheck disable=SC2086
+$XGETTEXT $COMMON --no-location -k --keyword=NC_:1c,2 \
+    --flag=NC_:2:no-c-format -o "$tmp/5quest.pot" "$tmp/quest.c"
+
 # xgettext only takes the first string of "cond ? "a" : "b"" given to the
 # message functions; po/msgargs.py lists all of them
 # shellcheck disable=SC2086
