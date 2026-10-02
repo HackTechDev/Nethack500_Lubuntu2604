@@ -184,8 +184,10 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
 - **Menus et fenêtres** : les textes passés à `add_menu()`, `putstr()`,
   `end_menu()` ne sont pas traduits automatiquement (menu complet des
   options `#optionsfull` (titres et descriptions traduits, noms d'options
-  en anglais), pierre tombale et tableau des scores (cause de la mort
-  enregistrée en anglais), aide du curseur). Le menu simple `O`, les
+  en anglais), tableau des scores (cause de la mort enregistrée en
+  anglais), aide du curseur). La pierre tombale est traduite à
+  l'affichage (les causes de mort autres qu'un monstre restent souvent en
+  anglais). Le menu simple `O`, les
   descriptions des commandes étendues, le résumé de fin de partie,
   `#conduct`, les exploits, `#overview` et l'illumination `^X` sont
   traduits (pour `^X`, les lignes rares — deux armes, mode magicien

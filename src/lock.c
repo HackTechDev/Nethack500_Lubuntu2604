@@ -526,10 +526,30 @@ pick_lock(
                         return PICKLOCK_DID_NOTHING;
                 } else {
                     /* "There is <a box> here; <verb> <it|its lock>?" */
-                    Sprintf(qsfx, " here; %s %s?",
-                            verb, it ? "it" : "its lock");
-                    (void) safe_qbuf(qbuf, "There is ", qsfx, otmp, doname,
-                                     ansimpleoname, "a box");
+                    if (i18n_active()) {
+                        const char *fmt = !strcmp(verb, "fix")
+                            ? _("There is %s here; fix its lock?")
+                            : !strcmp(verb, "lock")
+                              ? _("There is %s here; lock it?")
+                              : !strcmp(verb, "unlock")
+                                ? _("There is %s here; unlock it?")
+                                : _("There is %s here; pick its lock?");
+                        const char *p = strstr(fmt, "%s");
+                        char pfx[QBUFSZ];
+
+                        if (!p) /* bad translation; can't happen */
+                            p = fmt + strlen(fmt);
+                        copynchars(pfx, fmt,
+                                   min((int) (p - fmt), QBUFSZ - 1));
+                        copynchars(qsfx, *p ? p + 2 : p, QBUFSZ - 1);
+                        (void) safe_qbuf(qbuf, pfx, qsfx, otmp, doname,
+                                         ansimpleoname, _("a box"));
+                    } else {
+                        Sprintf(qsfx, " here; %s %s?",
+                                verb, it ? "it" : "its lock");
+                        (void) safe_qbuf(qbuf, "There is ", qsfx, otmp,
+                                         doname, ansimpleoname, "a box");
+                    }
                     otmp->lknown = 1;
 
                     c = ynq(qbuf);

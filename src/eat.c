@@ -3834,10 +3834,33 @@ floorfood(
             }
             /* "There is <an object> here; <verb> it?" or
                "There are <N objects> here; <verb> one?" */
-            Sprintf(qbuf, "There %s ", otense(otmp, "are"));
-            Sprintf(qsfx, " here; %s %s?", verb, one ? "it" : "one");
-            (void) safe_qbuf(qbuf, qbuf, qsfx, otmp, doname, ansimpleoname,
-                             one ? something : (const char *) "things");
+            if (i18n_active()) {
+                /* whole prompts, so that each can be translated */
+                const char *fmt = !strcmp(verb, "eat")
+                    ? (one ? _("There is %s here; eat it?")
+                           : _("There are %s here; eat one?"))
+                    : !strcmp(verb, "sacrifice")
+                      ? (one ? _("There is %s here; sacrifice it?")
+                             : _("There are %s here; sacrifice one?"))
+                      : (one ? _("There is %s here; tin it?")
+                             : _("There are %s here; tin one?"));
+                const char *p = strstr(fmt, "%s");
+                char pfx[QBUFSZ];
+
+                if (!p) /* bad translation; can't happen */
+                    p = fmt + strlen(fmt);
+                copynchars(pfx, fmt, min((int) (p - fmt), QBUFSZ - 1));
+                copynchars(qsfx, *p ? p + 2 : p, QBUFSZ - 1);
+                (void) safe_qbuf(qbuf, pfx, qsfx, otmp, doname,
+                                 ansimpleoname,
+                                 one ? _(something) : _("things"));
+            } else {
+                Sprintf(qbuf, "There %s ", otense(otmp, "are"));
+                Sprintf(qsfx, " here; %s %s?", verb, one ? "it" : "one");
+                (void) safe_qbuf(qbuf, qbuf, qsfx, otmp, doname,
+                                 ansimpleoname,
+                                 one ? something : (const char *) "things");
+            }
             if ((c = yn_function(qbuf, ynqchars, 'n', TRUE)) == 'y')
                 return  otmp;
             else if (c == 'q')

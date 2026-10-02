@@ -3058,7 +3058,10 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	weapon lines rewritten as whole sentences, other lines built from
 	translated fragments; the end of game summary ("You died in ...",
 	gold, moves, valuables), the full options menu (#optionsfull) and
-	the descriptions of the commands (#? list, key list, #help)
+	the descriptions of the commands (#? list, key list, #help); the
+	tombstone ("REPOSE EN PAIX", death description translated for display
+	only, centered by characters), "There is <food> here; eat it?" and
+	"There is <box> here; unlock it?" prompts
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

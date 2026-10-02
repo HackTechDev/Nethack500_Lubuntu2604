@@ -17126,7 +17126,7 @@ msgstr ""
 #: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4240 src/cmd.c:5100
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
-#: src/invent.c:4054 src/lock.c:917 src/nhlua.c:639 src/nhlua.c:655
+#: src/invent.c:4054 src/lock.c:937 src/nhlua.c:639 src/nhlua.c:655
 #: src/pager.c:2719 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
 #: src/pline.c:674 src/pline.c:686 src/pline.c:741 src/potion.c:226
 #: src/potion.c:253 src/pray.c:1869 src/questpgr.c:434 src/read.c:607
@@ -19871,7 +19871,7 @@ msgstr "Vous relâchez %s !"
 msgid "The %s is insightful."
 msgstr "Le %s est perspicace."
 
-#: src/artifact.c:1422 src/hack.c:3190 src/lock.c:1362 src/lock.c:1365
+#: src/artifact.c:1422 src/hack.c:3190 src/lock.c:1382 src/lock.c:1385
 #: src/mhitu.c:1085 src/mon.c:2954 src/shk.c:1579 src/sounds.c:428
 #: src/sounds.c:479 src/trap.c:519 src/trap.c:1120 src/trap.c:2039
 #: src/uhitm.c:2583 src/uhitm.c:2713 src/uhitm.c:4728 src/uhitm.c:6710
@@ -26674,7 +26674,7 @@ msgstr "Vous sentez une odeur de miel rance."
 msgid "Klunk!  The pipes vibrate noisily."
 msgstr "Klonk ! Les tuyaux vibrent bruyamment."
 
-#: src/dokick.c:1243 src/lock.c:1107
+#: src/dokick.c:1243 src/lock.c:1127
 msgid "Klunk!"
 msgstr "Klonk !"
 
@@ -28608,31 +28608,65 @@ msgstr "Il y a des barreaux de fer ici, mais vous ne pouvez pas les manger."
 msgid "There are iron bars here; eat them?"
 msgstr "Il y a des barreaux de fer ici ; les manger ?"
 
-#: src/eat.c:3853
+#: src/eat.c:3840
+#, c-format
+msgid "There is %s here; eat it?"
+msgstr "Il y a %s ici ; manger ceci ?"
+
+#: src/eat.c:3841
+#, c-format
+msgid "There are %s here; eat one?"
+msgstr "Il y a %s ici ; en manger ?"
+
+#: src/eat.c:3843
+#, c-format
+msgid "There is %s here; sacrifice it?"
+msgstr "Il y a %s ici ; sacrifier ceci ?"
+
+#: src/eat.c:3844
+#, c-format
+msgid "There are %s here; sacrifice one?"
+msgstr "Il y a %s ici ; en sacrifier ?"
+
+#: src/eat.c:3845
+#, c-format
+msgid "There is %s here; tin it?"
+msgstr "Il y a %s ici ; mettre ceci en conserve ?"
+
+#: src/eat.c:3846
+#, c-format
+msgid "There are %s here; tin one?"
+msgstr "Il y a %s ici ; en mettre en conserve ?"
+
+#: src/eat.c:3856
+msgid "things"
+msgstr "des choses"
+
+#: src/eat.c:3876
 msgctxt "verb"
 msgid "eat"
 msgstr "manger"
 
-#: src/eat.c:3855
+#: src/eat.c:3878
 msgctxt "verb"
 msgid "sacrifice"
 msgstr "sacrifier"
 
-#: src/eat.c:3864
+#: src/eat.c:3887
 #, c-format
 msgid "You can't %s that!"
 msgstr "Vous ne pouvez pas %s ça !"
 
-#: src/eat.c:3884
+#: src/eat.c:3907
 msgid "Your jaw gapes convulsively."
 msgstr "Votre mâchoire s'ouvre convulsivement."
 
-#: src/eat.c:3892
+#: src/eat.c:3915
 #, c-format
 msgid "Your %s heaves convulsively!"
 msgstr "Votre %s se soulève convulsivement !"
 
-#: src/eat.c:3912
+#: src/eat.c:3935
 msgid "You breathe acid on yourself..."
 msgstr "Vous crachez de l'acide sur vous-même..."
 
@@ -28931,66 +28965,96 @@ msgstr "Demi-déesse"
 msgid " and Schroedinger's cat"
 msgstr " et le chat de Schrödinger"
 
-#: src/end.c:1518
+#: src/end.c:1519
+#, c-format
+msgid "went to your reward with %ld point,"
+msgstr "avez reçu votre récompense avec %ld point,"
+
+#: src/end.c:1521
 #, c-format
 msgid "went to your reward with %ld points,"
 msgstr "avez reçu votre récompense avec %ld points,"
 
-#: src/end.c:1519
+#: src/end.c:1524
+#, c-format
+msgid "escaped from the dungeon with %ld point,"
+msgstr "vous êtes échappé du donjon avec %ld point,"
+
+#: src/end.c:1526
 #, c-format
 msgid "escaped from the dungeon with %ld points,"
 msgstr "vous êtes échappé du donjon avec %ld points,"
 
-#: src/end.c:1556
+#: src/end.c:1563
 #, c-format
 msgid "%8ld %s (worth %ld %s),"
 msgstr "%8ld %s (valant %ld %s),"
 
-#: src/end.c:1564
+#: src/end.c:1571
 #, c-format
 msgid "%8ld worthless piece of colored glass,"
 msgstr "%8ld morceau de verre coloré sans valeur,"
 
-#: src/end.c:1565
+#: src/end.c:1572
 #, c-format
 msgid "%8ld worthless pieces of colored glass,"
 msgstr "%8ld morceaux de verre coloré sans valeur,"
 
-#: src/end.c:1578
+#: src/end.c:1585
 #, c-format
 msgid "You %s beyond the confines of the dungeon"
 msgstr "Vous %s au-delà des limites du donjon"
 
-#: src/end.c:1586
+#: src/end.c:1593
 msgid "The Astral Plane"
 msgstr "le Plan astral"
 
-#: src/end.c:1593
+#: src/end.c:1600
 #, c-format
 msgid "You %s in %s"
 msgstr "Vous %s dans %s"
 
-#: src/end.c:1596
+#: src/end.c:1603
 #, c-format
 msgid " on dungeon level %d"
 msgstr " au niveau %d du donjon"
 
-#: src/end.c:1601
+#: src/end.c:1608
+#, c-format
+msgid " with %ld point,"
+msgstr " avec %ld point,"
+
+#: src/end.c:1609
 #, c-format
 msgid " with %ld points,"
 msgstr " avec %ld points,"
 
-#: src/end.c:1610
+#: src/end.c:1622
+#, c-format
+msgid "and %ld piece of gold, after %ld move."
+msgstr "et %ld pièce d'or, après %ld tour."
+
+#: src/end.c:1623
+#, c-format
+msgid "and %ld piece of gold, after %ld moves."
+msgstr "et %ld pièce d'or, après %ld tours."
+
+#: src/end.c:1625
+#, c-format
+msgid "and %ld pieces of gold, after %ld move."
+msgstr "et %ld pièces d'or, après %ld tour."
+
+#: src/end.c:1626
 #, c-format
 msgid "and %ld pieces of gold, after %ld moves."
 msgstr "et %ld pièces d'or, après %ld tours."
 
-#: src/end.c:1614
+#: src/end.c:1630
 #, c-format
 msgid "You were level %d with a maximum of %d hit points when you %s."
 msgstr "Vous étiez de niveau %d avec un maximum de %d points de vie quand vous %s."
 
-#: src/end.c:1737 src/pickup.c:4239
+#: src/end.c:1753 src/pickup.c:4239
 #, c-format
 msgid "%s is empty."
 msgstr "%s est vide."
@@ -35909,15 +35973,15 @@ msgctxt "disposition"
 msgid "is destroyed"
 msgstr "est détruit"
 
-#: src/lock.c:98 src/lock.c:633 src/lock.c:906 src/lock.c:1063
+#: src/lock.c:98 src/lock.c:653 src/lock.c:926 src/lock.c:1083
 msgid "This doorway has no door."
 msgstr "Cette embrasure n'a pas de porte."
 
-#: src/lock.c:101 src/lock.c:636
+#: src/lock.c:101 src/lock.c:656
 msgid "You cannot lock an open door."
 msgstr "Vous ne pouvez pas verrouiller une porte ouverte."
 
-#: src/lock.c:104 src/lock.c:639 src/lock.c:903 src/lock.c:1068 src/trap.c:6712
+#: src/lock.c:104 src/lock.c:659 src/lock.c:923 src/lock.c:1088 src/trap.c:6712
 msgid "This door is broken."
 msgstr "Cette porte est cassée."
 
@@ -36026,206 +36090,230 @@ msgstr ""
 msgid "You can't reach %s from up here."
 msgstr "Vous ne pouvez pas atteindre %s d'ici."
 
-#: src/lock.c:543
+#: src/lock.c:531
+#, c-format
+msgid "There is %s here; fix its lock?"
+msgstr "Il y a %s ici ; réparer sa serrure ?"
+
+#: src/lock.c:533
+#, c-format
+msgid "There is %s here; lock it?"
+msgstr "Il y a %s ici ; verrouiller ceci ?"
+
+#: src/lock.c:535
+#, c-format
+msgid "There is %s here; unlock it?"
+msgstr "Il y a %s ici ; déverrouiller ceci ?"
+
+#: src/lock.c:536
+#, c-format
+msgid "There is %s here; pick its lock?"
+msgstr "Il y a %s ici ; crocheter sa serrure ?"
+
+#: src/lock.c:546 src/trap.c:6656 src/trap.c:6663
+msgid "a box"
+msgstr "une boîte"
+
+#: src/lock.c:563
 #, c-format
 msgid "You can't fix its broken lock with %s."
 msgstr "Vous ne pouvez pas réparer sa serrure cassée avec %s."
 
-#: src/lock.c:548
+#: src/lock.c:568
 #, c-format
 msgid "You can't do that with %s."
 msgstr "Vous ne pouvez pas faire ça avec %s."
 
-#: src/lock.c:579
+#: src/lock.c:599
 msgid "There doesn't seem to be any sort of lock here."
 msgstr "Il ne semble y avoir aucune serrure ici."
 
-#: src/lock.c:588 src/lock.c:858 src/lock.c:1012
+#: src/lock.c:608 src/lock.c:878 src/lock.c:1032
 msgid "You can't reach over the edge of the pit."
 msgstr "Vous ne pouvez pas atteindre au-delà du bord de la fosse."
 
-#: src/lock.c:601
+#: src/lock.c:621
 msgid "No checks, no credit, no problem."
 msgstr "Pas de chèques, pas de crédit, pas de problème."
 
-#: src/lock.c:603
+#: src/lock.c:623
 #, c-format
 msgid "I don't think %s would appreciate that."
 msgstr "Je ne pense pas que %s apprécierait."
 
-#: src/lock.c:625
+#: src/lock.c:645
 msgid "You feel no lock on the drawbridge."
 msgstr "Vous ne sentez aucune serrure sur le pont-levis."
 
-#: src/lock.c:628 src/lock.c:893 src/lock.c:1057 src/trap.c:6706
+#: src/lock.c:648 src/lock.c:913 src/lock.c:1077 src/trap.c:6706
 msgid "You feel no door there."
 msgstr "Vous ne sentez pas de porte à cet endroit."
 
-#: src/lock.c:644
+#: src/lock.c:664
 msgid "Check this door for a trap?"
 msgstr "Chercher un piège sur cette porte ?"
 
-#: src/lock.c:653
+#: src/lock.c:673
 msgid "You can't lock a door with a credit card."
 msgstr "On ne verrouille pas une porte avec une carte de crédit."
 
-#: src/lock.c:725
+#: src/lock.c:745
 msgid "You can't force anything from inside here."
 msgstr "Vous ne pouvez rien forcer d'ici, de l'intérieur."
 
-#: src/lock.c:732
+#: src/lock.c:752
 msgid "You can't force anything when not wielding a weapon."
 msgstr "Vous ne pouvez rien forcer sans manier d'arme."
 
-#: src/lock.c:735
+#: src/lock.c:755
 msgid "You can't force anything without proper weapons."
 msgstr "Vous ne pouvez rien forcer sans armes adéquates."
 
-#: src/lock.c:738
+#: src/lock.c:758
 msgid "You can't force anything with those weapons."
 msgstr "Vous ne pouvez rien forcer avec ces armes."
 
-#: src/lock.c:749
+#: src/lock.c:769
 msgid "You resume your attempt to force the lock."
 msgstr "Vous reprenez vos efforts pour forcer la serrure."
 
-#: src/lock.c:765
+#: src/lock.c:785
 #, c-format
 msgid "There is %s here, but its lock is already broken."
 msgstr "Il y a %s ici, mais sa serrure est déjà cassée."
 
-#: src/lock.c:782
+#: src/lock.c:802
 #, c-format
 msgid "You force %s into a crack and pry."
 msgstr "Vous glissez %s dans une fente et faites levier."
 
-#: src/lock.c:784
+#: src/lock.c:804
 #, c-format
 msgid "You start bashing it with %s."
 msgstr "Vous commencez à le frapper avec %s."
 
-#: src/lock.c:796
+#: src/lock.c:816
 msgid "You decide not to force the issue."
 msgstr "Vous décidez de ne pas insister."
 
-#: src/lock.c:831
+#: src/lock.c:851
 msgid "You can't open anything -- you have no hands!"
 msgstr "Vous ne pouvez rien ouvrir : vous n'avez pas de mains !"
 
-#: src/lock.c:886
+#: src/lock.c:906
 msgid "There is no obvious way to open the drawbridge."
 msgstr "Aucun moyen évident d'ouvrir le pont-levis."
 
-#: src/lock.c:888
+#: src/lock.c:908
 msgid "The drawbridge is already open."
 msgstr "Le pont-levis est déjà ouvert."
 
-#: src/lock.c:890
+#: src/lock.c:910
 msgid "Feels like something lootable over there."
 msgstr "On dirait qu'il y a quelque chose à piller là-bas."
 
-#: src/lock.c:909
+#: src/lock.c:929
 msgid "This door is already open."
 msgstr "Cette porte est déjà ouverte."
 
-#: src/lock.c:912
+#: src/lock.c:932
 msgid "This door is locked."
 msgstr "Cette porte est verrouillée."
 
-#: src/lock.c:928
+#: src/lock.c:948
 msgid "Kick it?"
 msgstr "Lui donner un coup de pied ?"
 
-#: src/lock.c:941
+#: src/lock.c:961
 msgid "You're too small to pull the door open."
 msgstr "Vous êtes trop petit pour tirer la porte."
 
-#: src/lock.c:948
+#: src/lock.c:968
 msgid "The door opens."
 msgstr "La porte s'ouvre."
 
-#: src/lock.c:961 src/lock.c:1088
+#: src/lock.c:981 src/lock.c:1108
 msgid "The door resists!"
 msgstr "La porte résiste !"
 
-#: src/lock.c:982
+#: src/lock.c:1002
 #, c-format
 msgid "%s blocks the way!"
 msgstr "%s bloque le passage !"
 
-#: src/lock.c:991
+#: src/lock.c:1011
 msgid "Something's in the way."
 msgstr "Quelque chose bloque le passage."
 
-#: src/lock.c:1007
+#: src/lock.c:1027
 msgid "You can't close anything -- you have no hands!"
 msgstr "Vous ne pouvez rien fermer : vous n'avez pas de mains !"
 
-#: src/lock.c:1022
+#: src/lock.c:1042
 msgid "You are in the way!"
 msgstr "Vous êtes dans le passage !"
 
-#: src/lock.c:1052
+#: src/lock.c:1072
 msgid "The drawbridge is already closed."
 msgstr "Le pont-levis est déjà fermé."
 
-#: src/lock.c:1054
+#: src/lock.c:1074
 msgid "There is no obvious way to close the drawbridge."
 msgstr "Aucun moyen évident de fermer le pont-levis."
 
-#: src/lock.c:1071
+#: src/lock.c:1091
 msgid "This door is already closed."
 msgstr "Cette porte est déjà fermée."
 
-#: src/lock.c:1077
+#: src/lock.c:1097
 msgid "You're too small to push the door closed."
 msgstr "Vous êtes trop petit pour pousser la porte."
 
-#: src/lock.c:1082
+#: src/lock.c:1102
 msgid "The door closes."
 msgstr "La porte se ferme."
 
-#: src/lock.c:1121
+#: src/lock.c:1141
 msgid "Klick!"
 msgstr "Clic !"
 
-#: src/lock.c:1163
+#: src/lock.c:1183
 msgid "A door appears in the wall!"
 msgstr "Une porte apparaît dans le mur !"
 
-#: src/lock.c:1182
+#: src/lock.c:1202
 msgid "A cloud of dust springs up in the older, more primitive doorway."
 msgstr "Un nuage de poussière s'élève dans l'embrasure, plus ancienne et plus primitive."
 
-#: src/lock.c:1186
+#: src/lock.c:1206
 msgid "You hear a swoosh."
 msgstr "Vous entendez un bruissement."
 
-#: src/lock.c:1190
+#: src/lock.c:1210
 msgid "The cloud quickly dissipates."
 msgstr "Le nuage se dissipe rapidement."
 
-#: src/lock.c:1196
+#: src/lock.c:1216
 msgid "The doorway vanishes!"
 msgstr "L'embrasure disparaît !"
 
-#: src/lock.c:1206
+#: src/lock.c:1226
 msgid "A cloud of dust springs up in the doorway, but quickly dissipates."
 msgstr "Un nuage de poussière s'élève dans l'embrasure, mais se dissipe rapidement."
 
-#: src/lock.c:1263 src/monmove.c:69
+#: src/lock.c:1283 src/monmove.c:69
 msgid "KABOOM!!  You see a door explode."
 msgstr "BOUM !! Vous voyez une porte exploser."
 
-#: src/lock.c:1267 src/monmove.c:71
+#: src/lock.c:1287 src/monmove.c:71
 msgid "You hear a distant explosion."
 msgstr "Vous entendez une explosion lointaine."
 
-#: src/lock.c:1284
+#: src/lock.c:1304
 msgid "You hear a crashing sound."
 msgstr "Vous entendez un fracas."
 
-#: src/lock.c:1323
+#: src/lock.c:1343
 #, c-format
 msgid "You hear %s shatter!"
 msgstr "Vous entendez %s se briser !"
@@ -48571,6 +48659,121 @@ msgstr "Quelqu'un essaie de tricher ici..."
 msgid "This game is void."
 msgstr "Cette partie est annulée."
 
+#: src/rip.c:109
+msgctxt "killed by"
+msgid "choked on "
+msgstr "étouffé par "
+
+#: src/rip.c:109
+msgctxt "killed by"
+msgid "killed by "
+msgstr "tué par "
+
+#: src/rip.c:110
+msgctxt "killed by"
+msgid "died of "
+msgstr "mort de "
+
+#: src/rip.c:110
+msgctxt "killed by"
+msgid "poisoned by "
+msgstr "empoisonné par "
+
+#: src/rip.c:111
+msgctxt "killed by"
+msgid "burned by "
+msgstr "brûlé par "
+
+#: src/rip.c:111
+msgctxt "killed by"
+msgid "drowned in "
+msgstr "noyé dans "
+
+#: src/rip.c:112
+msgctxt "killed by"
+msgid "crushed to death by "
+msgstr "écrasé à mort par "
+
+#: src/rip.c:112
+msgctxt "killed by"
+msgid "dissolved in "
+msgstr "dissous dans "
+
+#: src/rip.c:113
+msgctxt "killed by"
+msgid "petrified by "
+msgstr "pétrifié par "
+
+#: src/rip.c:113
+msgctxt "killed by"
+msgid "turned to slime by "
+msgstr "changé en glu par "
+
+#: src/rip.c:114
+msgctxt "feminine killed by"
+msgid "killed by "
+msgstr "tuée par "
+
+#: src/rip.c:115
+msgctxt "feminine killed by"
+msgid "choked on "
+msgstr "étouffée par "
+
+#: src/rip.c:116
+msgctxt "feminine killed by"
+msgid "poisoned by "
+msgstr "empoisonnée par "
+
+#: src/rip.c:117
+msgctxt "feminine killed by"
+msgid "died of "
+msgstr "morte de "
+
+#: src/rip.c:118
+msgctxt "feminine killed by"
+msgid "drowned in "
+msgstr "noyée dans "
+
+#: src/rip.c:119
+msgctxt "feminine killed by"
+msgid "burned by "
+msgstr "brûlée par "
+
+#: src/rip.c:120
+msgctxt "feminine killed by"
+msgid "dissolved in "
+msgstr "dissoute dans "
+
+#: src/rip.c:121
+msgctxt "feminine killed by"
+msgid "crushed to death by "
+msgstr "écrasée à mort par "
+
+#: src/rip.c:122
+msgctxt "feminine killed by"
+msgid "petrified by "
+msgstr "pétrifiée par "
+
+#: src/rip.c:123
+msgctxt "feminine killed by"
+msgid "turned to slime by "
+msgstr "changée en glu par "
+
+#: src/rip.c:124
+msgctxt "tombstone"
+msgid "      IN      "
+msgstr "      EN      "
+
+#: src/rip.c:124
+msgctxt "tombstone"
+msgid "    REST    "
+msgstr "   REPOSE   "
+
+#: src/rip.c:125
+msgctxt "tombstone"
+msgid "     PEACE      "
+msgstr "      PAIX      "
+
 #: src/role.c:31
 msgid "Archeologist"
 msgstr "Archéologue"
@@ -54625,7 +54828,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-02 18:22+0200\n"
+"POT-Creation-Date: 2026-10-02 18:30+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -57007,10 +57210,6 @@ msgstr "Vous ne pouvez pas neutraliser ce piège."
 #: src/trap.c:6654
 msgid "Disarm "
 msgstr "Désamorcer "
-
-#: src/trap.c:6656 src/trap.c:6663
-msgid "a box"
-msgstr "une boîte"
 
 #: src/trap.c:6661
 msgid "There is "

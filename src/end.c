@@ -1515,9 +1515,16 @@ really_done(int how)
         }
         if (i18n_active())
             Sprintf(eos(pbuf), (how == ASCENDED)
-                                   ? _("went to your reward with %ld points,")
-                                   : _("escaped from the dungeon with %ld "
-                                       "points,"), u.urexp);
+                                   ? ((u.urexp <= 1L)
+                                      ? _("went to your reward with %ld "
+                                          "point,")
+                                      : _("went to your reward with %ld "
+                                          "points,"))
+                                   : ((u.urexp <= 1L)
+                                      ? _("escaped from the dungeon with %ld "
+                                          "point,")
+                                      : _("escaped from the dungeon with %ld "
+                                          "points,")), u.urexp);
         else
             Sprintf(eos(pbuf), "%s with %ld point%s,",
                     (how == ASCENDED) ? "went to your reward"
@@ -1598,7 +1605,9 @@ really_done(int how)
         }
 
         if (i18n_active())
-            Sprintf(eos(pbuf), _(" with %ld points,"), u.urexp);
+            Sprintf(eos(pbuf), (u.urexp <= 1L) ? _(" with %ld point,")
+                                               : _(" with %ld points,"),
+                    u.urexp);
         else
             Sprintf(eos(pbuf), " with %ld point%s,", u.urexp,
                     plur(u.urexp));
@@ -1606,9 +1615,16 @@ really_done(int how)
     }
 
     if (i18n_active()) {
+        /* singular forms for 0 and 1 (French rule) */
         Snprintf(pbuf, sizeof pbuf,
-                 _("and %ld pieces of gold, after %ld moves."), umoney,
-                 svm.moves);
+                 (umoney <= 1L)
+                 ? ((svm.moves <= 1L)
+                    ? _("and %ld piece of gold, after %ld move.")
+                    : _("and %ld piece of gold, after %ld moves."))
+                 : ((svm.moves <= 1L)
+                    ? _("and %ld pieces of gold, after %ld move.")
+                    : _("and %ld pieces of gold, after %ld moves.")),
+                 umoney, svm.moves);
         dump_forward_putstr(endwin, 0, pbuf, done_stopprint);
         Snprintf(pbuf, sizeof pbuf,
                  _("You were level %d with a maximum of %d hit points when "
