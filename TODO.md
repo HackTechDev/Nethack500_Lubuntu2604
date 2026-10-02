@@ -4,6 +4,7 @@
 > traduits. Ce qui reste est surtout du texte de données : les quêtes,
 > le tutoriel, l'encyclopédie et les livres (plus de 20 000 lignes, voir
 > le tableau ci-dessous). La documentation est traduite (section 6).
+> Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté.
 
 État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
 1 906 vides. Parmi ces vides, 1 099 sont des entrées de genre
@@ -24,7 +25,7 @@ Par ordre de priorité (visibilité en jeu) :
 |---|---:|---|---|
 | `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | Affichés par `deliver_by_pline()` / `deliver_by_window()` (`questpgr.c`) ; à extraire pour xgettext ou à fournir en `quest.lua` traduit |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
-| `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`) : à brancher d'abord |
+| `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
 | `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |
 
