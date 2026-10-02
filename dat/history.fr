@@ -1,0 +1,409 @@
+Historique de NetHack, version 5.0
+
+Contemple, mortel, les origines de NetHack...
+
+Jay Fenlason a écrit le Hack original, avec l'aide de Kenny Woodland,
+Mike Thome et Jon Payne.
+
+Andries Brouwer en a fait une réécriture majeure au Stichting Mathematisch
+Centrum (devenu Centrum Wiskunde & Informatica), qui a fait de Hack un jeu
+très différent.  Il a publié le code source de Hack pour les systèmes
+UNIX(tm) en le postant sur le groupe Usenet net.sources (plus tard renommé
+comp.sources) : version 1.0 en décembre 1984, puis 1.0.1, 1.0.2 et enfin
+1.0.3 en juillet 1985.  Le groupe Usenet net.games.hack (plus tard renommé
+rec.games.hack, finalement remplacé par rec.games.roguelike.nethack) a été
+créé pour en discuter.
+
+Don G. Kneller a porté Hack 1.0.3 vers Microsoft(tm) C et MS-DOS(tm), ce qui
+a donné PC HACK 1.01e, a ajouté la prise en charge du graphisme DEC Rainbow
+dans la version 1.03g, puis a produit au moins quatre autres versions (3.0,
+3.2, 3.51 et 3.6 ; ce sont d'anciens numéros de version de Hack, sans
+rapport avec ceux de NetHack).
+
+R. Black a porté PC HACK 3.51 vers Lattice(tm) C et l'Atari 520/1040ST, ce
+qui a donné ST Hack 1.03.
+
+Mike Stephenson a réuni ces différentes versions en reprenant beaucoup des
+fonctions ajoutées, et a produit NetHack 1.4 en 1987.  Il a ensuite
+coordonné une foule de contributeurs pour améliorer et déboguer NetHack 1.4,
+puis a publié les versions 2.2 et 2.3 de NetHack.  Comme Hack, elles ont été
+publiées en postant leur code source sur Usenet ; après leur expiration
+dans le groupe, elles sont restées disponibles dans diverses archives
+accessibles par ftp et uucp.
+
+Plus tard, Mike a coordonné une réécriture majeure du jeu, à la tête d'une
+équipe comprenant Ken Arromdee, Jean-Christophe Collet, Steve Creps, Eric
+Hendrickson, Izchak Miller, Eric S. Raymond, John Rupley, Mike Threepoint et
+Janet Walz, pour produire NetHack 3.0c.
+
+NetHack 3.0 a été porté sur Atari par Eric R. Smith, sur OS/2 par Timo
+Hakulinen et sur VMS par David Gentzel.  Tous trois, ainsi que Kevin Darcy,
+ont ensuite rejoint l'équipe principale de développement de NetHack pour
+produire les révisions suivantes de la 3.0.
+
+Olaf Seibert a porté NetHack 2.3 et 3.0 sur Amiga.  Norm Meluch, Stephen
+Spackman et Pierre Martineau ont conçu le code de recouvrement (overlay) de
+NetHack 3.0 pour PC.  Johnny Lee a porté NetHack 3.0 sur Macintosh.  Avec
+d'autres aventuriers du donjon, ils ont continué à améliorer les portages
+PC, Macintosh et Amiga au fil des révisions de la 3.0.
+
+La version 3.0 a connu dix révisions (« patch-levels ») publiées assez
+rapidement.  On les appelait alors 3.0 pour la version de base, puis
+« 3.0a » à « 3.0j », « 3.0 patchlevel 1 » à « 3.0 patchlevel 10 » ou
+« 3.0pl1 » à « 3.0pl10 », plutôt que 3.0.0 et 3.0.1 à 3.0.10 ; la
+numérotation en trois parties a commencé avec la 3.1.0.
+
+Sous la direction de Mike Stephenson et la coordination d'Izchak Miller et
+de Janet Walz, l'équipe de développement de NetHack, qui comprenait
+désormais Ken Arromdee, David Cohrs, Jean-Christophe Collet, Kevin Darcy,
+Matt Day, Timo Hakulinen, Steve Linhart, Dean Luick, Pat Rankin, Eric
+Raymond et Eric Smith, a entrepris une révision radicale de la 3.0.  Ils ont
+restructuré la conception du jeu et réécrit de grandes parties du code.
+Ils ont ajouté plusieurs donjons, un nouvel affichage, des quêtes propres à
+chaque personnage, une nouvelle fin de partie et bien d'autres nouveautés,
+pour produire NetHack 3.1.  La version 3.1.0 est sortie en janvier 1993.
+
+Ken Lorber, Gregg Wonderly et Greg Olson, avec l'aide de Richard Addison,
+Mike Passaretti et Olaf Seibert, ont développé NetHack 3.1 pour l'Amiga.
+
+Norm Meluch et Kevin Smolkowski, avec l'aide de Carl Schelin, Stephen
+Spackman, Steve VanDevender et Paul Winner, ont porté NetHack 3.1 sur PC.
+
+Jon W{tte et Hao-yang Wang, avec l'aide de Ross Brown, Mike Engber, David
+Hairston, Michael Hamel, Jonathan Handler, Johnny Lee, Tim Lennan, Rob
+Menke et Andy Swanson, ont développé NetHack 3.1 pour le Macintosh, en le
+portant sous MPW.  À partir de leur travail, Bart House a ajouté un portage
+Think C.
+
+Timo Hakulinen a porté NetHack 3.1 sur OS/2.  Eric Smith a porté NetHack
+3.1 sur Atari.  Pat Rankin, avec l'aide de Joshua Delahunty, s'est occupé de
+la version VMS de NetHack 3.1.  Michael Allison a porté NetHack 3.1 sur
+Windows NT.
+
+Dean Luick, avec l'aide de David Cohrs, a développé NetHack 3.1 pour X11.
+La carte y était dessinée en texte et non en graphisme, mais il fournissait
+nh10.bdf, une police X11 facultative où de minuscules images remplaçaient
+les lettres et la ponctuation, ancêtre des tuiles.  Ces images ne
+distinguaient pas chaque sorte de monstre ou d'objet, seulement les classes
+(une seule image pour tous les insectes « a », une autre pour toutes les
+armures « [ », et ainsi de suite, et non des images différentes pour les
+scarabées et les fourmis ou pour les capes et les bottes).
+
+Warwick Allison a écrit une version graphique de NetHack pour l'Atari, où
+les petites images, appelées « icônes », étaient propres à chaque sorte de
+monstre et d'objet et non à leur seule classe.  Il les a confiées à
+l'équipe de développement de NetHack, qui les a rebaptisées « tuiles »
+(« tiles »), un usage alors nouveau repris depuis par d'autres jeux.  Les
+tuiles de NetHack ont ensuite été prises en charge sur d'autres plates-formes
+(d'abord MS-DOS, puis Windows, Qt et X11).
+
+L'équipe de développement de NetHack 3.2, composée de Michael Allison, Ken
+Arromdee, David Cohrs, Jessie Collet, Steve Creps, Kevin Darcy, Timo
+Hakulinen, Steve Linhart, Dean Luick, Pat Rankin, Eric Smith, Mike
+Stephenson, Janet Walz et Paul Winner, a publié la version 3.2.0 en avril
+1996.
+
+La version 3.2 a marqué le dixième anniversaire de la formation de l'équipe
+de développement.  Preuve de leur dévouement au jeu, les treize membres de
+l'équipe d'origine en faisaient tous encore partie au début du travail sur
+cette version.  Entre la sortie de la 3.1.3 et celle de la 3.2.0, l'un des
+membres fondateurs de l'équipe, le Dr Izchak Miller, a appris qu'il avait
+un cancer et nous a quittés.  Les équipes de développement et de portage
+lui ont dédié cette version du jeu.
+
+La version 3.2 s'est révélée plus stable que les précédentes.  Beaucoup de
+bogues ont été corrigés, des abus supprimés et des éléments du jeu ajustés
+pour une meilleure jouabilité.
+
+Pendant la vie de NetHack 3.1 et 3.2, plusieurs passionnés ont apporté
+leurs propres modifications au jeu et ont rendu ces « variantes »
+publiques :
+
+Tom Proudfoot et Yuval Oren ont créé NetHack++, vite rebaptisé NetHack--
+quand certains ont cru, à tort, qu'il s'agissait d'une conversion du code
+source C en C++.  De son côté, Stephen White a écrit NetHack Plus.  Tom
+Proudfoot a ensuite fusionné NetHack Plus et son propre NetHack-- pour
+produire SLASH.  Larry Stewart-Zerba et Warwick Allison ont amélioré le
+système des sorts avec le Wizard Patch.  Warwick Allison a aussi porté
+NetHack vers l'interface Qt.
+
+Warren Cheung a combiné SLASH et le Wizard Patch pour produire Slash'EM et,
+avec l'aide de Kevin Hugo, y a ajouté d'autres nouveautés.  Kevin a ensuite
+rejoint l'équipe de développement de NetHack et a intégré le meilleur de
+ces idées dans NetHack 3.3.
+
+La dernière mise à jour de la 3.2 a été la version corrective 3.2.3, sortie
+en même temps que la 3.3.0 en décembre 1999, juste à temps pour l'an 2000.
+À cause de la nouvelle version, la 3.2.3 n'a été publiée que sous forme de
+correctif du code source, sans version prête à jouer pour les systèmes qui
+en avaient d'habitude.
+
+(Avis à qui voudrait ressusciter une ancienne version : toutes les versions
+antérieures à la 3.2.3 avaient un bogue de l'an 2000.  Le fichier des
+meilleurs scores et le journal contenaient des dates dont l'année était
+écrite sur deux chiffres, et l'année 99 de 1999 était suivie de l'année 100
+de 2000.  Cela s'écrivait sans erreur, mais ajoutait par accident une
+colonne dans le format du fichier, ce qui empêchait de relire correctement
+les scores : l'insertion des nouveaux scores en était perturbée, comme la
+lecture des anciens noms de personnages servant aux fantômes et statues
+aléatoires de la partie en cours.)
+
+L'équipe de développement de NetHack 3.3, composée de Michael Allison, Ken
+Arromdee, David Cohrs, Jessie Collet, Steve Creps, Kevin Darcy, Timo
+Hakulinen, Kevin Hugo, Steve Linhart, Ken Lorber, Dean Luick, Pat Rankin,
+Eric Smith, Mike Stephenson, Janet Walz et Paul Winner, a publié la 3.3.0 en
+décembre 1999 et la 3.3.1 en août 2000.
+
+La version 3.3 a apporté beaucoup de nouveautés.  C'était la première à
+séparer la race et la profession.  La classe Elfe a été remplacée par une
+race elfe, et les races naine, gnome et orque sont apparues pour la première
+fois dans le jeu aux côtés de la race humaine bien connue.  Les rôles de
+Moine et de Rôdeur ont rejoint les Archéologues, Barbares, Hommes des
+cavernes, Guérisseurs, Chevaliers, Prêtres, Voleurs, Samouraïs, Touristes,
+Valkyries et, bien sûr, Magiciens.  C'était aussi la première version où
+l'on pouvait chevaucher une monture, et la première à avoir un site web
+public listant tous les bogues découverts.  Malgré cette liste toujours
+plus longue, la 3.3 s'est montrée assez stable pour durer plus d'un an et
+demi.
+
+L'équipe de développement de NetHack 3.4 se composait au départ de Michael
+Allison, Ken Arromdee, David Cohrs, Jessie Collet, Kevin Hugo, Ken Lorber,
+Dean Luick, Pat Rankin, Mike Stephenson, Janet Walz et Paul Winner ; Warwick
+Allison l'a rejointe juste avant la sortie de NetHack 3.4.0 en mars 2002.
+
+Comme pour la version 3.3, diverses personnes ont contribué au jeu dans son
+ensemble et aux portages sur les différentes plates-formes où tourne
+NetHack :
+
+Pat Rankin a maintenu la 3.4 pour VMS.
+
+Michael Allison a maintenu NetHack 3.4 pour MS-DOS.
+Paul Winner et Yitzhak Sapir l'ont encouragé.
+
+Dean Luick, Mark Modrall et Kevin Hugo ont maintenu et amélioré le portage
+Macintosh de la 3.4.
+
+Michael Allison, David Cohrs, Alex Kompel, Dion Nicolaas et Yitzhak Sapir
+ont maintenu et amélioré la 3.4 pour Microsoft Windows.  Alex Kompel a
+apporté une nouvelle interface graphique au portage Windows.  Alex Kompel a
+aussi apporté un portage Windows CE pour la 3.4.1.
+
+Ron Van Iwaarden a été le seul à maintenir NetHack pour OS/2 pendant
+plusieurs versions.  Malheureusement, sa dernière machine OS/2 a cessé de
+fonctionner début 2006.  Un grand merci à Ron d'avoir fait vivre NetHack
+sous OS/2 pendant toutes ces années.
+
+Janne Salmijarvi et Teemu Suikki ont maintenu et amélioré le portage Amiga
+de la 3.4, que Janne Salmijarvi avait ressuscité pour la 3.3.1.
+
+Christian « Marvin » Bressler a maintenu la 3.4 pour Atari, après l'avoir
+ressuscitée pour la 3.3.1.
+
+La sortie de NetHack 3.4.3 en décembre 2003 a marqué le début d'une longue
+pause.  La 3.4.3 s'est montrée remarquablement stable et a fait le bonheur
+de la communauté pendant plus de dix ans.  L'équipe de développement de
+NetHack a continué à travailler lentement et discrètement sur le jeu en
+coulisses pendant le règne de la 3.4.3.  C'est à cette même période que
+plusieurs nouvelles variantes sont apparues dans la communauté NetHack,
+notamment sporkhack de Derek S. Ray, unnethack de Patric Mueller,
+nitrohack et ses successeurs, d'abord de Daniel Thaler puis d'Alex Smith,
+et Dynahack de Tung Nguyen.  Certaines de ces variantes sont toujours
+développées, maintenues et appréciées par la communauté.
+
+En septembre 2014, un instantané provisoire du code en développement a été
+publié par des tiers.  Ce code étant un travail en cours qui n'était pas
+passé par le débogage nécessaire à une sortie, il a été décidé que les
+numéros de version qu'il portait seraient retirés et jamais utilisés pour
+une version officielle de NetHack.  Une annonce en ce sens a été publiée
+sur le site officiel de l'équipe de développement, nethack.org : il n'y
+aurait jamais de version officielle 3.4.4, 3.5 ou 3.5.0.
+
+En janvier 2015 a commencé la préparation de la sortie de NetHack 3.6.
+
+Au début du développement de ce qui allait devenir la 3.6.0, l'équipe de
+développement de NetHack se composait de Warwick Allison, Michael Allison,
+Ken Arromdee, David Cohrs, Jessie Collet, Ken Lorber, Dean Luick, Pat
+Rankin, Mike Stephenson, Janet Walz et Paul Winner.  Début 2015, avant la
+sortie de la 3.6.0, Sean Hunt, Pasi Kallinen et Derek S. Ray ont rejoint
+l'équipe.
+
+Vers la fin du développement de la 3.6.0, l'une des grandes inspirations de
+nombreux traits d'humour du jeu, l'écrivain Terry Pratchett, nous a
+quittés.  NetHack 3.6.0 lui a rendu hommage.
+
+La 3.6.0 est sortie en décembre 2015 ; elle réunissait le travail de
+l'équipe depuis la sortie de la 3.4.3 et quelques correctifs appréciés de
+la communauté.  Beaucoup de bogues ont été corrigés et une partie du code a
+été restructurée.
+
+L'équipe de développement de NetHack, ainsi que Steve VanDevender et Kevin
+Smolkowski, ont veillé à ce que NetHack 3.6 continue de fonctionner sur
+diverses variantes d'UNIX et ont maintenu l'interface X11.
+
+Ken Lorber, Haoyang Wang, Pat Rankin et Dean Luick ont maintenu le portage
+de NetHack 3.6 pour MacOS.
+
+Michael Allison, David Cohrs, Bart House, Pasi Kallinen, Alex Kompel, Dion
+Nicolaas, Derek S. Ray et Yitzhak Sapir ont maintenu le portage de NetHack
+3.6 pour Microsoft Windows.
+
+Pat Rankin a tenté de maintenir le portage VMS de NetHack 3.6, gêné par un
+accès limité.  Kevin Smolkowski l'a mis à jour et testé pour la version la
+plus récente d'OpenVMS (V8.4 au moment où ces lignes sont écrites) sur
+Alpha et Integrity (alias Itanium, alias IA64), mais pas sur VAX.
+
+Ray Chason a ressuscité le portage MS-DOS pour la 3.6 et a mis les mises à
+jour nécessaires à la disposition de la communauté.
+
+Fin avril 2018, plusieurs centaines de corrections de la 3.6.0 et quelques
+nouveautés ont été réunies et publiées sous le nom de NetHack 3.6.1.
+L'équipe de développement de NetHack à la sortie de la 3.6.1 se composait
+de Warwick Allison, Michael Allison, Ken Arromdee, David Cohrs, Jessie
+Collet, Pasi Kallinen, Ken Lorber, Dean Luick, Patric Mueller, Pat Rankin,
+Derek S. Ray, Alex Smith, Mike Stephenson, Janet Walz et Paul Winner.
+
+Début mai 2019, 320 autres corrections, quelques améliorations et
+l'interface curses adoptée ont été publiées sous le nom de 3.6.2.
+
+Bart House, qui contribuait au jeu depuis des décennies au sein des équipes
+de portage, a rejoint l'équipe de développement de NetHack fin mai 2019.
+
+NetHack 3.6.3 est sorti le 5 décembre 2019 avec plus de 190 corrections de
+NetHack 3.6.2.
+
+NetHack 3.6.4 est sorti le 18 décembre 2019 avec une correction de sécurité
+et quelques corrections de bogues.
+
+NetHack 3.6.5 est sorti le 27 janvier 2020 avec quelques corrections de
+sécurité et un petit nombre de corrections de bogues.
+
+NetHack 3.6.6 est sorti le 8 mars 2020 avec une correction de sécurité et
+quelques corrections de bogues.
+
+NetHack 3.6.7 est sorti le 16 février 2023 avec une correction de sécurité
+et quelques corrections de bogues.
+
+Le développement de la version majeure suivante a commencé en 2015, à peu
+près au moment de la sortie de NetHack 3.6.0.  Ce travail s'est poursuivi
+en parallèle de chacune des versions 3.6 de 2015 à 2023, et jusqu'à fin
+avril 2026.  Pour la première fois, ce développement a été partagé
+publiquement sur GitHub et SourceForge au fur et à mesure.  Il portait le
+nom de NetHack-3.7 work-in-progress (WIP), même si le numéro de la version
+suivante n'était pas encore arrêté.
+
+Rendre le développement public a apporté beaucoup de bonnes choses, et
+quelques difficultés.  Chacun pouvait observer et critiquer les changements
+et les nouveautés presque aussitôt, et ne s'en privait pas.  Le système de
+pull requests de GitHub a permis à chacun de contribuer directement au
+développement.  Les contributions ont résolu de très nombreux bogues du
+jeu, et nous remercions tous les contributeurs.
+
+Début 2026, le développement étant assez stable pour envisager une sortie
+officielle, l'équipe a examiné la nature et le nombre des changements du
+jeu.  Il était clair qu'ils étaient assez profonds et nombreux pour
+justifier une version majeure, et la version 5.0 a été choisie.  C'est une
+nouvelle version majeure après la 3.x, sans risque d'ambiguïté ou de
+confusion avec des variantes existantes, comme cela aurait pu être le cas
+avec une version 4.0.
+
+NetHack 5.0.0 est sorti le 2 mai 2026.
+
+Le code source de NetHack 5.0.0 a été modifié et modernisé pour respecter
+la norme C99.  La version 5.0.0 contenait plus de 3100 corrections,
+changements et nouveautés.
+
+NetHack 5.0 est la première version à remplacer les compilateurs de niveaux
+et de donjons des versions précédentes, écrits avec lex et yacc, par une
+nouvelle approche fondée sur un interpréteur Lua.  Lua sert aussi aux
+textes des quêtes de NetHack 5.0.0.  Toute l'équipe de développement salue
+le travail de Pasi Kallinen, qui a rendu cela possible.
+
+À la sortie de NetHack 5.0, l'équipe principale de développement, membres
+actifs et anciens, comprenait Warwick Allison, Michael Allison, Ken
+Arromdee, David Cohrs, Jessie Collet, Bart House, Kevin Hugo, Pasi
+Kallinen, Ken Lorber, Dean Luick, Pat Rankin, Derek S. Ray, Alex Smith,
+Patric Mueller, Mike Stephenson, Janet Walz et Paul Winner.
+
+Ken Lorber, Pat Rankin, Patrick Mueller et Michael Allison ont veillé à ce
+que NetHack 5.0 fonctionne sous macOS.
+
+Ingo Paschke a réussi à faire revivre un portage de NetHack 5.0 pour
+l'Amiga, à l'aide d'un compilateur croisé sur une plate-forme moderne.  Son
+travail a été partagé : grâce à lui, d'autres peuvent produire sans peine
+NetHack 5.0 pour l'Amiga.
+
+Ray Chason a assuré l'essentiel de la maintenance du portage MS-DOS de
+NetHack 5.0, y compris le portage de l'interface curses.  Michael Allison a
+veillé à ce que les changements du cœur de NetHack 5.0 continuent de
+fonctionner avec le portage msdos et à le garder en vie.  La compilation
+croisée du portage MS-DOS a rendu cela possible et presque indolore.
+
+Ont contribué au portage Windows de NetHack 5.0 depuis le début de son
+développement, il y a plus de onze ans : Michael Allison, David Cohrs, Bart
+House, Pasi Kallinen, Alex Kompel, Dion Nicolaas, Derek S. Ray et Yitzhak
+Sapir.
+
+C'est avec tristesse que l'équipe tient à saluer la mémoire de feu Ron Van
+Iwaarden, qui a été le seul à maintenir NetHack pour OS/2 pendant plusieurs
+versions.  Ron nous manquera.
+
+Le site officiel de NetHack est tenu par Ken Lorber à l'adresse
+https://www.nethack.org/.
+
+Au nom de la communauté NetHack, merci encore à M. Drew Streib et Pasi
+Kallinen de fournir un serveur NetHack public, nethack.alt.org.  Merci à
+Keith Simpson et Andy Thomson pour hardfought.org.  Merci à tous les
+aventuriers anonymes qui consacrent leur temps et leurs efforts aux tournois
+annuels de NetHack comme Junethack, The November NetHack Tournament et,
+autrefois, devnull.net (disparu pour l'instant, mais pas oublié).
+
+                           - - - - - - - - - -
+
+De temps à autre, un individu dépravé quelque part sur le réseau envoie une
+modification particulièrement intrigante pour améliorer le jeu.  L'équipe
+de développement de NetHack note parfois le nom des pires de ces mécréants
+dans cette liste des aventuriers du donjon (« Dungeoneers ») :
+
+    Adam Aronow               Irina Rempt-Drijfhout     Mike Gallop
+    Alex Kompel               Izchak Miller             Mike Passaretti
+    Alex Smith                J. Ali Harlow             Mike Stephenson
+    Andreas Dorn              Janet Walz                Mikko Juola
+    Andy Church               Janne Salmijarvi          Nathan Eady
+    Andy Swanson              Jean-Christophe Collet    Norm Meluch
+    Andy Thomson              Jeff Bailey               Olaf Seibert
+    Ari Huttunen              Jochen Erwied             Pasi Kallinen
+    Bart House                John Kallen               Pat Rankin
+    Benson I. Margulies       John Rupley               Patric Mueller
+    Bill Dyer                 John S. Bien              Paul Winner
+    Boudewijn Waijers         Johnny Lee                Pierre Martineau
+    Bruce Cox                 Jon W{tte                 Ralf Brown
+    Bruce Holloway            Jonathan Handler          Ray Chason
+    Bruce Mewborne            Joshua Delahunty          Richard Addison
+    Cameron Root              Karl Garrison             Richard Beigel
+    Carl Schelin              Keizo Yamamoto            Richard P. Hughey
+    Chris Russo               Keith Simpson             Rob Menke
+    David Cohrs               Ken Arnold                Robin Bandy
+    David Damerell            Ken Arromdee              Robin Johnson
+    David Gentzel             Ken Lorber                Roderick Schertler
+    David Hairston            Ken Washikita             Roland McGrath
+    Dean Luick                Kestrel Gregorich-Trevor  Ron Van Iwaarden
+    Del Lamb                  Kevin Darcy               Ronnen Miller
+    Derek S. Ray              Kevin Hugo                Ross Brown
+    Deron Meranda             Kevin Sitze               Sascha Wostmann
+    Dion Nicolaas             Kevin Smolkowski          Scott Bigham
+    Dylan O'Donnell           Kevin Sweet               Scott R. Turner
+    Eric Backus               Lars Huttar               Sean Hunt
+    Eric Hendrickson          Leon Arnott               Stephen Spackman
+    Eric R. Smith             M. Drew Streib            Stefan Thielscher
+    Eric S. Raymond           Malcolm Ryan              Stephen White
+    Erik Andersen             Mark Gooderum             Steve Creps
+    Fredrik Ljungdahl         Mark Modrall              Steve Linhart
+    Frederick Roeber          Marvin Bressler           Steve VanDevender
+    G. Branden Robinson       Matthew Day               Teemu Suikki
+    Gil Neiger                Merlyn LeRoy              Tim Lennan
+    Greg Laskin               Michael Allison           Timo Hakulinen
+    Greg Olson                Michael Feir              Tom Almy
+    Gregg Wonderly            Michael Hamel             Tom West
+    Hao-yang Wang             Michael Meyer             Warren Cheung
+    Helge Hafting             Michael Sokolov           Warwick Allison
+    Ingo Paschke              Mike Engber               Yitzhak Sapir

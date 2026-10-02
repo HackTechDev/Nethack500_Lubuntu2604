@@ -26,20 +26,15 @@ Par ordre de priorité (visibilité en jeu) :
 | `dat/tut-1.lua`, `dat/tut-2.lua` | 374 | Tutoriel : inscriptions et messages | Textes assemblés en Lua avec les touches (`"Move around with " .. movekeys`) : il faut une fonction de traduction appelable depuis Lua, ou des formats entiers |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`) : à brancher d'abord |
-| `dat/cmdhelp` | 226 | Description de chaque touche (`&`) | Format « touche<TAB>texte » ; `cmdhelp.fr` |
-| `dat/opthelp` | 393 | Aide des options | `opthelp.fr` |
-| `dat/history` | 401 | Historique du jeu | `history.fr` |
-| `dat/usagehlp` | 139 | Ligne de commande | `usagehlp.fr` |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
-| `dat/optmenu` | 43 | Aide du menu des options | `optmenu.fr` |
-| `dat/wizhelp` | 51 | Commandes du mode magicien | `wizhelp.fr` |
 | `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |
 | `doc/Guidebook.mn` | 6 951 | Guide du joueur | Voir section 6 |
 | `doc/nethack.6` | 586 | Page de manuel | |
 
-Déjà traduits : `help`, `hh`, `keyhelp`, rumeurs, oracles, gravures,
-épitaphes (section 3), monstres hallucinés (`bogusmon.txt`, dans
-`po/fr.po`).
+Déjà traduits : `help`, `hh`, `keyhelp`, `cmdhelp`, `opthelp`,
+`history`, `usagehlp`, `optmenu`, `wizhelp` (fichiers `dat/*.fr`),
+rumeurs, oracles, gravures, épitaphes (section 3), monstres hallucinés
+(`bogusmon.txt`, dans `po/fr.po`).
 
 Restes dans le code (`po/fr.po`, environ 85 textes) : messages de
 débogage de `mkmaze.c`, `display.c`, `objnam.c`, `trap.c`, `dig.c`,
@@ -200,8 +195,12 @@ Mécanisme en place : `I18N_FILE(nom)` (nhi18n.c) ouvre `nom.<langue>`
 `make install` copie les `dat/*.<langue>` à côté de `nhdat`.
 
 Fait : `help` (aide détaillée), `hh` (liste des commandes), `keyhelp`
-(touches), ainsi que le menu de l'aide `?` et « --More-- », « (end) »
-de l'interface tty.
+(touches), `cmdhelp` (touche `&`, mêmes touches et directives `&`),
+`opthelp` (aide des options), `history`, `usagehlp` (ligne de commande),
+`optmenu` (menu des options) et `wizhelp` (mode magicien), ainsi que le
+menu de l'aide `?` et « --More-- », « (end) » de l'interface tty.
+`usagehlp` reste en anglais pour `nethack --usage` lancé hors du jeu,
+avant la lecture de l'option `language`.
 
 Fait aussi : les rumeurs, l'Oracle, les gravures et les épitaphes.
 `makedefs` les compile depuis `dat/rumors-fr.tru` et `.fal`,

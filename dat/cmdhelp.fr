@@ -1,0 +1,226 @@
+&# cmdhelp - became obsolete when 'BINDINGS=key:command' got added
+&	Tell what command a keystroke invokes
+^	Montrer le type d'un piège adjacent
+^[	Annuler la commande (comme la touche Échap)
+&? debug
+^E	Chercher les pièges, portes secrètes et monstres invisibles proches
+^F	Cartographier le niveau ; montre pièges et couloirs secrets, pas les portes
+^G	Créer un monstre par son nom ou sa classe
+^I	Voir l'inventaire avec tous les objets identifiés
+^O	Lister l'emplacement des niveaux spéciaux
+^V	Se téléporter d'un niveau à l'autre
+^W	Faire un vœu
+&: #!debug
+^E	commande de débogage indisponible
+^F	commande de débogage indisponible
+^G	commande de débogage indisponible
+^I	commande de débogage indisponible
+^O	Raccourci de « #overview » : lister les niveaux intéressants visités
+^V	commande de débogage indisponible
+^W	commande de débogage indisponible
+&. #?debug
+&? number_pad=0,-1
+b	Aller d'une case au sud-ouest
+B	Aller au sud-ouest jusqu'à être sur quelque chose
+h	Aller d'une case à l'ouest
+H	Aller à l'ouest jusqu'à être sur quelque chose
+j	Aller d'une case au sud
+J	Aller au sud jusqu'à être sur quelque chose
+k	Aller d'une case au nord
+K	Aller au nord jusqu'à être sur quelque chose
+l	Aller d'une case à l'est
+L	Aller à l'est jusqu'à être sur quelque chose
+n	Aller d'une case au sud-est
+N	Aller au sud-est jusqu'à être sur quelque chose
+u	Aller d'une case au nord-est
+U	Aller au nord-est jusqu'à être sur quelque chose
+&# y,Y handled below
+&: #number_pad=1,2,3,4
+h	Aide : synonyme de « ? »
+j	Sauter : raccourci de « #jump »
+k	Donner un coup de pied : synonyme de « ^D »
+l	Piller : raccourci de « #loot »
+n	Commencer un nombre ; continuer avec des chiffres
+N	Nommer : raccourci de « #name »
+u	Désamorcer : raccourci de « #untrap »
+&. #0,-1 vs 1,2,3,4
+a	Appliquer (utiliser) un outil ou briser une baguette
+A	Retirer toute l'armure et/ou tous les accessoires et/ou lâcher les armes
+^A	Refaire la commande précédente
+^B	Aller au sud-ouest jusqu'à être près de quelque chose
+c	Fermer une porte
+C	Nommer un monstre, un objet ou un type d'objet
+^C	Interrompre : quitter la partie
+d	Poser un objet
+D	Poser certains types d'objets
+^D	Donner un coup de pied (souvent à une porte, un coffre ou une boîte)
+e	Manger quelque chose
+E	Graver une inscription sur le sol
+f	Tirer les munitions du carquois
+F	Suivi d'une direction, combattre un monstre (même sans le percevoir)
+g	Suivi d'une direction, avancer jusqu'à être près de quelque chose
+G	Suivi d'une direction, comme Ctrl-direction
+^H	Aller à l'ouest jusqu'à être près de quelque chose
+i	Afficher votre inventaire
+I	Inventaire de certains types d'objets
+^J	Aller au sud jusqu'à être près de quelque chose
+^K	Aller au nord jusqu'à être près de quelque chose
+^L	Aller à l'est jusqu'à être près de quelque chose
+m	Suivi d'une direction, avancer sans rien ramasser ni combattre
+M	Suivi d'une direction, avancer loin sans rien ramasser
+^N	Aller au sud-est jusqu'à être près de quelque chose
+o	Ouvrir une porte
+O	Afficher les options, et les modifier si besoin
+p	Payer vos achats
+P	Mettre un accessoire (anneau, amulette, etc. ; marche aussi pour l'armure)
+^P	Parcourir les messages déjà affichés
+q	Boire quelque chose (potion, eau, etc.)
+Q	Choisir les munitions du carquois (« #quit » pour quitter)
+r	Lire un parchemin ou un grimoire
+R	Retirer un accessoire (anneau, amulette, etc. ; marche aussi pour l'armure)
+^R	Redessiner l'écran
+s	Chercher pièges et portes secrètes sur les cases adjacentes
+S	Sauvegarder et quitter (on ne peut pas sauvegarder et continuer)
+t	Lancer un objet (choisir l'objet, puis une direction -- pas une cible)
+T	Ôter une pièce d'armure (marche aussi pour les accessoires)
+^T	Se téléporter dans le niveau
+^U	Aller au nord-est jusqu'à être près de quelque chose
+v	Afficher la version (« #version » en dit plus)
+V	Afficher l'historique du développement du jeu
+w	Manier une arme (2 armes : « w » secondaire, « x », « w » principale, « X »)
+W	Porter une pièce d'armure (marche aussi pour les accessoires)
+x	Échanger l'arme en main et l'arme secondaire
+X	Activer ou désactiver le combat à deux armes
+^X	Afficher vos attributs (plus en mode débogage ou exploration)
+&? number_pad=0,1,2,3,4
+&? number_pad=0
+y	Aller d'une case au nord-ouest
+Y	Aller au nord-ouest jusqu'à être sur quelque chose
+&.
+^Y	Aller au nord-ouest jusqu'à être près de quelque chose
+z	Utiliser une baguette
+Z	Lancer un sort
+&? suspend
+^Z	Suspendre la partie ; « fg » (premier plan) pour reprendre
+&:
+^Z	commande indisponible : suspendre
+&.
+&: number_pad=-1
+y	Utiliser une baguette
+Y	Lancer un sort
+&? suspend
+^Y	Suspendre la partie ; « fg » (premier plan) pour reprendre
+&:
+^Y	commande indisponible : suspendre
+&.
+z	Aller d'une case au nord-ouest
+Z	Aller au nord-ouest jusqu'à être sur quelque chose
+^Z	Aller au nord-ouest jusqu'à être près de quelque chose
+&. #0,1..4 vs -1
+<	Monter un escalier
+>	Descendre un escalier
+/	Montrer à quoi correspond un symbole
+?	Afficher l'aide
+&? shell
+!	Ouvrir un shell ; « exit » pour revenir
+&:
+!	commande indisponible : shell
+&.
+\	Montrer les types d'objets découverts
+`	Montrer les types découverts d'une classe d'objets
+_	Voyager par le plus court chemin vers un point de la carte
+.	Se reposer un tour sans rien faire
+&? rest_on_space
+ 	Se reposer un tour sans rien faire
+&.
+:	Regarder ce qu'il y a par terre
+;	Montrer à quoi correspond un symbole de la carte du niveau
+,	Ramasser des objets ici
+@	Activer ou désactiver le ramassage automatique
+)	Montrer les armes en main ou préparées
+[	Montrer l'armure portée
+=	Montrer les anneaux portés
+"	Montrer l'amulette portée
+(	Montrer les outils utilisés
+*	Montrer tout l'équipement utilisé (commandes ),[,=,",( réunies)
+$	Compter votre or
++	Lister les sorts connus
+Del	Afficher la carte sans les monstres ni les objets qui la cachent.
+#	Lancer une commande étendue (« #? » pour les lister)
+&# number_pad:
+&#  -1 = numpad off, swap y with z (including Y with Z, ^Y with ^Z, M-y &c)
+&#   0 = numpad off (default)
+&#   1 = numpad on, normal keypad layout, '5'->'g'
+&#   2 = numpad on, normal keypad layout, '5'->'G'
+&#   3 = numpad on, phone keypad layout, '5'->'g'
+&#   4 = numpad on, phone keypad layout, '5'->'G'
+&? number_pad = 1,2,3,4
+0	Afficher l'inventaire
+4	Aller à l'ouest
+6	Aller à l'est
+-	Préfixe « F » : forcer le combat
+&: #-1,0
+0	Continuer un nombre
+4	Commencer ou continuer un nombre
+6	Commencer ou continuer un nombre
+&. #1,2,3,4 vs -1,0
+&? number_pad=1,2
+7	Aller au nord-ouest
+8	Aller au nord
+9	Aller au nord-est
+1	Aller au sud-ouest
+2	Aller au sud
+3	Aller au sud-est
+&: number_pad=3,4
+1	Aller au nord-ouest
+2	Aller au nord
+3	Aller au nord-est
+7	Aller au sud-ouest
+8	Aller au sud
+9	Aller au sud-est
+&: #-1,0
+1	Commencer ou continuer un nombre
+2	Commencer ou continuer un nombre
+3	Commencer ou continuer un nombre
+7	Commencer ou continuer un nombre
+8	Commencer ou continuer un nombre
+9	Commencer ou continuer un nombre
+&. #1,2 vs 3,4 vs -1,0
+&? number_pad=1,3
+5	Préfixe de déplacement « g »
+M-5	Préfixe de déplacement « G »
+&: number_pad=2,4
+5	Préfixe de déplacement « G »
+M-5	Préfixe de déplacement « g »
+M-0	Inventaire de certains types d'objets
+&: #-1,0
+5	Commencer ou continuer un nombre
+M-2	Activer ou désactiver le combat à deux armes
+&. #1,3 vs 2,4 vs -1,0
+M-?	Afficher l'aide des commandes étendues (si le système le permet)
+M-a	Changer les lettres de l'inventaire
+M-A	Annoter : donner un nom au niveau actuel du donjon
+M-c	Parler à une créature adjacente
+M-C	Conduite : lister les défis volontaires tenus
+M-d	Tremper un objet dans quelque chose
+M-e	Améliorer : voir les compétences, les faire progresser si possible
+M-f	Forcer une serrure
+M-i	Invoquer les pouvoirs spéciaux d'un objet
+M-j	Sauter vers un endroit proche
+M-l	Piller une boîte posée par terre
+M-m	Une fois métamorphosé, utiliser la capacité spéciale du monstre
+M-n	Nommer un monstre, un objet ou un type d'objet
+M-N	Nommer un monstre, un objet ou un type d'objet
+M-o	Offrir un sacrifice aux dieux
+M-O	Vue d'ensemble : résumé du donjon exploré
+M-p	Prier les dieux de vous aider
+M-q	Abandonner (quitter sans sauvegarder)
+M-r	Frotter une lampe ou une pierre de touche
+M-R	Chevaucher : monter ou descendre d'une monture sellée
+M-s	S'asseoir
+M-t	Repousser les morts-vivants
+M-T	Vider un conteneur
+M-u	Désamorcer quelque chose (piège, porte ou coffre)
+M-v	Afficher les options de compilation de cette version de NetHack
+M-w	Vous essuyer le visage
+M-X	Passer du jeu normal au mode exploration

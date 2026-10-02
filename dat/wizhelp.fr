@@ -1,0 +1,66 @@
+Aide-mémoire du mode débogage :
+
+^E  ==  détecter les portes secrètes et les pièges proches
+^F  ==  cartographier le niveau ; montre pièges et couloirs secrets, pas
+        les portes secrètes
+^G  ==  créer un monstre par son nom ou sa classe
+^I  ==  identifier les objets du sac
+^T  ==  se téléporter dans le niveau
+^V  ==  se téléporter vers un autre niveau ; « ? » donne un menu des
+        destinations spéciales
+^W  ==  souhaiter un objet, un piège ou certains terrains
+^X  ==  montrer l'état, les attributs et les caractéristiques
+        (illumination étendue)
+
+#debugfuzzer    == faire jouer le jeu en pilote automatique jusqu'à une
+                   erreur ; transforme les avertissements impossible() en
+                   panique
+#levelchange    == changer le niveau d'expérience du héros
+#lightsources   == montrer les sources de lumière mobiles
+#migratemons    == montrer les monstres en migration ; [Opt] en créer
+#panic          == tester panic() (attention : la partie en cours sera
+                   terminée)
+#polyself       == se métamorphoser
+#stats          == montrer les statistiques de mémoire
+#terrain        == montrer le niveau actuel (plus d'options qu'en jeu
+                   normal)
+#timeout        == voir la file des délais et les intrinsèques temporaires
+                   du héros
+#vision         == montrer le tableau de vision
+#wizborn        == statistiques des monstres : naissances, morts,
+                   génocides, extinctions
+#wizcast        == lancer n'importe quel sort
+#wizdispmacros  == [Opt] vérifier les classifications internes de
+                   l'affichage
+#wizfliplevel   == retourner le niveau actuel du donjon
+#wizintrinsic   == régler la durée de certaines intrinsèques
+#wizkill        == retirer des monstres du jeu
+#wizloaddes     == charger et exécuter un script lua de description de
+                   niveau spécial
+#wizloadlua     == charger et exécuter un script lua
+#wizmakemap     == recréer le niveau actuel du donjon
+#wizmondiff     == [Opt] chercher les incohérences dans la difficulté des
+                   monstres
+#wizobjprobs    == [Opt] lister les probabilités réelles de création des
+                   objets
+#wizrumorcheck  == valider l'index des rumeurs ; montre aussi la première,
+                   la deuxième et la dernière gravure, épitaphe et monstre
+                   halluciné aléatoires
+#wizseenv       == montrer les vecteurs de vue des cases de la carte
+#wizsmell       == sentir un monstre
+#wiztelekinesis == pousser un monstre par magie
+#wizwhere       == montrer l'emplacement de tous les niveaux spéciaux
+#wmode          == montrer les modes des murs
+
+Options :
+debug_hunger    == supprimer la faim du héros
+debug_mongen    == supprimer la création aléatoire de monstres
+debug_overwrite_stairs
+                == permettre de remplacer les escaliers par un autre
+                   terrain
+monpolycontrol  == demander la nouvelle forme chaque fois qu'un monstre
+                   change de forme
+sanity_check    == vérifier monstres, objets et carte avant chaque tour
+wizweight       == ajouter le poids des objets à leur description
+
+[Opt] = disponible selon les réglages de compilation

@@ -3073,6 +3073,9 @@ Unix: 'language' option selects a message catalog (po/<lang>.po compiled to
 	naming messages, config file error summary; two-weapon skill lines
 	of ^X, wizard mode command messages, file compression errors,
 	arrival messages of the elemental and Astral planes
+French versions of the cmdhelp, opthelp, history, usagehlp, optmenu and
+	wizhelp files (dat/*.fr), shown by the '?' menu and '&' when French
+	messages are in use
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

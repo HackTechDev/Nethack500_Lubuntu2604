@@ -1,0 +1,432 @@
+Options booléennes indépendantes des options de compilation (valeur par
+défaut entre []) :
+(Pour savoir quelles options existent dans votre version, consultez les
+réglages actuels avec la commande « O ».)
+
+acoustics      votre personnage entend-il quelque chose                 [True]
+armorstatus    champ d'état supplémentaire résumant l'armure portée    [False]
+autodescribe   décrire le terrain sous le curseur                      [False]
+autodig        creuser en avançant si l'on manie un outil de           [False]
+               creusement
+autoopen       avancer dans une porte tente de l'ouvrir                 [True]
+autopickup     ramasser automatiquement les objets sur lesquels on      [True]
+               passe
+autoquiver     en tirant avec un carquois vide, y mettre une arme      [False]
+               adaptée de l'inventaire
+BIOS           permettre les appels au BIOS ROM d'IBM                  [False]
+blind          votre personnage est aveugle en permanence              [False]
+bones          permettre le chargement des fichiers d'os                [True]
+clicklook      regarder la carte par un clic droit de la souris        [False]
+cmdassist      aider en cas d'erreur sur une direction ou une autre     [True]
+               commande
+color          utiliser des couleurs pour les objets à       [True for micros]
+               l'écran
+confirm        demander avant de frapper un monstre apprivoisé ou       [True]
+               pacifique
+dark_room      afficher d'une autre couleur le sol hors de vue          [True]
+dropped_nopick ne pas ramasser automatiquement les objets posés         [True]
+eight_bit_tty  envoyer les caractères 8 bits directement au terminal   [False]
+extmenu        tty, curses : menu pour # (commandes étendues) ; X11 :  [False]
+               le menu a toutes les commandes (T) ou le sous-ensemble
+               traditionnel (F)
+female         obsolète ; utiliser l'option gender:female              [False]
+fixinv         garder si possible la même lettre pour le même objet     [True]
+force_invmenu  les commandes qui demandent un objet affichent un menu  [False]
+goldX          en filtrant par état béni/maudit, classer l'or comme X  [False]
+               (inconnu) plutôt que U (non maudit)
+help           donner toutes les informations disponibles avec la       [True]
+               commande /
+herecmd_menu   menu de commandes possibles lors d'un clic de souris    [False]
+               sur vous ou à côté
+hilite_pet     mettre en évidence les familiers                        [False]
+hilite_pile    mettre en évidence les tas d'objets                     [False]
+ignintr        ignorer le signal d'interruption, y compris Break       [False]
+implicit_uncursed omettre « non maudit » dans l'inventaire si possible  [True]
+legacy         afficher le message d'introduction                       [True]
+lit_corridor   afficher un couloir sombre comme éclairé s'il est en    [False]
+               vue
+lootabc        utiliser a/b/c plutôt que o/i/b pour piller             [False]
+mail           activer le démon du courrier                             [True]
+mention_decor  signaler les escaliers, autels, fontaines... sur        [False]
+               lesquels on passe, même non cachés par des objets
+mention_walls  signaler quand on avance contre un mur                  [False]
+menu_overlay   superposer les menus à l'écran, alignés à droite         [True]
+menucolors     activer les motifs MENUCOLOR pour colorer des lignes    [False]
+               des menus d'objets comme l'inventaire ; peut utiliser gras,
+               inverse, etc. même sans couleur
+nudist         commencer sans armure                                   [False]
+null           permettre l'envoi de caractères nuls au terminal ;       [True]
+               essayez de désactiver cette option (NetHack utilisera alors son
+               propre délai) si les objets en mouvement semblent se téléporter
+               d'un bout à l'autre des pièces
+pauper         commencer sans aucune possession                        [False]
+perm_invent    garder l'inventaire dans une fenêtre permanente         [False]
+pickup_stolen  ignorer pickup_types pour les objets volés               [True]
+pickup_thrown  ignorer pickup_types pour les objets lancés              [True]
+price_quotes   afficher les prix retenus des objets non identifiés     [False]
+pushweapon     en maniant une nouvelle arme, mettre l'ancienne en arme [False]
+               secondaire
+quick_farsight en général, ne pas proposer d'explorer la carte lors    [False]
+               d'une clairvoyance due au hasard
+rawio          permettre les entrées/sorties brutes                    [False]
+reroll         permettre de retirer l'inventaire de départ             [False]
+rest_on_space  la barre d'espace sert à se reposer                     [False]
+safe_pet       vous empêcher d'attaquer (sciemment) vos familiers       [True]
+safe_wait      exiger le préfixe « m » avant « . » ou « s » pour        [True]
+               attendre ou fouiller à côté d'un monstre hostile
+sanity_check   vérifier la cohérence des données                       [False]
+showexp        afficher les points d'expérience accumulés              [False]
+showrace       vous représenter par votre race plutôt que par votre    [False]
+               rôle
+showvers       afficher le numéro de version dans les lignes d'état    [False]
+silent         ne pas utiliser la sonnerie du terminal                  [True]
+sortpack       regrouper les objets de même sorte dans l'inventaire     [True]
+sparkle        afficher un scintillement pour les attaques magiques     [True]
+               auxquelles on résiste (attaque de feu sur un monstre qui y
+               résiste, par exemple)
+standout       mettre en évidence --Plus-- dans les messages           [False]
+status_updates mettre à jour les lignes d'état                          [True]
+terrainstatus  champ d'état supplémentaire décrivant l'endroit où l'on [False]
+               est
+time           afficher le temps écoulé, en tours                      [False]
+tips           afficher quelques conseils pendant la partie             [True]
+tombstone      afficher une pierre tombale à votre mort                 [True]
+toptenwin      afficher les meilleurs scores dans une fenêtre plutôt   [False]
+               que sur la sortie standard
+travel         permet de voyager par un clic de souris si c'est         [True]
+               possible ; désactivable pour qu'un clic sur la carte ne déplace
+               pas le héros ; sans effet sur le voyage par « _ »
+use_darkgray   utiliser le noir gras plutôt que le bleu pour les        [True]
+               symboles noirs
+use_inverse    mettre en évidence les monstres détectés                [False]
+verbose        commenter davantage pendant la partie                    [True]
+weaponstatus   champ d'état supplémentaire listant les armes en main   [False]
+whatis_menu    afficher un menu pour choisir un endroit de la carte    [False]
+whatis_moveskip sauter les symboles identiques en choisissant un       [False]
+               endroit de la carte
+
+
+D'autres options booléennes dépendent des options de compilation.
+
+Option booléenne si INSURANCE était défini à la compilation :
+checkpoint     sauvegarder la partie à chaque changement de niveau,     [True]
+               pour pouvoir la récupérer après un plantage
+
+Option booléenne si NEWS était défini à la compilation :
+news           afficher au démarrage les nouvelles de l'administrateur  [True]
+               du jeu
+
+Option booléenne si SCORE_ON_BOTL était défini à la compilation :
+showscore      afficher votre score approximatif                       [False]
+
+Option booléenne si TIMED_DELAY était défini à la compilation (tty ou
+curses seulement) :
+timed_delay    sous unix et VMS, utiliser une minuterie plutôt que      [True]
+               d'envoyer des données supplémentaires à l'écran pour marquer
+               une pause d'effet visuel ; sous MSDOS sans la bibliothèque
+               termcap, faire ou non une pause pour l'effet visuel.
+
+Option booléenne si ALTMETA était défini à la compilation :
+altmeta        sous unix et VMS, traiter la séquence de deux           [False]
+               caractères « Échap c » comme M-c (Méta+c, 8e bit à 1) quand
+               nethack lit une commande au clavier.
+
+Option booléenne si TILES_IN_GLYPHMAP était défini à la compilation
+(MSDOS) :
+preload_tiles  charger ou non les tuiles en mémoire au début de la      [True]
+               partie. Cela accélère l'affichage des tuiles mais utilise plus
+               de mémoire.
+
+Option booléenne si TTY_TILES_ESCCODES était défini à la compilation
+(tty seulement) :
+vt_tiledata    insérer des marqueurs d'échappement de tuiles dans la   [False]
+               sortie
+
+Option booléenne si TTY_SOUND_ESCCODES était défini à la compilation
+(tty seulement) :
+vt_sounddata   insérer des marqueurs d'échappement de sons dans la     [False]
+               sortie
+
+Options booléennes disponibles selon les interfaces prises en charge par
+le programme.  S'il en prend plusieurs en charge, certaines peuvent
+sembler réglables mais n'avoir aucun effet si vous utilisez une autre
+interface que celle(s) à laquelle elles sont destinées :
+ascii_map      carte en texte, désactive tiles_map ; Qt, X11
+guicolor       curses
+hitpointbar    curses, tty, interface Windows si statushilites est actif ; Qt
+               sans statushilites ; X11 si « fancy_status » est désactivé
+               (dans les ressources X) et statushilites actif
+popup_dialog   curses, Qt, interface Windows
+selectsaved    tty (Qt et l'interface Windows le font toujours)
+splash_screen  curses, Qt, interface Windows
+tiled_map      carte en tuiles, désactive ascii_map ; Qt, X11
+
+Options booléennes disponibles en mode débogage (mode magicien) :
+menu_tab_sep   mise en forme des menus -- ne pas toucher
+monpolycontrol le joueur choisit la nouvelle forme des monstres métamorphes
+montelecontrol le joueur choisit la destination des monstres téléportés
+travel_debug   afficher sur la carte l'état de la recherche de chemin du
+               voyage
+wizweight      afficher le poids des objets dans l'inventaire
+
+Toute option booléenne peut être mise à vrai en la citant parmi les options
+réglées, ou à faux en faisant précéder son nom de « ! » ou « no ».  On
+peut aussi utiliser la syntaxe des options composées : « nom:true » et
+« nom:false ».
+
+ - - - - -
+
+Les options composées s'écrivent nom_option:valeur.
+
+Options composées réglables pendant la partie :
+
+autounlock    action à tenter sur une porte ou un conteneur         [Apply-Key]
+              verrouillé : None, ou une ou plusieurs de Untrap +
+              Apply-Key + Kick + Force ; Untrap passe en premier s'il est
+              présent ; les autres s'appliquent si vous répondez « non » à
+              « chercher des pièges ? » ; si vous répondez « oui », la
+              fouille ne trouve pas forcément un piège présent et utilise
+              le reste du tour quoi qu'il arrive ; Kick ne sert qu'aux
+              portes et Force qu'aux conteneurs ; ils ne sont tentés que
+              si Untrap est absent ou passé et si Apply-Key est absent ou
+              que vous n'avez pas d'outil de déverrouillage ou refusez
+              de vous en servir
+boulder       remplacer le symbole par défaut des rochers                [`]
+crash_email   adresse électronique pour les rapports de plantage          []
+crash_name    nom à utiliser dans les rapports de plantage                []
+crash_urlmax  longueur maximale d'une URL de rapport de plantage          []
+disclose      les informations qui vous sont proposées   [ni na nv ng nc no]
+              à la fin de la partie
+              (liste de valeurs de deux caractères séparées par des espaces ;
+              préfixe : « + » toujours montrer, « - » ne jamais montrer,
+              « n » demander avec « non » par défaut, « y » demander avec
+              « oui » par défaut, « a » demander l'ordre de tri (suffixe
+              « v » seulement) ;
+              suffixe : « i » inventaire, « a » attributs, « v » monstres
+              vaincus, « g » monstres génocidés et éteints, « c » conduite
+              et exploits, « o » vue d'ensemble du donjon)
+fruit         le nom d'un fruit que vous aimez manger          [slime mold]
+              (une fantaisie que NetHack utilise de temps en temps).
+hilite_status règle de mise en évidence d'un champ d'état                []
+              (plusieurs règles sont possibles)
+menustyle     interface de sélection de plusieurs objets :           [Full]
+              Traditional -- demander les classes voulues, puis
+                             demander objet par objet dans ces classes ;
+              Combination -- demander les classes voulues, puis
+                             choisir les objets dans un menu ;
+              Full        -- menu des classes voulues, puis menu des objets ;
+              Partial     -- pas de filtre par classe, menu de tous les
+                             objets ;
+              seule la première lettre (« T », « C », « F », « P ») compte
+              (avec Traditional, beaucoup d'actions acceptent la
+              pseudo-classe « m » pour choisir dans un menu : Combination
+              pour une fois.)
+menu_objsyms  ajouter ou non les symboles des classes d'objets aux menus : [4]
+              0 - none    -- pas de symboles d'objets dans les menus ;
+              1 - headers -- symbole de la classe à la fin des titres ;
+              2 - entries -- symbole de l'objet (le même que celui de la
+                             classe en ASCII) sur chaque ligne du menu ;
+              3 - both    -- 1 et 2 réunis ;
+              4 - conditional  -- comme 2, seulement s'il n'y a pas de titre ;
+              5 - one-or-other -- 1 et 4 réunis ;
+              0 et 1 marchent avec toutes les interfaces ; 2 à 5 sont pris
+              en charge par tty et curses
+msg_window    rappel des messages par ^P avec l'interface tty :          [s]
+              single      -- un message à la fois
+              full        -- fenêtre entière avec tous les messages gardés
+              reverse     -- comme full, du plus récent au plus ancien
+              combination -- les deux premiers ^P successifs montrent un
+                             message, le troisième les montre tous
+msg_window    rappel des messages par ^P avec l'interface curses :       [r]
+              reverse     -- fenêtre entière, du plus récent au plus ancien
+              full        -- du plus ancien au plus récent, en commençant
+                             par la dernière page pour voir les messages
+                             les plus récents
+number_pad    déplacements par lettres ou par chiffres :                 [0]
+               0 -- déplacements traditionnels hjkl + yubn (par défaut) ;
+               1 -- les chiffres déplacent, pour le pavé numérique ;
+               2 -- comme 1, mais « 5 » sert de préfixe « g » et non « G » ;
+               3 -- chiffres d'un pavé de téléphone (1,2,3 en haut,
+                    7,8,9 en bas) ;
+               4 -- pavé de téléphone (3) avec la préférence de « 5 » (2) ;
+              -1 -- « qwertz » : déplacements par lettres mais « z » et
+                    « y » échangés.
+              Régler number_pad (à une valeur positive) change la façon dont
+              toutes les touches de chiffres sont traitées, pas seulement
+              celles du pavé numérique.
+packorder     la liste des symboles des sortes d'objets   [")[%?+!=/(*`0_]
+              qui donne l'ordre d'affichage de l'inventaire (et d'autres
+              choses) si l'option « sortpack » est active
+              (Si vous n'indiquez que certaines sortes, les autres sont
+              ajoutées à la fin dans l'ordre par défaut.)
+paranoid_confirmation  liste, séparée     [paranoid_confirm:pray swim]
+              par des espaces, des cas où l'on veut une autre confirmation
+              Confirm -- quand « yes » est exigé, exiger aussi « no » pour
+                      refuser ; exige aussi yes plutôt que y pour pray,
+                      trap, AutoAll
+              quit    -- yes plutôt que y pour abandonner ou passer en mode
+                      exploration
+              die     -- yes plutôt que y pour accepter de mourir (en mode
+                      exploration ou débogage)
+              bones   -- yes plutôt que y pour sauver les os en mode débogage
+              attack  -- yes plutôt que y pour attaquer un monstre pacifique
+              wand-break  -- yes plutôt que y pour briser une baguette
+              eating  -- yes plutôt que y pour continuer à manger
+              Were-change -- yes plutôt que y pour changer de forme par
+                      lycanthropie quand le héros contrôle la métamorphose ;
+              pray    -- y pour confirmer une prière ; actif par défaut
+              trap    -- y pour entrer dans un piège connu, sauf s'il est
+                      inoffensif ;
+              swim    -- exiger le préfixe m pour entrer dans l'eau ou la
+                      lave quand le héros l'a vue et n'est pas diminué ;
+                      actif par défaut ;
+              AutoAll -- y pour confirmer le choix « A » du menu de filtre
+                      par classe avec menustyle:Full ;
+              Remove  -- toujours choisir dans l'inventaire pour « R » et
+                      « T », même avec un seul objet à retirer ou ôter
+perminv_mode  si l'interface a une fenêtre d'inventaire permanente       [a]
+              et que l'option perm_invent est vraie, règle ce qui
+              s'affiche :
+              none/off -- comme si perm_invent était faux
+              all/on   -- l'inventaire sauf l'or (par défaut)
+              full     -- l'inventaire avec l'or
+              in-use   -- seulement les objets portés et en main
+              (la prise en charge de perm_invent par tty ajoute quelques
+              choix qui modifient all et full)
+pickup_burden quand vous ramassez un objet qui dépasse ce niveau         [S]
+              de charge (Unencumbered, Burdened, streSsed, straiNed,
+              overTaxed ou overLoaded), on vous demande s'il faut continuer.
+pickup_types  la liste des symboles des sortes d'objets à ramasser        []
+              automatiquement quand cette option est active ; une liste
+              vide veut dire « tout »
+pile_limit    nombre d'objets au sol à partir duquel « il y a des        [5]
+              objets ici » s'affiche au lieu de leur liste quand vous
+              passez dessus.  (0 veut dire « toujours lister ».)
+runmode       fréquence de mise à jour de la carte pendant les        [run]
+              déplacements en plusieurs pas (course ou voyage) :
+              teleport -- pas de mise à jour avant la fin du déplacement ;
+              run      -- mise à jour régulière (tous les sept pas) ;
+              walk     -- mise à jour à chaque pas ;
+              crawl    -- comme walk, avec une pause après chaque pas.
+              (Cela ne change que l'affichage, pas le déplacement.)
+scores        les parties de la liste des scores à    [!own/3 top/2 around]
+              afficher en fin de partie.  Vous choisissez une combinaison
+              des meilleurs scores, des scores qui les entourent et de
+              tous vos scores.
+sortdiscoveries ordre de la liste des objets découverts                  [o]
+              o -- dans l'ordre de découverte, par classe
+              s -- l'ordre « loot » de sortloot
+              c -- par ordre alphabétique, par classe
+              a -- par ordre alphabétique, toutes classes confondues
+sortloot      ordre de présentation d'un ensemble d'objets               [n]
+              none -- pas de tri
+              loot -- trier les tas d'objets au sol et dans les conteneurs
+              full -- comme loot, plus les objets de l'inventaire
+sortvanquished ordre de la liste des monstres vaincus                    [t]
+              t -- traditionnel, par niveau des monstres
+              d -- par difficulté des monstres
+              a -- alphabétique, d'abord les monstres uniques
+              c -- par classe, du niveau le plus bas au plus haut
+              n -- par nombre, du plus grand au plus petit
+              z -- par nombre, du plus petit au plus grand
+statushilites afficher ou non les mises en évidence d'état (si non nul)  [0]
+              et pendant combien de tours afficher les mises en évidence
+              temporaires (règles hilite_status « up », « down » et
+              « changed »)
+statuslines   lignes d'état étendues (3) ou condensées (2)               [2]
+              (pour tty et curses : 2 est traditionnel, 3 recommandé ;
+              pour Qt : 3 est traditionnel et 2 recommandé)
+suppress_alert désactiver divers avertissements sur des changements      []
+              de jeu ou d'interface propres à une version, comme celui
+              donné pour la commande « Q » indiquant qu'on abandonne
+              désormais par #quit
+              (par exemple, suppress_alert:3.3.1 supprime celui-ci et tous
+              ceux ajoutés dans cette version ou avant)
+versinfo      ce qui s'affiche quand showvers est vrai              [1 or 4]
+              (la valeur par défaut dépend de l'état de développement)
+whatis_coord  inclure ou non les coordonnées sur la carte quand          [n]
+              autodescribe est actif pour les commandes « / » et « ; ».
+              La valeur est la première lettre de l'un des choix
+              compass      -- (par rapport à vous : « est », « 3s »,
+                              « 2n,4o »)
+              full compass -- (« est », « 3sud », « 2nord,4ouest »)
+              map          -- <x,y>        (la colonne x=0 n'est pas utilisée)
+              screen       -- [ligne,colonne] (ligne décalée comme sous tty)
+              none         -- pas de coordonnées.
+whatis_filter filtre des endroits de la carte proposés lors du choix     [n]
+              d'un endroit, par exemple pour la commande de voyage.
+              La valeur est l'une de
+              n - pas de filtre
+              v - seulement les endroits en vue
+              a - les endroits de la même zone (pièce, couloir, etc.)
+
+Options composées réglables seulement au démarrage :
+
+align      votre alignement de départ (lawful, neutral, chaotic     [random]
+           ou random).  Beaucoup de rôles restreignent le choix.
+           La première lettre suffit.
+catname    nom de votre familier de départ si c'est un chaton         [none]
+dogname    nom de votre familier de départ si c'est un petit chien    [none]
+           Plusieurs rôles qui commencent avec un chien en ont un dont le
+           nom est déjà fixé (par exemple « Hachi » pour le Samouraï),
+           mais dogname le remplace.
+gender     votre sexe de départ (male, female ou random).           [random]
+           La première lettre suffit.  Les anciennes options booléennes
+           « male » et « female » marchent encore, mais l'option
+           « gender » l'emporte.
+horsename  nom de votre familier de départ si c'est un poney          [none]
+menu_*     touches de raccourci des commandes des menus.
+           Voici toutes les commandes, avec leur touche par défaut,
+           suivies des interfaces qui les prennent en charge :
+           (t tty, c curses, w interface Windows, x X11, q Qt)
+           menu_first_page    aller à la première page d'un menu  [^](tcwxq)
+           menu_last_page     aller à la dernière page d'un menu  [|](tcwxq)
+           menu_next_page     passer à la page suivante           [>](tcwxq)
+           menu_previous_page revenir à la page précédente        [<](tcwxq)
+           menu_shift_left    décaler la vue à gauche
+                              (perm_invent seulement)             [{](cx)
+           menu_shift_right   décaler la vue à droite
+                              (perm_invent seulement)             [}](cx)
+           menu_select_all    choisir tous les éléments d'un menu [.](tcwxq)
+           menu_select_page   choisir tous ceux de cette page     [,](tcwq)
+           menu_deselect_all  désélectionner tout le menu         [-](tcwxq)
+           menu_deselect_page désélectionner toute cette page     [\](tcwq)
+           menu_invert_all    inverser tout le menu               [@](tcwxq)
+           menu_invert_page   inverser cette page                 [~](tcwq)
+           menu_search        demander un texte et inverser les   [:](tcwxq)
+                              éléments qui y correspondent
+msghistory nombre de messages de la ligne du haut à garder            [20]
+name       le nom de votre personnage    [par défaut le nom d'utilisateur
+           sur les systèmes multi-utilisateurs ; « Qui êtes-vous ? » sur les
+           systèmes mono-utilisateurs ou si le nom d'utilisateur est
+           générique comme « games »]
+           MS Windows est traité en mono-utilisateur, même s'il a des noms
+           d'utilisateur.  Un nom de personnage donné sur la ligne de
+           commande (en général par « nethack -u monnom », selon le
+           système et la façon d'y accéder) remplace l'option « name ».
+pettype    votre sorte de familier préférée (cat, dog, horse,      [random]
+           random ou none), si votre rôle en permet plusieurs (ou pour
+           éviter d'avoir un familier).  La plupart des rôles permettent
+           le chien ou le chat, pas le cheval.  Pour les rôles qui
+           imposent une sorte, pettype est ignoré sauf s'il vaut « none ».
+playmode   jeu normal, mode exploration sans score ou mode débogage [normal]
+race       votre race de départ (par exemple race:Human, race:Elf). [random]
+           La plupart des rôles restreignent le choix de la race.
+role       votre rôle de départ (par exemple role:Barbarian,        [random]
+           role:Valk).  Vous pouvez n'en donner que les premières
+           lettres, mais le premier rôle qui correspond sera choisi ;
+           mieux vaut donc écrire le nom du rôle le plus complètement
+           possible.  Vous pouvez encore indiquer le rôle à la suite de
+           l'option « name » (par exemple name:Vic-V), mais l'option
+           « role » l'emporte.
+windowtype système de fenêtres à utiliser   [dépend du système et de la
+           compilation]    si plusieurs choix sont possibles.
+           Certaines versions du programme n'en prennent en charge qu'un ;
+           dans ce cas, inutile de l'indiquer.  La liste des types de
+           fenêtres pris en charge s'obtient pendant la partie avec la
+           commande #version, ou en dehors en lisant le fichier texte
+           « options » créé lors de la compilation.
+
+Quelques exemples de listes d'options :
+!autopickup,!tombstone,name:Gandalf,scores:own/3 top/2 around
+female,nonews,dogname:Rover,rest_on_space,!verbose,menustyle:traditional

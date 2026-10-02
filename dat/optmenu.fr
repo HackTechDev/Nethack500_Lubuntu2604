@@ -1,0 +1,43 @@
+ Comment fonctionne le réglage des options en cours de partie :
+
+ Le menu simple des options montre un petit nombre d'options et applique
+ chaque choix aussitôt, puis s'affiche de nouveau pour permettre d'autres
+ changements.
+
+ Le menu complet des options montre la valeur actuelle de toutes les
+ options et vous laisse choisir celles que vous voulez changer.  Les
+ choisir ne change cependant rien : les changements ont lieu quand vous
+ fermez le menu.  Dans la plupart des interfaces de NetHack, on ferme le
+ menu avec la touche <Entrée> ; d'autres peuvent demander de cliquer sur
+ [ok].  La touche <Échap> ou un clic sur [cancel] ferme le menu en
+ abandonnant les changements en attente.
+
+ Le menu des options est trop long pour tenir sur un écran.  Certaines
+ interfaces découpent les menus en pages : la touche « > » passe à la page
+ suivante et « < » revient en arrière.  Elles réutilisent en général les
+ lettres de sélection (a-z) à chaque page.  D'autres n'ont qu'une longue
+ page avec une barre de défilement ; après a-z et A-Z, les éléments n'ont
+ plus de lettre de sélection et se choisissent en cliquant dessus.
+
+ Pour les options booléennes (True/False, activé/désactivé), il suffit de
+ les choisir.  Pour les options composées (qui prennent un nombre, un choix
+ parmi plusieurs valeurs ou quelque chose de plus complexe, et qui sont
+ listées dans une seconde partie après les booléennes), on vous demandera
+ une nouvelle valeur.
+
+ Au début de chacune des deux parties figurent les valeurs de quelques
+ options non sélectionnables, qui ne se règlent qu'avant le début de la
+ partie.  Après la partie des options composées viennent des options
+ « autres », qui prennent un ensemble de valeurs et sont souvent plus
+ compliquées à manier.
+
+ Certains changements ne durent que jusqu'à la sauvegarde (ou l'abandon)
+ de la partie en cours.  Ce sont en général des réglages qui pourraient ne
+ pas convenir si la partie était restaurée sur un autre ordinateur aux
+ capacités différentes.  Les autres options sont enregistrées dans la
+ sauvegarde de cette partie et gardent leur valeur après la restauration.
+ Aucun réglage du menu des options ne touche les autres parties, déjà
+ sauvegardées ou nouvelles.  Pour cela, il faut modifier votre fichier de
+ configuration et y indiquer les réglages voulus.  Même alors, la
+ restauration d'une partie qui contient des valeurs d'options sauvegardées
+ utilisera ces valeurs-là.

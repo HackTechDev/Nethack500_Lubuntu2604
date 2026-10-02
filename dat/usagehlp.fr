@@ -1,0 +1,150 @@
+Voici une description succincte des arguments de la ligne de commande de
+nethack.  Elle est orientée UNIX (y compris ses descendants comme linux et
+macOS) et peut ne pas être exacte pour d'autres plates-formes.
+
+Au début du jeu, s'il existe une sauvegarde pour le nom de personnage
+choisi, elle est restaurée ; sinon, une nouvelle partie commence sous ce
+nom.
+
+nethack
+  sans argument ; utilise le nom de personnage de l'entrée
+  OPTIONS=name:nom-du-personnage du fichier de configuration, ou à défaut
+  le nom d'utilisateur du joueur.
+
+nethack -u nom-du-personnage [-X ou -D]
+  '-u nom-du-personnage' indique le nom du personnage de cette partie ;
+       -u doit être en minuscule ; l'espace entre -u et le nom peut être
+       omis ;
+  '-X' jouer en mode exploration sans score, aussi appelé mode découverte ;
+       -X doit être en majuscule ; le personnage commence avec une baguette
+       de souhaits et le joueur peut choisir d'être sauvé et de continuer
+       si le personnage meurt ;
+  '-D' lancer en mode débogage, aussi appelé mode magicien ; -D doit être
+       en majuscule ; si le joueur n'y est pas autorisé, nethack passe en
+       -X ; s'il l'est, le nom du personnage devient « wizard ».
+
+  Un nom de personnage peut avoir un suffixe indiquant tout ou partie du
+  rôle, de la race, du sexe et de l'alignement, comme -u Conan-Bar-Hum-Mal-Neu
+  ou -u Tim-Wiz.  Chaque élément présent doit compter au moins trois lettres,
+  mais peut être plus long ; la casse n'importe pas.  Voir aussi -p et -r,
+  ci-dessous.
+
+nethack -p Ppp -r Rrr [-@]
+  '-p Ppp' indique le rôle ; p pour « profession », car -r est déjà pris ;
+       'Ppp' est formé d'au moins trois lettres du nom du rôle, comme Val
+       pour Valkyrie ; contrairement à -p lui-même, la casse de Ppp
+       n'importe pas
+  '-r Rrr' indique la race ou l'espèce : Hum[an], Elf, Orc, Dwa[rf],
+       Gno[me] ;
+  '-@' forcer un démarrage sans question ; le rôle, la race, le sexe et
+       l'alignement qui ne sont indiqués ni sur la ligne de commande ni dans
+       le fichier de configuration sont tirés au hasard sans rien demander ;
+       il peut falloir protéger l'arobase en la faisant précéder d'une
+       barre oblique inverse.
+
+  L'ancienne forme du rôle est toujours acceptée : -A ou -Arc[heologist],
+  -B ou -Bar[barian], -C ou -Cav[eman] ou -Cavew[oman], -H ou -Hea[ler],
+  -K ou -Kni[ght], -M ou -Mon[k], -P ou -Pri[est] ou -Prieste[ss],
+  -Ran[ger], -R ou -Rog[ue], -S ou -Sam[urai], -T ou -Tou[rist],
+  -V ou -Val[kyrie], -W ou -Wiz[ard].  La forme d'une lettre doit être en
+  majuscule, celle de trois lettres ou plus peut être de n'importe quelle
+  casse.  Il n'y a pas d'option d'une lettre pour le rôle de Rôdeur.
+
+nethack -DEC[graphics]
+nethack -IBM[graphics]
+  choisit le jeu de symboles DEC ou IBM pour dessiner des traits sur une
+  carte en texte ; peut être ignoré selon l'interface, ou sans effet,
+  voire brouillé, selon les capacités de l'affichage ; -DECgraphics et
+  -IBMgraphics s'excluent mutuellement ; ils s'écrivent dans n'importe
+  quelle casse mais avec au moins trois lettres.
+
+nethack -wIii
+nethack --windowtype:Iii
+  où 'Iii' désigne une interface : tty, curses, X11 ou Qt ; utile
+  seulement si le programme a été compilé avec plusieurs interfaces (la
+  commande '#version' du jeu l'indique) ; remplace OPTIONS=windowtype:Iii du
+  fichier de configuration et la valeur par défaut de la compilation ; '-w'
+  ou '--windowtype' doit être en minuscules, le nom de l'interface peut être
+  de n'importe quelle casse ; les variantes '--windowtype Iii' et '-w Iii'
+  marchent aussi.
+
+  Sous Windows, nethack.exe prend en charge tty ou curses ou les deux selon
+  les réglages au moment de la compilation ; nethackW.exe prend en charge
+  mswin (aussi appelée Win GUI) et éventuellement curses.
+  Sous MS-DOS, le programme prend en charge tty ou curses ou les deux.
+
+nethack -n
+  ne pas afficher le fichier 'news' s'il est présent dans le répertoire de
+  nethack.
+
+nethack --nethackrc:fichier-RC
+  utiliser fichier-RC au lieu du fichier de configuration par défaut (en
+  général '~/.nethackrc') ; le nom doit inclure le chemin complet, sauf si
+  le fichier est dans le répertoire de nethack ;
+nethack --no-nethackrc
+  n'utiliser aucun fichier de configuration ; équivaut à
+  --nethackrc:/dev/null, qui se comporte comme un fichier vide.
+
+nethack -dRép
+nethack --directory:Rép
+  peut remplacer la valeur de NETHACKDIR fixée à la compilation par
+  l'emplacement Rép ; si on l'utilise, il doit précéder les autres
+  arguments.
+
+Les options ci-dessus peuvent être combinées sur une même ligne de
+commande ; elles sont listées séparément pour la lisibilité.
+
+*******
+
+Autres options qui effectuent une action puis quittent au lieu de lancer le
+jeu :
+
+nethack -s
+nethack --scores
+  afficher les scores du personnage par défaut ; arguments facultatifs :
+nethack -s -v
+  afficher les scores de toutes les versions présentes dans le fichier des
+  meilleurs scores (record) s'il contient des scores d'anciennes versions ;
+  par défaut, seuls les scores de la version actuelle sont affichés ; '-v'
+  doit suivre immédiatement -s ou --scores, avant tout nom ou -p ou -r ;
+nethack -s nom-du-personnage [nom2 [nom3 [...]]]
+  afficher les scores d'un ou plusieurs noms de personnage (peut rester
+  sans effet si PERS_IS_UID=1 est indiqué dans le fichier sysconf de
+  nethack) ; les noms peuvent être précédés de '-u', sans obligation ; le
+  nom spécial « all » affiche tous les scores qui satisfont les autres
+  critères ;
+nethack -s -p Ppp -r Rrr
+  afficher les scores de certains rôles ou races ; on peut en donner
+  plusieurs ; si '-p' et '-r' sont tous deux utilisés, les scores qui
+  correspondent à l'un ou l'autre sont affichés, et non ceux qui
+  correspondent aux deux ;
+nethack -dRép -s
+nethack --directory:Rép -s
+  comme ci-dessus ; le répertoire de remplacement, s'il est indiqué, doit
+  venir en premier.
+
+nethack --version ou --version:copy ou --version:dump ou --version:show
+  '--version' affiche le numéro de version du programme, avec la date et
+  l'heure de sa compilation, puis quitte ;
+  '--version:copy' affiche le numéro de version et le copie aussi dans le
+  presse-papiers du système (devrait marcher sous macOS et Windows, peut-être
+  pas ailleurs) pour pouvoir le coller dans un courriel ou un formulaire de
+  contact, puis quitte ;
+  '--version:dump' affiche plusieurs valeurs internes, puis quitte ;
+  '--version:show' comme '--version'.
+
+nethack --showpaths
+  liste les emplacements attendus des divers fichiers et répertoires, puis
+  quitte ; indique notamment le nom et l'emplacement du fichier de
+  configuration, qui varie selon la plate-forme.
+
+nethack --usage
+nethack --help
+  afficher ce texte ; 'nethack -?' et 'nethack ?' marchent aussi, mais il
+  peut falloir protéger le point d'interrogation pour que le shell ne
+  l'intercepte pas.
+
+*******
+
+Ce texte est disponible pendant la partie dans le menu de la commande '?'
+du jeu, ou avec 'nethack --usage | more' dans un terminal.
