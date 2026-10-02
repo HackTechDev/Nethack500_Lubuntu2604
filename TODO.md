@@ -187,7 +187,7 @@ dans `dat/*.lua` (Sokoban, Mines, Oracle, tutoriel...).
   en anglais), tableau des scores (cause de la mort enregistrée en
   anglais)). L'aide du curseur et la pierre tombale sont traduites
   (cette dernière à
-  l'affichage (les causes de mort autres qu'un monstre restent souvent en
+  l'affichage ; les causes de mort composées dynamiquement restent en
   anglais). Le menu simple `O`, les
   descriptions des commandes étendues, le résumé de fin de partie,
   `#conduct`, les exploits, `#overview` et l'illumination `^X` sont

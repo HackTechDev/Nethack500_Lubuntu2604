@@ -136,42 +136,149 @@ rip_word_i18n(char *line, const char *en)
         (void) strsubst(line, en, tr);
 }
 
+#if 0
+/* death reasons (svk.killer.name) translated for the tombstone:
+   msgctxt "killer a" with the indefinite article, else "killer" */
+NC_("killer", "a grappling hook")
+NC_("killer a", "acidic chair")
+NC_("killer a", "acidic corpse")
+NC_("killer a", "acidic glob")
+NC_("killer a", "alchemic blast")
+NC_("killer a", "anti-magic implosion")
+NC_("killer", "axing a hard object")
+NC_("killer a", "bear trap")
+NC_("killer", "boiling water")
+NC_("killer a", "cadaver")
+NC_("killer a", "carnivorous bag")
+NC_("killer a", "closing drawbridge")
+NC_("killer a", "collapsing drawbridge")
+NC_("killer", "colliding with the ceiling")
+NC_("killer", "committed suicide")
+NC_("killer", "contusion from a small passage")
+NC_("killer", "crunched in the head by an iron ball")
+NC_("killer", "crushed to death underneath a drawbridge")
+NC_("killer a", "cursed throne")
+NC_("killer", "dangerous winds")
+NC_("killer", "deliberately meeting Medusa's gaze")
+NC_("killer", "deliberately plunged into a pit")
+NC_("killer", "dragged downstairs by an iron ball")
+NC_("killer a", "electric chair")
+NC_("killer a", "electric shock")
+NC_("killer", "elementary physics")
+NC_("killer", "exhaustion")
+NC_("killer a", "exploding crystal ball")
+NC_("killer a", "exploding drawbridge")
+NC_("killer a", "exploding ring")
+NC_("killer a", "exploding rune")
+NC_("killer a", "exploding wand")
+NC_("killer a", "explosion")
+NC_("killer", "falling down a mine shaft")
+NC_("killer a", "falling drawbridge")
+NC_("killer a", "falling object")
+NC_("killer", "falling off a ladder")
+NC_("killer a", "falling rock")
+NC_("killer", "fell from a drawbridge")
+NC_("killer", "fell into a chasm")
+NC_("killer", "fell into a pit")
+NC_("killer a", "gas cloud")
+NC_("killer", "genocidal confusion")
+NC_("killer", "hurt in a chasm")
+NC_("killer a", "imperious order")
+NC_("killer a", "iron ball collision")
+NC_("killer", "jumping out of a bear trap")
+NC_("killer", "killed by petrification")
+NC_("killer", "killed while stuck in creature form")
+NC_("killer a", "land mine")
+NC_("killer", "leg damage from being pulled out of a bear trap")
+NC_("killer a", "magical explosion")
+NC_("killer a", "mildly contaminated potion")
+NC_("killer", "molten lava")
+NC_("killer a", "potion of acid")
+NC_("killer a", "potion of holy water")
+NC_("killer a", "potion of unholy water")
+NC_("killer a", "propelled potion")
+NC_("killer a", "psychic blast")
+NC_("killer", "quaffing a burning potion of oil")
+NC_("killer a", "quit while already on Charon's boat")
+NC_("killer a", "residual undead turning effect")
+NC_("killer a", "riding accident")
+NC_("killer a", "rotted glob")
+NC_("killer a", "rotten lump of royal jelly")
+NC_("killer", "rusting away")
+NC_("killer a", "scroll of earth")
+NC_("killer a", "scroll of fire")
+NC_("killer a", "scroll of genocide")
+NC_("killer", "self-genocide")
+NC_("killer", "sipping boiling water")
+NC_("killer", "sitting in lava")
+NC_("killer", "sitting on an iron spike")
+NC_("killer", "sitting on lava")
+NC_("killer", "slimicide")
+NC_("killer", "squished under a boulder")
+NC_("killer", "starvation")
+NC_("killer a", "system shock")
+NC_("killer a", "thrown potion")
+NC_("killer", "tumbling down a flight of stairs")
+NC_("killer", "turned into green slime")
+NC_("killer a", "unrefrigerated sip of juice")
+NC_("killer a", "unsuccessful polymorph")
+NC_("killer a", "wand")
+NC_("killer", "went to heaven prematurely")
+NC_("killer", "tasting cockatrice meat")
+NC_("killer", "touching a cockatrice corpse")
+#endif
+
 /* translated death description for the tombstone; formatkiller() keeps
    the English one that is written to the record and log files */
 staticfn void
 killer_i18n(char *buf, unsigned siz, int how)
 {
-    char eng[BUFSZ], *kname;
-    const char *pfx = "", *tr;
     static const char *const prefixes[] = {
+        /* DIED, CHOKING, POISONING, STARVING, */
         "killed by ", "choked on ", "poisoned by ", "died of ",
+        /* DROWNING, BURNING, DISSOLVED, CRUSHING, */
         "drowned in ", "burned by ", "dissolved in ", "crushed to death by ",
-        "petrified by ", "turned to slime by ", 0
+        /* STONING, TURNED_SLIME, GENOCIDED, */
+        "petrified by ", "turned to slime by ", "killed by ",
+        /* PANICKED, TRICKED, QUIT, ESCAPED, ASCENDED */
+        "", "", "", "", ""
     };
-    int i;
+    const char *pfx = "", *tr = 0;
+#ifdef NHI18N
+    const char *kname = svk.killer.name;
+#endif
 
-    formatkiller(eng, sizeof eng, how, FALSE);
-    kname = eng;
-    for (i = 0; prefixes[i]; ++i)
-        if (!strncmp(eng, prefixes[i], strlen(prefixes[i]))) {
-            pfx = flags.female ? C_("feminine killed by", prefixes[i])
-                               : C_("killed by", prefixes[i]);
-            if (pfx == prefixes[i]) /* no feminine form */
-                pfx = C_("killed by", prefixes[i]);
-            kname = eng + strlen(prefixes[i]);
-            break;
+    if (svk.killer.format == KILLED_BY || svk.killer.format == KILLED_BY_AN) {
+        const char *en = (how >= 0 && how < SIZE(prefixes)) ? prefixes[how]
+                                                            : "";
+
+        if (*en) {
+            pfx = flags.female ? C_("feminine killed by", en)
+                               : C_("killed by", en);
+            if (pfx == en) /* no feminine form */
+                pfx = C_("killed by", en);
         }
-    /* "a jackal" -> "un chacal": monster names with their article */
-    if (!strncmp(kname, "a ", 2) && strcmp((tr = C_("monster", kname + 2)),
-                                           kname + 2))
-        tr = i18n_an_ctx("monster", kname + 2);
-    else if (!strncmp(kname, "an ", 3)
-             && strcmp((tr = C_("monster", kname + 3)), kname + 3))
-        tr = i18n_an_ctx("monster", kname + 3);
-    else if (strcmp((tr = C_("monster", kname)), kname))
-        ; /* unique monster or plain name */
-    else
-        tr = _(kname);
+    }
+#ifdef NHI18N
+    if (svk.killer.format == KILLED_BY_AN) {
+        if (strcmp(C_("monster", kname), kname))
+            tr = i18n_an_ctx("monster", kname);
+        else
+            tr = i18n_lookup("killer a", kname);
+    } else {
+        if (strcmp(C_("monster", kname), kname))
+            tr = C_("monster", kname);
+        else
+            tr = i18n_lookup("killer", kname);
+    }
+#endif
+    if (!tr) { /* no translation: the English description */
+        char eng[BUFSZ];
+
+        formatkiller(eng, sizeof eng, how, FALSE);
+        Snprintf(buf, siz, "%s", eng);
+        return;
+    }
     Snprintf(buf, siz, "%s%s", pfx, tr);
 }
 

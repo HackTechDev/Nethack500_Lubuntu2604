@@ -48980,6 +48980,441 @@ msgctxt "tombstone"
 msgid "     PEACE      "
 msgstr "      PAIX      "
 
+#: src/rip.c:142
+msgctxt "killer"
+msgid "a grappling hook"
+msgstr "un grappin"
+
+#: src/rip.c:143
+msgctxt "killer a"
+msgid "acidic chair"
+msgstr "un fauteuil acide"
+
+#: src/rip.c:144
+msgctxt "killer a"
+msgid "acidic corpse"
+msgstr "un cadavre acide"
+
+#: src/rip.c:145
+msgctxt "killer a"
+msgid "acidic glob"
+msgstr "un glob acide"
+
+#: src/rip.c:146
+msgctxt "killer a"
+msgid "alchemic blast"
+msgstr "une explosion alchimique"
+
+#: src/rip.c:147
+msgctxt "killer a"
+msgid "anti-magic implosion"
+msgstr "une implosion antimagique"
+
+#: src/rip.c:148
+msgctxt "killer"
+msgid "axing a hard object"
+msgstr "un coup de hache sur un objet dur"
+
+#: src/rip.c:149
+msgctxt "killer a"
+msgid "bear trap"
+msgstr "un piège à ours"
+
+#: src/rip.c:150
+msgctxt "killer"
+msgid "boiling water"
+msgstr "de l'eau bouillante"
+
+#: src/rip.c:151
+msgctxt "killer a"
+msgid "cadaver"
+msgstr "un cadavre"
+
+#: src/rip.c:152
+msgctxt "killer a"
+msgid "carnivorous bag"
+msgstr "un sac carnivore"
+
+#: src/rip.c:153
+msgctxt "killer a"
+msgid "closing drawbridge"
+msgstr "un pont-levis qui se ferme"
+
+#: src/rip.c:154
+msgctxt "killer a"
+msgid "collapsing drawbridge"
+msgstr "un pont-levis qui s'effondre"
+
+#: src/rip.c:155
+msgctxt "killer"
+msgid "colliding with the ceiling"
+msgstr "une collision avec le plafond"
+
+#: src/rip.c:156
+msgctxt "killer"
+msgid "committed suicide"
+msgstr "suicidé"
+
+#: src/rip.c:157
+msgctxt "killer"
+msgid "contusion from a small passage"
+msgstr "une contusion dans un passage étroit"
+
+#: src/rip.c:158
+msgctxt "killer"
+msgid "crunched in the head by an iron ball"
+msgstr "écrasé à la tête par un boulet"
+
+#: src/rip.c:159
+msgctxt "killer"
+msgid "crushed to death underneath a drawbridge"
+msgstr "écrasé à mort sous un pont-levis"
+
+#: src/rip.c:160
+msgctxt "killer a"
+msgid "cursed throne"
+msgstr "un trône maudit"
+
+#: src/rip.c:161
+msgctxt "killer"
+msgid "dangerous winds"
+msgstr "des vents dangereux"
+
+#: src/rip.c:162
+msgctxt "killer"
+msgid "deliberately meeting Medusa's gaze"
+msgstr "le regard de Méduse, croisé délibérément"
+
+#: src/rip.c:163
+msgctxt "killer"
+msgid "deliberately plunged into a pit"
+msgstr "plongé délibérément dans une fosse"
+
+#: src/rip.c:164
+msgctxt "killer"
+msgid "dragged downstairs by an iron ball"
+msgstr "entraîné dans l'escalier par un boulet"
+
+#: src/rip.c:165
+msgctxt "killer a"
+msgid "electric chair"
+msgstr "une chaise électrique"
+
+#: src/rip.c:166
+msgctxt "killer a"
+msgid "electric shock"
+msgstr "une décharge électrique"
+
+#: src/rip.c:167
+msgctxt "killer"
+msgid "elementary physics"
+msgstr "la physique élémentaire"
+
+#: src/rip.c:168
+msgctxt "killer"
+msgid "exhaustion"
+msgstr "l'épuisement"
+
+#: src/rip.c:169
+msgctxt "killer a"
+msgid "exploding crystal ball"
+msgstr "une boule de cristal qui explose"
+
+#: src/rip.c:170
+msgctxt "killer a"
+msgid "exploding drawbridge"
+msgstr "un pont-levis qui explose"
+
+#: src/rip.c:171
+msgctxt "killer a"
+msgid "exploding ring"
+msgstr "un anneau qui explose"
+
+#: src/rip.c:172
+msgctxt "killer a"
+msgid "exploding rune"
+msgstr "une rune explosive"
+
+#: src/rip.c:173
+msgctxt "killer a"
+msgid "exploding wand"
+msgstr "une baguette qui explose"
+
+#: src/rip.c:174
+msgctxt "killer a"
+msgid "explosion"
+msgstr "une explosion"
+
+#: src/rip.c:175
+msgctxt "killer"
+msgid "falling down a mine shaft"
+msgstr "une chute dans un puits de mine"
+
+#: src/rip.c:176
+msgctxt "killer a"
+msgid "falling drawbridge"
+msgstr "un pont-levis qui tombe"
+
+#: src/rip.c:177
+msgctxt "killer a"
+msgid "falling object"
+msgstr "un objet qui tombe"
+
+#: src/rip.c:178
+msgctxt "killer"
+msgid "falling off a ladder"
+msgstr "une chute d'une échelle"
+
+#: src/rip.c:179
+msgctxt "killer a"
+msgid "falling rock"
+msgstr "une pierre qui tombe"
+
+#: src/rip.c:180
+msgctxt "killer"
+msgid "fell from a drawbridge"
+msgstr "tombé d'un pont-levis"
+
+#: src/rip.c:181
+msgctxt "killer"
+msgid "fell into a chasm"
+msgstr "tombé dans un gouffre"
+
+#: src/rip.c:182
+msgctxt "killer"
+msgid "fell into a pit"
+msgstr "tombé dans une fosse"
+
+#: src/rip.c:183
+msgctxt "killer a"
+msgid "gas cloud"
+msgstr "un nuage de gaz"
+
+#: src/rip.c:184
+msgctxt "killer"
+msgid "genocidal confusion"
+msgstr "une confusion génocidaire"
+
+#: src/rip.c:185
+msgctxt "killer"
+msgid "hurt in a chasm"
+msgstr "blessé dans un gouffre"
+
+#: src/rip.c:186
+msgctxt "killer a"
+msgid "imperious order"
+msgstr "un ordre impérieux"
+
+#: src/rip.c:187
+msgctxt "killer a"
+msgid "iron ball collision"
+msgstr "un choc de boulet"
+
+#: src/rip.c:188
+msgctxt "killer"
+msgid "jumping out of a bear trap"
+msgstr "un saut hors d'un piège à ours"
+
+#: src/rip.c:189
+msgctxt "killer"
+msgid "killed by petrification"
+msgstr "tué par pétrification"
+
+#: src/rip.c:190
+msgctxt "killer"
+msgid "killed while stuck in creature form"
+msgstr "tué en restant coincé sous forme de créature"
+
+#: src/rip.c:191
+msgctxt "killer a"
+msgid "land mine"
+msgstr "une mine"
+
+#: src/rip.c:192
+msgctxt "killer"
+msgid "leg damage from being pulled out of a bear trap"
+msgstr "une blessure à la jambe en sortant d'un piège à ours"
+
+#: src/rip.c:193
+msgctxt "killer a"
+msgid "magical explosion"
+msgstr "une explosion magique"
+
+#: src/rip.c:194
+msgctxt "killer a"
+msgid "mildly contaminated potion"
+msgstr "une potion légèrement contaminée"
+
+#: src/rip.c:195
+msgctxt "killer"
+msgid "molten lava"
+msgstr "la lave en fusion"
+
+#: src/rip.c:196
+msgctxt "killer a"
+msgid "potion of acid"
+msgstr "une potion d'acide"
+
+#: src/rip.c:197
+msgctxt "killer a"
+msgid "potion of holy water"
+msgstr "une potion d'eau bénite"
+
+#: src/rip.c:198
+msgctxt "killer a"
+msgid "potion of unholy water"
+msgstr "une potion d'eau maudite"
+
+#: src/rip.c:199
+msgctxt "killer a"
+msgid "propelled potion"
+msgstr "une potion projetée"
+
+#: src/rip.c:200
+msgctxt "killer a"
+msgid "psychic blast"
+msgstr "une onde psychique"
+
+#: src/rip.c:201
+msgctxt "killer"
+msgid "quaffing a burning potion of oil"
+msgstr "une potion d'huile enflammée bue"
+
+#: src/rip.c:202
+msgctxt "killer a"
+msgid "quit while already on Charon's boat"
+msgstr "un abandon alors que déjà sur la barque de Charon"
+
+#: src/rip.c:203
+msgctxt "killer a"
+msgid "residual undead turning effect"
+msgstr "un effet résiduel de renvoi des morts-vivants"
+
+#: src/rip.c:204
+msgctxt "killer a"
+msgid "riding accident"
+msgstr "un accident d'équitation"
+
+#: src/rip.c:205
+msgctxt "killer a"
+msgid "rotted glob"
+msgstr "un glob pourri"
+
+#: src/rip.c:206
+msgctxt "killer a"
+msgid "rotten lump of royal jelly"
+msgstr "un morceau de gelée royale avariée"
+
+#: src/rip.c:207
+msgctxt "killer"
+msgid "rusting away"
+msgstr "la rouille"
+
+#: src/rip.c:208
+msgctxt "killer a"
+msgid "scroll of earth"
+msgstr "un parchemin de terre"
+
+#: src/rip.c:209
+msgctxt "killer a"
+msgid "scroll of fire"
+msgstr "un parchemin de feu"
+
+#: src/rip.c:210
+msgctxt "killer a"
+msgid "scroll of genocide"
+msgstr "un parchemin de génocide"
+
+#: src/rip.c:211
+msgctxt "killer"
+msgid "self-genocide"
+msgstr "un auto-génocide"
+
+#: src/rip.c:212
+msgctxt "killer"
+msgid "sipping boiling water"
+msgstr "une gorgée d'eau bouillante"
+
+#: src/rip.c:213
+msgctxt "killer"
+msgid "sitting in lava"
+msgstr "la lave, en s'y asseyant"
+
+#: src/rip.c:214
+msgctxt "killer"
+msgid "sitting on an iron spike"
+msgstr "une pointe de fer, en s'y asseyant"
+
+#: src/rip.c:215
+msgctxt "killer"
+msgid "sitting on lava"
+msgstr "la lave, en s'asseyant dessus"
+
+#: src/rip.c:216
+msgctxt "killer"
+msgid "slimicide"
+msgstr "un suicide gluant"
+
+#: src/rip.c:217
+msgctxt "killer"
+msgid "squished under a boulder"
+msgstr "écrasé sous un rocher"
+
+#: src/rip.c:218
+msgctxt "killer"
+msgid "starvation"
+msgstr "la faim"
+
+#: src/rip.c:219
+msgctxt "killer a"
+msgid "system shock"
+msgstr "un choc systémique"
+
+#: src/rip.c:220
+msgctxt "killer a"
+msgid "thrown potion"
+msgstr "une potion lancée"
+
+#: src/rip.c:221
+msgctxt "killer"
+msgid "tumbling down a flight of stairs"
+msgstr "une chute dans l'escalier"
+
+#: src/rip.c:222
+msgctxt "killer"
+msgid "turned into green slime"
+msgstr "changé en glu verte"
+
+#: src/rip.c:223
+msgctxt "killer a"
+msgid "unrefrigerated sip of juice"
+msgstr "une gorgée de jus non réfrigéré"
+
+#: src/rip.c:224
+msgctxt "killer a"
+msgid "unsuccessful polymorph"
+msgstr "une métamorphose ratée"
+
+#: src/rip.c:225
+msgctxt "killer a"
+msgid "wand"
+msgstr "une baguette"
+
+#: src/rip.c:226
+msgctxt "killer"
+msgid "went to heaven prematurely"
+msgstr "monté au ciel prématurément"
+
+#: src/rip.c:227
+msgctxt "killer"
+msgid "tasting cockatrice meat"
+msgstr "la dégustation de viande de cocatrix"
+
+#: src/rip.c:228
+msgctxt "killer"
+msgid "touching a cockatrice corpse"
+msgstr "le contact d'un cadavre de cocatrix"
+
 #: src/role.c:31
 msgid "Archeologist"
 msgstr "Archéologue"
@@ -55034,7 +55469,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-02 18:39+0200\n"
+"POT-Creation-Date: 2026-10-02 18:43+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
