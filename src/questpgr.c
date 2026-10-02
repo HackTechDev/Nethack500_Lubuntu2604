@@ -469,7 +469,10 @@ convert_arg_i18n(char c, char mod)
         str = C_("quest", Blind ? "sense" : "see");
         break;
     case 'Z':
-        str = _(svd.dungeons[0].dname);
+        /* "les Donjons du Destin": capitalize it with %ZC */
+        Strcpy(gc.cvt_buf, _(svd.dungeons[0].dname));
+        gc.cvt_buf[0] = lowc(gc.cvt_buf[0]);
+        str = 0;
         break;
     default:
         convert_arg(c);
@@ -482,7 +485,7 @@ convert_arg_i18n(char c, char mod)
     switch (mod) {
     case 'a':
     case 'A':
-        if (mndx != NON_PM && c != 'l' && c != 'n') {
+        if (mndx != NON_PM) {
             Strcpy(gc.cvt_buf, i18n_an_ctx("monster", en));
         } else {
             gend = quest_gend(c, gc.cvt_buf);

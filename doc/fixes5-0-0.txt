@@ -3084,6 +3084,8 @@ autopickup_exception patterns also match the English object name when
 	object names are translated, like MENUCOLOR
 quest texts (dat/quest.lua) are translated whole, with translated values
 	for their %-codes (names, ranks, articles, pronouns)
+tty: a line of a text window starting with a UTF-8 character (translated
+	text) was displayed as a DEC/IBM graphics symbol
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 
 

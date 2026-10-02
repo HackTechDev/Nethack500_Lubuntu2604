@@ -23096,7 +23096,7 @@ msgstr ""
 #: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
 #: src/pager.c:3367 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
 #: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
-#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:706
+#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:708
 #: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
 #: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:147 src/timeout.c:309
 #: src/timeout.c:342 src/timeout.c:420 src/timeout.c:542 src/timeout.c:568
@@ -24430,7 +24430,7 @@ msgstr ""
 
 #: src/apply.c:1333 src/do.c:538 src/do_name.c:871 src/do_name.c:948
 #: src/do_name.c:1126 src/hack.c:2242 src/muse.c:809 src/objnam.c:1299
-#: src/questpgr.c:487 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
+#: src/questpgr.c:489 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2391 src/zap.c:3994
 #, c-format
 msgctxt "feminine"
@@ -24439,7 +24439,7 @@ msgstr ""
 
 #: src/apply.c:1334 src/do.c:538 src/do_name.c:950 src/do_name.c:1128
 #: src/hack.c:2242 src/muse.c:809 src/objnam.c:647 src/objnam.c:1301
-#: src/questpgr.c:488 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
+#: src/questpgr.c:490 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2392 src/zap.c:3995
 #, c-format
 msgid "a %s"
@@ -47268,7 +47268,7 @@ msgstr ""
 msgid "You hear %d gear turn."
 msgstr ""
 
-#: src/nhi18n.c:446
+#: src/nhi18n.c:467
 msgctxt "grammar"
 msgid "contractions"
 msgstr ""
@@ -56388,13 +56388,13 @@ msgctxt "quest"
 msgid "brother"
 msgstr ""
 
-#: src/questpgr.c:333 src/questpgr.c:421
+#: src/questpgr.c:333 src/questpgr.c:423
 #, c-format
 msgctxt "quest"
 msgid "sister"
 msgstr ""
 
-#: src/questpgr.c:334 src/questpgr.c:424
+#: src/questpgr.c:334 src/questpgr.c:426
 #, c-format
 msgctxt "quest"
 msgid "daughter"
@@ -56420,7 +56420,7 @@ msgctxt "quest"
 msgid "see"
 msgstr ""
 
-#: src/questpgr.c:336 src/questpgr.c:467
+#: src/questpgr.c:336 src/questpgr.c:469
 #, c-format
 msgctxt "quest"
 msgid "sense"
@@ -56681,44 +56681,44 @@ msgctxt "quest"
 msgid "the Palantir of Westernesse"
 msgstr ""
 
-#: src/questpgr.c:712
+#: src/questpgr.c:714
 msgid "What a strange feeling!"
 msgstr ""
 
-#: src/questpgr.c:713
+#: src/questpgr.c:715
 msgid "You notice that there is no gravity here."
 msgstr ""
 
-#: src/questpgr.c:714
+#: src/questpgr.c:716
 msgid "You arrive on the Astral Plane!"
 msgstr ""
 
-#: src/questpgr.c:715
+#: src/questpgr.c:717
 #, c-format
 msgid "Here the High Temple of %d is located."
 msgstr ""
 
-#: src/questpgr.c:716
+#: src/questpgr.c:718
 msgid "You sense alarm, hostility, and excitement in the air!"
 msgstr ""
 
-#: src/questpgr.c:717
+#: src/questpgr.c:719
 msgid "Well done, mortal!"
 msgstr ""
 
-#: src/questpgr.c:718
+#: src/questpgr.c:720
 msgid "But now thou must face the final Test..."
 msgstr ""
 
-#: src/questpgr.c:719
+#: src/questpgr.c:721
 msgid "Prove thyself worthy or perish!"
 msgstr ""
 
-#: src/questpgr.c:720
+#: src/questpgr.c:722
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr ""
 
-#: src/questpgr.c:722
+#: src/questpgr.c:724
 msgctxt "heroine"
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr ""
@@ -63827,6 +63827,10 @@ msgstr ""
 msgid "You %s."
 msgstr ""
 
+#: src/teleport.c:1463
+msgid "You materialize on a different level!"
+msgstr ""
+
 #: src/teleport.c:1499
 msgid "You activated a magic portal!"
 msgstr ""
@@ -64355,7 +64359,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 00:17+0200\n"
+"POT-Creation-Date: 2026-10-03 00:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

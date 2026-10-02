@@ -1,9 +1,9 @@
 # Traduction française : reste à faire
 
 > **Où en est-on ?** Les messages du jeu écrits en C sont presque tous
-> traduits. Ce qui reste est surtout du texte de données : les quêtes,
-> le tutoriel, l'encyclopédie et les livres (plus de 20 000 lignes, voir
-> le tableau ci-dessous). La documentation est traduite (section 6).
+> traduits, ainsi que le tutoriel, les textes des quêtes et la
+> documentation (section 6). Ce qui reste est surtout l'encyclopédie
+> (`dat/data.base`, voir le tableau ci-dessous).
 > Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté.
 
 État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
@@ -23,7 +23,7 @@ Par ordre de priorité (visibilité en jeu) :
 
 | Fichier | Lignes | Contenu | Remarque |
 |---|---:|---|---|
-| `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | En cours, rôle par rôle : 872 textes, msgctxt `quest` dans `po/fr.po` (extraits par `po/questtext.py`). Fait : `common` |
+| `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | **Traduit** (octobre 2026) : 872 textes, msgctxt `quest` dans `po/fr.po`, extraits par `po/questtext.py` ; restent à tester en jeu les dialogues avec les chefs et ennemis |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Ouvert par `I18N_FILE(DATAFILE)` : fournir `data.base.fr` en gardant les **clés anglaises** (la recherche se fait en anglais) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
@@ -216,7 +216,7 @@ avant le remplacement de leurs codes `%` (liste pour xgettext dans
 `nhlib.lua`) est traduit : ses textes passent par `tr(format, ...)`
 (`nhlib.lua`), qui formate la traduction rendue par `nh.gettext()` ;
 `po/update-pot.sh` extrait les textes donnés à `tr()` dans les fichiers
-Lua.  Restent les textes des quêtes (`quest.lua`).
+Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
 
 ## 4. Interface
 

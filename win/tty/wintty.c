@@ -1822,7 +1822,11 @@ process_text_window(winid window, struct WinDesc *cw)
                     if (SYMHANDLING(H_UTF8)) {
                         /* FIXME: what is actually in that line? is it the \GNNNNNNNN or UTF-8? */
                         g_putch(*cp);
-                    } else if ((*cp & 0x80) != 0) {
+                    } else if ((*cp & 0x80) != 0
+                               /* not a UTF-8 character of translated text */
+                               && !((uchar) cp[0] >= 0xC2
+                                    && (uchar) cp[0] <= 0xF4
+                                    && ((uchar) cp[1] & 0xC0) == 0x80)) {
                         g_putch(*cp);
                         end_glyphout();
                     } else {
