@@ -1,0 +1,589 @@
+.\" Traduction française de nethack.6 (même révision que l'original).
+.\"DO NOT REMOVE NH_DATESUB .TH NETHACK 6 "Date(%-d %B %Y)" Project(uc)
+.TH NETHACK 6 "26 avril 2026" NETHACK
+.\"DO NOT REMOVE NH_DATESUB .ds Nd Date(%Y)
+.ds Nd 2024
+.de NB
+.ds Nb \\$2
+..
+.de NR
+.ds Nr \\$2
+..
+.NB $NHDT-Branch: NetHack-5 $
+.NR $NHDT-Revision: 1.31 $
+.\" groff and AT&T-descended troffs use different hyphenation patterns.
+.\" Don't hyphenate the last word on a page or column, or
+.\" before/after last/first 2 characters of a word.
+.ie \n(.g .hy 12
+.el       .hy 14
+.\" French hyphenation patterns with groff
+.if \n(.g \{\
+.  hla fr
+.  hpf hyphen.fr
+.\}
+.ds Na Robert Patrick Rankin
+.SH NOM
+nethack \- Explorer les Labyrinthes de la Menace
+.SH SYNOPSIS
+.na
+.hy 0
+.B nethack
+[
+.BR \-d | \-\-directory
+.I répertoire
+]
+[
+.BR \-w | \-\-windowtype
+.I interface
+]
+.br 1
+[
+.BI \-\-nethackrc: fichier-RC
+|
+.B \-\-no\-nethackrc
+]
+[
+.B \-n
+]
+[
+.BR \-dec " | " \-ibm
+]
+.br 1
+[
+.B \-u
+.I nom-du-joueur
+]
+[
+.BR \-X " | " \-D
+]
+[
+.B \-p
+.I profession
+]
+[
+.B \-r
+.I race
+]
+[
+.B \-\@
+]
+.PP
+Ou encore
+[
+.BR \-A | \-Arc
+|
+.BR \-B | \-Bar
+|
+.BR \-C | \-Cav
+|
+.BR \-H | \-Hea
+|
+.BR \-K | \-Kni
+|
+.BR \-M | \-Mon
+|
+.BR \-P | \-Pri
+|
+.BR \-R | \-Rog
+|
+.BR \-Ran
+|
+.BR \-S | \-Sam
+|
+.BR \-T | \-Tou
+|
+.BR \-V | \-Val
+|
+.BR \-W | \-Wiz
+]
+.PP
+.B nethack
+[
+.BR \-d | \-\-directory
+.I répertoire
+]
+.BR \-s | \-\-scores
+[
+.B \-v
+]
+.br 1
+[
+.B \-p
+.I profession
+]
+[
+.B \-r
+.I race
+]
+[
+.I noms-de-joueurs
+]
+.PP
+.B nethack
+[
+.B \-\-usage
+|
+.B \-\-help
+]
+[
+.BR \-\-showpaths
+]
+.br
+[
+.BR \-\-version [ :copy | :dump | :show ]
+]
+.ad
+.hy 14
+.hw nethackdir
+.SH DESCRIPTION
+.PP
+.I NetHack
+est un jeu à affichage en mode écran dans l'esprit de Dungeons & Dragons(tm).
+L'affichage tty standard et la structure des commandes ressemblent à
+ceux de rogue.
+.PP
+Il existe, sur la plupart des plates-formes, d'autres affichages plus
+graphiques.
+.PP
+Pour commencer, vous n'avez vraiment besoin de connaître que deux commandes.
+La commande
+.B ?
+donne la liste des commandes disponibles (et d'autres informations)
+et la commande
+.B /
+identifie ce que vous voyez à l'écran.
+.PP
+Pour gagner la partie (et pas seulement battre les meilleurs scores des
+autres), vous devez trouver l'Amulette de Yendor, quelque part sous le
+20e niveau du donjon, et la rapporter à la surface.
+Peu de gens y parviennent ; la plupart n'y arrivent jamais.
+Ceux qui l'ont fait entrent dans l'histoire comme des héros parmi les
+héros \(em puis ils trouvent des moyens de rendre le jeu encore plus difficile.
+Voyez la section du
+.I Guidebook
+sur la conduite si ce jeu est devenu trop facile pour vous.
+.PP
+Quand la partie se termine, que vous mouriez, abandonniez ou vous échappiez
+des cavernes,
+.I NetHack
+vous montre (une partie de) la liste des meilleurs scores.
+Le score dépend de nombreux aspects de votre comportement, mais on en obtient
+une estimation grossière en ajoutant l'or trouvé dans la caverne à quatre
+fois votre expérience (réelle).
+Les pierres précieuses peuvent valoir beaucoup d'or si vous les rapportez
+à la sortie.
+Se faire tuer coûte une pénalité de 10 %.
+.PP
+La variable d'environnement NETHACKOPTIONS permet d'initialiser de
+nombreuses options.
+La commande ? décrit ces options et leur syntaxe.
+(Les options de ligne de commande
+.B \-dec
+et
+.B \-ibm
+s'excluent mutuellement et équivalent aux options
+.B decgraphics
+et
+.B ibmgraphics
+qui y sont décrites ;
+elles sont fournies par simple commodité sur les systèmes qui gèrent
+plusieurs types de terminaux.)
+.PP
+Comme la liste des options peut être très longue,
+les options peuvent aussi être placées dans un fichier de configuration.
+Celui par défaut se trouve dans votre répertoire personnel et
+s'appelle .nethackrc sur les systèmes UNIX (y compris leurs descendants
+comme linux, NetBSD et macOS).
+Sous Windows, il s'appelle aussi .nethackrc mais son emplacement peut varier
+(voir
+.B \-\-showpaths
+plus bas).
+Sur d'autres systèmes, il peut s'appeler autrement, peut-être NetHack.cnf.
+Sous MS-DOS, il s'appelle defaults.nh, dans le répertoire (dossier) de
+NetHack,
+et sous VMS|OpenVMS, nethack.ini, dans votre répertoire personnel.
+On peut remplacer le fichier de configuration par défaut par l'option
+.BI \-\-nethackrc: "fichier-rc"
+de la ligne de commande, ou en donnant à NETHACKOPTIONS une valeur formée
+du caractère @ suivi du chemin et du nom du fichier.
+.PP
+L'option
+.B \-u
+.I nom-du-joueur
+fournit la réponse à la question « Qui êtes-vous ? ».
+Elle l'emporte sur le nom donné par les options ou le fichier de
+configuration, USER, LOGNAME ou getlogin(), essayés sinon dans cet ordre.
+Si aucun ne donne un nom utilisable, le jeu demande un nom au joueur.
+Les noms de joueurs (avec les uid) servent à identifier les sauvegardes :
+vous pouvez donc avoir plusieurs parties sauvegardées sous des noms différents.
+À l'inverse, il faut utiliser le bon nom de joueur pour restaurer une partie
+sauvegardée.
+.PP
+Un suffixe au
+.I nom-du-joueur
+peut indiquer la profession, la race, l'alignement et/ou le sexe du
+personnage.  La syntaxe complète d'un nom de joueur avec suffixe est
+« nom-ppp-rrr-aaa-ggg ».  « ppp » désigne au moins les trois premières
+lettres de la profession (qu'on peut aussi indiquer par l'option
+.B \-p
+.IR profession ).
+« rrr » désigne au moins les trois premières lettres de la race du
+personnage (qu'on peut aussi indiquer par l'option
+.B \-r
+.IR race ).
+« aaa » désigne au moins les trois premières lettres de l'alignement du
+personnage, et « ggg » au moins les trois premières lettres de son sexe.
+Chaque partie du suffixe peut être omise.
+.PP
+.B \-p
+.I profession
+permet de choisir la profession du personnage, aussi appelée rôle.
+Vous pouvez donner le nom masculin ou féminin du rôle, ou ses trois
+premières lettres en abrégé.
+.PP
+De même,
+.B \-r
+.I race
+permet de demander explicitement une race.
+.PP
+Les options de choix du rôle
+.BR \-A | \-Arc
+|
+.BR \-B | \-Bar
+|
+.BR \-C | \-Cav
+|
+.BR \-H | \-Hea
+|
+.BR \-K | \-Kni
+|
+.BR \-M | \-Mon
+|
+.BR \-P | \-Pri
+|
+.BR \-R | \-Rog
+|
+.BR \-Ran
+|
+.BR \-S | \-Sam
+|
+.BR \-T | \-Tou
+|
+.BR \-V | \-Val
+|
+.BR \-W | \-Wiz
+sont gardées pour la compatibilité avec les anciennes versions du
+programme.
+Elles s'excluent mutuellement et la forme d'une seule lettre doit être en
+majuscule.
+Le rôle de
+.I Rôdeur
+(Ranger) n'a pas de forme d'une lettre car
+.B \-R
+est déjà pris par le rôle de
+.I Voleur
+(Rogue).
+.PP
+.B \-\@
+demande à nethack de tirer au hasard, sans poser de question, les
+caractéristiques omises (profession/rôle, race, sexe, alignement).
+Sinon, omettre l'une d'elles vous la fera demander au démarrage de la
+partie.
+.PP
+L'option
+.B \-n
+supprime l'affichage des nouvelles de l'administrateur du jeu.
+.PP
+L'option
+.B \-X
+lance la partie dans un mode découverte spécial, sans score
+(aussi appelé mode exploration).
+.B \-D
+lance la partie en mode débogage (aussi appelé mode magicien) après avoir
+changé le nom du personnage en \(lqwizard\(rq, si le joueur y est autorisé.
+Sinon, elle passe en
+.BR \-X .
+Les joueurs autorisés à utiliser le mode débogage sont indiqués par la
+.RI "ligne \(lq" WIZARDS= "\(rq du fichier " sysconf " de nethack."
+.PP
+L'option
+.BR \-d " ou " \-\-directory ,
+qui doit être le premier argument si elle est présente,
+indique le répertoire qui sert de terrain de jeu.
+Elle l'emporte sur la valeur de NETHACKDIR, HACKDIR,
+ou sur le répertoire choisi par l'administrateur du jeu à la compilation
+(en général /usr/games/lib/nethackdir).
+Cette option ne sert en général qu'à l'administrateur du jeu.
+Le terrain de jeu doit contenir plusieurs fichiers auxiliaires comme les
+fichiers d'aide, la liste des meilleurs scores, et un sous-répertoire
+.I save
+où sont sauvegardées les parties.
+.PP
+L'option
+.BR \-w " ou " \-\-windowtype
+.I
+interface
+permet de choisir l'interface à utiliser si le programme a été compilé
+avec plusieurs interfaces.
+Une valeur donnée sur la ligne de commande l'emporte sur celle du
+fichier de configuration.
+La commande #version de NetHack montre les interfaces disponibles.
+.PP
+L'option
+.BI \-\-nethackrc: fichier-RC
+utilise
+.I fichier-RC
+au lieu du fichier de configuration par défaut
+.RI "(en général " \(ti/.nethackrc "),"
+et l'option
+.B \-\-no\-nethackrc
+permet de n'utiliser aucun fichier de configuration.
+.PP
+.br 1
+.PP
+Certaines options affichent une information puis quittent au lieu de
+lancer le jeu :
+.PP
+L'option
+.BR \-s " ou " \-\-scores
+seule affiche la liste de vos scores pour la version actuelle.
+Un
+.B \-v
+qui la suit immédiatement donne les scores de toutes les versions présentes
+dans le fichier des scores.
+.RB \(oq \-s | \-s\~\-v \(cq
+peut aussi être suivi des arguments
+.B \-p
+.I profession
+et
+.B \-r
+.I race
+pour n'afficher que les scores de certains rôles et races.
+Chacun peut être donné plusieurs fois pour inclure plusieurs rôles
+ou plusieurs races.
+Quand les deux sont donnés, les scores qui correspondent au rôle ou à la
+race (ou aux deux) sont affichés, et pas seulement ceux qui correspondent
+aux deux.
+.RB \(oq \-s | \-s\~\-v \(cq
+peut être suivi d'un ou plusieurs noms de joueurs pour afficher les scores
+de ces joueurs, de 'all' pour afficher tous les scores, ou d'un nombre pour
+afficher autant de meilleurs scores.
+Combiner des noms avec un rôle ou une race ou les deux donne les scores qui
+correspondent à l'un d'eux, et pas seulement ceux qui correspondent à tous.
+.PP
+.hw version
+.BR \-\-version " ou " \-\-version:show
+fait afficher par NetHack son numéro de version, la date et l'heure de la
+compilation du programme, et éventuellement quelques informations
+supplémentaires sur son code source, puis quitter.
+Ces informations facultatives sont l'empreinte du commit \fIgit\fP
+(la dernière modification du code source extrait du gestionnaire de
+versions \fIgit\fP, s'il est utilisé), si elle était disponible à la
+compilation.
+Sur certaines plates-formes comme Windows et macOS, la variante
+.B \-\-version:copy
+affiche les informations de version puis quitte, en en laissant une copie
+dans le presse-papiers pour pouvoir l'insérer par exemple dans un
+rapport de bogue.
+Sur toutes les plates-formes,
+.B \-\-version:dump
+montre l'essentiel des données qui servent à vérifier qu'une sauvegarde ou
+un fichier d'os est compatible avec le programme.
+Le programme affiche une ligne de cinq nombres en hexadécimal, puis quitte.
+.PP
+.B \-\-showpaths
+fait afficher par NetHack où il s'attend à trouver ses divers fichiers.
+Il montre notamment le chemin et le nom du fichier de configuration du
+joueur, un fichier texte qu'on peut modifier pour adapter certains aspects
+du fonctionnement du jeu.
+.PP
+.BR \-\-usage " ou " \-\-help
+affiche des informations proches de cette page de manuel, puis quitte.
+Utilisez
+.RB \(oq "nethack \-\-usage | more" \(cq
+pour les lire page par page.
+.SH AUTEURS
+.PP
+Jay Fenlason (avec Kenny Woodland, Mike Thome et Jon Payne) a écrit le
+hack d'origine, très proche de rogue (mais plein de bogues).
+.PP
+Andries Brouwer a déformé sans relâche leur code pour en faire un jeu
+entièrement différent.
+.PP
+Mike Stephenson a poursuivi la perversion du code, en ajoutant diverses
+classes de personnages tordues et des pièges sadiques avec l'aide de
+nombreuses personnes étranges qui résident dans ce lieu entre les mondes,
+la Zone Usenet.
+Plusieurs de ces mécréants sont immortalisés dans le registre historique
+du déshonneur et en divers autres endroits.
+.PP
+Le chaos qui en résulte s'appelle désormais NetHack, pour rappeler son
+développement par Usenet.
+C'est Andries Brouwer qui a demandé cette distinction, car il pourrait un
+jour publier une nouvelle version de son cru.
+.SH FICHIERS
+.PP
+Les options de configuration ont été décrites plus haut ; leur fichier a
+un nom et un emplacement propres à chaque plate-forme.
+Sous Unix, il s'appelle '.nethackrc' et se trouve dans le répertoire
+personnel de l'utilisateur.
+
+.br
+Tous les autres fichiers sont dans le répertoire du terrain de jeu,
+en général /usr/games/lib/nethackdir.
+Si DLB était défini à la compilation, les fichiers de données et les
+niveaux spéciaux sont réunis dans un fichier plus gros, en général nhdat,
+au lieu d'être séparés.
+
+.br
+.DT
+.\" continuation lines begin with <backslash><space><tab>
+.ta \w'cmdhelp, opthelp, wizhelp\ \ \ 'u
+nethack		Le programme lui-même.
+.br
+Guidebook\ |\ Guidebook.txt	Le manuel du joueur de NetHack.
+.br
+data, oracles, rumors	Fichiers de données utilisés par NetHack.
+.br
+bogusmon 	Un autre fichier de données.
+.br
+engrave, epitaph, tribute	Encore d'autres fichiers de données.
+.br
+symbols	Fichier de données contenant des jeux de
+.br
+\ 	règles d'affichage des monstres, des objets
+.br
+\ 	et des éléments de la carte.
+.br
+options	Fichier de données décrivant les options
+.br
+\ 	choisies à la compilation.
+.br
+help,\ hh,\ cmdhelp	Fichiers d'aide.
+('cmdhelp' est obsolète.)
+.br
+opthelp,\ optmenu,\ wizhelp	D'autres fichiers d'aide.
+.br
+keyhelp,\ usagehlp	Encore d'autres fichiers d'aide.
+.br
+*.fr, fr.mo	Traductions françaises des fichiers
+.br
+\ 	ci-dessus et des messages du jeu.
+.br
+*.lua	Niveaux spéciaux prédéfinis, organisation
+.br
+\ 	du donjon, textes des quêtes.
+.br
+history	Une brève histoire de NetHack.
+.br
+license	Les règles de redistribution.
+.br
+record	La liste des meilleurs scores.
+.br
+logfile	Une liste détaillée des parties jouées
+.br
+\ 	(facultative).
+.br
+xlogfile	Une version plus détaillée de 'logfile'
+.br
+\ 	(facultative aussi).
+.br
+paniclog	Journal des situations exceptionnelles
+.br
+\ 	découvertes pendant l'exécution.
+.br
+xlock.nn	Description du niveau 'nn' du donjon de
+.br
+\ 	la partie active 'x', s'il y a une limite
+.br
+\ 	au nombre de parties actives simultanées.
+.br
+UUcccccc.nn	Autre forme pour le niveau 'nn' de la
+.br
+\ 	partie active de l'utilisateur 'UU' qui
+.br
+\ 	joue le personnage 'cccccc', quand le
+.br
+\ 	nombre de parties actives n'est pas limité.
+.br
+perm	Fichier de verrou pour xlock.0 ou UUcccccc.0.
+.br
+bonD0.nn	Description du fantôme et des biens d'un
+.br
+\ 	aventurier qui a trouvé la mort au niveau
+.br
+\ 	'nn'.
+Un personnage ultérieur
+.br
+\ 	pourra retrouver ce vieux niveau.
+.br
+.\"following line should contain <backslash><space><tab>
+\
+.br
+save/	Un sous-répertoire contenant les parties
+.br
+\ 	sauvegardées.
+.br
+.\"following line should contain <backslash><space><tab>
+\
+.br
+sysconf	Options pour tout le système.  Obligatoire
+.br
+\ 	si le programme est compilé avec l'option
+.br
+\ 	'SYSCF', ignoré sinon.
+.br
+
+L'emplacement de 'sysconf' est fixé à la compilation et ne peut être
+changé qu'en modifiant le fichier source « config.h » et en recompilant.
+.br
+
+Le Guidebook de NetHack peut être absent si la personne qui a préparé ou
+installé la distribution du programme a oublié de l'inclure.
+.br
+
+Dans un monde parfait, 'paniclog' resterait vide.
+.SH ENVIRONNEMENT
+.DT
+.ta \w'NETHACKDIR ou HACKDIR\ \ \ 'u
+USER ou LOGNAME	Votre nom de connexion.
+.br
+HOME		Votre répertoire personnel.
+.br
+SHELL		Votre shell.
+.br
+TERM		Le type de votre terminal.
+.br
+HACKPAGER ou PAGER	Remplace le paginateur par défaut.
+.br
+MAIL	Fichier de boîte aux lettres.
+.br
+MAILREADER	Remplace le lecteur de courrier par défaut
+.br
+\ 	(sans doute /bin/mail ou /usr/ucb/mail).
+.br
+NETHACKDIR ou HACKDIR	Terrain de jeu.
+.br
+NETHACKOPTIONS	Chaîne prédéfinissant plusieurs options.
+.br
+
+Si la même option est donnée dans NETHACKOPTIONS et dans .nethackrc,
+la valeur de NETHACKOPTIONS l'emporte.
+.br
+
+SHOPTYPE et SPLEVTYPE servent en mode débogage (magicien).
+.br
+DEBUGFILES sert si le programme a été compilé avec 'DEBUG'.
+.SH "VOIR AUSSI"
+.PP
+recover(6)
+.SH BOGUES
+.PP
+Probablement en nombre infini.
+.SH COPYRIGHT
+Ce fichier est Copyright (C) \*(Na, \*(Nd pour la version \*(Nb:\*(Nr.
+NetHack peut être redistribué librement.  Voir license pour les détails.
+.PP
+Dungeons & Dragons est une marque de Wizards of the Coast, Inc.
+.PP
+Traduction française : projet de traduction de NetHack 5.0.0.

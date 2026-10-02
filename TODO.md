@@ -3,7 +3,7 @@
 > **Où en est-on ?** Les messages du jeu écrits en C sont presque tous
 > traduits. Ce qui reste est surtout du texte de données : les quêtes,
 > le tutoriel, l'encyclopédie et les livres (plus de 20 000 lignes, voir
-> le tableau ci-dessous), puis la documentation.
+> le tableau ci-dessous). La documentation est traduite (section 6).
 
 État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
 1 906 vides. Parmi ces vides, 1 099 sont des entrées de genre
@@ -27,8 +27,6 @@ Par ordre de priorité (visibilité en jeu) :
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`) : à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
 | `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |
-| `doc/Guidebook.mn` | 6 951 | Guide du joueur | Voir section 6 |
-| `doc/nethack.6` | 586 | Page de manuel | |
 
 Déjà traduits : `help`, `hh`, `keyhelp`, `cmdhelp`, `opthelp`,
 `history`, `usagehlp`, `optmenu`, `wizhelp` (fichiers `dat/*.fr`),
@@ -252,7 +250,12 @@ Lua.  Restent les textes des quêtes (`quest.lua`).
 
 ## 6. Documentation
 
-- Guidebook (`doc/Guidebook.mn`) : le projet nethack-fr (SourceForge,
-  abandonné en 2014) en proposait une traduction française, pour une
-  version ancienne ; elle pourrait servir de point de départ.
-- Pages de manuel (`doc/nethack.6`...).
+- Guide du joueur : `doc/Guidebook-fr.mn` (traduction complète de
+  `doc/Guidebook.mn`), texte UTF-8 dans `doc/Guidebook-fr.txt` produit par
+  `make Guidebook-fr.txt` dans `doc/` (il faut groff pour `preconv`).
+- Page de manuel : `doc/nethack-fr.6`, texte dans `doc/nethack-fr.txt`
+  (`make nethack-fr.txt`).
+- À reporter dans les traductions quand `Guidebook.mn` ou `nethack.6`
+  changent (chaque fichier traduit garde la révision de l'original).
+- Pas encore traduits : `Guidebook.tex` (version LaTeX), `recover.6`,
+  `dlb.6`, `makedefs.6` (outils techniques, faible priorité).

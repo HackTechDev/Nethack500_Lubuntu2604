@@ -970,6 +970,15 @@ check_autopickup_exceptions(struct obj *obj)
 
         while (ape && !regex_match(objdesc, ape->regex))
             ape = ape->next;
+        if (!ape && i18n_active()) {
+            /* a translated object name: the patterns may be English */
+            i18n_suspend(TRUE);
+            objdesc = makesingular(doname(obj));
+            i18n_suspend(FALSE);
+            for (ape = ga.apelist; ape && !regex_match(objdesc, ape->regex);
+                 ape = ape->next)
+                continue;
+        }
     }
     return ape;
 }
