@@ -1,12 +1,32 @@
 #!/bin/bash
-# Compile et installe NetHack 5.0.0 (interfaces tty + curses) sous Lubuntu 26.04.
-# Voir INSTALL.md pour le détail des étapes.
+# Compile et installe NetHack 5.0.0 sous Lubuntu 26.04, avec les
+# interfaces tty, curses, X11 et Qt (ou seulement tty et curses avec
+# --console).  Voir INSTALL.md pour le détail des étapes.
 set -euo pipefail
 
 cd "$(dirname "$(readlink -f "$0")")"
 
+graphique=1
+for arg in "$@"; do
+    case "$arg" in
+    --console) graphique=0 ;;
+    -h|--aide|--help)
+        echo "Usage : $0 [--console]"
+        echo "  sans option : interfaces tty, curses, X11 et Qt"
+        echo "  --console   : interfaces tty et curses seulement"
+        exit 0 ;;
+    *) echo "Option inconnue : $arg (voir $0 --aide)" >&2; exit 1 ;;
+    esac
+done
+
 PAQUETS="gcc make curl gettext libncurses-dev"
 WIN="WANT_WIN_TTY=1 WANT_WIN_CURSES=1"
+if [ "$graphique" = 1 ]; then
+    # X11 : widgets Athena ; Qt 6 : bibliothèques, moc et sons
+    PAQUETS="$PAQUETS libxaw7-dev qt6-base-dev qt6-base-dev-tools"
+    PAQUETS="$PAQUETS qt6-multimedia-dev"
+    WIN="WANT_WIN_ALL=1 WANT_WIN_QT6=1 QT6MANUAL=1 HOSTTYPE=x86_64"
+fi
 HACKDIR="$HOME/nh/install/games/lib/nethackdir"
 # fichiers du joueur conservés d'une installation à l'autre
 A_GARDER="save record logfile xlogfile livelog perm"
@@ -34,7 +54,14 @@ if [ ! -d lib/lua ]; then
     make fetch-lua
 fi
 
-etape "Compilation"
+# les objets compilés pour d'autres interfaces ne se lient pas avec
+# celles-ci : on les supprime quand le choix d'interfaces change
+if [ "$(cat src/.interfaces 2>/dev/null)" != "$WIN" ]; then
+    rm -f src/*.o
+    echo "$WIN" > src/.interfaces
+fi
+
+etape "Compilation ($WIN)"
 make -j"$(nproc)" $WIN
 
 sauvegarde=""
@@ -74,3 +101,7 @@ echo "config/nethackrc copié dans ~/.nethackrc"
 
 etape "Terminé"
 echo "Lancer le jeu avec : ~/nh/install/games/nethack"
+if [ "$graphique" = 1 ]; then
+    echo "  interface X11 : ~/nh/install/games/nethack -wX11"
+    echo "  interface Qt  : ~/nh/install/games/nethack -wQt"
+fi

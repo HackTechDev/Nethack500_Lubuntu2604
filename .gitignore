@@ -74,6 +74,8 @@ msdos-binary/
 dat/NHTILES.BMP
 dat/msdoshlp.txt
 src/host_o/
+# interfaces of the last install.sh build
+src/.interfaces
 util/djgpp-linux64-gcc550.tar.bz2
 util/djgpp-osx-gcc550.tar.bz2
 util/djgpp-mingw-gcc550-standalone.zip

@@ -11,13 +11,20 @@ Pour les autres systèmes ou interfaces, voir `sys/unix/NewInstall.unx`.
 Le script `install.sh` enchaîne les étapes 1 à 5 ci-dessous :
 
 ```sh
-./install.sh
+./install.sh             # interfaces tty, curses, X11 et Qt
+./install.sh --console   # interfaces tty et curses seulement
 ```
 
 1. installe les paquets manquants (`gcc`, `make`, `curl`, `gettext`,
-   `libncurses-dev`) avec `sudo apt-get` ;
+   `libncurses-dev`, plus `libxaw7-dev`, `qt6-base-dev`,
+   `qt6-base-dev-tools` et `qt6-multimedia-dev` pour X11 et Qt) avec
+   `sudo apt-get` ;
 2. configure avec `hints/linux.500` et télécharge Lua si `lib/lua` est absent ;
-3. compile avec `WANT_WIN_TTY=1 WANT_WIN_CURSES=1` ;
+3. compile avec `WANT_WIN_ALL=1 WANT_WIN_QT6=1 QT6MANUAL=1
+   HOSTTYPE=x86_64` (avec `--console` : `WANT_WIN_TTY=1
+   WANT_WIN_CURSES=1`) ; si le choix d'interfaces a changé depuis la
+   compilation précédente (noté dans `src/.interfaces`), les objets
+   `src/*.o` sont d'abord supprimés ;
 4. si le jeu est déjà installé, copie les parties et les scores (`save`,
    `record`, `logfile`, `xlogfile`, `livelog`, `perm`) dans
    `~/nh/backup-AAAAMMJJ-HHMMSS`, lance `make install`, puis les restaure ;
@@ -26,6 +33,10 @@ Le script `install.sh` enchaîne les étapes 1 à 5 ci-dessous :
 
 Les copies de sauvegarde dans `~/nh/` ne sont pas supprimées ; les effacer
 une fois le jeu vérifié.
+
+L'interface se choisit au lancement : `~/nh/install/games/nethack -wX11`
+ou `-wQt` (sans option, celle de `OPTIONS=windowtype` dans
+`~/.nethackrc`, curses avec la configuration fournie).
 
 Les sections suivantes décrivent les mêmes étapes à la main.
 

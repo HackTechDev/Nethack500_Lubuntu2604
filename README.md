@@ -15,7 +15,8 @@ cd Nethack500_Lubuntu2604
 ```
 
 `install.sh` installe les paquets manquants (via `sudo`), compile le jeu avec
-les interfaces tty et curses, l'installe en conservant les parties et les
+les interfaces tty, curses, X11 et Qt (`./install.sh --console` pour tty et
+curses seulement), l'installe en conservant les parties et les
 scores existants, puis copie `config/nethackrc` dans `~/.nethackrc`.
 
 Le détail de chaque étape, les emplacements des fichiers installés et les
@@ -24,18 +25,24 @@ précautions à prendre avant une réinstallation sont dans
 
 ### Interfaces X11 et Qt
 
-`install.sh` ne compile que tty et curses. Pour avoir aussi les
-interfaces graphiques X11 et Qt, installer d'abord leurs paquets de
-développement :
+Les interfaces graphiques ont besoin des paquets de développement
+`libxaw7-dev` (widgets Athena, pour X11) et `qt6-multimedia-dev` (sons de
+Qt 6, qui fait venir le reste de Qt) ; `install.sh` les installe :
 
 ```sh
 sudo apt install libxaw7-dev qt6-multimedia-dev
 ```
 
-`libxaw7-dev` (widgets Athena) est nécessaire à X11, `qt6-multimedia-dev`
-(sons) à Qt 6. Leurs menus, boutons et boîtes de dialogue sont traduits
-comme le reste du jeu ; X11 affiche le texte en Latin-1 (polices X
-classiques), si bien que `œ` y devient `oe`. Compiler ensuite avec :
+On choisit l'interface au lancement :
+
+```sh
+~/nh/install/games/nethack -wX11
+~/nh/install/games/nethack -wQt
+```
+
+Leurs menus, boutons et boîtes de dialogue sont traduits comme le reste du
+jeu ; X11 affiche le texte en Latin-1 (polices X classiques), si bien que
+`œ` y devient `oe`. Pour compiler à la main :
 
 ```sh
 make WANT_WIN_ALL=1 WANT_WIN_QT6=1 QT6MANUAL=1 HOSTTYPE=x86_64 all
