@@ -1,0 +1,74 @@
+DLB(6)                           Games Manual                           DLB(6)
+
+NOM
+       dlb - archiviste des données de NetHack
+
+SYNOPSIS
+       dlb {c|t|x}[v][C répertoire] [fichier] ...
+
+       dlb {c|t|x}[v]I fichier-liste
+
+       dlb {c|t|x}[v][f nom-de-l'archive] [fichier] ...
+
+DESCRIPTION
+       Dlb  est  un  outil d'archivage de fichiers dans l'esprit (et la tradi-
+       tion) de tar(1), pour nethack(6) à partir de la version 3.1.  Il sert à
+       tenir à jour les archives dans lesquelles le jeu lit les  fichiers  des
+       niveaux spéciaux et d'autres informations en lecture seule.  Comme avec
+       tar,  les  lettres  qui indiquent l'opération et les options s'écrivent
+       d'un seul bloc.  Contrairement à tar, dlb connaît par défaut  la  liste
+       des fichiers à traiter.
+
+   Opérations
+       Avec  c,  dlb crée une nouvelle archive à partir des fichiers du réper-
+       toire courant.
+
+       t liste les fichiers de l'archive.
+
+       Avec x, dlb extrait le contenu de l'archive dans le répertoire courant.
+
+OPTIONS
+       C rép          Se placer dans  le  répertoire  rép  avant  de  lire  le
+                      moindre fichier.
+
+       f archive      Lire ou écrire archive au lieu de LIBFILE (en général le
+                      fichier nhdat du répertoire de jeu).
+
+       I fichier-liste
+                      Lire  dans  fichier-liste les noms des fichiers à placer
+                      dans l'archive ou à en extraire.  Pour la création d'une
+                      archive, c'est LIBLISTFILE par défaut.
+
+       v              Donner le détail des opérations.
+
+EXEMPLES
+       Créer l'archive par défaut  à  partir  de  la  liste  de  fichiers  par
+       défaut :
+              dlb c
+
+       Lister le contenu de l'archive foo :
+              dlb tf foo
+
+AUTEUR
+       Kenneth Lorber
+
+VOIR AUSSI
+       nethack(6), tar(1)
+
+BOGUES
+       · Imite mal tar : - ne désigne ni l'entrée ni la sortie standard.
+
+       · Il faudrait une possibilité de compression facultative.
+
+       · Les fichiers en lecture seule de NetHack ne peuvent pas tous être lus
+         dans  une  archive ; seule la lecture du code source permet de savoir
+         lesquels le peuvent.
+
+COPYRIGHT
+       Ce fichier est Copyright (C) Kenneth Lorber, 2024 pour la version keni-
+       gitset:1.13.  NetHack peut être redistribué  librement.   Voir  license
+       pour les détails.
+
+       Traduction française : projet de traduction de NetHack 5.0.0.
+
+NETHACK                        25 décembre 2024                         DLB(6)

@@ -1,0 +1,162 @@
+.\" Traduction française de dlb.6 (même révision que l'original).
+.\" $NHDT-Branch: master $:$NHDT-Revision: 1.14 $ $NHDT-Date: 1735103831 2024/12/25 00:17:11 $
+.\"DO NOT REMOVE NH_DATESUB .TH DLB 6 "Date(%-d %B %Y)" Project(uc)
+.TH DLB 6 "25 décembre 2024" NETHACK
+.\"DO NOT REMOVE NH_DATESUB .ds Nd Date(%Y)
+.ds Nd 2024
+.de NB
+.ds Nb \\$2
+..
+.de NR
+.ds Nr \\$2
+..
+.NB $NHDT-Branch: keni-gitset $
+.NR $NHDT-Revision: 1.13 $
+.\" groff and AT&T-descended troffs use different hyphenation patterns.
+.\" Don't hyphenate the last word on a page or column, or
+.\" before/after last/first 2 characters of a word.
+.ie \n(.g .hy 12
+.el       .hy 14
+.\" French hyphenation patterns with groff
+.if \n(.g \{\
+.  hla fr
+.  hpf hyphen.fr
+.\}
+.ds Na Kenneth Lorber
+.SH NOM
+dlb \- archiviste des données de NetHack
+.SH SYNOPSIS
+.B dlb
+.\" We'd use `RB` with 7 arguments, but Unix troff man(7) has a limit of
+.\" 6 arguments to its macros.
+{\c
+.BR c | t | x\c
+}\c
+.RB [ v ]\c
+.RB [ C
+.IR répertoire ]
+.RI [ fichier ]
+\&.\|.\|.
+.PP
+.B dlb
+{\c
+.BR c | t | x\c
+}\c
+.RB [ v ]\c
+.B I
+.IR fichier-liste
+.PP
+.B dlb
+{\c
+.BR c | t | x\c
+}\c
+.RB [ v ]\c
+.RB [ f
+.IR nom-de-l'archive ]
+.RI [ fichier ]
+\&.\|.\|.
+.SH DESCRIPTION
+.I Dlb
+est un outil d'archivage de fichiers dans l'esprit (et la tradition) de
+.IR tar (1),
+pour
+.IR nethack (6)
+à partir de la version 3.1.
+Il sert à tenir à jour les archives dans lesquelles le jeu lit les
+fichiers des niveaux spéciaux et d'autres informations en lecture seule.
+Comme avec
+.IR tar ,
+les lettres qui indiquent l'opération et les options
+s'écrivent d'un seul bloc.
+Contrairement à
+.IR tar ,
+.I dlb
+connaît par défaut la liste des fichiers à traiter.
+.ig
+.PP
+^?ALLDOCS
+Cette fonction est facultative et peut être écartée à la configuration
+de NetHack.
+^:
+^?DLB
+Cette fonction est facultative, mais elle fait partie de cette
+configuration de NetHack.
+^:
+Cette fonction est facultative et a été écartée de cette configuration
+de NetHack.
+^.
+^.
+..
+.SS Opérations
+Avec
+.BR c ,
+.I dlb
+crée une nouvelle archive à partir des fichiers du répertoire courant.
+.PP
+.B t
+liste les fichiers de l'archive.
+.PP
+Avec
+.BR x ,
+.I dlb
+extrait le contenu de l'archive dans le répertoire courant.
+.SH OPTIONS
+.TP 15n \" "I fichier-liste" + 2n
+.BI "C " rép
+Se placer dans le répertoire
+.I rép
+avant de lire le moindre fichier.
+.TP
+.BI "f " archive
+Lire ou écrire
+.I archive
+au lieu de LIBFILE
+(en général le fichier
+.I nhdat
+du répertoire de jeu).
+.TP
+.BI "I " fichier-liste
+Lire dans
+.I fichier-liste
+les noms des fichiers à placer dans l'archive ou à en extraire.
+Pour la création d'une archive, c'est LIBLISTFILE par défaut.
+.TP
+.B v
+Donner le détail des opérations.
+.SH EXEMPLES
+Créer l'archive par défaut à partir de la liste de fichiers par défaut\~:
+.RS
+.EX
+dlb c
+.EE
+.RE
+.PP
+Lister le contenu de l'archive
+.IR foo \~:
+.RS
+.EX
+dlb tf foo
+.EE
+.RE
+.SH AUTEUR
+Kenneth Lorber
+.SH "VOIR AUSSI"
+.IR nethack (6),
+.IR tar (1)
+.SH BOGUES
+.IP \(bu 2n
+Imite mal
+.IR tar \~:
+.B -
+ne désigne ni l'entrée ni la sortie standard.
+.IP \(bu
+Il faudrait une possibilité de compression facultative.
+.IP \(bu
+Les fichiers en lecture seule de NetHack ne peuvent pas tous être lus
+dans une archive\~;
+seule la lecture du code source permet de savoir lesquels le peuvent.
+.SH COPYRIGHT
+Ce fichier est Copyright (C) \*(Na, \*(Nd pour la version \*(Nb:\*(Nr.
+NetHack peut être redistribué librement.  Voir license pour les détails.
+.PP
+Traduction française : projet de traduction de NetHack 5.0.0.

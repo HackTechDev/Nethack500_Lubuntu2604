@@ -34,11 +34,11 @@ devraient donc être bien moins nombreux, et le taux réel plus proche de
 
 ## Documentation
 
-- Faits : le Guide du joueur (`doc/Guidebook-fr.mn`) et la page de manuel
-  `doc/nethack-fr.6`.
-- Pas traduits : `Guidebook.tex`, qui est une autre version du même guide,
-  et les pages de manuel des outils `recover.6`, `dlb.6` et `makedefs.6`.
-  Ils sont notés de faible priorité dans `TODO.md`.
+- Faits : le Guide du joueur (`doc/Guidebook-fr.mn`), la page de manuel
+  `doc/nethack-fr.6` et celles des outils (`doc/recover-fr.6`,
+  `doc/dlb-fr.6`, `doc/makedefs-fr.6`).
+- Pas traduit : `Guidebook.tex`, qui est une autre version du même guide
+  (faible priorité dans `TODO.md`).
 
 ## Remarque
 

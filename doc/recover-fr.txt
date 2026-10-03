@@ -1,0 +1,87 @@
+RECOVER(6)                       Games Manual                       RECOVER(6)
+
+NOM
+       recover  -  récupérer  une partie de NetHack interrompue par une catas-
+       trophe
+
+SYNOPSIS
+       recover [ -d répertoire ] base1 base2 ...
+
+DESCRIPTION
+       Il arrive qu'une partie de NetHack  soit  interrompue  par  une  catas-
+       trophe, quand le jeu ou le système plante.  Avant NetHack 3.1, ces par-
+       ties étaient perdues, car certaines informations, comme l'inventaire du
+       joueur, n'existaient qu'en mémoire.  Désormais, tout ce qui compte peut
+       être  écrit  sur  le  disque, et ces parties peuvent être récupérées au
+       moment du dernier changement de niveau.
+
+       Les arguments base indiquent à recover quels fichiers traiter.   Chacun
+       d'eux désigne une partie distincte à récupérer.
+
+       L'option -d, qui doit être le premier argument quand elle est présente,
+       donne  le  répertoire de jeu (« playground ») de NetHack.  Elle a prio-
+       rité sur la valeur de NETHACKDIR ou de HACKDIR, et  sur  le  répertoire
+       choisi  par  l'administrateur  du  jeu  à  la  compilation  (en général
+       /usr/games/lib/nethackdir).  NetHack écrit normalement le fichier  d'un
+       niveau  quand le joueur le quitte, pour qu'il soit prêt s'il y revient.
+       Avec les points de reprise (« checkpoint »),  NetHack  écrit  aussi,  à
+       chaque changement de niveau, le niveau où le joueur arrive et l'état de
+       la partie.  Cela ralentit forcément un peu les changements de niveau.
+
+       Les  fichiers  des  niveaux  s'appellent  base.nn,  où nn est un numéro
+       interne attribué au niveau.  Le fichier base.0 sert à identifier  et  à
+       verrouiller  la  partie  et,  avec  les  points de reprise, à conserver
+       l'état de la partie.  Chaque système construit le  nom  de  base  à  sa
+       façon.   Les micro-ordinateurs prennent le nom du personnage, éventuel-
+       lement raccourci et modifié pour être un nom de fichier valide  sur  ce
+       système.    Les   systèmes  multi-utilisateurs  font  précéder  le  nom
+       (modifié) du personnage d'un  numéro  d'utilisateur,  pour  éviter  les
+       conflits,  ou utilisent « xlock » quand le nombre de joueurs simultanés
+       est limité.  Il faudra parfois regarder dans le répertoire de jeu  pour
+       trouver  le  bon  nom de base de la partie interrompue.  recover trans-
+       forme ces fichiers de niveaux en un fichier de  sauvegarde  portant  le
+       nom qu'aurait utilisé nethack.
+
+       Comme  recover  doit pouvoir lire et effacer des fichiers du répertoire
+       de jeu, et créer des fichiers dans le répertoire  des  sauvegardes,  il
+       pose  des  questions  délicates  de sécurité.  Donner aux joueurs ordi-
+       naires l'accès à recover par setuid ou  setgid  revient  à  laisser  le
+       répertoire  de  jeu  ouvert en écriture à tous, aussi bien pour tricher
+       que pour gâcher les parties des autres.  Sur un système à un seul  uti-
+       lisateur,  cela  ne  change  évidemment rien, et certains portages pour
+       micro-ordinateurs installent donc recover par défaut.
+
+       Sur un système multi-utilisateurs, l'administrateur du jeu  peut  faire
+       passer à recover tous les fichiers .0 du répertoire de jeu au démarrage
+       de  la machine, et traiter au cas par cas les plantages du jeu.  Si les
+       utilisateurs sont suffisamment dignes de confiance, recover  peut  être
+       installé avec les mêmes permissions que l'exécutable nethack.  Dans les
+       deux cas, recover se compile facilement à partir du répertoire des uti-
+       litaires de la distribution.
+
+NOTES
+       Comme nethack lui-même, recover écrase les fichiers de sauvegarde exis-
+       tants  qui  portent  le même nom.  Les fichiers de sauvegarde créés par
+       recover ne sont pas compressés ; on peut les compresser ensuite  si  on
+       le  souhaite,  mais  même  un nethack qui compresse ses sauvegardes les
+       trouvera sous leur forme non compressée.
+
+VOIR AUSSI
+       nethack(6)
+
+BOGUES
+       recover ne cherche pas à savoir si un nom de base désigne une partie en
+       cours.  Si plusieurs machines partagent un répertoire de jeu, ce serait
+       d'ailleurs impossible à déterminer.
+
+       Il faudrait apprendre à recover à utiliser le mécanisme de verrouillage
+       du répertoire de jeu de nethack, pour éviter les conflits.
+
+COPYRIGHT
+       Ce fichier est Copyright (C)  Kenneth  Lorber,  2024  pour  la  version
+       NetHack-5:1.12.  NetHack peut être redistribué librement.  Voir license
+       pour les détails.
+
+       Traduction française : projet de traduction de NetHack 5.0.0.
+
+NETHACK                          26 avril 2026                      RECOVER(6)

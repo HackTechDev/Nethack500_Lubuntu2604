@@ -147,8 +147,8 @@ FR2UTF8 = iconv -f latin1 -t utf-8 | LC_ALL=C.UTF-8 $(COLCMD)
 Guidebook-fr.txt	: Guidebook-fr.mn tmac.n tmac.nh $(NEEDMAKEDEFS)
 	cat Guidebook-fr.mn | $(NHGREP) | preconv | tbl tmac.n - \
 		| nroff -c -Tlatin1 $(NROFF_FLAGS) | $(FR2UTF8) > $@
-nethack-fr.txt	: nethack-fr.6
-	cat nethack-fr.6 | $(NHGREP) | preconv | nroff -c -man -Tlatin1 \
+nethack-fr.txt recover-fr.txt dlb-fr.txt makedefs-fr.txt : %.txt : %.6
+	cat $< | $(NHGREP) | preconv | nroff -c -man -Tlatin1 \
 		| $(FR2UTF8) > $@
 
 clean:

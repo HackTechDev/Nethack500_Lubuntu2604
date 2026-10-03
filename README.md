@@ -68,8 +68,9 @@ Sont traduits, pour les interfaces tty, curses, X11 et Qt :
   l'écran `#version` ;
 - le mode magicien et les messages d'erreur internes ; le `paniclog`
   garde le texte anglais pour les rapports de bugs ;
-- le guide du joueur (`doc/Guidebook-fr.txt`) et la page de manuel
-  (`doc/nethack-fr.txt`).
+- le guide du joueur (`doc/Guidebook-fr.txt`) et les pages de manuel
+  (`doc/nethack-fr.txt`, et `recover-fr.txt`, `dlb-fr.txt`,
+  `makedefs-fr.txt` pour les outils).
 
 Restent en anglais : les citations de Terry
 Pratchett (`dat/tribute`), la licence et les noms des options du fichier
@@ -90,7 +91,7 @@ fonctionnement est décrit dans la section 7 de [INSTALL.md](INSTALL.md).
 | `po/fr.po`         | Traduction française des messages, compilée en `dat/fr.mo`        |
 | `po/*.sh`, `po/*.py` | Extraction des textes à traduire (`make update-po`)             |
 | `dat/*.fr`, `dat/*-fr.*` | Fichiers d'aide, encyclopédie, rumeurs, oracles... traduits |
-| `doc/Guidebook-fr.mn`, `doc/nethack-fr.6` | Guide du joueur et page de manuel en français |
+| `doc/Guidebook-fr.mn`, `doc/*-fr.6` | Guide du joueur et pages de manuel en français |
 | `TODO.md`          | État de la traduction et ce qui reste à faire                     |
 
 Le reste du dépôt est le code source de NetHack 5.0.0, avec en plus le

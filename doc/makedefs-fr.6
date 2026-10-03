@@ -1,0 +1,305 @@
+.\" Traduction française de makedefs.6 (même révision que l'original).
+.\"DO NOT REMOVE NH_DATESUB .TH MAKEDEFS 6 "Date(%-d %B %Y)" Project(uc)
+.TH MAKEDEFS 6 "26 avril 2026" NETHACK
+.\"DO NOT REMOVE NH_DATESUB .ds Nd Date(%Y)
+.ds Nd 2024
+.de NB
+.ds Nb \\$2
+..
+.de NR
+.ds Nr \\$2
+..
+.NB $NHDT-Branch: NetHack-5 $
+.NR $NHDT-Revision: 1.22 $
+.\" groff and AT&T-descended troffs use different hyphenation patterns.
+.\" Don't hyphenate the last word on a page or column, or
+.\" before/after last/first 2 characters of a word.
+.ie \n(.g .hy 12
+.el       .hy 14
+.\" French hyphenation patterns with groff
+.if \n(.g \{\
+.  hla fr
+.  hpf hyphen.fr
+.\}
+.ds Na Kenneth Lorber
+.SH NOM
+makedefs \- fonctions diverses de NetHack utilisées à la compilation
+.SH SYNOPSIS
+.B makedefs
+{
+.B -o
+|
+.B -d
+|
+.B -e
+|
+.B -m
+|
+.B -v
+|
+.B -p
+|
+.B -q
+|
+.B -r
+|
+.B -h
+}
+.P
+.B makedefs --input
+.I fichier
+.B --output
+.I fichier
+.BI -- commande
+.SH DESCRIPTION
+.PP
+.B Makedefs
+est un outil utilisé à la compilation pour créer et modifier divers
+fichiers sources de
+.BR NetHack (6).
+Pour des raisons historiques,
+.B makedefs
+accepte deux sortes de lignes de commande.
+Avec une option courte, les fichiers traités sont fixés à la compilation
+de
+.BR makedefs .
+Avec une option longue, les options
+.B --input
+et
+.B --output
+indiquent les fichiers de la
+.BI -- commande .
+Chaque commande n'existe que sous l'une des deux formes.
+.SH "COMMANDES COURTES"
+Les commandes courtes s'écrivent indifféremment en minuscules ou en
+majuscules.
+.TP
+.B -o
+Produire
+.IR onames.h .
+.br
+.TP
+.B -d
+Produire
+.IR data.base .
+.br
+.TP
+.B -e
+Produire
+.IR dungeon.pdf .
+Le fichier d'entrée
+.I dungeon.def
+passe par le même traitement que celui de la commande
+.BR --grep \~;
+voir la section
+.B "FONCTIONS MDGREP"
+plus bas pour les détails.
+.br
+.TP
+.B -m
+Produire
+.I date.h
+et le fichier
+.IR options .
+Seulement s'il existe,
+.I dat/gitinfo.txt
+est lu pour obtenir les informations
+.B githash=
+et
+.BR gitbranch= ,
+et les #define correspondants du préprocesseur sont ajoutés au fichier
+.IR date.h .
+.br
+.TP
+.B -p
+Produire
+.IR pm.h .
+.br
+.TP
+.B -q
+Produire le fichier
+.IR rumors .
+.br
+.TP
+.B -s
+Produire les fichiers
+.IR bogusmon ", " engrave " et " epitaph .
+.br
+.TP
+.B -1
+Produire le fichier
+.IR epitaph .
+.br
+.TP
+.B -2
+Produire le fichier
+.IR engrave .
+.br
+.TP
+.B -3
+Produire le fichier
+.IR bogusmon .
+.br
+.TP
+.B -h
+Produire le fichier
+.BR oracles .
+.br
+.SH "COMMANDES LONGUES"
+.TP
+.B --debug
+Afficher des informations de débogage.
+.br
+.TP
+.B --make \fR[\fIcommande\fR]
+Exécuter une commande courte.  La commande s'écrit sans le tiret
+initial.
+.br
+.TP
+.BI --input " fichier"
+Indiquer le
+.I fichier
+d'entrée de la commande (si elle en a besoin).  Si le fichier est -,
+l'entrée standard est lue.
+.br
+.TP
+.BI --output " fichier"
+Indiquer le
+.I fichier
+de sortie de la commande (si elle en a besoin).  Si le fichier est -,
+le résultat est écrit sur la sortie standard.
+.br
+.TP
+.B --svs \fR[\fIséparateur\fR]
+Écrire une chaîne de version sur la sortie standard, sans retour à la
+ligne final.
+S'il est indiqué, le séparateur est placé entre chaque partie de la
+chaîne de version.
+.br
+.TP
+.B --grep
+Filtrer le
+.I fichier
+d'entrée vers le
+.I fichier
+de sortie.
+Voir la section
+.B "FONCTIONS MDGREP"
+plus bas pour savoir comment piloter ce filtrage.
+.br
+.TP
+.B --grep-showvars
+Afficher le nom et la valeur de chaque variable connue de l'option grep.
+.br
+.TP
+.B --grep-trace
+Activer la trace de débogage de la fonction grep (il faut aussi
+indiquer
+.BR --grep ).
+.br
+.TP
+.BI --grep-defined " symbole"
+Sortir avec le code vrai du shell (0) si
+.I symbole
+est connu et défini, sinon avec le code faux (1).
+.TP
+.BI --grep-define " symbole"
+Forcer
+.I symbole
+à « défini ».
+.I Symbole
+doit déjà être connu de
+.BR makedefs .
+.br
+.TP
+.BI --grep-undef " symbole"
+Forcer
+.I symbole
+à « non défini ».
+.I Symbole
+doit déjà être connu de
+.BR makedefs .
+.SH "FONCTIONS MDGREP"
+La commande
+.B --grep
+(et certaines autres commandes) filtre son entrée ligne par ligne,
+selon des lignes de contrôle placées dans l'entrée et selon des
+informations tirées de la configuration de
+.BR NetHack (6).
+Cela permet par exemple d'inclure dans les fichiers de documentation
+principaux des passages propres à une plate-forme.
+.P
+Règles\~:
+.RS
+.IP - 4
+Au départ, l'état conditionnel est « affichage activé ».
+.IP - 4
+Une ligne qui ne commence
+.I PAS
+par un accent circonflexe (^) est supprimée ou recopiée telle quelle,
+selon l'état conditionnel en cours.
+.IP - 4
+Une ligne qui commence par un accent circonflexe est une ligne de
+contrôle ; comme en C, on peut placer des espaces presque partout dans
+la ligne (sauf juste après l'accent circonflexe), mais l'accent
+circonflexe doit être en colonne 1.
+.IP - 4
+Les conditions peuvent être imbriquées.
+.IP - 4
+.I Makedefs
+se termine avec un code d'erreur si des erreurs sont détectées\~;
+le traitement continue (si possible) pour en détecter le plus possible.
+.IP - 4
+Un identifiant inconnu vaut à la fois VRAI et une erreur.  Remarquez que
+.BR --undef " ou " #undef
+dans la configuration de
+.BR NetHack (6)
+ne sont pas la même chose qu'inconnu.
+.RE
+.P
+Lignes de contrôle\~:
+.RS
+.IP ^^ 4
+une ligne qui commence par un accent circonflexe (un seul) à prendre
+littéralement
+.IP ^#
+un commentaire
+.IP ^?\fIID
+si
+.I ID
+est défini, mettre l'état conditionnel à VRAI
+.IP ^!\fIID
+si
+.I ID
+n'est pas défini, mettre l'état conditionnel à VRAI
+.IP ^:
+sinon ; inverser l'état conditionnel
+.IP ^.
+fin de la dernière condition ouverte
+.RE
+.SH ENVIRONNEMENT
+.TP
+.B MAKEDEFS_LANG
+Propre à cette version traduite.
+Avec un code de langue (par exemple
+.BR fr ),
+les commandes qui produisent les rumeurs, les oracles, les épitaphes,
+les gravures, les noms hallucinés et l'encyclopédie lisent les fichiers
+traduits
+.IR nom - langue .txt
+(ou
+.BR .tru ,
+.BR .fal ,
+.BR .base )
+et écrivent
+.IR nom . langue ,
+que le jeu lit avec
+.BR OPTIONS=language: \fIlangue\fR.
+.\".SH EXAMPLES
+.SH AUTEUR
+L'équipe de développement de NetHack (NetHack Development Team)
+.SH COPYRIGHT
+Ce fichier est Copyright (C) \*(Na, \*(Nd pour la version \*(Nb:\*(Nr.
+NetHack peut être redistribué librement.  Voir license pour les détails.
+.PP
+Traduction française : projet de traduction de NetHack 5.0.0.

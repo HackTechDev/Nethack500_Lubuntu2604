@@ -279,8 +279,10 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
   principales commandes.
 - À reporter dans les traductions quand `Guidebook.mn` ou `nethack.6`
   changent (chaque fichier traduit garde la révision de l'original).
-- Pas encore traduits : `Guidebook.tex` (version LaTeX), `recover.6`,
-  `dlb.6`, `makedefs.6` (outils techniques, faible priorité).
+- Pages de manuel des outils : `doc/recover-fr.6`, `doc/dlb-fr.6`,
+  `doc/makedefs-fr.6`, textes produits de la même façon
+  (`make recover-fr.txt dlb-fr.txt makedefs-fr.txt`).
+- Pas encore traduit : `Guidebook.tex` (version LaTeX, faible priorité).
 
 ## 7. Vérification et relecture (priorité haute)
 

@@ -1,0 +1,163 @@
+.\" Traduction française de recover.6 (même révision que l'original).
+.\"DO NOT REMOVE NH_DATESUB .TH RECOVER 6 "Date(%-d %B %Y)" Project(uc)
+.TH RECOVER 6 "26 avril 2026" NETHACK
+.\"DO NOT REMOVE NH_DATESUB .ds Nd Date(%Y)
+.ds Nd 2024
+.de NB
+.ds Nb \\$2
+..
+.de NR
+.ds Nr \\$2
+..
+.NB $NHDT-Branch: NetHack-5 $
+.NR $NHDT-Revision: 1.12 $
+.\" groff and AT&T-descended troffs use different hyphenation patterns.
+.\" Don't hyphenate the last word on a page or column, or
+.\" before/after last/first 2 characters of a word.
+.ie \n(.g .hy 12
+.el       .hy 14
+.\" French hyphenation patterns with groff
+.if \n(.g \{\
+.  hla fr
+.  hpf hyphen.fr
+.\}
+.ds Na Kenneth Lorber
+.SH NOM
+recover \- récupérer une partie de NetHack interrompue par une catastrophe
+.SH SYNOPSIS
+.B recover
+[
+.B \-d
+.I répertoire
+]
+.I "base1 base2" ...
+.SH DESCRIPTION
+.PP
+Il arrive qu'une partie de NetHack soit interrompue par une catastrophe,
+quand le jeu ou le système plante.
+Avant NetHack 3.1, ces parties étaient perdues, car certaines
+informations, comme l'inventaire du joueur, n'existaient qu'en mémoire.
+Désormais, tout ce qui compte peut être écrit sur le disque,
+et ces parties peuvent être récupérées au moment du dernier changement
+de niveau.
+.PP
+Les arguments
+.I base
+indiquent à
+.I recover
+quels fichiers traiter.
+Chacun d'eux désigne une partie distincte à récupérer.
+.PP
+L'option
+.BR \-d ,
+qui doit être le premier argument quand elle est présente,
+donne le répertoire de jeu (« playground ») de NetHack.
+Elle a priorité sur la valeur de NETHACKDIR ou de HACKDIR, et sur le
+répertoire choisi par l'administrateur du jeu à la compilation
+(en général /usr/games/lib/nethackdir).
+.ig
+.PP
+^?ALLDOCS
+Pour que la récupération soit possible,
+.I nethack
+doit avoir été compilé avec l'option INSURANCE, et l'option d'exécution
+.I checkpoint
+doit aussi avoir été activée.
+^:
+^?INSURANCE
+Pour que la récupération soit possible,
+.I nethack
+doit avoir été compilé avec l'option INSURANCE (c'est le cas de cette
+configuration), et l'option d'exécution
+.I checkpoint
+doit aussi avoir été activée.
+^:
+Cette configuration de
+.I nethack
+a été construite sans possibilité de récupération.
+^.
+^.
+..
+NetHack écrit normalement le fichier d'un niveau quand le joueur le
+quitte, pour qu'il soit prêt s'il y revient.
+Avec les points de reprise (« checkpoint »), NetHack écrit aussi, à chaque
+changement de niveau, le niveau où le joueur arrive et l'état de la
+partie.
+Cela ralentit forcément un peu les changements de niveau.
+.PP
+Les fichiers des niveaux s'appellent base.nn, où nn est un numéro
+interne attribué au niveau.
+Le fichier base.0 sert à identifier et à verrouiller la partie et, avec
+les points de reprise, à conserver l'état de la partie.
+Chaque système construit le nom de base à sa façon.
+Les micro-ordinateurs prennent le nom du personnage, éventuellement
+raccourci et modifié pour être un nom de fichier valide sur ce système.
+Les systèmes multi-utilisateurs font précéder le nom (modifié) du
+personnage d'un numéro d'utilisateur, pour éviter les conflits,
+ou utilisent « xlock » quand le nombre de joueurs simultanés est limité.
+Il faudra parfois regarder dans le répertoire de jeu pour trouver le
+bon nom de base de la partie interrompue.
+.I recover
+transforme ces fichiers de niveaux en un fichier de sauvegarde portant le
+nom qu'aurait utilisé
+.IR nethack .
+.PP
+Comme
+.I recover
+doit pouvoir lire et effacer des fichiers du répertoire de jeu,
+et créer des fichiers dans le répertoire des sauvegardes,
+il pose des questions délicates de sécurité.
+Donner aux joueurs ordinaires l'accès à
+.I recover
+par setuid ou setgid revient à laisser le répertoire de jeu ouvert en
+écriture à tous, aussi bien pour tricher que pour gâcher les parties
+des autres.
+Sur un système à un seul utilisateur, cela ne change évidemment rien,
+et certains portages pour micro-ordinateurs installent donc
+.I recover
+par défaut.
+.PP
+Sur un système multi-utilisateurs,
+l'administrateur du jeu peut faire passer à recover tous les fichiers
+\&.0 du répertoire de jeu au démarrage de la machine,
+et traiter au cas par cas les plantages du jeu.
+Si les utilisateurs sont suffisamment dignes de confiance,
+.I recover
+peut être installé avec les mêmes permissions que l'exécutable
+.IR nethack .
+Dans les deux cas,
+.I recover
+se compile facilement à partir du répertoire des utilitaires de la
+distribution.
+.SH NOTES
+.PP
+Comme
+.I nethack
+lui-même,
+.I recover
+écrase les fichiers de sauvegarde existants qui portent le même nom.
+Les fichiers de sauvegarde créés par
+.I recover
+ne sont pas compressés\~;
+on peut les compresser ensuite si on le souhaite,
+mais même un
+.I nethack
+qui compresse ses sauvegardes les trouvera sous leur forme non compressée.
+.SH "VOIR AUSSI"
+nethack(6)
+.SH BOGUES
+.PP
+.I recover
+ne cherche pas à savoir si un nom de base désigne une partie en cours.
+Si plusieurs machines partagent un répertoire de jeu, ce serait
+d'ailleurs impossible à déterminer.
+.PP
+Il faudrait apprendre à
+.I recover
+à utiliser le mécanisme de verrouillage du répertoire de jeu de nethack,
+pour éviter les conflits.
+.SH COPYRIGHT
+Ce fichier est Copyright (C) \*(Na, \*(Nd pour la version \*(Nb:\*(Nr.
+NetHack peut être redistribué librement.  Voir license pour les détails.
+.PP
+Traduction française : projet de traduction de NetHack 5.0.0.
