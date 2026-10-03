@@ -9,8 +9,8 @@
 > Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté et
 > la licence (`dat/license`) n'est pas traduite.
 
-État actuel (3 octobre 2026) : 14 624 textes traduits dans `po/fr.po`,
-1 871 vides. Parmi ces vides, 1 099 sont des entrées de genre
+État actuel (3 octobre 2026) : 14 915 textes traduits dans `po/fr.po`,
+1 874 vides. Parmi ces vides, 1 099 sont des entrées de genre
 (`gender`, `objgender`) : vides, elles valent masculin (voir la
 section 7 pour celles à vérifier). Presque tous les autres sont des
 formats anglais remplacés à l'exécution par une phrase entière traduite
@@ -275,6 +275,8 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
   `make Guidebook-fr.txt` dans `doc/` (il faut groff pour `preconv`).
 - Page de manuel : `doc/nethack-fr.6`, texte dans `doc/nethack-fr.txt`
   (`make nethack-fr.txt`).
+- Aide-mémoire : `doc/commandes_nethack.md`, résumé en français des
+  principales commandes.
 - À reporter dans les traductions quand `Guidebook.mn` ou `nethack.6`
   changent (chaque fichier traduit garde la révision de l'original).
 - Pas encore traduits : `Guidebook.tex` (version LaTeX), `recover.6`,
