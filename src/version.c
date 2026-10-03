@@ -185,6 +185,9 @@ doextversion(void)
     done_rt = TRUE;
 #endif
 
+    /* built before the options were read: redo it in today's language */
+    rebuild_runtime_opttext();
+
     /* instead of using ``display_file(OPTIONS_USED,TRUE)'' we handle
        the file manually so we can include dynamic version info */
 

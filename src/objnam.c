@@ -4746,10 +4746,16 @@ wizterrainwish(struct _readobjnam_data *d)
         if ((t = maketrap(x, y, trap)) != 0) {
             trap = t->ttyp;
             tname = trapname(trap, TRUE);
+            if (trap == MAGIC_PORTAL && i18n_active())
+                pline("A magic portal to nowhere.");
+            else if (i18n_active())
+                pline("%s.", upstart(i18n_an_ctx("trap", tname)));
+            else
             pline("%s%s.", An(tname),
                   (trap != MAGIC_PORTAL) ? "" : " to nowhere");
         } else {
-            pline("Creation of %s failed.", an(tname));
+            pline("Creation of %s failed.",
+                  i18n_active() ? i18n_an_ctx("trap", tname) : an(tname));
         }
         return &hands_obj;
     }
@@ -4766,7 +4772,7 @@ wizterrainwish(struct _readobjnam_data *d)
             svl.level.flags.nfountains++;
         lev->looted = d->looted ? F_LOOTED : 0; /* overlays 'flags' */
         lev->blessedftn = d->blessed || !strncmpi(bp, "magic ", 6);
-        pline("A %sfountain.", lev->blessedftn ? "magic " : "");
+        pline(lev->blessedftn ? "A magic fountain." : "A fountain.");
         madeterrain = TRUE;
     } else if (!BSTRCMPI(bp, p - 6, "throne")) {
         lev->typ = THRONE;
@@ -4827,8 +4833,8 @@ wizterrainwish(struct _readobjnam_data *d)
         }
         del_engr_at(x, y);
         if (!is_dbridge) {
-            pline("A %s of molten lava.",
-                  (lev->typ == LAVAPOOL) ? "pool" : "wall");
+            pline((lev->typ == LAVAPOOL) ? "A pool of molten lava."
+                                         : "A wall of molten lava.");
             if (!(Levitation || Flying) || lev->typ == LAVAWALL)
                 pooleffects(FALSE);
         } else {
@@ -4874,7 +4880,11 @@ wizterrainwish(struct _readobjnam_data *d)
         else /* -1 - A_CHAOTIC, 0 - A_NEUTRAL, 1 - A_LAWFUL */
             al = !rn2(6) ? A_NONE : (rn2((int) A_LAWFUL + 2) - 1);
         lev->altarmask = Align2amask(al); /* overlays 'flags' */
-        pline("%s altar.", An(align_str(al)));
+        /* whole sentences, so that each can be translated */
+        pline((al == A_LAWFUL) ? "A lawful altar."
+              : (al == A_NEUTRAL) ? "A neutral altar."
+                : (al == A_CHAOTIC) ? "A chaotic altar."
+                  : "An unaligned altar.");
         madeterrain = TRUE;
     } else if (!BSTRCMPI(bp, p - 5, "grave")
                || !BSTRCMPI(bp, p - 9, "headstone")) {
@@ -4882,7 +4892,7 @@ wizterrainwish(struct _readobjnam_data *d)
         if (IS_GRAVE(lev->typ)) {
             lev->looted = 0; /* overlays 'flags' */
             lev->disturbed = d->looted ? 1 : 0;
-            pline("A %sgrave.", lev->disturbed ? "disturbed " : "");
+            pline(lev->disturbed ? "A disturbed grave." : "A grave.");
             madeterrain = TRUE;
         } else {
             pline("Can't place a grave here.");
@@ -4985,11 +4995,42 @@ wizterrainwish(struct _readobjnam_data *d)
                 else
                     Strcat(dbuf, "door");
             }
+            if (i18n_active()) {
+                /* "noun (adjective, adjective)." instead of English
+                   adjectives before the noun */
+                char adj[BUFSZ];
+                const char *noun = (lev->typ == SDOOR) ? _("secret door")
+                    : ((lev->doormask & ~D_TRAPPED) == D_NODOOR)
+                      ? _("doorless doorway") : _("door");
+
+                adj[0] = '\0';
+                if (lev->doormask & D_TRAPPED)
+                    Strcat(adj, C_("door", "trapped"));
+                if (lev->doormask & D_LOCKED)
+                    Sprintf(eos(adj), "%s%s", *adj ? ", " : "",
+                            C_("door", "locked"));
+                if (lev->typ != SDOOR) {
+                    if (lev->doormask & D_CLOSED)
+                        Sprintf(eos(adj), "%s%s", *adj ? ", " : "",
+                                C_("door", "closed"));
+                    if (lev->doormask & D_ISOPEN)
+                        Sprintf(eos(adj), "%s%s", *adj ? ", " : "",
+                                C_("door", "open"));
+                    if (lev->doormask & D_BROKEN)
+                        Sprintf(eos(adj), "%s%s", *adj ? ", " : "",
+                                C_("door", "broken"));
+                }
+                if (*adj)
+                    pline("%s (%s).", upstart(strcpy(dbuf, noun)), adj);
+                else
+                    pline("%s.", upstart(strcpy(dbuf, noun)));
+            } else
             pline("%s.", upstart(an(dbuf)));
             madeterrain = TRUE;
         } else {
             Strcpy(dbuf, secret ? "secret door" : "door");
-            pline("%s requires door or wall location.", upstart(dbuf));
+            pline(secret ? "Secret door requires door or wall location."
+                         : "Door requires door or wall location.");
             badterrain = TRUE;
         }
     } else if (!BSTRCMPI(bp, p - 4, "wall")
@@ -5094,6 +5135,24 @@ dbterrainmesg(
     const char *newtype,
     coordxy x, coordxy y)
 {
+    if (i18n_active()) {
+        /* whole sentences, so that each can be translated */
+        boolean up = (levl[x][y].typ == DRAWBRIDGE_UP);
+
+        if (!strcmp(newtype, "Moat"))
+            pline(up ? "Moat in front of the drawbridge."
+                     : "Moat under the drawbridge.");
+        else if (!strcmp(newtype, "Lava"))
+            pline(up ? "Lava in front of the drawbridge."
+                     : "Lava under the drawbridge.");
+        else if (!strcmp(newtype, "Ice"))
+            pline(up ? "Ice in front of the drawbridge."
+                     : "Ice under the drawbridge.");
+        else
+            pline(up ? "Floor in front of the drawbridge."
+                     : "Floor under the drawbridge.");
+        return;
+    }
     pline("%s %s the drawbridge.", newtype,
           (levl[x][y].typ == DRAWBRIDGE_UP) ? "in front of" : "under");
 }

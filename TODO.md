@@ -6,13 +6,15 @@
 > Il reste quelques textes isolés (voir le tableau ci-dessous).
 > Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté.
 
-État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
-1 906 vides. Parmi ces vides, 1 099 sont des entrées de genre
+État actuel (3 octobre 2026) : 13 639 textes traduits dans `po/fr.po`,
+1 887 vides. Parmi ces vides, 1 099 sont des entrées de genre
 (`gender`, `objgender`) : vides, elles valent masculin, c'est voulu.
-Environ 800 autres sont des formats anglais remplacés à l'exécution par
-une phrase entière traduite (branche `i18n_active()`) : ils ne sont
-jamais cherchés dans le catalogue. Il reste donc environ 85 vrais textes
-du code à traduire, surtout des messages de débogage.
+Presque tous les autres sont des formats anglais remplacés à l'exécution
+par une phrase entière traduite (branche `i18n_active()`) : ils ne sont
+jamais cherchés dans le catalogue. Ce qui reste vraiment non traduit est
+surtout fait de messages de débogage et de formats sans texte
+(`"%s%s"`) ; les entrées `adjective-position` vides valent « après le
+nom », c'est voulu.
 
 Le fonctionnement de la traduction et la façon d'ajouter des traductions
 sont décrits dans la section 7 de [INSTALL.md](INSTALL.md).
@@ -26,8 +28,8 @@ Par ordre de priorité (visibilité en jeu) :
 | `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | **Traduit** (octobre 2026) : 872 textes, msgctxt `quest` dans `po/fr.po`, extraits par `po/questtext.py` ; restent à tester en jeu les dialogues avec les chefs et ennemis |
 | `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Fait : `dat/data-fr.base` (clés anglaises, compilé en `dat/data.fr` par `MAKEDEFS_LANG=fr makedefs -d`) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
-| `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
-| `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |
+| `dat/options` | 37 | Options de compilation (`#version`) | Fait : sous Unix, `#version` construit ce texte à l'exécution (`build_options()`, `src/mdlib.c`) ; il est traduit là, sauf la licence de Lua. Le fichier produit par `makedefs` reste en anglais |
+| `dat/license` | 95 | Licence | Écarté : la licence fait foi en anglais, on ne la traduit pas |
 
 Déjà traduits : `help`, `hh`, `keyhelp`, `cmdhelp`, `opthelp`,
 `history`, `usagehlp`, `optmenu`, `wizhelp` (fichiers `dat/*.fr`),

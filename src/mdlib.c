@@ -47,6 +47,21 @@
 #endif
 #endif  /* !MAKEDEFS_C */
 
+/* #version text is translated in the game, not in makedefs's dat/options */
+#if defined(MAKEDEFS_C) || !defined(NHI18N) || defined(NHI18N_OFF)
+#define MD_(s) (s)
+#define md_i18n() FALSE
+#ifndef N_
+#define N_(s) s
+#endif
+#else
+#include "nhi18n.h"
+extern const char *nh_gettext(const char *) FORMAT_ARG(1);
+extern boolean i18n_translating(void);
+#define MD_(s) nh_gettext(s)
+#define md_i18n() i18n_translating()
+#endif
+
 /* shorten up some lines */
 #define FOR_RUNTIME
 
@@ -85,6 +100,9 @@ extern void free_nomakedefs(void); /* date.c */
 void runtime_info_init(void);
 const char *do_runtime_info(int *) NO_NNARGS;
 void release_runtime_info(void);
+#ifndef MAKEDEFS_C
+void rebuild_runtime_opttext(void);
+#endif
 char *mdlib_version_string(char *, const char *) NONNULL NONNULLPTRS;
 
 staticfn void build_options(void);
@@ -118,17 +136,17 @@ static struct win_information window_opts[] = {
          confusing to most users (and it will already be listed separately
          in the compiled options section so users aware of it can find it) */
 #ifdef MSDOS
-      "traditional text with optional 'tiles' graphics",
+      N_("traditional text with optional 'tiles' graphics"),
 #else
       /* assume that one or more of IBMgraphics, DECgraphics
          can be enabled; we can't tell from here whether that is accurate */
-      "traditional text with optional line-drawing",
+      N_("traditional text with optional line-drawing"),
 #endif
       TRUE
     },
 #endif /*TTY_GRAPHICS */
 #ifdef CURSES_GRAPHICS
-    { "curses", "terminal-based graphics", TRUE },
+    { "curses", N_("terminal-based graphics"), TRUE },
 #endif
 #ifdef X11_GRAPHICS
     { "X11", "X11", TRUE },
@@ -137,7 +155,7 @@ static struct win_information window_opts[] = {
     { "Qt", "Qt", TRUE },
 #endif
 #ifdef MSWIN_GRAPHICS /* win32 */
-    { "mswin", "Windows GUI", TRUE },
+    { "mswin", N_("Windows GUI"), TRUE },
 #endif
 #ifdef SHIM_GRAPHICS
     { "shim", "NetHack Library Windowing Shim", TRUE },
@@ -399,6 +417,24 @@ build_savebones_compat_string(void)
                          | ((unsigned long) PATCHLEVEL    <<  8));
 #endif
 
+#ifdef VERSION_COMPATIBILITY
+    if (uver != cver && md_i18n()) {
+        Sprintf(save_bones_compat_buf,
+                MD_("save and bones files accepted from versions"
+                    " %lu.%lu.%lu through %d.%d.%d"),
+                ((uver >> 24) & 0x0ffUL), ((uver >> 16) & 0x0ffUL),
+                ((uver >> 8) & 0x0ffUL),
+                VERSION_MAJOR, VERSION_MINOR, PATCHLEVEL);
+        return;
+    }
+#endif
+    if (md_i18n()) {
+        Sprintf(save_bones_compat_buf,
+                MD_("save and bones files accepted from version"
+                    " %d.%d.%d only"),
+                VERSION_MAJOR, VERSION_MINOR, PATCHLEVEL);
+        return;
+    }
     Strcpy(save_bones_compat_buf,
            "save and bones files accepted from version");
 #ifdef VERSION_COMPATIBILITY
@@ -414,188 +450,194 @@ build_savebones_compat_string(void)
                 VERSION_MAJOR, VERSION_MINOR, PATCHLEVEL);
 }
 
+#if 0
+/* for xgettext: build option and #version texts not marked where used */
+N_("strong PRNG seed from /dev/urandom")
+N_("NetHack 5.0.* uses the 'Lua' interpreter to process some data:")
+#endif
+
 static const char *const build_opts[] = {
 #ifdef AMIGA_WBENCH
-    "Amiga WorkBench support",
+    N_("Amiga WorkBench support"),
 #endif
 #ifdef ANSI_DEFAULT
-    "ANSI default terminal",
+    N_("ANSI default terminal"),
 #endif
-    "color",
+    N_("color"),
 #ifdef TTY_GRAPHICS
 #ifdef TTY_TILES_ESCCODES
-    "console escape codes for tile hinting",
+    N_("console escape codes for tile hinting"),
 #endif
 #endif
 #ifdef LIFE
-    "Conway's Game of Life",
+    N_("Conway's Game of Life"),
 #endif
 #ifdef COMPRESS
-    "data file compression",
+    N_("data file compression"),
 #endif
 #ifdef ZLIB_COMP
-    "ZLIB data file compression",
+    N_("ZLIB data file compression"),
 #endif
 #ifdef DLB
 #ifndef VERSION_IN_DLB_FILENAME
-    "data librarian",
+    N_("data librarian"),
 #else
-    "data librarian with a version-dependent name",
+    N_("data librarian with a version-dependent name"),
 #endif
 #endif
 #ifdef EDIT_GETLIN
-    "edit getlin - some prompts remember previous response",
+    N_("edit getlin - some prompts remember previous response"),
 #endif
 #ifdef DUMPLOG
-    "end-of-game dumplogs",
+    N_("end-of-game dumplogs"),
 #endif
 #ifdef HOLD_LOCKFILE_OPEN
-    "exclusive lock on level 0 file",
+    N_("exclusive lock on level 0 file"),
 #endif
 #if defined(HANGUPHANDLING) && !defined(NO_SIGNAL)
 #ifdef SAFERHANGUP
-    "deferred handling of hangup signal",
+    N_("deferred handling of hangup signal"),
 #else
-    "immediate handling of hangup signal",
+    N_("immediate handling of hangup signal"),
 #endif
 #endif
 #ifdef INSURANCE
-    "insurance files for recovering from crashes",
+    N_("insurance files for recovering from crashes"),
 #endif
 #ifdef LIVELOG
-    "live logging support",
+    N_("live logging support"),
 #endif
 #ifdef LOGFILE
-    "log file",
+    N_("log file"),
 #endif
 #ifdef XLOGFILE
-    "extended log file",
+    N_("extended log file"),
 #endif
 #ifdef PANICLOG
-    "errors and warnings log file",
+    N_("errors and warnings log file"),
 #endif
 #ifdef MAIL
-    "mail daemon",
+    N_("mail daemon"),
 #endif
 #ifdef MONITOR_HEAP
-    "monitor heap - record memory usage for later analysis",
+    N_("monitor heap - record memory usage for later analysis"),
 #endif
 #if defined(GNUDOS) || defined(__DJGPP__)
-    "MSDOS protected mode",
+    N_("MSDOS protected mode"),
 #endif
 #ifdef NEWS
-    "news file",
+    N_("news file"),
 #endif
 #ifdef OVERLAY
 #ifdef MOVERLAY
-    "MOVE overlays",
+    N_("MOVE overlays"),
 #else
 #ifdef VROOMM
-    "VROOMM overlays",
+    N_("VROOMM overlays"),
 #else
-    "overlays",
+    N_("overlays"),
 #endif
 #endif
 #endif
 #ifdef UNIX
 #if defined(DEF_PAGER) && !defined(DLB)
-    "external pager used for viewing help files",
+    N_("external pager used for viewing help files"),
 #else
-    "internal pager used for viewing help files",
+    N_("internal pager used for viewing help files"),
 #endif
 #endif /* UNIX */
     /* pattern matching method will be substituted by nethack at run time */
-    "pattern matching via :PATMATCH:",
+    N_("pattern matching via :PATMATCH:"),
 #ifdef USE_ISAAC64
-    "pseudo random numbers generated by ISAAC64",
+    N_("pseudo random numbers generated by ISAAC64"),
 #ifdef DEV_RANDOM
     /* include which specific one */
     "strong PRNG seed from " DEV_RANDOM,
 #else
 #ifdef WIN32
-    "strong PRNG seed from CNG BCryptGenRandom()",
+    N_("strong PRNG seed from CNG BCryptGenRandom()"),
 #endif
 #endif  /* DEV_RANDOM */
 #else   /* ISAAC64 */
 #ifdef RANDOM
-    "pseudo random numbers generated by random()",
+    N_("pseudo random numbers generated by random()"),
 #else
-    "pseudo random numbers generated by C rand()",
+    N_("pseudo random numbers generated by C rand()"),
 #endif
 #endif /* ISAAC64 */
 #ifdef SELECTSAVED
-    "restore saved games via menu",
+    N_("restore saved games via menu"),
 #endif
 #ifdef SCORE_ON_BOTL
-    "score on status line",
+    N_("score on status line"),
 #endif
 #ifdef CLIPPING
-    "screen clipping",
+    N_("screen clipping"),
 #endif
 #ifdef NO_TERMS
 #ifdef MACOS9
-    "screen control via mactty",
+    N_("screen control via mactty"),
 #endif
 #ifdef SCREEN_BIOS
-    "screen control via BIOS",
+    N_("screen control via BIOS"),
 #endif
 #ifdef SCREEN_DJGPPFAST
-    "screen control via DJGPP fast",
+    N_("screen control via DJGPP fast"),
 #endif
 #ifdef SCREEN_VGA
-    "screen control via VGA graphics",
+    N_("screen control via VGA graphics"),
 #endif
 #ifdef WIN32CON
-    "screen control via WIN32 console I/O",
+    N_("screen control via WIN32 console I/O"),
 #endif
 #endif /* NO_TERMS */
 #ifdef SHELL
-    "shell command",
+    N_("shell command"),
 #endif
-    "traditional status display",
+    N_("traditional status display"),
 #ifdef STATUS_HILITES
-    "status via windowport with highlighting",
+    N_("status via windowport with highlighting"),
 #else
-    "status via windowport without highlighting",
+    N_("status via windowport without highlighting"),
 #endif
 #ifdef SUSPEND
-    "suspend command",
+    N_("suspend command"),
 #endif
 #ifdef TTY_GRAPHICS
 #ifdef TERMINFO
-    "terminal info library",
+    N_("terminal info library"),
 #else
 #if defined(TERMLIB) || (!defined(MICRO) && !defined(WIN32))
-    "terminal capability library",
+    N_("terminal capability library"),
 #endif
 #endif
 #endif /*TTY_GRAPHICS*/
 #ifdef USE_XPM
-    "tiles file in XPM format",
+    N_("tiles file in XPM format"),
 #endif
 #ifdef GRAPHIC_TOMBSTONE
-    "graphical RIP screen",
+    N_("graphical RIP screen"),
 #endif
 #ifdef TIMED_DELAY
-    "timed wait for display effects",
+    N_("timed wait for display effects"),
 #endif
 #ifdef PREFIXES_IN_USE
-    "variable playground",
+    N_("variable playground"),
 #endif
 #ifdef VISION_TABLES
-    "vision tables",
+    N_("vision tables"),
 #endif
 #ifdef SYSCF
-    "system configuration at run-time",
+    N_("system configuration at run-time"),
 #endif
 #ifdef PANICTRACE
-    "show stack trace on error",
+    N_("show stack trace on error"),
 #endif
 #ifdef CRASHREPORT
-    "launch browser to report issues",
+    N_("launch browser to report issues"),
 #endif
     save_bones_compat_buf,
-    "and basic NetHack features"
+    N_("and basic NetHack features")
 };
 
 staticfn int
@@ -692,11 +734,14 @@ build_options(void)
     Sprintf(optbuf, "%sNetHack version %d.%d.%d%s\n",
             opt_indent, VERSION_MAJOR, VERSION_MINOR, PATCHLEVEL, STATUS_ARG);
     STOREOPTTEXT(optbuf);
-    Sprintf(optbuf, "Options compiled into this edition:");
+    Sprintf(optbuf, "%s", MD_("Options compiled into this edition:"));
     STOREOPTTEXT(optbuf);
     optbuf[0] = '\0';
     length = COLNO + 1; /* force 1st item onto new line */
-    Strcat(strcpy(buf, datamodel(0)), " data model,");
+    if (md_i18n())
+        Snprintf(buf, sizeof buf, MD_("%s data model,"), datamodel(0));
+    else
+        Strcat(strcpy(buf, datamodel(0)), " data model,");
     opt_out_words(buf, &length);
     for (i = 0; i < SIZE(build_opts); i++) {
 #if !defined(MAKEDEFS_C) && defined(FOR_RUNTIME)
@@ -707,7 +752,8 @@ build_options(void)
             continue;
 #endif
 #endif /* !MAKEDEFS_C && FOR_RUNTIME */
-        Strcat(strcpy(buf, build_opts[i]),
+        copynchars(buf, MD_(build_opts[i]), (int) sizeof buf - 2);
+        Strcat(buf,
                (i < SIZE(build_opts) - 1) ? "," : ".");
         opt_out_words(buf, &length);
     }
@@ -715,8 +761,9 @@ build_options(void)
     optbuf[0] = '\0';
     winsyscnt = count_and_validate_winopts();
     STOREOPTTEXT(optbuf);
-    Sprintf(optbuf, "Supported windowing system%s:",
-            (winsyscnt > 1) ? "s" : "");
+    Sprintf(optbuf, "%s", (winsyscnt > 1)
+                          ? MD_("Supported windowing systems:")
+                          : MD_("Supported windowing system:"));
     STOREOPTTEXT(optbuf);
     optbuf[0] = '\0';
     length = COLNO + 1; /* force 1st item onto new line */
@@ -726,7 +773,8 @@ build_options(void)
             continue;
         Sprintf(buf, "\"%s\"", window_opts[i].id);
         if (strcmp(window_opts[i].name, window_opts[i].id))
-            Sprintf(eos(buf), " (%s)", window_opts[i].name);
+            Snprintf(eos(buf), sizeof buf - strlen(buf), " (%s)",
+                     MD_(window_opts[i].name));
         /*
          * 1 : foo.
          * 2 : foo and bar,
@@ -735,15 +783,15 @@ build_options(void)
          * 2+ will be followed by " with a default of..."
          */
         Strcat(buf, (winsyscnt == 1) ? "." /* no 'default' */
-                    : (winsyscnt == 2 && cnt == 0) ? " and"
-                      : (cnt == winsyscnt - 2) ? ", and"
+                    : (winsyscnt == 2 && cnt == 0) ? MD_(" and")
+                      : (cnt == winsyscnt - 2) ? MD_(", and")
                         : ",");
         opt_out_words(buf, &length);
         cnt++;
     }
     if (cnt > 1) {
         /* loop ended with a comma; opt_out_words() will insert a space */
-        Sprintf(buf, "with a default of \"%s\".", defwinsys);
+        Sprintf(buf, MD_("with a default of \"%s\"."), defwinsys);
         opt_out_words(buf, &length);
     }
 
@@ -753,7 +801,8 @@ build_options(void)
     optbuf[0] = '\0';
     soundlibcnt = count_and_validate_soundlibopts();
     STOREOPTTEXT(optbuf);
-    Sprintf(optbuf, "Supported soundlib%s:", (soundlibcnt > 1) ? "s" : "");
+    Sprintf(optbuf, "%s", (soundlibcnt > 1) ? MD_("Supported soundlibs:")
+                                            : MD_("Supported soundlib:"));
     STOREOPTTEXT(optbuf);
     optbuf[0] = '\0';
     length = COLNO + 1; /* force 1st item onto new line */
@@ -777,8 +826,8 @@ build_options(void)
          */
         Strcat(buf, (soundlibcnt == 1 || cnt == soundlibcnt - 1)
                     ? "." /* no 'with default' */
-                    : (soundlibcnt == 2 && cnt == 0) ? " and"
-                      : (cnt == soundlibcnt - 2) ? ", and"
+                    : (soundlibcnt == 2 && cnt == 0) ? MD_(" and")
+                      : (cnt == soundlibcnt - 2) ? MD_(", and")
                         : ",");
         opt_out_words(buf, &length);
         cnt++;
@@ -786,7 +835,7 @@ build_options(void)
 #ifdef USER_SOUNDS
     if (cnt > 1) {
         /* loop ended with a comma; opt_out_words() will insert a space */
-        Sprintf(buf, "user sounds.");
+        Sprintf(buf, "%s", MD_("user sounds."));
         opt_out_words(buf, &length);
     }
 #endif
@@ -819,7 +868,8 @@ build_options(void)
         /* add lua copyright notice;
            ":TAG:" substitutions are deferred to caller */
         for (i = 0; lua_info[i]; ++i) {
-            STOREOPTTEXT(lua_info[i]);
+            /* only the header is translated, not the license text */
+            STOREOPTTEXT((i == 1) ? MD_(lua_info[i]) : lua_info[i]);
         }
     }
 #endif /* MAKEDEFS_C || FOR_RUNTIME */
@@ -859,6 +909,25 @@ do_runtime_info(int *rtcontext)
         }
     return retval;
 }
+
+#ifndef MAKEDEFS_C
+/* rebuild the option text in the language now in use for '#version';
+   runtime_info_init() runs before the options are read */
+void
+rebuild_runtime_opttext(void)
+{
+    if (!done_runtime_opt_init_once) {
+        runtime_info_init();
+        return;
+    }
+    while (idxopttext > 0) {
+        --idxopttext;
+        free((genericptr_t) opttext[idxopttext]), opttext[idxopttext] = 0;
+    }
+    build_savebones_compat_string();
+    build_options();
+}
+#endif
 
 void
 release_runtime_info(void)

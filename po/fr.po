@@ -5408,11 +5408,20 @@ msgstr ""
 msgid "(userinput)"
 msgstr ""
 
+msgid "A chaotic altar."
+msgstr "Un autel chaotique."
+
+msgid "A fountain."
+msgstr "Une fontaine."
+
 msgid "A ghost appears next to you!"
 msgstr "Un fantôme apparaît à côté de vous !"
 
 msgid "A ghost appears next to you."
 msgstr "Un fantôme apparaît à côté de vous."
+
+msgid "A grave."
+msgstr "Une tombe."
 
 msgid "A lit field surrounds you!"
 msgstr "Un champ lumineux vous entoure !"
@@ -5437,6 +5446,9 @@ msgstr "Une violente décharge électrique vous traverse le corps !"
 
 msgid "A mysterious force extends the cave around you!"
 msgstr "Une force mystérieuse agrandit la caverne autour de vous !"
+
+msgid "A neutral altar."
+msgstr "Un autel neutre."
 
 #, c-format
 msgid "A pit appears in %s."
@@ -5481,6 +5493,9 @@ msgstr "Un %s apprivoisé apparaît !"
 
 msgid "A tame creature is present!"
 msgstr "Une créature apprivoisée est là !"
+
+msgid "A wall of molten lava."
+msgstr "Un mur de lave en fusion."
 
 #, c-format
 msgid "A wild %s appears!"
@@ -5622,6 +5637,9 @@ msgstr "Un objet se renverse."
 #, c-format
 msgid "An object tumbles into %s."
 msgstr "Un objet tombe dans %s."
+
+msgid "An unaligned altar."
+msgstr "Un autel sans alignement."
 
 msgctxt "gender"
 msgid "Ancient Multi-Hued Dragon"
@@ -6370,6 +6388,9 @@ msgctxt "monster"
 msgid "Domo-kun"
 msgstr ""
 
+msgid "Door requires door or wall location."
+msgstr "Une porte doit être placée sur une porte ou un mur."
+
 msgctxt "gender"
 msgid "Dudley"
 msgstr ""
@@ -6535,6 +6556,9 @@ msgstr ""
 "\n"
 "» Approchez, que je pose les mains sur vous pour voir si vous avez\n"
 "les compétences nécessaires pour accomplir cette mission. »"
+
+msgid "Floor under the drawbridge."
+msgstr "Sol sous le pont-levis."
 
 msgctxt "gender"
 msgid "Flying Spaghetti Monster"
@@ -6751,6 +6775,9 @@ msgstr "Je m'en occupe ; circulez, s'il vous plaît."
 
 msgid "I'll take that; now get moving."
 msgstr "Je prends ça ; maintenant, filez."
+
+msgid "Ice under the drawbridge."
+msgstr "Glace sous le pont-levis."
 
 msgctxt "gender"
 msgid "Ijyb"
@@ -7059,6 +7086,9 @@ msgctxt "feminine"
 msgid "LEP GEX VEN ZEA"
 msgstr ""
 
+msgid "Lava under the drawbridge."
+msgstr "Lave sous le pont-levis."
+
 #, c-format
 msgid "Leave %s outside."
 msgstr "Laissez %s dehors."
@@ -7174,6 +7204,9 @@ msgstr "Serviteur de Huhetotl"
 
 msgid "Mmm, tripe... not bad!"
 msgstr "Mmm, des tripes... pas mal !"
+
+msgid "Moat under the drawbridge."
+msgstr "Douves sous le pont-levis."
 
 msgid "Monsters appear around a spot near you!"
 msgstr "Des monstres apparaissent autour d'un endroit près de vous !"
@@ -10005,6 +10038,14 @@ msgstr ""
 "Vous vous rappelez les descriptions @de %i que\n"
 "vous a données %l.  C'est plus loin que vous trouverez\n"
 "la piste @de %n."
+
+#, c-format
+msgid "You return to level %d in %s while in explore mode."
+msgstr "Vous revenez au niveau %d : %s, en mode découverte."
+
+#, c-format
+msgid "You return to level %d in %s."
+msgstr "Vous revenez au niveau %d : %s."
 
 msgid "You ride to the edge of the pit."
 msgstr "Vous chevauchez jusqu'au bord de la fosse."
@@ -24466,14 +24507,14 @@ msgstr ""
 #: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
 #: src/pager.c:3367 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
 #: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
-#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:708
+#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:711
 #: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
 #: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:147 src/timeout.c:309
 #: src/timeout.c:342 src/timeout.c:420 src/timeout.c:542 src/timeout.c:568
 #: src/trap.c:5841 src/vault.c:981 src/version.c:163 src/windows.c:455
 #: src/windows.c:513 src/wizcmds.c:438 src/zap.c:5310 src/zap.c:5454
 #: win/curses/cursdial.c:298 win/curses/cursdial.c:366 win/tty/topl.c:420
-#: win/tty/topl.c:425 win/tty/wintty.c:2826
+#: win/tty/topl.c:425 win/tty/wintty.c:2830
 #, c-format
 msgid "%s"
 msgstr ""
@@ -25578,7 +25619,7 @@ msgid "%s others appear"
 msgstr "%s autres apparaissent"
 
 #: src/apply.c:884 src/insight.c:642 src/insight.c:649 src/insight.c:656
-#: src/insight.c:880 src/insight.c:4193
+#: src/insight.c:880 src/insight.c:4193 src/mdlib.c:786 src/mdlib.c:829
 msgid " and"
 msgstr " et"
 
@@ -25604,10 +25645,10 @@ msgstr "%.0s et %s"
 
 #: src/apply.c:902 src/cmd.c:1433 src/display.c:2069 src/dog.c:1218
 #: src/explode.c:856 src/getpos.c:1033 src/invent.c:3172 src/mail.c:375
-#: src/muse.c:3312 src/music.c:634 src/objnam.c:4808 src/objnam.c:4857
-#: src/objnam.c:4988 src/potion.c:1776 src/pray.c:608 src/read.c:1516
-#: src/read.c:2897 src/read.c:3122 src/uhitm.c:3121 src/wield.c:1162
-#: win/tty/wintty.c:2960
+#: src/muse.c:3312 src/music.c:634 src/objnam.c:4752 src/objnam.c:4814
+#: src/objnam.c:4863 src/objnam.c:5026 src/objnam.c:5028 src/potion.c:1776
+#: src/pray.c:608 src/read.c:1516 src/read.c:2897 src/read.c:3122
+#: src/uhitm.c:3121 src/wield.c:1162 win/tty/wintty.c:2964
 #, c-format
 msgid "%s."
 msgstr ""
@@ -25800,7 +25841,7 @@ msgstr "Vous avez l'air %s."
 
 #: src/apply.c:1333 src/do.c:538 src/do_name.c:871 src/do_name.c:948
 #: src/do_name.c:1126 src/hack.c:2242 src/muse.c:809 src/objnam.c:1299
-#: src/questpgr.c:489 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
+#: src/questpgr.c:492 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2391 src/zap.c:3994
 #, c-format
 msgctxt "feminine"
@@ -25809,7 +25850,7 @@ msgstr "une %s"
 
 #: src/apply.c:1334 src/do.c:538 src/do_name.c:950 src/do_name.c:1128
 #: src/hack.c:2242 src/muse.c:809 src/objnam.c:647 src/objnam.c:1301
-#: src/questpgr.c:490 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
+#: src/questpgr.c:493 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2392 src/zap.c:3995
 #, c-format
 msgid "a %s"
@@ -27221,25 +27262,25 @@ msgstr "%s %s !"
 msgid "You are stunned and confused!"
 msgstr "Vous êtes étourdi et confus !"
 
-#: src/artifact.c:1442 src/artifact.c:2558
+#: src/artifact.c:1442 src/artifact.c:2560
 #, c-format
 msgctxt "feminine"
 msgid "%s is stunned and confused!"
 msgstr "%s est étourdie et confuse !"
 
-#: src/artifact.c:1443 src/artifact.c:2559
+#: src/artifact.c:1443 src/artifact.c:2561
 #, c-format
 msgctxt "feminine"
 msgid "%s is stunned."
 msgstr "%s est étourdie."
 
-#: src/artifact.c:1444 src/artifact.c:2559
+#: src/artifact.c:1444 src/artifact.c:2561
 #, c-format
 msgctxt "feminine"
 msgid "%s is confused."
 msgstr "%s est confuse."
 
-#: src/artifact.c:1451 src/artifact.c:2620
+#: src/artifact.c:1451 src/artifact.c:2622
 #, c-format
 msgid "%s %s %s%c"
 msgstr ""
@@ -27300,7 +27341,7 @@ msgstr "Le bidule imaginaire frappe %s."
 msgid "The imaginary widget hits%s %s%c"
 msgstr ""
 
-#: src/artifact.c:1615 src/artifact.c:2553
+#: src/artifact.c:1615 src/artifact.c:2555
 msgid "The razor-sharp blade"
 msgstr "La lame affûtée comme un rasoir"
 
@@ -27513,175 +27554,182 @@ msgctxt "heroine"
 msgid "You are blasted by the power of %s!"
 msgstr "Vous êtes foudroyée par le pouvoir @de %s !"
 
-#: src/artifact.c:2548 src/attrib.c:28
+#: src/artifact.c:2548
+msgctxt "temperature"
 msgid "cool"
 msgstr "froide"
 
 #: src/artifact.c:2548
-msgid "hot"
-msgstr "chaude"
-
-#: src/artifact.c:2548
+msgctxt "temperature"
 msgid "slightly warm"
 msgstr "légèrement tiède"
 
-#: src/artifact.c:2548
+#: src/artifact.c:2549
+msgctxt "temperature"
 msgid "very warm"
 msgstr "très tiède"
 
-#: src/artifact.c:2548 src/attrib.c:30
+#: src/artifact.c:2549
+msgctxt "temperature"
 msgid "warm"
 msgstr "tiède"
 
-#: src/artifact.c:2549
-msgid "like fire"
-msgstr "brûlante comme le feu"
+#: src/artifact.c:2550
+msgctxt "temperature"
+msgid "hot"
+msgstr "chaude"
 
-#: src/artifact.c:2549
+#: src/artifact.c:2550
+msgctxt "temperature"
 msgid "very hot"
 msgstr "très chaude"
 
-#: src/artifact.c:2550
+#: src/artifact.c:2551
+msgctxt "temperature"
+msgid "like fire"
+msgstr "brûlante comme le feu"
+
+#: src/artifact.c:2552
 #, c-format
 msgctxt "feminine"
 msgid "You feel that %s is ignoring you."
 msgstr "Vous sentez que %s vous ignore."
 
-#: src/artifact.c:2551
+#: src/artifact.c:2553
 #, c-format
 msgctxt "plural"
 msgid "You feel that %s is ignoring you."
 msgstr "Vous sentez que %s vous ignorent."
 
-#: src/artifact.c:2552
+#: src/artifact.c:2554
 #, c-format
 msgctxt "feminine plural"
 msgid "You feel that %s is ignoring you."
 msgstr "Vous sentez que %s vous ignorent."
 
-#: src/artifact.c:2554
+#: src/artifact.c:2556
 msgctxt "magicbane"
 msgid "probe"
 msgstr "sonde"
 
-#: src/artifact.c:2554
+#: src/artifact.c:2556
 msgctxt "magicbane"
 msgid "stun"
 msgstr "étourdit"
 
-#: src/artifact.c:2555
+#: src/artifact.c:2557
 msgctxt "magicbane"
 msgid "cancel"
 msgstr "annule"
 
-#: src/artifact.c:2555
+#: src/artifact.c:2557
 msgctxt "magicbane"
 msgid "scare"
 msgstr "effraie"
 
-#: src/artifact.c:2556
+#: src/artifact.c:2558
 msgctxt "magicbane"
 msgid "amaze"
 msgstr "émerveille"
 
-#: src/artifact.c:2556
+#: src/artifact.c:2558
 msgctxt "magicbane"
 msgid "prod"
 msgstr "asticote"
 
-#: src/artifact.c:2557
+#: src/artifact.c:2559
 msgctxt "magicbane"
 msgid "purge"
 msgstr "purge"
 
-#: src/artifact.c:2557
+#: src/artifact.c:2559
 msgctxt "magicbane"
 msgid "tickle"
 msgstr "chatouille"
 
-#: src/artifact.c:2560
+#: src/artifact.c:2562
 #, c-format
 msgid "%s beheads %s!"
 msgstr "%s décapite %s !"
 
-#: src/artifact.c:2560
+#: src/artifact.c:2562
 #, c-format
 msgid "%s decapitates %s!"
 msgstr "%s décapite %s !"
 
-#: src/artifact.c:2561
+#: src/artifact.c:2563
 msgctxt "objverb"
 msgid "flicker"
 msgid_plural "flicker"
 msgstr[0] "vacille"
 msgstr[1] "vacillent"
 
-#: src/artifact.c:2561
+#: src/artifact.c:2563
 msgctxt "objverb"
 msgid "quiver"
 msgid_plural "quiver"
 msgstr[0] "frémit"
 msgstr[1] "frémissent"
 
-#: src/artifact.c:2562
+#: src/artifact.c:2564
 msgctxt "objverb"
 msgid "gleam"
 msgid_plural "gleam"
 msgstr[0] "luit"
 msgstr[1] "luisent"
 
-#: src/artifact.c:2562
+#: src/artifact.c:2564
 msgctxt "objverb"
 msgid "glimmer"
 msgid_plural "glimmer"
 msgstr[0] "luit"
 msgstr[1] "luisent"
 
-#: src/artifact.c:2604 src/wizcmds.c:323
+#: src/artifact.c:2606 src/wizcmds.c:323
 #, c-format
 msgid "%s is %s."
 msgstr "%s est %s."
 
-#: src/artifact.c:2614
+#: src/artifact.c:2616
 #, c-format
 msgid "%s %s with a %s light!"
 msgstr "%s %s d'une lumière %s !"
 
-#: src/artifact.c:2625
+#: src/artifact.c:2627
 #, c-format
 msgid "%s %s slightly."
 msgstr "%s %s légèrement."
 
-#: src/artifact.c:2630
+#: src/artifact.c:2632
 #, c-format
 msgid "%s stops quivering."
 msgstr "%s cesse de frémir."
 
-#: src/artifact.c:2633
+#: src/artifact.c:2635
 #, c-format
 msgid "%s stops %s."
 msgstr ""
 
-#: src/artifact.c:2667
+#: src/artifact.c:2669
 #, c-format
 msgid "You can't handle %s anymore!"
 msgstr "Vous ne pouvez plus manier %s !"
 
-#: src/artifact.c:2719
+#: src/artifact.c:2721
 #, c-format
 msgid "%s to %s."
 msgstr "%s sur %s."
 
-#: src/artifact.c:2722
+#: src/artifact.c:2724
 #, c-format
 msgid "%s to the %s."
 msgstr ""
 
-#: src/artifact.c:2839
+#: src/artifact.c:2841
 msgid "After losing your gloves, you"
 msgstr "Après avoir perdu vos gants, vous"
 
-#: src/artifact.c:2903
+#: src/artifact.c:2905
 #, c-format
 msgid "The Key feels %s!"
 msgstr "La Clé semble %s !"
@@ -27747,6 +27795,10 @@ msgid "repulsive"
 msgstr "repoussant"
 
 #: src/attrib.c:28
+msgid "cool"
+msgstr "au frais"
+
+#: src/attrib.c:28
 msgid "cooler"
 msgstr "plus au frais"
 
@@ -27793,6 +27845,10 @@ msgstr "inconscient"
 #: src/attrib.c:30
 msgid "uncontrolled"
 msgstr "incontrôlé"
+
+#: src/attrib.c:30
+msgid "warm"
+msgstr "au chaud"
 
 #: src/attrib.c:30
 msgid "warmer"
@@ -27892,13 +27948,13 @@ msgstr "maîtresse de vous"
 #, c-format
 msgctxt "feminine"
 msgid "cool"
-msgstr ""
+msgstr "au frais"
 
 #: src/attrib.c:38
 #, c-format
 msgctxt "feminine"
 msgid "cooler"
-msgstr ""
+msgstr "plus au frais"
 
 #: src/attrib.c:38
 #, c-format
@@ -27910,7 +27966,7 @@ msgstr "endurante"
 #, c-format
 msgctxt "feminine"
 msgid "healthy"
-msgstr ""
+msgstr "en bonne santé"
 
 #: src/attrib.c:39
 #, c-format
@@ -27922,19 +27978,19 @@ msgstr "isolée"
 #, c-format
 msgctxt "feminine"
 msgid "perceptive"
-msgstr ""
+msgstr "perspicace"
 
 #: src/attrib.c:40
 #, c-format
 msgctxt "feminine"
 msgid "quick"
-msgstr ""
+msgstr "rapide"
 
 #: src/attrib.c:41
 #, c-format
 msgctxt "feminine"
 msgid "sensitive"
-msgstr ""
+msgstr "sensible"
 
 #: src/attrib.c:41
 #, c-format
@@ -27970,13 +28026,13 @@ msgstr "incontrôlée"
 #, c-format
 msgctxt "feminine"
 msgid "warm"
-msgstr ""
+msgstr "au chaud"
 
 #: src/attrib.c:44
 #, c-format
 msgctxt "feminine"
 msgid "warmer"
-msgstr ""
+msgstr "plus au chaud"
 
 #: src/attrib.c:45
 msgid "dexterity"
@@ -31247,25 +31303,45 @@ msgstr ""
 msgid "You attempt a teleport spell."
 msgstr "Vous tentez un sort de téléportation."
 
-#: src/dig.c:2404
+#: src/dig.c:2410
+#, c-format
+msgid "You try to tunnel up through %s."
+msgstr "Vous essayez de creuser un tunnel vers le haut à travers %s."
+
+#: src/dig.c:2412
+#, c-format
+msgid "You ooze up through %s."
+msgstr "Vous suintez vers le haut à travers %s."
+
+#: src/dig.c:2414
+#, c-format
+msgid "You phase up through %s."
+msgstr "Vous traversez %s vers le haut."
+
+#: src/dig.c:2416
 #, c-format
 msgid "You %s up through the %s."
 msgstr ""
 
-#: src/dig.c:2426
+#: src/dig.c:2439
+#, c-format
+msgid "The objects on %s tumble into a hole!"
+msgstr "Les objets sur %s dégringolent dans un trou !"
+
+#: src/dig.c:2442
 #, c-format
 msgid "The objects on the %s tumble into a hole!"
 msgstr ""
 
-#: src/dig.c:2457
+#: src/dig.c:2474
 msgid "No objects here or adjacent to bury."
 msgstr "Aucun objet à enterrer ici ou à côté."
 
-#: src/dig.c:2462
+#: src/dig.c:2479
 msgid "No objects buried."
 msgstr "Aucun objet enterré."
 
-#: src/dig.c:2466
+#: src/dig.c:2483
 #, c-format
 msgid "%d object buried."
 msgstr "%d objet enterré."
@@ -44650,6 +44726,306 @@ msgstr "%s vous frappe avec %s !"
 msgid "%s zaps you with a %s!"
 msgstr ""
 
+#: src/mdlib.c:139
+msgid "traditional text with optional 'tiles' graphics"
+msgstr "texte traditionnel, avec graphismes « tuiles » optionnels"
+
+#: src/mdlib.c:143
+msgid "traditional text with optional line-drawing"
+msgstr "texte traditionnel, avec traits graphiques optionnels"
+
+#: src/mdlib.c:149
+msgid "terminal-based graphics"
+msgstr "graphismes en terminal"
+
+#: src/mdlib.c:158
+msgid "Windows GUI"
+msgstr "interface graphique Windows"
+
+#: src/mdlib.c:423
+#, c-format
+msgid "save and bones files accepted from versions %lu.%lu.%lu through %d.%d.%d"
+msgstr "parties sauvegardées et fichiers d'os acceptés des versions %lu.%lu.%lu à %d.%d.%d"
+
+#: src/mdlib.c:433
+#, c-format
+msgid "save and bones files accepted from version %d.%d.%d only"
+msgstr "parties sauvegardées et fichiers d'os acceptés de la version %d.%d.%d seulement"
+
+#: src/mdlib.c:455
+msgid "strong PRNG seed from /dev/urandom"
+msgstr "graine robuste du générateur aléatoire tirée de /dev/urandom"
+
+#: src/mdlib.c:456
+msgid "NetHack 5.0.* uses the 'Lua' interpreter to process some data:"
+msgstr "NetHack 5.0.* traite certaines données avec l'interpréteur « Lua » :"
+
+#: src/mdlib.c:461
+msgid "Amiga WorkBench support"
+msgstr "prise en charge du WorkBench Amiga"
+
+#: src/mdlib.c:464
+msgid "ANSI default terminal"
+msgstr "terminal ANSI par défaut"
+
+#: src/mdlib.c:466
+msgid "color"
+msgstr "couleur"
+
+#: src/mdlib.c:469
+msgid "console escape codes for tile hinting"
+msgstr "codes d'échappement de la console pour indiquer les tuiles"
+
+#: src/mdlib.c:473
+msgid "Conway's Game of Life"
+msgstr "jeu de la vie de Conway"
+
+#: src/mdlib.c:476
+msgid "data file compression"
+msgstr "compression des fichiers de données"
+
+#: src/mdlib.c:479
+msgid "ZLIB data file compression"
+msgstr "compression ZLIB des fichiers de données"
+
+#: src/mdlib.c:483
+msgid "data librarian"
+msgstr "archive de données"
+
+#: src/mdlib.c:485
+msgid "data librarian with a version-dependent name"
+msgstr "archive de données au nom dépendant de la version"
+
+#: src/mdlib.c:489
+msgid "edit getlin - some prompts remember previous response"
+msgstr "édition de la saisie - certaines questions retiennent la réponse précédente"
+
+#: src/mdlib.c:492
+msgid "end-of-game dumplogs"
+msgstr "journaux de fin de partie (dumplogs)"
+
+#: src/mdlib.c:495
+msgid "exclusive lock on level 0 file"
+msgstr "verrou exclusif sur le fichier du niveau 0"
+
+#: src/mdlib.c:499
+msgid "deferred handling of hangup signal"
+msgstr "traitement différé du signal de raccrochage"
+
+#: src/mdlib.c:501
+msgid "immediate handling of hangup signal"
+msgstr "traitement immédiat du signal de raccrochage"
+
+#: src/mdlib.c:505
+msgid "insurance files for recovering from crashes"
+msgstr "fichiers de secours pour récupérer après un plantage"
+
+#: src/mdlib.c:508
+msgid "live logging support"
+msgstr "journal en direct"
+
+#: src/mdlib.c:511
+msgid "log file"
+msgstr "fichier journal"
+
+#: src/mdlib.c:514
+msgid "extended log file"
+msgstr "fichier journal détaillé"
+
+#: src/mdlib.c:517
+msgid "errors and warnings log file"
+msgstr "journal des erreurs et avertissements"
+
+#: src/mdlib.c:520
+msgid "mail daemon"
+msgstr "démon de courrier"
+
+#: src/mdlib.c:523
+msgid "monitor heap - record memory usage for later analysis"
+msgstr "surveillance du tas - enregistre l'usage de la mémoire pour l'analyser plus tard"
+
+#: src/mdlib.c:526
+msgid "MSDOS protected mode"
+msgstr "mode protégé MSDOS"
+
+#: src/mdlib.c:529
+msgid "news file"
+msgstr "fichier des nouvelles"
+
+#: src/mdlib.c:533
+msgid "MOVE overlays"
+msgstr "segments de recouvrement MOVE"
+
+#: src/mdlib.c:536
+msgid "VROOMM overlays"
+msgstr "segments de recouvrement VROOMM"
+
+#: src/mdlib.c:538
+msgid "overlays"
+msgstr "segments de recouvrement"
+
+#: src/mdlib.c:544
+msgid "external pager used for viewing help files"
+msgstr "visionneuse externe pour les fichiers d'aide"
+
+#: src/mdlib.c:546
+msgid "internal pager used for viewing help files"
+msgstr "visionneuse interne pour les fichiers d'aide"
+
+#: src/mdlib.c:550
+msgid "pattern matching via :PATMATCH:"
+msgstr "reconnaissance de motifs par :PATMATCH:"
+
+#: src/mdlib.c:552
+msgid "pseudo random numbers generated by ISAAC64"
+msgstr "nombres pseudo-aléatoires produits par ISAAC64"
+
+#: src/mdlib.c:558
+msgid "strong PRNG seed from CNG BCryptGenRandom()"
+msgstr "graine robuste du générateur aléatoire tirée de CNG BCryptGenRandom()"
+
+#: src/mdlib.c:563
+msgid "pseudo random numbers generated by random()"
+msgstr "nombres pseudo-aléatoires produits par random()"
+
+#: src/mdlib.c:565
+msgid "pseudo random numbers generated by C rand()"
+msgstr "nombres pseudo-aléatoires produits par rand() du C"
+
+#: src/mdlib.c:569
+msgid "restore saved games via menu"
+msgstr "reprise des parties sauvegardées par un menu"
+
+#: src/mdlib.c:572
+msgid "score on status line"
+msgstr "score sur la ligne d'état"
+
+#: src/mdlib.c:575
+msgid "screen clipping"
+msgstr "carte découpée à la taille de l'écran"
+
+#: src/mdlib.c:579
+msgid "screen control via mactty"
+msgstr "contrôle de l'écran par mactty"
+
+#: src/mdlib.c:582
+msgid "screen control via BIOS"
+msgstr "contrôle de l'écran par le BIOS"
+
+#: src/mdlib.c:585
+msgid "screen control via DJGPP fast"
+msgstr "contrôle rapide de l'écran par DJGPP"
+
+#: src/mdlib.c:588
+msgid "screen control via VGA graphics"
+msgstr "contrôle de l'écran par graphismes VGA"
+
+#: src/mdlib.c:591
+msgid "screen control via WIN32 console I/O"
+msgstr "contrôle de l'écran par la console WIN32"
+
+#: src/mdlib.c:595
+msgid "shell command"
+msgstr "commande d'appel du shell"
+
+#: src/mdlib.c:597
+msgid "traditional status display"
+msgstr "affichage d'état traditionnel"
+
+#: src/mdlib.c:599
+msgid "status via windowport with highlighting"
+msgstr "état géré par l'interface avec surlignage"
+
+#: src/mdlib.c:601
+msgid "status via windowport without highlighting"
+msgstr "état géré par l'interface sans surlignage"
+
+#: src/mdlib.c:604
+msgid "suspend command"
+msgstr "commande de suspension"
+
+#: src/mdlib.c:608
+msgid "terminal info library"
+msgstr "bibliothèque terminfo"
+
+#: src/mdlib.c:611
+msgid "terminal capability library"
+msgstr "bibliothèque termcap"
+
+#: src/mdlib.c:616
+msgid "tiles file in XPM format"
+msgstr "fichier de tuiles au format XPM"
+
+#: src/mdlib.c:619
+msgid "graphical RIP screen"
+msgstr "écran de pierre tombale graphique"
+
+#: src/mdlib.c:622
+msgid "timed wait for display effects"
+msgstr "pauses temporisées pour les effets visuels"
+
+#: src/mdlib.c:625
+msgid "variable playground"
+msgstr "répertoire de jeu variable"
+
+#: src/mdlib.c:628
+msgid "vision tables"
+msgstr "tables de vision"
+
+#: src/mdlib.c:631
+msgid "system configuration at run-time"
+msgstr "configuration du système à l'exécution"
+
+#: src/mdlib.c:634
+msgid "show stack trace on error"
+msgstr "affichage de la pile d'appels en cas d'erreur"
+
+#: src/mdlib.c:637
+msgid "launch browser to report issues"
+msgstr "lancement du navigateur pour signaler les problèmes"
+
+#: src/mdlib.c:640
+msgid "and basic NetHack features"
+msgstr "et les fonctions de base de NetHack"
+
+#: src/mdlib.c:737
+msgid "Options compiled into this edition:"
+msgstr "Options compilées dans cette édition :"
+
+#: src/mdlib.c:742
+#, c-format
+msgid "%s data model,"
+msgstr "modèle de données %s,"
+
+#: src/mdlib.c:765
+msgid "Supported windowing systems:"
+msgstr "Interfaces disponibles :"
+
+#: src/mdlib.c:766
+msgid "Supported windowing system:"
+msgstr "Interface disponible :"
+
+#: src/mdlib.c:787 src/mdlib.c:830
+msgid ", and"
+msgstr " et"
+
+#: src/mdlib.c:794
+#, c-format
+msgid "with a default of \"%s\"."
+msgstr "avec \"%s\" par défaut."
+
+#: src/mdlib.c:804
+msgid "Supported soundlibs:"
+msgstr "Bibliothèques de son disponibles :"
+
+#: src/mdlib.c:805
+msgid "Supported soundlib:"
+msgstr "Bibliothèque de son disponible :"
+
+#: src/mdlib.c:838
+msgid "user sounds."
+msgstr "sons de l'utilisateur."
+
 #: src/mhitm.c:36
 msgid "You hear an explosion in the distance."
 msgstr "Vous entendez une explosion au loin."
@@ -49952,95 +50328,157 @@ msgstr " (à vendre, %ld %s)"
 msgid " (no charge)"
 msgstr " (gratuit)"
 
-#: src/objnam.c:4749
+#: src/objnam.c:4750
+msgid "A magic portal to nowhere."
+msgstr "Un portail magique vers nulle part."
+
+#: src/objnam.c:4754
 #, c-format
 msgid "%s%s."
 msgstr ""
 
-#: src/objnam.c:4752
+#: src/objnam.c:4757
 #, c-format
 msgid "Creation of %s failed."
-msgstr ""
+msgstr "La création @de %s a échoué."
 
-#: src/objnam.c:4769
-#, c-format
-msgid "A %sfountain."
-msgstr ""
+#: src/objnam.c:4775
+msgid "A magic fountain."
+msgstr "Une fontaine magique."
 
-#: src/objnam.c:4774
+#: src/objnam.c:4780
 msgid "A throne."
 msgstr "Un trône."
 
-#: src/objnam.c:4781
+#: src/objnam.c:4787
 msgid "A sink."
 msgstr "Un évier."
 
-#: src/objnam.c:4830
-#, c-format
-msgid "A %s of molten lava."
-msgstr ""
+#: src/objnam.c:4836
+msgid "A pool of molten lava."
+msgstr "Une mare de lave en fusion."
 
-#: src/objnam.c:4877
-#, c-format
-msgid "%s altar."
-msgstr ""
+#: src/objnam.c:4884
+msgid "A lawful altar."
+msgstr "Un autel loyal."
 
-#: src/objnam.c:4885
-#, c-format
-msgid "A %sgrave."
-msgstr ""
+#: src/objnam.c:4895
+msgid "A disturbed grave."
+msgstr "Une tombe profanée."
 
-#: src/objnam.c:4888
+#: src/objnam.c:4898
 msgid "Can't place a grave here."
 msgstr "Impossible de placer une tombe ici."
 
-#: src/objnam.c:4895
+#: src/objnam.c:4905
 msgid "A tree."
 msgstr "Un arbre."
 
-#: src/objnam.c:4905
+#: src/objnam.c:4915
 msgid "Iron bars."
 msgstr "Des barreaux de fer."
 
-#: src/objnam.c:4910
+#: src/objnam.c:4920
 msgid "A cloud."
 msgstr "Un nuage."
 
-#: src/objnam.c:4992
-#, c-format
-msgid "%s requires door or wall location."
-msgstr ""
+#: src/objnam.c:5002
+msgid "secret door"
+msgstr "porte secrète"
+
+#: src/objnam.c:5004
+msgid "door"
+msgstr "porte"
+
+#: src/objnam.c:5004
+msgid "doorless doorway"
+msgstr "embrasure sans porte"
 
 #: src/objnam.c:5008
+#, c-format
+msgctxt "door"
+msgid "trapped"
+msgstr "piégée"
+
+#: src/objnam.c:5011
+#, c-format
+msgctxt "door"
+msgid "locked"
+msgstr "verrouillée"
+
+#: src/objnam.c:5015
+#, c-format
+msgctxt "door"
+msgid "closed"
+msgstr "fermée"
+
+#: src/objnam.c:5018
+#, c-format
+msgctxt "door"
+msgid "open"
+msgstr "ouverte"
+
+#: src/objnam.c:5021
+#, c-format
+msgctxt "door"
+msgid "broken"
+msgstr "cassée"
+
+#: src/objnam.c:5024
+#, c-format
+msgid "%s (%s)."
+msgstr "%s (%s)."
+
+#: src/objnam.c:5032
+msgid "Secret door requires door or wall location."
+msgstr "Une porte secrète doit être placée sur une porte ou un mur."
+
+#: src/objnam.c:5049
 msgid "A wall."
 msgstr "Un mur."
 
-#: src/objnam.c:5013
+#: src/objnam.c:5054
 msgid "Secret corridor."
 msgstr "Couloir secret."
 
-#: src/objnam.c:5016
+#: src/objnam.c:5057
 msgid "Secret corridor requires corridor location."
-msgstr ""
+msgstr "Un couloir secret doit être placé sur un couloir."
 
-#: src/objnam.c:5028
+#: src/objnam.c:5069
 msgid "Room floor."
 msgstr "Sol de la pièce."
 
-#: src/objnam.c:5040
+#: src/objnam.c:5081
 msgid "Room|floor|ground not allowed here."
-msgstr ""
+msgstr "Sol interdit ici."
 
-#: src/objnam.c:5097
+#: src/objnam.c:5143
+msgid "Moat in front of the drawbridge."
+msgstr "Douves devant le pont-levis."
+
+#: src/objnam.c:5146
+msgid "Lava in front of the drawbridge."
+msgstr "Lave devant le pont-levis."
+
+#: src/objnam.c:5149
+msgid "Ice in front of the drawbridge."
+msgstr "Glace devant le pont-levis."
+
+#: src/objnam.c:5152
+msgid "Floor in front of the drawbridge."
+msgstr "Sol devant le pont-levis."
+
+#: src/objnam.c:5156
 #, c-format
 msgid "%s %s the drawbridge."
 msgstr ""
 
-#: src/objnam.c:6238
+#: src/objnam.c:6297
 msgid "Override glob weight limit?"
 msgstr "Ignorer la limite de poids des globules ?"
 
-#: src/objnam.c:6551
+#: src/objnam.c:6610
 #, c-format
 msgid "For a moment, you feel %s in your %s, but it disappears!"
 msgstr "Un instant, vous sentez %s dans vos %s, mais cela disparaît !"
@@ -58068,44 +58506,44 @@ msgctxt "quest"
 msgid "the Palantir of Westernesse"
 msgstr "le Palantir de l'Ouistrenesse"
 
-#: src/questpgr.c:714
+#: src/questpgr.c:717
 msgid "What a strange feeling!"
 msgstr "Quelle sensation étrange !"
 
-#: src/questpgr.c:715
+#: src/questpgr.c:718
 msgid "You notice that there is no gravity here."
 msgstr "Vous remarquez qu'il n'y a pas de pesanteur ici."
 
-#: src/questpgr.c:716
+#: src/questpgr.c:719
 msgid "You arrive on the Astral Plane!"
 msgstr "Vous arrivez sur le Plan astral !"
 
-#: src/questpgr.c:717
+#: src/questpgr.c:720
 #, c-format
 msgid "Here the High Temple of %d is located."
 msgstr "Ici se trouve le Grand Temple de %d."
 
-#: src/questpgr.c:718
+#: src/questpgr.c:721
 msgid "You sense alarm, hostility, and excitement in the air!"
 msgstr "Vous sentez dans l'air l'alarme, l'hostilité et l'excitation !"
 
-#: src/questpgr.c:719
+#: src/questpgr.c:722
 msgid "Well done, mortal!"
 msgstr "Bien joué, mortel !"
 
-#: src/questpgr.c:720
+#: src/questpgr.c:723
 msgid "But now thou must face the final Test..."
 msgstr "Mais à présent, tu dois affronter l'Épreuve finale..."
 
-#: src/questpgr.c:721
+#: src/questpgr.c:724
 msgid "Prove thyself worthy or perish!"
 msgstr "Montre-toi digne ou péris !"
 
-#: src/questpgr.c:722
+#: src/questpgr.c:725
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr "Vous vous retrouvez suspendu dans une bulle d'air entourée d'eau."
 
-#: src/questpgr.c:724
+#: src/questpgr.c:727
 msgctxt "heroine"
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr "Vous vous retrouvez suspendue dans une bulle d'air entourée d'eau."
@@ -59100,7 +59538,7 @@ msgstr "Impossible d'envoyer le rapport de bogue.  Consultez plutôt %s."
 #: src/restore.c:121
 #, c-format
 msgid "Finishing off %s..."
-msgstr ""
+msgstr "Vous achevez d'utiliser %s..."
 
 #: src/restore.c:547
 msgid "Saved game was not yours."
@@ -59110,20 +59548,25 @@ msgstr "Cette partie sauvegardée n'est pas la vôtre."
 msgid "You were not healthy enough to survive restoration."
 msgstr "Vous n'étiez pas en assez bonne santé pour survivre à la restauration."
 
-#: src/restore.c:858
+#: src/restore.c:859
+#, c-format
+msgid "You return to level %d in %s while in debug mode."
+msgstr "Vous revenez au niveau %d : %s, en mode débogage."
+
+#: src/restore.c:865
 #, c-format
 msgid "You return to level %d in %s%s."
 msgstr ""
 
-#: src/restore.c:1037
+#: src/restore.c:1044
 msgid "Strange, this map is not as I remember it."
 msgstr "Étrange, cette carte n'est pas comme dans mon souvenir."
 
-#: src/restore.c:1038
+#: src/restore.c:1045
 msgid "Somebody is trying some trickery here..."
 msgstr "Quelqu'un essaie de tricher ici..."
 
-#: src/restore.c:1039
+#: src/restore.c:1046
 msgid "This game is void."
 msgstr "Cette partie est annulée."
 
@@ -65743,7 +66186,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 00:25+0200\n"
+"POT-Creation-Date: 2026-10-03 06:07+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -70231,12 +70674,12 @@ msgstr "%s remet votre or au coffre."
 msgid "To Croesus: here's the gold recovered from %s the %s."
 msgstr "À Crésus : voici l'or récupéré sur %s, %s."
 
-#: src/version.c:402
+#: src/version.c:405
 #, c-format
 msgid "Version mismatch for file \"%s\"."
 msgstr "Version incompatible pour le fichier « %s »."
 
-#: src/version.c:416
+#: src/version.c:419
 #, c-format
 msgid "Configuration incompatibility for file \"%s\"."
 msgstr "Configuration incompatible pour le fichier « %s »."
@@ -73238,7 +73681,7 @@ msgstr ""
 msgid "%s%.60s: unknown extended command."
 msgstr ""
 
-#: win/tty/wintty.c:184 win/tty/wintty.c:3637
+#: win/tty/wintty.c:184 win/tty/wintty.c:3641
 msgid "--More--"
 msgstr "--Plus--"
 
@@ -73247,24 +73690,39 @@ msgstr "--Plus--"
 msgid "(%d of %d)"
 msgstr "(%d sur %d)"
 
-#: win/tty/wintty.c:2439
+#: win/tty/wintty.c:2443
 #, c-format
 msgid "Cannot open %s."
 msgstr ""
 
-#: win/tty/wintty.c:2480
+#: win/tty/wintty.c:2484
 #, c-format
 msgid "Cannot open \"%s\"."
 msgstr ""
 
-#: win/tty/wintty.c:2751
+#: win/tty/wintty.c:2755
 msgid "(end) "
 msgstr "(fin) "
 
-#: win/tty/wintty.c:2961
+#: win/tty/wintty.c:2965
 #, c-format
 msgid "tty perm_invent needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
+
+#~ msgid "hot"
+#~ msgstr "chaude"
+
+#~ msgid "slightly warm"
+#~ msgstr "légèrement tiède"
+
+#~ msgid "very warm"
+#~ msgstr "très tiède"
+
+#~ msgid "like fire"
+#~ msgstr "brûlante comme le feu"
+
+#~ msgid "very hot"
+#~ msgstr "très chaude"
 
 #~ msgid "monsters"
 #~ msgstr "des monstres"

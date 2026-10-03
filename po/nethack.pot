@@ -4539,10 +4539,19 @@ msgstr ""
 msgid "(userinput)"
 msgstr ""
 
+msgid "A chaotic altar."
+msgstr ""
+
+msgid "A fountain."
+msgstr ""
+
 msgid "A ghost appears next to you!"
 msgstr ""
 
 msgid "A ghost appears next to you."
+msgstr ""
+
+msgid "A grave."
 msgstr ""
 
 msgid "A lit field surrounds you!"
@@ -4562,6 +4571,9 @@ msgid "A massive electric shock shoots through your body!"
 msgstr ""
 
 msgid "A mysterious force extends the cave around you!"
+msgstr ""
+
+msgid "A neutral altar."
 msgstr ""
 
 #, c-format
@@ -4598,6 +4610,9 @@ msgid "A tame %s appears!"
 msgstr ""
 
 msgid "A tame creature is present!"
+msgstr ""
+
+msgid "A wall of molten lava."
 msgstr ""
 
 #, c-format
@@ -4721,6 +4736,9 @@ msgstr ""
 
 #, c-format
 msgid "An object tumbles into %s."
+msgstr ""
+
+msgid "An unaligned altar."
 msgstr ""
 
 msgctxt "gender"
@@ -5335,6 +5353,9 @@ msgctxt "monster"
 msgid "Domo-kun"
 msgstr ""
 
+msgid "Door requires door or wall location."
+msgstr ""
+
 msgctxt "gender"
 msgid "Dudley"
 msgstr ""
@@ -5480,6 +5501,9 @@ msgid ""
 "\n"
 "\"Come closer and let me lay hands on you, and determine if you have\n"
 "the skills necessary to accomplish this mission.\""
+msgstr ""
+
+msgid "Floor under the drawbridge."
 msgstr ""
 
 msgctxt "gender"
@@ -5677,6 +5701,9 @@ msgid "I'll take care of that; please move along."
 msgstr ""
 
 msgid "I'll take that; now get moving."
+msgstr ""
+
+msgid "Ice under the drawbridge."
 msgstr ""
 
 msgctxt "gender"
@@ -5946,6 +5973,9 @@ msgctxt "feminine"
 msgid "LEP GEX VEN ZEA"
 msgstr ""
 
+msgid "Lava under the drawbridge."
+msgstr ""
+
 #, c-format
 msgid "Leave %s outside."
 msgstr ""
@@ -6060,6 +6090,9 @@ msgid "Minion of Huhetotl"
 msgstr ""
 
 msgid "Mmm, tripe... not bad!"
+msgstr ""
+
+msgid "Moat under the drawbridge."
 msgstr ""
 
 msgid "Monsters appear around a spot near you!"
@@ -8671,6 +8704,14 @@ msgid ""
 "You remember the descriptions of %i, given\n"
 "to you by %l.  It is ahead that you will find\n"
 "%n's trail."
+msgstr ""
+
+#, c-format
+msgid "You return to level %d in %s while in explore mode."
+msgstr ""
+
+#, c-format
+msgid "You return to level %d in %s."
 msgstr ""
 
 msgid "You ride to the edge of the pit."
@@ -23096,14 +23137,14 @@ msgstr ""
 #: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
 #: src/pager.c:3367 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
 #: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
-#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:708
+#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:711
 #: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
 #: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:147 src/timeout.c:309
 #: src/timeout.c:342 src/timeout.c:420 src/timeout.c:542 src/timeout.c:568
 #: src/trap.c:5841 src/vault.c:981 src/version.c:163 src/windows.c:455
 #: src/windows.c:513 src/wizcmds.c:438 src/zap.c:5310 src/zap.c:5454
 #: win/curses/cursdial.c:298 win/curses/cursdial.c:366 win/tty/topl.c:420
-#: win/tty/topl.c:425 win/tty/wintty.c:2826
+#: win/tty/topl.c:425 win/tty/wintty.c:2830
 #, c-format
 msgid "%s"
 msgstr ""
@@ -24208,7 +24249,7 @@ msgid "%s others appear"
 msgstr ""
 
 #: src/apply.c:884 src/insight.c:642 src/insight.c:649 src/insight.c:656
-#: src/insight.c:880 src/insight.c:4193
+#: src/insight.c:880 src/insight.c:4193 src/mdlib.c:786 src/mdlib.c:829
 msgid " and"
 msgstr ""
 
@@ -24234,10 +24275,10 @@ msgstr ""
 
 #: src/apply.c:902 src/cmd.c:1433 src/display.c:2069 src/dog.c:1218
 #: src/explode.c:856 src/getpos.c:1033 src/invent.c:3172 src/mail.c:375
-#: src/muse.c:3312 src/music.c:634 src/objnam.c:4808 src/objnam.c:4857
-#: src/objnam.c:4988 src/potion.c:1776 src/pray.c:608 src/read.c:1516
-#: src/read.c:2897 src/read.c:3122 src/uhitm.c:3121 src/wield.c:1162
-#: win/tty/wintty.c:2960
+#: src/muse.c:3312 src/music.c:634 src/objnam.c:4752 src/objnam.c:4814
+#: src/objnam.c:4863 src/objnam.c:5026 src/objnam.c:5028 src/potion.c:1776
+#: src/pray.c:608 src/read.c:1516 src/read.c:2897 src/read.c:3122
+#: src/uhitm.c:3121 src/wield.c:1162 win/tty/wintty.c:2964
 #, c-format
 msgid "%s."
 msgstr ""
@@ -24430,7 +24471,7 @@ msgstr ""
 
 #: src/apply.c:1333 src/do.c:538 src/do_name.c:871 src/do_name.c:948
 #: src/do_name.c:1126 src/hack.c:2242 src/muse.c:809 src/objnam.c:1299
-#: src/questpgr.c:489 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
+#: src/questpgr.c:492 src/trap.c:334 src/trap.c:6523 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2391 src/zap.c:3994
 #, c-format
 msgctxt "feminine"
@@ -24439,7 +24480,7 @@ msgstr ""
 
 #: src/apply.c:1334 src/do.c:538 src/do_name.c:950 src/do_name.c:1128
 #: src/hack.c:2242 src/muse.c:809 src/objnam.c:647 src/objnam.c:1301
-#: src/questpgr.c:490 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
+#: src/questpgr.c:493 src/trap.c:334 src/trap.c:6524 src/trap.c:6566
 #: src/trap.c:6835 src/zap.c:2392 src/zap.c:3995
 #, c-format
 msgid "a %s"
@@ -25851,25 +25892,25 @@ msgstr ""
 msgid "You are stunned and confused!"
 msgstr ""
 
-#: src/artifact.c:1442 src/artifact.c:2558
+#: src/artifact.c:1442 src/artifact.c:2560
 #, c-format
 msgctxt "feminine"
 msgid "%s is stunned and confused!"
 msgstr ""
 
-#: src/artifact.c:1443 src/artifact.c:2559
+#: src/artifact.c:1443 src/artifact.c:2561
 #, c-format
 msgctxt "feminine"
 msgid "%s is stunned."
 msgstr ""
 
-#: src/artifact.c:1444 src/artifact.c:2559
+#: src/artifact.c:1444 src/artifact.c:2561
 #, c-format
 msgctxt "feminine"
 msgid "%s is confused."
 msgstr ""
 
-#: src/artifact.c:1451 src/artifact.c:2620
+#: src/artifact.c:1451 src/artifact.c:2622
 #, c-format
 msgid "%s %s %s%c"
 msgstr ""
@@ -25930,7 +25971,7 @@ msgstr ""
 msgid "The imaginary widget hits%s %s%c"
 msgstr ""
 
-#: src/artifact.c:1615 src/artifact.c:2553
+#: src/artifact.c:1615 src/artifact.c:2555
 msgid "The razor-sharp blade"
 msgstr ""
 
@@ -26143,175 +26184,182 @@ msgctxt "heroine"
 msgid "You are blasted by the power of %s!"
 msgstr ""
 
-#: src/artifact.c:2548 src/attrib.c:28
+#: src/artifact.c:2548
+msgctxt "temperature"
 msgid "cool"
 msgstr ""
 
 #: src/artifact.c:2548
-msgid "hot"
-msgstr ""
-
-#: src/artifact.c:2548
+msgctxt "temperature"
 msgid "slightly warm"
 msgstr ""
 
-#: src/artifact.c:2548
+#: src/artifact.c:2549
+msgctxt "temperature"
 msgid "very warm"
 msgstr ""
 
-#: src/artifact.c:2548 src/attrib.c:30
+#: src/artifact.c:2549
+msgctxt "temperature"
 msgid "warm"
 msgstr ""
 
-#: src/artifact.c:2549
-msgid "like fire"
-msgstr ""
-
-#: src/artifact.c:2549
-msgid "very hot"
+#: src/artifact.c:2550
+msgctxt "temperature"
+msgid "hot"
 msgstr ""
 
 #: src/artifact.c:2550
+msgctxt "temperature"
+msgid "very hot"
+msgstr ""
+
+#: src/artifact.c:2551
+msgctxt "temperature"
+msgid "like fire"
+msgstr ""
+
+#: src/artifact.c:2552
 #, c-format
 msgctxt "feminine"
 msgid "You feel that %s is ignoring you."
 msgstr ""
 
-#: src/artifact.c:2551
+#: src/artifact.c:2553
 #, c-format
 msgctxt "plural"
 msgid "You feel that %s is ignoring you."
 msgstr ""
 
-#: src/artifact.c:2552
+#: src/artifact.c:2554
 #, c-format
 msgctxt "feminine plural"
 msgid "You feel that %s is ignoring you."
 msgstr ""
 
-#: src/artifact.c:2554
+#: src/artifact.c:2556
 msgctxt "magicbane"
 msgid "probe"
 msgstr ""
 
-#: src/artifact.c:2554
+#: src/artifact.c:2556
 msgctxt "magicbane"
 msgid "stun"
 msgstr ""
 
-#: src/artifact.c:2555
+#: src/artifact.c:2557
 msgctxt "magicbane"
 msgid "cancel"
 msgstr ""
 
-#: src/artifact.c:2555
+#: src/artifact.c:2557
 msgctxt "magicbane"
 msgid "scare"
 msgstr ""
 
-#: src/artifact.c:2556
+#: src/artifact.c:2558
 msgctxt "magicbane"
 msgid "amaze"
 msgstr ""
 
-#: src/artifact.c:2556
+#: src/artifact.c:2558
 msgctxt "magicbane"
 msgid "prod"
 msgstr ""
 
-#: src/artifact.c:2557
+#: src/artifact.c:2559
 msgctxt "magicbane"
 msgid "purge"
 msgstr ""
 
-#: src/artifact.c:2557
+#: src/artifact.c:2559
 msgctxt "magicbane"
 msgid "tickle"
 msgstr ""
 
-#: src/artifact.c:2560
+#: src/artifact.c:2562
 #, c-format
 msgid "%s beheads %s!"
 msgstr ""
 
-#: src/artifact.c:2560
+#: src/artifact.c:2562
 #, c-format
 msgid "%s decapitates %s!"
 msgstr ""
 
-#: src/artifact.c:2561
+#: src/artifact.c:2563
 msgctxt "objverb"
 msgid "flicker"
 msgid_plural "flicker"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/artifact.c:2561
+#: src/artifact.c:2563
 msgctxt "objverb"
 msgid "quiver"
 msgid_plural "quiver"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/artifact.c:2562
+#: src/artifact.c:2564
 msgctxt "objverb"
 msgid "gleam"
 msgid_plural "gleam"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/artifact.c:2562
+#: src/artifact.c:2564
 msgctxt "objverb"
 msgid "glimmer"
 msgid_plural "glimmer"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/artifact.c:2604 src/wizcmds.c:323
+#: src/artifact.c:2606 src/wizcmds.c:323
 #, c-format
 msgid "%s is %s."
 msgstr ""
 
-#: src/artifact.c:2614
+#: src/artifact.c:2616
 #, c-format
 msgid "%s %s with a %s light!"
 msgstr ""
 
-#: src/artifact.c:2625
+#: src/artifact.c:2627
 #, c-format
 msgid "%s %s slightly."
 msgstr ""
 
-#: src/artifact.c:2630
+#: src/artifact.c:2632
 #, c-format
 msgid "%s stops quivering."
 msgstr ""
 
-#: src/artifact.c:2633
+#: src/artifact.c:2635
 #, c-format
 msgid "%s stops %s."
 msgstr ""
 
-#: src/artifact.c:2667
+#: src/artifact.c:2669
 #, c-format
 msgid "You can't handle %s anymore!"
 msgstr ""
 
-#: src/artifact.c:2719
+#: src/artifact.c:2721
 #, c-format
 msgid "%s to %s."
 msgstr ""
 
-#: src/artifact.c:2722
+#: src/artifact.c:2724
 #, c-format
 msgid "%s to the %s."
 msgstr ""
 
-#: src/artifact.c:2839
+#: src/artifact.c:2841
 msgid "After losing your gloves, you"
 msgstr ""
 
-#: src/artifact.c:2903
+#: src/artifact.c:2905
 #, c-format
 msgid "The Key feels %s!"
 msgstr ""
@@ -26377,6 +26425,10 @@ msgid "repulsive"
 msgstr ""
 
 #: src/attrib.c:28
+msgid "cool"
+msgstr ""
+
+#: src/attrib.c:28
 msgid "cooler"
 msgstr ""
 
@@ -26422,6 +26474,10 @@ msgstr ""
 
 #: src/attrib.c:30
 msgid "uncontrolled"
+msgstr ""
+
+#: src/attrib.c:30
+msgid "warm"
 msgstr ""
 
 #: src/attrib.c:30
@@ -29869,25 +29925,45 @@ msgstr ""
 msgid "You attempt a teleport spell."
 msgstr ""
 
-#: src/dig.c:2404
+#: src/dig.c:2410
+#, c-format
+msgid "You try to tunnel up through %s."
+msgstr ""
+
+#: src/dig.c:2412
+#, c-format
+msgid "You ooze up through %s."
+msgstr ""
+
+#: src/dig.c:2414
+#, c-format
+msgid "You phase up through %s."
+msgstr ""
+
+#: src/dig.c:2416
 #, c-format
 msgid "You %s up through the %s."
 msgstr ""
 
-#: src/dig.c:2426
+#: src/dig.c:2439
+#, c-format
+msgid "The objects on %s tumble into a hole!"
+msgstr ""
+
+#: src/dig.c:2442
 #, c-format
 msgid "The objects on the %s tumble into a hole!"
 msgstr ""
 
-#: src/dig.c:2457
+#: src/dig.c:2474
 msgid "No objects here or adjacent to bury."
 msgstr ""
 
-#: src/dig.c:2462
+#: src/dig.c:2479
 msgid "No objects buried."
 msgstr ""
 
-#: src/dig.c:2466
+#: src/dig.c:2483
 #, c-format
 msgid "%d object buried."
 msgstr ""
@@ -43272,6 +43348,306 @@ msgstr ""
 msgid "%s zaps you with a %s!"
 msgstr ""
 
+#: src/mdlib.c:139
+msgid "traditional text with optional 'tiles' graphics"
+msgstr ""
+
+#: src/mdlib.c:143
+msgid "traditional text with optional line-drawing"
+msgstr ""
+
+#: src/mdlib.c:149
+msgid "terminal-based graphics"
+msgstr ""
+
+#: src/mdlib.c:158
+msgid "Windows GUI"
+msgstr ""
+
+#: src/mdlib.c:423
+#, c-format
+msgid "save and bones files accepted from versions %lu.%lu.%lu through %d.%d.%d"
+msgstr ""
+
+#: src/mdlib.c:433
+#, c-format
+msgid "save and bones files accepted from version %d.%d.%d only"
+msgstr ""
+
+#: src/mdlib.c:455
+msgid "strong PRNG seed from /dev/urandom"
+msgstr ""
+
+#: src/mdlib.c:456
+msgid "NetHack 5.0.* uses the 'Lua' interpreter to process some data:"
+msgstr ""
+
+#: src/mdlib.c:461
+msgid "Amiga WorkBench support"
+msgstr ""
+
+#: src/mdlib.c:464
+msgid "ANSI default terminal"
+msgstr ""
+
+#: src/mdlib.c:466
+msgid "color"
+msgstr ""
+
+#: src/mdlib.c:469
+msgid "console escape codes for tile hinting"
+msgstr ""
+
+#: src/mdlib.c:473
+msgid "Conway's Game of Life"
+msgstr ""
+
+#: src/mdlib.c:476
+msgid "data file compression"
+msgstr ""
+
+#: src/mdlib.c:479
+msgid "ZLIB data file compression"
+msgstr ""
+
+#: src/mdlib.c:483
+msgid "data librarian"
+msgstr ""
+
+#: src/mdlib.c:485
+msgid "data librarian with a version-dependent name"
+msgstr ""
+
+#: src/mdlib.c:489
+msgid "edit getlin - some prompts remember previous response"
+msgstr ""
+
+#: src/mdlib.c:492
+msgid "end-of-game dumplogs"
+msgstr ""
+
+#: src/mdlib.c:495
+msgid "exclusive lock on level 0 file"
+msgstr ""
+
+#: src/mdlib.c:499
+msgid "deferred handling of hangup signal"
+msgstr ""
+
+#: src/mdlib.c:501
+msgid "immediate handling of hangup signal"
+msgstr ""
+
+#: src/mdlib.c:505
+msgid "insurance files for recovering from crashes"
+msgstr ""
+
+#: src/mdlib.c:508
+msgid "live logging support"
+msgstr ""
+
+#: src/mdlib.c:511
+msgid "log file"
+msgstr ""
+
+#: src/mdlib.c:514
+msgid "extended log file"
+msgstr ""
+
+#: src/mdlib.c:517
+msgid "errors and warnings log file"
+msgstr ""
+
+#: src/mdlib.c:520
+msgid "mail daemon"
+msgstr ""
+
+#: src/mdlib.c:523
+msgid "monitor heap - record memory usage for later analysis"
+msgstr ""
+
+#: src/mdlib.c:526
+msgid "MSDOS protected mode"
+msgstr ""
+
+#: src/mdlib.c:529
+msgid "news file"
+msgstr ""
+
+#: src/mdlib.c:533
+msgid "MOVE overlays"
+msgstr ""
+
+#: src/mdlib.c:536
+msgid "VROOMM overlays"
+msgstr ""
+
+#: src/mdlib.c:538
+msgid "overlays"
+msgstr ""
+
+#: src/mdlib.c:544
+msgid "external pager used for viewing help files"
+msgstr ""
+
+#: src/mdlib.c:546
+msgid "internal pager used for viewing help files"
+msgstr ""
+
+#: src/mdlib.c:550
+msgid "pattern matching via :PATMATCH:"
+msgstr ""
+
+#: src/mdlib.c:552
+msgid "pseudo random numbers generated by ISAAC64"
+msgstr ""
+
+#: src/mdlib.c:558
+msgid "strong PRNG seed from CNG BCryptGenRandom()"
+msgstr ""
+
+#: src/mdlib.c:563
+msgid "pseudo random numbers generated by random()"
+msgstr ""
+
+#: src/mdlib.c:565
+msgid "pseudo random numbers generated by C rand()"
+msgstr ""
+
+#: src/mdlib.c:569
+msgid "restore saved games via menu"
+msgstr ""
+
+#: src/mdlib.c:572
+msgid "score on status line"
+msgstr ""
+
+#: src/mdlib.c:575
+msgid "screen clipping"
+msgstr ""
+
+#: src/mdlib.c:579
+msgid "screen control via mactty"
+msgstr ""
+
+#: src/mdlib.c:582
+msgid "screen control via BIOS"
+msgstr ""
+
+#: src/mdlib.c:585
+msgid "screen control via DJGPP fast"
+msgstr ""
+
+#: src/mdlib.c:588
+msgid "screen control via VGA graphics"
+msgstr ""
+
+#: src/mdlib.c:591
+msgid "screen control via WIN32 console I/O"
+msgstr ""
+
+#: src/mdlib.c:595
+msgid "shell command"
+msgstr ""
+
+#: src/mdlib.c:597
+msgid "traditional status display"
+msgstr ""
+
+#: src/mdlib.c:599
+msgid "status via windowport with highlighting"
+msgstr ""
+
+#: src/mdlib.c:601
+msgid "status via windowport without highlighting"
+msgstr ""
+
+#: src/mdlib.c:604
+msgid "suspend command"
+msgstr ""
+
+#: src/mdlib.c:608
+msgid "terminal info library"
+msgstr ""
+
+#: src/mdlib.c:611
+msgid "terminal capability library"
+msgstr ""
+
+#: src/mdlib.c:616
+msgid "tiles file in XPM format"
+msgstr ""
+
+#: src/mdlib.c:619
+msgid "graphical RIP screen"
+msgstr ""
+
+#: src/mdlib.c:622
+msgid "timed wait for display effects"
+msgstr ""
+
+#: src/mdlib.c:625
+msgid "variable playground"
+msgstr ""
+
+#: src/mdlib.c:628
+msgid "vision tables"
+msgstr ""
+
+#: src/mdlib.c:631
+msgid "system configuration at run-time"
+msgstr ""
+
+#: src/mdlib.c:634
+msgid "show stack trace on error"
+msgstr ""
+
+#: src/mdlib.c:637
+msgid "launch browser to report issues"
+msgstr ""
+
+#: src/mdlib.c:640
+msgid "and basic NetHack features"
+msgstr ""
+
+#: src/mdlib.c:737
+msgid "Options compiled into this edition:"
+msgstr ""
+
+#: src/mdlib.c:742
+#, c-format
+msgid "%s data model,"
+msgstr ""
+
+#: src/mdlib.c:765
+msgid "Supported windowing systems:"
+msgstr ""
+
+#: src/mdlib.c:766
+msgid "Supported windowing system:"
+msgstr ""
+
+#: src/mdlib.c:787 src/mdlib.c:830
+msgid ", and"
+msgstr ""
+
+#: src/mdlib.c:794
+#, c-format
+msgid "with a default of \"%s\"."
+msgstr ""
+
+#: src/mdlib.c:804
+msgid "Supported soundlibs:"
+msgstr ""
+
+#: src/mdlib.c:805
+msgid "Supported soundlib:"
+msgstr ""
+
+#: src/mdlib.c:838
+msgid "user sounds."
+msgstr ""
+
 #: src/mhitm.c:36
 msgid "You hear an explosion in the distance."
 msgstr ""
@@ -48565,95 +48941,157 @@ msgstr ""
 msgid " (no charge)"
 msgstr ""
 
-#: src/objnam.c:4749
+#: src/objnam.c:4750
+msgid "A magic portal to nowhere."
+msgstr ""
+
+#: src/objnam.c:4754
 #, c-format
 msgid "%s%s."
 msgstr ""
 
-#: src/objnam.c:4752
+#: src/objnam.c:4757
 #, c-format
 msgid "Creation of %s failed."
 msgstr ""
 
-#: src/objnam.c:4769
-#, c-format
-msgid "A %sfountain."
+#: src/objnam.c:4775
+msgid "A magic fountain."
 msgstr ""
 
-#: src/objnam.c:4774
+#: src/objnam.c:4780
 msgid "A throne."
 msgstr ""
 
-#: src/objnam.c:4781
+#: src/objnam.c:4787
 msgid "A sink."
 msgstr ""
 
-#: src/objnam.c:4830
-#, c-format
-msgid "A %s of molten lava."
+#: src/objnam.c:4836
+msgid "A pool of molten lava."
 msgstr ""
 
-#: src/objnam.c:4877
-#, c-format
-msgid "%s altar."
-msgstr ""
-
-#: src/objnam.c:4885
-#, c-format
-msgid "A %sgrave."
-msgstr ""
-
-#: src/objnam.c:4888
-msgid "Can't place a grave here."
+#: src/objnam.c:4884
+msgid "A lawful altar."
 msgstr ""
 
 #: src/objnam.c:4895
-msgid "A tree."
+msgid "A disturbed grave."
+msgstr ""
+
+#: src/objnam.c:4898
+msgid "Can't place a grave here."
 msgstr ""
 
 #: src/objnam.c:4905
+msgid "A tree."
+msgstr ""
+
+#: src/objnam.c:4915
 msgid "Iron bars."
 msgstr ""
 
-#: src/objnam.c:4910
+#: src/objnam.c:4920
 msgid "A cloud."
 msgstr ""
 
-#: src/objnam.c:4992
-#, c-format
-msgid "%s requires door or wall location."
+#: src/objnam.c:5002
+msgid "secret door"
+msgstr ""
+
+#: src/objnam.c:5004
+msgid "door"
+msgstr ""
+
+#: src/objnam.c:5004
+msgid "doorless doorway"
 msgstr ""
 
 #: src/objnam.c:5008
+#, c-format
+msgctxt "door"
+msgid "trapped"
+msgstr ""
+
+#: src/objnam.c:5011
+#, c-format
+msgctxt "door"
+msgid "locked"
+msgstr ""
+
+#: src/objnam.c:5015
+#, c-format
+msgctxt "door"
+msgid "closed"
+msgstr ""
+
+#: src/objnam.c:5018
+#, c-format
+msgctxt "door"
+msgid "open"
+msgstr ""
+
+#: src/objnam.c:5021
+#, c-format
+msgctxt "door"
+msgid "broken"
+msgstr ""
+
+#: src/objnam.c:5024
+#, c-format
+msgid "%s (%s)."
+msgstr ""
+
+#: src/objnam.c:5032
+msgid "Secret door requires door or wall location."
+msgstr ""
+
+#: src/objnam.c:5049
 msgid "A wall."
 msgstr ""
 
-#: src/objnam.c:5013
+#: src/objnam.c:5054
 msgid "Secret corridor."
 msgstr ""
 
-#: src/objnam.c:5016
+#: src/objnam.c:5057
 msgid "Secret corridor requires corridor location."
 msgstr ""
 
-#: src/objnam.c:5028
+#: src/objnam.c:5069
 msgid "Room floor."
 msgstr ""
 
-#: src/objnam.c:5040
+#: src/objnam.c:5081
 msgid "Room|floor|ground not allowed here."
 msgstr ""
 
-#: src/objnam.c:5097
+#: src/objnam.c:5143
+msgid "Moat in front of the drawbridge."
+msgstr ""
+
+#: src/objnam.c:5146
+msgid "Lava in front of the drawbridge."
+msgstr ""
+
+#: src/objnam.c:5149
+msgid "Ice in front of the drawbridge."
+msgstr ""
+
+#: src/objnam.c:5152
+msgid "Floor in front of the drawbridge."
+msgstr ""
+
+#: src/objnam.c:5156
 #, c-format
 msgid "%s %s the drawbridge."
 msgstr ""
 
-#: src/objnam.c:6238
+#: src/objnam.c:6297
 msgid "Override glob weight limit?"
 msgstr ""
 
-#: src/objnam.c:6551
+#: src/objnam.c:6610
 #, c-format
 msgid "For a moment, you feel %s in your %s, but it disappears!"
 msgstr ""
@@ -56681,44 +57119,44 @@ msgctxt "quest"
 msgid "the Palantir of Westernesse"
 msgstr ""
 
-#: src/questpgr.c:714
+#: src/questpgr.c:717
 msgid "What a strange feeling!"
 msgstr ""
 
-#: src/questpgr.c:715
+#: src/questpgr.c:718
 msgid "You notice that there is no gravity here."
 msgstr ""
 
-#: src/questpgr.c:716
+#: src/questpgr.c:719
 msgid "You arrive on the Astral Plane!"
 msgstr ""
 
-#: src/questpgr.c:717
+#: src/questpgr.c:720
 #, c-format
 msgid "Here the High Temple of %d is located."
 msgstr ""
 
-#: src/questpgr.c:718
+#: src/questpgr.c:721
 msgid "You sense alarm, hostility, and excitement in the air!"
 msgstr ""
 
-#: src/questpgr.c:719
+#: src/questpgr.c:722
 msgid "Well done, mortal!"
 msgstr ""
 
-#: src/questpgr.c:720
+#: src/questpgr.c:723
 msgid "But now thou must face the final Test..."
 msgstr ""
 
-#: src/questpgr.c:721
+#: src/questpgr.c:724
 msgid "Prove thyself worthy or perish!"
 msgstr ""
 
-#: src/questpgr.c:722
+#: src/questpgr.c:725
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr ""
 
-#: src/questpgr.c:724
+#: src/questpgr.c:727
 msgctxt "heroine"
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr ""
@@ -57723,20 +58161,25 @@ msgstr ""
 msgid "You were not healthy enough to survive restoration."
 msgstr ""
 
-#: src/restore.c:858
+#: src/restore.c:859
+#, c-format
+msgid "You return to level %d in %s while in debug mode."
+msgstr ""
+
+#: src/restore.c:865
 #, c-format
 msgid "You return to level %d in %s%s."
 msgstr ""
 
-#: src/restore.c:1037
+#: src/restore.c:1044
 msgid "Strange, this map is not as I remember it."
 msgstr ""
 
-#: src/restore.c:1038
+#: src/restore.c:1045
 msgid "Somebody is trying some trickery here..."
 msgstr ""
 
-#: src/restore.c:1039
+#: src/restore.c:1046
 msgid "This game is void."
 msgstr ""
 
@@ -64359,7 +64802,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 00:25+0200\n"
+"POT-Creation-Date: 2026-10-03 06:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68847,12 +69290,12 @@ msgstr ""
 msgid "To Croesus: here's the gold recovered from %s the %s."
 msgstr ""
 
-#: src/version.c:402
+#: src/version.c:405
 #, c-format
 msgid "Version mismatch for file \"%s\"."
 msgstr ""
 
-#: src/version.c:416
+#: src/version.c:419
 #, c-format
 msgid "Configuration incompatibility for file \"%s\"."
 msgstr ""
@@ -71854,7 +72297,7 @@ msgstr ""
 msgid "%s%.60s: unknown extended command."
 msgstr ""
 
-#: win/tty/wintty.c:184 win/tty/wintty.c:3637
+#: win/tty/wintty.c:184 win/tty/wintty.c:3641
 msgid "--More--"
 msgstr ""
 
@@ -71863,21 +72306,21 @@ msgstr ""
 msgid "(%d of %d)"
 msgstr ""
 
-#: win/tty/wintty.c:2439
+#: win/tty/wintty.c:2443
 #, c-format
 msgid "Cannot open %s."
 msgstr ""
 
-#: win/tty/wintty.c:2480
+#: win/tty/wintty.c:2484
 #, c-format
 msgid "Cannot open \"%s\"."
 msgstr ""
 
-#: win/tty/wintty.c:2751
+#: win/tty/wintty.c:2755
 msgid "(end) "
 msgstr ""
 
-#: win/tty/wintty.c:2961
+#: win/tty/wintty.c:2965
 #, c-format
 msgid "tty perm_invent needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""

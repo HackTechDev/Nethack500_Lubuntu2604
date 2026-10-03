@@ -855,6 +855,13 @@ dorecover(NHFILE *nhfp)
         clear_nhwindow(WIN_MAP);
 #endif
     clear_nhwindow(WIN_MESSAGE);
+    if (i18n_active())
+        You(flags.debug ? "return to level %d in %s while in debug mode."
+            : flags.explore
+              ? "return to level %d in %s while in explore mode."
+              : "return to level %d in %s.",
+            depth(&u.uz), _(svd.dungeons[u.uz.dnum].dname));
+    else
     You("return to level %d in %s%s.", depth(&u.uz),
         svd.dungeons[u.uz.dnum].dname,
         flags.debug ? " while in debug mode"

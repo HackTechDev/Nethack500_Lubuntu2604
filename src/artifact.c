@@ -2545,8 +2545,10 @@ N_("Suddenly %s out."), N_("life"), N_("animating force"),
 NC_("heroine", "You are stunned and confused!"),
 NC_("heroine", "You are stunned."), NC_("heroine", "You are confused."),
 NC_("heroine", "You are blasted by the power of %s!"),
-N_("cool"), N_("slightly warm"), N_("warm"), N_("very warm"), N_("hot"),
-N_("very hot"), N_("like fire"),
+NC_("temperature", "cool"), NC_("temperature", "slightly warm"),
+NC_("temperature", "warm"), NC_("temperature", "very warm"),
+NC_("temperature", "hot"), NC_("temperature", "very hot"),
+NC_("temperature", "like fire"),
 C_("feminine", "You feel that %s is ignoring you."),
 C_("plural", "You feel that %s is ignoring you."),
 C_("feminine plural", "You feel that %s is ignoring you."),
@@ -2901,7 +2903,7 @@ mkot_trap_warn(void)
         if (ntraps != gm.mkot_trap_warn_count) {
             idx = min(ntraps, SIZE(heat) - 1);
             pline_The((ntraps > 3) ? "Key feels %s!" : "Key feels %s.",
-                      _(heat[idx]));
+                      C_("temperature", heat[idx]));
         }
         gm.mkot_trap_warn_count = ntraps;
     } else

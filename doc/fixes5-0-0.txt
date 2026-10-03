@@ -3089,6 +3089,9 @@ tty: a line of a text window starting with a UTF-8 character (translated
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
 the encyclopedia (dat/data.base) is translated into French as
 	dat/data-fr.base, compiled into dat/data.fr by makedefs
+#version: the list of compile-time options is rebuilt when shown, so it
+	follows the language option (the text is translated, not the Lua
+	license)
 
 
 NetHack Community Patches (or Variation) Included

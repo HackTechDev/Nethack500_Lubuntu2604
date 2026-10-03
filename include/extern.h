@@ -1527,6 +1527,7 @@ extern int buzzmu(struct monst *, struct attack *) NONNULLARG12;
 extern void runtime_info_init(void);
 extern const char *do_runtime_info(int *) NO_NNARGS;
 extern void release_runtime_info(void);
+extern void rebuild_runtime_opttext(void);
 extern char *mdlib_version_string(char *, const char *) NONNULL NONNULLPTRS;
 
 /* ### mhitm.c ### */

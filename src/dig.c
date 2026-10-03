@@ -2401,6 +2401,18 @@ escape_tomb(void)
             || (unsolid(gy.youmonst.data)
                 && gy.youmonst.data != &mons[PM_WATER_ELEMENTAL])
             || (tunnels(gy.youmonst.data) && !needspick(gy.youmonst.data))) {
+            if (i18n_active()) {
+                /* whole sentences, so that each can be translated */
+                char *surf = i18n_the(surface(u.ux, u.uy));
+
+                if (tunnels(gy.youmonst.data)
+                    && !needspick(gy.youmonst.data))
+                    You("try to tunnel up through %s.", surf);
+                else if (amorphous(gy.youmonst.data))
+                    You("ooze up through %s.", surf);
+                else
+                    You("phase up through %s.", surf);
+            } else
             You("%s up through the %s.",
                 (tunnels(gy.youmonst.data) && !needspick(gy.youmonst.data))
                    ? "try to tunnel"
@@ -2422,9 +2434,14 @@ bury_obj(otmp)
 struct obj *otmp;
 {
     debugpline0("bury_obj");
-    if (cansee(otmp->ox, otmp->oy))
-        pline_The("objects on the %s tumble into a hole!",
-                  surface(otmp->ox, otmp->oy));
+    if (cansee(otmp->ox, otmp->oy)) {
+        if (i18n_active())
+            pline("The objects on %s tumble into a hole!",
+                  i18n_the(surface(otmp->ox, otmp->oy)));
+        else
+            pline_The("objects on the %s tumble into a hole!",
+                      surface(otmp->ox, otmp->oy));
+    }
 
     bury_objs(otmp->ox, otmp->oy);
 }
