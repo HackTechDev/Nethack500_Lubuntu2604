@@ -664,24 +664,34 @@ vraw_printf(const char *line, va_list the_args)
 void
 impossible(const char *s, ...)
 {
-    va_list the_args;
+    va_list the_args, targs;
     char pbuf[BIGBUFSZ]; /* will be chopped down to BUFSZ-1 if longer */
     char pbuf2[BUFSZ];
+    char tbuf[BIGBUFSZ]; /* translation shown to the player */
 
     va_start(the_args, s);
     if (program_state.in_impossible)
         panic("impossible called impossible");
 
     program_state.in_impossible = 1;
+    va_copy(targs, the_args);
     (void) vsnprintf(pbuf, sizeof pbuf, s, the_args);
     va_end(the_args);
     pbuf[BUFSZ - 1] = '\0'; /* sanity */
+    /* the paniclog and bug reports keep the English text; the player
+       sees the translation */
+    if (i18n_active() && _(s) != s)
+        (void) vsnprintf(tbuf, sizeof tbuf, _(s), targs);
+    else
+        Strcpy(tbuf, pbuf);
+    va_end(targs);
+    tbuf[BUFSZ - 1] = '\0'; /* sanity */
     paniclog("impossible", pbuf);
     if (iflags.debug_fuzzer == fuzzer_impossible_panic)
         panic("%s", pbuf);
 
     gp.pline_flags = URGENT_MESSAGE;
-    pline("%s", pbuf);
+    pline("%s", tbuf);
     gp.pline_flags = 0;
 
     if (program_state.in_sanity_check) {
@@ -690,9 +700,11 @@ impossible(const char *s, ...)
         return;
     }
 
-    Strcpy(pbuf2, "Program in disorder!");
     if (program_state.something_worth_saving)
-        Strcat(pbuf2, "  (Saving and reloading may fix this problem.)");
+        Strcpy(pbuf2, N_("Program in disorder!"
+                         "  (Saving and reloading may fix this problem.)"));
+    else
+        Strcpy(pbuf2, N_("Program in disorder!"));
     pline("%s", pbuf2);
     pline("Please report these messages to %s.", DEVTEAM_EMAIL);
     if (sysopt.support) {

@@ -448,32 +448,32 @@ panic VA_DECL(const char *, str)
     }
 
     raw_print(program_state.gameover
-                  ? "Postgame wrapup disrupted."
+                  ? _("Postgame wrapup disrupted.")
                   : !program_state.something_worth_saving
-                        ? "Program initialization has failed."
-                        : "Suddenly, the dungeon collapses.");
+                        ? _("Program initialization has failed.")
+                        : _("Suddenly, the dungeon collapses."));
 #ifndef MICRO
 #ifdef NOTIFY_NETHACK_BUGS
     if (!wizard)
-        raw_printf("Report the following error to \"%s\" or at \"%s\".",
+        raw_printf(_("Report the following error to \"%s\" or at \"%s\"."),
                    DEVTEAM_EMAIL, DEVTEAM_URL);
     else if (program_state.something_worth_saving)
-        raw_print("\nError save file being written.\n");
+        raw_print(_("\nError save file being written.\n"));
 #else /* !NOTIFY_NETHACK_BUGS */
     if (!wizard) {
-        const char *maybe_rebuild = !program_state.something_worth_saving
-                                     ? "."
-                                     : "\nand it may be possible to rebuild.";
+        const char *maybe_rebuild =
+            !program_state.something_worth_saving
+                ? "." : _("\nand it may be possible to rebuild.");
 
 // XXX this may need an update if defined(CRASHREPORT) TBD
         if (sysopt.support)
-            raw_printf("To report this error, %s%s", sysopt.support,
+            raw_printf(_("To report this error, %s%s"), sysopt.support,
                        maybe_rebuild);
         else if (sysopt.fmtd_wizard_list) /* formatted SYSCF WIZARDS */
-            raw_printf("To report this error, contact %s%s",
+            raw_printf(_("To report this error, contact %s%s"),
                        sysopt.fmtd_wizard_list, maybe_rebuild);
         else
-            raw_printf("Report error to \"%s\"%s", WIZARD_NAME,
+            raw_printf(_("Report error to \"%s\"%s"), WIZARD_NAME,
                        maybe_rebuild);
     }
 #endif /* ?NOTIFY_NETHACK_BUGS */
@@ -490,8 +490,21 @@ panic VA_DECL(const char *, str)
     }
 #endif /* !MICRO */
 
-    (void) vsnprintf(buf, sizeof buf, str, VA_ARGS);
-    raw_print(buf);
+    {
+        va_list targs;
+        char tbuf[BUFSZ];
+
+        /* the paniclog and the core dump keep the English text; the
+           player sees the translation */
+        va_copy(targs, VA_ARGS);
+        (void) vsnprintf(buf, sizeof buf, str, VA_ARGS);
+        if (i18n_active() && _(str) != str)
+            (void) vsnprintf(tbuf, sizeof tbuf, _(str), targs);
+        else
+            Strcpy(tbuf, buf);
+        va_end(targs);
+        raw_print(tbuf);
+    }
     paniclog("panic", buf);
 
 #ifdef WIN32

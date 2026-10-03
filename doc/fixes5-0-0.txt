@@ -3095,7 +3095,9 @@ the encyclopedia (dat/data.base) is translated into French as
 wizard mode: #timeout, #wizintrinsic, #stats, #wizwhere (also the level
 	teleport menu), #lightsources, #wizborn, #wizrumorcheck, #wizmigrate,
 	#wizkill and the #terrain menu and legend are translated; internal
-	diagnostics (impossible(), sanity checks) stay in English
+	diagnostics are translated too (see below)
+impossible() and panic() show their message translated while the paniclog,
+	the crash report and the core dump keep the English text
 
 
 NetHack Community Patches (or Variation) Included

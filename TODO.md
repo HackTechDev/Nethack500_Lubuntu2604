@@ -14,10 +14,12 @@ par une phrase entière traduite (branche `i18n_active()`) : ils ne sont
 jamais cherchés dans le catalogue. Ce qui reste vraiment non traduit est
 surtout fait de messages de débogage et de formats sans texte
 (`"%s%s"`) ; les entrées `adjective-position` vides valent « après le
-nom », c'est voulu. Les commandes du mode magicien sont traduites ; les
-diagnostics internes (`impossible()`, contrôles de cohérence, vidage des
-glyphes de `#wizcustom`, mots-clés des drapeaux de niveau) restent en
-anglais pour les rapports de bugs.
+nom », c'est voulu. Les commandes du mode magicien sont traduites, ainsi que
+les diagnostics internes : `impossible()` et `panic()` affichent leur
+message traduit, mais le `paniclog`, le rapport de plantage et le core
+dump gardent le texte anglais pour les rapports de bugs. Seuls le vidage
+des glyphes de `#wizcustom` et les mots-clés des drapeaux de niveau
+(`noTport`...) restent en anglais, ce sont des identifiants.
 
 Le fonctionnement de la traduction et la façon d'ajouter des traductions
 sont décrits dans la section 7 de [INSTALL.md](INSTALL.md).

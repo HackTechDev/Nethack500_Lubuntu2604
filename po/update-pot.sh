@@ -27,6 +27,8 @@ $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
     --keyword=_ --keyword=N_ --keyword=MD_ \
     --keyword=C_:1c,2 --flag=C_:2:c-format --keyword=NC_:1c,2 \
     --keyword=NCP_:1c,2,3 \
+    --keyword=impossible --flag=impossible:1:c-format \
+    --keyword=panic --flag=panic:1:c-format \
     --keyword=pline --keyword=pline_dir:2 --keyword=pline_xy:3 \
     --keyword=pline_mon:2 --keyword=custompline:2 \
     --keyword=urgent_pline --keyword=Norep --keyword=verbalize \

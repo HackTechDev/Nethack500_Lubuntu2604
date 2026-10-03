@@ -24511,20 +24511,61 @@ msgstr ""
 #: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4342 src/cmd.c:5202
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
-#: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
-#: src/pager.c:3367 src/pickup.c:453 src/pickup.c:455 src/pline.c:218
-#: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
-#: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:711
-#: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
-#: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:148 src/timeout.c:310
-#: src/timeout.c:343 src/timeout.c:421 src/timeout.c:543 src/timeout.c:569
-#: src/trap.c:5841 src/vault.c:981 src/version.c:163 src/windows.c:455
-#: src/windows.c:513 src/wizcmds.c:446 src/zap.c:5310 src/zap.c:5454
-#: win/curses/cursdial.c:298 win/curses/cursdial.c:366 win/tty/topl.c:420
-#: win/tty/topl.c:425 win/tty/wintty.c:2830
+#: src/invent.c:4070 src/lock.c:937 src/nhlua.c:626 src/nhlua.c:640
+#: src/nhlua.c:656 src/pager.c:3367 src/pickup.c:453 src/pickup.c:455
+#: src/pline.c:218 src/pline.c:241 src/pline.c:691 src/pline.c:694
+#: src/pline.c:708 src/pline.c:763 src/potion.c:226 src/potion.c:253
+#: src/pray.c:1869 src/questpgr.c:711 src/read.c:607 src/rumors.c:584
+#: src/sit.c:56 src/sounds.c:1528 src/sounds.c:1714 src/spell.c:2134
+#: src/teleport.c:836 src/timeout.c:148 src/timeout.c:310 src/timeout.c:343
+#: src/timeout.c:421 src/timeout.c:543 src/timeout.c:569 src/trap.c:5841
+#: src/vault.c:981 src/version.c:163 src/windows.c:455 src/windows.c:513
+#: src/wizcmds.c:446 src/zap.c:5310 src/zap.c:5454 win/curses/cursdial.c:298
+#: win/curses/cursdial.c:366 win/tty/topl.c:420 win/tty/topl.c:425
+#: win/tty/wintty.c:2830
 #, c-format
 msgid "%s"
 msgstr ""
+
+#: src/alloc.c:76
+#, c-format
+msgid "Memory allocation failure; cannot get %u bytes"
+msgstr "Échec d'allocation mémoire ; impossible d'obtenir %u octets"
+
+#: src/alloc.c:94
+#, c-format
+msgid "Memory allocation failure; cannot extend to %u bytes"
+msgstr "Échec d'allocation mémoire ; impossible d'étendre à %u octets"
+
+#: src/alloc.c:163
+#, c-format
+msgid "Cannot get %u bytes, line %d of %s"
+msgstr "Impossible d'obtenir %u octets, ligne %d de %s"
+
+#: src/alloc.c:199
+#, c-format
+msgid "Cannot extend to %u bytes, line %d of %s"
+msgstr "Impossible d'étendre à %u octets, ligne %d de %s"
+
+#: src/alloc.c:225
+#, c-format
+msgid "nhdupstr: string length overflow, line %d of %s"
+msgstr "nhdupstr : dépassement de longueur de chaîne, ligne %d de %s"
+
+#: src/alloc.c:244
+#, c-format
+msgid "dupstr: string length overflow"
+msgstr "dupstr : dépassement de longueur de chaîne"
+
+#: src/alloc.c:258
+#, c-format
+msgid "dupstr_n: string too long"
+msgstr "dupstr_n : chaîne trop longue"
+
+#: src/alloc.c:271 src/alloc.c:281
+#, c-format
+msgid "Overflow at %s:%d"
+msgstr "Débordement à %s:%d"
 
 #: src/apply.c:71
 msgctxt "your"
@@ -25778,6 +25819,11 @@ msgstr "Vous retirez la laisse de votre %s."
 msgid "You remove the leash from %s."
 msgstr "Vous retirez la laisse @de %s."
 
+#: src/apply.c:1149
+#, c-format
+msgid "leashed-unleashed mon?"
+msgstr "monstre tenu-pas tenu en laisse ?"
+
 #: src/apply.c:1159
 msgid "You feel a leash go slack."
 msgstr "Vous sentez une laisse se détendre."
@@ -25785,6 +25831,11 @@ msgstr "Vous sentez une laisse se détendre."
 #: src/apply.c:1161
 msgid "You feel the leash go slack."
 msgstr "Vous sentez la laisse se détendre."
+
+#: src/apply.c:1192
+#, c-format
+msgid "leash in use isn't attached to anything?"
+msgstr "laisse utilisée attachée à rien ?"
 
 #: src/apply.c:1205
 #, c-format
@@ -26103,6 +26154,11 @@ msgstr ""
 #: src/apply.c:1663
 msgid "The candles are being rapidly consumed!"
 msgstr "Les bougies se consument rapidement !"
+
+#: src/apply.c:1673
+#, c-format
+msgid "Candelabrum with candles but no fuel?"
+msgstr "Candélabre avec bougies mais sans combustible ?"
 
 #: src/apply.c:1679
 #, c-format
@@ -26459,6 +26515,11 @@ msgstr "Vous forcez sur vos %s, mais vous êtes toujours attaché @à %s."
 msgid "the buried ball"
 msgstr "le boulet enterré"
 
+#: src/apply.c:2497
+#, c-format
+msgid "Jumping out of strange trap (%d)?"
+msgstr "Saut hors d'un piège étrange (%d) ?"
+
 #: src/apply.c:2515
 msgid "You jump up and come back down."
 msgstr "Vous sautez et retombez."
@@ -26498,9 +26559,24 @@ msgstr "Le cadavre vous échappe."
 msgid "That's too insubstantial to tin."
 msgstr "C'est trop immatériel pour être mis en conserve."
 
+#: src/apply.c:2645
+#, c-format
+msgid "Tinning failed."
+msgstr "Échec de la mise en boîte."
+
 #: src/apply.c:2670
 msgid "You suddenly feel trippy."
 msgstr "Vous vous sentez soudain défoncé."
+
+#: src/apply.c:2769
+#, c-format
+msgid "use_unicorn_horn: bad trouble? (%d)"
+msgstr "use_unicorn_horn : mauvais trouble ? (%d)"
+
+#: src/apply.c:2799
+#, c-format
+msgid "null figurine in fig_transform()"
+msgstr "figurine nulle dans fig_transform()"
 
 #: src/apply.c:2835
 #, c-format
@@ -26562,6 +26638,11 @@ msgstr "Vous voyez %s tomber @de %s%s !"
 #, c-format
 msgid "You see %s %s out of %s%s!"
 msgstr ""
+
+#: src/apply.c:2906
+#, c-format
+msgid "figurine came to life where? (%d)"
+msgstr "figurine ranimée où ? (%d)"
 
 #: src/apply.c:2929
 msgid "You don't have enough room in here."
@@ -27208,6 +27289,21 @@ msgstr "Ouah, un doublé !"
 msgid "It comes up heads."
 msgstr "C'est face."
 
+#: src/artifact.c:412
+#, c-format
+msgid "found_artifact: invalid artifact index! (%d)"
+msgstr "found_artifact : indice d'artefact invalide ! (%d)"
+
+#: src/artifact.c:414
+#, c-format
+msgid "found_artifact: artifact doesn't exist yet? (%d)"
+msgstr "found_artifact : l'artefact n'existe pas encore ? (%d)"
+
+#: src/artifact.c:511
+#, c-format
+msgid "invalid artifact origin: %4o"
+msgstr "origine d'artefact invalide : %4o"
+
 #: src/artifact.c:952
 #, c-format
 msgid "You are blasted by the power of %s!"
@@ -27227,6 +27323,16 @@ msgstr "%s à votre prise !"
 #, c-format
 msgid "%s beyond your control!"
 msgstr "%s hors de votre contrôle !"
+
+#: src/artifact.c:1059
+#, c-format
+msgid "Weird weapon special attack."
+msgstr "Attaque spéciale d'arme bizarre."
+
+#: src/artifact.c:1129
+#, c-format
+msgid "couldn't discover artifact (%d)"
+msgstr "impossible de découvrir l'artefact (%d)"
 
 #: src/artifact.c:1309
 #, c-format
@@ -27291,6 +27397,11 @@ msgstr "%s est confuse."
 #, c-format
 msgid "%s %s %s%c"
 msgstr ""
+
+#: src/artifact.c:1496
+#, c-format
+msgid "attacking yourself with weapon?"
+msgstr "vous vous attaquez avec une arme ?"
 
 #: src/artifact.c:1508
 msgid "The fiery blade hits you."
@@ -27510,6 +27621,16 @@ msgstr ""
 #: src/artifact.c:2209 src/mcastu.c:334
 msgid "You feel drained..."
 msgstr "Vous vous sentez vidé..."
+
+#: src/artifact.c:2230
+#, c-format
+msgid "arti_invoke without obj"
+msgstr "arti_invoke sans objet"
+
+#: src/artifact.c:2267
+#, c-format
+msgid "Unknown invoke power %d."
+msgstr "Pouvoir d'invocation inconnu %d."
 
 #: src/artifact.c:2304
 msgid "You feel like a rabble-rouser."
@@ -28084,6 +28205,11 @@ msgstr "Votre valeur innée de %s s'est améliorée."
 msgid "You feel very %s!"
 msgstr "Vous vous sentez très %s !"
 
+#: src/attrib.c:259
+#, c-format
+msgid "losestr: %d - %d"
+msgstr "losestr : %d - %d"
+
 #: src/attrib.c:348
 msgctxt "noun"
 msgid "dart"
@@ -28232,6 +28358,46 @@ msgstr "Heureusement, vous portez un casque solide."
 msgid "%s does not protect you."
 msgstr "%s ne vous protège pas."
 
+#: src/ball.c:123
+#, c-format
+msgid "Where are your ball and chain?"
+msgstr "Où sont votre boulet et votre chaîne ?"
+
+#: src/ball.c:205 src/ball.c:250 src/ball.c:342
+#, c-format
+msgid "bc already placed?"
+msgstr "boulet et chaîne déjà placés ?"
+
+#: src/ball.c:215
+#, c-format
+msgid "unplacebc denied, restriction in place"
+msgstr "unplacebc refusé, restriction en place"
+
+#: src/ball.c:227
+#, c-format
+msgid "unplacebc_and_covet_placebc denied, already restricted"
+msgstr "unplacebc_and_covet_placebc refusé, déjà restreint"
+
+#: src/ball.c:274
+#, c-format
+msgid "Placebc collision at %s:%d, already placed by %s:%d"
+msgstr "Collision de placebc à %s:%d, déjà placé par %s:%d"
+
+#: src/ball.c:312
+#, c-format
+msgid "Unplacebc_and_covet_placebc denied to %s:%d, restricted by %s:%d"
+msgstr "Unplacebc_and_covet_placebc refusé à %s:%d, restreint par %s:%d"
+
+#: src/ball.c:369
+#, c-format
+msgid "bc_order:  ball&chain not in same location!"
+msgstr "bc_order :  boulet et chaîne pas au même endroit !"
+
+#: src/ball.c:766
+#, c-format
+msgid "bad chain movement"
+msgstr "mauvais mouvement de chaîne"
+
 #: src/ball.c:778
 msgid "You cannot carry all that and also drag the heavy iron ball."
 msgstr "Vous ne pouvez pas porter tout cela et traîner en plus le lourd boulet."
@@ -28315,6 +28481,31 @@ msgstr "Le boulet vous entraîne en bas de l'escalier !"
 msgid "The iron ball smacks into you!"
 msgstr "Le boulet vous percute !"
 
+#: src/ball.c:1059
+#, c-format
+msgid "Punished without %s%s%s?"
+msgstr "Puni sans %s%s%s ?"
+
+#: src/ball.c:1064
+#, c-format
+msgid "Attached %s%s%s without being Punished?"
+msgstr "%s%s%s attaché sans être puni ?"
+
+#: src/ball.c:1085
+#, c-format
+msgid "uball: type %d (%s), where %d, wornmask=0x%08lx"
+msgstr "uball : type %d (%s), where %d, wornmask=0x%08lx"
+
+#: src/ball.c:1098
+#, c-format
+msgid "uchain: type %d (%s), where %d, wornmask=0x%08lx"
+msgstr "uchain : type %d (%s), where %d, wornmask=0x%08lx"
+
+#: src/ball.c:1117
+#, c-format
+msgid "b&c distance: you@<%d,%d>, chain@<%d,%d>, ball@<%d,%d>"
+msgstr "distance b&c : vous@<%d,%d>, chaîne@<%d,%d>, boulet@<%d,%d>"
+
 #: src/bones.c:421
 msgid "Bones file already exists.  Replace it?"
 msgstr "Le fichier d'os existe déjà.  Le remplacer ?"
@@ -28339,6 +28530,11 @@ msgstr "Supprimer les os ?"
 #, c-format
 msgid "You make adjustments to %s to suit your right hand."
 msgstr "Vous ajustez %s à votre main droite."
+
+#: src/botl.c:234
+#, c-format
+msgid "bot2: second status line exceeds MAXCO (%u > %d)"
+msgstr "bot2 : la deuxième ligne d'état dépasse MAXCO (%u > %d)"
 
 #: src/botl.c:376 src/botl.c:383
 #, c-format
@@ -28828,6 +29024,11 @@ msgstr "Tnt"
 msgid "UHold"
 msgstr "Tient"
 
+#: src/botl.c:1051
+#, c-format
+msgid "bot before init."
+msgstr "bot avant l'initialisation."
+
 #: src/botl.c:1106
 msgid "Chaotic"
 msgstr "Chaotique"
@@ -28839,6 +29040,61 @@ msgstr "Neutre"
 #: src/botl.c:1108
 msgid "Lawful"
 msgstr "Loyal"
+
+#: src/botl.c:1775
+#, c-format
+msgid "2nd status_initialize with full init."
+msgstr "2e status_initialize avec initialisation complète."
+
+#: src/botl.c:1780
+#, c-format
+msgid "status 'reassess' before init"
+msgstr "« reassess » de l'état avant l'initialisation"
+
+#: src/botl.c:1847
+#, c-format
+msgid "init_blstats called more than once."
+msgstr "init_blstats appelé plus d'une fois."
+
+#: src/botl.c:1898
+#, c-format
+msgid "compare_blstat: bad istat pointer %s, %s"
+msgstr "compare_blstat : mauvais pointeur istat %s, %s"
+
+#: src/botl.c:1906
+#, c-format
+msgid "compare_blstat: invalid pointer %s, %s"
+msgstr "compare_blstat : pointeur invalide %s, %s"
+
+#: src/botl.c:2071
+#, c-format
+msgid "percentage: bad istat pointer %s, %s"
+msgstr "percentage : mauvais pointeur istat %s, %s"
+
+#: src/botl.c:3703
+#, c-format
+msgid "hl->behavior=percentage, rel error"
+msgstr "hl->behavior=percentage, erreur de rel"
+
+#: src/botl.c:3713
+#, c-format
+msgid "hl->behavior=updown, rel error"
+msgstr "hl->behavior=updown, erreur de rel"
+
+#: src/botl.c:3719
+#, c-format
+msgid "hl->behavior=absolute, rel error"
+msgstr "hl->behavior=absolute, erreur de rel"
+
+#: src/botl.c:3725
+#, c-format
+msgid "hl->behavior=textmatch, rel or textmatch error"
+msgstr "hl->behavior=textmatch, erreur de rel ou de textmatch"
+
+#: src/botl.c:3731
+#, c-format
+msgid "hl->behavior=condition, rel error"
+msgstr "hl->behavior=condition, erreur de rel"
 
 #: src/botl.c:4023 src/spell.c:783
 msgid "That's enough tries."
@@ -28981,6 +29237,11 @@ msgid ""
 "%d error%s %s %s.\n"
 msgstr ""
 
+#: src/cfgfiles.c:1893
+#, c-format
+msgid "%s: truncation of buffer at %zu of %d bytes"
+msgstr "%s : troncature du tampon à %zu sur %d octets"
+
 #: src/cmd.c:485
 msgid "You can't do that while you are buried!"
 msgstr "Vous ne pouvez pas faire cela en étant enterré !"
@@ -29029,6 +29290,16 @@ msgstr "Tout afficher par ordre alphabétique, débogage compris"
 #: src/cmd.c:695
 msgid "no matches"
 msgstr "aucun résultat"
+
+#: src/cmd.c:794
+#, c-format
+msgid "Exceeded %d extended commands in doextcmd() menu; 'extmenu' disabled."
+msgstr "Plus de %d commandes étendues dans le menu de doextcmd() ; « extmenu » désactivé."
+
+#: src/cmd.c:872
+#, c-format
+msgid "Too many chars (%d) entered in extcmd_via_menu()"
+msgstr "Trop de caractères (%d) saisis dans extcmd_via_menu()"
 
 #: src/cmd.c:905
 msgid "Hide [h] or spin a web [s]?"
@@ -30120,9 +30391,19 @@ msgstr "Impossible d'aller là d'ici..."
 msgid "Unknown command '%s'."
 msgstr "Commande inconnue « %s »."
 
+#: src/cmd.c:4100
+#, c-format
+msgid "getdir: command queue had no dir?"
+msgstr "getdir : la file de commandes n'avait pas de direction ?"
+
 #: src/cmd.c:4111
 msgid "In what direction?"
 msgstr "Dans quelle direction ?"
+
+#: src/cmd.c:4208
+#, c-format
+msgid "getpos successful but not one of [.,;:] (%d)"
+msgstr "getpos a réussi mais pas avec l'un de [.,;:] (%d)"
 
 #: src/cmd.c:4232
 msgid "What a strange direction!"
@@ -30172,6 +30453,11 @@ msgstr "bas"
 msgid "up"
 msgstr "haut"
 
+#: src/cmd.c:5190
+#, c-format
+msgid "get_count: cmdcount_nht"
+msgstr "get_count : cmdcount_nht"
+
 #: src/cmd.c:5457
 msgid "Where do you want to travel to?"
 msgstr "Où voulez-vous vous rendre ?"
@@ -30193,6 +30479,16 @@ msgstr "Vous y êtes déjà."
 #, c-format
 msgid "%s %s"
 msgstr ""
+
+#: src/cmd.c:5699
+#, c-format
+msgid "yn_function() returned '%s'; using '%s' instead"
+msgstr "yn_function() a renvoyé « %s » ; « %s » utilisé à la place"
+
+#: src/dbridge.c:258
+#, c-format
+msgid "bad direction in create_drawbridge"
+msgstr "mauvaise direction dans create_drawbridge"
 
 #: src/dbridge.c:442
 msgid "A normal force teleports you away..."
@@ -30457,6 +30753,11 @@ msgstr "Votre %s picote et vous sentez l'odeur @de %s."
 #, c-format
 msgid "You sense %s."
 msgstr "Vous percevez %s."
+
+#: src/detect.c:620
+#, c-format
+msgid "object_detect:  illegal class %d"
+msgstr "object_detect :  classe illégale %d"
 
 #: src/detect.c:637 src/detect.c:1208
 msgid "objects"
@@ -30818,6 +31119,11 @@ msgstr "Vous êtes trop désorienté pour cela."
 msgid "Showing %s only..."
 msgstr "Affichage @de %s uniquement..."
 
+#: src/dig.c:83
+#, c-format
+msgid "mkcavepos called with dist %d"
+msgstr "mkcavepos appelé avec dist %d"
+
 #: src/dig.c:98
 msgid "Crash!  The ceiling collapses around you!"
 msgstr "Crac ! Le plafond s'effondre autour de vous !"
@@ -30964,6 +31270,11 @@ msgstr "Vous frappez %s de toutes vos forces."
 msgid "You hit the %s with all your might."
 msgstr ""
 
+#: src/dig.c:683
+#, c-format
+msgid "digactualhole: can't dig %s on this level."
+msgstr "digactualhole : impossible de creuser %s sur ce niveau."
+
 #: src/dig.c:727
 msgid "You dig an adjacent hole."
 msgstr "Vous creusez un trou à côté."
@@ -31040,6 +31351,11 @@ msgstr "Vous passez au travers..."
 #, c-format
 msgid "%s avoids the trap."
 msgstr "%s évite le piège."
+
+#: src/dig.c:897
+#, c-format
+msgid "Insane liquid_flow(%d,%d,%s,%s)."
+msgstr "liquid_flow(%d,%d,%s,%s) insensé."
 
 #: src/dig.c:964
 #, c-format
@@ -31413,6 +31729,11 @@ msgstr "Halte, vandale ! Vous êtes en état d'arrestation !"
 msgid "Hey, stop damaging that %s!"
 msgstr "Hé, arrêtez d'abîmer ce %s !"
 
+#: src/dig.c:1581
+#, c-format
+msgid "mdig_tunnel:  %s at (%d,%d) is undiggable"
+msgstr "mdig_tunnel :  %s en (%d,%d) est indestructible"
+
 #: src/dig.c:1592
 msgid "You hear crashing rock."
 msgstr "Vous entendez de la roche s'effondrer."
@@ -31571,19 +31892,104 @@ msgstr "Aucun objet enterré."
 msgid "%d object buried."
 msgstr "%d objet enterré."
 
+#: src/display.c:535
+#, c-format
+msgid "display_monster:  bad m_ap_type value [ = %d ]"
+msgstr "display_monster :  mauvaise valeur de m_ap_type [ = %d ]"
+
+#: src/display.c:647
+#, c-format
+msgid "display_warning did not match warning type?"
+msgstr "display_warning ne correspond pas au type d'avertissement ?"
+
+#: src/display.c:1211
+#, c-format
+msgid "tmp_at: tglyph not initialized"
+msgstr "tmp_at : tglyph non initialisé"
+
+#: src/display.c:1993
+#, c-format
+msgid "show_glyph:  bad pos <%d,%d> with glyph %d [%s %d]."
+msgstr "show_glyph :  mauvaise position <%d,%d> avec le glyphe %d [%s %d]."
+
+#: src/display.c:1998
+#, c-format
+msgid "show_glyph:  bad glyph %d [max %d] at <%d,%d>."
+msgstr "show_glyph :  mauvais glyphe %d [max %d] en <%d,%d>."
+
+#: src/display.c:2411
+#, c-format
+msgid "Strange db-under: %d"
+msgstr "db-under étrange : %d"
+
+#: src/display.c:2421
+#, c-format
+msgid "back_to_glyph:  unknown level type [ = %d ]"
+msgstr "back_to_glyph :  type de niveau inconnu [ = %d ]"
+
+#: src/display.c:2442
+#, c-format
+msgid "swallow_to_glyph: bad swallow location"
+msgstr "swallow_to_glyph : mauvaise position d'engloutissement"
+
+#: src/display.c:2464
+#, c-format
+msgid "zapdir_to_glyph:  illegal beam type"
+msgstr "zapdir_to_glyph :  type de rayon illégal"
+
+#: src/display.c:2570
+#, c-format
+msgid "null framecolor passed to get_bkglyph_and_framecolor"
+msgstr "framecolor nul passé à get_bkglyph_and_framecolor"
+
 #: src/display.c:3116
 #, c-format
 msgid "set_wall_state: %s @ (%d,%d) %s%s%s%s"
-msgstr ""
+msgstr "set_wall_state : %s @ (%d,%d) %s%s%s%s"
 
 #: src/display.c:3349
 msgid "set_wall_type: wall mode problems with: "
-msgstr ""
+msgstr "set_wall_type : problèmes de mode de mur avec : "
 
 #: src/display.c:3351
 #, c-format
 msgid "%s %d;"
-msgstr ""
+msgstr "%s %d ;"
+
+#: src/display.c:3591
+#, c-format
+msgid "wall_angle: unknown T wall mode %d"
+msgstr "wall_angle : mode de mur en T inconnu %d"
+
+#: src/display.c:3620
+#, c-format
+msgid "wall_angle: unknown vwall mode %d"
+msgstr "wall_angle : mode de vwall inconnu %d"
+
+#: src/display.c:3640
+#, c-format
+msgid "wall_angle: unknown hwall mode %d"
+msgstr "wall_angle : mode de hwall inconnu %d"
+
+#: src/display.c:3659
+#, c-format
+msgid "wall_angle: unknown %s mode %d"
+msgstr "wall_angle : mode de %s inconnu %d"
+
+#: src/display.c:3745
+#, c-format
+msgid "wall_angle: bottom of crwall check"
+msgstr "wall_angle : fin de la vérification de crwall"
+
+#: src/display.c:3776
+#, c-format
+msgid "wall_angle: unknown crosswall mode"
+msgstr "wall_angle : mode de mur en croix inconnu"
+
+#: src/display.c:3783
+#, c-format
+msgid "wall_angle: unexpected wall type %d"
+msgstr "wall_angle : type de mur inattendu %d"
 
 #: src/do.c:35 src/do.c:1059 src/do.c:1151
 msgctxt "verb"
@@ -31838,6 +32244,11 @@ msgctxt "noun"
 msgid "wall of lava"
 msgstr "mur de lave"
 
+#: src/do.c:92
+#, c-format
+msgid "Not a boulder?"
+msgstr "Pas un rocher ?"
+
 #: src/do.c:140
 #, c-format
 msgid "%s pushes %s into %s."
@@ -31883,6 +32294,11 @@ msgstr "Vous êtes touché par de la %s en fusion."
 #: src/do.c:193
 msgid "It sinks without a trace!"
 msgstr "Il coule sans laisser de trace !"
+
+#: src/do.c:225
+#, c-format
+msgid "flooreffects: obj not free"
+msgstr "flooreffects : objet non libre"
 
 #: src/do.c:245
 #, c-format
@@ -32192,7 +32608,7 @@ msgstr "Vous êtes avalé et ne pouvez pas monter."
 msgid "You are engulfed, and cannot go up."
 msgstr "Vous êtes englouti et ne pouvez pas monter."
 
-#: src/do.c:1254 src/end.c:791 src/hack.c:2763 src/zap.c:693
+#: src/do.c:1254 src/end.c:804 src/hack.c:2763 src/zap.c:693
 #, c-format
 msgid "You release %s."
 msgstr "Vous relâchez %s."
@@ -32285,6 +32701,11 @@ msgstr "Votre charge est trop lourde pour monter l'escalier."
 msgid "Beware, there will be no return!  Still climb?"
 msgstr "Attention, il n'y aura pas de retour ! Monter quand même ?"
 
+#: src/do.c:1564
+#, c-format
+msgid "level arrival collision: %s?"
+msgstr "collision à l'arrivée sur le niveau : %s ?"
+
 #: src/do.c:1587
 msgid "(monster in hero's way)"
 msgstr "(monstre sur votre chemin)"
@@ -32296,6 +32717,16 @@ msgstr "Une force mystérieuse vous entoure un instant..."
 #: src/do.c:1726
 msgid "A mysterious force prevents you from descending."
 msgstr "Une force mystérieuse vous empêche de descendre."
+
+#: src/do.c:1843
+#, c-format
+msgid "goto_level: returning to discarded level?"
+msgstr "goto_level : retour sur un niveau abandonné ?"
+
+#: src/do.c:1886
+#, c-format
+msgid "goto_level: no corresponding portal!"
+msgstr "goto_level : pas de portail correspondant !"
 
 #: src/do.c:1924
 #, c-format
@@ -32388,6 +32819,11 @@ msgstr "Surpris, %s lâche %s qui revient à la vie !"
 msgid "%s suddenly appears!"
 msgstr "%s apparaît soudain !"
 
+#: src/do.c:2368
+#, c-format
+msgid "reviving corpse from non-existent container"
+msgstr "réanimation d'un cadavre depuis un conteneur inexistant"
+
 #: src/do.c:2370
 #, c-format
 msgid "%s writhes out of %s!"
@@ -32416,6 +32852,11 @@ msgstr "%s s'extirpe du sol à coups de griffes !"
 #: src/do.c:2400
 msgid "You hear scratching noises."
 msgstr "Vous entendez des grattements."
+
+#: src/do.c:2409
+#, c-format
+msgid "revive_corpse: lost corpse @ %d"
+msgstr "revive_corpse : cadavre perdu @ %d"
 
 #: src/do.c:2437 src/muse.c:127 src/potion.c:3015 src/shk.c:5037 src/shk.c:5053
 #, c-format
@@ -32876,6 +33317,11 @@ msgstr "quelqu'un"
 #: src/do_name.c:1226 src/mhitm.c:796
 msgid "something"
 msgstr "quelque chose"
+
+#: src/do_name.c:1707
+#, c-format
+msgid "obj_pmname otyp:%i,corpsenm:%i"
+msgstr "obj_pmname otyp:%i,corpsenm:%i"
 
 #: src/do_name.c:1820
 msgid "amber"
@@ -33549,6 +33995,11 @@ msgstr "Vous cessez de voler."
 msgid "Suddenly you are transparent, but there!"
 msgstr "Soudain, vous êtes transparent, mais bien là !"
 
+#: src/do_wear.c:1415
+#, c-format
+msgid "Strange... I didn't know you had that ring."
+msgstr "Étrange... je ne savais pas que vous aviez cet anneau."
+
 #: src/do_wear.c:1455
 msgid "Suddenly you cannot see yourself."
 msgstr "Soudain, vous ne pouvez plus vous voir."
@@ -33568,6 +34019,11 @@ msgstr "Pour la première fois de votre vie, vous voyez !"
 #: src/do_wear.c:1548
 msgid "You can see!"
 msgstr "Vous voyez !"
+
+#: src/do_wear.c:1564
+#, c-format
+msgid "Blindf_off without eyewear?"
+msgstr "Blindf_off sans rien sur les yeux ?"
 
 #: src/do_wear.c:1577
 msgid "You still cannot see."
@@ -33603,6 +34059,11 @@ msgstr "Vous ne pouvez pas retirer ça ; c'est incrusté."
 msgid "You can't take that off%s."
 msgstr ""
 
+#: src/do_wear.c:1893
+#, c-format
+msgid "removing strange accessory: %s"
+msgstr "retrait d'un accessoire étrange : %s"
+
 #: src/do_wear.c:1911
 #, c-format
 msgid "The %s merged with your skin!"
@@ -33626,6 +34087,11 @@ msgctxt "verb"
 msgid "remove"
 msgstr "retirer"
 
+#: src/do_wear.c:1968
+#, c-format
+msgid "cursed without otmp"
+msgstr "cursed sans otmp"
+
 #: src/do_wear.c:1981
 #, c-format
 msgid "Despite your slippery %s, you can't."
@@ -33634,6 +34100,16 @@ msgstr "Malgré vos %s glissants, vous ne pouvez pas."
 #: src/do_wear.c:1987
 msgid "You can't.  They are cursed."
 msgstr "Vous ne pouvez pas.  Ils sont maudits."
+
+#: src/do_wear.c:2041
+#, c-format
+msgid "Taking off unknown armor (%d: %d), delay %d"
+msgstr "Retrait d'une armure inconnue (%d: %d), délai %d"
+
+#: src/do_wear.c:2076
+#, c-format
+msgid "Taking off unknown armor (%d: %d), no delay"
+msgstr "Retrait d'une armure inconnue (%d: %d), sans délai"
 
 #: src/do_wear.c:2092
 msgid "You are already wearing that!"
@@ -33787,9 +34263,19 @@ msgstr "Votre %s est déjà couvert d'une serviette."
 msgid "You can't wear that!"
 msgstr "Vous ne pouvez pas porter cela !"
 
+#: src/do_wear.c:2496
+#, c-format
+msgid "wearing armor not worn as armor? [%08lx]"
+msgstr "armure portée sans être portée comme armure ? [%08lx]"
+
 #: src/do_wear.c:2502
 msgid "You finish your dressing maneuver."
 msgstr "Vous finissez de vous habiller."
+
+#: src/do_wear.c:2526
+#, c-format
+msgid "putting on unexpected type of accessory: %s"
+msgstr "mise d'un type d'accessoire inattendu : %s"
 
 #: src/do_wear.c:2542
 msgid "Don't even bother."
@@ -33843,6 +34329,11 @@ msgstr ""
 #, c-format
 msgid "%s %s%s %s%s from your %s%s."
 msgstr ""
+
+#: src/do_wear.c:2796
+#, c-format
+msgid "stuck_ring: neither left nor right?"
+msgstr "stuck_ring : ni gauche ni droite ?"
 
 #: src/do_wear.c:2846
 msgid "The ring is stuck."
@@ -33903,6 +34394,11 @@ msgstr "Vous ne pouvez pas lâcher votre %s pour retirer %s."
 msgid "You cannot %s to take off %s."
 msgstr ""
 
+#: src/do_wear.c:2978
+#, c-format
+msgid "select_off: %s???"
+msgstr "select_off : %s ???"
+
 #: src/do_wear.c:2995
 msgid "You are no longer wielding either weapon."
 msgstr "Vous ne maniez plus aucune des deux armes."
@@ -33920,9 +34416,19 @@ msgstr "Vous ne maniez plus deux armes à la fois."
 msgid "You no longer have ammunition readied."
 msgstr "Vous n'avez plus de munitions préparées."
 
+#: src/do_wear.c:3050
+#, c-format
+msgid "do_takeoff: taking off %lx"
+msgstr "do_takeoff : retrait de %lx"
+
 #: src/do_wear.c:3086
 msgid "You finish disarming."
 msgstr "Vous finissez de vous désarmer."
+
+#: src/do_wear.c:3131
+#, c-format
+msgid "take_off: taking off %lx"
+msgstr "take_off : retrait de %lx"
 
 #: src/do_wear.c:3188
 msgid "You continue disarming."
@@ -33984,7 +34490,7 @@ msgstr "Vos %s se désintègrent !"
 msgid "Your %s crumbles away!"
 msgstr "Votre %s s'effrite !"
 
-#: src/do_wear.c:3422 src/end.c:1494
+#: src/do_wear.c:3422 src/end.c:1507
 msgid "You"
 msgstr "Vous"
 
@@ -34003,6 +34509,31 @@ msgstr "La figurine se tord puis vole en éclats !"
 #: src/dog.c:194
 msgid "You get a bad feeling about this."
 msgstr "Vous le sentez mal."
+
+#: src/dog.c:276
+#, c-format
+msgid "makedog() when startingpet_mid is already non-zero?"
+msgstr "makedog() alors que startingpet_mid est déjà non nul ?"
+
+#: src/dog.c:566
+#, c-format
+msgid "mon_arrive: no corresponding portal?"
+msgstr "mon_arrive : pas de portail correspondant ?"
+
+#: src/dog.c:636
+#, c-format
+msgid "catchup from future time?"
+msgstr "rattrapage depuis le futur ?"
+
+#: src/dog.c:640
+#, c-format
+msgid "catchup from now?"
+msgstr "rattrapage depuis maintenant ?"
+
+#: src/dog.c:714
+#, c-format
+msgid "catching up for leashed monster?"
+msgstr "rattrapage pour un monstre en laisse ?"
 
 #: src/dog.c:834 src/steed.c:908
 #, c-format
@@ -34023,6 +34554,11 @@ msgstr "La laisse @de %s se détache soudain."
 #, c-format
 msgid "%s leash suddenly comes loose."
 msgstr ""
+
+#: src/dog.c:859
+#, c-format
+msgid "steed left behind?"
+msgstr "monture laissée derrière ?"
 
 #: src/dog.c:886
 #, c-format
@@ -34079,6 +34615,11 @@ msgstr "Quelque chose dévore %s."
 msgid "%s spits %s out in disgust!"
 msgstr "%s recrache %s avec dégoût !"
 
+#: src/dogmove.c:321
+#, c-format
+msgid "dog_eat: pet apport <= 0 (%d, %d, %ld, %ld, %d, %u, %u)"
+msgstr "dog_eat : apport de l'animal <= 0 (%d, %d, %ld, %ld, %d, %u, %u)"
+
 #: src/dogmove.c:336
 #, c-format
 msgid "That %s will cost you %ld %s."
@@ -34111,6 +34652,11 @@ msgstr "Vous vous inquiétez pour %s."
 #, c-format
 msgid "%s picks up %s."
 msgstr "%s ramasse %s."
+
+#: src/dogmove.c:1005
+#, c-format
+msgid "dog_move for non-pet?"
+msgstr "dog_move pour un non-animal ?"
 
 #: src/dogmove.c:1059 src/monmove.c:389
 msgid "You get released!"
@@ -34912,6 +35458,11 @@ msgstr "%s à revenir !"
 msgid "%s snatches up %s."
 msgstr "%s s'empare @de %s."
 
+#: src/dothrow.c:2103
+#, c-format
+msgid "Unknown type of gloves (%d)"
+msgstr "Type de gants inconnu (%d)"
+
 #: src/dothrow.c:2127
 #, c-format
 msgid "%s catches and drops %s."
@@ -34966,6 +35517,11 @@ msgstr "Vos %s larmoient."
 msgid "Your %s waters."
 msgstr "Votre %s larmoie."
 
+#: src/dothrow.c:2671
+#, c-format
+msgid "breaking odd object (%d)?"
+msgstr "bris d'un objet bizarre (%d) ?"
+
 #: src/dothrow.c:2694 src/uhitm.c:1294 src/uhitm.c:1317 src/uhitm.c:1358
 msgid "Splat!"
 msgstr "Splatch !"
@@ -35007,6 +35563,138 @@ msgstr "L'or frappe %s."
 #, c-format
 msgid "The gold hits the %s."
 msgstr ""
+
+#: src/dungeon.c:244
+#, c-format
+msgid "level information count larger (%d) than allocated size"
+msgstr "nombre d'informations de niveau (%d) supérieur à la taille allouée"
+
+#: src/dungeon.c:275
+#, c-format
+msgid ""
+"Premature EOF on dungeon description file!\r\n"
+"Expected %d bytes - got %d."
+msgstr "Fin de fichier prématurée dans le fichier de description du donjon !\r\n%d octets attendus - %d reçus."
+
+#: src/dungeon.c:293
+#, c-format
+msgid "Couldn't resolve dungeon number for name \"%s\"."
+msgstr "Impossible de trouver le numéro de donjon pour le nom \"%s\"."
+
+#: src/dungeon.c:323
+#, c-format
+msgid "find_branch: can't find %s"
+msgstr "find_branch : impossible de trouver %s"
+
+#: src/dungeon.c:363
+#, c-format
+msgid "parent_dnum: couldn't resolve branch."
+msgstr "parent_dnum : branche introuvable."
+
+#: src/dungeon.c:392
+#, c-format
+msgid "level_range: empty chain level!"
+msgstr "level_range : niveau de chaîne vide !"
+
+#: src/dungeon.c:402
+#, c-format
+msgid "level_range: base value out of range"
+msgstr "level_range : valeur de base hors limites"
+
+#: src/dungeon.c:453
+#, c-format
+msgid "correct_branch_type: unknown branch type"
+msgstr "correct_branch_type : type de branche inconnu"
+
+#: src/dungeon.c:476
+#, c-format
+msgid "insert_branch: not found"
+msgstr "insert_branch : introuvable"
+
+#: src/dungeon.c:641
+#, c-format
+msgid "pick_level:  ran out of valid levels"
+msgstr "pick_level :  plus de niveaux valides"
+
+#: src/dungeon.c:770
+#, c-format
+msgid "flags[%i] is not a string"
+msgstr "flags[%i] n'est pas une chaîne"
+
+#: src/dungeon.c:775
+#, c-format
+msgid "flags is not an array or string"
+msgstr "flags n'est ni un tableau ni une chaîne"
+
+#: src/dungeon.c:854
+#, c-format
+msgid "Could not chain level %s to %s"
+msgstr "Impossible de chaîner le niveau %s à %s"
+
+#: src/dungeon.c:859
+#, c-format
+msgid "dungeon[%i].levels[%i] is not a hash"
+msgstr "dungeon[%i].levels[%i] n'est pas une table associative"
+
+#: src/dungeon.c:864
+#, c-format
+msgid "init_dungeon: too many special levels"
+msgstr "init_dungeon : trop de niveaux spéciaux"
+
+#: src/dungeon.c:920
+#, c-format
+msgid "Could not chain branch %s to level %s"
+msgstr "Impossible de chaîner la branche %s au niveau %s"
+
+#: src/dungeon.c:925
+#, c-format
+msgid "dungeon[%i].branches[%i] is not a hash"
+msgstr "dungeon[%i].branches[%i] n'est pas une table associative"
+
+#: src/dungeon.c:930
+#, c-format
+msgid "init_dungeon: too many branches"
+msgstr "init_dungeon : trop de branches"
+
+#: src/dungeon.c:1039
+#, c-format
+msgid "dungeon[%i].levels is not an array of hashes"
+msgstr "dungeon[%i].levels n'est pas un tableau de tables associatives"
+
+#: src/dungeon.c:1048
+#, c-format
+msgid "dungeon[%i].branches is not an array of hashes"
+msgstr "dungeon[%i].branches n'est pas un tableau de tables associatives"
+
+#: src/dungeon.c:1257
+#, c-format
+msgid "dungeon is not a lua table"
+msgstr "dungeon n'est pas une table lua"
+
+#: src/dungeon.c:1273
+#, c-format
+msgid "init_dungeons: too many dungeons"
+msgstr "init_dungeons : trop de donjons"
+
+#: src/dungeon.c:1282
+#, c-format
+msgid "dungeon[%i] is not a lua table"
+msgstr "dungeon[%i] n'est pas une table lua"
+
+#: src/dungeon.c:1294
+#, c-format
+msgid "init_dungeon:  couldn't place levels"
+msgstr "init_dungeon :  impossible de placer les niveaux"
+
+#: src/dungeon.c:1414
+#, c-format
+msgid "level number out of range [ledger_to_dnum(%d)]"
+msgstr "numéro de niveau hors limites [ledger_to_dnum(%d)]"
+
+#: src/dungeon.c:1492
+#, c-format
+msgid "builds_up: can't find branch for dungeon %d"
+msgstr "builds_up : branche introuvable pour le donjon %d"
 
 #: src/dungeon.c:1563
 #, c-format
@@ -35273,6 +35961,21 @@ msgctxt "gender"
 msgid "ground"
 msgstr ""
 
+#: src/dungeon.c:1861
+#, c-format
+msgid "get_level: can't find parent dungeon"
+msgstr "get_level : donjon parent introuvable"
+
+#: src/dungeon.c:1911
+#, c-format
+msgid "dgn_entrance: can't find entrance to %s"
+msgstr "dgn_entrance : entrée de %s introuvable"
+
+#: src/dungeon.c:1956
+#, c-format
+msgid "No boundary for Wizard's Tower?"
+msgstr "Pas de limite pour la Tour du Sorcier ?"
+
 #: src/dungeon.c:2273 src/dungeon.c:3555
 msgid "Portal"
 msgstr "Portail"
@@ -35358,6 +36061,16 @@ msgstr "Portail @ (%d,%d), héros @ (%d,%d)"
 #: src/dungeon.c:2459
 msgid "No portal found."
 msgstr "Aucun portail trouvé."
+
+#: src/dungeon.c:2502
+#, c-format
+msgid "Two branches on the same level?"
+msgstr "Deux branches sur le même niveau ?"
+
+#: src/dungeon.c:2505
+#, c-format
+msgid "Can't note branch for unseen level (%d, %d)"
+msgstr "Impossible de noter la branche d'un niveau non vu (%d, %d)"
 
 #: src/dungeon.c:2527
 #, c-format
@@ -35550,7 +36263,7 @@ msgstr " <- Vous êtes parti d'ici."
 msgid " <- You were here."
 msgstr " <- Vous étiez ici."
 
-#: src/dungeon.c:3676 src/end.c:1497 src/insight.c:1920
+#: src/dungeon.c:3676 src/end.c:1510 src/insight.c:1920
 #, c-format
 msgid " and %s"
 msgstr " et %s"
@@ -35886,6 +36599,11 @@ msgstr "Vous vous étouffez avec votre %s."
 #: src/eat.c:324
 msgid "You choke over it."
 msgstr "Vous vous étouffez avec."
+
+#: src/eat.c:339
+#, c-format
+msgid "recalc_wt without piece"
+msgstr "recalc_wt sans morceau"
 
 #: src/eat.c:599
 #, c-format
@@ -36590,6 +37308,11 @@ msgctxt "verb"
 msgid "sacrifice"
 msgstr "sacrifier"
 
+#: src/eat.c:3882
+#, c-format
+msgid "floorfood: unknown request (%s)"
+msgstr "floorfood : demande inconnue (%s)"
+
 #: src/eat.c:3887
 #, c-format
 msgid "You can't %s that!"
@@ -36607,6 +37330,16 @@ msgstr "Votre %s se soulève convulsivement !"
 #: src/eat.c:3935
 msgid "You breathe acid on yourself..."
 msgstr "Vous crachez de l'acide sur vous-même..."
+
+#: src/eat.c:3961
+#, c-format
+msgid "partly eaten food (%ld) more nutritious than untouched food (%ld)"
+msgstr "nourriture entamée (%ld) plus nourrissante que la nourriture intacte (%ld)"
+
+#: src/eat.c:3987
+#, c-format
+msgid "oeaten: attempting to set 0 nutrition food (%s) partially eaten"
+msgstr "oeaten : tentative de marquer entamée une nourriture sans valeur nutritive (%s)"
 
 #: src/end.c:66
 msgctxt "ends"
@@ -36802,204 +37535,268 @@ msgstr "Créer un instantané ?"
 msgid "Dump core?"
 msgstr "Faire un vidage mémoire (core) ?"
 
-#: src/end.c:667
+#: src/end.c:451
+msgid "Postgame wrapup disrupted."
+msgstr "La conclusion de la partie a été interrompue."
+
+#: src/end.c:453
+msgid "Program initialization has failed."
+msgstr "L'initialisation du programme a échoué."
+
+#: src/end.c:454
+msgid "Suddenly, the dungeon collapses."
+msgstr "Soudain, le donjon s'effondre."
+
+#: src/end.c:458
+#, c-format
+msgid "Report the following error to \"%s\" or at \"%s\"."
+msgstr "Signalez l'erreur suivante à \"%s\" ou sur \"%s\"."
+
+#: src/end.c:461
+msgid ""
+"\n"
+"Error save file being written.\n"
+msgstr "\nÉcriture d'une sauvegarde d'erreur.\n"
+
+#: src/end.c:466
+msgid ""
+"\n"
+"and it may be possible to rebuild."
+msgstr "\net il sera peut-être possible de la reconstruire."
+
+#: src/end.c:470
+#, c-format
+msgid "To report this error, %s%s"
+msgstr "Pour signaler cette erreur, %s%s"
+
+#: src/end.c:473
+#, c-format
+msgid "To report this error, contact %s%s"
+msgstr "Pour signaler cette erreur, contactez %s%s"
+
+#: src/end.c:476
+#, c-format
+msgid "Report error to \"%s\"%s"
+msgstr "Signalez l'erreur à \"%s\"%s"
+
+#: src/end.c:537
+#, c-format
+msgid "should_query_disclose_option: bad disclosure index %d %c"
+msgstr "should_query_disclose_option : mauvais indice de révélation %d %c"
+
+#: src/end.c:563
+#, c-format
+msgid "should_query_disclose_option: bad category %c"
+msgstr "should_query_disclose_option : mauvaise catégorie %c"
+
+#: src/end.c:680
 msgid "Do you want your possessions identified?"
 msgstr "Voulez-vous que vos possessions soient identifiées ?"
 
-#: src/end.c:684
+#: src/end.c:697
 msgid "Do you want to see your attributes?"
 msgstr "Voulez-vous voir vos caractéristiques ?"
 
-#: src/end.c:716
+#: src/end.c:729
 msgid "Do you want to see your conduct and achievements?"
 msgstr "Voulez-vous voir votre conduite et vos exploits ?"
 
-#: src/end.c:718
+#: src/end.c:731
 msgid "Do you want to see your conduct?"
 msgstr "Voulez-vous voir votre conduite ?"
 
-#: src/end.c:732
+#: src/end.c:745
 msgid "Do you want to see the dungeon overview?"
 msgstr "Voulez-vous voir le résumé du donjon ?"
 
-#: src/end.c:767
+#: src/end.c:780
 msgid "You survived that attempt on your life."
 msgstr "Vous avez survécu à cet attentat contre votre vie."
 
-#: src/end.c:793
+#: src/end.c:806
 #, c-format
 msgid "%s releases you."
 msgstr "%s vous relâche."
 
-#: src/end.c:970
+#: src/end.c:983
 #, c-format
 msgid "%s%s (worth %ld %s and %ld points)"
 msgstr "%s%s (valant %ld %s et %ld points)"
 
-#: src/end.c:971
+#: src/end.c:984
 msgid "The "
 msgstr ""
 
-#: src/end.c:1071
+#: src/end.c:1084
 msgid "You are a very tricky wizard, it seems."
 msgstr "Vous êtes un magicien très rusé, semble-t-il."
 
-#: src/end.c:1123 src/mon.c:2859
+#: src/end.c:1136 src/mon.c:2859
 msgid "But wait..."
 msgstr "Mais attendez..."
 
-#: src/end.c:1126
+#: src/end.c:1139
 msgid "Your medallion begins to glow!"
 msgstr "Votre médaillon se met à briller !"
 
-#: src/end.c:1128
+#: src/end.c:1141
 msgid "You vomit ..."
 msgstr "Vous vomissez..."
 
-#: src/end.c:1129
+#: src/end.c:1142
 msgid "You feel much better!"
 msgstr "Vous vous sentez beaucoup mieux !"
 
-#: src/end.c:1130 src/mon.c:2874
+#: src/end.c:1143 src/mon.c:2874
 msgid "The medallion crumbles to dust!"
 msgstr "Le médaillon tombe en poussière !"
 
-#: src/end.c:1137
+#: src/end.c:1150
 msgid "Unfortunately you are still genocided..."
 msgstr "Malheureusement, votre espèce est toujours exterminée..."
 
-#: src/end.c:1153
+#: src/end.c:1166
 msgid "Die?"
 msgstr "Mourir ?"
 
-#: src/end.c:1154
+#: src/end.c:1167
 msgid "OK, so you don't choke."
 msgstr "D'accord, vous ne vous étouffez pas."
 
-#: src/end.c:1229
+#: src/end.c:1242
 #, c-format
 msgid "Do not pass Go.  Do not collect 200 %s."
 msgstr "Ne passez pas par la case Départ.  Ne recevez pas 200 %s."
 
-#: src/end.c:1398
+#: src/end.c:1411
 #, c-format
 msgid "Your body rises from the dead as %s..."
 msgstr "Votre corps se relève d'entre les morts sous la forme @de %s..."
 
-#: src/end.c:1405
+#: src/end.c:1418
 msgid "Save bones?"
 msgstr "Sauvegarder les ossements ?"
 
-#: src/end.c:1459
+#: src/end.c:1472
 #, c-format
 msgid "%s %s the %s..."
 msgstr "%s %s, %s..."
 
-#: src/end.c:1464
+#: src/end.c:1477
 msgid "Demigod"
 msgstr "Demi-dieu"
 
-#: src/end.c:1464
+#: src/end.c:1477
 msgid "Demigoddess"
 msgstr "Demi-déesse"
 
-#: src/end.c:1509
+#: src/end.c:1522
 msgid " and Schroedinger's cat"
 msgstr " et le chat de Schrödinger"
 
-#: src/end.c:1519
+#: src/end.c:1532
 #, c-format
 msgid "went to your reward with %ld point,"
 msgstr "avez reçu votre récompense avec %ld point,"
 
-#: src/end.c:1521
+#: src/end.c:1534
 #, c-format
 msgid "went to your reward with %ld points,"
 msgstr "avez reçu votre récompense avec %ld points,"
 
-#: src/end.c:1524
+#: src/end.c:1537
 #, c-format
 msgid "escaped from the dungeon with %ld point,"
 msgstr "vous êtes échappé du donjon avec %ld point,"
 
-#: src/end.c:1526
+#: src/end.c:1539
 #, c-format
 msgid "escaped from the dungeon with %ld points,"
 msgstr "vous êtes échappé du donjon avec %ld points,"
 
-#: src/end.c:1563
+#: src/end.c:1576
 #, c-format
 msgid "%8ld %s (worth %ld %s),"
 msgstr "%8ld %s (valant %ld %s),"
 
-#: src/end.c:1571
+#: src/end.c:1584
 #, c-format
 msgid "%8ld worthless piece of colored glass,"
 msgstr "%8ld morceau de verre coloré sans valeur,"
 
-#: src/end.c:1572
+#: src/end.c:1585
 #, c-format
 msgid "%8ld worthless pieces of colored glass,"
 msgstr "%8ld morceaux de verre coloré sans valeur,"
 
-#: src/end.c:1585
+#: src/end.c:1598
 #, c-format
 msgid "You %s beyond the confines of the dungeon"
 msgstr "Vous %s au-delà des limites du donjon"
 
-#: src/end.c:1593
+#: src/end.c:1606
 msgid "The Astral Plane"
 msgstr "le Plan astral"
 
-#: src/end.c:1600
+#: src/end.c:1613
 #, c-format
 msgid "You %s in %s"
 msgstr "Vous %s dans %s"
 
-#: src/end.c:1603
+#: src/end.c:1616
 #, c-format
 msgid " on dungeon level %d"
 msgstr " au niveau %d du donjon"
 
-#: src/end.c:1608
+#: src/end.c:1621
 #, c-format
 msgid " with %ld point,"
 msgstr " avec %ld point,"
 
-#: src/end.c:1609
+#: src/end.c:1622
 #, c-format
 msgid " with %ld points,"
 msgstr " avec %ld points,"
 
-#: src/end.c:1622
+#: src/end.c:1635
 #, c-format
 msgid "and %ld piece of gold, after %ld move."
 msgstr "et %ld pièce d'or, après %ld tour."
 
-#: src/end.c:1623
+#: src/end.c:1636
 #, c-format
 msgid "and %ld piece of gold, after %ld moves."
 msgstr "et %ld pièce d'or, après %ld tours."
 
-#: src/end.c:1625
+#: src/end.c:1638
 #, c-format
 msgid "and %ld pieces of gold, after %ld move."
 msgstr "et %ld pièces d'or, après %ld tour."
 
-#: src/end.c:1626
+#: src/end.c:1639
 #, c-format
 msgid "and %ld pieces of gold, after %ld moves."
 msgstr "et %ld pièces d'or, après %ld tours."
 
-#: src/end.c:1630
+#: src/end.c:1643
 #, c-format
 msgid "You were level %d with a maximum of %d hit points when you %s."
 msgstr "Vous étiez de niveau %d avec un maximum de %d points de vie quand vous %s."
 
-#: src/end.c:1753 src/pickup.c:4248
+#: src/end.c:1766 src/pickup.c:4248
 #, c-format
 msgid "%s is empty."
 msgstr "%s est vide."
+
+#: src/end.c:1854
+#, c-format
+msgid "dealloc_killer (#%d) not on list"
+msgstr "dealloc_killer (#%d) absent de la liste"
+
+#: src/end.c:1939
+#, c-format
+msgid "no words in list"
+msgstr "aucun mot dans la liste"
 
 #: src/engrave.c:46
 msgctxt "gender"
@@ -37279,6 +38076,11 @@ msgstr ""
 msgid "You see a message scrawled in blood here."
 msgstr "Vous voyez un message griffonné avec du sang ici."
 
+#: src/engrave.c:454
+#, c-format
+msgid "%s is written in a very strange way."
+msgstr "%s est écrit d'une manière très étrange."
+
 #: src/engrave.c:483
 #, c-format
 msgid "You feel the words: \"%s\"%s"
@@ -37446,6 +38248,11 @@ msgstr "%s ne peut pas effacer cette gravure."
 msgid "Writing a poison pen letter?"
 msgstr "Vous écrivez une lettre empoisonnée ?"
 
+#: src/engrave.c:992
+#, c-format
+msgid "You're engraving with an illegal object!"
+msgstr "Vous gravez avec un objet illégal !"
+
 #: src/engrave.c:1082
 msgctxt "verb"
 msgid "write with"
@@ -37558,6 +38365,16 @@ msgstr "Vous êtes aveuglé par l'éclair !"
 msgid "You are unable to continue engraving."
 msgstr "Vous êtes incapable de continuer à graver."
 
+#: src/engrave.c:1448
+#, c-format
+msgid "carving with non-bladed weapon"
+msgstr "gravure avec une arme sans lame"
+
+#: src/engrave.c:1450
+#, c-format
+msgid "making graffiti with non-marker stylus"
+msgstr "graffiti avec un stylet qui n'est pas un marqueur"
+
 #: src/engrave.c:1480
 #, c-format
 msgid "One of %s gets dull."
@@ -37568,10 +38385,20 @@ msgstr "L'un @de %s s'émousse."
 msgid "%s gets dull."
 msgstr "%s s'émousse."
 
+#: src/engrave.c:1508
+#, c-format
+msgid "<= -3 weapon valid for engraving"
+msgstr "arme <= -3 valable pour graver"
+
 #: src/engrave.c:1518
 #, c-format
 msgid "You drop one %s!"
 msgstr "Vous en lâchez un : %s !"
+
+#: src/engrave.c:1531
+#, c-format
+msgid "overly dry marker valid for graffiti?"
+msgstr "marqueur trop sec valable pour un graffiti ?"
 
 #: src/engrave.c:1539
 msgid "Your marker dries out."
@@ -37594,6 +38421,36 @@ msgstr "Vous ne pouvez plus écrire."
 #, c-format
 msgid "You finish %s."
 msgstr "Vous finissez %s."
+
+#: src/engrave.c:1663
+#, c-format
+msgid "engraving sanity: on plane of air/water"
+msgstr "cohérence des gravures : sur le plan de l'Air ou de l'Eau"
+
+#: src/engrave.c:1671
+#, c-format
+msgid "engraving sanity: !isok <%i,%i>"
+msgstr "cohérence des gravures : !isok <%i,%i>"
+
+#: src/engrave.c:1676
+#, c-format
+msgid "engraving sanity: illegal surface (%d: \"%s\")"
+msgstr "cohérence des gravures : surface illégale (%d: \"%s\")"
+
+#: src/engrave.c:1791
+#, c-format
+msgid "Error in del_engr?"
+msgstr "Erreur dans del_engr ?"
+
+#: src/engrave.c:1845
+#, c-format
+msgid "Disturbing grave that isn't a grave? (%d)"
+msgstr "Profanation d'une tombe qui n'en est pas une ? (%d)"
+
+#: src/engrave.c:1847
+#, c-format
+msgid "Disturbing already disturbed grave?"
+msgstr "Profanation d'une tombe déjà profanée ?"
 
 #: src/engrave.c:1849
 msgid "You disturb the undead!"
@@ -37627,6 +38484,11 @@ msgstr "Vous revoici au niveau d'expérience %d."
 #, c-format
 msgid "Welcome %sto experience level %d."
 msgstr ""
+
+#: src/explode.c:70 src/explode.c:111
+#, c-format
+msgid "explosion type %d?"
+msgstr "type d'explosion %d ?"
 
 #: src/explode.c:120
 msgctxt "explosion"
@@ -37813,6 +38675,16 @@ msgstr "%s est légèrement brûlé !"
 msgid "%s gets slightly fried!"
 msgstr "%s est légèrement frit !"
 
+#: src/explode.c:279
+#, c-format
+msgid "explode: wand has bad zap type (%d)."
+msgstr "explode : la baguette a un mauvais type de zap (%d)."
+
+#: src/explode.c:390
+#, c-format
+msgid "explosion base type %d?"
+msgstr "type d'explosion de base %d ?"
+
 #: src/explode.c:489
 msgid "You hear a blast."
 msgstr "Vous entendez une détonation."
@@ -37865,6 +38737,11 @@ msgstr "C'est fatal."
 msgid "%s is fatal."
 msgstr "%s est fatal."
 
+#: src/explode.c:796
+#, c-format
+msgid "scattered object <%d,%d> not at scatter site <%d,%d>"
+msgstr "objet éparpillé <%d,%d> absent du lieu d'éparpillement <%d,%d>"
+
 #: src/explode.c:810
 msgid "The chain shatters!"
 msgstr "La chaîne vole en éclats !"
@@ -37887,15 +38764,100 @@ msgstr "Vous entendez de la pierre se briser."
 msgid "You hear stone crumbling."
 msgstr "Vous entendez de la pierre s'effriter."
 
+#: src/explode.c:1039
+#, c-format
+msgid "exploding unlit oil"
+msgstr "explosion d'huile non allumée"
+
+#: src/explode.c:1069
+#, c-format
+msgid "adtyp_to_expltype: bad explosion type %d"
+msgstr "adtyp_to_expltype : mauvais type d'explosion %d"
+
+#: src/explode.c:1105
+#, c-format
+msgid "unknown type for mon_explode %d"
+msgstr "type inconnu pour mon_explode %d"
+
+#: src/extralev.c:62 src/extralev.c:104
+#, c-format
+msgid "down: no wall at %d,%d?"
+msgstr "down : pas de mur en %d,%d ?"
+
+#: src/extralev.c:68
+#, c-format
+msgid "down door from %d,%d going nowhere?"
+msgstr "porte du bas depuis %d,%d qui ne mène nulle part ?"
+
+#: src/extralev.c:84
+#, c-format
+msgid "up: no wall at %d,%d?"
+msgstr "up : pas de mur en %d,%d ?"
+
+#: src/extralev.c:110
+#, c-format
+msgid "right door from %d,%d going nowhere?"
+msgstr "porte de droite depuis %d,%d qui ne mène nulle part ?"
+
+#: src/extralev.c:126
+#, c-format
+msgid "left: no wall at %d,%d?"
+msgstr "left : pas de mur en %d,%d ?"
+
+#: src/extralev.c:134
+#, c-format
+msgid "corridor in direction %d?"
+msgstr "couloir dans la direction %d ?"
+
+#: src/extralev.c:270
+#, c-format
+msgid "left end of %d, %d never connected?"
+msgstr "extrémité gauche de %d, %d jamais reliée ?"
+
+#: src/extralev.c:272
+#, c-format
+msgid "up end of %d, %d never connected?"
+msgstr "extrémité haute de %d, %d jamais reliée ?"
+
+#: src/files.c:373
+#, c-format
+msgid "Invalid fqn_filename_buffer specified: %d"
+msgstr "fqn_filename_buffer invalide : %d"
+
+#: src/files.c:383
+#, c-format
+msgid "fqname too long: %s + %s"
+msgstr "fqname trop long : %s + %s"
+
+#: src/files.c:465
+#, c-format
+msgid "Warning - Unclosed structlevel file being reinitialized"
+msgstr "Attention - réinitialisation d'un fichier structlevel non fermé"
+
+#: src/files.c:470
+#, c-format
+msgid "Warning - Unclosed fieldlevel file being reinitialized"
+msgstr "Attention - réinitialisation d'un fichier fieldlevel non fermé"
+
 #: src/files.c:936
 #, c-format
 msgid "couldn't rename %s to %s."
 msgstr "impossible de renommer %s en %s."
 
+#: src/files.c:956
+#, c-format
+msgid "bones file NHFILE * has odd fd (%d)"
+msgstr "le NHFILE * du fichier d'os a un fd bizarre (%d)"
+
+#: src/files.c:1119
+#, c-format
+msgid "set_savefile_name() couldn't complete without overflow %d"
+msgstr "set_savefile_name() n'a pas pu finir sans débordement %d"
+
 #: src/files.c:1704
 #, c-format
 msgid "Fork to %scompress %s failed."
-msgstr ""
+msgstr "Échec du fork pour %scompress %s."
 
 #: src/files.c:1861
 #, c-format
@@ -37905,6 +38867,11 @@ msgstr "Erreur de zlib dans docompress_file %s"
 #: src/files.c:1867 src/files.c:1926
 msgid "zlib failed to allocate memory"
 msgstr "zlib n'a pas pu allouer de mémoire"
+
+#: src/files.c:1869
+#, c-format
+msgid "Error in docompress_file %d"
+msgstr "Erreur dans docompress_file %d"
 
 #: src/files.c:1883
 msgid "Failure reading uncompressed file"
@@ -37918,6 +38885,11 @@ msgstr "Impossible de compresser %s."
 #: src/files.c:1898
 msgid "Failure writing compressed file"
 msgstr "Échec d'écriture du fichier compressé"
+
+#: src/files.c:1928
+#, c-format
+msgid "Error in zlib docompress_file %s, %d"
+msgstr "Erreur dans docompress_file de zlib %s, %d"
 
 #: src/files.c:1938
 #, c-format
@@ -37936,6 +38908,11 @@ msgstr "Impossible de décompresser %s."
 #: src/files.c:1966
 msgid "Failure writing uncompressed file"
 msgstr "Échec d'écriture du fichier décompressé"
+
+#: src/files.c:2265
+#, c-format
+msgid "TRIED TO NEST LOCKS"
+msgstr "TENTATIVE D'IMBRIQUER DES VERROUS"
 
 #: src/files.c:3483
 msgid "an incomprehensible foreign translation"
@@ -38819,6 +39796,16 @@ msgstr "Direction inconnue : '%s' (%s)."
 msgid "Done."
 msgstr "Terminé."
 
+#: src/glyphs.c:393
+#, c-format
+msgid "glyphid_cache full"
+msgstr "glyphid_cache plein"
+
+#: src/glyphs.c:1111
+#, c-format
+msgid "parse_id: buf[0] overflowed"
+msgstr "parse_id : débordement de buf[0]"
+
 #: src/hack.c:59
 msgctxt "heroine"
 msgid "You are caught in a bear trap."
@@ -39276,6 +40263,16 @@ msgstr "%s se dégage enfin d'un bond."
 msgid "You finally wriggle free."
 msgstr "Vous vous dégagez enfin en vous tortillant."
 
+#: src/hack.c:1760
+#, c-format
+msgid "trapmove: trapped in nothing?"
+msgstr "trapmove : pris au piège dans rien ?"
+
+#: src/hack.c:1763
+#, c-format
+msgid "trapmove: stuck in unknown trap? (%d)"
+msgstr "trapmove : coincé dans un piège inconnu ? (%d)"
+
 #: src/hack.c:1775
 msgid "You are rooted in place."
 msgstr "Vous êtes cloué sur place."
@@ -39297,6 +40294,11 @@ msgstr "(Astuce : utilisez le préfixe « %s » pour y entrer si vous le voulez 
 #: src/hack.c:1945
 msgid "(Tip: perhaps #untrap would help?)"
 msgstr "(Astuce : #untrap pourrait peut-être aider ?)"
+
+#: src/hack.c:1951
+#, c-format
+msgid "Unknown tip in handle_tip(%i)"
+msgstr "Conseil inconnu dans handle_tip(%i)"
 
 #: src/hack.c:1989
 msgid "You avoid stepping into the lava."
@@ -39389,6 +40391,11 @@ msgstr "Vous échangez votre place avec %s."
 #: src/hack.c:2309
 msgid "You feel guilty about losing your pet like this."
 msgstr "Vous vous sentez coupable de perdre votre animal ainsi."
+
+#: src/hack.c:2315
+#, c-format
+msgid "that's strange, unknown mintrap result!"
+msgstr "étrange, résultat de mintrap inconnu !"
 
 #: src/hack.c:2391
 msgid "an air bubble"
@@ -39796,6 +40803,11 @@ msgstr "Vous entendez la plainte de la Banshee..."
 msgid "[HP %i, %i left]"
 msgstr "[PV %i, reste %i]"
 
+#: src/hack.c:4410
+#, c-format
+msgid "hero losing %d hit points due to \"%s\"?"
+msgstr "le héros perd %d points de vie à cause de \"%s\" ?"
+
 #: src/hack.c:4436
 msgid "You die..."
 msgstr "Vous mourez..."
@@ -39803,6 +40815,21 @@ msgstr "Vous mourez..."
 #: src/hack.c:4554 src/steed.c:254
 msgid "You can't do that while carrying so much stuff."
 msgstr "Vous ne pouvez pas faire cela en portant autant de choses."
+
+#: src/hack.c:4706
+#, c-format
+msgid "division by zero in rounddiv"
+msgstr "division par zéro dans rounddiv"
+
+#: src/hacklib.c:234
+#, c-format
+msgid "string too long"
+msgstr "chaîne trop longue"
+
+#: src/hacklib.c:869
+#, c-format
+msgid "snprintf %s: func %s, file line %d"
+msgstr "snprintf %s : fonction %s, ligne %d du fichier"
 
 #: src/iactions.c:66
 #, c-format
@@ -39864,6 +40891,11 @@ msgstr "Examiner ce tome"
 #: src/iactions.c:138
 msgid "Study this spellbook"
 msgstr "Étudier ce livre de sorts"
+
+#: src/iactions.c:165
+#, c-format
+msgid "Unknown item action %d"
+msgstr "Action d'objet inconnue %d"
 
 #: src/iactions.c:299
 #, c-format
@@ -42349,6 +43381,11 @@ msgstr "État final :"
 msgid "Status:"
 msgstr "État :"
 
+#: src/insight.c:1583
+#, c-format
+msgid "Punished without uball?"
+msgstr "Puni sans uball ?"
+
 #: src/insight.c:1801
 #, c-format
 msgid " You are wielding %s."
@@ -42448,6 +43485,11 @@ msgstr " Vous avez transgressé."
 #: src/insight.c:2113
 msgid " You had transgressed."
 msgstr " Vous aviez transgressé."
+
+#: src/insight.c:2602
+#, c-format
+msgid "dead without dying?"
+msgstr "mort sans mourir ?"
 
 #: src/insight.c:2701
 msgctxt "heroine"
@@ -42962,6 +44004,11 @@ msgstr " Vous avez atteint le rang de %s."
 msgid " You have attained the rank of %s."
 msgstr " Vous avez atteint le rang de %s."
 
+#: src/insight.c:3163
+#, c-format
+msgid "Achievement #%d is out of range."
+msgstr "L'exploit n°%d est hors limites."
+
 #: src/insight.c:3284
 msgid "No chronicled events."
 msgstr "Aucun événement consigné."
@@ -43053,6 +44100,11 @@ msgstr "Voulez-vous la liste des créatures vaincues ?"
 #: src/insight.c:3691
 msgid "No creatures have been vanquished."
 msgstr "Aucune créature n'a été vaincue."
+
+#: src/insight.c:3709
+#, c-format
+msgid "unique creature '%d: %s' genocided?"
+msgstr "créature unique « %d: %s » génocidée ?"
 
 #: src/insight.c:3873
 msgid "No creatures have been genocided yet."
@@ -43343,14 +44395,84 @@ msgstr ", dans un nuage de vapeur"
 msgid "Status of %s (%s):  Level %d  HP %d(%d)  AC %d%s."
 msgstr "État @de %s (%s) :  Niveau %d  PV %d(%d)  CA %d%s."
 
+#: src/invent.c:896
+#, c-format
+msgid "merging strangely worn items (%lx)"
+msgstr "fusion d'objets portés étrangement (%lx)"
+
 #: src/invent.c:941
 msgid "You learn more about your items by comparing them."
 msgstr "Vous en apprenez davantage sur vos objets en les comparant."
+
+#: src/invent.c:966
+#, c-format
+msgid "already have amulet?"
+msgstr "vous avez déjà l'amulette ?"
+
+#: src/invent.c:971
+#, c-format
+msgid "already have candelabrum?"
+msgstr "vous avez déjà le candélabre ?"
+
+#: src/invent.c:976
+#, c-format
+msgid "already have silver bell?"
+msgstr "vous avez déjà la cloche d'argent ?"
+
+#: src/invent.c:981
+#, c-format
+msgid "already have the book?"
+msgstr "vous avez déjà le livre ?"
+
+#: src/invent.c:987
+#, c-format
+msgid "already have quest artifact?"
+msgstr "vous avez déjà l'artefact de la quête ?"
 
 #: src/invent.c:1040
 #, c-format
 msgid "You decipher the label on %s."
 msgstr "Vous déchiffrez l'étiquette @de %s."
+
+#: src/invent.c:1065
+#, c-format
+msgid "addinv: obj not free"
+msgstr "addinv : objet non libre"
+
+#: src/invent.c:1104
+#, c-format
+msgid "addinv: null obj after quiver merge otyp=%d"
+msgstr "addinv : objet nul après fusion dans le carquois otyp=%d"
+
+#: src/invent.c:1112
+#, c-format
+msgid "addinv: null obj after merge otyp=%d"
+msgstr "addinv : objet nul après fusion otyp=%d"
+
+#: src/invent.c:1363
+#, c-format
+msgid "don't have amulet?"
+msgstr "vous n'avez pas l'amulette ?"
+
+#: src/invent.c:1367
+#, c-format
+msgid "don't have candelabrum?"
+msgstr "vous n'avez pas le candélabre ?"
+
+#: src/invent.c:1371
+#, c-format
+msgid "don't have silver bell?"
+msgstr "vous n'avez pas la cloche d'argent ?"
+
+#: src/invent.c:1375
+#, c-format
+msgid "don't have the book?"
+msgstr "vous n'avez pas le livre ?"
+
+#: src/invent.c:1380
+#, c-format
+msgid "don't have quest artifact?"
+msgstr "vous n'avez pas l'artefact de la quête ?"
 
 #: src/invent.c:1685
 #, c-format
@@ -43361,6 +44483,16 @@ msgstr "Vous faites mine de %s."
 #, c-format
 msgid "You mime %s%s%s something%s%s."
 msgstr ""
+
+#: src/invent.c:1873
+#, c-format
+msgid "getobj: inventory overflow"
+msgstr "getobj : débordement de l'inventaire"
+
+#: src/invent.c:1902
+#, c-format
+msgid "bad return from getobj callback"
+msgstr "mauvais retour de la fonction de rappel de getobj"
 
 #: src/invent.c:1919
 #, c-format
@@ -44028,6 +45160,11 @@ msgstr "Objets en sac ou en coffre"
 msgid "Unpaid %s"
 msgstr "%s non payés"
 
+#: src/invent.c:5085
+#, c-format
+msgid "%s: %s%s%s"
+msgstr ""
+
 #: src/invent.c:5171
 msgid "You aren't carrying anything to adjust."
 msgstr "Vous ne portez rien à ajuster."
@@ -44152,6 +45289,116 @@ msgstr "%s n'a pas pu être activé."
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr "%s nécessite un terminal d'au moins %dx%d, le vôtre fait %dx%d."
+
+#: src/light.c:76
+#, c-format
+msgid "new_light_source:  illegal range %d"
+msgstr "new_light_source :  portée illégale %d"
+
+#: src/light.c:110
+#, c-format
+msgid "del_light_source:type=none"
+msgstr "del_light_source:type=aucun"
+
+#: src/light.c:135
+#, c-format
+msgid "del_light_source: not found type=%d, id=%s"
+msgstr "del_light_source : introuvable type=%d, id=%s"
+
+#: src/light.c:162
+#, c-format
+msgid "delete_ls not found, ls=%s"
+msgstr "delete_ls introuvable, ls=%s"
+
+#: src/light.c:287
+#, c-format
+msgid "transient light %s %s %s not %s?"
+msgstr "lumière passagère %s %s %s pas %s ?"
+
+#: src/light.c:438
+#, c-format
+msgid "counted %d light sources, wrote %d! [range=%d]"
+msgstr "%d sources de lumière comptées, %d écrites ! [range=%d]"
+
+#: src/light.c:445
+#, c-format
+msgid "save_light_sources: no id! [range=%d]"
+msgstr "save_light_sources : pas d'id ! [range=%d]"
+
+#: src/light.c:457
+#, c-format
+msgid "save_light_sources: bad type (%d) [range=%d]"
+msgstr "save_light_sources : mauvais type (%d) [range=%d]"
+
+#: src/light.c:544
+#, c-format
+msgid "relink_light_sources: no id mapping"
+msgstr "relink_light_sources : pas de correspondance d'id"
+
+#: src/light.c:555
+#, c-format
+msgid "relink_light_sources: can't find %c_id %u"
+msgstr "relink_light_sources : %c_id %u introuvable"
+
+#: src/light.c:558
+#, c-format
+msgid "relink_light_sources: bad type (%d)"
+msgstr "relink_light_sources : mauvais type (%d)"
+
+#: src/light.c:578
+#, c-format
+msgid "maybe_write_ls: no id! [range=%d]"
+msgstr "maybe_write_ls : pas d'id ! [range=%d]"
+
+#: src/light.c:590
+#, c-format
+msgid "maybe_write_ls: bad type (%d) [range=%d]"
+msgstr "maybe_write_ls : mauvais type (%d) [range=%d]"
+
+#: src/light.c:615
+#, c-format
+msgid "insane light source: no id!"
+msgstr "source de lumière incohérente : pas d'id !"
+
+#: src/light.c:620
+#, c-format
+msgid "insane light source: can't find obj #%u!"
+msgstr "source de lumière incohérente : objet n°%u introuvable !"
+
+#: src/light.c:625
+#, c-format
+msgid "insane light source: can't find mon #%u!"
+msgstr "source de lumière incohérente : monstre n°%u introuvable !"
+
+#: src/light.c:627
+#, c-format
+msgid "insane light source: bad ls type %d"
+msgstr "source de lumière incohérente : mauvais type de ls %d"
+
+#: src/light.c:651
+#, c-format
+msgid "write_ls: can't find obj #%u!"
+msgstr "write_ls : objet n°%u introuvable !"
+
+#: src/light.c:678
+#, c-format
+msgid "write_ls: can't find mon%s #%u!"
+msgstr "write_ls : monstre%s n°%u introuvable !"
+
+#: src/light.c:686
+#, c-format
+msgid "write_ls: stashed monst ptr not in any chain"
+msgstr "write_ls : pointeur de monstre mis de côté absent de toute chaîne"
+
+#: src/light.c:700
+#, c-format
+msgid "write_ls: bad type (%d)"
+msgstr "write_ls : mauvais type (%d)"
+
+#: src/light.c:837
+#, c-format
+msgid "obj_adjust_light_radius: can't find %s"
+msgstr "obj_adjust_light_radius : %s introuvable"
 
 #: src/light.c:945
 #, c-format
@@ -44348,6 +45595,11 @@ msgstr "Vous ne pouvez pas tenir %s -- vous n'avez pas de mains !"
 #, c-format
 msgid "You can't unlock %s."
 msgstr "Vous ne pouvez pas déverrouiller %s."
+
+#: src/lock.c:449
+#, c-format
+msgid "picking lock with object %d?"
+msgstr "crochetage avec l'objet %d ?"
 
 #: src/lock.c:469
 msgid "There isn't any sort of lock up here."
@@ -44596,6 +45848,11 @@ msgstr "Vous entendez une explosion lointaine."
 msgid "You hear a crashing sound."
 msgstr "Vous entendez un fracas."
 
+#: src/lock.c:1315
+#, c-format
+msgid "magic (%d) attempted on door."
+msgstr "magie (%d) tentée sur une porte."
+
 #: src/lock.c:1343
 #, c-format
 msgid "You hear %s shatter!"
@@ -44691,6 +45948,11 @@ msgstr "%sInvitation : visitez le site web de NetHack à %s%s"
 msgid "It reads:  \""
 msgstr "On peut y lire :  \""
 
+#: src/mail.c:530
+#, c-format
+msgid "fake mail #%d has undefined substitution"
+msgstr "le faux courrier n°%d a une substitution non définie"
+
 #: src/mail.c:535
 msgid "Unfortunately you cannot see what it says."
 msgstr "Malheureusement, vous ne voyez pas ce qui est écrit."
@@ -44735,7 +45997,22 @@ msgstr "Cela semble n'être que du charabia."
 #: src/makemon.c:109
 #, c-format
 msgid "cnt=%d using %d, cnttmp=%d, cntdiv=%d"
-msgstr ""
+msgstr "cnt=%d utilise %d, cnttmp=%d, cntdiv=%d"
+
+#: src/makemon.c:629
+#, c-format
+msgid "odd mercenary %d?"
+msgstr "mercenaire bizarre %d ?"
+
+#: src/makemon.c:857
+#, c-format
+msgid "clone_mon trying to create a monster at <%d,%d>?"
+msgstr "clone_mon essaie de créer un monstre en <%d,%d> ?"
+
+#: src/makemon.c:1189
+#, c-format
+msgid "makemon trying to create a monster at <%d,%d>?"
+msgstr "makemon essaie de créer un monstre en <%d,%d> ?"
 
 #: src/makemon.c:1499 src/teleport.c:1768
 #, c-format
@@ -44746,6 +46023,21 @@ msgstr "%s apparaît soudain%s !"
 #, c-format
 msgid "%s%s %s%s%c"
 msgstr ""
+
+#: src/makemon.c:1718
+#, c-format
+msgid "bad weight in rndmonst for mndx %d"
+msgstr "mauvais poids dans rndmonst pour mndx %d"
+
+#: src/makemon.c:1901
+#, c-format
+msgid "mkclass called with bad class!"
+msgstr "mkclass appelé avec une mauvaise classe !"
+
+#: src/makemon.c:1919
+#, c-format
+msgid "mkclass found no class %d monsters"
+msgstr "mkclass n'a trouvé aucun monstre de classe %d"
 
 #: src/makemon.c:2137
 #, c-format
@@ -44761,6 +46053,11 @@ msgstr "%s meurt en devenant %s !"
 #, c-format
 msgid "As %s grows up into %s, %s %s!"
 msgstr ""
+
+#: src/makemon.c:2577
+#, c-format
+msgid "bad bag o' tricks"
+msgstr "mauvais sac à malice"
 
 #: src/mcastu.c:70
 #, c-format
@@ -44786,6 +46083,11 @@ msgstr "%s pointe le doigt vers vous, puis jure."
 msgid "You hear a mumbled curse."
 msgstr "Vous entendez une malédiction marmonnée."
 
+#: src/mcastu.c:166
+#, c-format
+msgid "spellcasting monster found you and doesn't know it?"
+msgstr "un monstre lanceur de sorts vous a trouvé sans le savoir ?"
+
 #: src/mcastu.c:204
 #, c-format
 msgid "%s casts a spell at empty water!"
@@ -44804,6 +46106,11 @@ msgstr "L'air crépite autour @de %s."
 #, c-format
 msgid "%s casts a spell!"
 msgstr "%s lance un sort !"
+
+#: src/mcastu.c:239
+#, c-format
+msgid "%s casting non-hand-to-hand version of hand-to-hand spell %d?"
+msgstr "%s lance une version à distance du sort de corps à corps %d ?"
 
 #: src/mcastu.c:257
 msgid "You're enveloped in flames."
@@ -44856,6 +46163,11 @@ msgstr "Heureusement pour vous, ça n'a pas marché !"
 msgid "Double Trouble..."
 msgstr "Double peine..."
 
+#: src/mcastu.c:423
+#, c-format
+msgid "bad wizard cloning?"
+msgstr "mauvais clonage du Sorcier ?"
+
 #: src/mcastu.c:435
 msgid "Destroy the thief, my pet!"
 msgstr "Détruis le voleur, mon familier !"
@@ -44889,6 +46201,11 @@ msgstr "Vous vous sentez soudain plus faible !"
 #, c-format
 msgid "%s suddenly disappears!"
 msgstr "%s disparaît soudain !"
+
+#: src/mcastu.c:509
+#, c-format
+msgid "no reason for monster to cast disappear spell?"
+msgstr "aucune raison pour qu'un monstre lance le sort de disparition ?"
 
 #: src/mcastu.c:519
 msgid "You feel momentarily disoriented."
@@ -45017,6 +46334,11 @@ msgstr "Vous vous sentez encore plus confuse !"
 msgid "Scales cover your %s!"
 msgstr "Des écailles recouvrent vos %s !"
 
+#: src/mcastu.c:780
+#, c-format
+msgid "no reason for monster to cast blindness spell?"
+msgstr "aucune raison pour qu'un monstre lance le sort d'aveuglement ?"
+
 #: src/mcastu.c:792
 msgid "You stiffen briefly."
 msgstr "Vous vous raidissez brièvement."
@@ -45037,6 +46359,16 @@ msgstr "Vous planez encore plus !"
 msgid "You feel more confused!"
 msgstr "Vous vous sentez encore plus confus !"
 
+#: src/mcastu.c:842
+#, c-format
+msgid "monster cast spell (%d) with negative dmg (%d)?"
+msgstr "un monstre a lancé le sort (%d) avec des dégâts négatifs (%d) ?"
+
+#: src/mcastu.c:847
+#, c-format
+msgid "cast directed wizard spell (%d) with dmg=0?"
+msgstr "sort de mage dirigé (%d) lancé avec dmg=0 ?"
+
 #: src/mcastu.c:865
 msgid "You feel that monsters are aware of your presence."
 msgstr "Vous sentez que les monstres ont conscience de votre présence."
@@ -45044,6 +46376,11 @@ msgstr "Vous sentez que les monstres ont conscience de votre présence."
 #: src/mcastu.c:870
 msgid "You feel as if you need some help."
 msgstr "Vous avez l'impression d'avoir besoin d'aide."
+
+#: src/mcastu.c:928
+#, c-format
+msgid "mcastu: invalid magic spell (%d)"
+msgstr "mcastu : sort de magie invalide (%d)"
 
 #: src/mcastu.c:1041
 #, c-format
@@ -45879,6 +47216,11 @@ msgstr "dard"
 msgid "Your quickness feels less natural."
 msgstr "Votre rapidité vous semble moins naturelle."
 
+#: src/mhitu.c:234
+#, c-format
+msgid "%s attacks you without knowing your location?"
+msgstr "%s vous attaque sans savoir où vous êtes ?"
+
 #: src/mhitu.c:262
 #, c-format
 msgid "%s tries to touch you and misses!"
@@ -45937,6 +47279,11 @@ msgstr "Vous êtes régurgité !"
 #, c-format
 msgid "%s unfolds and you are released!"
 msgstr "%s se déplie et vous êtes libéré !"
+
+#: src/mhitu.c:340 src/polyself.c:1612
+#, c-format
+msgid "Swallower has no engulfing attack?"
+msgstr "L'engloutisseur n'a pas d'attaque d'engloutissement ?"
 
 #: src/mhitu.c:356
 #, c-format
@@ -46000,6 +47347,11 @@ msgstr "Attends, %s !  Il y a un %s caché nommé %s ici !"
 #, c-format
 msgid "Wait, %s!  There's a %s named %s hiding under %s!"
 msgstr "Attends, %s !  Il y a un %s nommé %s caché sous %s !"
+
+#: src/mhitu.c:730
+#, c-format
+msgid "hiding under nothing?"
+msgstr "caché sous rien ?"
 
 #: src/mhitu.c:745
 msgid "It gets stuck on you."
@@ -46240,6 +47592,11 @@ msgstr "Vous êtes pris dans un éclair de lumière kaléidoscopique !"
 msgid "You are freaked out."
 msgstr "Vous paniquez."
 
+#: src/mhitu.c:1748
+#, c-format
+msgid "unknown exploder damage type %d"
+msgstr "type de dégâts d'explosion inconnu %d"
+
 #: src/mhitu.c:1752
 msgid "You seem unaffected by it."
 msgstr "Vous semblez ne pas en être affecté."
@@ -46335,6 +47692,11 @@ msgstr "Le regard @de %s vous donne très sommeil..."
 msgid "%s gaze makes you very sleepy..."
 msgstr ""
 
+#: src/mhitu.c:1993
+#, c-format
+msgid "Gaze attack %d?"
+msgstr "Attaque du regard %d ?"
+
 #: src/mhitu.c:2001
 #, c-format
 msgid "%s looks %s%s."
@@ -46351,6 +47713,11 @@ msgstr "un peu "
 #: src/mhitu.c:2004
 msgid "somewhat "
 msgstr "assez "
+
+#: src/mhitu.c:2015
+#, c-format
+msgid "mdamageu for negative damage? (%d)"
+msgstr "mdamageu pour des dégâts négatifs ? (%d)"
 
 #: src/mhitu.c:2107
 #, c-format
@@ -46433,6 +47800,11 @@ msgstr "%s vous passe %s à la %s gauche."
 #, c-format
 msgid "%s replaces %s with %s."
 msgstr "%s remplace %s par %s."
+
+#: src/mhitu.c:2224
+#, c-format
+msgid "ring replacement"
+msgstr "remplacement d'anneau"
 
 #: src/mhitu.c:2234
 #, c-format
@@ -46649,6 +48021,11 @@ msgstr "%s apparaît dans %s !"
 msgid "%s appears in a %s of %s!"
 msgstr ""
 
+#: src/minion.c:223
+#, c-format
+msgid "unaligned player?"
+msgstr "joueur sans alignement ?"
+
 #: src/minion.c:252
 #, c-format
 msgid "The voice of %s booms:"
@@ -46825,6 +48202,76 @@ msgstr "Un ange apparaît près de vous."
 msgid "You feel the presence of a friendly angel near you."
 msgstr "Vous sentez la présence d'un ange amical près de vous."
 
+#: src/minion.c:573
+#, c-format
+msgid "merged weapon?"
+msgstr "arme fusionnée ?"
+
+#: src/mklev.c:179
+#, c-format
+msgid "finddpos: illegal dir"
+msgstr "finddpos : direction illégale"
+
+#: src/mklev.c:311
+#, c-format
+msgid "level has too many rooms"
+msgstr "le niveau a trop de salles"
+
+#: src/mklev.c:331
+#, c-format
+msgid "level has too many subrooms"
+msgstr "le niveau a trop de sous-salles"
+
+#: src/mklev.c:333
+#, c-format
+msgid "room has too many subrooms"
+msgstr "la salle a trop de sous-salles"
+
+#: src/mklev.c:959
+#, c-format
+msgid "fill_ordinary_room: Null subroom"
+msgstr "fill_ordinary_room : sous-salle nulle"
+
+#: src/mklev.c:1074
+#, c-format
+msgid "couldn't generate supply chest item"
+msgstr "impossible de générer un objet du coffre de provisions"
+
+#: src/mklev.c:1163
+#, c-format
+msgid "trycnt overflow4"
+msgstr "débordement de trycnt 4"
+
+#: src/mklev.c:1235
+#, c-format
+msgid "levl[%i][%i] door not ok"
+msgstr "porte de levl[%i][%i] incorrecte"
+
+#: src/mklev.c:1245
+#, c-format
+msgid "room %i not connected?"
+msgstr "salle %i non reliée ?"
+
+#: src/mklev.c:1261
+#, c-format
+msgid "makelevel() called when dungeon not yet initialized."
+msgstr "makelevel() appelé alors que le donjon n'est pas encore initialisé."
+
+#: src/mklev.c:1670
+#, c-format
+msgid "Can't place branch!"
+msgstr "Impossible de placer la branche !"
+
+#: src/mklev.c:2169
+#, c-format
+msgid "mkstairs:  bogus stair attempt at <%d,%d>"
+msgstr "mkstairs :  tentative d'escalier bidon en <%d,%d>"
+
+#: src/mklev.c:2179
+#, c-format
+msgid "mkstairs:  placing stairs %s on %s at <%d,%d>"
+msgstr "mkstairs :  pose d'un escalier %s sur %s en <%d,%d>"
+
 #: src/mklev.c:2417
 msgid "The floor shakes violently under you!"
 msgstr "Le sol tremble violemment sous vous !"
@@ -46836,6 +48283,71 @@ msgstr "Les murs autour de vous commencent à se tordre et s'effriter !"
 #: src/mklev.c:2493
 msgid "You are standing at the top of a stairwell leading down!"
 msgstr "Vous êtes en haut d'une cage d'escalier qui descend !"
+
+#: src/mklev.c:2576
+#, c-format
+msgid "mkinvpos called with dist %d"
+msgstr "mkinvpos appelé avec dist %d"
+
+#: src/mkmap.c:309
+#, c-format
+msgid "No start/end room loc in join_map."
+msgstr "Pas de position de salle de départ ou d'arrivée dans join_map."
+
+#: src/mkmap.c:395
+#, c-format
+msgid "regular room in joined map"
+msgstr "salle ordinaire dans une carte jointe"
+
+#: src/mkmaze.c:39
+#, c-format
+msgid "mz_move: bad direction %d"
+msgstr "mz_move : mauvaise direction %d"
+
+#: src/mkmaze.c:114
+#, c-format
+msgid "set_levltyp(%d,%d,%d)%s%s"
+msgstr "set_levltyp(%d,%d,%d)%s%s"
+
+#: src/mkmaze.c:133
+#, c-format
+msgid "set_levltyp_lit(%d,%d,%d,%d)"
+msgstr "set_levltyp_lit(%d,%d,%d,%d)"
+
+#: src/mkmaze.c:206
+#, c-format
+msgid "wall_cleanup: bad bounds (%d,%d) to (%d,%d)"
+msgstr "wall_cleanup : mauvaises limites (%d,%d) à (%d,%d)"
+
+#: src/mkmaze.c:250
+#, c-format
+msgid "wall_extends: bad bounds (%d,%d) to (%d,%d)"
+msgstr "wall_extends : mauvaises limites (%d,%d) à (%d,%d)"
+
+#: src/mkmaze.c:409
+#, c-format
+msgid "Couldn't place lregion type %d!"
+msgstr "Impossible de placer la lregion de type %d !"
+
+#: src/mkmaze.c:1194
+#, c-format
+msgid "Couldn't load \"%s\" - making a maze."
+msgstr "Impossible de charger \"%s\" - création d'un labyrinthe."
+
+#: src/mkmaze.c:1270
+#, c-format
+msgid "Overflow in walkfrom"
+msgstr "Débordement dans walkfrom"
+
+#: src/mkmaze.c:1347
+#, c-format
+msgid "mazexy: can't find a place!"
+msgstr "mazexy : impossible de trouver une place !"
+
+#: src/mkmaze.c:1471
+#, c-format
+msgid "portal on top of portal?"
+msgstr "portail par-dessus un portail ?"
 
 #: src/mkmaze.c:1513
 msgid "You hear a loud whoosh!"
@@ -46850,29 +48362,84 @@ msgstr "Vous entendez un souffle !"
 msgid "You hear a %swhoosh!"
 msgstr ""
 
+#: src/mkmaze.c:1575
+#, c-format
+msgid "movebubbles: cons != null"
+msgstr "movebubbles : cons != null"
+
+#: src/mkmaze.c:1580
+#, c-format
+msgid "movebubbles: bad pos (%d,%d)"
+msgstr "movebubbles : mauvaise position (%d,%d)"
+
 #: src/mkmaze.c:1721
 msgid "Water turbulence affects your movements."
 msgstr "Les remous de l'eau gênent vos mouvements."
 
+#: src/mkmaze.c:1791
+#, c-format
+msgid "No %s to restore?"
+msgstr "Pas de %s à restaurer ?"
+
+#: src/mkmaze.c:1810
+#, c-format
+msgid "set_wportal(): no portal!"
+msgstr "set_wportal() : pas de portail !"
+
+#: src/mkmaze.c:1820
+#, c-format
+msgid "setup_waterlevel(): [%d:%d] neither 'Water' nor 'Air'"
+msgstr "setup_waterlevel() : [%d:%d] ni « Water » ni « Air »"
+
+#: src/mkmaze.c:1898
+#, c-format
+msgid "n too large (mk_bubble)"
+msgstr "n trop grand (mk_bubble)"
+
+#: src/mkmaze.c:1902
+#, c-format
+msgid "bmask size is larger than MAX_BMASK"
+msgstr "la taille de bmask dépasse MAX_BMASK"
+
 #: src/mkmaze.c:1983
 #, c-format
 msgid "bubble xmin: x = %d, xmin = %d"
-msgstr ""
+msgstr "bulle xmin : x = %d, xmin = %d"
 
 #: src/mkmaze.c:1987
 #, c-format
 msgid "bubble ymin: y = %d, ymin = %d"
-msgstr ""
+msgstr "bulle ymin : y = %d, ymin = %d"
 
 #: src/mkmaze.c:1991
 #, c-format
 msgid "bubble xmax: x = %d, xmax = %d"
-msgstr ""
+msgstr "bulle xmax : x = %d, xmax = %d"
 
 #: src/mkmaze.c:1996
 #, c-format
 msgid "bubble ymax: y = %d, ymax = %d"
-msgstr ""
+msgstr "bulle ymax : y = %d, ymax = %d"
+
+#: src/mkmaze.c:2081
+#, c-format
+msgid "mv_bubble: unknown bubble contents"
+msgstr "mv_bubble : contenu de bulle inconnu"
+
+#: src/mkobj.c:296
+#, c-format
+msgid "probtype error, oclass=%d i=%d"
+msgstr "erreur de probtype, oclass=%d i=%d"
+
+#: src/mkobj.c:463
+#, c-format
+msgid "splitobj [cobj=%s num=%ld quan=%ld]"
+msgstr "splitobj [cobj=%s num=%ld quan=%ld]"
+
+#: src/mkobj.c:676
+#, c-format
+msgid "replace_object: obj position"
+msgstr "replace_object : position de l'objet"
 
 #: src/mkobj.c:752
 #, c-format
@@ -47118,6 +48685,11 @@ msgstr "Vous ternissez %s, vous le payez !"
 msgid "You crack %s, you pay for it!"
 msgstr "Vous fêlez %s, vous le payez !"
 
+#: src/mkobj.c:815
+#, c-format
+msgid "invalid alteration type (%d)"
+msgstr "type d'altération invalide (%d)"
+
 #: src/mkobj.c:864
 #, c-format
 msgid "You %s %s %s, you pay for %s!"
@@ -47127,6 +48699,21 @@ msgstr ""
 #, c-format
 msgid "You %s %s, you pay for %s!"
 msgstr ""
+
+#: src/mkobj.c:1231
+#, c-format
+msgid "mksobj tried to make type %d, class %d."
+msgstr "mksobj a essayé de créer le type %d, classe %d."
+
+#: src/mkobj.c:1542
+#, c-format
+msgid "start_glob_timeout for non-glob [%d: %s]?"
+msgstr "start_glob_timeout pour un non-globule [%d: %s] ?"
+
+#: src/mkobj.c:1580
+#, c-format
+msgid "shrink_glob for non-glob [%d: %s]?"
+msgstr "shrink_glob pour un non-globule [%d: %s] ?"
 
 #: src/mkobj.c:1708
 #, c-format
@@ -47142,6 +48729,101 @@ msgstr "%s disparaît peu à peu."
 #, c-format
 msgid "%s %s %s%s."
 msgstr ""
+
+#: src/mkobj.c:1982
+#, c-format
+msgid "Calculating weight of %ld %s?"
+msgstr "Calcul du poids de %ld %s ?"
+
+#: src/mkobj.c:2167
+#, c-format
+msgid "making corpstat type %d"
+msgstr "création d'une corpstat de type %d"
+
+#: src/mkobj.c:2413
+#, c-format
+msgid "place_object: obj \"%s\" [%d] not free"
+msgstr "place_object : objet \"%s\" [%d] non libre"
+
+#: src/mkobj.c:2603
+#, c-format
+msgid "remove_object: obj where=%d, not on floor"
+msgstr "remove_object : objet where=%d, pas au sol"
+
+#: src/mkobj.c:2678
+#, c-format
+msgid "obj_extract_self, where=%d"
+msgstr "obj_extract_self, where=%d"
+
+#: src/mkobj.c:2700
+#, c-format
+msgid "extract_nobj: object lost"
+msgstr "extract_nobj : objet perdu"
+
+#: src/mkobj.c:2727
+#, c-format
+msgid "extract_nexthere: object lost"
+msgstr "extract_nexthere : objet perdu"
+
+#: src/mkobj.c:2742
+#, c-format
+msgid "add_to_minv: obj where=%d, not free"
+msgstr "add_to_minv : objet where=%d, non libre"
+
+#: src/mkobj.c:2770
+#, c-format
+msgid "add_to_container: obj where=%d, not free"
+msgstr "add_to_container : objet where=%d, non libre"
+
+#: src/mkobj.c:2790
+#, c-format
+msgid "add_to_migration: obj where=%d, not free"
+msgstr "add_to_migration : objet where=%d, non libre"
+
+#: src/mkobj.c:2793
+#, c-format
+msgid "unpaid object migrating to another level? [%s]"
+msgstr "objet impayé migrant vers un autre niveau ? [%s]"
+
+#: src/mkobj.c:2812
+#, c-format
+msgid "add_to_buried: obj where=%d, not free"
+msgstr "add_to_buried : objet where=%d, non libre"
+
+#: src/mkobj.c:2839
+#, c-format
+msgid "dealloc_obj: obj already deleted (type=%d)"
+msgstr "dealloc_obj : objet déjà supprimé (type=%d)"
+
+#: src/mkobj.c:2842
+#, c-format
+msgid "dealloc_obj: obj not free (type=%d, where=%d)"
+msgstr "dealloc_obj : objet non libre (type=%d, where=%d)"
+
+#: src/mkobj.c:2846
+#, c-format
+msgid "dealloc_obj with nobj"
+msgstr "dealloc_obj avec nobj"
+
+#: src/mkobj.c:2848
+#, c-format
+msgid "dealloc_obj with cobj"
+msgstr "dealloc_obj avec cobj"
+
+#: src/mkobj.c:2850
+#, c-format
+msgid "dealloc_obj with hands_obj"
+msgstr "dealloc_obj avec hands_obj"
+
+#: src/mkobj.c:2928
+#, c-format
+msgid "dobjsfree: obj where=%d, not OBJ_DELETED"
+msgstr "dobjsfree : objet where=%d, pas OBJ_DELETED"
+
+#: src/mkobj.c:2944
+#, c-format
+msgid "bad horn o' plenty"
+msgstr "mauvaise corne d'abondance"
 
 #: src/mkobj.c:2975
 msgid "A potion spills out."
@@ -47161,6 +48843,46 @@ msgstr "%s tombe sur %s."
 #, c-format
 msgid "%s %s to the %s."
 msgstr ""
+
+#: src/mkobj.c:3104
+#, c-format
+msgid "gm.mydogs sanity [not empty]"
+msgstr "cohérence de gm.mydogs [non vide]"
+
+#: src/mkobj.c:3338
+#, c-format
+msgid "monst (%s: %u) wielding %s (%u) not in %s inventory"
+msgstr "monstre (%s: %u) maniant %s (%u) absent de l'inventaire de %s"
+
+#: src/mkobj.c:3488
+#, c-format
+msgid "failed sanity check: container holds itself"
+msgstr "contrôle de cohérence échoué : le conteneur se contient lui-même"
+
+#: src/mkobj.c:3492
+#, c-format
+msgid "%s obj %s in container %s, not %s"
+msgstr "%s objet %s dans le conteneur %s, pas %s"
+
+#: src/mkobj.c:3504
+#, c-format
+msgid "failed sanity check: container holds its parent"
+msgstr "contrôle de cohérence échoué : le conteneur contient son parent"
+
+#: src/mkobj.c:3744
+#, c-format
+msgid "obj_nexto: wasn't given an object to check"
+msgstr "obj_nexto : aucun objet à vérifier"
+
+#: src/mkobj.c:3850
+#, c-format
+msgid "obj_absorb: not called with two actual objects"
+msgstr "obj_absorb : pas appelé avec deux vrais objets"
+
+#: src/mkobj.c:3909
+#, c-format
+msgid "obj_meld: not called with two actual objects"
+msgstr "obj_meld : pas appelé avec deux vrais objets"
 
 #: src/mkobj.c:3927
 msgid "You see parts of the floor melting!"
@@ -47183,6 +48905,196 @@ msgstr ""
 #: src/mkobj.c:3954
 msgid "You hear a faint sloshing sound."
 msgstr "Vous entendez un léger clapotis."
+
+#: src/mkroom.c:89
+#, c-format
+msgid "Tried to make a room of type %d."
+msgstr "Tentative de créer une salle de type %d."
+
+#: src/mkroom.c:166
+#, c-format
+msgid "rooms[] not closed by -1?"
+msgstr "rooms[] non terminé par -1 ?"
+
+#: src/mkroom.c:1070
+#, c-format
+msgid "invalid_shop_shape: no squares inside door?"
+msgstr "invalid_shop_shape : aucune case derrière la porte ?"
+
+#: src/mon.c:65
+#, c-format
+msgid "insane pet #%u has droptime (%ld) in the future (%ld) (%s)"
+msgstr "l'animal incohérent n°%u a un droptime (%ld) dans le futur (%ld) (%s)"
+
+#: src/mon.c:84
+#, c-format
+msgid "illegal mon data %s; mnum=%d (%s)"
+msgstr "données de monstre illégales %s ; mnum=%d (%s)"
+
+#: src/mon.c:91
+#, c-format
+msgid "monster mnum=%d, monsndx=%d (%s)"
+msgstr "monstre mnum=%d, monsndx=%d (%s)"
+
+#: src/mon.c:105
+#, c-format
+msgid "%s: level %d %s #%u [%s] has %d cur HP, %d max HP"
+msgstr "%s : niveau %d %s n°%u [%s] a %d PV actuels, %d PV max"
+
+#: src/mon.c:113
+#, c-format
+msgid "dead monster on %s; %s at <%d,%d>"
+msgstr "monstre mort sur %s ; %s en <%d,%d>"
+
+#: src/mon.c:119
+#, c-format
+msgid "genocided %s in play (%s)"
+msgstr "%s génocidé en jeu (%s)"
+
+#: src/mon.c:122
+#, c-format
+msgid "tame %s is not peaceful (%s)"
+msgstr "%s apprivoisé n'est pas pacifique (%s)"
+
+#: src/mon.c:126
+#, c-format
+msgid "shk without eshk (%s)"
+msgstr "marchand sans eshk (%s)"
+
+#: src/mon.c:128
+#, c-format
+msgid "priest without epri (%s)"
+msgstr "prêtre sans epri (%s)"
+
+#: src/mon.c:130
+#, c-format
+msgid "guard without egd (%s)"
+msgstr "garde sans egd (%s)"
+
+#: src/mon.c:132
+#, c-format
+msgid "minion without emin (%s)"
+msgstr "serviteur sans emin (%s)"
+
+#: src/mon.c:136
+#, c-format
+msgid "pet without edog (%s)"
+msgstr "animal sans edog (%s)"
+
+#: src/mon.c:148
+#, c-format
+msgid "steed: %s%s%s (%s)"
+msgstr "monture : %s%s%s (%s)"
+
+#: src/mon.c:157
+#, c-format
+msgid "trapped without a trap (%s)"
+msgstr "pris au piège sans piège (%s)"
+
+#: src/mon.c:164
+#, c-format
+msgid "frozen monster [%s%s] is able to move (%s)"
+msgstr "monstre figé [%s%s] capable de bouger (%s)"
+
+#: src/mon.c:175
+#, c-format
+msgid "hiding monster stuck to you (%s)"
+msgstr "monstre caché collé à vous (%s)"
+
+#: src/mon.c:177
+#, c-format
+msgid "mon hiding under nonexistent obj (%s)"
+msgstr "monstre caché sous un objet inexistant (%s)"
+
+#: src/mon.c:180
+#, c-format
+msgid "eel hiding %s (%s)"
+msgstr "anguille cachée %s (%s)"
+
+#: src/mon.c:193
+#, c-format
+msgid "ceiling hider hiding %s (%s)"
+msgstr "monstre de plafond caché %s (%s)"
+
+#: src/mon.c:198
+#, c-format
+msgid "hiding while trapped in a non-pit (%s)"
+msgstr "caché alors que pris dans autre chose qu'une fosse (%s)"
+
+#: src/mon.c:208
+#, c-format
+msgid "migrating %s mimicking %s %s"
+msgstr "%s en migration imitant %s %s"
+
+#: src/mon.c:212
+#, c-format
+msgid "mimic%s concealed as %s despite Prot-from-shape-changers %s"
+msgstr "mimique%s déguisé en %s malgré la protection contre les changeformes %s"
+
+#: src/mon.c:221
+#, c-format
+msgid "non-mimic (%s) posing as %s (%s)"
+msgstr "non-mimique (%s) se faisant passer pour %s (%s)"
+
+#: src/mon.c:232
+#, c-format
+msgid "mimic%s concealed in inaccessible location: %s (%s)"
+msgstr "mimique%s caché dans un lieu inaccessible : %s (%s)"
+
+#: src/mon.c:239
+#, c-format
+msgid "monst %u: leashed but no leash for %s"
+msgstr "monstre %u : en laisse mais pas de laisse pour %s"
+
+#: src/mon.c:242
+#, c-format
+msgid "monst %u: leashed but not tame %s"
+msgstr "monstre %u : en laisse mais pas apprivoisé %s"
+
+#: src/mon.c:251
+#, c-format
+msgid "monst %u: leashed but not next to you (%d)"
+msgstr "monstre %u : en laisse mais pas à côté de vous (%d)"
+
+#: src/mon.c:271
+#, c-format
+msgid "mon (%s) claims to be at <%d,%d>?"
+msgstr "le monstre (%s) prétend être en <%d,%d> ?"
+
+#: src/mon.c:277
+#, c-format
+msgid "steed (%s) claims to be at <%d,%d>?"
+msgstr "la monture (%s) prétend être en <%d,%d> ?"
+
+#: src/mon.c:280
+#, c-format
+msgid "mon (%s) at <%d,%d> is not there!"
+msgstr "le monstre (%s) en <%d,%d> n'y est pas !"
+
+#: src/mon.c:288
+#, c-format
+msgid "floor mon (%s) with mstate set to 0x%08lx"
+msgstr "monstre au sol (%s) avec mstate à 0x%08lx"
+
+#: src/mon.c:300
+#, c-format
+msgid "map mon (%s) at <%d,%d> not in fmon list!"
+msgstr "monstre de la carte (%s) en <%d,%d> absent de la liste fmon !"
+
+#: src/mon.c:303
+#, c-format
+msgid "steed (%s) is on the map at <%d,%d>!"
+msgstr "la monture (%s) est sur la carte en <%d,%d> !"
+
+#: src/mon.c:307
+#, c-format
+msgid "map mon (%s) at <%d,%d> is found at <%d,%d>?"
+msgstr "monstre de la carte (%s) en <%d,%d> trouvé en <%d,%d> ?"
+
+#: src/mon.c:319
+#, c-format
+msgid "migrating mon (%s) with mstate set to 0x%08lx"
+msgstr "monstre en migration (%s) avec mstate à 0x%08lx"
 
 #: src/mon.c:610
 #, c-format
@@ -47255,6 +49167,41 @@ msgstr "Vous entendez quelqu'un mâcher."
 #, c-format
 msgid "%s picks up some gold."
 msgstr "%s ramasse de l'or."
+
+#: src/mon.c:2364
+#, c-format
+msgid "A monster looked at a very strange trap of type %d."
+msgstr "Un monstre a regardé un piège très étrange de type %d."
+
+#: src/mon.c:2516
+#, c-format
+msgid "dmonsfree: %d removed doesn't match %d pending on %s"
+msgstr "dmonsfree : %d supprimés ne correspond pas aux %d en attente sur %s"
+
+#: src/mon.c:2531
+#, c-format
+msgid "replmon: minvent inconsistency"
+msgstr "replmon : incohérence de minvent"
+
+#: src/mon.c:2575
+#, c-format
+msgid "relmon: no fmon available."
+msgstr "relmon : pas de fmon disponible."
+
+#: src/mon.c:2592
+#, c-format
+msgid "relmon: mon not in list."
+msgstr "relmon : monstre absent de la liste."
+
+#: src/mon.c:2692
+#, c-format
+msgid "dealloc_monst with nmon on %s"
+msgstr "dealloc_monst avec nmon sur %s"
+
+#: src/mon.c:2801
+#, c-format
+msgid "m_detach: %s is already detached?"
+msgstr "m_detach : %s est déjà détaché ?"
 
 #: src/mon.c:2861
 #, c-format
@@ -47376,6 +49323,11 @@ msgstr "%s est tué !"
 msgid "May %s roast in peace."
 msgstr "Que %s rôtisse en paix."
 
+#: src/mon.c:3460
+#, c-format
+msgid "Sticking to %s at distu %d?"
+msgstr "Collé à %s à distu %d ?"
+
 #: src/mon.c:3549 src/music.c:282 src/wizcmds.c:315
 #, c-format
 msgid "You destroy %s!"
@@ -47437,6 +49389,11 @@ msgstr "C'est maintenant %s."
 #: src/mon.c:3807
 msgid "... and returns to normal."
 msgstr "... et redevient normal."
+
+#: src/mon.c:3810
+#, c-format
+msgid "Can't polystone %s!"
+msgstr "Impossible de polystone %s !"
 
 #: src/mon.c:3859
 #, c-format
@@ -47639,6 +49596,16 @@ msgstr "Une puanteur infecte vous donne un peu la nausée."
 #, c-format
 msgid "%s resists!"
 msgstr "%s résiste !"
+
+#: src/mondata.c:167
+#, c-format
+msgid "Resists_Elem(%d), unexpected property type"
+msgstr "Resists_Elem(%d), type de propriété inattendu"
+
+#: src/mondata.c:268
+#, c-format
+msgid "'Blnd_resist' but not resists_blnd()?"
+msgstr "« Blnd_resist » mais pas resists_blnd() ?"
 
 #: src/mondata.c:1420
 msgid "already on fire"
@@ -47851,9 +49818,19 @@ msgstr "%s passe à travers les barreaux de fer."
 msgid "%s %s %s the iron bars."
 msgstr ""
 
+#: src/monmove.c:1848
+#, c-format
+msgid "unknown shk/gd/pri_move return value (%d)"
+msgstr "valeur de retour de shk/gd/pri_move inconnue (%d)"
+
 #: src/monmove.c:1863
 msgid "I'm late!"
 msgstr "Je suis en retard !"
+
+#: src/mplayer.c:251
+#, c-format
+msgid "bad mplayer monster"
+msgstr "mauvais monstre mplayer"
 
 #: src/mplayer.c:360
 msgid "I can't win, and neither will you!"
@@ -48096,6 +50073,11 @@ msgctxt "heroine"
 msgid "You are hit by %s."
 msgstr "Vous êtes touchée par %s."
 
+#: src/mthrowu.c:129
+#, c-format
+msgid "thitu: name & obj both null?"
+msgstr "thitu : nom et objet tous deux nuls ?"
+
 #: src/mthrowu.c:149
 msgid "It misses."
 msgstr "Ça rate."
@@ -48301,6 +50283,11 @@ msgstr "%s glisse quand %s le lance !"
 msgid "%s as %s throws it!"
 msgstr ""
 
+#: src/mthrowu.c:818
+#, c-format
+msgid "monster throwing egg type %d"
+msgstr "monstre lançant un œuf de type %d"
+
 #: src/mthrowu.c:870
 #, c-format
 msgid "The %s was poisoned!"
@@ -48402,6 +50389,11 @@ msgstr ""
 msgid "You hear a dry rattle nearby."
 msgstr "Vous entendez un cliquetis sec tout près."
 
+#: src/mthrowu.c:1205
+#, c-format
+msgid "bad attack type in spitmm"
+msgstr "mauvais type d'attaque dans spitmm"
+
 #: src/mthrowu.c:1214
 #, c-format
 msgid "%s spits venom!"
@@ -48420,6 +50412,11 @@ msgstr "Vous entendez une toux."
 #, c-format
 msgid "%s breathes %s!"
 msgstr "%s crache %s !"
+
+#: src/mthrowu.c:1307
+#, c-format
+msgid "Breath weapon %d used"
+msgstr "Souffle %d utilisé"
 
 #: src/mthrowu.c:1599
 msgid "The iron bars are dissolved!"
@@ -48475,6 +50472,11 @@ msgstr "%s utilise %s, qui explose soudain !"
 #: src/muse.c:150
 msgid "You hear a zap and an explosion nearby."
 msgstr "Vous entendez un zap et une explosion tout près."
+
+#: src/muse.c:174
+#, c-format
+msgid "Mon zapping wand with %d charges?"
+msgstr "Monstre utilisant une baguette à %d charges ?"
 
 #: src/muse.c:182
 msgid "You hear a nearby zap."
@@ -48577,6 +50579,11 @@ msgstr "La pointe de la corne @de %s brille !"
 #, c-format
 msgid "%s seems steadier now."
 msgstr "%s semble plus stable maintenant."
+
+#: src/muse.c:880
+#, c-format
+msgid "No need for unicorn horn?"
+msgstr "Pas besoin de corne de licorne ?"
 
 #: src/muse.c:887
 #, c-format
@@ -48700,6 +50707,11 @@ msgstr "%s semble aller beaucoup mieux."
 #, c-format
 msgid "%s looks completely healed."
 msgstr "%s semble complètement guéri."
+
+#: src/muse.c:1286 src/muse.c:2111 src/muse.c:2738
+#, c-format
+msgid "%s wanted to perform action %d?"
+msgstr "%s voulait faire l'action %d ?"
 
 #: src/muse.c:1689 src/muse.c:1708 src/zap.c:283 src/zap.c:2884
 msgid "Boing!"
@@ -49339,6 +51351,11 @@ msgstr "Vous tapez sur le tambour."
 msgid "You butcher a %s."
 msgstr "Vous massacrez un %s."
 
+#: src/music.c:759
+#, c-format
+msgid "What a weird instrument (%d)!"
+msgstr "Quel instrument bizarre (%d) !"
+
 #: src/music.c:801
 msgid "You can't play music underwater!"
 msgstr "Vous ne pouvez pas jouer de musique sous l'eau !"
@@ -49380,6 +51397,11 @@ msgctxt "grammar"
 msgid "contractions"
 msgstr "de le >du |de les >des |de +>d'|De le >Du |De les >Des |De +>D'|à le >au |à les >aux |À le >Au |À les >Aux |de >de |De >De |à >à |À >À "
 
+#: src/nhlua.c:156
+#, c-format
+msgid "l_nhcore_init failed"
+msgstr "échec de l_nhcore_init"
+
 #: src/nhlua.c:811
 msgid ""
 "Tip: Farlooking or selecting a map location\n"
@@ -49401,15 +51423,130 @@ msgstr ""
 "Dans ce mode, appuyez sur Échap pour revenir au jeu normal, et sur ?\n"
 "pour afficher l'aide des touches.\n"
 
+#: src/nhlua.c:1257 src/nhlua.c:1331 src/nhlua.c:1701
+#, c-format
+msgid "nh luacore not inited"
+msgstr "luacore nh non initialisé"
+
+#: src/nhlua.c:1264
+#, c-format
+msgid "nh_lua_variables is not a lua table"
+msgstr "nh_lua_variables n'est pas une table lua"
+
 #: src/nhlua.c:1443
 #, c-format
 msgid "TEST:{ x=%i, y=%i, name=\"%s\" }"
-msgstr ""
+msgstr "TEST:{ x=%i, y=%i, name=\"%s\" }"
+
+#: src/nhlua.c:1724
+#, c-format
+msgid "nh.callback counts are wrong"
+msgstr "les compteurs de nh.callback sont faux"
 
 #: src/nhlua.c:1767
 #, c-format
 msgid "Resetting time to move #%ld."
 msgstr "Le temps revient au tour n° %ld."
+
+#: src/nhlua.c:1825
+#, c-format
+msgid "nhl_gamestate: inconsistent state (%s vs %s)"
+msgstr "nhl_gamestate : état incohérent (%s contre %s)"
+
+#: src/nhlua.c:2111
+#, c-format
+msgid "package not a table in nhl_set_package_path"
+msgstr "package n'est pas une table dans nhl_set_package_path"
+
+#: src/nhlua.c:2160
+#, c-format
+msgid "Lua time exceeded %d:%s"
+msgstr "Temps Lua dépassé %d:%s"
+
+#: src/nhlua.c:2195
+#, c-format
+msgid "Lua error %d:%s %s"
+msgstr "Erreur Lua %d:%s %s"
+
+#: src/nhlua.c:2200
+#, c-format
+msgid "Lua error: %d:%s %s"
+msgstr "Erreur Lua : %d:%s %s"
+
+#: src/nhlua.c:2230
+#, c-format
+msgid "nhl_loadlua: Error opening %s"
+msgstr "nhl_loadlua : erreur à l'ouverture de %s"
+
+#: src/nhlua.c:2292
+#, c-format
+msgid "(%s) line too long"
+msgstr "(%s) ligne trop longue"
+
+#: src/nhlua.c:2302
+#, c-format
+msgid "luaL_loadbuffer: Error loading %s: %s"
+msgstr "luaL_loadbuffer : erreur au chargement de %s : %s"
+
+#: src/nhlua.c:2340
+#, c-format
+msgid "sandbox doesn't know this Lua version: this=%d != expected=%d "
+msgstr "le bac à sable ne connaît pas cette version de Lua : this=%d != attendue=%d "
+
+#: src/nhlua.c:2703
+#, c-format
+msgid "start_luapat: %d"
+msgstr "start_luapat : %d"
+
+#: src/nhlua.c:2958
+#, c-format
+msgid "can't hook io.open"
+msgstr "impossible d'intercepter io.open"
+
+#: src/nhlua.c:3028
+#, c-format
+msgid "unprotected error in call to Lua API (%s)\n"
+msgstr "erreur non protégée dans un appel à l'API Lua (%s)\n"
+
+#: src/nhlua.c:3102
+#, c-format
+msgid "NULL lua_newstate"
+msgstr "lua_newstate NUL"
+
+#: src/nhlua.c:3113
+#, c-format
+msgid "steps and perpcall both non-zero"
+msgstr "steps et perpcall tous deux non nuls"
+
+#: src/o_init.c:160
+#, c-format
+msgid "init_objects: class for generic object #%d doesn't match (%d)"
+msgstr "init_objects : la classe de l'objet générique n°%d ne correspond pas (%d)"
+
+#: src/o_init.c:180
+#, c-format
+msgid "objects[%d] class #%d not in order!"
+msgstr "classe n°%d de objects[%d] pas dans l'ordre !"
+
+#: src/o_init.c:217
+#, c-format
+msgid "obj #%d (%s) name is %s despite%s alternate description"
+msgstr "le nom de l'objet n°%d (%s) est %s malgré%s description alternative"
+
+#: src/o_init.c:255
+#, c-format
+msgid "%s (%d) probability total for oclass %d"
+msgstr "%s (%d) total des probabilités pour oclass %d"
+
+#: src/o_init.c:357
+#, c-format
+msgid "objdescr_is: null obj"
+msgstr "objdescr_is : objet nul"
+
+#: src/o_init.c:518
+#, c-format
+msgid "named object not in disco"
+msgstr "objet nommé absent des découvertes"
 
 #: src/o_init.c:857 src/o_init.c:1181
 msgid "You haven't discovered anything yet..."
@@ -49419,9 +51556,39 @@ msgstr "Vous n'avez encore rien découvert..."
 msgid "Dump information about all artifacts?"
 msgstr "Afficher les informations sur tous les artefacts ?"
 
+#: src/o_init.c:1083
+#, c-format
+msgid "doclassdisco: invalid object class '%s'"
+msgstr "doclassdisco : classe d'objet invalide « %s »"
+
 #: src/o_init.c:1183
 msgid "None of your discoveries can be assigned names..."
 msgstr "Aucune de vos découvertes ne peut être nommée..."
+
+#: src/objnam.c:133
+#, c-format
+msgid "PREFIX too short (for %d)."
+msgstr "PREFIX trop court (pour %d)."
+
+#: src/objnam.c:336
+#, c-format
+msgid "safe_typename: %s"
+msgstr "safe_typename : %s"
+
+#: src/objnam.c:549
+#, c-format
+msgid "reorder_fruit: fruit index (%d) out of range"
+msgstr "reorder_fruit : indice de fruit (%d) hors limites"
+
+#: src/objnam.c:552
+#, c-format
+msgid "reorder_fruit: duplicate fruit index (%d)"
+msgstr "reorder_fruit : indice de fruit en double (%d)"
+
+#: src/objnam.c:583
+#, c-format
+msgid "xcalled: not enough room for prefix (%d > %d)"
+msgstr "xcalled : pas assez de place pour le préfixe (%d > %d)"
 
 #: src/objnam.c:639
 msgid "blessed"
@@ -50681,6 +52848,56 @@ msgstr " (à vendre, %ld %s)"
 msgid " (no charge)"
 msgstr " (gratuit)"
 
+#: src/objnam.c:1839
+#, c-format
+msgid "Bad fruit #%d?"
+msgstr "Mauvais fruit n°%d ?"
+
+#: src/objnam.c:2021
+#, c-format
+msgid "xname_flags: %s"
+msgstr "xname_flags : %s"
+
+#: src/objnam.c:2034
+#, c-format
+msgid "xname: buffer overflow before appending name."
+msgstr "xname : débordement du tampon avant l'ajout du nom."
+
+#: src/objnam.c:2526
+#, c-format
+msgid "leashed %s #%u is dead"
+msgstr "%s en laisse n°%u est mort"
+
+#: src/objnam.c:2529
+#, c-format
+msgid "leashed monster #%u not found"
+msgstr "monstre en laisse n°%u introuvable"
+
+#: src/objnam.c:2820
+#, c-format
+msgid "doname: long object description overflow."
+msgstr "doname : débordement de la description longue de l'objet."
+
+#: src/objnam.c:3242
+#, c-format
+msgid "Alphabet soup: 'an(%s)'."
+msgstr "Soupe alphabet : « an(%s) »."
+
+#: src/objnam.c:3276
+#, c-format
+msgid "Alphabet soup: 'the(%s)'."
+msgstr "Soupe alphabet : « the(%s) »."
+
+#: src/objnam.c:4020
+#, c-format
+msgid "plural of null?"
+msgstr "pluriel de nul ?"
+
+#: src/objnam.c:4220
+#, c-format
+msgid "singular of null?"
+msgstr "singulier de nul ?"
+
 #: src/objnam.c:4750
 msgid "A magic portal to nowhere."
 msgstr "Un portail magique vers nulle part."
@@ -50836,6 +53053,26 @@ msgstr "Ignorer la limite de poids des globules ?"
 msgid "For a moment, you feel %s in your %s, but it disappears!"
 msgstr "Un instant, vous sentez %s dans vos %s, mais cela disparaît !"
 
+#: src/objnam.c:6696
+#, c-format
+msgid "unknown armor category (%s => %u)"
+msgstr "catégorie d'armure inconnue (%s => %u)"
+
+#: src/objnam.c:6879
+#, c-format
+msgid "safe_qbuf: prefix too long (%u characters)."
+msgstr "safe_qbuf : préfixe trop long (%u caractères)."
+
+#: src/objnam.c:6881
+#, c-format
+msgid "safe_qbuf: suffix too long (%u + %u characters)."
+msgstr "safe_qbuf : suffixe trop long (%u + %u caractères)."
+
+#: src/objnam.c:6884
+#, c-format
+msgid "safe_qbuf: filler too long (%u + %u + %u characters)."
+msgstr "safe_qbuf : remplissage trop long (%u + %u + %u caractères)."
+
 #: src/options.c:115
 msgid "Advanced"
 msgstr "Avancé"
@@ -50880,6 +53117,16 @@ msgstr "(Veuillez choisir « y » ou « n ».)"
 #: src/options.c:466
 msgid "Do you want a tutorial?"
 msgstr "Voulez-vous faire le tutoriel ?"
+
+#: src/options.c:752
+#, c-format
+msgid "bad index roleoptvals[%d][%d]"
+msgstr "mauvais indice roleoptvals[%d][%d]"
+
+#: src/options.c:1519
+#, c-format
+msgid "bad disclosure index %d %c"
+msgstr "mauvais indice de révélation %d %c"
 
 #: src/options.c:1760
 #, c-format
@@ -50969,9 +53216,14 @@ msgstr "Vous ne pouvez pas désactiver les alertes de nouveautés des versions f
 msgid "Feature change alerts disabled for NetHack %s features and prior."
 msgstr "Alertes de nouveautés désactivées pour NetHack %s et avant."
 
+#: src/options.c:8098
+#, c-format
+msgid "oc_to_str:  illegal object class %d"
+msgstr "oc_to_str :  classe d'objet illégale %d"
+
 #: src/options.c:8113
 msgid "out of menu map space."
-msgstr ""
+msgstr "plus de place dans la table des menus."
 
 #: src/options.c:8601
 msgid "Use command '#optionsfull' to get the complete options list."
@@ -51047,9 +53299,29 @@ msgstr "Ramassage automatique : ACTIVÉ, pour tous les objets."
 msgid "Autopickup: OFF."
 msgstr "Ramassage automatique : DÉSACTIVÉ."
 
+#: src/options.c:9902
+#, c-format
+msgid "set_option_mod_status: status out of range %d."
+msgstr "set_option_mod_status : statut hors limites %d."
+
+#: src/options.c:9928
+#, c-format
+msgid "set_wc_option_mod_status: status out of range %d."
+msgstr "set_wc_option_mod_status : statut hors limites %d."
+
+#: src/options.c:9982
+#, c-format
+msgid "set_wc2_option_mod_status: status out of range %d."
+msgstr "set_wc2_option_mod_status : statut hors limites %d."
+
 #: src/pager.c:94
 msgid " or "
 msgstr " ou "
+
+#: src/pager.c:103
+#, c-format
+msgid "append_str: 'buf' contains %lu characters."
+msgstr "append_str : « buf » contient %lu caractères."
 
 #: src/pager.c:120
 msgctxt "symbol"
@@ -53027,6 +55299,11 @@ msgstr "délire paranoïaque"
 msgid "warned of %s"
 msgstr "averti des %s"
 
+#: src/pager.c:1067
+#, c-format
+msgid "lookat: unknown method of seeing monster"
+msgstr "lookat : façon inconnue de voir le monstre"
+
 #: src/pager.c:1215 src/pager.c:2206
 #, c-format
 msgid " [seen: %s]"
@@ -53057,6 +55334,21 @@ msgstr "intérieur @de %s"
 msgid "Cannot open 'data' file!"
 msgstr "Impossible d'ouvrir le fichier 'data' !"
 
+#: src/pager.c:1391
+#, c-format
+msgid "bad do_look buffer passed (%s)!"
+msgstr "mauvais tampon passé à do_look (%s) !"
+
+#: src/pager.c:1536
+#, c-format
+msgid "can't get to start of 'data' file"
+msgstr "impossible d'aller au début du fichier « data »"
+
+#: src/pager.c:1541
+#, c-format
+msgid "can't read 'data' file"
+msgstr "impossible de lire le fichier « data »"
+
 #: src/pager.c:1611
 msgid "? Seek error on 'data' file!"
 msgstr "? Erreur de positionnement dans le fichier 'data' !"
@@ -53064,6 +55356,11 @@ msgstr "? Erreur de positionnement dans le fichier 'data' !"
 #: src/pager.c:1654
 msgid "You don't have any information on those things."
 msgstr "Vous n'avez aucune information sur ces choses."
+
+#: src/pager.c:1661
+#, c-format
+msgid "'data' file in wrong format or corrupted"
+msgstr "fichier « data » au mauvais format ou corrompu"
 
 #: src/pager.c:1758
 msgid "a trap"
@@ -53261,6 +55558,16 @@ msgstr "Je ne vois pas de piège là."
 #, c-format
 msgid "Cannot open \"%s\" data file!"
 msgstr "Impossible d'ouvrir le fichier de données \"%s\" !"
+
+#: src/pager.c:3195
+#, c-format
+msgid "cmdhelp: unrecognized &%c conditional at line %d: \"%.20s\""
+msgstr "cmdhelp : condition &%c non reconnue à la ligne %d : \"%.20s\""
+
+#: src/pager.c:3317
+#, c-format
+msgid "cmdhelp: mismatched &? &: &. conditionals."
+msgstr "cmdhelp : conditions &? &: &. mal appariées."
 
 #: src/pager.c:3333
 msgid "Ask about '&' or '?' to get more info.  (For ESC, type it twice.)"
@@ -53552,6 +55859,11 @@ msgstr "Vous avez beaucoup de mal à retirer"
 msgid "You have extreme difficulty removing"
 msgstr "Vous avez énormément de mal à retirer"
 
+#: src/pickup.c:120
+#, c-format
+msgid "simple_look(null)"
+msgstr "simple_look(null)"
+
 #: src/pickup.c:277
 #, c-format
 msgid "There are no %c's here."
@@ -53622,6 +55934,11 @@ msgstr "Tous les types"
 msgid "All worn and wielded types"
 msgstr "Tous les types portés et maniés"
 
+#: src/pickup.c:1432
+#, c-format
+msgid "query_category: too many categories"
+msgstr "query_category : trop de catégories"
+
 #: src/pickup.c:1450
 msgid "Unpaid items"
 msgstr "Objets impayés"
@@ -53662,6 +55979,11 @@ msgstr "Vraiment tout sélectionner automatiquement ?"
 #: src/pickup.c:1562
 msgid "No relevant items selected."
 msgstr "Aucun objet concerné sélectionné."
+
+#: src/pickup.c:1619
+#, c-format
+msgid "delta_cwt: obj not inside container?"
+msgstr "delta_cwt : objet pas dans le conteneur ?"
 
 #: src/pickup.c:1636
 msgid "lying here"
@@ -53715,6 +56037,11 @@ msgstr "Vous portez trop de choses pour ramasser un autre %s."
 #: src/pickup.c:1843
 msgid "Your knapsack cannot accommodate any more items (except gold)."
 msgstr "Votre sac ne peut plus contenir d'objets (sauf de l'or)."
+
+#: src/pickup.c:1903
+#, c-format
+msgid "pickup_object: count %ld > quan %ld?"
+msgstr "pickup_object : nombre %ld > quan %ld ?"
 
 #: src/pickup.c:1948
 msgid "The scroll turns to dust as you raise it up."
@@ -53879,6 +56206,11 @@ msgstr "Vous ne pouvez pas.  La selle semble collée @à %s."
 msgid "You take %s off of %s."
 msgstr "Vous retirez %s @à %s."
 
+#: src/pickup.c:2696
+#, c-format
+msgid "<in> no gc.current_container?"
+msgstr "<in> pas de gc.current_container ?"
+
 #: src/pickup.c:2699
 msgid "You must be kidding."
 msgstr "Vous plaisantez."
@@ -53921,10 +56253,20 @@ msgstr "Vous ne pouvez pas faire entrer %s dans %s."
 msgid "As you put %s inside, you are blasted by a magical explosion!"
 msgstr "Quand vous mettez %s dedans, une explosion magique vous frappe !"
 
+#: src/pickup.c:2827
+#, c-format
+msgid "in_container:  bag not found."
+msgstr "in_container :  sac introuvable."
+
 #: src/pickup.c:2835
 #, c-format
 msgid "You put %s into %s."
 msgstr "Vous mettez %s dans %s."
+
+#: src/pickup.c:2874
+#, c-format
+msgid "<out> no gc.current_container?"
+msgstr "<out> pas de gc.current_container ?"
 
 #: src/pickup.c:2953
 #, c-format
@@ -54080,19 +56422,42 @@ msgstr "%s est maintenant vide."
 msgid "%sbox is now empty."
 msgstr ""
 
-#: src/pline.c:697
+#: src/pline.c:277
+#, c-format
+msgid "pline attempting to print %d characters!"
+msgstr "pline essaie d'afficher %d caractères !"
+
+#: src/pline.c:674
+#, c-format
+msgid "impossible called impossible"
+msgstr "impossible appelé par impossible"
+
+#: src/pline.c:704
+msgid "Program in disorder!  (Saving and reloading may fix this problem.)"
+msgstr "Programme en désordre !  (Sauvegarder et recharger peut régler ce problème.)"
+
+#: src/pline.c:707
+msgid "Program in disorder!"
+msgstr "Programme en désordre !"
+
+#: src/pline.c:709
 #, c-format
 msgid "Please report these messages to %s."
 msgstr "Veuillez signaler ces messages à %s."
 
-#: src/pline.c:699
+#: src/pline.c:711
 #, c-format
 msgid "Alternatively, contact local support: %s"
 msgstr "Ou contactez l'assistance locale : %s"
 
-#: src/pline.c:704
+#: src/pline.c:716
 msgid "Report now?"
 msgstr "Signaler maintenant ?"
+
+#: src/pline.c:808
+#, c-format
+msgid "nhassert(%s) failed in file '%s' at line %d"
+msgstr "échec de nhassert(%s) dans le fichier « %s » à la ligne %d"
 
 #: src/polyself.c:34
 msgid "No longer petrify-resistant, you"
@@ -54437,6 +56802,21 @@ msgstr "Vous ne pouvez pas respirer. Désolé."
 msgid "You don't have enough energy to breathe!"
 msgstr "Vous n'avez pas assez d'énergie pour souffler !"
 
+#: src/polyself.c:1524
+#, c-format
+msgid "bad breath attack?"
+msgstr "mauvaise attaque de souffle ?"
+
+#: src/polyself.c:1542
+#, c-format
+msgid "bad spit attack?"
+msgstr "mauvaise attaque de crachat ?"
+
+#: src/polyself.c:1550
+#, c-format
+msgid "bad attack type in dospit"
+msgstr "mauvais type d'attaque dans dospit"
+
 #: src/polyself.c:1569
 #, c-format
 msgid "The ball and chain are buried firmly in %s."
@@ -54513,6 +56893,11 @@ msgstr "Vous tissez une toile qui bloque le déclencheur."
 msgid "You have triggered a trap!"
 msgstr "Vous avez déclenché un piège !"
 
+#: src/polyself.c:1690
+#, c-format
+msgid "Webbing over trap type %d?"
+msgstr "Toile sur un piège de type %d ?"
+
 #: src/polyself.c:1696
 msgid "Your web fails to impede access to the stairs."
 msgstr "Votre toile n'empêche pas l'accès à l'escalier."
@@ -54532,6 +56917,11 @@ msgstr "Vous appelez vos frères à l'aide !"
 #: src/polyself.c:1725
 msgid "But none arrive."
 msgstr "Mais personne n'arrive."
+
+#: src/polyself.c:1745
+#, c-format
+msgid "gaze attack %d?"
+msgstr "attaque du regard %d ?"
 
 #: src/polyself.c:1750
 msgid "You can't see anything to gaze at."
@@ -54681,6 +57071,11 @@ msgstr "Vous vous verrouillez sur la télépathie @de %s."
 msgid "You lock in on %s %s."
 msgstr ""
 
+#: src/polyself.c:2059
+#, c-format
+msgid "uunstick: no ustuck?"
+msgstr "uunstick : pas de ustuck ?"
+
 #: src/polyself.c:2063
 #, c-format
 msgid "%s is no longer in your clutches."
@@ -54689,6 +57084,11 @@ msgstr "%s n'est plus entre vos griffes."
 #: src/polyself.c:2073
 msgid "Your skin returns to its original form."
 msgstr "Votre peau reprend sa forme d'origine."
+
+#: src/polyself.c:2171
+#, c-format
+msgid "mbodypart: bad part %d"
+msgstr "mbodypart : mauvaise partie %d"
 
 #: src/polyself.c:2259
 msgctxt "bodypart"
@@ -56921,6 +59321,11 @@ msgstr "Ça brûle un peu !"
 msgid "You feel a little normal."
 msgstr "Vous vous sentez un peu normal."
 
+#: src/potion.c:1464
+#, c-format
+msgid "What a funny potion! (%u)"
+msgstr "Quelle drôle de potion ! (%u)"
+
 #: src/potion.c:1524
 msgctxt "bottle"
 msgid "bottle"
@@ -57365,6 +59770,11 @@ msgctxt "verb"
 msgid "dip"
 msgstr "tremper"
 
+#: src/potion.c:2495
+#, c-format
+msgid "dip_into: where is potion?"
+msgstr "dip_into : où est la potion ?"
+
 #: src/potion.c:2537
 msgid "BOOM!  They explode!"
 msgstr "BOUM !  Elles explosent !"
@@ -57635,6 +60045,11 @@ msgstr "résonne"
 msgid "thunders"
 msgstr "gronde"
 
+#: src/pray.c:365
+#, c-format
+msgid "fix_curse_trouble: nothing to uncurse."
+msgstr "fix_curse_trouble : rien à désenvoûter."
+
 #: src/pray.c:371
 #, c-format
 msgid "%s are no longer slippery."
@@ -57676,6 +60091,11 @@ msgstr "Vous vous sentez bien plus mince."
 #: src/pray.c:524
 msgid "Your shape becomes uncertain."
 msgstr "Votre forme devient incertaine."
+
+#: src/pray.c:533
+#, c-format
+msgid "fix_worst_trouble: couldn't cure hands."
+msgstr "fix_worst_trouble : impossible de guérir les mains."
 
 #: src/pray.c:545
 msgid "Your chain disappears."
@@ -58006,6 +60426,11 @@ msgstr ""
 #: src/pray.c:1420
 msgid "Use it wisely in my name!"
 msgstr "Uses-en sagement en mon nom !"
+
+#: src/pray.c:1435
+#, c-format
+msgid "Confused deity!"
+msgstr "Divinité confuse !"
 
 #: src/pray.c:1492
 #, c-format
@@ -58372,6 +60797,21 @@ msgstr "Comme vous êtes dans la Géhenne, %s ne vous aidera pas."
 msgid "Calling upon %s, you chant an arcane formula."
 msgstr "Invoquant %s, vous psalmodiez une formule arcanique."
 
+#: src/pray.c:2660
+#, c-format
+msgid "unknown alignment."
+msgstr "alignement inconnu."
+
+#: src/pray.c:2727
+#, c-format
+msgid "rn2 broken in halu_gname?!?"
+msgstr "rn2 cassé dans halu_gname ?!?"
+
+#: src/pray.c:2730
+#, c-format
+msgid "No random god name?"
+msgstr "Pas de nom de dieu aléatoire ?"
+
 #: src/pray.c:2773
 #, c-format
 msgid "A voice (could it be %s?) whispers:"
@@ -58407,6 +60847,11 @@ msgstr "Un frisson vous parcourt la %s."
 #: src/priest.c:530
 msgid "You sense a presence close by!"
 msgstr "Vous sentez une présence toute proche !"
+
+#: src/priest.c:552
+#, c-format
+msgid "attempting to manipulate shrine data for non-priest?"
+msgstr "tentative de manipuler les données d'un sanctuaire pour un non-prêtre ?"
 
 #: src/priest.c:580
 #, c-format
@@ -58543,6 +60988,11 @@ msgstr "Vous êtes actuellement à %d et il faut %d."
 msgid "adjust?"
 msgstr "ajuster ?"
 
+#: src/quest.c:214
+#, c-format
+msgid "quest portal already gone?"
+msgstr "portail de la quête déjà disparu ?"
+
 #: src/quest.c:244
 msgid "Sorry to say, this is a mere imitation of the true Amulet of Yendor."
 msgstr "Désolé de le dire, mais ce n'est qu'une imitation de la véritable Amulette de Yendor."
@@ -58560,6 +61010,16 @@ msgstr "%s parle :"
 #: src/quest.c:459
 msgid "I'm finally free!"
 msgstr "Je suis enfin libre !"
+
+#: src/quest.c:490
+#, c-format
+msgid "quest_chat: Unknown quest character %s."
+msgstr "quest_chat : personnage de quête inconnu %s."
+
+#: src/questpgr.c:47
+#, c-format
+msgid "quest_info(%d)"
+msgstr "quest_info(%d)"
 
 #: src/questpgr.c:333
 msgctxt "quest"
@@ -58859,6 +61319,11 @@ msgctxt "quest"
 msgid "the Palantir of Westernesse"
 msgstr "le Palantir de l'Ouistrenesse"
 
+#: src/questpgr.c:682
+#, c-format
+msgid "convert_line: overflow"
+msgstr "convert_line : débordement"
+
 #: src/questpgr.c:717
 msgid "What a strange feeling!"
 msgstr "Quelle sensation étrange !"
@@ -58900,6 +61365,41 @@ msgstr "Vous vous retrouvez suspendu dans une bulle d'air entourée d'eau."
 msgctxt "heroine"
 msgid "You find yourself suspended in an air bubble surrounded by water."
 msgstr "Vous vous retrouvez suspendue dans une bulle d'air entourée d'eau."
+
+#: src/questpgr.c:782
+#, c-format
+msgid "com_pager: nhl_init() failed"
+msgstr "com_pager : échec de nhl_init()"
+
+#: src/questpgr.c:788
+#, c-format
+msgid "com_pager: %s not found."
+msgstr "com_pager : %s introuvable."
+
+#: src/questpgr.c:796
+#, c-format
+msgid "com_pager: questtext in %s is not a lua table"
+msgstr "com_pager : questtext dans %s n'est pas une table lua"
+
+#: src/questpgr.c:804
+#, c-format
+msgid "com_pager: questtext[%s] in %s is not a lua table"
+msgstr "com_pager : questtext[%s] dans %s n'est pas une table lua"
+
+#: src/questpgr.c:825
+#, c-format
+msgid "com_pager: questtext[%s][%s] in %s is not a lua table"
+msgstr "com_pager : questtext[%s][%s] dans %s n'est pas une table lua"
+
+#: src/questpgr.c:829
+#, c-format
+msgid "com_pager: questtext[%s][%s] and [][%s] in %s are not lua tables"
+msgstr "com_pager : questtext[%s][%s] et [][%s] dans %s ne sont pas des tables lua"
+
+#: src/questpgr.c:853
+#, c-format
+msgid "com_pager: questtext[%s][%s] in %s is not an array of strings"
+msgstr "com_pager : questtext[%s][%s] dans %s n'est pas un tableau de chaînes"
 
 #: src/read.c:367 src/read.c:592
 #, c-format
@@ -59595,6 +62095,11 @@ msgstr "Il semble s'agir @de %s."
 msgid "That was a scroll of mail?"
 msgstr "C'était un parchemin de courrier ?"
 
+#: src/read.c:2493
+#, c-format
+msgid "What weird effect is this? (%u)"
+msgstr "Quel est cet effet bizarre ? (%u)"
+
 #: src/read.c:2571
 #, c-format
 msgid "%s is hit by %s!"
@@ -59832,6 +62337,21 @@ msgstr "Le parchemin s'effrite en dégageant une odeur d'œuf pourri."
 msgid "Try again (type * for random, ESC to cancel)."
 msgstr "Réessayez (* pour au hasard, Échap pour annuler)."
 
+#: src/rect.c:35
+#, c-format
+msgid "Could not alloc rect"
+msgstr "Impossible d'allouer rect"
+
+#: src/rect.c:164
+#, c-format
+msgid "n_rects may be too small."
+msgstr "n_rects est peut-être trop petit."
+
+#: src/region.c:170
+#, c-format
+msgid "add_mon_to_reg: %s [#%u] already in region."
+msgstr "add_mon_to_reg : %s [n°%u] déjà dans la région."
+
 #: src/region.c:461
 msgid "The gas cloud around you dissipates."
 msgstr "Le nuage de gaz autour de vous se dissipe."
@@ -59871,6 +62391,11 @@ msgstr "%s tousse !"
 msgid "You are enveloped in a cloud of noxious gas!"
 msgstr "Vous êtes enveloppé dans un nuage de gaz nocif !"
 
+#: src/region.c:1237
+#, c-format
+msgid "create_gas_cloud: cloud too large (%d)!"
+msgstr "create_gas_cloud : nuage trop grand (%d) !"
+
 #: src/region.c:1391
 msgid "You feel able to breathe."
 msgstr "Vous vous sentez capable de respirer."
@@ -59893,6 +62418,26 @@ msgstr "Impossible d'envoyer le rapport de bogue.  Consultez plutôt %s."
 msgid "Finishing off %s..."
 msgstr "Vous achevez d'utiliser %s..."
 
+#: src/restore.c:296
+#, c-format
+msgid "Restobjchn: error reading objchn."
+msgstr "Restobjchn : erreur de lecture de objchn."
+
+#: src/restore.c:442
+#, c-format
+msgid "bad monster weapon restore"
+msgstr "mauvaise restauration de l'arme d'un monstre"
+
+#: src/restore.c:460
+#, c-format
+msgid "Restmonchn: error reading monchn."
+msgstr "Restmonchn : erreur de lecture de monchn."
+
+#: src/restore.c:509
+#, c-format
+msgid "no old fruit?"
+msgstr "pas d'ancien fruit ?"
+
 #: src/restore.c:547
 msgid "Saved game was not yours."
 msgstr "Cette partie sauvegardée n'est pas la vôtre."
@@ -59900,6 +62445,11 @@ msgstr "Cette partie sauvegardée n'est pas la vôtre."
 #: src/restore.c:633
 msgid "You were not healthy enough to survive restoration."
 msgstr "Vous n'étiez pas en assez bonne santé pour survivre à la restauration."
+
+#: src/restore.c:764
+#, c-format
+msgid "restlevelfile: %s"
+msgstr "restlevelfile : %s"
 
 #: src/restore.c:859
 #, c-format
@@ -59910,6 +62460,11 @@ msgstr "Vous revenez au niveau %d : %s, en mode débogage."
 #, c-format
 msgid "You return to level %d in %s%s."
 msgstr ""
+
+#: src/restore.c:918
+#, c-format
+msgid "restgamestate: lost ball & chain"
+msgstr "restgamestate : boulet et chaîne perdus"
 
 #: src/restore.c:1044
 msgid "Strange, this map is not as I remember it."
@@ -59922,6 +62477,21 @@ msgstr "Quelqu'un essaie de tricher ici..."
 #: src/restore.c:1046
 msgid "This game is void."
 msgstr "Cette partie est annulée."
+
+#: src/restore.c:1290
+#, c-format
+msgid "getlev: need portal but none found"
+msgstr "getlev : portail nécessaire mais aucun trouvé"
+
+#: src/restore.c:1408
+#, c-format
+msgid "restore_gamelog: msg too big (%d)"
+msgstr "restore_gamelog : message trop grand (%d)"
+
+#: src/restore.c:1435
+#, c-format
+msgid "restore_msghistory: msg too big (%d)"
+msgstr "restore_msghistory : message trop grand (%d)"
 
 #: src/rip.c:109
 msgctxt "killed by"
@@ -60472,6 +63042,31 @@ msgstr "la dégustation de viande de cocatrix"
 msgctxt "killer"
 msgid "touching a cockatrice corpse"
 msgstr "le contact d'un cadavre de cocatrix"
+
+#: src/rnd.c:50
+#, c-format
+msgid "Bad rng function passed to init_isaac64()."
+msgstr "Mauvaise fonction de hasard passée à init_isaac64()."
+
+#: src/rnd.c:99
+#, c-format
+msgid "rn2(%d) attempted"
+msgstr "tentative de rn2(%d)"
+
+#: src/rnd.c:118
+#, c-format
+msgid "rnl(%d) attempted"
+msgstr "tentative de rnl(%d)"
+
+#: src/rnd.c:159
+#, c-format
+msgid "rnd(%d) attempted"
+msgstr "tentative de rnd(%d)"
+
+#: src/rnd.c:181
+#, c-format
+msgid "d(%d,%d) attempted"
+msgstr "tentative de d(%d,%d)"
 
 #: src/role.c:31
 msgid "Archeologist"
@@ -61839,6 +64434,11 @@ msgstr "chaos"
 msgid "evil"
 msgstr "mal"
 
+#: src/role.c:1414
+#, c-format
+msgid "rolefilterstring: bad role aspect (%d)"
+msgstr "rolefilterstring : mauvais aspect de rôle (%d)"
+
 #: src/role.c:1661
 msgid "Shall I pick a character for you? [ynaq] "
 msgstr "Dois-je choisir votre personnage à votre place ? [ynaq] "
@@ -61904,6 +64504,11 @@ msgstr "Au hasard"
 #: src/role.c:2038 src/role.c:2757
 msgid "Quit"
 msgstr "Quitter"
+
+#: src/role.c:2041
+#, c-format
+msgid "role_menu_extra: bad arg (%d)"
+msgstr "role_menu_extra : mauvais argument (%d)"
 
 #: src/role.c:2207
 msgid "Salutations"
@@ -62015,6 +64620,21 @@ msgstr "<alignement>"
 msgid "%.20s the %.20s %.20s %.20s"
 msgstr "%1$.20s, %4$.20s %3$.20s %2$.20s"
 
+#: src/role.c:2935
+#, c-format
+msgid "could not create role selection window"
+msgstr "impossible de créer la fenêtre de choix du rôle"
+
+#: src/rumors.c:185
+#, c-format
+msgid "strange truth value for rumor"
+msgstr "valeur de vérité étrange pour une rumeur"
+
+#: src/rumors.c:195
+#, c-format
+msgid "Can't find non-cookie rumor?"
+msgstr "Impossible de trouver une rumeur hors biscuit ?"
+
 #: src/rumors.c:304
 msgid "rumors not accessible."
 msgstr "rumeurs inaccessibles."
@@ -62098,6 +64718,11 @@ msgstr "Vous n'avez même pas assez d'or pour cela !"
 msgid "\"Then dost thou desire a major one?\" (%d %s)"
 msgstr "« Alors désires-tu une consultation majeure ? » (%d %s)"
 
+#: src/rumors.c:867
+#, c-format
+msgid "Can't open '%s' file."
+msgstr "Impossible d'ouvrir le fichier « %s »."
+
 #: src/save.c:46
 msgid "Really save?"
 msgstr "Vraiment sauvegarder ?"
@@ -62126,10 +64751,55 @@ msgstr "Impossible d'ouvrir le fichier de sauvegarde."
 msgid "Probably someone removed it."
 msgstr "Quelqu'un l'a probablement supprimé."
 
+#: src/save.c:440
+#, c-format
+msgid "savelev: where are we?"
+msgstr "savelev : où sommes-nous ?"
+
+#: src/save.c:463
+#, c-format
+msgid "Save on bad file!"
+msgstr "Sauvegarde sur un mauvais fichier !"
+
+#: src/selvar.c:591
+#, c-format
+msgid "Unrecognized gradient type! Defaulting to radial..."
+msgstr "Type de dégradé non reconnu ! Radial par défaut..."
+
+#: src/sfstruct.c:423
+#, c-format
+msgid "buffering already enabled"
+msgstr "mise en tampon déjà active"
+
+#: src/sfstruct.c:426
+#, c-format
+msgid "buffering of file %d failed"
+msgstr "échec de la mise en tampon du fichier %d"
+
+#: src/sfstruct.c:486
+#, c-format
+msgid "flush of savefile failed!"
+msgstr "échec du vidage du fichier de sauvegarde !"
+
+#: src/sfstruct.c:540
+#, c-format
+msgid "cannot write %u bytes to file #%d"
+msgstr "impossible d'écrire %u octets dans le fichier n°%d"
+
+#: src/sfstruct.c:543
+#, c-format
+msgid "fd not in list (%d)?"
+msgstr "fd absent de la liste (%d) ?"
+
 #: src/sfstruct.c:581
 #, c-format
 msgid "Read %d instead of %u bytes."
-msgstr ""
+msgstr "%d octets lus au lieu de %u."
+
+#: src/sfstruct.c:588
+#, c-format
+msgid "Error reading level file."
+msgstr "Erreur de lecture du fichier de niveau."
 
 #: src/shk.c:62
 msgid " and its contents"
@@ -62229,6 +64899,26 @@ msgstr "agacé"
 #, c-format
 msgid "%s of %s"
 msgstr "%s @de %s"
+
+#: src/shk.c:196
+#, c-format
+msgid "%s payment in money2mon!"
+msgstr "paiement %s dans money2mon !"
+
+#: src/shk.c:200
+#, c-format
+msgid "Paying without %s gold?"
+msgstr "Paiement sans or %s ?"
+
+#: src/shk.c:225
+#, c-format
+msgid "%s payment in money2u!"
+msgstr "paiement %s dans money2u !"
+
+#: src/shk.c:229
+#, c-format
+msgid "%s paying without %s gold?"
+msgstr "%s paie sans or %s ?"
 
 #: src/shk.c:240
 msgid "You have no room for the gold!"
@@ -62414,6 +65104,11 @@ msgstr "Espèce de %s sournois !  Sortez d'ici avec cette pioche !"
 msgid "%s glares at your pick!"
 msgstr "%s fusille votre pioche du regard !"
 
+#: src/shk.c:1062
+#, c-format
+msgid "same_price: object wasn't on any bill!"
+msgstr "same_price : l'objet n'était sur aucune facture !"
+
 #: src/shk.c:1097
 msgid "You have no credit or debt in here."
 msgstr "Vous n'avez ni crédit ni dette ici."
@@ -62440,6 +65135,31 @@ msgstr "Vous devez %2$ld %3$s à %1$s."
 #: src/shk.c:1122
 msgid "You don't owe any gold here."
 msgstr "Vous ne devez pas d'or ici."
+
+#: src/shk.c:1154
+#, c-format
+msgid "%s? (rmno=%d, rtype=%d, mnum=%d, \"%s\")"
+msgstr "%s ? (rmno=%d, rtype=%d, mnum=%d, \"%s\")"
+
+#: src/shk.c:1235
+#, c-format
+msgid "onbill: paid obj on bill?"
+msgstr "onbill : objet payé sur la facture ?"
+
+#: src/shk.c:1241
+#, c-format
+msgid "onbill: unpaid obj %s?"
+msgstr "onbill : objet impayé %s ?"
+
+#: src/shk.c:1329
+#, c-format
+msgid "obfree: not on bill, %s = (%d,%d,%ld,%d) (%d,%d,%ld,%d)?"
+msgstr "obfree : pas sur la facture, %s = (%d,%d,%ld,%d) (%d,%d,%ld,%d) ?"
+
+#: src/shk.c:1356
+#, c-format
+msgid "obfree: deleting worn obj (%d: %ld)"
+msgstr "obfree : suppression d'un objet porté (%d: %ld)"
 
 #: src/shk.c:1374
 msgid "The price is deducted from your credit."
@@ -62478,6 +65198,11 @@ msgstr "%s se calme."
 #, c-format
 msgid "Besides, you don't have enough to interest %s."
 msgstr "De toute façon, vous n'avez pas assez pour intéresser %s."
+
+#: src/shk.c:1664
+#, c-format
+msgid "Can't find shop bill entry for #%d"
+msgstr "Entrée de facture introuvable pour le n°%d"
 
 #: src/shk.c:1814
 msgid "Pay for which items?"
@@ -62625,6 +65350,11 @@ msgstr ""
 msgid "But %s is as angry as ever."
 msgstr "Mais %s est plus furieux que jamais."
 
+#: src/shk.c:2061
+#, c-format
+msgid "dopay: not to shopkeeper?"
+msgstr "dopay : pas à un marchand ?"
+
 #: src/shk.c:2074
 #, c-format
 msgid "You owe %s %ld %s for the use of merchandise."
@@ -62688,6 +65418,26 @@ msgstr "Facture détaillée ?"
 #, c-format
 msgid "You need to remove any unpaid items from that %s and buy them separately."
 msgstr "Vous devez retirer les objets impayés de ce %s et les acheter séparément."
+
+#: src/shk.c:2367
+#, c-format
+msgid "Paid object on bill??"
+msgstr "Objet payé sur la facture ??"
+
+#: src/shk.c:2474
+#, c-format
+msgid "Can't find contained item on shop bill (#%d)."
+msgstr "Objet contenu introuvable sur la facture (n°%d)."
+
+#: src/shk.c:2508
+#, c-format
+msgid "Buying %s contents: item #%u disappeared from bill."
+msgstr "Achat du contenu de %s : l'objet n°%u a disparu de la facture."
+
+#: src/shk.c:2516
+#, c-format
+msgid "Buying %s contents failed unexpectedly (#%u %d)."
+msgstr "L'achat du contenu de %s a échoué de façon inattendue (n°%u %d)."
 
 #: src/shk.c:2573
 #, c-format
@@ -62763,6 +65513,16 @@ msgstr "%s prend les %ld %s dus."
 msgid "%s %s the %ld %s %sowed %s."
 msgstr ""
 
+#: src/shk.c:2899
+#, c-format
+msgid "finish_paybill: bad location <%d,%d>."
+msgstr "finish_paybill : mauvais emplacement <%d,%d>."
+
+#: src/shk.c:3097
+#, c-format
+msgid "bad glass gem %d?"
+msgstr "mauvais verre %d ?"
+
 #: src/shk.c:3276
 #, c-format
 msgid "%s seems horrified that you want to sell that."
@@ -62801,9 +65561,19 @@ msgstr "%s secoue la %s en signe de refus."
 msgid "%s shakes %s %s in refusal."
 msgstr ""
 
+#: src/shk.c:3476
+#, c-format
+msgid "unpaid_cost: object wasn't on any bill."
+msgstr "unpaid_cost : l'objet n'était sur aucune facture."
+
 #: src/shk.c:3504 src/shk.c:3683
 msgid "You got that for free!"
 msgstr "Vous l'avez eu gratuitement !"
+
+#: src/shk.c:3542
+#, c-format
+msgid "add_to_billobjs: obj not free"
+msgstr "add_to_billobjs : objet non libre"
 
 #: src/shk.c:3733
 #, c-format
@@ -62988,6 +65758,31 @@ msgctxt "gender"
 msgid "lady"
 msgstr "f"
 
+#: src/shk.c:3880
+#, c-format
+msgid "splitbill: no resident shopkeeper??"
+msgstr "splitbill : pas de marchand résident ??"
+
+#: src/shk.c:3885
+#, c-format
+msgid "splitbill: not on bill?"
+msgstr "splitbill : pas sur la facture ?"
+
+#: src/shk.c:3889
+#, c-format
+msgid "Negative quantity on bill??"
+msgstr "Quantité négative sur la facture ??"
+
+#: src/shk.c:3892
+#, c-format
+msgid "Zero quantity on bill??"
+msgstr "Quantité nulle sur la facture ??"
+
+#: src/shk.c:3936
+#, c-format
+msgid "sub_one_frombill: unpaid object not on bill"
+msgstr "sub_one_frombill : objet impayé absent de la facture"
+
 #: src/shk.c:4085
 #, c-format
 msgid "You have %ld %s credit remaining."
@@ -63085,6 +65880,21 @@ msgstr "%s semble indifférent au reste."
 #, c-format
 msgid "%s cannot pay you at present."
 msgstr "%s ne peut pas vous payer pour l'instant."
+
+#: src/shk.c:4462
+#, c-format
+msgid "invalid sell response"
+msgstr "réponse de vente invalide"
+
+#: src/shk.c:4482
+#, c-format
+msgid "doinvbill: no shopkeeper?"
+msgstr "doinvbill : pas de marchand ?"
+
+#: src/shk.c:4509
+#, c-format
+msgid "Bad shopkeeper administration."
+msgstr "Mauvaise gestion du marchand."
 
 #: src/shk.c:4651 src/shk.c:5580 src/vault.c:751
 msgid "Out of my way, scum!"
@@ -63576,6 +66386,16 @@ msgstr "bête"
 msgid "fiend"
 msgstr "démon"
 
+#: src/shk.c:6266
+#, c-format
+msgid "cad: unknown gender"
+msgstr "cad : genre inconnu"
+
+#: src/shk.c:6326
+#, c-format
+msgid "globby_bill_fixup called for non-globby object"
+msgstr "globby_bill_fixup appelé pour un objet non globuleux"
+
 #: src/shk.c:6389
 #, c-format
 msgid "The donated %s partially pays off your debt."
@@ -63720,20 +66540,55 @@ msgctxt "gender"
 msgid "lighting store"
 msgstr ""
 
+#: src/shknam.c:386
+#, c-format
+msgid "item probabilities total to %d for %s shops!"
+msgstr "les probabilités d'objets totalisent %d pour les boutiques %s !"
+
+#: src/shknam.c:390
+#, c-format
+msgid "shop probabilities total to %d!"
+msgstr "les probabilités des boutiques totalisent %d !"
+
+#: src/shknam.c:443
+#, c-format
+msgid "shkveg no veggy objects"
+msgstr "shkveg : aucun objet végétarien"
+
+#: src/shknam.c:454
+#, c-format
+msgid "shkveg probtype error, oclass=%d i=%d"
+msgstr "shkveg : erreur de probtype, oclass=%d i=%d"
+
+#: src/shknam.c:661
+#, c-format
+msgid "Where is shopdoor?"
+msgstr "Où est la porte de la boutique ?"
+
 #: src/shknam.c:662
 #, c-format
 msgid "Room at (%d,%d),(%d,%d)."
-msgstr ""
+msgstr "Salle en (%d,%d),(%d,%d)."
 
 #: src/shknam.c:664
 #, c-format
 msgid "doormax=%d doorct=%d fdoor=%d"
-msgstr ""
+msgstr "doormax=%d doorct=%d fdoor=%d"
 
 #: src/shknam.c:667
 #, c-format
 msgid "door [%d,%d]"
-msgstr ""
+msgstr "porte [%d,%d]"
+
+#: src/shknam.c:884
+#, c-format
+msgid "shkname: \"%s\" is not a shopkeeper."
+msgstr "shkname : \"%s\" n'est pas un marchand."
+
+#: src/shknam.c:886
+#, c-format
+msgid "shkname: shopkeeper \"%s\" lacks 'eshk' data."
+msgstr "shkname : il manque les données « eshk » du marchand \"%s\"."
 
 #: src/sit.c:29
 msgid "You feel a strange sensation."
@@ -63823,6 +66678,11 @@ msgstr "Une révélation vous est accordée !"
 #: src/sit.c:208
 msgid "Your mind turns into a pretzel!"
 msgstr "Votre esprit se noue en bretzel !"
+
+#: src/sit.c:213
+#, c-format
+msgid "throne effect"
+msgstr "effet du trône"
 
 #: src/sit.c:218
 msgid "You feel very comfortable here."
@@ -64873,6 +67733,151 @@ msgstr ""
 msgid "%s doesn't respond."
 msgstr "%s ne répond pas."
 
+#: src/sounds.c:1965
+#, c-format
+msgid "activate_chosen_soundlib: invalid soundlib (%d)"
+msgstr "activate_chosen_soundlib : bibliothèque de son invalide (%d)"
+
+#: src/sounds.c:1982
+#, c-format
+msgid "assign_soundlib: invalid soundlib (%d)"
+msgstr "assign_soundlib : bibliothèque de son invalide (%d)"
+
+#: src/sounds.c:2052
+#, c-format
+msgid "get_soundlib_name: invalid active_soundlib (%d)"
+msgstr "get_soundlib_name : active_soundlib invalide (%d)"
+
+#: src/sp_lev.c:269
+#, c-format
+msgid "outside mapfrag (%i,%i), wanted (%i,%i)"
+msgstr "hors de mapfrag (%i,%i), voulu (%i,%i)"
+
+#: src/sp_lev.c:1251
+#, c-format
+msgid "get_location:  can't find a place!"
+msgstr "get_location :  impossible de trouver une place !"
+
+#: src/sp_lev.c:1369
+#, c-format
+msgid "get_room_loc : can't find a place!"
+msgstr "get_room_loc : impossible de trouver une place !"
+
+#: src/sp_lev.c:1401
+#, c-format
+msgid "get_free_room_loc:  can't find a place!"
+msgstr "get_free_room_loc :  impossible de trouver une place !"
+
+#: src/sp_lev.c:1800
+#, c-format
+msgid "create_door: Can't find a proper place!"
+msgstr "create_door : impossible de trouver un endroit convenable !"
+
+#: src/sp_lev.c:1941
+#, c-format
+msgid "create_monster: unknown monster class '%c'"
+msgstr "create_monster : classe de monstre inconnue « %c »"
+
+#: src/sp_lev.c:2012
+#, c-format
+msgid "create_monster: mon has an appearance, \"%s\", but no type"
+msgstr "create_monster : le monstre a une apparence, \"%s\", mais pas de type"
+
+#: src/sp_lev.c:2021
+#, c-format
+msgid "create_monster: can't find feature \"%s\""
+msgstr "create_monster : élément \"%s\" introuvable"
+
+#: src/sp_lev.c:2035
+#, c-format
+msgid "create_monster: can't find object \"%s\""
+msgstr "create_monster : objet \"%s\" introuvable"
+
+#: src/sp_lev.c:2073
+#, c-format
+msgid "create_monster: invalid %s (\"%s\")"
+msgstr "create_monster : %s invalide (\"%s\")"
+
+#: src/sp_lev.c:2117
+#, c-format
+msgid "create_monster: unimplemented mon appear type [%d,\"%s\"]"
+msgstr "create_monster : type d'apparence de monstre non implémenté [%d,\"%s\"]"
+
+#: src/sp_lev.c:2221
+#, c-format
+msgid "create_object:  unexpected object class '%c'"
+msgstr "create_object :  classe d'objet inattendue « %c »"
+
+#: src/sp_lev.c:2349
+#, c-format
+msgid "create_object: too deeply nested containers."
+msgstr "create_object : conteneurs trop imbriqués."
+
+#: src/sp_lev.c:2417
+#, c-format
+msgid "create_object: unknown achievement (%s\"%s\")"
+msgstr "create_object : exploit inconnu (%s\"%s\")"
+
+#: src/sp_lev.c:2526
+#, c-format
+msgid "search_door: Bad wall!"
+msgstr "search_door : mauvais mur !"
+
+#: src/sp_lev.c:2685
+#, c-format
+msgid "create_corridor to/from a random wall"
+msgstr "create_corridor vers ou depuis un mur au hasard"
+
+#: src/sp_lev.c:2986
+#, c-format
+msgid "Unrecognized level init style."
+msgstr "Style d'initialisation de niveau non reconnu."
+
+#: src/sp_lev.c:3999
+#, c-format
+msgid "get_mkroom_name unknown rtype %d"
+msgstr "get_mkroom_name : rtype inconnu %d"
+
+#: src/sp_lev.c:4016
+#, c-format
+msgid "Unknown room type '%s'"
+msgstr "Type de salle inconnu « %s »"
+
+#: src/sp_lev.c:4038
+#, c-format
+msgid "Too deeply nested rooms?!"
+msgstr "Salles trop imbriquées ?!"
+
+#: src/sp_lev.c:4637
+#, c-format
+msgid "sel_set_feature(%i,%i,%i) !isok"
+msgstr "sel_set_feature(%i,%i,%i) !isok"
+
+#: src/sp_lev.c:4894
+#, c-format
+msgid "feature has unknown type param."
+msgstr "l'élément a un paramètre de type inconnu."
+
+#: src/sp_lev.c:5657
+#, c-format
+msgid "Too many rooms on new level!"
+msgstr "Trop de salles sur le nouveau niveau !"
+
+#: src/sp_lev.c:5695
+#, c-format
+msgid "region as subroom"
+msgstr "région en sous-salle"
+
+#: src/sp_lev.c:5759
+#, c-format
+msgid "Cannot create drawbridge."
+msgstr "Impossible de créer le pont-levis."
+
+#: src/sp_lev.c:5833
+#, c-format
+msgid "mazewalk: Bad direction"
+msgstr "mazewalk : mauvaise direction"
+
 #: src/spell.c:154
 msgid "These runes were just too much to comprehend."
 msgstr "Ces runes étaient tout simplement trop difficiles à comprendre."
@@ -64967,6 +67972,11 @@ msgstr ""
 msgid "the \"%s\" spell"
 msgstr "le sort « %s »"
 
+#: src/spell.c:416 src/spell.c:2452
+#, c-format
+msgid "Too many spells memorized!"
+msgstr "Trop de sorts mémorisés !"
+
 #: src/spell.c:420
 msgid "This spellbook is too faint to be read any more."
 msgstr "Ce livre de sorts est trop effacé pour être encore lu."
@@ -65002,6 +68012,11 @@ msgstr "Vous poursuivez vos efforts pour lire le roman."
 #: src/spell.c:525
 msgid "This spellbook is all blank."
 msgstr "Ce livre de sorts est entièrement vierge."
+
+#: src/spell.c:574
+#, c-format
+msgid "Unknown spellbook level %d, book %d;"
+msgstr "Niveau de grimoire inconnu %d, livre %d ;"
 
 #: src/spell.c:584
 #, c-format
@@ -65174,6 +68189,11 @@ msgctxt "plural"
 msgid "%s slams shut!"
 msgstr "%s se referment d'un coup sec !"
 
+#: src/spell.c:905
+#, c-format
+msgid "Unknown spell skill, %d;"
+msgstr "Compétence de sort inconnue, %d ;"
+
 #: src/spell.c:1107
 #, c-format
 msgid "You shock %s!"
@@ -65265,6 +68285,11 @@ msgstr "Vous n'êtes plus malade."
 msgid "You sense a pointy hat on top of your %s."
 msgstr "Vous sentez un chapeau pointu sur votre %s."
 
+#: src/spell.c:1662
+#, c-format
+msgid "Unknown spell %d attempted."
+msgstr "Tentative d'un sort inconnu %d."
+
 #: src/spell.c:1731
 msgid "You're joking!  In this weather?"
 msgstr "Vous plaisantez ! Par ce temps ?"
@@ -65288,6 +68313,11 @@ msgstr "Le sort est interrompu !"
 #: src/spell.c:1760
 msgid "Your mind fails to lock onto that location!"
 msgstr "Votre esprit n'arrive pas à se fixer sur cet endroit !"
+
+#: src/spell.c:1795
+#, c-format
+msgid "tport_spell: spellbook full"
+msgstr "tport_spell : livre de sorts plein"
 
 #: src/spell.c:1926
 msgid "by casting letter"
@@ -65380,6 +68410,16 @@ msgstr "[trier les sorts]"
 msgid "(gone)"
 msgstr "(perdu)"
 
+#: src/spell.c:2455
+#, c-format
+msgid "Spell %s already known."
+msgstr "Sort %s déjà connu."
+
+#: src/spell.c:2506
+#, c-format
+msgid "Too many spells memorized"
+msgstr "Trop de sorts mémorisés"
+
 #: src/steal.c:10
 #, c-format
 msgctxt "feminine"
@@ -65462,10 +68502,20 @@ msgstr "Votre bourse semble plus légère."
 msgid "You finish taking off your %s."
 msgstr "Vous finissez d'enlever votre %s."
 
+#: src/steal.c:212
+#, c-format
+msgid "stealarm(): dead monster stealing"
+msgstr "stealarm() : un monstre mort vole"
+
 #: src/steal.c:225 src/steal.c:848
 #, c-format
 msgid "%s steals %s!"
 msgstr "%s vole %s !"
+
+#: src/steal.c:277
+#, c-format
+msgid "Removing embedded scales?"
+msgstr "Retrait d'écailles incrustées ?"
 
 #: src/steal.c:422
 #, c-format
@@ -65485,6 +68535,11 @@ msgstr "%s essaie de vous voler, mais l'or ne l'intéresse pas."
 #, c-format
 msgid "%s tries to rob you, but there is nothing to steal!"
 msgstr "%s essaie de vous voler, mais il n'y a rien à prendre !"
+
+#: src/steal.c:463
+#, c-format
+msgid "Steal fails!"
+msgstr "Le vol échoue !"
 
 #: src/steal.c:516
 #, c-format
@@ -65531,10 +68586,25 @@ msgstr ""
 msgid "%s seduces you and %s off your %s."
 msgstr ""
 
+#: src/steal.c:641
+#, c-format
+msgid "Tried to steal a strange worn thing. [%d]"
+msgstr "Tentative de voler une chose portée étrange. [%d]"
+
 #: src/steal.c:681
 #, c-format
 msgid "%s stole %s."
 msgstr "%s a volé %s."
+
+#: src/steal.c:703
+#, c-format
+msgid "monster (%s) taking or picking up nothing?"
+msgstr "monstre (%s) prenant ou ramassant rien ?"
+
+#: src/steal.c:707
+#, c-format
+msgid "monster (%s) taking or picking up attached %s (%s)?"
+msgstr "monstre (%s) prenant ou ramassant %s attaché (%s) ?"
 
 #: src/steal.c:733
 #, c-format
@@ -65632,6 +68702,16 @@ msgstr "Vous ne pouvez pas seller une telle créature."
 #, c-format
 msgid "You put the saddle on %s."
 msgstr "Vous mettez la selle sur %s."
+
+#: src/steed.c:151
+#, c-format
+msgid "put_saddle_on_mon: saddle obj could get orphaned"
+msgstr "put_saddle_on_mon : la selle pourrait se retrouver orpheline"
+
+#: src/steed.c:163
+#, c-format
+msgid "merged saddle?"
+msgstr "selle fusionnée ?"
 
 #: src/steed.c:190
 msgid "Force the mount to succeed?"
@@ -65803,6 +68883,26 @@ msgstr "Vous vous installez sur la selle @de %s."
 msgid "%s won't move!"
 msgstr "%s refuse de bouger !"
 
+#: src/steed.c:927
+#, c-format
+msgid "trying to place %s at <%d,%d> mstate:%lx on %s"
+msgstr "tentative de placer %s en <%d,%d> mstate:%lx sur %s"
+
+#: src/steed.c:935
+#, c-format
+msgid "placing %s onto map, mstate:%lx, on %s?"
+msgstr "placement de %s sur la carte, mstate:%lx, sur %s ?"
+
+#: src/steed.c:944
+#, c-format
+msgid "placing %s over %s at <%d,%d>, mstates:%lx %lx on %s?"
+msgstr "placement de %s par-dessus %s en <%d,%d>, mstates:%lx %lx sur %s ?"
+
+#: src/strutil.c:96
+#, c-format
+msgid "%s:%d string too long"
+msgstr "%s:%d chaîne trop longue"
+
 #: src/symbols.c:960
 #, c-format
 msgid "There are no appropriate %s symbol sets available."
@@ -65817,6 +68917,11 @@ msgstr "Impossible d'accéder au fichier « %s »."
 #, c-format
 msgid "There were no symbol sets found in \"%s\"."
 msgstr "Aucun jeu de symboles trouvé dans « %s »."
+
+#: src/sys.c:74
+#, c-format
+msgid "config error: PERS_IS_UID must be either 0 or 1"
+msgstr "erreur de configuration : PERS_IS_UID doit valoir 0 ou 1"
 
 #: src/teleport.c:10
 msgid " close by"
@@ -65879,6 +68984,11 @@ msgstr "Vous êtes trop affaiblie par la faim pour vous téléporter."
 #: src/teleport.c:562
 msgid "You materialize in the same location!"
 msgstr "Vous vous matérialisez au même endroit !"
+
+#: src/teleport.c:812
+#, c-format
+msgid "%s is leashed, without a leash."
+msgstr "%s est en laisse, sans laisse."
 
 #: src/teleport.c:871
 msgid "A mysterious force prevents you from teleporting!"
@@ -66074,6 +69184,11 @@ msgstr "%s disparaît et réapparaît%s."
 msgid "%s appears%s!"
 msgstr "%s apparaît%s !"
 
+#: src/teleport.c:1935
+#, c-format
+msgid "rloc(): couldn't relocate monster"
+msgstr "rloc() : impossible de déplacer le monstre"
+
 #: src/teleport.c:1964
 #, c-format
 msgid "Teleport %s @ <%d,%d> where?"
@@ -66103,6 +69218,11 @@ msgstr "%s évite le trou."
 #, c-format
 msgid "%s seems to shimmer for a moment."
 msgstr "%s semble scintiller un instant."
+
+#: src/teleport.c:2128
+#, c-format
+msgid "mlevel_tele_trap: unexpected trap type (%d)"
+msgstr "mlevel_tele_trap : type de piège inattendu (%d)"
 
 #: src/teleport.c:2133
 #, c-format
@@ -66582,6 +69702,11 @@ msgstr "Vous voyez %s tomber @de %s !"
 msgid "You see %s %s out of %s!"
 msgstr ""
 
+#: src/timeout.c:1179
+#, c-format
+msgid "egg hatched where? (%d)"
+msgstr "œuf éclos où ? (%d)"
+
 #: src/timeout.c:1260 src/timeout.c:1391
 msgid "them"
 msgstr "eux"
@@ -66891,7 +70016,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 06:24+0200\n"
+"POT-Creation-Date: 2026-10-03 06:29+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -66901,6 +70026,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: src/timeout.c:1780
+#, c-format
+msgid "burn_object: unexpected obj %s"
+msgstr "burn_object : objet inattendu %s"
+
+#: src/timeout.c:1878
+#, c-format
+msgid "begin burn: unexpected %s"
+msgstr "begin burn : %s inattendu"
+
+#: src/timeout.c:1904
+#, c-format
+msgid "begin_burn: can't get obj position"
+msgstr "begin_burn : impossible d'obtenir la position de l'objet"
+
+#: src/timeout.c:1916
+#, c-format
+msgid "end_burn: obj %s not lit"
+msgstr "end_burn : objet %s non allumé"
+
+#: src/timeout.c:1930
+#, c-format
+msgid "end_burn: obj %s not timed!"
+msgstr "end_burn : objet %s sans minuterie !"
+
+#: src/timeout.c:1942
+#, c-format
+msgid "cleanup_burn: obj %s not lit"
+msgstr "cleanup_burn : objet %s non allumé"
+
 #: src/timeout.c:1990
 msgid "Kaboom!!!  Boom!!  Boom!!"
 msgstr "Kaboum !!! Boum !! Boum !!"
@@ -66908,6 +70063,11 @@ msgstr "Kaboum !!! Boum !! Boum !!"
 #: src/timeout.c:2000
 msgid "You hear a rumbling noise."
 msgstr "Vous entendez un grondement."
+
+#: src/timeout.c:2109
+#, c-format
+msgid "no timer type"
+msgstr "pas de type de minuterie"
 
 #: src/timeout.c:2130
 msgid " <empty>"
@@ -66957,6 +70117,101 @@ msgstr "Niveau interdit de téléportation pendant %ld tours."
 #, c-format
 msgid "Level is no-teleport for %ld more turn."
 msgstr "Niveau interdit de téléportation pendant encore %ld tour."
+
+#: src/timeout.c:2272
+#, c-format
+msgid "timer sanity: untimed obj %s, timer %lu"
+msgstr "cohérence des minuteries : objet sans minuterie %s, minuterie %lu"
+
+#: src/timeout.c:2290
+#, c-format
+msgid "timer sanity: can't locate obj %s [where=%d], timer %lu"
+msgstr "cohérence des minuteries : objet %s introuvable [where=%d], minuterie %lu"
+
+#: src/timeout.c:2294
+#, c-format
+msgid "timer sanity: obj %s [where=%d] located at <%d,%d>, timer %lu"
+msgstr "cohérence des minuteries : objet %s [where=%d] situé en <%d,%d>, minuterie %lu"
+
+#: src/timeout.c:2300
+#, c-format
+msgid "timer sanity: unexpected monster timer %lu"
+msgstr "cohérence des minuteries : minuterie de monstre inattendue %lu"
+
+#: src/timeout.c:2323
+#, c-format
+msgid "timer sanity: melt timer %lu on non-ice %d <%d,%d>"
+msgstr "cohérence des minuteries : minuterie de fonte %lu sur autre chose que de la glace %d <%d,%d>"
+
+#: src/timeout.c:2326
+#, c-format
+msgid "timer sanity: spot timer %lu at <%d,%d>"
+msgstr "cohérence des minuteries : minuterie de case %lu en <%d,%d>"
+
+#: src/timeout.c:2332
+#, c-format
+msgid "timer sanity: unexpected global timer %lu"
+msgstr "cohérence des minuteries : minuterie globale inattendue %lu"
+
+#: src/timeout.c:2335
+#, c-format
+msgid "timer sanity: unknown timer %lu, type: %d"
+msgstr "cohérence des minuteries : minuterie inconnue %lu, type : %d"
+
+#: src/timeout.c:2382
+#, c-format
+msgid "start_timer (%s: %d)"
+msgstr "start_timer (%s: %d)"
+
+#: src/timeout.c:2398
+#, c-format
+msgid "Attempted to start duplicate %s, aborted."
+msgstr "Tentative de lancer %s en double, abandon."
+
+#: src/timeout.c:2476
+#, c-format
+msgid "obj_move_timers"
+msgstr "obj_move_timers"
+
+#: src/timeout.c:2673
+#, c-format
+msgid "write_timer"
+msgstr "write_timer"
+
+#: src/timeout.c:2699
+#, c-format
+msgid "obj_is_local"
+msgstr "obj_is_local"
+
+#: src/timeout.c:2740
+#, c-format
+msgid "timer_is_local"
+msgstr "timer_is_local"
+
+#: src/timeout.c:2886
+#, c-format
+msgid "relink_timers 1"
+msgstr "relink_timers 1"
+
+#: src/timeout.c:2891
+#, c-format
+msgid "can't find o_id %d"
+msgstr "o_id %d introuvable"
+
+#: src/timeout.c:2894
+#, c-format
+msgid "relink_timers: no monster timer implemented"
+msgstr "relink_timers : pas de minuterie de monstre implémentée"
+
+#: src/timeout.c:2896
+#, c-format
+msgid "relink_timers 2"
+msgstr "relink_timers 2"
+
+#: src/topten.c:115
+#, c-format
+msgid "bad killer format? (%d)"
+msgstr "mauvais format de cause de mort ? (%d)"
 
 #: src/topten.c:937
 msgid " No  Points     Name"
@@ -67294,6 +70549,21 @@ msgstr "morte"
 msgctxt "feminine"
 msgid "turned to stone"
 msgstr "changée en pierre"
+
+#: src/topten.c:1594
+#, c-format
+msgid "What weird role is this? (%s)"
+msgstr "Quel est ce rôle bizarre ? (%s)"
+
+#: src/topten.c:1611
+#, c-format
+msgid "Cannot open record file!"
+msgstr "Impossible d'ouvrir le fichier des scores !"
+
+#: src/track.c:101
+#, c-format
+msgid "rest_track: impossible pt counts"
+msgstr "rest_track : nombre de points impossible"
 
 #: src/trap.c:83
 #, c-format
@@ -68021,6 +71291,11 @@ msgctxt "feminine plural"
 msgid "%s is protected by the layer of grease!"
 msgstr "%s sont protégées par la couche de graisse !"
 
+#: src/trap.c:417
+#, c-format
+msgid "Invalid erosion type in erode_obj"
+msgstr "Type d'érosion invalide dans erode_obj"
+
 #: src/trap.c:446
 #, c-format
 msgid "%s is not affected by %s."
@@ -68055,6 +71330,11 @@ msgstr ""
 #, c-format
 msgid "%s %s %s!"
 msgstr ""
+
+#: src/trap.c:552
+#, c-format
+msgid "erode_obj(%d): destroying strangely worn item [%d, 0x%08lx: %s]"
+msgstr "erode_obj(%d) : destruction d'un objet porté étrangement [%d, 0x%08lx: %s]"
 
 #: src/trap.c:566
 #, c-format
@@ -68094,6 +71374,11 @@ msgstr ""
 #: src/trap.c:621
 msgid "The grease dissolves."
 msgstr "La graisse se dissout."
+
+#: src/trap.c:812
+#, c-format
+msgid "making fixed-dest tele trap pointing to itself"
+msgstr "création d'un piège de téléportation à destination fixe qui pointe sur lui-même"
 
 #: src/trap.c:867
 msgid "A trap door opens up under you!"
@@ -68248,6 +71533,11 @@ msgstr "%s s'écoule à travers %s toile d'araignée."
 #: src/trap.c:1351
 msgid "You can fly."
 msgstr "Vous savez voler."
+
+#: src/trap.c:1478
+#, c-format
+msgid "m_harmless_trap: unknown trap %i"
+msgstr "m_harmless_trap : piège inconnu %i"
 
 #: src/trap.c:1497
 msgid "You hear a loud click!"
@@ -68596,6 +71886,16 @@ msgstr "%s tombe dans %s fosse !"
 msgid "%s %s into %s pit!"
 msgstr ""
 
+#: src/trap.c:2407
+#, c-format
+msgid "dotrap: %ss cannot exist on this level."
+msgstr "dotrap : les %ss ne peuvent exister sur ce niveau."
+
+#: src/trap.c:2420
+#, c-format
+msgid "mintrap: %ss cannot exist on this level."
+msgstr "mintrap : les %ss ne peuvent exister sur ce niveau."
+
 #: src/trap.c:2432
 #, c-format
 msgid "A trap door opens, but %s doesn't fall through."
@@ -68705,6 +72005,11 @@ msgstr ""
 msgid "%s warps strangely."
 msgstr "%s se déforme étrangement."
 
+#: src/trap.c:2918
+#, c-format
+msgid "re-equipping iron shoes destroyed them?"
+msgstr "remettre les chaussures de fer les a détruites ?"
+
 #: src/trap.c:2967
 msgid "There is the trigger of your mine in a pile of soil below you."
 msgstr "Le détonateur de votre mine est dans un tas de terre sous vous."
@@ -68775,6 +72080,21 @@ msgstr "Vous voyez une étrange vibration sous %s."
 msgid "You see the ground vibrate nearby."
 msgstr "Vous voyez le sol vibrer tout près."
 
+#: src/trap.c:3226
+#, c-format
+msgid "immune_to_trap: null monster"
+msgstr "immune_to_trap : monstre nul"
+
+#: src/trap.c:3366
+#, c-format
+msgid "immune_to_trap: bad ttype %u"
+msgstr "immune_to_trap : mauvais ttype %u"
+
+#: src/trap.c:3424
+#, c-format
+msgid "%s encountered a strange trap of type %d."
+msgstr "%s a rencontré un piège étrange de type %d."
+
 #: src/trap.c:3458
 #, c-format
 msgid "Air currents pull you down into %s!"
@@ -68804,6 +72124,16 @@ msgstr "Vous échappez à %s."
 #, c-format
 msgid "You escape %s %s."
 msgstr ""
+
+#: src/trap.c:3565
+#, c-format
+msgid "steed hit by non-existent arrow?"
+msgstr "monture touchée par une flèche inexistante ?"
+
+#: src/trap.c:3573
+#, c-format
+msgid "steed hit by non-existent dart?"
+msgstr "monture touchée par une fléchette inexistante ?"
 
 #: src/trap.c:3769
 #, c-format
@@ -69751,6 +73081,11 @@ msgstr "l'aiguille empoisonnée vous manque"
 msgid "gas cloud blows away"
 msgstr "le nuage de gaz se dissipe"
 
+#: src/trap.c:7044
+#, c-format
+msgid "chest disarm bug"
+msgstr "bogue du désamorçage de coffre"
+
 #: src/trap.c:7049
 #, c-format
 msgid "But luckily the %s!"
@@ -69801,6 +73136,16 @@ msgstr "Quelle sensation géniale !"
 msgid "You %s%s..."
 msgstr ""
 
+#: src/trap.c:7204
+#, c-format
+msgid "bad chest trap"
+msgstr "mauvais piège de coffre"
+
+#: src/trap.c:7256
+#, c-format
+msgid "deltrap: no preceding trap!"
+msgstr "deltrap : pas de piège précédent !"
+
 #: src/trap.c:7413
 #, c-format
 msgid "KABOOM!!  %s was booby-trapped!"
@@ -69815,6 +73160,11 @@ msgstr "%s est presque touché par %s !"
 #, c-format
 msgid "%s is hit by %s but is not harmed."
 msgstr "%s est touché par %s, mais n'est pas blessé."
+
+#: src/trap.c:7550
+#, c-format
+msgid "lava_effects: '%s' (#%u) is already in use; so is #%u."
+msgstr "lava_effects : « %s » (n°%u) est déjà utilisé ; le n°%u aussi."
 
 #: src/trap.c:7577
 #, c-format
@@ -69890,6 +73240,21 @@ msgstr ""
 #: src/trap.c:7756
 msgid "You sink below the surface and die."
 msgstr "Vous coulez sous la surface et mourez."
+
+#: src/trap.c:7946
+#, c-format
+msgid "trap sanity: location (%i,%i)"
+msgstr "cohérence des pièges : position (%i,%i)"
+
+#: src/trap.c:7948
+#, c-format
+msgid "trap sanity: type (%i)"
+msgstr "cohérence des pièges : type (%i)"
+
+#: src/u_init.c:1085
+#, c-format
+msgid "No skills found for role"
+msgstr "Aucune compétence trouvée pour le rôle"
 
 #: src/uhitm.c:22
 #, c-format
@@ -69994,6 +73359,11 @@ msgstr "Vous ratez largement et trébuchez en avant."
 #: src/uhitm.c:628
 msgid "Your bloodthirsty blade attacks!"
 msgstr "Votre lame sanguinaire attaque !"
+
+#: src/uhitm.c:691
+#, c-format
+msgid "hitum_cleave: unknown target direction [%d,%d,%d]?"
+msgstr "hitum_cleave : direction de la cible inconnue [%d,%d,%d] ?"
 
 #: src/uhitm.c:927
 #, c-format
@@ -70212,6 +73582,11 @@ msgstr ""
 #: src/uhitm.c:2238
 msgid "Some hell-p has arrived!"
 msgstr "Des renforts infernaux sont arrivés !"
+
+#: src/uhitm.c:2290
+#, c-format
+msgid "steal_it: multiple worn suits"
+msgstr "steal_it : plusieurs armures portées"
 
 #: src/uhitm.c:2310
 #, c-format
@@ -70667,6 +74042,11 @@ msgstr "Vous sentez votre force vitale s'écouler..."
 msgid "%s looks more confused."
 msgstr "%s semble encore plus confus."
 
+#: src/uhitm.c:4158
+#, c-format
+msgid "bad shade attack function flow?"
+msgstr "mauvais déroulement de la fonction d'attaque d'ombre ?"
+
 #: src/uhitm.c:4195
 #, c-format
 msgid "%s grabs you!"
@@ -71076,6 +74456,11 @@ msgstr "Vous saisissez %s !"
 msgid "Your attempt to surround %s is harmless."
 msgstr "Votre tentative d'envelopper %s est sans effet."
 
+#: src/uhitm.c:6079
+#, c-format
+msgid "strange attack of yours (%d)"
+msgstr "étrange attaque de votre part (%d)"
+
 #: src/uhitm.c:6169
 msgid "You are splashed!"
 msgstr "Vous êtes éclaboussé !"
@@ -71205,10 +74590,20 @@ msgstr "Le couloir disparaît."
 msgid "You are encased in rock."
 msgstr "Vous êtes emprisonné dans la roche."
 
+#: src/vault.c:260
+#, c-format
+msgid "escaping vault without guard?"
+msgstr "fuite du coffre sans garde ?"
+
 #: src/vault.c:269
 #, c-format
 msgid "%s becomes irate."
 msgstr "%s devient furieux."
+
+#: src/vault.c:311
+#, c-format
+msgid "Not a single corridor on this level?"
+msgstr "Pas un seul couloir sur ce niveau ?"
 
 #: src/vault.c:445
 msgid "Suddenly one of the Vault's guards enters!"
@@ -71321,6 +74716,11 @@ msgstr "Une force mystérieuse déplace l'or dans la chambre forte."
 msgid "The damaged vault's walls are magically restored!"
 msgstr "Les murs endommagés de la chambre forte sont magiquement restaurés !"
 
+#: src/vault.c:776
+#, c-format
+msgid "vault guard: no gold at hero's feet?"
+msgstr "garde du coffre : pas d'or aux pieds du héros ?"
+
 #: src/vault.c:830
 #, c-format
 msgid "%s calms down and picks up the gold from beneath you."
@@ -71413,6 +74813,11 @@ msgstr "Soit, coquin !"
 msgid "Move along!"
 msgstr "Circulez !"
 
+#: src/vault.c:1200
+#, c-format
+msgid "fakecorr overflow"
+msgstr "débordement de fakecorr"
+
 #: src/vault.c:1250
 #, c-format
 msgid "Your %ld %s goes into the Magic Memory Vault."
@@ -71428,6 +74833,11 @@ msgstr "%s remet votre or au coffre."
 msgid "To Croesus: here's the gold recovered from %s the %s."
 msgstr "À Crésus : voici l'or récupéré sur %s, %s."
 
+#: src/version.c:386
+#, c-format
+msgid "check_version() called with 'complain'=True but 'filename'=Null"
+msgstr "check_version() appelé avec 'complain'=True mais 'filename'=Null"
+
 #: src/version.c:405
 #, c-format
 msgid "Version mismatch for file \"%s\"."
@@ -71437,6 +74847,16 @@ msgstr "Version incompatible pour le fichier « %s »."
 #, c-format
 msgid "Configuration incompatibility for file \"%s\"."
 msgstr "Configuration incompatible pour le fichier « %s »."
+
+#: src/vision.c:2048
+#, c-format
+msgid "view_from called with range %d"
+msgstr "view_from appelé avec la portée %d"
+
+#: src/vision.c:2129
+#, c-format
+msgid "do_clear_area:  illegal range %d"
+msgstr "do_clear_area :  portée illégale %d"
 
 #: src/weapon.c:54
 msgctxt "skill"
@@ -71746,6 +75166,11 @@ msgstr "Vous vous sentez plus sûr de vos compétences."
 msgid "Your rings sear %s!"
 msgstr "Vos anneaux brûlent %s !"
 
+#: src/weapon.c:899
+#, c-format
+msgid "weapon_check %d for %s?"
+msgstr "weapon_check %d pour %s ?"
+
 #: src/weapon.c:931
 #, c-format
 msgid "Since the weapons of %s are welded to its %s,"
@@ -71857,10 +75282,30 @@ msgstr "Améliorer les compétences sans entraînement ?"
 msgid "You feel you could be more dangerous!"
 msgstr "Vous sentez que vous pourriez être plus dangereux !"
 
+#: src/weapon.c:1569
+#, c-format
+msgid "lose_weapon_skill (%d)"
+msgstr "lose_weapon_skill (%d)"
+
+#: src/weapon.c:1602
+#, c-format
+msgid "drain_weapon_skill (%d)"
+msgstr "drain_weapon_skill (%d)"
+
 #: src/weapon.c:1617
 #, c-format
 msgid "You forget some of your training in %s."
 msgstr "Vous oubliez une partie de votre entraînement en %s."
+
+#: src/weapon.c:1765
+#, c-format
+msgid "weapon_dam_bonus: bad skill %d"
+msgstr "weapon_dam_bonus : mauvaise compétence %d"
+
+#: src/weapon.c:1904
+#, c-format
+msgid "skill_init: curr > max: %s"
+msgstr "skill_init : curr > max : %s"
 
 #: src/weapon.c:1929
 #, c-format
@@ -71881,6 +75326,11 @@ msgstr "Vous entendez %s hurler à la lune."
 #, c-format
 msgid "You hear a %s howling at the moon."
 msgstr ""
+
+#: src/were.c:112
+#, c-format
+msgid "unknown lycanthrope %s."
+msgstr "lycanthrope inconnu %s."
 
 #: src/were.c:118
 #, c-format
@@ -72397,6 +75847,21 @@ msgstr "%s est soudé à votre %s !"
 msgid "%s welded to your %s!"
 msgstr ""
 
+#: src/windows.c:1673
+#, c-format
+msgid "choose_classes_menu: invalid monclass '%c'"
+msgstr "choose_classes_menu : monclass invalide « %c »"
+
+#: src/windows.c:1684
+#, c-format
+msgid "choose_classes_menu: invalid objclass '%c'"
+msgstr "choose_classes_menu : objclass invalide « %c »"
+
+#: src/windows.c:1693
+#, c-format
+msgid "choose_classes_menu: invalid category %d"
+msgstr "choose_classes_menu : catégorie invalide %d"
+
 #: src/wizard.c:80
 #, c-format
 msgid "%s feels hot!"
@@ -72657,6 +76122,11 @@ msgstr "Je reviendrai."
 msgid "%s casts aspersions on your ancestry."
 msgstr "%s insulte vos ancêtres."
 
+#: src/wizcmds.c:147
+#, c-format
+msgid "makemap_remove_mons: 'fmon' did not get emptied?"
+msgstr "makemap_remove_mons : « fmon » n'a pas été vidé ?"
+
 #: src/wizcmds.c:256
 msgid "Pick first monster to slay:"
 msgstr "Choisissez le premier monstre à tuer :"
@@ -72734,6 +76204,11 @@ msgstr "quelle direction ?"
 #: src/wizcmds.c:550
 msgid "Do you want to call panic() and end your game?"
 msgstr "Voulez-vous appeler panic() et terminer la partie ?"
+
+#: src/wizcmds.c:551
+#, c-format
+msgid "Crash test (#panic)."
+msgstr "Test de plantage (#panic)."
 
 #: src/wizcmds.c:560
 msgid "The fuzz tester will make NetHack execute random keypresses."
@@ -72866,6 +76341,36 @@ msgstr "historique des os, taille %ld"
 msgid "object type names, text"
 msgstr "noms des types d'objets, texte"
 
+#: src/wizcmds.c:1463
+#, c-format
+msgid "sanity_check: swallowed by nothing?"
+msgstr "sanity_check : englouti par rien ?"
+
+#: src/wizcmds.c:1473
+#, c-format
+msgid "sanity_check: you over monster"
+msgstr "sanity_check : vous par-dessus un monstre"
+
+#: src/wizcmds.c:1478
+#, c-format
+msgid "current hero health (%d) better than maximum? (%d)"
+msgstr "santé actuelle du héros (%d) supérieure au maximum ? (%d)"
+
+#: src/wizcmds.c:1484
+#, c-format
+msgid "current hero health as monster (%d) better than maximum? (%d)"
+msgstr "santé actuelle du héros en monstre (%d) supérieure au maximum ? (%d)"
+
+#: src/wizcmds.c:1489
+#, c-format
+msgid "current hero energy (%d) better than maximum? (%d)"
+msgstr "énergie actuelle du héros (%d) supérieure au maximum ? (%d)"
+
+#: src/wizcmds.c:1509
+#, c-format
+msgid "levl[%i][%i] vision blocking"
+msgstr "levl[%i][%i] bloque la vue"
+
 #: src/wizcmds.c:1582
 msgid "No monsters currently migrating."
 msgstr "Aucun monstre en migration."
@@ -72992,6 +76497,16 @@ msgstr "Combien de monstres aléatoires faire migrer au niveau suivant ? [0]"
 msgid "Can't get there from here."
 msgstr "Impossible d'y aller d'ici."
 
+#: src/worm.c:313
+#, c-format
+msgid "wormgone: wormno is 0"
+msgstr "wormgone : wormno vaut 0"
+
+#: src/worm.c:401
+#, c-format
+msgid "cutworm: no segment at (%d,%d)"
+msgstr "cutworm : pas de segment en (%d,%d)"
+
 #: src/worm.c:442
 #, c-format
 msgid "Part of the tail of %s has been cut off."
@@ -73011,6 +76526,76 @@ msgstr "%s est coupé en deux."
 #, c-format
 msgid "You cut %s in half."
 msgstr "Vous coupez %s en deux."
+
+#: src/worm.c:629
+#, c-format
+msgid "placing worm seg <%d,%d> over another mon"
+msgstr "placement d'un segment de ver <%d,%d> par-dessus un autre monstre"
+
+#: src/worm.c:631
+#, c-format
+msgid "replacing worm seg <%d,%d> on empty spot"
+msgstr "remise d'un segment de ver <%d,%d> sur une case vide"
+
+#: src/worm.c:648
+#, c-format
+msgid "worm_sanity: null monster!"
+msgstr "worm_sanity : monstre nul !"
+
+#: src/worm.c:656
+#, c-format
+msgid "worm_sanity: not a worm!"
+msgstr "worm_sanity : pas un ver !"
+
+#: src/worm.c:662
+#, c-format
+msgid "wormno %d is set without proper tail"
+msgstr "wormno %d est défini sans queue correcte"
+
+#: src/worm.c:673
+#, c-format
+msgid "worm seg not isok <%d,%d>"
+msgstr "segment de ver pas isok <%d,%d>"
+
+#: src/worm.c:675
+#, c-format
+msgid "mon (%s) at seg location is not worm (%s)"
+msgstr "le monstre (%s) à l'emplacement du segment n'est pas un ver (%s)"
+
+#: src/worm.c:701
+#, c-format
+msgid "phantom worm tail #0 [head=%s, %d segment%s; tail=%s, %d segment%s]"
+msgstr "queue de ver fantôme n°0 [tête=%s, %d segment%s ; queue=%s, %d segment%s]"
+
+#: src/worm.c:749
+#, c-format
+msgid "place_worm_tail_randomly: wormno is set without a tail!"
+msgstr "place_worm_tail_randomly : wormno est défini sans queue !"
+
+#: src/worm.c:758
+#, c-format
+msgid "place_worm_tail_randomly: tail segment at <%d,%d>, worm at <%d,%d>"
+msgstr "place_worm_tail_randomly : segment de queue en <%d,%d>, ver en <%d,%d>"
+
+#: src/worm.c:917
+#, c-format
+msgid "worm_cross checking for non-adjacent location?"
+msgstr "worm_cross vérifie une position non adjacente ?"
+
+#: src/worn.c:88
+#, c-format
+msgid "Setworn: mask=0x%08lx."
+msgstr "Setworn : mask=0x%08lx."
+
+#: src/worn.c:385 src/worn.c:401 src/worn.c:432
+#, c-format
+msgid "Worn-slot insanity: %s."
+msgstr "Incohérence d'emplacement porté : %s."
+
+#: src/worn.c:466
+#, c-format
+msgid "Two-weapon insanity: %s."
+msgstr "Incohérence du combat à deux armes : %s."
 
 #: src/worn.c:551
 #, c-format
@@ -73125,6 +76710,11 @@ msgstr ""
 #, c-format
 msgid "%s is shining %s."
 msgstr "%s brille %s."
+
+#: src/worn.c:1056
+#, c-format
+msgid "bad flag in which_armor"
+msgstr "mauvais drapeau dans which_armor"
 
 #: src/worn.c:1227
 #, c-format
@@ -73281,6 +76871,16 @@ msgstr "La selle @de %s tombe."
 #, c-format
 msgid "%s saddle falls off."
 msgstr ""
+
+#: src/worn.c:1475
+#, c-format
+msgid "extract_from_minvent called on object not in minvent"
+msgstr "extract_from_minvent appelé sur un objet absent de minvent"
+
+#: src/write.c:54
+#, c-format
+msgid "You can't write such a weird scroll!"
+msgstr "Vous ne pouvez pas écrire un parchemin aussi bizarre !"
 
 #: src/write.c:88
 msgid "You need hands to be able to write!"
@@ -73934,6 +77534,16 @@ msgstr "%s se change en chair !"
 msgid "%s suddenly seems weaker!"
 msgstr "%s semble soudain plus faible !"
 
+#: src/zap.c:644 src/zap.c:2581
+#, c-format
+msgid "What an interesting effect (%d)"
+msgstr "Quel effet intéressant (%d)"
+
+#: src/zap.c:678
+#, c-format
+msgid "release_hold when not held?"
+msgstr "release_hold sans être tenu ?"
+
 #: src/zap.c:684
 msgid "You feel a sudden rush of air!"
 msgstr "Vous sentez une soudaine bouffée d'air !"
@@ -73958,6 +77568,11 @@ msgstr ""
 msgid "%s is not carrying anything besides you."
 msgstr "%s ne porte rien d'autre que vous."
 
+#: src/zap.c:1000
+#, c-format
+msgid "Attempting to revive %s?"
+msgstr "Tentative de ranimer %s ?"
+
 #: src/zap.c:1073
 #, c-format
 msgid "%s twitches feebly."
@@ -73981,6 +77596,11 @@ msgstr "Un cadavre est ressuscité."
 #, c-format
 msgid "%s is suddenly drawn into its former body!"
 msgstr "%s est soudain attiré dans son ancien corps !"
+
+#: src/zap.c:1247
+#, c-format
+msgid "revive default case %d"
+msgstr "cas par défaut de revive %d"
 
 #: src/zap.c:1326
 #, c-format
@@ -74036,6 +77656,11 @@ msgstr "Vous sentez une odeur de viande."
 #: src/zap.c:2248
 msgid "You smell a delicious smell."
 msgstr "Vous sentez une délicieuse odeur."
+
+#: src/zap.c:2321
+#, c-format
+msgid "bhito: obj is not floor or Stone To Flesh spell"
+msgstr "bhito : l'objet n'est ni au sol ni un sort de pierre en chair"
 
 #: src/zap.c:2377
 #, c-format
@@ -74181,6 +77806,11 @@ msgstr "La baguette vous envoie un rayon apparemment inoffensif."
 msgid "You irradiate yourself with pure energy!"
 msgstr "Vous vous irradiez d'énergie pure !"
 
+#: src/zap.c:3173
+#, c-format
+msgid "zapyourself: object %d used?"
+msgstr "zapyourself : objet %d utilisé ?"
+
 #: src/zap.c:3210
 msgid "Ow, that light hurts!"
 msgstr "Aïe, cette lumière fait mal !"
@@ -74254,6 +77884,11 @@ msgstr "Du sang coule sur votre %s."
 #: src/zap.c:3607
 msgid "You feel shuddering vibrations."
 msgstr "Vous sentez des vibrations."
+
+#: src/zap.c:3649
+#, c-format
+msgid "weffects: unexpected spell or wand"
+msgstr "weffects : sort ou baguette inattendu"
 
 #: src/zap.c:3734
 msgid "?"
@@ -74481,6 +78116,11 @@ msgstr ""
 msgid "%s settles..."
 msgstr "%s se stabilise..."
 
+#: src/zap.c:5317
+#, c-format
+msgid "melt_ice: no pool?"
+msgstr "melt_ice : pas de bassin ?"
+
 #: src/zap.c:5415
 msgid "A web bursts into flames!"
 msgstr "Une toile s'embrase !"
@@ -74591,6 +78231,11 @@ msgstr ""
 msgid "You feel vibrations."
 msgstr "Vous sentez des vibrations."
 
+#: src/zap.c:5819
+#, c-format
+msgid "Unsupported damage type (%d) for mon_spell_hits_spot."
+msgstr "Type de dégâts non pris en charge (%d) pour mon_spell_hits_spot."
+
 #: src/zap.c:5839
 #, c-format
 msgid "You fracture %s of %s."
@@ -74605,9 +78250,19 @@ msgstr ""
 msgid "You feel guilty about damaging such a historic statue."
 msgstr "Vous vous sentez coupable d'endommager une statue aussi historique."
 
+#: src/zap.c:6177
+#, c-format
+msgid "maybe_destroy_item with unexpected dmgtyp %d"
+msgstr "maybe_destroy_item avec un dmgtyp inattendu %d"
+
 #: src/zap.c:6253
 msgid "You aren't hurt!"
 msgstr "Vous n'êtes pas blessé !"
+
+#: src/zap.c:6372
+#, c-format
+msgid "destroy_item: items in multiple chains"
+msgstr "destroy_item : objets dans plusieurs chaînes"
 
 #: src/zap.c:6642
 msgid "You may wish for an object."
@@ -74634,15 +78289,115 @@ msgstr ""
 msgid "%s%s: unknown extended command."
 msgstr ""
 
+#: win/curses/cursdial.c:635
+#, c-format
+msgid "curses_add_nhmenu_item: attempt to add item to nonexistent menu"
+msgstr "curses_add_nhmenu_item : tentative d'ajouter un élément à un menu inexistant"
+
+#: win/curses/cursdial.c:744
+#, c-format
+msgid "curses_finalize_nhmenu: attempt to finalize nonexistent menu"
+msgstr "curses_finalize_nhmenu : tentative de finaliser un menu inexistant"
+
+#: win/curses/cursdial.c:774
+#, c-format
+msgid "curses_display_nhmenu: attempt to display nonexistent menu"
+msgstr "curses_display_nhmenu : tentative d'afficher un menu inexistant"
+
+#: win/curses/cursdial.c:781
+#, c-format
+msgid "curses_display_nhmenu: attempt to display empty menu"
+msgstr "curses_display_nhmenu : tentative d'afficher un menu vide"
+
+#: win/curses/cursdial.c:817
+#, c-format
+msgid "curses_display_nhmenu: Selected items exceeds expected number"
+msgstr "curses_display_nhmenu : plus d'éléments choisis que prévu"
+
+#: win/curses/cursdial.c:830
+#, c-format
+msgid "curses_display_nhmenu: Selected items less than expected number"
+msgstr "curses_display_nhmenu : moins d'éléments choisis que prévu"
+
+#: win/curses/cursdial.c:1153
+#, c-format
+msgid "get_menuitem_y: attempt to display nonexistent page"
+msgstr "get_menuitem_y : tentative d'afficher une page inexistante"
+
+#: win/curses/cursdial.c:1229 win/curses/cursdial.c:1734
+#, c-format
+msgid "menu_display_page: attempt to display nonexistent page"
+msgstr "menu_display_page : tentative d'afficher une page inexistante"
+
 #: win/curses/cursdial.c:1352
 #, c-format
 msgid " (Page %d of %d) "
 msgstr " (Page %d sur %d) "
 
+#: win/curses/cursinit.c:478
+#, c-format
+msgid "no available ROLE+race+gender+alignment combinations"
+msgstr "aucune combinaison RÔLE+race+sexe+alignement disponible"
+
+#: win/curses/cursmain.c:282
+#, c-format
+msgid "Terminal is too small; must have at least %s%s%s."
+msgstr "Le terminal est trop petit ; il faut au moins %s%s%s."
+
+#: win/curses/cursmisc.c:208
+#, c-format
+msgid "curses_get_wid: unsupported window type"
+msgstr "curses_get_wid : type de fenêtre non pris en charge"
+
 #: win/curses/cursmisc.c:673
 #, c-format
 msgid "Cannot open \"%s\" for reading!"
 msgstr ""
+
+#: win/curses/cursstat.c:154
+#, c-format
+msgid "curses_status_update(%d)"
+msgstr "curses_status_update(%d)"
+
+#: win/curses/curswins.c:94
+#, c-format
+msgid "curses_create_window: Terminal too small for dialog window"
+msgstr "curses_create_window : terminal trop petit pour une fenêtre de dialogue"
+
+#: win/curses/curswins.c:100
+#, c-format
+msgid "curses_create_window: Bad orientation"
+msgstr "curses_create_window : mauvaise orientation"
+
+#: win/curses/curswins.c:286
+#, c-format
+msgid "curses_get_nhwin: wid %d out of range. Not a main window."
+msgstr "curses_get_nhwin : wid %d hors limites. Pas une fenêtre principale."
+
+#: win/curses/curswins.c:368
+#, c-format
+msgid "curses_add_nhwin: wid %d out of range. Not a main window."
+msgstr "curses_add_nhwin : wid %d hors limites. Pas une fenêtre principale."
+
+#: win/curses/curswins.c:469
+#, c-format
+msgid "curses_del_nhwin: wid %d out of range. Not a main window."
+msgstr "curses_del_nhwin : wid %d hors limites. Pas une fenêtre principale."
+
+#: win/curses/curswins.c:588
+#, c-format
+msgid "curses_get_window_xy: wid %d out of range. Not a main window."
+msgstr "curses_get_window_xy : wid %d hors limites. Pas une fenêtre principale."
+
+#: win/curses/curswins.c:645
+#, c-format
+msgid "curses_get_window_orientation: wid %d out of range. Not a main window."
+msgstr "curses_get_window_orientation : wid %d hors limites. Pas une fenêtre principale."
+
+#: win/curses/curswins.c:686
+#, c-format
+msgid "curses_puts: Attempted write to nonexistent window %d!"
+msgstr "curses_puts : tentative d'écriture dans la fenêtre inexistante %d !"
 
 #: win/tty/getline.c:67
 #, c-format
@@ -74654,14 +78409,39 @@ msgstr ""
 msgid "%s%.60s: unknown extended command."
 msgstr ""
 
+#: win/tty/topl.c:310
+#, c-format
+msgid "Putsym window MESSAGE nonexistent"
+msgstr "Fenêtre MESSAGE de putsym inexistante"
+
 #: win/tty/wintty.c:184 win/tty/wintty.c:3641
 msgid "--More--"
 msgstr "--Plus--"
+
+#: win/tty/wintty.c:862
+#, c-format
+msgid "No window slots!"
+msgstr "Plus d'emplacement de fenêtre !"
+
+#: win/tty/wintty.c:936
+#, c-format
+msgid "Tried to create window type %d\n"
+msgstr "Tentative de créer une fenêtre de type %d\n"
+
+#: win/tty/wintty.c:1406
+#, c-format
+msgid "bad menu screen page #%d"
+msgstr "mauvaise page d'écran de menu n°%d"
 
 #: win/tty/wintty.c:1540
 #, c-format
 msgid "(%d of %d)"
 msgstr "(%d sur %d)"
+
+#: win/tty/wintty.c:2195
+#, c-format
+msgid "Can't putsym to window type %d"
+msgstr "Impossible de putsym dans une fenêtre de type %d"
 
 #: win/tty/wintty.c:2443
 #, c-format
@@ -74673,6 +78453,11 @@ msgstr ""
 msgid "Cannot open \"%s\"."
 msgstr ""
 
+#: win/tty/wintty.c:2605
+#, c-format
+msgid "Menu item too long (%d)."
+msgstr "Élément de menu trop long (%d)."
+
 #: win/tty/wintty.c:2755
 msgid "(end) "
 msgstr "(fin) "
@@ -74681,6 +78466,26 @@ msgstr "(fin) "
 #, c-format
 msgid "tty perm_invent needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
+
+#: win/tty/wintty.c:3012
+#, c-format
+msgid "Removing ttyinv data for nonexistent perm invent window?"
+msgstr "Suppression des données ttyinv d'une fenêtre d'inventaire permanent inexistante ?"
+
+#: win/tty/wintty.c:3399
+#, c-format
+msgid "ttyinv_populate_slot row=%d, side=%d"
+msgstr "ttyinv_populate_slot row=%d, side=%d"
+
+#: win/tty/wintty.c:4816
+#, c-format
+msgid "tty_putstatusfield: Invalid WinDesc\n"
+msgstr "tty_putstatusfield : WinDesc invalide\n"
+
+#: win/tty/wintty.c:5097
+#, c-format
+msgid "Unexpected condition placement overflow for \"%s\""
+msgstr "Débordement inattendu du placement de condition pour \"%s\""
 
 #~ msgid "hot"
 #~ msgstr "chaude"
