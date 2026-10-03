@@ -109,40 +109,40 @@ NetHackQtStatusWindow::NetHackQtStatusWindow() :
     name(this,"(name)"),
     dlevel(this,"(dlevel)"),
     /* next two rows:  icon over text label for the six characteristics */
-    str(this, "Str"),
-    dex(this, "Dex"),
-    con(this, "Con"),
-    intel(this, "Int"),
-    wis(this, "Wis"),
-    cha(this, "Cha"),
+    str(this, _("Str")),
+    dex(this, _("Dex")),
+    con(this, _("Con")),
+    intel(this, _("Int")),
+    wis(this, _("Wis")),
+    cha(this, _("Cha")),
     /* sixth row, text only:  some contain two slash-separated values */
-    hp(this,"Hit Points"),
-    power(this,"Power"),
-    ac(this,"Armor Class"),
-    level(this,"Level"), // Xp level, with "/"+Exp points optionally appended
+    hp(this, _("Hit Points")),
+    power(this, _("Power")),
+    ac(this, _("Armor Class")),
+    level(this, _("Level")), // Xp level, with "/"+Exp points optionally appended
     blank1(this, ""),    // used for padding to align columns (was once 'exp')
-    gold(this,"Gold"),   // gold used to be this row's first column, now last
+    gold(this, _("Gold")),   // gold used to be this row's first column, now last
     /* seventh row:  two optionally displayed values (just text, no icons) */
-    time(this,"Time"),   // if 'time' option On
-    score(this,"Score"), // if SCORE_ON_BOTL defined and 'showscore' option On
+    time(this, _("Time")),   // if 'time' option On
+    score(this, _("Score")), // if SCORE_ON_BOTL defined and 'showscore' option On
     /* last two rows:  alignment followed by conditions (icons over text) */
-    align(this,"Alignment"),
+    align(this, _("Alignment")),
     blank2(this, " "),   // used to prevent Conditions row from being empty
     hunger(this,""),
     encumber(this,""),
-    stoned(this,"Stone"),     // major conditions
-    slimed(this,"Slime"),
-    strngld(this,"Strngl"),
-    sick_fp(this,"FoodPois"),
-    sick_il(this,"TermIll"),
-    stunned(this,"Stun"),     // minor conditions
-    confused(this,"Conf"),
-    hallu(this,"Hallu"),
-    blind(this,"Blind"),
-    deaf(this,"Deaf"),
-    lev(this,"Lev"),          // 'other' conditions
-    fly(this,"Fly"),
-    ride(this,"Ride"),
+    stoned(this, _("Stone")),     // major conditions
+    slimed(this, _("Slime")),
+    strngld(this, _("Strngl")),
+    sick_fp(this, _("FoodPois")),
+    sick_il(this, _("TermIll")),
+    stunned(this, _("Stun")),     // minor conditions
+    confused(this, _("Conf")),
+    hallu(this, _("Hallu")),
+    blind(this, _("Blind")),
+    deaf(this, _("Deaf")),
+    lev(this, _("Lev")),          // 'other' conditions
+    fly(this, _("Fly")),
+    ride(this, _("Ride")),
     vers(this,""),            // optional, right justified after 'conditions'
     hline1(this),             // separators
     hline2(this),
@@ -204,31 +204,31 @@ NetHackQtStatusWindow::NetHackQtStatusWindow() :
 
     p_vers = QPixmap(blank_xpm); // same all-background pixmap as blank2
 
-    str.setIcon(p_str, "strength");
-    dex.setIcon(p_dex, "dexterity");
-    con.setIcon(p_con, "constitution");
-    intel.setIcon(p_int, "intelligence");
-    wis.setIcon(p_wis, "wisdom");
-    cha.setIcon(p_cha, "charisma");
+    str.setIcon(p_str, _("strength"));
+    dex.setIcon(p_dex, _("dexterity"));
+    con.setIcon(p_con, _("constitution"));
+    intel.setIcon(p_int, _("intelligence"));
+    wis.setIcon(p_wis, _("wisdom"));
+    cha.setIcon(p_cha, _("charisma"));
 
     align.setIcon(p_neutral);
     blank2.setIcon(p_blank2); // used for spacing when Conditions row is empty
     hunger.setIcon(p_hungry);
     encumber.setIcon(p_encumber[0]);
 
-    stoned.setIcon(p_stoned, "turning to stone");
-    slimed.setIcon(p_slimed, "turning into slime");
-    strngld.setIcon(p_strngld, "being strangled");
-    sick_fp.setIcon(p_sick_fp, "severe food poisoning");
-    sick_il.setIcon(p_sick_il, "terminal illness");
-    stunned.setIcon(p_stunned, "stunned");
-    confused.setIcon(p_confused, "confused");
-    hallu.setIcon(p_hallu, "hallucinating");
-    blind.setIcon(p_blind, "cannot see");
-    deaf.setIcon(p_deaf, "cannot hear");
-    lev.setIcon(p_lev, "levitating");
-    fly.setIcon(p_fly, "flying");
-    ride.setIcon(p_ride, "riding");
+    stoned.setIcon(p_stoned, _("turning to stone"));
+    slimed.setIcon(p_slimed, _("turning into slime"));
+    strngld.setIcon(p_strngld, _("being strangled"));
+    sick_fp.setIcon(p_sick_fp, _("severe food poisoning"));
+    sick_il.setIcon(p_sick_il, _("terminal illness"));
+    stunned.setIcon(p_stunned, _("stunned"));
+    confused.setIcon(p_confused, _("confused"));
+    hallu.setIcon(p_hallu, _("hallucinating"));
+    blind.setIcon(p_blind, _("cannot see"));
+    deaf.setIcon(p_deaf, _("cannot hear"));
+    lev.setIcon(p_lev, _("levitating"));
+    fly.setIcon(p_fly, _("flying"));
+    ride.setIcon(p_ride, _("riding"));
 
     vers.setIcon(p_vers); // used to align text-only version with conditions
 
@@ -751,20 +751,20 @@ void NetHackQtStatusWindow::updateStats()
 
     int st = ACURR(A_STR);
     if (st > STR18(100)) {
-        buf = nh_qsprintf("Str:%d", st - 100);        // 19..25
+        buf = nh_qsprintf(_("Str:%d"), st - 100);        // 19..25
     } else if (st == STR18(100)) {
-        buf = nh_qsprintf("Str:18/**");               // 18/100
+        buf = nh_qsprintf(_("Str:18/**"));               // 18/100
     } else if (st > 18) {
-        buf = nh_qsprintf("Str:18/%02d", st - 18);    // 18/01..18/99
+        buf = nh_qsprintf(_("Str:18/%02d"), st - 18);    // 18/01..18/99
     } else {
-        buf = nh_qsprintf("Str:%d", st);              //  3..18
+        buf = nh_qsprintf(_("Str:%d"), st);              //  3..18
     }
     str.setLabel(buf, NetHackQtLabelledIcon::NoNum, (long) st);
-    dex.setLabel("Dex:", (long) ACURR(A_DEX));
-    con.setLabel("Con:", (long) ACURR(A_CON));
-    intel.setLabel("Int:", (long) ACURR(A_INT));
-    wis.setLabel("Wis:", (long) ACURR(A_WIS));
-    cha.setLabel("Cha:", (long) ACURR(A_CHA));
+    dex.setLabel(_("Dex:"), (long) ACURR(A_DEX));
+    con.setLabel(_("Con:"), (long) ACURR(A_CON));
+    intel.setLabel(_("Int:"), (long) ACURR(A_INT));
+    wis.setLabel(_("Wis:"), (long) ACURR(A_WIS));
+    cha.setLabel(_("Cha:"), (long) ACURR(A_CHA));
 
     boolean spreadout = (::iflags.wc2_statuslines != 2);
     int k = 0; // number of conditions shown
@@ -855,20 +855,21 @@ void NetHackQtStatusWindow::updateStats()
         vers.hide();
 
     if (Upolyd) {
-	buf = nh_capitalize_words(pmname(&mons[u.umonnum],
-                                  ::flags.female ? FEMALE : MALE));
+	buf = nh_capitalize_words(C_("monster", pmname(&mons[u.umonnum],
+                                  ::flags.female ? FEMALE : MALE)));
     } else {
-	buf = rank_of(u.ulevel, svp.pl_character[0], ::flags.female);
+	buf = gendered_word(rank_of(u.ulevel, svp.pl_character[0],
+                                    ::flags.female), ::flags.female);
     }
     QString buf2;
     char buf3[BUFSZ];
-    buf2 = nh_qsprintf("%s the %s", upstart(strcpy(buf3, svp.plname)),
-                       buf.toLatin1().constData());
+    /* title_the() gives " the " (translated, maybe feminine or elided) */
+    buf2 = QString(upstart(strcpy(buf3, svp.plname))) + title_the() + buf;
     name.setLabel(buf2, NetHackQtLabelledIcon::NoNum, u.ulevel);
 
     if (!describe_level(buf3, 0)) {
-	Sprintf(buf3, "%s, level %d",
-                svd.dungeons[u.uz.dnum].dname, ::depth(&u.uz));
+	Snprintf(buf3, sizeof buf3, _("%s, level %d"),
+                 _(svd.dungeons[u.uz.dnum].dname), ::depth(&u.uz));
     }
     dlevel.setLabel(buf3);
 
@@ -882,26 +883,28 @@ void NetHackQtStatusWindow::updateStats()
     if (Upolyd) {
         // You're a monster!
         buf = nh_qsprintf("/%d", u.mhmax);
-        hp.setLabel("HP:", std::max((long) u.mh, 0L), buf);
-        level.setLabel("HD:", (long) mons[u.umonnum].mlevel); // hit dice
+        hp.setLabel(_("HP:"), std::max((long) u.mh, 0L), buf);
+        level.setLabel(_("HD:"), (long) mons[u.umonnum].mlevel); // hit dice
         // Exp points are not shown when HD is displayed instead of Xp level
     } else {
         // You're normal.
         buf = nh_qsprintf("/%d", u.uhpmax);
-        hp.setLabel("HP:", std::max((long) u.uhp, 0L), buf);
+        hp.setLabel(_("HP:"), std::max((long) u.uhp, 0L), buf);
         // if Exp points are to be displayed, append them to Xp level;
         // up/down highlighting becomes tricky--don't try very hard;
         // depending upon font size and status layout, "Level:NN/nnnnnnnn"
         // might be too wide to fit
-        static const char *const lvllbl[3] = { "Level:", "Lvl:", "L:" };
+        static const char *const lvllbl[3] = {
+            N_("Level:"), N_("Lvl:"), N_("L:")
+        };
         QFontMetrics fm(level.label->font());
         for (int i = ::flags.showexp ? 0 : 3; i < 4; ++i) {
             // passes 0,1,2 are with Exp, 3 is without Exp and always fits
             if (i < 3) {
-                buf = nh_qsprintf("%s%ld/%ld", lvllbl[i], (long) u.ulevel,
+                buf = nh_qsprintf("%s%ld/%ld", _(lvllbl[i]), (long) u.ulevel,
                                   u.uexp);
             } else {
-                buf = nh_qsprintf("%s%ld", lvllbl[i - 3], (long) u.ulevel);
+                buf = nh_qsprintf("%s%ld", _(lvllbl[i - 3]), (long) u.ulevel);
             }
             // +2: allow a couple of pixels at either end to be clipped off
             if (fm.size(0, buf).width() <= (2 + level.label->width() + 2))
@@ -922,33 +925,42 @@ void NetHackQtStatusWindow::updateStats()
     had_exp = (::flags.showexp && !was_polyd) ? true : false;
 
     buf = nh_qsprintf("/%d", u.uenmax);
-    power.setLabel("Pow:", (long) u.uen, buf);
-    ac.setLabel("AC:", (long) u.uac);
+    power.setLabel(_("Pow:"), (long) u.uen, buf);
+    ac.setLabel(_("AC:"), (long) u.uac);
     // gold prefix used to be "Au:", tty uses "$:"; never too wide to fit;
     // practical limit due to carrying capacity limit is less than 300K
     long goldamt = money_cnt(gi.invent);
     goldamt = std::max(goldamt, 0L); // sanity; core's botl() does likewise
     goldamt = std::min(goldamt, 99999999L); // ditto
-    gold.setLabel("Gold:", goldamt);
+    gold.setLabel(_("Gold:"), goldamt);
 
     const char *text;
     QString qtext;
     QPixmap *pxmp;
+    /* whole words and sentences, so that each can be translated */
     if (u.ualign.type == A_LAWFUL) {
         pxmp = &p_lawful;
-        text = "Lawful";
+        text = _("Lawful");
+        qtext = _("lawfully aligned");
     } else if (u.ualign.type == A_NEUTRAL) {
         pxmp = &p_neutral;
-        text = "Neutral";
+        text = _("Neutral");
+        qtext = _("neutrally aligned");
     } else {
         pxmp = &p_chaotic;
         // Unaligned should never happen
-        text = (u.ualign.type == A_CHAOTIC) ? "Chaotic"
-               : (u.ualign.type == A_NONE) ? "unaligned"
-                 : "other?";
+        if (u.ualign.type == A_CHAOTIC) {
+            text = _("Chaotic");
+            qtext = _("chaotically aligned");
+        } else if (u.ualign.type == A_NONE) {
+            text = _("unaligned");
+            qtext = _("unaligned");
+        } else {
+            text = "other?";
+            qtext = "other?";
+        }
     }
-    qtext = nh_qsprintf("%sly aligned", text);
-    align.setIcon(*pxmp, qtext.toLower());
+    align.setIcon(*pxmp, qtext);
     align.setLabel(QString(text));
     // without this, the ankh pixmap shifts from centered to left
     // justified relative to the label text for some unknown reason...
@@ -966,7 +978,7 @@ void NetHackQtStatusWindow::updateStats()
     if (::flags.time) {
         // hypothetically Time could grow to enough digits to have trouble
         // fitting, but it's not worth worrying about
-        time.setLabel("Time:", (long) svm.moves);
+        time.setLabel(_("Time:"), (long) svm.moves);
     } else {
         time.setLabel("");
     }
@@ -979,14 +991,16 @@ void NetHackQtStatusWindow::updateStats()
         long pts = botl_score();
         if (spreadout) {
             // plenty of room; Time and Score both have the width of 3 fields
-            score.setLabel("Score:", pts);
+            score.setLabel(_("Score:"), pts);
         } else {
             // depending upon font size and status layout, "Score:nnnnnnnn"
             // might be too wide to fit (simpler version of Level:NN/nnnnnnnn)
-            static const char *const scrlbl[3] = { "Score:", "Scr:", "S:" };
+            static const char *const scrlbl[3] = {
+                N_("Score:"), N_("Scr:"), N_("S:")
+            };
             QFontMetrics fm(score.label->font());
             for (int i = 0; i < 3; ++i) {
-                buf = nh_qsprintf("%s%ld", scrlbl[i], pts);
+                buf = nh_qsprintf("%s%ld", _(scrlbl[i]), pts);
                 // +2: allow couple of pixels at either end to be clipped off
                 if (fm.size(0, buf).width() <= (2 + score.width() + 2))
                     break;

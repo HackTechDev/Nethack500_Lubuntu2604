@@ -41,7 +41,7 @@ NetHackQtYnDialog::NetHackQtYnDialog(QWidget *parent, const QString &q,
     le((QLineEdit *) NULL),
     y_btn((QPushButton *) NULL)
 {
-    setWindowTitle("NetHack: Question");
+    setWindowTitle(_("NetHack: Question"));
 
     // plain prompt doesn't show any room for an answer (answer won't be
     // echoed but the fact that a prompt is pending and accepts typed
@@ -113,7 +113,11 @@ char NetHackQtYnDialog::Exec()
 		}
 	    }
 	}
-	if ( question.indexOf("what direction") >= 0 ) {
+	/* the question may be translated: also look for the translation
+	   of the English fragment */
+	if ( question.indexOf("what direction") >= 0
+             || question.contains(QString(_("what direction")),
+                                  Qt::CaseInsensitive) ) {
 	    // We replace this regardless, since sometimes you get choices.
 	    const char* d = gc.Cmd.dirchars;
 	    enable=ch;
@@ -199,40 +203,45 @@ char NetHackQtYnDialog::Exec()
                 // use alternate text is needed
                 switch (ch[i].cell()) {
                 case 'y':
-                    button_name = "Yes";
+                    button_name = _("Yes");
                     making_y = true;
                     break;
                 case 'n':
-                    button_name = "No";
+                    button_name = _("No");
                     break;
                 case 'a':
                     // the display of vanquished monsters uses "ynaq" for
                     // convenience, where 'a' requests a sort-by menu;
                     // show "sort" instead of "all" and allow player to
                     // type either 'a' or 's' when not clicking on button
-                    if (question.contains(QString("vanquished?")))
-                        button_name = "Sort", AltChoice('s', 'a');
+                    if (question.contains(QString("vanquished?"))
+                        || question.contains(
+                                       QString(_("creatures vanquished?"))))
+                        button_name = _("Sort"), AltChoice('s', 'a');
                     else
-                        button_name = "All";
+                        button_name = _("All");
                     break;
                 case 'q':
                     // most 'q' replies are actually for "cancel" but
                     // for "ynaq" (where "all" is a choice) it's "stop"
                     // and for end of game disclosure it really is "quit"
                     if (question.left(10) == QString("Dump core?")
+                        || question.startsWith(QString(_("Dump core?")))
                         || (::program_state.gameover
-                            && question.left(11) == QString("Do you want")))
-                        button_name = "Quit";
+                            && (question.left(11) == QString("Do you want")
+                                || question.startsWith(
+                                           QString(_("Do you want"))))))
+                        button_name = _("Quit");
                     else if (is_ynaq)
-                        button_name = "Stop", AltChoice('s', 'q');
+                        button_name = _("Stop"), AltChoice('s', 'q');
                     else
-                        button_name = "Cancel", AltChoice('c', 'q');
+                        button_name = _("Cancel"), AltChoice('c', 'q');
                     break;
                 case 'l':
-                    button_name = "Left";
+                    button_name = _("Left");
                     break;
                 case 'r':
-                    button_name = "Right";
+                    button_name = _("Right");
                     break;
                 }
             } else {
@@ -243,16 +252,16 @@ char NetHackQtYnDialog::Exec()
                 // labelling \n as newline or line-feed seems confusing;
                 switch (ch[i].cell()) {
                 case ' ':
-                    button_name = "Spc";
+                    button_name = _("Spc");
                     break;
                 case '\n':
-                    button_name = "Ent";
+                    button_name = _("Ent");
                     break;
                 case '\r':
-                    button_name = "Ret";
+                    button_name = _("Ret");
                     break;
                 case '\033': // won't happen; ESC is hidden
-                    button_name = "Esc";
+                    button_name = _("Esc");
                     break;
                 case '&':
                     // ampersand is used as a hidden quote char to flag
@@ -297,7 +306,7 @@ char NetHackQtYnDialog::Exec()
         QLabel *lb = 0;
         if (allow_count) {
             // insert Count widget in front of [n], between [y] and [n][a][q]
-            lb = new QLabel("Count:");
+            lb = new QLabel(_("Count:"));
             groupbox->insertWidget(1, lb); // [y] button is item #0, [n] is #1
             le = new QLineEdit();
             groupbox->insertWidget(2, le); // [n] became #2, Count label is #1
@@ -351,7 +360,7 @@ char NetHackQtYnDialog::Exec()
 
     } else {
 	QLabel label(qlabel,this);
-	QPushButton cancel("Dismiss",this);
+	QPushButton cancel(_("Dismiss"),this);
 #if __cplusplus >= 202002L
 	label.setFrameStyle(static_cast<int>(QFrame::Box)
                                 | static_cast<int>(QFrame::Sunken));

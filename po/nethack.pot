@@ -6422,6 +6422,9 @@ msgctxt "monster"
 msgid "Ravenous Bugblatter Beast of Traal"
 msgstr ""
 
+msgid "Really quit?"
+msgstr ""
+
 #, c-format
 msgid "SETVAR:%s"
 msgstr ""
@@ -25739,7 +25742,8 @@ msgstr ""
 msgid "an object on %s"
 msgstr ""
 
-#: src/apply.c:4345 src/wizcmds.c:261 src/wizcmds.c:513 src/wizcmds.c:922
+#: src/apply.c:4345 src/do_name.c:544 src/wizcmds.c:261 src/wizcmds.c:513
+#: src/wizcmds.c:922
 msgid "a monster"
 msgstr ""
 
@@ -26278,7 +26282,7 @@ msgstr ""
 msgid "Your body seems to unfade..."
 msgstr ""
 
-#: src/artifact.c:2394 src/dungeon.c:3609
+#: src/artifact.c:2394 src/dungeon.c:3610
 #, c-format
 msgid "%s:"
 msgstr ""
@@ -26792,27 +26796,27 @@ msgctxt "feminine"
 msgid "warmer"
 msgstr ""
 
-#: src/attrib.c:45
+#: src/attrib.c:45 win/Qt/qt_stat.cpp:208
 msgid "dexterity"
 msgstr ""
 
-#: src/attrib.c:45
+#: src/attrib.c:45 win/Qt/qt_stat.cpp:210
 msgid "intelligence"
 msgstr ""
 
-#: src/attrib.c:45
+#: src/attrib.c:45 win/Qt/qt_stat.cpp:207
 msgid "strength"
 msgstr ""
 
-#: src/attrib.c:45
+#: src/attrib.c:45 win/Qt/qt_stat.cpp:211
 msgid "wisdom"
 msgstr ""
 
-#: src/attrib.c:46
+#: src/attrib.c:46 win/Qt/qt_stat.cpp:212
 msgid "charisma"
 msgstr ""
 
-#: src/attrib.c:46
+#: src/attrib.c:46 win/Qt/qt_stat.cpp:209
 msgid "constitution"
 msgstr ""
 
@@ -27161,614 +27165,617 @@ msgstr ""
 msgid "You make adjustments to %s to suit your right hand."
 msgstr ""
 
-#: src/botl.c:234
+#: src/botl.c:233
 #, c-format
 msgid "bot2: second status line exceeds MAXCO (%u > %d)"
 msgstr ""
 
-#: src/botl.c:376 src/botl.c:383
+#: src/botl.c:375 src/botl.c:382
 #, c-format
 msgctxt "elided"
 msgid " the "
 msgstr ""
 
-#: src/botl.c:378
+#: src/botl.c:377
 msgid " the "
 msgstr ""
 
-#: src/botl.c:378
+#: src/botl.c:377
 #, c-format
 msgctxt "feminine"
 msgid " the "
 msgstr ""
 
-#: src/botl.c:388
+#: src/botl.c:387
 #, c-format
 msgctxt "feminine"
 msgid "Chaotic"
 msgstr ""
 
-#: src/botl.c:388
+#: src/botl.c:387
 #, c-format
 msgctxt "feminine"
 msgid "Neutral"
 msgstr ""
 
-#: src/botl.c:389
+#: src/botl.c:388
 #, c-format
 msgctxt "feminine"
 msgid "Lawful"
 msgstr ""
 
-#: src/botl.c:394
+#: src/botl.c:393
 msgid "Fainted"
 msgstr ""
 
-#: src/botl.c:394
+#: src/botl.c:393
 msgid "Fainting"
 msgstr ""
 
-#: src/botl.c:394
+#: src/botl.c:393
 msgid "Hungry"
 msgstr ""
 
-#: src/botl.c:394
+#: src/botl.c:393
 msgid "Satiated"
 msgstr ""
 
-#: src/botl.c:394
+#: src/botl.c:393
 msgid "Weak"
 msgstr ""
 
-#: src/botl.c:395
+#: src/botl.c:394
 msgid "Burdened"
 msgstr ""
 
-#: src/botl.c:395
+#: src/botl.c:394
 msgid "Starved"
 msgstr ""
 
-#: src/botl.c:395
+#: src/botl.c:394
 msgid "Strained"
 msgstr ""
 
-#: src/botl.c:395
+#: src/botl.c:394
 msgid "Stressed"
 msgstr ""
 
-#: src/botl.c:396
+#: src/botl.c:395
 msgid "Overloaded"
 msgstr ""
 
-#: src/botl.c:396
+#: src/botl.c:395
 msgid "Overtaxed"
 msgstr ""
 
-#: src/botl.c:501
+#: src/botl.c:500
 #, c-format
 msgid "Home %d"
 msgstr ""
 
-#: src/botl.c:512
+#: src/botl.c:511
 msgid "Dlvl"
 msgstr ""
 
-#: src/botl.c:512
+#: src/botl.c:511
 msgid "Tutorial"
 msgstr ""
 
-#: src/botl.c:754
+#: src/botl.c:753
 #, c-format
 msgid " St:%s"
 msgstr ""
 
-#: src/botl.c:755
+#: src/botl.c:754
 #, c-format
 msgid " Dx:%s"
 msgstr ""
 
-#: src/botl.c:756
+#: src/botl.c:755
 #, c-format
 msgid " Co:%s"
 msgstr ""
 
-#: src/botl.c:757
+#: src/botl.c:756
 #, c-format
 msgid " In:%s"
 msgstr ""
 
-#: src/botl.c:758
+#: src/botl.c:757
 #, c-format
 msgid " Wi:%s"
 msgstr ""
 
-#: src/botl.c:759
+#: src/botl.c:758
 #, c-format
 msgid " Ch:%s"
 msgstr ""
 
-#: src/botl.c:761
+#: src/botl.c:760
 #, c-format
 msgid " S:%s"
 msgstr ""
 
-#: src/botl.c:764
+#: src/botl.c:763
 #, c-format
 msgid " Pw:%s"
 msgstr ""
 
-#: src/botl.c:766
+#: src/botl.c:765
 #, c-format
 msgid " Xp:%s"
 msgstr ""
 
-#: src/botl.c:768
+#: src/botl.c:767
 #, c-format
 msgid " AC:%s"
 msgstr ""
 
-#: src/botl.c:769
+#: src/botl.c:768
 #, c-format
 msgid " HD:%s"
 msgstr ""
 
-#: src/botl.c:770
+#: src/botl.c:769
 #, c-format
 msgid " T:%s"
 msgstr ""
 
-#: src/botl.c:773
+#: src/botl.c:772
 #, c-format
 msgid " HP:%s"
 msgstr ""
 
-#: src/botl.c:834
+#: src/botl.c:833
 msgid "Bar"
 msgstr ""
 
-#: src/botl.c:834
+#: src/botl.c:833
 msgid "Bare"
 msgstr ""
 
-#: src/botl.c:834
+#: src/botl.c:833
 msgid "Bh"
 msgstr ""
 
-#: src/botl.c:836
+#: src/botl.c:835
 msgid "Bl"
 msgstr ""
 
-#: src/botl.c:836
+#: src/botl.c:835 win/Qt/qt_stat.cpp:141 win/X11/winstat.c:163
+#: win/X11/winstat.c:1414
 msgid "Blind"
 msgstr ""
 
-#: src/botl.c:836
+#: src/botl.c:835
 msgid "Blnd"
 msgstr ""
 
-#: src/botl.c:838
+#: src/botl.c:837
 msgid "Bsy"
 msgstr ""
 
-#: src/botl.c:838
+#: src/botl.c:837
 msgid "Busy"
 msgstr ""
 
-#: src/botl.c:838
+#: src/botl.c:837
 msgid "By"
 msgstr ""
 
-#: src/botl.c:840
+#: src/botl.c:839
 msgid "Cf"
 msgstr ""
 
-#: src/botl.c:840
+#: src/botl.c:839
 msgid "Cnf"
 msgstr ""
 
-#: src/botl.c:840
+#: src/botl.c:839 win/Qt/qt_stat.cpp:139 win/X11/winstat.c:166
 msgid "Conf"
 msgstr ""
 
-#: src/botl.c:842
+#: src/botl.c:841 win/Qt/qt_stat.cpp:142 win/X11/winstat.c:164
+#: win/X11/winstat.c:1415
 msgid "Deaf"
 msgstr ""
 
-#: src/botl.c:842
+#: src/botl.c:841
 msgid "Def"
 msgstr ""
 
-#: src/botl.c:842
+#: src/botl.c:841
 msgid "Df"
 msgstr ""
 
-#: src/botl.c:844
+#: src/botl.c:843
 msgid "Fe"
 msgstr ""
 
-#: src/botl.c:844
+#: src/botl.c:843
 msgid "Irn"
 msgstr ""
 
-#: src/botl.c:844
+#: src/botl.c:843
 msgid "Iron"
 msgstr ""
 
-#: src/botl.c:846
+#: src/botl.c:845
 msgid "Fl"
 msgstr ""
 
-#: src/botl.c:846
+#: src/botl.c:845 win/Qt/qt_stat.cpp:144 win/X11/winstat.c:171
 msgid "Fly"
 msgstr ""
 
-#: src/botl.c:848
+#: src/botl.c:847 win/Qt/qt_stat.cpp:136 win/X11/winstat.c:158
 msgid "FoodPois"
 msgstr ""
 
-#: src/botl.c:848
+#: src/botl.c:847
 msgid "Fpois"
 msgstr ""
 
-#: src/botl.c:848
+#: src/botl.c:847
 msgid "Poi"
 msgstr ""
 
-#: src/botl.c:850
+#: src/botl.c:849
 msgid "Gl"
 msgstr ""
 
-#: src/botl.c:850
+#: src/botl.c:849
 msgid "Glo"
 msgstr ""
 
-#: src/botl.c:850
+#: src/botl.c:849
 msgid "Glow"
 msgstr ""
 
-#: src/botl.c:852
+#: src/botl.c:851
 msgid "Gr"
 msgstr ""
 
-#: src/botl.c:852
+#: src/botl.c:851
 msgid "Grab"
 msgstr ""
 
-#: src/botl.c:852
+#: src/botl.c:851
 msgid "Grb"
 msgstr ""
 
-#: src/botl.c:854
+#: src/botl.c:853
 msgid "Hal"
 msgstr ""
 
-#: src/botl.c:854
+#: src/botl.c:853 win/Qt/qt_stat.cpp:140 win/X11/winstat.c:167
 msgid "Hallu"
 msgstr ""
 
-#: src/botl.c:854
+#: src/botl.c:853
 msgid "Hl"
 msgstr ""
 
-#: src/botl.c:856
+#: src/botl.c:855
 msgid "Hd"
 msgstr ""
 
-#: src/botl.c:856
+#: src/botl.c:855 win/X11/winstat.c:161 win/X11/winstat.c:1411
 msgid "Held"
 msgstr ""
 
-#: src/botl.c:856
+#: src/botl.c:855
 msgid "Hld"
 msgstr ""
 
-#: src/botl.c:858
+#: src/botl.c:857
 msgid "Ic"
 msgstr ""
 
-#: src/botl.c:858
+#: src/botl.c:857
 msgid "Icy"
 msgstr ""
 
-#: src/botl.c:860
+#: src/botl.c:859 win/X11/winstat.c:160
 msgid "InLava"
 msgstr ""
 
-#: src/botl.c:860
+#: src/botl.c:859
 msgid "La"
 msgstr ""
 
-#: src/botl.c:860
+#: src/botl.c:859
 msgid "Lav"
 msgstr ""
 
-#: src/botl.c:862
+#: src/botl.c:861 win/Qt/qt_stat.cpp:143 win/X11/winstat.c:170
 msgid "Lev"
 msgstr ""
 
-#: src/botl.c:862
+#: src/botl.c:861
 msgid "Lv"
 msgstr ""
 
-#: src/botl.c:864
+#: src/botl.c:863
 msgid "Par"
 msgstr ""
 
-#: src/botl.c:864
+#: src/botl.c:863
 msgid "Para"
 msgstr ""
 
-#: src/botl.c:864
+#: src/botl.c:863
 msgid "Parlyz"
 msgstr ""
 
-#: src/botl.c:866
+#: src/botl.c:865
 msgid "Rd"
 msgstr ""
 
-#: src/botl.c:866
+#: src/botl.c:865
 msgid "Rid"
 msgstr ""
 
-#: src/botl.c:866
+#: src/botl.c:865 win/Qt/qt_main.cpp:650 win/Qt/qt_stat.cpp:145
+#: win/X11/winstat.c:172
 msgid "Ride"
 msgstr ""
 
-#: src/botl.c:868
+#: src/botl.c:867
 msgid "Zz"
 msgstr ""
 
-#: src/botl.c:868
+#: src/botl.c:867
 msgid "Zzz"
 msgstr ""
 
-#: src/botl.c:870
+#: src/botl.c:869
 msgid "Slim"
 msgstr ""
 
-#: src/botl.c:870
+#: src/botl.c:869 win/Qt/qt_stat.cpp:134 win/X11/winstat.c:156
 msgid "Slime"
 msgstr ""
 
-#: src/botl.c:870
+#: src/botl.c:869
 msgid "Slm"
 msgstr ""
 
-#: src/botl.c:872
+#: src/botl.c:871
 msgid "Sl"
 msgstr ""
 
-#: src/botl.c:872
+#: src/botl.c:871
 msgid "Slip"
 msgstr ""
 
-#: src/botl.c:872
+#: src/botl.c:871
 msgid "Slp"
 msgstr ""
 
-#: src/botl.c:874
+#: src/botl.c:873
 msgid "Sto"
 msgstr ""
 
-#: src/botl.c:874
+#: src/botl.c:873
 msgid "Ston"
 msgstr ""
 
-#: src/botl.c:874
+#: src/botl.c:873 win/Qt/qt_stat.cpp:133 win/X11/winstat.c:155
 msgid "Stone"
 msgstr ""
 
-#: src/botl.c:876
+#: src/botl.c:875
 msgid "Stngl"
 msgstr ""
 
-#: src/botl.c:876
+#: src/botl.c:875 win/Qt/qt_stat.cpp:112
 msgid "Str"
 msgstr ""
 
-#: src/botl.c:876
+#: src/botl.c:875 win/Qt/qt_stat.cpp:135 win/X11/winstat.c:157
 msgid "Strngl"
 msgstr ""
 
-#: src/botl.c:878
+#: src/botl.c:877
 msgid "St"
 msgstr ""
 
-#: src/botl.c:878
+#: src/botl.c:877 win/Qt/qt_stat.cpp:138 win/X11/winstat.c:165
 msgid "Stun"
 msgstr ""
 
-#: src/botl.c:880
+#: src/botl.c:879
 msgid "Sm"
 msgstr ""
 
-#: src/botl.c:880
+#: src/botl.c:879
 msgid "Subm"
 msgstr ""
 
-#: src/botl.c:880
+#: src/botl.c:879
 msgid "Submrg"
 msgstr ""
 
-#: src/botl.c:882
+#: src/botl.c:881
 msgid "Ill"
 msgstr ""
 
-#: src/botl.c:882
+#: src/botl.c:881 win/Qt/qt_stat.cpp:137 win/X11/winstat.c:159
 msgid "TermIll"
 msgstr ""
 
-#: src/botl.c:884
+#: src/botl.c:883
 msgid "Te"
 msgstr ""
 
-#: src/botl.c:884
+#: src/botl.c:883
 msgid "Teth"
 msgstr ""
 
-#: src/botl.c:884
+#: src/botl.c:883
 msgid "Tth"
 msgstr ""
 
-#: src/botl.c:886
+#: src/botl.c:885
 msgid "Tr"
 msgstr ""
 
-#: src/botl.c:886
+#: src/botl.c:885
 msgid "Trap"
 msgstr ""
 
-#: src/botl.c:886
+#: src/botl.c:885
 msgid "Trp"
 msgstr ""
 
-#: src/botl.c:888
+#: src/botl.c:887
 msgid "KO"
 msgstr ""
 
-#: src/botl.c:888
+#: src/botl.c:887
 msgid "Out"
 msgstr ""
 
-#: src/botl.c:890
+#: src/botl.c:889
 msgid "Leg"
 msgstr ""
 
-#: src/botl.c:890
+#: src/botl.c:889
 msgid "Lg"
 msgstr ""
 
-#: src/botl.c:890
+#: src/botl.c:889
 msgid "WLegs"
 msgstr ""
 
-#: src/botl.c:892
+#: src/botl.c:891
 msgid "UHd"
 msgstr ""
 
-#: src/botl.c:892
+#: src/botl.c:891
 msgid "UHld"
 msgstr ""
 
-#: src/botl.c:892
+#: src/botl.c:891
 msgid "UHold"
 msgstr ""
 
-#: src/botl.c:1051
+#: src/botl.c:1050
 #, c-format
 msgid "bot before init."
 msgstr ""
 
-#: src/botl.c:1106
+#: src/botl.c:1105 win/Qt/qt_stat.cpp:953 win/X11/winmisc.c:1148
 msgid "Chaotic"
 msgstr ""
 
-#: src/botl.c:1107
+#: src/botl.c:1106 win/Qt/qt_stat.cpp:947 win/X11/winmisc.c:1138
 msgid "Neutral"
 msgstr ""
 
-#: src/botl.c:1108
+#: src/botl.c:1107 win/Qt/qt_stat.cpp:943 win/X11/winmisc.c:1128
 msgid "Lawful"
 msgstr ""
 
-#: src/botl.c:1775
+#: src/botl.c:1774
 #, c-format
 msgid "2nd status_initialize with full init."
 msgstr ""
 
-#: src/botl.c:1780
+#: src/botl.c:1779
 #, c-format
 msgid "status 'reassess' before init"
 msgstr ""
 
-#: src/botl.c:1847
+#: src/botl.c:1846
 #, c-format
 msgid "init_blstats called more than once."
 msgstr ""
 
-#: src/botl.c:1898
+#: src/botl.c:1897
 #, c-format
 msgid "compare_blstat: bad istat pointer %s, %s"
 msgstr ""
 
-#: src/botl.c:1906
+#: src/botl.c:1905
 #, c-format
 msgid "compare_blstat: invalid pointer %s, %s"
 msgstr ""
 
-#: src/botl.c:2071
+#: src/botl.c:2070
 #, c-format
 msgid "percentage: bad istat pointer %s, %s"
 msgstr ""
 
-#: src/botl.c:3703
+#: src/botl.c:3702
 #, c-format
 msgid "hl->behavior=percentage, rel error"
 msgstr ""
 
-#: src/botl.c:3713
+#: src/botl.c:3712
 #, c-format
 msgid "hl->behavior=updown, rel error"
 msgstr ""
 
-#: src/botl.c:3719
+#: src/botl.c:3718
 #, c-format
 msgid "hl->behavior=absolute, rel error"
 msgstr ""
 
-#: src/botl.c:3725
+#: src/botl.c:3724
 #, c-format
 msgid "hl->behavior=textmatch, rel or textmatch error"
 msgstr ""
 
-#: src/botl.c:3731
+#: src/botl.c:3730
 #, c-format
 msgid "hl->behavior=condition, rel error"
 msgstr ""
 
-#: src/botl.c:4023 src/spell.c:783
+#: src/botl.c:4022 src/spell.c:783
 msgid "That's enough tries."
 msgstr ""
 
-#: src/botl.c:4073
+#: src/botl.c:4072
 msgid "Not expecting a percentage."
 msgstr ""
 
-#: src/botl.c:4079
+#: src/botl.c:4078
 #, c-format
 msgid "\"%s\" is not a recognized number."
 msgstr ""
 
-#: src/botl.c:4083
+#: src/botl.c:4082
 msgid "Is that an invisible number?"
 msgstr ""
 
-#: src/botl.c:4100
+#: src/botl.c:4099
 #, c-format
 msgid "Field '%s' does not support percentage values."
 msgstr ""
 
-#: src/botl.c:4114
+#: src/botl.c:4113
 #, c-format
 msgid "'%s%d%%' is not a valid percent value."
 msgstr ""
 
-#: src/botl.c:4126
+#: src/botl.c:4125
 #, c-format
 msgid "%s'%s%d'%s"
 msgstr ""
 
-#: src/botl.c:4132
+#: src/botl.c:4131
 #, c-format
 msgid "%s'%s%ld'%s"
 msgstr ""
 
-#: src/botl.c:4361
+#: src/botl.c:4360
 #, c-format
 msgid "Added hilite condition/%s/%s"
 msgstr ""
 
-#: src/botl.c:4375 src/botl.c:4384
+#: src/botl.c:4374 src/botl.c:4383
 #, c-format
 msgid "Added hilite %s"
 msgstr ""
@@ -29097,7 +29104,7 @@ msgid "You are already here."
 msgstr ""
 
 #: src/cmd.c:5582 src/shk.c:3856 src/sounds.c:1372 src/trap.c:616
-#: src/windows.c:1902
+#: src/windows.c:1902 win/X11/winX.c:2611
 #, c-format
 msgid "%s %s"
 msgstr ""
@@ -30222,12 +30229,12 @@ msgctxt "feminine plural"
 msgid "%s rots away."
 msgstr ""
 
-#: src/dig.c:1454 src/dungeon.c:1772 src/dungeon.c:3562
+#: src/dig.c:1454 src/dungeon.c:1772 src/dungeon.c:3563
 msgctxt "gender"
 msgid "fountain"
 msgstr ""
 
-#: src/dig.c:1454 src/dungeon.c:1761 src/dungeon.c:3562
+#: src/dig.c:1454 src/dungeon.c:1761 src/dungeon.c:3563
 msgctxt "noun"
 msgid "fountain"
 msgstr ""
@@ -30327,12 +30334,12 @@ msgctxt "gender"
 msgid "door"
 msgstr ""
 
-#: src/dig.c:1468 src/dungeon.c:3562
+#: src/dig.c:1468 src/dungeon.c:3563
 msgctxt "gender"
 msgid "tree"
 msgstr ""
 
-#: src/dig.c:1468 src/dungeon.c:3561
+#: src/dig.c:1468 src/dungeon.c:3562
 msgctxt "noun"
 msgid "tree"
 msgstr ""
@@ -30662,7 +30669,7 @@ msgstr ""
 msgid "kicking"
 msgstr ""
 
-#: src/do.c:51
+#: src/do.c:51 win/Qt/qt_stat.cpp:231
 msgid "riding"
 msgstr ""
 
@@ -31615,6 +31622,30 @@ msgstr ""
 #: src/do_name.c:372
 #, c-format
 msgid "You engrave: \"%s\"."
+msgstr ""
+
+#: src/do_name.c:550
+msgid "a particular object in inventory"
+msgstr ""
+
+#: src/do_name.c:554
+msgid "the type of an object in inventory"
+msgstr ""
+
+#: src/do_name.c:559
+msgid "the type of an object upon the floor"
+msgstr ""
+
+#: src/do_name.c:563
+msgid "the type of an object on discoveries list"
+msgstr ""
+
+#: src/do_name.c:567
+msgid "record an annotation for the current level"
+msgstr ""
+
+#: src/do_name.c:569
+msgid "What do you want to name?"
 msgstr ""
 
 #: src/do_name.c:586
@@ -34598,11 +34629,11 @@ msgstr ""
 msgid "No boundary for Wizard's Tower?"
 msgstr ""
 
-#: src/dungeon.c:2273 src/dungeon.c:3555
+#: src/dungeon.c:2273 src/dungeon.c:3556
 msgid "Portal"
 msgstr ""
 
-#: src/dungeon.c:2275 src/dungeon.c:3555
+#: src/dungeon.c:2275 src/dungeon.c:3556
 msgid "Connection"
 msgstr ""
 
@@ -34628,7 +34659,7 @@ msgstr ""
 msgid "%s: depths %d to %d"
 msgstr ""
 
-#: src/dungeon.c:2346 src/dungeon.c:3616
+#: src/dungeon.c:2346 src/dungeon.c:3617
 #, c-format
 msgid "%s: levels %d to %d"
 msgstr ""
@@ -34699,277 +34730,282 @@ msgstr ""
 msgid "You remember this level as %s."
 msgstr ""
 
-#: src/dungeon.c:2818
+#: src/dungeon.c:2552
+#, c-format
+msgid "Replace annotation \"%.30s%s\" with?"
+msgstr ""
+
+#: src/dungeon.c:2819
 #, c-format
 msgid "general, size %ld"
 msgstr ""
 
-#: src/dungeon.c:2822
+#: src/dungeon.c:2823
 #, c-format
 msgid "cemetery, size %ld"
 msgstr ""
 
-#: src/dungeon.c:2828
+#: src/dungeon.c:2829
 msgid "annotations, text"
 msgstr ""
 
-#: src/dungeon.c:3503
+#: src/dungeon.c:3504
 #, c-format
 msgid "notes \"%s\""
 msgstr ""
 
-#: src/dungeon.c:3505
+#: src/dungeon.c:3506
 msgid "5-note tune"
 msgstr ""
 
-#: src/dungeon.c:3506
+#: src/dungeon.c:3507
 #, c-format
 msgid " (play %s to open or close drawbridge)"
 msgstr ""
 
-#: src/dungeon.c:3551
+#: src/dungeon.c:3552
 msgid "Sokoban"
 msgstr ""
 
-#: src/dungeon.c:3551
+#: src/dungeon.c:3552
 msgid "The Dungeons of Doom"
 msgstr ""
 
-#: src/dungeon.c:3551
+#: src/dungeon.c:3552
 msgid "The Gnomish Mines"
 msgstr ""
 
-#: src/dungeon.c:3552
+#: src/dungeon.c:3553
 msgid "Fort Ludios"
 msgstr ""
 
-#: src/dungeon.c:3552
+#: src/dungeon.c:3553
 msgid "Gehennom"
 msgstr ""
 
-#: src/dungeon.c:3552
+#: src/dungeon.c:3553
 msgid "The Elemental Planes"
 msgstr ""
 
-#: src/dungeon.c:3552
+#: src/dungeon.c:3553
 msgid "The Quest"
 msgstr ""
 
-#: src/dungeon.c:3553
+#: src/dungeon.c:3554
 msgid "Astral Plane"
 msgstr ""
 
-#: src/dungeon.c:3553
+#: src/dungeon.c:3554
 msgid "Plane of Water"
 msgstr ""
 
-#: src/dungeon.c:3553
+#: src/dungeon.c:3554
 msgid "The Tutorial"
 msgstr ""
 
-#: src/dungeon.c:3553
+#: src/dungeon.c:3554
 msgid "Vlad's Tower"
 msgstr ""
 
-#: src/dungeon.c:3554
+#: src/dungeon.c:3555
 msgid "Plane of Air"
 msgstr ""
 
-#: src/dungeon.c:3554
+#: src/dungeon.c:3555
 msgid "Plane of Earth"
 msgstr ""
 
-#: src/dungeon.c:3554
+#: src/dungeon.c:3555
 msgid "Plane of Fire"
 msgstr ""
 
-#: src/dungeon.c:3555
+#: src/dungeon.c:3556
 msgid "One way stairs up"
 msgstr ""
 
-#: src/dungeon.c:3555
+#: src/dungeon.c:3556
 msgid "Sealed portal"
 msgstr ""
 
-#: src/dungeon.c:3556
+#: src/dungeon.c:3557
 msgid "One way stairs down"
 msgstr ""
 
-#: src/dungeon.c:3556
+#: src/dungeon.c:3557
 msgid "Stairs down"
 msgstr ""
 
-#: src/dungeon.c:3556
+#: src/dungeon.c:3557
 msgid "Stairs up"
 msgstr ""
 
-#: src/dungeon.c:3557
+#: src/dungeon.c:3558
 msgctxt "noun plural"
 msgid "shop"
 msgstr ""
 
-#: src/dungeon.c:3557
+#: src/dungeon.c:3558
 msgctxt "noun plural"
 msgid "temple"
 msgstr ""
 
-#: src/dungeon.c:3558
+#: src/dungeon.c:3559
 msgctxt "noun plural"
 msgid "altar"
 msgstr ""
 
-#: src/dungeon.c:3558
+#: src/dungeon.c:3559
 msgctxt "noun plural"
 msgid "throne"
 msgstr ""
 
-#: src/dungeon.c:3559
+#: src/dungeon.c:3560
 msgctxt "noun plural"
 msgid "fountain"
 msgstr ""
 
-#: src/dungeon.c:3559
+#: src/dungeon.c:3560
 msgctxt "noun plural"
 msgid "sink"
 msgstr ""
 
-#: src/dungeon.c:3560
+#: src/dungeon.c:3561
 msgctxt "noun plural"
 msgid "grave"
 msgstr ""
 
-#: src/dungeon.c:3560
+#: src/dungeon.c:3561
 msgctxt "noun plural"
 msgid "tree"
 msgstr ""
 
-#: src/dungeon.c:3561
+#: src/dungeon.c:3562
 msgctxt "gender"
 msgid "temple"
 msgstr ""
 
-#: src/dungeon.c:3561
+#: src/dungeon.c:3562
 msgctxt "noun"
 msgid "temple"
 msgstr ""
 
-#: src/dungeon.c:3577
+#: src/dungeon.c:3578
 #, c-format
 msgid "many %s"
 msgstr ""
 
-#: src/dungeon.c:3577 src/objnam.c:647
+#: src/dungeon.c:3578 src/objnam.c:647
 #, c-format
 msgid "some %s"
 msgstr ""
 
-#: src/dungeon.c:3611
+#: src/dungeon.c:3612
 #, c-format
 msgid "%s: levels %d up to %d"
 msgstr ""
 
-#: src/dungeon.c:3629
+#: src/dungeon.c:3630
 #, c-format
 msgid "%sLevel %d:"
 msgstr ""
 
-#: src/dungeon.c:3644
+#: src/dungeon.c:3645
 msgid " <- You are here."
 msgstr ""
 
-#: src/dungeon.c:3646
+#: src/dungeon.c:3647
 msgid " <- You left from here."
 msgstr ""
 
-#: src/dungeon.c:3647
+#: src/dungeon.c:3648
 msgid " <- You were here."
 msgstr ""
 
-#: src/dungeon.c:3676 src/end.c:1510 src/insight.c:1920
+#: src/dungeon.c:3677 src/end.c:1510 src/insight.c:1920
 #, c-format
 msgid " and %s"
 msgstr ""
 
-#: src/dungeon.c:3686
+#: src/dungeon.c:3687
 #, c-format
 msgid " to %s"
 msgstr ""
 
-#: src/dungeon.c:3753
+#: src/dungeon.c:3754
 msgid "Oracle of Delphi."
 msgstr ""
 
-#: src/dungeon.c:3756
+#: src/dungeon.c:3757
 msgid "Solved."
 msgstr ""
 
-#: src/dungeon.c:3756
+#: src/dungeon.c:3757
 msgid "Unsolved."
 msgstr ""
 
-#: src/dungeon.c:3758
+#: src/dungeon.c:3759
 msgid "A very big room."
 msgstr ""
 
-#: src/dungeon.c:3760
+#: src/dungeon.c:3761
 msgid "A primitive area."
 msgstr ""
 
-#: src/dungeon.c:3763
+#: src/dungeon.c:3764
 msgid "Home (no way back...)."
 msgstr ""
 
-#: src/dungeon.c:3764
+#: src/dungeon.c:3765
 msgid "Home."
 msgstr ""
 
-#: src/dungeon.c:3766
+#: src/dungeon.c:3767
 #, c-format
 msgid "%sCompleted quest for %s."
 msgstr ""
 
-#: src/dungeon.c:3769
+#: src/dungeon.c:3770
 #, c-format
 msgid "%sGiven quest by %s."
 msgstr ""
 
-#: src/dungeon.c:3775
+#: src/dungeon.c:3776
 msgid "Fort Ludios."
 msgstr ""
 
-#: src/dungeon.c:3777
+#: src/dungeon.c:3778
 #, c-format
 msgid "%sThe castle%s."
 msgstr ""
 
-#: src/dungeon.c:3780
+#: src/dungeon.c:3781
 msgid "Valley of the Dead."
 msgstr ""
 
-#: src/dungeon.c:3782
+#: src/dungeon.c:3783
 msgid "Gateway to Moloch's Sanctum."
 msgstr ""
 
-#: src/dungeon.c:3784
+#: src/dungeon.c:3785
 msgid "Moloch's Sanctum."
 msgstr ""
 
-#: src/dungeon.c:3791
+#: src/dungeon.c:3792
 #, c-format
 msgid "%sSummoned by %s."
 msgstr ""
 
-#: src/dungeon.c:3798
+#: src/dungeon.c:3799
 #, c-format
 msgid "%s%s to %s"
 msgstr ""
 
-#: src/dungeon.c:3807
+#: src/dungeon.c:3808 win/X11/winstat.c:1570
 #, c-format
 msgid ", level %d"
 msgstr ""
 
-#: src/dungeon.c:3821
+#: src/dungeon.c:3822
 msgid "Final resting place for"
 msgstr ""
 
@@ -36153,7 +36189,7 @@ msgstr ""
 msgid "Create SnapShot?"
 msgstr ""
 
-#: src/end.c:167
+#: src/end.c:167 win/Qt/qt_yndlg.cpp:229
 msgid "Dump core?"
 msgstr ""
 
@@ -40181,11 +40217,11 @@ msgstr ""
 msgid "Autopickup "
 msgstr ""
 
-#: src/insight.c:233
+#: src/insight.c:233 win/Qt/qt_stat.cpp:230
 msgid "flying"
 msgstr ""
 
-#: src/insight.c:233
+#: src/insight.c:233 win/Qt/qt_stat.cpp:229
 msgid "levitating"
 msgstr ""
 
@@ -40197,7 +40233,7 @@ msgstr ""
 msgid "swimming"
 msgstr ""
 
-#: src/insight.c:234
+#: src/insight.c:234 win/Qt/qt_stat.cpp:219
 msgid "turning to stone"
 msgstr ""
 
@@ -40209,7 +40245,7 @@ msgstr ""
 msgid "terminally sick from illness"
 msgstr ""
 
-#: src/insight.c:235
+#: src/insight.c:235 win/Qt/qt_stat.cpp:220
 msgid "turning into slime"
 msgstr ""
 
@@ -40217,7 +40253,7 @@ msgstr ""
 msgid "nauseated"
 msgstr ""
 
-#: src/insight.c:236 src/mhitu.c:1767
+#: src/insight.c:236 src/mhitu.c:1767 win/Qt/qt_stat.cpp:224
 msgid "stunned"
 msgstr ""
 
@@ -40225,7 +40261,7 @@ msgstr ""
 msgid "terminally sick from food poisoning"
 msgstr ""
 
-#: src/insight.c:237 src/mhitu.c:1766
+#: src/insight.c:237 src/mhitu.c:1766 win/Qt/qt_stat.cpp:225
 msgid "confused"
 msgstr ""
 
@@ -40233,7 +40269,7 @@ msgstr ""
 msgid "deaf"
 msgstr ""
 
-#: src/insight.c:237
+#: src/insight.c:237 win/Qt/qt_stat.cpp:226
 msgid "hallucinating"
 msgstr ""
 
@@ -42800,7 +42836,8 @@ msgstr ""
 msgid "tiny"
 msgstr ""
 
-#: src/insight.c:4027 src/role.c:766
+#: src/insight.c:4027 src/role.c:766 win/Qt/qt_stat.cpp:956
+#: win/Qt/qt_stat.cpp:957
 msgid "unaligned"
 msgstr ""
 
@@ -51698,11 +51735,11 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/options.c:115
+#: src/options.c:115 win/Qt/qt_main.cpp:797
 msgid "Map"
 msgstr ""
 
-#: src/options.c:115
+#: src/options.c:115 win/Qt/qt_main.cpp:799
 msgid "Status"
 msgstr ""
 
@@ -51854,7 +51891,7 @@ msgstr ""
 msgid "  (for autopickup)"
 msgstr ""
 
-#: src/options.c:8672
+#: src/options.c:8672 win/Qt/qt_main.cpp:602
 msgid "Options"
 msgstr ""
 
@@ -61106,552 +61143,552 @@ msgstr ""
 msgid "restore_msghistory: msg too big (%d)"
 msgstr ""
 
-#: src/rip.c:109
+#: src/rip.c:108
 msgctxt "killed by"
 msgid "choked on "
 msgstr ""
 
-#: src/rip.c:109
+#: src/rip.c:108
 msgctxt "killed by"
 msgid "killed by "
 msgstr ""
 
-#: src/rip.c:110
+#: src/rip.c:109
 msgctxt "killed by"
 msgid "died of "
 msgstr ""
 
-#: src/rip.c:110
+#: src/rip.c:109
 msgctxt "killed by"
 msgid "poisoned by "
 msgstr ""
 
-#: src/rip.c:111
+#: src/rip.c:110
 msgctxt "killed by"
 msgid "burned by "
 msgstr ""
 
-#: src/rip.c:111
+#: src/rip.c:110
 msgctxt "killed by"
 msgid "drowned in "
 msgstr ""
 
-#: src/rip.c:112
+#: src/rip.c:111
 msgctxt "killed by"
 msgid "crushed to death by "
 msgstr ""
 
-#: src/rip.c:112
+#: src/rip.c:111
 msgctxt "killed by"
 msgid "dissolved in "
 msgstr ""
 
-#: src/rip.c:113
+#: src/rip.c:112
 msgctxt "killed by"
 msgid "petrified by "
 msgstr ""
 
-#: src/rip.c:113
+#: src/rip.c:112
 msgctxt "killed by"
 msgid "turned to slime by "
+msgstr ""
+
+#: src/rip.c:113
+msgctxt "feminine killed by"
+msgid "killed by "
 msgstr ""
 
 #: src/rip.c:114
 msgctxt "feminine killed by"
-msgid "killed by "
+msgid "choked on "
 msgstr ""
 
 #: src/rip.c:115
 msgctxt "feminine killed by"
-msgid "choked on "
+msgid "poisoned by "
 msgstr ""
 
 #: src/rip.c:116
 msgctxt "feminine killed by"
-msgid "poisoned by "
+msgid "died of "
 msgstr ""
 
 #: src/rip.c:117
 msgctxt "feminine killed by"
-msgid "died of "
+msgid "drowned in "
 msgstr ""
 
 #: src/rip.c:118
 msgctxt "feminine killed by"
-msgid "drowned in "
+msgid "burned by "
 msgstr ""
 
 #: src/rip.c:119
 msgctxt "feminine killed by"
-msgid "burned by "
+msgid "dissolved in "
 msgstr ""
 
 #: src/rip.c:120
 msgctxt "feminine killed by"
-msgid "dissolved in "
+msgid "crushed to death by "
 msgstr ""
 
 #: src/rip.c:121
 msgctxt "feminine killed by"
-msgid "crushed to death by "
+msgid "petrified by "
 msgstr ""
 
 #: src/rip.c:122
 msgctxt "feminine killed by"
-msgid "petrified by "
-msgstr ""
-
-#: src/rip.c:123
-msgctxt "feminine killed by"
 msgid "turned to slime by "
 msgstr ""
 
-#: src/rip.c:124
+#: src/rip.c:123
 msgctxt "tombstone"
 msgid "      IN      "
 msgstr ""
 
-#: src/rip.c:124
+#: src/rip.c:123
 msgctxt "tombstone"
 msgid "    REST    "
 msgstr ""
 
-#: src/rip.c:125
+#: src/rip.c:124
 msgctxt "tombstone"
 msgid "     PEACE      "
 msgstr ""
 
-#: src/rip.c:142
+#: src/rip.c:141
 msgctxt "killer"
 msgid "a grappling hook"
 msgstr ""
 
-#: src/rip.c:143
+#: src/rip.c:142
 msgctxt "killer a"
 msgid "acidic chair"
 msgstr ""
 
-#: src/rip.c:144
+#: src/rip.c:143
 msgctxt "killer a"
 msgid "acidic corpse"
 msgstr ""
 
-#: src/rip.c:145
+#: src/rip.c:144
 msgctxt "killer a"
 msgid "acidic glob"
 msgstr ""
 
-#: src/rip.c:146
+#: src/rip.c:145
 msgctxt "killer a"
 msgid "alchemic blast"
 msgstr ""
 
-#: src/rip.c:147
+#: src/rip.c:146
 msgctxt "killer a"
 msgid "anti-magic implosion"
 msgstr ""
 
-#: src/rip.c:148
+#: src/rip.c:147
 msgctxt "killer"
 msgid "axing a hard object"
 msgstr ""
 
-#: src/rip.c:149
+#: src/rip.c:148
 msgctxt "killer a"
 msgid "bear trap"
 msgstr ""
 
-#: src/rip.c:150
+#: src/rip.c:149
 msgctxt "killer"
 msgid "boiling water"
 msgstr ""
 
-#: src/rip.c:151
+#: src/rip.c:150
 msgctxt "killer a"
 msgid "cadaver"
 msgstr ""
 
-#: src/rip.c:152
+#: src/rip.c:151
 msgctxt "killer a"
 msgid "carnivorous bag"
 msgstr ""
 
-#: src/rip.c:153
+#: src/rip.c:152
 msgctxt "killer a"
 msgid "closing drawbridge"
 msgstr ""
 
-#: src/rip.c:154
+#: src/rip.c:153
 msgctxt "killer a"
 msgid "collapsing drawbridge"
 msgstr ""
 
-#: src/rip.c:155
+#: src/rip.c:154
 msgctxt "killer"
 msgid "colliding with the ceiling"
 msgstr ""
 
-#: src/rip.c:156
+#: src/rip.c:155
 msgctxt "killer"
 msgid "committed suicide"
 msgstr ""
 
-#: src/rip.c:157
+#: src/rip.c:156
 msgctxt "killer"
 msgid "contusion from a small passage"
 msgstr ""
 
-#: src/rip.c:158
+#: src/rip.c:157
 msgctxt "killer"
 msgid "crunched in the head by an iron ball"
 msgstr ""
 
-#: src/rip.c:159
+#: src/rip.c:158
 msgctxt "killer"
 msgid "crushed to death underneath a drawbridge"
 msgstr ""
 
-#: src/rip.c:160
+#: src/rip.c:159
 msgctxt "killer a"
 msgid "cursed throne"
 msgstr ""
 
-#: src/rip.c:161
+#: src/rip.c:160
 msgctxt "killer"
 msgid "dangerous winds"
 msgstr ""
 
-#: src/rip.c:162
+#: src/rip.c:161
 msgctxt "killer"
 msgid "deliberately meeting Medusa's gaze"
 msgstr ""
 
-#: src/rip.c:163
+#: src/rip.c:162
 msgctxt "killer"
 msgid "deliberately plunged into a pit"
 msgstr ""
 
-#: src/rip.c:164
+#: src/rip.c:163
 msgctxt "killer"
 msgid "dragged downstairs by an iron ball"
 msgstr ""
 
-#: src/rip.c:165
+#: src/rip.c:164
 msgctxt "killer a"
 msgid "electric chair"
 msgstr ""
 
-#: src/rip.c:166
+#: src/rip.c:165
 msgctxt "killer a"
 msgid "electric shock"
 msgstr ""
 
-#: src/rip.c:167
+#: src/rip.c:166
 msgctxt "killer"
 msgid "elementary physics"
 msgstr ""
 
-#: src/rip.c:168
+#: src/rip.c:167
 msgctxt "killer"
 msgid "exhaustion"
 msgstr ""
 
-#: src/rip.c:169
+#: src/rip.c:168
 msgctxt "killer a"
 msgid "exploding crystal ball"
 msgstr ""
 
-#: src/rip.c:170
+#: src/rip.c:169
 msgctxt "killer a"
 msgid "exploding drawbridge"
 msgstr ""
 
-#: src/rip.c:171
+#: src/rip.c:170
 msgctxt "killer a"
 msgid "exploding ring"
 msgstr ""
 
-#: src/rip.c:172
+#: src/rip.c:171
 msgctxt "killer a"
 msgid "exploding rune"
 msgstr ""
 
-#: src/rip.c:173
+#: src/rip.c:172
 msgctxt "killer a"
 msgid "exploding wand"
 msgstr ""
 
-#: src/rip.c:174
+#: src/rip.c:173
 msgctxt "killer a"
 msgid "explosion"
 msgstr ""
 
-#: src/rip.c:175
+#: src/rip.c:174
 msgctxt "killer"
 msgid "falling down a mine shaft"
 msgstr ""
 
-#: src/rip.c:176
+#: src/rip.c:175
 msgctxt "killer a"
 msgid "falling drawbridge"
 msgstr ""
 
-#: src/rip.c:177
+#: src/rip.c:176
 msgctxt "killer a"
 msgid "falling object"
 msgstr ""
 
-#: src/rip.c:178
+#: src/rip.c:177
 msgctxt "killer"
 msgid "falling off a ladder"
 msgstr ""
 
-#: src/rip.c:179
+#: src/rip.c:178
 msgctxt "killer a"
 msgid "falling rock"
 msgstr ""
 
-#: src/rip.c:180
+#: src/rip.c:179
 msgctxt "killer"
 msgid "fell from a drawbridge"
 msgstr ""
 
-#: src/rip.c:181
+#: src/rip.c:180
 msgctxt "killer"
 msgid "fell into a chasm"
 msgstr ""
 
-#: src/rip.c:182
+#: src/rip.c:181
 msgctxt "killer"
 msgid "fell into a pit"
 msgstr ""
 
-#: src/rip.c:183
+#: src/rip.c:182
 msgctxt "killer a"
 msgid "gas cloud"
 msgstr ""
 
-#: src/rip.c:184
+#: src/rip.c:183
 msgctxt "killer"
 msgid "genocidal confusion"
 msgstr ""
 
-#: src/rip.c:185
+#: src/rip.c:184
 msgctxt "killer"
 msgid "hurt in a chasm"
 msgstr ""
 
-#: src/rip.c:186
+#: src/rip.c:185
 msgctxt "killer a"
 msgid "imperious order"
 msgstr ""
 
-#: src/rip.c:187
+#: src/rip.c:186
 msgctxt "killer a"
 msgid "iron ball collision"
 msgstr ""
 
-#: src/rip.c:188
+#: src/rip.c:187
 msgctxt "killer"
 msgid "jumping out of a bear trap"
 msgstr ""
 
-#: src/rip.c:189
+#: src/rip.c:188
 msgctxt "killer"
 msgid "killed by petrification"
 msgstr ""
 
-#: src/rip.c:190
+#: src/rip.c:189
 msgctxt "killer"
 msgid "killed while stuck in creature form"
 msgstr ""
 
-#: src/rip.c:191
+#: src/rip.c:190
 msgctxt "killer a"
 msgid "land mine"
 msgstr ""
 
-#: src/rip.c:192
+#: src/rip.c:191
 msgctxt "killer"
 msgid "leg damage from being pulled out of a bear trap"
 msgstr ""
 
-#: src/rip.c:193
+#: src/rip.c:192
 msgctxt "killer a"
 msgid "magical explosion"
 msgstr ""
 
-#: src/rip.c:194
+#: src/rip.c:193
 msgctxt "killer a"
 msgid "mildly contaminated potion"
 msgstr ""
 
-#: src/rip.c:195
+#: src/rip.c:194
 msgctxt "killer"
 msgid "molten lava"
 msgstr ""
 
-#: src/rip.c:196
+#: src/rip.c:195
 msgctxt "killer a"
 msgid "potion of acid"
 msgstr ""
 
-#: src/rip.c:197
+#: src/rip.c:196
 msgctxt "killer a"
 msgid "potion of holy water"
 msgstr ""
 
-#: src/rip.c:198
+#: src/rip.c:197
 msgctxt "killer a"
 msgid "potion of unholy water"
 msgstr ""
 
-#: src/rip.c:199
+#: src/rip.c:198
 msgctxt "killer a"
 msgid "propelled potion"
 msgstr ""
 
-#: src/rip.c:200
+#: src/rip.c:199
 msgctxt "killer a"
 msgid "psychic blast"
 msgstr ""
 
-#: src/rip.c:201
+#: src/rip.c:200
 msgctxt "killer"
 msgid "quaffing a burning potion of oil"
 msgstr ""
 
-#: src/rip.c:202
+#: src/rip.c:201
 msgctxt "killer a"
 msgid "quit while already on Charon's boat"
 msgstr ""
 
-#: src/rip.c:203
+#: src/rip.c:202
 msgctxt "killer a"
 msgid "residual undead turning effect"
 msgstr ""
 
-#: src/rip.c:204
+#: src/rip.c:203
 msgctxt "killer a"
 msgid "riding accident"
 msgstr ""
 
-#: src/rip.c:205
+#: src/rip.c:204
 msgctxt "killer a"
 msgid "rotted glob"
 msgstr ""
 
-#: src/rip.c:206
+#: src/rip.c:205
 msgctxt "killer a"
 msgid "rotten lump of royal jelly"
 msgstr ""
 
-#: src/rip.c:207
+#: src/rip.c:206
 msgctxt "killer"
 msgid "rusting away"
 msgstr ""
 
-#: src/rip.c:208
+#: src/rip.c:207
 msgctxt "killer a"
 msgid "scroll of earth"
 msgstr ""
 
-#: src/rip.c:209
+#: src/rip.c:208
 msgctxt "killer a"
 msgid "scroll of fire"
 msgstr ""
 
-#: src/rip.c:210
+#: src/rip.c:209
 msgctxt "killer a"
 msgid "scroll of genocide"
 msgstr ""
 
-#: src/rip.c:211
+#: src/rip.c:210
 msgctxt "killer"
 msgid "self-genocide"
 msgstr ""
 
-#: src/rip.c:212
+#: src/rip.c:211
 msgctxt "killer"
 msgid "sipping boiling water"
 msgstr ""
 
-#: src/rip.c:213
+#: src/rip.c:212
 msgctxt "killer"
 msgid "sitting in lava"
 msgstr ""
 
-#: src/rip.c:214
+#: src/rip.c:213
 msgctxt "killer"
 msgid "sitting on an iron spike"
 msgstr ""
 
-#: src/rip.c:215
+#: src/rip.c:214
 msgctxt "killer"
 msgid "sitting on lava"
 msgstr ""
 
-#: src/rip.c:216
+#: src/rip.c:215
 msgctxt "killer"
 msgid "slimicide"
 msgstr ""
 
-#: src/rip.c:217
+#: src/rip.c:216
 msgctxt "killer"
 msgid "squished under a boulder"
 msgstr ""
 
-#: src/rip.c:218
+#: src/rip.c:217
 msgctxt "killer"
 msgid "starvation"
 msgstr ""
 
-#: src/rip.c:219
+#: src/rip.c:218
 msgctxt "killer a"
 msgid "system shock"
 msgstr ""
 
-#: src/rip.c:220
+#: src/rip.c:219
 msgctxt "killer a"
 msgid "thrown potion"
 msgstr ""
 
-#: src/rip.c:221
+#: src/rip.c:220
 msgctxt "killer"
 msgid "tumbling down a flight of stairs"
 msgstr ""
 
-#: src/rip.c:222
+#: src/rip.c:221
 msgctxt "killer"
 msgid "turned into green slime"
 msgstr ""
 
-#: src/rip.c:223
+#: src/rip.c:222
 msgctxt "killer a"
 msgid "unrefrigerated sip of juice"
 msgstr ""
 
-#: src/rip.c:224
+#: src/rip.c:223
 msgctxt "killer a"
 msgid "unsuccessful polymorph"
 msgstr ""
 
-#: src/rip.c:225
+#: src/rip.c:224
 msgctxt "killer a"
 msgid "wand"
 msgstr ""
 
-#: src/rip.c:226
+#: src/rip.c:225
 msgctxt "killer"
 msgid "went to heaven prematurely"
 msgstr ""
 
-#: src/rip.c:227
+#: src/rip.c:226
 msgctxt "killer"
 msgid "tasting cockatrice meat"
 msgstr ""
 
-#: src/rip.c:228
+#: src/rip.c:227
 msgctxt "killer"
 msgid "touching a cockatrice corpse"
 msgstr ""
@@ -63110,11 +63147,12 @@ msgstr ""
 msgid "Set role/race/&c filtering"
 msgstr ""
 
-#: src/role.c:2033
+#: src/role.c:2033 win/Qt/qt_plsel.cpp:200 win/X11/winmisc.c:1188
 msgid "Random"
 msgstr ""
 
-#: src/role.c:2038 src/role.c:2757
+#: src/role.c:2038 src/role.c:2757 win/Qt/qt_plsel.cpp:202
+#: win/Qt/qt_svsel.cpp:87 win/Qt/qt_yndlg.cpp:234 win/X11/winmisc.c:1214
 msgid "Quit"
 msgstr ""
 
@@ -63143,7 +63181,7 @@ msgstr ""
 msgid "Incompatible role!"
 msgstr ""
 
-#: src/role.c:2406
+#: src/role.c:2406 win/X11/winmisc.c:1309
 msgid "Pick a role or profession"
 msgstr ""
 
@@ -63151,7 +63189,7 @@ msgstr ""
 msgid "Incompatible race!"
 msgstr ""
 
-#: src/role.c:2500
+#: src/role.c:2500 win/X11/winmisc.c:1388
 msgid "Pick a race or species"
 msgstr ""
 
@@ -63159,7 +63197,7 @@ msgstr ""
 msgid "Incompatible gender!"
 msgstr ""
 
-#: src/role.c:2588
+#: src/role.c:2588 win/X11/winmisc.c:1465
 msgid "Pick a gender or sex"
 msgstr ""
 
@@ -63167,7 +63205,7 @@ msgstr ""
 msgid "Incompatible alignment!"
 msgstr ""
 
-#: src/role.c:2674
+#: src/role.c:2674 win/X11/winmisc.c:1540
 msgid "Pick an alignment or creed"
 msgstr ""
 
@@ -68632,7 +68670,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 06:29+0200\n"
+"POT-Creation-Date: 2026-10-03 10:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68845,7 +68883,8 @@ msgstr ""
 msgid "escaped the dungeon"
 msgstr ""
 
-#: src/topten.c:949
+#: src/topten.c:949 win/X11/winmisc.c:1314 win/X11/winmisc.c:1393
+#: win/X11/winmisc.c:1470 win/X11/winmisc.c:1544
 msgid "quit"
 msgstr ""
 
@@ -76896,6 +76935,1355 @@ msgstr ""
 msgid "Nothing fitting that description exists in the game."
 msgstr ""
 
+#: win/Qt/qt_bind.cpp:139
+msgid "Loading..."
+msgstr ""
+
+#: win/Qt/qt_bind.cpp:478
+#, c-format
+msgid "File not found: %s\n"
+msgstr ""
+
+#: win/Qt/qt_bind.cpp:479
+msgid "File Error"
+msgstr ""
+
+#: win/Qt/qt_bind.cpp:790 win/Qt/qt_bind.cpp:828 win/tty/wintty.c:184
+#: win/tty/wintty.c:3641
+msgid "--More--"
+msgstr ""
+
+#: win/Qt/qt_glyph.cpp:66
+#, c-format
+msgid "Cannot load '%s'."
+msgstr ""
+
+#: win/Qt/qt_glyph.cpp:69
+msgid "nhtiles.bmp' or 'x11tiles"
+msgstr ""
+
+#: win/Qt/qt_glyph.cpp:70 win/Qt/qt_rip.cpp:40
+msgid "IO Error"
+msgstr ""
+
+#: win/Qt/qt_glyph.cpp:75
+#, c-format
+msgid "Tile file \"%s\" has %d columns, not multiple of row count (%d)"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:209
+msgid "nothing readied for firing"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:210
+msgid "no weapon"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:215
+msgid "no alternate weapon"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:217
+msgid "secondary weapon is wielded"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:218
+msgid "no right ring"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:222
+msgid "no active light sources"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:226
+msgid "no helmet"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:227
+msgid "no amulet"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:228
+msgid "no cloak"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:229
+msgid "no suit"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:230
+msgid "no shirt"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:231
+msgid "no boots"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:234
+msgid "no eyewear"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:243
+msgid "no shield"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:244
+msgid "no gloves"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:245
+msgid "no left ring"
+msgstr ""
+
+#: win/Qt/qt_inv.cpp:247
+msgid "no leashes in use"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:472
+#, c-format
+msgid "NetHack-Qt is a version of NetHack built using KDE and the Qt %d GUI toolkit.\n"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:475
+#, c-format
+msgid "NetHack-Qt is a version of NetHack built using the Qt %d GUI toolkit.\n"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:486
+#, c-format
+msgid " with Qt %s"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:488
+#, c-format
+msgid "This is %s%s and Lua %s.\n"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:493
+msgid "NetHack's Qt interface originally developed by Warwick Allison.\n"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:588
+msgid "Extended-commands"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:590
+msgid "Version"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:591
+msgid "Compilation"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:592
+msgid "History"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:593
+msgid "Redraw"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:603
+msgid "Explore mode"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:605
+msgid "Save-and-exit"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:613
+msgid "Quit-without-saving"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:615
+msgid "Apparel off"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:616
+msgid "Remove many"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:618
+msgid "Wield weapon"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:619
+msgid "Exchange weapons"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:620
+msgid "Two weapon combat"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:621
+msgid "Load quiver"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:623
+msgid "Wear armor"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:624
+msgid "Take off armor"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:626
+msgid "Put on accessories"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:627
+msgid "Remove accessories"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:631
+msgid "Apply"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:632
+msgid "Chat"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:633
+msgid "Close door"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:634
+msgid "Down"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:635
+msgid "Drop many"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:636 win/Qt/qt_main.cpp:846
+msgid "Drop"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:637 win/Qt/qt_main.cpp:850
+msgid "Eat"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:638
+msgid "Engrave"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:640
+msgid "Fire from quiver"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:641
+msgid "Force"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:642
+msgid "Jump"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:643 win/Qt/qt_main.cpp:847
+msgid "Kick"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:644
+msgid "Loot"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:645
+msgid "Open door"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:646
+msgid "Pay"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:648
+msgid "Pick up (was Get)"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:649 win/Qt/qt_main.cpp:852
+msgid "Rest"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:651 win/Qt/qt_main.cpp:851 win/Qt/qt_menu.cpp:199
+msgid "Search"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:652
+msgid "Sit"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:653 win/Qt/qt_main.cpp:848
+msgid "Throw"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:654
+msgid "Untrap"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:655
+msgid "Up"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:656
+msgid "Wipe face"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:658
+msgid "Quaff potion"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:659
+msgid "Read scroll/book"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:660
+msgid "Zap wand"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:661
+msgid "Zap spell"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:662
+msgid "Dip"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:663
+msgid "Rub"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:664
+msgid "Invoke"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:666
+msgid "Offer"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:667
+msgid "Pray"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:669
+msgid "Teleport"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:670
+msgid "Monster action"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:671
+msgid "Turn undead"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:673 win/Qt/qt_main.cpp:809 win/Qt/qt_main.cpp:823
+msgid "Help"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:675
+msgid "What is here"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:676
+msgid "What is there"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:677
+msgid "What is..."
+msgstr ""
+
+#: win/Qt/qt_main.cpp:680
+msgid "Inventory"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:681
+msgid "Attributes (extended status)"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:682
+msgid "Overview"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:683
+msgid "Conduct"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:684
+msgid "Discoveries"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:685
+msgid "List/reorder spells"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:686
+msgid "Adjust inventory letters"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:688
+msgid "Name object or creature"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:689
+msgid "Annotate level"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:691
+msgid "Skills"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:698
+msgid "Qt settings..."
+msgstr ""
+
+#: win/Qt/qt_main.cpp:702
+msgid "Preferences..."
+msgstr ""
+
+#: win/Qt/qt_main.cpp:712
+msgid "Quit NetHack-Qt"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:716 win/Qt/qt_main.cpp:721 win/Qt/qt_main.cpp:1046
+msgid "About NetHack-Qt"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:778
+msgid "Game"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:780
+msgid "Gear"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:788 win/Qt/qt_main.cpp:803
+msgid "Magic"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:791 win/Qt/qt_main.cpp:805
+msgid "Info"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:798
+msgid "Messages"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:801 win/Qt/qt_main.cpp:941
+msgid "Action"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:843
+msgid "Again"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:845
+msgid "Pick up"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:849
+msgid "Fire"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1060
+#, c-format
+msgid "This will end your NetHack session.%s"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1062
+msgid ""
+"\n"
+"(Cancel quitting and use the Save command\n"
+"to save your current game.)"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1070
+msgid "&Cancel and return to game"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1071 win/Qt/qt_main.cpp:1414
+msgid "&Quit without saving"
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1413
+msgid "This will end your NetHack session."
+msgstr ""
+
+#: win/Qt/qt_main.cpp:1414
+msgid "&Save and exit"
+msgstr ""
+
+#: win/Qt/qt_map.cpp:523 win/Qt/qt_map.cpp:1007
+msgid "Press a key when done viewing"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:184
+msgid "Ok"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:187 win/Qt/qt_xcmd.cpp:142 win/Qt/qt_yndlg.cpp:238
+msgid "Cancel"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:190 win/Qt/qt_yndlg.cpp:222
+msgid "All"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:193
+msgid "None"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:196
+msgid "Invert"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:643
+msgid "Count: "
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:800 win/Qt/qt_menu.cpp:1159 win/X11/winmenu.c:482
+msgid "Search for:"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:926
+msgid "&Dismiss"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:927
+msgid "&Search"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:1159
+msgid "Done"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:1159
+msgid "Find"
+msgstr ""
+
+#: win/Qt/qt_menu.cpp:1239
+#, c-format
+msgid "'%s' called before we know whether window is Menu or Text."
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:201 win/X11/winmisc.c:1200
+msgid "Play"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:257 win/X11/winmisc.c:783
+msgid "Name"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:262
+msgid "  (required)"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:284 win/Qt/qt_svsel.cpp:75
+msgid "by the NetHack DevTeam"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:341 win/X11/winmisc.c:981
+msgid "Role"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:346 win/X11/winmisc.c:914
+msgid "Race"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:354 win/X11/winmisc.c:1047
+msgid "Gender"
+msgstr ""
+
+#: win/Qt/qt_plsel.cpp:365 win/Qt/qt_stat.cpp:129 win/X11/winmisc.c:1108
+#: win/X11/winstat.c:1384
+msgid "Alignment"
+msgstr ""
+
+#: win/Qt/qt_rip.cpp:39
+#, c-format
+msgid "Cannot load \"%s\""
+msgstr ""
+
+#: win/Qt/qt_set.cpp:69
+msgid "&Zoomed"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:72
+msgid "Tile &width:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:73
+msgid "Tile &height:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:75
+msgid "&Shown"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:78
+msgid "&Doll width:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:79
+msgid "Doll height:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:166 win/Qt/qt_set.cpp:169
+msgid "Medium"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:167
+msgid "Huge"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:168
+msgid "Large"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:170
+msgid "Small"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:171
+msgid "Tiny"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:178
+msgid "Qt NetHack Settings\n"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:182
+msgid "&Map:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:193
+msgid "&Invent:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:203
+msgid "&Font:"
+msgstr ""
+
+#: win/Qt/qt_set.cpp:208 win/Qt/qt_yndlg.cpp:363
+msgid "Dismiss"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:113
+msgid "Dex"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:114
+msgid "Con"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:115
+msgid "Int"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:116
+msgid "Wis"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:117
+msgid "Cha"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:119 win/X11/winstat.c:1370
+msgid "Hit Points"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:120 win/X11/winstat.c:1373
+msgid "Power"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:121 win/X11/winstat.c:1375
+msgid "Armor Class"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:122
+msgid "Level"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:124 win/X11/winstat.c:1368
+msgid "Gold"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:126 win/X11/winstat.c:1386
+msgid "Time"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:127 win/X11/winstat.c:1388
+msgid "Score"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:221
+msgid "being strangled"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:222
+msgid "severe food poisoning"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:223
+msgid "terminal illness"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:227
+msgid "cannot see"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:228
+msgid "cannot hear"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:754 win/Qt/qt_stat.cpp:760
+#, c-format
+msgid "Str:%d"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:756
+msgid "Str:18/**"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:758
+#, c-format
+msgid "Str:18/%02d"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:763
+msgid "Dex:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:764
+msgid "Con:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:765
+msgid "Int:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:766
+msgid "Wis:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:767
+msgid "Cha:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:871
+#, c-format
+msgid "%s, level %d"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:886 win/Qt/qt_stat.cpp:892
+msgid "HP:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:887
+msgid "HD:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:898
+msgid "L:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:898
+msgid "Level:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:898
+msgid "Lvl:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:928
+msgid "Pow:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:929
+msgid "AC:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:935
+msgid "Gold:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:944
+msgid "lawfully aligned"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:948
+msgid "neutrally aligned"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:954
+msgid "chaotically aligned"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:981
+msgid "Time:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:994 win/Qt/qt_stat.cpp:999
+msgid "Score:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:999
+msgid "S:"
+msgstr ""
+
+#: win/Qt/qt_stat.cpp:999
+msgid "Scr:"
+msgstr ""
+
+#: win/Qt/qt_svsel.cpp:90
+msgid "New Game"
+msgstr ""
+
+#: win/Qt/qt_svsel.cpp:95
+msgid "Saved Characters"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:172
+msgid "Filter"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:188
+msgid "Layout"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:193
+msgid "Reset"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:206
+msgid "All commands"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:208
+msgid "Normal mode commands"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:209
+msgid "Available commands"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:211
+msgid "Traditional extended commands"
+msgstr ""
+
+#: win/Qt/qt_xcmd.cpp:213
+msgid "Debug mode commands"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:44
+msgid "NetHack: Question"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:119
+msgid "what direction"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:206
+msgid "Yes"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:210
+msgid "No"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:219
+msgid "creatures vanquished?"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:220
+msgid "Sort"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:233
+msgid "Do you want"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:236
+msgid "Stop"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:241
+msgid "Left"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:244
+msgid "Right"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:255
+msgid "Spc"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:258
+msgid "Ent"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:261
+msgid "Ret"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:264
+msgid "Esc"
+msgstr ""
+
+#: win/Qt/qt_yndlg.cpp:309
+msgid "Count:"
+msgstr ""
+
+#: win/X11/winX.c:273
+#, c-format
+msgid "find_widget:  can't match widget"
+msgstr ""
+
+#: win/X11/winX.c:292
+#, c-format
+msgid "find_free_window: no free windows!"
+msgstr ""
+
+#: win/X11/winX.c:364
+#, c-format
+msgid "XrmGetResource error (%s)"
+msgstr ""
+
+#: win/X11/winX.c:378
+#, c-format
+msgid "XAllocNamedColor failed for color %i (%s)"
+msgstr ""
+
+#: win/X11/winX.c:1084
+#, c-format
+msgid "curs:  bad x value [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1088
+#, c-format
+msgid "curs:  bad y value [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1117
+#, c-format
+msgid "putstr: called on map window \"%s\""
+msgstr ""
+
+#: win/X11/winX.c:1121
+#, c-format
+msgid "putstr:  called on a menu window, \"%s\" discarded"
+msgstr ""
+
+#: win/X11/winX.c:1139
+#, c-format
+msgid "putstr: unknown window type [%d] \"%s\""
+msgstr ""
+
+#: win/X11/winX.c:1176
+#, c-format
+msgid "create_nhwindow:  windows not initialized"
+msgstr ""
+
+#: win/X11/winX.c:1257
+#, c-format
+msgid "create_nhwindow: unknown type [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1284
+#, c-format
+msgid "clear_nhwindow: unknown window type [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1337
+#, c-format
+msgid "perminvent: %d selected??"
+msgstr ""
+
+#: win/X11/winX.c:1346
+#, c-format
+msgid "display_nhwindow: unknown window type [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1407
+#, c-format
+msgid "destroy_nhwindow: unknown window type [%d]"
+msgstr ""
+
+#: win/X11/winX.c:1560
+#, c-format
+msgid "ripout on non-text window (window type [%d])"
+msgstr ""
+
+#: win/X11/winX.c:1661
+#, c-format
+msgid "X Error"
+msgstr ""
+
+#: win/X11/winX.c:1942
+#, c-format
+msgctxt "button"
+msgid "okay"
+msgstr ""
+
+#: win/X11/winX.c:1947 win/X11/winmenu.c:1209
+#, c-format
+msgctxt "button"
+msgid "cancel"
+msgstr ""
+
+#: win/X11/winX.c:2010
+msgid "Until next time then..."
+msgstr ""
+
+#: win/X11/winX.c:2039
+msgid "What is your name?"
+msgstr ""
+
+#: win/X11/winX.c:2211
+#, c-format
+msgid "%.*s %.*s"
+msgstr ""
+
+#: win/X11/winX.c:2238
+#, c-format
+msgid "Cannot open %s.  Sorry."
+msgstr ""
+
+#: win/X11/winX.c:2466 win/X11/winX.c:2481
+#, c-format
+msgid "X11_yn_function:  question too long (%d)"
+msgstr ""
+
+#: win/X11/winmap.c:102
+#, c-format
+msgid "print_glyph: can (currently) only print to map windows"
+msgstr ""
+
+#: win/X11/winmap.c:605
+#, c-format
+msgid "init_tiles: insufficient memory to create image"
+msgstr ""
+
+#: win/X11/winmap.c:1247
+#, c-format
+msgid "unexpected X event, type = %d\n"
+msgstr ""
+
+#: win/X11/winmap.c:1375
+#, c-format
+msgid "map_update:  bad row range %d-%d\n"
+msgstr ""
+
+#: win/X11/winmap.c:1379
+#, c-format
+msgid "map_update:  bad col range %d-%d\n"
+msgstr ""
+
+#: win/X11/winmap.c:2025
+#, c-format
+msgid "x_event: unknown exit condition %d"
+msgstr ""
+
+#: win/X11/winmenu.c:734
+msgid "Inventory scroll:"
+msgstr ""
+
+#: win/X11/winmenu.c:808
+#, c-format
+msgid "add_menu:  called before start_menu"
+msgstr ""
+
+#: win/X11/winmenu.c:841 win/tty/wintty.c:2605
+#, c-format
+msgid "Menu item too long (%d)."
+msgstr ""
+
+#: win/X11/winmenu.c:876
+#, c-format
+msgid "end_menu:  called before start_menu"
+msgstr ""
+
+#: win/X11/winmenu.c:903
+#, c-format
+msgid "select_menu:  called before start_menu"
+msgstr ""
+
+#: win/X11/winmenu.c:1189
+#, c-format
+msgctxt "button"
+msgid "OK"
+msgstr ""
+
+#: win/X11/winmenu.c:1228
+#, c-format
+msgctxt "button"
+msgid "all"
+msgstr ""
+
+#: win/X11/winmenu.c:1246
+#, c-format
+msgctxt "button"
+msgid "none"
+msgstr ""
+
+#: win/X11/winmenu.c:1264
+#, c-format
+msgctxt "button"
+msgid "invert"
+msgstr ""
+
+#: win/X11/winmenu.c:1283
+#, c-format
+msgctxt "button"
+msgid "search"
+msgstr ""
+
+#: win/X11/winmesg.c:291
+#, c-format
+msgid "set_circle_buf: bad count [= %d]"
+msgstr ""
+
+#: win/X11/winmesg.c:375
+#, c-format
+msgid "split: eos!"
+msgstr ""
+
+#: win/X11/winmisc.c:839
+msgid "Player Selection"
+msgstr ""
+
+#: win/X11/winmisc.c:1068
+msgid "Male"
+msgstr ""
+
+#: win/X11/winmisc.c:1078
+msgid "Female"
+msgstr ""
+
+#: win/X11/winmisc.c:1305 win/curses/cursinit.c:478
+#, c-format
+msgid "no available ROLE+race+gender+alignment combinations"
+msgstr ""
+
+#: win/X11/winmisc.c:1314 win/X11/winmisc.c:1393 win/X11/winmisc.c:1470
+#: win/X11/winmisc.c:1545
+msgid "random"
+msgstr ""
+
+#: win/X11/winmisc.c:1339
+#, c-format
+msgid "player_selection: bad role select value %d"
+msgstr ""
+
+#: win/X11/winmisc.c:1379
+#, c-format
+msgid "no available role+RACE+gender+alignment combinations"
+msgstr ""
+
+#: win/X11/winmisc.c:1419
+#, c-format
+msgid "player_selection: bad race select value %d"
+msgstr ""
+
+#: win/X11/winmisc.c:1456
+#, c-format
+msgid "no available role+race+GENDER+alignment combinations"
+msgstr ""
+
+#: win/X11/winmisc.c:1496
+#, c-format
+msgid "player_selection: bad gender select value %d"
+msgstr ""
+
+#: win/X11/winmisc.c:1531
+#, c-format
+msgid "no available role+race+gender+ALIGNMENT combinations"
+msgstr ""
+
+#: win/X11/winmisc.c:1570
+#, c-format
+msgid "player_selection: bad alignment select value %d"
+msgstr ""
+
+#: win/X11/winmisc.c:1977
+msgid "Extended Commands"
+msgstr ""
+
+#: win/X11/winmisc.c:1978
+msgid "dismiss"
+msgstr ""
+
+#: win/X11/winmisc.c:1979
+msgid "help"
+msgstr ""
+
+#: win/X11/winstat.c:154 win/X11/winstat.c:1400
+msgid "Grabbed!"
+msgstr ""
+
+#: win/X11/winstat.c:162 win/X11/winstat.c:1413
+msgid "Holding"
+msgstr ""
+
+#: win/X11/winstat.c:168 win/X11/winstat.c:1393
+msgid "Trapped"
+msgstr ""
+
+#: win/X11/winstat.c:169 win/X11/winstat.c:1394
+msgid "Tethered"
+msgstr ""
+
+#: win/X11/winstat.c:595
+#, c-format
+msgid "X11 status can't determine font."
+msgstr ""
+
+#: win/X11/winstat.c:947
+#, c-format
+msgid "X11_status_update(%d) -- invalid field"
+msgstr ""
+
+#: win/X11/winstat.c:1134
+#, c-format
+msgid "Status Window resized, but of what widget?"
+msgstr ""
+
+#: win/X11/winstat.c:1176
+#, c-format
+msgid "create_status_window_fancy: no parent for fancy status"
+msgstr ""
+
+#: win/X11/winstat.c:1355
+msgid "Strength"
+msgstr ""
+
+#: win/X11/winstat.c:1356
+msgid "Dexterity"
+msgstr ""
+
+#: win/X11/winstat.c:1357
+msgid "Constitution"
+msgstr ""
+
+#: win/X11/winstat.c:1359
+msgid "Intelligence"
+msgstr ""
+
+#: win/X11/winstat.c:1362
+msgid "Wisdom"
+msgstr ""
+
+#: win/X11/winstat.c:1363
+msgid "Charisma"
+msgstr ""
+
+#: win/X11/winstat.c:1372
+msgid "Max HP"
+msgstr ""
+
+#: win/X11/winstat.c:1374
+msgid "Max Power"
+msgstr ""
+
+#: win/X11/winstat.c:1378
+msgid "Xp Level"
+msgstr ""
+
+#: win/X11/winstat.c:1382
+msgid "Exp Points"
+msgstr ""
+
+#: win/X11/winstat.c:1395
+msgid "Levitating"
+msgstr ""
+
+#: win/X11/winstat.c:1398
+msgid "Flying"
+msgstr ""
+
+#: win/X11/winstat.c:1399
+msgid "Riding"
+msgstr ""
+
+#: win/X11/winstat.c:1402
+msgid "Petrifying"
+msgstr ""
+
+#: win/X11/winstat.c:1404
+msgid "Slimed"
+msgstr ""
+
+#: win/X11/winstat.c:1406
+msgid "Strangled"
+msgstr ""
+
+#: win/X11/winstat.c:1407
+msgid "Food Pois"
+msgstr ""
+
+#: win/X11/winstat.c:1408
+msgid "Term Ill"
+msgstr ""
+
+#: win/X11/winstat.c:1410
+msgid "Sinking"
+msgstr ""
+
+#: win/X11/winstat.c:1416
+msgid "Stunned"
+msgstr ""
+
+#: win/X11/winstat.c:1417
+msgid "Confused"
+msgstr ""
+
+#: win/X11/winstat.c:1419
+msgid "Hallucinat"
+msgstr ""
+
+#: win/X11/winstat.c:1518
+#, c-format
+msgid "null_out_status: unknown type %d\n"
+msgstr ""
+
+#: win/X11/winstat.c:1578
+#, c-format
+msgid "update_val: unknown label type \"%s\""
+msgstr ""
+
+#: win/X11/winstat.c:1669
+msgid "Hit Dice"
+msgstr ""
+
+#: win/X11/winstat.c:2029
+#, c-format
+msgid "update_other: unknown shown value"
+msgstr ""
+
+#: win/X11/winstat.c:2198
+#, c-format
+msgid "width_string: unknown index %d\n"
+msgstr ""
+
+#: win/X11/winstat.c:2268
+#, c-format
+msgid "create_widget: unknown type %d"
+msgstr ""
+
+#: win/X11/winstat.c:2294
+#, c-format
+msgid "get_widths: unknown type %d"
+msgstr ""
+
+#: win/X11/winstat.c:2314
+#, c-format
+msgid "set_widths: unknown type %d"
+msgstr ""
+
+#: win/X11/wintext.c:365
+#, c-format
+msgid "append_text_buffer:  null text buffer"
+msgstr ""
+
 #: win/curses/cursdial.c:424
 msgid "#"
 msgstr ""
@@ -76948,11 +78336,6 @@ msgstr ""
 #: win/curses/cursdial.c:1352
 #, c-format
 msgid " (Page %d of %d) "
-msgstr ""
-
-#: win/curses/cursinit.c:478
-#, c-format
-msgid "no available ROLE+race+gender+alignment combinations"
 msgstr ""
 
 #: win/curses/cursmain.c:282
@@ -77030,10 +78413,6 @@ msgstr ""
 msgid "Putsym window MESSAGE nonexistent"
 msgstr ""
 
-#: win/tty/wintty.c:184 win/tty/wintty.c:3641
-msgid "--More--"
-msgstr ""
-
 #: win/tty/wintty.c:862
 #, c-format
 msgid "No window slots!"
@@ -77067,11 +78446,6 @@ msgstr ""
 #: win/tty/wintty.c:2484
 #, c-format
 msgid "Cannot open \"%s\"."
-msgstr ""
-
-#: win/tty/wintty.c:2605
-#, c-format
-msgid "Menu item too long (%d)."
 msgstr ""
 
 #: win/tty/wintty.c:2755

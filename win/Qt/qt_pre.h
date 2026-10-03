@@ -7,6 +7,7 @@
  */
 
 #undef C            // conflicts with Qt6 header
+#undef _            // nhi18n.h; restored by qt_post.h
 #undef Invisible
 #undef Warning
 #undef msleep

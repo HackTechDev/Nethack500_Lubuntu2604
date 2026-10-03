@@ -66,17 +66,17 @@ namespace nethack_qt_ {
 
 NetHackQtSettings::NetHackQtSettings() :
     settings(),
-    whichsize("&Zoomed", this),
+    whichsize(_("&Zoomed"), this),
     tilewidth(this),
     tileheight(this),
-    widthlbl("Tile &width:", this),
-    heightlbl("Tile &height:", this),
+    widthlbl(_("Tile &width:"), this),
+    heightlbl(_("Tile &height:"), this),
 #ifdef ENHANCED_PAPERDOLL
-    dollshown("&Shown", this),
+    dollshown(_("&Shown"), this),
     dollwidth(this),
     dollheight(this),
-    dollwidthlbl("&Doll width:", this),  // should "Doll tile width"...
-    dollheightlbl("Doll height:", this), // ...but that's too verbose
+    dollwidthlbl(_("&Doll width:"), this),  // should "Doll tile width"...
+    dollheightlbl(_("Doll height:"), this), // ...but that's too verbose
 #endif
     fontsize(this),
     normal("times"),
@@ -163,23 +163,23 @@ NetHackQtSettings::NetHackQtSettings() :
         doll_is_shown = false;
     }
 
-    fontsize.setMinimumContentsLength((int) strlen("Medium"));
-    fontsize.addItem("Huge");
-    fontsize.addItem("Large");
-    fontsize.addItem("Medium");
-    fontsize.addItem("Small");
-    fontsize.addItem("Tiny");
+    fontsize.setMinimumContentsLength((int) strlen(_("Medium")));
+    fontsize.addItem(_("Huge"));
+    fontsize.addItem(_("Large"));
+    fontsize.addItem(_("Medium"));
+    fontsize.addItem(_("Small"));
+    fontsize.addItem(_("Tiny"));
     fontsize.setCurrentIndex(default_fontsize);
     connect(&fontsize, SIGNAL(activated(int)), this, SLOT(changedFont()));
 
     int row = 0; // used like X11-style XtSetArg(), ++argc
      QGridLayout *grid = new QGridLayout(this);
     // dialog box label, spans first two rows and all three columns
-    QLabel *settings_label = new QLabel("Qt NetHack Settings\n", this);
+    QLabel *settings_label = new QLabel(_("Qt NetHack Settings\n"), this);
     grid->addWidget(settings_label, row, 0, 2, 3), row += 2; // uses extra row
     settings_label->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
-    QLabel *map_label = new QLabel("&Map:", this);
+    QLabel *map_label = new QLabel(_("&Map:"), this);
     map_label->setBuddy(&whichsize);
     grid->addWidget(map_label, row, 0), // "Map: [ ]Zoomed"
         grid->addWidget(&whichsize, row, 1), ++row;
@@ -190,7 +190,7 @@ NetHackQtSettings::NetHackQtSettings() :
 
 #ifdef ENHANCED_PAPERDOLL
     dollshown.QAbstractButton::setChecked(doll_is_shown);
-    QLabel *doll_label = new QLabel("&Invent:", this);
+    QLabel *doll_label = new QLabel(_("&Invent:"), this);
     doll_label->setBuddy(&dollshown);
     grid->addWidget(doll_label, row, 0), // "Invent: [ ]Shown"
         grid->addWidget(&dollshown, row, 1), ++row;
@@ -200,12 +200,12 @@ NetHackQtSettings::NetHackQtSettings() :
         grid->addWidget(&dollheight, row, 2), ++row;
 #endif
 
-    QLabel *flabel = new QLabel("&Font:", this);
+    QLabel *flabel = new QLabel(_("&Font:"), this);
     flabel->setBuddy(&fontsize);
     grid->addWidget(flabel, row, 0),
         grid->addWidget(&fontsize, row, 1), ++row;
 
-    QPushButton *dismiss = new QPushButton("Dismiss", this);
+    QPushButton *dismiss = new QPushButton(_("Dismiss"), this);
     dismiss->setDefault(true);
     grid->addWidget(dismiss, row, 0, 1, 3), ++row;
     grid->setRowStretch(row - 1, 0);

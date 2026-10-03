@@ -206,32 +206,32 @@ void NetHackQtInvUsageWindow::paintEvent(QPaintEvent*)
     // String argument is for a tool tip when the object in question is Null.
     //
     //  left grid column (depicts hero's right side)
-    drawWorn(painter, uquiver, 0, 0, "nothing readied for firing"); // quiver
-    drawWorn(painter, uwep,    0, 1, "no weapon");
+    drawWorn(painter, uquiver, 0, 0, _("nothing readied for firing")); // quiver
+    drawWorn(painter, uwep,    0, 1, _("no weapon"));
     /* uswapwep slot varies depending upon dual-wielding state;
        shown in shield slot when actively wielded, so uswapwep slot is empty
        then and an alternate tool tip is used to explain that emptiness */
     if (!u.twoweap)
-        drawWorn(painter, uswapwep, 0, 2, "no alternate weapon");
+        drawWorn(painter, uswapwep, 0, 2, _("no alternate weapon"));
     else
-        drawWorn(painter, NULL,     0, 2, "secondary weapon is wielded");
-    drawWorn(painter, uright,  0, 3, "no right ring");
+        drawWorn(painter, NULL,     0, 2, _("secondary weapon is wielded"));
+    drawWorn(painter, uright,  0, 3, _("no right ring"));
     /* OIL_LAMP matches lit candles, lamps, lantern, and candelabrum
        (and might also duplicate Sunsword when it is wielded--hence lit--
        depending upon whether another light source precedes it in invent) */
-    drawWorn(painter, find_tool(OIL_LAMP), 0, 4, "no active light sources");
+    drawWorn(painter, find_tool(OIL_LAMP), 0, 4, _("no active light sources"));
     drawWorn(painter, NULL,    0, 5, NULL, dollUnused); // always blank
 
     //  middle grid column; no unused slots
-    drawWorn(painter, uarmh,   1, 0, "no helmet");
-    drawWorn(painter, uamul,   1, 1, "no amulet");
-    drawWorn(painter, uarmc,   1, 2, "no cloak");
-    drawWorn(painter, uarm,    1, 3, "no suit");
-    drawWorn(painter, uarmu,   1, 4, "no shirt");
-    drawWorn(painter, uarmf,   1, 5, "no boots");
+    drawWorn(painter, uarmh,   1, 0, _("no helmet"));
+    drawWorn(painter, uamul,   1, 1, _("no amulet"));
+    drawWorn(painter, uarmc,   1, 2, _("no cloak"));
+    drawWorn(painter, uarm,    1, 3, _("no suit"));
+    drawWorn(painter, uarmu,   1, 4, _("no shirt"));
+    drawWorn(painter, uarmf,   1, 5, _("no boots"));
 
     //  right grid column (depicts hero's left side)
-    drawWorn(painter, ublindf,      2, 0, "no eyewear"); // bf|towel|lenses
+    drawWorn(painter, ublindf,      2, 0, _("no eyewear")); // bf|towel|lenses
     /* shield slot varies depending upon weapon usage;
        no alt tool tip is needed for first two cases because object will
        never be Null when the corresponding tests pass */
@@ -240,11 +240,11 @@ void NetHackQtInvUsageWindow::paintEvent(QPaintEvent*)
     else if (uwep && bimanual(uwep)) // show two-handed uwep twice
         drawWorn(painter, uwep,     2, 1, NULL, dollReverse); // uwep on right
     else
-        drawWorn(painter, uarms,    2, 1, "no shield");
-    drawWorn(painter, uarmg,        2, 2, "no gloves");
-    drawWorn(painter, uleft,        2, 3, "no left ring");
+        drawWorn(painter, uarms,    2, 1, _("no shield"));
+    drawWorn(painter, uarmg,        2, 2, _("no gloves"));
+    drawWorn(painter, uleft,        2, 3, _("no left ring"));
     /* light source and leash aren't unique and don't have pointers defined */
-    drawWorn(painter, find_tool(LEASH), 2, 4, "no leashes in use");
+    drawWorn(painter, find_tool(LEASH), 2, 4, _("no leashes in use"));
     drawWorn(painter, NULL,         2, 5, NULL, dollUnused); // always blank
 
     painter.end();

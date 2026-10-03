@@ -139,7 +139,7 @@ interesting_command(unsigned indx, int cmds)
 NetHackQtExtCmdRequestor::NetHackQtExtCmdRequestor(QWidget *parent) :
     QDialog(parent),
     prompt(new QLabel("#", this)),
-    cancel_btn(new QPushButton("Cancel", this)),
+    cancel_btn(new QPushButton(_("Cancel"), this)),
     byRow(qt_settings->xcmd_by_row),
     set(qt_settings->xcmd_set),
     butoffset(0),
@@ -169,7 +169,7 @@ NetHackQtExtCmdRequestor::NetHackQtExtCmdRequestor(QWidget *parent) :
     ctrls->addStretch(0); // Cancel will be left justified, others far right
     // Filter: change the [sub]set of commands that get shown;
     // presently only useful when running in wizard mode
-    QPushButton *filter_btn = new QPushButton("Filter", this);
+    QPushButton *filter_btn = new QPushButton(_("Filter"), this);
 #if 0   /* [later] normal vs autocomplete matters regardless of wizard mode */
     if (!WizardMode) { // nothing to filter if not in wizard mode
         filter_btn->setEnabled(false); // gray the [Filter] button out
@@ -185,12 +185,12 @@ NetHackQtExtCmdRequestor::NetHackQtExtCmdRequestor(QWidget *parent) :
     butw = std::max(butw, filter_btn->width());
     ctrls->addWidget(filter_btn);
     // Layout: switch from by-column grid to by-row grid or vice versa
-    QPushButton *layout_btn = new QPushButton("Layout", this);
+    QPushButton *layout_btn = new QPushButton(_("Layout"), this);
     layout_btn->setMinimumSize(layout_btn->sizeHint());
     butw = std::max(butw, layout_btn->width());
     ctrls->addWidget(layout_btn);
     // Reset: switch filter back to all commands and layout back to by-column
-    QPushButton *reset__btn = new QPushButton("Reset", this);
+    QPushButton *reset__btn = new QPushButton(_("Reset"), this);
     reset__btn->setMinimumSize(reset__btn->sizeHint());
     butw = std::max(butw, reset__btn->width());
     ctrls->addWidget(reset__btn);
@@ -203,14 +203,14 @@ NetHackQtExtCmdRequestor::NetHackQtExtCmdRequestor(QWidget *parent) :
 
     // grid title rather than overall popup title
     const char *ctitle = ((set == all_cmds) // implies wizard mode
-                          ? "All commands"
+                          ? _("All commands")
                           : (set == normal_cmds)
-                            ? (WizardMode ? "Normal mode commands"
-                                          : "Available commands")
+                            ? (WizardMode ? _("Normal mode commands")
+                                          : _("Available commands"))
                             : (set == autocomplete_cmds)
-                              ? "Traditional extended commands"
+                              ? _("Traditional extended commands")
                               : (set == wizard_cmds)
-                                ? "Debug mode commands"
+                                ? _("Debug mode commands")
                                 : "(unknown)"); // won't happen
     const QString &qtitle = QString(ctitle);
     // rectangular grid to hold a button for each extended command name
@@ -294,7 +294,7 @@ NetHackQtExtCmdRequestor::NetHackQtExtCmdRequestor(QWidget *parent) :
             QString btn_lbl = extcmdlist[i].ef_txt;
             if (btn_lbl == "wait")
                 btn_lbl += " (rest)";
-            QString btn_tip = nh_qsprintf(" %s ", extcmdlist[i].ef_desc);
+            QString btn_tip = nh_qsprintf(" %s ", _(extcmdlist[i].ef_desc));
             QPushButton *pb = new QPushButton(btn_lbl, grid);
             pb->setMinimumSize(butw, pb->sizeHint().height());
             // force the button to have fixed width or it can move around a

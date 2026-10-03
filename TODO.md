@@ -4,7 +4,8 @@
 > interfaces tty et curses : messages du jeu, mode magicien, diagnostics
 > internes, tutoriel, quêtes, encyclopédie, fichiers d'aide et
 > documentation (section 6). Ce qui reste est surtout de la
-> **vérification** (section 7) et les interfaces X11 et Qt (section 4).
+> **vérification** (section 7), y compris celle des interfaces X11 et
+> Qt, traduites mais peu testées (section 4).
 > Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté et
 > la licence (`dat/license`) n'est pas traduite.
 
@@ -47,8 +48,7 @@ ne sont ni des genres ni des formats remplacés par une branche
 `i18n_active()` (les formats sans texte comme `"%s%s"` n'ont pas besoin
 de traduction).
 
-Interfaces non extraites : `win/X11` et `win/Qt` (`po/update-pot.sh` ne
-lit que `win/tty` et `win/curses`).
+`po/update-pot.sh` extrait aussi `win/X11` et `win/Qt`.
 
 ## 1. Grammaire française des noms (priorité haute)
 
@@ -225,10 +225,15 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
 
 ## 4. Interface
 
-- **Interfaces X11 et Qt** : non traduites. `po/update-pot.sh` ne lit
-  que `win/tty` et `win/curses` ; les menus, boutons et boîtes de
-  dialogue de `win/X11` (environ 90 textes) et `win/Qt` (environ 120,
-  C++) restent en anglais, alors que les messages du jeu y sont traduits.
+- **Interfaces X11 et Qt** : traduites (menus, boutons, boîtes de
+  dialogue, ligne d'état, choix du personnage). X11 dessine avec des
+  polices X en Latin-1 : `x11_latin1()` (winX.c) convertit le texte
+  affiché (`œ` devient `oe`, `—` devient `-`) et `x11_utf8()` le texte
+  saisi. Qt lit et rend le texte en UTF-8. Testé : choix du personnage,
+  messages, état, inventaire, aide, questions et saisie en X11 ;
+  choix du personnage, messages, état et inventaire en Qt. À vérifier :
+  saisie de lettres accentuées en X11, menus de Qt (options, sons),
+  pierres tombales graphiques, commandes étendues de X11.
 - **Menus et fenêtres** : les textes passés à `add_menu()`, `putstr()`,
   `end_menu()` ne sont pas traduits automatiquement (menu complet des
   options `#optionsfull` (titres et descriptions traduits, noms d'options

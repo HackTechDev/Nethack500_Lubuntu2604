@@ -3098,6 +3098,11 @@ wizard mode: #timeout, #wizintrinsic, #stats, #wizwhere (also the level
 	diagnostics are translated too (see below)
 impossible() and panic() show their message translated while the paniclog,
 	the crash report and the core dump keep the English text
+X11 and Qt interfaces are translated (menus, buttons, dialogs, status,
+	player selection); X11 converts UTF-8 text to the Latin-1 of its
+	core fonts and typed text back to UTF-8
+Qt: text from the core and typed text are UTF-8, not Latin-1
+the #call menu and the prompt to replace a level annotation are translated
 
 
 NetHack Community Patches (or Variation) Included

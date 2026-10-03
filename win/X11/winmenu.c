@@ -166,7 +166,7 @@ menu_select(Widget w, XtPointer client_data, XtPointer call_data)
         curr->pick_count = -1L;
     }
 
-    XtSetArg(args[0], nhStr(XtNlabel), curr->str);
+    XtSetArg(args[0], nhStr(XtNlabel), x11_latin1(curr->str));
     XtSetValues(w, args, ONE);
 
     if (menu_info->how == PICK_ONE)
@@ -205,12 +205,12 @@ invert_line(struct xwindow *wp, x11_menu_item *curr, int which, long how_many)
     curr->preselected = FALSE;
     if (curr->selected) {
         curr->str[2] = (how_many != -1) ? '#' : '+';
-        XtSetArg(args[0], nhStr(XtNlabel), curr->str);
+        XtSetArg(args[0], nhStr(XtNlabel), x11_latin1(curr->str));
         XtSetValues(curr->w, args, ONE);
         curr->pick_count = how_many;
     } else {
         curr->str[2] = '-';
-        XtSetArg(args[0], nhStr(XtNlabel), curr->str);
+        XtSetArg(args[0], nhStr(XtNlabel), x11_latin1(curr->str));
         XtSetValues(curr->w, args, ONE);
         curr->pick_count = -1L;
     }
@@ -479,7 +479,7 @@ search_menu(struct xwindow *wp)
     buf[0] = buf[1] = '\0';
     pat = &buf[1]; /* leave room to maybe insert '*' at front */
     if (menu_info->how != PICK_NONE) {
-        X11_getlin("Search for:", pat);
+        X11_getlin(_("Search for:"), pat);
         if (!*pat || *pat == '\033')
             return;
         /* convert "string" into "*string*" for use with pmatch() */
@@ -731,7 +731,7 @@ x11_scroll_perminv(int arg UNUSED) /* arg is always 1 */
            player closes the menu via mouse */
         save_is_active = wp->menu_information->is_active;
         wp->menu_information->is_active = TRUE;
-        ch = X11_yn_function_core("Inventory scroll:", menukeys,
+        ch = X11_yn_function_core(_("Inventory scroll:"), menukeys,
                                   0, (YN_NO_LOGMESG | YN_NO_DEFAULT));
         if (wp->menu_information->is_up)
             wp->menu_information->is_active = save_is_active;
@@ -982,7 +982,8 @@ X11_select_menu(winid window, int how, menu_item **menu_list)
             num_args++;
         }
         if (wp->title) {
-            XtSetArg(args[num_args], nhStr(XtNtitle), wp->title); num_args++;
+            XtSetArg(args[num_args], nhStr(XtNtitle),
+                     x11_latin1(wp->title)); num_args++;
         }
         wp->popup = XtCreatePopupShell((window == WIN_INVEN)
                                            ? "inventory" : "menu",
@@ -1008,6 +1009,10 @@ X11_select_menu(winid window, int how, menu_item **menu_list)
         XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
         XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
         XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+        if (labeled) {
+            XtSetArg(args[num_args], nhStr(XtNlabel),
+                     x11_latin1(menu_info->new_menu.query)); num_args++;
+        }
 
         label = labeled ? XtCreateManagedWidget(menu_info->new_menu.query,
                                                 labelWidgetClass, form,
@@ -1180,6 +1185,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "OK"))); num_args++;
     ok = XtCreateManagedWidget("OK", commandWidgetClass, form,
                                args, num_args);
     XtAddCallback(ok, XtNcallback, menu_ok, (XtPointer) wp);
@@ -1198,6 +1205,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "cancel"))); num_args++;
     cancel = XtCreateManagedWidget("cancel", commandWidgetClass, form,
                                    args, num_args);
     XtAddCallback(cancel, XtNcallback, menu_cancel, (XtPointer) wp);
@@ -1215,6 +1224,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "all"))); num_args++;
     all = XtCreateManagedWidget("all", commandWidgetClass, form,
                                 args, num_args);
     XtAddCallback(all, XtNcallback, menu_all, (XtPointer) wp);
@@ -1231,6 +1242,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "none"))); num_args++;
     none = XtCreateManagedWidget("none", commandWidgetClass, form,
                                  args, num_args);
     XtAddCallback(none, XtNcallback, menu_none, (XtPointer) wp);
@@ -1247,6 +1260,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "invert"))); num_args++;
     invert = XtCreateManagedWidget("invert", commandWidgetClass, form,
                                    args, num_args);
     XtAddCallback(invert, XtNcallback, menu_invert, (XtPointer) wp);
@@ -1264,6 +1279,8 @@ menu_create_buttons(struct xwindow *wp, Widget form, Widget under)
     XtSetArg(args[num_args], nhStr(XtNbottom), XtChainTop); num_args++;
     XtSetArg(args[num_args], nhStr(XtNleft), XtChainLeft); num_args++;
     XtSetArg(args[num_args], nhStr(XtNright), XtChainLeft); num_args++;
+    XtSetArg(args[num_args], nhStr(XtNlabel),
+             x11_latin1(C_("button", "search"))); num_args++;
     search = XtCreateManagedWidget("search", commandWidgetClass, form,
                                    args, num_args);
     XtAddCallback(search, XtNcallback, menu_search, (XtPointer) wp);
@@ -1299,7 +1316,7 @@ menu_create_entries(struct xwindow *wp, struct menu *curr_menu)
     for (curr = curr_menu->base; curr; curr = curr->next) {
         char tmpbuf[BUFSZ];
         Widget linewidget;
-        String str = (String) curr->str;
+        String str = x11_latin1(curr->str); /* item keeps UTF-8 */
         int attr = ATR_NONE;
         int color = NO_COLOR;
         boolean canpick = (how != PICK_NONE && curr->identifier.a_void);

@@ -136,7 +136,7 @@ NetHackQtBind::qt_Splash()
         lsplash->setPixmap(pm);
         lsplash->setFixedSize(pm.size());
         //lsplash->setMask(pm.mask());
-        QLabel *capt = new QLabel("Loading...", splash);
+        QLabel *capt = new QLabel(_("Loading..."), splash);
         vb->addWidget(capt);
         capt->setAlignment(Qt::AlignCenter);
 
@@ -432,13 +432,13 @@ void NetHackQtBind::qt_curs(winid wid, int x, int y)
 void NetHackQtBind::qt_putstr(winid wid, int attr, const char *text)
 {
     NetHackQtWindow* window=id_to_window[(int)wid];
-    window->PutStr(attr,QString::fromLatin1(text));
+    window->PutStr(attr,QString::fromUtf8(text));
 }
 
 void NetHackQtBind::qt_putstr(winid wid, int attr, const std::string& text)
 {
     NetHackQtWindow* window=id_to_window[(int)wid];
-    window->PutStr(attr,QString::fromLatin1(text.c_str(), text.size()));
+    window->PutStr(attr,QString::fromUtf8(text.c_str(), text.size()));
 }
 
 void NetHackQtBind::qt_putstr(winid wid, int attr, const QString& text)
@@ -475,8 +475,8 @@ void NetHackQtBind::qt_display_file(const char *filename, boolean must_exist)
     }
 
     if (complain) {
-        QString message = nh_qsprintf("File not found: %s\n",filename);
-        QMessageBox::warning(NULL, "File Error", message, QMessageBox::Ignore);
+        QString message = nh_qsprintf(_("File not found: %s\n"),filename);
+        QMessageBox::warning(NULL, _("File Error"), message, QMessageBox::Ignore);
     }
 }
 
@@ -492,7 +492,7 @@ void NetHackQtBind::qt_add_menu(winid wid, const glyph_info *glyphinfo,
 {
     NetHackQtWindow* window=id_to_window[(int)wid];
     window->AddMenu(glyphinfo->glyph, identifier, ch, gch, attr, clr,
-            QString::fromLatin1(str),
+            QString::fromUtf8(str),
             itemflags);
 }
 
@@ -787,7 +787,7 @@ char NetHackQtBind::qt_more()
 
     if (mesgwin && !::iflags.wc_popup_dialog && WIN_MESSAGE != WIN_ERR) {
 
-        mesgwin->AddToStr("--More--");
+        mesgwin->AddToStr(_("--More--"));
         bool retry = false;
         int complain = 0;
         do {
@@ -825,7 +825,7 @@ char NetHackQtBind::qt_more()
     } else {
         // use a popup dialog box; unlike yn_function(), we don't show
         // the prompt+response in the message window
-        NetHackQtYnDialog dialog(main, "--More--", " \033\n\r", ' ');
+        NetHackQtYnDialog dialog(main, _("--More--"), " \033\n\r", ' ');
         ch = dialog.Exec();
         if (ch == '\0') {
             ch = '\033';
@@ -840,7 +840,7 @@ char NetHackQtBind::qt_more()
 char NetHackQtBind::qt_yn_function(const char *question_,
                                    const char *choices, char def)
 {
-    QString question(QString::fromLatin1(question_));
+    QString question(QString::fromUtf8(question_));
     QString message;
     char yn_esc_map='\033';
     int result = -1;
@@ -1088,7 +1088,7 @@ void NetHackQtBind::qt_putmsghistory(const char *msg, boolean is_restoring)
 
     if (msg) {
         //raw_printf("msg='%s'", msg);
-        window->PutStr(ATR_NONE, QString::fromLatin1(msg));
+        window->PutStr(ATR_NONE, QString::fromUtf8(msg));
 #ifdef DUMPLOG_CORE
         dumplogmsg(msg);
 #endif
@@ -1098,7 +1098,7 @@ void NetHackQtBind::qt_putmsghistory(const char *msg, boolean is_restoring)
             const QString &nxtmsg = msgs_strings->at(i);
             window->PutStr(ATR_NONE, nxtmsg);
 #ifdef DUMPLOG_CORE
-            dumplogmsg(nxtmsg.toLatin1().constData());
+            dumplogmsg(nxtmsg.toUtf8().constData());
 #endif
         }
         delete msgs_strings;

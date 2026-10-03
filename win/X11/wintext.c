@@ -478,7 +478,13 @@ calculate_rip_text(int how, time_t when)
     Sprintf(rip_line[GOLD_LINE], "%ld Au", cash);
 
     /* Put together death description */
-    formatkiller(buf, sizeof buf, how, FALSE);
+    if (i18n_active()) {
+        killer_i18n(buf, sizeof buf, how);
+        /* split below by bytes: shown in Latin-1 */
+        Strcpy(buf, x11_latin1(buf));
+    } else {
+        formatkiller(buf, sizeof buf, how, FALSE);
+    }
 
     /* Put death type on stone */
     for (line = DEATH_LINE, dpx = buf; line < YEAR_LINE; line++) {

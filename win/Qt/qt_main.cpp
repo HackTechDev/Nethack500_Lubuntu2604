@@ -456,7 +456,9 @@ static const char * cast_c_xpm[] UNUSED = {
 static QString
 aboutMsg()
 {
-    char *p, vbuf[BUFSZ];
+    char *p, vbuf[BUFSZ], qtbuf[40];
+
+    qtbuf[0] = '\0';
     /* nethack's getversionstring() includes a final period
        but we're using it mid-sentence so strip period off */
     if ((p = strrchr(::getversionstring(vbuf, sizeof vbuf), '.')) != 0
@@ -464,44 +466,40 @@ aboutMsg()
         *p = '\0';
     /* it's also long; break it into two pieces */
     (void) strsubst(vbuf, " - ", "\n- ");
+    /* built from whole sentences, so that each can be translated */
     QString msg = nh_qsprintf(
-        // format
-        "NetHack-Qt is a version of NetHack built using" // no newline
 #ifdef KDE
-        " KDE and"                                       // ditto
+        _("NetHack-Qt is a version of NetHack built using"
+          " KDE and the Qt %d GUI toolkit.\n"),
+#else
+        _("NetHack-Qt is a version of NetHack built using"
+          " the Qt %d GUI toolkit.\n"),
 #endif
-        " the Qt %d GUI toolkit.\n"                      // short Qt version
-        "\n"
-        "This is %s%s and Lua %s.\n" // long nethack version, Qt & Lua versions
-        "\n"
-        "NetHack's Qt interface originally developed by Warwick Allison.\n"
-        "\n"
-#if 0
-        "Homepage:\n     http://trolls.troll.no/warwick/nethack/\n" //obsolete
+#ifdef QT_VERSION_MAJOR
+        QT_VERSION_MAJOR
+#else
+        5               // Qt version macro should exist; if not, assume Qt5
 #endif
+        );
+    msg += "\n";
+#ifdef QT_VERSION_STR
+    Snprintf(qtbuf, sizeof qtbuf, _(" with Qt %s"), QT_VERSION_STR);
+#endif
+    msg += nh_qsprintf(_("This is %s%s and Lua %s.\n"),
+        vbuf,           // nethack version
+        qtbuf,
+        ::get_lua_version());
+    msg += "\n";
+    msg += _("NetHack's Qt interface originally developed by"
+             " Warwick Allison.\n");
+    msg += "\n";
+    msg += nh_qsprintf(
 #ifdef KDE
         "KDE:\n     https://kde.org/\n"
 #endif
-#if 1
         "Qt:\n     https://qt.io/\n"
-#else
-        "Qt:\n     http://www.troll.no/\n"      // obsolete
-#endif
         "Lua:\n     https://lua.org/\n"
         "NetHack:\n     %s\n", // DEVTEAM_URL
-        // arguments
-#ifdef QT_VERSION_MAJOR
-        QT_VERSION_MAJOR,
-#else
-        5,              // Qt version macro should exist; if not, assume Qt5
-#endif
-        vbuf,           // nethack version
-#ifdef QT_VERSION_STR
-        " with Qt " QT_VERSION_STR,
-#else
-        "",
-#endif
-        ::get_lua_version(),
         DEVTEAM_URL);
     return msg;
 }
@@ -587,12 +585,12 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
         int (*funct)(void);
     } item[] = {
         { game,    0, 3, (int (*)(void)) 0},
-        { game,    "Extended-commands",  3, doextcmd },
+        { game,    N_("Extended-commands"),  3, doextcmd },
         { game,    0, 3, (int (*)(void)) 0},
-        { game,    "Version",            3, doversion},
-        { game,    "Compilation",        3, doextversion},
-        { game,    "History",            3, dohistory},
-        { game,    "Redraw",             0, doredraw}, // useless
+        { game,    N_("Version"),            3, doversion},
+        { game,    N_("Compilation"),        3, doextversion},
+        { game,    N_("History"),            3, dohistory},
+        { game,    N_("Redraw"),             0, doredraw}, // useless
         { game,
 #ifdef MACOS
             /* Qt on OSX would rename "Options" to "Preferences..." and
@@ -601,10 +599,10 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
                shortcut--except those are disabled by default by Qt on OSX */
                    "Run-time &" // rely on adjacent string concatenation
 #endif
-                   "Options",            3, doset},
-        { game,    "Explore mode",       3, enter_explore_mode},
+                   N_("Options"),        3, doset},
+        { game,    N_("Explore mode"),       3, enter_explore_mode},
         { game,    0, 3, (int (*)(void)) 0},
-        { game,    "Save-and-exit",      3, dosave},
+        { game,    N_("Save-and-exit"),      3, dosave},
         { game,
 #ifdef MACOS
             /* need something to prevent matching leading "quit" so that it
@@ -612,96 +610,96 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
                make &Q be a keyboard shortcut (but see Options above) */
                    "\177&"
 #endif
-                   "Quit-without-saving", 3, done2},
+                   N_("Quit-without-saving"), 3, done2},
 
-        { apparel, "Apparel off",        2, doddoremarm},
-        { apparel, "Remove many",        1, doddoremarm},
+        { apparel, N_("Apparel off"),        2, doddoremarm},
+        { apparel, N_("Remove many"),        1, doddoremarm},
         { apparel, 0, 3, (int (*)(void)) 0},
-        { apparel, "Wield weapon",       3, dowield},
-        { apparel, "Exchange weapons",   3, doswapweapon},
-        { apparel, "Two weapon combat",  3, dotwoweapon},
-        { apparel, "Load quiver",        3, dowieldquiver},
+        { apparel, N_("Wield weapon"),       3, dowield},
+        { apparel, N_("Exchange weapons"),   3, doswapweapon},
+        { apparel, N_("Two weapon combat"),  3, dotwoweapon},
+        { apparel, N_("Load quiver"),        3, dowieldquiver},
         { apparel, 0, 3, (int (*)(void)) 0},
-        { apparel, "Wear armor",         3, dowear},
-        { apparel, "Take off armor",     3, dotakeoff},
+        { apparel, N_("Wear armor"),         3, dowear},
+        { apparel, N_("Take off armor"),     3, dotakeoff},
         { apparel, 0, 3, (int (*)(void)) 0},
-        { apparel, "Put on accessories", 3, doputon},
-        { apparel, "Remove accessories", 3, doremring},
+        { apparel, N_("Put on accessories"), 3, doputon},
+        { apparel, N_("Remove accessories"), 3, doremring},
 
-        /* { act1,      "Again\tCtrl+A",           "\001", 2},
+        /* { act1,      N_("Again\tCtrl+A"),           "\001", 2},
         { act1, 0, 0, 3}, */
-        { act1, "Apply",             3, doapply},
-        { act1, "Chat",              3, dotalk},
-        { act1, "Close door",        3, doclose},
-        { act1, "Down",              3, dodown},
-        { act1, "Drop many",         2, doddrop},
-        { act1, "Drop",              2, dodrop},
-        { act1, "Eat",               2, doeat},
-        { act1, "Engrave",           3, doengrave},
-        /* { act1,      "Fight\tShift+F",             "F", 3}, */
-        { act1, "Fire from quiver",  2, dofire},
-        { act1, "Force",             3, doforce},
-        { act1, "Jump",              3, dojump},
-        { act2, "Kick",              2, dokick},
-        { act2, "Loot",              3, doloot},
-        { act2, "Open door",         3, doopen},
-        { act2, "Pay",               3, dopay},
+        { act1, N_("Apply"),             3, doapply},
+        { act1, N_("Chat"),              3, dotalk},
+        { act1, N_("Close door"),        3, doclose},
+        { act1, N_("Down"),              3, dodown},
+        { act1, N_("Drop many"),         2, doddrop},
+        { act1, N_("Drop"),              2, dodrop},
+        { act1, N_("Eat"),               2, doeat},
+        { act1, N_("Engrave"),           3, doengrave},
+        /* { act1,      N_("Fight\tShift+F"),             "F", 3}, */
+        { act1, N_("Fire from quiver"),  2, dofire},
+        { act1, N_("Force"),             3, doforce},
+        { act1, N_("Jump"),              3, dojump},
+        { act2, N_("Kick"),              2, dokick},
+        { act2, N_("Loot"),              3, doloot},
+        { act2, N_("Open door"),         3, doopen},
+        { act2, N_("Pay"),               3, dopay},
         // calling this "Get" was confusing to experienced players
-        { act1, "Pick up (was Get)", 3, dopickup},
-        { act2, "Rest",              2, donull},
-        { act2, "Ride",              3, doride},
-        { act2, "Search",            3, dosearch},
-        { act2, "Sit",               3, dosit},
-        { act2, "Throw",             2, dothrow},
-        { act2, "Untrap",            3, dountrap},
-        { act2, "Up",                3, doup},
-        { act2, "Wipe face",         3, dowipe},
+        { act1, N_("Pick up (was Get)"), 3, dopickup},
+        { act2, N_("Rest"),              2, donull},
+        { act2, N_("Ride"),              3, doride},
+        { act2, N_("Search"),            3, dosearch},
+        { act2, N_("Sit"),               3, dosit},
+        { act2, N_("Throw"),             2, dothrow},
+        { act2, N_("Untrap"),            3, dountrap},
+        { act2, N_("Up"),                3, doup},
+        { act2, N_("Wipe face"),         3, dowipe},
 
-        { magic, "Quaff potion",     3, dodrink},
-        { magic, "Read scroll/book", 3, doread},
-        { magic, "Zap wand",         3, dozap},
-        { magic, "Zap spell",        3, docast},
-        { magic, "Dip",              3, dodip},
-        { magic, "Rub",              3, dorub},
-        { magic, "Invoke",           3, doinvoke},
+        { magic, N_("Quaff potion"),     3, dodrink},
+        { magic, N_("Read scroll/book"), 3, doread},
+        { magic, N_("Zap wand"),         3, dozap},
+        { magic, N_("Zap spell"),        3, docast},
+        { magic, N_("Dip"),              3, dodip},
+        { magic, N_("Rub"),              3, dorub},
+        { magic, N_("Invoke"),           3, doinvoke},
         { magic, 0, 3, (int (*)(void)) 0},
-        { magic, "Offer",            3, dosacrifice},
-        { magic, "Pray",             3, dopray},
+        { magic, N_("Offer"),            3, dosacrifice},
+        { magic, N_("Pray"),             3, dopray},
         { magic, 0, 3, (int (*)(void)) 0},
-        { magic, "Teleport",         3, dotelecmd},
-        { magic, "Monster action",   3, domonability},
-        { magic, "Turn undead",      3, doturn},
+        { magic, N_("Teleport"),         3, dotelecmd},
+        { magic, N_("Monster action"),   3, domonability},
+        { magic, N_("Turn undead"),      3, doturn},
 
-        { help,  "Help",             3, dohelp},
+        { help,  N_("Help"),             3, dohelp},
         { help,  0, 3, (int (*)(void)) 0},
-        { help,  "What is here",     3, dolook},
-        { help,  "What is there",    3, doquickwhatis},
-        { help,  "What is...",       2, dowhatis},
+        { help,  N_("What is here"),     3, dolook},
+        { help,  N_("What is there"),    3, doquickwhatis},
+        { help,  N_("What is..."),       2, dowhatis},
         { help,  0, 1, (int (*)(void)) 0},
 
-        { info,  "Inventory",        3, ddoinv},
-        { info,  "Attributes (extended status)", 3, doattributes },
-        { info,  "Overview",         3, dooverview },
-        { info,  "Conduct",          3, doconduct},
-        { info,  "Discoveries",      3, dodiscovered},
-        { info,  "List/reorder spells",  3, dovspell},
-        { info,  "Adjust inventory letters", 3, doorganize },
+        { info,  N_("Inventory"),        3, ddoinv},
+        { info,  N_("Attributes (extended status)"), 3, doattributes },
+        { info,  N_("Overview"),         3, dooverview },
+        { info,  N_("Conduct"),          3, doconduct},
+        { info,  N_("Discoveries"),      3, dodiscovered},
+        { info,  N_("List/reorder spells"),  3, dovspell},
+        { info,  N_("Adjust inventory letters"), 3, doorganize },
         { info,  0, 3, (int (*)(void)) 0},
-        { info,  "Name object or creature", 3, docallcmd},
-        { info,  "Annotate level",   3, donamelevel },
+        { info,  N_("Name object or creature"), 3, docallcmd},
+        { info,  N_("Annotate level"),   3, donamelevel },
         { info,  0, 3, (int (*)(void)) 0},
-        { info,  "Skills",  3, enhance_weapon_skill},
+        { info,  N_("Skills"),  3, enhance_weapon_skill},
 
 	{ 0, 0, 0, (int (*)(void)) 0 }
     };
 
     QAction *actn;
 #ifndef MACOS
-    (void) game->addAction("Qt settings...", this, SLOT(doQtSettings(bool)));
+    (void) game->addAction(_("Qt settings..."), this, SLOT(doQtSettings(bool)));
 #else
     /* on OSX, put this in the application menu instead of the game menu;
        Qt would change the action name behind our backs; do it explicitly */
-    actn = game->addAction("Preferences...", this, SLOT(doQtSettings(bool)));
+    actn = game->addAction(_("Preferences..."), this, SLOT(doQtSettings(bool)));
     actn->setMenuRole(QWidgetAction::PreferencesRole);
     /* we also want a "Quit NetHack" entry in the application menu;
        when "_Quit-without-saving" was called "Quit" it got intercepted
@@ -711,16 +709,16 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
        nethack's #quit command with "really quit?" prompt, this quit--with
        Command+q as shortcut--pops up a dialog to choose between quit or
        cancel-and-resume-playing */
-    actn = game->addAction("Quit NetHack-Qt", this, SLOT(doQuit(bool)));
+    actn = game->addAction(_("Quit NetHack-Qt"), this, SLOT(doQuit(bool)));
     actn->setMenuRole(QWidgetAction::QuitRole);
 #endif
 
-    actn = help->addAction("About NetHack-Qt", this, SLOT(doAbout(bool)));
+    actn = help->addAction(_("About NetHack-Qt"), this, SLOT(doAbout(bool)));
 #ifdef MACOS
     actn->setMenuRole(QWidgetAction::AboutRole);
     /* for OSX, the preceding "About" went into the application menu;
        now add another duplicate one to the Help dropdown menu */
-    actn = help->addAction("About NetHack-Qt", this, SLOT(doAbout(bool)));
+    actn = help->addAction(_("About NetHack-Qt"), this, SLOT(doAbout(bool)));
     actn->setMenuRole(QWidgetAction::NoRole);
 #else
     nhUse(actn);
@@ -751,10 +749,11 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
                         actchar[0] = '\0';
                 }
                 if (actchar[0] && !qt_compact_mode)
-                    Sprintf(menuitem, "%.50s\t%.9s", item[i].name,
-                            visctrl(actchar[0]));
+                    Snprintf(menuitem, sizeof menuitem, "%.80s\t%.9s",
+                             _(item[i].name), visctrl(actchar[0]));
                 else
-                    Sprintf(menuitem, "%s", item[i].name);
+                    Snprintf(menuitem, sizeof menuitem, "%s",
+                             _(item[i].name));
 
                 if (item[i].funct && !actchar[0]) {
                     actchar[0] = '#';
@@ -776,9 +775,9 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
 	}
     }
 
-    game->setTitle("Game");
+    game->setTitle(_("Game"));
     menubar->addMenu(game);
-    apparel->setTitle("Gear");
+    apparel->setTitle(_("Gear"));
     menubar->addMenu(apparel);
 
     if ( qt_compact_mode ) {
@@ -786,28 +785,28 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
 	menubar->addMenu(act1);
 	act2->setTitle("K-Z");
 	menubar->addMenu(act2);
-	magic->setTitle("Magic");
+	magic->setTitle(_("Magic"));
 	menubar->addMenu(magic);
 	info->setIcon(QIcon(QPixmap(info_xpm)));
-	info->setTitle("Info");
+	info->setTitle(_("Info"));
 	menubar->addMenu(info);
 	//menubar->insertItem(QPixmap(map_xpm), this, SLOT(raiseMap()));
 	//menubar->insertItem(QPixmap(msg_xpm), this, SLOT(raiseMessages()));
 	//menubar->insertItem(QPixmap(stat_xpm), this, SLOT(raiseStatus()));
 	info->addSeparator();
-	info->addAction("Map", this, SLOT(raiseMap()));
-	info->addAction("Messages", this, SLOT(raiseMessages()));
-	info->addAction("Status", this, SLOT(raiseStatus()));
+	info->addAction(_("Map"), this, SLOT(raiseMap()));
+	info->addAction(_("Messages"), this, SLOT(raiseMessages()));
+	info->addAction(_("Status"), this, SLOT(raiseStatus()));
     } else {
-	act1->setTitle("Action");
+	act1->setTitle(_("Action"));
 	menubar->addMenu(act1);
-	magic->setTitle("Magic");
+	magic->setTitle(_("Magic"));
 	menubar->addMenu(magic);
-	info->setTitle("Info");
+	info->setTitle(_("Info"));
 	menubar->addMenu(info);
 	menubar->addSeparator();
 #ifndef MACOS
-	help->setTitle("Help");
+	help->setTitle(_("Help"));
 #else
         // On OSX, an entry in the menubar called "Help" will get an
         // extra action, "Search [______]", inserted as the first entry.
@@ -821,7 +820,7 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
         // from getting inserted into the "Help" menu behind our back.
         // Underscore works too and is more robust but unless we prepend
         // it to every entry, "_Help" would stand out as strange.
-	help->setTitle("\177Help");
+	help->setTitle(QString("\177") + _("Help"));
         // (Renaming back to "Help" after the fact does reset the menu's
         // name but it also results in the Search action being added.
         // Perhaps a custom context menu that changes its name to "Help"
@@ -841,16 +840,16 @@ NetHackQtMainWindow::NetHackQtMainWindow(NetHackQtKeyBuffer& ks) :
     connect(sm, SIGNAL(mapped(const QString&)),
             this, SLOT(doKeys(const QString&)));
 #endif
-    AddToolButton(toolbar, sm, "Again", do_repeat, QPixmap(again_xpm));
+    AddToolButton(toolbar, sm, _("Again"), do_repeat, QPixmap(again_xpm));
     // this used to be called "Get" which is confusing to experienced players
-    AddToolButton(toolbar, sm, "Pick up", dopickup, QPixmap(pickup_xpm));
-    AddToolButton(toolbar, sm, "Drop", doddrop, QPixmap(drop_xpm));
-    AddToolButton(toolbar, sm, "Kick", dokick, QPixmap(kick_xpm));
-    AddToolButton(toolbar, sm, "Throw", dothrow, QPixmap(throw_xpm));
-    AddToolButton(toolbar, sm, "Fire", dofire, QPixmap(fire_xpm));
-    AddToolButton(toolbar, sm, "Eat", doeat, QPixmap(eat_xpm));
-    AddToolButton(toolbar, sm, "Search", dosearch, QPixmap(search_xpm));
-    AddToolButton(toolbar, sm, "Rest", donull, QPixmap(rest_xpm));
+    AddToolButton(toolbar, sm, _("Pick up"), dopickup, QPixmap(pickup_xpm));
+    AddToolButton(toolbar, sm, _("Drop"), doddrop, QPixmap(drop_xpm));
+    AddToolButton(toolbar, sm, _("Kick"), dokick, QPixmap(kick_xpm));
+    AddToolButton(toolbar, sm, _("Throw"), dothrow, QPixmap(throw_xpm));
+    AddToolButton(toolbar, sm, _("Fire"), dofire, QPixmap(fire_xpm));
+    AddToolButton(toolbar, sm, _("Eat"), doeat, QPixmap(eat_xpm));
+    AddToolButton(toolbar, sm, _("Search"), dosearch, QPixmap(search_xpm));
+    AddToolButton(toolbar, sm, _("Rest"), donull, QPixmap(rest_xpm));
 
     connect(game, SIGNAL(triggered(QAction *)),
             this, SLOT(doMenuItem(QAction *)));
@@ -939,7 +938,7 @@ void NetHackQtMainWindow::AddToolButton(QToolBar *toolbar, QSignalMapper *sm,
     // if key is valid, add a button for it; otherwise omit the command
     // (won't work as intended if a different command is bound to same key)
     if (key) {
-        QToolButton *tb = new SmallToolButton(xpm, QString(name), "Action",
+        QToolButton *tb = new SmallToolButton(xpm, QString(name), _("Action"),
                                               sm, SLOT(map()), toolbar);
         actchar[0] = '\0';
         sm->setMapping(tb, strkitten(actchar, (char) key));
@@ -1044,7 +1043,7 @@ void NetHackQtMainWindow::doQtSettings(bool)
 
 void NetHackQtMainWindow::doAbout(bool)
 {
-    QMessageBox::about(this, "About NetHack-Qt", aboutMsg());
+    QMessageBox::about(this, _("About NetHack-Qt"), aboutMsg());
 }
 
 // on OSX, "quit nethack" has been selected in the application menu or
@@ -1058,18 +1057,18 @@ void NetHackQtMainWindow::doQuit(bool)
     // nethack's #quit command itself) but this routine is unconditional
     // in case someone wants to change that
 #ifdef MACOS
-    QString info = nh_qsprintf("This will end your NetHack session.%s",
+    QString info = nh_qsprintf(_("This will end your NetHack session.%s"),
                  !program_state.something_worth_saving ? ""
-                 : "\n(Cancel quitting and use the Save command"
-                   "\nto save your current game.)");
+                 : _("\n(Cancel quitting and use the Save command"
+                     "\nto save your current game.)"));
     /* this is similar to closeEvent but the details are different;
        first choice (Cancel) is the default action for most arbitrary keys;
        the second choice (Quit) is the action for <return> or <space>;
        <escape> leaves the popup waiting for some other response;
        the &<char> settings for Alt+<char> shortcuts don't work on OSX */
     int act = QMessageBox::information(this, "NetHack", info,
-                                       "&Cancel and return to game",
-                                       "&Quit without saving",
+                                       _("&Cancel and return to game"),
+                                       _("&Quit without saving"),
                                        0, 1);
     switch (act) {
     case 0:
@@ -1411,8 +1410,9 @@ void NetHackQtMainWindow::closeEvent(QCloseEvent *e UNUSED)
            but cancel (ignoring the close attempt) won't work
            if user has clicked on the window's Close button */
 	int act = QMessageBox::information(this, "NetHack",
-                              "This will end your NetHack session.",
-                              "&Save and exit", "&Quit without saving", 0, 1);
+                              _("This will end your NetHack session."),
+                              _("&Save and exit"), _("&Quit without saving"),
+                              0, 1);
 	switch (act) {
         case 0:
             // save portion of save-and-exit

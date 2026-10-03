@@ -6,6 +6,15 @@
  * #include after <Qt.../Qt...>.
  */
 
+/* restore the translation macro of nhi18n.h, undefined by qt_pre.h */
+#ifndef _
+#if defined(NHI18N) && !defined(SFCTOOL)
+#define _(msgid) nh_gettext(msgid)
+#else
+#define _(msgid) (msgid)
+#endif
+#endif
+
 #if defined(__cplusplus)
 #ifdef __clang__
 #pragma clang diagnostic pop

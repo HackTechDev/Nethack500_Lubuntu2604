@@ -2548,8 +2548,9 @@ query_annotation(d_level *lev)
     if (mptr->custom) {
         char tmpbuf[BUFSZ];
 
-        Sprintf(tmpbuf, "Replace annotation \"%.30s%s\" with?", mptr->custom,
-                (strlen(mptr->custom) > 30) ? "..." : "");
+        Snprintf(tmpbuf, sizeof tmpbuf,
+                 _("Replace annotation \"%.30s%s\" with?"), mptr->custom,
+                 (strlen(mptr->custom) > 30) ? "..." : "");
         getlin(tmpbuf, nbuf);
     } else
 #endif

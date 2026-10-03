@@ -264,6 +264,7 @@ extern void free_ebones(struct monst *) NONNULLARG1;
 extern char *get_strength_str(void);
 extern char *do_statusline1(void);
 extern void check_gold_symbol(void);
+extern const char *title_the(void);
 extern char *do_statusline2(void);
 extern void bot(void);
 extern void timebot(void);
@@ -2787,6 +2788,7 @@ extern void relative_time_to_moves(long *);
 /* ### rip.c ### */
 
 extern void genl_outrip(winid, int, time_t);
+extern void killer_i18n(char *, unsigned, int);
 
 /* ### rnd.c ### */
 

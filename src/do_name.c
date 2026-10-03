@@ -541,32 +541,32 @@ docallcmd(void)
     any = cg.zeroany;
     any.a_char = 'm'; /* group accelerator 'C' */
     add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, 'C',
-             ATR_NONE, clr, "a monster", MENU_ITEMFLAGS_NONE);
+             ATR_NONE, clr, _("a monster"), MENU_ITEMFLAGS_NONE);
     if (gi.invent) {
         /* we use y and n as accelerators so that we can accept user's
            response keyed to old "name an individual object?" prompt */
         any.a_char = 'i'; /* group accelerator 'y' */
         add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, 'y',
-                 ATR_NONE, clr, "a particular object in inventory",
+                 ATR_NONE, clr, _("a particular object in inventory"),
                  MENU_ITEMFLAGS_NONE);
         any.a_char = 'o'; /* group accelerator 'n' */
         add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, 'n',
-                 ATR_NONE, clr, "the type of an object in inventory",
+                 ATR_NONE, clr, _("the type of an object in inventory"),
                  MENU_ITEMFLAGS_NONE);
     }
     any.a_char = 'f'; /* group accelerator ',' (or ':' instead?) */
     add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, ',',
-             ATR_NONE, clr, "the type of an object upon the floor",
+             ATR_NONE, clr, _("the type of an object upon the floor"),
              MENU_ITEMFLAGS_NONE);
     any.a_char = 'd'; /* group accelerator '\' */
     add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, '\\',
-             ATR_NONE, clr, "the type of an object on discoveries list",
+             ATR_NONE, clr, _("the type of an object on discoveries list"),
              MENU_ITEMFLAGS_NONE);
     any.a_char = 'a'; /* group accelerator 'l' */
     add_menu(win, &nul_glyphinfo, &any, abc ? 0 : any.a_char, 'l',
-             ATR_NONE, clr, "record an annotation for the current level",
+             ATR_NONE, clr, _("record an annotation for the current level"),
              MENU_ITEMFLAGS_NONE);
-    end_menu(win, "What do you want to name?");
+    end_menu(win, _("What do you want to name?"));
     if (select_menu(win, PICK_ONE, &pick_list) > 0) {
         ch = pick_list[0].item.a_char;
         free((genericptr_t) pick_list);

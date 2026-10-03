@@ -151,25 +151,25 @@ static struct tt_condinfo {
     unsigned long mask;
     const char *text;
 } tt_condorder[] = {
-    { BL_MASK_GRAB, "Grabbed!" },
-    { BL_MASK_STONE, "Stone" },
-    { BL_MASK_SLIME, "Slime" },
-    { BL_MASK_STRNGL, "Strngl" },
-    { BL_MASK_FOODPOIS, "FoodPois" },
-    { BL_MASK_TERMILL, "TermIll" },
-    { BL_MASK_INLAVA, "InLava" },
-    { BL_MASK_HELD, "Held" },
-    { BL_MASK_HOLDING, "Holding" },
-    { BL_MASK_BLIND, "Blind" },
-    { BL_MASK_DEAF, "Deaf" },
-    { BL_MASK_STUN, "Stun" },
-    { BL_MASK_CONF, "Conf" },
-    { BL_MASK_HALLU, "Hallu" },
-    { BL_MASK_TRAPPED, "Trapped" },
-    { BL_MASK_TETHERED, "Tethered", },
-    { BL_MASK_LEV, "Lev" },
-    { BL_MASK_FLY, "Fly" },
-    { BL_MASK_RIDE, "Ride" },
+    { BL_MASK_GRAB, N_("Grabbed!") },
+    { BL_MASK_STONE, N_("Stone") },
+    { BL_MASK_SLIME, N_("Slime") },
+    { BL_MASK_STRNGL, N_("Strngl") },
+    { BL_MASK_FOODPOIS, N_("FoodPois") },
+    { BL_MASK_TERMILL, N_("TermIll") },
+    { BL_MASK_INLAVA, N_("InLava") },
+    { BL_MASK_HELD, N_("Held") },
+    { BL_MASK_HOLDING, N_("Holding") },
+    { BL_MASK_BLIND, N_("Blind") },
+    { BL_MASK_DEAF, N_("Deaf") },
+    { BL_MASK_STUN, N_("Stun") },
+    { BL_MASK_CONF, N_("Conf") },
+    { BL_MASK_HALLU, N_("Hallu") },
+    { BL_MASK_TRAPPED, N_("Trapped") },
+    { BL_MASK_TETHERED, N_("Tethered"), },
+    { BL_MASK_LEV, N_("Lev") },
+    { BL_MASK_FLY, N_("Fly") },
+    { BL_MASK_RIDE, N_("Ride") },
 };
 
 static const char *const fancy_status_hilite_colors[] = {
@@ -381,6 +381,7 @@ PrepStatusField(int fld, Widget label, const char *text)
     if (colrattr != old_field_colors[fld])
         HiliteField(label, fld, 0, colrattr, &font);
 
+    text = x11_latin1(text); /* the core's text is UTF-8 */
     num_args = 0;
     (void) memset((genericptr_t) args, 0, sizeof args);
     /* set up the current text to be displayed */
@@ -409,7 +410,7 @@ DisplayCond(
     XFontStruct *font = X11_status_font;
     int coloridx, attrmask, colrattr, idx;
     unsigned long bm = tt_condorder[c_idx].mask;
-    const char *text = tt_condorder[c_idx].text;
+    const char *text = x11_latin1(_(tt_condorder[c_idx].text));
     struct status_info_t *si = xw_status_win->Win_info.Status_info;
 
     if ((X11_condition_bits & bm) == 0)
@@ -1328,6 +1329,7 @@ static void update_color(struct X_status_value *, int);
 static boolean name_widget_has_label(struct X_status_value *);
 static void apply_hilite_attributes(struct X_status_value *, int);
 static const char *width_string(int);
+static const char *stat_label(const char *);
 static void create_widget(Widget, struct X_status_value *, int);
 static void get_widths(struct X_status_value *, int *, int *);
 static void set_widths(struct X_status_value *, int, int);
@@ -1350,64 +1352,72 @@ static struct X_status_value shown_stats[NUM_STATS] = {
     /* 0 */
     { "",             SV_NAME,  W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* 1 */
-    { "Strength",     SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Dexterity",    SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Constitution", SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Intelligence", SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Strength"), SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Dexterity"), SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Constitution"),
+      SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Intelligence"),
+      SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* 5 */
-    { "Wisdom",       SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Charisma",     SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Wisdom"),  SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Charisma"), SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* F_NAME: 7 */
     { "",             SV_LABEL, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* F_DLEVEL: 8 */
     { "",             SV_LABEL, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Gold",         SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Gold"),    SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* F_HP: 10 */
-    { "Hit Points",   SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Max HP",       SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Power",        SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Max Power",    SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Armor Class",  SV_VALUE, W0, 256L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Hit Points"),
+      SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Max HP"),  SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Power"),   SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Max Power"), SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Armor Class"),
+      SV_VALUE, W0, 256L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* F_XP_LEVL: 15 */
-    { "Xp Level",     SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Xp Level"), SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* also 15 (overloaded field) */
-    /*{ "Hit Dice",   SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },*/
+    /*{ "Hit Dice", SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },*/
     /* F_EXP_PTS: 16 (optionally displayed) */
-    { "Exp Points",   SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
-    { "Alignment",    SV_VALUE, W0,  -2L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Exp Points"),
+      SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Alignment"), SV_VALUE, W0,  -2L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* 18, optionally displayed */
-    { "Time",         SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Time"),    SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* 19, conditionally present, optionally displayed when present */
-    { "Score",        SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
+    { N_("Score"),   SV_VALUE, W0,  -1L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
     /* F_HUNGER: 20 (blank if 'normal') */
     { "",             SV_NAME,  W0,  -1L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* F_ENCUMBER: 21 (blank if unencumbered) */
     { "",             SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Trapped",      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Tethered",     SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Levitating",   SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Trapped"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Tethered"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Levitating"),
+      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* 25 */
-    { "Flying",       SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Riding",       SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Grabbed!",     SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Flying"),  SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Riding"),  SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Grabbed!"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* F_STONE: 28 */
-    { "Petrifying",   SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Slimed",       SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Petrifying"),
+      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Slimed"),  SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* 30 */
-    { "Strangled",    SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Food Pois",    SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Term Ill",     SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Strangled"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Food Pois"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Term Ill"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* F_IN_LAVA: 33 */
-    { "Sinking",      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Held",         SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Sinking"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Held"),    SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* 35 */
-    { "Holding",      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Blind",        SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Deaf",         SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Stunned",      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
-    { "Confused",     SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Holding"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Blind"),   SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Deaf"),    SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Stunned"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Confused"), SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* F_HALLU: 40 (full spelling truncated due to space limitations) */
-    { "Hallucinat",   SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
+    { N_("Hallucinat"),
+      SV_NAME,  W0,   0L, 0, FALSE, TRUE,  FALSE, P0, 0, 0 },
     /* F_VERS; optionally shown, generally treated as a pseudo-condition */
     { "Version 1.2.3", SV_LABEL, W0,  0L, 0, FALSE, FALSE, FALSE, P0, 0, 0 },
 };
@@ -1537,7 +1547,7 @@ update_val(struct X_status_value *attr_rec, long new_value)
         if (attr_rec == &shown_stats[F_NAME]) {
             Strcpy(buf, svp.plname);
             buf[0] = highc(buf[0]);
-            Strcat(buf, " the ");
+            Strcat(buf, title_the());
             if (Upolyd) {
                 char mnam[BUFSZ];
                 int k;
@@ -1550,13 +1560,14 @@ update_val(struct X_status_value *attr_rec, long new_value)
                 Strcat(buf, mnam);
             } else {
                 Strcat(buf,
-                       rank_of(u.ulevel, svp.pl_character[0], flags.female));
+                       gendered_word(rank_of(u.ulevel, svp.pl_character[0],
+                                             flags.female), flags.female));
             }
 
         } else if (attr_rec == &shown_stats[F_DLEVEL]) {
             if (!describe_level(buf, 0)) {
-                Strcpy(buf, svd.dungeons[u.uz.dnum].dname);
-                Sprintf(eos(buf), ", level %d", depth(&u.uz));
+                Strcpy(buf, _(svd.dungeons[u.uz.dnum].dname));
+                Sprintf(eos(buf), _(", level %d"), depth(&u.uz));
             }
         } else if (attr_rec == &shown_stats[F_VERS]) {
             if (flags.showvers)
@@ -1575,7 +1586,7 @@ update_val(struct X_status_value *attr_rec, long new_value)
         /* Set the label.  'name' field is const for most entries;
            we need to cast away that const for this assignment */
         Strcpy((char *) attr_rec->name, buf);
-        XtSetArg(args[0], XtNlabel, buf);
+        XtSetArg(args[0], XtNlabel, x11_latin1(buf));
         XtSetValues(attr_rec->w, args, ONE);
 
     } else if (attr_rec->type == SV_NAME) {
@@ -1588,10 +1599,11 @@ update_val(struct X_status_value *attr_rec, long new_value)
         if (attr_rec == &shown_stats[F_HUNGER]) {
             Strcpy(buf, hu_stat[new_value]);
             (void) mungspaces(buf);
+            Strcpy(buf, stat_label(buf));
         } else if (attr_rec == &shown_stats[F_ENCUMBER]) {
-            Strcpy(buf, enc_stat[new_value]);
+            Strcpy(buf, stat_label(enc_stat[new_value]));
         } else if (new_value) {
-            Strcpy(buf, attr_rec->name); /* condition name On */
+            Strcpy(buf, stat_label(attr_rec->name)); /* condition name On */
         } else {
             *buf = '\0'; /* condition name Off */
         }
@@ -1605,7 +1617,7 @@ update_val(struct X_status_value *attr_rec, long new_value)
         /* special case: time can be enabled & disabled */
         if (attr_rec == &shown_stats[F_TIME]) {
             if (flags.time && !time_shown) {
-                set_name(attr_rec->w, shown_stats[F_TIME].name);
+                set_name(attr_rec->w, stat_label(shown_stats[F_TIME].name));
                 force_update = TRUE;
                 time_shown = TRUE;
             } else if (!flags.time && time_shown) {
@@ -1621,7 +1633,8 @@ update_val(struct X_status_value *attr_rec, long new_value)
             boolean showexp = flags.showexp && !Upolyd;
 
             if (showexp && !Exp_shown) {
-                set_name(attr_rec->w, shown_stats[F_EXP_PTS].name);
+                set_name(attr_rec->w,
+                         stat_label(shown_stats[F_EXP_PTS].name));
                 force_update = TRUE;
                 Exp_shown = TRUE;
             } else if (!showexp && Exp_shown) {
@@ -1636,7 +1649,7 @@ update_val(struct X_status_value *attr_rec, long new_value)
         } else if (attr_rec == &shown_stats[F_SCORE]) {
 #ifdef SCORE_ON_BOTL
             if (flags.showscore && !score_shown) {
-                set_name(attr_rec->w, shown_stats[F_SCORE].name);
+                set_name(attr_rec->w, stat_label(shown_stats[F_SCORE].name));
                 force_update = TRUE;
                 score_shown = TRUE;
             } else
@@ -1653,11 +1666,12 @@ update_val(struct X_status_value *attr_rec, long new_value)
         } else if (attr_rec == &shown_stats[F_XP_LEVL]) {
             if (Upolyd && !Xp_was_HD) {
                 force_update = TRUE;
-                set_name(attr_rec->w, "Hit Dice");
+                set_name(attr_rec->w, stat_label(N_("Hit Dice")));
                 Xp_was_HD = TRUE;
             } else if (!Upolyd && Xp_was_HD) {
                 force_update = TRUE;
-                set_name(attr_rec->w, shown_stats[F_XP_LEVL].name);
+                set_name(attr_rec->w,
+                         stat_label(shown_stats[F_XP_LEVL].name));
                 Xp_was_HD = FALSE;
             }
             /* core won't call status_update() for Exp when it hasn't changed
@@ -1699,6 +1713,9 @@ update_val(struct X_status_value *attr_rec, long new_value)
         } else if (attr_rec == &shown_stats[F_ALIGN]) {
             Strcpy(buf, (new_value == A_CHAOTIC) ? "Chaotic"
                         : (new_value == A_NEUTRAL) ? "Neutral" : "Lawful");
+            /* translated as on the basic status line (botl.c) */
+            Strcpy(buf, x11_latin1(flags.female ? C_("feminine", buf)
+                                                : _(buf)));
         } else {
             Sprintf(buf, "%ld", new_value);
         }
@@ -2103,6 +2120,15 @@ check_turn_events(void)
 /* Initialize alternate status ============================================ */
 
 /* Return a string for the initial width, so use longest possible value. */
+/* translation of a status label or condition name, to be shown */
+static const char *
+stat_label(const char *name)
+{
+    if (!name || !*name)
+        return name; /* "" would get the catalog header */
+    return x11_latin1(_(name));
+}
+
 static const char *
 width_string(int sv_index)
 {
@@ -2182,7 +2208,8 @@ create_widget(Widget parent, struct X_status_value *sv, int sv_index)
     switch (sv->type) {
     case SV_VALUE:
         sv->w = create_value(parent, sv->name);
-        set_value(sv->w, width_string(sv_index));
+        set_name(sv->w, stat_label(sv->name));
+        set_value(sv->w, stat_label(width_string(sv_index)));
         break;
     case SV_LABEL:
         /* Labels get their own buffer. */
@@ -2214,7 +2241,8 @@ create_widget(Widget parent, struct X_status_value *sv, int sv_index)
             sv->w = shown_stats[baseindx].w;
             break;
         }
-        txt = width_string(sv_index); /* for conditions, it's just sv->name */
+        /* for conditions, it's just sv->name */
+        txt = stat_label(width_string(sv_index));
         if (fo) {
             int i, ff, altln, ln = (int) strlen(txt);
 
@@ -2223,7 +2251,7 @@ create_widget(Widget parent, struct X_status_value *sv, int sv_index)
                display, and ultimately only matters if one of the overloads
                happens to be the longest string in its whole column */
             for (i = 1; i < NUM_OVLD && (ff = fo->conds[i].ff) > 0; ++i)
-                if ((altln = (int) strlen(width_string(ff))) > ln)
+                if ((altln = (int) strlen(stat_label(width_string(ff)))) > ln)
                     ln = altln;
             Sprintf(buf, "%*s", ln, txt);
             txt = buf;

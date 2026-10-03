@@ -181,22 +181,22 @@ NetHackQtMenuWindow::NetHackQtMenuWindow(QWidget *parent) :
     table->horizontalHeader()->hide();
     table->verticalHeader()->hide();
 
-    ok=new QPushButton("Ok");
+    ok=new QPushButton(_("Ok"));
     connect(ok,SIGNAL(clicked()),this,SLOT(accept()));
 
-    cancel=new QPushButton("Cancel");
+    cancel=new QPushButton(_("Cancel"));
     connect(cancel,SIGNAL(clicked()),this,SLOT(reject()));
 
-    all=new QPushButton("All");
+    all=new QPushButton(_("All"));
     connect(all,SIGNAL(clicked()),this,SLOT(All()));
 
-    none=new QPushButton("None");
+    none=new QPushButton(_("None"));
     connect(none,SIGNAL(clicked()),this,SLOT(ChooseNone()));
 
-    invert=new QPushButton("Invert");
+    invert=new QPushButton(_("Invert"));
     connect(invert,SIGNAL(clicked()),this,SLOT(Invert()));
 
-    search=new QPushButton("Search");
+    search=new QPushButton(_("Search"));
     connect(search,SIGNAL(clicked()),this,SLOT(Search()));
 
     QPoint pos(0,ok->height());
@@ -640,7 +640,7 @@ void NetHackQtMenuWindow::InputCount(char key)
 	countstr += QChar(key);
     }
     if (counting)
-	prompt.setText("Count: " + countstr);
+	prompt.setText(_("Count: ") + countstr);
 }
 
 void NetHackQtMenuWindow::ClearCount(void)
@@ -797,7 +797,7 @@ void NetHackQtMenuWindow::Search()
         return;
 
     searching = true;
-    NetHackQtStringRequestor requestor(this, "Search for:");
+    NetHackQtStringRequestor requestor(this, _("Search for:"));
     char line[BUFSZ];
     line[0] = '\0'; /* for EDIT_GETLIN */
     if (requestor.Get(line)) {
@@ -923,8 +923,8 @@ NetHackQtTextWindow::NetHackQtTextWindow(QWidget *parent) :
     use_rip(false),
     str_fixed(false),
     textsearching(false),
-    ok("&Dismiss", this),
-    search("&Search", this),
+    ok(_("&Dismiss"), this),
+    search(_("&Search"), this),
     lines(new NetHackQtTextListBox(this)),
     target(""),
     rip(this)
@@ -1156,7 +1156,7 @@ void NetHackQtTextWindow::PutStr(int attr UNUSED, const QString& text)
 void NetHackQtTextWindow::Search()
 {
     textsearching = true;
-    NetHackQtStringRequestor requestor(this, "Search for:", "Done", "Find");
+    NetHackQtStringRequestor requestor(this, _("Search for:"), _("Done"), _("Find"));
     requestor.SetDefault(target);
     boolean get_a_line = requestor.Get(target, (int) sizeof target);
 

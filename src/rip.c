@@ -21,7 +21,6 @@
 
 #ifdef TEXT_TOMBSTONE
 staticfn void center(int, char *);
-staticfn void killer_i18n(char *, unsigned, int);
 staticfn void rip_word_i18n(char *, const char *);
 
 #ifndef NH320_DEDICATION
@@ -229,8 +228,9 @@ NC_("killer", "touching a cockatrice corpse")
 #endif
 
 /* translated death description for the tombstone; formatkiller() keeps
-   the English one that is written to the record and log files */
-staticfn void
+   the English one that is written to the record and log files;
+   also used by the X11 graphical tombstone */
+void
 killer_i18n(char *buf, unsigned siz, int how)
 {
     static const char *const prefixes[] = {

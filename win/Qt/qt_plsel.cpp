@@ -75,7 +75,7 @@ void centerOnMain( QWidget* w );
 // hack: padded with blank lines by inserting breaks above and below in
 // order to force window to be tall enough to show all the roles at once
 static const char nh_attribution[] = "<br><center><big>NetHack %1</big>"
-        "<br><small>by the NetHack DevTeam</small></center><br>";
+        "<br><small>%2</small></center><br>";
 
 //
 // None of these extra classes seem to be used except for NhPSListView. [pr]
@@ -127,9 +127,9 @@ public:
     NhPSListViewRole( QTableWidget* parent, int id ) :
 	NhPSListViewItem(parent,
 #ifdef QT_CHOOSE_RACE_FIRST // Lowerize - looks better
-	    QString(roles[id].name.m).toLower()
+	    QString(_(roles[id].name.m)).toLower()
 #else
-	    roles[id].name.m
+	    _(roles[id].name.m)
 #endif
 	)
     {
@@ -145,9 +145,9 @@ public:
     NhPSListViewRace( QTableWidget* parent, int id ) :
 	NhPSListViewItem(parent,
 #ifdef QT_CHOOSE_RACE_FIRST // Capitalize - looks better
-	    str_titlecase(races[id].noun)
+	    str_titlecase(_(races[id].noun))
 #else
-	    races[id].noun
+	    _(races[id].noun)
 #endif
 	)
     {
@@ -197,9 +197,9 @@ NetHackQtPlayerSelector::NetHackQtPlayerSelector(
     chosen_align(ROLE_NONE),
     cleric_role_row(0),
     human_race_row(0),
-    rand_btn(new QPushButton("Random")),
-    play_btn(new QPushButton("Play")),
-    quit_btn(new QPushButton("Quit"))
+    rand_btn(new QPushButton(_("Random"))),
+    play_btn(new QPushButton(_("Play"))),
+    quit_btn(new QPushButton(_("Quit")))
 {
     /*
                0              1              2
@@ -254,12 +254,12 @@ NetHackQtPlayerSelector::NetHackQtPlayerSelector(
     l->setColumnStretch(2, 1);
     sizePolicy().setHorizontalPolicy(QSizePolicy::Minimum);
 
-    QGroupBox* namebox = new QGroupBox("Name", this);
+    QGroupBox* namebox = new QGroupBox(_("Name"), this);
     QVBoxLayout *namelayout = new QVBoxLayout(namebox);
     QLineEdit* name = new QLineEdit(namebox);
     namelayout->addWidget(name);
     name->setMaxLength(PL_NSIZ - 1);
-    name->setPlaceholderText(QString("  (required)")); // grayed out
+    name->setPlaceholderText(QString(_("  (required)"))); // grayed out
 
     // if plname[] contains a generic user name, clear it
     if (generic_plname())
@@ -280,7 +280,8 @@ NetHackQtPlayerSelector::NetHackQtPlayerSelector(
     QVBoxLayout* vbab UNUSED = new QVBoxLayout(alignbox);
     char versionbuf[QBUFSZ];
     QLabel *logo = new QLabel(QString(nh_attribution).arg(
-                        version_string(versionbuf, sizeof versionbuf)), this);
+                        version_string(versionbuf, sizeof versionbuf),
+                        QString(_("by the NetHack DevTeam"))), this);
 
     l->addWidget( namebox, 0,0,1,3 );
     role = new NhPSListView(this);
@@ -337,12 +338,12 @@ NetHackQtPlayerSelector::NetHackQtPlayerSelector(
 
     connect(role, SIGNAL(currentCellChanged(int, int, int, int)),
             this, SLOT(selectRole(int, int, int, int)));
-    role->setHorizontalHeaderLabels(QStringList("Role"));
+    role->setHorizontalHeaderLabels(QStringList(_("Role")));
     role->resizeColumnToContents(0);
 
     connect(race, SIGNAL(currentCellChanged(int, int, int, int)),
             this, SLOT(selectRace(int, int, int, int)));
-    race->setHorizontalHeaderLabels(QStringList("Race"));
+    race->setHorizontalHeaderLabels(QStringList(_("Race")));
     race->resizeColumnToContents(0);
 
     // TODO:
@@ -350,22 +351,22 @@ NetHackQtPlayerSelector::NetHackQtPlayerSelector(
     //  horizontal header labels for role and race.  (Getting the font from
     //  race table above and setting it for labels below made no difference.)
 
-    QLabel *gendlabel = new QLabel("Gender");
+    QLabel *gendlabel = new QLabel(_("Gender"));
     genderbox->layout()->addWidget(gendlabel);
     gender = new QRadioButton*[ROLE_GENDERS];
     for (i=0; i<ROLE_GENDERS; i++) {
-	gender[i] = new QRadioButton( genders[i].adj, genderbox );
+	gender[i] = new QRadioButton( _(genders[i].adj), genderbox );
 	genderbox->layout()->addWidget(gender[i]);
 	gendergroup->addButton(gender[i], i);
     }
     connect(gendergroup, SIGNAL(buttonClicked(int)),
             this, SLOT(selectGender(int)));
 
-    QLabel *alignlabel = new QLabel("Alignment");
+    QLabel *alignlabel = new QLabel(_("Alignment"));
     alignbox->layout()->addWidget(alignlabel);
     alignment = new QRadioButton*[ROLE_ALIGNS];
     for (i=0; i<ROLE_ALIGNS; i++) {
-	alignment[i] = new QRadioButton( aligns[i].adj, alignbox );
+	alignment[i] = new QRadioButton( _(aligns[i].adj), alignbox );
 	alignbox->layout()->addWidget(alignment[i]);
 	aligngroup->addButton(alignment[i], i);
     }
@@ -403,8 +404,9 @@ NetHackQtPlayerSelector::populate_roles()
     bool is_f = (gn == 1);
     NetHackQtGlyphs& glyphs = qt_settings->glyphs();
     for (int i = 0; roles[i].name.m; ++i) {
-        rolename = (is_f && roles[i].name.f) ? roles[i].name.f
-                                             : roles[i].name.m;
+        /* translated as on the tty role selection (role.c) */
+        rolename = (is_f && roles[i].name.f) ? _(roles[i].name.f)
+                   : gendered_word(roles[i].name.m, is_f ? 1 : 0);
         gf = monnum_to_glyph(roles[i].mnum, is_f ? FEMALE : MALE);
         map_glyphinfo(0, 0, gf, 0, &gi);
         v = ((ra < 0 || validrace(i, ra))
@@ -440,7 +442,7 @@ NetHackQtPlayerSelector::populate_races()
         v = ((ro < 0 || validrace(ro, j))
              && (al < 0 || validalign((ro >= 0) ? ro : cl, j, al)));
         item = race->item(j, 0);
-        item->setText(races[j].noun);
+        item->setText(gendered_word(races[j].noun, is_f ? 1 : 0));
         item->setIcon(QIcon(glyphs.glyph(gf, gi.gm.tileidx)));
         item->setFlags(v ? Qt::ItemIsEnabled | Qt::ItemIsSelectable
                          : Qt::NoItemFlags);
@@ -559,7 +561,8 @@ void NetHackQtPlayerSelector::plnamePlayVsQuit()
 // the line edit widget for the name field has received input
 void NetHackQtPlayerSelector::selectName(const QString& n)
 {
-    const char *name_str = n.toLatin1().constData();
+    QByteArray name_utf8 = n.toUtf8(); // keep it alive while name_str is used
+    const char *name_str = name_utf8.constData();
     // skip any leading spaces
     // (it would be better to set up a validator that rejects leading spaces)
     while (*name_str == ' ')

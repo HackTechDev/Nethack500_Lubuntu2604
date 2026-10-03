@@ -187,6 +187,7 @@ static void X11_sig_cb(XtPointer, XtSignalId *);
 static void d_timeout(XtPointer, XtIntervalId *);
 static void X11_hangup(Widget, XEvent *, String *, Cardinal *);
 ATTRNORETURN static void X11_bail(const char *) NORETURN;
+static void dialog_button_labels(Widget);
 static void askname_delete(Widget, XEvent *, String *, Cardinal *);
 static void askname_done(Widget, XtPointer, XtPointer);
 static void done_button(Widget, XtPointer, XtPointer);
@@ -216,7 +217,7 @@ X11_putmsghistory(const char *msg, boolean is_restoring)
         struct xwindow *wp = &window_list[WIN_MESSAGE];
         debugpline2("X11_putmsghistory('%s',%i)", msg, is_restoring);
         if (msg)
-            append_message(wp, msg);
+            append_message(wp, x11_latin1(msg));
     }
 }
 
@@ -240,7 +241,9 @@ X11_getmsghistory(boolean init)
             curr = curr->next;
             numlines++;
             debugpline2("X11_getmsghistory(%i)='%s'", init, curr->line);
-            return curr->line;
+            /* lines are kept in Latin-1 [x11_latin1()]; the core saves
+               them for any interface */
+            return x11_utf8(curr->line);
         }
     }
     return (char *) 0;
@@ -934,6 +937,131 @@ release_default_resources(void)
     /* def_rsrc_macr[] and def_rsrc_valu[] have already been released */
 }
 
+/*
+ * The X11 interface draws its text with core fonts in ISO-8859-1 while
+ * translated text is UTF-8.  x11_latin1() converts a string about to be
+ * displayed (characters outside Latin-1 get a substitute); bytes which
+ * aren't UTF-8 are kept, so text already converted is left alone.
+ * x11_utf8() converts text typed by the player back to UTF-8.  Both
+ * return one of several static buffers.
+ */
+#define X11_CONVBUFS 8
+#define X11_CONVBUFSZ (2 * BUFSZ)
+
+char *
+x11_latin1(const char *str)
+{
+    static char bufs[X11_CONVBUFS][X11_CONVBUFSZ];
+    static int bufidx = 0;
+    const unsigned char *q = (const unsigned char *) str;
+    const char *sub;
+    char *res, *p, *end;
+    unsigned long c;
+    int n;
+
+    if (!str)
+        return (char *) 0;
+    while (*q && *q < 0x80)
+        ++q;
+    if (!*q)
+        return (char *) str; /* plain ASCII */
+    res = p = bufs[bufidx];
+    bufidx = (bufidx + 1) % X11_CONVBUFS;
+    end = res + X11_CONVBUFSZ - 4; /* room for a substitute */
+    q = (const unsigned char *) str;
+    while (*q && p < end) {
+        if (*q < 0x80) {
+            *p++ = (char) *q++;
+            continue;
+        }
+        if ((q[0] & 0xE0) == 0xC0 && (q[1] & 0xC0) == 0x80) {
+            c = ((unsigned long) (q[0] & 0x1F) << 6) | (q[1] & 0x3F);
+            n = 2;
+        } else if ((q[0] & 0xF0) == 0xE0 && (q[1] & 0xC0) == 0x80
+                   && (q[2] & 0xC0) == 0x80) {
+            c = ((unsigned long) (q[0] & 0x0F) << 12)
+                | ((unsigned long) (q[1] & 0x3F) << 6) | (q[2] & 0x3F);
+            n = 3;
+        } else if ((q[0] & 0xF8) == 0xF0 && (q[1] & 0xC0) == 0x80
+                   && (q[2] & 0xC0) == 0x80 && (q[3] & 0xC0) == 0x80) {
+            c = 0x10000; /* nothing to show in Latin-1 */
+            n = 4;
+        } else {
+            *p++ = (char) *q++; /* not UTF-8: already Latin-1 */
+            continue;
+        }
+        q += n;
+        if (c < 0x100) {
+            *p++ = (char) c;
+            continue;
+        }
+        switch (c) {
+        case 0x0152:
+            sub = "OE";
+            break;
+        case 0x0153:
+            sub = "oe";
+            break;
+        case 0x2018:
+        case 0x2019:
+            sub = "'";
+            break;
+        case 0x201C:
+        case 0x201D:
+            sub = "\"";
+            break;
+        case 0x2013:
+        case 0x2014:
+            sub = "-";
+            break;
+        case 0x2026:
+            sub = "...";
+            break;
+        case 0x2007:
+        case 0x2009:
+        case 0x202F:
+            sub = " ";
+            break;
+        default:
+            sub = "?";
+            break;
+        }
+        while (*sub)
+            *p++ = *sub++;
+    }
+    *p = '\0';
+    return res;
+}
+
+char *
+x11_utf8(const char *str)
+{
+    static char bufs[2][X11_CONVBUFSZ];
+    static int bufidx = 0;
+    const unsigned char *q = (const unsigned char *) str;
+    char *res, *p, *end;
+
+    if (!str)
+        return (char *) 0;
+    while (*q && *q < 0x80)
+        ++q;
+    if (!*q)
+        return (char *) str; /* plain ASCII */
+    res = p = bufs[bufidx];
+    bufidx = (bufidx + 1) % 2;
+    end = res + X11_CONVBUFSZ - 2;
+    for (q = (const unsigned char *) str; *q && p < end; ++q) {
+        if (*q < 0x80) {
+            *p++ = (char) *q;
+        } else {
+            *p++ = (char) (0xC0 | (*q >> 6));
+            *p++ = (char) (0x80 | (*q & 0x3F));
+        }
+    }
+    *p = '\0';
+    return res;
+}
+
 /* Global Functions ======================================================= */
 void
 X11_raw_print(const char *str)
@@ -978,11 +1106,11 @@ X11_putstr(winid window, int attr, const char *str)
     case NHW_MESSAGE:
         (void) strncpy(gt.toplines, str, TBUFSZ); /* for Norep(). */
         gt.toplines[TBUFSZ - 1] = 0;
-        append_message(wp, str);
+        append_message(wp, x11_latin1(str));
         break;
 #ifndef STATUS_HILITES
     case NHW_STATUS:
-        adjust_status(wp, str);
+        adjust_status(wp, x11_latin1(str));
         break;
 #endif
     case NHW_MAP:
@@ -1005,7 +1133,7 @@ X11_putstr(winid window, int attr, const char *str)
         FALLTHROUGH;
         /*FALLTHRU*/
     case NHW_TEXT:
-        add_to_text_window(wp, attr, str);
+        add_to_text_window(wp, attr, x11_latin1(str));
         break;
     default:
         impossible("putstr: unknown window type [%d] \"%s\"", wp->type, str);
@@ -1801,6 +1929,26 @@ X11_bail(const char *mesg)
     /*NOTREACHED*/
 }
 
+/* translate the buttons of a dialog made by CreateDialog() (dialogs.c
+   doesn't see the translation functions) */
+static void
+dialog_button_labels(Widget dialog)
+{
+    Widget button;
+    Arg args[1];
+
+    if ((button = XtNameToWidget(dialog, "okay")) != 0) {
+        XtSetArg(args[0], nhStr(XtNlabel),
+                 x11_latin1(C_("button", "okay")));
+        XtSetValues(button, args, ONE);
+    }
+    if ((button = XtNameToWidget(dialog, "cancel")) != 0) {
+        XtSetArg(args[0], nhStr(XtNlabel),
+                 x11_latin1(C_("button", "cancel")));
+        XtSetValues(button, args, ONE);
+    }
+}
+
 /* askname ---------------------------------------------------------------- */
 /* ARGSUSED */
 static void
@@ -1859,7 +2007,7 @@ X11_askname(void)
     if (iflags.wc2_selectsaved && !iflags.renameinprogress)
         switch (restore_menu(WIN_MAP)) {
         case -1: /* quit */
-            X11_bail("Until next time then...");
+            X11_bail(_("Until next time then..."));
             /*NOTREACHED*/
         case 0: /* no game chosen; start new game */
             break;
@@ -1886,8 +2034,9 @@ X11_askname(void)
 
     dialog = CreateDialog(popup, nhStr("dialog"), askname_done,
                           (XtCallbackProc) 0);
+    dialog_button_labels(dialog);
 
-    SetDialogPrompt(dialog, nhStr("What is your name?")); /* set prompt */
+    SetDialogPrompt(dialog, XL_("What is your name?")); /* set prompt */
     SetDialogResponse(dialog, svp.plname, PL_NSIZ); /* set default answer */
 
     XtRealizeWidget(popup);
@@ -1921,20 +2070,22 @@ static void
 done_button(Widget w, XtPointer client_data, XtPointer call_data)
 {
     int len;
-    char *s;
+    char *s, *utf8;
     Widget dialog = (Widget) client_data;
 
     nhUse(w);
     nhUse(call_data);
 
     s = (char *) GetDialogResponse(dialog);
-    len = strlen(s);
+    /* typed in Latin-1; the core wants UTF-8 */
+    utf8 = x11_utf8(s);
+    len = strlen(utf8);
 
     /* Truncate input if necessary */
     if (len >= BUFSZ)
         len = BUFSZ - 1;
 
-    (void) strncpy(getline_input, s, len);
+    (void) strncpy(getline_input, utf8, len);
     getline_input[len] = '\0';
     XtFree(s);
 
@@ -2004,6 +2155,7 @@ X11_getlin(
 
         getline_dialog = CreateDialog(getline_popup, nhStr("dialog"),
                                       done_button, abort_button);
+        dialog_button_labels(getline_dialog);
 
         XtRealizeWidget(getline_popup);
         XSetWMProtocols(XtDisplay(getline_popup), XtWindow(getline_popup),
@@ -2021,12 +2173,12 @@ X11_getlin(
         upromptlen = 64;
 #ifdef EDIT_GETLIN
     /* set default answer */
-    SetDialogResponse(getline_dialog, input, upromptlen);
+    SetDialogResponse(getline_dialog, x11_latin1(input), upromptlen);
 #else
     /* no default answer */
     SetDialogResponse(getline_dialog, nhStr(""), upromptlen);
 #endif
-    SetDialogPrompt(getline_dialog, (String) question); /* set prompt */
+    SetDialogPrompt(getline_dialog, x11_latin1(question)); /* set prompt */
     positionpopup(getline_popup, TRUE);           /* center,bottom */
 
     nh_XtPopup(getline_popup, (int) XtGrabExclusive, getline_dialog);
@@ -2267,7 +2419,7 @@ X11_yn_function_core(
 {
     static XFontStruct *yn_font = 0;
     static Dimension yn_minwidth = 0;
-    char buf[BUFSZ], buf2[BUFSZ];
+    char buf[BUFSZ], buf2[BUFSZ], *lbuf;
     Arg args[4];
     Cardinal num_args;
     boolean suppress_logging = (ynflags & YN_NO_LOGMESG) != 0U,
@@ -2399,7 +2551,8 @@ X11_yn_function_core(
     /* set the label of the yn widget to be the prompt text */
     (void) memset((genericptr_t) args, 0, sizeof args);
     num_args = 0;
-    XtSetArg(args[num_args], XtNlabel, buf); num_args++;
+    lbuf = x11_latin1(buf); /* buf stays UTF-8 for the message log */
+    XtSetArg(args[num_args], XtNlabel, lbuf); num_args++;
     XtSetValues(yn_label, args, num_args);
 
     /* for !slow, pop up the prompt+response widget */
@@ -2422,7 +2575,8 @@ X11_yn_function_core(
         XtSetArg(args[num_args], XtNwidth, &labelwidth); num_args++;
         XtGetValues(yn_label, args, num_args);
 
-        promptwidth = (Dimension) XTextWidth(yn_font, buf, (int) strlen(buf));
+        promptwidth = (Dimension) XTextWidth(yn_font, lbuf,
+                                              (int) strlen(lbuf));
         if (labelwidth != promptwidth || labelwidth < yn_minwidth) {
             labelwidth = max(promptwidth, yn_minwidth);
             (void) memset((genericptr_t) args, 0, sizeof args);

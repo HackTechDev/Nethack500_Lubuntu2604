@@ -350,6 +350,10 @@ extern void positionpopup(Widget, boolean);
 
 /* ### winX.c ### */
 extern struct xwindow *find_widget(Widget);
+extern char *x11_latin1(const char *);
+extern char *x11_utf8(const char *);
+/* translated text shown by a widget */
+#define XL_(s) x11_latin1(_(s))
 extern XColor get_nhcolor(struct xwindow *, int);
 extern void init_menu_nhcolors(struct xwindow *);
 extern void load_boldfont(struct xwindow *, Widget);

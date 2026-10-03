@@ -16,7 +16,7 @@ cd "$(dirname "$0")/.."
 
 XGETTEXT=${XGETTEXT:-xgettext}
 MSGCAT=${MSGCAT:-msgcat}
-SRC="src/*.c win/tty/*.c win/curses/*.c include/optlist.h"
+SRC="src/*.c win/tty/*.c win/curses/*.c win/X11/*.c win/Qt/*.cpp include/optlist.h"
 COMMON="--language=C --from-code=UTF-8 --no-wrap --add-comments=TRANSLATORS:"
 
 tmp=$(mktemp -d)
@@ -24,7 +24,7 @@ trap 'rm -rf "$tmp"' 0
 
 # shellcheck disable=SC2086
 $XGETTEXT $COMMON --package-name=NetHack --package-version=5.0.0 \
-    --keyword=_ --keyword=N_ --keyword=MD_ \
+    --keyword=_ --keyword=N_ --keyword=MD_ --keyword=XL_ \
     --keyword=C_:1c,2 --flag=C_:2:c-format --keyword=NC_:1c,2 \
     --keyword=NCP_:1c,2,3 \
     --keyword=impossible --flag=impossible:1:c-format \

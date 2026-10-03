@@ -22,13 +22,35 @@ Le détail de chaque étape, les emplacements des fichiers installés et les
 précautions à prendre avant une réinstallation sont dans
 [INSTALL.md](INSTALL.md).
 
+### Interfaces X11 et Qt
+
+`install.sh` ne compile que tty et curses. Pour avoir aussi les
+interfaces graphiques X11 et Qt, installer d'abord leurs paquets de
+développement :
+
+```sh
+sudo apt install libxaw7-dev qt6-multimedia-dev
+```
+
+`libxaw7-dev` (widgets Athena) est nécessaire à X11, `qt6-multimedia-dev`
+(sons) à Qt 6. Leurs menus, boutons et boîtes de dialogue sont traduits
+comme le reste du jeu ; X11 affiche le texte en Latin-1 (polices X
+classiques), si bien que `œ` y devient `oe`. Compiler ensuite avec :
+
+```sh
+make WANT_WIN_ALL=1 WANT_WIN_QT6=1 QT6MANUAL=1 HOSTTYPE=x86_64 all
+```
+
+Après un changement d'interfaces, supprimer d'abord les objets
+(`rm src/*.o`), sinon l'édition de liens échoue.
+
 ## Jouer en français
 
 La configuration fournie contient `OPTIONS=language:fr` : le jeu démarre
 en français. Avec `OPTIONS=language:en` (ou sans l'option), il reste en
 anglais.
 
-Sont traduits, pour les interfaces tty et curses :
+Sont traduits, pour les interfaces tty, curses, X11 et Qt :
 
 - tous les messages du jeu, les menus, l'inventaire, les noms des
   monstres et des objets (avec leur genre et leur pluriel), la ligne
@@ -42,7 +64,7 @@ Sont traduits, pour les interfaces tty et curses :
 - le guide du joueur (`doc/Guidebook-fr.txt`) et la page de manuel
   (`doc/nethack-fr.txt`).
 
-Restent en anglais : les interfaces X11 et Qt, les citations de Terry
+Restent en anglais : les citations de Terry
 Pratchett (`dat/tribute`), la licence et les noms des options du fichier
 de configuration. La traduction doit encore être vérifiée en jeu ; ce
 qui reste à faire est listé dans [TODO.md](TODO.md), et son

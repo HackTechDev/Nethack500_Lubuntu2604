@@ -14,7 +14,6 @@ const char *const enc_stat[] = {
 };
 
 staticfn const char *rank(void);
-staticfn const char *title_the(void);
 staticfn const char *status_word(const char *);
 staticfn void bot_via_windowport(void);
 staticfn void stat_update_time(void);
@@ -366,8 +365,8 @@ rank(void)
 }
 
 /* " the " between the hero's name and rank title on the status line;
-   a translation may need the feminine form */
-staticfn const char *
+   a translation may need the feminine form; also used by the Qt status */
+const char *
 title_the(void)
 {
 #ifdef NHI18N

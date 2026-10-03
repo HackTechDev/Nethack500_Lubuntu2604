@@ -63,16 +63,16 @@ NetHackQtGlyphs::NetHackQtGlyphs()
 
     if (!tile_file) {
         tilesok = FALSE;
-        QString msg = nh_qsprintf("Cannot load '%s'.",
+        QString msg = nh_qsprintf(_("Cannot load '%s'."),
                                   user_tiles ? tile_list[0]
                                     // mismatched quotes match format
-                                    : "nhtiles.bmp' or 'x11tiles");
-        QMessageBox::warning(0, "IO Error", msg);
+                                    : _("nhtiles.bmp' or 'x11tiles"));
+        QMessageBox::warning(0, _("IO Error"), msg);
     } else {
         if (img.width() % tiles_per_row) {
             tilesok = FALSE;
             impossible(
-            "Tile file \"%s\" has %d columns, not multiple of row count (%d)",
+            _("Tile file \"%s\" has %d columns, not multiple of row count (%d)"),
                        tile_file, img.width(), tiles_per_row);
         }
     }
