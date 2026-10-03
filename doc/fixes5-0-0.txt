@@ -3092,6 +3092,10 @@ the encyclopedia (dat/data.base) is translated into French as
 #version: the list of compile-time options is rebuilt when shown, so it
 	follows the language option (the text is translated, not the Lua
 	license)
+wizard mode: #timeout, #wizintrinsic, #stats, #wizwhere (also the level
+	teleport menu), #lightsources, #wizborn, #wizrumorcheck, #wizmigrate,
+	#wizkill and the #terrain menu and legend are translated; internal
+	diagnostics (impossible(), sanity checks) stay in English
 
 
 NetHack Community Patches (or Variation) Included

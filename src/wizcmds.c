@@ -246,15 +246,15 @@ wiz_kill(void)
     coord cc;
     int ans;
     char c, qbuf[QBUFSZ];
-    const char *prompt = "Pick first monster to slay";
+    boolean first = TRUE;
     boolean save_verbose = flags.verbose,
             save_autodescribe = iflags.autodescribe;
     d_level uarehere = u.uz;
 
     cc.x = u.ux, cc.y = u.uy;
     for (;;) {
-        pline("%s:", prompt);
-        prompt = "Next monster";
+        pline(first ? "Pick first monster to slay:" : "Next monster:");
+        first = FALSE;
 
         flags.verbose = FALSE;
         iflags.autodescribe = TRUE;
@@ -267,15 +267,16 @@ wiz_kill(void)
         mtmp = 0;
         if (u_at(cc.x, cc.y)) {
             if (u.usteed) {
-                Sprintf(qbuf, "Kill %.110s?", mon_nam(u.usteed));
+                Snprintf(qbuf, sizeof qbuf, _("Kill %.110s?"),
+                         mon_nam(u.usteed));
                 if ((c = ynq(qbuf)) == 'q')
                     break;
                 if (c == 'y')
                     mtmp = u.usteed;
             }
             if (!mtmp) {
-                Sprintf(qbuf, "%s?", Role_if(PM_SAMURAI) ? "Perform seppuku"
-                                                         : "Commit suicide");
+                Strcpy(qbuf, Role_if(PM_SAMURAI) ? _("Perform seppuku?")
+                                                 : _("Commit suicide?"));
                 if (paranoid_query(TRUE, qbuf)) {
                     Sprintf(svk.killer.name, "%s own player", uhis());
                     svk.killer.format = KILLED_BY;
@@ -311,7 +312,7 @@ wiz_kill(void)
 
             if (!iflags.menu_requested) {
                 /* normal case: hero is credited/blamed */
-                You("%s %s!", nonliving(mtmp->data) ? "destroy" : "kill", Mn);
+                You(nonliving(mtmp->data) ? "destroy %s!" : "kill %s!", Mn);
                 xkilled(mtmp, XKILL_NOMSG);
             } else { /* 'm'-prefix */
                 /* we know that monsters aren't moving because player has
@@ -320,8 +321,14 @@ wiz_kill(void)
                    need to have the mon_moving flag be True in order to
                    avoid blaming or crediting hero for their deaths */
                 svc.context.mon_moving = TRUE;
-                pline("%s is %s.", upstart(Mn),
-                      nonliving(mtmp->data) ? "destroyed" : "killed");
+                if (i18n_mon_fem(mtmp))
+                    pline(nonliving(mtmp->data)
+                          ? C_("feminine", "%s is destroyed.")
+                          : C_("feminine", "%s is killed."), upstart(Mn));
+                else
+                    pline(nonliving(mtmp->data) ? "%s is destroyed."
+                                                : "%s is killed.",
+                          upstart(Mn));
                 /* Null second arg suppresses the usual message */
                 monkilled(mtmp, (char *) 0, AD_PHYS);
                 svc.context.mon_moving = FALSE;
@@ -412,7 +419,8 @@ int
 wiz_flip_level(void)
 {
     static const char choices[] = "0123",
-        prmpt[] = "Flip 0=randomly, 1=vertically, 2=horizontally, 3=both:";
+        prmpt[] =
+            N_("Flip 0=randomly, 1=vertically, 2=horizontally, 3=both:");
 
     /*
      * Does not handle
@@ -846,9 +854,9 @@ wiz_levltyp_legend(void)
     char buf[BUFSZ];
 
     win = create_nhwindow(NHW_TEXT);
-    putstr(win, 0, "#terrain encodings:");
+    putstr(win, 0, _("#terrain encodings:"));
     putstr(win, 0, "");
-    fmt = " %c - %-28s"; /* TODO: include tab-separated variant for win32 */
+    fmt = " %c - %s%*s"; /* TODO: include tab-separated variant for win32 */
     *buf = '\0';
     /* output in pairs, left hand column holds [0],[1],...,[N/2-1]
        and right hand column holds [N/2],[N/2+1],...,[N-1];
@@ -865,7 +873,18 @@ wiz_levltyp_legend(void)
                       : (j < 10) ? '0' + j
                          : (j < 36) ? 'a' + j - 10
                             : 'A' + j - 36;
-            Sprintf(eos(buf), fmt, c, dsc);
+            {
+                const char *s;
+                int pad = 28;
+
+                if (*dsc)
+                    dsc = C_("terrain", dsc);
+                /* pad to 28 characters, not bytes (UTF-8 translations) */
+                for (s = dsc; *s; ++s)
+                    if ((*s & 0xc0) != 0x80)
+                        --pad;
+                Sprintf(eos(buf), fmt, c, dsc, max(pad, 0), "");
+            }
             if (j > i) {
                 putstr(win, 0, buf);
                 *buf = '\0';
@@ -951,7 +970,6 @@ wiz_intrinsic(void)
 {
     if (wizard) {
         static const char wizintrinsic[] = "#wizintrinsic";
-        static const char fmt[] = "You are%s %s.";
         winid win;
         anything any;
         char buf[BUFSZ];
@@ -967,7 +985,7 @@ wiz_intrinsic(void)
         if (iflags.cmdassist) {
             /* start menu with a subtitle */
             Sprintf(buf,
-        "[Precede any selection with a count to increment by other than %d.]",
+     _("[Precede any selection with a count to increment by other than %d.]"),
                     DEFAULT_TIMEOUT_INCR);
             add_menu_str(win, buf);
         }
@@ -987,14 +1005,24 @@ wiz_intrinsic(void)
             }
             any.a_int = i + 1; /* +1: avoid 0 */
             oldtimeout = u.uprops[p].intrinsic & TIMEOUT;
-            if (oldtimeout)
-                Sprintf(buf, "%-27s [%li]", propname, oldtimeout);
-            else
+            propname = C_("property", propname);
+            if (oldtimeout) {
+                const char *s;
+                int pad = 27;
+
+                /* pad to 27 characters, not bytes (UTF-8 translations) */
+                for (s = propname; *s; ++s)
+                    if ((*s & 0xc0) != 0x80)
+                        --pad;
+                Snprintf(buf, sizeof buf, "%s%*s [%li]", propname,
+                         max(pad, 0), "", oldtimeout);
+            } else {
                 Sprintf(buf, "%s", propname);
+            }
             add_menu(win, &nul_glyphinfo, &any, 0, 0, ATR_NONE, clr, buf,
                      MENU_ITEMFLAGS_NONE);
         }
-        end_menu(win, "Which intrinsics?");
+        end_menu(win, _("Which intrinsics?"));
         n = select_menu(win, PICK_ANY, &pick_list);
         destroy_nhwindow(win);
 
@@ -1038,20 +1066,23 @@ wiz_intrinsic(void)
                 make_sick(newtimeout, wizintrinsic, TRUE, typ);
                 break;
             case SLIMED:
-                Sprintf(buf, fmt,
-                        !Slimed ? "" : " still", "turning into slime");
+                Strcpy(buf, !Slimed
+                            ? N_("You are turning into slime.")
+                            : N_("You are still turning into slime."));
                 make_slimed(newtimeout, buf);
                 break;
             case STONED:
-                Sprintf(buf, fmt,
-                        !Stoned ? "" : " still", "turning into stone");
+                Strcpy(buf, !Stoned
+                            ? N_("You are turning into stone.")
+                            : N_("You are still turning into stone."));
                 make_stoned(newtimeout, buf, KILLED_BY, wizintrinsic);
                 break;
             case STUNNED:
                 make_stunned(newtimeout, TRUE);
                 break;
             case VOMITING:
-                Sprintf(buf, fmt, !Vomiting ? "" : " still", "vomiting");
+                Strcpy(buf, !Vomiting ? N_("You are vomiting.")
+                                      : N_("You are still vomiting."));
                 make_vomiting(newtimeout, FALSE);
                 pline1(buf);
                 break;
@@ -1074,8 +1105,9 @@ wiz_intrinsic(void)
                 if (p != GLIB)
                     incr_itimeout(&u.uprops[p].intrinsic, amt);
                 disp.botl = TRUE; /* have pline() do a status update */
-                pline("Timeout for %s %s %d.", propname,
-                      oldtimeout ? "increased by" : "set to", amt);
+                pline(oldtimeout ? "Timeout for %s increased by %d."
+                                 : "Timeout for %s set to %d.",
+                      C_("property", propname), amt);
                 break;
             }
             /* this has to be after incr_itimeout() */
@@ -1111,8 +1143,30 @@ wiz_rumor_check(void)
  */
 
 static const char template[] = "%-27s  %4ld  %6ld";
-static const char stats_hdr[] = "                             count  bytes";
+static const char stats_hdr[] =
+    N_("                             count  bytes");
 static const char stats_sep[] = "---------------------------  ----- -------";
+
+/* label s padded with spaces to 27 characters (not bytes, for UTF-8
+   translations), so that the columns of template[] line up */
+const char *
+wiz_stat_label(const char *s)
+{
+    static char lbuf[2][BUFSZ];
+    static int idx = 0;
+    char *p = lbuf[idx];
+    int n = 0;
+    const char *q;
+
+    idx = 1 - idx;
+    for (q = s; *q; ++q)
+        if ((*q & 0xc0) != 0x80) /* not a UTF-8 continuation byte */
+            ++n;
+    copynchars(p, s, BUFSZ - 30);
+    for (; n < 27; ++n)
+        Strcat(p, " ");
+    return p;
+}
 
 staticfn int
 size_obj(struct obj *otmp)
@@ -1304,32 +1358,32 @@ misc_stats(
     }
     *total_count += count;
     *total_size += size;
-    Sprintf(hdrbuf, "traps, size %ld", (long) sizeof (struct trap));
-    Sprintf(buf, template, hdrbuf, count, size);
+    Sprintf(hdrbuf, _("traps, size %ld"), (long) sizeof (struct trap));
+    Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
     putstr(win, 0, buf);
 
     count = size = 0L;
-    engr_stats("engravings, size %ld+text", hdrbuf, &count, &size);
+    engr_stats(_("engravings, size %ld+text"), hdrbuf, &count, &size);
     *total_count += count;
     *total_size += size;
-    Sprintf(buf, template, hdrbuf, count, size);
+    Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
     putstr(win, 0, buf);
 
     count = size = 0L;
-    light_stats("light sources, size %ld", hdrbuf, &count, &size);
+    light_stats(_("light sources, size %ld"), hdrbuf, &count, &size);
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
     count = size = 0L;
-    timer_stats("timers, size %ld", hdrbuf, &count, &size);
+    timer_stats(_("timers, size %ld"), hdrbuf, &count, &size);
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
@@ -1341,18 +1395,18 @@ misc_stats(
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(hdrbuf, "shop damage, size %ld",
+        Sprintf(hdrbuf, _("shop damage, size %ld"),
                 (long) sizeof (struct damage));
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
     count = size = 0L;
-    region_stats("regions, size %ld+%ld*rect+N", hdrbuf, &count, &size);
+    region_stats(_("regions, size %ld+%ld*rect+N"), hdrbuf, &count, &size);
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
@@ -1364,9 +1418,9 @@ misc_stats(
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(hdrbuf, "delayed killer%s, size %ld",
+        Sprintf(hdrbuf, _("delayed killer%s, size %ld"),
                 plur(count), (long) sizeof (struct kinfo));
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
@@ -1378,9 +1432,9 @@ misc_stats(
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Sprintf(hdrbuf, "bones history, size %ld",
+        Sprintf(hdrbuf, _("bones history, size %ld"),
                 (long) sizeof (struct cemetery));
-        Sprintf(buf, template, hdrbuf, count, size);
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 
@@ -1393,8 +1447,8 @@ misc_stats(
     if (count || size) {
         *total_count += count;
         *total_size += size;
-        Strcpy(hdrbuf, "object type names, text");
-        Sprintf(buf, template, hdrbuf, count, size);
+        Strcpy(hdrbuf, _("object type names, text"));
+        Sprintf(buf, template, wiz_stat_label(hdrbuf), count, size);
         putstr(win, 0, buf);
     }
 }
@@ -1527,9 +1581,12 @@ list_migrating_mons(
     if (here + nxtlv + other == 0) {
         pline("No monsters currently migrating.");
     } else {
-        pline(
-      "%d mon%s pending for current level, %d for next level, %d for others.",
-              here, plur(here), nxtlv, other);
+        if (here == 1)
+            pline("%d mon pending for current level, %d for next level,"
+                  " %d for others.", here, nxtlv, other);
+        else
+            pline("%d mons pending for current level, %d for next level,"
+                  " %d for others.", here, nxtlv, other);
         prmpt[0] = xtra[0] = '\0';
         (void) strkitten(here ? prmpt : xtra, 'c');
         (void) strkitten(nxtlv ? prmpt : xtra, 'n');
@@ -1537,7 +1594,7 @@ list_migrating_mons(
         Strcat(prmpt, "a q");
         if (*xtra)
             Sprintf(eos(prmpt), "%c%s", '\033', xtra);
-        c = yn_function("List which?", prmpt, 'q', TRUE);
+        c = yn_function(_("List which?"), prmpt, 'q', TRUE);
         n = (c == 'c') ? here
             : (c == 'n') ? nxtlv
               : (c == 'o') ? other
@@ -1549,13 +1606,22 @@ list_migrating_mons(
             case 'c':
             case 'n':
             case 'o':
-                Sprintf(buf, "Monster%s migrating to %s:", plur(n),
-                        (c == 'c') ? "current level"
-                        : (c == 'n') ? "next level"
-                          : "'other' levels");
+                /* whole sentences, so that each can be translated */
+                if (c == 'c')
+                    Strcpy(buf, (n == 1)
+                           ? _("Monster migrating to current level:")
+                           : _("Monsters migrating to current level:"));
+                else if (c == 'n')
+                    Strcpy(buf, (n == 1)
+                           ? _("Monster migrating to next level:")
+                           : _("Monsters migrating to next level:"));
+                else
+                    Strcpy(buf, (n == 1)
+                           ? _("Monster migrating to 'other' levels:")
+                           : _("Monsters migrating to 'other' levels:"));
                 break;
             default:
-                Strcpy(buf, "All migrating monsters:");
+                Strcpy(buf, _("All migrating monsters:"));
                 break;
             }
             putstr(win, 0, buf);
@@ -1624,11 +1690,11 @@ wiz_show_stats(void)
          total_misc_size, total_misc_count;
 
     win = create_nhwindow(NHW_TEXT);
-    putstr(win, 0, "Current memory statistics:");
+    putstr(win, 0, _("Current memory statistics:"));
 
     total_obj_count = total_obj_size = 0L;
-    putstr(win, 0, stats_hdr);
-    Sprintf(buf, "  Objects, base size %ld", (long) sizeof (struct obj));
+    putstr(win, 0, _(stats_hdr));
+    Sprintf(buf, _("  Objects, base size %ld"), (long) sizeof (struct obj));
     putstr(win, 0, buf);
     obj_chain(win, "invent", gi.invent, TRUE,
               &total_obj_count, &total_obj_size);
@@ -1644,12 +1710,14 @@ wiz_show_stats(void)
                      &total_obj_count, &total_obj_size);
     contained_stats(win, "contained", &total_obj_count, &total_obj_size);
     putstr(win, 0, stats_sep);
-    Sprintf(buf, template, "  Obj total", total_obj_count, total_obj_size);
+    Sprintf(buf, template, wiz_stat_label(_("  Obj total")),
+            total_obj_count, total_obj_size);
     putstr(win, 0, buf);
 
     total_mon_count = total_mon_size = 0L;
     putstr(win, 0, "");
-    Sprintf(buf, "  Monsters, base size %ld", (long) sizeof (struct monst));
+    Sprintf(buf, _("  Monsters, base size %ld"),
+            (long) sizeof (struct monst));
     putstr(win, 0, buf);
     mon_chain(win, "fmon", fmon, TRUE, &total_mon_count, &total_mon_size);
     mon_chain(win, "migrating", gm.migrating_mons, FALSE,
@@ -1660,28 +1728,31 @@ wiz_show_stats(void)
         mon_chain(win, "mydogs", gm.mydogs, FALSE,
                   &total_mon_count, &total_mon_size);
     putstr(win, 0, stats_sep);
-    Sprintf(buf, template, "  Mon total", total_mon_count, total_mon_size);
+    Sprintf(buf, template, wiz_stat_label(_("  Mon total")),
+            total_mon_count, total_mon_size);
     putstr(win, 0, buf);
 
     total_ovr_count = total_ovr_size = 0L;
     putstr(win, 0, "");
-    putstr(win, 0, "  Overview");
+    putstr(win, 0, _("  Overview"));
     overview_stats(win, template, &total_ovr_count, &total_ovr_size);
     putstr(win, 0, stats_sep);
-    Sprintf(buf, template, "  Over total", total_ovr_count, total_ovr_size);
+    Sprintf(buf, template, wiz_stat_label(_("  Over total")),
+            total_ovr_count, total_ovr_size);
     putstr(win, 0, buf);
 
     total_misc_count = total_misc_size = 0L;
     putstr(win, 0, "");
-    putstr(win, 0, "  Miscellaneous");
+    putstr(win, 0, _("  Miscellaneous"));
     misc_stats(win, &total_misc_count, &total_misc_size);
     putstr(win, 0, stats_sep);
-    Sprintf(buf, template, "  Misc total", total_misc_count, total_misc_size);
+    Sprintf(buf, template, wiz_stat_label(_("  Misc total")),
+            total_misc_count, total_misc_size);
     putstr(win, 0, buf);
 
     putstr(win, 0, "");
     putstr(win, 0, stats_sep);
-    Sprintf(buf, template, "  Grand total",
+    Sprintf(buf, template, wiz_stat_label(_("  Grand total")),
             (total_obj_count + total_mon_count
              + total_ovr_count + total_misc_count),
             (total_obj_size + total_mon_size
@@ -1705,7 +1776,7 @@ RESTORE_WARNING_FORMAT_NONLITERAL
 int
 wiz_display_macros(void)
 {
-    static const char display_issues[] = "Display macro issues:";
+    static const char display_issues[] = N_("Display macro issues:");
     char buf[BUFSZ];
     winid win;
     int glyph, test, trouble = 0, no_glyph = NO_GLYPH, max_glyph = MAX_GLYPH;
@@ -1719,7 +1790,7 @@ wiz_display_macros(void)
             /* check for MAX_GLYPH return */
             if (test == no_glyph) {
                 if (!trouble++)
-                    putstr(win, 0, display_issues);
+                    putstr(win, 0, _(display_issues));
                 Sprintf(buf, "glyph_is_cmap() / glyph_to_cmap(glyph=%d)"
                              " sync failure, returned NO_GLYPH (%d)",
                         glyph, test);
@@ -1728,7 +1799,7 @@ wiz_display_macros(void)
             if (glyph_is_cmap_zap(glyph)
                 && !(test >= S_vbeam && test <= S_rslant)) {
                 if (!trouble++)
-                    putstr(win, 0, display_issues);
+                    putstr(win, 0, _(display_issues));
                 Sprintf(buf,
                         "glyph_is_cmap_zap(glyph=%d) returned non-zap cmap %d",
                         glyph, test);
@@ -1737,7 +1808,7 @@ wiz_display_macros(void)
             /* check against defsyms array subscripts */
             if (!IndexOk(test, defsyms)) {
                 if (!trouble++)
-                    putstr(win, 0, display_issues);
+                    putstr(win, 0, _(display_issues));
                 Sprintf(buf, "glyph_to_cmap(glyph=%d) returns %d"
                              " exceeds defsyms[%d] bounds (MAX_GLYPH = %d)",
                         glyph, test, SIZE(defsyms), max_glyph);
@@ -1750,7 +1821,7 @@ wiz_display_macros(void)
             /* check against mons array subscripts */
             if (test < 0 || test >= NUMMONS) {
                 if (!trouble++)
-                    putstr(win, 0, display_issues);
+                    putstr(win, 0, _(display_issues));
                 Sprintf(buf, "glyph_to_mon(glyph=%d) returns %d"
                              " exceeds mons[%d] bounds",
                         glyph, test, NUMMONS);
@@ -1763,7 +1834,7 @@ wiz_display_macros(void)
             /* check against objects array subscripts */
             if (test < 0 || test > NUM_OBJECTS) {
                 if (!trouble++)
-                    putstr(win, 0, display_issues);
+                    putstr(win, 0, _(display_issues));
                 Sprintf(buf, "glyph_to_obj(glyph=%d) returns %d"
                              " exceeds objects[%d] bounds",
                         glyph, test, NUM_OBJECTS);
@@ -1772,7 +1843,7 @@ wiz_display_macros(void)
         }
     }
     if (!trouble)
-        putstr(win, 0, "No display macro issues detected.");
+        putstr(win, 0, _("No display macro issues detected."));
     display_nhwindow(win, FALSE);
     destroy_nhwindow(win);
     return ECMD_OK;
@@ -1790,8 +1861,8 @@ wiz_show_nhuuid(void)
 int
 wiz_mon_diff(void)
 {
-    static const char window_title[] = "Review of monster difficulty ratings"
-                                       " [index:level]:";
+    static const char window_title[] =
+        N_("Review of monster difficulty ratings [index:level]:");
     char buf[BUFSZ];
     winid win;
     int mhardcoded = 0, mcalculated = 0, trouble = 0, cnt = 0, mdiff = 0;
@@ -1810,19 +1881,20 @@ wiz_mon_diff(void)
         mdiff = mhardcoded - mcalculated;
         if (mdiff) {
             if (!trouble++)
-                putstr(win, 0, window_title);
+                putstr(win, 0, _(window_title));
             mlev = (int) ptr->mlevel;
             if (mlev > 50) /* hack for named demons */
                 mlev = 50;
             Snprintf(buf, sizeof buf,
-                     "%-18s [%3d:%2d]: calculated: %2d, hardcoded: %2d (%+d)",
+                  _("%-18s [%3d:%2d]: calculated: %2d, hardcoded: %2d (%+d)"),
                      ptr->pmnames[NEUTRAL], cnt, mlev,
                      mcalculated, mhardcoded, mdiff);
             putstr(win, 0, buf);
         }
     }
     if (!trouble)
-        putstr(win, 0, "No monster difficulty discrepancies were detected.");
+        putstr(win, 0,
+               _("No monster difficulty discrepancies were detected."));
     display_nhwindow(win, FALSE);
     destroy_nhwindow(win);
     return ECMD_OK;

@@ -1089,17 +1089,46 @@ makemap_prepost(boolean pre, boolean wiztower)
    symbols and only the latter have easily accessible descriptions.
    Also used by wizcmds.c */
 const char *levltyp[MAX_TYPE + 2] = {
-    "stone", "vertical wall", "horizontal wall", "top-left corner wall",
-    "top-right corner wall", "bottom-left corner wall",
-    "bottom-right corner wall", "cross wall", "tee-up wall", "tee-down wall",
-    "tee-left wall", "tee-right wall", "drawbridge wall", "tree",
-    "secret door", "secret corridor", "pool", "moat", "water",
-    "drawbridge up", "lava pool", "lava wall", "iron bars", "door",
-    "corridor", "room", "stairs", "ladder", "fountain", "throne", "sink",
-    "grave", "altar", "ice", "drawbridge down", "air", "cloud",
+    NC_("terrain", "stone"),
+    NC_("terrain", "vertical wall"),
+    NC_("terrain", "horizontal wall"),
+    NC_("terrain", "top-left corner wall"),
+    NC_("terrain", "top-right corner wall"),
+    NC_("terrain", "bottom-left corner wall"),
+    NC_("terrain", "bottom-right corner wall"),
+    NC_("terrain", "cross wall"),
+    NC_("terrain", "tee-up wall"),
+    NC_("terrain", "tee-down wall"),
+    NC_("terrain", "tee-left wall"),
+    NC_("terrain", "tee-right wall"),
+    NC_("terrain", "drawbridge wall"),
+    NC_("terrain", "tree"),
+    NC_("terrain", "secret door"),
+    NC_("terrain", "secret corridor"),
+    NC_("terrain", "pool"),
+    NC_("terrain", "moat"),
+    NC_("terrain", "water"),
+    NC_("terrain", "drawbridge up"),
+    NC_("terrain", "lava pool"),
+    NC_("terrain", "lava wall"),
+    NC_("terrain", "iron bars"),
+    NC_("terrain", "door"),
+    NC_("terrain", "corridor"),
+    NC_("terrain", "room"),
+    NC_("terrain", "stairs"),
+    NC_("terrain", "ladder"),
+    NC_("terrain", "fountain"),
+    NC_("terrain", "throne"),
+    NC_("terrain", "sink"),
+    NC_("terrain", "grave"),
+    NC_("terrain", "altar"),
+    NC_("terrain", "ice"),
+    NC_("terrain", "drawbridge down"),
+    NC_("terrain", "air"),
+    NC_("terrain", "cloud"),
     /* not a real terrain type, but used for undiggable stone
        by wiz_map_levltyp() */
-    "unreachable/undiggable",
+    NC_("terrain", "unreachable/undiggable"),
     /* padding in case the number of entries above is odd */
     ""
 };
@@ -1142,33 +1171,33 @@ doterrain(void)
     any = cg.zeroany;
     any.a_int = 1;
     add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE, clr,
-             "known map without monsters, objects, and traps",
+             _("known map without monsters, objects, and traps"),
              MENU_ITEMFLAGS_SELECTED);
     any.a_int = 2;
     add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE,
-             clr, "known map without monsters and objects",
+             clr, _("known map without monsters and objects"),
              MENU_ITEMFLAGS_NONE);
     any.a_int = 3;
     add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE,
-             clr, "known map without monsters",
+             clr, _("known map without monsters"),
              MENU_ITEMFLAGS_NONE);
     if (discover || wizard) {
         any.a_int = 4;
         add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE,
-                 clr, "full map without monsters, objects, and traps",
+                 clr, _("full map without monsters, objects, and traps"),
                  MENU_ITEMFLAGS_NONE);
         if (wizard) {
             any.a_int = 5;
             add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE,
-                     clr, "internal levl[][].typ codes in base-36",
+                     clr, _("internal levl[][].typ codes in base-36"),
                      MENU_ITEMFLAGS_NONE);
             any.a_int = 6;
             add_menu(men, &nul_glyphinfo, &any, 0, 0, ATR_NONE,
-                     clr, "legend of base-36 levl[][].typ codes",
+                     clr, _("legend of base-36 levl[][].typ codes"),
                      MENU_ITEMFLAGS_NONE);
         }
     }
-    end_menu(men, "View which?");
+    end_menu(men, _("View which?"));
 
     n = select_menu(men, PICK_ONE, &sel);
     destroy_nhwindow(men);

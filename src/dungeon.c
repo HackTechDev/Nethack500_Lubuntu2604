@@ -2267,17 +2267,18 @@ tport_menu(
 staticfn const char *
 br_string(int type)
 {
+    /* translated: only used for display */
     switch (type) {
     case BR_PORTAL:
-        return "Portal";
+        return _("Portal");
     case BR_NO_END1:
-        return "Connection";
+        return _("Connection");
     case BR_NO_END2:
-        return "One way stair";
+        return _("One way stair");
     case BR_STAIR:
-        return "Stair";
+        return _("Stair");
     }
-    return " (unknown)";
+    return _(" (unknown)");
 }
 
 staticfn char
@@ -2300,10 +2301,11 @@ print_branch(
     for (br = svb.branches; br; br = br->next) {
         if (br->end1.dnum == dnum && lower_bound < br->end1.dlevel
             && br->end1.dlevel <= upper_bound) {
-            Sprintf(buf, "%c %s to %s: %d",
-                    bymenu ? chr_u_on_lvl(&br->end1) : ' ',
-                    br_string(br->type),
-                    svd.dungeons[br->end2.dnum].dname, depth(&br->end1));
+            Snprintf(buf, sizeof buf, _("%c %s to %s: %d"),
+                     bymenu ? chr_u_on_lvl(&br->end1) : ' ',
+                     br_string(br->type),
+                     _(svd.dungeons[br->end2.dnum].dname),
+                     depth(&br->end1));
             if (bymenu)
                 tport_menu(win, buf, lchoices_p, &br->end1,
                            unreachable_level(&br->end1, FALSE));
@@ -2319,7 +2321,6 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
 {
     int i, last_level, nlev;
     char buf[BUFSZ];
-    const char *descr;
     boolean first, unplaced;
     s_level *slev;
     dungeon *dptr;
@@ -2337,23 +2338,27 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
         if (bymenu && In_endgame(&u.uz) && i != astral_level.dnum)
             continue;
         unplaced = unplaced_floater(dptr);
-        descr = unplaced ? "depth" : "level";
         nlev = dptr->num_dunlevs;
+        /* whole formats, so that each can be translated */
         if (nlev > 1)
-            Snprintf(buf, sizeof buf, "%s: %s %d to %d", dptr->dname,
-                     makeplural(descr), dptr->depth_start,
+            Snprintf(buf, sizeof buf,
+                     unplaced ? _("%s: depths %d to %d")
+                              : _("%s: levels %d to %d"),
+                     _(dptr->dname), dptr->depth_start,
                      dptr->depth_start + nlev - 1);
         else
-            Snprintf(buf, sizeof buf, "%s: %s %d", dptr->dname,
-                     descr, dptr->depth_start);
+            Snprintf(buf, sizeof buf,
+                     unplaced ? _("%s: depth %d") : _("%s: level %d"),
+                     _(dptr->dname), dptr->depth_start);
 
         /* Most entrances are uninteresting. */
         if (dptr->entry_lev != 1) {
             if (dptr->entry_lev == nlev)
-                Strcat(buf, ", entrance from below");
+                Strcat(buf, _(", entrance from below"));
             else
-                Sprintf(eos(buf), ", entrance on %d",
-                        dptr->depth_start + dptr->entry_lev - 1);
+                Snprintf(eos(buf), sizeof buf - strlen(buf),
+                         _(", entrance on %d"),
+                         dptr->depth_start + dptr->entry_lev - 1);
         }
         if (bymenu) {
             add_menu_heading(win, buf);
@@ -2376,7 +2381,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
                     chr_u_on_lvl(&slev->dlevel),
                     slev->proto, depth(&slev->dlevel));
             if (Is_stronghold(&slev->dlevel))
-                Sprintf(eos(buf), " (tune %s)", svt.tune);
+                Sprintf(eos(buf), _(" (tune %s)"), svt.tune);
             if (bymenu)
                 tport_menu(win, buf, &lchoices, &slev->dlevel,
                            unreachable_level(&slev->dlevel, unplaced));
@@ -2394,7 +2399,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
         menu_item *selected;
         int idx;
 
-        end_menu(win, "Level teleport to where:");
+        end_menu(win, _("Level teleport to where:"));
         n = select_menu(win, PICK_ONE, &selected);
         destroy_nhwindow(win);
         if (n > 0) {
@@ -2414,11 +2419,11 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
         if (br->end1.dnum == svn.n_dgns) {
             if (first) {
                 putstr(win, 0, "");
-                putstr(win, 0, "Floating branches");
+                putstr(win, 0, _("Floating branches"));
                 first = FALSE;
             }
-            Sprintf(buf, "   %s to %s", br_string(br->type),
-                    svd.dungeons[br->end2.dnum].dname);
+            Snprintf(buf, sizeof buf, _("   %s to %s"), br_string(br->type),
+                     _(svd.dungeons[br->end2.dnum].dname));
             putstr(win, 0, buf);
         }
     }
@@ -2426,7 +2431,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
     /* I hate searching for the invocation pos while debugging. -dean */
     if (Invocation_lev(&u.uz)) {
         putstr(win, 0, "");
-        Sprintf(buf, "Invocation position @ (%d,%d), hero @ (%d,%d)",
+        Sprintf(buf, _("Invocation position @ (%d,%d), hero @ (%d,%d)"),
                 svi.inv_pos.x, svi.inv_pos.y, u.ux, u.uy);
         putstr(win, 0, buf);
     } else {
@@ -2443,7 +2448,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
                 break;
 
         if (trap)
-            Sprintf(buf, "Portal @ (%d,%d), hero @ (%d,%d)",
+            Sprintf(buf, _("Portal @ (%d,%d), hero @ (%d,%d)"),
                     trap->tx, trap->ty, u.ux, u.uy);
 
         /* only report "no portal found" when actually expecting a portal */
@@ -2451,7 +2456,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
                  || Is_firelevel(&u.uz) || Is_airlevel(&u.uz)
                  || Is_qstart(&u.uz) || at_dgn_entrance("The Quest")
                  || Is_knox(&u.uz))
-            Strcpy(buf, "No portal found.");
+            Strcpy(buf, _("No portal found."));
 
         /* only give output if we found a portal or expected one and didn't */
         if (*buf) {
@@ -2810,18 +2815,18 @@ overview_stats(
         }
     }
 
-    Sprintf(hdrbuf, "general, size %ld", (long) sizeof (mapseen));
-    Sprintf(buf, statsfmt, hdrbuf, ocount, osize);
+    Sprintf(hdrbuf, _("general, size %ld"), (long) sizeof (mapseen));
+    Sprintf(buf, statsfmt, wiz_stat_label(hdrbuf), ocount, osize);
     putstr(win, 0, buf);
     if (bcount) {
-        Sprintf(hdrbuf, "cemetery, size %ld",
+        Sprintf(hdrbuf, _("cemetery, size %ld"),
                 (long) sizeof (struct cemetery));
-        Sprintf(buf, statsfmt, hdrbuf, bcount, bsize);
+        Sprintf(buf, statsfmt, wiz_stat_label(hdrbuf), bcount, bsize);
         putstr(win, 0, buf);
     }
     if (acount) {
-        Sprintf(hdrbuf, "annotations, text");
-        Sprintf(buf, statsfmt, hdrbuf, acount, asize);
+        Strcpy(hdrbuf, _("annotations, text"));
+        Sprintf(buf, statsfmt, wiz_stat_label(hdrbuf), acount, asize);
         putstr(win, 0, buf);
     }
     *total_count += ocount + bcount + acount;

@@ -28,88 +28,89 @@ static const struct propname {
     int prop_num;
     const char *prop_name;
 } propertynames[] = {
-    { INVULNERABLE, "invulnerable" },
-    { STONED, "petrifying" },
-    { SLIMED, "becoming slime" },
-    { STRANGLED, "strangling" },
-    { SICK, "fatally sick" },
-    { STUNNED, "stunned" },
-    { CONFUSION, "confused" },
-    { HALLUC, "hallucinating" },
-    { BLINDED, "blinded" },
-    { DEAF, "deafness" },
-    { VOMITING, "vomiting" },
-    { GLIB, "slippery fingers" },
-    { WOUNDED_LEGS, "wounded legs" },
-    { SLEEPY, "sleepy" },
-    { TELEPORT, "teleporting" },
-    { POLYMORPH, "polymorphing" },
-    { LEVITATION, "levitating" },
-    { FAST, "very fast" }, /* timed 'FAST' is very fast */
-    { CLAIRVOYANT, "clairvoyant" },
-    { DETECT_MONSTERS, "monster detection" },
-    { SEE_INVIS, "see invisible" },
-    { INVIS, "invisible" },
+    { INVULNERABLE, NC_("property", "invulnerable") },
+    { STONED, NC_("property", "petrifying") },
+    { SLIMED, NC_("property", "becoming slime") },
+    { STRANGLED, NC_("property", "strangling") },
+    { SICK, NC_("property", "fatally sick") },
+    { STUNNED, NC_("property", "stunned") },
+    { CONFUSION, NC_("property", "confused") },
+    { HALLUC, NC_("property", "hallucinating") },
+    { BLINDED, NC_("property", "blinded") },
+    { DEAF, NC_("property", "deafness") },
+    { VOMITING, NC_("property", "vomiting") },
+    { GLIB, NC_("property", "slippery fingers") },
+    { WOUNDED_LEGS, NC_("property", "wounded legs") },
+    { SLEEPY, NC_("property", "sleepy") },
+    { TELEPORT, NC_("property", "teleporting") },
+    { POLYMORPH, NC_("property", "polymorphing") },
+    { LEVITATION, NC_("property", "levitating") },
+    { FAST, NC_("property", "very fast") }, /* timed 'FAST' is very fast */
+    { CLAIRVOYANT, NC_("property", "clairvoyant") },
+    { DETECT_MONSTERS, NC_("property", "monster detection") },
+    { SEE_INVIS, NC_("property", "see invisible") },
+    { INVIS, NC_("property", "invisible") },
     /* temporary acid resistance and stone resistance can come from eating */
-    { ACID_RES, "acid resistance" },
-    { STONE_RES, "stoning resistance" },
+    { ACID_RES, NC_("property", "acid resistance") },
+    { STONE_RES, NC_("property", "stoning resistance") },
     /* timed displacement is possible via eating a displacer beast corpse */
-    { DISPLACED, "displaced" },
+    { DISPLACED, NC_("property", "displaced") },
     /* timed pass-walls is a potential prayer result if surrounded by stone
        with nowhere to be safely teleported to */
-    { PASSES_WALLS, "pass thru walls" },
+    { PASSES_WALLS, NC_("property", "pass thru walls") },
     /* likewise for magical breathing vs poison gas regions */
-    { MAGICAL_BREATHING, "magical breathing" },
+    { MAGICAL_BREATHING, NC_("property", "magical breathing") },
     /* timed fire resistance and water walking are possible in explore mode
        (as well as in wizard mode) after life-saving in lava if it fails to
        teleport the hero to safety and player declines to die */
-    { WWALKING, "water walking" },
-    { FIRE_RES, "fire resistance" },
+    { WWALKING, NC_("property", "water walking") },
+    { FIRE_RES, NC_("property", "fire resistance") },
     /*
      * Properties beyond here don't have timed values during normal play,
      * so there's not much point in trying to order them sensibly.
      * They're either on or off based on equipment, role, actions, &c,
      * but in wizard mode, #wizintrinsic can give them as timed effects.
      */
-    { COLD_RES, "cold resistance" },
-    { SLEEP_RES, "sleep resistance" },
-    { DISINT_RES, "disintegration resistance" },
-    { SHOCK_RES, "shock resistance" },
-    { POISON_RES, "poison resistance" },
-    { DRAIN_RES, "drain resistance" },
-    { SICK_RES, "sickness resistance" },
-    { ANTIMAGIC, "magic resistance" },
-    { HALLUC_RES, "hallucination resistance" },
-    { BLND_RES, "light-induced blindness resistance" },
-    { FUMBLING, "fumbling" },
-    { HUNGER, "voracious hunger" },
-    { TELEPAT, "telepathic" },
-    { WARNING, "warning" },
-    { WARN_OF_MON, "warn: monster type or class" },
-    { WARN_UNDEAD, "warn: undead" },
-    { SEARCHING, "searching" },
-    { INFRAVISION, "infravision" },
-    { ADORNED, "adorned (+/- Cha)" },
-    { STEALTH, "stealthy" },
-    { AGGRAVATE_MONSTER, "monster aggravation" },
-    { CONFLICT, "conflict" },
-    { JUMPING, "jumping" },
-    { TELEPORT_CONTROL, "teleport control" },
-    { FLYING, "flying" },
-    { SWIMMING, "swimming" },
-    { SLOW_DIGESTION, "slow digestion" },
-    { HALF_SPDAM, "half spell damage" },
-    { HALF_PHDAM, "half physical damage" },
-    { REGENERATION, "HP regeneration" },
-    { ENERGY_REGENERATION, "energy regeneration" },
-    { PROTECTION, "extra protection" },
-    { PROT_FROM_SHAPE_CHANGERS, "protection from shape changers" },
-    { POLYMORPH_CONTROL, "polymorph control" },
-    { UNCHANGING, "unchanging" },
-    { REFLECTING, "reflecting" },
-    { FREE_ACTION, "free action" },
-    { FIXED_ABIL, "fixed abilities" },
-    { LIFESAVED, "life will be saved" },
+    { COLD_RES, NC_("property", "cold resistance") },
+    { SLEEP_RES, NC_("property", "sleep resistance") },
+    { DISINT_RES, NC_("property", "disintegration resistance") },
+    { SHOCK_RES, NC_("property", "shock resistance") },
+    { POISON_RES, NC_("property", "poison resistance") },
+    { DRAIN_RES, NC_("property", "drain resistance") },
+    { SICK_RES, NC_("property", "sickness resistance") },
+    { ANTIMAGIC, NC_("property", "magic resistance") },
+    { HALLUC_RES, NC_("property", "hallucination resistance") },
+    { BLND_RES, NC_("property", "light-induced blindness resistance") },
+    { FUMBLING, NC_("property", "fumbling") },
+    { HUNGER, NC_("property", "voracious hunger") },
+    { TELEPAT, NC_("property", "telepathic") },
+    { WARNING, NC_("property", "warning") },
+    { WARN_OF_MON, NC_("property", "warn: monster type or class") },
+    { WARN_UNDEAD, NC_("property", "warn: undead") },
+    { SEARCHING, NC_("property", "searching") },
+    { INFRAVISION, NC_("property", "infravision") },
+    { ADORNED, NC_("property", "adorned (+/- Cha)") },
+    { STEALTH, NC_("property", "stealthy") },
+    { AGGRAVATE_MONSTER, NC_("property", "monster aggravation") },
+    { CONFLICT, NC_("property", "conflict") },
+    { JUMPING, NC_("property", "jumping") },
+    { TELEPORT_CONTROL, NC_("property", "teleport control") },
+    { FLYING, NC_("property", "flying") },
+    { SWIMMING, NC_("property", "swimming") },
+    { SLOW_DIGESTION, NC_("property", "slow digestion") },
+    { HALF_SPDAM, NC_("property", "half spell damage") },
+    { HALF_PHDAM, NC_("property", "half physical damage") },
+    { REGENERATION, NC_("property", "HP regeneration") },
+    { ENERGY_REGENERATION, NC_("property", "energy regeneration") },
+    { PROTECTION, NC_("property", "extra protection") },
+    { PROT_FROM_SHAPE_CHANGERS,
+      NC_("property", "protection from shape changers") },
+    { POLYMORPH_CONTROL, NC_("property", "polymorph control") },
+    { UNCHANGING, NC_("property", "unchanging") },
+    { REFLECTING, NC_("property", "reflecting") },
+    { FREE_ACTION, NC_("property", "free action") },
+    { FIXED_ABIL, NC_("property", "fixed abilities") },
+    { LIFESAVED, NC_("property", "life will be saved") },
     {  0, 0 },
 };
 
@@ -2060,6 +2061,7 @@ do_storms(void)
 
 staticfn const char *kind_name(short);
 staticfn void print_queue(winid, timer_element *);
+staticfn int tmo_strlen(const char *);
 staticfn void insert_timer(timer_element *);
 staticfn timer_element *remove_timer(timer_element **, short, ANY_P *);
 staticfn void write_timer(NHFILE *, timer_element *);
@@ -2125,9 +2127,9 @@ print_queue(winid win, timer_element *base)
     char buf[BUFSZ];
 
     if (!base) {
-        putstr(win, 0, " <empty>");
+        putstr(win, 0, _(" <empty>"));
     } else {
-        putstr(win, 0, "timeout  id   kind   call");
+        putstr(win, 0, _("timeout  id   kind   call"));
         for (curr = base; curr; curr = curr->next) {
 #ifdef VERBOSE_TIMER
             Sprintf(buf, " %4ld   %4ld  %-6s %s(%s)", curr->timeout,
@@ -2144,6 +2146,18 @@ print_queue(winid win, timer_element *base)
     }
 }
 
+/* number of characters (not bytes, for UTF-8 translations) in s */
+staticfn int
+tmo_strlen(const char *s)
+{
+    int n = 0;
+
+    for (; *s; ++s)
+        if ((*s & 0xc0) != 0x80) /* not a UTF-8 continuation byte */
+            ++n;
+    return n;
+}
+
 /* the #timeout command */
 int
 wiz_timeout_queue(void)
@@ -2158,10 +2172,10 @@ wiz_timeout_queue(void)
     if (win == WIN_ERR)
         return ECMD_OK;
 
-    Sprintf(buf, "Current time = %ld.", svm.moves);
+    Sprintf(buf, _("Current time = %ld."), svm.moves);
     putstr(win, 0, buf);
     putstr(win, 0, "");
-    putstr(win, 0, "Active timeout queue:");
+    putstr(win, 0, _("Active timeout queue:"));
     putstr(win, 0, "");
     print_queue(win, gt.timer_base);
 
@@ -2175,7 +2189,7 @@ wiz_timeout_queue(void)
         intrinsic = u.uprops[p].intrinsic;
         if (intrinsic & TIMEOUT) {
             ++count;
-            if ((ln = (int) strlen(propname)) > longestlen)
+            if ((ln = tmo_strlen(C_("property", propname))) > longestlen)
                 longestlen = ln;
         }
         if (specindx == 0 && p == COLD_RES) /* was FIRE_RES but has changed */
@@ -2183,24 +2197,27 @@ wiz_timeout_queue(void)
     }
     putstr(win, 0, "");
     if (!count) {
-        putstr(win, 0, "No timed properties.");
+        putstr(win, 0, _("No timed properties."));
     } else {
-        putstr(win, 0, "Timed properties:");
+        putstr(win, 0, _("Timed properties:"));
         putstr(win, 0, "");
         for (i = 0; (propname = propertynames[i].prop_name) != 0; ++i) {
             p = propertynames[i].prop_num;
             intrinsic = u.uprops[p].intrinsic;
             if (intrinsic & TIMEOUT) {
                 if (specindx > 0 && i >= specindx) {
-                    putstr(win, 0, " -- settable via #wizintrinsic only --");
+                    putstr(win, 0,
+                           _(" -- settable via #wizintrinsic only --"));
                     specindx = 0;
                 }
                 /* timeout value can be up to 16777215 (0x00ffffff) but
                    width of 4 digits should result in values lining up
                    almost all the time (if/when they don't, it won't
                    look nice but the information will still be accurate) */
-                Sprintf(buf, " %*s %4ld", -longestlen, propname,
-                        (intrinsic & TIMEOUT));
+                propname = C_("property", propname);
+                Snprintf(buf, sizeof buf, " %s%*s %4ld", propname,
+                         longestlen - tmo_strlen(propname), "",
+                         (intrinsic & TIMEOUT));
                 putstr(win, 0, buf);
             }
         }
@@ -2209,12 +2226,12 @@ wiz_timeout_queue(void)
         putstr(win, 0, "");
         /* decremented when engulfer makes a move, so can last longer than
            the number of turns reported if engulfer is slow */
-        Sprintf(buf, "Swallow countdown is %u.", u.uswldtim);
+        Sprintf(buf, _("Swallow countdown is %u."), u.uswldtim);
         putstr(win, 0, buf);
     }
     if (u.uinvault) {
         putstr(win, 0, "");
-        Sprintf(buf, "Vault counter is %d.", u.uinvault);
+        Sprintf(buf, _("Vault counter is %d."), u.uinvault);
         putstr(win, 0, buf);
     }
     if (any_visible_region()) {
@@ -2222,10 +2239,10 @@ wiz_timeout_queue(void)
     }
     if (svl.level.flags.stasis_until >= svm.moves) {
         putstr(win, 0, "");
-        Sprintf(buf, "Level is no-teleport for %ld %s.",
-                svl.level.flags.stasis_until - svm.moves + 1L,
-                (svl.level.flags.stasis_until - svm.moves > 0L)
-                  ? "turns" : "more turn");
+        Sprintf(buf, (svl.level.flags.stasis_until - svm.moves > 0L)
+                       ? _("Level is no-teleport for %ld turns.")
+                       : _("Level is no-teleport for %ld more turn."),
+                svl.level.flags.stasis_until - svm.moves + 1L);
         putstr(win, 0, buf);
     }
     display_nhwindow(win, FALSE);

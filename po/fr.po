@@ -7288,6 +7288,9 @@ msgctxt "monster"
 msgid "Nessie"
 msgstr ""
 
+msgid "Next monster:"
+msgstr ""
+
 msgid "No creatures have been genocided."
 msgstr "Aucune créature n'a été génocidée."
 
@@ -8286,6 +8289,10 @@ msgstr ""
 "À travers des nuages de gaz sulfureux, vous parvenez à %x une palissade\n"
 "de roche entourée de douves de lave bouillonnante.  Vous vous rappelez\n"
 "la description qu'en a faite %l.  C'est l'antre @de %n."
+
+#, c-format
+msgid "Timeout for %s set to %d."
+msgstr "Délai de %s fixé à %d."
 
 msgctxt "gender"
 msgid "Totoro"
@@ -24501,7 +24508,7 @@ msgstr ""
 #: src/allmain.c:1042 src/apply.c:1291 src/apply.c:2021 src/apply.c:2041
 #: src/apply.c:2689 src/apply.c:2777 src/apply.c:3000 src/apply.c:4197
 #: src/apply.c:4221 src/artifact.c:2113 src/artifact.c:2145 src/artifact.c:2158
-#: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4313 src/cmd.c:5173
+#: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4342 src/cmd.c:5202
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
 #: src/invent.c:4070 src/lock.c:937 src/nhlua.c:640 src/nhlua.c:656
@@ -24509,10 +24516,10 @@ msgstr ""
 #: src/pline.c:241 src/pline.c:684 src/pline.c:696 src/pline.c:751
 #: src/potion.c:226 src/potion.c:253 src/pray.c:1869 src/questpgr.c:711
 #: src/read.c:607 src/rumors.c:584 src/sit.c:56 src/sounds.c:1528
-#: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:147 src/timeout.c:309
-#: src/timeout.c:342 src/timeout.c:420 src/timeout.c:542 src/timeout.c:568
+#: src/sounds.c:1714 src/spell.c:2134 src/timeout.c:148 src/timeout.c:310
+#: src/timeout.c:343 src/timeout.c:421 src/timeout.c:543 src/timeout.c:569
 #: src/trap.c:5841 src/vault.c:981 src/version.c:163 src/windows.c:455
-#: src/windows.c:513 src/wizcmds.c:438 src/zap.c:5310 src/zap.c:5454
+#: src/windows.c:513 src/wizcmds.c:446 src/zap.c:5310 src/zap.c:5454
 #: win/curses/cursdial.c:298 win/curses/cursdial.c:366 win/tty/topl.c:420
 #: win/tty/topl.c:425 win/tty/wintty.c:2830
 #, c-format
@@ -25643,7 +25650,7 @@ msgstr "%s autres disparaissent"
 msgid "%s and %s"
 msgstr "%.0s et %s"
 
-#: src/apply.c:902 src/cmd.c:1433 src/display.c:2069 src/dog.c:1218
+#: src/apply.c:902 src/cmd.c:1462 src/display.c:2069 src/dog.c:1218
 #: src/explode.c:856 src/getpos.c:1033 src/invent.c:3172 src/mail.c:375
 #: src/muse.c:3312 src/music.c:634 src/objnam.c:4752 src/objnam.c:4814
 #: src/objnam.c:4863 src/objnam.c:5026 src/objnam.c:5028 src/potion.c:1776
@@ -26504,7 +26511,7 @@ msgstr " et se cacher sous %s"
 msgid " and vanish"
 msgstr " et disparaître"
 
-#: src/apply.c:2849 src/timeout.c:1117
+#: src/apply.c:2849 src/timeout.c:1118
 msgid "You feel something drop from your pack!"
 msgstr "Vous sentez quelque chose tomber de votre sac !"
 
@@ -26513,7 +26520,7 @@ msgstr "Vous sentez quelque chose tomber de votre sac !"
 msgid "You see %s drop out of your pack%s!"
 msgstr "Vous voyez %s tomber de votre sac%s !"
 
-#: src/apply.c:2854 src/timeout.c:1121
+#: src/apply.c:2854 src/timeout.c:1122
 #, c-format
 msgid "You feel %s %s from your pack!"
 msgstr ""
@@ -26538,11 +26545,11 @@ msgstr "Vous voyez une figurine se transformer en %s%s !"
 msgid "the pack of %s"
 msgstr "le sac @de %s"
 
-#: src/apply.c:2888 src/timeout.c:1162
+#: src/apply.c:2888 src/timeout.c:1163
 msgid "empty water"
 msgstr "l'eau"
 
-#: src/apply.c:2890 src/hack.c:2412 src/timeout.c:1164
+#: src/apply.c:2890 src/hack.c:2412 src/timeout.c:1165
 msgid "thin air"
 msgstr "le vide"
 
@@ -27021,7 +27028,7 @@ msgstr ""
 msgid "an object on %s"
 msgstr "un objet sur %s"
 
-#: src/apply.c:4345 src/wizcmds.c:261 src/wizcmds.c:505 src/wizcmds.c:903
+#: src/apply.c:4345 src/wizcmds.c:261 src/wizcmds.c:513 src/wizcmds.c:922
 msgid "a monster"
 msgstr "un monstre"
 
@@ -27520,7 +27527,7 @@ msgstr "Votre corps prend une transparence normale..."
 msgid "Your body seems to unfade..."
 msgstr "Votre corps semble réapparaître..."
 
-#: src/artifact.c:2394 src/dungeon.c:3604 src/wizcmds.c:256
+#: src/artifact.c:2394 src/dungeon.c:3609
 #, c-format
 msgid "%s:"
 msgstr "%s :"
@@ -27685,7 +27692,7 @@ msgid_plural "glimmer"
 msgstr[0] "luit"
 msgstr[1] "luisent"
 
-#: src/artifact.c:2606 src/wizcmds.c:323
+#: src/artifact.c:2606
 #, c-format
 msgid "%s is %s."
 msgstr "%s est %s."
@@ -29093,877 +29100,1095 @@ msgstr "Le mode débogage continue."
 msgid "Continuing with %s."
 msgstr ""
 
-#: src/cmd.c:1295
+#: src/cmd.c:1092
+msgctxt "terrain"
+msgid "stone"
+msgstr "pierre"
+
+#: src/cmd.c:1093
+msgctxt "terrain"
+msgid "vertical wall"
+msgstr "mur vertical"
+
+#: src/cmd.c:1094
+msgctxt "terrain"
+msgid "horizontal wall"
+msgstr "mur horizontal"
+
+#: src/cmd.c:1095
+msgctxt "terrain"
+msgid "top-left corner wall"
+msgstr "coin de mur haut gauche"
+
+#: src/cmd.c:1096
+msgctxt "terrain"
+msgid "top-right corner wall"
+msgstr "coin de mur haut droit"
+
+#: src/cmd.c:1097
+msgctxt "terrain"
+msgid "bottom-left corner wall"
+msgstr "coin de mur bas gauche"
+
+#: src/cmd.c:1098
+msgctxt "terrain"
+msgid "bottom-right corner wall"
+msgstr "coin de mur bas droit"
+
+#: src/cmd.c:1099
+msgctxt "terrain"
+msgid "cross wall"
+msgstr "mur en croix"
+
+#: src/cmd.c:1100
+msgctxt "terrain"
+msgid "tee-up wall"
+msgstr "mur en T vers le haut"
+
+#: src/cmd.c:1101
+msgctxt "terrain"
+msgid "tee-down wall"
+msgstr "mur en T vers le bas"
+
+#: src/cmd.c:1102
+msgctxt "terrain"
+msgid "tee-left wall"
+msgstr "mur en T vers la gauche"
+
+#: src/cmd.c:1103
+msgctxt "terrain"
+msgid "tee-right wall"
+msgstr "mur en T vers la droite"
+
+#: src/cmd.c:1104
+msgctxt "terrain"
+msgid "drawbridge wall"
+msgstr "mur de pont-levis"
+
+#: src/cmd.c:1105
+msgctxt "terrain"
+msgid "tree"
+msgstr "arbre"
+
+#: src/cmd.c:1106
+msgctxt "terrain"
+msgid "secret door"
+msgstr "porte secrète"
+
+#: src/cmd.c:1107
+msgctxt "terrain"
+msgid "secret corridor"
+msgstr "couloir secret"
+
+#: src/cmd.c:1108
+msgctxt "terrain"
+msgid "pool"
+msgstr "bassin"
+
+#: src/cmd.c:1109
+msgctxt "terrain"
+msgid "moat"
+msgstr "douves"
+
+#: src/cmd.c:1110
+msgctxt "terrain"
+msgid "water"
+msgstr "eau"
+
+#: src/cmd.c:1111
+msgctxt "terrain"
+msgid "drawbridge up"
+msgstr "pont-levis levé"
+
+#: src/cmd.c:1112
+msgctxt "terrain"
+msgid "lava pool"
+msgstr "mare de lave"
+
+#: src/cmd.c:1113
+msgctxt "terrain"
+msgid "lava wall"
+msgstr "mur de lave"
+
+#: src/cmd.c:1114
+msgctxt "terrain"
+msgid "iron bars"
+msgstr "barreaux de fer"
+
+#: src/cmd.c:1115
+msgctxt "terrain"
+msgid "door"
+msgstr "porte"
+
+#: src/cmd.c:1116
+msgctxt "terrain"
+msgid "corridor"
+msgstr "couloir"
+
+#: src/cmd.c:1117
+msgctxt "terrain"
+msgid "room"
+msgstr "salle"
+
+#: src/cmd.c:1118
+msgctxt "terrain"
+msgid "stairs"
+msgstr "escalier"
+
+#: src/cmd.c:1119
+msgctxt "terrain"
+msgid "ladder"
+msgstr "échelle"
+
+#: src/cmd.c:1120
+msgctxt "terrain"
+msgid "fountain"
+msgstr "fontaine"
+
+#: src/cmd.c:1121
+msgctxt "terrain"
+msgid "throne"
+msgstr "trône"
+
+#: src/cmd.c:1122
+msgctxt "terrain"
+msgid "sink"
+msgstr "évier"
+
+#: src/cmd.c:1123
+msgctxt "terrain"
+msgid "grave"
+msgstr "tombe"
+
+#: src/cmd.c:1124
+msgctxt "terrain"
+msgid "altar"
+msgstr "autel"
+
+#: src/cmd.c:1125
+msgctxt "terrain"
+msgid "ice"
+msgstr "glace"
+
+#: src/cmd.c:1126
+msgctxt "terrain"
+msgid "drawbridge down"
+msgstr "pont-levis baissé"
+
+#: src/cmd.c:1127
+msgctxt "terrain"
+msgid "air"
+msgstr "air"
+
+#: src/cmd.c:1128
+msgctxt "terrain"
+msgid "cloud"
+msgstr "nuage"
+
+#: src/cmd.c:1131
+msgctxt "terrain"
+msgid "unreachable/undiggable"
+msgstr "inaccessible/indestructible"
+
+#: src/cmd.c:1174
+msgid "known map without monsters, objects, and traps"
+msgstr "carte connue sans monstres, objets ni pièges"
+
+#: src/cmd.c:1178
+msgid "known map without monsters and objects"
+msgstr "carte connue sans monstres ni objets"
+
+#: src/cmd.c:1182
+msgid "known map without monsters"
+msgstr "carte connue sans monstres"
+
+#: src/cmd.c:1187
+msgid "full map without monsters, objects, and traps"
+msgstr "carte complète sans monstres, objets ni pièges"
+
+#: src/cmd.c:1192
+msgid "internal levl[][].typ codes in base-36"
+msgstr "codes internes levl[][].typ en base 36"
+
+#: src/cmd.c:1196
+msgid "legend of base-36 levl[][].typ codes"
+msgstr "légende des codes levl[][].typ en base 36"
+
+#: src/cmd.c:1200
+msgid "View which?"
+msgstr "Afficher laquelle ?"
+
+#: src/cmd.c:1324
 #, c-format
 msgid "a square %d by %d room"
 msgstr "une salle carrée de %d sur %d"
 
-#: src/cmd.c:1295
+#: src/cmd.c:1324
 #, c-format
 msgid "an irregularly shaped %d by %d room"
 msgstr "une salle irrégulière de %d sur %d"
 
-#: src/cmd.c:1296
+#: src/cmd.c:1325
 #, c-format
 msgid "a rectangular %d by %d room"
 msgstr "une salle rectangulaire de %d sur %d"
 
-#: src/cmd.c:1296
+#: src/cmd.c:1325
 #, c-format
 msgid "an irregularly shaped %d by %d area"
 msgstr "une zone irrégulière de %d sur %d"
 
-#: src/cmd.c:1297
+#: src/cmd.c:1326
 #, c-format
 msgid "a rectangular %d by %d area"
 msgstr "une zone rectangulaire de %d sur %d"
 
-#: src/cmd.c:1297
+#: src/cmd.c:1326
 #, c-format
 msgid "a square %d by %d area"
 msgstr "une zone carrée de %d sur %d"
 
-#: src/cmd.c:1329
+#: src/cmd.c:1358
 #, c-format
 msgid "You are in %s."
 msgstr "Vous êtes dans %s."
 
-#: src/cmd.c:1331
+#: src/cmd.c:1360
 #, c-format
 msgid "You remember this as %s."
 msgstr "Vous vous en souvenez comme d'%s."
 
-#: src/cmd.c:1332
+#: src/cmd.c:1361
 #, c-format
 msgid "You remember that as %s."
 msgstr "Vous vous en souvenez comme d'%s."
 
-#: src/cmd.c:1334
+#: src/cmd.c:1363
 #, c-format
 msgid "You guess this to be %s."
 msgstr "Vous supposez qu'il s'agit d'%s."
 
-#: src/cmd.c:1335
+#: src/cmd.c:1364
 #, c-format
 msgid "You guess that to be %s."
 msgstr "Vous supposez qu'il s'agit d'%s."
 
-#: src/cmd.c:1337
+#: src/cmd.c:1366
 msgid "You can't guess the size of this area."
 msgstr "Vous ne pouvez pas deviner la taille de cette zone."
 
-#: src/cmd.c:1338
+#: src/cmd.c:1367
 msgid "You can't guess the size of that area."
 msgstr "Vous ne pouvez pas deviner la taille de cette zone-là."
 
-#: src/cmd.c:1363 src/trap.c:5581
+#: src/cmd.c:1392 src/trap.c:5581
 #, c-format
 msgid "You %s %s %s."
 msgstr ""
 
-#: src/cmd.c:1369
+#: src/cmd.c:1398
 #, c-format
 msgid "You guess %s to be %s %s."
 msgstr ""
 
-#: src/cmd.c:1374
+#: src/cmd.c:1403
 #, c-format
 msgid "You can't guess the size of %s area."
 msgstr ""
 
-#: src/cmd.c:1453
+#: src/cmd.c:1482
 msgid "Use #optionsfull to set any option instead."
 msgstr "Utilisez plutôt #optionsfull pour régler n'importe quelle option."
 
-#: src/cmd.c:1650
+#: src/cmd.c:1679
 #, c-format
 msgid "Double %s prefix, canceled."
 msgstr "Double préfixe %s, annulé."
 
-#: src/cmd.c:1665
+#: src/cmd.c:1694
 msgid "Double rush prefix, canceled."
 msgstr "Double préfixe de course, annulé."
 
-#: src/cmd.c:1681
+#: src/cmd.c:1710
 msgid "Double run prefix, canceled."
 msgstr "Double préfixe de course, annulé."
 
-#: src/cmd.c:1697
+#: src/cmd.c:1726
 msgid "Double fight prefix, canceled."
 msgstr "Double préfixe de combat, annulé."
 
-#: src/cmd.c:1718
+#: src/cmd.c:1747
 msgid "There is no command available to repeat."
 msgstr "Il n'y a aucune commande à répéter."
 
-#: src/cmd.c:1740
+#: src/cmd.c:1769
 msgid "enter and perform an extended command"
 msgstr "saisir et exécuter une commande étendue"
 
-#: src/cmd.c:1742
+#: src/cmd.c:1771
 msgid "list all extended commands"
 msgstr "lister toutes les commandes étendues"
 
-#: src/cmd.c:1745
+#: src/cmd.c:1774
 msgid "adjust inventory letters"
 msgstr "ajuster les lettres de l'inventaire"
 
-#: src/cmd.c:1747
+#: src/cmd.c:1776
 msgid "name current level"
 msgstr "nommer le niveau actuel"
 
-#: src/cmd.c:1749
+#: src/cmd.c:1778
 msgid "apply (use) a tool (pick-axe, key, lamp...)"
 msgstr "appliquer (utiliser) un outil (pioche, clé, lampe...)"
 
-#: src/cmd.c:1751
+#: src/cmd.c:1780
 msgid "show your attributes"
 msgstr "afficher vos attributs"
 
-#: src/cmd.c:1753
+#: src/cmd.c:1782
 msgid "toggle the 'autopickup' option on/off"
 msgstr "activer/désactiver l'option 'autopickup'"
 
-#: src/cmd.c:1756
+#: src/cmd.c:1785
 msgid "file a bug report"
 msgstr "envoyer un rapport de bogue"
 
-#: src/cmd.c:1760
+#: src/cmd.c:1789
 msgid "name a monster, specific object, or type of object"
 msgstr "nommer un monstre, un objet précis ou un type d'objet"
 
-#: src/cmd.c:1762
+#: src/cmd.c:1791
 msgid "zap (cast) a spell"
 msgstr "lancer un sort"
 
-#: src/cmd.c:1764
+#: src/cmd.c:1793
 msgid "talk to someone"
 msgstr "parler à quelqu'un"
 
-#: src/cmd.c:1766
+#: src/cmd.c:1795
 msgid "show journal of major events"
 msgstr "afficher le journal des événements majeurs"
 
-#: src/cmd.c:1768
+#: src/cmd.c:1797
 msgid "close a door"
 msgstr "fermer une porte"
 
-#: src/cmd.c:1770
+#: src/cmd.c:1799
 msgid "list voluntary challenges you have maintained"
 msgstr "lister les défis volontaires respectés"
 
-#: src/cmd.c:1772
+#: src/cmd.c:1801
 msgid "start the fuzz tester"
 msgstr "lancer le testeur aléatoire"
 
-#: src/cmd.c:1774
+#: src/cmd.c:1803
 msgid "dip an object into something"
 msgstr "tremper un objet dans quelque chose"
 
-#: src/cmd.c:1776
+#: src/cmd.c:1805
 msgid "go down a staircase"
 msgstr "descendre un escalier"
 
-#: src/cmd.c:1781
+#: src/cmd.c:1810
 msgid "drop an item"
 msgstr "lâcher un objet"
 
-#: src/cmd.c:1783
+#: src/cmd.c:1812
 msgid "drop specific item types"
 msgstr "lâcher certains types d'objets"
 
-#: src/cmd.c:1785
+#: src/cmd.c:1814
 msgid "eat something"
 msgstr "manger quelque chose"
 
-#: src/cmd.c:1787
+#: src/cmd.c:1816
 msgid "engrave writing on the floor"
 msgstr "graver une inscription sur le sol"
 
-#: src/cmd.c:1789
+#: src/cmd.c:1818
 msgid "advance or check weapon and spell skills"
 msgstr "améliorer ou vérifier les compétences"
 
-#: src/cmd.c:1793
+#: src/cmd.c:1822
 msgid "enter explore (discovery) mode"
 msgstr "passer en mode exploration"
 
-#: src/cmd.c:1796
+#: src/cmd.c:1825
 msgid "prefix: force fight even if you don't see a monster"
 msgstr "préfixe : forcer le combat même sans monstre visible"
 
-#: src/cmd.c:1798
+#: src/cmd.c:1827
 msgid "fire ammunition from quiver"
 msgstr "tirer les munitions du carquois"
 
-#: src/cmd.c:1800
+#: src/cmd.c:1829
 msgid "force a lock"
 msgstr "forcer une serrure"
 
-#: src/cmd.c:1803
+#: src/cmd.c:1832
 msgid "list monsters that have been genocided or become extinct"
 msgstr "lister les monstres génocidés ou éteints"
 
-#: src/cmd.c:1806
+#: src/cmd.c:1835
 msgid "list monsters that have been genocided"
 msgstr "lister les monstres génocidés"
 
-#: src/cmd.c:1811
+#: src/cmd.c:1840
 msgid "show what type of thing a map symbol corresponds to"
 msgstr "montrer à quoi correspond un symbole de la carte"
 
-#: src/cmd.c:1813
+#: src/cmd.c:1842
 msgid "give a help message"
 msgstr "afficher l'aide"
 
-#: src/cmd.c:1815
+#: src/cmd.c:1844
 msgid "show menu of commands you can do here"
 msgstr "menu des commandes possibles ici"
 
-#: src/cmd.c:1817
+#: src/cmd.c:1846
 msgid "show a summary of the game's development"
 msgstr "résumé de l'histoire du jeu"
 
-#: src/cmd.c:1819
+#: src/cmd.c:1848
 msgid "show your inventory"
 msgstr "afficher votre inventaire"
 
-#: src/cmd.c:1821
+#: src/cmd.c:1850
 msgid "show inventory of one specific item class"
 msgstr "afficher une classe d'objets de l'inventaire"
 
-#: src/cmd.c:1823
+#: src/cmd.c:1852
 msgid "invoke an object's special powers"
 msgstr "invoquer les pouvoirs spéciaux d'un objet"
 
-#: src/cmd.c:1825
+#: src/cmd.c:1854
 msgid "jump to another location"
 msgstr "sauter vers un autre endroit"
 
-#: src/cmd.c:1827
+#: src/cmd.c:1856
 msgid "kick something"
 msgstr "donner un coup de pied"
 
-#: src/cmd.c:1829
+#: src/cmd.c:1858
 msgid "show what object types have been discovered"
 msgstr "afficher les types d'objets découverts"
 
-#: src/cmd.c:1832
+#: src/cmd.c:1861
 msgid "show discovered types for one class of objects"
 msgstr "afficher les types découverts d'une classe d'objets"
 
-#: src/cmd.c:1834
+#: src/cmd.c:1863
 msgid "change experience level"
 msgstr "changer de niveau d'expérience"
 
-#: src/cmd.c:1836
+#: src/cmd.c:1865
 msgid "show mobile light sources"
 msgstr "afficher les sources de lumière mobiles"
 
-#: src/cmd.c:1838
+#: src/cmd.c:1867
 msgid "look at what is here"
 msgstr "regarder ce qu'il y a ici"
 
-#: src/cmd.c:1840
+#: src/cmd.c:1869
 msgid "describe what you can see"
 msgstr "décrire ce que vous voyez"
 
-#: src/cmd.c:1842
+#: src/cmd.c:1871
 msgid "loot a box on the floor"
 msgstr "piller une boîte sur le sol"
 
-#: src/cmd.c:1851
+#: src/cmd.c:1880
 msgid "use monster's special ability"
 msgstr "utiliser la capacité spéciale du monstre"
 
-#: src/cmd.c:1854
+#: src/cmd.c:1883
 msgid "same as call; name a monster or object or object type"
 msgstr "comme call ; nommer un monstre, un objet ou un type d'objet"
 
-#: src/cmd.c:1856
+#: src/cmd.c:1885
 msgid "offer a sacrifice to the gods"
 msgstr "offrir un sacrifice aux dieux"
 
-#: src/cmd.c:1858
+#: src/cmd.c:1887
 msgid "open a door"
 msgstr "ouvrir une porte"
 
-#: src/cmd.c:1861
+#: src/cmd.c:1890
 msgid "show option settings"
 msgstr "afficher les options"
 
-#: src/cmd.c:1865
+#: src/cmd.c:1894
 msgid "show all option settings, possibly change them"
 msgstr "afficher toutes les options, et les modifier"
 
-#: src/cmd.c:1871
+#: src/cmd.c:1900
 msgid "show a summary of the explored dungeon"
 msgstr "résumé du donjon exploré"
 
-#: src/cmd.c:1875
+#: src/cmd.c:1904
 msgid "test panic routine (fatal to game)"
 msgstr "tester la routine de panique (fatal pour la partie)"
 
-#: src/cmd.c:1877
+#: src/cmd.c:1906
 msgid "pay your shopping bill"
 msgstr "payer vos achats"
 
-#: src/cmd.c:1879
+#: src/cmd.c:1908
 msgid "scroll persistent inventory display"
 msgstr "faire défiler l'inventaire permanent"
 
-#: src/cmd.c:1883
+#: src/cmd.c:1912
 msgid "polymorph self"
 msgstr "vous métamorphoser"
 
-#: src/cmd.c:1885
+#: src/cmd.c:1914
 msgid "pray to the gods for help"
 msgstr "prier les dieux de vous aider"
 
-#: src/cmd.c:1887
+#: src/cmd.c:1916
 msgid "view recent game messages"
 msgstr "revoir les messages récents"
 
-#: src/cmd.c:1889
+#: src/cmd.c:1918
 msgid "put on an accessory (ring, amulet, etc)"
 msgstr "mettre un accessoire (anneau, amulette, etc.)"
 
-#: src/cmd.c:1891
+#: src/cmd.c:1920
 msgid "quaff (drink) something"
 msgstr "boire quelque chose"
 
-#: src/cmd.c:1893
+#: src/cmd.c:1922
 msgid "exit without saving current game"
 msgstr "quitter sans sauvegarder la partie"
 
-#: src/cmd.c:1896
+#: src/cmd.c:1925
 msgid "select ammunition for quiver"
 msgstr "choisir les munitions du carquois"
 
-#: src/cmd.c:1898
+#: src/cmd.c:1927
 msgid "read a scroll or spellbook"
 msgstr "lire un parchemin ou un livre de sorts"
 
-#: src/cmd.c:1900
+#: src/cmd.c:1929
 msgid "redraw screen"
 msgstr "redessiner l'écran"
 
-#: src/cmd.c:1902
+#: src/cmd.c:1931
 msgid "remove an accessory (ring, amulet, etc)"
 msgstr "retirer un accessoire (anneau, amulette, etc.)"
 
-#: src/cmd.c:1904
+#: src/cmd.c:1933
 msgid "repeat a previous command"
 msgstr "répéter une commande précédente"
 
-#: src/cmd.c:1911
+#: src/cmd.c:1940
 msgid "prefix: request menu or modify command"
 msgstr "préfixe : demander un menu ou modifier la commande"
 
-#: src/cmd.c:1913
+#: src/cmd.c:1942
 msgid "travel to previously selected travel location"
 msgstr "voyager vers la destination choisie"
 
-#: src/cmd.c:1915
+#: src/cmd.c:1944
 msgid "mount or dismount a saddled steed"
 msgstr "monter ou descendre d'une monture sellée"
 
-#: src/cmd.c:1917
+#: src/cmd.c:1946
 msgid "rub a lamp or a stone"
 msgstr "frotter une lampe ou une pierre"
 
-#: src/cmd.c:1919
+#: src/cmd.c:1948
 msgid "prefix: run until something interesting is seen"
 msgstr "préfixe : courir jusqu'à voir quelque chose d'intéressant"
 
-#: src/cmd.c:1921
+#: src/cmd.c:1950
 msgid "prefix: rush until something interesting is seen"
 msgstr "préfixe : foncer jusqu'à voir quelque chose d'intéressant"
 
-#: src/cmd.c:1923
+#: src/cmd.c:1952
 msgid "save the game and exit"
 msgstr "sauvegarder la partie et quitter"
 
-#: src/cmd.c:1925
+#: src/cmd.c:1954
 msgid "save the game configuration"
 msgstr "sauvegarder la configuration"
 
-#: src/cmd.c:1928
+#: src/cmd.c:1957
 msgid "search for traps and secret doors"
 msgstr "chercher les pièges et portes secrètes"
 
-#: src/cmd.c:1930
+#: src/cmd.c:1959
 msgid "show all equipment in use"
 msgstr "afficher tout l'équipement utilisé"
 
-#: src/cmd.c:1932
+#: src/cmd.c:1961
 msgid "show the amulet currently worn"
 msgstr "afficher l'amulette portée"
 
-#: src/cmd.c:1934
+#: src/cmd.c:1963
 msgid "show the armor currently worn"
 msgstr "afficher l'armure portée"
 
-#: src/cmd.c:1936
+#: src/cmd.c:1965
 msgid "show the ring(s) currently worn"
 msgstr "afficher le ou les anneaux portés"
 
-#: src/cmd.c:1938
+#: src/cmd.c:1967
 msgid "show the tools currently in use"
 msgstr "afficher les outils utilisés"
 
-#: src/cmd.c:1940
+#: src/cmd.c:1969
 msgid "show the weapon currently wielded"
 msgstr "afficher l'arme en main"
 
-#: src/cmd.c:1943
+#: src/cmd.c:1972
 msgid "leave game to enter a sub-shell ('exit' to come back)"
 msgstr "quitter vers un sous-shell ('exit' pour revenir)"
 
-#: src/cmd.c:1950
+#: src/cmd.c:1979
 msgid "show gold, possibly shop credit or debt"
 msgstr "afficher l'or, et le crédit ou la dette en boutique"
 
-#: src/cmd.c:1952
+#: src/cmd.c:1981
 msgid "list and reorder known spells"
 msgstr "lister et réordonner les sorts connus"
 
-#: src/cmd.c:1954
+#: src/cmd.c:1983
 msgid "describe an adjacent, discovered trap"
 msgstr "décrire un piège adjacent découvert"
 
-#: src/cmd.c:1956
+#: src/cmd.c:1985
 msgid "sit down"
 msgstr "s'asseoir"
 
-#: src/cmd.c:1958
+#: src/cmd.c:1987
 msgid "show memory statistics"
 msgstr "afficher les statistiques mémoire"
 
-#: src/cmd.c:1960
+#: src/cmd.c:1989
 msgid "push game to background ('fg' to come back)"
 msgstr "mettre le jeu en arrière-plan ('fg' pour revenir)"
 
-#: src/cmd.c:1966
+#: src/cmd.c:1995
 msgid "swap wielded and secondary weapons"
 msgstr "échanger l'arme en main et l'arme secondaire"
 
-#: src/cmd.c:1968
+#: src/cmd.c:1997
 msgid "take off one piece of armor"
 msgstr "enlever une pièce d'armure"
 
-#: src/cmd.c:1970
+#: src/cmd.c:1999
 msgid "remove all armor"
 msgstr "enlever toute l'armure"
 
-#: src/cmd.c:1972
+#: src/cmd.c:2001
 msgid "teleport around the level"
 msgstr "se téléporter dans le niveau"
 
-#: src/cmd.c:1978
+#: src/cmd.c:2007
 msgid "view map without monsters or objects obstructing it"
 msgstr "voir la carte sans monstres ni objets"
 
-#: src/cmd.c:1981
+#: src/cmd.c:2010
 msgid "menu of commands you can do from here to adjacent spot"
 msgstr "menu des commandes possibles vers une case adjacente"
 
-#: src/cmd.c:1983
+#: src/cmd.c:2012
 msgid "throw something"
 msgstr "lancer quelque chose"
 
-#: src/cmd.c:1986
+#: src/cmd.c:2015
 msgid "look at timeout queue and hero's timed intrinsics"
 msgstr "voir la file des délais et les intrinsèques temporaires"
 
-#: src/cmd.c:1988
+#: src/cmd.c:2017
 msgid "empty a container"
 msgstr "vider un conteneur"
 
-#: src/cmd.c:1990
+#: src/cmd.c:2019
 msgid "toggle boolean option"
 msgstr "basculer une option booléenne"
 
-#: src/cmd.c:1992
+#: src/cmd.c:2021
 msgid "travel to a specific location on the map"
 msgstr "voyager vers un endroit précis de la carte"
 
-#: src/cmd.c:1994
+#: src/cmd.c:2023
 msgid "turn undead away"
 msgstr "repousser les morts-vivants"
 
-#: src/cmd.c:1996
+#: src/cmd.c:2025
 msgid "toggle two-weapon combat"
 msgstr "basculer le combat à deux armes"
 
-#: src/cmd.c:1998
+#: src/cmd.c:2027
 msgid "untrap something"
 msgstr "désamorcer quelque chose"
 
-#: src/cmd.c:2000
+#: src/cmd.c:2029
 msgid "go up a staircase"
 msgstr "monter un escalier"
 
-#: src/cmd.c:2003
+#: src/cmd.c:2032
 msgid "list vanquished monsters"
 msgstr "lister les monstres vaincus"
 
-#: src/cmd.c:2007
+#: src/cmd.c:2036
 msgid "list compile time options for this version of NetHack"
 msgstr "lister les options de compilation de cette version de NetHack"
 
-#: src/cmd.c:2010
+#: src/cmd.c:2039
 msgid "show version and date+time program was built"
 msgstr "afficher la version et la date de compilation"
 
-#: src/cmd.c:2012
+#: src/cmd.c:2041
 msgid "show vision array"
 msgstr "afficher le tableau de vision"
 
-#: src/cmd.c:2014
+#: src/cmd.c:2043
 msgid "rest one move while doing nothing"
 msgstr "se reposer un tour sans rien faire"
 
-#: src/cmd.c:2016
+#: src/cmd.c:2045
 msgid "wear a piece of armor"
 msgstr "porter une pièce d'armure"
 
-#: src/cmd.c:2018
+#: src/cmd.c:2047
 msgid "tell what a command does"
 msgstr "dire ce que fait une commande"
 
-#: src/cmd.c:2020
+#: src/cmd.c:2049
 msgid "show what type of thing a symbol corresponds to"
 msgstr "montrer à quoi correspond un symbole"
 
-#: src/cmd.c:2022
+#: src/cmd.c:2051
 msgid "wield (put in use) a weapon"
 msgstr "manier une arme"
 
-#: src/cmd.c:2024
+#: src/cmd.c:2053
 msgid "wipe off your face"
 msgstr "vous essuyer le visage"
 
-#: src/cmd.c:2026
+#: src/cmd.c:2055
 msgid "show stats of monsters created"
 msgstr "statistiques des monstres créés"
 
-#: src/cmd.c:2029
+#: src/cmd.c:2058
 msgid "bury objs under and around you"
 msgstr "enterrer les objets sous et autour de vous"
 
-#: src/cmd.c:2033
+#: src/cmd.c:2062
 msgid "cast any spell"
 msgstr "lancer n'importe quel sort"
 
-#: src/cmd.c:2035
+#: src/cmd.c:2064
 msgid "show customized glyphs"
 msgstr "afficher les glyphes personnalisés"
 
-#: src/cmd.c:2037
+#: src/cmd.c:2066
 msgid "reveal hidden things within a small radius"
 msgstr "révéler les choses cachées à proximité"
 
-#: src/cmd.c:2040
+#: src/cmd.c:2069
 msgid "validate the display macro ranges"
 msgstr "valider les intervalles des macros d'affichage"
 
-#: src/cmd.c:2043
+#: src/cmd.c:2072
 msgid "flip the level"
 msgstr "retourner le niveau"
 
-#: src/cmd.c:2045
+#: src/cmd.c:2074
 msgid "create a monster"
 msgstr "créer un monstre"
 
-#: src/cmd.c:2047
+#: src/cmd.c:2076
 msgid "identify all items in inventory"
 msgstr "identifier tout l'inventaire"
 
-#: src/cmd.c:2049
+#: src/cmd.c:2078
 msgid "set an intrinsic"
 msgstr "fixer un intrinsèque"
 
-#: src/cmd.c:2051
+#: src/cmd.c:2080
 msgid "slay a monster"
 msgstr "tuer un monstre"
 
-#: src/cmd.c:2054
+#: src/cmd.c:2083
 msgid "teleport to another level"
 msgstr "se téléporter vers un autre niveau"
 
-#: src/cmd.c:2056
+#: src/cmd.c:2085
 msgid "load and execute a des-file lua script"
 msgstr "charger et exécuter un script lua des-file"
 
-#: src/cmd.c:2058
+#: src/cmd.c:2087
 msgid "load and execute a lua script"
 msgstr "charger et exécuter un script lua"
 
-#: src/cmd.c:2061
+#: src/cmd.c:2090
 msgid "list object generation probabilities"
 msgstr "lister les probabilités de génération des objets"
 
-#: src/cmd.c:2064
+#: src/cmd.c:2093
 msgid "recreate the current level"
 msgstr "recréer le niveau actuel"
 
-#: src/cmd.c:2066
+#: src/cmd.c:2095
 msgid "map the level"
 msgstr "cartographier le niveau"
 
-#: src/cmd.c:2069
+#: src/cmd.c:2098
 msgid "validate the difficulty ratings of monsters"
 msgstr "valider la difficulté des monstres"
 
-#: src/cmd.c:2072
+#: src/cmd.c:2101
 msgid "verify rumor boundaries"
 msgstr "vérifier les limites des rumeurs"
 
-#: src/cmd.c:2074
+#: src/cmd.c:2103
 msgid "show map locations' seen vectors"
 msgstr "afficher les vecteurs de vision de la carte"
 
-#: src/cmd.c:2076
+#: src/cmd.c:2105
 msgid "show NHUUID for this game"
 msgstr "afficher le NHUUID de cette partie"
 
-#: src/cmd.c:2078
+#: src/cmd.c:2107
 msgid "smell monster"
 msgstr "sentir un monstre"
 
-#: src/cmd.c:2080
+#: src/cmd.c:2109
 msgid "telekinesis"
 msgstr "télékinésie"
 
-#: src/cmd.c:2082
+#: src/cmd.c:2111
 msgid "show locations of special levels"
 msgstr "afficher l'emplacement des niveaux spéciaux"
 
-#: src/cmd.c:2084
+#: src/cmd.c:2113
 msgid "wish for something"
 msgstr "faire un vœu"
 
-#: src/cmd.c:2086
+#: src/cmd.c:2115
 msgid "show wall modes"
 msgstr "afficher les modes des murs"
 
-#: src/cmd.c:2088
+#: src/cmd.c:2117
 msgid "zap a wand"
 msgstr "utiliser une baguette"
 
-#: src/cmd.c:2092
+#: src/cmd.c:2121
 msgid "move west (screen left)"
 msgstr "aller à l'ouest (gauche de l'écran)"
 
-#: src/cmd.c:2094
+#: src/cmd.c:2123
 msgid "move northwest (screen upper left)"
 msgstr "aller au nord-ouest (haut gauche de l'écran)"
 
-#: src/cmd.c:2096
+#: src/cmd.c:2125
 msgid "move north (screen up)"
 msgstr "aller au nord (haut de l'écran)"
 
-#: src/cmd.c:2098
+#: src/cmd.c:2127
 msgid "move northeast (screen upper right)"
 msgstr "aller au nord-est (haut droite de l'écran)"
 
-#: src/cmd.c:2100
+#: src/cmd.c:2129
 msgid "move east (screen right)"
 msgstr "aller à l'est (droite de l'écran)"
 
-#: src/cmd.c:2102
+#: src/cmd.c:2131
 msgid "move southeast (screen lower right)"
 msgstr "aller au sud-est (bas droite de l'écran)"
 
-#: src/cmd.c:2104
+#: src/cmd.c:2133
 msgid "move south (screen down)"
 msgstr "aller au sud (bas de l'écran)"
 
-#: src/cmd.c:2106
+#: src/cmd.c:2135
 msgid "move southwest (screen lower left)"
 msgstr "aller au sud-ouest (bas gauche de l'écran)"
 
-#: src/cmd.c:2109
+#: src/cmd.c:2138
 msgid "rush west (screen left)"
 msgstr "foncer à l'ouest (gauche de l'écran)"
 
-#: src/cmd.c:2111
+#: src/cmd.c:2140
 msgid "rush northwest (screen upper left)"
 msgstr "foncer au nord-ouest (haut gauche de l'écran)"
 
-#: src/cmd.c:2113
+#: src/cmd.c:2142
 msgid "rush north (screen up)"
 msgstr "foncer au nord (haut de l'écran)"
 
-#: src/cmd.c:2115
+#: src/cmd.c:2144
 msgid "rush northeast (screen upper right)"
 msgstr "foncer au nord-est (haut droite de l'écran)"
 
-#: src/cmd.c:2117
+#: src/cmd.c:2146
 msgid "rush east (screen right)"
 msgstr "foncer à l'est (droite de l'écran)"
 
-#: src/cmd.c:2119
+#: src/cmd.c:2148
 msgid "rush southeast (screen lower right)"
 msgstr "foncer au sud-est (bas droite de l'écran)"
 
-#: src/cmd.c:2121
+#: src/cmd.c:2150
 msgid "rush south (screen down)"
 msgstr "foncer au sud (bas de l'écran)"
 
-#: src/cmd.c:2123
+#: src/cmd.c:2152
 msgid "rush southwest (screen lower left)"
 msgstr "foncer au sud-ouest (bas gauche de l'écran)"
 
-#: src/cmd.c:2126
+#: src/cmd.c:2155
 msgid "run west (screen left)"
 msgstr "courir à l'ouest (gauche de l'écran)"
 
-#: src/cmd.c:2128
+#: src/cmd.c:2157
 msgid "run northwest (screen upper left)"
 msgstr "courir au nord-ouest (haut gauche de l'écran)"
 
-#: src/cmd.c:2130
+#: src/cmd.c:2159
 msgid "run north (screen up)"
 msgstr "courir au nord (haut de l'écran)"
 
-#: src/cmd.c:2132
+#: src/cmd.c:2161
 msgid "run northeast (screen upper right)"
 msgstr "courir au nord-est (haut droite de l'écran)"
 
-#: src/cmd.c:2134
+#: src/cmd.c:2163
 msgid "run east (screen right)"
 msgstr "courir à l'est (droite de l'écran)"
 
-#: src/cmd.c:2136
+#: src/cmd.c:2165
 msgid "run southeast (screen lower right)"
 msgstr "courir au sud-est (bas droite de l'écran)"
 
-#: src/cmd.c:2138
+#: src/cmd.c:2167
 msgid "run south (screen down)"
 msgstr "courir au sud (bas de l'écran)"
 
-#: src/cmd.c:2140
+#: src/cmd.c:2169
 msgid "run southwest (screen lower left)"
 msgstr "courir au sud-ouest (bas gauche de l'écran)"
 
-#: src/cmd.c:2388 src/cmd.c:2468
+#: src/cmd.c:2417 src/cmd.c:2497
 msgid "Bind which key? "
 msgstr "Associer quelle touche ? "
 
-#: src/cmd.c:2479
+#: src/cmd.c:2508
 #, c-format
 msgid "Changed key '%s' from \"%s\" to \"%s\"."
 msgstr "Touche « %s » changée de « %s » en « %s »."
 
-#: src/cmd.c:2482
+#: src/cmd.c:2511
 #, c-format
 msgid "Bound key '%s' to \"%s\"."
 msgstr "Touche « %s » associée à « %s »."
 
-#: src/cmd.c:2486
+#: src/cmd.c:2515
 msgid "Key binding failed?!"
 msgstr "L'association de touche a échoué ?!"
 
-#: src/cmd.c:3797
+#: src/cmd.c:3826
 #, c-format
 msgid "The %s command does not accept '%s' prefix."
 msgstr "La commande %s n'accepte pas le préfixe « %s »."
 
-#: src/cmd.c:3806
+#: src/cmd.c:3835
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command other than up or down."
 msgstr "Le préfixe « %s » doit être suivi d'une commande de déplacement autre que monter ou descendre."
 
-#: src/cmd.c:3808
+#: src/cmd.c:3837
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command."
 msgstr "Le préfixe « %s » doit être suivi d'une commande de déplacement."
 
-#: src/cmd.c:3812
+#: src/cmd.c:3841
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command%s."
 msgstr ""
 
-#: src/cmd.c:3876
+#: src/cmd.c:3905
 msgid "You can't get there from here..."
 msgstr "Impossible d'aller là d'ici..."
 
-#: src/cmd.c:3928
+#: src/cmd.c:3957
 #, c-format
 msgid "Unknown command '%s'."
 msgstr "Commande inconnue « %s »."
 
-#: src/cmd.c:4082
+#: src/cmd.c:4111
 msgid "In what direction?"
 msgstr "Dans quelle direction ?"
 
-#: src/cmd.c:4203
+#: src/cmd.c:4232
 msgid "What a strange direction!"
 msgstr "Quelle direction étrange !"
 
-#: src/cmd.c:4207
+#: src/cmd.c:4236
 msgid "You can't orient yourself that direction."
 msgstr "Vous ne pouvez pas vous orienter dans cette direction."
 
-#: src/cmd.c:4410
+#: src/cmd.c:4439
 msgid "north"
 msgstr "nord"
 
-#: src/cmd.c:4410
+#: src/cmd.c:4439
 msgid "northeast"
 msgstr "nord-est"
 
-#: src/cmd.c:4410
+#: src/cmd.c:4439
 msgid "northwest"
 msgstr "nord-ouest"
 
-#: src/cmd.c:4410
+#: src/cmd.c:4439
 msgid "west"
 msgstr "ouest"
 
-#: src/cmd.c:4411
+#: src/cmd.c:4440
 msgid "east"
 msgstr "est"
 
-#: src/cmd.c:4411
+#: src/cmd.c:4440
 msgid "south"
 msgstr "sud"
 
-#: src/cmd.c:4411
+#: src/cmd.c:4440
 msgid "southeast"
 msgstr "sud-est"
 
-#: src/cmd.c:4411
+#: src/cmd.c:4440
 msgid "southwest"
 msgstr "sud-ouest"
 
-#: src/cmd.c:4412
+#: src/cmd.c:4441
 msgid "down"
 msgstr "bas"
 
-#: src/cmd.c:4412
+#: src/cmd.c:4441
 msgid "up"
 msgstr "haut"
 
-#: src/cmd.c:5428
+#: src/cmd.c:5457
 msgid "Where do you want to travel to?"
 msgstr "Où voulez-vous vous rendre ?"
 
-#: src/cmd.c:5429
+#: src/cmd.c:5458
 msgid "the desired destination"
 msgstr "la destination voulue"
 
-#: src/cmd.c:5447
+#: src/cmd.c:5476
 msgid "No travel destination set."
 msgstr "Aucune destination définie."
 
-#: src/cmd.c:5452
+#: src/cmd.c:5481
 msgid "You are already here."
 msgstr "Vous y êtes déjà."
 
-#: src/cmd.c:5553 src/shk.c:3856 src/sounds.c:1372 src/trap.c:616
+#: src/cmd.c:5582 src/shk.c:3856 src/sounds.c:1372 src/trap.c:616
 #: src/windows.c:1902
 #, c-format
 msgid "%s %s"
@@ -31059,12 +31284,12 @@ msgctxt "feminine plural"
 msgid "%s rots away."
 msgstr "%s pourrissent."
 
-#: src/dig.c:1454 src/dungeon.c:1772 src/dungeon.c:3557
+#: src/dig.c:1454 src/dungeon.c:1772 src/dungeon.c:3562
 msgctxt "gender"
 msgid "fountain"
 msgstr "f"
 
-#: src/dig.c:1454 src/dungeon.c:1761 src/dungeon.c:3557
+#: src/dig.c:1454 src/dungeon.c:1761 src/dungeon.c:3562
 msgctxt "noun"
 msgid "fountain"
 msgstr "fontaine"
@@ -31164,12 +31389,12 @@ msgctxt "gender"
 msgid "door"
 msgstr "f"
 
-#: src/dig.c:1468 src/dungeon.c:3557
+#: src/dig.c:1468 src/dungeon.c:3562
 msgctxt "gender"
 msgid "tree"
 msgstr ""
 
-#: src/dig.c:1468 src/dungeon.c:3556
+#: src/dig.c:1468 src/dungeon.c:3561
 msgctxt "noun"
 msgid "tree"
 msgstr "arbre"
@@ -32639,8 +32864,8 @@ msgstr "%s nommé %s"
 msgid "you"
 msgstr "vous"
 
-#: src/do_name.c:1224 src/mon.c:3542 src/pray.c:1857 src/timeout.c:1258
-#: src/timeout.c:1390 src/zap.c:3426
+#: src/do_name.c:1224 src/mon.c:3542 src/pray.c:1857 src/timeout.c:1259
+#: src/timeout.c:1391 src/zap.c:3426
 msgid "it"
 msgstr "quelque chose"
 
@@ -33208,7 +33433,7 @@ msgstr "Vous sentez que les monstres ont du mal à vous localiser."
 msgid "You feel yourself speed up a bit more."
 msgstr "Vous vous sentez accélérer encore un peu."
 
-#: src/do_wear.c:337 src/timeout.c:730
+#: src/do_wear.c:337 src/timeout.c:731
 msgid "You feel yourself slow down a bit."
 msgstr "Vous vous sentez ralentir un peu."
 
@@ -35048,281 +35273,368 @@ msgctxt "gender"
 msgid "ground"
 msgstr ""
 
-#: src/dungeon.c:2522
-#, c-format
-msgid "You remember this level as %s."
-msgstr "Vous vous souvenez de ce niveau : %s."
-
-#: src/dungeon.c:3498
-#, c-format
-msgid "notes \"%s\""
-msgstr "les notes « %s »"
-
-#: src/dungeon.c:3500
-msgid "5-note tune"
-msgstr "l'air de 5 notes"
-
-#: src/dungeon.c:3501
-#, c-format
-msgid " (play %s to open or close drawbridge)"
-msgstr " (jouez %s pour ouvrir ou fermer le pont-levis)"
-
-#: src/dungeon.c:3546
-msgid "Sokoban"
-msgstr "Sokoban"
-
-#: src/dungeon.c:3546
-msgid "The Dungeons of Doom"
-msgstr "Les Donjons du Destin"
-
-#: src/dungeon.c:3546
-msgid "The Gnomish Mines"
-msgstr "Les Mines des gnomes"
-
-#: src/dungeon.c:3547
-msgid "Fort Ludios"
-msgstr "Fort Ludios"
-
-#: src/dungeon.c:3547
-msgid "Gehennom"
-msgstr "La Géhenne"
-
-#: src/dungeon.c:3547
-msgid "The Elemental Planes"
-msgstr "Les Plans élémentaires"
-
-#: src/dungeon.c:3547
-msgid "The Quest"
-msgstr "La Quête"
-
-#: src/dungeon.c:3548
-msgid "Astral Plane"
-msgstr "Plan astral"
-
-#: src/dungeon.c:3548
-msgid "Plane of Water"
-msgstr "Plan de l'Eau"
-
-#: src/dungeon.c:3548
-msgid "The Tutorial"
-msgstr "Le Tutoriel"
-
-#: src/dungeon.c:3548
-msgid "Vlad's Tower"
-msgstr "La Tour de Vlad"
-
-#: src/dungeon.c:3549
-msgid "Plane of Air"
-msgstr "Plan de l'Air"
-
-#: src/dungeon.c:3549
-msgid "Plane of Earth"
-msgstr "Plan de la Terre"
-
-#: src/dungeon.c:3549
-msgid "Plane of Fire"
-msgstr "Plan du Feu"
-
-#: src/dungeon.c:3550
-msgid "Connection"
-msgstr "Liaison"
-
-#: src/dungeon.c:3550
-msgid "One way stairs up"
-msgstr "Escalier montant à sens unique"
-
-#: src/dungeon.c:3550
+#: src/dungeon.c:2273 src/dungeon.c:3555
 msgid "Portal"
 msgstr "Portail"
 
-#: src/dungeon.c:3550
-msgid "Sealed portal"
-msgstr "Portail scellé"
+#: src/dungeon.c:2275 src/dungeon.c:3555
+msgid "Connection"
+msgstr "Liaison"
 
-#: src/dungeon.c:3551
-msgid "One way stairs down"
-msgstr "Escalier descendant à sens unique"
+#: src/dungeon.c:2277
+msgid "One way stair"
+msgstr "Escalier à sens unique"
 
-#: src/dungeon.c:3551
-msgid "Stairs down"
-msgstr "Escalier descendant"
+#: src/dungeon.c:2279
+msgid "Stair"
+msgstr "Escalier"
 
-#: src/dungeon.c:3551
-msgid "Stairs up"
-msgstr "Escalier montant"
+#: src/dungeon.c:2281
+msgid " (unknown)"
+msgstr " (inconnu)"
 
-#: src/dungeon.c:3552
-msgctxt "noun plural"
-msgid "shop"
-msgstr "boutiques"
-
-#: src/dungeon.c:3552
-msgctxt "noun plural"
-msgid "temple"
-msgstr "temples"
-
-#: src/dungeon.c:3553
-msgctxt "noun plural"
-msgid "altar"
-msgstr "autels"
-
-#: src/dungeon.c:3553
-msgctxt "noun plural"
-msgid "throne"
-msgstr "trônes"
-
-#: src/dungeon.c:3554
-msgctxt "noun plural"
-msgid "fountain"
-msgstr "fontaines"
-
-#: src/dungeon.c:3554
-msgctxt "noun plural"
-msgid "sink"
-msgstr "éviers"
-
-#: src/dungeon.c:3555
-msgctxt "noun plural"
-msgid "grave"
-msgstr "tombes"
-
-#: src/dungeon.c:3555
-msgctxt "noun plural"
-msgid "tree"
-msgstr "arbres"
-
-#: src/dungeon.c:3556
-msgctxt "gender"
-msgid "temple"
-msgstr ""
-
-#: src/dungeon.c:3556
-msgctxt "noun"
-msgid "temple"
-msgstr "temple"
-
-#: src/dungeon.c:3572
+#: src/dungeon.c:2304
 #, c-format
-msgid "many %s"
-msgstr "beaucoup @de %s"
+msgid "%c %s to %s: %d"
+msgstr "%c %s vers %s : %d"
 
-#: src/dungeon.c:3572 src/objnam.c:647
+#: src/dungeon.c:2345
 #, c-format
-msgid "some %s"
-msgstr "des %s"
+msgid "%s: depths %d to %d"
+msgstr "%s : profondeurs %d à %d"
 
-#: src/dungeon.c:3606
-#, c-format
-msgid "%s: levels %d up to %d"
-msgstr "%s : niveaux %d en montant jusqu'au %d"
-
-#: src/dungeon.c:3611
+#: src/dungeon.c:2346 src/dungeon.c:3616
 #, c-format
 msgid "%s: levels %d to %d"
 msgstr "%s : niveaux %d à %d"
 
-#: src/dungeon.c:3624
+#: src/dungeon.c:2351
+#, c-format
+msgid "%s: depth %d"
+msgstr "%s : profondeur %d"
+
+#: src/dungeon.c:2351
+#, c-format
+msgid "%s: level %d"
+msgstr "%s : niveau %d"
+
+#: src/dungeon.c:2357
+msgid ", entrance from below"
+msgstr ", entrée par le bas"
+
+#: src/dungeon.c:2360
+#, c-format
+msgid ", entrance on %d"
+msgstr ", entrée au niveau %d"
+
+#: src/dungeon.c:2384
+#, c-format
+msgid " (tune %s)"
+msgstr " (air : %s)"
+
+#: src/dungeon.c:2402
+msgid "Level teleport to where:"
+msgstr "Se téléporter à quel niveau ?"
+
+#: src/dungeon.c:2422
+msgid "Floating branches"
+msgstr "Branches flottantes"
+
+#: src/dungeon.c:2425
+#, c-format
+msgid "   %s to %s"
+msgstr "   %s vers %s"
+
+#: src/dungeon.c:2434
+#, c-format
+msgid "Invocation position @ (%d,%d), hero @ (%d,%d)"
+msgstr "Emplacement de l'invocation @ (%d,%d), héros @ (%d,%d)"
+
+#: src/dungeon.c:2451
+#, c-format
+msgid "Portal @ (%d,%d), hero @ (%d,%d)"
+msgstr "Portail @ (%d,%d), héros @ (%d,%d)"
+
+#: src/dungeon.c:2459
+msgid "No portal found."
+msgstr "Aucun portail trouvé."
+
+#: src/dungeon.c:2527
+#, c-format
+msgid "You remember this level as %s."
+msgstr "Vous vous souvenez de ce niveau : %s."
+
+#: src/dungeon.c:2818
+#, c-format
+msgid "general, size %ld"
+msgstr "général, taille %ld"
+
+#: src/dungeon.c:2822
+#, c-format
+msgid "cemetery, size %ld"
+msgstr "cimetière, taille %ld"
+
+#: src/dungeon.c:2828
+msgid "annotations, text"
+msgstr "annotations, texte"
+
+#: src/dungeon.c:3503
+#, c-format
+msgid "notes \"%s\""
+msgstr "les notes « %s »"
+
+#: src/dungeon.c:3505
+msgid "5-note tune"
+msgstr "l'air de 5 notes"
+
+#: src/dungeon.c:3506
+#, c-format
+msgid " (play %s to open or close drawbridge)"
+msgstr " (jouez %s pour ouvrir ou fermer le pont-levis)"
+
+#: src/dungeon.c:3551
+msgid "Sokoban"
+msgstr "Sokoban"
+
+#: src/dungeon.c:3551
+msgid "The Dungeons of Doom"
+msgstr "Les Donjons du Destin"
+
+#: src/dungeon.c:3551
+msgid "The Gnomish Mines"
+msgstr "Les Mines des gnomes"
+
+#: src/dungeon.c:3552
+msgid "Fort Ludios"
+msgstr "Fort Ludios"
+
+#: src/dungeon.c:3552
+msgid "Gehennom"
+msgstr "La Géhenne"
+
+#: src/dungeon.c:3552
+msgid "The Elemental Planes"
+msgstr "Les Plans élémentaires"
+
+#: src/dungeon.c:3552
+msgid "The Quest"
+msgstr "La Quête"
+
+#: src/dungeon.c:3553
+msgid "Astral Plane"
+msgstr "Plan astral"
+
+#: src/dungeon.c:3553
+msgid "Plane of Water"
+msgstr "Plan de l'Eau"
+
+#: src/dungeon.c:3553
+msgid "The Tutorial"
+msgstr "Le Tutoriel"
+
+#: src/dungeon.c:3553
+msgid "Vlad's Tower"
+msgstr "La Tour de Vlad"
+
+#: src/dungeon.c:3554
+msgid "Plane of Air"
+msgstr "Plan de l'Air"
+
+#: src/dungeon.c:3554
+msgid "Plane of Earth"
+msgstr "Plan de la Terre"
+
+#: src/dungeon.c:3554
+msgid "Plane of Fire"
+msgstr "Plan du Feu"
+
+#: src/dungeon.c:3555
+msgid "One way stairs up"
+msgstr "Escalier montant à sens unique"
+
+#: src/dungeon.c:3555
+msgid "Sealed portal"
+msgstr "Portail scellé"
+
+#: src/dungeon.c:3556
+msgid "One way stairs down"
+msgstr "Escalier descendant à sens unique"
+
+#: src/dungeon.c:3556
+msgid "Stairs down"
+msgstr "Escalier descendant"
+
+#: src/dungeon.c:3556
+msgid "Stairs up"
+msgstr "Escalier montant"
+
+#: src/dungeon.c:3557
+msgctxt "noun plural"
+msgid "shop"
+msgstr "boutiques"
+
+#: src/dungeon.c:3557
+msgctxt "noun plural"
+msgid "temple"
+msgstr "temples"
+
+#: src/dungeon.c:3558
+msgctxt "noun plural"
+msgid "altar"
+msgstr "autels"
+
+#: src/dungeon.c:3558
+msgctxt "noun plural"
+msgid "throne"
+msgstr "trônes"
+
+#: src/dungeon.c:3559
+msgctxt "noun plural"
+msgid "fountain"
+msgstr "fontaines"
+
+#: src/dungeon.c:3559
+msgctxt "noun plural"
+msgid "sink"
+msgstr "éviers"
+
+#: src/dungeon.c:3560
+msgctxt "noun plural"
+msgid "grave"
+msgstr "tombes"
+
+#: src/dungeon.c:3560
+msgctxt "noun plural"
+msgid "tree"
+msgstr "arbres"
+
+#: src/dungeon.c:3561
+msgctxt "gender"
+msgid "temple"
+msgstr ""
+
+#: src/dungeon.c:3561
+msgctxt "noun"
+msgid "temple"
+msgstr "temple"
+
+#: src/dungeon.c:3577
+#, c-format
+msgid "many %s"
+msgstr "beaucoup @de %s"
+
+#: src/dungeon.c:3577 src/objnam.c:647
+#, c-format
+msgid "some %s"
+msgstr "des %s"
+
+#: src/dungeon.c:3611
+#, c-format
+msgid "%s: levels %d up to %d"
+msgstr "%s : niveaux %d en montant jusqu'au %d"
+
+#: src/dungeon.c:3629
 #, c-format
 msgid "%sLevel %d:"
 msgstr "%sNiveau %d :"
 
-#: src/dungeon.c:3639
+#: src/dungeon.c:3644
 msgid " <- You are here."
 msgstr " <- Vous êtes ici."
 
-#: src/dungeon.c:3641
+#: src/dungeon.c:3646
 msgid " <- You left from here."
 msgstr " <- Vous êtes parti d'ici."
 
-#: src/dungeon.c:3642
+#: src/dungeon.c:3647
 msgid " <- You were here."
 msgstr " <- Vous étiez ici."
 
-#: src/dungeon.c:3671 src/end.c:1497 src/insight.c:1920
+#: src/dungeon.c:3676 src/end.c:1497 src/insight.c:1920
 #, c-format
 msgid " and %s"
 msgstr " et %s"
 
-#: src/dungeon.c:3681
+#: src/dungeon.c:3686
 #, c-format
 msgid " to %s"
 msgstr " (%s)"
 
-#: src/dungeon.c:3748
+#: src/dungeon.c:3753
 msgid "Oracle of Delphi."
 msgstr "Oracle de Delphes."
 
-#: src/dungeon.c:3751
+#: src/dungeon.c:3756
 msgid "Solved."
 msgstr "Résolu."
 
-#: src/dungeon.c:3751
+#: src/dungeon.c:3756
 msgid "Unsolved."
 msgstr "Non résolu."
 
-#: src/dungeon.c:3753
+#: src/dungeon.c:3758
 msgid "A very big room."
 msgstr "Une très grande salle."
 
-#: src/dungeon.c:3755
+#: src/dungeon.c:3760
 msgid "A primitive area."
 msgstr "Une zone primitive."
 
-#: src/dungeon.c:3758
+#: src/dungeon.c:3763
 msgid "Home (no way back...)."
 msgstr "Foyer (pas de retour possible...)."
 
-#: src/dungeon.c:3759
+#: src/dungeon.c:3764
 msgid "Home."
 msgstr "Foyer."
 
-#: src/dungeon.c:3761
+#: src/dungeon.c:3766
 #, c-format
 msgid "%sCompleted quest for %s."
 msgstr "%sQuête accomplie pour %s."
 
-#: src/dungeon.c:3764
+#: src/dungeon.c:3769
 #, c-format
 msgid "%sGiven quest by %s."
 msgstr "%sQuête confiée par %s."
 
-#: src/dungeon.c:3770
+#: src/dungeon.c:3775
 msgid "Fort Ludios."
 msgstr "Fort Ludios."
 
-#: src/dungeon.c:3772
+#: src/dungeon.c:3777
 #, c-format
 msgid "%sThe castle%s."
 msgstr "%sLe château%s."
 
-#: src/dungeon.c:3775
+#: src/dungeon.c:3780
 msgid "Valley of the Dead."
 msgstr "Vallée des Morts."
 
-#: src/dungeon.c:3777
+#: src/dungeon.c:3782
 msgid "Gateway to Moloch's Sanctum."
 msgstr "Porte du Sanctuaire de Moloch."
 
-#: src/dungeon.c:3779
+#: src/dungeon.c:3784
 msgid "Moloch's Sanctum."
 msgstr "Sanctuaire de Moloch."
 
-#: src/dungeon.c:3786
+#: src/dungeon.c:3791
 #, c-format
 msgid "%sSummoned by %s."
 msgstr "%sConvoqué par %s."
 
-#: src/dungeon.c:3793
+#: src/dungeon.c:3798
 #, c-format
 msgid "%s%s to %s"
 msgstr "%s%s vers %s"
 
-#: src/dungeon.c:3802
+#: src/dungeon.c:3807
 #, c-format
 msgid ", level %d"
 msgstr ", niveau %d"
 
-#: src/dungeon.c:3816
+#: src/dungeon.c:3821
 msgid "Final resting place for"
 msgstr "Dernière demeure de"
 
@@ -36090,7 +36402,7 @@ msgstr "Yabba-dabba délicieux !"
 msgid "Heigh-ho, ho-hum, I think I'll skip work today."
 msgstr "Hé ho, bof, je crois que je vais sécher le travail aujourd'hui."
 
-#: src/eat.c:2710 src/timeout.c:791
+#: src/eat.c:2710 src/timeout.c:792
 msgid "You fall asleep."
 msgstr "Vous vous endormez."
 
@@ -42746,6 +43058,10 @@ msgstr "Aucune créature n'a été vaincue."
 msgid "No creatures have been genocided yet."
 msgstr "Aucune créature n'a encore été génocidée."
 
+#: src/insight.c:3902
+msgid "died born"
+msgstr "mort nés"
+
 #: src/insight.c:4024
 msgid "devoutly"
 msgstr "dévotement"
@@ -43836,6 +44152,19 @@ msgstr "%s n'a pas pu être activé."
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr "%s nécessite un terminal d'au moins %dx%d, le vôtre fait %dx%d."
+
+#: src/light.c:945
+#, c-format
+msgid "Mobile light sources: hero @ (%2d,%2d)"
+msgstr "Sources de lumière mobiles : héros @ (%2d,%2d)"
+
+#: src/light.c:950
+msgid "location range flags  type    id"
+msgstr "position rayon bits   type    id"
+
+#: src/light.c:969
+msgid "<none>"
+msgstr "<aucune>"
 
 #: src/lock.c:38
 msgctxt "lock action"
@@ -47047,7 +47376,7 @@ msgstr "%s est tué !"
 msgid "May %s roast in peace."
 msgstr "Que %s rôtisse en paix."
 
-#: src/mon.c:3549 src/music.c:282
+#: src/mon.c:3549 src/music.c:282 src/wizcmds.c:315
 #, c-format
 msgid "You destroy %s!"
 msgstr "Vous détruisez %s !"
@@ -47526,10 +47855,34 @@ msgstr ""
 msgid "I'm late!"
 msgstr "Je suis en retard !"
 
+#: src/mplayer.c:360
+msgid "I can't win, and neither will you!"
+msgstr "Je ne peux pas gagner, et toi non plus !"
+
+#: src/mplayer.c:361
+msgid "You don't deserve to win!"
+msgstr "Tu ne mérites pas de gagner !"
+
+#: src/mplayer.c:362
+msgid "Mine should be the honor, not yours!"
+msgstr "L'honneur devrait être pour moi, pas pour toi !"
+
+#: src/mplayer.c:365
+msgid "The low-life wants to talk, eh?"
+msgstr "La racaille veut causer, hein ?"
+
+#: src/mplayer.c:366
+msgid "Fight, scum!"
+msgstr "Bats-toi, vermine !"
+
+#: src/mplayer.c:367
+msgid "Here is what I have to say!"
+msgstr "Voilà ce que j'ai à dire !"
+
 #: src/mplayer.c:374
 #, c-format
 msgid "Talk? -- %s"
-msgstr ""
+msgstr "Parler ? -- %s"
 
 #: src/mthrowu.c:24
 #, c-format
@@ -53894,7 +54247,7 @@ msgstr "Vous vous transformez en %s !"
 msgid "You feel like a new %s!"
 msgstr "Vous vous sentez renaître en %s !"
 
-#: src/polyself.c:854 src/trap.c:2293 src/wizcmds.c:314
+#: src/polyself.c:854 src/trap.c:2293
 #, c-format
 msgid "You %s %s!"
 msgstr ""
@@ -56445,7 +56798,7 @@ msgstr "Vos %s sont collés @à %s !"
 msgid "Your %s are frozen to the %s!"
 msgstr ""
 
-#: src/potion.c:942 src/potion.c:2170 src/timeout.c:273
+#: src/potion.c:942 src/potion.c:2170 src/timeout.c:274
 msgid "You yawn."
 msgstr "Vous bâillez."
 
@@ -57295,7 +57648,7 @@ msgstr "Votre anneau gauche brille doucement"
 msgid "Your right ring softly glows"
 msgstr "Votre anneau droit brille doucement"
 
-#: src/pray.c:415 src/timeout.c:902
+#: src/pray.c:415 src/timeout.c:903
 msgid "Your amulet vanishes!"
 msgstr "Votre amulette disparaît !"
 
@@ -61666,6 +62019,18 @@ msgstr "%1$.20s, %4$.20s %3$.20s %2$.20s"
 msgid "rumors not accessible."
 msgstr "rumeurs inaccessibles."
 
+#: src/rumors.c:317
+msgid "Engravings:"
+msgstr "Gravures :"
+
+#: src/rumors.c:318
+msgid "Epitaphs:"
+msgstr "Épitaphes :"
+
+#: src/rumors.c:319
+msgid "Bogus monsters:"
+msgstr "Monstres imaginaires :"
+
 #: src/rumors.c:557
 msgid "True to her word, the Oracle offhandedly says: "
 msgstr "Fidèle à sa parole, l'Oracle dit d'un ton détaché : "
@@ -63641,7 +64006,7 @@ msgstr ""
 msgid "You can't maneuver to sit!"
 msgstr "Vous n'arrivez pas à vous asseoir !"
 
-#: src/sit.c:528 src/timeout.c:812
+#: src/sit.c:528 src/timeout.c:813
 msgid "You land."
 msgstr "Vous atterrissez."
 
@@ -65759,421 +66124,761 @@ msgstr "%s résiste à votre magie !"
 msgid "You are no longer inside %s!"
 msgstr "Vous n'êtes plus à l'intérieur @de %s !"
 
-#: src/timeout.c:255
+#: src/timeout.c:31
+msgctxt "property"
+msgid "invulnerable"
+msgstr "invulnérable"
+
+#: src/timeout.c:32
+msgctxt "property"
+msgid "petrifying"
+msgstr "pétrification"
+
+#: src/timeout.c:33
+msgctxt "property"
+msgid "becoming slime"
+msgstr "transformation en vase"
+
+#: src/timeout.c:34
+msgctxt "property"
+msgid "strangling"
+msgstr "strangulation"
+
+#: src/timeout.c:35
+msgctxt "property"
+msgid "fatally sick"
+msgstr "maladie mortelle"
+
+#: src/timeout.c:36
+msgctxt "property"
+msgid "stunned"
+msgstr "étourdissement"
+
+#: src/timeout.c:37
+msgctxt "property"
+msgid "confused"
+msgstr "confusion"
+
+#: src/timeout.c:38
+msgctxt "property"
+msgid "hallucinating"
+msgstr "hallucinations"
+
+#: src/timeout.c:39
+msgctxt "property"
+msgid "blinded"
+msgstr "aveuglement"
+
+#: src/timeout.c:40
+msgctxt "property"
+msgid "deafness"
+msgstr "surdité"
+
+#: src/timeout.c:41
+msgctxt "property"
+msgid "vomiting"
+msgstr "vomissements"
+
+#: src/timeout.c:42
+msgctxt "property"
+msgid "slippery fingers"
+msgstr "doigts glissants"
+
+#: src/timeout.c:43
+msgctxt "property"
+msgid "wounded legs"
+msgstr "jambes blessées"
+
+#: src/timeout.c:44
+msgctxt "property"
+msgid "sleepy"
+msgstr "somnolence"
+
+#: src/timeout.c:45
+msgctxt "property"
+msgid "teleporting"
+msgstr "téléportation"
+
+#: src/timeout.c:46
+msgctxt "property"
+msgid "polymorphing"
+msgstr "métamorphose"
+
+#: src/timeout.c:47
+msgctxt "property"
+msgid "levitating"
+msgstr "lévitation"
+
+#: src/timeout.c:48
+msgctxt "property"
+msgid "very fast"
+msgstr "très rapide"
+
+#: src/timeout.c:49
+msgctxt "property"
+msgid "clairvoyant"
+msgstr "clairvoyance"
+
+#: src/timeout.c:50
+msgctxt "property"
+msgid "monster detection"
+msgstr "détection des monstres"
+
+#: src/timeout.c:51
+msgctxt "property"
+msgid "see invisible"
+msgstr "voir l'invisible"
+
+#: src/timeout.c:52
+msgctxt "property"
+msgid "invisible"
+msgstr "invisibilité"
+
+#: src/timeout.c:54
+msgctxt "property"
+msgid "acid resistance"
+msgstr "résistance à l'acide"
+
+#: src/timeout.c:55
+msgctxt "property"
+msgid "stoning resistance"
+msgstr "résistance à la pétrification"
+
+#: src/timeout.c:57
+msgctxt "property"
+msgid "displaced"
+msgstr "déplacement d'image"
+
+#: src/timeout.c:60
+msgctxt "property"
+msgid "pass thru walls"
+msgstr "traverse les murs"
+
+#: src/timeout.c:62
+msgctxt "property"
+msgid "magical breathing"
+msgstr "respiration magique"
+
+#: src/timeout.c:66
+msgctxt "property"
+msgid "water walking"
+msgstr "marche sur l'eau"
+
+#: src/timeout.c:67
+msgctxt "property"
+msgid "fire resistance"
+msgstr "résistance au feu"
+
+#: src/timeout.c:74
+msgctxt "property"
+msgid "cold resistance"
+msgstr "résistance au froid"
+
+#: src/timeout.c:75
+msgctxt "property"
+msgid "sleep resistance"
+msgstr "résistance au sommeil"
+
+#: src/timeout.c:76
+msgctxt "property"
+msgid "disintegration resistance"
+msgstr "résistance à la désintégration"
+
+#: src/timeout.c:77
+msgctxt "property"
+msgid "shock resistance"
+msgstr "résistance à l'électricité"
+
+#: src/timeout.c:78
+msgctxt "property"
+msgid "poison resistance"
+msgstr "résistance au poison"
+
+#: src/timeout.c:79
+msgctxt "property"
+msgid "drain resistance"
+msgstr "résistance au drain de niveau"
+
+#: src/timeout.c:80
+msgctxt "property"
+msgid "sickness resistance"
+msgstr "résistance aux maladies"
+
+#: src/timeout.c:81
+msgctxt "property"
+msgid "magic resistance"
+msgstr "résistance à la magie"
+
+#: src/timeout.c:82
+msgctxt "property"
+msgid "hallucination resistance"
+msgstr "résistance aux hallucinations"
+
+#: src/timeout.c:83
+msgctxt "property"
+msgid "light-induced blindness resistance"
+msgstr "résistance à l'éblouissement"
+
+#: src/timeout.c:84
+msgctxt "property"
+msgid "fumbling"
+msgstr "maladresse"
+
+#: src/timeout.c:85
+msgctxt "property"
+msgid "voracious hunger"
+msgstr "faim vorace"
+
+#: src/timeout.c:86
+msgctxt "property"
+msgid "telepathic"
+msgstr "télépathie"
+
+#: src/timeout.c:87
+msgctxt "property"
+msgid "warning"
+msgstr "avertissement"
+
+#: src/timeout.c:88
+msgctxt "property"
+msgid "warn: monster type or class"
+msgstr "avertissement : type ou classe de monstre"
+
+#: src/timeout.c:89
+msgctxt "property"
+msgid "warn: undead"
+msgstr "avertissement : morts-vivants"
+
+#: src/timeout.c:90
+msgctxt "property"
+msgid "searching"
+msgstr "fouille automatique"
+
+#: src/timeout.c:91
+msgctxt "property"
+msgid "infravision"
+msgstr "infravision"
+
+#: src/timeout.c:92
+msgctxt "property"
+msgid "adorned (+/- Cha)"
+msgstr "paré (+/- Cha)"
+
+#: src/timeout.c:93
+msgctxt "property"
+msgid "stealthy"
+msgstr "furtivité"
+
+#: src/timeout.c:94
+msgctxt "property"
+msgid "monster aggravation"
+msgstr "irritation des monstres"
+
+#: src/timeout.c:95
+msgctxt "property"
+msgid "conflict"
+msgstr "conflit"
+
+#: src/timeout.c:96
+msgctxt "property"
+msgid "jumping"
+msgstr "saut"
+
+#: src/timeout.c:97
+msgctxt "property"
+msgid "teleport control"
+msgstr "contrôle de la téléportation"
+
+#: src/timeout.c:98
+msgctxt "property"
+msgid "flying"
+msgstr "vol"
+
+#: src/timeout.c:99
+msgctxt "property"
+msgid "swimming"
+msgstr "nage"
+
+#: src/timeout.c:100
+msgctxt "property"
+msgid "slow digestion"
+msgstr "digestion lente"
+
+#: src/timeout.c:101
+msgctxt "property"
+msgid "half spell damage"
+msgstr "demi-dégâts des sorts"
+
+#: src/timeout.c:102
+msgctxt "property"
+msgid "half physical damage"
+msgstr "demi-dégâts physiques"
+
+#: src/timeout.c:103
+msgctxt "property"
+msgid "HP regeneration"
+msgstr "régénération des PV"
+
+#: src/timeout.c:104
+msgctxt "property"
+msgid "energy regeneration"
+msgstr "régénération de l'énergie"
+
+#: src/timeout.c:105
+msgctxt "property"
+msgid "extra protection"
+msgstr "protection supplémentaire"
+
+#: src/timeout.c:107
+msgctxt "property"
+msgid "protection from shape changers"
+msgstr "protection contre les changeformes"
+
+#: src/timeout.c:108
+msgctxt "property"
+msgid "polymorph control"
+msgstr "contrôle de la métamorphose"
+
+#: src/timeout.c:109
+msgctxt "property"
+msgid "unchanging"
+msgstr "forme figée"
+
+#: src/timeout.c:110
+msgctxt "property"
+msgid "reflecting"
+msgstr "réflexion"
+
+#: src/timeout.c:111
+msgctxt "property"
+msgid "free action"
+msgstr "action libre"
+
+#: src/timeout.c:112
+msgctxt "property"
+msgid "fixed abilities"
+msgstr "caractéristiques fixes"
+
+#: src/timeout.c:113
+msgctxt "property"
+msgid "life will be saved"
+msgstr "vie sauve"
+
+#: src/timeout.c:256
 msgid "You vomit!"
 msgstr "Vous vomissez !"
 
-#: src/timeout.c:509
+#: src/timeout.c:510
 msgid "Yes, you do.  Green slime has been genocided..."
 msgstr "Si, vous mourez.  Le limon vert a été génocidé..."
 
-#: src/timeout.c:512
+#: src/timeout.c:513
 msgid "Unfortunately, green slime has been genocided..."
 msgstr "Malheureusement, le limon vert a été génocidé..."
 
-#: src/timeout.c:660
+#: src/timeout.c:661
 #, c-format
 msgid "The %s haze around you becomes less dense."
 msgstr "La brume %s autour de vous devient moins dense."
 
-#: src/timeout.c:669
+#: src/timeout.c:670
 #, c-format
 msgid "%s stops galloping."
 msgstr "%s cesse de galoper."
 
-#: src/timeout.c:700
+#: src/timeout.c:701
 msgid "You have recovered from your illness."
 msgstr "Vous êtes guéri de votre maladie."
 
-#: src/timeout.c:706
+#: src/timeout.c:707
 msgid "You die from your illness."
 msgstr "Vous mourez de votre maladie."
 
-#: src/timeout.c:766
+#: src/timeout.c:767
 msgid "You are no longer invisible."
 msgstr "Vous n'êtes plus invisible."
 
-#: src/timeout.c:826
+#: src/timeout.c:827
 msgid "You no longer feel safe from acid."
 msgstr "Vous ne vous sentez plus protégé de l'acide."
 
-#: src/timeout.c:839
+#: src/timeout.c:840
 msgid "You no longer feel secure from petrification."
 msgstr "Vous ne vous sentez plus protégé de la pétrification."
 
-#: src/timeout.c:854
+#: src/timeout.c:855
 msgid "Your temporary ability to survive burning has ended."
 msgstr "Votre capacité temporaire à survivre au feu a pris fin."
 
-#: src/timeout.c:859
+#: src/timeout.c:860
 msgid "Your temporary ability to walk on liquid has ended."
 msgstr "Votre capacité temporaire à marcher sur les liquides a pris fin."
 
-#: src/timeout.c:873
+#: src/timeout.c:874
 #, c-format
 msgid "You are no longer warned about %s."
 msgstr "Vous n'êtes plus averti de la présence des %s."
 
-#: src/timeout.c:880
+#: src/timeout.c:881
 msgid "You feel hemmed in again."
 msgstr "Vous vous sentez de nouveau à l'étroit."
 
-#: src/timeout.c:883
+#: src/timeout.c:884
 msgid "You're back to your normal self again."
 msgstr "Vous êtes de nouveau vous-même, normalement."
 
-#: src/timeout.c:890
+#: src/timeout.c:891
 msgid "You cough."
 msgstr "Vous toussez."
 
-#: src/timeout.c:920
+#: src/timeout.c:921
 msgid "You make a lot of noise!"
 msgstr "Vous faites beaucoup de bruit !"
 
-#: src/timeout.c:1119
+#: src/timeout.c:1120
 #, c-format
 msgid "You see %s drop out of your pack!"
 msgstr "Vous voyez %s tomber de votre sac !"
 
-#: src/timeout.c:1124
+#: src/timeout.c:1125
 #, c-format
 msgid "You see %s %s out of your pack!"
 msgstr ""
 
-#: src/timeout.c:1128
+#: src/timeout.c:1129
 #, c-format
 msgid "Their cries sound like \"%s%s\""
 msgstr "Leurs cris ressemblent à « %s%s »"
 
-#: src/timeout.c:1130 src/timeout.c:1391
+#: src/timeout.c:1131 src/timeout.c:1392
 msgid "daddy"
 msgstr "papa"
 
-#: src/timeout.c:1130 src/timeout.c:1391
+#: src/timeout.c:1131 src/timeout.c:1392
 msgid "mommy"
 msgstr "maman"
 
-#: src/timeout.c:1133
+#: src/timeout.c:1134
 #, c-format
 msgid "%s %s %s like \"%s%s\""
 msgstr ""
 
-#: src/timeout.c:1140
+#: src/timeout.c:1141
 msgid "Gleep!"
 msgstr "Glip !"
 
-#: src/timeout.c:1147
+#: src/timeout.c:1148
 #, c-format
 msgid "You see %s hatch."
 msgstr "Vous voyez %s éclore."
 
-#: src/timeout.c:1167
+#: src/timeout.c:1168
 #, c-format
 msgid "You see %s drop out of %s!"
 msgstr "Vous voyez %s tomber @de %s !"
 
-#: src/timeout.c:1169
+#: src/timeout.c:1170
 #, c-format
 msgid "You see %s %s out of %s!"
 msgstr ""
 
-#: src/timeout.c:1259 src/timeout.c:1390
+#: src/timeout.c:1260 src/timeout.c:1391
 msgid "them"
 msgstr "eux"
 
-#: src/timeout.c:1259 src/timeout.c:1390
+#: src/timeout.c:1260 src/timeout.c:1391
 msgid "they"
 msgstr "eux"
 
-#: src/timeout.c:1264 src/timeout.c:1390
+#: src/timeout.c:1265 src/timeout.c:1391
 msgid "a rock"
 msgstr "une pierre"
 
-#: src/timeout.c:1265 src/timeout.c:1390
+#: src/timeout.c:1266 src/timeout.c:1391
 msgid "some rocks"
 msgstr "des pierres"
 
-#: src/timeout.c:1269
+#: src/timeout.c:1270
 #, c-format
 msgid "Egads!  %s bites your %s!"
 msgstr "Sapristi !  %s vous mord le %s !"
 
-#: src/timeout.c:1273
+#: src/timeout.c:1274
 #, c-format
 msgid "You trip over %s."
 msgstr "Vous trébuchez sur %s."
 
-#: src/timeout.c:1287
+#: src/timeout.c:1288
 #, c-format
 msgid "%s slips on the ice."
 msgstr "%s glisse sur la glace."
 
-#: src/timeout.c:1292
+#: src/timeout.c:1293
 msgid "You slip on the ice."
 msgstr "Vous glissez sur la glace."
 
-#: src/timeout.c:1295
+#: src/timeout.c:1296
 #, c-format
 msgid "%s %s %s the ice."
 msgstr ""
 
-#: src/timeout.c:1314
+#: src/timeout.c:1315
 msgid "You lose your balance."
 msgstr "Vous perdez l'équilibre."
 
-#: src/timeout.c:1334
+#: src/timeout.c:1335
 msgid "You trip over your own elbow."
 msgstr "Vous trébuchez sur votre propre coude."
 
-#: src/timeout.c:1336
+#: src/timeout.c:1337
 #, c-format
 msgid "You trip over your own %s."
 msgstr "Vous trébuchez sur vos propres %s."
 
-#: src/timeout.c:1340
+#: src/timeout.c:1341
 msgid "You slip on a banana peel."
 msgstr "Vous glissez sur une peau de banane."
 
-#: src/timeout.c:1344
+#: src/timeout.c:1345
 msgid "You flounder."
 msgstr "Vous pataugez."
 
-#: src/timeout.c:1347
+#: src/timeout.c:1348
 msgid "You stumble."
 msgstr "Vous trébuchez."
 
-#: src/timeout.c:1357
+#: src/timeout.c:1358
 #, c-format
 msgid "Your %s slip out of the stirrups."
 msgstr "Vos %s glissent des étriers."
 
-#: src/timeout.c:1361
+#: src/timeout.c:1362
 msgid "You let go of the reins."
 msgstr "Vous lâchez les rênes."
 
-#: src/timeout.c:1364
+#: src/timeout.c:1365
 msgid "You bang into the saddle-horn."
 msgstr "Vous heurtez le pommeau de la selle."
 
-#: src/timeout.c:1367
+#: src/timeout.c:1368
 msgid "You slide to one side of the saddle."
 msgstr "Vous glissez sur le côté de la selle."
 
-#: src/timeout.c:1377
+#: src/timeout.c:1378
 #, c-format
 msgctxt "feminine"
 msgid "%s has burnt away."
 msgstr "%s s'est consumée."
 
-#: src/timeout.c:1377
+#: src/timeout.c:1378
 #, c-format
 msgctxt "plural"
 msgid "%s has burnt away."
 msgstr "%s se sont consumés."
 
-#: src/timeout.c:1378
+#: src/timeout.c:1379
 #, c-format
 msgctxt "feminine plural"
 msgid "%s has burnt away."
 msgstr "%s se sont consumées."
 
-#: src/timeout.c:1379
+#: src/timeout.c:1380
 #, c-format
 msgctxt "feminine"
 msgid "%s has run out of power."
 msgstr "%s n'a plus d'énergie."
 
-#: src/timeout.c:1380
+#: src/timeout.c:1381
 #, c-format
 msgctxt "plural"
 msgid "%s has run out of power."
 msgstr "%s n'ont plus d'énergie."
 
-#: src/timeout.c:1381
+#: src/timeout.c:1382
 #, c-format
 msgctxt "feminine plural"
 msgid "%s has run out of power."
 msgstr "%s n'ont plus d'énergie."
 
-#: src/timeout.c:1382
+#: src/timeout.c:1383
 #, c-format
 msgctxt "feminine"
 msgid "%s has gone out."
 msgstr "%s s'est éteinte."
 
-#: src/timeout.c:1382
+#: src/timeout.c:1383
 #, c-format
 msgctxt "plural"
 msgid "%s has gone out."
 msgstr "%s se sont éteints."
 
-#: src/timeout.c:1383
+#: src/timeout.c:1384
 #, c-format
 msgctxt "feminine plural"
 msgid "%s has gone out."
 msgstr "%s se sont éteintes."
 
-#: src/timeout.c:1384
+#: src/timeout.c:1385
 #, c-format
 msgctxt "feminine"
 msgid "%s is consumed!"
 msgstr "%s est consumée !"
 
-#: src/timeout.c:1384
+#: src/timeout.c:1385
 #, c-format
 msgctxt "plural"
 msgid "%s is consumed!"
 msgstr "%s sont consumés !"
 
-#: src/timeout.c:1385
+#: src/timeout.c:1386
 #, c-format
 msgctxt "feminine plural"
 msgid "%s is consumed!"
 msgstr "%s sont consumées !"
 
-#: src/timeout.c:1401
+#: src/timeout.c:1402
 #, c-format
 msgid "%s flickers considerably."
 msgstr "%s vacille fortement."
 
-#: src/timeout.c:1405
+#: src/timeout.c:1406
 #, c-format
 msgid "You see %s flicker considerably."
 msgstr "Vous voyez %s vaciller fortement."
 
-#: src/timeout.c:1418
+#: src/timeout.c:1419
 msgid "Your lantern is getting dim."
 msgstr "Votre lanterne faiblit."
 
-#: src/timeout.c:1420
+#: src/timeout.c:1421
 msgid "Batteries have not been invented yet."
 msgstr "Les piles n'ont pas encore été inventées."
 
-#: src/timeout.c:1423
+#: src/timeout.c:1424
 msgid "You see a lantern getting dim."
 msgstr "Vous voyez une lanterne faiblir."
 
-#: src/timeout.c:1427
+#: src/timeout.c:1428
 #, c-format
 msgid "The lantern of %s is getting dim."
 msgstr "La lanterne @de %s faiblit."
 
-#: src/timeout.c:1430
+#: src/timeout.c:1431
 #, c-format
 msgid "%s lantern is getting dim."
 msgstr ""
 
-#: src/timeout.c:1515
+#: src/timeout.c:1516
 #, c-format
 msgid "%s has burnt away."
 msgstr "%s s'est consumé."
 
-#: src/timeout.c:1517
+#: src/timeout.c:1518
 #, c-format
 msgid "%spotion of oil has burnt away."
 msgstr ""
 
-#: src/timeout.c:1520
+#: src/timeout.c:1521
 msgid "You see a burning potion of oil go out."
 msgstr "Vous voyez une potion d'huile enflammée s'éteindre."
 
-#: src/timeout.c:1562
+#: src/timeout.c:1563
 #, c-format
 msgid "%s seems about to go out."
 msgstr "%s semble sur le point de s'éteindre."
 
-#: src/timeout.c:1565
+#: src/timeout.c:1566
 #, c-format
 msgid "You see %s about to go out."
 msgstr "Vous voyez %s sur le point de s'éteindre."
 
-#: src/timeout.c:1585
+#: src/timeout.c:1586
 #, c-format
 msgid "%s has run out of power."
 msgstr "%s n'a plus d'énergie."
 
-#: src/timeout.c:1589
+#: src/timeout.c:1590
 #, c-format
 msgid "%slantern has run out of power."
 msgstr ""
 
-#: src/timeout.c:1591
+#: src/timeout.c:1592
 #, c-format
 msgid "%s has gone out."
 msgstr "%s s'est éteint."
 
-#: src/timeout.c:1595
+#: src/timeout.c:1596
 msgid "You see a lantern run out of power."
 msgstr "Vous voyez une lanterne s'éteindre, à court d'énergie."
 
-#: src/timeout.c:1597
+#: src/timeout.c:1598
 #, c-format
 msgid "You see %s go out."
 msgstr "Vous voyez %s s'éteindre."
 
-#: src/timeout.c:1628
+#: src/timeout.c:1629
 #, c-format
 msgid "The candles of %s are getting short."
 msgstr "Les bougies @de %s raccourcissent."
 
-#: src/timeout.c:1632
+#: src/timeout.c:1633
 #, c-format
 msgid "%s are getting short."
 msgstr "%s raccourcissent."
 
-#: src/timeout.c:1635
+#: src/timeout.c:1636
 #, c-format
 msgid "%s%scandle%s getting short."
 msgstr ""
 
-#: src/timeout.c:1645
+#: src/timeout.c:1646
 msgid "You see some candles getting short."
 msgstr "Vous voyez des bougies raccourcir."
 
-#: src/timeout.c:1657
+#: src/timeout.c:1658
 #, c-format
 msgid "The candle flames of %s flicker low!"
 msgstr "Les flammes des bougies @de %s vacillent faiblement !"
 
-#: src/timeout.c:1661
+#: src/timeout.c:1662
 #, c-format
 msgid "The flames of %s flicker low!"
 msgstr "Les flammes @de %s vacillent faiblement !"
 
-#: src/timeout.c:1665
+#: src/timeout.c:1666
 #, c-format
 msgid "%s%scandle%s flame%s flicker%s low!"
 msgstr ""
 
-#: src/timeout.c:1675
+#: src/timeout.c:1676
 msgid "You see some candles' flames flicker low!"
 msgstr "Vous voyez les flammes de quelques bougies vaciller faiblement !"
 
-#: src/timeout.c:1692
+#: src/timeout.c:1693
 #, c-format
 msgid "The flames of %s die."
 msgstr "Les flammes @de %s s'éteignent."
 
-#: src/timeout.c:1696
+#: src/timeout.c:1697
 #, c-format
 msgid "%scandelabrum's flame%s."
 msgstr ""
 
-#: src/timeout.c:1700
+#: src/timeout.c:1701
 msgid "You see a candelabrum's flames die."
 msgstr "Vous voyez les flammes d'un candélabre s'éteindre."
 
-#: src/timeout.c:1715
+#: src/timeout.c:1716
 #, c-format
 msgid "%s is consumed!"
 msgstr "%s est consumé !"
 
-#: src/timeout.c:1718
+#: src/timeout.c:1719
 #, c-format
 msgid "%s %s consumed!"
 msgstr ""
 
-#: src/timeout.c:1726
+#: src/timeout.c:1727
 #, c-format
 msgid "You see some %s consumed!"
 msgstr "Vous voyez des %s se consumer !"
@@ -66181,12 +66886,12 @@ msgstr "Vous voyez des %s se consumer !"
 # Traduction française des messages de NetHack.
 # This file is distributed under the same license as the NetHack package.
 #
-#: src/timeout.c:1735
+#: src/timeout.c:1736
 msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 06:07+0200\n"
+"POT-Creation-Date: 2026-10-03 06:24+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -66196,13 +66901,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/timeout.c:1989
+#: src/timeout.c:1990
 msgid "Kaboom!!!  Boom!!  Boom!!"
 msgstr "Kaboum !!! Boum !! Boum !!"
 
-#: src/timeout.c:1999
+#: src/timeout.c:2000
 msgid "You hear a rumbling noise."
 msgstr "Vous entendez un grondement."
+
+#: src/timeout.c:2130
+msgid " <empty>"
+msgstr " <vide>"
+
+#: src/timeout.c:2132
+msgid "timeout  id   kind   call"
+msgstr "délai    id   type   appel"
+
+#: src/timeout.c:2175
+#, c-format
+msgid "Current time = %ld."
+msgstr "Tour actuel = %ld."
+
+#: src/timeout.c:2178
+msgid "Active timeout queue:"
+msgstr "File des minuteries actives :"
+
+#: src/timeout.c:2200
+msgid "No timed properties."
+msgstr "Aucune propriété temporaire."
+
+#: src/timeout.c:2202
+msgid "Timed properties:"
+msgstr "Propriétés temporaires :"
+
+#: src/timeout.c:2210
+msgid " -- settable via #wizintrinsic only --"
+msgstr " -- réglables seulement par #wizintrinsic --"
+
+#: src/timeout.c:2229
+#, c-format
+msgid "Swallow countdown is %u."
+msgstr "Compte à rebours d'engloutissement : %u."
+
+#: src/timeout.c:2234
+#, c-format
+msgid "Vault counter is %d."
+msgstr "Compteur du coffre : %d."
+
+#: src/timeout.c:2243
+#, c-format
+msgid "Level is no-teleport for %ld turns."
+msgstr "Niveau interdit de téléportation pendant %ld tours."
+
+#: src/timeout.c:2244
+#, c-format
+msgid "Level is no-teleport for %ld more turn."
+msgstr "Niveau interdit de téléportation pendant encore %ld tour."
 
 #: src/topten.c:937
 msgid " No  Points     Name"
@@ -71903,119 +72657,338 @@ msgstr "Je reviendrai."
 msgid "%s casts aspersions on your ancestry."
 msgstr "%s insulte vos ancêtres."
 
-#: src/wizcmds.c:334
+#: src/wizcmds.c:256
+msgid "Pick first monster to slay:"
+msgstr "Choisissez le premier monstre à tuer :"
+
+#: src/wizcmds.c:270
+#, c-format
+msgid "Kill %.110s?"
+msgstr "Tuer %.110s ?"
+
+#: src/wizcmds.c:278
+msgid "Perform seppuku?"
+msgstr "Faire seppuku ?"
+
+#: src/wizcmds.c:279
+msgid "Commit suicide?"
+msgstr "Vous suicider ?"
+
+#: src/wizcmds.c:326
+#, c-format
+msgctxt "feminine"
+msgid "%s is destroyed."
+msgstr "%s est détruite."
+
+#: src/wizcmds.c:327
+#, c-format
+msgctxt "feminine"
+msgid "%s is killed."
+msgstr "%s est tuée."
+
+#: src/wizcmds.c:329
+#, c-format
+msgid "%s is destroyed."
+msgstr "%s est détruit."
+
+#: src/wizcmds.c:341
 msgid "There is no monster there."
 msgstr "Il n'y a pas de monstre là."
 
-#: src/wizcmds.c:363
+#: src/wizcmds.c:370
 msgid "Load which lua file?"
 msgstr "Charger quel fichier lua ?"
 
-#: src/wizcmds.c:382
+#: src/wizcmds.c:389
 msgid "Load which des lua file?"
 msgstr "Charger quel fichier lua de niveau ?"
 
-#: src/wizcmds.c:453
+#: src/wizcmds.c:423
+msgid "Flip 0=randomly, 1=vertically, 2=horizontally, 3=both:"
+msgstr "Retourner 0=au hasard, 1=verticalement, 2=horizontalement, 3=les deux :"
+
+#: src/wizcmds.c:461
 msgid "To what experience level do you want to be set?"
 msgstr "À quel niveau d'expérience voulez-vous passer ?"
 
-#: src/wizcmds.c:465
+#: src/wizcmds.c:473
 msgid "You are already that experienced."
 msgstr "Vous avez déjà cette expérience."
 
-#: src/wizcmds.c:468
+#: src/wizcmds.c:476
 msgid "You are already as inexperienced as you can get."
 msgstr "Vous êtes déjà aussi inexpérimenté que possible."
 
-#: src/wizcmds.c:477
+#: src/wizcmds.c:485
 msgid "You are already as experienced as you can get."
 msgstr "Vous êtes déjà aussi expérimenté que possible."
 
-#: src/wizcmds.c:503
+#: src/wizcmds.c:511
 msgid "Pick a monster to hurtle."
 msgstr "Choisissez un monstre à projeter."
 
-#: src/wizcmds.c:511
+#: src/wizcmds.c:519
 msgid "which direction?"
 msgstr "quelle direction ?"
 
-#: src/wizcmds.c:542
+#: src/wizcmds.c:550
 msgid "Do you want to call panic() and end your game?"
 msgstr "Voulez-vous appeler panic() et terminer la partie ?"
 
-#: src/wizcmds.c:552
+#: src/wizcmds.c:560
 msgid "The fuzz tester will make NetHack execute random keypresses."
 msgstr "Le testeur aléatoire va faire exécuter à NetHack des frappes au hasard."
 
-#: src/wizcmds.c:553
+#: src/wizcmds.c:561
 msgid "There is no conventional way out of this mode."
 msgstr "Il n'y a pas de moyen normal de sortir de ce mode."
 
-#: src/wizcmds.c:555
+#: src/wizcmds.c:563
 msgid "Do you want to start fuzz testing?"
 msgstr "Voulez-vous lancer le test aléatoire ?"
 
-#: src/wizcmds.c:557
+#: src/wizcmds.c:565
 msgid "Do you want to call panic() after impossible()?"
 msgstr "Voulez-vous appeler panic() après impossible() ?"
 
-#: src/wizcmds.c:896
+#: src/wizcmds.c:857
+msgid "#terrain encodings:"
+msgstr "Codes de #terrain :"
+
+#: src/wizcmds.c:915
 msgid "You are incapable of detecting odors in your present form."
 msgstr "Vous êtes incapable de percevoir les odeurs sous votre forme actuelle."
 
-#: src/wizcmds.c:900
+#: src/wizcmds.c:919
 msgid "You can move the cursor to a monster that you want to smell."
 msgstr "Vous pouvez déplacer le curseur sur un monstre que vous voulez sentir."
 
-#: src/wizcmds.c:902
+#: src/wizcmds.c:921
 msgid "Pick a monster to smell."
 msgstr "Choisissez un monstre à sentir."
 
-#: src/wizcmds.c:926
+#: src/wizcmds.c:945
 #, c-format
 msgid "You surreptitiously sniff under your %s."
 msgstr "Vous reniflez discrètement sous votre %s."
 
-#: src/wizcmds.c:928
+#: src/wizcmds.c:947
 msgid "You seem to not give off any smell."
 msgstr "Vous semblez ne dégager aucune odeur."
 
-#: src/wizcmds.c:934
+#: src/wizcmds.c:953
 msgid "You don't smell any monster there."
 msgstr "Vous ne sentez aucun monstre là."
 
-#: src/wizcmds.c:1077
+#: src/wizcmds.c:988
 #, c-format
-msgid "Timeout for %s %s %d."
-msgstr ""
+msgid "[Precede any selection with a count to increment by other than %d.]"
+msgstr "[Faites précéder un choix d'un nombre pour augmenter d'autre chose que %d.]"
 
-#: src/wizcmds.c:1528
+#: src/wizcmds.c:1025
+msgid "Which intrinsics?"
+msgstr "Quelles propriétés ?"
+
+#: src/wizcmds.c:1070
+msgid "You are turning into slime."
+msgstr "Vous vous transformez en vase."
+
+#: src/wizcmds.c:1071
+msgid "You are still turning into slime."
+msgstr "Vous vous transformez toujours en vase."
+
+#: src/wizcmds.c:1076
+msgid "You are turning into stone."
+msgstr "Vous vous changez en pierre."
+
+#: src/wizcmds.c:1077
+msgid "You are still turning into stone."
+msgstr "Vous vous changez toujours en pierre."
+
+#: src/wizcmds.c:1084
+msgid "You are vomiting."
+msgstr "Vous vomissez."
+
+#: src/wizcmds.c:1085
+msgid "You are still vomiting."
+msgstr "Vous vomissez toujours."
+
+#: src/wizcmds.c:1108
+#, c-format
+msgid "Timeout for %s increased by %d."
+msgstr "Délai de %s augmenté de %d."
+
+#: src/wizcmds.c:1147
+msgid "                             count  bytes"
+msgstr "                            nombre octets"
+
+#: src/wizcmds.c:1361
+#, c-format
+msgid "traps, size %ld"
+msgstr "pièges, taille %ld"
+
+#: src/wizcmds.c:1366
+#, c-format
+msgid "engravings, size %ld+text"
+msgstr "gravures, taille %ld+texte"
+
+#: src/wizcmds.c:1373
+#, c-format
+msgid "light sources, size %ld"
+msgstr "sources de lumière, taille %ld"
+
+#: src/wizcmds.c:1382
+#, c-format
+msgid "timers, size %ld"
+msgstr "minuteries, taille %ld"
+
+#: src/wizcmds.c:1398
+#, c-format
+msgid "shop damage, size %ld"
+msgstr "dégâts de boutique, taille %ld"
+
+#: src/wizcmds.c:1405
+#, c-format
+msgid "regions, size %ld+%ld*rect+N"
+msgstr "régions, taille %ld+%ld*rect+N"
+
+#: src/wizcmds.c:1421
+#, c-format
+msgid "delayed killer%s, size %ld"
+msgstr "cause%s de mort différée, taille %ld"
+
+#: src/wizcmds.c:1435
+#, c-format
+msgid "bones history, size %ld"
+msgstr "historique des os, taille %ld"
+
+#: src/wizcmds.c:1450
+msgid "object type names, text"
+msgstr "noms des types d'objets, texte"
+
+#: src/wizcmds.c:1582
 msgid "No monsters currently migrating."
 msgstr "Aucun monstre en migration."
 
-#: src/wizcmds.c:1531
+#: src/wizcmds.c:1585
 #, c-format
-msgid "%d mon%s pending for current level, %d for next level, %d for others."
-msgstr ""
+msgid "%d mon pending for current level, %d for next level, %d for others."
+msgstr "%d monstre en attente pour le niveau actuel, %d pour le suivant, %d pour les autres."
 
-#: src/wizcmds.c:1540
+#: src/wizcmds.c:1588
+#, c-format
+msgid "%d mons pending for current level, %d for next level, %d for others."
+msgstr "%d monstres en attente pour le niveau actuel, %d pour le suivant, %d pour les autres."
+
+#: src/wizcmds.c:1597
 msgid "List which?"
 msgstr "Lister lesquels ?"
 
-#: src/wizcmds.c:1607
+#: src/wizcmds.c:1612
+msgid "Monster migrating to current level:"
+msgstr "Monstre en migration vers le niveau actuel :"
+
+#: src/wizcmds.c:1613
+msgid "Monsters migrating to current level:"
+msgstr "Monstres en migration vers le niveau actuel :"
+
+#: src/wizcmds.c:1616
+msgid "Monster migrating to next level:"
+msgstr "Monstre en migration vers le niveau suivant :"
+
+#: src/wizcmds.c:1617
+msgid "Monsters migrating to next level:"
+msgstr "Monstres en migration vers le niveau suivant :"
+
+#: src/wizcmds.c:1620
+msgid "Monster migrating to 'other' levels:"
+msgstr "Monstre en migration vers les « autres » niveaux :"
+
+#: src/wizcmds.c:1621
+msgid "Monsters migrating to 'other' levels:"
+msgstr "Monstres en migration vers les « autres » niveaux :"
+
+#: src/wizcmds.c:1624
+msgid "All migrating monsters:"
+msgstr "Tous les monstres en migration :"
+
+#: src/wizcmds.c:1673
 msgid "None."
 msgstr "Aucun."
 
-#: src/wizcmds.c:1785
+#: src/wizcmds.c:1693
+msgid "Current memory statistics:"
+msgstr "Statistiques actuelles de la mémoire :"
+
+#: src/wizcmds.c:1697
+#, c-format
+msgid "  Objects, base size %ld"
+msgstr "  Objets, taille de base %ld"
+
+#: src/wizcmds.c:1713
+msgid "  Obj total"
+msgstr "  Total des objets"
+
+#: src/wizcmds.c:1719
+#, c-format
+msgid "  Monsters, base size %ld"
+msgstr "  Monstres, taille de base %ld"
+
+#: src/wizcmds.c:1731
+msgid "  Mon total"
+msgstr "  Total des monstres"
+
+#: src/wizcmds.c:1737
+msgid "  Overview"
+msgstr "  Vue d'ensemble"
+
+#: src/wizcmds.c:1740
+msgid "  Over total"
+msgstr "  Total vue d'ensemble"
+
+#: src/wizcmds.c:1746
+msgid "  Miscellaneous"
+msgstr "  Divers"
+
+#: src/wizcmds.c:1749
+msgid "  Misc total"
+msgstr "  Total divers"
+
+#: src/wizcmds.c:1755
+msgid "  Grand total"
+msgstr "  Total général"
+
+#: src/wizcmds.c:1779
+msgid "Display macro issues:"
+msgstr "Problèmes des macros d'affichage :"
+
+#: src/wizcmds.c:1846
+msgid "No display macro issues detected."
+msgstr "Aucun problème des macros d'affichage détecté."
+
+#: src/wizcmds.c:1856
 #, c-format
 msgid "The NHUUID for this game is { %s }."
 msgstr "Le NHUUID de cette partie est { %s }."
 
-#: src/wizcmds.c:1898
+#: src/wizcmds.c:1865
+msgid "Review of monster difficulty ratings [index:level]:"
+msgstr "Revue des difficultés des monstres [indice:niveau] :"
+
+#: src/wizcmds.c:1889
+#, c-format
+msgid "%-18s [%3d:%2d]: calculated: %2d, hardcoded: %2d (%+d)"
+msgstr "%-18s [%3d:%2d] : calculée : %2d, en dur : %2d (%+d)"
+
+#: src/wizcmds.c:1897
+msgid "No monster difficulty discrepancies were detected."
+msgstr "Aucun écart de difficulté des monstres détecté."
+
+#: src/wizcmds.c:1970
 msgid "How many random monsters to migrate to next level? [0]"
 msgstr "Combien de monstres aléatoires faire migrer au niveau suivant ? [0]"
 
-#: src/wizcmds.c:1901
+#: src/wizcmds.c:1973
 msgid "Can't get there from here."
 msgstr "Impossible d'y aller d'ici."
 

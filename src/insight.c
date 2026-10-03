@@ -3899,7 +3899,7 @@ doborn(void)
     char buf[BUFSZ];
     int nborn = 0, ndied = 0;
 
-    putstr(datawin, 0, "died born");
+    putstr(datawin, 0, _("died born"));
     for (i = LOW_PM; i < NUMMONS; i++)
         if (svm.mvitals[i].born || svm.mvitals[i].died
             || (svm.mvitals[i].mvflags & G_GONE) != 0) {
@@ -3909,7 +3909,7 @@ doborn(void)
                     : ((svm.mvitals[i].mvflags & G_GONE) == G_GENOD) ? 'G'
                       : ((svm.mvitals[i].mvflags & G_GONE) != 0) ? 'X'
                         : ' ',
-                    mons[i].pmnames[NEUTRAL]);
+                    C_("monster", mons[i].pmnames[NEUTRAL]));
             putstr(datawin, 0, buf);
             nborn += svm.mvitals[i].born;
             ndied += svm.mvitals[i].died;

@@ -314,9 +314,9 @@ rumor_check(void)
 
     /* initial implementation of default epitaph/engraving/bogusmon
        contained an error; check those along with rumors */
-    others_check("Engravings:", ENGRAVEFILE, &tmpwin);
-    others_check("Epitaphs:", EPITAPHFILE, &tmpwin);
-    others_check("Bogus monsters:", BOGUSMONFILE, &tmpwin);
+    others_check(_("Engravings:"), ENGRAVEFILE, &tmpwin);
+    others_check(_("Epitaphs:"), EPITAPHFILE, &tmpwin);
+    others_check(_("Bogus monsters:"), BOGUSMONFILE, &tmpwin);
 
     if (tmpwin != WIN_ERR) {
         display_nhwindow(tmpwin, TRUE);
