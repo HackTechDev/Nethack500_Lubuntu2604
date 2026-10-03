@@ -1,25 +1,25 @@
 # Traduction française : reste à faire
 
-> **Où en est-on ?** Les messages du jeu écrits en C sont presque tous
-> traduits, ainsi que le tutoriel, les textes des quêtes et la
-> documentation (section 6) et l'encyclopédie (`dat/data.base`).
-> Il reste quelques textes isolés (voir le tableau ci-dessous).
-> Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté.
+> **Où en est-on ?** Le contenu est entièrement traduit pour les
+> interfaces tty et curses : messages du jeu, mode magicien, diagnostics
+> internes, tutoriel, quêtes, encyclopédie, fichiers d'aide et
+> documentation (section 6). Ce qui reste est surtout de la
+> **vérification** (section 7) et les interfaces X11 et Qt (section 4).
+> Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté et
+> la licence (`dat/license`) n'est pas traduite.
 
-État actuel (3 octobre 2026) : 13 639 textes traduits dans `po/fr.po`,
-1 887 vides. Parmi ces vides, 1 099 sont des entrées de genre
-(`gender`, `objgender`) : vides, elles valent masculin, c'est voulu.
-Presque tous les autres sont des formats anglais remplacés à l'exécution
-par une phrase entière traduite (branche `i18n_active()`) : ils ne sont
-jamais cherchés dans le catalogue. Ce qui reste vraiment non traduit est
-surtout fait de messages de débogage et de formats sans texte
-(`"%s%s"`) ; les entrées `adjective-position` vides valent « après le
-nom », c'est voulu. Les commandes du mode magicien sont traduites, ainsi que
-les diagnostics internes : `impossible()` et `panic()` affichent leur
-message traduit, mais le `paniclog`, le rapport de plantage et le core
-dump gardent le texte anglais pour les rapports de bugs. Seuls le vidage
-des glyphes de `#wizcustom` et les mots-clés des drapeaux de niveau
-(`noTport`...) restent en anglais, ce sont des identifiants.
+État actuel (3 octobre 2026) : 14 624 textes traduits dans `po/fr.po`,
+1 871 vides. Parmi ces vides, 1 099 sont des entrées de genre
+(`gender`, `objgender`) : vides, elles valent masculin (voir la
+section 7 pour celles à vérifier). Presque tous les autres sont des
+formats anglais remplacés à l'exécution par une phrase entière traduite
+(branche `i18n_active()`) : ils ne sont jamais cherchés dans le
+catalogue. Les entrées `adjective-position` vides valent « après le
+nom », c'est voulu. `impossible()` et `panic()` affichent leur message
+traduit, mais le `paniclog`, le rapport de plantage et le core dump
+gardent le texte anglais pour les rapports de bugs. Seuls le vidage des
+glyphes de `#wizcustom` et les mots-clés des drapeaux de niveau
+(`noTport`...) restent en anglais : ce sont des identifiants.
 
 Le fonctionnement de la traduction et la façon d'ajouter des traductions
 sont décrits dans la section 7 de [INSTALL.md](INSTALL.md).
@@ -41,20 +41,18 @@ Déjà traduits : `help`, `hh`, `keyhelp`, `cmdhelp`, `opthelp`,
 rumeurs, oracles, gravures, épitaphes (section 3), monstres hallucinés
 (`bogusmon.txt`, dans `po/fr.po`).
 
-Restes dans le code (`po/fr.po`, environ 85 textes) : messages de
-débogage de `mkmaze.c`, `display.c`, `objnam.c`, `trap.c`, `dig.c`,
-`wizcmds.c`, `restore.c`, `sfstruct.c` ; quelques textes des interfaces
-`win/tty` (8) et `win/curses` (4) ; les menus du mode magicien (`^V`,
-`^O`...). Pour les retrouver, chercher dans `po/fr.po` les entrées vides
-qui ne sont ni des genres ni des formats remplacés par une branche
-`i18n_active()`.
+Restes dans le code : il n'y en a plus de connus. Pour vérifier après
+une mise à jour du code, chercher dans `po/fr.po` les entrées vides qui
+ne sont ni des genres ni des formats remplacés par une branche
+`i18n_active()` (les formats sans texte comme `"%s%s"` n'ont pas besoin
+de traduction).
 
 Interfaces non extraites : `win/X11` et `win/Qt` (`po/update-pot.sh` ne
 lit que `win/tty` et `win/curses`).
 
 ## 1. Grammaire française des noms (priorité haute)
 
-C'est ce qui bloque la plupart des messages restants.
+Fait pour l'essentiel ; les points ci-dessous décrivent le mécanisme.
 
 - **Fait : noms de monstres.** Les 419 noms de `include/monsters.h` sont
   traduits (contexte `monster`) avec leur genre (contexte `gender` : `f`
@@ -227,6 +225,10 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
 
 ## 4. Interface
 
+- **Interfaces X11 et Qt** : non traduites. `po/update-pot.sh` ne lit
+  que `win/tty` et `win/curses` ; les menus, boutons et boîtes de
+  dialogue de `win/X11` (environ 90 textes) et `win/Qt` (environ 120,
+  C++) restent en anglais, alors que les messages du jeu y sont traduits.
 - **Menus et fenêtres** : les textes passés à `add_menu()`, `putstr()`,
   `end_menu()` ne sont pas traduits automatiquement (menu complet des
   options `#optionsfull` (titres et descriptions traduits, noms d'options
@@ -251,10 +253,15 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
 
 ## 5. Laissé volontairement en anglais
 
-- Messages techniques internes (`impossible()`, `panic()`, traces de
-  débogage).
+- Le texte des diagnostics écrit dans `paniclog` et dans les rapports de
+  plantage (seul l'affichage est traduit).
+- Identifiants techniques du mode magicien : vidage des glyphes de
+  `#wizcustom`, mots-clés des drapeaux de niveau (`noTport`, `noDig`...),
+  noms de fonctions et de variables cités dans les diagnostics.
 - Fichiers `livelog`, `dumplog` et `xlogfile`, lus par des outils externes.
 - Noms des options et valeurs du fichier de configuration.
+- Licence (`dat/license`) et licence de Lua dans `#version` : elles font
+  foi en anglais.
 
 ## 6. Documentation
 
@@ -267,3 +274,29 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
   changent (chaque fichier traduit garde la révision de l'original).
 - Pas encore traduits : `Guidebook.tex` (version LaTeX), `recover.6`,
   `dlb.6`, `makedefs.6` (outils techniques, faible priorité).
+
+## 7. Vérification et relecture (priorité haute)
+
+La traduction a été faite fichier par fichier. `msgfmt --check` et le
+contrôle des conversions printf (`nhi18n.c`) garantissent qu'aucune
+traduction ne peut faire planter le jeu, mais pas que les phrases sont
+justes une fois assemblées.
+
+- **Jouer des parties en français** et noter les phrases bizarres :
+  accords (article, genre, pluriel), contractions `@de`/`@à`, ordre des
+  adjectifs. Beaucoup de messages n'ont jamais été vus en jeu.
+- **Genres des objets** : 289 entrées `objgender` sont vides (masculin
+  par défaut). Environ 115 ont une traduction qui ressemble à un nom
+  féminin (« gnôle », « parure », « annulation »...). Beaucoup sont sans
+  effet, car le nom suit un mot qui porte le genre (« potion de »,
+  « sort de »), mais il faut les vérifier une à une.
+- **Pas encore vus en jeu** : les dialogues de quête avec les chefs et
+  les ennemis, les messages ajoutés le 3 octobre 2026 dans `dig.c`
+  (remonter à travers le sol, objets qui tombent dans un trou),
+  `restore.c` (retour au niveau), les vœux de terrain du mode magicien
+  et l'affichage d'`impossible()`/`panic()`.
+- **Relecture d'ensemble** : uniformiser le vocabulaire et les noms
+  propres. Par exemple, l'encyclopédie emploie les noms français du
+  Disque-monde (« Rincevent », « Deuxfleurs ») mais garde « Graywand »
+  en anglais.
+
