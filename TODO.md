@@ -2,8 +2,8 @@
 
 > **Où en est-on ?** Les messages du jeu écrits en C sont presque tous
 > traduits, ainsi que le tutoriel, les textes des quêtes et la
-> documentation (section 6). Ce qui reste est surtout l'encyclopédie
-> (`dat/data.base`, voir le tableau ci-dessous).
+> documentation (section 6) et l'encyclopédie (`dat/data.base`).
+> Il reste quelques textes isolés (voir le tableau ci-dessous).
 > Les citations de Terry Pratchett (`dat/tribute`) sont mises de côté.
 
 État actuel (2 octobre 2026) : 12 492 textes traduits dans `po/fr.po`,
@@ -24,7 +24,7 @@ Par ordre de priorité (visibilité en jeu) :
 | Fichier | Lignes | Contenu | Remarque |
 |---|---:|---|---|
 | `dat/quest.lua` | 3 087 | Textes des quêtes de chaque rôle (arrivée, chef, ennemi, artefact) | **Traduit** (octobre 2026) : 872 textes, msgctxt `quest` dans `po/fr.po`, extraits par `po/questtext.py` ; restent à tester en jeu les dialogues avec les chefs et ennemis |
-| `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | En cours, par tranches : `dat/data-fr.base` (clés anglaises, compilé en `dat/data.fr` par `MAKEDEFS_LANG=fr makedefs -d`) ; la ligne `# --- suite non traduite : data.base ligne N ---` marque où reprendre. Fait : lignes 29-246 (abbot à ape) |
+| `dat/data.base` | 6 528 | Encyclopédie (`;` puis `?`, `/`) | Fait : `dat/data-fr.base` (clés anglaises, compilé en `dat/data.fr` par `MAKEDEFS_LANG=fr makedefs -d`) |
 | `dat/tribute` | 9 942 | Citations de Terry Pratchett (livres du jeu) | Ouvert sans `I18N_FILE()` (`files.c`, `TRIBUTEFILE`). **Mis de côté** (3 octobre 2026) ; si on le reprend, à brancher d'abord |
 | `dat/options` | 37 | Options de compilation (`#version`) | Généré par `makedefs` et ouvert sans `I18N_FILE()` (`version.c`) : surtout des noms techniques, faible priorité |
 | `dat/license` | 95 | Licence | Ouvert sans `I18N_FILE()` ; la licence fait foi en anglais, une traduction serait indicative |

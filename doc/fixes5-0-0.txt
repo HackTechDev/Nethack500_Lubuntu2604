@@ -3087,6 +3087,8 @@ quest texts (dat/quest.lua) are translated whole, with translated values
 tty: a line of a text window starting with a UTF-8 character (translated
 	text) was displayed as a DEC/IBM graphics symbol
 wiping out an engraving turns a whole multibyte (UTF-8) character into '?'
+the encyclopedia (dat/data.base) is translated into French as
+	dat/data-fr.base, compiled into dat/data.fr by makedefs
 
 
 NetHack Community Patches (or Variation) Included
