@@ -150,9 +150,15 @@ Guidebook-fr.txt	: Guidebook-fr.mn tmac.n tmac.nh $(NEEDMAKEDEFS)
 nethack-fr.txt recover-fr.txt dlb-fr.txt makedefs-fr.txt : %.txt : %.6
 	cat $< | $(NHGREP) | preconv | nroff -c -man -Tlatin1 \
 		| $(FR2UTF8) > $@
+# LaTeX version (needs pdflatex and the French babel files); run twice
+# like Guidebook.dvi
+Guidebook-fr.pdf	: Guidebook-fr.tex
+	pdflatex Guidebook-fr.tex
+	pdflatex Guidebook-fr.tex
 
 clean:
 	-rm -f Guidebook.aux Guidebook.log $(DOC_EXTRAS)
+	-rm -f Guidebook-fr.aux Guidebook-fr.log Guidebook-fr.out
 
 spotless: clean
 	-rm -f Guidebook Guidebook.dat Guidebook.ps \

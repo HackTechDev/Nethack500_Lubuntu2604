@@ -282,7 +282,11 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
 - Pages de manuel des outils : `doc/recover-fr.6`, `doc/dlb-fr.6`,
   `doc/makedefs-fr.6`, textes produits de la même façon
   (`make recover-fr.txt dlb-fr.txt makedefs-fr.txt`).
-- Pas encore traduit : `Guidebook.tex` (version LaTeX, faible priorité).
+- Version LaTeX : `doc/Guidebook-fr.tex`, produite à partir de
+  `doc/Guidebook-fr.mn` par un script de conversion (même texte) ;
+  `make Guidebook-fr.pdf` dans `doc/` (il faut pdflatex et les fichiers
+  français de babel).  Pas encore compilée faute de LaTeX installé :
+  seul l'équilibre des accolades et des environnements a été vérifié.
 
 ## 7. Vérification et relecture (priorité haute)
 
