@@ -35,7 +35,7 @@ devraient donc être bien moins nombreux, et le taux réel plus proche de
 ## Documentation
 
 - Faits : le Guide du joueur (`doc/Guidebook-fr.mn`, et sa version LaTeX
-  `doc/Guidebook-fr.tex`, pas encore compilée), la page de manuel
+  `doc/Guidebook-fr.tex`, compilée par `make Guidebook-fr.pdf`), la page de manuel
   `doc/nethack-fr.6` et celles des outils (`doc/recover-fr.6`,
   `doc/dlb-fr.6`, `doc/makedefs-fr.6`).
 

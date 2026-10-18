@@ -4,6 +4,7 @@
 \documentclass[titlepage]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[french]{babel}
 \usepackage[hidelinks]{hyperref}
 \usepackage{longtable}
@@ -277,6 +278,7 @@ L'aspect de l'écran dépend de votre plate-forme.
 % the left and right box boundaries that does not appear in PostScript
 % output.  This behavior is specific to GNU tbl.
 \medskip
+
 \vbox{
 \begin{verbatim}
         La chauve-souris mord !
@@ -298,6 +300,7 @@ L'aspect de l'écran dépend de votre plate-forme.
 Figure 1
 \end{center}
 \medskip
+
 \vbox{
 \begin{verbatim}
         Joueur le Promeneur  Fo:12 Dx:7 Co:18 In:11 Sa:9 Ch:15        
@@ -7302,7 +7305,6 @@ comment le message doit être montré~;
 le motif à reconnaître.
 \end{description}
 
-\begin{description}
 
 Le motif doit être une expression régulière.
 
@@ -7349,7 +7351,6 @@ L'ordre des lignes MSGTYPE est important~: c'est la dernière règle
 correspondante qui s'applique.
 Mettez le cas général d'abord, les exceptions ensuite.
 
-\end{description}
 \subsection{Configurer les couleurs des menus}
 
 
@@ -7577,7 +7578,6 @@ alignment &  & score\\
 \end{tabular}
 \end{center}
 
-\begin{description}
 
 Ce sont respectivement le titre, le niveau du donjon, le niveau
 d'expérience, la force, l'or, les points d'expérience, la dextérité, les
@@ -7617,6 +7617,7 @@ Il l'emporte sur les autres règles si les points de vie sont inférieurs ou
 vie et du niveau d'expérience).
 %.si
 
+\begin{description}
 %.lp
 \item[{*}]
 «~always~» fixe les attributs par défaut du champ.
@@ -8182,7 +8183,6 @@ Une option non réglée prend une valeur par défaut fixée à la compilation
 %               essentially, "OPTION = Word" becomes one token as far
 %               as filling and justifying are concerned
 
-\begin{description}
 
 WIZARDS~=~Une liste, séparée par des espaces, des noms d'utilisateurs
 autorisés à jouer en mode débogage (couramment appelé mode magicien).
@@ -8231,13 +8231,11 @@ l'UID (identifiant numérique de l'utilisateur) des fichiers de sauvegarde
 (pour vérifier que l'utilisateur qui restaure la partie est celui qui l'a
 sauvegardée).
 
-\end{description}
 
 Les quatre options suivantes concernent le fichier des scores~:
 
 
 
-\begin{description}
 
 PERSMAX~=~Nombre maximum d'entrées pour une même personne.
 
@@ -8322,7 +8320,6 @@ préremplie avec les informations nécessaires pour signaler un problème
 quand le jeu panique ou se retrouve dans un état incohérent, ou quand on
 utilise la commande \#bugreport.
 
-\end{description}
 \section{Score}
 
 

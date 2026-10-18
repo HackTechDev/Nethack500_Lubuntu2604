@@ -283,10 +283,10 @@ Lua.  Les textes des quêtes (`quest.lua`) sont traduits aussi.
   `doc/makedefs-fr.6`, textes produits de la même façon
   (`make recover-fr.txt dlb-fr.txt makedefs-fr.txt`).
 - Version LaTeX : `doc/Guidebook-fr.tex`, produite à partir de
-  `doc/Guidebook-fr.mn` par un script de conversion (même texte) ;
+  `doc/Guidebook-fr.mn` par `doc/mn2tex-fr.py` (même texte ; dans `doc/` :
+  `python3 mn2tex-fr.py Guidebook-fr.mn > Guidebook-fr.tex`) ;
   `make Guidebook-fr.pdf` dans `doc/` (il faut pdflatex et les fichiers
-  français de babel).  Pas encore compilée faute de LaTeX installé :
-  seul l'équilibre des accolades et des environnements a été vérifié.
+  français de babel) ; compilée et relue (80 pages, polices Latin Modern).
 
 ## 7. Vérification et relecture (priorité haute)
 

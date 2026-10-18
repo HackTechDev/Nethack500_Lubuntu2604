@@ -13,6 +13,10 @@ Guidebook.log
 Guidebook.pdf
 Guidebook.ps
 Guidebook.dated.*
+Guidebook-fr.aux
+Guidebook-fr.log
+Guidebook-fr.out
+Guidebook-fr.pdf
 *.synctex.*
 # files that might appear from "make fetch-docs"
 dlb.pdf
