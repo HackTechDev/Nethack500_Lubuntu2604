@@ -268,5 +268,6 @@ mentore n'a été contrôlé que dans le catalogue.
 
 ## Prochains lots
 
-1. Les quêtes des douze autres rôles, une ou deux par lot.
+1. Les quêtes des douze autres rôles, deux par lot (liste dans
+   [CYBERPUNK_lot.md](CYBERPUNK_lot.md)).
 2. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
