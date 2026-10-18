@@ -1550,8 +1550,14 @@ currency(long amount)
     res = Hallucination ? ROLL_FROM(currencies) : "zorkmid";
     if (amount != 1L)
         res = makeplural(res);
-    return res;
+    /* a theme can rename the currency ("credits" for fr@cyber) */
+    return C_("currency", res);
 }
+
+#if 0
+/* currency(): for xgettext */
+NC_("currency", "zorkmid"), NC_("currency", "zorkmids"),
+#endif
 
 struct obj *
 u_carried_gloves(void)

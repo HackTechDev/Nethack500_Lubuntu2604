@@ -203,10 +203,24 @@ graveur de puces », « Le cheval de Troie boit un stim bleu ciel ! », « La
 contremaîtresse manie une épée courte large ! », « Le flic de choc
 frappe ! ».
 
+## Cinquième lot : messages et monnaie (en place)
+
+- Les 113 messages qui nommaient potions, parchemins, baguettes, anneaux,
+  livres de sorts ou pièces d'or parlent de stims, puces, implants,
+  modules, logiciels et crédits (« Pendant que vous lisez la puce, elle
+  grille. », « Le stim explose ! », « Vous ne portez aucun module. »),
+  avec l'accord en genre (« Cet %s est un implant de creusement ! »), y
+  compris les causes de mort (« un stim d'acide ») et l'aide des
+  commandes.  Le mot « magie » reste : le Réseau a sa magie.
+- La monnaie : `currency()` (invent.c) traduit son résultat (msgctxt
+  `currency`).  En français il reste « zorkmid », le thème dit « crédit »
+  : « Votre bourse contient 672 crédits. », prix des boutiques, Oracle...
+- Le fruit par défaut « slime mold » est traduit quand le joueur n'a pas
+  choisi de nom (objnam.c) : « moisissure visqueuse », « pâte d'algues »
+  dans le thème.
+
 ## Prochains lots
 
-1. Les messages fréquents qui parlent de magie (lire, boire, lancer un
-   sort...), la monnaie des marchands (« zorkmids »).
-2. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
+1. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
    fichiers `dat/*-fr@cyber.*`, puis les quêtes.
-3. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
+2. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).

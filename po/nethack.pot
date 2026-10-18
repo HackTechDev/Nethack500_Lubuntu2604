@@ -22476,7 +22476,7 @@ msgid "omit \"uncursed\" from inventory"
 msgstr ""
 
 #: include/optlist.h:408
-msgid "language of game messages (en, fr)"
+msgid "language of game messages (en, fr, fr@cyber)"
 msgstr ""
 
 #: include/optlist.h:417
@@ -23144,7 +23144,7 @@ msgstr ""
 #: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4342 src/cmd.c:5202
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
-#: src/invent.c:4070 src/lock.c:937 src/nhlua.c:626 src/nhlua.c:640
+#: src/invent.c:4076 src/lock.c:937 src/nhlua.c:626 src/nhlua.c:640
 #: src/nhlua.c:656 src/pager.c:3367 src/pickup.c:453 src/pickup.c:455
 #: src/pline.c:218 src/pline.c:241 src/pline.c:691 src/pline.c:694
 #: src/pline.c:708 src/pline.c:763 src/potion.c:226 src/potion.c:253
@@ -24325,7 +24325,7 @@ msgid "%s and %s"
 msgstr ""
 
 #: src/apply.c:902 src/cmd.c:1462 src/display.c:2069 src/dog.c:1218
-#: src/explode.c:856 src/getpos.c:1033 src/invent.c:3172 src/mail.c:375
+#: src/explode.c:856 src/getpos.c:1033 src/invent.c:3178 src/mail.c:375
 #: src/muse.c:3312 src/music.c:634 src/objnam.c:4752 src/objnam.c:4814
 #: src/objnam.c:4863 src/objnam.c:5026 src/objnam.c:5028 src/potion.c:1776
 #: src/pray.c:608 src/read.c:1516 src/read.c:2897 src/read.c:3122
@@ -25290,7 +25290,7 @@ msgstr ""
 msgid "You cannot place a figurine in %s!"
 msgstr ""
 
-#: src/apply.c:2943 src/invent.c:4181
+#: src/apply.c:2943 src/invent.c:4187
 msgid "a tree"
 msgstr ""
 
@@ -33056,7 +33056,7 @@ msgstr ""
 msgid "You are no longer wielding either weapon."
 msgstr ""
 
-#: src/do_wear.c:2997 src/hack.c:4342 src/invent.c:4713 src/wield.c:217
+#: src/do_wear.c:2997 src/hack.c:4342 src/invent.c:4719 src/wield.c:217
 #, c-format
 msgid "You are %s."
 msgstr ""
@@ -43133,818 +43133,828 @@ msgstr ""
 msgid "don't have quest artifact?"
 msgstr ""
 
-#: src/invent.c:1685
+#: src/invent.c:1559
+msgctxt "currency"
+msgid "zorkmid"
+msgstr ""
+
+#: src/invent.c:1559
+msgctxt "currency"
+msgid "zorkmids"
+msgstr ""
+
+#: src/invent.c:1691
 #, c-format
 msgid "You mime %s."
 msgstr ""
 
-#: src/invent.c:1709
+#: src/invent.c:1715
 #, c-format
 msgid "You mime %s%s%s something%s%s."
 msgstr ""
 
-#: src/invent.c:1873
+#: src/invent.c:1879
 #, c-format
 msgid "getobj: inventory overflow"
 msgstr ""
 
-#: src/invent.c:1902
+#: src/invent.c:1908
 #, c-format
 msgid "bad return from getobj callback"
 msgstr ""
 
-#: src/invent.c:1919
+#: src/invent.c:1925
 #, c-format
 msgid "You don't have anything else to %s."
 msgstr ""
 
-#: src/invent.c:1921
+#: src/invent.c:1927
 #, c-format
 msgid "You don't have anything to %s."
 msgstr ""
 
-#: src/invent.c:1927 src/invent.c:1985
+#: src/invent.c:1933 src/invent.c:1991
 #, c-format
 msgid "What do you want to %s?"
 msgstr ""
 
-#: src/invent.c:1944
+#: src/invent.c:1950
 #, c-format
 msgid " [%s or ?*]"
 msgstr ""
 
-#: src/invent.c:1951
+#: src/invent.c:1957
 msgid "No count allowed with this command."
 msgstr ""
 
-#: src/invent.c:2022
+#: src/invent.c:2028
 #, c-format
 msgid "You cannot %s gold."
 msgstr ""
 
-#: src/invent.c:2033
+#: src/invent.c:2039
 msgid "The LRS would be very interested to know you have that much."
 msgstr ""
 
-#: src/invent.c:2051
+#: src/invent.c:2057
 #, c-format
 msgid "You only have %ld and can only throw one at a time."
 msgstr ""
 
-#: src/invent.c:2054
+#: src/invent.c:2060
 #, c-format
 msgid "You only have %ld."
 msgstr ""
 
-#: src/invent.c:2056
+#: src/invent.c:2062
 msgid "You can only throw one at a time."
 msgstr ""
 
-#: src/invent.c:2071
+#: src/invent.c:2077
 msgid "You don't have that object."
 msgstr ""
 
-#: src/invent.c:2076
+#: src/invent.c:2082
 #, c-format
 msgid "You don't have that many!  You have only %ld."
 msgstr ""
 
-#: src/invent.c:2135
+#: src/invent.c:2141
 #, c-format
 msgid "Use the '%s' command to wear those."
 msgstr ""
 
-#: src/invent.c:2136
+#: src/invent.c:2142
 #, c-format
 msgid "Use the '%s' command to wear that."
 msgstr ""
 
-#: src/invent.c:2138
+#: src/invent.c:2144
 #, c-format
 msgid "Use the '%s' command to take those off."
 msgstr ""
 
-#: src/invent.c:2139
+#: src/invent.c:2145
 #, c-format
 msgid "Use the '%s' command to take that off."
 msgstr ""
 
-#: src/invent.c:2141
+#: src/invent.c:2147
 #, c-format
 msgid "Use the '%s' command to put those on."
 msgstr ""
 
-#: src/invent.c:2142
+#: src/invent.c:2148
 #, c-format
 msgid "Use the '%s' command to put that on."
 msgstr ""
 
-#: src/invent.c:2143
+#: src/invent.c:2149
 #, c-format
 msgid "Use the '%s' command to remove those."
 msgstr ""
 
-#: src/invent.c:2144
+#: src/invent.c:2150
 #, c-format
 msgid "Use the '%s' command to remove that."
 msgstr ""
 
-#: src/invent.c:2147
+#: src/invent.c:2153
 #, c-format
 msgid "Use the '%s' command to %s %s%s."
 msgstr ""
 
-#: src/invent.c:2156
+#: src/invent.c:2162
 msgid "The Amulet doesn't like being called names."
 msgstr ""
 
-#: src/invent.c:2244
+#: src/invent.c:2250
 #, c-format
 msgid "You have nothing to %s."
 msgstr ""
 
-#: src/invent.c:2290
+#: src/invent.c:2296
 #, c-format
 msgid "What kinds of thing do you want to %s? [%s]"
 msgstr ""
 
-#: src/invent.c:2336
+#: src/invent.c:2342
 msgid "Not applicable."
 msgstr ""
 
-#: src/invent.c:2343
+#: src/invent.c:2349
 msgid "You are not wielding anything."
 msgstr ""
 
-#: src/invent.c:2346
+#: src/invent.c:2352
 msgid "You are not wearing rings."
 msgstr ""
 
-#: src/invent.c:2349 src/invent.c:4862
+#: src/invent.c:2355 src/invent.c:4868
 msgid "You are not wearing an amulet."
 msgstr ""
 
-#: src/invent.c:2352
+#: src/invent.c:2358
 msgid "You are not wearing a blindfold."
 msgstr ""
 
-#: src/invent.c:2370
+#: src/invent.c:2376
 #, c-format
 msgid "You don't have any %c's."
 msgstr ""
 
-#: src/invent.c:2560 src/invent.c:2716
+#: src/invent.c:2566 src/invent.c:2722
 msgid "That was all."
 msgstr ""
 
-#: src/invent.c:2562
+#: src/invent.c:2568
 msgid "No applicable objects."
 msgstr ""
 
-#: src/invent.c:2636
+#: src/invent.c:2642
 msgid "Reroll this character?"
 msgstr ""
 
-#: src/invent.c:2698
+#: src/invent.c:2704
 msgid "What would you like to identify first?"
 msgstr ""
 
-#: src/invent.c:2699
+#: src/invent.c:2705
 msgid "What would you like to identify next?"
 msgstr ""
 
-#: src/invent.c:2722
+#: src/invent.c:2728
 msgid "Choose an item; use ESC to decline."
 msgstr ""
 
-#: src/invent.c:2750
+#: src/invent.c:2756
 msgid "You have already identified all of your possessions."
 msgstr ""
 
-#: src/invent.c:2767
+#: src/invent.c:2773
 msgctxt "verb"
 msgid "identify"
 msgstr ""
 
-#: src/invent.c:2867
+#: src/invent.c:2873
 #, c-format
 msgid "Persistent inventory display is not supported by '%s'."
 msgstr ""
 
-#: src/invent.c:2872
+#: src/invent.c:2878
 msgid "Persistent inventory ('perm_invent' option) is not presently enabled."
 msgstr ""
 
-#: src/invent.c:2876
+#: src/invent.c:2882
 msgid "Persistent inventory display is empty."
 msgstr ""
 
-#: src/invent.c:2917
+#: src/invent.c:2923
 #, c-format
 msgid " (%ld in total)."
 msgstr ""
 
-#: src/invent.c:2918
+#: src/invent.c:2924
 #, c-format
 msgid "%s%s%s%s"
 msgstr ""
 
-#: src/invent.c:3097
+#: src/invent.c:3103
 msgid "Not carrying anything"
 msgstr ""
 
-#: src/invent.c:3098
+#: src/invent.c:3104
 msgid "Not using any items"
 msgstr ""
 
-#: src/invent.c:3099
+#: src/invent.c:3105
 msgid "Only carrying gold"
 msgstr ""
 
-#: src/invent.c:3809
+#: src/invent.c:3815
 #, c-format
 msgid "You aren't carrying any unpaid items but there are %d on the floor."
 msgstr ""
 
-#: src/invent.c:3817
+#: src/invent.c:3823
 #, c-format
 msgid "You aren't carrying any unpaid items but there %s %d %s."
 msgstr ""
 
-#: src/invent.c:3823
+#: src/invent.c:3829
 #, c-format
 msgid "(There are %d more unpaid objects on the floor.)"
 msgstr ""
 
-#: src/invent.c:3826
+#: src/invent.c:3832
 #, c-format
 msgid "(There are %d more unpaid objects under the floor.)"
 msgstr ""
 
-#: src/invent.c:3828
+#: src/invent.c:3834
 #, c-format
 msgid "(There are %d more unpaid objects on or under the floor.)"
 msgstr ""
 
-#: src/invent.c:3882
+#: src/invent.c:3888
 msgid "What type of object do you want an inventory of?"
 msgstr ""
 
-#: src/invent.c:3899
+#: src/invent.c:3905
 msgid "You aren't carrying anything."
 msgstr ""
 
-#: src/invent.c:4001
+#: src/invent.c:4007
 msgid "No used-up objects on your shopping bill."
 msgstr ""
 
-#: src/invent.c:4009
+#: src/invent.c:4015
 msgid "You are not carrying any unpaid objects."
 msgstr ""
 
-#: src/invent.c:4030
+#: src/invent.c:4036
 msgid "You have no known to be blessed objects."
 msgstr ""
 
-#: src/invent.c:4031
+#: src/invent.c:4037
 msgid "Items known to be blessed:"
 msgstr ""
 
-#: src/invent.c:4035
+#: src/invent.c:4041
 msgid "You have no known to be uncursed objects."
 msgstr ""
 
-#: src/invent.c:4036
+#: src/invent.c:4042
 msgid "Items known to be uncursed:"
 msgstr ""
 
-#: src/invent.c:4040
+#: src/invent.c:4046
 msgid "You have no known to be cursed objects."
 msgstr ""
 
-#: src/invent.c:4041
+#: src/invent.c:4047
 msgid "Items known to be cursed:"
 msgstr ""
 
-#: src/invent.c:4045
+#: src/invent.c:4051
 msgid "You have no objects whose blessed/uncursed/cursed status is unknown."
 msgstr ""
 
-#: src/invent.c:4047
+#: src/invent.c:4053
 msgid "Items whose blessed/uncursed/cursed status is unknown:"
 msgstr ""
 
-#: src/invent.c:4052
+#: src/invent.c:4058
 msgid "You have no objects that were just picked up."
 msgstr ""
 
-#: src/invent.c:4053
+#: src/invent.c:4059
 msgid "Items that were just picked up:"
 msgstr ""
 
-#: src/invent.c:4063
+#: src/invent.c:4069
 msgid "You have no such objects."
 msgstr ""
 
-#: src/invent.c:4072
+#: src/invent.c:4078
 #, c-format
 msgid "You have no %sobjects%s."
 msgstr ""
 
-#: src/invent.c:4177
+#: src/invent.c:4183
 msgid "a closed door"
 msgstr ""
 
-#: src/invent.c:4177
+#: src/invent.c:4183
 msgid "a doorway"
 msgstr ""
 
-#: src/invent.c:4177
+#: src/invent.c:4183
 msgid "an open door"
 msgstr ""
 
-#: src/invent.c:4178
+#: src/invent.c:4184
 msgid "a broken door"
 msgstr ""
 
-#: src/invent.c:4178
+#: src/invent.c:4184
 msgid "an open drawbridge portcullis"
 msgstr ""
 
-#: src/invent.c:4179
+#: src/invent.c:4185
 msgid "a fountain"
 msgstr ""
 
-#: src/invent.c:4179
+#: src/invent.c:4185
 msgid "an opulent throne"
 msgstr ""
 
-#: src/invent.c:4179
+#: src/invent.c:4185
 msgid "molten lava"
 msgstr ""
 
-#: src/invent.c:4180
+#: src/invent.c:4186
 msgid "a lowered drawbridge"
 msgstr ""
 
-#: src/invent.c:4180
+#: src/invent.c:4186
 msgid "a pool of water"
 msgstr ""
 
-#: src/invent.c:4180
+#: src/invent.c:4186
 msgid "a sink"
 msgstr ""
 
-#: src/invent.c:4181
+#: src/invent.c:4187
 msgid "a grave"
 msgstr ""
 
-#: src/invent.c:4181
+#: src/invent.c:4187
 msgid "a raised drawbridge"
 msgstr ""
 
-#: src/invent.c:4182
+#: src/invent.c:4188
 msgid "a set of iron bars"
 msgstr ""
 
-#: src/invent.c:4182
+#: src/invent.c:4188
 msgid "a staircase down"
 msgstr ""
 
-#: src/invent.c:4182
+#: src/invent.c:4188
 msgid "a staircase up"
 msgstr ""
 
-#: src/invent.c:4183
+#: src/invent.c:4189
 msgid "a ladder down"
 msgstr ""
 
-#: src/invent.c:4183
+#: src/invent.c:4189
 msgid "a ladder up"
 msgstr ""
 
-#: src/invent.c:4228
+#: src/invent.c:4234
 #, c-format
 msgid "Contents of the stomach of %s"
 msgstr ""
 
-#: src/invent.c:4231
+#: src/invent.c:4237
 #, c-format
 msgid "You try to feel what is lying in the stomach of %s."
 msgstr ""
 
-#: src/invent.c:4240
+#: src/invent.c:4246
 #, c-format
 msgid "You %s to %s what is lying in %s."
 msgstr ""
 
-#: src/invent.c:4257 src/invent.c:4383
+#: src/invent.c:4263 src/invent.c:4389
 msgid "You feel no objects here."
 msgstr ""
 
-#: src/invent.c:4259 src/invent.c:4385
+#: src/invent.c:4265 src/invent.c:4391
 msgid "You see no objects here."
 msgstr ""
 
-#: src/invent.c:4276
+#: src/invent.c:4282
 msgid "a poison gas cloud"
 msgstr ""
 
-#: src/invent.c:4277
+#: src/invent.c:4283
 msgid "a vapor cloud"
 msgstr ""
 
-#: src/invent.c:4283
+#: src/invent.c:4289
 #, c-format
 msgid "There is %s and %s here."
 msgstr ""
 
-#: src/invent.c:4287
+#: src/invent.c:4293
 #, c-format
 msgid "There is %s%s%s here."
 msgstr ""
 
-#: src/invent.c:4303
+#: src/invent.c:4309
 msgid "You try to feel what is here."
 msgstr ""
 
-#: src/invent.c:4311
+#: src/invent.c:4317
 msgid "You try to feel what is on it."
 msgstr ""
 
-#: src/invent.c:4321
+#: src/invent.c:4327
 msgid "You try to feel what is floating here."
 msgstr ""
 
-#: src/invent.c:4323
+#: src/invent.c:4329
 msgid "You try to feel what is lying beneath you."
 msgstr ""
 
-#: src/invent.c:4325
+#: src/invent.c:4331
 #, c-format
 msgid "You try to feel what is lying here on %s."
 msgstr ""
 
-#: src/invent.c:4328
+#: src/invent.c:4334
 #, c-format
 msgid "You try to feel what is %s%s."
 msgstr ""
 
-#: src/invent.c:4335
+#: src/invent.c:4341
 msgid "But you can't reach it!"
 msgstr ""
 
-#: src/invent.c:4362 src/pickup.c:444
+#: src/invent.c:4368 src/pickup.c:444
 #, c-format
 msgid "There is %s here."
 msgstr ""
 
-#: src/invent.c:4397
+#: src/invent.c:4403
 msgid "There is another object here."
 msgstr ""
 
-#: src/invent.c:4399
+#: src/invent.c:4405
 msgid "There is an object here."
 msgstr ""
 
-#: src/invent.c:4403
+#: src/invent.c:4409
 msgid "There are two objects here."
 msgstr ""
 
-#: src/invent.c:4404
+#: src/invent.c:4410
 msgid "There are a few objects here."
 msgstr ""
 
-#: src/invent.c:4405
+#: src/invent.c:4411
 msgid "There are several objects here."
 msgstr ""
 
-#: src/invent.c:4406
+#: src/invent.c:4412
 msgid "There are many objects here."
 msgstr ""
 
-#: src/invent.c:4407
+#: src/invent.c:4413
 msgid "There are two more objects here."
 msgstr ""
 
-#: src/invent.c:4408
+#: src/invent.c:4414
 msgid "There are a few more objects here."
 msgstr ""
 
-#: src/invent.c:4409
+#: src/invent.c:4415
 msgid "There are several more objects here."
 msgstr ""
 
-#: src/invent.c:4410
+#: src/invent.c:4416
 msgid "There are many more objects here."
 msgstr ""
 
-#: src/invent.c:4441
+#: src/invent.c:4447
 #, c-format
 msgid "You feel here %s."
 msgstr ""
 
-#: src/invent.c:4443
+#: src/invent.c:4449
 #, c-format
 msgid "You see here %s."
 msgstr ""
 
-#: src/invent.c:4457
+#: src/invent.c:4463
 msgid "Other things that you feel here:"
 msgstr ""
 
-#: src/invent.c:4458
+#: src/invent.c:4464
 msgid "Other things that are here:"
 msgstr ""
 
-#: src/invent.c:4460
+#: src/invent.c:4466
 msgid "Things that you feel here:"
 msgstr ""
 
-#: src/invent.c:4461
+#: src/invent.c:4467
 msgid "Things that are here:"
 msgstr ""
 
-#: src/invent.c:4515
+#: src/invent.c:4521
 #, c-format
 msgid "You touched %s with your bare %s."
 msgstr ""
 
-#: src/invent.c:4518
+#: src/invent.c:4524
 #, c-format
 msgid "Touching %s is a fatal mistake..."
 msgstr ""
 
-#: src/invent.c:4679
+#: src/invent.c:4685
 msgid "Your wallet is empty."
 msgstr ""
 
-#: src/invent.c:4681
+#: src/invent.c:4687
 #, c-format
 msgid "Your wallet contains %ld %s."
 msgstr ""
 
-#: src/invent.c:4683
+#: src/invent.c:4689
 #, c-format
 msgid "Your wallet is empty, but you have %ld %s stashed away in your pack."
 msgstr ""
 
-#: src/invent.c:4686
+#: src/invent.c:4692
 #, c-format
 msgid "Your wallet contains %ld %s, and you have %ld more stashed away in your pack."
 msgstr ""
 
-#: src/invent.c:4692
+#: src/invent.c:4698
 #, c-format
 msgid "You are carrying a total of %ld %s."
 msgstr ""
 
-#: src/invent.c:4694
+#: src/invent.c:4700
 msgid "You have no money."
 msgstr ""
 
-#: src/invent.c:4738
+#: src/invent.c:4744
 #, c-format
 msgctxt "feminine"
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4739
+#: src/invent.c:4745
 #, c-format
 msgctxt "plural"
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4741
+#: src/invent.c:4747
 #, c-format
 msgctxt "feminine plural"
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4751
+#: src/invent.c:4757
 msgid "You are not wearing any armor."
 msgstr ""
 
-#: src/invent.c:4758
+#: src/invent.c:4764
 #, c-format
 msgid "You are not wearing armor but have %s embedded in your skin."
 msgstr ""
 
-#: src/invent.c:4825
+#: src/invent.c:4831
 msgid "You are not wearing any rings."
 msgstr ""
 
-#: src/invent.c:4911
+#: src/invent.c:4917
 msgid "You are not using any tools."
 msgstr ""
 
-#: src/invent.c:4933
+#: src/invent.c:4939
 msgid "You are not wearing or wielding anything."
 msgstr ""
 
-#: src/invent.c:4970
+#: src/invent.c:4976
 msgid "Armor"
 msgstr ""
 
-#: src/invent.c:4970
+#: src/invent.c:4976
 msgid "Illegal objects"
 msgstr ""
 
-#: src/invent.c:4970
+#: src/invent.c:4976
 msgid "Rings"
 msgstr ""
 
-#: src/invent.c:4970
+#: src/invent.c:4976
 msgid "Weapons"
 msgstr ""
 
-#: src/invent.c:4971
+#: src/invent.c:4977
 msgid "Amulets"
 msgstr ""
 
-#: src/invent.c:4971
+#: src/invent.c:4977
 msgid "Comestibles"
 msgstr ""
 
-#: src/invent.c:4971
+#: src/invent.c:4977
 msgid "Potions"
 msgstr ""
 
-#: src/invent.c:4971
+#: src/invent.c:4977
 msgid "Tools"
 msgstr ""
 
-#: src/invent.c:4972
+#: src/invent.c:4978
 msgid "Coins"
 msgstr ""
 
-#: src/invent.c:4972
+#: src/invent.c:4978
 msgid "Scrolls"
 msgstr ""
 
-#: src/invent.c:4972
+#: src/invent.c:4978
 msgid "Spellbooks"
 msgstr ""
 
-#: src/invent.c:4972
+#: src/invent.c:4978
 msgid "Wands"
 msgstr ""
 
-#: src/invent.c:4973
+#: src/invent.c:4979
 msgid "Boulders/Statues"
 msgstr ""
 
-#: src/invent.c:4973
+#: src/invent.c:4979
 msgid "Gems/Stones"
 msgstr ""
 
-#: src/invent.c:4973
+#: src/invent.c:4979
 msgid "Iron balls"
 msgstr ""
 
-#: src/invent.c:4974
+#: src/invent.c:4980
 msgid "Chains"
 msgstr ""
 
-#: src/invent.c:4974
+#: src/invent.c:4980
 msgid "Venoms"
 msgstr ""
 
-#: src/invent.c:4977
+#: src/invent.c:4983
 msgid "Bagged/Boxed items"
 msgstr ""
 
-#: src/invent.c:4998 src/invent.c:5007
+#: src/invent.c:5004 src/invent.c:5013
 #, c-format
 msgid "Unpaid %s"
 msgstr ""
 
-#: src/invent.c:5085
+#: src/invent.c:5091
 #, c-format
 msgid "%s: %s%s%s"
 msgstr ""
 
-#: src/invent.c:5171
+#: src/invent.c:5177
 msgid "You aren't carrying anything to adjust."
 msgstr ""
 
-#: src/invent.c:5183
+#: src/invent.c:5189
 msgctxt "verb"
 msgid "adjust"
 msgstr ""
 
-#: src/invent.c:5198
+#: src/invent.c:5204
 msgctxt "verb"
 msgid "split"
 msgstr ""
 
-#: src/invent.c:5206
+#: src/invent.c:5212
 msgid "Split off how many?"
 msgstr ""
 
-#: src/invent.c:5233
+#: src/invent.c:5239
 msgid "Amount to split from current stack must be at least 1."
 msgstr ""
 
-#: src/invent.c:5235
+#: src/invent.c:5241
 #, c-format
 msgid "Amount to split from current stack must be less than %ld."
 msgstr ""
 
-#: src/invent.c:5322
+#: src/invent.c:5328
 #, c-format
 msgid "Adjust letter to what [%s] (? see used letters)?"
 msgstr ""
 
-#: src/invent.c:5324
+#: src/invent.c:5330
 #, c-format
 msgid "Adjust letter to what [%s]?"
 msgstr ""
 
-#: src/invent.c:5327
+#: src/invent.c:5333
 #, c-format
 msgid "Split %ld to what [%s] (? see used letters)?"
 msgstr ""
 
-#: src/invent.c:5329
+#: src/invent.c:5335
 #, c-format
 msgid "Split %ld to what [%s]?"
 msgstr ""
 
-#: src/invent.c:5360
+#: src/invent.c:5366
 #, c-format
 msgid "Only gold coins may be moved into the '%c' slot."
 msgstr ""
 
-#: src/invent.c:5372
+#: src/invent.c:5378
 msgid "Select an inventory slot letter."
 msgstr ""
 
-#: src/invent.c:5377
+#: src/invent.c:5383
 msgid "Collecting:"
 msgstr ""
 
-#: src/invent.c:5379
+#: src/invent.c:5385
 msgid "Splitting:"
 msgstr ""
 
-#: src/invent.c:5412
+#: src/invent.c:5418
 msgid "Merging:"
 msgstr ""
 
-#: src/invent.c:5422
+#: src/invent.c:5428
 msgid "Swapping:"
 msgstr ""
 
-#: src/invent.c:5439
+#: src/invent.c:5445
 msgid "Splitting and merging:"
 msgstr ""
 
-#: src/invent.c:5445
+#: src/invent.c:5451
 msgid "Your pack is too full."
 msgstr ""
 
-#: src/invent.c:5477
+#: src/invent.c:5483
 msgid "Moving:"
 msgstr ""
 
-#: src/invent.c:5680
+#: src/invent.c:5686
 msgid "Things that are buried here:"
 msgstr ""
 
-#: src/invent.c:5681
+#: src/invent.c:5687
 msgid "Things that are buried under them:"
 msgstr ""
 
-#: src/invent.c:5682
+#: src/invent.c:5688
 msgid "Things that are buried beneath it:"
 msgstr ""
 
-#: src/invent.c:5683
+#: src/invent.c:5689
 msgid "Things that are buried beneath them:"
 msgstr ""
 
-#: src/invent.c:5714
+#: src/invent.c:5720
 #, c-format
 msgid "There is %s under %s here."
 msgstr ""
 
-#: src/invent.c:5717
+#: src/invent.c:5723
 #, c-format
 msgid "There %s %s under the %s here."
 msgstr ""
 
-#: src/invent.c:5727
+#: src/invent.c:5733
 #, c-format
 msgid "Things that are under %s here:"
 msgstr ""
 
-#: src/invent.c:5851
+#: src/invent.c:5857
 #, c-format
 msgid "%s could not be enabled."
 msgstr ""
 
-#: src/invent.c:5852
+#: src/invent.c:5858
 #, c-format
 msgid "%s needs a terminal that is at least %dx%d, yours is %dx%d."
 msgstr ""
@@ -50051,7 +50061,7 @@ msgstr ""
 msgid "You hear %d gear turn."
 msgstr ""
 
-#: src/nhi18n.c:467
+#: src/nhi18n.c:479
 msgctxt "grammar"
 msgid "contractions"
 msgstr ""
@@ -68670,7 +68680,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 10:34+0200\n"
+"POT-Creation-Date: 2026-10-18 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

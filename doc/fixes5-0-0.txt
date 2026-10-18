@@ -3108,6 +3108,8 @@ X11 and Qt interfaces are translated (menus, buttons, dialogs, status,
 	core fonts and typed text back to UTF-8
 Qt: text from the core and typed text are UTF-8, not Latin-1
 the #call menu and the prompt to replace a level annotation are translated
+the currency name (msgctxt "currency") and the default fruit name
+	"slime mold" are translated, so that a theme can rename them
 
 
 NetHack Community Patches (or Variation) Included

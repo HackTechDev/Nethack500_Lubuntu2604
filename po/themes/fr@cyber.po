@@ -3460,3 +3460,570 @@ msgstr[1] "pâtes d'algues"
 msgctxt "objgender"
 msgid "slime mold"
 msgstr "f"
+
+# Cinquième lot : messages sur les stims, puces, implants, modules,
+# logiciels et la monnaie
+
+msgctxt "quest"
+msgid "\"Can you spare an old cutpurse a zorkmid for some grog?\""
+msgstr "« Tu n'aurais pas un crédit pour un vieux coupe-bourse qui a soif ? »"
+
+msgctxt "quest"
+msgid "\"Gehennom on 5 zorkmids a day -- more like 500 a day if you ask me.\""
+msgstr "« La Géhennom pour 5 crédits par jour -- plutôt 500 par jour, si tu veux mon avis. »"
+
+msgctxt "quest"
+msgid "\"Hey man, got any potions of hallucination for sale?\""
+msgstr "« Dis donc, t'aurais pas des stims d'hallucination à vendre ? »"
+
+msgctxt "quest"
+msgid "\"I shall use your very skin to bind my next grimoire.\""
+msgstr "« Je tannerai ta propre peau pour gainer mon prochain terminal. »"
+
+msgctxt "quest"
+msgid "\"I will put my %Rp to work making a physic out of your ashes.\""
+msgstr "« Je mettrai mes %Rp au travail pour tirer un stim de tes cendres. »"
+
+msgid "As you cogitate the formula on it, the scroll disappears."
+msgstr "Tandis que vous méditez son code, la puce grille."
+
+msgid "As you pronounce the formula on it, the scroll disappears."
+msgstr "Tandis que vous exécutez son code, la puce grille."
+
+msgid "As you read the scroll, it disappears."
+msgstr "Pendant que vous lisez la puce, elle grille."
+
+msgid "Some potions spill out."
+msgstr "Des stims s'en échappent."
+
+msgid "The ink in this spellbook is %s."
+msgstr "Le code de ce logiciel est %s."
+
+msgid "The potion explodes!"
+msgstr "Le stim explose !"
+
+msgid "The scroll turns to dust as you pick it up."
+msgstr "La puce tombe en poussière quand vous la ramassez."
+
+msgid "The scrolls turn to dust as you pick them up."
+msgstr "Les puces tombent en poussière quand vous les ramassez."
+
+msgid "There is a message on this scroll."
+msgstr "Il y a un message sur cette puce."
+
+msgid "This spellbook has nothing written in it."
+msgstr "Ce logiciel est vide."
+
+msgid "You cannot take off your %s to remove the ring."
+msgstr "Vous ne pouvez pas retirer vos %s pour retirer le module."
+
+msgid "You cogitate the formula on the scroll."
+msgstr "Vous méditez le code de la puce."
+
+msgid "You pronounce the formula on the scroll."
+msgstr "Vous exécutez le code de la puce."
+
+msgid "Your left ring sears %s!"
+msgstr "Votre module gauche brûle %s !"
+
+msgid "Your right ring sears %s!"
+msgstr "Votre module droit brûle %s !"
+
+msgid "Your silver ring sears %s!"
+msgstr "Votre module d'argent brûle %s !"
+
+msgid "Your silver rings sear %s!"
+msgstr "Vos modules d'argent brûlent %s !"
+
+msgid "Pick up this scroll, read it with '%s', and try to remove the armor again"
+msgstr "Ramassez cette puce, lisez-la avec “%s”, puis essayez de nouveau d'ôter l'armure"
+
+msgid "Magic wands are used with '%s'"
+msgstr "On utilise les implants avec “%s”"
+
+msgid "Pick up the spellbook with '%s'"
+msgstr "Ramassez le logiciel avec “%s”"
+
+msgid "Read the spellbook with '%s'"
+msgstr "Lisez le logiciel avec “%s”"
+
+msgid "You \"quaff\" potions with '%s'"
+msgstr "Vous buvez les stims avec “%s”"
+
+msgid "You snuff the lit potion."
+msgstr "Vous éteignez le stim allumé."
+
+msgid "That's in addition to the cost of the potion, of course."
+msgstr "C'est en plus du prix du stim, bien entendu."
+
+msgid "This spellbook doesn't have much of a plot."
+msgstr "Ce logiciel n'a pas vraiment de scénario."
+
+msgid "The magical ink in this spellbook is %s."
+msgstr "Le code magique de ce logiciel est %s."
+
+msgid "put on an accessory (ring, amulet, etc)"
+msgstr "mettre un accessoire (module, amulette, etc.)"
+
+msgid "read a scroll or spellbook"
+msgstr "lire une puce ou un logiciel"
+
+msgid "remove an accessory (ring, amulet, etc)"
+msgstr "retirer un accessoire (module, amulette, etc.)"
+
+msgid "show the ring(s) currently worn"
+msgstr "afficher le ou les modules portés"
+
+msgid "zap a wand"
+msgstr "utiliser un implant"
+
+msgid "rings"
+msgstr "modules"
+
+msgid "potions"
+msgstr "stims"
+
+msgid "scrolls"
+msgstr "puces"
+
+msgid "spellbooks"
+msgstr "logiciels"
+
+msgid "wands"
+msgstr "implants"
+
+msgid "The ring is regurgitated!"
+msgstr "Le module est régurgité !"
+
+msgid "You see the ring slide right down the drain!"
+msgstr "Vous voyez le module glisser dans le siphon !"
+
+msgid "You hear the ring bouncing down the drainpipe."
+msgstr "Vous entendez le module rebondir dans la canalisation."
+
+msgid "Strange... I didn't know you had that ring."
+msgstr "Étrange... je ne savais pas que vous aviez ce module."
+
+msgid "You cannot make the ring stick to your body."
+msgstr "Vous n'arrivez pas à faire tenir le module sur votre corps."
+
+msgid "Your %s are too slippery to remove, so you cannot put on the ring."
+msgstr "Vos %s sont trop glissants pour être retirés, vous ne pouvez donc pas mettre le module."
+
+msgid "You cannot remove your %s to put on the ring."
+msgstr "Vous ne pouvez pas retirer vos %s pour mettre le module."
+
+msgid "You cannot free your weapon %s to put on the ring."
+msgstr "Vous ne pouvez pas libérer votre %s d'arme pour mettre le module."
+
+msgid "Your rings slip off your %s."
+msgstr "Vos modules glissent de vos %s."
+
+msgid "Your ring slips off your %s."
+msgstr "Votre module glisse de votre %s."
+
+msgid "The ring is stuck."
+msgstr "Le module est coincé."
+
+msgid "You cannot free a weapon %s to remove the ring."
+msgstr "Vous ne pouvez pas libérer une %s d'arme pour retirer le module."
+
+msgid "You cannot take off your slippery %s to remove the ring."
+msgstr "Vous ne pouvez pas retirer vos %s glissants pour retirer le module."
+
+msgid "Magic spreads through your body as you digest the ring."
+msgstr "La magie se répand dans votre corps tandis que vous digérez le module."
+
+msgid "This ring is indigestible!"
+msgstr "Ce module est indigeste !"
+
+msgid "and %ld piece of gold, after %ld move."
+msgstr "et %ld crédit, après %ld tour."
+
+msgid "and %ld piece of gold, after %ld moves."
+msgstr "et %ld crédit, après %ld tours."
+
+msgid "and %ld pieces of gold, after %ld move."
+msgstr "et %ld crédits, après %ld tour."
+
+msgid "and %ld pieces of gold, after %ld moves."
+msgstr "et %ld crédits, après %ld tours."
+
+msgid "The wand does nothing more, and the tip of the wand can't reach %s."
+msgstr "L'implant ne fait rien de plus, et son extrémité n'atteint pas %s."
+
+msgid "The wand unsuccessfully fights your attempt to write!"
+msgstr "L'implant combat en vain votre tentative d'écrire !"
+
+msgid "A few ice cubes drop from the wand."
+msgstr "Quelques glaçons tombent de l'implant."
+
+msgid "This %s is a wand of digging!"
+msgstr "Cet %s est un implant de creusement !"
+
+msgid "This %s is a wand of fire!"
+msgstr "Cet %s est un implant de feu !"
+
+msgid "You feel the wand heat up."
+msgstr "Vous sentez l'implant chauffer."
+
+msgid "Flames fly from the wand."
+msgstr "Des flammes jaillissent de l'implant."
+
+msgid "This %s is a wand of lightning!"
+msgstr "Cet %s est un implant de foudre !"
+
+msgid "Lightning arcs from the wand."
+msgstr "Des éclairs jaillissent de l'implant."
+
+msgid "The wand is too worn out to engrave."
+msgstr "L'implant est trop usé pour graver."
+
+msgid "You gesture, with your wand, towards %s below you."
+msgstr "Vous faites un geste avec votre implant vers %s sous vous."
+
+msgid "You find a ring in the sink!"
+msgstr "Vous trouvez un module dans l'évier !"
+
+msgid "You sense a ring lost down the drain."
+msgstr "Vous sentez un module perdu dans le siphon."
+
+msgid "You see a ring shining in its midst."
+msgstr "Vous voyez un module briller en son milieu."
+
+msgid "Read this scroll to activate its magic"
+msgstr "Lire cette puce pour activer sa magie"
+
+msgid "Read this scroll"
+msgstr "Lire cette puce"
+
+msgid "Read this spellbook"
+msgstr "Lire ce logiciel"
+
+msgid "Study this spellbook"
+msgstr "Étudier ce logiciel"
+
+msgid "Dip something into one of these potions"
+msgstr "Tremper quelque chose dans l'un de ces stims"
+
+msgid "Dip something into this potion"
+msgstr "Tremper quelque chose dans ce stim"
+
+msgid "Break this wand"
+msgstr "Briser cet implant"
+
+msgid "Put this ring on"
+msgstr "Mettre ce module"
+
+msgid "[both ring %s in use]"
+msgstr "[vos deux %s portent déjà un module]"
+
+msgid "Quaff (drink) one of these potions"
+msgstr "Boire l'un de ces stims"
+
+msgid "Quaff (drink) this potion"
+msgstr "Boire ce stim"
+
+msgid "Remove this ring"
+msgstr "Retirer ce module"
+
+msgid "Zap this wand to release its magic"
+msgstr "Utiliser cet implant pour libérer sa magie"
+
+msgid "You are not wearing rings."
+msgstr "Vous ne portez pas de modules."
+
+msgid "You are not wearing any rings."
+msgstr "Vous ne portez aucun module."
+
+msgid "Only gold coins may be moved into the '%c' slot."
+msgstr "Seuls les crédits peuvent être placés dans l'emplacement '%c'."
+
+msgid "Buy a potion of gain level for only $19.99!  Guaranteed to be blessed!"
+msgstr "Achetez un stim de gain de niveau pour seulement 19,99 ¥ !  Béni garanti !"
+
+msgid "There is another message on this scroll."
+msgstr "Il y a un autre message sur cette puce."
+
+msgid "ring replacement"
+msgstr "remplacement de module"
+
+msgid "A potion spills out."
+msgstr "Un stim s'en échappe."
+
+msgid "The wand hits you!"
+msgstr "L'implant vous frappe !"
+
+msgid "The wand misses you."
+msgstr "L'implant vous rate."
+
+msgid "The scroll erupts in a tower of flame!"
+msgstr "La puce s'embrase en une colonne de flammes !"
+
+msgid "The scroll turns to dust as you raise it up."
+msgstr "La puce tombe en poussière quand vous la soulevez."
+
+msgid "The scrolls turn to dust as you raise them up."
+msgstr "Les puces tombent en poussière quand vous les soulevez."
+
+msgid "Ulch!  That potion tasted foul!"
+msgstr "Beurk ! Ce stim était infect !"
+
+msgid "What a funny potion! (%u)"
+msgstr "Quel drôle de stim ! (%u)"
+
+msgid "Ulch!  That potion smells terrible!"
+msgstr "Beurk ! Ce stim sent affreusement mauvais !"
+
+msgid "That is a potion bottle, not a Klein bottle!"
+msgstr "C'est une ampoule de stim, pas une bouteille de Klein !"
+
+msgid "The potion spills and covers your %s with oil."
+msgstr "Le stim se renverse et vous couvre les %s d'huile."
+
+msgid "The potion that you dipped into clears."
+msgstr "Le stim dans lequel vous avez trempé devient limpide."
+
+msgid "The potion clears."
+msgstr "Le stim devient limpide."
+
+msgid "The potion that you dipped into turns %s."
+msgstr "Le stim dans lequel vous avez trempé devient %s."
+
+msgid "The potion turns %s."
+msgstr "Le stim devient %s."
+
+msgid "Your left ring softly glows"
+msgstr "Votre module gauche brille doucement"
+
+msgid "Your right ring softly glows"
+msgstr "Votre module droit brille doucement"
+
+msgid "Some of the potions on the altar glow %s for a moment."
+msgstr "Certains des stims sur l'autel brillent en %s un instant."
+
+msgid "One of the potions on the altar glows %s for a moment."
+msgstr "Un des stims sur l'autel brille en %s un instant."
+
+msgid "The potions on the altar glow %s for a moment."
+msgstr "Les stims sur l'autel brillent en %s un instant."
+
+msgid "The potion on the altar glows %s for a moment."
+msgstr "Le stim sur l'autel brille en %s un instant."
+
+msgid "\"1 Zorkmid.  857 GUE.  In Frobs We Trust.\""
+msgstr "« 1 Crédit. 857 GUE. In Frobs We Trust. »"
+
+msgid "Being blind, you cannot read the formula on the scroll."
+msgstr "Étant aveugle, vous ne pouvez pas lire le code de la puce."
+
+msgid "You read the scroll."
+msgstr "Vous lisez la puce."
+
+msgid "The scroll disintegrates."
+msgstr "La puce se désintègre."
+
+msgid "You have found a scroll of genocide!"
+msgstr "Vous avez trouvé une puce de génocide !"
+
+msgid "This is a charging scroll."
+msgstr "C'est une puce de recharge."
+
+msgid "The scroll catches fire and you burn your %s."
+msgstr "La puce prend feu et vous vous brûlez les %s."
+
+msgid "This is a scroll of fire!"
+msgstr "C'est une puce de feu !"
+
+msgid "You have found a scroll of stinking cloud!"
+msgstr "Vous avez trouvé une puce de nuage puant !"
+
+msgid "You don't remember there being any magic words on this scroll."
+msgstr "Vous ne vous souvenez pas qu'il y ait eu du code sur cette puce."
+
+msgid "This scroll seems to be blank."
+msgstr "Cette puce semble vierge."
+
+msgid "You identify this as an identify scroll."
+msgstr "Vous l'identifiez comme une puce d'identification."
+
+msgid "This is an identify scroll."
+msgstr "C'est une puce d'identification."
+
+msgid "This scroll is marked \"%s\"."
+msgstr "Cette puce porte l'étiquette « %s »."
+
+msgid "That was a scroll of mail?"
+msgstr "C'était une puce de courrier ?"
+
+msgid "The scroll crumbles with a whiff of rotten eggs."
+msgstr "La puce grille en dégageant une odeur d'œuf pourri."
+
+msgctxt "killer a"
+msgid "exploding ring"
+msgstr "un module qui explose"
+
+msgctxt "killer a"
+msgid "exploding wand"
+msgstr "un implant qui explose"
+
+msgctxt "killer a"
+msgid "mildly contaminated potion"
+msgstr "un stim légèrement contaminé"
+
+msgctxt "killer a"
+msgid "potion of acid"
+msgstr "un stim d'acide"
+
+msgctxt "killer a"
+msgid "potion of holy water"
+msgstr "un stim d'eau bénite"
+
+msgctxt "killer a"
+msgid "potion of unholy water"
+msgstr "un stim d'eau maudite"
+
+msgctxt "killer a"
+msgid "propelled potion"
+msgstr "un stim projeté"
+
+msgctxt "killer"
+msgid "quaffing a burning potion of oil"
+msgstr "un stim d'huile enflammé bu"
+
+msgctxt "killer a"
+msgid "scroll of earth"
+msgstr "une puce de terre"
+
+msgctxt "killer a"
+msgid "scroll of fire"
+msgstr "une puce de feu"
+
+msgctxt "killer a"
+msgid "scroll of genocide"
+msgstr "une puce de génocide"
+
+msgctxt "killer a"
+msgid "thrown potion"
+msgstr "un stim lancé"
+
+msgctxt "killer a"
+msgid "wand"
+msgstr "un implant"
+
+msgid "You traded %s for %ld zorkmid%s in %scredit."
+msgstr "Vous avez échangé %s contre %ld crédit%s d'avoir %s."
+
+msgid "You relinquish %s and acquire %ld zorkmid%s in %scredit."
+msgstr "Vous cédez %s et obtenez %ld crédit%s d'avoir %s."
+
+msgid "You try to appease %s with 1000 gold pieces."
+msgstr "Vous essayez d'apaiser %s avec 1000 crédits."
+
+msgid "You hear someone counting gold coins."
+msgstr "Vous entendez quelqu'un compter des crédits."
+
+msgctxt "monnoise"
+msgid "asks for a potion of healing."
+msgstr "demande un stim de soins."
+
+msgid "I only drink... potions."
+msgstr "Je ne bois que... des stims."
+
+msgid "You accidentally tear the spellbook to pieces."
+msgstr "Vous cassez accidentellement le logiciel en morceaux."
+
+msgid "This spellbook is too faint to be read any more."
+msgstr "Ce logiciel est trop corrompu pour être encore lu."
+
+msgid "This spellbook is too faint to read even once."
+msgstr "Ce logiciel est trop corrompu pour être lu ne serait-ce qu'une fois."
+
+msgid "This spellbook is all blank."
+msgstr "Ce logiciel est entièrement vide."
+
+msgid "This spellbook is very difficult to comprehend.  Continue?"
+msgstr "Ce logiciel est très difficile à comprendre.  Continuer ?"
+
+msgid "This spellbook is difficult to comprehend.  Continue?"
+msgstr "Ce logiciel est difficile à comprendre.  Continuer ?"
+
+msgid "The spellbook crumbles to dust!"
+msgstr "Le logiciel tombe en poussière !"
+
+msgid "You see a burning potion of oil go out."
+msgstr "Vous voyez un stim d'huile enflammé s'éteindre."
+
+msgctxt "while"
+msgid ", while frozen by a potion"
+msgstr ", sous l'emprise d'un stim"
+
+msgid "The potions explode!"
+msgstr "Les stims explosent !"
+
+msgid "Your rings sear %s!"
+msgstr "Vos modules brûlent %s !"
+
+msgid "You can't write such a weird scroll!"
+msgstr "Vous ne pouvez pas écrire une puce aussi bizarre !"
+
+msgid "The spellbook is left unfinished and your writing fades."
+msgstr "Le logiciel reste inachevé et votre code s'efface."
+
+msgid "The scroll is now useless and disappears!"
+msgstr "La puce est désormais inutile et disparaît !"
+
+msgid "You write \"%s\" and the scroll disappears."
+msgstr "Vous écrivez « %s » et la puce disparaît."
+
+msgid "You fail to write the scroll correctly and it disappears."
+msgstr "Vous ne parvenez pas à écrire correctement la puce et elle disparaît."
+
+msgid "The spellbook warps strangely, then turns into %s."
+msgstr "Le logiciel se déforme étrangement, puis se transforme en %s."
+
+msgid "The spellbook warps strangely, then turns %s."
+msgstr "Le logiciel se déforme étrangement, puis devient %s."
+
+msgctxt "zap"
+msgid "wand"
+msgstr "implant"
+
+msgid "You wrest one last charge from the worn-out wand."
+msgstr "Vous arrachez une dernière charge à l'implant usé."
+
+msgid "You aren't able to zap anything in your current form."
+msgstr "Vous ne pouvez pas utiliser d'implant sous votre forme actuelle."
+
+msgid "The wand shoots an apparently harmless beam at you."
+msgstr "L'implant vous envoie un rayon apparemment inoffensif."
+
+msgid "no right ring"
+msgstr "pas de module à droite"
+
+msgid "no left ring"
+msgstr "pas de module à gauche"
+
+msgid "Quaff potion"
+msgstr "Boire un stim"
+
+msgid "Read scroll/book"
+msgstr "Lire une puce ou un logiciel"
+
+msgid "Zap wand"
+msgstr "Utiliser un implant"
+
+msgid "ring"
+msgstr "module"
+
+msgctxt "gender"
+msgid "wand"
+msgstr "m"
+
+msgctxt "currency"
+msgid "zorkmid"
+msgstr "crédit"
+
+msgctxt "currency"
+msgid "zorkmids"
+msgstr "crédits"

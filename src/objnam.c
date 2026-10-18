@@ -1062,6 +1062,12 @@ xname_i18n(struct obj *obj, unsigned cxn_flags)
         if (typ == SLIME_MOLD) {
             struct fruit *f = fruit_from_indx(obj->spe);
 
+            if (f && !strcmp(f->fname, "slime mold")) {
+                /* the default fruit isn't a name chosen by the player */
+                Strcpy(buf, obj_noun(f->fname, pl, &gram));
+                set_objgram(buf, gram);
+                return buf;
+            }
             /* the player's own name for the fruit */
             Strcpy(buf, f ? f->fname : "fruit");
             if (pl) {
