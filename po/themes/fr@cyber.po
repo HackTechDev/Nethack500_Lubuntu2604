@@ -1389,3 +1389,230 @@ msgstr "Shogun corpo"
 
 msgid "Sire"
 msgstr "Patron"
+
+# --- Descriptions des classes de monstres et d'objets (« ; », « / ») :
+#     msgctxt "symbol" sans article, "symbol a" avec l'article ---
+
+msgctxt "symbol"
+msgid "ant or other insect"
+msgstr "nanobot ou insecte"
+
+msgctxt "symbol a"
+msgid "ant or other insect"
+msgstr "un nanobot ou insecte"
+
+msgctxt "symbol"
+msgid "blob"
+msgstr "blob de déchets"
+
+msgctxt "symbol a"
+msgid "blob"
+msgstr "un blob de déchets"
+
+msgctxt "symbol"
+msgid "eye or sphere"
+msgstr "caméra ou sphère"
+
+msgctxt "symbol a"
+msgid "eye or sphere"
+msgstr "une caméra ou sphère"
+
+msgctxt "symbol"
+msgid "imp or minor demon"
+msgstr "virus ou démon mineur"
+
+msgctxt "symbol a"
+msgid "imp or minor demon"
+msgstr "un virus ou démon mineur"
+
+msgctxt "symbol"
+msgid "jelly"
+msgstr "gelée chimique"
+
+msgctxt "symbol a"
+msgid "jelly"
+msgstr "une gelée chimique"
+
+msgctxt "symbol"
+msgid "kobold"
+msgstr "voyou"
+
+msgctxt "symbol a"
+msgid "kobold"
+msgstr "un voyou"
+
+msgctxt "symbol"
+msgid "orc"
+msgstr "ganger"
+
+msgctxt "symbol a"
+msgid "orc"
+msgstr "un ganger"
+
+msgctxt "symbol"
+msgid "vortex"
+msgstr "vortex de données"
+
+msgctxt "symbol a"
+msgid "vortex"
+msgstr "un vortex de données"
+
+msgctxt "symbol"
+msgid "light"
+msgstr "hologramme"
+
+msgctxt "symbol a"
+msgid "light"
+msgstr "un hologramme"
+
+msgctxt "symbol"
+msgid "angelic being"
+msgstr "IA angélique"
+
+msgctxt "symbol a"
+msgid "angelic being"
+msgstr "une IA angélique"
+
+msgctxt "symbol"
+msgid "bat or bird"
+msgstr "drone volant ou oiseau"
+
+msgctxt "symbol a"
+msgid "bat or bird"
+msgstr "un drone volant ou oiseau"
+
+msgctxt "symbol"
+msgid "gnome"
+msgstr "squatteur"
+
+msgctxt "symbol a"
+msgid "gnome"
+msgstr "un squatteur"
+
+msgctxt "symbol"
+msgid "invisible monster"
+msgstr "monstre furtif"
+
+msgctxt "symbol a"
+msgid "invisible monster"
+msgstr "un monstre furtif"
+
+msgctxt "symbol"
+msgid "Keystone Kop"
+msgstr "flic de choc"
+
+msgctxt "symbol a"
+msgid "Keystone Kop"
+msgstr "un flic de choc"
+
+msgctxt "symbol"
+msgid "lich"
+msgstr "IA corrompue"
+
+msgctxt "symbol a"
+msgid "lich"
+msgstr "une IA corrompue"
+
+msgctxt "symbol"
+msgid "mummy"
+msgstr "cyborg momifié"
+
+msgctxt "symbol a"
+msgid "mummy"
+msgstr "un cyborg momifié"
+
+msgctxt "symbol"
+msgid "pudding or ooze"
+msgstr "pouding ou boue toxique"
+
+msgctxt "symbol a"
+msgid "pudding or ooze"
+msgstr "un pouding ou boue toxique"
+
+msgctxt "symbol"
+msgid "wraith"
+msgstr "spectre numérique"
+
+msgctxt "symbol a"
+msgid "wraith"
+msgstr "un spectre numérique"
+
+msgctxt "symbol"
+msgid "ghost"
+msgstr "fantôme du Réseau"
+
+msgctxt "symbol a"
+msgid "ghost"
+msgstr "un fantôme du Réseau"
+
+msgctxt "symbol"
+msgid "golem"
+msgstr "drone ou golem"
+
+msgctxt "symbol a"
+msgid "golem"
+msgstr "un drone ou golem"
+
+msgctxt "symbol"
+msgid "major demon"
+msgstr "entité du Réseau"
+
+msgctxt "symbol a"
+msgid "major demon"
+msgstr "une entité du Réseau"
+
+msgctxt "symbol"
+msgid "suit or piece of armor"
+msgstr "combinaison ou pièce de blindage"
+
+msgctxt "symbol a"
+msgid "suit or piece of armor"
+msgstr "une combinaison ou pièce de blindage"
+
+msgctxt "symbol"
+msgid "ring"
+msgstr "module"
+
+msgctxt "symbol a"
+msgid "ring"
+msgstr "un module"
+
+msgctxt "symbol"
+msgid "potion"
+msgstr "stim"
+
+msgctxt "symbol a"
+msgid "potion"
+msgstr "un stim"
+
+msgctxt "symbol"
+msgid "scroll"
+msgstr "puce"
+
+msgctxt "symbol a"
+msgid "scroll"
+msgstr "une puce"
+
+msgctxt "symbol"
+msgid "spellbook"
+msgstr "logiciel"
+
+msgctxt "symbol a"
+msgid "spellbook"
+msgstr "un logiciel"
+
+msgctxt "symbol"
+msgid "wand"
+msgstr "implant"
+
+msgctxt "symbol a"
+msgid "wand"
+msgstr "un implant"
+
+msgctxt "symbol"
+msgid "pile of coins"
+msgstr "tas de crédits"
+
+msgctxt "symbol a"
+msgid "pile of coins"
+msgstr "un tas de crédits"

@@ -149,14 +149,30 @@ thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
 Vérifié en jeu : « le Script-kiddie », puis « le Hacker » au niveau 10
 (Netrunner) ; « la Gamine », puis « la Femme d'armes » (Mercenaire).
 
+## Troisième lot : descriptions des classes (en place)
+
+Ce que montrent `;` et `/` (msgctxt `symbol` sans article, `symbol a`
+avec).  Seules changent les classes liées aux renommages et quelques
+classes à forte couleur ; les autres restent en français.
+
+- Monstres : nanobot ou insecte, blob de déchets, caméra ou sphère, virus
+  ou démon mineur, gelée chimique, voyou, ganger, vortex de données,
+  hologramme, IA angélique, drone volant ou oiseau, squatteur, monstre
+  furtif, flic de choc, IA corrompue, cyborg momifié, pouding ou boue
+  toxique, spectre numérique, fantôme du Réseau, drone ou golem, entité du
+  Réseau.
+- Objets : combinaison ou pièce de blindage, module, stim, puce,
+  logiciel, implant, tas de crédits.
+
+Vérifié en jeu avec `/` : « un ganger », « un squatteur », « un stim »,
+« une puce », « une entité du Réseau », « un drone ou golem ».
+
 ## Prochains lots
 
-1. Les descriptions des classes de monstres et d'objets (msgctxt `symbol`,
-   `symbol a` : « un chat ou autre félin »...).
-2. Le reste des monstres (environ 380) et des objets (armes, armures,
+1. Le reste des monstres (environ 380) et des objets (armes, armures,
    outils, nourriture), avec leurs genres.
-3. Les messages fréquents qui parlent de magie (lire, boire, lancer un
+2. Les messages fréquents qui parlent de magie (lire, boire, lancer un
    sort...), la monnaie des marchands (« zorkmids »).
-4. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
+3. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
    fichiers `dat/*-fr@cyber.*`, puis les quêtes.
-5. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
+4. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
