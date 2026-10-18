@@ -298,11 +298,15 @@ justes une fois assemblées.
 - **Jouer des parties en français** et noter les phrases bizarres :
   accords (article, genre, pluriel), contractions `@de`/`@à`, ordre des
   adjectifs. Beaucoup de messages n'ont jamais été vus en jeu.
-- **Genres des objets** : 289 entrées `objgender` sont vides (masculin
-  par défaut). Environ 115 ont une traduction qui ressemble à un nom
-  féminin (« gnôle », « parure », « annulation »...). Beaucoup sont sans
-  effet, car le nom suit un mot qui porte le genre (« potion de »,
-  « sort de »), mais il faut les vérifier une à une.
+- **Genres des objets** : vérifiés le 18 octobre 2026.
+  `python3 po/check-objgender.py` liste les entrées `objgender` vides (donc
+  masculines) dont le genre compte réellement : noms complets et
+  descriptions, mais pas le complément de « potion de », « anneau de »,
+  « baguette de »... (« gnôle », « parure », « annulation » prennent le
+  genre de « potion » ou d'« anneau »).  Les 170 restantes sont bien
+  masculines ; « eau bénite » et « eau maudite » sont passées au féminin.
+  Avec `--all`, le script liste aussi les entrées déjà renseignées.  À
+  relancer après l'ajout d'objets.
 - **Pas encore vus en jeu** : les dialogues de quête avec les chefs et
   les ennemis, les messages ajoutés le 3 octobre 2026 dans `dig.c`
   (remonter à travers le sol, objets qui tombent dans un trou),

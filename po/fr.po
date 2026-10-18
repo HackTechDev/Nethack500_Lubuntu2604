@@ -52640,12 +52640,12 @@ msgstr "f"
 #: src/objnam.c:755
 msgctxt "objgender"
 msgid "holy water"
-msgstr ""
+msgstr "f"
 
 #: src/objnam.c:756
 msgctxt "objgender"
 msgid "unholy water"
-msgstr ""
+msgstr "f"
 
 #: src/objnam.c:757
 #, no-c-format
