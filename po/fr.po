@@ -23846,8 +23846,8 @@ msgid "omit \"uncursed\" from inventory"
 msgstr "omettre « non maudit » dans l'inventaire"
 
 #: include/optlist.h:408
-msgid "language of game messages (en, fr)"
-msgstr "langue des messages du jeu (en, fr)"
+msgid "language of game messages (en, fr, fr@cyber)"
+msgstr "langue des messages du jeu (en, fr, fr@cyber)"
 
 #: include/optlist.h:417
 msgid "show introductory message"

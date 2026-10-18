@@ -135,10 +135,14 @@ MSGFMT = msgfmt
 MSGCAT = msgcat
 MSGMERGE = msgmerge
 XGETTEXT = xgettext
-MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po))
+# themes (po/themes/<lang>@<theme>.po, see CYBERPUNK.md) only hold the
+# entries they change; their catalog is completed by that of their language
+THEMEMO = $(patsubst po/themes/%.po,dat/%.mo,$(wildcard po/themes/*.po))
+MOFILES = $(patsubst po/%.po,dat/%.mo,$(wildcard po/*.po)) $(THEMEMO)
 # translated data files (dat/help.fr...), installed next to nhdat and used
 # instead of the English ones when the language is in use (nhi18n.c)
-I18NLANGS = $(patsubst po/%.po,%,$(wildcard po/*.po))
+I18NLANGS = $(patsubst po/%.po,%,$(wildcard po/*.po)) \
+	$(patsubst po/themes/%.po,%,$(wildcard po/themes/*.po))
 # translated sources compiled by makedefs (dat/rumors-<lang>.tru and .fal,
 # dat/{engrave,epitaph,oracles}-<lang>.txt, dat/data-<lang>.base: the
 # encyclopedia, keeping the English keys) give dat/<name>.<lang>;
@@ -541,6 +545,10 @@ spotless-keep-lib: clean-keep-lib
 
 dat/%.mo: po/%.po
 	$(MSGFMT) --check -o $@ $<
+# theme first: its entries win over those of the language
+$(THEMEMO): dat/%.mo: po/themes/%.po $(wildcard po/*.po)
+	$(MSGCAT) --use-first $< po/$(firstword $(subst @, ,$*)).po \
+		| $(MSGFMT) --check -o $@ -
 
 dat/rumors.%: dat/rumors-%.tru dat/rumors-%.fal $(GAME)
 	( cd dat ; MAKEDEFS_LANG=$* ../util/makedefs -r )

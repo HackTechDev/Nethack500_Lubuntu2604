@@ -57,7 +57,7 @@ static int suspended = 0; /* i18n_suspend() */
 
 /* is there a catalog in use right now? */
 #define TRANSLATING() (catalog.data && !suspended)
-static char cur_language[8] = "en";
+static char cur_language[16] = "en";
 
 /* 32-bit number at offset off of the file, in the file's byte order */
 staticfn unsigned long
@@ -406,15 +406,27 @@ i18n_datafile(const char *fname)
     char *res;
     dlb *f;
 
+    const char *at;
+
     if (!TRANSLATING()
         || strlen(fname) + strlen(cur_language) + 2 > sizeof buf[0])
         return fname;
     res = buf[idx = (idx + 1) % 4];
     Sprintf(res, "%s.%s", fname, cur_language);
-    if ((f = dlb_fopen(res, "r")) == 0)
-        return fname;
-    (void) dlb_fclose(f);
-    return res;
+    if ((f = dlb_fopen(res, "r")) != 0) {
+        (void) dlb_fclose(f);
+        return res;
+    }
+    /* a theme ("fr@cyber") falls back on the files of its language */
+    if ((at = strchr(cur_language, '@')) != 0) {
+        Sprintf(res, "%s.%.*s", fname, (int) (at - cur_language),
+                cur_language);
+        if ((f = dlb_fopen(res, "r")) != 0) {
+            (void) dlb_fclose(f);
+            return res;
+        }
+    }
+    return fname;
 }
 
 /* are messages being translated? */
@@ -508,20 +520,32 @@ i18n_contract(char *buf)
 }
 
 /* switch to language lang ("en" or a code like "fr" or "pt_BR" whose
-   catalog is <lang>.mo); FALSE, keeping the current language, if lang
-   isn't a valid code or its catalog can't be loaded */
+   catalog is <lang>.mo, possibly followed by a theme like "fr@cyber",
+   whose catalog completes that of its language); FALSE, keeping the
+   current language, if lang isn't a valid code or its catalog can't be
+   loaded */
 boolean
 i18n_set_language(const char *lang)
 {
     struct mo_catalog newcat;
     char fname[sizeof cur_language + sizeof ".mo"];
-    size_t len = strlen(lang);
+    const char *at = strchr(lang, '@');
+    size_t len = at ? (size_t) (at - lang) : strlen(lang);
 
     if (!(len == 2 || (len == 5 && lang[2] == '_'
                        && isupper((uchar) lang[3])
                        && isupper((uchar) lang[4])))
         || !islower((uchar) lang[0]) || !islower((uchar) lang[1]))
         return FALSE;
+    if (at) { /* theme: 1 to 8 lowercase letters */
+        const char *p;
+
+        if (!at[1] || strlen(at + 1) > 8)
+            return FALSE;
+        for (p = at + 1; *p; ++p)
+            if (!islower((uchar) *p))
+                return FALSE;
+    }
     if (!strcmp(lang, "en")) {
         mo_free(&catalog);
     } else {

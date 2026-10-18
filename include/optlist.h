@@ -403,9 +403,9 @@ static int optfn_##a(int, int, boolean, char *, char *);
            On, Yes, No, No, NoAlias, &flags.implicit_uncursed, Term_False,
            "omit \"uncursed\" from inventory")
 #ifdef NHI18N
-    NHOPTC(language, Advanced, 8, opt_in, set_gameview,
+    NHOPTC(language, Advanced, 15, opt_in, set_gameview,
                 No, Yes, No, No, NoAlias,
-                "language of game messages (en, fr)")
+                "language of game messages (en, fr, fr@cyber)")
 #endif
 #if 0   /* obsolete - pre-OSX Mac */
     NHOPTB(large_font, Advanced, 0, opt_in, set_in_config,

@@ -1,0 +1,586 @@
+# NetHack 5.0.0 : thème « cyberpunk » du français (OPTIONS=language:fr@cyber).
+# Ne contient que les entrées qui changent ; tout le reste vient de
+# po/fr.po (voir CYBERPUNK.md).  Les genres masculins s'écrivent "m" : une
+# entrée vide serait remplacée par celle de fr.po.
+# Premier lot : rôles, lieux, classes d'objets, monnaie, monstres courants.
+msgid ""
+msgstr ""
+"Project-Id-Version: NetHack 5.0.0\n"
+"PO-Revision-Date: 2026-10-18\n"
+"Last-Translator: projet de traduction de NetHack\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# --- Rôles (masculin, puis msgctxt "feminine") ---
+
+msgid "Archeologist"
+msgstr "Récupérateur"
+
+msgctxt "feminine"
+msgid "Archeologist"
+msgstr "Récupératrice"
+
+msgid "Barbarian"
+msgstr "Cogneur"
+
+msgctxt "feminine"
+msgid "Barbarian"
+msgstr "Cogneuse"
+
+msgid "Caveman"
+msgstr "Sauvageon"
+
+msgid "Cavewoman"
+msgstr "Sauvageonne"
+
+msgid "Healer"
+msgstr "Charcudoc"
+
+msgctxt "feminine"
+msgid "Healer"
+msgstr "Charcudoc"
+
+msgid "Knight"
+msgstr "Exécuteur"
+
+msgctxt "feminine"
+msgid "Knight"
+msgstr "Exécutrice"
+
+msgid "Monk"
+msgstr "Moine augmenté"
+
+msgctxt "feminine"
+msgid "Monk"
+msgstr "Moniale augmentée"
+
+msgid "Priest"
+msgstr "Technoprêtre"
+
+msgid "Priestess"
+msgstr "Technoprêtresse"
+
+msgid "Ranger"
+msgstr "Traqueur"
+
+msgctxt "feminine"
+msgid "Ranger"
+msgstr "Traqueuse"
+
+msgid "Rogue"
+msgstr "Voleur de données"
+
+msgctxt "feminine"
+msgid "Rogue"
+msgstr "Voleuse de données"
+
+msgid "Samurai"
+msgstr "Ronin urbain"
+
+msgctxt "feminine"
+msgid "Samurai"
+msgstr "Ronin urbaine"
+
+msgid "Tourist"
+msgstr "Corpo en goguette"
+
+msgctxt "feminine"
+msgid "Tourist"
+msgstr "Corpo en goguette"
+
+msgid "Valkyrie"
+msgstr "Mercenaire"
+
+msgctxt "feminine"
+msgid "Valkyrie"
+msgstr "Mercenaire"
+
+msgid "Wizard"
+msgstr "Netrunner"
+
+msgctxt "feminine"
+msgid "Wizard"
+msgstr "Netrunneuse"
+
+# --- Lieux ---
+
+msgid "The Dungeons of Doom"
+msgstr "La Mégalopole"
+
+msgid "The Gnomish Mines"
+msgstr "Les Bas-fonds"
+
+msgid "Sokoban"
+msgstr "Les Entrepôts automatisés"
+
+msgid "The Quest"
+msgstr "Le Contrat"
+
+msgid "Fort Ludios"
+msgstr "Le Coffre-fort de Ludios"
+
+msgid "Gehennom"
+msgstr "Le Réseau profond"
+
+msgid "The Elemental Planes"
+msgstr "Les Couches du Réseau"
+
+# --- Classes d'objets : potions -> stims, parchemins -> puces, baguettes ->
+#     implants, anneaux -> modules, grimoires -> logiciels ---
+
+msgctxt "object"
+msgid "potion"
+msgid_plural "potions"
+msgstr[0] "stim"
+msgstr[1] "stims"
+
+msgctxt "objgender"
+msgid "potion"
+msgstr "m"
+
+msgctxt "object"
+msgid "potion of %s"
+msgid_plural "potions of %s"
+msgstr[0] "stim de %s"
+msgstr[1] "stims de %s"
+
+msgctxt "objgender"
+msgid "potion of %s"
+msgstr "m"
+
+msgctxt "object-elided"
+msgid "potion of %s"
+msgid_plural "potions of %s"
+msgstr[0] "stim d'%s"
+msgstr[1] "stims d'%s"
+
+msgctxt "object"
+msgid "%s potion"
+msgid_plural "%s potions"
+msgstr[0] "stim %s"
+msgstr[1] "stims %s"
+
+msgctxt "objgender"
+msgid "%s potion"
+msgstr "m"
+
+msgctxt "object"
+msgid "scroll"
+msgid_plural "scrolls"
+msgstr[0] "puce"
+msgstr[1] "puces"
+
+msgctxt "objgender"
+msgid "scroll"
+msgstr "f"
+
+msgctxt "object"
+msgid "scroll of %s"
+msgid_plural "scrolls of %s"
+msgstr[0] "puce de %s"
+msgstr[1] "puces de %s"
+
+msgctxt "objgender"
+msgid "scroll of %s"
+msgstr "f"
+
+msgctxt "object-elided"
+msgid "scroll of %s"
+msgid_plural "scrolls of %s"
+msgstr[0] "puce d'%s"
+msgstr[1] "puces d'%s"
+
+msgctxt "object"
+msgid "scroll labeled %s"
+msgid_plural "scrolls labeled %s"
+msgstr[0] "puce étiquetée %s"
+msgstr[1] "puces étiquetées %s"
+
+msgctxt "objgender"
+msgid "scroll labeled %s"
+msgstr "f"
+
+msgctxt "object"
+msgid "%s scroll"
+msgid_plural "%s scrolls"
+msgstr[0] "puce %s"
+msgstr[1] "puces %s"
+
+msgctxt "objgender"
+msgid "%s scroll"
+msgstr "f"
+
+msgctxt "object"
+msgid "wand"
+msgid_plural "wands"
+msgstr[0] "implant"
+msgstr[1] "implants"
+
+msgctxt "objgender"
+msgid "wand"
+msgstr "m"
+
+msgctxt "object"
+msgid "wand of %s"
+msgid_plural "wands of %s"
+msgstr[0] "implant de %s"
+msgstr[1] "implants de %s"
+
+msgctxt "objgender"
+msgid "wand of %s"
+msgstr "m"
+
+msgctxt "object-elided"
+msgid "wand of %s"
+msgid_plural "wands of %s"
+msgstr[0] "implant d'%s"
+msgstr[1] "implants d'%s"
+
+msgctxt "object"
+msgid "%s wand"
+msgid_plural "%s wands"
+msgstr[0] "implant %s"
+msgstr[1] "implants %s"
+
+msgctxt "objgender"
+msgid "%s wand"
+msgstr "m"
+
+msgctxt "object"
+msgid "ring"
+msgid_plural "rings"
+msgstr[0] "module"
+msgstr[1] "modules"
+
+msgctxt "objgender"
+msgid "ring"
+msgstr "m"
+
+msgctxt "object"
+msgid "ring of %s"
+msgid_plural "rings of %s"
+msgstr[0] "module de %s"
+msgstr[1] "modules de %s"
+
+msgctxt "objgender"
+msgid "ring of %s"
+msgstr "m"
+
+msgctxt "object-elided"
+msgid "ring of %s"
+msgid_plural "rings of %s"
+msgstr[0] "module d'%s"
+msgstr[1] "modules d'%s"
+
+msgctxt "object"
+msgid "%s ring"
+msgid_plural "%s rings"
+msgstr[0] "module %s"
+msgstr[1] "modules %s"
+
+msgctxt "objgender"
+msgid "%s ring"
+msgstr "m"
+
+msgctxt "object"
+msgid "spellbook"
+msgid_plural "spellbooks"
+msgstr[0] "logiciel"
+msgstr[1] "logiciels"
+
+msgctxt "objgender"
+msgid "spellbook"
+msgstr "m"
+
+msgctxt "object"
+msgid "spellbook of %s"
+msgid_plural "spellbooks of %s"
+msgstr[0] "logiciel de %s"
+msgstr[1] "logiciels de %s"
+
+msgctxt "objgender"
+msgid "spellbook of %s"
+msgstr "m"
+
+msgctxt "object-elided"
+msgid "spellbook of %s"
+msgid_plural "spellbooks of %s"
+msgstr[0] "logiciel d'%s"
+msgstr[1] "logiciels d'%s"
+
+msgctxt "object"
+msgid "%s spellbook"
+msgid_plural "%s spellbooks"
+msgstr[0] "logiciel %s"
+msgstr[1] "logiciels %s"
+
+msgctxt "objgender"
+msgid "%s spellbook"
+msgstr "m"
+
+# --- Titres des catégories de l'inventaire ---
+msgid "Scrolls"
+msgstr "Puces"
+
+msgid "Potions"
+msgstr "Stims"
+
+msgid "Rings"
+msgstr "Modules"
+
+msgid "Wands"
+msgstr "Implants"
+
+msgid "Spellbooks"
+msgstr "Logiciels"
+
+msgid "Coins"
+msgstr "Crédits"
+
+# --- Monnaie et quelques objets emblématiques ---
+
+msgctxt "object"
+msgid "gold piece"
+msgid_plural "gold pieces"
+msgstr[0] "crédit"
+msgstr[1] "crédits"
+
+msgctxt "objgender"
+msgid "gold piece"
+msgstr "m"
+
+msgctxt "object"
+msgid "credit card"
+msgid_plural "credit cards"
+msgstr[0] "puce de crédit"
+msgstr[1] "puces de crédit"
+
+msgctxt "objgender"
+msgid "credit card"
+msgstr "f"
+
+msgctxt "object"
+msgid "expensive camera"
+msgid_plural "expensive cameras"
+msgstr[0] "holocaméra"
+msgstr[1] "holocaméras"
+
+msgctxt "objgender"
+msgid "expensive camera"
+msgstr "f"
+
+msgctxt "object"
+msgid "food ration"
+msgid_plural "food rations"
+msgstr[0] "ration synthétique"
+msgstr[1] "rations synthétiques"
+
+msgctxt "objgender"
+msgid "food ration"
+msgstr "f"
+
+# --- Monstres courants (genre : m, f ; e/n pour l'élision) ---
+
+msgctxt "monster"
+msgid "newt"
+msgstr "rat de labo"
+
+msgctxt "gender"
+msgid "newt"
+msgstr "m"
+
+msgctxt "monster"
+msgid "sewer rat"
+msgstr "rat d'égout"
+
+msgctxt "gender"
+msgid "sewer rat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "jackal"
+msgstr "chien errant"
+
+msgctxt "gender"
+msgid "jackal"
+msgstr "m"
+
+msgctxt "monster"
+msgid "grid bug"
+msgstr "bug réseau"
+
+msgctxt "gender"
+msgid "grid bug"
+msgstr "m"
+
+msgctxt "monster"
+msgid "floating eye"
+msgstr "caméra flottante"
+
+msgctxt "gender"
+msgid "floating eye"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kobold"
+msgstr "voyou"
+
+msgctxt "gender"
+msgid "kobold"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome"
+msgstr "squatteur"
+
+msgctxt "gender"
+msgid "gnome"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome lord"
+msgstr "chef squatteur"
+
+msgctxt "gender"
+msgid "gnome lord"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf"
+msgstr "mineur"
+
+msgctxt "gender"
+msgid "dwarf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "hill orc"
+msgstr "ganger"
+
+msgctxt "gender"
+msgid "hill orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Mordor orc"
+msgstr "ganger du Mordor"
+
+msgctxt "gender"
+msgid "Mordor orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Uruk-hai"
+msgstr "gros bras"
+
+msgctxt "gender"
+msgid "Uruk-hai"
+msgstr "m"
+
+msgctxt "monster"
+msgid "lich"
+msgstr "IA corrompue"
+
+msgctxt "gender"
+msgid "lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "paper golem"
+msgstr "drone de papier"
+
+msgctxt "gender"
+msgid "paper golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "iron golem"
+msgstr "drone de combat"
+
+msgctxt "gender"
+msgid "iron golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "imp"
+msgstr "virus"
+
+msgctxt "gender"
+msgid "imp"
+msgstr "m"
+
+msgctxt "monster"
+msgid "soldier ant"
+msgstr "nanobot soldat"
+
+msgctxt "gender"
+msgid "soldier ant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "killer bee"
+msgstr "drone tueur"
+
+msgctxt "gender"
+msgid "killer bee"
+msgstr "m"
+
+msgctxt "monster"
+msgid "shopkeeper"
+msgstr "vendeur"
+
+msgctxt "gender"
+msgid "shopkeeper"
+msgstr "m"
+
+msgctxt "monster"
+msgid "watchman"
+msgstr "vigile"
+
+msgctxt "gender"
+msgid "watchman"
+msgstr "m"
+
+msgctxt "monster"
+msgid "watch captain"
+msgstr "chef des vigiles"
+
+msgctxt "gender"
+msgid "watch captain"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Oracle"
+msgstr "Fixeuse"
+
+msgctxt "gender"
+msgid "Oracle"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kitten"
+msgstr "chaton-robot"
+
+msgctxt "gender"
+msgid "kitten"
+msgstr "m"
+
+msgctxt "monster"
+msgid "little dog"
+msgstr "chien-robot"
+
+msgctxt "gender"
+msgid "little dog"
+msgstr "m"
+
+msgctxt "monster"
+msgid "pony"
+msgstr "moto-poney"
+
+msgctxt "gender"
+msgid "pony"
+msgstr "f"
