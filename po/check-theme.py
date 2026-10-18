@@ -26,7 +26,9 @@ theme = entries(sys.argv[1])
 pot = entries('po/nethack.pot')
 bad = 0
 for key in theme:
-    if key not in pot:
+    # plural exceptions of monster names (do_name.c i18n_mon_plural())
+    look = ('monster', key[1]) if key[0] == 'monster-plural' else key
+    if look not in pot:
         print('not in nethack.pot: %s %r' % key)
         bad += 1
 for (ctx, mid), val in theme.items():

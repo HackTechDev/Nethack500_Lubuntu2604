@@ -1616,3 +1616,1847 @@ msgstr "tas de crédits"
 msgctxt "symbol a"
 msgid "pile of coins"
 msgstr "un tas de crédits"
+
+# Quatrième lot : le reste des monstres (sélection)
+
+msgctxt "monster"
+msgid "giant ant"
+msgstr "fourmi cybernétique"
+
+msgctxt "gender"
+msgid "giant ant"
+msgstr "f"
+
+msgctxt "monster"
+msgid "fire ant"
+msgstr "fourmi incendiaire"
+
+msgctxt "gender"
+msgid "fire ant"
+msgstr "f"
+
+msgctxt "monster"
+msgid "giant beetle"
+msgstr "scarabée blindé"
+
+msgctxt "gender"
+msgid "giant beetle"
+msgstr "m"
+
+msgctxt "monster"
+msgid "queen bee"
+msgstr "reine de l'essaim"
+
+msgctxt "gender"
+msgid "queen bee"
+msgstr "f"
+
+msgctxt "monster"
+msgid "acid blob"
+msgstr "blob acide"
+
+msgctxt "gender"
+msgid "acid blob"
+msgstr "m"
+
+msgctxt "monster"
+msgid "quivering blob"
+msgstr "blob tremblotant"
+
+msgctxt "gender"
+msgid "quivering blob"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gelatinous cube"
+msgstr "cube de gel industriel"
+
+msgctxt "gender"
+msgid "gelatinous cube"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dog"
+msgstr "chien-robot de garde"
+
+msgctxt "gender"
+msgid "dog"
+msgstr "m"
+
+msgctxt "monster"
+msgid "large dog"
+msgstr "molosse-robot"
+
+msgctxt "gender"
+msgid "large dog"
+msgstr "m"
+
+msgctxt "monster"
+msgid "housecat"
+msgstr "chat-robot"
+
+msgctxt "gender"
+msgid "housecat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "large cat"
+msgstr "gros chat-robot"
+
+msgctxt "gender"
+msgid "large cat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "horse"
+msgstr "moto-cheval"
+
+msgctxt "gender"
+msgid "horse"
+msgstr "f"
+
+msgctxt "monster"
+msgid "warhorse"
+msgstr "moto-destrier"
+
+msgctxt "gender"
+msgid "warhorse"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gas spore"
+msgstr "mine gazeuse"
+
+msgctxt "gender"
+msgid "gas spore"
+msgstr "f"
+
+msgctxt "monster"
+msgid "freezing sphere"
+msgstr "drone cryogénique"
+
+msgctxt "gender"
+msgid "freezing sphere"
+msgstr "m"
+
+msgctxt "monster"
+msgid "flaming sphere"
+msgstr "drone incendiaire"
+
+msgctxt "gender"
+msgid "flaming sphere"
+msgstr "m"
+
+msgctxt "monster"
+msgid "shocking sphere"
+msgstr "drone à décharge"
+
+msgctxt "gender"
+msgid "shocking sphere"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf lord"
+msgstr "chef mineur"
+
+msgctxt "gender"
+msgid "dwarf lord"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf lady"
+msgstr "cheffe mineuse"
+
+msgctxt "gender"
+msgid "dwarf lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "dwarf leader"
+msgstr "responsable des mineurs"
+
+msgctxt "gender"
+msgid "dwarf leader"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf king"
+msgstr "contremaître"
+
+msgctxt "gender"
+msgid "dwarf king"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf queen"
+msgstr "contremaîtresse"
+
+msgctxt "gender"
+msgid "dwarf queen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "dwarf ruler"
+msgstr "directeur de la mine"
+
+msgctxt "gender"
+msgid "dwarf ruler"
+msgstr "m"
+
+msgctxt "monster"
+msgid "mind flayer"
+msgstr "pirate neuronal"
+
+msgctxt "gender"
+msgid "mind flayer"
+msgstr "m"
+
+msgctxt "monster"
+msgid "master mind flayer"
+msgstr "maître pirate neuronal"
+
+msgctxt "gender"
+msgid "master mind flayer"
+msgstr "m"
+
+msgctxt "monster"
+msgid "quasit"
+msgstr "ver informatique"
+
+msgctxt "gender"
+msgid "quasit"
+msgstr "m"
+
+msgctxt "monster"
+msgid "tengu"
+msgstr "cheval de Troie"
+
+msgctxt "gender"
+msgid "tengu"
+msgstr "m"
+
+msgctxt "monster"
+msgid "blue jelly"
+msgstr "gelée cryogénique"
+
+msgctxt "gender"
+msgid "blue jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "spotted jelly"
+msgstr "gelée acide tachetée"
+
+msgctxt "gender"
+msgid "spotted jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "ochre jelly"
+msgstr "gelée corrosive"
+
+msgctxt "gender"
+msgid "ochre jelly"
+msgstr "f"
+
+msgctxt "monster"
+msgid "large kobold"
+msgstr "gros voyou"
+
+msgctxt "gender"
+msgid "large kobold"
+msgstr "m"
+
+msgctxt "monster"
+msgid "kobold lord"
+msgstr "chef voyou"
+
+msgctxt "gender"
+msgid "kobold lord"
+msgstr "m"
+
+msgctxt "monster"
+msgid "kobold lady"
+msgstr "cheffe voyoute"
+
+msgctxt "gender"
+msgid "kobold lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kobold leader"
+msgstr "meneur voyou"
+
+msgctxt "gender"
+msgid "kobold leader"
+msgstr "m"
+
+msgctxt "monster"
+msgid "kobold shaman"
+msgstr "chaman des rues"
+
+msgctxt "gender"
+msgid "kobold shaman"
+msgstr "m"
+
+msgctxt "monster"
+msgid "leprechaun"
+msgstr "racketteur"
+
+msgctxt "gender"
+msgid "leprechaun"
+msgstr "m"
+
+msgctxt "monster"
+msgid "small mimic"
+msgstr "petit leurre"
+
+msgctxt "gender"
+msgid "small mimic"
+msgstr "m"
+
+msgctxt "monster"
+msgid "large mimic"
+msgstr "grand leurre"
+
+msgctxt "gender"
+msgid "large mimic"
+msgstr "m"
+
+msgctxt "monster"
+msgid "giant mimic"
+msgstr "leurre géant"
+
+msgctxt "gender"
+msgid "giant mimic"
+msgstr "m"
+
+msgctxt "monster"
+msgid "wood nymph"
+msgstr "voleuse des parcs"
+
+msgctxt "gender"
+msgid "wood nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "water nymph"
+msgstr "voleuse des quais"
+
+msgctxt "gender"
+msgid "water nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "mountain nymph"
+msgstr "voleuse des toits"
+
+msgctxt "gender"
+msgid "mountain nymph"
+msgstr "f"
+
+msgctxt "monster"
+msgid "goblin"
+msgstr "petite frappe"
+
+msgctxt "gender"
+msgid "goblin"
+msgstr "f"
+
+msgctxt "monster"
+msgid "hobgoblin"
+msgstr "gros dur"
+
+msgctxt "gender"
+msgid "hobgoblin"
+msgstr "m"
+
+msgctxt "monster"
+msgid "orc"
+msgstr "membre de gang"
+
+msgctxt "gender"
+msgid "orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "orc shaman"
+msgstr "chaman de gang"
+
+msgctxt "gender"
+msgid "orc shaman"
+msgstr "m"
+
+msgctxt "monster"
+msgid "orc-captain"
+msgstr "capitaine de gang"
+
+msgctxt "gender"
+msgid "orc-captain"
+msgstr "m"
+
+msgctxt "monster"
+msgid "giant rat"
+msgstr "rat mutant"
+
+msgctxt "gender"
+msgid "giant rat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "cave spider"
+msgstr "araignée des égouts"
+
+msgctxt "gender"
+msgid "cave spider"
+msgstr "f"
+
+msgctxt "monster"
+msgid "centipede"
+msgstr "mille-pattes des égouts"
+
+msgctxt "gender"
+msgid "centipede"
+msgstr "m"
+
+msgctxt "monster"
+msgid "giant spider"
+msgstr "araignée mécanique"
+
+msgctxt "gender"
+msgid "giant spider"
+msgstr "f"
+
+msgctxt "monster"
+msgid "stalker"
+msgstr "chasseur furtif"
+
+msgctxt "gender"
+msgid "stalker"
+msgstr "m"
+
+msgctxt "monster"
+msgid "fog cloud"
+msgstr "nuage de smog"
+
+msgctxt "gender"
+msgid "fog cloud"
+msgstr "m"
+
+msgctxt "monster"
+msgid "energy vortex"
+msgstr "tempête de données"
+
+msgctxt "gender"
+msgid "energy vortex"
+msgstr "f"
+
+msgctxt "monster"
+msgid "yellow light"
+msgstr "hologramme aveuglant"
+
+msgctxt "gender"
+msgid "yellow light"
+msgstr "m"
+
+msgctxt "monster"
+msgid "black light"
+msgstr "hologramme psychédélique"
+
+msgctxt "gender"
+msgid "black light"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Angel"
+msgstr "Ange numérique"
+
+msgctxt "gender"
+msgid "Angel"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Archon"
+msgstr "Archonte numérique"
+
+msgctxt "gender"
+msgid "Archon"
+msgstr "m"
+
+msgctxt "monster"
+msgid "bat"
+msgstr "drone chauve-souris"
+
+msgctxt "gender"
+msgid "bat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "giant bat"
+msgstr "gros drone chauve-souris"
+
+msgctxt "gender"
+msgid "giant bat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "vampire bat"
+msgstr "drone vampire"
+
+msgctxt "gender"
+msgid "vampire bat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "raven"
+msgstr "drone corbeau"
+
+msgctxt "gender"
+msgid "raven"
+msgstr "m"
+
+msgctxt "monster"
+msgid "shrieker"
+msgstr "alarme ambulante"
+
+msgctxt "gender"
+msgid "shrieker"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome lady"
+msgstr "cheffe squatteuse"
+
+msgctxt "gender"
+msgid "gnome lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome leader"
+msgstr "meneur squatteur"
+
+msgctxt "gender"
+msgid "gnome leader"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnomish wizard"
+msgstr "bidouilleur squatteur"
+
+msgctxt "gender"
+msgid "gnomish wizard"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome king"
+msgstr "caïd squatteur"
+
+msgctxt "gender"
+msgid "gnome king"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome queen"
+msgstr "caïde squatteuse"
+
+msgctxt "gender"
+msgid "gnome queen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "gnome ruler"
+msgstr "parrain squatteur"
+
+msgctxt "gender"
+msgid "gnome ruler"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Keystone Kop"
+msgstr "flic de choc"
+
+msgctxt "gender"
+msgid "Keystone Kop"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Kop Sergeant"
+msgstr "sergent de choc"
+
+msgctxt "gender"
+msgid "Kop Sergeant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Kop Lieutenant"
+msgstr "lieutenant de choc"
+
+msgctxt "gender"
+msgid "Kop Lieutenant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Kop Kaptain"
+msgstr "capitaine de choc"
+
+msgctxt "gender"
+msgid "Kop Kaptain"
+msgstr "m"
+
+msgctxt "monster"
+msgid "demilich"
+msgstr "IA démente"
+
+msgctxt "gender"
+msgid "demilich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "master lich"
+msgstr "IA maîtresse"
+
+msgctxt "gender"
+msgid "master lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "arch-lich"
+msgstr "IA suprême"
+
+msgctxt "gender"
+msgid "arch-lich"
+msgstr "f"
+
+msgctxt "monster"
+msgid "kobold mummy"
+msgstr "voyou momifié"
+
+msgctxt "gender"
+msgid "kobold mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome mummy"
+msgstr "squatteur momifié"
+
+msgctxt "gender"
+msgid "gnome mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "orc mummy"
+msgstr "ganger momifié"
+
+msgctxt "gender"
+msgid "orc mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf mummy"
+msgstr "mineur momifié"
+
+msgctxt "gender"
+msgid "dwarf mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "elf mummy"
+msgstr "elfe momifié"
+
+msgctxt "gender"
+msgid "elf mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "human mummy"
+msgstr "cyborg momifié"
+
+msgctxt "gender"
+msgid "human mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "ettin mummy"
+msgstr "ettin momifié"
+
+msgctxt "gender"
+msgid "ettin mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "giant mummy"
+msgstr "géant momifié"
+
+msgctxt "gender"
+msgid "giant mummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "kobold zombie"
+msgstr "voyou zombie"
+
+msgctxt "gender"
+msgid "kobold zombie"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome zombie"
+msgstr "squatteur zombie"
+
+msgctxt "gender"
+msgid "gnome zombie"
+msgstr "m"
+
+msgctxt "monster"
+msgid "orc zombie"
+msgstr "ganger zombie"
+
+msgctxt "gender"
+msgid "orc zombie"
+msgstr "m"
+
+msgctxt "monster"
+msgid "dwarf zombie"
+msgstr "mineur zombie"
+
+msgctxt "gender"
+msgid "dwarf zombie"
+msgstr "m"
+
+msgctxt "monster"
+msgid "skeleton"
+msgstr "squelette chromé"
+
+msgctxt "gender"
+msgid "skeleton"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gray ooze"
+msgstr "boue toxique"
+
+msgctxt "gender"
+msgid "gray ooze"
+msgstr "f"
+
+msgctxt "monster"
+msgid "rust monster"
+msgstr "dévoreur de métal"
+
+msgctxt "gender"
+msgid "rust monster"
+msgstr "m"
+
+msgctxt "monster"
+msgid "disenchanter"
+msgstr "désactivateur"
+
+msgctxt "gender"
+msgid "disenchanter"
+msgstr "m"
+
+msgctxt "monster"
+msgid "wraith"
+msgstr "spectre numérique"
+
+msgctxt "gender"
+msgid "wraith"
+msgstr "m"
+
+msgctxt "monster"
+msgid "straw golem"
+msgstr "drone de paille"
+
+msgctxt "gender"
+msgid "straw golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "rope golem"
+msgstr "drone de câbles"
+
+msgctxt "gender"
+msgid "rope golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gold golem"
+msgstr "drone doré"
+
+msgctxt "gender"
+msgid "gold golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "leather golem"
+msgstr "drone de cuir"
+
+msgctxt "gender"
+msgid "leather golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "wood golem"
+msgstr "drone de bois"
+
+msgctxt "gender"
+msgid "wood golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "flesh golem"
+msgstr "biodrone"
+
+msgctxt "gender"
+msgid "flesh golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "clay golem"
+msgstr "drone d'argile"
+
+msgctxt "gender"
+msgid "clay golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "stone golem"
+msgstr "drone de pierre"
+
+msgctxt "gender"
+msgid "stone golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "glass golem"
+msgstr "drone de verre"
+
+msgctxt "gender"
+msgid "glass golem"
+msgstr "m"
+
+msgctxt "monster"
+msgid "prisoner"
+msgstr "détenu"
+
+msgctxt "gender"
+msgid "prisoner"
+msgstr "m"
+
+msgctxt "monster"
+msgid "priest"
+msgstr "technoprêtre"
+
+msgctxt "gender"
+msgid "priest"
+msgstr "m"
+
+msgctxt "monster"
+msgid "priestess"
+msgstr "technoprêtresse"
+
+msgctxt "gender"
+msgid "priestess"
+msgstr "f"
+
+msgctxt "monster"
+msgid "aligned cleric"
+msgstr "technoclerc aligné"
+
+msgctxt "gender"
+msgid "aligned cleric"
+msgstr "m"
+
+msgctxt "monster"
+msgid "high priest"
+msgstr "grand technoprêtre"
+
+msgctxt "gender"
+msgid "high priest"
+msgstr "m"
+
+msgctxt "monster"
+msgid "high priestess"
+msgstr "grande technoprêtresse"
+
+msgctxt "gender"
+msgid "high priestess"
+msgstr "f"
+
+msgctxt "monster"
+msgid "high cleric"
+msgstr "grand technoclerc"
+
+msgctxt "gender"
+msgid "high cleric"
+msgstr "m"
+
+msgctxt "monster"
+msgid "soldier"
+msgstr "soldat corpo"
+
+msgctxt "gender"
+msgid "soldier"
+msgstr "m"
+
+msgctxt "monster"
+msgid "sergeant"
+msgstr "sergent corpo"
+
+msgctxt "gender"
+msgid "sergeant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "lieutenant"
+msgstr "lieutenant corpo"
+
+msgctxt "gender"
+msgid "lieutenant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "captain"
+msgstr "capitaine corpo"
+
+msgctxt "gender"
+msgid "captain"
+msgstr "m"
+
+msgctxt "monster"
+msgid "nurse"
+msgstr "infirmière-androïde"
+
+msgctxt "gender"
+msgid "nurse"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Wizard of Yendor"
+msgstr "Archihacker de Yendor"
+
+msgctxt "gender"
+msgid "Wizard of Yendor"
+msgstr "m"
+
+msgctxt "monster"
+msgid "mail daemon"
+msgstr "démon de messagerie"
+
+msgctxt "gender"
+msgid "mail daemon"
+msgstr "m"
+
+msgctxt "monster"
+msgid "archeologist"
+msgstr "récupérateur"
+
+msgctxt "gender"
+msgid "archeologist"
+msgstr "m"
+
+msgctxt "monster"
+msgid "barbarian"
+msgstr "cogneur"
+
+msgctxt "gender"
+msgid "barbarian"
+msgstr "m"
+
+msgctxt "monster"
+msgid "caveman"
+msgstr "sauvageon"
+
+msgctxt "gender"
+msgid "caveman"
+msgstr "m"
+
+msgctxt "monster"
+msgid "cavewoman"
+msgstr "sauvageonne"
+
+msgctxt "gender"
+msgid "cavewoman"
+msgstr "f"
+
+msgctxt "monster"
+msgid "cave dweller"
+msgstr "troglo"
+
+msgctxt "gender"
+msgid "cave dweller"
+msgstr "m"
+
+msgctxt "monster"
+msgid "healer"
+msgstr "charcudoc"
+
+msgctxt "gender"
+msgid "healer"
+msgstr "m"
+
+msgctxt "monster"
+msgid "knight"
+msgstr "exécuteur"
+
+msgctxt "gender"
+msgid "knight"
+msgstr "m"
+
+msgctxt "monster"
+msgid "monk"
+msgstr "moine augmenté"
+
+msgctxt "gender"
+msgid "monk"
+msgstr "m"
+
+msgctxt "monster"
+msgid "cleric"
+msgstr "technoclerc"
+
+msgctxt "gender"
+msgid "cleric"
+msgstr "m"
+
+msgctxt "monster"
+msgid "ranger"
+msgstr "traqueur"
+
+msgctxt "gender"
+msgid "ranger"
+msgstr "m"
+
+msgctxt "monster"
+msgid "rogue"
+msgstr "voleur de données"
+
+msgctxt "gender"
+msgid "rogue"
+msgstr "m"
+
+msgctxt "monster"
+msgid "samurai"
+msgstr "ronin urbain"
+
+msgctxt "gender"
+msgid "samurai"
+msgstr "m"
+
+msgctxt "monster"
+msgid "tourist"
+msgstr "corpo en goguette"
+
+msgctxt "gender"
+msgid "tourist"
+msgstr "m"
+
+msgctxt "monster"
+msgid "valkyrie"
+msgstr "mercenaire"
+
+msgctxt "gender"
+msgid "valkyrie"
+msgstr "f"
+
+msgctxt "monster"
+msgid "wizard"
+msgstr "netrunner"
+
+msgctxt "gender"
+msgid "wizard"
+msgstr "m"
+
+msgctxt "monster"
+msgid "student"
+msgstr "stagiaire"
+
+msgctxt "gender"
+msgid "student"
+msgstr "m"
+
+msgctxt "monster"
+msgid "chieftain"
+msgstr "chef de tribu urbaine"
+
+msgctxt "gender"
+msgid "chieftain"
+msgstr "m"
+
+msgctxt "monster"
+msgid "neanderthal"
+msgstr "nomade des friches"
+
+msgctxt "gender"
+msgid "neanderthal"
+msgstr "m"
+
+msgctxt "monster"
+msgid "attendant"
+msgstr "aide-soignant"
+
+msgctxt "gender"
+msgid "attendant"
+msgstr "m"
+
+msgctxt "monster"
+msgid "page"
+msgstr "écuyer corpo"
+
+msgctxt "gender"
+msgid "page"
+msgstr "m"
+
+msgctxt "monster"
+msgid "abbot"
+msgstr "abbé augmenté"
+
+msgctxt "gender"
+msgid "abbot"
+msgstr "m"
+
+msgctxt "monster"
+msgid "acolyte"
+msgstr "acolyte du Réseau"
+
+msgctxt "gender"
+msgid "acolyte"
+msgstr "m"
+
+msgctxt "monster"
+msgid "hunter"
+msgstr "pisteur"
+
+msgctxt "gender"
+msgid "hunter"
+msgstr "m"
+
+msgctxt "monster"
+msgid "roshi"
+msgstr "sensei"
+
+msgctxt "gender"
+msgid "roshi"
+msgstr "m"
+
+msgctxt "monster"
+msgid "guide"
+msgstr "guide touristique"
+
+msgctxt "gender"
+msgid "guide"
+msgstr "m"
+
+msgctxt "monster"
+msgid "apprentice"
+msgstr "apprenti hacker"
+
+msgctxt "gender"
+msgid "apprentice"
+msgstr "m"
+
+# Pluriels irréguliers (i18n_mon_plural())
+
+msgctxt "monster-plural"
+msgid "horse"
+msgstr "motos-chevaux"
+
+msgctxt "monster-plural"
+msgid "tengu"
+msgstr "chevaux de Troie"
+
+msgctxt "monster-plural"
+msgid "demilich"
+msgstr "IA démentes"
+
+msgctxt "monster-plural"
+msgid "master lich"
+msgstr "IA maîtresses"
+
+msgctxt "monster-plural"
+msgid "arch-lich"
+msgstr "IA suprêmes"
+
+msgctxt "monster-plural"
+msgid "lich"
+msgstr "IA corrompues"
+
+msgctxt "monster-plural"
+msgid "centipede"
+msgstr "mille-pattes des égouts"
+
+msgctxt "monster-plural"
+msgid "grid bug"
+msgstr "bugs réseau"
+
+# Quatrième lot : objets (sélection)
+
+msgctxt "object"
+msgid "dagger"
+msgid_plural "daggers"
+msgstr[0] "poignard"
+msgstr[1] "poignards"
+
+msgctxt "objgender"
+msgid "dagger"
+msgstr "m"
+
+msgctxt "object"
+msgid "silver dagger"
+msgid_plural "silver daggers"
+msgstr[0] "poignard en argent"
+msgstr[1] "poignards en argent"
+
+msgctxt "objgender"
+msgid "silver dagger"
+msgstr "m"
+
+msgctxt "object"
+msgid "knife"
+msgid_plural "knifes"
+msgstr[0] "cutter"
+msgstr[1] "cutters"
+
+msgctxt "objgender"
+msgid "knife"
+msgstr "m"
+
+msgctxt "object"
+msgid "scalpel"
+msgid_plural "scalpels"
+msgstr[0] "scalpel laser"
+msgstr[1] "scalpels laser"
+
+msgctxt "objgender"
+msgid "scalpel"
+msgstr "m"
+
+msgctxt "object"
+msgid "stiletto"
+msgid_plural "stilettos"
+msgstr[0] "cran d'arrêt"
+msgstr[1] "crans d'arrêt"
+
+msgctxt "objgender"
+msgid "stiletto"
+msgstr "m"
+
+msgctxt "object"
+msgid "short sword"
+msgid_plural "short swords"
+msgstr[0] "machette"
+msgstr[1] "machettes"
+
+msgctxt "objgender"
+msgid "short sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "long sword"
+msgid_plural "long swords"
+msgstr[0] "lame longue"
+msgstr[1] "lames longues"
+
+msgctxt "objgender"
+msgid "long sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "katana"
+msgid_plural "katanas"
+msgstr[0] "monokatana"
+msgstr[1] "monokatanas"
+
+msgctxt "objgender"
+msgid "katana"
+msgstr "m"
+
+msgctxt "object"
+msgid "samurai sword"
+msgid_plural "samurai swords"
+msgstr[0] "épée de ronin"
+msgstr[1] "épées de ronin"
+
+msgctxt "objgender"
+msgid "samurai sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "axe"
+msgid_plural "axes"
+msgstr[0] "hache d'incendie"
+msgstr[1] "haches d'incendie"
+
+msgctxt "objgender"
+msgid "axe"
+msgstr "f"
+
+msgctxt "object"
+msgid "club"
+msgid_plural "clubs"
+msgstr[0] "matraque"
+msgstr[1] "matraques"
+
+msgctxt "objgender"
+msgid "club"
+msgstr "f"
+
+msgctxt "object"
+msgid "quarterstaff"
+msgid_plural "quarterstaffs"
+msgstr[0] "bâton télescopique"
+msgstr[1] "bâtons télescopiques"
+
+msgctxt "objgender"
+msgid "quarterstaff"
+msgstr "m"
+
+msgctxt "object"
+msgid "bow"
+msgid_plural "bows"
+msgstr[0] "arc à poulies"
+msgstr[1] "arcs à poulies"
+
+msgctxt "objgender"
+msgid "bow"
+msgstr "m"
+
+msgctxt "object"
+msgid "sling"
+msgid_plural "slings"
+msgstr[0] "lance-pierre"
+msgstr[1] "lance-pierres"
+
+msgctxt "objgender"
+msgid "sling"
+msgstr "m"
+
+msgctxt "object"
+msgid "pick-axe"
+msgid_plural "pick-axes"
+msgstr[0] "perceuse"
+msgstr[1] "perceuses"
+
+msgctxt "objgender"
+msgid "pick-axe"
+msgstr "f"
+
+msgctxt "object"
+msgid "dwarvish mattock"
+msgid_plural "dwarvish mattocks"
+msgstr[0] "marteau-piqueur"
+msgstr[1] "marteaux-piqueurs"
+
+msgctxt "objgender"
+msgid "dwarvish mattock"
+msgstr "m"
+
+msgctxt "object"
+msgid "grappling hook"
+msgid_plural "grappling hooks"
+msgstr[0] "lance-grappin"
+msgstr[1] "lance-grappins"
+
+msgctxt "objgender"
+msgid "grappling hook"
+msgstr "m"
+
+msgctxt "object"
+msgid "helm of brilliance"
+msgid_plural "helm of brilliances"
+msgstr[0] "casque d'amplification neuronale"
+msgstr[1] "casques d'amplification neuronale"
+
+msgctxt "objgender"
+msgid "helm of brilliance"
+msgstr "m"
+
+msgctxt "object"
+msgid "helm of opposite alignment"
+msgid_plural "helm of opposite alignments"
+msgstr[0] "casque de reprogrammation"
+msgstr[1] "casques de reprogrammation"
+
+msgctxt "objgender"
+msgid "helm of opposite alignment"
+msgstr "m"
+
+msgctxt "object"
+msgid "helm of telepathy"
+msgid_plural "helm of telepathys"
+msgstr[0] "casque télépathique"
+msgstr[1] "casques télépathiques"
+
+msgctxt "objgender"
+msgid "helm of telepathy"
+msgstr "m"
+
+msgctxt "object"
+msgid "plate mail"
+msgid_plural "plate mails"
+msgstr[0] "blindage lourd"
+msgstr[1] "blindages lourds"
+
+msgctxt "objgender"
+msgid "plate mail"
+msgstr "m"
+
+msgctxt "object"
+msgid "crystal plate mail"
+msgid_plural "crystal plate mails"
+msgstr[0] "blindage cristallin"
+msgstr[1] "blindages cristallins"
+
+msgctxt "objgender"
+msgid "crystal plate mail"
+msgstr "m"
+
+msgctxt "object"
+msgid "bronze plate mail"
+msgid_plural "bronze plate mails"
+msgstr[0] "blindage en bronze"
+msgstr[1] "blindages en bronze"
+
+msgctxt "objgender"
+msgid "bronze plate mail"
+msgstr "m"
+
+msgctxt "object"
+msgid "splint mail"
+msgid_plural "splint mails"
+msgstr[0] "armure segmentée"
+msgstr[1] "armures segmentées"
+
+msgctxt "objgender"
+msgid "splint mail"
+msgstr "f"
+
+msgctxt "object"
+msgid "chain mail"
+msgid_plural "chain mails"
+msgstr[0] "maille de kevlar"
+msgstr[1] "mailles de kevlar"
+
+msgctxt "objgender"
+msgid "chain mail"
+msgstr "f"
+
+msgctxt "object"
+msgid "studded leather armor"
+msgid_plural "studded leather armors"
+msgstr[0] "cuir clouté"
+msgstr[1] "cuirs cloutés"
+
+msgctxt "objgender"
+msgid "studded leather armor"
+msgstr "m"
+
+msgctxt "object"
+msgid "leather jacket"
+msgid_plural "leather jackets"
+msgstr[0] "blouson de cuir"
+msgstr[1] "blousons de cuir"
+
+msgctxt "objgender"
+msgid "leather jacket"
+msgstr "m"
+
+msgctxt "object"
+msgid "dwarvish mithril-coat"
+msgid_plural "dwarvish mithril-coats"
+msgstr[0] "gilet de mineur en nanofibre"
+msgstr[1] "gilets de mineur en nanofibre"
+
+msgctxt "objgender"
+msgid "dwarvish mithril-coat"
+msgstr "m"
+
+msgctxt "object"
+msgid "elven mithril-coat"
+msgid_plural "elven mithril-coats"
+msgstr[0] "gilet elfique en nanofibre"
+msgstr[1] "gilets elfiques en nanofibre"
+
+msgctxt "objgender"
+msgid "elven mithril-coat"
+msgstr "m"
+
+msgctxt "object"
+msgid "cloak of protection"
+msgid_plural "cloak of protections"
+msgstr[0] "trench de protection"
+msgstr[1] "trenchs de protection"
+
+msgctxt "objgender"
+msgid "cloak of protection"
+msgstr "m"
+
+msgctxt "object"
+msgid "cloak of invisibility"
+msgid_plural "cloak of invisibilitys"
+msgstr[0] "trench à camouflage optique"
+msgstr[1] "trenchs à camouflage optique"
+
+msgctxt "objgender"
+msgid "cloak of invisibility"
+msgstr "m"
+
+msgctxt "object"
+msgid "cloak of magic resistance"
+msgid_plural "cloak of magic resistances"
+msgstr[0] "trench à blindage EM"
+msgstr[1] "trenchs à blindage EM"
+
+msgctxt "objgender"
+msgid "cloak of magic resistance"
+msgstr "m"
+
+msgctxt "object"
+msgid "cloak of displacement"
+msgid_plural "cloak of displacements"
+msgstr[0] "trench holographique"
+msgstr[1] "trenchs holographiques"
+
+msgctxt "objgender"
+msgid "cloak of displacement"
+msgstr "m"
+
+msgctxt "object"
+msgid "leather cloak"
+msgid_plural "leather cloaks"
+msgstr[0] "trench de cuir"
+msgstr[1] "trenchs de cuir"
+
+msgctxt "objgender"
+msgid "leather cloak"
+msgstr "m"
+
+msgctxt "object"
+msgid "oilskin cloak"
+msgid_plural "oilskin cloaks"
+msgstr[0] "imperméable"
+msgstr[1] "imperméables"
+
+msgctxt "objgender"
+msgid "oilskin cloak"
+msgstr "m"
+
+msgctxt "object"
+msgid "alchemy smock"
+msgid_plural "alchemy smocks"
+msgstr[0] "blouse de chimiste"
+msgstr[1] "blouses de chimiste"
+
+msgctxt "objgender"
+msgid "alchemy smock"
+msgstr "f"
+
+msgctxt "object"
+msgid "large shield"
+msgid_plural "large shields"
+msgstr[0] "bouclier anti-émeute"
+msgstr[1] "boucliers anti-émeute"
+
+msgctxt "objgender"
+msgid "large shield"
+msgstr "m"
+
+msgctxt "object"
+msgid "shield of reflection"
+msgid_plural "shield of reflections"
+msgstr[0] "bouclier réfléchissant"
+msgstr[1] "boucliers réfléchissants"
+
+msgctxt "objgender"
+msgid "shield of reflection"
+msgstr "m"
+
+msgctxt "object"
+msgid "gauntlets of power"
+msgid_plural "gauntlets of powers"
+msgstr[0] "gantelets hydrauliques"
+msgstr[1] "gantelets hydrauliques"
+
+msgctxt "objgender"
+msgid "gauntlets of power"
+msgstr "p"
+
+msgctxt "object"
+msgid "gauntlets of dexterity"
+msgid_plural "gauntlets of dexteritys"
+msgstr[0] "gants de précision"
+msgstr[1] "gants de précision"
+
+msgctxt "objgender"
+msgid "gauntlets of dexterity"
+msgstr "p"
+
+msgctxt "object"
+msgid "gauntlets of fumbling"
+msgid_plural "gauntlets of fumblings"
+msgstr[0] "gants défectueux"
+msgstr[1] "gants défectueux"
+
+msgctxt "objgender"
+msgid "gauntlets of fumbling"
+msgstr "p"
+
+msgctxt "object"
+msgid "speed boots"
+msgid_plural "speed bootss"
+msgstr[0] "bottes à servomoteurs"
+msgstr[1] "bottes à servomoteurs"
+
+msgctxt "objgender"
+msgid "speed boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "jumping boots"
+msgid_plural "jumping bootss"
+msgstr[0] "bottes à ressorts"
+msgstr[1] "bottes à ressorts"
+
+msgctxt "objgender"
+msgid "jumping boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "levitation boots"
+msgid_plural "levitation bootss"
+msgstr[0] "bottes antigravité"
+msgstr[1] "bottes antigravité"
+
+msgctxt "objgender"
+msgid "levitation boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "water walking boots"
+msgid_plural "water walking bootss"
+msgstr[0] "bottes hydrophobes"
+msgstr[1] "bottes hydrophobes"
+
+msgctxt "objgender"
+msgid "water walking boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "fumble boots"
+msgid_plural "fumble bootss"
+msgstr[0] "bottes déréglées"
+msgstr[1] "bottes déréglées"
+
+msgctxt "objgender"
+msgid "fumble boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "kicking boots"
+msgid_plural "kicking bootss"
+msgstr[0] "bottes de frappe"
+msgstr[1] "bottes de frappe"
+
+msgctxt "objgender"
+msgid "kicking boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "low boots"
+msgid_plural "low bootss"
+msgstr[0] "baskets"
+msgstr[1] "baskets"
+
+msgctxt "objgender"
+msgid "low boots"
+msgstr "fp"
+
+msgctxt "object"
+msgid "large box"
+msgid_plural "large boxs"
+msgstr[0] "caisse"
+msgstr[1] "caisses"
+
+msgctxt "objgender"
+msgid "large box"
+msgstr "f"
+
+msgctxt "object"
+msgid "ice box"
+msgid_plural "ice boxs"
+msgstr[0] "frigo portable"
+msgstr[1] "frigos portables"
+
+msgctxt "objgender"
+msgid "ice box"
+msgstr "m"
+
+msgctxt "object"
+msgid "oilskin sack"
+msgid_plural "oilskin sacks"
+msgstr[0] "sac étanche"
+msgstr[1] "sacs étanches"
+
+msgctxt "objgender"
+msgid "oilskin sack"
+msgstr "m"
+
+msgctxt "object"
+msgid "bag of holding"
+msgid_plural "bag of holdings"
+msgstr[0] "sac hyperspatial"
+msgstr[1] "sacs hyperspatiaux"
+
+msgctxt "objgender"
+msgid "bag of holding"
+msgstr "m"
+
+msgctxt "object"
+msgid "skeleton key"
+msgid_plural "skeleton keys"
+msgstr[0] "passe électronique"
+msgstr[1] "passes électroniques"
+
+msgctxt "objgender"
+msgid "skeleton key"
+msgstr "m"
+
+msgctxt "object"
+msgid "brass lantern"
+msgid_plural "brass lanterns"
+msgstr[0] "lampe torche"
+msgstr[1] "lampes torches"
+
+msgctxt "objgender"
+msgid "brass lantern"
+msgstr "f"
+
+msgctxt "object"
+msgid "crystal ball"
+msgid_plural "crystal balls"
+msgstr[0] "holosphère"
+msgstr[1] "holosphères"
+
+msgctxt "objgender"
+msgid "crystal ball"
+msgstr "f"
+
+msgctxt "object"
+msgid "lenses"
+msgid_plural "lensess"
+msgstr[0] "lentilles augmentées"
+msgstr[1] "lentilles augmentées"
+
+msgctxt "objgender"
+msgid "lenses"
+msgstr "fp"
+
+msgctxt "object"
+msgid "stethoscope"
+msgid_plural "stethoscopes"
+msgstr[0] "scanner médical"
+msgstr[1] "scanners médicaux"
+
+msgctxt "objgender"
+msgid "stethoscope"
+msgstr "m"
+
+msgctxt "object"
+msgid "can of grease"
+msgid_plural "can of greases"
+msgstr[0] "bombe de lubrifiant"
+msgstr[1] "bombes de lubrifiant"
+
+msgctxt "objgender"
+msgid "can of grease"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic marker"
+msgid_plural "magic markers"
+msgstr[0] "graveur de puces"
+msgstr[1] "graveurs de puces"
+
+msgctxt "objgender"
+msgid "magic marker"
+msgstr "m"
+
+msgctxt "object"
+msgid "beartrap"
+msgid_plural "beartraps"
+msgstr[0] "piège à mâchoires"
+msgstr[1] "pièges à mâchoires"
+
+msgctxt "objgender"
+msgid "beartrap"
+msgstr "m"
+
+msgctxt "object"
+msgid "magic whistle"
+msgid_plural "magic whistles"
+msgstr[0] "sifflet à ultrasons"
+msgstr[1] "sifflets à ultrasons"
+
+msgctxt "objgender"
+msgid "magic whistle"
+msgstr "m"
+
+msgctxt "object"
+msgid "frost horn"
+msgid_plural "frost horns"
+msgstr[0] "canon cryogénique"
+msgstr[1] "canons cryogéniques"
+
+msgctxt "objgender"
+msgid "frost horn"
+msgstr "m"
+
+msgctxt "object"
+msgid "fire horn"
+msgid_plural "fire horns"
+msgstr[0] "lance-flammes"
+msgstr[1] "lance-flammes"
+
+msgctxt "objgender"
+msgid "fire horn"
+msgstr "m"
+
+msgctxt "object"
+msgid "bugle"
+msgid_plural "bugles"
+msgstr[0] "sirène d'alarme"
+msgstr[1] "sirènes d'alarme"
+
+msgctxt "objgender"
+msgid "bugle"
+msgstr "f"
+
+msgctxt "object"
+msgid "cram ration"
+msgid_plural "cram rations"
+msgstr[0] "barre protéinée"
+msgstr[1] "barres protéinées"
+
+msgctxt "objgender"
+msgid "cram ration"
+msgstr "f"
+
+msgctxt "object"
+msgid "lembas wafer"
+msgid_plural "lembas wafers"
+msgstr[0] "gaufrette énergétique"
+msgstr[1] "gaufrettes énergétiques"
+
+msgctxt "objgender"
+msgid "lembas wafer"
+msgstr "f"
+
+msgctxt "object"
+msgid "slime mold"
+msgid_plural "slime molds"
+msgstr[0] "pâte d'algues"
+msgstr[1] "pâtes d'algues"
+
+msgctxt "objgender"
+msgid "slime mold"
+msgstr "f"

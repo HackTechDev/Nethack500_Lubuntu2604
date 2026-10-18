@@ -167,12 +167,46 @@ classes à forte couleur ; les autres restent en français.
 Vérifié en jeu avec `/` : « un ganger », « un squatteur », « un stim »,
 « une puce », « une entité du Réseau », « un drone ou golem ».
 
+## Quatrième lot : le reste des monstres et des objets (en place)
+
+Une sélection : 133 monstres et 67 objets de plus ; les animaux, dragons,
+géants, démons nommés, chefs de quête et armes d'hast restent en
+français.  `i18n_mon_plural()` met chaque mot au pluriel ; les exceptions
+sont dans le msgctxt `monster-plural` (« chevaux de Troie », « IA
+corrompues »), que `check-theme.py` accepte.
+
+- Monstres : chien-robot de garde, molosse-robot, chat-robot,
+  moto-cheval ; mineurs (chef mineur, contremaître, contremaîtresse),
+  squatteurs (caïd, caïde, parrain, bidouilleur squatteur), voyous et
+  gangs (petite frappe, gros dur, membre de gang, capitaine de gang) ;
+  pirate neuronal, ver informatique, cheval de Troie, racketteur, leurres,
+  voleuses des parcs, des quais, des toits ; drones (chauve-souris,
+  corbeau, cryogénique, incendiaire, de paille, de verre, biodrone),
+  mine gazeuse, alarme ambulante, hologrammes aveuglant et psychédélique,
+  tempête de données, nuage de smog ; flics de choc, IA démente, maîtresse,
+  suprême, momies et zombies des nouvelles races ; technoprêtres,
+  soldats corpo, infirmière-androïde, Archihacker de Yendor, démon de
+  messagerie ; rôles joués par les monstres et gardiens des quêtes
+  (stagiaire, sensei, apprenti hacker...).
+- Objets : poignard, cutter, cran d'arrêt, machette, monokatana, hache
+  d'incendie, matraque, bâton télescopique, arc à poulies, perceuse,
+  marteau-piqueur ; blindage lourd, maille de kevlar, blouson de cuir,
+  trenchs (de protection, à camouflage optique, à blindage EM,
+  holographique), bouclier anti-émeute, gantelets hydrauliques, bottes à
+  servomoteurs, à ressorts, antigravité ; sac hyperspatial, frigo
+  portable, lampe torche, holosphère, lentilles augmentées, scanner
+  médical, graveur de puces, canon cryogénique, lance-flammes, barre
+  protéinée, gaufrette énergétique.
+
+Vérifié en jeu : « 2 poignards », « un trench à blindage EM », « un
+graveur de puces », « Le cheval de Troie boit un stim bleu ciel ! », « La
+contremaîtresse manie une épée courte large ! », « Le flic de choc
+frappe ! ».
+
 ## Prochains lots
 
-1. Le reste des monstres (environ 380) et des objets (armes, armures,
-   outils, nourriture), avec leurs genres.
-2. Les messages fréquents qui parlent de magie (lire, boire, lancer un
+1. Les messages fréquents qui parlent de magie (lire, boire, lancer un
    sort...), la monnaie des marchands (« zorkmids »).
-3. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
+2. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
    fichiers `dat/*-fr@cyber.*`, puis les quêtes.
-4. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
+3. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
