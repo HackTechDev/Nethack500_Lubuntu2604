@@ -242,8 +242,31 @@ les exploits.
 Vérifié en jeu : `#wizrumorcheck` (rumeurs, gravures, épitaphes),
 consultations mineure et majeure de la Fixeuse.
 
+## Septième lot : les quêtes, textes communs et Netrunner (en place)
+
+Les 931 textes de quête (msgctxt `quest`) se réécrivent rôle par rôle avec
+`po/quest-theme.py` : `dump <rôle>` les liste avec leur traduction
+française, numérotés ; `gen <rôle> <fichier>` produit les entrées du
+thème à partir des textes réécrits, et signale les codes `%` qui ne
+correspondent pas.  Un texte partagé par plusieurs rôles n'a qu'une
+traduction : il doit rester neutre.
+
+- Textes communs : jurons des anges (« Ta licence de vie est révoquée par
+  %D ! ») et des démons, bannissement (« Votre contrat est résilié. »),
+  légende du début (« Il est écrit dans le Code source de %d... Moloch
+  déroba à Marduk le Programmeur... »), message du portail (« Vous recevez
+  un message chiffré, très brouillé... »).
+- Netrunner (Magicien) : Néferet la Verte, mentore, dans son data center
+  isolé (« la Tour solitaire ») ; le Ténébreux dans la Tour Obsidienne ;
+  apprentis hackers, pare-feu, botnet, Archihacker de Yendor.
+
+Vérifié en jeu : arrivée (« C'est le data center de votre ancienne
+mentore, Néferet la Verte. »), retour (« Vous voici de nouveau au data
+center isolé. »), répliques des apprentis (« Les attaques du Ténébreux
+étaient trop puissantes pour nos pare-feu. »).  Le dialogue avec la
+mentore n'a été contrôlé que dans le catalogue.
+
 ## Prochains lots
 
-1. Les quêtes : les textes de `dat/quest.lua` réécrits pour chaque rôle
-   (msgctxt `quest`), le Contrat de chaque profession.
+1. Les quêtes des douze autres rôles, une ou deux par lot.
 2. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
