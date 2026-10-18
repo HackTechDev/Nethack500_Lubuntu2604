@@ -266,6 +266,21 @@ center isolé. »), répliques des apprentis (« Les attaques du Ténébreux
 étaient trop puissantes pour nos pare-feu. »).  Le dialogue avec la
 mentore n'a été contrôlé que dans le catalogue.
 
+## Huitième lot : quêtes du Récupérateur et du Cogneur (en place)
+
+Seuls les textes qui changent sont dans le thème (94 entrées) ; ceux
+que partage déjà la quête du Netrunner gardent sa version.
+
+- Récupérateur (Archéologue) : le Campus d'archéotechnique, menacé par un
+  plan social de ses actionnaires ; le Bunker des rois toltèques derrière
+  une friche industrielle ; stagiaires, cyborgs momifiés.
+- Cogneur (Barbare) : le Squat de la tribu Duali, la Station de pompage
+  des Duali ; Thoth Amon en techno-sorcier, son convoi blindé touranien,
+  le Codex de Skelos ; la rue, le gang, les bastons sur le bitume.
+
+Vérifié en jeu : arrivée dans la quête du Récupérateur (« ou que le
+Campus d'archéotechnique a été assiégé ») ; le reste dans le catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
