@@ -99,3 +99,5 @@ util/*.lib
 util/*.exp
 submodules/CHKSUMS.tmp
 sys/amiga/regex/
+# fichier personnel, hors du dépôt
+/claude_task.md
