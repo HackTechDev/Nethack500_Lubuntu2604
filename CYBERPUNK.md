@@ -281,6 +281,21 @@ que partage déjà la quête du Netrunner gardent sa version.
 Vérifié en jeu : arrivée dans la quête du Récupérateur (« ou que le
 Campus d'archéotechnique a été assiégé ») ; le reste dans le catalogue.
 
+## Neuvième lot : quêtes du Sauvageon et du Charcudoc (en place)
+
+73 entrées (textes changés et noms de lieux).
+
+- Sauvageon (Homme des cavernes) : les Tunnels des Ancêtres, vieilles
+  rames de métro éclairées de braseros ; le Collecteur du Dragon, au
+  bout d'égouts géants ; pluies acides, sortie vers la surface coupée.
+- Charcudoc (Guérisseur) : la Clinique d'Épidaure et ses cuves de
+  culture, le Laboratoire de Coéos au-delà des marais toxiques ; le
+  cyclope répand un virus, nanobots-sangsues, vaccin, rejet de greffe.
+  Les noms grecs (Chiron, Hadès, Zeus) restent.
+
+Vérifié en jeu : arrivée dans la quête du Charcudoc (« Quel bug vous a
+ramené à la Clinique d'Épidaure ? ») ; le reste dans le catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
