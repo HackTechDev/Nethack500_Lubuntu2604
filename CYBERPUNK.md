@@ -219,8 +219,31 @@ frappe ! ».
   choisi de nom (objnam.c) : « moisissure visqueuse », « pâte d'algues »
   dans le thème.
 
+## Sixième lot : les textes d'ambiance (en place)
+
+Écrits pour le thème (pas traduits du français), compilés par `makedefs`
+avec `MAKEDEFS_LANG=fr@cyber` (`set_datlang()` accepte maintenant le
+« @ ») en `dat/<nom>.fr@cyber`, installés à côté de `fr@cyber.mo` :
+
+- `dat/rumors-fr@cyber.tru` et `.fal` : 113 vraies rumeurs (des conseils
+  exacts, avec le vocabulaire du thème) et 107 fausses (publicités,
+  slogans des corpos, folklore du Réseau) ;
+- `dat/oracles-fr@cyber.txt` : les 21 consultations de la Fixeuse, dans
+  l'ordre de `oracles.txt` (le contenu de chaque conseil est gardé) ;
+- `dat/engrave-fr@cyber.txt` : 53 graffitis (tags de gangs, mots de
+  passe, slogans ; « Elbereth » reste) ;
+- `dat/epitaph-fr@cyber.txt` : 98 épitaphes (« Déconnecté », « Garantie
+  expirée », « Téléchargée vers un monde meilleur »...).
+
+Les messages de l'Oracle disent « la Fixeuse » (« La Fixeuse consulte ses
+écrans un instant, puis déclare : »), aussi dans l'aperçu du donjon et
+les exploits.
+
+Vérifié en jeu : `#wizrumorcheck` (rumeurs, gravures, épitaphes),
+consultations mineure et majeure de la Fixeuse.
+
 ## Prochains lots
 
-1. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
-   fichiers `dat/*-fr@cyber.*`, puis les quêtes.
+1. Les quêtes : les textes de `dat/quest.lua` réécrits pour chaque rôle
+   (msgctxt `quest`), le Contrat de chaque profession.
 2. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).

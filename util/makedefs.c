@@ -447,18 +447,19 @@ rafile(int whichone)
     }
 }
 
-/* pick up MAKEDEFS_LANG; ignored unless it is a short alphabetic code */
+/* pick up MAKEDEFS_LANG; ignored unless it is a short alphabetic code,
+   possibly with a theme ("fr@cyber", see CYBERPUNK.md) */
 static void
 set_datlang(void)
 {
     const char *lang = getenv("MAKEDEFS_LANG");
     const char *p;
 
-    if (!lang || !*lang || strlen(lang) > 8)
+    if (!lang || !*lang || strlen(lang) > 15)
         return;
     for (p = lang; *p; ++p)
         if (!((*p >= 'a' && *p <= 'z') || (*p >= 'A' && *p <= 'Z')
-              || *p == '_'))
+              || *p == '_' || *p == '@'))
             return;
     datlang = lang;
 }

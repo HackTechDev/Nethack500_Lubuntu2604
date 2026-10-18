@@ -33,3 +33,10 @@ engrave.??
 epitaph.??
 bogusmon.??
 data.??
+# and from the files of a theme (rumors-<lang>@<theme>.tru &c)
+rumors.??@*
+oracles.??@*
+engrave.??@*
+epitaph.??@*
+bogusmon.??@*
+data.??@*

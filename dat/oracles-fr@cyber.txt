@@ -1,0 +1,101 @@
+# NetHack 5.0  oracles-fr@cyber.txt
+# NetHack may be freely redistributed.  See license for details.
+# Consultations de la Fixeuse (l'Oracle du thème cyberpunk, CYBERPUNK.md),
+# compilées en oracles.fr@cyber (MAKEDEFS_LANG=fr@cyber ../util/makedefs
+# -h) ; sans ce fichier, le jeu prend oracles.fr.
+# Comme dans oracles-fr.txt, la première entrée est l'oracle spécial ; les
+# autres doivent rester dans le même ordre que dans oracles.txt, car les
+# positions des oracles déjà consultés sont celles du fichier anglais (voir
+# outoracle() dans rumors.c).
+-----
+« Tu veux savoir si P égale NP ?  Personne ne le sait, chéri.  Des gens
+très bien payés ont même prouvé que leurs outils ne suffiraient jamais à
+le savoir.  Moi, je vends des réponses, pas des miracles.  Reviens quand
+tu auras une question à ta portée. »
+-----
+Ton implant est à sec ?  Insiste.  Rien ne se passe, puis rien encore,
+et un jour il crache une toute dernière charge.  Les fabricants appellent
+ça un défaut ; nous, on appelle ça un bonus.
+-----
+Les vendeurs surveillent leurs portes, pas leur plancher.  Plus d'un voleur
+de données est reparti avec la marchandise par un trou percé au sol, grâce
+à un implant de creusement.
+-----
+La rouille te ronge le blindage ?  Lis, l'esprit embrouillé, les puces qui
+d'habitude améliorent tes armes et tes armures : elles les protégeront à
+la place.  Une bombe de lubrifiant fait le même travail, mais pas pour
+longtemps.
+-----
+Méfie-toi de la cocatrix : petite bestiole, gros problème.  Un contact et
+te voilà statue.  Si tu sens tes membres se raidir, avale vite un lézard
+mort ou un blob acide.  Les malins en gardent toujours un dans leur sac.
+-----
+Les blindages qu'on ramasse par terre, c'est bien.  Mais il y a des gens,
+dans les Bas-fonds, qui savent changer des écailles de dragon en armure.
+Avec la bonne puce, tu peux le faire toi-même.
+-----
+Tes yeux te mentent, tu vois des choses qui n'existent pas ?  Un stim de
+soins importants remet le cerveau à l'heure.  Le stim qui rend malade
+aussi, d'ailleurs.  Le moins cher n'est pas toujours le pire.
+-----
+Pour la tête qui tourne, un lézard ou de l'eau bénite.  Pour presque tout
+le reste, la corne d'une créature parfaitement pure.  Ne demande pas où on
+trouve une licorne en ville.  Cherche.
+-----
+Si tu veux aller loin et vite, apprends à contrôler tes téléportations,
+puis lis de travers, l'esprit confus, la puce qui te téléporte d'habitude
+à côté.  Certains n'ont eu besoin ni de puce ni de stim : ils ont marché
+sur le bon piège.
+-----
+Tout le monde veut passer Méduse.  Mon conseil : un bandeau sur les yeux,
+et un miroir pour qu'elle croise son propre regard.  Elle n'a jamais
+supporté les selfies.
+-----
+Là où les murs disent « ad aerarium », fouille bien : un piège mène au
+Coffre-fort de Ludios, où dort la fortune de Crésus.  Entrer, c'est
+facile.  Sortir avec les crédits, c'est une autre histoire.
+-----
+Les vendeurs gonflent leurs prix quand ils voient arriver une chemise à
+fleurs ou un client mal vu.  Ils préfèrent les beaux visages et les bonnes
+manières.  Le rustre paie le prix fort, comme partout.
+-----
+L'évier qui avale les modules, ce n'est pas une légende urbaine.  Mais les
+connaisseurs regardent ce que l'évier devient quand il en avale un : c'est
+le meilleur moyen de savoir ce que faisait le module.
+-----
+Ce qu'on mange laisse des traces.  Une caméra flottante bien fraîche, c'est
+la Télépathie garantie : même aveugle, tu sentiras les esprits autour de
+toi.  Les netrunners se l'arrachent.
+-----
+Savoir ce qui est béni ou maudit, c'est le rayon des dieux.  Ils le disent
+à qui le demande dans leurs temples, ou à ceux qui travaillent pour eux.
+Les technoprêtres n'ont même pas besoin de demander.
+-----
+Parfois les dieux offrent à leurs fidèles une lame qui a un nom, et une
+légende avec.  Mais les gens bien informés savent fabriquer eux-mêmes les
+lames elfiques que les gangers détestent tant.  Pas besoin de miracle.
+-----
+On parle d'une amulette venue de l'antique Yendor.  Les dieux la veulent
+plus que tout.  Celui qui la porte voit ce que ses yeux ne voient pas et
+trouve les passages qui mènent ailleurs ; certains disent qu'il suffit de
+l'avoir sur soi.  Mais tout se paie : un tel pouvoir use son homme.
+-----
+On dit qu'on peut entrer dans le sanctuaire de Moloch, au plus profond du
+Réseau, depuis un endroit où le sol vibre.  Il te faudra trois objets : la
+cloche d'argent pour t'annoncer, le livre de Moloch pour faire trembler la
+terre, et le candélabre allumé pour voir le chemin.
+-----
+Tout au fond de la Mégalopole, à l'entrée du Réseau profond, il y a un
+château, et dans ce château un implant de souhaits.  Le pont-levis obéit
+à une mélodie : prends un instrument.  Les dieux connaissent les notes ;
+toi, tu peux les deviner à force d'essais.  Les autres font le tour
+jusqu'à la poterne.
+-----
+Les dieux aiment qu'on donne aux prêtres de leurs temples, et ils savent
+remercier.  Mais attention : mieux vaut être jeune et économe que vieux
+et radin.  Le tarif monte avec l'âge, comme tout.
+-----
+Écris le nom d'Elbereth par terre et beaucoup de tes ennemis n'oseront
+plus t'approcher.  Reste calme : un pas maladroit efface l'inscription, et
+un coup d'arme rompt la trêve.  Les tags, ça s'entretient.
+-----

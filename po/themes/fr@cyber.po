@@ -4027,3 +4027,35 @@ msgstr "crédit"
 msgctxt "currency"
 msgid "zorkmids"
 msgstr "crédits"
+
+# Sixième lot : la Fixeuse (oracle.c, rumors.c, insight.c)
+
+msgid "Oracle of Delphi."
+msgstr "La Fixeuse."
+
+msgid "consulted the Oracle of Delphi"
+msgstr "consulté la Fixeuse"
+
+msgid "You have consulted the Oracle of Delphi."
+msgstr "Vous avez consulté la Fixeuse."
+
+msgid "You consulted the Oracle of Delphi."
+msgstr "Vous avez consulté la Fixeuse."
+
+msgid "True to her word, the Oracle offhandedly says: "
+msgstr "Fidèle à sa parole, la Fixeuse lâche d'un ton détaché : "
+
+msgid "True to her word, the Oracle casually says: "
+msgstr "Fidèle à sa parole, la Fixeuse glisse en passant : "
+
+msgid "True to her word, the Oracle nonchalantly says: "
+msgstr "Fidèle à sa parole, la Fixeuse dit avec nonchalance : "
+
+msgid "True to her word, the Oracle says: "
+msgstr "Fidèle à sa parole, la Fixeuse dit : "
+
+msgid "The Oracle scornfully takes all your gold and says:"
+msgstr "La Fixeuse empoche tous vos crédits avec mépris et dit :"
+
+msgid "The Oracle meditates for a moment and then intones:"
+msgstr "La Fixeuse consulte ses écrans un instant, puis déclare :"

@@ -1,0 +1,105 @@
+# NetHack 5.0  epitaph-fr@cyber.txt
+# NetHack may be freely redistributed.  See license for details.
+# Épitaphes des pierres tombales aléatoires du thème cyberpunk
+# (CYBERPUNK.md).  Compilé en epitaph.fr@cyber
+# (MAKEDEFS_LANG=fr@cyber ../util/makedefs -1) ; sans ce fichier, le jeu
+# prend epitaph.fr.
+#
+Repose en paix
+R.I.P.
+Déconnecté
+Connexion perdue
+Hors ligne
+Session expirée
+Fin de transmission
+Signal perdu
+Batterie à plat
+Mise à jour en cours, ne pas éteindre
+Redémarrage prévu à l'aube
+Sauvegarde corrompue
+Il n'avait pas fait de sauvegarde
+Il avait oublié son mot de passe
+Elle avait cliqué sur le lien
+Il avait accepté les conditions d'utilisation
+Elle avait lu les conditions d'utilisation, toutes
+Il a voulu pirater la mauvaise corpo
+Elle a bu le stim trouble
+Il a bu le stim trouble, deux fois
+Il avait acheté l'implant d'occasion
+Implant non certifié
+Garantie expirée
+Pièces détachées disponibles sur demande
+Organes à vendre, s'adresser au charcudoc
+Recyclé à 87 %
+Ici repose 70 % de Jack.  Le reste est en location.
+Ici gît la partie organique
+Plus de chrome que de chair
+Trop de chrome, pas assez d'âme
+Son cyberdeck lui survit
+Il est parti dans le Réseau et n'est jamais revenu
+Elle vit encore dans le Réseau.  Laissez un message.
+Téléchargée vers un monde meilleur
+Uploadé avec succès
+Transfert de conscience : échec
+Conscience archivée, accès payant
+Ses données ont été revendues trois fois
+Profil supprimé à la demande de la famille
+Ce compte a été désactivé
+Compte suspendu pour activité suspecte
+Le client n'est pas joignable pour le moment
+Merci de rappeler plus tard
+Nous rencontrons des difficultés techniques
+Veuillez patienter
+Tapez 1 pour laisser un hommage
+Votre appel est important pour nous
+Abonnement résilié
+Dette remboursée.  Enfin.
+Il devait des crédits au mauvais vendeur
+Mort pour la corpo.  La corpo n'a pas envoyé de fleurs.
+Licencié, puis enterré
+Employé du mois, trois fois
+Il a fait des heures supplémentaires
+Elle a demandé une augmentation
+Il a dit non à un vigile
+Il a dit oui à un ganger
+Elle a fait confiance à la Fixeuse
+Il n'a pas fait confiance à la Fixeuse
+Le contrat a été rempli
+Le contrat ne l'a pas été
+Ronin jusqu'au bout
+Il connaissait le chemin de la sortie, mais pas celui du retour
+Pas de réseau sous terre
+Il cherchait la sortie de secours
+Elle a pris l'escalier de service
+Ici repose un netrunner.  Sa dernière ligne de code compilait.
+Ici repose un netrunner.  Sa dernière ligne de code ne compilait pas.
+Erreur fatale
+Exception non interceptée
+Core dumped
+Kernel panic
+Écran bleu
+404 : vie introuvable
+Accès refusé
+Permission denied
+Programme terminé normalement
+Processus tué par le système
+Tué par le ramasse-miettes
+Fuite de mémoire
+Débordement de pile
+Boucle infinie
+while (vivant) { travailler(); }
+Il était le dernier humain du quartier
+Son chien-robot l'attend toujours
+Son chaton-robot ne l'a pas attendu
+Elle a vu les rayons C briller près de la porte de Tannhäuser
+Il pleuvait, comme toujours
+Le néon s'est éteint
+Ne pas déranger
+Ne pas réanimer
+Réanimation : abonnement premium requis
+Bientôt de retour
+Revenez plus tard
+À suivre...
+Game over
+Insert coin
+Appuyez sur Entrée pour continuer

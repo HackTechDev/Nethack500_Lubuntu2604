@@ -1,0 +1,67 @@
+# NetHack 5.0  engrave-fr@cyber.txt
+# NetHack may be freely redistributed.  See license for details.
+# Gravures aléatoires du thème cyberpunk (CYBERPUNK.md) : des graffitis
+# sur les murs de la Mégalopole.  Compilé en engrave.fr@cyber
+# (MAKEDEFS_LANG=fr@cyber ../util/makedefs -2) ; sans ce fichier, le jeu
+# prend engrave.fr.
+#
+# "Elbereth" n'est pas traduit : c'est le mot qui effraie les monstres
+Elbereth
+# tags de gangs
+Les Rats de Labo tiennent ce couloir
+Propriété des Gangers du Mordor.  Passe ton chemin.
+Les Squatteurs étaient là avant toi
+KILROY.EXE est passé par là
+Vlad.dll a été chargé ici
+# conseils de rue
+Ne fais jamais confiance à un vendeur qui sourit
+Le vigile dort au troisième niveau.  Ou pas.
+Ici la caméra ne voit rien
+<--- Sortie de secours (hors service)
+Le Wi-Fi est meilleur en bas
+Ne bois pas les stims troubles
+X marque l'emplacement du serveur
+Vous êtes ici. ---> X
+Ce n'est pas le niveau que vous cherchez.
+Attention, drone de combat derrière cette porte !
+Il y avait un terminal ici.  Il n'y est plus.
+Mot de passe : 1234
+Mot de passe : motdepasse
+Changez votre mot de passe tous les 90 jours
+Réinitialiser ? [o/n]
+Erreur 404 : sortie introuvable
+Segmentation fault (core dumped)
+Hello, World!
+# contestation
+La Mégalopole ment
+Les corpos nous mangent vivants
+Débranchez-les tous
+Le Réseau est à tout le monde
+Vos données nous appartiennent
+Souriez, vous êtes filmé
+Ni dieux ni maîtres ni licences
+Le futur, c'était mieux avant
+L'avenir est déjà là, il est juste mal distribué
+# publicité
+Besoin de lumière ?  Lampes torches Izchak, au cœur des Bas-fonds !
+Stims de soins à prix cassés, demandez Zoé au niveau 4
+Implant de souhait : vous êtes le millionième visiteur !  Patientez 200 tours.
+Votre abonnement a expiré
+Cet espace publicitaire est à louer
+Cette case a été laissée vide intentionnellement.
+# folklore du Réseau
+Le gâteau est un mensonge
+Wake up, Neo...
+Toutes vos bases sont à nous
+Il n'y a pas de cuillère
+Sauvegardez maintenant, et faites vos sauvegardes !
+Ne paniquez pas
+42
+sudo creusez ici
+rm -rf /
+:(){ :|:& };:
+# hommages
+Case l'avait bien dit
+Molly était là.  Molly repassera.
+Les androïdes rêvent-ils de moutons électriques ?
+J'ai vu tant de choses que vous, humains, ne pourriez pas croire
