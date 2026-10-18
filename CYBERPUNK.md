@@ -123,15 +123,40 @@ Vérifié en jeu (Magicien elfe) : « Vous êtes Netrunner elfe chaotique »,
 « une puce d'identification non maudite », « un stim de soins non
 maudit », « Vous êtes dans la Mégalopole », « chaton-robot apprivoisé ».
 
+## Deuxième lot : les rangs (en place)
+
+Neuf rangs par rôle, au masculin et au féminin (ligne d'état, `^X`, fin
+de partie).  Les rangs qui reprennent le nom du rôle gardent celui du
+thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
+(« Sire » et « Dame », `sit.c`).
+
+| Rôle | Rangs (niveaux 1, 3, 6, 10, 14, 18, 22, 26, 30) |
+|---|---|
+| Récupérateur | Fouineur, Ferrailleur, Fouilleur de décharges, Pilleur d'épaves, Démonteur, Spéléo urbain, Archéotechnicien, Collectionneur, Conservateur |
+| Cogneur | Casseur, Pilleur, Racketteur, Braqueur, Pillard, Ravageur, Tueur, Chef de gang, Seigneur de guerre |
+| Sauvageon | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Nomade, Écumeur, Pionnier |
+| Charcudoc | Herboriste de rue, Rafistoleur, Embaumeur, Infirmier, Rebouteux, Chimiste de rue, Doc, Médecin de l'ombre, Chirurgien cybernétique |
+| Exécuteur | Recrue, Vigile, Agent, Sergent, Exécuteur, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
+| Moine augmenté | Candidat, Novice, Initié, Élève du Silicium, du Flux, du Chrome, des Ondes, du Plasma, Maître |
+| Technoprêtre | Aspirant, Acolyte, Adepte, Technoprêtre, Desservant du Code, Chanoine du Réseau, Gourou, Patriarche du Réseau, Grand Technoprêtre |
+| Traqueur | Bleu, Guetteur, Éclaireur, Ombre, Pisteur, Arbalétrier, Tireur, Tireur d'élite, Sniper |
+| Voleur de données | Pickpocket, Coupe-bourse, Voleur de données, Chapardeur, Braqueur, Cambrioleur, Escroc, Arnaqueur, Maître voleur |
+| Ronin urbain | Recrue du clan, Ronin des rues, Ninja/Kunoichi, Garde du corps, Chef de quartier, Chef de district, Oyabun, Conseiller zaibatsu, Shogun corpo |
+| Corpo en goguette | Badaud, Visiteur, Excursionniste, Globe-trotteur, Voyageur, Baroudeur, Grand voyageur, Explorateur, Aventurier |
+| Mercenaire | Gamin, Escarmoucheur, Combattant, Homme d'armes, Guerrier, Bretteur, Héros, Champion, Seigneur des rues |
+| Netrunner | Script-kiddie, Bidouilleur, Codeur, Hacker, Cracker, Sorcier du code, Nécromancien des données, Netrunner, Légende du Réseau |
+
+Vérifié en jeu : « le Script-kiddie », puis « le Hacker » au niveau 10
+(Netrunner) ; « la Gamine », puis « la Femme d'armes » (Mercenaire).
+
 ## Prochains lots
 
-1. Les rangs de chaque rôle (neuf par rôle, ligne d'état et `^X`).
-2. Les descriptions des classes de monstres et d'objets (msgctxt `symbol`,
+1. Les descriptions des classes de monstres et d'objets (msgctxt `symbol`,
    `symbol a` : « un chat ou autre félin »...).
-3. Le reste des monstres (environ 380) et des objets (armes, armures,
+2. Le reste des monstres (environ 380) et des objets (armes, armures,
    outils, nourriture), avec leurs genres.
-4. Les messages fréquents qui parlent de magie (lire, boire, lancer un
+3. Les messages fréquents qui parlent de magie (lire, boire, lancer un
    sort...), la monnaie des marchands (« zorkmids »).
-5. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
+4. Les textes d'ambiance (rumeurs, Oracle, gravures, épitaphes) en
    fichiers `dat/*-fr@cyber.*`, puis les quêtes.
-6. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
+5. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).

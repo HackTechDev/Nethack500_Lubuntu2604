@@ -584,3 +584,808 @@ msgstr "moto-poney"
 msgctxt "gender"
 msgid "pony"
 msgstr "f"
+
+# --- Rangs de chaque rôle (msgid sans contexte ; forme féminine en
+#     msgctxt "feminine" quand l'anglais n'en a pas) ---
+
+# Archeologist
+
+msgid "Digger"
+msgstr "Fouineur"
+
+msgctxt "feminine"
+msgid "Digger"
+msgstr "Fouineuse"
+
+msgid "Field Worker"
+msgstr "Ferrailleur"
+
+msgctxt "feminine"
+msgid "Field Worker"
+msgstr "Ferrailleuse"
+
+msgid "Investigator"
+msgstr "Fouilleur de décharges"
+
+msgctxt "feminine"
+msgid "Investigator"
+msgstr "Fouilleuse de décharges"
+
+msgid "Exhumer"
+msgstr "Pilleur d'épaves"
+
+msgctxt "feminine"
+msgid "Exhumer"
+msgstr "Pilleuse d'épaves"
+
+msgid "Excavator"
+msgstr "Démonteur"
+
+msgctxt "feminine"
+msgid "Excavator"
+msgstr "Démonteuse"
+
+msgid "Spelunker"
+msgstr "Spéléo urbain"
+
+msgctxt "feminine"
+msgid "Spelunker"
+msgstr "Spéléo urbaine"
+
+msgid "Speleologist"
+msgstr "Archéotechnicien"
+
+msgctxt "feminine"
+msgid "Speleologist"
+msgstr "Archéotechnicienne"
+
+msgid "Collector"
+msgstr "Collectionneur"
+
+msgctxt "feminine"
+msgid "Collector"
+msgstr "Collectionneuse"
+
+msgid "Curator"
+msgstr "Conservateur"
+
+msgctxt "feminine"
+msgid "Curator"
+msgstr "Conservatrice"
+
+# Barbarian
+
+msgid "Plunderer"
+msgstr "Casseur"
+
+msgid "Plunderess"
+msgstr "Casseuse"
+
+msgid "Pillager"
+msgstr "Pilleur"
+
+msgctxt "feminine"
+msgid "Pillager"
+msgstr "Pilleuse"
+
+msgid "Bandit"
+msgstr "Racketteur"
+
+msgctxt "feminine"
+msgid "Bandit"
+msgstr "Racketteuse"
+
+msgid "Brigand"
+msgstr "Braqueur"
+
+msgctxt "feminine"
+msgid "Brigand"
+msgstr "Braqueuse"
+
+msgid "Raider"
+msgstr "Pillard"
+
+msgctxt "feminine"
+msgid "Raider"
+msgstr "Pillarde"
+
+msgid "Reaver"
+msgstr "Ravageur"
+
+msgctxt "feminine"
+msgid "Reaver"
+msgstr "Ravageuse"
+
+msgid "Slayer"
+msgstr "Tueur"
+
+msgctxt "feminine"
+msgid "Slayer"
+msgstr "Tueuse"
+
+msgid "Chieftain"
+msgstr "Chef de gang"
+
+msgid "Chieftainess"
+msgstr "Cheffe de gang"
+
+msgid "Conqueror"
+msgstr "Seigneur de guerre"
+
+msgid "Conqueress"
+msgstr "Dame de guerre"
+
+# Caveman
+
+msgid "Troglodyte"
+msgstr "Troglo"
+
+msgctxt "feminine"
+msgid "Troglodyte"
+msgstr "Troglo"
+
+msgid "Aborigine"
+msgstr "Rat de tunnel"
+
+msgctxt "feminine"
+msgid "Aborigine"
+msgstr "Rate de tunnel"
+
+msgid "Wanderer"
+msgstr "Errant"
+
+msgctxt "feminine"
+msgid "Wanderer"
+msgstr "Errante"
+
+msgid "Vagrant"
+msgstr "Clodo"
+
+msgctxt "feminine"
+msgid "Vagrant"
+msgstr "Clodo"
+
+msgid "Wayfarer"
+msgstr "Routard"
+
+msgctxt "feminine"
+msgid "Wayfarer"
+msgstr "Routarde"
+
+msgid "Roamer"
+msgstr "Rôdeur des friches"
+
+msgctxt "feminine"
+msgid "Roamer"
+msgstr "Rôdeuse des friches"
+
+msgid "Nomad"
+msgstr "Nomade"
+
+msgctxt "feminine"
+msgid "Nomad"
+msgstr "Nomade"
+
+msgid "Rover"
+msgstr "Écumeur"
+
+msgctxt "feminine"
+msgid "Rover"
+msgstr "Écumeuse"
+
+msgid "Pioneer"
+msgstr "Pionnier"
+
+msgctxt "feminine"
+msgid "Pioneer"
+msgstr "Pionnière"
+
+# Healer
+
+msgid "Rhizotomist"
+msgstr "Herboriste de rue"
+
+msgctxt "feminine"
+msgid "Rhizotomist"
+msgstr "Herboriste de rue"
+
+msgid "Empiric"
+msgstr "Rafistoleur"
+
+msgctxt "feminine"
+msgid "Empiric"
+msgstr "Rafistoleuse"
+
+msgid "Embalmer"
+msgstr "Embaumeur"
+
+msgctxt "feminine"
+msgid "Embalmer"
+msgstr "Embaumeuse"
+
+msgid "Dresser"
+msgstr "Infirmier"
+
+msgctxt "feminine"
+msgid "Dresser"
+msgstr "Infirmière"
+
+msgid "Medicus ossium"
+msgstr "Rebouteux"
+
+msgid "Medica ossium"
+msgstr "Rebouteuse"
+
+msgid "Herbalist"
+msgstr "Chimiste de rue"
+
+msgctxt "feminine"
+msgid "Herbalist"
+msgstr "Chimiste de rue"
+
+msgid "Magister"
+msgstr "Doc"
+
+msgid "Magistra"
+msgstr "Doc"
+
+msgid "Physician"
+msgstr "Médecin de l'ombre"
+
+msgctxt "feminine"
+msgid "Physician"
+msgstr "Médecin de l'ombre"
+
+msgid "Chirurgeon"
+msgstr "Chirurgien cybernétique"
+
+msgctxt "feminine"
+msgid "Chirurgeon"
+msgstr "Chirurgienne cybernétique"
+
+# Knight
+
+msgid "Gallant"
+msgstr "Recrue"
+
+msgctxt "feminine"
+msgid "Gallant"
+msgstr "Recrue"
+
+msgid "Esquire"
+msgstr "Vigile"
+
+msgctxt "feminine"
+msgid "Esquire"
+msgstr "Vigile"
+
+msgid "Bachelor"
+msgstr "Agent"
+
+msgctxt "feminine"
+msgid "Bachelor"
+msgstr "Agente"
+
+msgid "Sergeant"
+msgstr "Sergent"
+
+msgctxt "feminine"
+msgid "Sergeant"
+msgstr "Sergente"
+
+msgid "Banneret"
+msgstr "Chef d'escouade"
+
+msgctxt "feminine"
+msgid "Banneret"
+msgstr "Cheffe d'escouade"
+
+msgid "Chevalier"
+msgstr "Chevalier corpo"
+
+msgid "Chevaliere"
+msgstr "Chevalière corpo"
+
+msgid "Seignieur"
+msgstr "Patron"
+
+msgid "Dame"
+msgstr "Patronne"
+
+msgid "Paladin"
+msgstr "Paladin corpo"
+
+msgctxt "feminine"
+msgid "Paladin"
+msgstr "Paladine corpo"
+
+# Monk
+
+msgid "Candidate"
+msgstr "Candidat"
+
+msgctxt "feminine"
+msgid "Candidate"
+msgstr "Candidate"
+
+msgid "Novice"
+msgstr "Novice"
+
+msgctxt "feminine"
+msgid "Novice"
+msgstr "Novice"
+
+msgid "Initiate"
+msgstr "Initié"
+
+msgctxt "feminine"
+msgid "Initiate"
+msgstr "Initiée"
+
+msgid "Student of Stones"
+msgstr "Élève du Silicium"
+
+msgctxt "feminine"
+msgid "Student of Stones"
+msgstr "Élève du Silicium"
+
+msgid "Student of Waters"
+msgstr "Élève du Flux"
+
+msgctxt "feminine"
+msgid "Student of Waters"
+msgstr "Élève du Flux"
+
+msgid "Student of Metals"
+msgstr "Élève du Chrome"
+
+msgctxt "feminine"
+msgid "Student of Metals"
+msgstr "Élève du Chrome"
+
+msgid "Student of Winds"
+msgstr "Élève des Ondes"
+
+msgctxt "feminine"
+msgid "Student of Winds"
+msgstr "Élève des Ondes"
+
+msgid "Student of Fire"
+msgstr "Élève du Plasma"
+
+msgctxt "feminine"
+msgid "Student of Fire"
+msgstr "Élève du Plasma"
+
+msgid "Master"
+msgstr "Maître"
+
+msgctxt "feminine"
+msgid "Master"
+msgstr "Maîtresse"
+
+# Priest
+
+msgid "Aspirant"
+msgstr "Aspirant"
+
+msgctxt "feminine"
+msgid "Aspirant"
+msgstr "Aspirante"
+
+msgid "Acolyte"
+msgstr "Acolyte"
+
+msgctxt "feminine"
+msgid "Acolyte"
+msgstr "Acolyte"
+
+msgid "Adept"
+msgstr "Adepte"
+
+msgctxt "feminine"
+msgid "Adept"
+msgstr "Adepte"
+
+msgid "Curate"
+msgstr "Desservant du Code"
+
+msgctxt "feminine"
+msgid "Curate"
+msgstr "Desservante du Code"
+
+msgid "Canon"
+msgstr "Chanoine du Réseau"
+
+msgid "Canoness"
+msgstr "Chanoinesse du Réseau"
+
+msgid "Lama"
+msgstr "Gourou"
+
+msgctxt "feminine"
+msgid "Lama"
+msgstr "Gourou"
+
+msgid "Patriarch"
+msgstr "Patriarche du Réseau"
+
+msgid "Matriarch"
+msgstr "Matriarche du Réseau"
+
+msgid "High Priest"
+msgstr "Grand Technoprêtre"
+
+msgid "High Priestess"
+msgstr "Grande Technoprêtresse"
+
+# Rogue
+
+msgid "Footpad"
+msgstr "Pickpocket"
+
+msgctxt "feminine"
+msgid "Footpad"
+msgstr "Pickpocket"
+
+msgid "Cutpurse"
+msgstr "Coupe-bourse"
+
+msgctxt "feminine"
+msgid "Cutpurse"
+msgstr "Coupe-bourse"
+
+msgid "Pilferer"
+msgstr "Chapardeur"
+
+msgctxt "feminine"
+msgid "Pilferer"
+msgstr "Chapardeuse"
+
+msgid "Robber"
+msgstr "Braqueur"
+
+msgctxt "feminine"
+msgid "Robber"
+msgstr "Braqueuse"
+
+msgid "Burglar"
+msgstr "Cambrioleur"
+
+msgctxt "feminine"
+msgid "Burglar"
+msgstr "Cambrioleuse"
+
+msgid "Filcher"
+msgstr "Escroc"
+
+msgctxt "feminine"
+msgid "Filcher"
+msgstr "Escroc"
+
+msgid "Magsman"
+msgstr "Arnaqueur"
+
+msgid "Magswoman"
+msgstr "Arnaqueuse"
+
+msgid "Thief"
+msgstr "Maître voleur"
+
+msgctxt "feminine"
+msgid "Thief"
+msgstr "Maîtresse voleuse"
+
+# Tourist
+
+msgid "Rambler"
+msgstr "Badaud"
+
+msgctxt "feminine"
+msgid "Rambler"
+msgstr "Badaude"
+
+msgid "Sightseer"
+msgstr "Visiteur"
+
+msgctxt "feminine"
+msgid "Sightseer"
+msgstr "Visiteuse"
+
+msgid "Excursionist"
+msgstr "Excursionniste"
+
+msgctxt "feminine"
+msgid "Excursionist"
+msgstr "Excursionniste"
+
+msgid "Peregrinator"
+msgstr "Globe-trotteur"
+
+msgid "Peregrinatrix"
+msgstr "Globe-trotteuse"
+
+msgid "Traveler"
+msgstr "Voyageur"
+
+msgctxt "feminine"
+msgid "Traveler"
+msgstr "Voyageuse"
+
+msgid "Journeyer"
+msgstr "Baroudeur"
+
+msgctxt "feminine"
+msgid "Journeyer"
+msgstr "Baroudeuse"
+
+msgid "Voyager"
+msgstr "Grand voyageur"
+
+msgctxt "feminine"
+msgid "Voyager"
+msgstr "Grande voyageuse"
+
+msgid "Explorer"
+msgstr "Explorateur"
+
+msgctxt "feminine"
+msgid "Explorer"
+msgstr "Exploratrice"
+
+msgid "Adventurer"
+msgstr "Aventurier"
+
+msgctxt "feminine"
+msgid "Adventurer"
+msgstr "Aventurière"
+
+# Valkyrie
+
+msgid "Stripling"
+msgstr "Gamin"
+
+msgctxt "feminine"
+msgid "Stripling"
+msgstr "Gamine"
+
+msgid "Skirmisher"
+msgstr "Escarmoucheur"
+
+msgctxt "feminine"
+msgid "Skirmisher"
+msgstr "Escarmoucheuse"
+
+msgid "Fighter"
+msgstr "Combattant"
+
+msgctxt "feminine"
+msgid "Fighter"
+msgstr "Combattante"
+
+msgid "Man-at-arms"
+msgstr "Homme d'armes"
+
+msgid "Woman-at-arms"
+msgstr "Femme d'armes"
+
+msgid "Warrior"
+msgstr "Guerrier"
+
+msgctxt "feminine"
+msgid "Warrior"
+msgstr "Guerrière"
+
+msgid "Swashbuckler"
+msgstr "Bretteur"
+
+msgctxt "feminine"
+msgid "Swashbuckler"
+msgstr "Bretteuse"
+
+msgid "Hero"
+msgstr "Héros"
+
+msgid "Heroine"
+msgstr "Héroïne"
+
+msgid "Champion"
+msgstr "Champion"
+
+msgctxt "feminine"
+msgid "Champion"
+msgstr "Championne"
+
+msgid "Lord"
+msgstr "Seigneur des rues"
+
+msgid "Lady"
+msgstr "Dame des rues"
+
+# Wizard
+
+msgid "Evoker"
+msgstr "Script-kiddie"
+
+msgctxt "feminine"
+msgid "Evoker"
+msgstr "Script-kiddie"
+
+msgid "Conjurer"
+msgstr "Bidouilleur"
+
+msgctxt "feminine"
+msgid "Conjurer"
+msgstr "Bidouilleuse"
+
+msgid "Thaumaturge"
+msgstr "Codeur"
+
+msgctxt "feminine"
+msgid "Thaumaturge"
+msgstr "Codeuse"
+
+msgid "Magician"
+msgstr "Hacker"
+
+msgctxt "feminine"
+msgid "Magician"
+msgstr "Hacker"
+
+msgid "Enchanter"
+msgstr "Cracker"
+
+msgid "Enchantress"
+msgstr "Cracker"
+
+msgid "Sorcerer"
+msgstr "Sorcier du code"
+
+msgid "Sorceress"
+msgstr "Sorcière du code"
+
+msgid "Necromancer"
+msgstr "Nécromancien des données"
+
+msgctxt "feminine"
+msgid "Necromancer"
+msgstr "Nécromancienne des données"
+
+msgid "Mage"
+msgstr "Légende du Réseau"
+
+msgctxt "feminine"
+msgid "Mage"
+msgstr "Légende du Réseau"
+
+# Ranger
+
+msgid "Tenderfoot"
+msgstr "Bleu"
+
+msgctxt "feminine"
+msgid "Tenderfoot"
+msgstr "Bleue"
+
+msgid "Lookout"
+msgstr "Guetteur"
+
+msgctxt "feminine"
+msgid "Lookout"
+msgstr "Guetteuse"
+
+msgid "Trailblazer"
+msgstr "Éclaireur"
+
+msgctxt "feminine"
+msgid "Trailblazer"
+msgstr "Éclaireuse"
+
+msgid "Reconnoiterer"
+msgstr "Ombre"
+
+msgid "Reconnoiteress"
+msgstr "Ombre"
+
+msgid "Scout"
+msgstr "Pisteur"
+
+msgctxt "feminine"
+msgid "Scout"
+msgstr "Pisteuse"
+
+msgid "Arbalester"
+msgstr "Arbalétrier"
+
+msgctxt "feminine"
+msgid "Arbalester"
+msgstr "Arbalétrière"
+
+msgid "Archer"
+msgstr "Tireur"
+
+msgctxt "feminine"
+msgid "Archer"
+msgstr "Tireuse"
+
+msgid "Sharpshooter"
+msgstr "Tireur d'élite"
+
+msgctxt "feminine"
+msgid "Sharpshooter"
+msgstr "Tireuse d'élite"
+
+msgid "Marksman"
+msgstr "Sniper"
+
+msgid "Markswoman"
+msgstr "Sniper"
+
+# Samurai
+
+msgid "Hatamoto"
+msgstr "Recrue du clan"
+
+msgctxt "feminine"
+msgid "Hatamoto"
+msgstr "Recrue du clan"
+
+msgid "Ronin"
+msgstr "Ronin des rues"
+
+msgctxt "feminine"
+msgid "Ronin"
+msgstr "Ronin des rues"
+
+msgid "Ninja"
+msgstr "Ninja"
+
+msgid "Kunoichi"
+msgstr "Kunoichi"
+
+msgid "Joshu"
+msgstr "Garde du corps"
+
+msgctxt "feminine"
+msgid "Joshu"
+msgstr "Garde du corps"
+
+msgid "Ryoshu"
+msgstr "Chef de quartier"
+
+msgctxt "feminine"
+msgid "Ryoshu"
+msgstr "Cheffe de quartier"
+
+msgid "Kokushu"
+msgstr "Chef de district"
+
+msgctxt "feminine"
+msgid "Kokushu"
+msgstr "Cheffe de district"
+
+msgid "Daimyo"
+msgstr "Oyabun"
+
+msgctxt "feminine"
+msgid "Daimyo"
+msgstr "Oyabun"
+
+msgid "Kuge"
+msgstr "Conseiller zaibatsu"
+
+msgctxt "feminine"
+msgid "Kuge"
+msgstr "Conseillère zaibatsu"
+
+msgid "Shogun"
+msgstr "Shogun corpo"
+
+msgctxt "feminine"
+msgid "Shogun"
+msgstr "Shogun corpo"
+
+# le trône s'adresse au héros comme à un rang (sit.c)
+
+msgid "Sire"
+msgstr "Patron"
