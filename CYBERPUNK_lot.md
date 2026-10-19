@@ -15,7 +15,8 @@ Suivi des lots du thème `fr@cyber` (le détail de chaque lot est dans
 | 6 | Textes d'ambiance : rumeurs (113 vraies, 107 fausses), consultations de la Fixeuse, 53 graffitis, 98 épitaphes ; `makedefs` accepte `fr@cyber` | `be076ce` |
 | 7 | Quêtes : textes communs et quête du Netrunner ; outil `po/quest-theme.py` | `2dd4ddb` |
 | 8 | Quêtes du Récupérateur (Archéologue) et du Cogneur (Barbare) | `52452fb` |
-| 9 | Quêtes du Sauvageon (Homme des cavernes) et du Charcudoc (Guérisseur) | (ce commit) |
+| 9 | Quêtes du Sauvageon (Homme des cavernes) et du Charcudoc (Guérisseur) | `27f262f` |
+| 10 | Quêtes de l'Exécuteur (Chevalier) et du Moine augmenté | (ce commit) |
 
 ## Lots à faire
 
@@ -24,7 +25,6 @@ environ 70 textes par rôle, avec les noms de leurs lieux (`%H`, `%i`).
 
 | Lot | Contenu |
 |---|---|
-| 10 | Quêtes de l'Exécuteur (Chevalier, 68) et du Moine augmenté (68) |
 | 11 | Quêtes du Technoprêtre (Prêtre, 68) et du Traqueur (Rôdeur, 69) |
 | 12 | Quêtes du Voleur de données (Voleur, 70) et du Ronin urbain (Samouraï, 69) |
 | 13 | Quêtes du Corpo en goguette (Touriste, 70) et de la Mercenaire (Valkyrie, 68) |

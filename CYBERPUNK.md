@@ -296,6 +296,20 @@ Campus d'archéotechnique a été assiégé ») ; le reste dans le catalogue.
 Vérifié en jeu : arrivée dans la quête du Charcudoc (« Quel bug vous a
 ramené à la Clinique d'Épidaure ? ») ; le reste dans le catalogue.
 
+## Dixième lot : quêtes de l'Exécuteur et du Moine augmenté (en place)
+
+- Exécuteur (Chevalier) : la Tour Camelot, siège d'une corporation dont
+  le roi Arthur préside le conseil (le « Nous » est gardé) ; Merlin
+  devient l'IA de sécurité qu'il faut remettre en ligne ; la Plateforme
+  de Verre au-delà des marais toxiques ; écuyers corpo, stock-options.
+- Moine augmenté : le Dojo de Chan-Sune, la Forteresse du Seigneur de la
+  Terre ; méditation → synchronisation, illumination → mise à jour
+  suprême ; Maître Kaen a sauvegardé son esprit ailleurs.
+
+Vérifié en jeu : arrivée dans la quête de l'Exécuteur (« Vous vous
+matérialisez dans l'ombre de la Tour Camelot. ») ; le reste dans le
+catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
