@@ -73,7 +73,7 @@ struct window_procs curses_procs = {
      | WC2_FLUSH_STATUS | WC2_TERM_SIZE
      | WC2_STATUSLINES | WC2_WINDOWBORDERS | WC2_PETATTR | WC2_GUICOLOR
      | WC2_SUPPRESS_HIST | WC2_URGENT_MESG | WC2_MENU_SHIFT
-     | WC2_EXTRASTATUS
+     | WC2_EXTRASTATUS | WC2_PAPERDOLL
     ),
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, /* color availability */
     curses_init_nhwindows,
@@ -773,6 +773,11 @@ curses_select_menu(winid wid, int how, MENU_ITEM_P ** selected)
 void
 curses_update_inventory(int arg)
 {
+    /* the paperdoll shows worn equipment, which only changes along with
+       the inventory */
+    if (!arg && (program_state.in_moveloop || program_state.gameover))
+        curses_update_doll();
+
     /* Don't do anything if perm_invent is off unless it was on and
        player just changed the option. */
     if (!iflags.perm_invent) {
@@ -1241,6 +1246,8 @@ curses_preference_update(const char *pref)
         || !strcmp(pref, "statuslines")
         || !strcmp(pref, "windowborders"))
         redo_main = redo_status = TRUE;
+    else if (!strcmp(pref, "paperdoll"))
+        redo_main = TRUE;
     else if (!strcmp(pref, "hilite_status"))
         redo_status = TRUE;
     else if (!strcmp(pref, "align_message"))

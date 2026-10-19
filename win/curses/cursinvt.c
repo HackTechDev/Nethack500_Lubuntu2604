@@ -464,3 +464,198 @@ curs_show_invt(WINDOW *win)
     }
     return;
 }
+
+/*
+ * Paperdoll (paperdoll option): the worn equipment beside the map, laid
+ * out like the Qt interface's doll (win/Qt/qt_inv.cpp), as a grid of
+ * object symbols with the short names of the worn items.
+ */
+
+enum doll_slot {
+    DS_QUIVER, DS_WEAPON, DS_ALTWEP, DS_RRING, DS_LIGHT, DS_UNUSED1,
+    DS_HELMET, DS_AMULET, DS_CLOAK, DS_SUIT, DS_SHIRT, DS_BOOTS,
+    DS_EYEWEAR, DS_SHIELD, DS_GLOVES, DS_LRING, DS_LEASH, DS_UNUSED2,
+    NUM_DOLL_SLOTS
+};
+
+/* labels of the slots, in grid order (three columns of six) */
+static const char *const doll_label[NUM_DOLL_SLOTS] = {
+    NC_("paperdoll", "quiver"), NC_("paperdoll", "weapon"),
+    NC_("paperdoll", "alternate"), NC_("paperdoll", "right ring"),
+    NC_("paperdoll", "light"), (const char *) 0,
+    NC_("paperdoll", "helmet"), NC_("paperdoll", "amulet"),
+    NC_("paperdoll", "cloak"), NC_("paperdoll", "suit"),
+    NC_("paperdoll", "shirt"), NC_("paperdoll", "boots"),
+    NC_("paperdoll", "eyewear"), NC_("paperdoll", "shield"),
+    NC_("paperdoll", "gloves"), NC_("paperdoll", "left ring"),
+    NC_("paperdoll", "leash"), (const char *) 0,
+};
+
+/* order of the short names under or beside the grid */
+static const enum doll_slot doll_name_order[] = {
+    DS_WEAPON, DS_SHIELD, DS_ALTWEP, DS_QUIVER, DS_HELMET, DS_EYEWEAR,
+    DS_AMULET, DS_CLOAK, DS_SUIT, DS_SHIRT, DS_GLOVES, DS_BOOTS,
+    DS_RRING, DS_LRING, DS_LIGHT, DS_LEASH,
+};
+
+static struct obj *doll_lit_or_leash(boolean);
+static struct obj *doll_obj(enum doll_slot);
+static void doll_putname(WINDOW *, int, int, int, const char *);
+
+/* a lit light source or a leash in use, which have no pointer of their own
+   (the first lit object might also be a wielded Sunsword) */
+static struct obj *
+doll_lit_or_leash(boolean leash)
+{
+    struct obj *o;
+
+    for (o = gi.invent; o; o = o->nobj)
+        if (leash ? (o->otyp == LEASH && o->leashmon) : o->lamplit)
+            break;
+    return o;
+}
+
+/* the object shown in a slot */
+static struct obj *
+doll_obj(enum doll_slot slot)
+{
+    switch (slot) {
+    case DS_QUIVER:
+        return uquiver;
+    case DS_WEAPON:
+        return uwep;
+    case DS_ALTWEP: /* shown in the shield slot when wielded */
+        return u.twoweap ? (struct obj *) 0 : uswapwep;
+    case DS_RRING:
+        return uright;
+    case DS_LIGHT:
+        return doll_lit_or_leash(FALSE);
+    case DS_HELMET:
+        return uarmh;
+    case DS_AMULET:
+        return uamul;
+    case DS_CLOAK:
+        return uarmc;
+    case DS_SUIT:
+        return uarm;
+    case DS_SHIRT:
+        return uarmu;
+    case DS_BOOTS:
+        return uarmf;
+    case DS_EYEWEAR:
+        return ublindf;
+    case DS_SHIELD: /* secondary weapon, or a two-handed one shown twice */
+        return u.twoweap ? uswapwep
+               : (uwep && bimanual(uwep)) ? uwep : uarms;
+    case DS_GLOVES:
+        return uarmg;
+    case DS_LRING:
+        return uleft;
+    case DS_LEASH:
+        return doll_lit_or_leash(TRUE);
+    default:
+        break;
+    }
+    return (struct obj *) 0;
+}
+
+/* write "label: name" at y,x, cut to width columns (UTF-8 aware) */
+static void
+doll_putname(WINDOW *win, int y, int x, int width, const char *text)
+{
+    const char *p;
+    int cols = 0;
+
+    for (p = text; *p && cols < width; ++cols) {
+        ++p; /* skip the continuation bytes of a multibyte character */
+        while ((*p & 0xc0) == 0x80)
+            ++p;
+    }
+    mvwaddnstr(win, y, x, text, (int) (p - text));
+}
+
+void
+curses_update_doll(void)
+{
+    WINDOW *win = curses_get_nhwin(DOLL_WIN);
+    struct obj *obj;
+    glyph_info gi_obj;
+    char buf[BUFSZ];
+    int border, height, width, slot, col, row, x, y, i, line, namex,
+        color;
+
+    if (!win)
+        return;
+    border = curses_window_has_border(DOLL_WIN) ? 1 : 0;
+    curses_get_window_size(DOLL_WIN, &height, &width);
+    werase(win);
+    if (border)
+        box(win, 0, 0);
+
+    /* the grid: three columns of six cells, " c " each */
+    y = border, x = border;
+    mvwaddch(win, y, x, ACS_ULCORNER);
+    mvwaddch(win, y + 7, x, ACS_LLCORNER);
+    for (col = 0; col < 3; ++col) {
+        for (i = 1; i <= 3; ++i) {
+            mvwaddch(win, y, x + 4 * col + i, ACS_HLINE);
+            mvwaddch(win, y + 7, x + 4 * col + i, ACS_HLINE);
+        }
+        mvwaddch(win, y, x + 4 * col + 4,
+                 (col < 2) ? ACS_TTEE : ACS_URCORNER);
+        mvwaddch(win, y + 7, x + 4 * col + 4,
+                 (col < 2) ? ACS_BTEE : ACS_LRCORNER);
+    }
+    for (slot = 0; slot < NUM_DOLL_SLOTS; ++slot) {
+        col = slot / 6, row = slot % 6;
+        if (!col)
+            mvwaddch(win, y + 1 + row, x, ACS_VLINE);
+        mvwaddch(win, y + 1 + row, x + 4 * col + 4, ACS_VLINE);
+        wmove(win, y + 1 + row, x + 4 * col + 2);
+        if (!doll_label[slot]) {
+            waddch(win, ' '); /* unused cell */
+        } else if ((obj = doll_obj((enum doll_slot) slot)) == 0) {
+            curses_toggle_color_attr(win, CLR_BLACK, NONE, ON);
+            waddch(win, '.'); /* empty slot */
+            curses_toggle_color_attr(win, CLR_BLACK, NONE, OFF);
+        } else {
+            map_glyphinfo(0, 0, obj_to_glyph(obj, rn2_on_display_rng), 0,
+                          &gi_obj);
+            color = gi_obj.gm.sym.color;
+            curses_toggle_color_attr(win, color, NONE, ON);
+#if defined(CURSES_UNICODE) && defined(ENHANCED_SYMBOLS)
+            if (SYMHANDLING(H_UTF8) && gi_obj.gm.u && gi_obj.gm.u->utf8str)
+                waddstr(win, (const char *) gi_obj.gm.u->utf8str);
+            else
+#endif
+                waddch(win, (chtype) (uchar) gi_obj.ttychar);
+            curses_toggle_color_attr(win, color, NONE, OFF);
+        }
+    }
+
+    /* the short names: beside the grid, then under it at full width */
+    if (width < DOLL_NARROW + 1 + DOLL_NAMES) {
+        wnoutrefresh(win);
+        return;
+    }
+    line = 0;
+    for (i = 0; i < SIZE(doll_name_order) && line < height; ++i) {
+        slot = (int) doll_name_order[i];
+        if ((obj = doll_obj((enum doll_slot) slot)) == 0)
+            continue;
+        /* a two-handed weapon is only named once */
+        if (slot == DS_SHIELD && obj == uwep)
+            continue;
+        Snprintf(buf, sizeof buf, C_("paperdoll", "%s: %s"),
+                 (slot == DS_SHIELD && u.twoweap)
+                     ? C_("paperdoll", "second weapon")
+                     : C_("paperdoll", doll_label[slot]),
+                 xname(obj));
+        namex = (line < 8) ? DOLL_NARROW + 1 : 0;
+        doll_putname(win, border + line, border + namex, width - namex, buf);
+        ++line;
+    }
+    wnoutrefresh(win);
+}
+
+/*cursinvt.c*/

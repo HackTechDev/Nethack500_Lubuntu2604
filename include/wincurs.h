@@ -32,7 +32,12 @@ extern WINDOW *activemenu;         /* curses window for menu requesting a
 #define INV_WIN     4
 #define TEXT_WIN    5
 #define MENU_WIN    6
-#define NHWIN_MAX   7
+#define DOLL_WIN    7 /* paperdoll: worn equipment beside the map */
+#define DOLL_HEIGHT 16 /* paperdoll lines: grid of 8, then short names */
+#define DOLL_NAMES  10 /* narrowest useful column of short names */
+#define DOLL_WIDTH  40 /* paperdoll columns at most: grid of 13, names */
+#define DOLL_NARROW 13 /* grid alone, without the names */
+#define NHWIN_MAX   8
 #if !defined(__APPLE__) || !defined(NCURSES_VERSION)
 # define USE_DARKGRAY /* Allow "bright" black; delete if not visible */
 #endif  /* !__APPLE__ && !PDCURSES */
@@ -207,6 +212,7 @@ extern void curses_status_update(int, genericptr_t, int, int, int,
 
 extern void curs_purge_perminv_data(boolean);
 extern void curs_update_invt(int);
+extern void curses_update_doll(void);
 extern void curs_add_invt(int, char, attr_t, int, const char *);
 
 /* cursinit.c */

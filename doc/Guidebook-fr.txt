@@ -5109,37 +5109,37 @@
        contenant  les  symboles  des divers types d'objets.  Les types omis
        sont ajoutés à la fin dans l'ordre précédent.
 
+     paperdoll
+       Affiche l'équipement porté  à  côté  de  la  carte  (désactivée  par
+       défaut)  :  une grille de symboles d'objets disposée comme la poupée
+       de l'interface Qt (carquois, arme, arme de rechange, anneaux, source
+       de lumière à gauche  ;  casque,  amulette,  cape,  armure,  chemise,
+       bottes au milieu ; lunettes, bouclier, gants, laisse à droite), avec
+       le nom court des objets portés.  Elle se place en haut de la fenêtre
+       de  perm_invent  quand  cette option est activée, sinon à côté de la
+       carte ; les noms demandent un terminal d'environ  120  colonnes,  la
+       grille seule 100.  Interface curses seulement.
+
      paranoid_confirmation
-       Une liste, séparée par des espaces, de situations où l'on  veut  une
-       autre  forme  de  confirmation.   La  valeur  par défaut est « para-
+       Une  liste,  séparée par des espaces, de situations où l'on veut une
+       autre forme de confirmation.  La  valeur  par  défaut  est  «  para-
        noid_confirmation:pray swim trap ».
 
-       Confirm     - pour toute question réglée pour exiger « yes »  plutôt
-                     que  'y', exiger aussi « no » pour refuser, au lieu de
+       Confirm     - pour  toute question réglée pour exiger « yes » plutôt
+                     que 'y', exiger aussi « no » pour refuser, au lieu  de
                      prendre toute réponse autre que oui pour un non ; pray
                      et AutoAll exigent alors aussi « yes » ou 'no' ;
        quit        - exiger « yes » plutôt que 'y' pour confirmer l'abandon
-                     de la partie ou le passage au  mode  exploration  sans
+                     de  la  partie  ou le passage au mode exploration sans
                      score ;
-       die         - exiger  «  yes » plutôt que 'y' pour confirmer la mort
-                     (inutile en jeu normal ; s'applique au  mode  explora-
+       die         - exiger « yes » plutôt que 'y' pour confirmer  la  mort
+                     (inutile  en  jeu normal ; s'applique au mode explora-
                      tion) ;
-       bones       - exiger  «  yes » plutôt que 'y' pour confirmer l'enre-
+       bones       - exiger « yes » plutôt que 'y' pour  confirmer  l'enre-
                      gistrement des os à la mort en mode débogage ;
        attack      - exiger « yes » plutôt que 'y' pour confirmer l'attaque
                      d'un monstre pacifique ;
-       wand-break  - exiger « yes » plutôt que  'y'  pour  confirmer  qu'on
-                     brise une baguette avec la commande apply ;
-       eating      - exiger  «  yes  »  plutôt que 'y' pour confirmer qu'on
-                     continue à manger ;
-       Were-change - exiger « yes » plutôt que 'y' pour confirmer un  chan-
-                     gement  de  forme  par  lycanthropie  quand  le  héros
-                     contrôle la métamorphose ;
-       pray        - exiger 'y' pour confirmer une prière au lieu de  prier
-                     aussitôt  ;  activée par défaut ; (pour exiger « yes »
-                     plutôt qu'un simple 'y', réglez aussi Confirm) ;
-       trap        - exiger 'y' pour confirmer qu'on avance dans ou sur  un
-                     piège  connu,  sauf  si  c'est jugé inoffensif ; quand
+       wand-break  - exiger  «  yes  »  plutôt que 'y' pour confirmer qu'on
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5152,60 +5152,60 @@
 
 
 
-                     elle est activée, cette confirmation sert  aussi  pour
-                     entrer  dans des nuages de gaz visibles ; (pour exiger
-                     «  yes  »  plutôt  qu'un  simple  'y',  réglez   aussi
-                     Confirm)  ; le préfixe de déplacement 'm' permet de se
+                     brise une baguette avec la commande apply ;
+       eating      - exiger « yes » plutôt que  'y'  pour  confirmer  qu'on
+                     continue à manger ;
+       Were-change - exiger  « yes » plutôt que 'y' pour confirmer un chan-
+                     gement  de  forme  par  lycanthropie  quand  le  héros
+                     contrôle la métamorphose ;
+       pray        - exiger  'y' pour confirmer une prière au lieu de prier
+                     aussitôt ; activée par défaut ; (pour exiger «  yes  »
+                     plutôt qu'un simple 'y', réglez aussi Confirm) ;
+       trap        - exiger  'y' pour confirmer qu'on avance dans ou sur un
+                     piège connu, sauf si c'est  jugé  inoffensif  ;  quand
+                     elle  est  activée, cette confirmation sert aussi pour
+                     entrer dans des nuages de gaz visibles ; (pour  exiger
+                     «   yes  »  plutôt  qu'un  simple  'y',  réglez  aussi
+                     Confirm) ; le préfixe de déplacement 'm' permet de  se
                      passer de confirmation ;
        swim        - empêcher d'avancer dans l'eau ou la lave ; activée par
                      défaut ; (pour marcher délibérément sur ou dans un tel
-                     terrain quand elle est réglée, utilisez le préfixe  de
+                     terrain  quand elle est réglée, utilisez le préfixe de
                      déplacement 'm' depuis une case adjacente) ;
-       AutoAll     - exiger  une  confirmation  quand  le  choix  'A' (tout
-                     sélectionner) est pris dans les menus  de  filtre  par
-                     classe  avec  menustyle:Full  ;  (pour  exiger « yes »
+       AutoAll     - exiger une  confirmation  quand  le  choix  'A'  (tout
+                     sélectionner)  est  pris  dans les menus de filtre par
+                     classe avec menustyle:Full ;  (pour  exiger  «  yes  »
                      plutôt qu'un simple 'y', réglez aussi Confirm) ;
-       Remove      - exiger le choix dans l'inventaire pour  les  commandes
+       Remove      - exiger  le  choix dans l'inventaire pour les commandes
                      'R' et 'T' même si un seul objet concerné est porté ;
        all         - activer tout ce qui précède.
 
-       Par  défaut,  les  choix pray, swim et trap sont activés, les autres
-       non.  Pour les désactiver sans régler d'autre choix, utilisez  para-
+       Par défaut, les choix pray, swim et trap sont  activés,  les  autres
+       non.   Pour les désactiver sans régler d'autre choix, utilisez para-
        noid_confirmation:none.  Pour les garder activés en réglant d'autres
-       choix,  vous  pouvez les inclure dans la nouvelle liste, comme para-
-       noid_confirmation:attack pray swim  Remove,  ou  faire  précéder  la
-       première  entrée  de  la  liste  d'un signe plus, paranoid_confirma-
+       choix, vous pouvez les inclure dans la nouvelle liste,  comme  para-
+       noid_confirmation:attack  pray  swim  Remove,  ou  faire précéder la
+       première entrée de la  liste  d'un  signe  plus,  paranoid_confirma-
        tion:+attack Remove.  Pour retirer une entrée déjà réglée sans reti-
-       rer les autres, faites précéder la première entrée de la liste  d'un
+       rer  les autres, faites précéder la première entrée de la liste d'un
        signe moins, paranoid_confirmation:-swim.  Pour à la fois ajouter de
        nouvelles entrées et en retirer d'anciennes, vous pouvez donner plu-
-       sieurs  réglages  de  l'option paranoid_confirmation, ou utiliser la
-       forme '+' en listant les entrées à ajouter par leur nom et celles  à
-       retirer  par  '!' suivi du nom.  Les entrées positives (sans '!') et
+       sieurs réglages de l'option paranoid_confirmation,  ou  utiliser  la
+       forme  '+' en listant les entrées à ajouter par leur nom et celles à
+       retirer par '!' suivi du nom.  Les entrées positives (sans  '!')  et
        négatives (avec '!') peuvent être mélangées.
 
      pauper
-       Le personnage commence sans aucune possession (fausse  par  défaut).
+       Le  personnage  commence sans aucune possession (fausse par défaut).
        Persistante.
 
        Il commence aussi sans sort ni compétence, qui sont liés à l'équipe-
-       ment  de  départ.   N'empêche  pas  d'acquérir et d'utiliser objets,
+       ment de départ.  N'empêche  pas  d'acquérir  et  d'utiliser  objets,
        sorts et compétences une fois la partie commencée.
 
      perm_invent
-       Si elle est  vraie,  affiche  toujours  votre  inventaire  dans  une
+       Si  elle  est  vraie,  affiche  toujours  votre  inventaire dans une
        fenêtre (fausse par défaut).
-
-       Cela  n'a de sens que pour les interfaces qui gèrent cette fonction.
-       Pour  elles,  l'option  perminv_mode  permet  de  préciser  ce   qui
-       s'affiche pour perm_invent.  La régler sur une autre valeur que none
-       alors que perm_invent est fausse rend celle-ci vraie.
-
-     perminv_mode
-       Complète l'option perm_invent.  La valeur est l'une de
-
-       none   - faire comme si perm_invent était fausse ;
-       all    - montrer tout l'inventaire sauf l'or ;
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5218,60 +5218,60 @@
 
 
 
+       Cela n'a de sens que pour les interfaces qui gèrent cette  fonction.
+       Pour   elles,  l'option  perminv_mode  permet  de  préciser  ce  qui
+       s'affiche pour perm_invent.  La régler sur une autre valeur que none
+       alors que perm_invent est fausse rend celle-ci vraie.
+
+     perminv_mode
+       Complète l'option perm_invent.  La valeur est l'une de
+
+       none   - faire comme si perm_invent était fausse ;
+       all    - montrer tout l'inventaire sauf l'or ;
        full   - montrer tout l'inventaire, or compris ;
-       in-use - montrer  seulement  les  objets  utilisés (portés, en main,
+       in-use - montrer seulement les objets  utilisés  (portés,  en  main,
                 lampes allumées).
 
-       La valeur par défaut est none, mais  si  perm_invent  devient  vraie
+       La  valeur  par  défaut  est none, mais si perm_invent devient vraie
        alors qu'elle vaut none, elle passe à all.
 
-       Note  :  si de l'or a été placé dans le carquois ou la poche à muni-
-       tions, il est inclus pour all, bien que ce mode  omette  normalement
+       Note : si de l'or a été placé dans le carquois ou la poche  à  muni-
+       tions,  il  est inclus pour all, bien que ce mode omette normalement
        l'or.
 
      petattr
-       Indique  un ou plusieurs attributs de mise en évidence du texte pour
-       afficher les familiers sur la carte.   C'est  en  fait  une  version
+       Indique un ou plusieurs attributs de mise en évidence du texte  pour
+       afficher  les  familiers  sur  la  carte.  C'est en fait une version
        enrichie de l'option booléenne hilite_pet.  Interfaces curses ou tty
-       seulement  ; la valeur est l'une de none, bold, dim, underline, ita-
-       lic, blink et inverse.  Certains de ces choix peuvent  ne  pas  mar-
+       seulement ; la valeur est l'une de none, bold, dim, underline,  ita-
+       lic,  blink  et  inverse.  Certains de ces choix peuvent ne pas mar-
        cher, selon le terminal ou son logiciel d'émulation.
 
      pettype
-       Indique  le  type  de  votre  familier  de départ, si vous jouez une
-       classe de personnage qui peut en avoir plusieurs ; ou choisit de  ne
-       pas  avoir de familier du tout.  Les valeurs possibles sont « cat »,
-       « dog », « horse » et « none ».  Si le choix n'est pas  permis  pour
-       le  rôle  que  vous jouez, il est ignoré sans message.  Par exemple,
-       « horse » n'est respecté que pour un chevalier.  Ne  peut  pas  être
+       Indique le type de votre familier  de  départ,  si  vous  jouez  une
+       classe  de personnage qui peut en avoir plusieurs ; ou choisit de ne
+       pas avoir de familier du tout.  Les valeurs possibles sont « cat  »,
+       «  dog  », « horse » et « none ».  Si le choix n'est pas permis pour
+       le rôle que vous jouez, il est ignoré sans  message.   Par  exemple,
+       «  horse  »  n'est respecté que pour un chevalier.  Ne peut pas être
        réglée avec la commande 'O'.
 
      pickup_burden
-       Quand  vous  ramassez  un  objet qui dépasserait ce niveau de charge
-       (Unencumbered, Burdened, streSsed, straiNed, overTaxed  ou  overLoa-
-       ded,  soit  non  chargé,  chargé,  encombré,  éreinté,  surchargé ou
-       écrasé), on vous demande s'il faut  continuer.   ('S'  par  défaut.)
+       Quand vous ramassez un objet qui dépasserait  ce  niveau  de  charge
+       (Unencumbered,  Burdened,  streSsed, straiNed, overTaxed ou overLoa-
+       ded, soit  non  chargé,  chargé,  encombré,  éreinté,  surchargé  ou
+       écrasé),  on  vous  demande  s'il faut continuer.  ('S' par défaut.)
        Persistante.
 
      pickup_stolen
        Si cette option est activée et que autopickup l'est aussi, essaie de
-       ramasser  ce  qu'un  monstre  vous a volé, même si ce n'est pas dans
-       pickup_types et ne  correspond  à  aucune  exception  de  ramassage.
+       ramasser ce qu'un monstre vous a volé, même si  ce  n'est  pas  dans
+       pickup_types  et  ne  correspond  à  aucune  exception de ramassage.
        Activée par défaut.  Persistante.
 
      pickup_thrown
        Si cette option est activée et que autopickup l'est aussi, essaie de
-       ramasser  ce  que  vous  avez  lancé,  même  si  ce  n'est  pas dans
-       pickup_types et ne  correspond  à  aucune  exception  de  ramassage.
-       Activée par défaut.  Persistante.
-
-     pickup_types
-       Indique  les types d'objets à ramasser quand autopickup est activée.
-       Par défaut, tous les types.  Persistante.
-
-       La valeur est une liste de symboles d'objets, comme pickup_types:$?!
-       pour ramasser l'or, les parchemins et les potions.  Vous pouvez uti-
-       liser des lignes autopickup_exception dans le fichier de  configura-
+       ramasser ce  que  vous  avez  lancé,  même  si  ce  n'est  pas  dans
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5284,60 +5284,60 @@
 
 
 
+       pickup_types  et  ne  correspond  à  aucune  exception de ramassage.
+       Activée par défaut.  Persistante.
+
+     pickup_types
+       Indique les types d'objets à ramasser quand autopickup est  activée.
+       Par défaut, tous les types.  Persistante.
+
+       La valeur est une liste de symboles d'objets, comme pickup_types:$?!
+       pour ramasser l'or, les parchemins et les potions.  Vous pouvez uti-
+       liser  des lignes autopickup_exception dans le fichier de configura-
        tion pour affiner le comportement de autopickup.
 
-       On  ne peut pas régler pickup_types sur « aucun ».  (Une valeur vide
-       revient à « tous ».)  Si vous  voulez  ne  ramasser  automatiquement
-       aucun  type  d'objet  mais  garder  autopickup  activée pour que des
-       réglages autopickup_exception décident de ce que  vous  ramassez  ou
-       non,  réglez  pickup_types  sur  '.'.  C'est le symbole du venin, et
-       comme vous ne trouverez pas d'objets de venin, vous n'en  ramasserez
+       On ne peut pas régler pickup_types sur « aucun ».  (Une valeur  vide
+       revient  à  «  tous  ».)  Si vous voulez ne ramasser automatiquement
+       aucun type d'objet mais  garder  autopickup  activée  pour  que  des
+       réglages  autopickup_exception  décident  de ce que vous ramassez ou
+       non, réglez pickup_types sur '.'.  C'est le  symbole  du  venin,  et
+       comme  vous ne trouverez pas d'objets de venin, vous n'en ramasserez
        pas par mégarde.
 
      pile_limit
        Quand vous passez sur un tas d'objets au sol, nombre à partir duquel
-       le  message « il y a quelques/plusieurs/beaucoup d'objets ici » rem-
-       place la liste de ces  objets.   La  valeur  0  signifie  «  pas  de
-       limite  »  (toujours lister les objets) ; la valeur 1 revient à « ne
-       jamais montrer les objets », puisqu'un tas compte toujours au  moins
+       le message « il y a quelques/plusieurs/beaucoup d'objets ici »  rem-
+       place  la  liste  de  ces  objets.   La  valeur  0 signifie « pas de
+       limite » (toujours lister les objets) ; la valeur 1 revient à  «  ne
+       jamais  montrer les objets », puisqu'un tas compte toujours au moins
        un objet ; la valeur par défaut est 5.  Persistante.
 
      playmode
-       Les  valeurs  sont  « normal », « explore » ou « debug ».  Permet de
-       choisir le mode exploration (aussi appelé  mode  découverte)  ou  le
-       mode  débogage  (aussi  appelé mode magicien) au lieu du jeu normal.
+       Les valeurs sont « normal », « explore » ou « debug  ».   Permet  de
+       choisir  le  mode  exploration  (aussi appelé mode découverte) ou le
+       mode débogage (aussi appelé mode magicien) au lieu  du  jeu  normal.
        Le mode débogage peut n'être permis qu'à une personne connectée sous
        un nom d'utilisateur précis (sur les systèmes multi-utilisateurs) ou
-       donnant un nom de personnage précis (sur les systèmes  mono-utilisa-
-       teurs),  ou être complètement désactivé.  Le demander quand ce n'est
-       pas permis ou pas possible donne le mode  exploration  à  la  place.
+       donnant  un nom de personnage précis (sur les systèmes mono-utilisa-
+       teurs), ou être complètement désactivé.  Le demander quand ce  n'est
+       pas  permis  ou  pas  possible donne le mode exploration à la place.
        Par défaut, jeu normal.
 
      price_quotes
-       Chaque  fois  que le jeu mentionne le nom d'un objet que vous n'avez
-       pas encore identifié,  il  indique  aussi  la  fourchette  des  prix
-       d'achat  et  de vente que vous avez vus pour cet objet (pour aider à
-       deviner ce qu'il peut être).  Le prix affiché est le  prix  unitaire
-       d'un  objet  (même  quand vous regardez un tas de plusieurs objets).
-       Beaucoup de joueurs voudront l'activer pendant l'identification  des
-       objets,  puis  la  désactiver  pour le reste du jeu.  Désactivée par
+       Chaque fois que le jeu mentionne le nom d'un objet que  vous  n'avez
+       pas  encore  identifié,  il  indique  aussi  la  fourchette des prix
+       d'achat et de vente que vous avez vus pour cet objet (pour  aider  à
+       deviner  ce  qu'il peut être).  Le prix affiché est le prix unitaire
+       d'un objet (même quand vous regardez un tas  de  plusieurs  objets).
+       Beaucoup  de joueurs voudront l'activer pendant l'identification des
+       objets, puis la désactiver pour le reste  du  jeu.   Désactivée  par
        défaut.
 
      pushweapon
-       Utiliser la commande 'w' (manier) alors  qu'on  manie  déjà  quelque
-       chose  pousse  l'ancien  objet dans l'emplacement d'arme de rechange
-       (désactivée par défaut).  De même pour la commande  'a'  (appliquer)
+       Utiliser  la  commande  'w'  (manier) alors qu'on manie déjà quelque
+       chose pousse l'ancien objet dans l'emplacement  d'arme  de  rechange
+       (désactivée  par  défaut).  De même pour la commande 'a' (appliquer)
        si elle met en main l'objet appliqué.  Persistante.
-
-     query_menu
-       Utilise  un  menu  au  lieu  d'une question pour certaines questions
-       oui/non.
-
-     quick_farsight
-       Quand elle est réglée, évite en général le message «  vous  percevez
-       vos  environs », qui met le jeu en pause pour vous laisser parcourir
-       la carte quand une clairvoyance aléatoire se  déclenche.   Certaines
-       situations,  comme  être  sous  l'eau  ou  englouti,  ignorent cette
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5350,60 +5350,60 @@
 
 
 
+     query_menu
+       Utilise un menu au lieu  d'une  question  pour  certaines  questions
+       oui/non.
+
+     quick_farsight
+       Quand  elle  est réglée, évite en général le message « vous percevez
+       vos environs », qui met le jeu en pause pour vous laisser  parcourir
+       la  carte  quand une clairvoyance aléatoire se déclenche.  Certaines
+       situations, comme  être  sous  l'eau  ou  englouti,  ignorent  cette
        option.  Elle n'agit pas sur le sort de clairvoyance, pour lequel la
-       pause pour  examiner  les  objets  ou  monstres  révélés  est  moins
+       pause  pour  examiner  les  objets  ou  monstres  révélés  est moins
        gênante.  Désactivée par défaut.  Persistante.
 
      race
-       Choisit  votre race (par exemple race:human).  Les choix sont human,
-       dwarf, elf, gnome et orc (humain, nain, elfe, gnome et orque),  mais
-       la  plupart  des rôles restreignent les races non humaines permises.
+       Choisit votre race (par exemple race:human).  Les choix sont  human,
+       dwarf,  elf, gnome et orc (humain, nain, elfe, gnome et orque), mais
+       la plupart des rôles restreignent les races non  humaines  permises.
        Voir role pour savoir comment exclure des choix par la négation.
 
-       Si race n'est pas indiqué, il n'y a pas de valeur par  défaut  ;  le
-       joueur  est  interrogé, sauf si le rôle impose la race.  Ne peut pas
+       Si  race  n'est  pas indiqué, il n'y a pas de valeur par défaut ; le
+       joueur est interrogé, sauf si le rôle impose la race.  Ne  peut  pas
        être réglée avec la commande 'O'.  Persistante.
 
      reroll
-       Permet de retirer l'inventaire et les attributs de départ  de  votre
+       Permet  de  retirer l'inventaire et les attributs de départ de votre
        personnage (fausse par défaut).  Persistante.
 
-       Notez  que  retirer son personnage n'est pas une façon conseillée de
-       jouer si l'on vise simplement à gagner (un début chanceux pèse  bien
-       moins  sur  la  victoire  que vos actions plus tard dans la partie).
-       Cette option existe en partie parce que certains joueurs y  tiennent
-       de  toute façon, et en partie parce que retirer peut être nécessaire
+       Notez que retirer son personnage n'est pas une façon  conseillée  de
+       jouer  si l'on vise simplement à gagner (un début chanceux pèse bien
+       moins sur la victoire que vos actions plus  tard  dans  la  partie).
+       Cette  option existe en partie parce que certains joueurs y tiennent
+       de toute façon, et en partie parce que retirer peut être  nécessaire
        pour certains types de parties à défi.
 
      rest_on_space
-       Fait de la barre d'espace un synonyme de  la  commande  '.'  (#wait)
+       Fait  de  la  barre  d'espace un synonyme de la commande '.' (#wait)
        (désactivée par défaut).  Persistante.
 
      role
-       Choisit  votre type de personnage (par exemple role:Samurai) ; syno-
-       nyme de character.  Voir name pour une autre façon d'indiquer  votre
+       Choisit votre type de personnage (par exemple role:Samurai) ;  syno-
+       nyme  de character.  Voir name pour une autre façon d'indiquer votre
        rôle.
 
-       Cette  option  peut aussi limiter le choix quand le rôle est tiré au
-       hasard.  Donnez une liste de rôles séparés par des espaces, et  niez
-       chacun  d'eux ou niez l'option elle-même.  La négation se fait comme
-       pour les options booléennes, en faisant  précéder  l'option  ou  ses
+       Cette option peut aussi limiter le choix quand le rôle est  tiré  au
+       hasard.   Donnez une liste de rôles séparés par des espaces, et niez
+       chacun d'eux ou niez l'option elle-même.  La négation se fait  comme
+       pour  les  options  booléennes,  en faisant précéder l'option ou ses
        valeurs de '!' ou de « no ».
        Exemples :
 
             OPTIONS=role:!arc !bar !kni
             OPTIONS=!role:arc bar kni
 
-       Il  peut  y  avoir plusieurs occurrences de l'option role si ce sont
-       toutes des négations.
-
-       Si role n'est pas indiqué, il n'y a pas de valeur par  défaut  ;  le
-       joueur est interrogé.  Ne peut pas être réglée avec la commande 'O'.
-       Persistante.
-
-     roguesymset
-       Cette  option  permet de choisir l'un des jeux de symboles nommés du
-       fichier « symbols » pour changer les symboles affichés au niveau  de
+       Il peut y avoir plusieurs occurrences de l'option role  si  ce  sont
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5416,17 +5416,26 @@
 
 
 
+       toutes des négations.
+
+       Si  role  n'est  pas indiqué, il n'y a pas de valeur par défaut ; le
+       joueur est interrogé.  Ne peut pas être réglée avec la commande 'O'.
+       Persistante.
+
+     roguesymset
+       Cette option permet de choisir l'un des jeux de symboles  nommés  du
+       fichier  « symbols » pour changer les symboles affichés au niveau de
        Rogue.
 
      rlecomp
-       À  l'écriture  d'une  sauvegarde, compresse la carte par plages (run
-       length).  Tous les portages ne gèrent pas cette  compression.   Sans
+       À l'écriture d'une sauvegarde, compresse la carte  par  plages  (run
+       length).   Tous  les portages ne gèrent pas cette compression.  Sans
        effet sur la lecture d'une sauvegarde existante.
 
      runmode
-       Règle  la fréquence de mise à jour de la fenêtre de la carte pendant
-       les déplacements sur plusieurs tours (course avec  Maj+direction  ou
-       Ctrl+direction,  etc.,  ou voyage par la commande ou un clic de sou-
+       Règle la fréquence de mise à jour de la fenêtre de la carte  pendant
+       les  déplacements  sur plusieurs tours (course avec Maj+direction ou
+       Ctrl+direction, etc., ou voyage par la commande ou un clic  de  sou-
        ris).  Les valeurs possibles sont :
 
        teleport - mettre à jour la carte une fois le déplacement terminé ;
@@ -5434,42 +5443,33 @@
        walk     - mettre à jour la carte à chaque pas ;
        crawl    - comme walk, avec une courte pause après chaque pas.
 
-       Cette option ne change que l'affichage du jeu, pas le  résultat  des
-       déplacements.   La  valeur  par  défaut  est  « run » ; les versions
-       antérieures à la 3.4.1 n'avaient que «  teleport  ».   L'effet  sera
-       plus  ou  moins  visible  selon  l'interface ou le type de terminal.
+       Cette  option  ne change que l'affichage du jeu, pas le résultat des
+       déplacements.  La valeur par défaut est  «  run  »  ;  les  versions
+       antérieures  à  la  3.4.1  n'avaient que « teleport ».  L'effet sera
+       plus ou moins visible selon l'interface  ou  le  type  de  terminal.
        Persistante.
 
      safe_pet
-       Vous empêche  d'attaquer  (sciemment)  vos  familiers  (activée  par
+       Vous  empêche  d'attaquer  (sciemment)  vos  familiers  (activée par
        défaut).  Persistante.
 
      safe_wait
-       Vous  empêche  d'attendre ou de fouiller à côté d'un monstre hostile
+       Vous empêche d'attendre ou de fouiller à côté d'un  monstre  hostile
        (activée par défaut).  Persistante.
 
      sanity_check
-       Vérifie les monstres, les objets  et  la  carte  avant  chaque  tour
+       Vérifie  les  monstres,  les  objets  et  la carte avant chaque tour
        (désactivée par défaut).  Mode débogage seulement.
 
      scores
-       Règle  les parties de la liste des scores affichées en fin de partie
-       (par exemple « scores:5 top scores/4 around my score/own scores  »).
-       Seule  la  première lettre de chaque catégorie ('t', 'a' ou 'o') est
+       Règle les parties de la liste des scores affichées en fin de  partie
+       (par  exemple « scores:5 top scores/4 around my score/own scores »).
+       Seule la première lettre de chaque catégorie ('t', 'a' ou  'o')  est
        nécessaire.  Persistante.
 
      showdamage
-       Chaque fois que votre personnage subit des dégâts, affiche  un  mes-
+       Chaque  fois  que votre personnage subit des dégâts, affiche un mes-
        sage avec les dégâts subis et les points de vie restants.
-
-     showexp
-       Affiche  vos  points  d'expérience  accumulés  sur  la  ligne du bas
-       (désactivée par défaut).  Persistante.
-
-     showrace
-       Vous affiche avec le symbole de votre race plutôt que de votre  rôle
-       (désactivée par défaut).  Notez que ce réglage ne change que l'appa-
-       rence de l'affichage, pas la façon dont le jeu vous traite.  Persis-
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5482,20 +5482,28 @@
 
 
 
+     showexp
+       Affiche vos points  d'expérience  accumulés  sur  la  ligne  du  bas
+       (désactivée par défaut).  Persistante.
+
+     showrace
+       Vous  affiche avec le symbole de votre race plutôt que de votre rôle
+       (désactivée par défaut).  Notez que ce réglage ne change que l'appa-
+       rence de l'affichage, pas la façon dont le jeu vous traite.  Persis-
        tante.
 
      showscore
        Affiche votre score approximatif sur la ligne du bas (désactivée par
-       défaut).   Par défaut, cette fonction est supprimée à la compilation
+       défaut).  Par défaut, cette fonction est supprimée à la  compilation
        du programme.  Persistante.
 
      showvers
        Ajoute le numéro de version du jeu aux lignes d'état (désactivée par
-       défaut).  Utile si vous passez d'une version  ou  d'une  variante  à
-       l'autre,  ou  si  vous  faites  des  captures d'écran ou des vidéos.
-       L'option statuslines:3 est conseillée pour avoir plus de place  pour
-       les  informations  d'état,  sauf  si vous utilisez l'interface Qt de
-       NetHack ou si la fenêtre de  votre  émulateur  de  terminal  affiche
+       défaut).   Utile  si  vous  passez d'une version ou d'une variante à
+       l'autre, ou si vous faites  des  captures  d'écran  ou  des  vidéos.
+       L'option  statuslines:3 est conseillée pour avoir plus de place pour
+       les informations d'état, sauf si vous  utilisez  l'interface  Qt  de
+       NetHack  ou  si  la  fenêtre  de votre émulateur de terminal affiche
        moins de 25 lignes.  Persistante.
 
        L'option versinfo permet de régler en partie ce qu'affiche showvers.
@@ -5510,31 +5518,23 @@
 
        o - lister les types d'objets par classe, dans l'ordre de découverte
            au sein de chaque classe ; par défaut ;
-       s - lister  les types d'objets selon le classement de sortloot : par
-           classe, et par sous-classe pour les classes qui ont des  groupes
-           importants  (casques, bottes, gants, etc. pour les armures), les
-           types partiellement découverts grâce  à  un  nom  donné  passant
+       s - lister les types d'objets selon le classement de sortloot :  par
+           classe,  et par sous-classe pour les classes qui ont des groupes
+           importants (casques, bottes, gants, etc. pour les armures),  les
+           types  partiellement  découverts  grâce  à  un nom donné passant
            avant les types complètement identifiés ;
-       c - lister  par  classe,  par  ordre  alphabétique au sein de chaque
+       c - lister par classe, par ordre  alphabétique  au  sein  de  chaque
            classe ;
        a - lister par ordre alphabétique, toutes classes confondues.
 
-       Peut se régler en cours de partie avec la commande 'O'  ou  avec  le
+       Peut  se  régler  en cours de partie avec la commande 'O' ou avec le
        préfixe 'm' avant la commande '\' ou '`'.
 
      sortloot
-       Règle  le tri des listes de ramassage pour l'inventaire, la commande
+       Règle le tri des listes de ramassage pour l'inventaire, la  commande
        #loot et quelques autres.  Persistante.
 
        Les valeurs possibles sont :
-
-       full - toujours trier les listes ;
-       loot - trier seulement les listes qui n'utilisent  pas  les  lettres
-              d'inventaire,  comme  avec  les  commandes #loot et de ramas-
-              sage ;
-       none - montrer les listes de la façon traditionnelle, sans tri ; par
-              défaut.
-
 
 
 
@@ -5548,8 +5548,15 @@
 
 
 
+       full - toujours trier les listes ;
+       loot - trier  seulement  les  listes qui n'utilisent pas les lettres
+              d'inventaire, comme avec les commandes  #loot  et  de  ramas-
+              sage ;
+       none - montrer les listes de la façon traditionnelle, sans tri ; par
+              défaut.
+
      sortpack
-       Trie le contenu du  sac  par  type  à  l'affichage  de  l'inventaire
+       Trie  le  contenu  du  sac  par  type  à l'affichage de l'inventaire
        (activée par défaut).  Persistante.
 
      sortvanquished
@@ -5560,48 +5567,41 @@
 
        t - traditionnel--par niveau des monstres ; les égalités sont dépar-
            tagées par l'index interne des monstres ; par défaut ;
-       d - par  difficulté  des monstres ; égalités départagées par l'index
+       d - par difficulté des monstres ; égalités départagées  par  l'index
            interne ;
-       a - par ordre alphabétique, d'abord les monstres uniques  puis  tous
+       a - par  ordre  alphabétique, d'abord les monstres uniques puis tous
            les autres ;
-       c - par  classe de monstres, du niveau le plus bas au plus haut dans
+       c - par classe de monstres, du niveau le plus bas au plus haut  dans
            chaque classe ;
-       n - par nombre, du plus grand au plus petit ;  égalités  départagées
+       n - par  nombre,  du plus grand au plus petit ; égalités départagées
            par l'index interne des monstres ;
-       z - par  nombre,  du plus petit au plus grand ; égalités départagées
+       z - par nombre, du plus petit au plus grand ;  égalités  départagées
            par l'index interne.
 
-       Peut se régler en cours de partie avec la commande 'm O' ou avec  le
+       Peut  se régler en cours de partie avec la commande 'm O' ou avec le
        préfixe 'm' avant la commande #vanquished ou #genocided.
 
      sounds
-       Permet  l'émission  de  sons  par  une bibliothèque de sons intégrée
+       Permet l'émission de sons par  une  bibliothèque  de  sons  intégrée
        (activée par défaut).
 
      sparkle
-       Affiche un scintillement quand un monstre (vous compris) est  touché
+       Affiche  un scintillement quand un monstre (vous compris) est touché
        par une attaque à laquelle il résiste (activée par défaut).  Persis-
        tante.
 
      spot_monsters
-       Affiche  un  message  quand le héros remarque un monstre (désactivée
+       Affiche un message quand le héros remarque  un  monstre  (désactivée
        par défaut).
 
      standout
-       Met en gras les monstres et « --Plus-- »  (désactivée  par  défaut).
+       Met  en  gras  les monstres et « --Plus-- » (désactivée par défaut).
        Persistante.
 
      statushilites
-       Règle  pendant  combien  de  tours les mises en évidence d'état sou-
-       lignent le champ.  Niée ou mise à zéro, elle désactive  la  mise  en
-       évidence  d'état.   Voir  «  Configurer la mise en évidence d'état »
-       pour plus d'informations.
-
-     status_updates
-       Permet la mise à jour des lignes d'état en bas de l'écran (vraie par
-       défaut).
-
-
+       Règle pendant combien de tours les mises  en  évidence  d'état  sou-
+       lignent  le  champ.   Niée ou mise à zéro, elle désactive la mise en
+       évidence d'état.  Voir « Configurer la mise  en  évidence  d'état  »
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5614,60 +5614,60 @@
 
 
 
+       pour plus d'informations.
+
+     status_updates
+       Permet la mise à jour des lignes d'état en bas de l'écran (vraie par
+       défaut).
+
      suppress_alert
        Cette option peut recevoir un numéro de version de NetHack pour sup-
-       primer les avertissements sur les changements de fonctions de  cette
+       primer  les avertissements sur les changements de fonctions de cette
        version et des précédentes (par exemple « suppress_alert:3.3.1 »).
 
      symset
-       Cette  option  permet de choisir l'un des jeux de symboles nommés du
-       fichier « symbols » pour changer les symboles  affichés  à  l'écran.
-       Utilisez  « symset:default » pour choisir explicitement les symboles
+       Cette option permet de choisir l'un des jeux de symboles  nommés  du
+       fichier  «  symbols  » pour changer les symboles affichés à l'écran.
+       Utilisez « symset:default » pour choisir explicitement les  symboles
        par défaut.
 
      terrainstatus
-       Affiche une condition d'état  supplémentaire  qui  décrit  l'endroit
+       Affiche  une  condition  d'état  supplémentaire qui décrit l'endroit
        sous les pieds du héros (désactivée par défaut, pas gérée par toutes
        les interfaces).
 
      time
-       Affiche  le  temps  de  jeu  écoulé,  en  tours, sur la ligne du bas
+       Affiche le temps de jeu écoulé,  en  tours,  sur  la  ligne  du  bas
        (désactivée par défaut).  Persistante.
 
      timed_delay
-       Pour les courtes pauses d'effet visuel, comme les explosions et  les
-       objets  en mouvement, utilise une minuterie plutôt que d'envoyer des
-       caractères supplémentaires à l'écran.  (Ne s'applique qu'aux  inter-
-       faces  «  tty » et « curses » ; l'interface « X11 » utilise toujours
-       une minuterie.  Activée par défaut si elle est prévue dans  le  pro-
+       Pour  les courtes pauses d'effet visuel, comme les explosions et les
+       objets en mouvement, utilise une minuterie plutôt que d'envoyer  des
+       caractères  supplémentaires à l'écran.  (Ne s'applique qu'aux inter-
+       faces « tty » et « curses » ; l'interface « X11 »  utilise  toujours
+       une  minuterie.   Activée par défaut si elle est prévue dans le pro-
        gramme.)  Persistante.
 
      tips
-       Affiche  quelques  conseils  utiles  pendant  la partie (activée par
+       Affiche quelques conseils utiles  pendant  la  partie  (activée  par
        défaut).  Persistante.
 
      tombstone
-       Dessine une pierre tombale à votre mort (activée par défaut).   Per-
+       Dessine  une pierre tombale à votre mort (activée par défaut).  Per-
        sistante.
 
      toptenwin
-       Met  l'affichage  de  fin  dans une fenêtre de NetHack au lieu de la
-       sortie standard (désactivée par défaut).  Ce réglage rend  la  liste
-       des  scores visible quand une version fenêtrée de NetHack est lancée
-       sans fenêtre parente,  mais  la  liste  des  scores  ne  reste  plus
-       affichée  après  la fin de la partie dans un terminal ou une fenêtre
+       Met l'affichage de fin dans une fenêtre de NetHack  au  lieu  de  la
+       sortie  standard  (désactivée par défaut).  Ce réglage rend la liste
+       des scores visible quand une version fenêtrée de NetHack est  lancée
+       sans  fenêtre  parente,  mais  la  liste  des  scores  ne reste plus
+       affichée après la fin de la partie dans un terminal ou  une  fenêtre
        d'émulation.
 
      travel
-       Permet la commande  de  voyage  par  clic  de  souris  (activée  par
-       défaut).   La désactiver évite que le jeu tente des déplacements non
-       voulus si vous cliquez par mégarde  sur  la  fenêtre  de  la  carte.
-       N'agit pas sur le voyage par la commande '_' (« #travel »).  Persis-
-       tante.
-
-     tutorial
-       Joue  un  niveau  de  tutoriel  au  début  de  la partie.  La régler
-       (activée ou désactivée) dans le fichier de  configuration  évite  la
+       Permet  la  commande  de  voyage  par  clic  de  souris (activée par
+       défaut).  La désactiver évite que le jeu tente des déplacements  non
+       voulus  si  vous  cliquez  par  mégarde  sur la fenêtre de la carte.
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5680,6 +5680,12 @@
 
 
 
+       N'agit pas sur le voyage par la commande '_' (« #travel »).  Persis-
+       tante.
+
+     tutorial
+       Joue un niveau de  tutoriel  au  début  de  la  partie.   La  régler
+       (activée  ou  désactivée)  dans le fichier de configuration évite la
        question.
 
      verbose
@@ -5689,7 +5695,7 @@
        Règle ce que l'option showvers affiche sur les lignes d'état.
 
      weaponstatus
-       Affiche  une  condition  d'état  supplémentaire qui décrit l'arme en
+       Affiche une condition d'état supplémentaire  qui  décrit  l'arme  en
        main (désactivée par défaut, pas gérée par toutes les interfaces).
 
        Quelques valeurs affichées possibles :
@@ -5699,9 +5705,9 @@
             dual-weps - deux armes en main.
 
      whatis_coord
-       Quand on utilise les commandes '/' ou ';'  pour  regarder  la  carte
+       Quand  on  utilise  les  commandes '/' ou ';' pour regarder la carte
        avec autodescribe activée, affiche des coordonnées après la descrip-
-       tion.   Marche aussi dans les autres situations où l'on vous demande
+       tion.  Marche aussi dans les autres situations où l'on vous  demande
        de choisir un endroit.
 
        Les réglages possibles sont :
@@ -5712,28 +5718,22 @@
             s - écran [ligne,colonne] (ligne décalée comme sous tty) ;
             n - aucune (pas de coordonnées) [par défaut].
 
-       L'option whatis_coord sert aussi aux sous-commandes « /m », « /M  »,
-       «  /o  »  et  « /O » de '/', où le réglage « none » est remplacé par
+       L'option  whatis_coord sert aussi aux sous-commandes « /m », « /M »,
+       « /o » et « /O » de '/', où le réglage « none  »  est  remplacé  par
        « map ».
 
      whatis_filter
        Quand on choisit un endroit de la carte et qu'on passe d'une cible à
-       la suivante ou à la précédente avec les touches, permet  de  filtrer
+       la  suivante  ou à la précédente avec les touches, permet de filtrer
        les cibles possibles.
 
             n - pas de filtre [par défaut]
             v - seulement en vue
             a - seulement dans la même zone
 
-       Le  filtre par zone essaie d'être un peu prévoyant--si vous êtes sur
-       une embrasure, il considère la zone du côté de la porte vers  lequel
+       Le filtre par zone essaie d'être un peu prévoyant--si vous êtes  sur
+       une  embrasure, il considère la zone du côté de la porte vers lequel
        vous alliez en dernier.
-
-       On  peut  aussi changer le filtre pendant le choix d'un endroit avec
-       la touche « getpos.filter ».
-
-     whatis_menu
-       Quand on choisit un endroit de la carte et qu'on passe d'une cible à
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5746,60 +5746,60 @@
 
 
 
-       l'autre avec une touche, utilise plutôt  un  menu  pour  choisir  la
+       On peut aussi changer le filtre pendant le choix d'un  endroit  avec
+       la touche « getpos.filter ».
+
+     whatis_menu
+       Quand on choisit un endroit de la carte et qu'on passe d'une cible à
+       l'autre  avec  une  touche,  utilise  plutôt un menu pour choisir la
        cible.  (Désactivée par défaut.)
 
      whatis_moveskip
-       Quand  on  choisit  un  endroit de la carte et qu'on se déplace vite
-       avec les touches de  déplacement  en  majuscules  ou  méta-chiffres,
-       saute  les  symboles  identiques  au  lieu d'avancer de 8 cases à la
+       Quand on choisit un endroit de la carte et  qu'on  se  déplace  vite
+       avec  les  touches  de  déplacement  en majuscules ou méta-chiffres,
+       saute les symboles identiques au lieu d'avancer  de  8  cases  à  la
        fois.  (Désactivée par défaut.)
 
      windowtype
-       Quand le programme a été compilé avec plusieurs interfaces,  choisit
-       celle  à  utiliser,  comme  « tty » ou « X11 » (la valeur par défaut
-       dépend de la compilation ; utilisez « #version » pour la  vérifier).
+       Quand  le programme a été compilé avec plusieurs interfaces, choisit
+       celle à utiliser, comme « tty » ou « X11 »  (la  valeur  par  défaut
+       dépend  de la compilation ; utilisez « #version » pour la vérifier).
        Ne peut pas être réglée avec la commande 'O'.
 
-       Si  on  l'utilise,  ce  doit  être la première option réglée, car sa
+       Si on l'utilise, ce doit être la  première  option  réglée,  car  sa
        valeur peut rendre disponibles ou non diverses autres options.  Dans
-       un fichier de configuration sur plusieurs lignes, c'est la  première
-       ligne  qui n'est pas un commentaire.  Dans une liste séparée par des
-       virgules dans NETHACKOPTIONS ou une ligne OPTIONS  d'un  fichier  de
+       un  fichier de configuration sur plusieurs lignes, c'est la première
+       ligne qui n'est pas un commentaire.  Dans une liste séparée par  des
+       virgules  dans  NETHACKOPTIONS  ou une ligne OPTIONS d'un fichier de
        configuration, c'est l'option la plus à droite de la liste.
 
      wizweight
-       Ajoute  le  poids  des  objets  à  leur  description (désactivée par
+       Ajoute le poids  des  objets  à  leur  description  (désactivée  par
        défaut).  Mode débogage seulement.
 
      zerocomp
-       À l'écriture d'une  sauvegarde,  compresse  son  contenu  par  zéros
-       (zero-comp).   Tous  les  portages  ne gèrent pas cette compression.
+       À  l'écriture  d'une  sauvegarde,  compresse  son  contenu par zéros
+       (zero-comp).  Tous les portages ne  gèrent  pas  cette  compression.
        Sans effet sur la lecture d'une sauvegarde existante.
 
      9.5.  Options de personnalisation des interfaces
 
           Voici les diverses options qui servent à personnaliser et à modi-
-     fier les caractéristiques de l'interface (windowtype)  que  vous  avez
-     choisie.    Les  chaînes  de  caractères  trop  longues  peuvent  être
-     tronquées.  Toutes  les  interfaces  ne  s'adaptent  pas  à  tous  les
-     réglages  listés  ici.   Vous  pouvez  sans  risque  ajouter n'importe
+     fier  les  caractéristiques  de l'interface (windowtype) que vous avez
+     choisie.   Les  chaînes  de  caractères  trop  longues  peuvent   être
+     tronquées.   Toutes  les  interfaces  ne  s'adaptent  pas  à  tous les
+     réglages listés  ici.   Vous  pouvez  sans  risque  ajouter  n'importe
      laquelle de ces options à votre fichier de configuration : si l'inter-
-     face sait s'adapter à vos préférences, elle essaiera  de  le  faire  ;
-     sinon,  elle  l'ignorera  sans message.  Pour savoir si une option est
-     gérée par l'interface que vous utilisez,  regardez  si  elle  apparaît
-     dans  la  liste  des  options.   Certaines  options sont dynamiques et
+     face  sait  s'adapter  à  vos préférences, elle essaiera de le faire ;
+     sinon, elle l'ignorera sans message.  Pour savoir si  une  option  est
+     gérée  par  l'interface  que  vous utilisez, regardez si elle apparaît
+     dans la liste des  options.   Certaines  options  sont  dynamiques  et
      peuvent être réglées pendant la partie avec la commande 'O'.
 
      align_message
-       Où aligner ou placer la fenêtre des messages (top, bottom,  left  ou
+       Où  aligner  ou placer la fenêtre des messages (top, bottom, left ou
        right : en haut, en bas, à gauche ou à droite).
 
-     align_status
-       Où aligner ou placer la fenêtre d'état (top, bottom, left ou right).
-
-     ascii_map
-       Si  NetHack  le peut, il affiche la carte avec de simples caractères
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5812,23 +5812,28 @@
 
 
 
+     align_status
+       Où aligner ou placer la fenêtre d'état (top, bottom, left ou right).
+
+     ascii_map
+       Si NetHack le peut, il affiche la carte avec de  simples  caractères
        (lettres et ponctuation) plutôt qu'avec des tuiles graphiques.  Dans
        certains cas, les caractères peuvent être complétés par des symboles
        de tracé de traits ; utilisez l'option symset pour choisir un jeu de
-       symboles comme DECgraphics ou IBMgraphics  si  votre  affichage  les
+       symboles  comme  DECgraphics  ou  IBMgraphics si votre affichage les
        gère.  Mettre ascii_map à True met tiled_map à False.
 
      color
-       Si  NetHack le peut, il affiche en couleurs les différents monstres,
+       Si NetHack le peut, il affiche en couleurs les différents  monstres,
        objets et éléments du donjon (activée par défaut).
 
      eight_bit_tty
-       Si NetHack le peut, il transmet directement  à  votre  terminal  les
-       caractères  8 bits (par exemple, donnés avec l'option traps) (désac-
+       Si  NetHack  le  peut,  il transmet directement à votre terminal les
+       caractères 8 bits (par exemple, donnés avec l'option traps)  (désac-
        tivée par défaut).
 
      font_map
-       Si NetHack le peut, il utilise la police de ce nom pour  la  fenêtre
+       Si  NetHack  le peut, il utilise la police de ce nom pour la fenêtre
        de la carte.
 
      font_menu
@@ -5836,11 +5841,11 @@
        de menu.
 
      font_message
-       Si  NetHack  le peut, il utilise la police de ce nom pour la fenêtre
+       Si NetHack le peut, il utilise la police de ce nom pour  la  fenêtre
        des messages.
 
      font_status
-       Si NetHack le peut, il utilise la police de ce nom pour  la  fenêtre
+       Si  NetHack  le peut, il utilise la police de ce nom pour la fenêtre
        d'état.
 
      font_text
@@ -5848,24 +5853,19 @@
        de texte.
 
      font_size_map
-       Si  NetHack  le  peut,  il  utilise  cette  taille de police pour la
+       Si NetHack le peut, il  utilise  cette  taille  de  police  pour  la
        fenêtre de la carte.
 
      font_size_menu
-       Si NetHack le peut, il utilise  cette  taille  de  police  pour  les
+       Si  NetHack  le  peut,  il  utilise  cette taille de police pour les
        fenêtres de menu.
 
      font_size_message
-       Si  NetHack  le  peut,  il  utilise  cette  taille de police pour la
+       Si NetHack le peut, il  utilise  cette  taille  de  police  pour  la
        fenêtre des messages.
 
      font_size_status
-       Si NetHack le peut, il  utilise  cette  taille  de  police  pour  la
-       fenêtre d'état.
-
-     font_size_text
-       Si  NetHack  le  peut,  il  utilise  cette taille de police pour les
-       fenêtres de texte.
+       Si  NetHack  le  peut,  il  utilise  cette  taille de police pour la
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5878,14 +5878,20 @@
 
 
 
+       fenêtre d'état.
+
+     font_size_text
+       Si NetHack le peut, il utilise  cette  taille  de  police  pour  les
+       fenêtres de texte.
+
      fullscreen
        Si NetHack le peut, il essaie d'afficher sur tout l'écran plutôt que
        dans une fenêtre.
 
      guicolor
        Utilise du texte en couleurs et/ou des attributs de mise en évidence
-       pour afficher certaines données hors carte  (comme  les  lettres  de
-       sélection  des  menus).   Interface  curses  seulement ; activée par
+       pour  afficher  certaines  données  hors carte (comme les lettres de
+       sélection des menus).  Interface  curses  seulement  ;  activée  par
        défaut.
 
      large_font
@@ -5895,22 +5901,22 @@
        Si NetHack le peut, il affiche la carte de la manière indiquée.
 
      player_selection
-       Si NetHack le peut, il ouvre des boîtes de dialogue, ou utilise  des
+       Si  NetHack le peut, il ouvre des boîtes de dialogue, ou utilise des
        questions, pour choisir le personnage.
 
      popup_dialog
-       Si  NetHack  le  peut, il ouvre des boîtes de dialogue pour les sai-
+       Si NetHack le peut, il ouvre des boîtes de dialogue  pour  les  sai-
        sies.
 
      preload_tiles
-       Si NetHack le  peut,  il  précharge  les  tuiles  en  mémoire.   Par
+       Si  NetHack  le  peut,  il  précharge  les  tuiles  en mémoire.  Par
        exemple, dans la version MS-DOS en mode protégé, règle si les tuiles
-       sont  chargées en mémoire vive au début de la partie.  Cela accélère
-       l'affichage des tuiles, mais utilise plus de  mémoire  (activée  par
+       sont chargées en mémoire vive au début de la partie.  Cela  accélère
+       l'affichage  des  tuiles,  mais utilise plus de mémoire (activée par
        défaut).  Ne peut pas être réglée avec la commande 'O'.
 
      scroll_amount
-       Si  NetHack  le  peut,  il  fait défiler l'affichage de ce nombre de
+       Si NetHack le peut, il fait défiler  l'affichage  de  ce  nombre  de
        cases quand le héros atteint la marge de défilement (scroll_margin).
 
      scroll_margin
@@ -5919,19 +5925,13 @@
 
      selectsaved
        Si NetHack le peut, il affiche au démarrage un menu des parties sau-
-       vegardées existantes, parmi lesquelles le joueur choisit.  Tous  les
+       vegardées  existantes, parmi lesquelles le joueur choisit.  Tous les
        portages ne gèrent pas cette option.
 
      softkeyboard
-       Affiche  un  clavier  à  l'écran.   Ce sont surtout les appareils de
+       Affiche un clavier à l'écran.  Ce  sont  surtout  les  appareils  de
        poche qui gèrent cette option.
 
-     splash_screen
-       Si NetHack le peut, il  affiche  un  écran  d'accueil  au  démarrage
-       (activée par défaut).
-
-     statuslines
-       Nombre  de  lignes de l'affichage d'état traditionnel sous la carte.
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -5944,32 +5944,38 @@
 
 
 
+     splash_screen
+       Si  NetHack  le  peut,  il  affiche  un écran d'accueil au démarrage
+       (activée par défaut).
+
+     statuslines
+       Nombre de lignes de l'affichage d'état traditionnel sous  la  carte.
        Les valeurs acceptées sont 2 et 3 (2 par défaut).
 
-       Avec 3, l'interface tty déplace certains champs et  affiche  surtout
-       les  conditions  d'état  sur  leur  propre ligne.  Un affichage d'au
-       moins 25 lignes est conseillé.  La valeur peut être changée dans  un
+       Avec  3,  l'interface tty déplace certains champs et affiche surtout
+       les conditions d'état sur leur  propre  ligne.   Un  affichage  d'au
+       moins  25 lignes est conseillé.  La valeur peut être changée dans un
        sens ou dans l'autre pendant la partie avec la commande 'O'.
 
-       L'interface  curses fait de même si l'option align_status est réglée
-       sur top ou bottom, mais ignore statuslines si elle  est  réglée  sur
+       L'interface curses fait de même si l'option align_status est  réglée
+       sur  top  ou  bottom, mais ignore statuslines si elle est réglée sur
        left ou right.
 
-       L'interface  Qt affiche déjà plus de 3 lignes d'état et utilise donc
+       L'interface Qt affiche déjà plus de 3 lignes d'état et utilise  donc
        autrement la valeur de statuslines.  La valeur 3 affiche l'état dans
        le format d'origine de l'interface Qt, avec la fenêtre d'état étalée
-       verticalement.  La valeur 2 condense un  peu  l'état,  en  déplaçant
+       verticalement.   La  valeur  2  condense un peu l'état, en déplaçant
        certains  champs  sur  d'autres  lignes  pour  supprimer  une  ligne
-       entière, ce qui réduit la hauteur nécessaire.   (Si  NetHack  a  été
-       compilé  avec  une version de Qt antérieure à qt-5.9, statuslines ne
-       peut être réglée que dans le fichier de configuration ou par  NETHA-
+       entière,  ce  qui  réduit  la hauteur nécessaire.  (Si NetHack a été
+       compilé avec une version de Qt antérieure à qt-5.9,  statuslines  ne
+       peut  être réglée que dans le fichier de configuration ou par NETHA-
        CKOPTIONS, et non en cours de partie avec la commande 'O'.)
 
      term_cols  et
 
      term_rows
-       Interface  curses seulement.  Nombre de colonnes et de lignes à uti-
-       liser pour l'affichage.  Curses  essaie  de  se  redimensionner  aux
+       Interface curses seulement.  Nombre de colonnes et de lignes à  uti-
+       liser  pour  l'affichage.   Curses  essaie  de se redimensionner aux
        valeurs indiquées, mais se contente de tailles plus petites si elles
        sont trop grandes.  Par défaut, la taille actuelle de la fenêtre.
 
@@ -5977,27 +5983,21 @@
        Indique le nom d'un autre fichier de tuiles à utiliser à la place de
        celui par défaut.
 
-       Note  :  l'interface  X11  utilise  les  ressources X plutôt que les
-       options de NetHack pour choisir un autre fichier  de  tuiles.   Voir
+       Note : l'interface X11 utilise  les  ressources  X  plutôt  que  les
+       options  de  NetHack  pour choisir un autre fichier de tuiles.  Voir
        NetHack.ad, l'exemple de fichier X des « application defaults ».
 
      tile_height
-       Indique  la  hauteur  souhaitée  de chaque tuile dans un portage qui
+       Indique la hauteur souhaitée de chaque tuile  dans  un  portage  qui
        gère les tuiles.
 
      tile_width
-       Indique la largeur souhaitée de chaque tuile  dans  un  portage  qui
+       Indique  la  largeur  souhaitée  de chaque tuile dans un portage qui
        gère les tuiles.
 
      tiled_map
-       Si  NetHack  le peut, il affiche la carte avec des tuiles graphiques
-       plutôt qu'avec de simples caractères (lettres et ponctuation,  éven-
-       tuellement  complétées par des symboles de tracé de traits).  Mettre
-       tiled_map à True met ascii_map à False.
-
-     use_darkgray
-       Utilise le noir gras plutôt que le bleu pour les symboles noirs (TTY
-       seulement).
+       Si NetHack le peut, il affiche la carte avec des  tuiles  graphiques
+       plutôt  qu'avec de simples caractères (lettres et ponctuation, éven-
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6010,18 +6010,25 @@
 
 
 
+       tuellement complétées par des symboles de tracé de traits).   Mettre
+       tiled_map à True met ascii_map à False.
+
+     use_darkgray
+       Utilise le noir gras plutôt que le bleu pour les symboles noirs (TTY
+       seulement).
+
      use_inverse
-       Si NetHack le peut, il affiche en vidéo  inverse  quand  le  jeu  le
+       Si  NetHack  le  peut,  il  affiche en vidéo inverse quand le jeu le
        demande.
 
      vary_msgcount
-       Si  NetHack le peut, il affiche ce nombre de messages à la fois dans
+       Si NetHack le peut, il affiche ce nombre de messages à la fois  dans
        la fenêtre des messages.
 
      windowborders
        Dessiner ou non des cadres autour de la carte, de la zone d'état, de
        la zone des messages et de la fenêtre d'inventaire permanent si elle
-       est activée.  Interface curses  seulement.   Les  valeurs  acceptées
+       est  activée.   Interface  curses  seulement.  Les valeurs acceptées
        sont
 
             0 - off, ne jamais afficher de cadres
@@ -6030,40 +6037,33 @@
             3 - on, sauf pour perm_invent où ils sont forcés à off
             4 - auto, sauf pour perm_invent où ils sont forcés à off
 
-       (Le  seuil  de  26x82  pour  '2'  désigne  le nombre de lignes et de
-       colonnes de  l'affichage.   Il  faut  une  largeur  d'au  moins  110
-       colonnes  (80+2+26+2)  pour  afficher les cadres si align_status est
+       (Le seuil de 26x82 pour '2'  désigne  le  nombre  de  lignes  et  de
+       colonnes  de  l'affichage.   Il  faut  une  largeur  d'au  moins 110
+       colonnes (80+2+26+2) pour afficher les cadres  si  align_status  est
        réglée sur left ou right.)
 
        La fenêtre d'inventaire permanent, si elle est activée, peut grandir
-       jusqu'à ne plus tenir sur la plupart des affichages, et son  contenu
-       est  alors tronqué.  Si les cadres sont forcés (1) ou si l'affichage
-       est assez grand pour les montrer (2), régler plutôt la valeur sur  3
-       ou  4  garde les cadres de la carte, des messages et de l'état, mais
-       laisse la place de deux  lignes  d'inventaire  de  plus  et  élargit
+       jusqu'à  ne plus tenir sur la plupart des affichages, et son contenu
+       est alors tronqué.  Si les cadres sont forcés (1) ou si  l'affichage
+       est  assez grand pour les montrer (2), régler plutôt la valeur sur 3
+       ou 4 garde les cadres de la carte, des messages et de  l'état,  mais
+       laisse  la  place  de  deux  lignes  d'inventaire de plus et élargit
        chaque ligne d'inventaire de deux colonnes.
 
      windowcolors
-       Si  NetHack  le  peut,  il  affiche toutes les fenêtres d'un certain
-       style avec les couleurs  de  premier  plan  et  de  fond  indiquées.
+       Si NetHack le peut, il affiche  toutes  les  fenêtres  d'un  certain
+       style  avec  les  couleurs  de  premier  plan  et de fond indiquées.
        Interface Windows et curses seulement.  Le format est
 
           OPTION=windowcolors:style premier-plan/fond
 
-       où  style est l'un de « menu », « message », « status » ou « text »,
-       et où le premier plan et le fond sont des couleurs, soit  numériques
-       (dièse  suivi  de  trois  paires de chiffres hexadécimaux, #rrggbb),
-       soit l'une des couleurs nommées (black,  red,  green,  brown,  blue,
-       magenta,  cyan,  orange,  bright-green, yellow, bright-blue, bright-
-       magenta, bright-cyan, white, gray, purple, silver, maroon,  fuchsia,
-       lime,  olive, navy, teal, aqua), soit (sous Windows seulement) l'une
-       des couleurs de l'interface Windows (trueblack, activeborder,  acti-
-       vecaption,  appworkspace,  background,  btnface, btnshadow, btntext,
-       captiontext, graytext, greytext, highlight, highlighttext, inactive-
-       border, inactivecaption, menu, menutext, scrollbar, window,  window-
-       frame, windowtext).
-
-
+       où style est l'un de « menu », « message », « status » ou « text  »,
+       et  où le premier plan et le fond sont des couleurs, soit numériques
+       (dièse suivi de trois paires  de  chiffres  hexadécimaux,  #rrggbb),
+       soit  l'une  des  couleurs  nommées (black, red, green, brown, blue,
+       magenta, cyan, orange, bright-green,  yellow,  bright-blue,  bright-
+       magenta,  bright-cyan, white, gray, purple, silver, maroon, fuchsia,
+       lime, olive, navy, teal, aqua), soit (sous Windows seulement)  l'une
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6076,26 +6076,32 @@
 
 
 
+       des  couleurs de l'interface Windows (trueblack, activeborder, acti-
+       vecaption, appworkspace, background,  btnface,  btnshadow,  btntext,
+       captiontext, graytext, greytext, highlight, highlighttext, inactive-
+       border,  inactivecaption, menu, menutext, scrollbar, window, window-
+       frame, windowtext).
+
      wraptext
-       Si  NetHack  le  peut,  il  coupe les longues lignes de texte qui ne
+       Si NetHack le peut, il coupe les longues  lignes  de  texte  qui  ne
        tiennent pas dans la partie visible de la fenêtre.
 
      9.6.  Options des rapports de plantage
 
           Notez que NetHack n'envoie aucune information hors de votre ordi-
-     nateur, sauf si vous cliquez vous-même sur « envoyer » dans un  formu-
+     nateur,  sauf si vous cliquez vous-même sur « envoyer » dans un formu-
      laire.
 
           OPTION=crash_email:adresse_électronique
 
           OPTION=crash_name:votre_nom
-            Ces  options  servent  seulement  à  vous éviter de retaper ces
-            informations dans les formulaires de rapport de plantage et  de
+            Ces options servent seulement à  vous  éviter  de  retaper  ces
+            informations  dans les formulaires de rapport de plantage et de
             #bugreport.
 
           OPTION=crash_urlmax:octets
-            Cette  option  limite  la  longueur des URL créées ; elle n'est
-            utile que si votre navigateur ne gère pas les URL  de  longueur
+            Cette option limite la longueur des URL  créées  ;  elle  n'est
+            utile  que  si votre navigateur ne gère pas les URL de longueur
             quelconque.
 
      9.7.  Options propres à certaines plates-formes
@@ -6104,32 +6110,26 @@
      tains portages à personnaliser et à modifier leur comportement.
 
      altkeyhandling
-       Choisit  une  autre façon de traiter les frappes au clavier (NetHack
-       tty Win32 seulement).  Le nom du type  de  traitement  est  l'un  de
+       Choisit une autre façon de traiter les frappes au  clavier  (NetHack
+       tty  Win32  seulement).   Le  nom  du type de traitement est l'un de
        « default », « ray », « 340 ».
 
      altmeta
-       Sur  les  systèmes où elle existe, cette option demande à NetHack de
+       Sur les systèmes où elle existe, cette option demande à  NetHack  de
        convertir une séquence de deux caractères commençant par Échap en la
        version méta du second caractère (désactivée par défaut).
 
-       Cette conversion n'est faite que pour les commandes,  pas  pour  les
-       autres  saisies.   Notez  que  taper  un ou plusieurs chiffres comme
-       nombre avant une commande--précédés de n si l'option number_pad  est
-       réglée--est  aussi  soumis  à  cette  conversion  :  si vous essayez
-       d'annuler le nombre en  tapant  Échap,  NetHack  attendra  un  autre
-       caractère  pour  compléter la séquence de deux caractères.  Tapez un
-       second Échap pour finir d'annuler ce nombre.  Aux autres  questions,
+       Cette  conversion  n'est  faite que pour les commandes, pas pour les
+       autres saisies.  Notez que taper  un  ou  plusieurs  chiffres  comme
+       nombre  avant une commande--précédés de n si l'option number_pad est
+       réglée--est aussi soumis  à  cette  conversion  :  si  vous  essayez
+       d'annuler  le  nombre  en  tapant  Échap,  NetHack attendra un autre
+       caractère pour compléter la séquence de deux caractères.   Tapez  un
+       second  Échap pour finir d'annuler ce nombre.  Aux autres questions,
        un seul Échap suffit.
 
      BIOS
-       Utilise  les appels du BIOS pour mettre à jour l'écran rapidement et
-       lire le clavier (ce qui permet de se déplacer avec les flèches)  sur
-       les  machines dotées d'un BIOS ROM compatible IBM PC (désactivée par
-       défaut, NetHack OS/2, PC et ST seulement).
-
-     rawio
-       Force le mode brut (non cbreak) pour un affichage plus rapide et des
+       Utilise les appels du BIOS pour mettre à jour l'écran rapidement  et
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6142,60 +6142,60 @@
 
 
 
-       saisies plus fiables (sans lui, MS-DOS traite parfois '^P' comme  un
-       basculement  de  l'imprimante) (désactivée par défaut, NetHack OS/2,
+       lire  le clavier (ce qui permet de se déplacer avec les flèches) sur
+       les machines dotées d'un BIOS ROM compatible IBM PC (désactivée  par
+       défaut, NetHack OS/2, PC et ST seulement).
+
+     rawio
+       Force le mode brut (non cbreak) pour un affichage plus rapide et des
+       saisies  plus fiables (sans lui, MS-DOS traite parfois '^P' comme un
+       basculement de l'imprimante) (désactivée par défaut,  NetHack  OS/2,
        PC et ST seulement).  Note : les DEC Rainbow se bloquent si elle est
        activée.  Ne peut pas être réglée avec la commande 'O'.
 
      subkeyvalue
-       (NetHack tty Win32 seulement.)  Permet de  modifier  la  valeur  des
-       frappes  que  le système d'exploitation renvoie à NetHack, pour com-
-       penser des problèmes de claviers internationaux.   OPTIONS=subkeyva-
-       lue:171/92  renvoie  92  à NetHack si 171 devait être renvoyé.  Vous
+       (NetHack  tty  Win32  seulement.)   Permet de modifier la valeur des
+       frappes que le système d'exploitation renvoie à NetHack,  pour  com-
+       penser  des problèmes de claviers internationaux.  OPTIONS=subkeyva-
+       lue:171/92 renvoie 92 à NetHack si 171 devait  être  renvoyé.   Vous
        pouvez donner plusieurs subkeyvalue dans le fichier de configuration
        si besoin.  Ne peut pas être réglée avec la commande 'O'.
 
      video
-       Règle le mode  vidéo  (NetHack  PC  seulement).   Les  valeurs  sont
-       «  autodetect  »,  «  default », « vga » ou « vesa ».  « vesa » fait
-       afficher les tuiles par le jeu en utilisant toutes les capacités  du
-       matériel  VGA.   «  vga  » fait afficher les tuiles en 640x480 et 16
-       couleurs, un mode compatible avec tout matériel VGA.   Les  jeux  de
-       tuiles  tiers  ne  marcheront sans doute pas.  « autodetect » essaie
-       « vesa », puis « vga », et enfin « default » si aucun de  ces  modes
+       Règle  le  mode  vidéo  (NetHack  PC  seulement).   Les valeurs sont
+       « autodetect », « default », « vga » ou « vesa ».   «  vesa  »  fait
+       afficher  les tuiles par le jeu en utilisant toutes les capacités du
+       matériel VGA.  « vga » fait afficher les tuiles  en  640x480  et  16
+       couleurs,  un  mode  compatible avec tout matériel VGA.  Les jeux de
+       tuiles tiers ne marcheront sans doute pas.  «  autodetect  »  essaie
+       «  vesa  », puis « vga », et enfin « default » si aucun de ces modes
        ne marche.  Ne peut pas être réglée avec la commande 'O'.
 
      video_height
-       Règle  la  hauteur  de  la résolution du mode VGA (MS-DOS seulement,
+       Règle la hauteur de la résolution du  mode  VGA  (MS-DOS  seulement,
        avec video:vesa).
 
      video_width
-       Règle la largeur de la résolution du  mode  VGA  (MS-DOS  seulement,
+       Règle  la  largeur  de  la résolution du mode VGA (MS-DOS seulement,
        avec video:vesa).
 
      videocolors
        Règle la palette de couleurs des systèmes PC utilisant NO_TERMS (par
-       défaut   4-2-6-1-5-3-15-12-10-14-9-13-11,   NetHack  PC  seulement).
-       L'ordre des couleurs est rouge, vert,  brun,  bleu,  magenta,  cyan,
-       bright.white,    bright.red,   bright.green,   jaune,   bright.blue,
+       défaut  4-2-6-1-5-3-15-12-10-14-9-13-11,  NetHack   PC   seulement).
+       L'ordre  des  couleurs  est  rouge, vert, brun, bleu, magenta, cyan,
+       bright.white,   bright.red,   bright.green,   jaune,    bright.blue,
        bright.magenta et bright.cyan.  Ne peut pas être réglée avec la com-
        mande 'O'.
 
      videoshades
-       Règle l'intensité des trois niveaux de gris disponibles (par  défaut
+       Règle  l'intensité des trois niveaux de gris disponibles (par défaut
        dark normal light, NetHack PC seulement).  Si l'affichage du jeu est
-       difficile  à  lire, essayez d'ajuster ces niveaux ; si cela ne règle
-       pas le problème, essayez !color.  Ne peut pas être  réglée  avec  la
+       difficile à lire, essayez d'ajuster ces niveaux ; si cela  ne  règle
+       pas  le  problème,  essayez !color.  Ne peut pas être réglée avec la
        commande 'O'.
 
-     9.8.  Expressions régulières
 
-          Les  expressions  régulières  sont  normalement  des  expressions
-     régulières étendues POSIX.  On peut compiler  NetHack  sans  prise  en
-     charge  des  expressions régulières sur une plate-forme qui n'a pas de
-     bibliothèque pour cela.  Ce n'est le cas d'aucune plate-forme moderne,
-     mais si votre NetHack a été compilé ainsi, les motifs sont des  motifs
-     de  type  glob  ;  dans  tous  les  cas,  ce document appelle les deux
+
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6208,45 +6208,53 @@
 
 
 
+     9.8.  Expressions régulières
+
+          Les  expressions  régulières  sont  normalement  des  expressions
+     régulières  étendues  POSIX.   On  peut compiler NetHack sans prise en
+     charge des expressions régulières sur une plate-forme qui n'a  pas  de
+     bibliothèque pour cela.  Ce n'est le cas d'aucune plate-forme moderne,
+     mais  si votre NetHack a été compilé ainsi, les motifs sont des motifs
+     de type glob ; dans  tous  les  cas,  ce  document  appelle  les  deux
      'expressions régulières'.  Cela s'applique aux exceptions de ramassage
      automatique, aux types de messages, aux couleurs des menus et aux sons
      de l'utilisateur.
 
-          Note sur la traduction : quand le jeu  affiche  les  messages  en
-     français,  les  types de messages (MSGTYPE) sont reconnus sur le texte
+          Note  sur  la  traduction  : quand le jeu affiche les messages en
+     français, les types de messages (MSGTYPE) sont reconnus sur  le  texte
      français, puis sur le texte anglais d'origine ; les couleurs des menus
-     (MENUCOLOR) sur le texte affiché, puis sur le nom anglais des  objets.
+     (MENUCOLOR)  sur le texte affiché, puis sur le nom anglais des objets.
      Les motifs écrits en anglais continuent donc de marcher.
 
      9.9.  Configurer les exceptions au ramassage automatique
 
-          Vous  pouvez  affiner  le comportement de l'option autopickup au-
+          Vous pouvez affiner le comportement de  l'option  autopickup  au-
      delà de ce que permet l'option pickup_types.
 
-          En plaçant des lignes autopickup_exception dans votre fichier  de
+          En  plaçant des lignes autopickup_exception dans votre fichier de
      configuration, vous pouvez définir des motifs qui seront testés chaque
      fois que le jeu s'apprête à ramasser automatiquement quelque chose.
 
      autopickup_exception
-       Définit  une  exception  à  l'option pickup_types.  L'option autopi-
+       Définit une exception à  l'option  pickup_types.   L'option  autopi-
        ckup_exception doit être suivie d'une expression régulière, utilisée
-       comme motif à comparer à la forme au  singulier  de  la  description
+       comme  motif  à  comparer  à la forme au singulier de la description
        d'un objet qui se trouve à votre emplacement.
 
-       De  plus, certains caractères ont un sens particulier quand ils sont
+       De plus, certains caractères ont un sens particulier quand ils  sont
        le premier caractère du motif :
 
             < - toujours ramasser un objet qui correspond au reste du motif ;
             > - ne jamais ramasser un objet qui correspond au reste du motif.
 
-       Les règles autopickup_exception sont traitées dans l'ordre où  elles
-       apparaissent  dans  votre  fichier  de configuration, si bien qu'une
+       Les  règles autopickup_exception sont traitées dans l'ordre où elles
+       apparaissent dans votre fichier de  configuration,  si  bien  qu'une
        règle peut l'emporter sur une règle précédente.
 
-       On peut définir des exceptions avec  la  commande  'O',  mais  comme
-       elles  ne  sont  pas  dans  votre fichier de configuration, elles ne
+       On  peut  définir  des  exceptions  avec la commande 'O', mais comme
+       elles ne sont pas dans votre  fichier  de  configuration,  elles  ne
        seront plus en vigueur si vous sauvegardez puis restaurez la partie.
-       Les règles autopickup_exception ne sont  pas  sauvegardées  avec  la
+       Les  règles  autopickup_exception  ne  sont pas sauvegardées avec la
        partie.
 
      Quelques exemples :
@@ -6254,14 +6262,6 @@
             autopickup_exception="<*arrow"
             autopickup_exception=">*corpse"
             autopickup_exception=">* cursed*"
-
-          Le premier exemple ci-dessus fait ramasser automatiquement toutes
-     les sortes de flèches.  Le deuxième exclut tous les cadavres du ramas-
-     sage  automatique.   Le  dernier  exclut  du ramassage automatique les
-     objets connus pour être maudits.
-
-          Note sur la traduction  :  quand  le  jeu  affiche  les  noms  en
-     français,  les  motifs  sont  comparés  à  la description française de
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6274,18 +6274,25 @@
 
 
 
-     l'objet, puis à  sa  description  anglaise  ;  les  motifs  écrits  en
+          Le premier exemple ci-dessus fait ramasser automatiquement toutes
+     les sortes de flèches.  Le deuxième exclut tous les cadavres du ramas-
+     sage automatique.  Le dernier  exclut  du  ramassage  automatique  les
+     objets connus pour être maudits.
+
+          Note  sur  la  traduction  :  quand  le  jeu  affiche les noms en
+     français, les motifs sont  comparés  à  la  description  française  de
+     l'objet,  puis  à  sa  description  anglaise  ;  les  motifs écrits en
      anglais, comme ceux des exemples, continuent donc de marcher.
 
      9.10.  Changer les associations de touches
 
-          Il  est  possible  de  changer les touches associées par défaut à
-     certaines commandes spéciales, aux raccourcis des menus  et  aux  com-
-     mandes  étendues,  avec  des lignes BIND dans le fichier de configura-
-     tion.  Le format est la touche, suivie de la commande à lui  associer,
-     séparées  par  un  deux-points.  La touche peut être un caractère seul
-     (« x »), une touche Contrôle (« ^X », « C-x »), une touche méta («  M-
-     x  »),  un  bouton  de  la  souris  ou  un  code ASCII décimal à trois
+          Il est possible de changer les touches  associées  par  défaut  à
+     certaines  commandes  spéciales,  aux raccourcis des menus et aux com-
+     mandes étendues, avec des lignes BIND dans le  fichier  de  configura-
+     tion.   Le format est la touche, suivie de la commande à lui associer,
+     séparées par un deux-points.  La touche peut être  un  caractère  seul
+     («  x »), une touche Contrôle (« ^X », « C-x »), une touche méta (« M-
+     x »), un bouton de  la  souris  ou  un  code  ASCII  décimal  à  trois
      chiffres.
 
           Par exemple :
@@ -6295,39 +6302,32 @@
           BIND=v:loot
 
      Touches des commandes étendues
-       Vous pouvez associer plusieurs touches à la même  commande  étendue.
-       Pour  libérer  une  touche,  associez-la  à la commande « nothing ».
-       Vous pouvez aussi associer les touches « <esc> »,  «  <enter>  »  et
+       Vous  pouvez  associer plusieurs touches à la même commande étendue.
+       Pour libérer une touche, associez-la à  la  commande  «  nothing  ».
+       Vous  pouvez  aussi  associer  les touches « <esc> », « <enter> » et
        « <space> ».
 
      Raccourcis des menus
        Les touches de contrôle des menus, ou raccourcis, peuvent aussi être
-       réassociées  par des lignes OPTIONS du fichier de configuration.  On
-       ne peut pas utiliser les symboles  des  objets  ni  les  lettres  de
-       sélection  comme raccourcis de menu.  Certaines interfaces ne gèrent
+       réassociées par des lignes OPTIONS du fichier de configuration.   On
+       ne  peut  pas  utiliser  les  symboles  des objets ni les lettres de
+       sélection comme raccourcis de menu.  Certaines interfaces ne  gèrent
        qu'une partie de ces raccourcis.
 
      Boutons de la souris
-       Vous pouvez associer « mouse1 » ou « mouse2 » à « nothing », «  the-
+       Vous  pouvez associer « mouse1 » ou « mouse2 » à « nothing », « the-
        recmdmenu », « clicklook » ou « mouseaction ».
 
      Touches des commandes spéciales
        Voici les commandes spéciales que vous pouvez réassocier.  Certaines
-       peuvent  partager  une  touche  sans problème, d'autres sont dans le
-       même « contexte » et, si  elles  partagent  une  touche,  une  seule
-       d'entre  elles  sera disponible.  Une commande spéciale ne peut être
+       peuvent partager une touche sans problème,  d'autres  sont  dans  le
+       même  «  contexte  »  et,  si  elles partagent une touche, une seule
+       d'entre elles sera disponible.  Une commande spéciale ne  peut  être
        associée qu'à une seule touche.
 
      count
-       Touche préfixe qui commence un nombre,  pour  répéter  une  commande
+       Touche  préfixe  qui  commence  un nombre, pour répéter une commande
        autant de fois.  Avec number_pad seulement.  Par défaut 'n'.
-
-     getdir.help
-       Quand  on  vous demande une direction, la touche qui affiche l'aide.
-       Par défaut '?'.
-
-     getdir.mouse
-       Quand on vous demande une direction, la touche qui simule un clic de
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6340,10 +6340,16 @@
 
 
 
-       souris.  On vous demande alors de choisir un emplacement.   Déplacez
-       le  curseur sur la carte avec les touches de déplacement, puis tapez
+     getdir.help
+       Quand on vous demande une direction, la touche qui  affiche  l'aide.
+       Par défaut '?'.
+
+     getdir.mouse
+       Quand on vous demande une direction, la touche qui simule un clic de
+       souris.   On vous demande alors de choisir un emplacement.  Déplacez
+       le curseur sur la carte avec les touches de déplacement, puis  tapez
        la touche getpos.pick.once (par défaut ',') ou la touche getpos.pick
-       (par défaut '.')  pour terminer comme par un clic gauche  ou  droit.
+       (par  défaut  '.')  pour terminer comme par un clic gauche ou droit.
        Utile seulement avec la commande #therecmdmenu.  Par défaut '_'.
 
      getdir.self
@@ -6351,7 +6357,7 @@
        même.  Par défaut '.'.
 
      getdir.self2
-       Quand  on  vous  demande  une  direction, une autre touche pour vous
+       Quand on vous demande une direction,  une  autre  touche  pour  vous
        viser vous-même.  Par défaut 's'.
 
      getpos.autodescribe
@@ -6359,41 +6365,35 @@
        tive la description automatique.  Par défaut '#'.
 
      getpos.all.next
-       Quand on vous demande un emplacement, la  touche  pour  aller  à  la
+       Quand  on  vous  demande  un  emplacement, la touche pour aller à la
        chose intéressante suivante la plus proche.  Par défaut 'a'.
 
      getpos.all.prev
-       Quand  on  vous  demande  un  emplacement, la touche pour aller à la
+       Quand on vous demande un emplacement, la  touche  pour  aller  à  la
        chose intéressante précédente la plus proche.  Par défaut 'A'.
 
      getpos.door.next
-       Quand on vous demande un emplacement, la  touche  pour  aller  à  la
+       Quand  on  vous  demande  un  emplacement, la touche pour aller à la
        porte ou à l'embrasure suivante la plus proche.  Par défaut 'd'.
 
      getpos.door.prev
-       Quand  on  vous  demande  un  emplacement, la touche pour aller à la
+       Quand on vous demande un emplacement, la  touche  pour  aller  à  la
        porte ou à l'embrasure précédente la plus proche.  Par défaut 'D'.
 
      getpos.help
-       Quand on vous demande un emplacement, la touche qui affiche  l'aide.
+       Quand  on vous demande un emplacement, la touche qui affiche l'aide.
        Par défaut '?'.
 
      getpos.mon.next
-       Quand  on  vous  demande  un  emplacement,  la  touche pour aller au
+       Quand on vous demande  un  emplacement,  la  touche  pour  aller  au
        monstre suivant le plus proche.  Par défaut 'm'.
 
      getpos.mon.prev
-       Quand on vous demande  un  emplacement,  la  touche  pour  aller  au
+       Quand  on  vous  demande  un  emplacement,  la  touche pour aller au
        monstre précédent le plus proche.  Par défaut 'M'.
 
      getpos.obj.next
        Quand on vous demande un emplacement, la touche pour aller à l'objet
-       suivant le plus proche.  Par défaut 'o'.
-
-     getpos.obj.prev
-       Quand on vous demande un emplacement, la touche pour aller à l'objet
-       précédent le plus proche.  Par défaut 'O'.
-
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6406,60 +6406,60 @@
 
 
 
+       suivant le plus proche.  Par défaut 'o'.
+
+     getpos.obj.prev
+       Quand on vous demande un emplacement, la touche pour aller à l'objet
+       précédent le plus proche.  Par défaut 'O'.
+
      getpos.menu
-       Quand  on  vous  demande  un  emplacement  et que vous parcourez les
-       cibles avec l'une des touches suivant ou précédent,  affiche  plutôt
+       Quand on vous demande un  emplacement  et  que  vous  parcourez  les
+       cibles  avec  l'une des touches suivant ou précédent, affiche plutôt
        un menu.  Par défaut '!'.
 
      getpos.moveskip
-       Quand  on vous demande un emplacement et que vous vous déplacez vite
-       avec les touches de déplacement en majuscule ou  les  touches  méta-
-       chiffre,  saute par-dessus les symboles identiques au lieu d'avancer
+       Quand on vous demande un emplacement et que vous vous déplacez  vite
+       avec  les  touches  de déplacement en majuscule ou les touches méta-
+       chiffre, saute par-dessus les symboles identiques au lieu  d'avancer
        de 8 cases.  Par défaut '*'.
 
      getpos.filter
        Quand on vous demande un emplacement, change le mode de filtrage des
-       touches suivant et précédent qui parcourent les cibles.  Passe  suc-
-       cessivement  de  «  aucun  filtrage  » à « en vue seulement » puis à
+       touches  suivant et précédent qui parcourent les cibles.  Passe suc-
+       cessivement de « aucun filtrage » à « en  vue  seulement  »  puis  à
        « dans la même zone seulement ».  Par défaut '"'.
 
      getpos.pick
-       Quand on  vous  demande  un  emplacement,  la  touche  pour  choisir
+       Quand  on  vous  demande  un  emplacement,  la  touche  pour choisir
        l'emplacement et éventuellement demander plus d'informations.  Quand
-       on  simule  un  clic  de souris après une demande de direction (voir
-       getdir.mouse plus haut), la touche qui répond comme un  clic  droit.
+       on simule un clic de souris après une  demande  de  direction  (voir
+       getdir.mouse  plus  haut), la touche qui répond comme un clic droit.
        Par défaut '.'.
 
      getpos.pick.once
-       Quand  on  vous  demande  un  emplacement,  la  touche  pour choisir
+       Quand on  vous  demande  un  emplacement,  la  touche  pour  choisir
        l'emplacement sans demander plus d'informations.  Quand on simule un
-       clic de souris après une demande de direction, la touche qui  répond
+       clic  de souris après une demande de direction, la touche qui répond
        comme un clic gauche.  Par défaut ','.
 
      getpos.pick.quick
-       Quand  on  vous  demande  un  emplacement,  la  touche  pour choisir
+       Quand on  vous  demande  un  emplacement,  la  touche  pour  choisir
        l'emplacement sans demander plus d'informations et quitter la boucle
        de choix d'emplacement.  Par défaut ';'.
 
      getpos.pick.verbose
-       Quand on  vous  demande  un  emplacement,  la  touche  pour  choisir
+       Quand  on  vous  demande  un  emplacement,  la  touche  pour choisir
        l'emplacement et afficher plus d'informations sans le demander.  Par
        défaut ':'.
 
      getpos.self
-       Quand  on  vous demande un emplacement, la touche pour aller à votre
+       Quand on vous demande un emplacement, la touche pour aller  à  votre
        emplacement.  Par défaut '@'.
 
      getpos.unexplored.next
-       Quand on vous  demande  un  emplacement,  la  touche  pour  aller  à
+       Quand  on  vous  demande  un  emplacement,  la  touche  pour aller à
        l'emplacement inexploré suivant le plus proche.  Par défaut 'x'.
 
-     getpos.unexplored.prev
-       Quand  on  vous  demande  un  emplacement,  la  touche  pour aller à
-       l'emplacement inexploré précédent le plus proche.  Par défaut 'X'.
-
-     getpos.valid
-       Quand on vous demande un  emplacement,  la  touche  qui  montre  les
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6472,23 +6472,29 @@
 
 
 
+     getpos.unexplored.prev
+       Quand on vous  demande  un  emplacement,  la  touche  pour  aller  à
+       l'emplacement inexploré précédent le plus proche.  Par défaut 'X'.
+
+     getpos.valid
+       Quand  on  vous  demande  un  emplacement,  la touche qui montre les
        emplacements valides pour la cible.  Par défaut '$'.
 
      getpos.valid.next
-       Quand  on  vous  demande  un  emplacement,  la  touche  pour aller à
+       Quand on vous  demande  un  emplacement,  la  touche  pour  aller  à
        l'emplacement valide suivant le plus proche.  Par défaut 'z'.
 
      getpos.valid.prev
-       Quand on vous  demande  un  emplacement,  la  touche  pour  aller  à
+       Quand  on  vous  demande  un  emplacement,  la  touche  pour aller à
        l'emplacement valide précédent le plus proche.  Par défaut 'Z'.
 
      9.11.  Configurer les types de messages
 
-          Vous  pouvez changer la façon dont les messages sont montrés dans
-     la zone des messages, quand le message correspond à  un  motif  défini
+          Vous pouvez changer la façon dont les messages sont montrés  dans
+     la  zone  des  messages, quand le message correspond à un motif défini
      par vous.
 
-          En  général, les lignes du fichier de configuration qui décrivent
+          En général, les lignes du fichier de configuration qui  décrivent
      les types de messages ont cette forme : MSGTYPE=type "motif"
 
      type  - comment le message doit être montré ;
@@ -6501,7 +6507,7 @@
        show  - montrer le message normalement ;
        hide  - ne jamais montrer le message ;
        stop  - attendre le joueur avec l'invite « --Plus-- » ;
-       norep - montrer le message une fois, mais pas de  nouveau  si  aucun
+       norep - montrer  le  message  une fois, mais pas de nouveau si aucun
                autre message n'a été montré entre-temps.
 
        Voici un exemple de types de messages utilisant la reconnaissance de
@@ -6510,21 +6516,15 @@
             MSGTYPE=stop "You feel hungry."
             MSGTYPE=hide "You displaced *."
 
-       indique  que  chaque fois que le message « You feel hungry » (« Vous
-       avez faim  »)  est  montré,  le  joueur  doit  répondre  à  l'invite
-       «  --Plus--  »,  et  qu'un  message  correspondant à « You displaced
+       indique que chaque fois que le message « You feel hungry »  («  Vous
+       avez  faim  »)  est  montré,  le  joueur  doit  répondre  à l'invite
+       « --Plus-- », et qu'un  message  correspondant  à  «  You  displaced
        <quelque chose>. » n'est pas montré du tout.
 
-       Quand le jeu affiche les messages en français, le motif est  d'abord
-       comparé  au  message  français,  puis au message anglais d'origine ;
-       MSGTYPE=stop "Vous avez faim." a donc le même effet que la  première
+       Quand  le jeu affiche les messages en français, le motif est d'abord
+       comparé au message français, puis au  message  anglais  d'origine  ;
+       MSGTYPE=stop  "Vous avez faim." a donc le même effet que la première
        ligne de l'exemple.
-
-       L'ordre  des  lignes MSGTYPE est important : c'est la dernière règle
-       correspondante qui s'applique.  Mettez le cas général  d'abord,  les
-       exceptions ensuite.
-
-
 
 
 
@@ -6538,60 +6538,60 @@
 
 
 
+       L'ordre des lignes MSGTYPE est important : c'est la  dernière  règle
+       correspondante  qui  s'applique.  Mettez le cas général d'abord, les
+       exceptions ensuite.
+
      9.12.  Configurer les couleurs des menus
 
-          Certaines  plates-formes  permettent de définir des couleurs pour
-     les lignes des menus qui correspondent à un  motif  défini  par  vous.
+          Certaines plates-formes permettent de définir des  couleurs  pour
+     les  lignes  des  menus  qui correspondent à un motif défini par vous.
      Actuellement, les interfaces tty, curses, win32tty et win32gui le per-
      mettent.
 
-          En  général, les lignes du fichier de configuration qui décrivent
+          En général, les lignes du fichier de configuration qui  décrivent
      les couleurs des menus ont cette forme :
 
           MENUCOLOR="motif"=couleur&attribut
 
             motif           - le motif à reconnaître ;
-            couleur         - la couleur des lignes  qui  correspondent  au
+            couleur         - la  couleur  des  lignes qui correspondent au
                               motif ;
-            attribut        - l'attribut  des  lignes  qui correspondent au
-                              motif.  L'attribut est facultatif ;  si  vous
+            attribut        - l'attribut des lignes  qui  correspondent  au
+                              motif.   L'attribut  est facultatif ; si vous
                               l'omettez, omettez aussi l'esperluette qui le
-                              précède.   Si  aucun  attribut  n'est défini,
+                              précède.  Si  aucun  attribut  n'est  défini,
                               aucun attribut n'est utilisé.
 
        Le motif doit être une expression régulière.
 
-       Les couleurs permises sont black (noir), red (rouge), green  (vert),
-       brown  (brun),  blue  (bleu),  magenta,  cyan,  gray (gris), orange,
-       light-green (vert clair), yellow (jaune), light-blue  (bleu  clair),
-       light-magenta  (magenta  clair),  light-cyan  (cyan  clair) et white
-       (blanc).  S'y ajoute no-color, la couleur par défaut du  texte,  qui
-       n'est  pas  forcément  l'une des autres couleurs.  Les noms des cou-
+       Les  couleurs permises sont black (noir), red (rouge), green (vert),
+       brown (brun), blue  (bleu),  magenta,  cyan,  gray  (gris),  orange,
+       light-green  (vert  clair), yellow (jaune), light-blue (bleu clair),
+       light-magenta (magenta clair),  light-cyan  (cyan  clair)  et  white
+       (blanc).   S'y  ajoute no-color, la couleur par défaut du texte, qui
+       n'est pas forcément l'une des autres couleurs.  Les  noms  des  cou-
        leurs s'écrivent en anglais.
 
-       Les attributs permis sont none (aucun), bold (gras), dim  (atténué),
+       Les  attributs permis sont none (aucun), bold (gras), dim (atténué),
        italic  (italique),  underline  (souligné),  blink  (clignotant)  et
-       inverse (vidéo inverse).  « normal » est un synonyme de  «  none  ».
-       Notez  que  la  plate-forme peut interpréter les attributs comme bon
+       inverse  (vidéo  inverse).   « normal » est un synonyme de « none ».
+       Notez que la plate-forme peut interpréter les  attributs  comme  bon
        lui semble.
 
-       Voici un exemple de couleurs des menus utilisant  la  reconnaissance
+       Voici  un  exemple de couleurs des menus utilisant la reconnaissance
        de motifs interne de NetHack :
 
             MENUCOLOR="* blessed *"=green
             MENUCOLOR="* cursed *"=red
             MENUCOLOR="* cursed *(being worn)"=red&underline
 
-       indique  que toute ligne de menu contenant «  blessed  » (béni) sera
-       montrée en vert, les lignes  contenant  «   cursed   »  (maudit)  en
-       rouge,  et  les  lignes  contenant  «   cursed   » suivi de « (being
-       worn) » (porté) sur la même ligne seront montrées en rouge  et  sou-
-       lignées.   Vous  pouvez mettre plusieurs lignes MENUCOLOR dans votre
+       indique que toute ligne de menu contenant «  blessed  » (béni)  sera
+       montrée  en  vert,  les  lignes  contenant  «  cursed  » (maudit) en
+       rouge, et les lignes contenant  «   cursed   »  suivi  de  «  (being
+       worn)  »  (porté) sur la même ligne seront montrées en rouge et sou-
+       lignées.  Vous pouvez mettre plusieurs lignes MENUCOLOR  dans  votre
        fichier de configuration ; c'est la dernière ligne MENUCOLOR corres-
-       pondant à une ligne de menu qui s'applique à cette ligne.
-
-          Quand le jeu affiche les noms des objets en  français,  le  motif
-     est  d'abord  comparé  à  la  ligne  affichée,  puis au nom anglais de
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -6604,26 +6604,30 @@
 
 
 
-     l'objet : les motifs anglais de  l'exemple  marchent  donc  aussi,  et
+       pondant à une ligne de menu qui s'applique à cette ligne.
+
+          Quand  le  jeu  affiche les noms des objets en français, le motif
+     est d'abord comparé à la  ligne  affichée,  puis  au  nom  anglais  de
+     l'objet  :  les  motifs  anglais  de l'exemple marchent donc aussi, et
      MENUCOLOR="* béni *"=green aurait le même effet que la première ligne.
-     Attention,  en  français  l'adjectif  s'accorde  («  bénie  »,  « mau-
+     Attention, en  français  l'adjectif  s'accorde  («  bénie  »,  «  mau-
      dites »...) : un motif anglais est souvent plus simple.
 
-          Notez que si vous voulez qu'une  ou  plusieurs  couleurs  corres-
+          Notez  que  si  vous  voulez qu'une ou plusieurs couleurs corres-
      pondent à «  uncursed  » (non maudit), il vaut sans doute mieux désac-
-     tiver  l'option implicit_uncursed pour que tous les objets connus pour
-     être non maudits soient réellement affichés avec la mention  «  uncur-
+     tiver l'option implicit_uncursed pour que tous les objets connus  pour
+     être  non  maudits soient réellement affichés avec la mention « uncur-
      sed ».
 
      9.13.  Configurer les sons de l'utilisateur
 
-          Certaines   plates-formes  permettent  de  définir  des  fichiers
-     sonores à jouer quand un message correspondant à un motif  défini  par
-     vous  est envoyé à la fenêtre des messages.  Actuellement, l'interface
-     Qt et les interfaces win32tty et win32gui gèrent les sons de  l'utili-
+          Certaines  plates-formes  permettent  de  définir  des   fichiers
+     sonores  à  jouer quand un message correspondant à un motif défini par
+     vous est envoyé à la fenêtre des messages.  Actuellement,  l'interface
+     Qt  et les interfaces win32tty et win32gui gèrent les sons de l'utili-
      sateur.
 
-          Les  lignes suivantes du fichier de configuration servent à asso-
+          Les lignes suivantes du fichier de configuration servent à  asso-
      cier des sons aux messages :
 
      SOUNDDIR
@@ -6633,18 +6637,18 @@
        Une ligne qui associe un fichier sonore à un motif de message défini
        par vous.  Chaque ligne SOUND se décompose ainsi :
 
-       MESG           - association à la fenêtre  des  messages  (la  seule
+       MESG           - association  à  la  fenêtre  des messages (la seule
                         gérée en 5.0.0) ;
-       msgtype        - facultatif  ;  le  type de message à utiliser, voir
+       msgtype        - facultatif ; le type de message  à  utiliser,  voir
                         « Configurer les types de messages » ;
        motif          - le motif à reconnaître ;
        fichier sonore - le fichier sonore à jouer ;
        volume         - le volume à utiliser pour jouer le fichier sonore ;
-       indice du son  - facultatif ; l'indice correspondant  à  un  fichier
+       indice du son  - facultatif  ;  l'indice  correspondant à un fichier
                         sonore.
 
-       Le  motif  doit  être  une  expression régulière.  Contrairement aux
-       types de messages, il n'est comparé  qu'au  message  tel  qu'il  est
+       Le motif doit être  une  expression  régulière.   Contrairement  aux
+       types  de  messages,  il  n'est  comparé qu'au message tel qu'il est
        affiché : si le jeu est en français, écrivez-le en français.
 
           Par exemple :
@@ -6652,10 +6656,6 @@
           SOUNDDIR=C:\nethack\sounds
           SOUND=MESG "Cette porte est verrouillée" "lock.wav" 100
           SOUND=MESG hide "^Vous ratez " "swing.wav" 75
-
-
-
-
 
 
 
@@ -6672,7 +6672,7 @@
 
      9.14.  Configurer la mise en évidence d'état
 
-          Votre  NetHack  a  peut-être été compilé avec la mise en évidence
+          Votre NetHack a peut-être été compilé avec la  mise  en  évidence
      d'état (« Status Hilites »).  Si c'est le cas, vous pouvez personnali-
      ser l'affichage du jeu en fixant des seuils qui changent la couleur ou
      l'aspect des champs de la ligne d'état.
@@ -6681,8 +6681,8 @@
 
      OPTION=hilite_status:nom-du-champ/comportement/couleur&attributs
 
-          Par exemple, la ligne suivante dans votre fichier  de  configura-
-     tion  fait afficher les points de vie en rouge s'ils tombent à 30 % ou
+          Par  exemple,  la ligne suivante dans votre fichier de configura-
+     tion fait afficher les points de vie en rouge s'ils tombent à 30 %  ou
      moins :
 
      OPTION=hilite_status:hitpoints/<=30%/red/normal
@@ -6690,33 +6690,33 @@
      (Cet exemple indique en fait red&normal pour <=30 % et no-color&normal
      pour >30 %.)
 
-          Autre exemple : la ligne suivante fait  afficher  la  sagesse  en
+          Autre  exemple  :  la  ligne suivante fait afficher la sagesse en
      rouge si elle baisse et en vert si elle monte :
 
      OPTION=hilite_status:wisdom/down/red/up/green
 
-          Les  couleurs  permises  sont  black,  red,  green,  brown, blue,
-     magenta, cyan, gray, orange, light-green, yellow,  light-blue,  light-
-     magenta,  light-cyan  et  white  (voir  «  Configurer les couleurs des
-     menus »).  S'y ajoute « no-color », la couleur par défaut du  texte  à
+          Les couleurs  permises  sont  black,  red,  green,  brown,  blue,
+     magenta,  cyan,  gray, orange, light-green, yellow, light-blue, light-
+     magenta, light-cyan et white  (voir  «  Configurer  les  couleurs  des
+     menus  »).   S'y ajoute « no-color », la couleur par défaut du texte à
      l'écran, qui n'est pas forcément le noir, le blanc ni l'une des autres
      couleurs.
 
-          Les  attributs  permis  sont  none, bold, dim, underline, italic,
-     blink et inverse.  « normal » est un synonyme de « none  »  ;  ils  ne
+          Les attributs permis sont none,  bold,  dim,  underline,  italic,
+     blink  et  inverse.   «  normal » est un synonyme de « none » ; ils ne
      doivent pas être combinés avec les autres attributs.
 
-          Pour  indiquer à la fois une couleur et un attribut, combinez-les
-     avec '&'.  Pour indiquer plusieurs attributs, combinez-les  avec  '+'.
+          Pour indiquer à la fois une couleur et un attribut,  combinez-les
+     avec  '&'.   Pour indiquer plusieurs attributs, combinez-les avec '+'.
      Par exemple : « magenta&inverse+dim ».
 
-          Notez  que  l'affichage peut remplacer ou ignorer certains attri-
-     buts selon ses possibilités et, en général, les interpréter comme  bon
-     lui  semble.  Par exemple, sur certains systèmes d'affichage, demander
+          Notez que l'affichage peut remplacer ou ignorer  certains  attri-
+     buts  selon ses possibilités et, en général, les interpréter comme bon
+     lui semble.  Par exemple, sur certains systèmes d'affichage,  demander
      du gras peut donner du clignotant, ou l'inverse.  Sur d'autres, deman-
-     der un attribut alors qu'un autre est déjà actif remplace  le  premier
-     au  lieu  de s'y ajouter.  Comme NetHack demande les attributs les uns
-     après les autres (du moins avec l'interface tty)  et  non  tous  à  la
+     der  un  attribut alors qu'un autre est déjà actif remplace le premier
+     au lieu de s'y ajouter.  Comme NetHack demande les attributs  les  uns
+     après  les  autres  (du  moins  avec l'interface tty) et non tous à la
      fois, le seul moyen de maîtriser une telle situation est de n'indiquer
      qu'un seul attribut.
 
@@ -6743,52 +6743,52 @@
                   charisma      armor-class        condition
                  alignment                           score
 
-       Ce  sont  respectivement  le  titre,  le niveau du donjon, le niveau
+       Ce sont respectivement le titre, le  niveau  du  donjon,  le  niveau
        d'expérience, la force, l'or, les points d'expérience, la dextérité,
-       les points de vie, les dés de vie, la constitution,  les  points  de
-       vie  maximum,  le  temps,  l'intelligence,  l'énergie,  la  faim, la
-       sagesse, l'énergie  maximum,  la  charge,  le  charisme,  la  classe
+       les  points  de  vie, les dés de vie, la constitution, les points de
+       vie maximum,  le  temps,  l'intelligence,  l'énergie,  la  faim,  la
+       sagesse,  l'énergie  maximum,  la  charge,  le  charisme,  la classe
        d'armure, les états, l'alignement et le score.
 
-       Le  pseudo-champ  « characteristics » permet de régler d'un coup les
+       Le pseudo-champ « characteristics » permet de régler d'un  coup  les
        six caractéristiques (Fo, Dx, Co, In, Sa et Ch sur la ligne d'état).
-       « HD » signifie « hit dice » (dés  de  vie),  une  approximation  du
-       niveau  d'expérience affichée quand vous êtes métamorphosé.  « expe-
-       rience », « time » et « score »  ne  sont  affichés  que  selon  vos
+       «  HD  »  signifie  «  hit dice » (dés de vie), une approximation du
+       niveau d'expérience affichée quand vous êtes métamorphosé.  «  expe-
+       rience  »,  «  time  »  et  « score » ne sont affichés que selon vos
        autres options.
 
-       Au  lieu  d'un  comportement,  «  condition  » prend les indicateurs
-       d'état suivants : stone (pétrification),  slime  (visqueux),  strngl
-       (étranglement),  foodpois (intoxication alimentaire), termill (mala-
-       die mortelle), blind (aveugle), deaf (sourd), stun  (étourdi),  conf
-       (confus),  hallu  (hallucinations),  lev  (lévitation), fly (vol) et
-       ride (monture).   Vous  pouvez  utiliser  «  major_troubles  »  pour
-       désigner  de  stone  à termill, « minor_troubles » de blind à hallu,
+       Au lieu d'un comportement,  «  condition  »  prend  les  indicateurs
+       d'état  suivants  :  stone (pétrification), slime (visqueux), strngl
+       (étranglement), foodpois (intoxication alimentaire), termill  (mala-
+       die  mortelle),  blind (aveugle), deaf (sourd), stun (étourdi), conf
+       (confus), hallu (hallucinations), lev  (lévitation),  fly  (vol)  et
+       ride  (monture).   Vous  pouvez  utiliser  «  major_troubles  » pour
+       désigner de stone à termill, « minor_troubles » de  blind  à  hallu,
        « movement » pour lev, fly et ride, et « all » pour tous les états.
 
-       Les comportements  permis  sont  «  always  »  (toujours),  «  up  »
-       (hausse),  «  down » (baisse), « changed » (changement), un seuil en
+       Les  comportements  permis  sont  «  always  »  (toujours),  «  up »
+       (hausse), « down » (baisse), « changed » (changement), un  seuil  en
        pourcentage ou en nombre absolu, ou un texte à reconnaître.  Pour le
-       champ hitpoints, il existe en plus le comportement «  criticalhp  ».
-       Il  l'emporte  sur  les  autres  règles  si  les  points de vie sont
+       champ  hitpoints,  il existe en plus le comportement « criticalhp ».
+       Il l'emporte sur les  autres  règles  si  les  points  de  vie  sont
        inférieurs ou égaux au seuil de problème majeur (qui dépend du maxi-
        mum de points de vie et du niveau d'expérience).
 
           * « always » fixe les attributs par défaut du champ.
 
-          * « up » et « down » fixent  les  attributs  du  champ  quand  sa
+          * «  up  »  et  «  down  » fixent les attributs du champ quand sa
             valeur monte ou baisse.  Cet attribut disparaît au bout de sta-
             tushilites tours.
 
-          * «  changed  »  fixe l'attribut du champ quand sa valeur change.
-            Cet attribut disparaît au bout de statushilites tours.  (Si  un
-            champ  a à la fois une règle « changed » et une règle « up » ou
-            « down » qui correspond au changement de sa  valeur,  c'est  la
+          * « changed » fixe l'attribut du champ quand  sa  valeur  change.
+            Cet  attribut disparaît au bout de statushilites tours.  (Si un
+            champ a à la fois une règle « changed » et une règle « up »  ou
+            «  down  »  qui correspond au changement de sa valeur, c'est la
             règle « up » ou « down » qui s'applique.)
 
           * un pourcentage fixe l'attribut du champ quand sa valeur corres-
-            pond  à  ce pourcentage.  Il s'écrit comme un nombre de 0 à 100
-            suivi de '%' (signe pour cent).  Si le pourcentage est  précédé
+            pond à ce pourcentage.  Il s'écrit comme un nombre de 0  à  100
+            suivi  de '%' (signe pour cent).  Si le pourcentage est précédé
             de '<=' ou '>=', il correspond aussi aux valeurs inférieures ou
 
 
@@ -6802,50 +6802,50 @@
 
 
 
-            supérieures.   Utilisez  le préfixe '<' ou '>' pour les valeurs
-            strictement inférieures ou supérieures.  (La limite est un  peu
-            assouplie  dans  ce  cas  :  >-1% et <101% sont permis.)  Seuls
+            supérieures.  Utilisez le préfixe '<' ou '>' pour  les  valeurs
+            strictement  inférieures ou supérieures.  (La limite est un peu
+            assouplie dans ce cas : >-1%  et  <101%  sont  permis.)   Seuls
             quatre champs acceptent les règles en pourcentage.  Pour « hit-
-            points » et « power », c'est simple : le  pourcentage  se  rap-
-            porte  au  champ maximum correspondant.  Les règles en pourcen-
-            tage sont aussi permises pour « experience level » et  «  expe-
-            rience  points » (valables quand l'option showexp est activée).
-            Pour celles-ci, le pourcentage mesure la progression  entre  le
-            début  du  niveau  d'expérience  actuel et le début du suivant.
-            Ainsi, si le niveau 2 commence à 20 points et le niveau 3 à  40
-            points,  30 points font 50 % et 35 points 75 %.  On ne peut pas
-            atteindre 100 % d'expérience, car on gagne alors un  niveau  et
-            le  calcul  repart pour ce nouveau niveau, mais une règle =100%
-            est permise et correspond au cas particulier où  il  ne  manque
+            points  »  et  « power », c'est simple : le pourcentage se rap-
+            porte au champ maximum correspondant.  Les règles  en  pourcen-
+            tage  sont  aussi permises pour « experience level » et « expe-
+            rience points » (valables quand l'option showexp est  activée).
+            Pour  celles-ci,  le pourcentage mesure la progression entre le
+            début du niveau d'expérience actuel et  le  début  du  suivant.
+            Ainsi,  si le niveau 2 commence à 20 points et le niveau 3 à 40
+            points, 30 points font 50 % et 35 points 75 %.  On ne peut  pas
+            atteindre  100  % d'expérience, car on gagne alors un niveau et
+            le calcul repart pour ce nouveau niveau, mais une  règle  =100%
+            est  permise  et  correspond au cas particulier où il ne manque
             qu'un point d'expérience pour passer au niveau suivant.
 
           * une valeur absolue fixe l'attribut quand la valeur du champ est
-            égale  à  ce  nombre.  Le nombre doit être positif ou nul, sauf
+            égale à ce nombre.  Le nombre doit être positif  ou  nul,  sauf
             pour « armor-class » qui accepte les valeurs négatives, et peut
             être précédé de '='.  S'il est précédé de '<=' ou '>=', il cor-
-            respond aussi aux valeurs inférieures ou supérieures.  Avec  le
+            respond  aussi aux valeurs inférieures ou supérieures.  Avec le
             préfixe '<' ou '>', il ne correspond qu'aux valeurs strictement
             inférieures ou supérieures.
 
-          * criticalhp  ne  s'applique  qu'au  champ hitpoints et seulement
-            quand les points de vie actuels sont sous un seuil (qui  dépend
-            du  maximum  de  points de vie et du niveau d'expérience).  Une
-            fois ce seuil  atteint,  une  règle  criticalhp  l'emporte  sur
+          * criticalhp ne s'applique qu'au  champ  hitpoints  et  seulement
+            quand  les points de vie actuels sont sous un seuil (qui dépend
+            du maximum de points de vie et du  niveau  d'expérience).   Une
+            fois  ce  seuil  atteint,  une  règle  criticalhp l'emporte sur
             toutes les autres règles de hitpoints.
 
-          * un  texte fixe l'attribut quand la valeur du champ correspond à
-            ce texte.  On ne peut utiliser les textes  que  pour  «  align-
+          * un texte fixe l'attribut quand la valeur du champ correspond  à
+            ce  texte.   On  ne  peut utiliser les textes que pour « align-
             ment », « carrying-capacity », « hunger », « dungeon-level » et
-            «  title  ».   Pour le titre, seul le titre de rang du rôle est
+            « title ».  Pour le titre, seul le titre de rang  du  rôle  est
             testé ; le nom du personnage est ignoré.  Ces textes s'écrivent
-            en anglais, même quand la ligne d'état est en  français  :  par
-            exemple  «  Hungry  »  pour  «  Affamé  »  ou « Burdened » pour
+            en  anglais,  même  quand la ligne d'état est en français : par
+            exemple « Hungry » pour  «  Affamé  »  ou  «  Burdened  »  pour
             « Chargé ».
 
-          Le menu des options du jeu peut vous aider  à  trouver  la  bonne
+          Le  menu  des  options  du jeu peut vous aider à trouver la bonne
      syntaxe pour le fichier de configuration.
 
-          On  peut  désactiver toute la fonction en réglant l'option statu-
+          On peut désactiver toute la fonction en réglant  l'option  statu-
      shilites à 0.
 
           Exemples de mise en évidence :
@@ -6883,27 +6883,27 @@
 
      9.15.  Modifier les symboles de NetHack
 
-          NetHack peut charger des  jeux  de  symboles  entiers  depuis  le
+          NetHack  peut  charger  des  jeux  de  symboles entiers depuis le
      fichier des symboles.
 
-          Les  options  qui  choisissent un jeu de symboles dans le fichier
+          Les options qui choisissent un jeu de symboles  dans  le  fichier
      des symboles sont :
 
      symset
        Le nom du jeu de symboles à charger.
 
      roguesymset
-       Le nom du jeu de symboles à charger pour l'affichage  du  niveau  de
+       Le  nom  du  jeu de symboles à charger pour l'affichage du niveau de
        Rogue.
 
-          Vous  pouvez  aussi  remplacer  un ou plusieurs symboles avec les
+          Vous pouvez aussi remplacer un ou  plusieurs  symboles  avec  les
      options SYMBOLS et ROGUESYMBOLS du fichier de configuration.  Les sym-
      boles s'indiquent par paires nom:valeur.  Notez que NetHack interprète
      les séquences d'échappement de la valeur à la manière habituelle du C.
      Cela veut dire que \ est un préfixe qui fait prendre le caractère sui-
-     vant littéralement.  Il faut donc écrire  \  sous  la  forme  \\.   Le
-     préfixe  spécial  \m active le bit méta de la valeur du symbole, et le
-     préfixe ^ fait traiter le caractère  suivant  comme  un  caractère  de
+     vant  littéralement.   Il  faut  donc  écrire  \ sous la forme \\.  Le
+     préfixe spécial \m active le bit méta de la valeur du symbole,  et  le
+     préfixe  ^  fait  traiter  le  caractère suivant comme un caractère de
      contrôle.
 
      Symboles de NetHack
@@ -7148,15 +7148,15 @@
 
      Notes :
 
-     * Plusieurs  symboles  de  ce  tableau  semblent  vides.   Ce sont des
-       espaces, sauf S_pet_override et S_hero_override  qui  n'ont  pas  de
-       valeur  par défaut et ne sont utilisables que s'ils sont permis dans
+     * Plusieurs symboles de  ce  tableau  semblent  vides.   Ce  sont  des
+       espaces,  sauf  S_pet_override  et  S_hero_override qui n'ont pas de
+       valeur par défaut et ne sont utilisables que s'ils sont permis  dans
        le fichier « sysconf ».
 
-     * Le nom de S_rock est trompeur : les cailloux  et  les  pierres  uti-
+     * Le  nom  de  S_rock  est trompeur : les cailloux et les pierres uti-
        lisent S_gem.  La « roche » dont il est question désigne les statues
-       et  les  rochers,  mais  depuis  la  version  3.6.0 les statues sont
-       affichées comme le monstre qu'elles représentent.   S_rock  ne  sert
+       et les rochers, mais  depuis  la  version  3.6.0  les  statues  sont
+       affichées  comme  le  monstre qu'elles représentent.  S_rock ne sert
        donc qu'aux rochers, et pas du tout s'il est remplacé par le symbole
        plus précis S_boulder.
 
@@ -7165,12 +7165,12 @@
 
      9.16.  Personnaliser l'apparence des glyphes de la carte avec Unicode
 
-          Si   votre  plate-forme  ou  votre  terminal  sait  afficher  les
-     séquences de caractères UTF-8, vous pouvez  personnaliser  l'affichage
-     du  jeu  en  attribuant  aux glyphes des points de code Unicode et des
+          Si  votre  plate-forme  ou  votre  terminal  sait  afficher   les
+     séquences  de  caractères UTF-8, vous pouvez personnaliser l'affichage
+     du jeu en attribuant aux glyphes des points de  code  Unicode  et  des
      couleurs rouge-vert-bleu.  Ces personnalisations peuvent s'appliquer à
      un jeu de symboles qui a un gestionnaire UTF8 dans le fichier des sym-
-     boles, comme le jeu enhanced1, ou être données une à  une  dans  votre
+     boles,  comme  le  jeu enhanced1, ou être données une à une dans votre
      fichier nethack.rc.
 
           Le format pour définir l'apparence d'un glyphe est :
@@ -7178,10 +7178,10 @@
      OPTIONS=glyph:idglyphe/U+nnnn/R-V-B
 
           L'interface  utilisée  doit  savoir  afficher  les  séquences  de
-     caractères UTF-8 et les couleurs rouge-vert-bleu explicites  pour  que
-     l'apparence  du  glyphe  soit visible.  Par exemple, la ligne suivante
-     dans votre fichier de configuration fait  afficher  le  glyphe  G_pool
-     (eau)  avec  le  point  de code Unicode U+224B et la couleur de valeur
+     caractères  UTF-8  et les couleurs rouge-vert-bleu explicites pour que
+     l'apparence du glyphe soit visible.  Par exemple,  la  ligne  suivante
+     dans  votre  fichier  de  configuration fait afficher le glyphe G_pool
+     (eau) avec le point de code Unicode U+224B et  la  couleur  de  valeur
      rouge-vert-bleu 0-0-160 :
 
      OPTIONS=glyph:G_pool/U+224B/0-0-160
@@ -7198,47 +7198,47 @@
 
 
 
-     La liste des identifiants de glyphes  permis  s'obtient  avec  nethack
-     --dumpglyphids.   On peut désigner un glyphe précis de NetHack avec le
+     La  liste  des  identifiants  de glyphes permis s'obtient avec nethack
+     --dumpglyphids.  On peut désigner un glyphe précis de NetHack avec  le
      préfixe G_, ou utiliser un symbole S_ comme identifiant pour appliquer
-     l'apparence personnalisée à tous les glyphes de  NetHack  qui  corres-
+     l'apparence  personnalisée  à  tous les glyphes de NetHack qui corres-
      pondent à ce symbole.
 
-          Pour  que  les  personnalisations s'affichent, il faut choisir un
+          Pour que les personnalisations s'affichent, il  faut  choisir  un
      jeu de symboles qui a un gestionnaire UTF8, comme le jeu Enhanced.
 
      9.17.  Configurer NetHack pour les joueurs aveugles
 
-          NetHack peut être réglé pour n'utiliser que des caractères  ASCII
-     standard  pour dessiner les cartes du donjon.  Cela rend même les ver-
-     sions MS-DOS de NetHack  (qui  utilisent  par  défaut  des  caractères
-     spéciaux  de tracé de lignes) entièrement accessibles aux aveugles qui
-     se servent de synthèse vocale  ou  de  plages  braille.   Les  joueurs
-     devront  bien connaître les fonctions de revue de leur lecteur d'écran
-     et savoir se déplacer horizontalement et verticalement  caractère  par
-     caractère.   Les  fonctions  de recherche de leur lecteur d'écran leur
-     seront aussi très utiles.  Lisez bien ce Guide  avant  de  jouer  pour
-     vous  faire  une  idée  de  la  disposition de l'écran.  Il faut aussi
+          NetHack  peut être réglé pour n'utiliser que des caractères ASCII
+     standard pour dessiner les cartes du donjon.  Cela rend même les  ver-
+     sions  MS-DOS  de  NetHack  (qui  utilisent  par défaut des caractères
+     spéciaux de tracé de lignes) entièrement accessibles aux aveugles  qui
+     se  servent  de  synthèse  vocale  ou  de plages braille.  Les joueurs
+     devront bien connaître les fonctions de revue de leur lecteur  d'écran
+     et  savoir  se déplacer horizontalement et verticalement caractère par
+     caractère.  Les fonctions de recherche de leur  lecteur  d'écran  leur
+     seront  aussi  très  utiles.   Lisez bien ce Guide avant de jouer pour
+     vous faire une idée de la  disposition  de  l'écran.   Il  faut  aussi
      savoir trouver le curseur système : il est toujours à l'emplacement de
-     votre personnage.  Chercher simplement un @ ne suffit pas  toujours  à
+     votre  personnage.   Chercher simplement un @ ne suffit pas toujours à
      trouver votre personnage, car d'autres humanoïdes sont représentés par
      le même signe.  Votre lecteur d'écran devrait aussi avoir une fonction
-     qui  donne  la  ligne  et la colonne du curseur de revue et du curseur
-     système.  Ces coordonnées aident souvent à mieux situer les  choses  à
+     qui donne la ligne et la colonne du curseur de  revue  et  du  curseur
+     système.   Ces  coordonnées aident souvent à mieux situer les choses à
      l'écran.
 
-          NetHack  peut  aussi être compilé de façon à envoyer les messages
-     du jeu à un programme externe, par exemple un synthétiseur vocal.   Si
-     la  commande  étendue  «  #version » mentionne « external program as a
+          NetHack peut aussi être compilé de façon à envoyer  les  messages
+     du  jeu à un programme externe, par exemple un synthétiseur vocal.  Si
+     la commande étendue « #version » mentionne «  external  program  as  a
      message handler » (programme externe comme gestionnaire des messages),
-     votre NetHack a été compilé avec cette possibilité.  Quand on  compile
+     votre  NetHack a été compilé avec cette possibilité.  Quand on compile
      NetHack depuis les sources sous Linux et les autres systèmes POSIX, il
-     faut  définir MSGHANDLER pour l'activer.  Pour l'utiliser, donnez à la
-     variable   d'environnement   NETHACK_MSGHANDLER   le    chemin    d'un
-     exécutable  ;  il  sera  lancé  avec  le message du jeu (tel qu'il est
+     faut définir MSGHANDLER pour l'activer.  Pour l'utiliser, donnez à  la
+     variable    d'environnement    NETHACK_MSGHANDLER   le   chemin   d'un
+     exécutable ; il sera lancé avec le  message  du  jeu  (tel  qu'il  est
      affiché, donc en français si le jeu l'est) comme seul paramètre.
 
-          Les réglages les plus importants pour rendre le jeu  plus  acces-
+          Les  réglages  les plus importants pour rendre le jeu plus acces-
      sible sont :
 
      symset:plain
@@ -7251,7 +7251,7 @@
        Montre les menus sur un écran effacé, alignés sur le bord gauche.
 
      number_pad
-       Beaucoup  de  programmes  d'accès  vocal utilisent le pavé numérique
+       Beaucoup de programmes d'accès vocal  utilisent  le  pavé  numérique
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7264,7 +7264,7 @@
 
 
 
-       pour parcourir l'écran.  Si c'est  votre  cas,  désactivez  l'option
+       pour  parcourir  l'écran.   Si  c'est votre cas, désactivez l'option
        number_pad et utilisez les commandes traditionnelles de Rogue.
 
      paranoid_confirmation:swim
@@ -7274,22 +7274,22 @@
        Ajoute aux messages des indications de direction ou d'emplacement.
 
      spot_monsters
-       Affiche  un  message quand le héros remarque un monstre ; à combiner
+       Affiche un message quand le héros remarque un monstre ;  à  combiner
        avec accessiblemsg.
 
      mon_movement
-       Affiche un message  quand  le  héros  remarque  un  monstre  qui  se
+       Affiche  un  message  quand  le  héros  remarque  un  monstre qui se
        déplace ; à combiner avec spot_monsters et accessiblemsg.
 
      autodescribe
        Décrit automatiquement le terrain sous le curseur quand on vise.
 
      mention_map
-       Donne  des  messages quand des emplacements intéressants de la carte
+       Donne des messages quand des emplacements intéressants de  la  carte
        changent.
 
      mention_walls
-       Donne des messages quand on marche vers un mur ou quand la  commande
+       Donne  des messages quand on marche vers un mur ou quand la commande
        de voyage est interrompue.
 
      whatis_coord:compass
@@ -7301,8 +7301,8 @@
        même zone (par exemple la même pièce ou le même couloir).
 
      whatis_moveskip
-       Quand  on  vise avec le curseur et qu'on se déplace vite, saute par-
-       dessus les symboles identiques au lieu d'avancer de  8  cases  à  la
+       Quand on vise avec le curseur et qu'on se déplace vite,  saute  par-
+       dessus  les  symboles  identiques  au lieu d'avancer de 8 cases à la
        fois.
 
      nostatus_updates
@@ -7311,13 +7311,13 @@
        avec la commande « #attributes ».
 
      showdamage
-       Affiche  un  message donnant les dégâts reçus et le nombre de points
+       Affiche un message donnant les dégâts reçus et le nombre  de  points
        de vie restants.
 
      9.18.  Configuration globale pour les administrateurs système
 
-          Si NetHack est  compilé  avec  l'option  SYSCF,  l'administrateur
-     système  doit  mettre  en  place  une configuration globale : c'est un
+          Si  NetHack  est  compilé  avec  l'option SYSCF, l'administrateur
+     système doit mettre en place une  configuration  globale  :  c'est  un
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7331,47 +7331,47 @@
 
 
      fichier au même format que le fichier de configuration traditionnel de
-     chaque joueur (voir plus haut).  Ce fichier doit s'appeler sysconf  et
+     chaque  joueur (voir plus haut).  Ce fichier doit s'appeler sysconf et
      se trouver dans le même répertoire que les autres fichiers de NetHack.
-     Les  options  reconnues  dans ce fichier sont listées ci-dessous.  Une
-     option non réglée prend une valeur par défaut fixée à  la  compilation
+     Les options reconnues dans ce fichier sont  listées  ci-dessous.   Une
+     option  non  réglée prend une valeur par défaut fixée à la compilation
      (qui ne convient pas forcément à votre système).
 
-       WIZARDS = Une  liste,  séparée  par des espaces, des noms d'utilisa-
-       teurs autorisés à jouer en mode  débogage  (couramment  appelé  mode
+       WIZARDS = Une liste, séparée par des espaces,  des  noms  d'utilisa-
+       teurs  autorisés  à  jouer  en mode débogage (couramment appelé mode
        magicien).  Un seul astérisque (*) permet à tout le monde de commen-
        cer une partie en mode débogage.
 
-       SHELLERS = Une  liste  des utilisateurs autorisés à utiliser la com-
-       mande d'échappement vers le shell (!).  La syntaxe est la  même  que
+       SHELLERS = Une liste des utilisateurs autorisés à utiliser  la  com-
+       mande  d'échappement  vers le shell (!).  La syntaxe est la même que
        pour WIZARDS.
 
-       EXPLORERS = Une  liste des utilisateurs autorisés à utiliser le mode
+       EXPLORERS = Une liste des utilisateurs autorisés à utiliser le  mode
        exploration.  La syntaxe est la même que pour WIZARDS.
 
        MSGHANDLER = Le chemin et le nom d'un exécutable.  Chaque fois qu'un
-       message est montré dans la fenêtre des messages,  NetHack  lance  ce
+       message  est  montré  dans la fenêtre des messages, NetHack lance ce
        programme, qui reçoit le message comme seul paramètre.
 
        MAXPLAYERS = Limite le nombre de parties qui peuvent tourner en même
        temps.
 
-       SUPPORT = Une  chaîne qui explique comment obtenir de l'aide locale-
+       SUPPORT = Une chaîne qui explique comment obtenir de l'aide  locale-
        ment (pas de valeur par défaut).
 
-       RECOVER = Une chaîne qui explique comment récupérer une  partie  sur
+       RECOVER = Une  chaîne  qui explique comment récupérer une partie sur
        ce système (pas de valeur par défaut).
 
-       SEDUCE = 0  ou  1 pour désactiver ou activer l'option SEDUCE.  Quand
+       SEDUCE = 0 ou 1 pour désactiver ou activer l'option  SEDUCE.   Quand
        elle est désactivée, les incubes et les succubes se comportent comme
        des nymphes.
 
        CHECK_PLNAME = Avec 1, EXPLORERS, WIZARDS et SHELLERS testent le nom
        du joueur au lieu du nom de connexion de l'utilisateur.
 
-       CHECK_SAVE_UID = 0 ou 1 pour désactiver ou activer  la  vérification
-       de  l'UID  (identifiant  numérique de l'utilisateur) des fichiers de
-       sauvegarde (pour vérifier que l'utilisateur qui restaure  la  partie
+       CHECK_SAVE_UID = 0  ou  1 pour désactiver ou activer la vérification
+       de l'UID (identifiant numérique de l'utilisateur)  des  fichiers  de
+       sauvegarde  (pour  vérifier que l'utilisateur qui restaure la partie
        est celui qui l'a sauvegardée).
 
           Les quatre options suivantes concernent le fichier des scores :
@@ -7380,7 +7380,7 @@
 
        ENTRYMAX = Nombre maximum d'entrées dans le fichier des scores.
 
-       POINTSMIN = Nombre  minimum  de  points pour figurer dans le fichier
+       POINTSMIN = Nombre minimum de points pour figurer  dans  le  fichier
        des scores.
 
 
@@ -7396,26 +7396,26 @@
 
 
 
-       PERS_IS_UID = 0 ou 1 pour identifier chaque personne du fichier  des
+       PERS_IS_UID = 0  ou 1 pour identifier chaque personne du fichier des
        scores par son nom d'utilisateur ou par son identifiant numérique.
 
-       HIDEUSAGE = 0  ou  1  pour montrer ou cacher l'entrée du menu d'aide
+       HIDEUSAGE = 0 ou 1 pour montrer ou cacher l'entrée  du  menu  d'aide
        sur l'utilisation de la ligne de commande.
 
        MAX_STATUENAME_RANK = Nombre maximum d'entrées du fichier des scores
        utilisées pour les noms de statues aléatoires (10 par défaut).
 
-       ACCESSIBILITY = 0 ou 1 pour interdire ou permettre  aux  joueurs  de
-       régler  les  symboles  S_pet_override  et  S_hero_override dans leur
+       ACCESSIBILITY = 0  ou  1  pour interdire ou permettre aux joueurs de
+       régler les symboles  S_pet_override  et  S_hero_override  dans  leur
        fichier de configuration.
 
-       PORTABLE_DEVICE_PATHS = 0 ou 1, Windows seulement : le  jeu  cherche
+       PORTABLE_DEVICE_PATHS = 0  ou  1, Windows seulement : le jeu cherche
        tous ses fichiers externes et écrit tous ses fichiers de sortie à un
        seul endroit au lieu des emplacements standard.
 
        DUMPLOGFILE = Un nom de fichier où le journal de fin de partie (dum-
-       plog)  est  enregistré.   Si  elle  n'est pas définie, aucun journal
-       n'est créé.  Disponible seulement si le jeu est  compilé  avec  DUM-
+       plog) est enregistré.  Si elle  n'est  pas  définie,  aucun  journal
+       n'est  créé.   Disponible  seulement si le jeu est compilé avec DUM-
        PLOG.  Les marqueurs suivants sont permis :
 
            %% - un '%' littéral
@@ -7428,27 +7428,27 @@
            %n - le nom du joueur
            %N - la première lettre du nom du joueur
 
-       LIVELOG = Un  masque de bits des types d'événements à écrire dans le
-       fichier livelog s'il existe.  Le fichier  sysconf  d'exemple  fourni
-       avec  le  programme  contient  un  commentaire qui donne le sens des
-       différents bits.  Destiné aux serveurs où plusieurs  joueurs  jouent
-       en  même temps (chacun dans sa propre partie à un joueur, précisons-
-       le), pour montrer leur progression à des spectateurs.  Ne  sert  que
-       si  le  programme  a  été compilé avec LIVELOG.  Si cette option est
-       disponible, il vaut mieux la laisser en commentaire sur une  instal-
-       lation  à  un seul joueur, car avec le temps le fichier peut devenir
+       LIVELOG = Un masque de bits des types d'événements à écrire dans  le
+       fichier  livelog  s'il  existe.  Le fichier sysconf d'exemple fourni
+       avec le programme contient un commentaire  qui  donne  le  sens  des
+       différents  bits.   Destiné aux serveurs où plusieurs joueurs jouent
+       en même temps (chacun dans sa propre partie à un joueur,  précisons-
+       le),  pour  montrer leur progression à des spectateurs.  Ne sert que
+       si le programme a été compilé avec LIVELOG.   Si  cette  option  est
+       disponible,  il vaut mieux la laisser en commentaire sur une instal-
+       lation à un seul joueur, car avec le temps le fichier  peut  devenir
        énorme s'il n'est pas entretenu.
 
        CRASHREPORTURL = Réglé                                             à
-       https://www.nethack.org/links/cr-37BETA.html,  et si la fonction est
+       https://www.nethack.org/links/cr-37BETA.html, et si la fonction  est
        compilée, ouvre une fenêtre de navigateur préremplie avec les infor-
-       mations nécessaires pour signaler un problème quand le  jeu  panique
-       ou  se retrouve dans un état incohérent, ou quand on utilise la com-
+       mations  nécessaires  pour signaler un problème quand le jeu panique
+       ou se retrouve dans un état incohérent, ou quand on utilise la  com-
        mande #bugreport.
 
      10.  Score
 
-          NetHack tient une liste des meilleurs  scores  ou  des  meilleurs
+          NetHack  tient  une  liste  des meilleurs scores ou des meilleurs
      joueurs de votre machine, selon son installation.  Dans le second cas,
 
 
@@ -7464,58 +7464,58 @@
 
      chaque compte de la machine ne peut avoir qu'un seul score non gagnant
      dans la liste.  Si votre score dépasse celui de quelqu'un d'autre dans
-     la  liste, ou si vous améliorez votre score précédent, vous serez ins-
-     crit à la bonne place sous votre nom  actuel.   Le  nombre  de  scores
+     la liste, ou si vous améliorez votre score précédent, vous serez  ins-
+     crit  à  la  bonne  place  sous votre nom actuel.  Le nombre de scores
      conservés se règle aussi à la compilation de NetHack.
 
           Votre score dépend surtout de l'expérience que vous avez acquise,
      du butin que vous avez amassé, de la profondeur que vous avez explorée
-     et  de  la façon dont la partie s'est terminée.  Si vous abandonnez la
-     partie, vous vous en sortez avec tout votre or.  En revanche, si  vous
-     êtes  tué  dans  les  Labyrinthes  de la Menace, la guilde n'apprendra
-     l'existence que de 90 % de votre or quand on découvrira votre  cadavre
-     (les  aventuriers  ont la réputation de se payer pour l'avoir trouvé).
-     Demandez-vous donc si vous voulez porter un dernier coup à ce  monstre
-     en  espérant  survivre,  ou abandonner avec ce que vous avez.  Si vous
-     abandonnez, vous gardez tout votre or, mais si vous frappez et  survi-
+     et de la façon dont la partie s'est terminée.  Si vous  abandonnez  la
+     partie,  vous vous en sortez avec tout votre or.  En revanche, si vous
+     êtes tué dans les Labyrinthes de  la  Menace,  la  guilde  n'apprendra
+     l'existence  que de 90 % de votre or quand on découvrira votre cadavre
+     (les aventuriers ont la réputation de se payer pour  l'avoir  trouvé).
+     Demandez-vous  donc si vous voulez porter un dernier coup à ce monstre
+     en espérant survivre, ou abandonner avec ce que vous  avez.   Si  vous
+     abandonnez,  vous gardez tout votre or, mais si vous frappez et survi-
      vez, vous en trouverez peut-être davantage.
 
-          Si  vous  voulez  simplement voir la liste actuelle des meilleurs
+          Si vous voulez simplement voir la liste  actuelle  des  meilleurs
      joueurs ou parties, tapez nethack -s all sur la plupart des versions.
 
      11.  Mode exploration
 
           NetHack est un jeu complexe et difficile.  Les novices pourraient
-     trembler de peur, conscients d'ignorer  comment  survivre.   Eh  bien,
-     n'ayez  crainte.  Votre donjon est équipé d'un mode « exploration » ou
-     « découverte » qui vous permet de garder vos anciennes sauvegardes  et
-     de  tromper  la mort, pour le prix dérisoire de ne pas figurer dans la
+     trembler  de  peur,  conscients  d'ignorer comment survivre.  Eh bien,
+     n'ayez crainte.  Votre donjon est équipé d'un mode « exploration »  ou
+     «  découverte » qui vous permet de garder vos anciennes sauvegardes et
+     de tromper la mort, pour le prix dérisoire de ne pas figurer  dans  la
      liste des meilleurs scores.
 
-          Il y a deux façons d'activer le mode  exploration.   La  première
-     est  de  commencer  la partie avec l'option de ligne de commande -X ou
-     avec l'option playmode:explore.  L'autre est  d'utiliser  la  commande
-     étendue  «  #exploremode » en cours de partie.  Commencer une nouvelle
-     partie en mode exploration donne à votre personnage  une  baguette  de
-     souhait  dans  son inventaire de départ ; passer dans ce mode en cours
+          Il  y  a  deux façons d'activer le mode exploration.  La première
+     est de commencer la partie avec l'option de ligne de  commande  -X  ou
+     avec  l'option  playmode:explore.   L'autre est d'utiliser la commande
+     étendue « #exploremode » en cours de partie.  Commencer  une  nouvelle
+     partie  en  mode  exploration donne à votre personnage une baguette de
+     souhait dans son inventaire de départ ; passer dans ce mode  en  cours
      de partie, non.  Les autres avantages du mode exploration sont laissés
      à la découverte du lecteur intrépide.
 
      11.1.  Mode débogage
 
           Le mode débogage, aussi appelé mode magicien, n'est documenté que
-     par cette brève description et  par  les  diverses  commandes  «  Mode
-     débogage  seulement » citées parmi les descriptions des commandes.  Il
-     sert à traquer les problèmes du programme plutôt qu'à donner des  pou-
-     voirs  divins  à  votre personnage, et l'on attend des joueurs qui s'y
+     par  cette  brève  description  et  par  les diverses commandes « Mode
+     débogage seulement » citées parmi les descriptions des commandes.   Il
+     sert  à traquer les problèmes du programme plutôt qu'à donner des pou-
+     voirs divins à votre personnage, et l'on attend des  joueurs  qui  s'y
      essaient qu'ils découvrent eux-mêmes comment s'en servir.  On le lance
-     en commençant la partie avec l'option de ligne de commande -D ou  avec
+     en  commençant la partie avec l'option de ligne de commande -D ou avec
      l'option playmode:debug.
 
-          Sur  certains  systèmes, le joueur doit être connecté sous un nom
-     d'utilisateur particulier pour avoir droit  au  mode  débogage  ;  sur
-     d'autres,  le héros doit porter un nom de personnage particulier (mais
-     peut avoir n'importe quel rôle ; il n'y a aucun lien entre le  «  mode
+          Sur certains systèmes, le joueur doit être connecté sous  un  nom
+     d'utilisateur  particulier  pour  avoir  droit  au mode débogage ; sur
+     d'autres, le héros doit porter un nom de personnage particulier  (mais
+     peut  avoir  n'importe quel rôle ; il n'y a aucun lien entre le « mode
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7528,15 +7528,15 @@
 
 
 
-     magicien  »  et le rôle de Magicien).  Essayer de commencer une partie
-     en mode débogage sans en avoir le droit, ou quand il n'est pas  dispo-
+     magicien » et le rôle de Magicien).  Essayer de commencer  une  partie
+     en  mode débogage sans en avoir le droit, ou quand il n'est pas dispo-
      nible, la fait commencer en mode exploration à la place.
 
      12.  Remerciements
 
-          Le  jeu  hack  d'origine  s'inspirait  du  jeu  rogue  du UNIX de
-     Berkeley.  Une grande partie de ce document a été honteusement  pillée
-     dans  A Guide to the Dungeons of Doom, de Michael C. Toy et Kenneth C.
+          Le jeu hack  d'origine  s'inspirait  du  jeu  rogue  du  UNIX  de
+     Berkeley.   Une grande partie de ce document a été honteusement pillée
+     dans A Guide to the Dungeons of Doom, de Michael C. Toy et Kenneth  C.
      R. C. Arnold.  De petites parties ont été adaptées de Further Explora-
      tion of the Dungeons of Doom, de Ken Arromdee.
 
@@ -7547,41 +7547,41 @@
           Jay Fenlason a écrit le Hack d'origine, avec l'aide de Kenny Woo-
      dland, Mike Thome et Jon Payne.
 
-          Andries Brouwer l'a profondément réécrit  au  Stichting  Mathema-
+          Andries  Brouwer  l'a  profondément réécrit au Stichting Mathema-
      tisch Centrum (aujourd'hui Centrum Wiskunde & Informatica), faisant de
-     Hack  un  jeu très différent.  Il a publié le code source de Hack pour
-     les systèmes UNIX en le  postant  dans  le  forum  Usenet  net.sources
-     (renommé  plus  tard  comp.sources) : la version 1.0 en décembre 1984,
-     puis les versions 1.0.1, 1.0.2 et enfin 1.0.3  en  juillet  1985.   Le
-     forum  Usenet  net.games.hack  (renommé plus tard rec.games.hack, puis
+     Hack un jeu très différent.  Il a publié le code source de  Hack  pour
+     les  systèmes  UNIX  en  le  postant  dans le forum Usenet net.sources
+     (renommé plus tard comp.sources) : la version 1.0  en  décembre  1984,
+     puis  les  versions  1.0.1,  1.0.2 et enfin 1.0.3 en juillet 1985.  Le
+     forum Usenet net.games.hack (renommé plus  tard  rec.games.hack,  puis
      remplacé par rec.games.roguelike.nethack) a été créé pour en discuter.
 
-          Don G. Kneller a porté Hack 1.0.3 sous Microsoft C et MS-DOS,  ce
-     qui  a donné PC HACK 1.01e, a ajouté la prise en charge des graphismes
-     du DEC Rainbow dans la version 1.03g, puis a produit au  moins  quatre
-     autres  versions (3.0, 3.2, 3.51 et 3.6 ; ce sont d'anciens numéros de
+          Don  G. Kneller a porté Hack 1.0.3 sous Microsoft C et MS-DOS, ce
+     qui a donné PC HACK 1.01e, a ajouté la prise en charge des  graphismes
+     du  DEC  Rainbow dans la version 1.03g, puis a produit au moins quatre
+     autres versions (3.0, 3.2, 3.51 et 3.6 ; ce sont d'anciens numéros  de
      version de Hack, sans rapport avec ceux de NetHack).
 
-          R. Black a porté PC  HACK  3.51  sous  Lattice  C  et  sur  Atari
+          R.  Black  a  porté  PC  HACK  3.51  sous  Lattice C et sur Atari
      520/1040ST, ce qui a donné ST Hack 1.03.
 
-          Mike  Stephenson a fusionné ces différentes versions en reprenant
-     beaucoup de leurs ajouts, et a produit NetHack  1.4  en  1987.   Il  a
+          Mike Stephenson a fusionné ces différentes versions en  reprenant
+     beaucoup  de  leurs  ajouts,  et  a produit NetHack 1.4 en 1987.  Il a
      ensuite  coordonné  une  foule  de  contributeurs  pour  améliorer  et
-     déboguer NetHack 1.4, et a publié les versions 2.2 et 2.3 de  NetHack.
-     Comme  Hack,  elles  ont  été publiées en postant leur code source sur
-     Usenet, où elles  sont  restées  disponibles  dans  diverses  archives
+     déboguer  NetHack 1.4, et a publié les versions 2.2 et 2.3 de NetHack.
+     Comme Hack, elles ont été publiées en postant  leur  code  source  sur
+     Usenet,  où  elles  sont  restées  disponibles  dans diverses archives
      accessibles par ftp et uucp après avoir expiré du forum.
 
-          Plus  tard,  Mike a coordonné une réécriture majeure du jeu, à la
-     tête d'une équipe comprenant  Ken  Arromdee,  Jean-Christophe  Collet,
-     Steve  Creps,  Eric  Hendrickson, Izchak Miller, Eric S. Raymond, John
+          Plus tard, Mike a coordonné une réécriture majeure du jeu,  à  la
+     tête  d'une  équipe  comprenant  Ken Arromdee, Jean-Christophe Collet,
+     Steve Creps, Eric Hendrickson, Izchak Miller, Eric  S.  Raymond,  John
      Rupley, Mike Threepoint et Janet Walz, pour produire NetHack 3.0c.
 
-          NetHack 3.0 a été porté sur Atari par Eric R.  Smith,  sous  OS/2
-     par  Timo  Hakulinen et sous VMS par David Gentzel.  Tous trois, ainsi
+          NetHack  3.0  a  été porté sur Atari par Eric R. Smith, sous OS/2
+     par Timo Hakulinen et sous VMS par David Gentzel.  Tous  trois,  ainsi
      que Kevin Darcy, ont ensuite rejoint l'équipe principale de développe-
-     ment de NetHack  (la  NetHack  Development  Team)  pour  produire  les
+     ment  de  NetHack  (la  NetHack  Development  Team)  pour produire les
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7596,57 +7596,57 @@
 
      révisions suivantes de 3.0.
 
-          Olaf  Seibert a porté NetHack 2.3 et 3.0 sur Amiga.  Norm Meluch,
+          Olaf Seibert a porté NetHack 2.3 et 3.0 sur Amiga.  Norm  Meluch,
      Stephen Spackman et Pierre Martineau ont conçu le code de recouvrement
-     (overlays) de PC NetHack 3.0.  Johnny Lee  a  porté  NetHack  3.0  sur
-     Macintosh.   Avec  divers  autres  explorateurs  de  donjons,  ils ont
-     continué d'améliorer les versions PC, Macintosh et Amiga  au  fil  des
+     (overlays)  de  PC  NetHack  3.0.   Johnny Lee a porté NetHack 3.0 sur
+     Macintosh.  Avec  divers  autres  explorateurs  de  donjons,  ils  ont
+     continué  d'améliorer  les  versions PC, Macintosh et Amiga au fil des
      révisions de 3.0.
 
-          La  version  3.0 a connu dix révisions de « niveau de correctif »
-     (patch-level) publiées assez rapidement.  À l'époque,  on  parlait  de
-     3.0  pour  la  version  de  base,  puis  selon  les  cas de « 3.0a » à
-     « 3.0j », de « 3.0 patchlevel 1 »  à  «  3.0 patchlevel 10  »,  ou  de
-     «  3.0pl1  » à « 3.0pl10 », plutôt que de 3.0.0 et de 3.0.1 à 3.0.10 ;
+          La version 3.0 a connu dix révisions de « niveau de  correctif  »
+     (patch-level)  publiées  assez  rapidement.  À l'époque, on parlait de
+     3.0 pour la version de base,  puis  selon  les  cas  de  «  3.0a  »  à
+     «  3.0j  »,  de  «  3.0 patchlevel 1  » à « 3.0 patchlevel 10 », ou de
+     « 3.0pl1 » à « 3.0pl10 », plutôt que de 3.0.0 et de 3.0.1 à  3.0.10  ;
      la numérotation à trois composants a commencé avec 3.1.0.
 
-          Dirigée par Mike Stephenson et coordonnée par  Izchak  Miller  et
-     Janet  Walz,  l'équipe  de  développement  de  NetHack, qui comprenait
-     désormais Ken Arromdee, David  Cohrs,  Jean-Christophe  Collet,  Kevin
-     Darcy,  Matt  Day, Timo Hakulinen, Steve Linhart, Dean Luick, Pat Ran-
-     kin, Eric Raymond et Eric Smith, a entrepris une refonte  radicale  de
-     3.0.   Ils  ont restructuré la conception du jeu et réécrit de grandes
-     parties du code.  Ils ont ajouté plusieurs donjons,  un  nouvel  affi-
-     chage,  des  quêtes  propres  à chaque personnage, une nouvelle fin de
-     partie et bien d'autres nouveautés, et produit NetHack 3.1.   La  ver-
+          Dirigée  par  Mike  Stephenson et coordonnée par Izchak Miller et
+     Janet Walz, l'équipe  de  développement  de  NetHack,  qui  comprenait
+     désormais  Ken  Arromdee,  David  Cohrs, Jean-Christophe Collet, Kevin
+     Darcy, Matt Day, Timo Hakulinen, Steve Linhart, Dean Luick,  Pat  Ran-
+     kin,  Eric  Raymond et Eric Smith, a entrepris une refonte radicale de
+     3.0.  Ils ont restructuré la conception du jeu et réécrit  de  grandes
+     parties  du  code.   Ils ont ajouté plusieurs donjons, un nouvel affi-
+     chage, des quêtes propres à chaque personnage,  une  nouvelle  fin  de
+     partie  et  bien d'autres nouveautés, et produit NetHack 3.1.  La ver-
      sion 3.1.0 est sortie en janvier 1993.
 
-          Ken  Lorber, Gregg Wonderly et Greg Olson, avec l'aide de Richard
-     Addison, Mike Passaretti et Olaf Seibert, ont  développé  NetHack  3.1
+          Ken Lorber, Gregg Wonderly et Greg Olson, avec l'aide de  Richard
+     Addison,  Mike  Passaretti  et Olaf Seibert, ont développé NetHack 3.1
      pour l'Amiga.
 
-          Norm  Meluch  et  Kevin  Smolkowski, avec l'aide de Carl Schelin,
-     Stephen Spackman, Steve VanDevender et Paul Winner, ont porté  NetHack
+          Norm Meluch et Kevin Smolkowski, avec  l'aide  de  Carl  Schelin,
+     Stephen  Spackman, Steve VanDevender et Paul Winner, ont porté NetHack
      3.1 sur PC.
 
-          Jon  W{tte et Hao-yang Wang, avec l'aide de Ross Brown, Mike Eng-
-     ber, David Hairston, Michael Hamel, Jonathan Handler, Johnny Lee,  Tim
-     Lennan,  Rob  Menke et Andy Swanson, ont développé NetHack 3.1 pour le
-     Macintosh en le portant sous MPW.  En  s'appuyant  sur  leur  travail,
+          Jon W{tte et Hao-yang Wang, avec l'aide de Ross Brown, Mike  Eng-
+     ber,  David Hairston, Michael Hamel, Jonathan Handler, Johnny Lee, Tim
+     Lennan, Rob Menke et Andy Swanson, ont développé NetHack 3.1  pour  le
+     Macintosh  en  le  portant  sous MPW.  En s'appuyant sur leur travail,
      Bart House a ajouté une version Think C.
 
           Timo Hakulinen a porté NetHack 3.1 sous OS/2.  Eric Smith a porté
-     NetHack  3.1  sur Atari.  Pat Rankin, avec l'aide de Joshua Delahunty,
-     s'est occupé de la version VMS de  NetHack  3.1.   Michael  Allison  a
+     NetHack 3.1 sur Atari.  Pat Rankin, avec l'aide de  Joshua  Delahunty,
+     s'est  occupé  de  la  version  VMS de NetHack 3.1.  Michael Allison a
      porté NetHack 3.1 sous Windows NT.
 
-          Dean  Luick,  avec l'aide de David Cohrs, a développé NetHack 3.1
+          Dean Luick, avec l'aide de David Cohrs, a développé  NetHack  3.1
      pour X11.  Cette version dessinait la carte en texte plutôt qu'en gra-
      phisme, mais fournissait nh10.bdf, une police X11 personnalisée facul-
-     tative qui remplaçait les lettres et la ponctuation par de  minuscules
-     images,  ancêtres  des tuiles.  Ces images ne distinguaient pas chaque
-     sorte de monstre ou d'objet, mais seulement leurs classes  (une  image
-     pour  tous les insectes « a », une autre pour toutes les armures « [ »
+     tative  qui remplaçait les lettres et la ponctuation par de minuscules
+     images, ancêtres des tuiles.  Ces images ne distinguaient  pas  chaque
+     sorte  de  monstre ou d'objet, mais seulement leurs classes (une image
+     pour tous les insectes « a », une autre pour toutes les armures « [  »
      et ainsi de suite, et non des images différentes pour les scarabées et
 
 
@@ -7662,58 +7662,58 @@
 
      les fourmis ou pour les capes et les bottes).
 
-          Warwick Allison a écrit pour l'Atari  une  version  graphique  de
-     NetHack  où les petites images, appelées « icônes », étaient propres à
+          Warwick  Allison  a  écrit  pour l'Atari une version graphique de
+     NetHack où les petites images, appelées « icônes », étaient propres  à
      chaque sorte de monstre et d'objet et non à leur seule classe.  Il les
-     a données à  la  NetHack  Development  Team,  qui  les  a  rebaptisées
-     «  tuiles » (tiles), un usage original repris depuis par divers autres
-     jeux.  Les tuiles de NetHack ont ensuite  été  prises  en  charge  sur
+     a  données  à  la  NetHack  Development  Team,  qui  les a rebaptisées
+     « tuiles » (tiles), un usage original repris depuis par divers  autres
+     jeux.   Les  tuiles  de  NetHack  ont ensuite été prises en charge sur
      d'autres plates-formes (d'abord MS-DOS, puis Windows, Qt et X11).
 
-          L'équipe  de  développement  de  NetHack 3.2, composée de Michael
-     Allison, Ken Arromdee, David Cohrs, Jessie Collet, Steve Creps,  Kevin
-     Darcy,  Timo  Hakulinen,  Steve  Linhart, Dean Luick, Pat Rankin, Eric
+          L'équipe de développement de NetHack  3.2,  composée  de  Michael
+     Allison,  Ken Arromdee, David Cohrs, Jessie Collet, Steve Creps, Kevin
+     Darcy, Timo Hakulinen, Steve Linhart, Dean  Luick,  Pat  Rankin,  Eric
      Smith, Mike Stephenson, Janet Walz et Paul Winner, a publié la version
      3.2.0 en avril 1996.
 
           La version 3.2 a marqué le dixième anniversaire de la création de
-     l'équipe de développement.  Preuve de  leur  dévouement  au  jeu,  les
-     treize  membres  de l'équipe d'origine en faisaient encore tous partie
-     au début du travail sur cette version.  Entre la sortie  de  3.1.3  et
-     celle  de 3.2.0, l'un des membres fondateurs de l'équipe, le Dr Izchak
-     Miller, a appris qu'il avait un cancer et est décédé.  Les équipes  de
+     l'équipe  de  développement.   Preuve  de  leur dévouement au jeu, les
+     treize membres de l'équipe d'origine en faisaient encore  tous  partie
+     au  début  du  travail sur cette version.  Entre la sortie de 3.1.3 et
+     celle de 3.2.0, l'un des membres fondateurs de l'équipe, le Dr  Izchak
+     Miller,  a appris qu'il avait un cancer et est décédé.  Les équipes de
      développement et de portage lui ont dédié cette version du jeu.
 
-          La  version  3.2  s'est  révélée plus stable que les précédentes.
-     Beaucoup de bogues ont été corrigés, des abus éliminés  et  des  fonc-
+          La version 3.2 s'est révélée plus  stable  que  les  précédentes.
+     Beaucoup  de  bogues  ont été corrigés, des abus éliminés et des fonc-
      tions du jeu ajustées pour le rendre plus agréable.
 
           Pendant la vie de NetHack 3.1 et 3.2, plusieurs passionnés du jeu
-     y  ont  ajouté  leurs propres modifications et ont rendu publiques ces
+     y ont ajouté leurs propres modifications et ont  rendu  publiques  ces
      « variantes » :
 
-          Tom Proudfoot et Yuval Oren  ont  créé  NetHack++,  vite  renommé
+          Tom  Proudfoot  et  Yuval  Oren  ont créé NetHack++, vite renommé
      NetHack-- quand certains ont cru à tort qu'il s'agissait d'une conver-
-     sion  du  code  source  C  en C++.  De son côté, Stephen White a écrit
-     NetHack Plus.  Tom Proudfoot a ensuite fusionné NetHack  Plus  et  son
-     propre  NetHack-- pour produire SLASH.  Larry Stewart-Zerba et Warwick
-     Allison ont amélioré le système de sorts avec le Wizard  Patch.   War-
+     sion du code source C en C++.  De son  côté,  Stephen  White  a  écrit
+     NetHack  Plus.   Tom  Proudfoot a ensuite fusionné NetHack Plus et son
+     propre NetHack-- pour produire SLASH.  Larry Stewart-Zerba et  Warwick
+     Allison  ont  amélioré le système de sorts avec le Wizard Patch.  War-
      wick Allison a aussi porté NetHack sur l'interface Qt.
 
-          Warren  Cheung  a  combiné SLASH et le Wizard Patch pour produire
+          Warren Cheung a combiné SLASH et le Wizard  Patch  pour  produire
      Slash'EM et, avec l'aide de Kevin Hugo, y a ajouté d'autres fonctions.
-     Kevin a ensuite  rejoint  l'équipe  de  développement  de  NetHack  et
+     Kevin  a  ensuite  rejoint  l'équipe  de  développement  de NetHack et
      intégré les meilleures de ces idées à NetHack 3.3.
 
           La dernière mise à jour de 3.2 a été la version corrective 3.2.3,
-     publiée  en  même temps que 3.3.0 en décembre 1999, juste à temps pour
-     l'an 2000.  À cause de la version plus récente, 3.2.3 n'a été  publiée
-     que  sous forme de correctif du code source, sans distribution prête à
+     publiée en même temps que 3.3.0 en décembre 1999, juste à  temps  pour
+     l'an  2000.  À cause de la version plus récente, 3.2.3 n'a été publiée
+     que sous forme de correctif du code source, sans distribution prête  à
      jouer pour les systèmes qui en avaient d'habitude.
 
-          (Avis à qui voudrait ressusciter une ancienne  version  :  toutes
-     les  versions  antérieures  à 3.2.3 avaient le bogue de l'an 2000.  Le
-     fichier des meilleurs scores et le  fichier  journal  contenaient  des
+          (Avis  à  qui  voudrait ressusciter une ancienne version : toutes
+     les versions antérieures à 3.2.3 avaient le bogue de  l'an  2000.   Le
+     fichier  des  meilleurs  scores  et le fichier journal contenaient des
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7726,58 +7726,58 @@
 
 
 
-     dates  écrites  avec  une année à deux chiffres, et l'année 99 de 1999
-     était suivie de l'année 100 de 2000.  Elle s'écrivait  sans  problème,
-     mais  ajoutait  sans  le  vouloir  une colonne dans le fichier, ce qui
-     empêchait de relire correctement les  scores,  perturbant  l'insertion
-     des  nouveaux  meilleurs  scores et la récupération des noms d'anciens
+     dates écrites avec une année à deux chiffres, et l'année  99  de  1999
+     était  suivie  de l'année 100 de 2000.  Elle s'écrivait sans problème,
+     mais ajoutait sans le vouloir une colonne  dans  le  fichier,  ce  qui
+     empêchait  de  relire  correctement les scores, perturbant l'insertion
+     des nouveaux meilleurs scores et la récupération  des  noms  d'anciens
      personnages utilisés pour nommer au hasard les fantômes et les statues
      de la partie en cours.)
 
-          L'équipe de développement de NetHack  3.3,  composée  de  Michael
-     Allison,  Ken Arromdee, David Cohrs, Jessie Collet, Steve Creps, Kevin
-     Darcy, Timo Hakulinen, Kevin Hugo, Steve  Linhart,  Ken  Lorber,  Dean
-     Luick,  Pat  Rankin,  Eric  Smith, Mike Stephenson, Janet Walz et Paul
+          L'équipe  de  développement  de  NetHack 3.3, composée de Michael
+     Allison, Ken Arromdee, David Cohrs, Jessie Collet, Steve Creps,  Kevin
+     Darcy,  Timo  Hakulinen,  Kevin  Hugo, Steve Linhart, Ken Lorber, Dean
+     Luick, Pat Rankin, Eric Smith, Mike Stephenson,  Janet  Walz  et  Paul
      Winner, a publié 3.3.0 en décembre 1999 et 3.3.1 en août 2000.
 
-          La version 3.3 a  apporté  beaucoup  de  premières.   C'était  la
+          La  version  3.3  a  apporté  beaucoup  de premières.  C'était la
      première version à séparer la race de la profession.  La classe Elfe a
      été remplacée par une race elfe, et les races des nains, des gnomes et
-     des  orques  sont  apparues dans le jeu à côté de la race humaine bien
-     connue.   Les  rôles  de  Moine  et  de  Rôdeur   ont   rejoint   ceux
-     d'Archéologue,  de  Barbare,  d'Homme  des cavernes, de Guérisseur, de
+     des orques sont apparues dans le jeu à côté de la  race  humaine  bien
+     connue.    Les   rôles   de  Moine  et  de  Rôdeur  ont  rejoint  ceux
+     d'Archéologue, de Barbare, d'Homme des  cavernes,  de  Guérisseur,  de
      Chevalier, de Prêtre, de Voleur, de Samouraï, de Touriste, de Valkyrie
-     et bien sûr de Magicien.  C'était aussi la première  version  où  l'on
-     pouvait  chevaucher  une  monture,  et la première à avoir un site web
-     public listant tous les bogues  découverts.   Malgré  cette  liste  de
-     bogues  qui ne cessait de grandir, 3.3 s'est révélée assez stable pour
+     et  bien  sûr  de Magicien.  C'était aussi la première version où l'on
+     pouvait chevaucher une monture, et la première à  avoir  un  site  web
+     public  listant  tous  les  bogues  découverts.  Malgré cette liste de
+     bogues qui ne cessait de grandir, 3.3 s'est révélée assez stable  pour
      durer plus d'un an et demi.
 
-          L'équipe de développement de NetHack  3.4  comprenait  au  départ
+          L'équipe  de  développement  de  NetHack 3.4 comprenait au départ
      Michael Allison, Ken Arromdee, David Cohrs, Jessie Collet, Kevin Hugo,
-     Ken  Lorber,  Dean  Luick,  Pat Rankin, Mike Stephenson, Janet Walz et
-     Paul Winner ; Warwick Allison l'a rejointe juste avant  la  sortie  de
+     Ken Lorber, Dean Luick, Pat Rankin, Mike  Stephenson,  Janet  Walz  et
+     Paul  Winner  ;  Warwick Allison l'a rejointe juste avant la sortie de
      NetHack 3.4.0 en mars 2002.
 
-          Comme  pour  la  version 3.3, diverses personnes ont contribué au
-     jeu dans son  ensemble  ainsi  qu'aux  portages  sur  les  différentes
+          Comme pour la version 3.3, diverses personnes  ont  contribué  au
+     jeu  dans  son  ensemble  ainsi  qu'aux  portages  sur les différentes
      plates-formes où tourne NetHack :
 
           Pat Rankin a maintenu 3.4 pour VMS.
 
-          Michael  Allison a maintenu NetHack 3.4 pour MS-DOS.  Paul Winner
+          Michael Allison a maintenu NetHack 3.4 pour MS-DOS.  Paul  Winner
      et Yitzhak Sapir l'ont encouragé.
 
-          Dean Luick, Mark Modrall et Kevin Hugo ont maintenu  et  amélioré
+          Dean  Luick,  Mark Modrall et Kevin Hugo ont maintenu et amélioré
      la version Macintosh de 3.4.
 
           Michael Allison, David Cohrs, Alex Kompel, Dion Nicolaas et Yitz-
-     hak  Sapir  ont maintenu et amélioré 3.4 pour Microsoft Windows.  Alex
-     Kompel a apporté une nouvelle interface graphique à  la  version  Win-
+     hak Sapir ont maintenu et amélioré 3.4 pour Microsoft  Windows.   Alex
+     Kompel  a  apporté  une nouvelle interface graphique à la version Win-
      dows, ainsi qu'une version Windows CE de 3.4.1.
 
-          Ron  Van  Iwaarden a été le seul responsable de NetHack pour OS/2
-     pendant plusieurs versions.  Hélas, la dernière machine OS/2 de Ron  a
+          Ron Van Iwaarden a été le seul responsable de NetHack  pour  OS/2
+     pendant  plusieurs versions.  Hélas, la dernière machine OS/2 de Ron a
      cessé de fonctionner début 2006.  Un grand merci à Ron pour avoir fait
      vivre NetHack sous OS/2 pendant toutes ces années.
 
@@ -7793,58 +7793,58 @@
 
 
           Janne Salmijarvi et Teemu Suikki ont maintenu et amélioré la ver-
-     sion  Amiga  de  3.4,  après que Janne Salmijarvi l'a ressuscitée pour
+     sion Amiga de 3.4, après que Janne  Salmijarvi  l'a  ressuscitée  pour
      3.3.1.
 
-          Christian « Marvin » Bressler a maintenu 3.4 pour  l'Atari  après
+          Christian  «  Marvin » Bressler a maintenu 3.4 pour l'Atari après
      l'avoir ressuscitée pour 3.3.1.
 
-          La  sortie  de  NetHack  3.4.3 en décembre 2003 a marqué le début
-     d'une longue pause dans les publications.  3.4.3 s'est révélée  remar-
-     quablement  stable  et a fait le bonheur de la communauté pendant plus
-     de dix ans.  L'équipe de développement de NetHack a  continué,  lente-
-     ment  et discrètement, à travailler sur le jeu en coulisses pendant le
-     règne de 3.4.3.  C'est à cette même période  que  plusieurs  nouvelles
-     variantes  sont  apparues  dans la communauté NetHack, notamment spor-
-     khack de Derek S. Ray, unnethack de Patric Mueller, nitrohack  et  ses
-     successeurs,  d'abord  de Daniel Thaler puis d'Alex Smith, et Dynahack
-     de Tung Nguyen.  Certaines de ces variantes sont  encore  développées,
+          La sortie de NetHack 3.4.3 en décembre 2003  a  marqué  le  début
+     d'une  longue pause dans les publications.  3.4.3 s'est révélée remar-
+     quablement stable et a fait le bonheur de la communauté  pendant  plus
+     de  dix  ans.  L'équipe de développement de NetHack a continué, lente-
+     ment et discrètement, à travailler sur le jeu en coulisses pendant  le
+     règne  de  3.4.3.   C'est à cette même période que plusieurs nouvelles
+     variantes sont apparues dans la communauté  NetHack,  notamment  spor-
+     khack  de  Derek S. Ray, unnethack de Patric Mueller, nitrohack et ses
+     successeurs, d'abord de Daniel Thaler puis d'Alex Smith,  et  Dynahack
+     de  Tung  Nguyen.  Certaines de ces variantes sont encore développées,
      maintenues et appréciées par la communauté aujourd'hui.
 
-          En  septembre  2014, un instantané intermédiaire du code en cours
-     de développement a été rendu public par  des  tiers.   Comme  ce  code
-     était  un  travail  en cours qui n'avait pas été débogué pour en faire
-     une version publiable, il a été décidé  que  les  numéros  de  version
+          En septembre 2014, un instantané intermédiaire du code  en  cours
+     de  développement  a  été  rendu  public par des tiers.  Comme ce code
+     était un travail en cours qui n'avait pas été débogué  pour  en  faire
+     une  version  publiable,  il  a  été décidé que les numéros de version
      présents dans cet instantané seraient retirés et ne serviraient jamais
-     pour  une version officielle de NetHack.  Une annonce en ce sens a été
-     publiée sur le site officiel de l'équipe de développement de  NetHack,
-     nethack.org,  précisant  qu'il n'y aurait jamais de version officielle
+     pour une version officielle de NetHack.  Une annonce en ce sens a  été
+     publiée  sur le site officiel de l'équipe de développement de NetHack,
+     nethack.org, précisant qu'il n'y aurait jamais de  version  officielle
      3.4.4, 3.5 ou 3.5.0.
 
           En janvier 2015 a commencé la préparation de la sortie de NetHack
      3.6.
 
-          Au début  du  développement  de  ce  qui  allait  devenir  3.6.0,
-     l'équipe  de développement de NetHack se composait de Warwick Allison,
+          Au  début  du  développement  de  ce  qui  allait  devenir 3.6.0,
+     l'équipe de développement de NetHack se composait de Warwick  Allison,
      Michael Allison, Ken Arromdee, David Cohrs, Jessie Collet, Ken Lorber,
-     Dean Luick, Pat Rankin, Mike Stephenson, Janet Walz  et  Paul  Winner.
-     Début  2015, avant la sortie de 3.6.0, de nouveaux membres, Sean Hunt,
-     Pasi Kallinen et Derek S. Ray, ont rejoint l'équipe  de  développement
+     Dean  Luick,  Pat  Rankin, Mike Stephenson, Janet Walz et Paul Winner.
+     Début 2015, avant la sortie de 3.6.0, de nouveaux membres, Sean  Hunt,
+     Pasi  Kallinen  et Derek S. Ray, ont rejoint l'équipe de développement
      de NetHack.
 
-          Vers  la fin du développement de 3.6.0, l'une des grandes sources
-     d'inspiration de beaucoup des  aspects  drôles  et  amusants  du  jeu,
-     l'écrivain  Terry  Pratchett,  est  décédé.  NetHack 3.6.0 lui a rendu
+          Vers la fin du développement de 3.6.0, l'une des grandes  sources
+     d'inspiration  de  beaucoup  des  aspects  drôles  et amusants du jeu,
+     l'écrivain Terry Pratchett, est décédé.  NetHack  3.6.0  lui  a  rendu
      hommage.
 
           3.6.0 est sortie en décembre 2015 ; elle réunissait le travail de
-     l'équipe de développement depuis la sortie de 3.4.3 et  certains  cor-
-     rectifs  très  appréciés de la communauté.  Beaucoup de bogues ont été
+     l'équipe  de  développement depuis la sortie de 3.4.3 et certains cor-
+     rectifs très appréciés de la communauté.  Beaucoup de bogues  ont  été
      corrigés et une partie du code restructurée.
 
           L'équipe de développement de NetHack, ainsi que Steve VanDevender
      et Kevin Smolkowski, ont veillé à ce que NetHack 3.6 continue de fonc-
-     tionner sur les différentes variantes d'UNIX et ont maintenu  l'inter-
+     tionner  sur les différentes variantes d'UNIX et ont maintenu l'inter-
      face X11.
 
 
@@ -7858,60 +7858,60 @@
 
 
 
-          Ken  Lorber,  Haoyang Wang, Pat Rankin et Dean Luick ont maintenu
+          Ken Lorber, Haoyang Wang, Pat Rankin et Dean Luick  ont  maintenu
      la version MacOS de NetHack 3.6.
 
-          Michael Allison, David Cohrs, Bart  House,  Pasi  Kallinen,  Alex
-     Kompel,  Dion  Nicolaas, Derek S. Ray et Yitzhak Sapir ont maintenu la
+          Michael  Allison,  David  Cohrs,  Bart House, Pasi Kallinen, Alex
+     Kompel, Dion Nicolaas, Derek S. Ray et Yitzhak Sapir ont  maintenu  la
      version Microsoft Windows de NetHack 3.6.
 
-          Pat Rankin a tenté de faire tourner la  version  VMS  de  NetHack
+          Pat  Rankin  a  tenté  de faire tourner la version VMS de NetHack
      3.6, gêné par un accès limité aux machines.  Kevin Smolkowski l'a mise
-     à  jour  et  testée pour la version la plus récente d'OpenVMS (V8.4 au
-     moment où ces lignes sont écrites) sur Alpha et Integrity (alias  Ita-
+     à jour et testée pour la version la plus récente  d'OpenVMS  (V8.4  au
+     moment  où ces lignes sont écrites) sur Alpha et Integrity (alias Ita-
      nium, alias IA64), mais pas sur VAX.
 
-          Ray  Chason  a ressuscité la version MS-DOS pour 3.6 et a mis les
+          Ray Chason a ressuscité la version MS-DOS pour 3.6 et a  mis  les
      modifications nécessaires à la disposition de tous.
 
-          Fin avril 2018, plusieurs centaines de corrections de  bogues  de
-     3.6.0  et  quelques nouveautés ont été rassemblées et publiées sous le
+          Fin  avril  2018, plusieurs centaines de corrections de bogues de
+     3.6.0 et quelques nouveautés ont été rassemblées et publiées  sous  le
      nom de NetHack 3.6.1.  À la sortie de 3.6.1, l'équipe de développement
-     de NetHack se composait  de  Warwick  Allison,  Michael  Allison,  Ken
-     Arromdee,  David Cohrs, Jessie Collet, Pasi Kallinen, Ken Lorber, Dean
+     de  NetHack  se  composait  de  Warwick  Allison, Michael Allison, Ken
+     Arromdee, David Cohrs, Jessie Collet, Pasi Kallinen, Ken Lorber,  Dean
      Luick, Patric Mueller, Pat Rankin, Derek S. Ray, Alex Smith, Mike Ste-
      phenson, Janet Walz et Paul Winner.
 
-          Début mai  2019,  320  autres  corrections  de  bogues,  quelques
-     améliorations  et l'interface curses, adoptée pour l'occasion, ont été
+          Début  mai  2019,  320  autres  corrections  de  bogues, quelques
+     améliorations et l'interface curses, adoptée pour l'occasion, ont  été
      publiées sous le nom de 3.6.2.
 
           Bart House, qui contribuait au jeu au sein des équipes de portage
-     depuis des décennies, a rejoint l'équipe de développement  de  NetHack
+     depuis  des  décennies, a rejoint l'équipe de développement de NetHack
      fin mai 2019.
 
           NetHack 3.6.3 est sortie le 5 décembre 2019 avec plus de 190 cor-
      rections de bogues de NetHack 3.6.2.
 
-          NetHack  3.6.4 est sortie le 18 décembre 2019 avec une correction
+          NetHack 3.6.4 est sortie le 18 décembre 2019 avec une  correction
      de sécurité et quelques corrections de bogues.
 
-          NetHack 3.6.5 est sortie le 27 janvier 2020 avec des  corrections
+          NetHack  3.6.5 est sortie le 27 janvier 2020 avec des corrections
      de sécurité et un petit nombre de corrections de bogues.
 
-          NetHack  3.6.6  est  sortie le 8 mars 2020 avec une correction de
+          NetHack 3.6.6 est sortie le 8 mars 2020 avec  une  correction  de
      sécurité et quelques corrections de bogues.
 
-          NetHack 3.6.7 est sortie le 16 février 2023 avec  une  correction
+          NetHack  3.6.7  est sortie le 16 février 2023 avec une correction
      de sécurité et quelques corrections de bogues.
 
-          Le  développement  de  la  version  majeure qui devait succéder à
-     NetHack 3.6 a commencé en 2015, à peu près au moment de la  sortie  de
-     NetHack  3.6.0.   Il  s'est poursuivi en parallèle de chacune des ver-
-     sions de NetHack 3.6, de 2015 à 2023, et jusqu'à la fin d'avril  2026.
+          Le développement de la version  majeure  qui  devait  succéder  à
+     NetHack  3.6  a commencé en 2015, à peu près au moment de la sortie de
+     NetHack 3.6.0.  Il s'est poursuivi en parallèle de  chacune  des  ver-
+     sions  de NetHack 3.6, de 2015 à 2023, et jusqu'à la fin d'avril 2026.
      Pour la première fois, ce développement a été partagé publiquement sur
-     GitHub  et  SourceForge  au  fur  et à mesure.  Il portait l'étiquette
-     NetHack-3.7 travail en cours  (WIP,  work-in-progress),  bien  que  le
+     GitHub et SourceForge au fur et  à  mesure.   Il  portait  l'étiquette
+     NetHack-3.7  travail  en  cours  (WIP,  work-in-progress), bien que le
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7926,58 +7926,58 @@
 
      numéro de la version suivante n'ait pas encore été arrêté.
 
-          Ouvrir  le  développement  au public a apporté beaucoup de bonnes
+          Ouvrir le développement au public a apporté  beaucoup  de  bonnes
      choses, et quelques difficultés.  On pouvait observer et critiquer les
      changements et les nouveautés presque immédiatement, et on ne s'en est
      pas privé.  Le système de demandes de fusion (pull requests) de GitHub
-     a permis de contribuer très simplement au développement.  Ces  contri-
-     butions  ont  résolu  un  très  grand nombre de bogues du jeu, et nous
+     a  permis de contribuer très simplement au développement.  Ces contri-
+     butions ont résolu un très grand nombre de  bogues  du  jeu,  et  nous
      remercions tous les contributeurs.
 
-          Début 2026, le développement étant assez  stable  pour  envisager
-     une  version officielle, l'équipe a examiné la nature et le nombre des
-     changements apportés au jeu.  Leur ampleur et leur  profondeur  justi-
+          Début  2026,  le  développement étant assez stable pour envisager
+     une version officielle, l'équipe a examiné la nature et le nombre  des
+     changements  apportés  au jeu.  Leur ampleur et leur profondeur justi-
      fiaient clairement une version majeure, et le choix s'est porté sur la
-     version  5.0  :  une  nouvelle  version  majeure  après  les 3.x, sans
+     version 5.0 :  une  nouvelle  version  majeure  après  les  3.x,  sans
      l'ambiguïté ni la confusion avec des variantes existantes qu'aurait pu
      causer une version 4.0.
 
           NetHack 5.0.0 est sortie le 2 mai 2026.
 
-          Le code source de NetHack 5.0.0 a été modifié et  modernisé  pour
-     respecter  la norme C99.  La version 5.0.0 contenait plus de 3100 cor-
+          Le  code  source de NetHack 5.0.0 a été modifié et modernisé pour
+     respecter la norme C99.  La version 5.0.0 contenait plus de 3100  cor-
      rections, changements et améliorations.
 
-          NetHack 5.0 est la première version à remplacer les  compilateurs
+          NetHack  5.0 est la première version à remplacer les compilateurs
      de niveaux et de donjons lex et yacc des versions passées par une nou-
-     velle  approche  fondée  sur  un interpréteur Lua.  Lua sert aussi aux
-     textes de la quête dans NetHack 5.0.0.  Toute l'équipe  de  développe-
+     velle approche fondée sur un interpréteur Lua.   Lua  sert  aussi  aux
+     textes  de  la quête dans NetHack 5.0.0.  Toute l'équipe de développe-
      ment salue le travail accompli par Pasi Kallinen pour y parvenir.
 
           À la sortie de NetHack 5.0, l'équipe principale de développement,
-     membres  actifs  et anciens, comprenait Warwick Allison, Michael Alli-
+     membres actifs et anciens, comprenait Warwick Allison,  Michael  Alli-
      son, Ken Arromdee, David Cohrs, Jessie Collet, Bart House, Kevin Hugo,
-     Pasi Kallinen, Ken Lorber, Dean Luick, Pat Rankin, Derek S. Ray,  Alex
+     Pasi  Kallinen, Ken Lorber, Dean Luick, Pat Rankin, Derek S. Ray, Alex
      Smith, Patric Mueller, Mike Stephenson, Janet Walz et Paul Winner.
 
-          Ken  Lorber,  Pat  Rankin, Patrick Mueller et Michael Allison ont
+          Ken Lorber, Pat Rankin, Patrick Mueller et  Michael  Allison  ont
      veillé à ce que NetHack 5.0 fonctionne sous macOS.
 
-          Ingo Paschke a réussi, on ne sait comment, à  faire  revivre  une
-     version  de NetHack 5.0 pour l'Amiga, à l'aide d'un compilateur croisé
-     sur une plate-forme moderne.  Il a partagé son travail,  si  bien  que
-     d'autres  peuvent produire simplement NetHack 5.0 pour l'Amiga grâce à
+          Ingo  Paschke  a  réussi, on ne sait comment, à faire revivre une
+     version de NetHack 5.0 pour l'Amiga, à l'aide d'un compilateur  croisé
+     sur  une  plate-forme  moderne.  Il a partagé son travail, si bien que
+     d'autres peuvent produire simplement NetHack 5.0 pour l'Amiga grâce  à
      lui.
 
-          Ray Chason a fourni l'essentiel du travail de maintenance  de  la
-     version  MS-DOS  de  NetHack  5.0, y compris le portage de l'interface
+          Ray  Chason  a fourni l'essentiel du travail de maintenance de la
+     version MS-DOS de NetHack 5.0, y compris  le  portage  de  l'interface
      curses.  Michael Allison a veillé à ce que les changements du coeur de
-     NetHack 5.0 continuent de fonctionner avec la version MS-DOS et  à  la
-     garder  en  vie.   La compilation croisée de la version MS-DOS a rendu
+     NetHack  5.0  continuent de fonctionner avec la version MS-DOS et à la
+     garder en vie.  La compilation croisée de la version  MS-DOS  a  rendu
      cela possible et presque indolore.
 
-          Parmi les personnes qui ont contribué à  la  version  Windows  de
-     NetHack  5.0 depuis le début de son développement, il y a plus de onze
+          Parmi  les  personnes  qui  ont contribué à la version Windows de
+     NetHack 5.0 depuis le début de son développement, il y a plus de  onze
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -7993,11 +7993,11 @@
      ans, figurent Michael Allison, David Cohrs, Bart House, Pasi Kallinen,
      Alex Kompel, Dion Nicolaas, Derek S. Ray et Yitzhak Sapir.
 
-          C'est avec tristesse que l'équipe tient à saluer  la  mémoire  et
+          C'est  avec  tristesse  que l'équipe tient à saluer la mémoire et
      les contributions de feu Ron Van Iwaarden, qui fut le seul responsable
      de NetHack pour OS/2 pendant plusieurs versions.  Ron nous manquera.
 
-          Le  site  web  officiel de NetHack est entretenu par Ken Lorber à
+          Le site web officiel de NetHack est entretenu par  Ken  Lorber  à
      l'adresse https://www.nethack.org/.
 
 
@@ -8043,7 +8043,7 @@
      12.1.  Remerciements particuliers
 
           Au nom de la communauté NetHack, un grand merci encore une fois à
-     M. Drew Streib et Pasi Kallinen pour  le  serveur  public  NetHack  de
+     M.  Drew  Streib  et  Pasi  Kallinen pour le serveur public NetHack de
 
 
      NetHack 5.0.0                                               2 mai 2026
@@ -8056,10 +8056,10 @@
 
 
 
-     nethack.alt.org.   Merci  à  Keith  Simpson et Andy Thomson pour hard-
-     fought.org.  Merci à tous les explorateurs  de  donjons  anonymes  qui
+     nethack.alt.org.  Merci à Keith Simpson et  Andy  Thomson  pour  hard-
+     fought.org.   Merci  à  tous  les explorateurs de donjons anonymes qui
      consacrent leur temps et leurs efforts aux tournois annuels de NetHack
-     comme  Junethack,  The November NetHack Tournament et, autrefois, dev-
+     comme Junethack, The November NetHack Tournament et,  autrefois,  dev-
      null.net (disparu pour l'instant, mais pas oublié).
 
 
@@ -8105,9 +8105,9 @@
      12.2.  Explorateurs de donjons
 
           De temps en temps, un individu dépravé quelque part sur le réseau
-     envoie une modification particulièrement intrigante pour améliorer  le
-     jeu.   L'équipe  de développement de NetHack note parfois les noms des
-     pires de ces mécréants dans cette liste,  celle  des  explorateurs  de
+     envoie  une modification particulièrement intrigante pour améliorer le
+     jeu.  L'équipe de développement de NetHack note parfois les  noms  des
+     pires  de  ces  mécréants  dans cette liste, celle des explorateurs de
      donjons (Dungeoneers) :
 
 
@@ -8188,7 +8188,7 @@
 
 
 
-          Les  noms  de  marques  et  de  produits  sont des marques ou des
+          Les noms de marques et  de  produits  sont  des  marques  ou  des
      marques déposées de leurs propriétaires respectifs.
 
 

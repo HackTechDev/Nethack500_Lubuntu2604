@@ -4868,6 +4868,17 @@ Specify the order to list object types in (default
 containing the symbols for the various object types.  Any omitted types
 are filled in at the end from the previous order.
 %.lp
+\item[paperdoll]
+If true, show the worn equipment beside the map (default false):
+a grid of object symbols laid out like the Qt interface's paperdoll
+(quiver, weapon, alternate weapon, rings, light source on the left;
+helmet, amulet, cloak, suit, shirt, boots in the middle; eyewear, shield,
+gloves, leash on the right), with the short names of the worn items.
+It goes at the top of the {\it perm\textunderscore invent\/} window when
+that option is on, otherwise beside the map; the names need a terminal of
+about 120 columns, the grid alone 100.
+Curses interface only.
+%.lp
 \item[paranoid\textunderscore confirmation]
 A space separated list of specific situations where alternate
 prompting is desired.

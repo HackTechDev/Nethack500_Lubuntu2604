@@ -238,12 +238,14 @@ curses_destroy_win(WINDOW *win)
 void
 curses_refresh_nethack_windows(void)
 {
-    WINDOW *status_window, *message_window, *map_window, *inv_window;
+    WINDOW *status_window, *message_window, *map_window, *inv_window,
+        *doll_window;
 
     status_window = curses_get_nhwin(STATUS_WIN);
     message_window = curses_get_nhwin(MESSAGE_WIN);
     map_window = curses_get_nhwin(MAP_WIN);
     inv_window = curses_get_nhwin(INV_WIN);
+    doll_window = curses_get_nhwin(DOLL_WIN);
 
     if (!iflags.window_inited) {
         return;
@@ -271,6 +273,10 @@ curses_refresh_nethack_windows(void)
         if (inv_window) {
             touchwin(inv_window);
             wnoutrefresh(inv_window);
+        }
+        if (doll_window) {
+            touchwin(doll_window);
+            wnoutrefresh(doll_window);
         }
         doupdate();
     }
@@ -752,7 +758,7 @@ static boolean
 is_main_window(winid wid)
 {
     if (wid == MESSAGE_WIN || wid == MAP_WIN
-        || wid == STATUS_WIN || wid == INV_WIN)
+        || wid == STATUS_WIN || wid == INV_WIN || wid == DOLL_WIN)
         return TRUE;
 
     return FALSE;

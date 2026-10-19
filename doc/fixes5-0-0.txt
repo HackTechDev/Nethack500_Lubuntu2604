@@ -3131,6 +3131,9 @@ verbalize1() translates the sentence given as argument (temple priests);
 	("touché par un cutter", not "a cutter"); quest texts: elision
 	before a rank ("d'Élève du Flux") and pronoun agreeing with the hero
 	("si pure soit-elle")
+curses: paperdoll option shows the worn equipment beside the map, as a
+	grid of object symbols laid out like the Qt paperdoll, with the
+	short names of the worn items
 
 
 NetHack Community Patches (or Variation) Included

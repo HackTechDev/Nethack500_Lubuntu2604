@@ -199,6 +199,8 @@ curses_create_main_windows(void)
         int status_width = 0;
         int inv_height = 0;
         int inv_width = 0;
+        int doll_x = 0, doll_y = 0, doll_height = 0, doll_width = 0;
+        boolean doll_border = borders;
         int map_height = (term_rows - border_space);
         int map_width = (term_cols - border_space);
         int statusheight = (iflags.wc2_statuslines < 3) ? 2 : 3;
@@ -227,6 +229,34 @@ curses_create_main_windows(void)
             /* suppress borders on perm_invent window, part I */
             if (noperminv_borders)
                 inv_width += border_space, inv_height += border_space; /*+=2*/
+        }
+
+        /* paperdoll: at the top of the perm_invent column, or in a column
+           of its own when it fits beside a full-width map */
+        if (iflags.wc2_paperdoll) {
+            if (iflags.perm_invent) {
+                int extra;
+
+                doll_border = borders && !noperminv_borders;
+                extra = doll_border ? 2 : 0;
+                if (inv_width >= DOLL_NARROW
+                    && inv_height >= DOLL_HEIGHT + extra + 3) {
+                    doll_x = inv_x, doll_y = inv_y;
+                    doll_width = min(inv_width, DOLL_WIDTH);
+                    doll_height = DOLL_HEIGHT;
+                    inv_y += doll_height + extra;
+                    inv_height -= doll_height + extra;
+                }
+            } else if (map_width - border_space - DOLL_NARROW >= COLNO) {
+                int width = min(DOLL_WIDTH, map_width - border_space - COLNO);
+
+                set_window_position(&doll_x, &doll_y,
+                                    &doll_width, &doll_height, ALIGN_RIGHT,
+                                    &map_x, &map_y, &map_width, &map_height,
+                                    border_space, -1, width);
+                if (doll_height > DOLL_HEIGHT)
+                    doll_height = DOLL_HEIGHT;
+            }
         }
 
         if (msg_vertical)
@@ -264,6 +294,7 @@ curses_create_main_windows(void)
             curses_del_nhwin(MESSAGE_WIN);
             curses_del_nhwin(MAP_WIN);
             curses_del_nhwin(INV_WIN);
+            curses_del_nhwin(DOLL_WIN);
             clear();
         }
 
@@ -279,12 +310,18 @@ curses_create_main_windows(void)
                              /* suppress perm_invent borders, part II */
                              borders && !noperminv_borders);
 
+        if (doll_width)
+            curses_add_nhwin(DOLL_WIN, doll_height, doll_width,
+                             doll_y, doll_x, ALIGN_RIGHT, doll_border);
+
         curses_add_nhwin(MAP_WIN, map_height, map_width,
                          map_y, map_x, 0, borders);
 
         refresh();
 
         curses_refresh_nethack_windows();
+        if (doll_width && program_state.in_moveloop)
+            curses_update_doll();
     /*
         if (iflags.window_inited) {
             curses_update_stats();

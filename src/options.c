@@ -9869,6 +9869,7 @@ static struct wc_Opt wc2_options[] = {
     { "hilite_status", WC2_HILITE_STATUS },
     { "hitpointbar", WC2_HITPOINTBAR },
     { "menu_shift", WC2_MENU_SHIFT },
+    { "paperdoll", WC2_PAPERDOLL },
     { "petattr", WC2_PETATTR },
     { "softkeyboard", WC2_SOFTKEYBOARD },
     /* name shown in 'O' menu is different */

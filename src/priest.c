@@ -411,6 +411,10 @@ N_("You have a forbidding feeling..."),
 N_("You have a strange forbidding feeling..."),
 N_("You experience a sense of peace."),
 N_("You experience an unusual sense of peace."),
+/* and the forms of the priest's greetings for a female hero */
+NC_("heroine", "Infidel, you have entered Moloch's Sanctum!"),
+NC_("heroine", "Pilgrim, you enter a desecrated place!"),
+NC_("heroine", "Pilgrim, you enter a sacred place!"),
 #endif
 
 /* called from check_special_room() when the player enters the temple room */

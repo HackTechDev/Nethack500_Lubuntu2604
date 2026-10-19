@@ -4638,6 +4638,17 @@ Indique l'ordre dans lequel lister les types d'objets (par défaut
 La valeur de cette option doit être une chaîne contenant les symboles des
 divers types d'objets.
 Les types omis sont ajoutés à la fin dans l'ordre précédent.
+.lp paperdoll
+Affiche l'équipement porté à côté de la carte (désactivée par défaut)\~:
+une grille de symboles d'objets disposée comme la poupée de l'interface Qt
+(carquois, arme, arme de rechange, anneaux, source de lumière à gauche\~;
+casque, amulette, cape, armure, chemise, bottes au milieu\~; lunettes,
+bouclier, gants, laisse à droite), avec le nom court des objets portés.
+Elle se place en haut de la fenêtre de
+.op perm_invent
+quand cette option est activée, sinon à côté de la carte\~;
+les noms demandent un terminal d'environ 120 colonnes, la grille seule 100.
+Interface curses seulement.
 .lp paranoid_confirmation
 Une liste, séparée par des espaces, de situations où l'on veut une autre
 forme de confirmation.

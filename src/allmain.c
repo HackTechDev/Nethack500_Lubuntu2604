@@ -106,8 +106,9 @@ moveloop_preamble(boolean resuming)
 
     program_state.in_moveloop = 1;
     /* for perm_invent preset at startup, display persistent inventory after
-       invent is fully populated and the in_moveloop flag has been set */
-    if (iflags.perm_invent)
+       invent is fully populated and the in_moveloop flag has been set;
+       likewise for the paperdoll (curses) */
+    if (iflags.perm_invent || iflags.wc2_paperdoll)
         update_inventory();
 }
 

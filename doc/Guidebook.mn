@@ -4460,6 +4460,17 @@ Specify the order to list object types in (default \(lq\(dq)[%?+!=/(*\`0_\(rq).
 The value of this option should be a string containing the
 symbols for the various object types.
 Any omitted types are filled in at the end from the previous order.
+.lp paperdoll
+If true, show the worn equipment beside the map (default false):
+a grid of object symbols laid out like the Qt interface's paperdoll
+(quiver, weapon, alternate weapon, rings, light source on the left;
+helmet, amulet, cloak, suit, shirt, boots in the middle; eyewear, shield,
+gloves, leash on the right), with the short names of the worn items.
+It goes at the top of the
+.op perm_invent
+window when that option is on, otherwise beside the map;
+the names need a terminal of about 120 columns, the grid alone 100.
+Curses interface only.
 .lp paranoid_confirmation
 A space separated list of specific situations where alternate
 prompting is desired.

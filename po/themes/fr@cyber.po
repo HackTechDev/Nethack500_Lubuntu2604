@@ -8289,3 +8289,12 @@ msgstr ""
 "» Vous devez maintenant commencer, au nom de %d, à chercher l'Amulette\n"
 "de Yendor.  Que vos pas soient guidés par %d, {mon fils|ma fille}. »"
 
+# Poupée d'équipement (option paperdoll, curses)
+
+msgctxt "paperdoll"
+msgid "right ring"
+msgstr "module droit"
+
+msgctxt "paperdoll"
+msgid "left ring"
+msgstr "module gauche"

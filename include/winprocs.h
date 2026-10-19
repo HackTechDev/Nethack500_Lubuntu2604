@@ -264,7 +264,8 @@ extern
                                    /* 13 free bits */
 #define WC2_EXTRASTATUS  0x080000L /* 20 optional weaponstatus, armorstatus,
                                     *    terrainstatus */
-                                   /* 12 free bits */
+#define WC2_PAPERDOLL    0x100000L /* 21 show worn equipment beside the map */
+                                   /* 11 free bits */
 
 #define ALIGN_LEFT   1
 #define ALIGN_RIGHT  2

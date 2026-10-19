@@ -557,6 +557,9 @@ static int optfn_##a(int, int, boolean, char *, char *);
                 "palette (00c/880/-fff is blue/yellow/reverse white)")
 #endif
 #endif
+    NHOPTB(paperdoll, Advanced, 0, opt_in, set_in_game,
+                Off, Yes, No, No, NoAlias, &iflags.wc2_paperdoll, Term_False,
+                "show worn equipment beside the map")
     /* prior to paranoid_confirmation, 'prayconfirm' was a distinct option */
     NHOPTC(paranoid_confirmation, Advanced, 28, opt_in, set_in_game,
                 Yes, Yes, Yes, Yes, "prayconfirm",
