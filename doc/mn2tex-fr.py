@@ -17,7 +17,7 @@ ESC = [  # roff escape -> LaTeX (applied after LaTeX special chars escaping)
     (r'\(aq', '\\textquotesingle{}'), (r'\(bu', '\\textbullet{}'),
     (r'\(rg', '\\textregistered{}'), (r'\~', '~'), (r'\-', '-'),
     (r'\&', ''), (r'\e', '\\textbackslash{}'), (r'\ ', '~'), (r'\.', '.'),
-    (r'\`', '`'), (r'\0', '~'), (r'\|', ''), (r'\^', ''),
+    (r'\`', '`'), (r'\0', '~'), (r'\|', ''), (r'\^', ''), (r'\%', ''),
     (r'\\', '\\textbackslash{}'),
 ]
 SPECIAL = {'#': '\\#', '$': '\\$', '%': '\\%', '&': '\\&', '_': '\\_',

@@ -3110,6 +3110,18 @@ Qt: text from the core and typed text are UTF-8, not Latin-1
 the #call menu and the prompt to replace a level annotation are translated
 the currency name (msgctxt "currency") and the default fruit name
 	"slime mold" are translated, so that a theme can rename them
+themes: 'language' accepts <lang>@<theme> (language:fr@cyber); the
+	theme catalog po/themes/<lang>@<theme>.po keeps only the entries it
+	changes and is merged over po/<lang>.po into dat/<lang>@<theme>.mo;
+	data files fall back from <file>.<lang>@<theme> to <file>.<lang>;
+	po/check-theme.py checks a theme, po/quest-theme.py helps rewriting
+	its quest texts; makedefs accepts MAKEDEFS_LANG=<lang>@<theme>
+French cyberpunk theme fr@cyber (CYBERPUNK.md): roles, ranks, places,
+	monster and object classes, a selection of monsters and objects,
+	potions, scrolls, wands, rings and spellbooks as stims, data chips,
+	implants, modules and software, credits as currency, rumors,
+	oracles, engravings, epitaphs and the quest texts of all roles;
+	sample neon configuration doc/cyberpunk.nethackrc
 
 
 NetHack Community Patches (or Variation) Included
