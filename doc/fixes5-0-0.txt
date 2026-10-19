@@ -3122,6 +3122,9 @@ French cyberpunk theme fr@cyber (CYBERPUNK.md): roles, ranks, places,
 	implants, modules and software, credits as currency, rumors,
 	oracles, engravings, epitaphs and the quest texts of all roles;
 	sample neon configuration doc/cyberpunk.nethackrc
+Unix: without a language option the game starts in the cyberpunk theme
+	(NHI18N_DEFAULT_LANG "fr@cyber" in unixconf.h; English if its
+	catalog is missing); language:en or language:fr to change it
 translated: the temple entry messages (priest.c), the malignant aura of
 	a curse (sit.c) and the note of a squeaky board (trap.c), which were
 	built from English fragments; French: the Chromatic Dragon is

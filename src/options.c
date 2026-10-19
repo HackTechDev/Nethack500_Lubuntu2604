@@ -1969,6 +1969,11 @@ optfn_language(
     char *opts, char *op)
 {
     if (req == do_init) {
+#ifdef NHI18N_DEFAULT_LANG
+        /* language used when no language option is given; English if
+           its catalog can't be loaded */
+        (void) i18n_set_language(NHI18N_DEFAULT_LANG);
+#endif
         return optn_ok;
     }
     if (req == do_set) {

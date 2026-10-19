@@ -64,6 +64,11 @@ Jouer ensuite pour juger de l'effet avant d'aller plus loin.
   ou l'option `language` des options avancées en cours de partie.  La
   forme `<langue>@<thème>` suit les locales POSIX (`src/nhi18n.c` :
   thème de 1 à 8 minuscules).
+- **Thème par défaut** : sans option `language`, le jeu démarre en
+  `fr@cyber` (`NHI18N_DEFAULT_LANG` dans `include/unixconf.h`, à
+  définir autrement ou vide avec `-DNHI18N_DEFAULT_LANG=...`) ; en
+  anglais si le catalogue manque.  `language:fr` ou `language:en` dans
+  la configuration pour en sortir.
 - **Catalogue** : `po/themes/fr@cyber.po` ne contient que les entrées qui
   changent.  `make` le fusionne avec `po/fr.po` (`msgcat --use-first`, le
   thème d'abord) en `dat/fr@cyber.mo`, installé à côté de `fr.mo`

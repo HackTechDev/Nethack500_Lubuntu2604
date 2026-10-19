@@ -319,6 +319,10 @@
 /* translation of game messages (nhi18n.c); -DNHI18N_OFF to leave it out */
 #ifndef NHI18N_OFF
 #define NHI18N
+/* language of a game without a language option: the cyberpunk theme */
+#ifndef NHI18N_DEFAULT_LANG
+#define NHI18N_DEFAULT_LANG "fr@cyber"
+#endif
 #endif
 
 #define tgetch getchar

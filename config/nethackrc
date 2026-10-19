@@ -13,8 +13,8 @@ OPTIONS=fruit:chocolate,catname:toxoplasmosis,dogname:cujo,horsename:Mr Ed
 
 OPTIONS=windowtype:curses
 
-# Messages du jeu en français (traduction partielle, voir TODO.md)
-OPTIONS=language:fr
+# Messages du jeu en français, thème cyberpunk (fr pour le français seul)
+OPTIONS=language:fr@cyber
 
 # Symboles Unicode pour la carte (murs en traits, sol en points) ; requis
 # pour les lignes glyph ci-dessous, qui doivent venir après
