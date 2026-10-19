@@ -18,7 +18,8 @@ Suivi des lots du thème `fr@cyber` (le détail de chaque lot est dans
 | 9 | Quêtes du Sauvageon (Homme des cavernes) et du Charcudoc (Guérisseur) | `27f262f` |
 | 10 | Quêtes de l'Exécuteur (Chevalier) et du Moine augmenté | `ea8a0fd` |
 | 11 | Quêtes du Technoprêtre (Prêtre) et du Traqueur (Rôdeur) | `3db8b45` |
-| 12 | Quêtes du Voleur de données (Voleur) et du Ronin urbain (Samouraï) | (ce commit) |
+| 12 | Quêtes du Voleur de données (Voleur) et du Ronin urbain (Samouraï) | `ffff6c2` |
+| 13 | Quêtes du Corpo en goguette (Touriste) et de la Mercenaire (Valkyrie) | (ce commit) |
 
 ## Lots à faire
 
@@ -27,7 +28,6 @@ environ 70 textes par rôle, avec les noms de leurs lieux (`%H`, `%i`).
 
 | Lot | Contenu |
 |---|---|
-| 13 | Quêtes du Corpo en goguette (Touriste, 70) et de la Mercenaire (Valkyrie, 68) |
 | 14 | Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`, couleurs de la ligne d'état) |
 
 ## Pistes pour plus tard

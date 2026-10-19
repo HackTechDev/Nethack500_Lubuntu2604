@@ -342,6 +342,22 @@ sauvage de la Mégalopole ») ; le reste dans le catalogue.
 Vérifié en jeu : arrivée dans la quête du Ronin urbain (« le kami du
 Siège du clan Taro ») ; le reste dans le catalogue.
 
+## Treizième lot : quêtes du Corpo en goguette et de la Mercenaire (en place)
+
+- Corpo en goguette (Touriste) : Ankh-Morpork garde son nom, ses néons
+  éteints et ses aérotaxis cloués au sol ; le maire financé par les
+  corpos s'enfuit avec la caisse municipale vers le QG de la Guilde des
+  Voleurs (nom du lot 12) ; crédits, holocartes postales des Bas-fonds,
+  hôtel-capsule, visa annulé, code PIN de la carte.
+- Mercenaire (Valkyrie) : le Relais du Destin, hérissé d'antennes, sur
+  une colline de neige artificielle ; la Fonderie de Surt, haut fourneau
+  entouré de lave ; la Norne calcule l'avenir au lieu de le lire, l'orbe
+  devient un flux de simulations ; solde, contrats, Valhalla gardé.
+
+Vérifié en jeu : arrivées dans les deux quêtes (« le décor familier
+d'Ankh-Morpork », « le Relais du Destin, hérissé d'antennes ») ; le
+reste dans le catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
