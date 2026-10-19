@@ -54,7 +54,7 @@ Tapez 1 pour laisser un hommage
 Votre appel est important pour nous
 Abonnement résilié
 Dette remboursée.  Enfin.
-Il devait des crédits au mauvais vendeur
+Il devait des eddies au mauvais vendeur
 Mort pour la corpo.  La corpo n'a pas envoyé de fleurs.
 Licencié, puis enterré
 Employé du mois, trois fois
@@ -62,8 +62,8 @@ Il a fait des heures supplémentaires
 Elle a demandé une augmentation
 Il a dit non à un vigile
 Il a dit oui à un corporatiste
-Elle a fait confiance à la Fixeuse
-Il n'a pas fait confiance à la Fixeuse
+Elle a fait confiance à la Courtière
+Il n'a pas fait confiance à la Courtière
 Le contrat a été rempli
 Le contrat ne l'a pas été
 Ronin jusqu'au bout
@@ -103,3 +103,8 @@ Revenez plus tard
 Game over
 Insert coin
 Appuyez sur Entrée pour continuer
+Trop de chrome, pas assez d'humanité
+Parti en beauté, comme un vrai edgerunner
+Elle a vécu vite et s'est déconnectée jeune
+Ci-gît un gonk qui croyait tout payer en eddies
+Flatliné à vingt-trois ans.  Preem.

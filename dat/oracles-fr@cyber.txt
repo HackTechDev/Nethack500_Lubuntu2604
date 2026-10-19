@@ -1,6 +1,6 @@
 # NetHack 5.0  oracles-fr@cyber.txt
 # NetHack may be freely redistributed.  See license for details.
-# Consultations de la Fixeuse (l'Oracle du thème cyberpunk, CYBERPUNK.md),
+# Consultations de la Courtière (l'Oracle du thème cyberpunk, CYBERPUNK.md),
 # compilées en oracles.fr@cyber (MAKEDEFS_LANG=fr@cyber ../util/makedefs
 # -h) ; sans ce fichier, le jeu prend oracles.fr.
 # Comme dans oracles-fr.txt, la première entrée est l'oracle spécial ; les
@@ -53,7 +53,7 @@ supporté les selfies.
 -----
 Là où les murs disent « ad aerarium », fouille bien : un piège mène au
 Coffre-fort de Ludios, où dort la fortune de Crésus.  Entrer, c'est
-facile.  Sortir avec les crédits, c'est une autre histoire.
+facile.  Sortir avec les eddies, c'est une autre histoire.
 -----
 Les vendeurs gonflent leurs prix quand ils voient arriver une chemise à
 fleurs ou un client mal vu.  Ils préfèrent les beaux visages et les bonnes

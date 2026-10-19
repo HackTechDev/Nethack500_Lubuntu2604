@@ -18,18 +18,18 @@ msgstr ""
 # --- Rôles (masculin, puis msgctxt "feminine") ---
 
 msgid "Archeologist"
-msgstr "Récupérateur"
+msgstr "Techie"
 
 msgctxt "feminine"
 msgid "Archeologist"
-msgstr "Récupératrice"
+msgstr "Techie"
 
 msgid "Barbarian"
-msgstr "Cogneur"
+msgstr "Nomade"
 
 msgctxt "feminine"
 msgid "Barbarian"
-msgstr "Cogneuse"
+msgstr "Nomade"
 
 msgid "Caveman"
 msgstr "Sauvageon"
@@ -38,18 +38,18 @@ msgid "Cavewoman"
 msgstr "Sauvageonne"
 
 msgid "Healer"
-msgstr "Charcudoc"
+msgstr "Medtech"
 
 msgctxt "feminine"
 msgid "Healer"
-msgstr "Charcudoc"
+msgstr "Medtech"
 
 msgid "Knight"
-msgstr "Exécuteur"
+msgstr "Lawman"
 
 msgctxt "feminine"
 msgid "Knight"
-msgstr "Exécutrice"
+msgstr "Lawman"
 
 msgid "Monk"
 msgstr "Moine augmenté"
@@ -72,11 +72,11 @@ msgid "Ranger"
 msgstr "Traqueuse"
 
 msgid "Rogue"
-msgstr "Voleur de données"
+msgstr "Fixer"
 
 msgctxt "feminine"
 msgid "Rogue"
-msgstr "Voleuse de données"
+msgstr "Fixeuse"
 
 msgid "Samurai"
 msgstr "Ronin urbain"
@@ -93,11 +93,11 @@ msgid "Tourist"
 msgstr "Corpo en goguette"
 
 msgid "Valkyrie"
-msgstr "Mercenaire"
+msgstr "Solo"
 
 msgctxt "feminine"
 msgid "Valkyrie"
-msgstr "Mercenaire"
+msgstr "Solo"
 
 msgid "Wizard"
 msgstr "Netrunner"
@@ -339,15 +339,15 @@ msgid "Spellbooks"
 msgstr "Logiciels"
 
 msgid "Coins"
-msgstr "Crédits"
+msgstr "Eddies"
 
 # --- Monnaie et quelques objets emblématiques ---
 
 msgctxt "object"
 msgid "gold piece"
 msgid_plural "gold pieces"
-msgstr[0] "crédit"
-msgstr[1] "crédits"
+msgstr[0] "eddie"
+msgstr[1] "eddies"
 
 msgctxt "objgender"
 msgid "gold piece"
@@ -613,7 +613,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Oracle"
-msgstr "Fixeuse"
+msgstr "Courtière"
 
 msgctxt "gender"
 msgid "Oracle"
@@ -642,6 +642,38 @@ msgstr "moto-poney"
 msgctxt "gender"
 msgid "pony"
 msgstr "f"
+
+# --- Jargon du jeu de rôle : la lycanthropie devient la cyberpsychose ---
+
+msgctxt "monster"
+msgid "wererat"
+msgstr "cyberpsycho des égouts"
+
+msgctxt "gender"
+msgid "wererat"
+msgstr "m"
+
+msgctxt "monster"
+msgid "werejackal"
+msgstr "cyberpsycho des ruelles"
+
+msgctxt "gender"
+msgid "werejackal"
+msgstr "m"
+
+msgctxt "monster"
+msgid "werewolf"
+msgstr "cyberpsycho alpha"
+
+msgctxt "gender"
+msgid "werewolf"
+msgstr "m"
+
+msgid "You feel feverish."
+msgstr "Votre chrome grésille : la cyberpsychose vous gagne."
+
+msgid "You feel purified."
+msgstr "Votre chrome se tait : la cyberpsychose s'est dissipée."
 
 # --- Rangs de chaque rôle (msgid sans contexte ; forme féminine en
 #     msgctxt "feminine" quand l'anglais n'en a pas) ---
@@ -818,11 +850,11 @@ msgid "Roamer"
 msgstr "Rôdeuse des friches"
 
 msgid "Nomad"
-msgstr "Nomade"
+msgstr "Bourlingueur"
 
 msgctxt "feminine"
 msgid "Nomad"
-msgstr "Nomade"
+msgstr "Bourlingueuse"
 
 msgid "Rover"
 msgstr "Écumeur"
@@ -1669,11 +1701,11 @@ msgstr "un implant"
 
 msgctxt "symbol"
 msgid "pile of coins"
-msgstr "tas de crédits"
+msgstr "tas d'eddies"
 
 msgctxt "symbol a"
 msgid "pile of coins"
-msgstr "un tas de crédits"
+msgstr "un tas d'eddies"
 
 # Quatrième lot : le reste des monstres (sélection)
 
@@ -2607,7 +2639,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "archeologist"
-msgstr "récupérateur"
+msgstr "techie"
 
 msgctxt "gender"
 msgid "archeologist"
@@ -2615,7 +2647,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "barbarian"
-msgstr "cogneur"
+msgstr "nomade"
 
 msgctxt "gender"
 msgid "barbarian"
@@ -2647,7 +2679,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "healer"
-msgstr "charcudoc"
+msgstr "medtech"
 
 msgctxt "gender"
 msgid "healer"
@@ -2655,7 +2687,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "knight"
-msgstr "exécuteur"
+msgstr "lawman"
 
 msgctxt "gender"
 msgid "knight"
@@ -2687,7 +2719,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "rogue"
-msgstr "voleur de données"
+msgstr "fixer"
 
 msgctxt "gender"
 msgid "rogue"
@@ -2711,7 +2743,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "valkyrie"
-msgstr "mercenaire"
+msgstr "solo"
 
 msgctxt "gender"
 msgid "valkyrie"
@@ -3524,11 +3556,11 @@ msgstr "f"
 
 msgctxt "quest"
 msgid "\"Can you spare an old cutpurse a zorkmid for some grog?\""
-msgstr "« Tu n'aurais pas un crédit pour un vieux coupe-bourse qui a soif ? »"
+msgstr "« Tu n'aurais pas un eddie pour un vieux coupe-bourse qui a soif ? »"
 
 msgctxt "quest"
 msgid "\"Gehennom on 5 zorkmids a day -- more like 500 a day if you ask me.\""
-msgstr "« La Géhennom pour 5 crédits par jour -- plutôt 500 par jour, si tu veux mon avis. »"
+msgstr "« La Géhennom pour 5 eddies par jour -- plutôt 500 par jour, si tu veux mon avis. »"
 
 msgctxt "quest"
 msgid "\"Hey man, got any potions of hallucination for sale?\""
@@ -3696,16 +3728,16 @@ msgid "This ring is indigestible!"
 msgstr "Ce module est indigeste !"
 
 msgid "and %ld piece of gold, after %ld move."
-msgstr "et %ld crédit, après %ld tour."
+msgstr "et %ld eddie, après %ld tour."
 
 msgid "and %ld piece of gold, after %ld moves."
-msgstr "et %ld crédit, après %ld tours."
+msgstr "et %ld eddie, après %ld tours."
 
 msgid "and %ld pieces of gold, after %ld move."
-msgstr "et %ld crédits, après %ld tour."
+msgstr "et %ld eddies, après %ld tour."
 
 msgid "and %ld pieces of gold, after %ld moves."
-msgstr "et %ld crédits, après %ld tours."
+msgstr "et %ld eddies, après %ld tours."
 
 msgid "The wand does nothing more, and the tip of the wand can't reach %s."
 msgstr "L'implant ne fait rien de plus, et son extrémité n'atteint pas %s."
@@ -3795,7 +3827,7 @@ msgid "You are not wearing any rings."
 msgstr "Vous ne portez aucun module."
 
 msgid "Only gold coins may be moved into the '%c' slot."
-msgstr "Seuls les crédits peuvent être placés dans l'emplacement '%c'."
+msgstr "Seuls les eddies peuvent être placés dans l'emplacement '%c'."
 
 msgid "Buy a potion of gain level for only $19.99!  Guaranteed to be blessed!"
 msgstr "Achetez un stim de gain de niveau pour seulement 19,99 ¥ !  Béni garanti !"
@@ -3870,7 +3902,7 @@ msgid "The potion on the altar glows %s for a moment."
 msgstr "Le stim sur l'autel brille en %s un instant."
 
 msgid "\"1 Zorkmid.  857 GUE.  In Frobs We Trust.\""
-msgstr "« 1 Crédit. 857 GUE. In Frobs We Trust. »"
+msgstr "« 1 Eddie. 857 GUE. In Frobs We Trust. »"
 
 msgid "Being blind, you cannot read the formula on the scroll."
 msgstr "Étant aveugle, vous ne pouvez pas lire le code de la puce."
@@ -3976,10 +4008,10 @@ msgid "You relinquish %s and acquire %ld zorkmid%s in %scredit."
 msgstr "Vous cédez %s et obtenez %ld crédit%s d'avoir %s."
 
 msgid "You try to appease %s with 1000 gold pieces."
-msgstr "Vous essayez d'apaiser %s avec 1000 crédits."
+msgstr "Vous essayez d'apaiser %s avec 1000 eddies."
 
 msgid "You hear someone counting gold coins."
-msgstr "Vous entendez quelqu'un compter des crédits."
+msgstr "Vous entendez quelqu'un compter des eddies."
 
 msgctxt "monnoise"
 msgid "asks for a potion of healing."
@@ -4080,43 +4112,43 @@ msgstr "m"
 
 msgctxt "currency"
 msgid "zorkmid"
-msgstr "crédit"
+msgstr "eddie"
 
 msgctxt "currency"
 msgid "zorkmids"
-msgstr "crédits"
+msgstr "eddies"
 
-# Sixième lot : la Fixeuse (oracle.c, rumors.c, insight.c)
+# Sixième lot : la Courtière (oracle.c, rumors.c, insight.c)
 
 msgid "Oracle of Delphi."
-msgstr "La Fixeuse."
+msgstr "La Courtière."
 
 msgid "consulted the Oracle of Delphi"
-msgstr "consulté la Fixeuse"
+msgstr "consulté la Courtière"
 
 msgid "You have consulted the Oracle of Delphi."
-msgstr "Vous avez consulté la Fixeuse."
+msgstr "Vous avez consulté la Courtière."
 
 msgid "You consulted the Oracle of Delphi."
-msgstr "Vous avez consulté la Fixeuse."
+msgstr "Vous avez consulté la Courtière."
 
 msgid "True to her word, the Oracle offhandedly says: "
-msgstr "Fidèle à sa parole, la Fixeuse lâche d'un ton détaché : "
+msgstr "Fidèle à sa parole, la Courtière lâche d'un ton détaché : "
 
 msgid "True to her word, the Oracle casually says: "
-msgstr "Fidèle à sa parole, la Fixeuse glisse en passant : "
+msgstr "Fidèle à sa parole, la Courtière glisse en passant : "
 
 msgid "True to her word, the Oracle nonchalantly says: "
-msgstr "Fidèle à sa parole, la Fixeuse dit avec nonchalance : "
+msgstr "Fidèle à sa parole, la Courtière dit avec nonchalance : "
 
 msgid "True to her word, the Oracle says: "
-msgstr "Fidèle à sa parole, la Fixeuse dit : "
+msgstr "Fidèle à sa parole, la Courtière dit : "
 
 msgid "The Oracle scornfully takes all your gold and says:"
-msgstr "La Fixeuse empoche tous vos crédits avec mépris et dit :"
+msgstr "La Courtière empoche tous vos eddies avec mépris et dit :"
 
 msgid "The Oracle meditates for a moment and then intones:"
-msgstr "La Fixeuse consulte ses écrans un instant, puis déclare :"
+msgstr "La Courtière consulte ses écrans un instant, puis déclare :"
 
 # Septième lot : les quêtes (msgctxt quest).  Textes communs
 
@@ -4908,7 +4940,7 @@ msgstr ""
 "« Approchez, {mon fils|ma fille}, et racontez-moi vos aventures.\n"
 "Alors, avez-vous réussi votre quête de l'Amulette de Yendor ? »"
 
-# Quête du Récupérateur (Arc)
+# Quête du Techie (Arc)
 
 msgctxt "quest"
 msgid "the College of Archeology"
@@ -4937,7 +4969,7 @@ msgid ""
 msgstr ""
 "« Les temps sont durs pour le campus : %na nous a\n"
 "volé %o.  Sans lui, nos actionnaires vont couper\n"
-"les crédits de la fondation, et tous nos chantiers de fouille\n"
+"les eddies de la fondation, et tous nos chantiers de fouille\n"
 "fermeront.\n"
 "\n"
 "» Vous devez trouver l'entrée @de %i.  Tout au fond,\n"
@@ -5301,7 +5333,7 @@ msgstr ""
 "moment est venu de reprendre votre recherche de l'Amulette.  %ZC attendent\n"
 "votre retour par le portail qui vous a amené{|e} ici. »"
 
-# Quête du Cogneur (Bar)
+# Quête du Nomade (Bar)
 
 msgctxt "quest"
 msgid "the Camp of the Duali Tribe"
@@ -5995,7 +6027,7 @@ msgstr ""
 "de reprendre votre recherche de l'Amulette.  %ZC attendent votre retour\n"
 "par le portail qui vous a amené{|e} ici. »"
 
-# Quête du Charcudoc (Hea)
+# Quête du Medtech (Hea)
 
 msgctxt "quest"
 msgid "the Temple of Epidaurus"
@@ -6270,7 +6302,7 @@ msgstr ""
 
 msgctxt "quest"
 msgid "[You are a failure as a healer.]"
-msgstr "[Vous avez échoué en tant que charcudoc.]"
+msgstr "[Vous avez échoué en tant que medtech.]"
 
 msgctxt "quest"
 msgid ""
@@ -6386,7 +6418,7 @@ msgstr ""
 "Une odeur de mort et de désinfectant imprègne l'air.  Pas besoin d'être\n"
 "%Ra pour savoir que %n est sur le point de l'emporter."
 
-# Quête de l'Exécuteur (Kni)
+# Quête du Lawman (Kni)
 
 msgctxt "quest"
 msgid "Camelot Castle"
@@ -7386,7 +7418,7 @@ msgstr ""
 "le moment est venu de reprendre votre recherche de l'Amulette.  %ZC\n"
 "attendent votre retour par le portail qui vous a amené{|e} ici. »"
 
-# Quête du Voleur de données (Rog)
+# Quête du Fixer (Rog)
 
 msgctxt "quest"
 msgid "the Thieves' Guild Hall"
@@ -7411,7 +7443,7 @@ msgstr ""
 "« Que tous ceux qui ne vont pas reprendre %o à cet\n"
 "abruti, %n, fassent un pas en arrière.  Bon choix,\n"
 "%p, parce que j'allais t'envoyer de toute façon.  Mes autres %gp\n"
-"me rapportent trop de crédits.\n"
+"me rapportent trop d'eddies.\n"
 "\n"
 "» Voilà le deal.  Je veux %o, %n\n"
 "a %o.  Tu vas aller chercher %o\n"
@@ -7445,7 +7477,7 @@ msgstr ""
 
 msgctxt "quest"
 msgid "\"May I suggest a compromise.  Are you interested in gold or gems?\""
-msgstr "« Puis-je te proposer un compromis ?  Tu préfères les crédits ou les puces de données ? »"
+msgstr "« Puis-je te proposer un compromis ?  Tu préfères les eddies ou les puces de données ? »"
 
 msgctxt "quest"
 msgid "\"When you return, with or without %o, %l will have you killed.\""
@@ -7478,7 +7510,7 @@ msgid ""
 "of your arrival reach %ls den."
 msgstr ""
 "À l'improviste, vous vous retrouvez à Ransmannsby, le quartier où vous\n"
-"avez appris le métier de {voleur|voleuse} de données.  Vous tapez vite\n"
+"avez appris le métier de {fixer|fixeuse}.  Vous tapez vite\n"
 "le code de la guilde sur votre terminal de poignet, en espérant que vous\n"
 "ET la nouvelle de votre arrivée atteindrez le repaire @de %l."
 
@@ -7577,7 +7609,7 @@ msgstr ""
 "devenu{|e} {un fameux|une fameuse} %r.\n"
 "\n"
 "» Pendant ton absence, je me suis dit qu'ensemble, toi et %o,\n"
-"vous pourriez me rapporter plus de crédits que chacun de votre côté, alors\n"
+"vous pourriez me rapporter plus d'eddies que chacun de votre côté, alors\n"
 "pourquoi ne l'emporterais-tu pas ?  Tout ce que je demande, c'est un\n"
 "pourcentage sur tout butin que tu trouveras.  C'est un meilleur deal que\n"
 "celui que j'ai proposé @à %n.\n"
@@ -8112,7 +8144,7 @@ msgstr ""
 "« %oC est désormais à vous.  %ZC\n"
 "attendent votre retour par le portail qui vous a amené{|e} ici. »"
 
-# Quête de la Mercenaire (Val)
+# Quête de la Solo (Val)
 
 msgctxt "quest"
 msgid "the Shrine of Destiny"

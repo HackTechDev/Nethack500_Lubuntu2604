@@ -835,7 +835,9 @@ background_enlightenment(int unused_mode UNUSED, int final)
         Snprintf(rbuf, sizeof rbuf,
                  Upolyd ? _(" You are actually %s, %s %s of level %d.")
                         : _(" You are %s, %s %s of level %d."),
-                 _(rank_titl), _(role_titl),
+                 _(rank_titl),
+                 gu.urole.name.f ? _(role_titl)
+                                 : gendered_word(role_titl, innategend),
                  gendered_word(gu.urace.adj, innategend), u.ulevel);
         enlght_out(rbuf);
     } else {

@@ -3410,3 +3410,5 @@ relocate general-purpose function choose_classes_menu(), from
 	options.c to windows.c
 remove register from variable declarations
 make glyph_to_cmap() a function instead of a macro
+translated ^X showed the masculine role name of a female hero whose role
+	has no feminine name in English (Rogue, Valkyrie...)

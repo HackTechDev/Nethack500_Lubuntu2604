@@ -17,7 +17,7 @@ toucher aux règles du jeu :
   IA corrompues, golems → drones, démons → entités du Réseau ;
 - lieux et rôles, à l'affichage seulement : Donjons du Destin →
   Mégalopole, Mines des gnomes → Bas-fonds, Sokoban → Entrepôt automatisé,
-  le Magicien → Netrunner, la Valkyrie → Mercenaire, le Samouraï → Ronin
+  le Magicien → Netrunner, la Valkyrie → Solo, le Samouraï → Ronin
   urbain, le Touriste → Corpo en goguette.
 
 Avantages : le français reste disponible à côté, et la partie technique
@@ -29,7 +29,7 @@ les messages les plus fréquents.
 
 Il faudrait réécrire, avec notre propre plume :
 
-- les rumeurs, l'Oracle (« la Fixeuse »), les gravures (graffitis) et les
+- les rumeurs, l'Oracle (« la Courtière »), les gravures (graffitis) et les
   épitaphes ;
 - les textes de quête de chaque rôle, l'encyclopédie et le Guide.
 
@@ -96,17 +96,17 @@ Jouer ensuite pour juger de l'effet avant d'aller plus loin.
 | wand | baguette | implant, masculin |
 | ring | anneau | module, masculin |
 | spellbook | livre de sorts | logiciel, masculin |
-| gold piece | pièce d'or | crédit |
+| gold piece | pièce d'or | eddie |
 | credit card, expensive camera, food ration | carte de crédit... | puce de crédit, holocaméra, ration synthétique |
-| catégories de l'inventaire | Parchemins, Potions... | Puces, Stims, Modules, Implants, Logiciels, Crédits |
+| catégories de l'inventaire | Parchemins, Potions... | Puces, Stims, Modules, Implants, Logiciels, Eddies |
 
-Rôles : Archéologue → Récupérateur/Récupératrice, Barbare →
-Cogneur/Cogneuse, Homme/Femme des cavernes → Sauvageon/Sauvageonne,
-Guérisseur → Charcudoc, Chevalier → Exécuteur/Exécutrice, Moine → Moine
+Rôles (d'après ceux du jeu de rôle Cyberpunk quand l'un correspond) :
+Archéologue → Techie, Barbare → Nomade, Homme/Femme des cavernes →
+Sauvageon/Sauvageonne, Guérisseur → Medtech, Chevalier → Lawman, Moine → Moine
 augmenté/Moniale augmentée, Prêtre/Prêtresse →
 Technoprêtre/Technoprêtresse, Rôdeur → Traqueur/Traqueuse, Voleur →
-Voleur/Voleuse de données, Samouraï → Ronin urbain(e), Touriste → Corpo
-en goguette, Valkyrie → Mercenaire, Magicien → Netrunner/Netrunneuse.
+Fixer/Fixeuse, Samouraï → Ronin urbain(e), Touriste → Corpo
+en goguette, Valkyrie → Solo, Magicien → Netrunner/Netrunneuse.
 
 Races : elfe → réplicant/réplicante, nain → mineur/mineuse, gnome →
 squatteur/squatteuse, orque → corporatiste ; humain reste humain.
@@ -125,7 +125,7 @@ Uruk-hai → gros bras, liche → IA corrompue, golem de papier → drone de
 papier, golem de fer → drone de combat, diablotin → virus,
 fourmi soldat → nanobot soldat,
 abeille tueuse → drone tueur, marchand → vendeur, garde → vigile,
-capitaine de la garde → chef des vigiles, Oracle → la Fixeuse, chaton,
+capitaine de la garde → chef des vigiles, Oracle → la Courtière, chaton,
 petit chien, poney → chaton-robot, chien-robot, moto-poney.
 
 Vérifié en jeu (Magicien elfe) : « Vous êtes Netrunner elfe chaotique »,
@@ -141,22 +141,22 @@ thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
 
 | Rôle | Rangs (niveaux 1, 3, 6, 10, 14, 18, 22, 26, 30) |
 |---|---|
-| Récupérateur | Fouineur, Ferrailleur, Fouilleur de décharges, Pilleur d'épaves, Démonteur, Spéléo urbain, Archéotechnicien, Collectionneur, Conservateur |
-| Cogneur | Casseur, Pilleur, Racketteur, Braqueur, Pillard, Ravageur, Tueur, Chef de gang, Seigneur de guerre |
-| Sauvageon | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Nomade, Écumeur, Pionnier |
-| Charcudoc | Herboriste de rue, Rafistoleur, Embaumeur, Infirmier, Rebouteux, Chimiste de rue, Doc, Médecin de l'ombre, Chirurgien cybernétique |
-| Exécuteur | Recrue, Vigile, Agent, Sergent, Exécuteur, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
+| Techie | Fouineur, Ferrailleur, Fouilleur de décharges, Pilleur d'épaves, Démonteur, Spéléo urbain, Archéotechnicien, Collectionneur, Conservateur |
+| Nomade | Casseur, Pilleur, Racketteur, Braqueur, Pillard, Ravageur, Tueur, Chef de gang, Seigneur de guerre |
+| Sauvageon | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Bourlingueur, Écumeur, Pionnier |
+| Medtech | Herboriste de rue, Rafistoleur, Embaumeur, Infirmier, Rebouteux, Chimiste de rue, Doc, Médecin de l'ombre, Chirurgien cybernétique |
+| Lawman | Recrue, Vigile, Agent, Sergent, Lawman, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
 | Moine augmenté | Candidat, Novice, Initié, Élève du Silicium, du Flux, du Chrome, des Ondes, du Plasma, Maître |
 | Technoprêtre | Aspirant, Acolyte, Adepte, Technoprêtre, Desservant du Code, Chanoine du Réseau, Gourou, Patriarche du Réseau, Grand Technoprêtre |
 | Traqueur | Bleu, Guetteur, Éclaireur, Ombre, Pisteur, Arbalétrier, Tireur, Tireur d'élite, Sniper |
-| Voleur de données | Pickpocket, Coupe-bourse, Voleur de données, Chapardeur, Braqueur, Cambrioleur, Escroc, Arnaqueur, Maître voleur |
+| Fixer | Pickpocket, Coupe-bourse, Fixer, Chapardeur, Braqueur, Cambrioleur, Escroc, Arnaqueur, Maître voleur |
 | Ronin urbain | Recrue du clan, Ronin des rues, Ninja/Kunoichi, Garde du corps, Chef de quartier, Chef de district, Oyabun, Conseiller zaibatsu, Shogun corpo |
 | Corpo en goguette | Badaud, Visiteur, Excursionniste, Globe-trotteur, Voyageur, Baroudeur, Grand voyageur, Explorateur, Aventurier |
-| Mercenaire | Gamin, Escarmoucheur, Combattant, Homme d'armes, Guerrier, Bretteur, Héros, Champion, Seigneur des rues |
+| Solo | Gamin, Escarmoucheur, Combattant, Homme d'armes, Guerrier, Bretteur, Héros, Champion, Seigneur des rues |
 | Netrunner | Script-kiddie, Bidouilleur, Codeur, Hacker, Cracker, Sorcier du code, Nécromancien des données, Netrunner, Légende du Réseau |
 
 Vérifié en jeu : « le Script-kiddie », puis « le Hacker » au niveau 10
-(Netrunner) ; « la Gamine », puis « la Femme d'armes » (Mercenaire).
+(Netrunner) ; « la Gamine », puis « la Femme d'armes » (Valkyrie).
 
 ## Troisième lot : descriptions des classes (en place)
 
@@ -391,3 +391,22 @@ sortent en cyan et violet (palette 256 couleurs du terminal).
 
 Tous les lots prévus sont faits ; les pistes pour plus tard sont dans
 [CYBERPUNK_lot.md](CYBERPUNK_lot.md).
+
+## Jargon du jeu de rôle Cyberpunk (en place)
+
+Les noms et termes génériques du jeu de rôle, sans ses noms propres
+(villes, corporations, gangs) :
+
+- rôles : Techie, Nomade, Medtech, Lawman, Fixer/Fixeuse, Solo (voir
+  plus haut) ; le rang « Nomade » des Sauvageons devient « Bourlingueur »
+  pour ne pas faire doublon, et l'Oracle « la Fixeuse » devient « la
+  Courtière » ;
+- la monnaie : eddies (« Votre bourse contient 978 eddies. ») ; le
+  crédit des boutiques et le crédit au sens figuré restent des crédits ;
+- la lycanthropie devient la cyberpsychose : rat-garou, chacal-garou,
+  loup-garou → cyberpsycho des égouts, des ruelles, alpha ; « Votre chrome
+  grésille : la cyberpsychose vous gagne. » ;
+- l'argot (chrome, choom, preem, gonk, edgerunner, flatliné) dans de
+  nouvelles rumeurs, épitaphes et gravures.
+
+Les sections précédentes gardent les anciens noms des rôles.
