@@ -3122,6 +3122,10 @@ French cyberpunk theme fr@cyber (CYBERPUNK.md): roles, ranks, places,
 	implants, modules and software, credits as currency, rumors,
 	oracles, engravings, epitaphs and the quest texts of all roles;
 	sample neon configuration doc/cyberpunk.nethackrc
+translated: the temple entry messages (priest.c), the malignant aura of
+	a curse (sit.c) and the note of a squeaky board (trap.c), which were
+	built from English fragments; French: the Chromatic Dragon is
+	feminine ("la Dragonne Chromatique"), as her quest texts say
 
 
 NetHack Community Patches (or Variation) Included

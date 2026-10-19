@@ -405,6 +405,14 @@ findpriest(char roomno)
 
 DISABLE_WARNING_FORMAT_NONLITERAL
 
+#if 0
+/* for xgettext: feelings of intemple(), with the prefix of You() */
+N_("You have a forbidding feeling..."),
+N_("You have a strange forbidding feeling..."),
+N_("You experience a sense of peace."),
+N_("You experience an unusual sense of peace."),
+#endif
+
 /* called from check_special_room() when the player enters the temple room */
 void
 intemple(int roomno)
@@ -414,7 +422,6 @@ intemple(int roomno)
     boolean shrined, sanctum, can_speak;
     long *this_time, *other_time;
     const char *msg1, *msg2;
-    char buf[BUFSZ];
 
     /* don't do anything if hero is already in the room */
     if (temple_occupied(u.urooms0))
@@ -449,19 +456,18 @@ intemple(int roomno)
         if (sanctum && Is_sanctum(&u.uz)) {
             if (priest->mpeaceful) {
                 /* first time inside */
-                msg1 = "Infidel, you have entered Moloch's Sanctum!";
-                msg2 = "Be gone!";
+                msg1 = N_("Infidel, you have entered Moloch's Sanctum!");
+                msg2 = N_("Be gone!");
                 priest->mpeaceful = 0;
                 /* became angry voluntarily; no penalty for attacking him */
                 set_malign(priest);
             } else {
                 /* repeat visit, or attacked priest before entering */
-                msg1 = "You desecrate this place by your presence!";
+                msg1 = N_("You desecrate this place by your presence!");
             }
         } else if (svm.moves >= epri_p->enter_time) {
-            Sprintf(buf, "Pilgrim, you enter a %s place!",
-                    !shrined ? "desecrated" : "sacred");
-            msg1 = buf;
+            msg1 = !shrined ? N_("Pilgrim, you enter a desecrated place!")
+                            : N_("Pilgrim, you enter a sacred place!");
         }
         if (msg1 && can_speak && !Deaf) {
             SetVoice(priest, 0, 80, 0);
@@ -473,13 +479,15 @@ intemple(int roomno)
         if (!sanctum) {
             if (!shrined || !p_coaligned(priest)
                 || u.ualign.record <= ALGN_SINNED) {
-                msg1 = "have a%s forbidding feeling...";
-                msg2 = (!shrined || !p_coaligned(priest)) ? "" : " strange";
+                msg1 = (!shrined || !p_coaligned(priest))
+                           ? "have a forbidding feeling..."
+                           : "have a strange forbidding feeling...";
                 this_time = &epri_p->hostile_time;
                 other_time = &epri_p->peaceful_time;
             } else {
-                msg1 = "experience %s sense of peace.";
-                msg2 = (u.ualign.record >= ALGN_DEVOUT) ? "a" : "an unusual";
+                msg1 = (u.ualign.record >= ALGN_DEVOUT)
+                           ? "experience a sense of peace."
+                           : "experience an unusual sense of peace.";
                 this_time = &epri_p->peaceful_time;
                 other_time = &epri_p->hostile_time;
             }
@@ -487,7 +495,7 @@ intemple(int roomno)
                if alignment update has caused it to switch from
                forbidding to sense-of-peace or vice versa */
             if (svm.moves >= *this_time || *other_time >= *this_time) {
-                You(msg1, msg2);
+                You1(msg1);
                 *this_time = svm.moves + (long) d(10, 20); /* ~55 */
                 /* avoid being tricked by the RNG:  switch might have just
                    happened and previous random threshold could be larger */

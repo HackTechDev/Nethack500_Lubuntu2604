@@ -6278,11 +6278,11 @@ msgstr "monstre du sapin de Noël"
 
 msgctxt "gender"
 msgid "Chromatic Dragon"
-msgstr ""
+msgstr "f"
 
 msgctxt "monster"
 msgid "Chromatic Dragon"
-msgstr "Dragon Chromatique"
+msgstr "Dragonne Chromatique"
 
 #, c-format
 msgid "Click!  %s triggers a rolling boulder trap."
@@ -9727,7 +9727,7 @@ msgstr "Vous entendez %s lire %s."
 
 #, c-format
 msgid "You hear %s squeak in the distance."
-msgstr "Vous entendez grincer %s au loin."
+msgstr "Vous entendez une planche grincer au loin (%s)."
 
 msgid "You hear a distant zap."
 msgstr "Vous entendez un zap lointain."
@@ -60884,6 +60884,54 @@ msgstr "Votre image déplacée ne trompe pas %s !"
 msgid "%s intones:"
 msgstr "%s entonne :"
 
+#: src/priest.c
+msgid "Infidel, you have entered Moloch's Sanctum!"
+msgstr "Infidèle, tu es entré dans le Sanctuaire de Moloch !"
+
+#: src/priest.c
+msgid "Be gone!"
+msgstr "Va-t'en !"
+
+#: src/priest.c
+msgid "You desecrate this place by your presence!"
+msgstr "Ta présence profane ce lieu !"
+
+#: src/priest.c
+msgid "Pilgrim, you enter a desecrated place!"
+msgstr "Pèlerin, vous entrez dans un lieu profané !"
+
+#: src/priest.c
+msgid "Pilgrim, you enter a sacred place!"
+msgstr "Pèlerin, vous entrez dans un lieu sacré !"
+
+#: src/priest.c
+msgid "You have a forbidding feeling..."
+msgstr "Vous avez une impression menaçante..."
+
+#: src/priest.c
+msgid "You have a strange forbidding feeling..."
+msgstr "Vous avez une étrange impression menaçante..."
+
+#: src/priest.c
+msgid "You experience a sense of peace."
+msgstr "Vous ressentez une impression de paix."
+
+#: src/priest.c
+msgid "You experience an unusual sense of peace."
+msgstr "Vous ressentez une impression de paix inhabituelle."
+
+msgctxt "heroine"
+msgid "Infidel, you have entered Moloch's Sanctum!"
+msgstr "Infidèle, tu es entrée dans le Sanctuaire de Moloch !"
+
+msgctxt "heroine"
+msgid "Pilgrim, you enter a desecrated place!"
+msgstr "Pèlerine, vous entrez dans un lieu profané !"
+
+msgctxt "heroine"
+msgid "Pilgrim, you enter a sacred place!"
+msgstr "Pèlerine, vous entrez dans un lieu sacré !"
+
 #: src/priest.c:506
 msgid "You have an eerie feeling..."
 msgstr "Vous avez une impression inquiétante..."
@@ -66980,6 +67028,14 @@ msgstr "Amusant de s'asseoir sur %s ?"
 msgid "Having fun sitting on the %s?"
 msgstr ""
 
+#: src/sit.c:615
+msgid "You feel a malignant aura surround the magic-absorbing blade."
+msgstr "Vous sentez une aura maléfique envelopper la lame absorbe-magie."
+
+#: src/sit.c:623
+msgid "You feel a malignant aura surround you."
+msgstr "Vous sentez une aura maléfique vous envelopper."
+
 #: src/sit.c:691
 msgid "You feel warmer."
 msgstr "Vous avez plus chaud."
@@ -71642,6 +71698,54 @@ msgstr "Vous remarquez une planche mal fixée sous vous."
 msgid "A board beneath you vibrates."
 msgstr "Une planche vibre sous vos pieds."
 
+msgctxt "note"
+msgid "a C note"
+msgstr "un do"
+
+msgctxt "note"
+msgid "a D flat"
+msgstr "un ré bémol"
+
+msgctxt "note"
+msgid "a D note"
+msgstr "un ré"
+
+msgctxt "note"
+msgid "an E flat"
+msgstr "un mi bémol"
+
+msgctxt "note"
+msgid "an E note"
+msgstr "un mi"
+
+msgctxt "note"
+msgid "an F note"
+msgstr "un fa"
+
+msgctxt "note"
+msgid "an F sharp"
+msgstr "un fa dièse"
+
+msgctxt "note"
+msgid "a G note"
+msgstr "un sol"
+
+msgctxt "note"
+msgid "a G sharp"
+msgstr "un sol dièse"
+
+msgctxt "note"
+msgid "an A note"
+msgstr "un la"
+
+msgctxt "note"
+msgid "a B flat"
+msgstr "un si bémol"
+
+msgctxt "note"
+msgid "a B note"
+msgstr "un si"
+
 #: src/trap.c:1734
 #, c-format
 msgid "A board beneath you squeaks %s loudly."
@@ -71660,7 +71764,7 @@ msgstr "%s s'arrête un instant et semble tressaillir."
 #: src/trap.c:1769
 #, c-format
 msgid "You hear %s squeak nearby."
-msgstr "Vous entendez grincer %s tout près."
+msgstr "Vous entendez une planche grincer tout près (%s)."
 
 #: src/trap.c:1797
 #, c-format

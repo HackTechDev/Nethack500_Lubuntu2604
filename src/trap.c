@@ -3514,15 +3514,27 @@ trapnote(struct trap *trap, boolean noprefix)
         "E note",  "F note", "F sharp", "G note",
         "G sharp", "A note", "B flat",  "B note",
     };
-    static char tnbuf[12]; /* result buffer */
+    static char tnbuf[40]; /* result buffer */
     const char *tn;
 
     tnbuf[0] = '\0';
     tn = tnnames[trap->tnote];
     if (!noprefix)
         (void) just_an(tnbuf, tn);
-    return strcat(tnbuf, tn);
+    Strcat(tnbuf, tn);
+    if (i18n_active()) /* "a C note" -> translated note with its article */
+        copynchars(tnbuf, C_("note", tnbuf), (int) sizeof tnbuf - 1);
+    return tnbuf;
 }
+
+#if 0
+/* for xgettext: the notes of trapnote() */
+NC_("note", "a C note"), NC_("note", "a D flat"), NC_("note", "a D note"),
+NC_("note", "an E flat"), NC_("note", "an E note"), NC_("note", "an F note"),
+NC_("note", "an F sharp"), NC_("note", "a G note"),
+NC_("note", "a G sharp"), NC_("note", "an A note"),
+NC_("note", "a B flat"), NC_("note", "a B note"),
+#endif
 
 /* choose a note not used by any trap on current level,
    ignoring ttmp; if all are in use, pick a random one */

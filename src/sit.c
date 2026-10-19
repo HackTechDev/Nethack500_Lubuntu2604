@@ -610,10 +610,9 @@ rndcurse(void)
     int nobj = 0;
     int cnt, onum;
     struct obj *otmp;
-    static const char mal_aura[] = "feel a malignant aura surround %s.";
 
     if (u_wield_art(ART_MAGICBANE) && rn2(20)) {
-        You(mal_aura, "the magic-absorbing blade");
+        You("feel a malignant aura surround the magic-absorbing blade.");
         return;
     }
 
@@ -621,7 +620,7 @@ rndcurse(void)
         shieldeff(u.ux, u.uy);
     }
 
-    You(mal_aura, "you");
+    You("feel a malignant aura surround you.");
 
     for (otmp = gi.invent; otmp; otmp = otmp->nobj) {
         /* gold isn't subject to being cursed or blessed */
