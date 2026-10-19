@@ -383,6 +383,64 @@ msgctxt "objgender"
 msgid "food ration"
 msgstr "f"
 
+# --- Races (nom et adjectif, puis msgctxt "feminine") ---
+
+msgid "elf"
+msgstr "réplicant"
+
+msgctxt "feminine"
+msgid "elf"
+msgstr "réplicante"
+
+msgid "elven"
+msgstr "réplicant"
+
+msgctxt "feminine"
+msgid "elven"
+msgstr "réplicante"
+
+msgid "dwarf"
+msgstr "mineur"
+
+msgctxt "feminine"
+msgid "dwarf"
+msgstr "mineuse"
+
+msgid "dwarven"
+msgstr "mineur"
+
+msgctxt "feminine"
+msgid "dwarven"
+msgstr "mineuse"
+
+msgid "gnome"
+msgstr "squatteur"
+
+msgctxt "feminine"
+msgid "gnome"
+msgstr "squatteuse"
+
+msgid "gnomish"
+msgstr "squatteur"
+
+msgctxt "feminine"
+msgid "gnomish"
+msgstr "squatteuse"
+
+msgid "orc"
+msgstr "ganger"
+
+msgctxt "feminine"
+msgid "orc"
+msgstr "gangeuse"
+
+msgid "orcish"
+msgstr "ganger"
+
+msgctxt "feminine"
+msgid "orcish"
+msgstr "gangeuse"
+
 # --- Monstres courants (genre : m, f ; e/n pour l'élision) ---
 
 msgctxt "monster"

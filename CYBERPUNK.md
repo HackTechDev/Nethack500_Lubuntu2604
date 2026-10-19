@@ -108,6 +108,9 @@ Technoprêtre/Technoprêtresse, Rôdeur → Traqueur/Traqueuse, Voleur →
 Voleur/Voleuse de données, Samouraï → Ronin urbain(e), Touriste → Corpo
 en goguette, Valkyrie → Mercenaire, Magicien → Netrunner/Netrunneuse.
 
+Races : elfe → réplicant/réplicante, nain → mineur/mineuse, gnome →
+squatteur/squatteuse, orque → ganger/gangeuse ; humain reste humain.
+
 Lieux : Donjons du Destin → la Mégalopole, Mines des gnomes → les
 Bas-fonds, Sokoban → les Entrepôts automatisés, la Quête → le Contrat,
 Fort Ludios → le Coffre-fort de Ludios, Géhennom → le Réseau profond, Plans
