@@ -4639,7 +4639,7 @@ La valeur de cette option doit être une chaîne contenant les symboles des
 divers types d'objets.
 Les types omis sont ajoutés à la fin dans l'ordre précédent.
 .lp paperdoll
-Affiche l'équipement porté à côté de la carte (désactivée par défaut)\~:
+Affiche l'équipement porté à côté de la carte (activée par défaut)\~:
 une grille de symboles d'objets disposée comme la poupée de l'interface Qt
 (carquois, arme, arme de rechange, anneaux, source de lumière à gauche\~;
 casque, amulette, cape, armure, chemise, bottes au milieu\~; lunettes,

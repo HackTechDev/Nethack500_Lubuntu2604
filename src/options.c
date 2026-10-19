@@ -312,34 +312,36 @@ typedef struct {
 } menu_cmd_t;
 
 static const menu_cmd_t default_menu_cmd_info[] = {
-    { "menu_next_page",     MENU_NEXT_PAGE,     "Go to next page" },
-    { "menu_previous_page", MENU_PREVIOUS_PAGE, "Go to previous page" },
-    { "menu_first_page",    MENU_FIRST_PAGE,    "Go to first page" },
-    { "menu_last_page",     MENU_LAST_PAGE,     "Go to last page" },
+    { "menu_next_page",     MENU_NEXT_PAGE,     N_("Go to next page") },
+    { "menu_previous_page", MENU_PREVIOUS_PAGE, N_("Go to previous page") },
+    { "menu_first_page",    MENU_FIRST_PAGE,    N_("Go to first page") },
+    { "menu_last_page",     MENU_LAST_PAGE,     N_("Go to last page") },
     { "menu_select_all",    MENU_SELECT_ALL,
-                            "Select all items in entire menu" },
+                            N_("Select all items in entire menu") },
     { "menu_invert_all",    MENU_INVERT_ALL,
-                            "Invert selection for all items" },
+                            N_("Invert selection for all items") },
     { "menu_deselect_all",  MENU_UNSELECT_ALL,
-                            "Unselect all items in entire menu" },
+                            N_("Unselect all items in entire menu") },
     { "menu_select_page",   MENU_SELECT_PAGE,
-                            "Select all items on current page" },
+                            N_("Select all items on current page") },
     { "menu_invert_page",   MENU_INVERT_PAGE,
-                            "Invert current page's selections" },
+                            N_("Invert current page's selections") },
     { "menu_deselect_page", MENU_UNSELECT_PAGE,
-                            "Unselect all items on current page" },
+                            N_("Unselect all items on current page") },
     { "menu_search",        MENU_SEARCH,
-                            "Search and invert matching items" },
+                            N_("Search and invert matching items") },
     { "menu_shift_right",   MENU_SHIFT_RIGHT,
-                            "Pan current page to right (perm_invent only)" },
+      N_("Pan current page to right (perm_invent only)") },
     { "menu_shift_left",    MENU_SHIFT_LEFT,
-                            "Pan current page to left (perm_invent only)" },
+      N_("Pan current page to left (perm_invent only)") },
     { (char *) 0, '\0', (char *) 0 }
 };
 
 static const char n_currently_set[] = "(%d currently set)";
 
 staticfn void nmcpy(char *, const char *, int);
+staticfn int mc_strwidth(const char *);
+staticfn void mc_line(char *, const char *, const char *, const char *);
 staticfn void escapes(const char *, char *);
 staticfn void rejectoption(const char *);
 staticfn char *string_for_opt(char *, boolean);
@@ -9107,18 +9109,21 @@ show_menu_controls(winid win, boolean dolist)
         const char *key, *desc;
     };
     static const struct xtra_cntrls hardcoded[] = {
-        { "Return", "Accept current choice(s) and dismiss menu" },
-        { "Enter",  "Same as Return" },
-        { "Space",  "If not on last page, advance one page;" },
-        { "     ",  "when on last page, treat like Return" },
-        { "Escape", "Cancel menu without making any choice(s)" },
+        { NC_("key", "Return"),
+          N_("Accept current choice(s) and dismiss menu") },
+        { NC_("key", "Enter"),  N_("Same as Return") },
+        { NC_("key", "Space"),
+          N_("If not on last page, advance one page;") },
+        { "     ",  N_("when on last page, treat like Return") },
+        { NC_("key", "Escape"),
+          N_("Cancel menu without making any choice(s)") },
         { (char *) 0, (char *) 0}
     };
-    static const char mc_fmt[] = "%8s     %-6s %s",
-                      mc_altfmt[] = "%9s  %-6s %s";
+    static const char mc_altfmt[] = "%9s  %-6s %s";
     char buf[BUFSZ];
     const char *fmt, *arg;
     const struct xtra_cntrls *xcp;
+    int keywidth;
     boolean has_menu_shift = wc2_supported("menu_shift");
 
     /*
@@ -9126,7 +9131,7 @@ show_menu_controls(winid win, boolean dolist)
      * with a fixed-width font or will look dreadful.
      */
 
-    putstr(win, 0, "Menu control keys:");
+    putstr(win, 0, _("Menu control keys:"));
     if (dolist) { /* key bindings help: '?i' */
         int i;
         char ch;
@@ -9139,72 +9144,106 @@ show_menu_controls(winid win, boolean dolist)
                 continue;
             Sprintf(buf, fmt,
                     visctrl(get_menu_cmd_key(ch)),
-                    default_menu_cmd_info[i].desc);
+                    _(default_menu_cmd_info[i].desc));
             putstr(win, 0, buf);
         }
         /* no separator before hardcoded */
-        fmt = "%s%-7s %s"; /* extra specifier to absorb 'arg' */
+        fmt = "%s"; /* specifier to absorb 'arg' */
         arg = ""; /* no extra prefix for 'dolist' */
+        keywidth = 7;
     } else { /* menu controls help: '?k' */
         putstr(win, 0, "");
-        Sprintf(buf, mc_altfmt, "", "Whole", "Current");
+        Sprintf(buf, mc_altfmt, "", C_("menu controls", "Whole"),
+                C_("menu controls", "Current"));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_altfmt, "", " Menu", " Page");
+        Sprintf(buf, mc_altfmt, "", C_("menu controls", " Menu"),
+                C_("menu controls", " Page"));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "Select",
+        mc_line(buf, C_("menu controls", "Select"),
                 visctrl(get_menu_cmd_key(MENU_SELECT_ALL)),
                 visctrl(get_menu_cmd_key(MENU_SELECT_PAGE)));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "Invert",
+        mc_line(buf, C_("menu controls", "Invert"),
                 visctrl(get_menu_cmd_key(MENU_INVERT_ALL)),
                 visctrl(get_menu_cmd_key(MENU_INVERT_PAGE)));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "Deselect",
+        mc_line(buf, C_("menu controls", "Deselect"),
                 visctrl(get_menu_cmd_key(MENU_UNSELECT_ALL)),
                 visctrl(get_menu_cmd_key(MENU_UNSELECT_PAGE)));
         putstr(win, 0, buf);
         putstr(win, 0, "");
-        Sprintf(buf, mc_fmt, "Go to",
+        mc_line(buf, C_("menu controls", "Go to"),
                 visctrl(get_menu_cmd_key(MENU_NEXT_PAGE)),
-                "Next page");
+                _("Next page"));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "",
+        mc_line(buf, "",
                 visctrl(get_menu_cmd_key(MENU_PREVIOUS_PAGE)),
-                "Previous page");
+                _("Previous page"));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "",
+        mc_line(buf, "",
                 visctrl(get_menu_cmd_key(MENU_FIRST_PAGE)),
-                "First page");
+                _("First page"));
         putstr(win, 0, buf);
-        Sprintf(buf, mc_fmt, "",
+        mc_line(buf, "",
                 visctrl(get_menu_cmd_key(MENU_LAST_PAGE)),
-                "Last page");
+                _("Last page"));
         putstr(win, 0, buf);
         if (has_menu_shift) {
-            Sprintf(buf, mc_fmt, "Pan view",
+            mc_line(buf, C_("menu controls", "Pan view"),
                     visctrl(get_menu_cmd_key(MENU_SHIFT_RIGHT)),
-                    "Right (perm_invent only)");
+                    _("Right (perm_invent only)"));
             putstr(win, 0, buf);
-            Sprintf(buf, mc_fmt, "",
+            mc_line(buf, "",
                     visctrl(get_menu_cmd_key(MENU_SHIFT_LEFT)),
-                    "Left");
+                    _("Left"));
             putstr(win, 0, buf);
         }
         putstr(win, 0, "");
-        Sprintf(buf, mc_fmt, "Search",
+        mc_line(buf, C_("menu controls", "Search"),
                 visctrl(get_menu_cmd_key(MENU_SEARCH)),
-                "Exter a target string and invert all matching entries");
+                _("Exter a target string and invert all matching entries"));
         putstr(win, 0, buf);
         /* separator before hardcoded */
         putstr(win, 0, "");
-        fmt = "%9s  %-8s %s";
-        arg = "Other "; /* prefix for first hardcoded[] entry, then reset */
+        fmt = "%9s  ";
+        /* prefix for first hardcoded[] entry, then reset */
+        arg = C_("menu controls", "Other ");
+        keywidth = 8;
     }
     for (xcp = hardcoded; xcp->key; ++xcp) {
-        Sprintf(buf, fmt, arg, xcp->key, xcp->desc);
+        const char *key = (*xcp->key != ' ') ? C_("key", xcp->key)
+                                             : xcp->key;
+
+        /* pad the key by its width on screen, not by its bytes, since a
+           translated key name such as "Entrée" can be UTF-8 */
+        Sprintf(buf, fmt, arg);
+        Sprintf(eos(buf), "%s%*s %s", key,
+                max(keywidth - mc_strwidth(key), 0), "", _(xcp->desc));
         putstr(win, 0, buf);
         arg = "";
     }
+}
+
+/* a line of the menu controls help: label right-aligned on 8 columns
+   (by width on screen, the label being possibly translated), then key
+   and what it does or another key */
+staticfn void
+mc_line(char *buf, const char *label, const char *key, const char *what)
+{
+    Sprintf(buf, "%*s%s     %-6s %s", max(8 - mc_strwidth(label), 0), "",
+            label, key, what);
+}
+
+/* number of characters of a UTF-8 string (skipping continuation bytes) */
+staticfn int
+mc_strwidth(const char *str)
+{
+    int width = 0;
+
+    for (; *str; ++str)
+        if ((*str & 0xc0) != 0x80)
+            ++width;
+    return width;
 }
 
 RESTORE_WARNING_FORMAT_NONLITERAL

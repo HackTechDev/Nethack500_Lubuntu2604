@@ -24515,7 +24515,7 @@ msgstr ""
 #: src/allmain.c:1043 src/apply.c:1291 src/apply.c:2021 src/apply.c:2041
 #: src/apply.c:2689 src/apply.c:2777 src/apply.c:3000 src/apply.c:4197
 #: src/apply.c:4221 src/artifact.c:2113 src/artifact.c:2145 src/artifact.c:2158
-#: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4342 src/cmd.c:5202
+#: src/artifact.c:2162 src/attrib.c:724 src/cmd.c:4346 src/cmd.c:5206
 #: src/dbridge.c:385 src/do.c:2201 src/dokick.c:738 src/eat.c:2256
 #: src/engrave.c:1380 src/hack.c:135 src/hack.c:3529 src/hack.c:4335
 #: src/invent.c:4076 src/lock.c:937 src/nhlua.c:626 src/nhlua.c:640
@@ -30355,6 +30355,14 @@ msgstr "courir au sud (bas de l'écran)"
 msgid "run southwest (screen lower left)"
 msgstr "courir au sud-ouest (bas gauche de l'écran)"
 
+#: src/cmd.c:2204
+msgid "cancel current prompt or pending prefix"
+msgstr "annuler l'invite en cours ou le préfixe en attente"
+
+#: src/cmd.c:2206
+msgid "Prefix: for digits when preceding a command with a count"
+msgstr "Préfixe : pour les chiffres d'un nombre précédant une commande"
+
 #: src/cmd.c:2417 src/cmd.c:2497
 msgid "Bind which key? "
 msgstr "Associer quelle touche ? "
@@ -30373,125 +30381,177 @@ msgstr "Touche « %s » associée à « %s »."
 msgid "Key binding failed?!"
 msgstr "L'association de touche a échoué ?!"
 
-#: src/cmd.c:3826
+#: src/cmd.c:3022
+msgid "Full Current Key Bindings List"
+msgstr "Liste complète des touches actuelles"
+
+#: src/cmd.c:3027
+msgid "(also commands with no key assignment)"
+msgstr "(et commandes sans touche associée)"
+
+#: src/cmd.c:3034
+msgid "Directional keys:"
+msgstr "Touches de direction :"
+
+#: src/cmd.c:3041
+msgid "Ctrl+<direction> will run in specified direction until something very"
+msgstr "Ctrl+<direction> court dans la direction indiquée jusqu'à ce que quelque"
+
+#: src/cmd.c:3043
+msgid "interesting is seen."
+msgstr "chose de très intéressant soit en vue."
+
+#: src/cmd.c:3046
+msgid "Shift+<direction> will run in specified direction until you encounter"
+msgstr "Maj+<direction> court dans la direction indiquée jusqu'à ce que vous"
+
+#: src/cmd.c:3052
+msgid "Meta+<direction> will run in specified direction until you encounter"
+msgstr "Méta+<direction> court dans la direction indiquée jusqu'à ce que vous"
+
+#: src/cmd.c:3055
+msgid "an obstacle."
+msgstr "rencontriez un obstacle."
+
+#: src/cmd.c:3059
+msgid "Miscellaneous keys:"
+msgstr "Touches diverses :"
+
+#: src/cmd.c:3082
+msgid " interrupt: break out of NetHack (SIGINT)"
+msgstr " interruption : quitter NetHack de force (SIGINT)"
+
+#: src/cmd.c:3109
+msgid "General commands:"
+msgstr "Commandes générales :"
+
+#: src/cmd.c:3116
+msgid "Game commands:"
+msgstr "Commandes de jeu :"
+
+#: src/cmd.c:3125
+msgid "Debug mode commands:"
+msgstr "Commandes du mode de débogage :"
+
+#: src/cmd.c:3830
 #, c-format
 msgid "The %s command does not accept '%s' prefix."
 msgstr "La commande %s n'accepte pas le préfixe « %s »."
 
-#: src/cmd.c:3835
+#: src/cmd.c:3839
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command other than up or down."
 msgstr "Le préfixe « %s » doit être suivi d'une commande de déplacement autre que monter ou descendre."
 
-#: src/cmd.c:3837
+#: src/cmd.c:3841
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command."
 msgstr "Le préfixe « %s » doit être suivi d'une commande de déplacement."
 
-#: src/cmd.c:3841
+#: src/cmd.c:3845
 #, c-format
 msgid "The '%s' prefix should be followed by a movement command%s."
 msgstr ""
 
-#: src/cmd.c:3905
+#: src/cmd.c:3909
 msgid "You can't get there from here..."
 msgstr "Impossible d'aller là d'ici..."
 
-#: src/cmd.c:3957
+#: src/cmd.c:3961
 #, c-format
 msgid "Unknown command '%s'."
 msgstr "Commande inconnue « %s »."
 
-#: src/cmd.c:4100
+#: src/cmd.c:4104
 #, c-format
 msgid "getdir: command queue had no dir?"
 msgstr "getdir : la file de commandes n'avait pas de direction ?"
 
-#: src/cmd.c:4111
+#: src/cmd.c:4115
 msgid "In what direction?"
 msgstr "Dans quelle direction ?"
 
-#: src/cmd.c:4208
+#: src/cmd.c:4212
 #, c-format
 msgid "getpos successful but not one of [.,;:] (%d)"
 msgstr "getpos a réussi mais pas avec l'un de [.,;:] (%d)"
 
-#: src/cmd.c:4232
+#: src/cmd.c:4236
 msgid "What a strange direction!"
 msgstr "Quelle direction étrange !"
 
-#: src/cmd.c:4236
+#: src/cmd.c:4240
 msgid "You can't orient yourself that direction."
 msgstr "Vous ne pouvez pas vous orienter dans cette direction."
 
-#: src/cmd.c:4439
+#: src/cmd.c:4443
 msgid "north"
 msgstr "nord"
 
-#: src/cmd.c:4439
+#: src/cmd.c:4443
 msgid "northeast"
 msgstr "nord-est"
 
-#: src/cmd.c:4439
+#: src/cmd.c:4443
 msgid "northwest"
 msgstr "nord-ouest"
 
-#: src/cmd.c:4439
+#: src/cmd.c:4443
 msgid "west"
 msgstr "ouest"
 
-#: src/cmd.c:4440
+#: src/cmd.c:4444
 msgid "east"
 msgstr "est"
 
-#: src/cmd.c:4440
+#: src/cmd.c:4444
 msgid "south"
 msgstr "sud"
 
-#: src/cmd.c:4440
+#: src/cmd.c:4444
 msgid "southeast"
 msgstr "sud-est"
 
-#: src/cmd.c:4440
+#: src/cmd.c:4444
 msgid "southwest"
 msgstr "sud-ouest"
 
-#: src/cmd.c:4441
+#: src/cmd.c:4445
 msgid "down"
 msgstr "bas"
 
-#: src/cmd.c:4441
+#: src/cmd.c:4445
 msgid "up"
 msgstr "haut"
 
-#: src/cmd.c:5190
+#: src/cmd.c:5194
 #, c-format
 msgid "get_count: cmdcount_nht"
 msgstr "get_count : cmdcount_nht"
 
-#: src/cmd.c:5457
+#: src/cmd.c:5461
 msgid "Where do you want to travel to?"
 msgstr "Où voulez-vous vous rendre ?"
 
-#: src/cmd.c:5458
+#: src/cmd.c:5462
 msgid "the desired destination"
 msgstr "la destination voulue"
 
-#: src/cmd.c:5476
+#: src/cmd.c:5480
 msgid "No travel destination set."
 msgstr "Aucune destination définie."
 
-#: src/cmd.c:5481
+#: src/cmd.c:5485
 msgid "You are already here."
 msgstr "Vous y êtes déjà."
 
-#: src/cmd.c:5582 src/shk.c:3856 src/sounds.c:1372 src/trap.c:616
+#: src/cmd.c:5586 src/shk.c:3856 src/sounds.c:1372 src/trap.c:616
 #: src/windows.c:1902 win/X11/winX.c:2611
 #, c-format
 msgid "%s %s"
 msgstr ""
 
-#: src/cmd.c:5699
+#: src/cmd.c:5703
 #, c-format
 msgid "yn_function() returned '%s'; using '%s' instead"
 msgstr "yn_function() a renvoyé « %s » ; « %s » utilisé à la place"
@@ -53150,6 +53210,58 @@ msgstr "Carte"
 msgid "Status"
 msgstr "État"
 
+#: src/options.c:315
+msgid "Go to next page"
+msgstr "Aller à la page suivante"
+
+#: src/options.c:316
+msgid "Go to previous page"
+msgstr "Aller à la page précédente"
+
+#: src/options.c:317
+msgid "Go to first page"
+msgstr "Aller à la première page"
+
+#: src/options.c:318
+msgid "Go to last page"
+msgstr "Aller à la dernière page"
+
+#: src/options.c:320
+msgid "Select all items in entire menu"
+msgstr "Choisir tous les éléments du menu"
+
+#: src/options.c:322
+msgid "Invert selection for all items"
+msgstr "Inverser le choix de tous les éléments"
+
+#: src/options.c:324
+msgid "Unselect all items in entire menu"
+msgstr "Retirer tous les éléments du menu"
+
+#: src/options.c:326
+msgid "Select all items on current page"
+msgstr "Choisir tous les éléments de la page"
+
+#: src/options.c:328
+msgid "Invert current page's selections"
+msgstr "Inverser les choix de la page"
+
+#: src/options.c:330
+msgid "Unselect all items on current page"
+msgstr "Retirer tous les éléments de la page"
+
+#: src/options.c:332
+msgid "Search and invert matching items"
+msgstr "Chercher et inverser les éléments correspondants"
+
+#: src/options.c:334
+msgid "Pan current page to right (perm_invent only)"
+msgstr "Décaler la page vers la droite (perm_invent seulement)"
+
+#: src/options.c:336
+msgid "Pan current page to left (perm_invent only)"
+msgstr "Décaler la page vers la gauche (perm_invent seulement)"
+
 #: src/options.c:446
 #, c-format
 msgid "Put \"OPTIONS=!tutorial\" in %s to skip this query."
@@ -53343,30 +53455,168 @@ msgstr "Emplacements variables des fichiers :"
 msgid "Set what options?"
 msgstr "Régler quelles options ?"
 
-#: src/options.c:9301
+#: src/options.c:9110
+msgctxt "key"
+msgid "Return"
+msgstr "Retour"
+
+#: src/options.c:9111
+msgid "Accept current choice(s) and dismiss menu"
+msgstr "Valider le ou les choix et fermer le menu"
+
+#: src/options.c:9112
+msgctxt "key"
+msgid "Enter"
+msgstr "Entrée"
+
+#: src/options.c:9112
+msgid "Same as Return"
+msgstr "Comme Retour"
+
+#: src/options.c:9113
+msgctxt "key"
+msgid "Space"
+msgstr "Espace"
+
+#: src/options.c:9114
+msgid "If not on last page, advance one page;"
+msgstr "Hors de la dernière page, avancer d'une page ;"
+
+#: src/options.c:9115
+msgid "when on last page, treat like Return"
+msgstr "sur la dernière page, comme Retour"
+
+#: src/options.c:9116
+msgctxt "key"
+msgid "Escape"
+msgstr "Échap"
+
+#: src/options.c:9117
+msgid "Cancel menu without making any choice(s)"
+msgstr "Annuler le menu sans rien choisir"
+
+#: src/options.c:9132
+msgid "Menu control keys:"
+msgstr "Touches de contrôle des menus :"
+
+#: src/options.c:9153
+#, c-format
+msgctxt "menu controls"
+msgid "Whole"
+msgstr "Menu"
+
+#: src/options.c:9154
+#, c-format
+msgctxt "menu controls"
+msgid "Current"
+msgstr "Page"
+
+#: src/options.c:9156
+#, c-format
+msgctxt "menu controls"
+msgid " Menu"
+msgstr "entier"
+
+#: src/options.c:9157
+#, c-format
+msgctxt "menu controls"
+msgid " Page"
+msgstr "en cours"
+
+#: src/options.c:9159
+#, c-format
+msgctxt "menu controls"
+msgid "Select"
+msgstr "Choisir"
+
+#: src/options.c:9163
+#, c-format
+msgctxt "menu controls"
+msgid "Invert"
+msgstr "Inverser"
+
+#: src/options.c:9167
+#, c-format
+msgctxt "menu controls"
+msgid "Deselect"
+msgstr "Retirer"
+
+#: src/options.c:9172
+#, c-format
+msgctxt "menu controls"
+msgid "Go to"
+msgstr "Aller à"
+
+#: src/options.c:9174
+msgid "Next page"
+msgstr "Page suivante"
+
+#: src/options.c:9178
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: src/options.c:9182
+msgid "First page"
+msgstr "Première page"
+
+#: src/options.c:9186
+msgid "Last page"
+msgstr "Dernière page"
+
+#: src/options.c:9189
+#, c-format
+msgctxt "menu controls"
+msgid "Pan view"
+msgstr "Décaler"
+
+#: src/options.c:9191
+msgid "Right (perm_invent only)"
+msgstr "Droite (perm_invent seulement)"
+
+#: src/options.c:9195 win/Qt/qt_yndlg.cpp:241
+msgid "Left"
+msgstr "Gauche"
+
+#: src/options.c:9199
+#, c-format
+msgctxt "menu controls"
+msgid "Search"
+msgstr "Chercher"
+
+#: src/options.c:9201
+msgid "Exter a target string and invert all matching entries"
+msgstr "Taper un texte et inverser toutes les entrées qui le contiennent"
+
+#: src/options.c:9207
+#, c-format
+msgctxt "menu controls"
+msgid "Other "
+msgstr "Autres "
+
+#: src/options.c:9309
 #, c-format
 msgid "Autopickup: ON, for %s objects."
 msgstr "Ramassage automatique : ACTIVÉ, pour les objets %s."
 
-#: src/options.c:9307
+#: src/options.c:9315
 msgid "Autopickup: ON, for all objects."
 msgstr "Ramassage automatique : ACTIVÉ, pour tous les objets."
 
-#: src/options.c:9313
+#: src/options.c:9321
 msgid "Autopickup: OFF."
 msgstr "Ramassage automatique : DÉSACTIVÉ."
 
-#: src/options.c:9903
+#: src/options.c:9911
 #, c-format
 msgid "set_option_mod_status: status out of range %d."
 msgstr "set_option_mod_status : statut hors limites %d."
 
-#: src/options.c:9929
+#: src/options.c:9937
 #, c-format
 msgid "set_wc_option_mod_status: status out of range %d."
 msgstr "set_wc_option_mod_status : statut hors limites %d."
 
-#: src/options.c:9983
+#: src/options.c:9991
 #, c-format
 msgid "set_wc2_option_mod_status: status out of range %d."
 msgstr "set_wc2_option_mod_status : statut hors limites %d."
@@ -70133,7 +70383,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 19:59+0200\n"
+"POT-Creation-Date: 2026-10-19 20:17+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -79331,10 +79581,6 @@ msgstr "Voulez-vous"
 msgid "Stop"
 msgstr "Arrêter"
 
-#: win/Qt/qt_yndlg.cpp:241
-msgid "Left"
-msgstr "Gauche"
-
 #: win/Qt/qt_yndlg.cpp:244
 msgid "Right"
 msgstr "Droite"
@@ -79944,13 +80190,13 @@ msgctxt "paperdoll"
 msgid "leash"
 msgstr "laisse"
 
-#: win/curses/cursinvt.c:648
+#: win/curses/cursinvt.c:649
 #, c-format
 msgctxt "paperdoll"
 msgid "%s: %s"
 msgstr "%s : %s"
 
-#: win/curses/cursinvt.c:650
+#: win/curses/cursinvt.c:651
 #, c-format
 msgctxt "paperdoll"
 msgid "second weapon"

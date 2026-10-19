@@ -2201,9 +2201,9 @@ static const struct {
     const char *desc;
     boolean numpad;
 } misc_keys[] = {
-    { NHKF_ESC, "cancel current prompt or pending prefix", FALSE },
+    { NHKF_ESC, N_("cancel current prompt or pending prefix"), FALSE },
     { NHKF_COUNT,
-      "Prefix: for digits when preceding a command with a count", TRUE },
+      N_("Prefix: for digits when preceding a command with a count"), TRUE },
     { 0, (const char *) 0, FALSE }
 };
 
@@ -2707,7 +2707,7 @@ key2extcmddesc(uchar key)
             continue;
         j = misc_keys[i].nhkf;
         if (key == (uchar) gc.Cmd.spkeys[j])
-            return misc_keys[i].desc;
+            return _(misc_keys[i].desc);
     }
     /* finally, check whether 'key' is a command */
     if ((cmdbind = cmdbind_get(key)) != 0
@@ -3019,41 +3019,44 @@ dokeylist(void)
 
     datawin = create_nhwindow(NHW_TEXT);
     putstr(datawin, 0, "");
-    Sprintf(buf, "%7s %s", "", "    Full Current Key Bindings List");
+    Sprintf(buf, "%7s     %s", "", _("Full Current Key Bindings List"));
     putstr(datawin, 0, buf);
     for (extcmd = extcmdlist; extcmd->ef_txt; ++extcmd)
         if (spkey_gap || !keylist_func_has_key(extcmd, keys_used)) {
             Sprintf(buf, "%7s %s", "",
-                               "(also commands with no key assignment)");
+                    _("(also commands with no key assignment)"));
             putstr(datawin, 0, buf);
             break;
         }
 
     /* directional keys */
     putstr(datawin, 0, "");
-    putstr(datawin, 0, "Directional keys:");
+    putstr(datawin, 0, _("Directional keys:"));
     show_direction_keys(datawin, '.', FALSE); /* '.'==self in direct'n grid */
 
+    /* one line per text, as they are laid out in columns */
     if (!iflags.num_pad) {
         putstr(datawin, 0, "");
         putstr(datawin, 0,
-     "Ctrl+<direction> will run in specified direction until something very");
-        Sprintf(buf, "%7s %s", "", "interesting is seen.");
+               _("Ctrl+<direction> will run in specified direction "
+                 "until something very"));
+        Sprintf(buf, "%7s %s", "", _("interesting is seen."));
         putstr(datawin, 0, buf);
-        Strcpy(buf, "Shift"); /* append the rest below */
+        putstr(datawin, 0,
+               _("Shift+<direction> will run in specified direction "
+                 "until you encounter"));
     } else {
         /* num_pad */
         putstr(datawin, 0, "");
-        Strcpy(buf, "Meta"); /* append the rest next */
+        putstr(datawin, 0,
+               _("Meta+<direction> will run in specified direction "
+                 "until you encounter"));
     }
-    Strcat(buf,
-          "+<direction> will run in specified direction until you encounter");
-    putstr(datawin, 0, buf);
-    Sprintf(buf, "%7s %s", "", "an obstacle.");
+    Sprintf(buf, "%7s %s", "", _("an obstacle."));
     putstr(datawin, 0, buf);
 
     putstr(datawin, 0, "");
-    putstr(datawin, 0, "Miscellaneous keys:");
+    putstr(datawin, 0, _("Miscellaneous keys:"));
     for (i = 0; misc_keys[i].desc; ++i) {
         if (misc_keys[i].numpad && !iflags.num_pad)
             continue;
@@ -3061,7 +3064,8 @@ dokeylist(void)
         key = (uchar) gc.Cmd.spkeys[j];
         if (key && !mov_seen[key]
             && (pfx_seen[key] == j)) {
-            Sprintf(buf, "%-7s %s", key2txt(key, buf2), misc_keys[i].desc);
+            Sprintf(buf, "%-7s %s", key2txt(key, buf2),
+                    _(misc_keys[i].desc));
             putstr(datawin, 0, buf);
         }
     }
@@ -3075,7 +3079,7 @@ dokeylist(void)
     Sprintf(buf2, "[%s]", key2txt(key, buf));
     Sprintf(buf, "%-21s", buf2);
 #endif
-    Strcat(buf, " interrupt: break out of NetHack (SIGINT)");
+    Strcat(buf, _(" interrupt: break out of NetHack (SIGINT)"));
     putstr(datawin, 0, buf);
     /* keyless special key commands, if any */
     if (spkey_gap) {
@@ -3089,7 +3093,7 @@ dokeylist(void)
                 /* lines up with the other unassigned commands which use
                    "#%-20s ", but not with the other special keys */
                 Snprintf(buf, sizeof(buf), "%-21s %s", buf2,
-                         misc_keys[i].desc);
+                         _(misc_keys[i].desc));
                 putstr(datawin, 0, buf);
             }
         }
@@ -3102,14 +3106,14 @@ dokeylist(void)
 
     if (keylist_putcmds(datawin, TRUE, GENERALCMD, IGNORECMD, keys_used)) {
         putstr(datawin, 0, "");
-        putstr(datawin, 0, "General commands:");
+        putstr(datawin, 0, _("General commands:"));
         (void) keylist_putcmds(datawin, FALSE, GENERALCMD,
                                IGNORECMD, keys_used);
     }
 
     if (keylist_putcmds(datawin, TRUE, 0, GENERALCMD | IGNORECMD, keys_used)) {
         putstr(datawin, 0, "");
-        putstr(datawin, 0, "Game commands:");
+        putstr(datawin, 0, _("Game commands:"));
         (void) keylist_putcmds(datawin, FALSE, 0,
                                GENERALCMD | IGNORECMD,
                                keys_used);
@@ -3118,7 +3122,7 @@ dokeylist(void)
     if (wizard && keylist_putcmds(datawin, TRUE,
                                   WIZMODECMD, INTERNALCMD, keys_used)) {
         putstr(datawin, 0, "");
-        putstr(datawin, 0, "Debug mode commands:");
+        putstr(datawin, 0, _("Debug mode commands:"));
         (void) keylist_putcmds(datawin, FALSE,
                                WIZMODECMD, INTERNALCMD, keys_used);
     }

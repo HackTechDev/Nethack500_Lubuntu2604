@@ -5110,13 +5110,13 @@
        sont ajoutés à la fin dans l'ordre précédent.
 
      paperdoll
-       Affiche l'équipement porté  à  côté  de  la  carte  (désactivée  par
-       défaut)  :  une grille de symboles d'objets disposée comme la poupée
-       de l'interface Qt (carquois, arme, arme de rechange, anneaux, source
-       de lumière à gauche  ;  casque,  amulette,  cape,  armure,  chemise,
-       bottes au milieu ; lunettes, bouclier, gants, laisse à droite), avec
-       le nom court des objets portés.  Elle se place en haut de la fenêtre
-       de  perm_invent  quand  cette option est activée, sinon à côté de la
+       Affiche l'équipement porté à côté de la carte (activée par défaut) :
+       une grille de symboles d'objets disposée comme la poupée de l'inter-
+       face Qt (carquois,  arme,  arme  de  rechange,  anneaux,  source  de
+       lumière  à  gauche ; casque, amulette, cape, armure, chemise, bottes
+       au milieu ; lunettes, bouclier, gants, laisse à droite), avec le nom
+       court des objets portés.  Elle se place en haut  de  la  fenêtre  de
+       perm_invent  quand  cette  option  est  activée,  sinon à côté de la
        carte ; les noms demandent un terminal d'environ  120  colonnes,  la
        grille seule 100.  Interface curses seulement.
 
