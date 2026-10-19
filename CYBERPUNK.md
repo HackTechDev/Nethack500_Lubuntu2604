@@ -326,6 +326,22 @@ catalogue.
 Vérifié en jeu : arrivée dans la quête du Traqueur (« le dernier parc
 sauvage de la Mégalopole ») ; le reste dans le catalogue.
 
+## Douzième lot : quêtes du Voleur de données et du Ronin urbain (en place)
+
+- Voleur de données (Voleur) : Ransmannsby devient un quartier, le code
+  de la guilde se tape sur un terminal de poignet ; le QG de la Guilde
+  des Voleurs et celui de la Guilde des Assassins (le premier sert aussi
+  à la quête du Corpo en goguette) ; crédits, puces de données, passe
+  électronique, virus qui change les puces en ferraille ; la clé ouvre
+  « toutes les serrures et tous les pare-feu de la Mégalopole ».
+- Ronin urbain (Samouraï) : le Siège du clan Taro et la Tour du Shogun ;
+  le daimyo devient directeur, l'empereur le Président du zaibatsu ;
+  yakuzas des bas quartiers, monokatana, hologramme du teki, saké de
+  synthèse ; les mots japonais restent.
+
+Vérifié en jeu : arrivée dans la quête du Ronin urbain (« le kami du
+Siège du clan Taro ») ; le reste dans le catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
