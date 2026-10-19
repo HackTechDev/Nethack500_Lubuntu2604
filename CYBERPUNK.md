@@ -310,6 +310,22 @@ Vérifié en jeu : arrivée dans la quête de l'Exécuteur (« Vous vous
 matérialisez dans l'ombre de la Tour Camelot. ») ; le reste dans le
 catalogue.
 
+## Onzième lot : quêtes du Technoprêtre et du Traqueur (en place)
+
+- Technoprêtre (Prêtre) : le Grand Temple du Code et son autel-serveur
+  corrompu, le Sanctuaire de Nalzok derrière une décharge de serveurs
+  morts ; Grandes Compilations, Moloch qui tonne dans les haut-parleurs.
+  Beaucoup de répliques sont communes avec le Moine augmenté (même texte
+  anglais) : elles gardent la version du lot 10, rendue neutre
+  (« Quittez ce sanctuaire »).
+- Traqueur (Rôdeur) : le Poste avancé d'Orion dans le dernier parc
+  sauvage de la Mégalopole, défendu par des champs de force ; le
+  Labyrinthe du wumpus, « comme dans un très vieux jeu vidéo » ; le
+  bunker de Scorpius ; l'arc qui imprime lui-même ses flèches.
+
+Vérifié en jeu : arrivée dans la quête du Traqueur (« le dernier parc
+sauvage de la Mégalopole ») ; le reste dans le catalogue.
+
 ## Prochains lots
 
 1. Les quêtes des douze autres rôles, deux par lot (liste dans
