@@ -1,0 +1,107 @@
+# NetHack 5.0  cyberpunk.nethackrc
+# Exemple de configuration aux couleurs néon pour le thème cyberpunk
+# (CYBERPUNK.md).  À copier dans ~/.nethackrc, ou à charger avec
+#     nethack -nethackrc=/chemin/vers/cyberpunk.nethackrc
+# Les couleurs R-G-B de la carte demandent un terminal à 24 bits de
+# couleur (la plupart des terminaux actuels) ; sinon, NetHack prend la
+# couleur la plus proche.  Rien n'est compilé : on peut retirer ou changer
+# chaque ligne.
+
+# --- Le thème ---
+OPTIONS=language:fr@cyber
+OPTIONS=color,menucolors,statushilites:5
+OPTIONS=customcolors,customsymbols
+
+# --- Les symboles : traits Unicode pour les murs, point médian pour le sol.
+#     Le jeu de symboles doit venir avant les lignes glyph ---
+OPTIONS=symset:Enhanced1
+
+# Palette :
+#   magenta néon  255-0-255     cyan néon   0-255-255
+#   vert acide     57-255-20    rose vif   255-42-109
+#   violet        122-4-235     jaune      245-245-0
+#   bleu électrique 5-217-232   gris acier  90-90-120
+
+# Murs : cyan néon, coins compris
+OPTIONS=glyph:S_vwall:U+2502/0-255-255
+OPTIONS=glyph:S_hwall:U+2500/0-255-255
+OPTIONS=glyph:S_tlcorn:U+250C/0-255-255
+OPTIONS=glyph:S_trcorn:U+2510/0-255-255
+OPTIONS=glyph:S_blcorn:U+2514/0-255-255
+OPTIONS=glyph:S_brcorn:U+2518/0-255-255
+OPTIONS=glyph:S_crwall:U+253C/0-255-255
+OPTIONS=glyph:S_tuwall:U+2534/0-255-255
+OPTIONS=glyph:S_tdwall:U+252C/0-255-255
+OPTIONS=glyph:S_tlwall:U+2524/0-255-255
+OPTIONS=glyph:S_trwall:U+251C/0-255-255
+# Sol des salles en violet, couloirs en gris acier (éclairés : bleu)
+OPTIONS=glyph:S_room:U+00B7/122-4-235
+OPTIONS=glyph:S_darkroom:U+00B7/60-0-120
+OPTIONS=glyph:S_corr:U+2591/90-90-120
+OPTIONS=glyph:S_litcorr:U+2592/5-217-232
+# Portes fermées ▮ et ouvertes ▯ en rose vif
+OPTIONS=glyph:S_vcdoor:U+25AE/255-42-109
+OPTIONS=glyph:S_hcdoor:U+25AE/255-42-109
+OPTIONS=glyph:S_vodoor:U+25AF/255-42-109
+OPTIONS=glyph:S_hodoor:U+25AF/255-42-109
+# Escaliers ▲ ▼ et échelles en jaune
+OPTIONS=glyph:S_upstair:U+25B2/245-245-0
+OPTIONS=glyph:S_dnstair:U+25BC/245-245-0
+OPTIONS=glyph:S_brupstair:U+25B2/245-245-0
+OPTIONS=glyph:S_brdnstair:U+25BC/245-245-0
+OPTIONS=glyph:S_upladder:U+21A5/245-245-0
+OPTIONS=glyph:S_dnladder:U+21A7/245-245-0
+# Fontaines (bornes à eau), autels (autels-serveurs) et trônes
+OPTIONS=glyph:S_fountain:U+2320/5-217-232
+OPTIONS=glyph:S_altar:U+2338/255-0-255
+OPTIONS=glyph:S_throne:U+2654/245-245-0
+# Eau et lave
+OPTIONS=glyph:S_pool:U+224B/0-90-255
+OPTIONS=glyph:S_water:U+224B/0-90-255
+OPTIONS=glyph:S_lava:U+224B/255-80-0
+# Arbres : antennes et pylônes
+OPTIONS=glyph:S_tree:U+2021/57-255-20
+# Pièges : tous en rose vif (les pièges gardent leur symbole ^)
+OPTIONS=glyph:S_arrow_trap:^/255-42-109
+OPTIONS=glyph:S_dart_trap:^/255-42-109
+OPTIONS=glyph:S_land_mine:^/255-42-109
+OPTIONS=glyph:S_teleportation_trap:^/255-0-255
+OPTIONS=glyph:S_magic_portal:^/255-0-255
+
+# --- Les menus : les motifs se comparent au nom ANGLAIS des objets, même
+#     quand le jeu est traduit (CLAUDE.md, doname_i18n()) ---
+MENUCOLOR=" blessed "=bright-green
+MENUCOLOR=" cursed "=red&bold
+MENUCOLOR=" uncursed "=cyan
+MENUCOLOR="(being worn)"=bright-magenta
+MENUCOLOR="(weapon in hand)"=bright-magenta&underline
+MENUCOLOR="(wielded)"=bright-magenta
+MENUCOLOR="(in use)"=yellow
+MENUCOLOR="(lit)"=yellow
+MENUCOLOR=" gold piece"=yellow
+MENUCOLOR="Amulet of Yendor"=bright-magenta&blink
+
+# --- La ligne d'état ---
+# Points de vie : vert acide, puis jaune, orange, rouge clignotant
+OPTIONS=hilite_status:hitpoints/100%/bright-green
+OPTIONS=hilite_status:hitpoints/<100%/green
+OPTIONS=hilite_status:hitpoints/<66%/yellow
+OPTIONS=hilite_status:hitpoints/<50%/orange
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&blink
+# Énergie en cyan, magenta quand elle baisse
+OPTIONS=hilite_status:power/100%/bright-cyan
+OPTIONS=hilite_status:power/<100%/cyan
+OPTIONS=hilite_status:power/<33%/magenta
+# Crédits : jaune quand ils montent, rouge quand ils baissent
+OPTIONS=hilite_status:gold/up/yellow/down/red
+# Caractéristiques : vert quand elles montent, rouge quand elles baissent
+OPTIONS=hilite_status:characteristics/up/bright-green/down/red
+# Le titre (rang) en magenta, l'alignement en bleu électrique
+OPTIONS=hilite_status:title/always/bright-magenta
+OPTIONS=hilite_status:alignment/always/bright-blue
+OPTIONS=hilite_status:experience-level/changed/bright-cyan&bold
+# États graves en rouge, les autres en jaune
+OPTIONS=hilite_status:condition/major_troubles/red&inverse
+OPTIONS=hilite_status:condition/minor_troubles/yellow
+OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red&blink

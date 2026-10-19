@@ -358,8 +358,27 @@ Vérifié en jeu : arrivées dans les deux quêtes (« le décor familier
 d'Ankh-Morpork », « le Relais du Destin, hérissé d'antennes ») ; le
 reste dans le catalogue.
 
+## Quatorzième lot : configuration aux couleurs néon (en place)
+
+`doc/cyberpunk.nethackrc` est un exemple de configuration, à copier dans
+`~/.nethackrc` ou à lancer avec `nethack -nethackrc=doc/cyberpunk.nethackrc` :
+
+- `language:fr@cyber`, `symset:Enhanced1` ;
+- carte : murs en cyan néon, sol violet, couloirs gris acier, portes rose
+  vif, escaliers jaunes, autels magenta, lave orange, pièges rose vif
+  (`glyph:S_<symbole>:U+nnnn/R-G-B`) ;
+- menus (`MENUCOLOR`) : béni, maudit, porté, en main... Les motifs se
+  comparent au nom anglais des objets, même en jeu traduit ;
+- ligne d'état (`hilite_status`) : points de vie du vert acide au rouge
+  clignotant, énergie en cyan, crédits, rang en magenta, faim, états.
+
+Les couleurs à deux mots s'écrivent avec un tiret (`bright-green`) :
+avec une espace, `hilite_status` les refuse.
+
+Vérifié en jeu : la configuration se charge sans erreur ; murs et sol
+sortent en cyan et violet (palette 256 couleurs du terminal).
+
 ## Prochains lots
 
-1. Les quêtes des douze autres rôles, deux par lot (liste dans
-   [CYBERPUNK_lot.md](CYBERPUNK_lot.md)).
-2. Un exemple de configuration aux couleurs néon (`MENUCOLOR`, `symset`).
+Tous les lots prévus sont faits ; les pistes pour plus tard sont dans
+[CYBERPUNK_lot.md](CYBERPUNK_lot.md).
