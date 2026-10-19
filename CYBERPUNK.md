@@ -13,7 +13,7 @@ toucher aux règles du jeu :
 - objets : potions → stims, parchemins → puces de données, baguettes →
   implants ou gadgets, grimoires → logiciels, anneaux → modules neuronaux,
   armures → combinaisons ou blindages ;
-- monstres : gnomes → squatteurs des sous-sols, orques → gangers, liches →
+- monstres : gnomes → squatteurs des sous-sols, orques → corporatistes, liches →
   IA corrompues, golems → drones, démons → entités du Réseau ;
 - lieux et rôles, à l'affichage seulement : Donjons du Destin →
   Mégalopole, Mines des gnomes → Bas-fonds, Sokoban → Entrepôt automatisé,
@@ -109,7 +109,7 @@ Voleur/Voleuse de données, Samouraï → Ronin urbain(e), Touriste → Corpo
 en goguette, Valkyrie → Mercenaire, Magicien → Netrunner/Netrunneuse.
 
 Races : elfe → réplicant/réplicante, nain → mineur/mineuse, gnome →
-squatteur/squatteuse, orque → ganger/gangeuse ; humain reste humain.
+squatteur/squatteuse, orque → corporatiste ; humain reste humain.
 
 Lieux : Donjons du Destin → la Mégalopole, Mines des gnomes → les
 Bas-fonds, Sokoban → les Entrepôts automatisés, la Quête → le Contrat,
@@ -120,9 +120,10 @@ Fort Ludios → le Coffre-fort de Ludios, Géhennom → le Réseau profond, Plan
 Monstres : triton → rat de labo, chacal → chien errant, insecte de grille
 → bug réseau, œil flottant → caméra flottante, kobold → voyou, gnome →
 squatteur, seigneur gnome → chef squatteur, nain → mineur, orque des
-collines → ganger, orque du Mordor → ganger du Mordor, Uruk-hai → gros
-bras, liche → IA corrompue, golem de papier → drone de papier, golem de
-fer → drone de combat, diablotin → virus, fourmi soldat → nanobot soldat,
+collines → corporatiste, orque du Mordor → corporatiste du Mordor,
+Uruk-hai → gros bras, liche → IA corrompue, golem de papier → drone de
+papier, golem de fer → drone de combat, diablotin → virus,
+fourmi soldat → nanobot soldat,
 abeille tueuse → drone tueur, marchand → vendeur, garde → vigile,
 capitaine de la garde → chef des vigiles, Oracle → la Fixeuse, chaton,
 petit chien, poney → chaton-robot, chien-robot, moto-poney.
@@ -164,7 +165,7 @@ avec).  Seules changent les classes liées aux renommages et quelques
 classes à forte couleur ; les autres restent en français.
 
 - Monstres : nanobot ou insecte, blob de déchets, caméra ou sphère, virus
-  ou démon mineur, gelée chimique, voyou, ganger, vortex de données,
+  ou démon mineur, gelée chimique, voyou, corporatiste, vortex de données,
   hologramme, IA angélique, drone volant ou oiseau, squatteur, monstre
   furtif, flic de choc, IA corrompue, cyborg momifié, pouding ou boue
   toxique, spectre numérique, fantôme du Réseau, drone ou golem, entité du
@@ -172,7 +173,7 @@ classes à forte couleur ; les autres restent en français.
 - Objets : combinaison ou pièce de blindage, module, stim, puce,
   logiciel, implant, tas de crédits.
 
-Vérifié en jeu avec `/` : « un ganger », « un squatteur », « un stim »,
+Vérifié en jeu avec `/` : « un corporatiste », « un squatteur », « un stim »,
 « une puce », « une entité du Réseau », « un drone ou golem ».
 
 ## Quatrième lot : le reste des monstres et des objets (en place)

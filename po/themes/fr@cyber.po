@@ -428,18 +428,18 @@ msgid "gnomish"
 msgstr "squatteuse"
 
 msgid "orc"
-msgstr "ganger"
+msgstr "corporatiste"
 
 msgctxt "feminine"
 msgid "orc"
-msgstr "gangeuse"
+msgstr "corporatiste"
 
 msgid "orcish"
-msgstr "ganger"
+msgstr "corporatiste"
 
 msgctxt "feminine"
 msgid "orcish"
-msgstr "gangeuse"
+msgstr "corporatiste"
 
 # --- Monstres courants (genre : m, f ; e/n pour l'élision) ---
 
@@ -517,7 +517,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "hill orc"
-msgstr "ganger"
+msgstr "corporatiste"
 
 msgctxt "gender"
 msgid "hill orc"
@@ -525,7 +525,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Mordor orc"
-msgstr "ganger du Mordor"
+msgstr "corporatiste du Mordor"
 
 msgctxt "gender"
 msgid "Mordor orc"
@@ -1501,11 +1501,11 @@ msgstr "un voyou"
 
 msgctxt "symbol"
 msgid "orc"
-msgstr "ganger"
+msgstr "corporatiste"
 
 msgctxt "symbol a"
 msgid "orc"
-msgstr "un ganger"
+msgstr "un corporatiste"
 
 msgctxt "symbol"
 msgid "vortex"
@@ -2303,7 +2303,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "orc mummy"
-msgstr "ganger momifié"
+msgstr "corporatiste momifié"
 
 msgctxt "gender"
 msgid "orc mummy"
@@ -2367,7 +2367,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "orc zombie"
-msgstr "ganger zombie"
+msgstr "corporatiste zombie"
 
 msgctxt "gender"
 msgid "orc zombie"
