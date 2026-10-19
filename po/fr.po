@@ -720,7 +720,7 @@ msgid ""
 msgstr ""
 "« Hélas, %p, ce n'est pas encore le moment.  Un{|e} simple %r ne\n"
 "saurait résister à la puissance @de %n.  Repartez dans le monde, et\n"
-"revenez quand vous aurez atteint le rang de %R. »"
+"revenez quand vous aurez atteint le rang @de %R. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -731,7 +731,7 @@ msgid ""
 msgstr ""
 "« Hélas, %p, ce n'est pas encore le moment.  Un{|e} simple %r ne\n"
 "saurait résister à la puissance @de %n.  Repartez dans le monde, et\n"
-"revenez quand vous aurez atteint le rang de %R. »"
+"revenez quand vous aurez atteint le rang @de %R. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -3169,11 +3169,11 @@ msgid ""
 msgstr ""
 "« En vérité, %p, tu as bien agi.  Avoir survécu jusqu'ici fait honneur\n"
 "à ta vaillance, mais tu n'es pas encore prêt{|e} pour les exigences qui\n"
-"attendent Notre Champion.  %rA, si pur{|e} soit-il, ne saurait\n"
+"attendent Notre Champion.  %rA, si pur{|e} soit-{il|elle}, ne saurait\n"
 "espérer vaincre l'immonde %n.\n"
 "\n"
 "» Pars d'ici et affûte tes talents.  Reviens en Notre présence quand tu\n"
-"auras atteint le noble titre de %R. »"
+"auras atteint le noble titre @de %R. »"
 
 #, no-c-format
 msgctxt "quest"

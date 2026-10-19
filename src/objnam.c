@@ -2186,7 +2186,8 @@ mshot_xname(struct obj *obj)
     char tmpbuf[BUFSZ];
     char *onm = xname(obj);
 
-    if (gm.m_shot.n > 1 && gm.m_shot.o == obj->otyp) {
+    /* (the English ordinal isn't added to a translated name) */
+    if (gm.m_shot.n > 1 && gm.m_shot.o == obj->otyp && !i18n_active()) {
         /* "the Nth arrow"; value will eventually be passed to an() or
            The(), both of which correctly handle this "the " prefix */
         Sprintf(tmpbuf, "the %d%s ", gm.m_shot.i, ordin(gm.m_shot.i));

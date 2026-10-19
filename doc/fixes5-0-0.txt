@@ -3126,6 +3126,11 @@ translated: the temple entry messages (priest.c), the malignant aura of
 	a curse (sit.c) and the note of a squeaky board (trap.c), which were
 	built from English fragments; French: the Chromatic Dragon is
 	feminine ("la Dragonne Chromatique"), as her quest texts say
+verbalize1() translates the sentence given as argument (temple priests);
+	a missile hitting the hero gets the article of its translated name
+	("touché par un cutter", not "a cutter"); quest texts: elision
+	before a rank ("d'Élève du Flux") and pronoun agreeing with the hero
+	("si pure soit-elle")
 
 
 NetHack Community Patches (or Variation) Included

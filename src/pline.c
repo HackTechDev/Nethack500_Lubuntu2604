@@ -560,6 +560,23 @@ verbalize(const char *line, ...)
 
     va_start(the_args, line);
     gp.pline_flags |= PLINE_VERBALIZE;
+    if (i18n_active() && !strcmp(line, "%s")) {
+        /* verbalize1(): translate the sentence given as argument, which
+           would otherwise be looked up with its quotes */
+        const char *arg = va_arg(the_args, const char *),
+                   *translation = flags.female ? C_("heroine", arg) : _(arg);
+
+        if (translation == arg)
+            translation = _(arg);
+        tmp = You_buf((int) strlen(translation) + sizeof "\"\"");
+        Strcpy(tmp, "\"");
+        Strcat(tmp, translation);
+        Strcat(tmp, "\"");
+        pline("%s", tmp);
+        gp.pline_flags &= ~PLINE_VERBALIZE;
+        va_end(the_args);
+        return;
+    }
     line = _(line);
     tmp = You_buf((int) strlen(line) + sizeof "\"\"");
     Strcpy(tmp, "\"");

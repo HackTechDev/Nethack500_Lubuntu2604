@@ -141,6 +141,11 @@ thitu(
     onm = (obj && obj_is_pname(obj)) ? the(name)
           : (obj && obj->quan > 1L) ? name
             : an(name);
+    /* an() and the() need the object name buffer itself to give the
+       article of a translated name, not a copy of it */
+    if (i18n_active() && !named && obj && obj->quan == 1L)
+        onm = obj_is_pname(obj) ? the(mshot_xname(obj))
+                                : an(mshot_xname(obj));
     is_acid = (obj && obj->otyp == ACID_VENOM);
 
     if (u.uac + tlev <= (dieroll = rnd(20))) {
