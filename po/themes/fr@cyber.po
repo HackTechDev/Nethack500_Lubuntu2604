@@ -114,6 +114,24 @@ msgstr "La Mégalopole"
 msgid "The Gnomish Mines"
 msgstr "Les Bas-fonds"
 
+msgid "entered the Gnomish Mines"
+msgstr "êtes entré dans les Bas-fonds"
+
+msgid "completed the Gnomish Mines"
+msgstr "terminé les Bas-fonds"
+
+msgid "You have entered the Gnomish Mines."
+msgstr "Vous êtes entré dans les Bas-fonds."
+
+msgid "You entered the Gnomish Mines."
+msgstr "Vous êtes entré dans les Bas-fonds."
+
+msgid "You have completed the Gnomish Mines."
+msgstr "Vous avez terminé les Bas-fonds."
+
+msgid "You completed the Gnomish Mines."
+msgstr "Vous avez terminé les Bas-fonds."
+
 msgid "Sokoban"
 msgstr "Les Entrepôts automatisés"
 
