@@ -9161,3 +9161,9 @@ msgstr "grande technoprêtresse @de %s"
 
 msgid " due to your lycanthropy"
 msgstr " à cause de votre cyberpsychose"
+
+# Résumé de l'antre de l'Exécuteur, accordé au texte du thème
+
+msgctxt "quest"
+msgid "[You %x the entrance to a cavern inside a hill.]"
+msgstr "[Vous parvenez à %x un trou béant au flanc d'un terril.]"
