@@ -45,11 +45,11 @@ msgid "Healer"
 msgstr "Medtech"
 
 msgid "Knight"
-msgstr "Lawman"
+msgstr "Avocat"
 
 msgctxt "feminine"
 msgid "Knight"
-msgstr "Lawman"
+msgstr "Avocate"
 
 msgid "Monk"
 msgstr "Moine augmenté"
@@ -2705,7 +2705,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "knight"
-msgstr "lawman"
+msgstr "avocat"
 
 msgctxt "gender"
 msgid "knight"
@@ -6436,7 +6436,7 @@ msgstr ""
 "Une odeur de mort et de désinfectant imprègne l'air.  Pas besoin d'être\n"
 "%Ra pour savoir que %n est sur le point de l'emporter."
 
-# Quête du Lawman (Kni)
+# Quête de l'Avocat (Kni)
 
 msgctxt "quest"
 msgid "Camelot Castle"
@@ -10056,3 +10056,7 @@ msgstr "aucune combinaison rôle+origine+sexe+ALIGNEMENT disponible"
 
 msgid "player_selection: bad race select value %d"
 msgstr "player_selection : valeur d'origine choisie incorrecte %d"
+
+# l'en-tête de ^X ne doit pas se confondre avec l'origine (race)
+msgid "Background:"
+msgstr "Parcours :"

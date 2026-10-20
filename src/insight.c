@@ -701,9 +701,11 @@ enlightenment(
     /* as in background_enlightenment, when poly'd we need to use the saved
        gender in u.mfemale rather than the current you-as-monster gender */
     Snprintf(buf, sizeof(buf), _("%s the %s's attributes:"), tmpbuf,
-             _(((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
-                ? gu.urole.name.f
-                : gu.urole.name.m));
+             ((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
+                ? _(gu.urole.name.f)
+                : gendered_word(gu.urole.name.m,
+                                (Upolyd ? u.mfemale : flags.female) ? 1
+                                                                    : 0));
 
     /* title */
     enlght_out(buf); /* "Conan the Archeologist's attributes:" */
