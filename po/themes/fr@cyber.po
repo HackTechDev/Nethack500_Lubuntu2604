@@ -6075,7 +6075,7 @@ msgid ""
 "    \"You must travel into the swamps to %i, and from there\n"
 "    follow the trail to %ns island lair.  Be careful.\""
 msgstr ""
-"Pour la première fois, vous devinez un sourire sur le visage d'%l.\n"
+"Pour la première fois, vous devinez un sourire sur le visage @de %l.\n"
 "\n"
 "    « Vous avez vraiment appris tout ce que nous pouvions vous enseigner\n"
 "    pour vous préparer à cette tâche.  Laissez-moi vous exposer les\n"
@@ -6189,13 +6189,13 @@ msgid ""
 msgstr ""
 "Quel bug vous a ramené{|e} @à %H ?  L'odeur des incinérateurs qui\n"
 "tournent à plein régime vous apprend que quelque chose ne va pas chez\n"
-"les charcudocs qui exerçaient ici.\n"
+"les medtechs qui exerçaient ici.\n"
 "\n"
 "Personne ne s'occupe des cuves de culture, et où sont passés les\n"
 "pauvres gens qui venaient se faire soigner à crédit ?\n"
 "\n"
 "Vous savez que vous devez gagner au plus vite la clinique, et\n"
-"le bloc opératoire d'%l, pour découvrir ce qui s'est passé en votre absence."
+"le bloc opératoire @de %l, pour découvrir ce qui s'est passé en votre absence."
 
 msgctxt "quest"
 msgid ""
@@ -6207,7 +6207,7 @@ msgid ""
 "heal them on your return, but not now."
 msgstr ""
 "Vous voici en vue de la sinistre Île @de %n.  Même\n"
-"les paroles d'%l ne vous avaient pas préparé{|e} à cela.\n"
+"les paroles @de %l ne vous avaient pas préparé{|e} à cela.\n"
 "\n"
 "Vous blindant contre les gémissements des malades qui vous percent les\n"
 "oreilles, vous vous hâtez d'accomplir votre tâche.  Peut-être pourrez-vous\n"
@@ -9926,3 +9926,86 @@ msgstr "la puce de crédit Yendorian Express Platine"
 msgctxt "quest"
 msgid "the Orb of Fate"
 msgstr "le Noyau du Destin"
+
+# Chefs de quête : titres de Night City (même forme que le nom français :
+# noms propres sans article, titres avec)
+
+msgctxt "monster"
+msgid "Lord Carnarvon"
+msgstr "Doyen Carnarvon"
+
+msgctxt "gender"
+msgid "Lord Carnarvon"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Pelias"
+msgstr "Papa Pélias"
+
+msgctxt "gender"
+msgid "Pelias"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Shaman Karnov"
+msgstr "Prophète Karnov"
+
+msgctxt "gender"
+msgid "Shaman Karnov"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Hippocrates"
+msgstr "Doc Hippocrate"
+
+msgctxt "gender"
+msgid "Hippocrates"
+msgstr "m"
+
+msgctxt "monster"
+msgid "King Arthur"
+msgstr "PDG Arthur"
+
+msgctxt "gender"
+msgid "King Arthur"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Grand Master"
+msgstr "Grand Maître du Flux"
+
+msgctxt "gender"
+msgid "Grand Master"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Arch Priest"
+msgstr "Archiprêtre du Code"
+
+msgctxt "gender"
+msgid "Arch Priest"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Orion"
+msgstr "Capitaine Orion"
+
+msgctxt "gender"
+msgid "Orion"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Master of Thieves"
+msgstr "Parrain des Voleurs"
+
+msgctxt "gender"
+msgid "Master of Thieves"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Lord Sato"
+msgstr "Oyabun Sato"
+
+msgctxt "gender"
+msgid "Lord Sato"
+msgstr "m"

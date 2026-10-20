@@ -439,6 +439,16 @@ elfes sont des réplicants, comme la race du héros, et les objets des
 races renommées sont « de mineur », « de réplicant » et « corpo ».  Les
 messages sur l'or parlent d'eddies.
 
+## Chefs de quête
+
+Neuf chefs de quête prennent un titre de Night City, de même forme que
+leur nom français (les noms propres sans article, les titres avec) :
+Doyen Carnarvon, Papa Pélias, Prophète Karnov, Doc Hippocrate, le PDG
+Arthur, le Grand Maître du Flux, l'Archiprêtre du Code, Capitaine Orion,
+le Parrain des Voleurs, Oyabun Sato.  Deuxfleurs, la Norne et Néferet
+la Verte gardent leur nom.  Les textes de quête du Medtech disent
+« @de %l » (« de Doc Hippocrate ») au lieu de « d'%l ».
+
 ## Encyclopédie
 
 Ce que montre `/` (ou `;`) quand on demande la description d'une chose
