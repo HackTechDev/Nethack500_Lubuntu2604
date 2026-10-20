@@ -57,6 +57,7 @@ C_("feminine plural", "%s is full."),
 NC_("heroine", "You feel less trippy now."),
 NC_("heroine", "You feel less confused now."),
 NC_("heroine", "You feel a little normal."),
+NC_("heroine", "You feel completely healed."),
 N_("corroded and rusty"), N_("rusty"), N_("corroded"),
 C_("feminine", "corroded and rusty"), C_("feminine", "rusty"),
 C_("feminine", "corroded"), N_("brown"), C_("feminine", "brown"),
@@ -392,14 +393,16 @@ make_hallucinated(
 {
     long old = HHallucination;
     boolean changed = 0;
-    const char *message, *verb;
+    const char *message;
 
     if (Unaware)
         talk = FALSE;
 
-    message = (!xtime) ? "Everything %s SO boring now."
-                       : "Oh wow!  Everything %s so cosmic!";
-    verb = (!Blind) ? "looks" : "feels";
+    /* whole sentences, so that each can be translated */
+    message = (!xtime) ? (!Blind ? N_("Everything looks SO boring now.")
+                                 : N_("Everything feels SO boring now."))
+                       : (!Blind ? N_("Oh wow!  Everything looks so cosmic!")
+                                 : N_("Oh wow!  Everything feels so cosmic!"));
 
     if (mask) {
         if (HHallucination)
@@ -451,7 +454,7 @@ make_hallucinated(
 
         disp.botl = TRUE;
         if (talk)
-            pline(message, verb);
+            pline1(message);
     }
     return changed;
 }

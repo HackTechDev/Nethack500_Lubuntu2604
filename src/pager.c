@@ -1346,8 +1346,15 @@ ia_checkfile(struct obj *otmp)
 {
     char itemnam[BUFSZ];
 
-    /* singular() of xname() of otmp is what "/i" looks up */
+    /* singular() of xname() of otmp is what "/i" looks up; the data
+       file is searched by English name */
+#ifdef NHI18N
+    i18n_suspend(TRUE);
+#endif
     Strcpy(itemnam, singular(otmp, xname));
+#ifdef NHI18N
+    i18n_suspend(FALSE);
+#endif
     return checkfile(itemnam, (struct permonst *) 0,
                      chkfilIaCheck | chkfilDontAsk, (char *) 0);
 }
@@ -1596,12 +1603,17 @@ checkfile(
                     char *entrytext = pass ? alt : dbase_str;
                     char question[QBUFSZ];
 
-                    Strcpy(question, "More info about \"");
-                    /* +2 => length of "\"?" */
-                    copynchars(eos(question), entrytext,
-                               (int) (sizeof question - 1
-                                      - (strlen(question) + 2)));
-                    Strcat(question, "\"?");
+                    if (i18n_active()) {
+                        Snprintf(question, sizeof question,
+                                 _("More info about \"%s\"?"), entrytext);
+                    } else {
+                        Strcpy(question, "More info about \"");
+                        /* +2 => length of "\"?" */
+                        copynchars(eos(question), entrytext,
+                                   (int) (sizeof question - 1
+                                          - (strlen(question) + 2)));
+                        Strcat(question, "\"?");
+                    }
                     if (y_n(question) == 'y')
                         yes_to_moreinfo = TRUE;
                 }
@@ -2430,7 +2442,14 @@ do_look(int mode, coord *click_cc)
             *out_str = '\0';
             for (invobj = gi.invent; invobj; invobj = invobj->nobj)
                 if (invobj->invlet == invlet) {
+                    /* the data file is searched by English name */
+#ifdef NHI18N
+                    i18n_suspend(TRUE);
+#endif
                     Strcpy(out_str, singular(invobj, xname));
+#ifdef NHI18N
+                    i18n_suspend(FALSE);
+#endif
                     break;
                 }
             if (*out_str)
@@ -2930,11 +2949,17 @@ do_supplemental_info(
         if (bp || bp2) {
             Strcpy(fullname, name);
             if (!without_asking) {
-                Strcpy(question, "More info about \"");
-                /* +2 => length of "\"?" */
-                copynchars(eos(question), entrytext,
-                        (int) (sizeof question - 1 - (strlen(question) + 2)));
-                Strcat(question, "\"?");
+                if (i18n_active()) {
+                    Snprintf(question, sizeof question,
+                             _("More info about \"%s\"?"), entrytext);
+                } else {
+                    Strcpy(question, "More info about \"");
+                    /* +2 => length of "\"?" */
+                    copynchars(eos(question), entrytext,
+                               (int) (sizeof question - 1
+                                      - (strlen(question) + 2)));
+                    Strcat(question, "\"?");
+                }
                 if (y_n(question) == 'y')
                 yes_to_moreinfo = TRUE;
             }

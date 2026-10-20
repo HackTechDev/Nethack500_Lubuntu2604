@@ -2225,7 +2225,8 @@ attributes_enlightenment(
         you_are("clairvoyant", from_what(CLAIRVOYANT));
     } else if ((HClairvoyant || EClairvoyant) && BClairvoyant) {
         Strcpy(buf, from_what(-CLAIRVOYANT));
-        (void) strsubst(buf, " because of ", " if not for ");
+        /* (from_what() gives a translated " because of %s") */
+        (void) strsubst(buf, _(" because of "), _(" if not for "));
         enl_msg(You_, "could be", "could have been", " clairvoyant", buf);
     }
     if (Infravision)

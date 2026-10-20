@@ -3155,6 +3155,11 @@ artifact names are translated for display (msgctxt "artifact", with their
 	gender under "objgender"); wishes and comparisons keep the English
 French cyberpunk theme: its own encyclopedia (dat/data-fr@cyber.base),
 	147 entries rewritten for Night City, written by po/encyclo-theme.py
+looking up an inventory item ("/" then "i", and the item action menu)
+	searches the encyclopedia by its English name when translating; the
+	"More info about" question, the hallucination message (whole
+	sentences instead of a "looks"/"feels" fragment), the heroine form
+	of "completely healed" and "if not for" in enlightenment translated
 
 
 NetHack Community Patches (or Variation) Included
