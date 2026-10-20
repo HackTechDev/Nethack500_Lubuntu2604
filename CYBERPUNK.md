@@ -16,7 +16,7 @@ toucher aux règles du jeu :
 - monstres : gnomes → squatteurs des sous-sols, orques → corporatistes, liches →
   IA corrompues, golems → drones, démons → entités du Réseau ;
 - lieux et rôles, à l'affichage seulement : Donjons du Destin →
-  Mégalopole, Mines des gnomes → Bas-fonds, Sokoban → Entrepôt automatisé,
+  Night City, Mines des gnomes → Bas-fonds, Sokoban → Entrepôt automatisé,
   le Magicien → Netrunner, la Valkyrie → Solo, le Samouraï → Ronin
   urbain, le Touriste → Corpo en goguette.
 
@@ -111,8 +111,8 @@ en goguette, Valkyrie → Solo, Magicien → Netrunner/Netrunneuse.
 Races : elfe → réplicant/réplicante, nain → mineur/mineuse, gnome →
 squatteur/squatteuse, orque → corporatiste ; humain reste humain.
 
-Lieux : Donjons du Destin → la Mégalopole, Mines des gnomes → les
-Bas-fonds, Sokoban → les Entrepôts automatisés, la Quête → le Contrat,
+Lieux : Donjons du Destin → Night City (d'abord « la Mégalopole »), Mines
+des gnomes → les Bas-fonds, Sokoban → les Entrepôts automatisés, la Quête → le Contrat,
 Fort Ludios → le Coffre-fort de Ludios, Géhennom → le Réseau profond, Plans
 élémentaires → les Couches du Réseau.  (Éviter les noms en « L' » : seuls
 « Le », « La », « Les » passent en minuscule dans les phrases.)
@@ -394,8 +394,8 @@ Tous les lots prévus sont faits ; les pistes pour plus tard sont dans
 
 ## Jargon du jeu de rôle Cyberpunk (en place)
 
-Les noms et termes génériques du jeu de rôle, sans ses noms propres
-(villes, corporations, gangs) :
+Les noms et termes génériques du jeu de rôle (ses noms propres sont venus
+ensuite, voir « Night City » ci-dessous) :
 
 - rôles : Techie, Nomade, Medtech, Lawman, Fixer/Fixeuse, Solo (voir
   plus haut) ; le rang « Nomade » des Sauvageons devient « Bourlingueur »
@@ -410,3 +410,23 @@ Les noms et termes génériques du jeu de rôle, sans ses noms propres
   nouvelles rumeurs, épitaphes et gravures.
 
 Les sections précédentes gardent les anciens noms des rôles.
+
+## Night City
+
+Le jeu se déroule à Night City, la ville du jeu de rôle Cyberpunk : la
+« Mégalopole » anonyme des premiers lots devient Night City (nom du
+donjon, textes de quête, rumeurs, gravures, Fixeuse et prêtres), et les
+noms propres du jeu de rôle peuvent servir, sans en copier les textes
+publiés :
+
+- les quartiers (Watson, Westbrook, Heywood, Pacifica, Santo Domingo,
+  City Center) et les Badlands autour ;
+- les corporations (Arasaka, Militech, Biotechnica...), auxquelles
+  peuvent appartenir les corporatistes et le Corpo en goguette ;
+- les gangs (Maelstrom, Tyger Claws, Valentinos, 6th Street, Voodoo
+  Boys...) ;
+- les forces de l'ordre (NCPD, MaxTac) et Trauma Team.
+
+« Night City » n'a pas d'article : « à Night City », « de Night City »
+(pas de contraction), « dans les rues de Night City ».  Les Bas-fonds
+gardent leur nom générique.
