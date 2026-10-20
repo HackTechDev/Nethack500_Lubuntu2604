@@ -9167,3 +9167,529 @@ msgstr " à cause de votre cyberpsychose"
 msgctxt "quest"
 msgid "[You %x the entrance to a cavern inside a hill.]"
 msgstr "[Vous parvenez à %x un trou béant au flanc d'un terril.]"
+
+# La magie devient du code : sort → programme, magie → piratage, magique
+# → numérique, de données... (objets, compétences, propriétés, pièges)
+
+msgctxt "object"
+msgid "amulet of magical breathing"
+msgid_plural "amulet of magical breathings"
+msgstr[0] "amulette de respiration assistée"
+msgstr[1] "amulettes de respiration assistée"
+
+msgctxt "objgender"
+msgid "amulet of magical breathing"
+msgstr "f"
+
+msgctxt "object"
+msgid "enchant armor"
+msgid_plural "enchant armors"
+msgstr[0] "optimisation d'armure"
+msgstr[1] "optimisations d'armure"
+
+msgctxt "objgender"
+msgid "enchant armor"
+msgstr "f"
+
+msgctxt "object"
+msgid "enchant weapon"
+msgid_plural "enchant weapons"
+msgstr[0] "optimisation d'arme"
+msgstr[1] "optimisations d'arme"
+
+msgctxt "objgender"
+msgid "enchant weapon"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic flute"
+msgid_plural "magic flutes"
+msgstr[0] "flûte hypnotique"
+msgstr[1] "flûtes hypnotiques"
+
+msgctxt "objgender"
+msgid "magic flute"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic harp"
+msgid_plural "magic harps"
+msgstr[0] "harpe hypnotique"
+msgstr[1] "harpes hypnotiques"
+
+msgctxt "objgender"
+msgid "magic harp"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic lamp"
+msgid_plural "magic lamps"
+msgstr[0] "lampe connectée"
+msgstr[1] "lampes connectées"
+
+msgctxt "objgender"
+msgid "magic lamp"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic mapping"
+msgid_plural "magic mappings"
+msgstr[0] "cartographie satellite"
+msgstr[1] "cartographies satellite"
+
+msgctxt "objgender"
+msgid "magic mapping"
+msgstr "f"
+
+msgctxt "object"
+msgid "magic missile"
+msgid_plural "magic missiles"
+msgstr[0] "trait de données"
+msgstr[1] "traits de données"
+
+msgctxt "objgender"
+msgid "magic missile"
+msgstr "m"
+
+msgctxt "object"
+msgid "wizard lock"
+msgid_plural "wizard locks"
+msgstr[0] "verrou crypté"
+msgstr[1] "verrous cryptés"
+
+msgctxt "objgender"
+msgid "wizard lock"
+msgstr "m"
+
+msgctxt "explosion"
+msgid "magical blast"
+msgstr "décharge de données"
+
+msgctxt "feminine"
+msgid "magic-protected"
+msgstr "protégée contre le piratage"
+
+msgctxt "symbol"
+msgid "magic portal"
+msgstr "portail de données"
+
+msgctxt "symbol a"
+msgid "magic portal"
+msgstr "un portail de données"
+
+msgctxt "symbol"
+msgid "magic trap"
+msgstr "piège à données"
+
+msgctxt "symbol a"
+msgid "magic trap"
+msgstr "un piège à données"
+
+msgctxt "killer a"
+msgid "magical explosion"
+msgstr "une surcharge électronique"
+
+msgctxt "monnoise"
+msgid "talks about spellcraft."
+msgstr "parle de code."
+
+msgctxt "monnoise"
+msgid "seems to mutter a cantrip."
+msgstr "semble marmonner une ligne de code."
+
+msgctxt "spell skill"
+msgid "enchantment"
+msgstr "optimisation"
+
+msgctxt "heroine"
+msgid "You are too weak from hunger for a teleport spell."
+msgstr "Vous êtes trop affaiblie par la faim pour un programme de téléportation."
+
+msgctxt "property"
+msgid "magical breathing"
+msgstr "respiration assistée"
+
+msgctxt "property"
+msgid "magic resistance"
+msgstr "résistance au piratage"
+
+msgctxt "property"
+msgid "half spell damage"
+msgstr "demi-dégâts des programmes"
+
+msgctxt "while"
+msgid ", while sleeping off a magical draught"
+msgstr ", en cuvant un stim douteux"
+
+msgctxt "trap"
+msgid "magic portal"
+msgstr "portail de données"
+
+msgctxt "trap"
+msgid "magic trap"
+msgstr "piège à données"
+
+msgctxt "skill"
+msgid "attack spells"
+msgstr "programmes d'attaque"
+
+msgctxt "skill"
+msgid "divination spells"
+msgstr "programmes de divination"
+
+msgctxt "skill"
+msgid "healing spells"
+msgstr "programmes de soins"
+
+msgctxt "skill"
+msgid "clerical spells"
+msgstr "programmes sacrés"
+
+msgctxt "skill"
+msgid "enchantment spells"
+msgstr "programmes d'optimisation"
+
+msgctxt "skill"
+msgid "escape spells"
+msgstr "programmes d'évasion"
+
+msgctxt "skill"
+msgid "matter spells"
+msgstr "programmes de matière"
+
+msgctxt "heroine"
+msgid "You feel more confident in your spell casting skills."
+msgstr "Vous vous sentez plus sûre de vos compétences en programmation."
+
+msgctxt "zap"
+msgid "magic missile"
+msgstr "trait de données"
+
+msgctxt "zap"
+msgid "spell"
+msgstr "programme"
+
+msgctxt "zapverb"
+msgid "spell"
+msgstr "programme"
+
+msgctxt "quest"
+msgid "\"Run while you can, %c.  My next spell will be your last.\""
+msgstr "« Fuis tant que tu le peux, %c.  Mon prochain programme sera ton dernier. »"
+
+# Messages sur les sorts et la magie : programmes, code, énergie
+
+msgid "%s casts a spell at a spot near you!"
+msgstr "%s exécute un programme sur un point près de vous !"
+
+msgid "%s casts a spell at thin air!"
+msgstr "%s exécute un programme dans le vide !"
+
+msgid "%s casts a spell at you!"
+msgstr "%s exécute un programme contre vous !"
+
+msgid "%s casts a spell at your displaced image!"
+msgstr "%s exécute un programme contre votre image déplacée !"
+
+msgid "%s mutters an incantation."
+msgstr "%s marmonne une ligne de code."
+
+msgid "Being confused, you mispronounce the magic words..."
+msgstr "Dans votre confusion, vous tapez mal le code..."
+
+msgid "Magic spreads through your body as you digest the amulet."
+msgstr "Le code de l'amulette se répand dans votre corps tandis que vous la digérez."
+
+msgid "The imaginary widget hits!  A hail of magic missiles strikes %s!"
+msgstr "Le bidule imaginaire frappe !  Une grêle de traits de données s'abat sur %s !"
+
+msgid "The imaginary widget hits!  A hail of magic missiles strikes you!"
+msgstr "Le bidule imaginaire frappe !  Une grêle de traits de données s'abat sur vous !"
+
+msgid "The new candle magically ignites!"
+msgstr "La nouvelle bougie s'allume toute seule !"
+
+msgid "The new candles magically ignite!"
+msgstr "Les nouvelles bougies s'allument toutes seules !"
+
+msgid "You can't cast that spell."
+msgstr "Vous ne pouvez pas exécuter ce programme."
+
+msgid "You continue your efforts to memorize the spell."
+msgstr "Vous poursuivez vos efforts pour mémoriser le programme."
+
+msgid "You don't have enough energy to cast that spell anymore."
+msgstr "Vous n'avez plus assez d'énergie pour exécuter ce programme."
+
+msgid "You don't have enough energy to cast that spell yet."
+msgstr "Vous n'avez pas encore assez d'énergie pour exécuter ce programme."
+
+msgid "You feel more confident in your spell casting skills."
+msgstr "Vous vous sentez plus sûr de vos compétences en programmation."
+
+msgid "You feel your magical energy drain away."
+msgstr "Vous sentez votre énergie s'écouler."
+
+msgid "You feel your magical energy drain away!"
+msgstr "Vous sentez votre énergie s'écouler !"
+
+msgid "Your knowledge of spell '%c' - %s is refreshed."
+msgstr "Votre connaissance du programme « %c » - %s est rafraîchie."
+
+msgid "Your knowledge of spell '%c' - %s is restored."
+msgstr "Votre connaissance du programme « %c » - %s est restaurée."
+
+msgid "You can leave the tutorial via the magic portal."
+msgstr "Vous pouvez quitter le tutoriel par le portail de données."
+
+msgid "Now you know the very basics. You can leave the tutorial via the magic portal."
+msgstr "Vous connaissez maintenant les bases. Vous pouvez quitter le tutoriel par le portail de données."
+
+msgid "Another magic portal, a way to leave this tutorial"
+msgstr "Un autre portail de données, pour quitter ce tutoriel"
+
+msgid "Spellcasting"
+msgstr "Exécuter des programmes"
+
+msgid "Unfortunately you don't have enough energy to cast spells."
+msgstr "Malheureusement, vous n'avez pas assez d'énergie pour exécuter des programmes."
+
+msgid "Use '%s' to cast a spell"
+msgstr "Utilisez “%s” pour exécuter un programme"
+
+msgid "display sparkly effect when resisting magic"
+msgstr "afficher un scintillement quand on résiste au piratage"
+
+msgid "You lose magical energy!"
+msgstr "Vous perdez de l'énergie !"
+
+msgid "You absorb magical energy!"
+msgstr "Vous absorbez de l'énergie !"
+
+msgid "a potion or spell"
+msgstr "un stim ou un programme"
+
+msgid "zap (cast) a spell"
+msgstr "exécuter un programme"
+
+msgid "list and reorder known spells"
+msgstr "lister et réordonner les programmes connus"
+
+msgid "cast any spell"
+msgstr "exécuter n'importe quel programme"
+
+msgid "You attempt a teleport spell."
+msgstr "Vous tentez un programme de téléportation."
+
+msgid "magic-protected"
+msgstr "protégé contre le piratage"
+
+msgid "Your spell casting "
+msgstr "Votre programmation "
+
+msgid " You have no energy points (spell power)."
+msgstr " Vous n'avez aucun point d'énergie (puissance de calcul)."
+
+msgid " You had no energy points (spell power)."
+msgstr " Vous n'aviez aucun point d'énergie (puissance de calcul)."
+
+msgid " You have all %d energy points (spell power)."
+msgstr " Vous avez la totalité de vos %d points d'énergie (puissance de calcul)."
+
+msgid " You had all %d energy points (spell power)."
+msgstr " Vous aviez la totalité de vos %d points d'énergie (puissance de calcul)."
+
+msgid " You have %d out of %d energy points (spell power)."
+msgstr " Vous avez %d points d'énergie (puissance de calcul) sur %d."
+
+msgid " You had %d out of %d energy points (spell power)."
+msgstr " Vous aviez %d points d'énergie (puissance de calcul) sur %d."
+
+msgid "%s casts a spell at empty water!"
+msgstr "%s exécute un programme sur l'eau vide !"
+
+msgid "%s casts a spell!"
+msgstr "%s exécute un programme !"
+
+msgid "%s casts at a clump of sticks, but nothing happens.%s"
+msgstr "%s exécute un programme sur un tas de bâtons, mais rien ne se passe.%s"
+
+msgid "You disenchant %s, you pay for it!"
+msgstr "Vous désoptimisez %s, vous le payez !"
+
+msgid "Being confused, it mispronounces the magic words..."
+msgstr "Dans sa confusion, il tape mal le code..."
+
+msgid "Being confused, %s mispronounces the magic words..."
+msgstr "Dans sa confusion, %s tape mal le code..."
+
+msgid "%s resists the magic!"
+msgstr "%s résiste au piratage !"
+
+msgid "A magic portal to nowhere."
+msgstr "Un portail de données vers nulle part."
+
+msgid "A magic fountain."
+msgstr "Une borne à eau programmée."
+
+msgid "As you put %s inside, you are blasted by a magical explosion!"
+msgstr "Quand vous mettez %s dedans, une surcharge électronique vous frappe !"
+
+msgid "As %s tumbles inside, you are blasted by a magical explosion!"
+msgstr "Quand %s tombe dedans, une surcharge électronique vous frappe !"
+
+msgid "Magical energies course through your body."
+msgstr "Des flux d'énergie parcourent votre corps."
+
+msgid "Divine knowledge of %s fills your mind!  Spell '%c'."
+msgstr "La connaissance divine @de %s emplit votre esprit !  Programme « %c »."
+
+msgid "Being confused, you misunderstand the magic words..."
+msgstr "Dans votre confusion, vous comprenez mal le code..."
+
+msgid "Your %s spins as %s blocks the spell!"
+msgstr "Votre %s tourne tandis que %s bloque le programme !"
+
+msgid "%s whispers an incantation."
+msgstr "%s murmure une ligne de code."
+
+msgid "You hear someone muttering an incantation."
+msgstr "Vous entendez quelqu'un marmonner une ligne de code."
+
+msgid "the \"%s\" spell"
+msgstr "le programme « %s »"
+
+msgid "Too many spells memorized!"
+msgstr "Trop de programmes mémorisés !"
+
+msgid "You are too impaired to cast a spell."
+msgstr "Vous êtes trop diminué pour exécuter un programme."
+
+msgid "You are unable to chant the incantation."
+msgstr "Vous êtes incapable de réciter le code."
+
+msgid "Your arms are not free to cast!"
+msgstr "Vos bras ne sont pas libres pour exécuter un programme !"
+
+msgid "You don't know any spells right now."
+msgstr "Vous ne connaissez aucun programme pour l'instant."
+
+msgid "Cast which spell? [%s *?]"
+msgstr "Exécuter quel programme ? [%s *?]"
+
+msgid "You don't know that spell."
+msgstr "Vous ne connaissez pas ce programme."
+
+msgid "Choose which spell to cast"
+msgstr "Choisissez le programme à exécuter"
+
+msgid "Cast which spell?"
+msgstr "Exécuter quel programme ?"
+
+msgid "Your knowledge of this spell is twisted."
+msgstr "Votre connaissance de ce programme est corrompue."
+
+msgid "You strain to recall the spell."
+msgstr "Vous peinez à vous rappeler le programme."
+
+msgid "You have difficulty remembering the spell."
+msgstr "Vous avez du mal à vous souvenir du programme."
+
+msgid "Your knowledge of this spell is growing faint."
+msgstr "Votre connaissance de ce programme s'estompe."
+
+msgid "Your recall of this spell is gradually fading."
+msgstr "Votre souvenir de ce programme s'efface peu à peu."
+
+msgid "You are too hungry to cast that spell."
+msgstr "Vous avez trop faim pour exécuter ce programme."
+
+msgid "You lack the strength to cast spells."
+msgstr "Vous manquez de force pour exécuter des programmes."
+
+msgid "You don't have enough energy to cast that spell."
+msgstr "Vous n'avez pas assez d'énergie pour exécuter ce programme."
+
+msgid "You fail to cast the spell correctly."
+msgstr "Vous ne parvenez pas à exécuter le programme correctement."
+
+msgid "The magical energy is released!"
+msgstr "L'énergie est libérée !"
+
+msgid "Where do you want to cast the spell?"
+msgstr "Où voulez-vous exécuter le programme ?"
+
+msgid "The spell dissipates over the distance!"
+msgstr "Le programme se dissipe avec la distance !"
+
+msgid "The spell is cut short!"
+msgstr "Le programme est interrompu !"
+
+msgid "by casting letter"
+msgstr "par lettre d'exécution"
+
+msgid "View known spells list sorted"
+msgstr "Trier la liste des programmes connus"
+
+msgid "Currently known spells"
+msgstr "Programmes actuellement connus"
+
+msgid "Reordering spells; swap '%c' with"
+msgstr "Réordonner les programmes ; échanger '%c' avec"
+
+msgid "You didn't know any spells."
+msgstr "Vous ne connaissiez aucun programme."
+
+msgid "Spells:"
+msgstr "Programmes :"
+
+msgid "[sort spells]"
+msgstr "[trier les programmes]"
+
+msgid "Spell %s already known."
+msgstr "Programme %s déjà connu."
+
+msgid "Too many spells memorized"
+msgstr "Trop de programmes mémorisés"
+
+msgid "%s magically floats up!"
+msgstr "%s s'élève tout seul !"
+
+msgid "You are too weak from hunger for a teleport spell."
+msgstr "Vous êtes trop affaibli par la faim pour un programme de téléportation."
+
+msgid "You lack the strength for a teleport spell."
+msgstr "Vous manquez de force pour un programme de téléportation."
+
+msgid "You lack the energy for a teleport spell."
+msgstr "Vous manquez d'énergie pour un programme de téléportation."
+
+msgid "You activated a magic portal!"
+msgstr "Vous avez activé un portail de données !"
+
+msgid "%s resists your magic!"
+msgstr "%s résiste à votre piratage !"
+
+msgid "You are caught in a magical explosion!"
+msgstr "Vous êtes pris dans une surcharge électronique !"
+
+msgid "Your body absorbs some of the magical energy!"
+msgstr "Votre corps absorbe une partie de l'énergie !"
+
+msgid "A hail of magic missiles narrowly misses you!"
+msgstr "Une grêle de traits de données vous frôle !"
+
+msgid "You are hit by magic missiles appearing from thin air!"
+msgstr "Des traits de données surgis de nulle part vous frappent !"
+
+msgid "Your %ld %s goes into the Magic Memory Vault."
+msgstr "Vos %ld %s rejoignent le Coffre de Mémoire Numérique."
+
+msgid "Zap spell"
+msgstr "Exécuter un programme"
+
+msgid "List/reorder spells"
+msgstr "Lister ou réordonner les programmes"
+
+msgid "Magic"
+msgstr "Code"
