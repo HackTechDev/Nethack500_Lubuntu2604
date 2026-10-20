@@ -48,8 +48,9 @@ while i < n:
                              or not src[i].strip()):
                 i += 1
             for t in new[k0]:
-                t = t.strip()
-                out.append(('\t\t' + t) if t.startswith('[') else ('\t' + t))
+                t = t.rstrip()  # leading spaces align columns (ranks)
+                out.append(('\t\t' + t.lstrip()) if t.lstrip().startswith('[')
+                           else ('\t' + t))
             out.append('')
         continue
     out.append(ln); i += 1
