@@ -10009,3 +10009,50 @@ msgstr "Oyabun Sato"
 msgctxt "gender"
 msgid "Lord Sato"
 msgstr "m"
+
+# --- « race » devient « origine » (choix du personnage, options) ---
+msgid "your starting race (e.g., Human, Elf)"
+msgstr "votre origine de départ (ex. Human, Elf)"
+
+msgid "show your character by race rather than role"
+msgstr "représenter votre personnage par son origine plutôt que son rôle"
+
+msgctxt "rolesel"
+msgid "race"
+msgstr "l'origine"
+
+msgid "Reset role/race/&c filtering"
+msgstr "Réinitialiser le filtre rôle/origine/etc."
+
+msgid "Set role/race/&c filtering"
+msgstr "Filtrer rôle/origine/etc."
+
+msgid "Incompatible race!"
+msgstr "Origine incompatible !"
+
+msgid "Pick a race or species"
+msgstr "Choisissez une origine ou une espèce"
+
+msgid "Unacceptable races"
+msgstr "Origines exclues"
+
+msgid "<race>"
+msgstr "<origine>"
+
+msgid "Race"
+msgstr "Origine"
+
+msgid "no available ROLE+race+gender+alignment combinations"
+msgstr "aucune combinaison RÔLE+origine+sexe+alignement disponible"
+
+msgid "no available role+RACE+gender+alignment combinations"
+msgstr "aucune combinaison rôle+ORIGINE+sexe+alignement disponible"
+
+msgid "no available role+race+GENDER+alignment combinations"
+msgstr "aucune combinaison rôle+origine+SEXE+alignement disponible"
+
+msgid "no available role+race+gender+ALIGNMENT combinations"
+msgstr "aucune combinaison rôle+origine+sexe+ALIGNEMENT disponible"
+
+msgid "player_selection: bad race select value %d"
+msgstr "player_selection : valeur d'origine choisie incorrecte %d"

@@ -76,7 +76,7 @@ safe_wait      exiger le préfixe « m » avant « . » ou « s » pour        [
                attendre ou fouiller à côté d'un monstre hostile
 sanity_check   vérifier la cohérence des données                       [False]
 showexp        afficher les points d'expérience accumulés              [False]
-showrace       vous représenter par votre race plutôt que par votre    [False]
+showrace       vous représenter par votre origine plutôt que par votre [False]
                rôle
 showvers       afficher le numéro de version dans les lignes d'état    [False]
 silent         ne pas utiliser la sonnerie du terminal                  [True]
@@ -410,8 +410,8 @@ pettype    votre sorte de familier préférée (cat, dog, horse,      [random]
            le chien ou le chat, pas le cheval.  Pour les rôles qui
            imposent une sorte, pettype est ignoré sauf s'il vaut « none ».
 playmode   jeu normal, mode exploration sans score ou mode débogage [normal]
-race       votre race de départ (par exemple race:Human, race:Elf). [random]
-           La plupart des rôles restreignent le choix de la race.
+race       votre origine (par exemple race:Human, race:Elf).        [random]
+           La plupart des rôles restreignent le choix de l'origine.
 role       votre rôle de départ (par exemple role:Barbarian,        [random]
            role:Valk).  Vous pouvez n'en donner que les premières
            lettres, mais le premier rôle qui correspond sera choisi ;

@@ -24,7 +24,7 @@ nethack -u nom-du-personnage [-X ou -D]
        -X ; s'il l'est, le nom du personnage devient « wizard ».
 
   Un nom de personnage peut avoir un suffixe indiquant tout ou partie du
-  rôle, de la race, du sexe et de l'alignement, comme -u Conan-Bar-Hum-Mal-Neu
+  rôle, de l'origine, du sexe et de l'alignement, comme -u Conan-Bar-Hum-Mal-Neu
   ou -u Tim-Wiz.  Chaque élément présent doit compter au moins trois lettres,
   mais peut être plus long ; la casse n'importe pas.  Voir aussi -p et -r,
   ci-dessous.
@@ -34,9 +34,9 @@ nethack -p Ppp -r Rrr [-@]
        'Ppp' est formé d'au moins trois lettres du nom du rôle, comme Val
        pour Valkyrie ; contrairement à -p lui-même, la casse de Ppp
        n'importe pas
-  '-r Rrr' indique la race ou l'espèce : Hum[an], Elf, Orc, Dwa[rf],
+  '-r Rrr' indique l'origine ou l'espèce : Hum[an], Elf, Orc, Dwa[rf],
        Gno[me] ;
-  '-@' forcer un démarrage sans question ; le rôle, la race, le sexe et
+  '-@' forcer un démarrage sans question ; le rôle, l'origine, le sexe et
        l'alignement qui ne sont indiqués ni sur la ligne de commande ni dans
        le fichier de configuration sont tirés au hasard sans rien demander ;
        il peut falloir protéger l'arobase en la faisant précéder d'une
@@ -114,7 +114,7 @@ nethack -s nom-du-personnage [nom2 [nom3 [...]]]
   nom spécial « all » affiche tous les scores qui satisfont les autres
   critères ;
 nethack -s -p Ppp -r Rrr
-  afficher les scores de certains rôles ou races ; on peut en donner
+  afficher les scores de certains rôles ou origines ; on peut en donner
   plusieurs ; si '-p' et '-r' sont tous deux utilisés, les scores qui
   correspondent à l'un ou l'autre sont affichés, et non ceux qui
   correspondent aux deux ;
