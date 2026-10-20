@@ -1380,6 +1380,7 @@ typedef uint32_t mmflags_nht;     /* makemon MM_ flags */
 #define PLINE_VERBALIZE 16
 #define PLINE_SPEECH    32
 #define NO_CURS_ON_U    64
+#define PLINE_GODDESS  128 /* translation agrees with a goddess */
 
 /* get_count flags */
 #define GC_NOFLAGS   0

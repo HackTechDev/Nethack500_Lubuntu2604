@@ -3148,6 +3148,9 @@ translated: temple priests' names, the shopkeeper's offer when selling, the
 	currency abbreviation of the bill, tin preparations agreeing with the
 	tin, lycanthropy and debug-mode property sources in enlightenment;
 	verbalize() puts translated quotes around translated sentences
+god names are translated (msgctxt "god": Athéna, Hermès, La Dame...),
+	the death reason keeping the English name; messages about a goddess
+	agree with her (msgctxt "goddess", pline flag PLINE_GODDESS)
 
 
 NetHack Community Patches (or Variation) Included

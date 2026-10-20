@@ -183,6 +183,14 @@ vpline(const char *line, va_list the_args)
         const char *translation = flags.female ? C_("heroine", line)
                                                : _(line);
 
+        /* a message about a goddess (pray.c) uses its "goddess" form */
+        if ((gp.pline_flags & PLINE_GODDESS) != 0) {
+            const char *g = C_("goddess", line);
+
+            if (g != line)
+                translation = g;
+        }
+
         if (translation != line) {
             english = line;
             if (strchr(english, '%')) {

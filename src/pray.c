@@ -5,6 +5,7 @@
 #include "hack.h"
 
 staticfn int prayer_done(void);
+staticfn boolean god_is_female(aligntyp);
 staticfn void maybe_turn_mon_iter(struct monst *);
 staticfn struct obj *worst_cursed_item(void);
 staticfn int in_trouble(void);
@@ -733,7 +734,14 @@ fry_by_god(aligntyp resp_god, boolean via_disintegration)
     You(!via_disintegration ? "fry to a crisp!"
                             : "disintegrate into a pile of dust!");
     svk.killer.format = KILLED_BY;
+    /* the death reason keeps the English name of the god */
+#ifdef NHI18N
+    i18n_suspend(TRUE);
+#endif
     Sprintf(svk.killer.name, "the wrath of %s", align_gname(resp_god));
+#ifdef NHI18N
+    i18n_suspend(FALSE);
+#endif
     done(DIED);
 }
 
@@ -762,9 +770,12 @@ angrygods(aligntyp resp_god)
     switch (rn2(maxanger)) {
     case 0:
     case 1:
+        if (god_is_female(resp_god))
+            gp.pline_flags |= PLINE_GODDESS;
         You_feel(Hallucination ? "that %s is bummed."
                                : "that %s is displeased.",
                  align_gname(resp_god));
+        gp.pline_flags &= ~PLINE_GODDESS;
         break;
     case 2:
     case 3:
@@ -1133,12 +1144,17 @@ pleased(aligntyp g_align)
     int trouble = in_trouble(); /* what's your worst difficulty? */
     int pat_on_head = 0, kick_on_butt;
 
-    You_feel("that %s is %s.", align_gname(g_align),
-             _((u.ualign.record >= DEVOUT)
+    {
+        const char *adj = (u.ualign.record >= DEVOUT)
                  ? Hallucination ? N_("pleased as punch") : N_("well-pleased")
                  : (u.ualign.record >= STRIDENT)
                        ? Hallucination ? N_("ticklish") : N_("pleased")
-                       : Hallucination ? N_("full") : N_("satisfied")));
+                       : Hallucination ? N_("full") : N_("satisfied");
+
+        /* the adjective agrees with a goddess */
+        You_feel("that %s is %s.", align_gname(g_align),
+                 god_is_female(g_align) ? C_("feminine", adj) : _(adj));
+    }
 
     /* not your deity */
     if (on_altar() && gp.p_aligntyp != u.ualign.type) {
@@ -1516,13 +1532,19 @@ godvoice(aligntyp g_align, const char *words)
     else
         words = "";
 
-    if (i18n_active())
+    if (i18n_active()) {
+        /* a goddess's words agree with her ("Tu m'as mise en colère.") */
+        const char *said = (*words && god_is_female(g_align)
+                            && C_("goddess", words) != words)
+                               ? C_("goddess", words) : _(words);
+
         pline(*words ? _("The voice of %s %s: \"%s\"")
                      : _("The voice of %s %s:"),
-              align_gname(g_align), _(ROLL_FROM(godvoices)), _(words));
-    else
-    pline_The("voice of %s %s: %s%s%s", align_gname(g_align),
-              ROLL_FROM(godvoices), quot, words, quot);
+              align_gname(g_align), _(ROLL_FROM(godvoices)), said);
+    } else {
+        pline_The("voice of %s %s: %s%s%s", align_gname(g_align),
+                  ROLL_FROM(godvoices), quot, words, quot);
+    }
 }
 
 staticfn void
@@ -1612,8 +1634,11 @@ desecrate_altar(boolean highaltar, aligntyp altaralign)
         u.ugangr += 5;
     }
     You_feel("the air around you grow charged...");
+    if (god_is_female(altaralign))
+        gp.pline_flags |= PLINE_GODDESS;
     pline("Suddenly, you realize that %s has noticed you...",
           align_gname(altaralign));
+    gp.pline_flags &= ~PLINE_GODDESS;
     Sprintf(gvbuf, "So, mortal!  You dare desecrate my %s!",
             highaltar ? "High Temple" : "altar");
     godvoice(altaralign, gvbuf);
@@ -1664,7 +1689,10 @@ offer_real_amulet(struct obj *otmp, aligntyp altaralign)
         adjalign(-99);
         pline("%s accepts your gift, and gains dominion over %s...",
               a_gname(), u_gname());
+        if (god_is_female(u.ualign.type))
+            gp.pline_flags |= PLINE_GODDESS;
         pline("%s is enraged...", u_gname());
+        gp.pline_flags &= ~PLINE_GODDESS;
         pline("Fortunately, %s permits you to live...", a_gname());
         pline(cloud_of_smoke, hcolor(NH_ORANGE));
         done(ESCAPED);
@@ -2663,8 +2691,40 @@ align_gname(aligntyp alignment)
     }
     if (*gnam == '_')
         ++gnam;
-    return gnam;
+    /* translated for display ("Athéna"); msgctxt "god" */
+    return C_("god", gnam);
 }
+
+#if 0
+/* for xgettext: the gods, translated by align_gname() and halu_gname() */
+NC_("goddess", "You feel that %s is displeased."),
+NC_("goddess", "You feel that %s is bummed."),
+NC_("goddess", "Suddenly, you realize that %s has noticed you..."),
+NC_("goddess", "%s is enraged..."), NC_("goddess", "Thou hast angered me."),
+NC_("feminine", "well-pleased"), NC_("feminine", "pleased"),
+NC_("feminine", "satisfied"), NC_("feminine", "pleased as punch"),
+NC_("feminine", "ticklish"), NC_("feminine", "full"),
+NC_("god", "Quetzalcoatl"), NC_("god", "Camaxtli"), NC_("god", "Huhetotl"),
+NC_("god", "Mitra"), NC_("god", "Crom"), NC_("god", "Set"),
+NC_("god", "Anu"), NC_("god", "Ishtar"), NC_("god", "Anshar"),
+NC_("god", "Athena"), NC_("god", "Hermes"), NC_("god", "Poseidon"),
+NC_("god", "Lugh"), NC_("god", "Brigit"), NC_("god", "Manannan Mac Lir"),
+NC_("god", "Shan Lai Ching"), NC_("god", "Chih Sung-tzu"),
+NC_("god", "Huan Ti"), NC_("god", "Issek"), NC_("god", "Mog"),
+NC_("god", "Kos"), NC_("god", "Solonor Thelandira"),
+NC_("god", "Aerdrie Faenya"), NC_("god", "Lolth"), NC_("god", "Mercury"),
+NC_("god", "Venus"), NC_("god", "Mars"), NC_("god", "Amaterasu Omikami"),
+NC_("god", "Raijin"), NC_("god", "Susanowo"), NC_("god", "Blind Io"),
+NC_("god", "The Lady"), NC_("god", "Offler"), NC_("god", "Tyr"),
+NC_("god", "Odin"), NC_("god", "Loki"), NC_("god", "Ptah"),
+NC_("god", "Thoth"), NC_("god", "Anhur"), NC_("god", "Moloch"),
+NC_("god", "the Flying Spaghetti Monster"), NC_("god", "Eris"),
+NC_("god", "the Martians"), NC_("god", "Xom"), NC_("god", "AnDoR dRaKoN"),
+NC_("god", "the Central Bank of Yendor"), NC_("god", "Tooth Fairy"),
+NC_("god", "Om"), NC_("god", "Yawgmoth"), NC_("god", "Morgoth"),
+NC_("god", "Cthulhu"), NC_("god", "the Ori"), NC_("god", "destiny"),
+NC_("god", "your Friend the Computer"),
+#endif
 
 static const char *const hallu_gods[] = {
     "the Flying Spaghetti Monster", /* Church of the FSM */
@@ -2732,7 +2792,7 @@ halu_gname(aligntyp alignment)
     }
     if (*gnam == '_')
         ++gnam;
-    return gnam;
+    return C_("god", gnam);
 }
 
 /* deity's title */
@@ -2758,6 +2818,14 @@ align_gtitle(aligntyp alignment)
     if (gnam && *gnam == '_')
         result = "goddess";
     return result;
+}
+
+/* is the god of that alignment a goddess? (for the agreement of
+   translated messages) */
+staticfn boolean
+god_is_female(aligntyp alignment)
+{
+    return (boolean) !strcmp(align_gtitle(alignment), "goddess");
 }
 
 void
