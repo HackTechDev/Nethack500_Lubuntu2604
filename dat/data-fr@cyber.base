@@ -17,18 +17,12 @@
 # Voir data.base pour le format.
 #
 abbot
-	Car il était depuis longtemps évident pour le comte Landulf qu'on
-	ne pouvait rien faire de son septième fils Thomas, sinon un Abbé
-	ou quelque chose de ce genre.  Né en 1226, il avait depuis
-	l'enfance une mystérieuse répugnance à devenir un aigle rapace,
-	ou même à s'intéresser comme tout le monde à la fauconnerie, aux
-	joutes ou à tout autre passe-temps de gentilhomme.  C'était un
-	garçon grand, lourd et tranquille, et d'un silence phénoménal,
-	n'ouvrant guère la bouche que pour dire soudain à son maître
-	d'école, d'une manière explosive : « Qu'est-ce que Dieu ? »  La
-	réponse n'a pas été conservée, mais il est probable que celui qui
-	posait la question continua de chercher lui-même des réponses.
-		[ The Runaway Abbot, de G.K. Chesterton ]
+	Abbé augmenté : chef d'un dojo de moines augmentés, il a remplacé
+	la méditation par la synchronisation et l'encens par le liquide de
+	refroidissement.  Ses élèves disent qu'il voit les coups venir
+	avant que vous ne les pensiez.
+		[ Témoignage d'un ancien élève du Dojo de Chan-Sune ]
+
 # takes "suit or piece of armor" when specifying '['
 # FIXME: "dragon scales, dragon scale mail" needs its own entry
 # FIXME too: "ac, armor class" also merits its own distinct entry
@@ -164,17 +158,12 @@ amulet of yendor
 	profondeurs du Sanctuaire de Moloch et l'offrir sur le grand autel
 	qui convient dans le Plan astral.
 angel*
-	Il leur répondit : Celui qui sème la bonne semence, c'est le Fils
-	de l'homme ; le champ, c'est le monde ; la bonne semence, ce sont
-	les fils du royaume ; l'ivraie, ce sont les fils du malin ;
-	l'ennemi qui l'a semée, c'est le diable ; la moisson, c'est la fin
-	du monde ; les moissonneurs, ce sont les anges.  Or, comme on
-	arrache l'ivraie et qu'on la jette au feu, il en sera de même à
-	la fin du monde.  [...]  Il en sera de même à la fin du monde :
-	les anges viendront séparer les méchants d'avec les justes, et
-	ils les jetteront dans la fournaise ardente ; c'est là qu'il y
-	aura des pleurs et des grincements de dents.
-		[ Évangile selon saint Matthieu, 13:37-42, 49-50 ]
+	Ange numérique : une IA de protection lâchée dans le monde par une
+	divinité ou par une corpo, on ne sait plus très bien la différence.
+	Elle frappe vite, parle en citations et ne se laisse pas
+	reprogrammer.
+		[ Notice de sécurité, Réseau profond ]
+
 angry god*
 	Un vent froid souffle.
 	Les dieux regardent avec colère ce pauvre enfant.
@@ -210,10 +199,11 @@ anshar
 	    [ Encyclopedia of Gods, de Michael Jordan ]
 ant
 * ant
-	Cette variété géante de la fourmi ordinaire se bat avec autant
-	d'acharnement que sa petite cousine éloignée.  Il en existe
-	plusieurs variétés, connues et redoutées pour la façon implacable
-	dont elles poursuivent leurs victimes.
+	Fourmis : cybernétiques, incendiaires, ou nanobots soldats lâchés
+	d'un labo de Biotechnica.  Elles vont en colonne, piquent en
+	groupe, et rentrent rarement au labo.
+		[ Rapport d'incident, NCPD, quartier de Heywood ]
+
 anu
 	Anu était le dieu babylonien des cieux, le monarque de l'étoile du
 	Nord.  C'était le plus ancien des dieux babyloniens, le père de
@@ -247,31 +237,18 @@ apple
 		[ The Devil's Dictionary, d'Ambrose Bierce ]
 archeolog*
 * archeologist
-	L'archéologie est la recherche des faits, pas de la vérité. [...]
-	Alors oubliez vos idées de cités perdues, de voyages exotiques
-	et de fouilles aux quatre coins du monde.  Nous ne suivons pas
-	de cartes au trésor, et jamais, au grand jamais, une croix ne
-	marque l'emplacement.
-		[ Indiana Jones and the Last Crusade ]
+	Techie : bricoleur de génie, capable de remettre en marche une
+	machine que personne n'a touchée depuis le Krach.  Il fouille les
+	ruines, démonte les épaves et revend ce qui marche encore.
+		[ Petites annonces, rubrique « Services » ]
 
-	« Je ne supporte pas les fouilles archéologiques, pour ma
-	part, dis-je.  Les gars qui les font ne trouvent jamais que des
-	murets et quelques tessons de poterie, puis ils s'excitent et
-	jurent qu'ils viennent de faire la découverte la plus
-	importante du siècle, les ruines d'un temple d'un kilomètre et
-	demi de haut couvert d'or, dédié à Frogmore, dieu des
-	Accessoires de Selle de Vélo, ou quelque chose du genre.
-	— Je crois que vous constaterez, dit M. Rune, qu'ils font cela
-	pour obtenir de nouveaux crédits de l'État pour leurs fouilles
-	et ainsi garder leur emploi.
-	— C'est une vision plutôt cynique », dis-je.
-		[ the brightonomicon, de Robert Rankin ]
 #		[title & author: same situation as with "bad luck" entry]
 archon
-	Les archontes sont les principaux habitants des cieux.  Si
-	insolite que soit leur apparence, ils ne sont en général pas
-	mauvais.  Ce sont des êtres en paix avec eux-mêmes et avec ce
-	qui les entoure.
+	Archonte numérique : IA d'un très haut niveau d'accréditation,
+	gardienne des Couches du Réseau.  Ceux qui l'ont croisée parlent
+	d'une lumière insupportable et d'un pare-feu qui pense.
+		[ Rumeur du Réseau profond ]
+
 arioch
 	Arioch, le démon protecteur des ancêtres d'Elric ; l'un des plus
 	puissants de tous les Ducs de l'Enfer, que l'on appelait
@@ -422,34 +399,21 @@ banshee
 		[ Brewer's Concise Dictionary of Phrase and Fable ]
 barbarian
 * barbarian
-	Ils étaient vêtus de la même façon : bottes en daim, culottes
-	de cuir et chemises en peau de cerf, avec de larges ceintures
-	où pendaient haches et épées courtes ; et tous étaient
-	décharnés, couturés de cicatrices, le regard dur, nerveux et
-	taciturnes.
-	C'étaient des sauvages, en un sens, mais un large fossé les
-	séparait encore du Cimmérien.  Ils étaient fils de la
-	civilisation, retournés à une semi-barbarie.  Lui était un
-	barbare issu de mille générations de barbares.  Ils avaient
-	acquis la ruse et la discrétion, mais lui était né avec.  Il
-	les surpassait même dans l'économie souple de ses mouvements.
-	Ils étaient des loups, mais lui était un tigre.
-		[ Conan - The Warrior, de Robert E. Howard ]
+	Nomade : né dans les Badlands, élevé dans un convoi, armé dès
+	l'enfance.  Il ne croit ni aux corpos ni aux villes, seulement à
+	sa famille et à son moteur.
+		[ Portrait des clans nomades, reportage de N54 News ]
+
 # takes "bat or bird" when specifying 'B'
 ~*combat
 ~*wombat
 *bat
 bat or bird
-	Une chauve-souris, qui voletait dans l'obscurité au dehors, se
-	trompa de chemin pendant sa ronde nocturne et entra par la
-	fenêtre que l'on avait laissée ouverte par souci d'hygiène.
-	Elle se mit alors à tourner dans la pièce de cette manière
-	stupide et sans but habituelle aux chauves-souris, qui comptent
-	notoirement parmi les créatures de Dieu les moins douées
-	intellectuellement.  Montrez-moi une chauve-souris, dit le
-	vieux proverbe, et je vous montrerai quelque chose qui devrait
-	être dans une sorte d'asile.
-		[ A Pelican at Blandings, de P.G. Wodehouse ]
+	Drones chauves-souris : petits appareils de surveillance au vol
+	erratique, qui foncent sur tout ce qui bouge.  Le drone vampire,
+	lui, prélève un échantillon de sang au passage.
+		[ Fiche de reconnaissance, MaxTac ]
+
 bear*trap
 	Piège à mâchoires : deux arcs d'acier qui se referment sur la
 	jambe de qui marche dessus.  Les squatteurs en sèment devant
@@ -457,23 +421,17 @@ bear*trap
 		[ Rapport de patrouille, NCPD ]
 
 *bee
-	Cette variété géante de sa cousine ordinaire et utile apparaît
-	d'habitude en petits groupes, à la recherche de matières
-	premières pour produire la gelée royale nécessaire à nourrir
-	leur reine.  En de rares occasions, on peut tomber sur une
-	ruche, où la reine est bien pourvue et gardée contre les
-	intrus.
-*beetle
-	[ Le Créateur ] a une prédilection démesurée pour les
-	coléoptères.
-		[ attribué au biologiste J.B.S. Haldane ]
+	Drones tueurs : essaims d'attaque programmés pour piquer et
+	injecter un poison.  La reine de l'essaim coordonne les autres ;
+	détruisez-la et l'essaim se disperse.  En théorie.
+		[ Manuel de défense contre les essaims, Militech ]
 
-	Nom commun des insectes aux ailes en forme de bouclier
-	(_Coleoptera_), l'une des dix sous-espèces entre lesquelles se
-	divisent les insectes.  Ils se caractérisent par les boucliers
-	(la paire d'ailes antérieures) sous lesquels sont repliées les
-	ailes postérieures.
-		[ Van Dale's Groot Woordenboek der Nederlandse Taal ]
+*beetle
+	Scarabée blindé : insecte modifié dont la carapace arrête les
+	balles de petit calibre.  Les gangs des égouts les élèvent pour
+	les combats du samedi soir.
+		[ Reportage clandestin, Pacifica ]
+
 bell of opening
 	« Un boulot à cloche, livre et chandelle. »
 	L'Économe soupira.  « Nous avons essayé, Archichancelier. »
@@ -533,37 +491,18 @@ ooze
 * ooze
 *pudding
 * slime
-	Ces créatures amiboïdes géantes ne ressemblent à rien d'autre
-	qu'à des flaques de vase, mais elles vivent et se déplacent,
-	se nourrissant de métal ou de bois, et à l'occasion d'un
-	explorateur de donjon pour compléter leur régime.
+	Blobs, boues et poudings : déchets chimiques qui ont commencé à
+	bouger tout seuls.  Ils rongent le métal, dissolvent la chair et
+	se divisent quand on les frappe.  Évitez de marcher dedans.
+		[ Fiche danger, service de voirie de Night City ]
 
-	Mais nous n'étions pas sur un quai de gare.  Nous étions sur la
-	voie, devant le cauchemar, colonne plastique d'iridescence
-	noire et fétide qui suintait, serrée, le long de son sinus de
-	cinq mètres, prenant une vitesse impie et poussant devant elle
-	un nuage en spirale, sans cesse épaissi, de la pâle vapeur de
-	l'abîme.  C'était une chose terrible, indescriptible, plus vaste
-	que n'importe quelle rame de métro -- un amas informe de bulles
-	protoplasmiques, faiblement luminescentes, avec des myriades
-	d'yeux éphémères se formant et se défaisant comme des pustules
-	de lumière verdâtre sur tout le front qui emplissait le tunnel
-	et fonçait sur nous, écrasant les manchots affolés et glissant
-	sur le sol luisant que cette chose et ses semblables avaient si
-	diaboliquement débarrassé de tout débris.
-		[ At the Mountains of Madness, de H.P. Lovecraft ]
 blue jelly
 ochre jelly
 spotted jelly
-	J'avais prévu comment empêcher le sas de se refermer derrière
-	moi ; cela demandait un sacrifice temporaire, pas de
-	l'intelligence.  Je me servis de la porte elle-même pour
-	m'aider à trancher une partie de mon corps, après avoir évacué
-	toute mémoire du morceau à abandonner.  Ce morceau, qui avait
-	l'air indiciblement cher et abandonné pour un bout de gelée
-	bleue, maintiendrait la porte extérieure ouverte jusqu'à mon
-	retour pour le réintégrer.
-		[ Beholder's Eye, de Julie E. Czerneda ]
+	Gelées : cryogéniques, acides ou corrosives.  Elles ne bougent
+	pas, ne mordent pas, et vous font regretter de les avoir touchées.
+		[ Fiche danger, service de voirie de Night City ]
+
 bone devil
 	Les diables osseux attaquent avec des armes et avec une grande
 	queue crochue qui fait perdre de la force à ceux qu'ils
@@ -770,38 +709,20 @@ s*d*g*r* cat
 *cat
 *feline
 kitten
-	Quadrupède domestique bien connu de la famille des félins
-	prédateurs (_Felis ochreata domestica_), au pelage épais et
-	doux ; souvent gardé comme animal de compagnie.  Divers
-	folklores associent le chat à la magie et aux dieux de l'Égypte
-	ancienne.
-		[]
+	Chats : chats-robots domestiques, aux yeux qui brillent dans le
+	noir, et félins de chair échappés des ménageries des corpos.  Les
+	uns ronronnent, les autres griffent ; certains font les deux.
+		[ Fiche d'adoption, refuge animalier de Westbrook ]
 
-	Ulthar s'endormit donc dans une vaine colère ; et quand les
-	gens s'éveillèrent à l'aube - voyez !  Chaque chat était
-	revenu à son foyer habituel !  Grands et petits, noirs, gris,
-	tigrés, jaunes et blancs, il n'en manquait aucun.  Les chats
-	avaient l'air très lisses et gras, et ronronnaient
-	sonorement de contentement.
-		[ The Cats of Ulthar, de H.P. Lovecraft ]
 # this one doesn't work very well for dwarven and gnomish cavemen
 cave dweller
 cave*man
 human cave*man
-	Il faisait maintenant assez clair pour partir.  Guetteur-de-Lune
-	ramassa le cadavre desséché et le traîna derrière lui en se
-	courbant sous le surplomb bas de la caverne.  Une fois dehors,
-	il jeta le corps sur son épaule et se tint debout - le seul
-	animal au monde capable de le faire.
-	Parmi les siens, Guetteur-de-Lune était presque un géant.  Il
-	mesurait près d'un mètre cinquante et, bien que gravement
-	sous-alimenté, pesait plus de quarante-cinq kilos.  Son corps
-	velu et musclé tenait à mi-chemin du singe et de l'homme, mais
-	sa tête était déjà bien plus proche de l'homme que du singe.
-	Le front était bas, et des bourrelets surmontaient les orbites,
-	mais il portait indéniablement dans ses gènes la promesse de
-	l'humanité.
-		[ 2001: A Space Odyssey, d'Arthur C. Clarke ]
+	Sauvageon : vit dans les tunnels du métro abandonné, chasse le rat
+	mutant et refuse le chrome.  Les corpos le méprisent ; les tunnels
+	le protègent.
+		[ Reportage « Les oubliés des Tunnels des Ancêtres » ]
+
 dwar* cave*man
 gnom* cave*man
 	C'était en un pays inculte, à l'aube rouge de la vie ;
@@ -843,17 +764,11 @@ gnom* cave*man
 #		  it appears that Volume 1 (of 13) was written by
 #		  William Sherwood Fox and edited by Louis Herbert Gray ]
 centipede
-	J'observai ici, ce que j'avais souvent vu auparavant, que
-	certains districts abondent en scolopendres.  Ici, ils ont le
-	corps rougeâtre clair et les pattes bleues ; on voit de grands
-	myriapodes ramper partout.  Bien qu'ils ne fassent aucun mal,
-	ils inspirent à l'homme un sentiment de dégoût.  Peut-être
-	notre apparence produit-elle un sentiment semblable chez
-	l'éléphant et les autres grands animaux.  Là où on les a
-	beaucoup dérangés, ils nous regardent assurément avec une
-	grande méfiance, comme l'horrible bipède qui ruine leur paix.
-		[ Travels and Researches in South Africa,
-			du Dr David Livingstone ]
+	Mille-pattes des égouts : long de deux mètres, venimeux, et
+	affamé.  Les égoutiers de Night City le craignent plus que les
+	gangs.
+		[ Témoignage d'un égoutier de Watson ]
+
 cerberus
 kerberos
 	Cerbère (ou Kerberos en grec) était le chien à trois têtes qui
@@ -908,20 +823,11 @@ citrine*
 	Variété jaune pâle de quartz cristallin qui ressemble à la
 	topaze.
 clay golem
-	Par une chaude nuit de printemps, un poing frappa à la porte si
-	fort que les gonds se tordirent.
-	Un homme ouvrit et scruta la rue.  La brume montait du fleuve
-	et la nuit était nuageuse.  Il aurait aussi bien pu essayer de
-	voir à travers du velours blanc.
-	Mais il pensa par la suite qu'il y avait eu des formes là-bas,
-	juste au-delà de la lumière qui se répandait sur la chaussée.
-	Beaucoup de formes, qui l'observaient attentivement.  Il pensa
-	qu'il y avait peut-être eu de très faibles points lumineux...
-	Pas moyen de se tromper sur la forme juste devant lui, en
-	revanche.  Elle était grande, rouge sombre, et ressemblait à un
-	homme modelé en argile par un enfant.  Ses yeux étaient deux
-	braises.
-		[ Feet of Clay, de Terry Pratchett ]
+	Drone d'argile : coque en céramique imprimée, programme gravé sur
+	une puce cachée dans le front.  Effacez la puce et il s'arrête ;
+	cassez la coque et il en imprime une autre.
+		[ Manuel de maintenance, gamme de drones de chantier ]
+
 cleaver
 	Fendoir industriel FI-9 : lame de démolition en acier trempé,
 	manche isolé, garantie six mois contre la casse (hors usage sur
@@ -1321,8 +1227,11 @@ dingo
 		[ Webster's Encyclopedic Unabridged Dictionary
 		    of the English Language ]
 disenchanter
-	Ne demandez pas ce que votre magie peut lui faire.  Demandez ce
-	qu'il peut faire à votre magie.
+	Désactivateur : machine de saisie du NCPD qui vide les objets de
+	leurs optimisations au simple contact.  Les Solos le détestent
+	plus que n'importe quelle arme.
+		[ Message sur un forum de Solos ]
+
 dispater
 	Le souverain romain du monde souterrain et de la fortune,
 	semblable à l'Hadès grec.  Tous les cent ans, on célébrait en
@@ -1360,12 +1269,11 @@ djinn*
 *dog
 pup*
 *canine
-	Animal domestique, le _chien domestique_ (_Canis familiaris_),
-	dont il existe de nombreuses races.  Le mâle s'appelle chien, et
-	la femelle chienne.  En raison de sa fidélité reconnue envers
-	l'homme et de sa douceur avec les enfants, c'est l'animal
-	domestique le plus populaire au monde.  On peut facilement le
-	dresser à accomplir diverses tâches.
+	Chiens : chiens-robots de garde, molosses-robots de combat et
+	chiens de chair des rues.  Ils obéissent au sifflet, gardent les
+	portes, et mordent quand on ne s'y attend pas.
+		[ Manuel du maître-chien, NCPD ]
+
 # typing "spellbook or a closed door" (map description for "+" when using
 # the default symbol set) shouldn't yield this entry
 ~trap*door
@@ -1487,29 +1395,12 @@ dungeon*
 ~dwar* cloak
 #~dwar* cave*man
 dwarf*
-	Les nains ont un visage d'homme (d'homme laid, à la peau ridée
-	et tannée), mais ils ont en général les pieds plats, les pieds
-	de canard, ou les pieds tournés vers l'arrière.  Ils sont de la
-	terre, terrestres, vivent dans les cavernes les plus sombres et
-	ne s'aventurent dehors qu'avec les capes qui les rendent
-	invisibles, d'autres déguisés en crapauds.  Les mineurs les
-	croisent souvent et nouent parfois avec eux des relations assez
-	étroites. ...  Les mineurs de Cornouailles étaient toujours ravis
-	d'entendre un bucca creuser avec ardeur, car tous les nains ont
-	un flair infaillible pour les métaux précieux.
-	Entre autres choses, on apprécie à juste titre les nains pour
-	leur habileté de forgerons et de joailliers : ils ont fait pour
-	Odin sa célèbre lance Gungnir, et pour Thor son marteau ; pour
-	Freyja ils ont conçu un magnifique collier, et pour Freyr un
-	sanglier d'or.  Et à leurs heures perdues, ils sont
-	d'excellents boulangers.  Ironie du sort, malgré leurs pieds
-	bizarres, ils aiment particulièrement danser.  Ils peuvent aussi
-	voir l'avenir, et sont par conséquent d'excellents
-	météorologues.  Ils savent se montrer généreux en cadeaux envers
-	ceux qu'ils aiment, et un présent nain a des chances de se
-	changer en or dans la main.  Mais dans l'ensemble, c'est un
-	peuple hargneux.
-	    [ The Immortals, de Derek et Julia Parker ]
+	Mineurs : ouvriers des Bas-fonds, petits, solides, toujours avec
+	un casque et une perceuse.  Ils creusent pour les corpos et gardent
+	pour eux ce qu'ils trouvent.  Leurs chefs portent des gilets en
+	nanofibre qu'ils ne quittent jamais.
+		[ Rapport syndical, mines des Bas-fonds ]
+
 # accept "dwarfish" and "dwarvish"
 dwar* cloak
 hooded cloak
@@ -1600,29 +1491,12 @@ electric eel
 elvenking
 elvenqueen
 elven monarch
-	Les Elfes étaient assis autour du feu, sur l'herbe ou sur des
-	rondelles sciées de vieux troncs.  Certains allaient et venaient,
-	portant des coupes et versant à boire ; d'autres apportaient de
-	la nourriture sur des assiettes et des plats bien garnis.
+	Réplicants : humanoïdes artificiels, plus rapides et plus beaux que
+	leurs créateurs, avec une date de péremption gravée quelque part.
+	Certains servent, d'autres fuient, quelques-uns règnent sur des
+	clans entiers dans les friches.
+		[ Note de service, division des chasseurs de réplicants ]
 
-	« C'est un piètre repas, dirent-ils aux hobbits ; car nous
-	logeons dans la forêt verte, loin de nos demeures.  Si jamais
-	vous êtes nos hôtes chez nous, nous vous traiterons mieux.
-	— Il me semble bien assez bon pour une fête d'anniversaire »,
-	dit Frodo.
-	Pippin ne se rappela plus tard presque rien de la nourriture ni
-	de la boisson, car son esprit était rempli de la lumière sur
-	les visages elfiques et du son de voix si variées et si belles
-	qu'il se sentait dans un rêve éveillé.  [...]
-
-	Sam ne put jamais décrire avec des mots, ni se représenter
-	clairement, ce qu'il ressentit ou pensa cette nuit-là, bien que
-	cela restât dans sa mémoire comme l'un des grands événements de
-	sa vie.  Le plus près qu'il en approcha fut de dire : « Eh bien,
-	monsieur, si je pouvais faire pousser des pommes comme ça, je
-	me dirais jardinier.  Mais c'est le chant qui m'est allé au
-	cœur, si vous voyez ce que je veux dire. »
-	   [ The Fellowship of the Ring, de J.R.R. Tolkien ]
 elven cloak
 	Cape de réplicant : tissu adaptatif qui se fond dans la pénombre
 	et étouffe les pas.  Les réplicants qui la portent passent devant
@@ -1783,28 +1657,11 @@ f* brand
 		[ Fil de discussion « Lames de légende », forum des Solos ]
 
 flesh golem
-	Avec une anxiété qui touchait presque à l'agonie, je rassemblai
-	autour de moi les instruments de la vie, afin d'insuffler une
-	étincelle d'existence à la chose inanimée qui gisait à mes
-	pieds.  Il était déjà une heure du matin ; la pluie battait
-	lugubrement les carreaux, et ma bougie était presque consumée
-	quand, à la lueur de la lumière à demi éteinte, je vis s'ouvrir
-	l'œil jaune et terne de la créature ; elle respira
-	profondément, et un mouvement convulsif agita ses membres.
+	Biodrone : un corps cousu de pièces de chair, animé par un
+	processeur de récupération.  Il ne souffre pas, n'oublie rien, et
+	sent mauvais.
+		[ Rapport du coroner, Night City ]
 
-	Comment décrire mes émotions devant cette catastrophe, ou
-	comment dépeindre le misérable que je m'étais efforcé de former
-	avec tant de peine et de soin infinis ?  Ses membres étaient
-	proportionnés, et j'avais choisi ses traits pour qu'ils soient
-	beaux.  Beaux !  Grand Dieu !  Sa peau jaune couvrait à peine le
-	travail des muscles et des artères en dessous ; ses cheveux
-	étaient d'un noir lustré et flottants ; ses dents d'une
-	blancheur nacrée ; mais ces splendeurs ne faisaient qu'un
-	contraste plus horrible avec ses yeux larmoyants, qui semblaient
-	presque de la même couleur que les orbites d'un blanc terne où
-	ils étaient enchâssés, son teint ratatiné et ses lèvres noires
-	et droites.
-		[ Frankenstein, de Mary Wollstonecraft Shelley ]
 flint*
 	Une émeraude est verte comme l'herbe ;
 	Un rubis rouge comme le sang ;
@@ -1817,14 +1674,11 @@ flint*
 	Mais un silex renferme le feu.
 		[ Precious Stones, de Christina Giorgina Rossetti ]
 floating eye
-	Les yeux flottants sont, sans surprise, de grands globes
-	oculaires flottants qui dérivent dans le donjon.  Bien qu'ils ne
-	soient pas dangereux en eux-mêmes, on redoute beaucoup leur
-	pouvoir de paralyser ceux qui regardent leur grand œil pendant
-	un combat.  Nombreuses sont les histoires de ceux qui ont frappé
-	un œil flottant, ont été paralysés par ses pouvoirs mystiques,
-	puis grignotés à mort par quelque autre créature qui rôdait
-	tout près.
+	Caméra flottante : une sphère de surveillance qui plane dans les
+	couloirs.  Ne la frappez surtout pas en la regardant : son flash
+	paralyse.  Les corpos en posent partout.
+		[ Conseil d'un Voleur de données ]
+
 *flute
 	Flûte : de bois, de plastique ou hypnotique.  La flûte
 	hypnotique émet une fréquence qui endort les monstres et les
@@ -1834,14 +1688,10 @@ floating eye
 
 # also takes fog/vapor cloud
 fog* cloud
-	Le brouillard vient
-	à petits pas de chat.
+	Nuage de smog : la pollution de Night City a fini par prendre vie.
+	Il s'enroule autour de vous et vous étouffe doucement.
+		[ Bulletin de qualité de l'air, mairie de Night City ]
 
-	Il s'assoit et regarde
-	le port et la ville
-	sur ses hanches silencieuses
-	puis repart.
-	     [ Fog, de Carl Sandburg ]
 # includes "food detection" and "detect food", which might not be the best
 *food*
 	Ration synthétique : un cube de nutriments compressés, sans goût
@@ -1977,16 +1827,11 @@ hell
 	Nouveau Testament, la Géhenne devint synonyme d'enfer.
 		[ Encyclopedia Mythica, éd. M.F. Lindemans ]
 gelatinous cube
-	Malgré sa popularité (ou peut-être à cause d'elle), le cube
-	gélatineux est aussi très connu comme l'un des monstres de jeu de
-	rôle les plus ridicules.  C'est une sorte de commentaire sur
-	l'omniprésence des donjons remplis de trésors dans l'univers de
-	Donjons et Dragons, car le cube est une créature spécialement
-	adaptée à l'écosystème d'un donjon.  Avec ses trois mètres de
-	côté, il parcourt les couloirs de donjon standard de trois
-	mètres sur trois, nettoyant les débris et redistribuant les
-	trésors en excrétant les objets métalliques indigestes.
-		[ Wikipédia, l'encyclopédie libre ]
+	Cube de gel industriel : un bloc de gel de nettoyage qui avale tout
+	ce qui traîne, objets comme passants.  Ce qu'il digère ressort
+	propre ; ce qu'il ne digère pas reste dedans.
+		[ Fiche produit retirée du catalogue de Biotechnica ]
+
 *gem
 gem or rock
 	La différence entre les faux souvenirs et les vrais est la même
@@ -2083,48 +1928,17 @@ gauntlets*
 #~gnom* cave*man
 gnome*
 gnomish wizard
-	...  Et puis un gnome passa, portant un ballot, un vieux
-	bonhomme trois fois plus grand qu'un diablotin et vêtu d'habits
-	d'une certaine sorte, en particulier d'un chapeau.  Et il était
-	visiblement tout aussi effrayé que les diablotins, bien qu'il ne
-	pût aller aussi vite.  Ramon Alonzo comprit qu'un grand malheur
-	devait tourmenter les êtres magiques ; et, comme les gnomes
-	parlent la langue des hommes et répondent si on leur parle avec
-	douceur, il souleva son chapeau et demanda au gnome son nom.  Le
-	gnome n'interrompit pas un instant son trottinement pressé en
-	répondant « Alaraba », et il saisit le bord de son chapeau mais
-	oublia de l'ôter.
-	« Quel est le problème, Alaraba ? dit Ramon Alonzo.
-	— La magie blanche.  Courez ! » dit le gnome...
-		[ The Charwoman's Shadow, de Lord Dunsany ]
+	Squatteurs : ils occupent les étages abandonnés et les sous-sols
+	de Night City, bricolent l'électricité et défendent leur territoire
+	à coups d'outils.  Leurs caïds et leurs parrains règnent sur des
+	immeubles entiers.
+		[ Étude sociologique sur les Bas-fonds ]
 
-	« Les Moldus ont des gnomes de jardin, eux aussi, tu sais », dit
-	Harry à Ron en traversant la pelouse.
-	« Ouais, j'ai vu ces trucs qu'ils prennent pour des gnomes, dit
-	Ron, plié en deux, la tête dans une pivoine, genre petits pères
-	Noël obèses avec des cannes à pêche... »
-	Il y eut un violent bruit de lutte, la pivoine frémit, et Ron se
-	redressa.  « Ça, c'est un gnome », dit-il d'un air sombre.
-	« Lâche-moi !  Lâche-moi ! » couina le gnome.
-	Il ne ressemblait vraiment pas au père Noël.  Il était petit,
-	l'air parcheminé, avec une grosse tête chauve et bosselée,
-	exactement comme une pomme de terre.  Ron le tenait à bout de
-	bras tandis qu'il lui donnait des coups de ses petits pieds
-	cornés ; il l'attrapa par les chevilles et le retourna la tête
-	en bas.
-	  [ Harry Potter and the Chamber of Secrets, de J.K. Rowling ]
 goblin
-	Or, les gobelins sont cruels, méchants et mauvais.  Ils ne font
-	pas de belles choses, mais ils en font beaucoup d'ingénieuses.
-	Ils savent creuser des tunnels et des mines aussi bien que
-	n'importe quels nains, hormis les plus habiles, quand ils s'en
-	donnent la peine, bien qu'ils soient d'ordinaire désordonnés et
-	sales.  Marteaux, haches, épées, poignards, pioches, tenailles,
-	et aussi instruments de torture, ils les font très bien, ou les
-	font faire selon leurs plans par d'autres, prisonniers et
-	esclaves qui doivent travailler jusqu'à en mourir faute d'air et
-	de lumière.
-	     [ The Hobbit, de J.R.R. Tolkien ]
+	Petite frappe : le dernier échelon des gangs, armé d'un cutter et
+	d'une grande gueule.  Elle frappe en groupe et fuit seule.
+		[ Rapport de patrouille, NCPD ]
+
 god
 goddess
 	Déesses et Dieux opèrent seuls, par trois, ou en panthéons
@@ -2149,40 +1963,22 @@ gold piece
 		[ Petit lexique de la rue ]
 
 gold golem
-	Il écarta les soufflets du feu, et rassembla dans un coffre
-	d'argent tous les outils avec lesquels il travaillait ; puis,
-	avec une éponge, il s'essuya le visage et les deux mains, et son
-	cou puissant et sa poitrine velue, revêtit une tunique, saisit
-	un gros bâton et sortit en boitant ; mais pour soutenir leur
-	seigneur s'empressèrent des servantes faites d'or, semblables à
-	des jeunes filles vivantes.  Elles ont l'intelligence dans le
-	cœur, et la parole et la force, et elles savent les travaux
-	habiles par la grâce des dieux immortels.
-		[ L'Iliade, d'Homère ]
+	Drone doré : un robot de luxe plaqué or, commandé par un
+	milliardaire pour garder sa collection.  Il garde maintenant la
+	collection de quelqu'un d'autre.
+		[ Petites annonces, rubrique « Objets perdus » ]
+
 ~flesh golem
 ~gold golem
 ~straw golem
 ~wood golem
 ~clay golem
 *golem
-	« L'histoire originale remonte, dit-on, au seizième siècle.  Un
-	rabbin, à l'aide de formules de la Kabbale perdues depuis
-	longtemps, aurait fabriqué un homme artificiel -- le fameux
-	Golem -- pour l'aider à sonner les cloches de la synagogue et à
-	toutes sortes d'autres tâches subalternes.
-	« Mais ce n'était pas un homme complet, et il était animé d'une
-	sorte de demi-vie végétative.  Le peu de vie qu'il avait,
-	toujours selon l'histoire, ne lui venait que du charme magique
-	placé chaque jour derrière ses dents, qui attirait à lui ce
-	qu'on appelait "la libre force sidérale de l'univers".
-	« Un soir, avant la prière du soir, le rabbin oublia de retirer
-	le charme de la bouche du Golem, et celui-ci fut pris de fureur.
-	Il se déchaîna dans les rues obscures, brisant tout sur son
-	passage, jusqu'à ce que le rabbin le rattrape, lui retire le
-	charme et le détruise.  Alors le Golem s'effondra, sans vie.  Il
-	n'en resta qu'une petite figurine d'argile, qu'on peut encore
-	voir dans la Vieille Synagogue. » ...
-	    [ The Golem, de Gustav Meyrink ]
+	Drones : de papier, de câbles, de cuir, de fer, de verre...  Ce sont
+	des machines sans esprit, qui exécutent un ordre jusqu'à la casse.
+	Les drones de combat de Militech ne connaissent pas la casse.
+		[ Brochure de démonstration, salon de la robotique ]
+
 grave
 	« Qui voudrait les creuser, dit le vieux, vieux homme,
 	Ces six pieds marqués à la craie ?
@@ -2220,21 +2016,11 @@ gremlin
 	Il pensait à cela quand l'homme réapparut.
 		[ Nightmare at 20,000 Feet, de Richard Matheson ]
 grid bug
-	Ces créatures de nature électronique ne sont pas originaires de
-	cet univers.  Elles semblent venir d'un monde dont les lois du
-	mouvement sont radicalement différentes des nôtres.
-	    []
+	Bug réseau : petit programme défectueux qui ne sait se déplacer
+	qu'en ligne droite.  Inoffensif, sauf pour l'orgueil du codeur qui
+	l'a laissé passer.
+		[ Commentaire dans un code source anonyme ]
 
-	Tron regarda sa compagne et pilote.  « Je vais vérifier la
-	connexion au rayon, Yori.  Vous deux, guettez les insectes de
-	grille. »  Tron avança le long de l'étroite passerelle qui
-	semblait toujours terriblement fragile à Flynn, bien qu'il la
-	sût étonnamment solide.  Il suivit Tron des yeux, en se
-	demandant ce que pouvait bien être un insecte de grille, et en
-	espérant que la connexion au rayon -- à laquelle il n'avait pas
-	accordé la moindre pensée jusqu'à cet instant -- était en bon
-	état.
-	    [ Tron, roman de Brian Daley, histoire de Steven Lisberger ]
 gunyoki
 	Le dernier repas du samouraï avant la bataille.  Il se composait
 	en général de châtaignes cuites, d'algues séchées et de saké.
@@ -2283,26 +2069,12 @@ healer
 attendant
 doctor
 physician
-	Je jure par Apollon médecin, par Asclépios, par Hygie et
-	Panacée, par tous les dieux et toutes les déesses, que je
-	remplirai, selon ma capacité et mon jugement, ce serment et cet
-	engagement -- de tenir celui qui m'a enseigné cet Art pour aussi
-	cher que mes parents, de partager avec lui mon avoir et de
-	pourvoir à ses besoins s'il le faut ; de considérer ses enfants
-	comme mes propres frères, et de leur enseigner cet art s'ils
-	veulent l'apprendre, sans salaire ni engagement ; et de
-	transmettre, par les préceptes, les leçons et tout autre mode
-	d'enseignement, la connaissance de l'Art à mes fils, à ceux de
-	mes maîtres, et aux disciples liés par un engagement et un
-	serment selon la loi médicale, mais à nul autre.  Je suivrai le
-	régime que, selon ma capacité et mon jugement, j'estimerai
-	profitable à mes malades, et je m'abstiendrai de tout ce qui est
-	nuisible et malfaisant.  [...]
-		[ Serment d'Hippocrate ]
+	Medtech : soignant de rue, une mallette de stims dans une main et
+	un scalpel laser dans l'autre.  Il opère dans les arrière-salles,
+	encaisse en liquide et ne pose pas de questions.  Trauma Team le
+	méprise ; ses patients l'adorent.
+		[ Portrait d'un charcudoc de Watson ]
 
-	MÉDECIN, n.  Celui sur qui nous lâchons nos espoirs quand nous
-	sommes malades, et nos chiens quand nous sommes bien portants.
-		[ The Devil's Dictionary, d'Ambrose Bierce ]
 heart of ahriman
 	Les trois autres retinrent brusquement leur souffle, et l'homme
 	brun et puissant qui se tenait à la tête du sarcophage murmura :
@@ -2424,31 +2196,11 @@ hobbit
 	deviennent difficiles à trouver.
 		[ The Fellowship of the Ring, de J.R.R. Tolkien ]
 hobgoblin
-	Hobgobelin.  Employé par les Puritains et par la suite pour
-	désigner de méchants esprits gobelins, comme dans le « ni
-	hobgobelin ni vil démon » de Bunyan, mais son emploi plus correct
-	désigne les esprits amicaux du type brownie.  Dans « Le Songe
-	d'une nuit d'été », une fée dit au Puck de Shakespeare :
-		Ceux qui t'appellent Hobgobelin, et doux Puck,
-		Tu fais leur travail, et ils auront de la chance :
-		N'est-ce pas toi ?
-	et à l'évidence Puck ne voudrait pas être appelé hobgobelin si
-	c'était un mot de mauvais augure.
-	Les hobgobelins sont dans l'ensemble de bonne humeur et prêts à
-	rendre service, mais ils aiment les farces, et comme la plupart
-	des fées, ce sont des gens assez méchants à contrarier.  Les
-	boggarts sont à la limite de la hobgobelinerie.  Les bogles sont
-	juste de l'autre côté.
-	Un Hob mentionné par Henderson était Hob-sans-Tête, qui hantait
-	la route entre Hurworth et Neasham, mais ne pouvait franchir la
-	petite rivière Kent, qui se jetait dans la Tees.  Il fut exorcisé
-	et enfermé sous une grosse pierre au bord de la route pour
-	quatre-vingt-dix-neuf ans et un jour.  Si quelqu'un était assez
-	imprudent pour s'asseoir sur cette pierre, il ne pourrait plus
-	jamais la quitter.  Les quatre-vingt-dix-neuf ans sont presque
-	écoulés ; on pourrait donc bientôt entendre parler de troubles
-	sur la route entre Hurworth et Neasham.
-		[ A Dictionary of Fairies, de Katharine Briggs ]
+	Gros dur : petite frappe qui a pris du muscle et du chrome.  Il
+	garde les portes des clubs, rackette les commerçants et règle les
+	disputes à coups de poing.
+		[ Rapport de patrouille, NCPD ]
+
 holy water
 	« Nous voulons te dire un mot », dit Ligur (d'un ton qui
 	laissait entendre que « mot » était synonyme d'« éternité
@@ -2521,17 +2273,12 @@ barbed devil
 	sont assez difficiles à tuer.
 ~horsem*
 *horse
-	Le roi Richard III : Un cheval ! un cheval ! mon royaume pour un
-	                     cheval !
-	Catesby : Retirez-vous, monseigneur ; je vous trouverai un
-	          cheval.
-	Le roi Richard III : Maraud, j'ai mis ma vie sur un coup de dés,
-	                     Et j'en courrai le hasard jusqu'au bout :
-	                     Je crois qu'il y a six Richmond sur le champ ;
-	                     J'en ai tué cinq aujourd'hui au lieu de lui.
-	                     Un cheval ! un cheval ! mon royaume pour un
-	                     cheval !
-		[ King Richard III, de William Shakespeare ]
+	Motos-chevaux et motos-destriers : montures mécaniques à quatre
+	pattes, conçues pour les terrains où les roues ne passent pas.
+	Elles ruent, elles hennissent par haut-parleur, et elles coûtent
+	plus cher qu'une voiture.
+		[ Catalogue d'un concessionnaire des Badlands ]
+
 *horsem*
 rider*
 death
@@ -2600,23 +2347,18 @@ student
 warrior
 *watch*
 human or elf*
-	Ces étranges créatures vivent surtout à la surface de la terre,
-	se rassemblant en sociétés de formes diverses, mais de temps à
-	autre l'une d'elles s'égare dans les profondeurs et sème le
-	désordre parmi les résidents du donjon qui, naturellement,
-	voient souvent d'un mauvais œil l'intrusion de telles bêtes.
-	Ils sont capables d'utiliser armes et magie, et la rumeur veut
-	même que le Sorcier de Yendor soit membre de cette espèce.
+	Humains : vigiles, infirmières-androïdes, stagiaires, ninjas,
+	gardiens et guerriers de toute sorte.  Night City en compte des
+	millions ; la plupart travaillent pour quelqu'un qui ne les connaît
+	pas.
+		[ Recensement municipal, introduction ]
+
 hunter
-	Et la chasse, hardi chasseur ?
-	Frère, la veille fut longue et froide.
-	Et la proie que tu allais tuer ?
-	Frère, elle broute encore dans la jungle.
-	Où est la force qui faisait ta fierté ?
-	Frère, elle s'écoule de mon flanc et de mon côté.
-	Où vas-tu donc, si pressé ?
-	Frère, je vais à mon repaire pour mourir.
-		[ The Jungle Book, de Rudyard Kipling ]
+	Pisteur : chasseur de primes au service d'un Traqueur, capable de
+	suivre une trace dans la poussière des Badlands comme dans les
+	logs d'un serveur.
+		[ Annonce d'une agence de chasseurs de primes ]
+
 # added in PR #1108 by NullCGT for ice box object but has been changed to
 # ice terrain
 # note: this might need to be reformatted; it's much wider than other entries
@@ -2661,20 +2403,11 @@ idefix
 # takes "imp or minor demon" when specifying 'i'
 imp
 imp or minor demon
-	 ... des diablotins... petites créatures de soixante centimètres
-	de haut qui pouvaient gambader et sauter prodigieusement ; ...
-		[ The Charwoman's Shadow, de Lord Dunsany ]
+	Virus : petit programme malveillant qui a fini par se donner un
+	corps.  Il ricane, il pique, il se régénère, et il revient toujours
+	au pire moment.
+		[ Bulletin de sécurité, Netwatch ]
 
-	En anglais, un « imp » est une pousse ou une bouture.  Ainsi, un
-	« ymp tree » était un arbre greffé, ou issu d'une bouture et non
-	d'une graine.  « Imp » signifie proprement un petit diable, une
-	pousse de Satan, mais la distinction entre les gobelins ou les
-	bogles et les diablotins de l'enfer est difficile à faire, et
-	beaucoup, dans les pays celtes comme chez les Puritains anglais,
-	considéraient toutes les fées comme des diables.  Les fées de la
-	tradition oscillent souvent, mal à l'aise, entre l'état de
-	fantôme et l'état diabolique.
-		[ A Dictionary of Fairies, de Katharine Briggs ]
 # "amorous demon" is a placeholder until something better comes along
 incubus
 succubus
@@ -2808,19 +2541,10 @@ jacinth*
 	Tel est-Il parmi les fils. »
 		[ The Beloved, de May Probyn ]
 jackal
-	Dans les contes populaires asiatiques, le chacal pourvoit aux
-	besoins du lion ; il lève le gibier, que le lion tue et mange,
-	et reçoit les restes en récompense.  Dans les histoires du nord
-	de l'Inde, on l'appelle parfois « ministre du roi », c'est-à-dire
-	du lion.  De la légende selon laquelle il ne tue pas sa propre
-	nourriture est née celle de sa lâcheté.  Il ne faut jamais
-	manger le cœur d'un chacal, par exemple, selon la croyance des
-	peuples indigènes des régions où le chacal abonde. ...  Dans les
-	contes haoussas, le Chacal joue le rôle de juge sagace et on
-	l'appelle « Ô Savant de la Forêt ».  Les Bochimans disent que le
-	Chacal se comporte comme il le fait « parce qu'il est le
-	Chacal ».
-		[ Funk & Wagnalls Standard Dictionary of Folklore ]
+	Chien errant : bâtard maigre qui chasse en meute dans les ruelles.
+	Seul, il a peur ; à six, il n'a plus peur de rien.
+		[ Conseil aux nouveaux arrivants, guide de Night City ]
+
 *jack*boot*
 	Grande botte montant au-dessus du genou, servant d'armure de
 	protection pour la jambe, portée par les cavaliers aux XVIIe et
@@ -2960,56 +2684,25 @@ stiletto
 
 knight
 * knight
-	Ci-gît le noble chevalier sans peur,
-	Dont la vaillance s'éleva si haut ;
-	Quand la Mort enfin l'eut abattu,
-	À lui furent la victoire et la gloire.
-	Il faisait peu de cas du monde,
-	Et était un épouvantail aux yeux des hommes ;
-	Mais il eut la fortune, en son âge,
-	De vivre en fou et de mourir en sage.
-	  [ Don Quichotte de la Manche, de Miguel de Cervantes Saavedra ]
+	Lawman : flic, shérif ou agent d'une corpo de sécurité, il fait
+	appliquer la loi, ou du moins celle de son employeur.  Il ne tire
+	pas dans le dos, par principe ; ses collègues, si.
+		[ Code de conduite du NCPD, article premier ]
+
 ~kobold ??m*
 *kobold*
-	La race des kobolds serait une création artificielle d'un maître
-	magicien (un demi-dieu ?).  Ils mesurent environ un mètre et ont
-	une face vaguement canine.  Ils vouent une violente aversion à
-	la race des Elfes, et se donneront toujours du mal pour causer
-	des ennuis aux Elfes.
+	Voyous : jeunes des rues, petits et teigneux, qui traînent en bande
+	autour des distributeurs.  Leurs chefs et cheffes portent une veste
+	plus chère et le même regard.
+		[ Rapport de patrouille, NCPD ]
+
 *kop*
 rubber hose
-	Les Kops sont une idée brillante.  Prendre une bande de
-	policiers ineptes et les montrer encore et encore dans une série
-	de châtiments physiques désopilants plaît autant au poulailler
-	qu'aux loges coûteuses.  Les gens détestent les flics.  Même les
-	gens qui n'ont jamais eu affaire aux flics les détestent.  Bien
-	sûr, nous comptons sur eux pour maintenir l'ordre et nous
-	protéger quand nous avons besoin de protection, et nous les
-	adorons dans les séries télévisées où ils ont des nerfs d'acier
-	et un cœur d'or, mais dans l'abstrait, en tant que nation,
-	collectivement, nous les détestons.  Ils ressemblent trop aux
-	proviseurs de lycée.  Nous sommes ravis de voir leur pantalon
-	tomber, et nous les trouvons beaux avec de la tarte sur la
-	figure.  Les Keystone Kops arrivent -- et ils en sont punis, en
-	se rentrant dedans, en tombant, et en subissant humiliation sur
-	humiliation.  Voilà la satisfaction cinématographique à l'état
-	pur.
+	Flics du NCPD : sous-payés, mal équipés, toujours en retard, et
+	pourtant toujours là quand on ne les attend pas.  Leurs matraques
+	font mal, leurs procès-verbaux aussi.
+		[ Éditorial d'un journal pirate de Watson ]
 
-	Les Kops sont présentés avec beaucoup d'habileté.  L'originalité
-	comique et le sens du rythme de l'une de leurs scènes de
-	poursuite demandent de l'imagination pour les concevoir, du
-	talent pour les exécuter, une compréhension du médium et, bien
-	sûr, un courage brut pour les jouer.  Les Kops sont des fous
-	présentés comme des incompétents, et ce sont des fous qui
-	foncent dans tous les sens dans des machines modernes.  Qui plus
-	est, les machines qu'ils conduisaient dans leurs numéros étaient
-	nouvellement inventées et encore inconnues du spectateur moyen.
-	(Aux premiers temps de l'automobile, on rapporte qu'il n'y avait
-	que deux voitures immatriculées dans tout Kansas City, et
-	qu'elles se sont percutées.  Il y a de la poésie et de la
-	philosophie dans ce fait, mais surtout de l'humour.  Sennett a
-	saisi l'humour.)
-		[ Silent Stars, de Jeanine Basinger ]
 kos
 	« Je ne suis pas un lâche ! s'écria-t-il.  J'oserai affronter la
 	Maison des Voleurs, je te rapporterai la tête de Krovas et la
@@ -3164,45 +2857,18 @@ leu*otta
 	imiter la voix humaine.
 		[ Curious Creatures in Zoology, de John Ashton ]
 leprechaun
-	Le Leprechaun irlandais est le cordonnier des Fées, et on le
-	connaît sous divers noms selon les régions d'Irlande :
-	Cluricaune à Cork, Lurican dans le Kerry, Lurikeen dans le
-	Kildare et Lurigadaun dans le Tipperary.  Bien qu'il travaille
-	pour les Fées, le Leprechaun n'est pas de la même espèce.  Il est
-	petit, a la peau sombre et porte des vêtements étranges.  Son
-	caractère a quelque chose de maniaco-dépressif : d'abord il est
-	tout content, sifflotant gaiement en clouant une semelle sur une
-	chaussure ; quelques minutes plus tard, il est maussade et
-	morose, ivre de sa bière de bruyère maison.  Les deux grandes
-	passions du Leprechaun sont le tabac et le whiskey, et c'est un
-	escroc de premier ordre, impossible à duper.  Personne, si malin
-	soit-il, n'a jamais réussi à lui soutirer son pot d'or caché ou
-	son shilling magique.  À la dernière minute, il trouve toujours
-	un moyen de détourner l'attention de celui qui l'a capturé et
-	disparaît en un clin d'œil.
-		[ A Field Guide to the Little People
-		    de Nancy Arrowsmith et George Moorse ]
+	Racketteur : petit homme rapide qui vous soulage de vos eddies
+	avant que vous l'ayez vu, puis disparaît par la première fenêtre.
+	On ne le rattrape pas : on le paie, ou on le perd.
+		[ Plainte déposée au NCPD, classée sans suite ]
+
 *lich
-	Mais sur ses talons, avant que le couchant ne s'efface, vint une
-	seconde apparition, avançant à pas incroyables et s'arrêtant
-	quand elle me domina presque dans le crépuscule rouge -- la
-	momie monstrueuse de quelque roi ancien, encore couronnée d'or
-	inaltéré, mais tournant vers mon regard un visage que plus que
-	le temps ou le ver avait ravagé.  Des bandelettes déchirées
-	battaient autour des jambes de squelette, et au-dessus de la
-	couronne sertie de saphirs et de rubis orangés, quelque chose de
-	noir se balançait et hochait horriblement ; mais, un instant, je
-	ne devinai pas ce que c'était.  Puis, en son milieu, deux yeux
-	obliques et écarlates s'ouvrirent et luirent comme des charbons
-	infernaux, et deux crocs d'ophidien étincelèrent dans une bouche
-	simiesque.  Une tête trapue, sans poil, informe, au bout d'un cou
-	d'une longueur disproportionnée, se pencha indiciblement et
-	murmura à l'oreille de la momie.  Alors, d'une seule enjambée, la
-	liche titanesque franchit la moitié de la distance qui nous
-	séparait, et des plis du linceul en lambeaux s'éleva un bras
-	décharné, et des doigts sans chair, armés de griffes, chargés de
-	gemmes menaçantes, se tendirent et cherchèrent ma gorge...
-		[ The Abominations of Yondo, de Clark Ashton Smith ]
+	IA corrompues : des intelligences artificielles qui ont survécu à
+	leur propre effacement et ont décidé de ne plus mourir.  Les IA
+	démentes, maîtresses et suprêmes commandent des légions de
+	programmes morts-vivants dans le Réseau profond.
+		[ Rapport confidentiel, Netwatch ]
+
 lichen
 	La chambre était de roc brut, ronde, autant qu'on pouvait en
 	juger, de six mètres de diamètre environ, et égayée d'une riche
@@ -3215,9 +2881,11 @@ lichen
 ~* of light
 * light
 light
-	Étranges créatures formées d'énergie plutôt que de matière, les
-	lumières ont un comportement autodestructeur quand elles
-	combattent leurs ennemis.
+	Hologrammes : aveuglants ou psychédéliques, ils explosent en une
+	gerbe de lumière qui laisse leurs victimes aveugles ou hallucinées
+	pendant des heures.
+		[ Avertissement à l'entrée d'une boîte de nuit de Pacifica ]
+
 gecko
 iguana
 lizard
@@ -3335,22 +3003,12 @@ lycanthrope
 were*
 human were*
 *were
-	En 1573, le Parlement de Dole publia un arrêt permettant aux
-	habitants de la Franche-Comté de poursuivre et de tuer un
-	loup-garou qui infestait cette province, « nonobstant les lois
-	existantes sur la chasse ».  Le peuple fut autorisé à
-	« s'assembler avec épieux, hallebardes, piques, arquebuses et
-	bâtons, pour chasser et poursuivre ledit loup-garou en tous
-	lieux où il le pourrait trouver, et le prendre, brûler et tuer,
-	sans encourir aucune amende ni autre peine ».  La chasse semble
-	avoir réussi, à en juger par le fait que le même tribunal, l'année
-	suivante, condamna au bûcher un nommé Gilles Garnier, qui
-	courait à quatre pattes dans les forêts et les champs et dévorait
-	de petits enfants, « même le vendredi ».  Le pauvre lycanthrope,
-	semble-t-il, avait aussi peu de respect pour les fêtes de l'Église
-	que le cochon français, qu'aucun sentiment de piété ne retenait
-	de manger des nourrissons un jour de jeûne.
-		[ The History of Vampires, de Dudley Wright ]
+	Cyberpsychose : quand le chrome prend le dessus sur la chair, le
+	porteur perd le contrôle et devient une bête.  Les cyberpsychos des
+	égouts, des ruelles ou alphas transmettent leur folie en mordant.
+	MaxTac s'en occupe ; ou une prière, si l'on a encore un dieu.
+		[ Brochure de prévention, Trauma Team ]
+
 lynx
 	Rêver que l'on voit un lynx : des ennemis sapent vos affaires et
 	troublent votre vie de famille.  Pour une femme, ce rêve indique
@@ -3400,8 +3058,11 @@ magicbane
 		[ Archives de Néferet la Verte ]
 
 mail d*emon
-	La rumeur veut que ces étranges créatures ne puissent être
-	blessées que par des canidés domestiques.
+	Démon de messagerie : un programme de livraison qui a pris forme
+	pour vous remettre votre courrier en main propre.  Ne tirez pas
+	dessus : il a peut-être une bonne nouvelle.
+		[ Mention légale d'un fournisseur de messagerie ]
+
 ma*annan*
 	Généralement appelé Manannan, le fils de Ler était le protecteur
 	des marchands et des marins.  Manannan avait une épée qui ne
@@ -3568,19 +3229,17 @@ mercury
 	représente communément portant un caducée (un bâton autour
 	duquel s'entrelacent deux serpents) et une bourse.
 *mimic
-	Ancêtres du caméléon moderne, ces créatures peuvent prendre la
-	forme de n'importe quoi dans leur environnement.  Elles peuvent
-	prendre l'apparence d'objets ou d'éléments du donjon.  Mais
-	contrairement au caméléon, qui prend la forme d'une autre
-	créature et part à la recherche de nourriture, le mimique attend
-	patiemment que ses repas viennent le chercher.
+	Leurres : machines de piège qui prennent l'apparence d'un coffre,
+	d'une porte ou d'un tas d'eddies.  Quand on les touche, on reste
+	collé.
+		[ Avertissement d'un récupérateur ]
+
 *mind flayer
-	Cette créature a un corps humanoïde, des tentacules autour de la
-	bouche qu'ils recouvrent, et trois longs doigts à chaque main.
-	Les flagelleurs mentaux sont télépathes, et adorent dévorer les
-	êtres intelligents, surtout les humains.  S'il touche sa victime
-	d'un tentacule, le flagelleur mental lui draine lentement toute
-	son intelligence, et finit par la tuer.
+	Pirate neuronal : il se branche sur votre cortex par des câbles
+	tentaculaires et aspire vos souvenirs et votre intelligence.  On
+	s'en remet rarement entier.
+		[ Rapport médical, clinique d'Épidaure ]
+
 mine*
 gnomish mines
 	Faite par des Nains.  La Règle veut ici que la Mine soit soit
@@ -3674,43 +3333,12 @@ monk
 * monk
 grand master
 master kaen
-	Un jour, un général invita le moine bouddhiste I-Hsiu
-	(littéralement « Un Repos ») à dîner à son quartier général.
-	I-Hsiu n'avait pas l'habitude de porter des vêtements luxueux ;
-	il mit donc simplement une vieille robe ordinaire pour se rendre
-	à la base militaire.  Pour lui, « la forme est vide ».
+	Moine augmenté : il a fondu ses arts martiaux avec ses implants
+	jusqu'à ne plus savoir où finit l'un et où commence l'autre.  Il
+	combat à mains nues, plus vite qu'une balle, et refuse toute
+	arme.
+		[ Brochure du Dojo de Chan-Sune ]
 
-	Comme il approchait de la base, deux soldats surgirent devant
-	lui et crièrent : « D'où sort ce mendiant ?  Déclinez votre
-	identité !  Vous n'avez pas le droit de traîner par ici ! »
-
-	« Je m'appelle I-Hsiu, Maître du Dharma.  Votre général m'a
-	invité à souper. »
-
-	Les deux soldats examinèrent le moine de près et dirent :
-	« Menteur.  Comment notre général inviterait-il à dîner un moine
-	aussi miteux ?  C'est le très solennel et vénérable I-Hsiu qu'il
-	invite aujourd'hui à notre base pour une grande cérémonie, pas
-	toi.  Maintenant, dehors ! »
-
-	I-Hsiu ne parvint pas à convaincre les soldats qu'il était bien
-	l'invité ; il retourna donc au temple et revêtit une robe de
-	cérémonie très solennelle pour le dîner.  Et quand il revint à la
-	base militaire, les soldats, voyant que c'était un grand moine
-	bouddhiste, le firent entrer avec les honneurs.
-
-	Au dîner, I-Hsiu s'assit devant la table couverte de mets, mais
-	au lieu de porter la nourriture à sa bouche, il la prenait avec
-	ses baguettes et la mettait dans ses manches.  Le général,
-	intrigué, lui murmura : « C'est très embarrassant.  Voulez-vous
-	rapporter de la nourriture au temple ?  Je vais ordonner au
-	cuisinier de vous préparer des plats à emporter. »  « Non,
-	répondit le moine.  Quand je suis venu ici, vos soldats ne m'ont
-	pas laissé entrer dans la base avant que je porte cette robe de
-	cérémonie.  Ce n'est pas moi que vous invitez à dîner.  C'est ma
-	robe.  Par conséquent, c'est ma robe qui mange, pas moi. »
-		[ Dining with a General - a Zen Buddhism Koan,
-		  traduit par Yiu-man Chan ]
 monkey
 	« Écoute, petit d'homme, dit l'Ours, et sa voix grondait comme
 	le tonnerre par une nuit chaude.  Je t'ai enseigné toute la Loi
@@ -3754,19 +3382,12 @@ mumak*
 	défenses relevées comme des cornes ... dégouttaient de sang.
 		[ The Two Towers, de J.R.R. Tolkien ]
 *mummy
-	Mais pour savoir comment on bandait le corps, connaître la liste
-	des onguents et autres matières employés pour ce faire, et les
-	paroles de pouvoir qu'on prononçait en mettant chaque bandelette
-	à sa place, il faut recourir à un papyrus très intéressant que
-	M. Maspero a édité et traduit sous le titre de Le Rituel de
-	l'Embaumement. ...
-	Tout ce qui pouvait être fait pour conserver le corps était
-	maintenant fait, et chacun de ses membres était, au moyen des
-	paroles de pouvoir qui changeaient les substances périssables en
-	impérissables, protégé pour l'éternité ; quand on avait attaché
-	sur lui l'ultime enveloppe de lin pourpre ou blanc, le corps
-	était prêt pour le tombeau.
-		[ Egyptian Magic, de E.A. Wallis Budge ]
+	Momifiés : des cyborgs, des squatteurs ou des mineurs morts depuis
+	longtemps, dont les implants continuent de faire marcher le corps.
+	Ils grincent, ils sentent la poussière, et ils n'ont pas fini leur
+	service.
+		[ Rapport du coroner, Night City ]
+
 mummy wrapping
 	Il tenait un linge blanc -- c'était une serviette qu'il avait
 	apportée -- sur le bas de son visage, si bien que sa bouche et
@@ -3823,9 +3444,11 @@ nalzok
 	fait pas confiance mais, assez sûr de sa propre puissance, choisit
 	de lui laisser son poste parce qu'il est utile.
 neanderthal*
-	1.  Vallée entre Düsseldorf et Elberfeld en Allemagne, où l'on a
-	trouvé un crâne ancien d'un ancêtre préhistorique de l'homme
-	moderne.  2.  Humain(oïde) de la race susmentionnée.
+	Nomade des friches : survivant des Badlands, sans implant ni
+	papier, qui ne parle qu'à son clan.  Ses coups sont simples et
+	efficaces.
+		[ Reportage « Les oubliés des Badlands » ]
+
 neferet
 neferet the green
 	Neferet la Verte exerce sa charge dans sa tour cachée, accessible
@@ -3836,19 +3459,10 @@ neferet the green
 	elle-même apprentie, elle s'est accidentellement teint la peau
 	en vert, et l'a gardée ainsi depuis.
 newt
-	(sortes de) petit animal, semblable à un lézard, qui passe la
-	plus grande partie de son temps dans l'eau.
-		[ Oxford's Student's Dictionary of Current English ]
+	Rat de labo : petit cobaye échappé de Biotechnica.  Il mord, il fuit,
+	et il sert parfois de repas aux plus affamés.
+		[ Fiche d'inventaire, animalerie d'un laboratoire ]
 
-	« Filet de serpent des marais,
-	Dans le chaudron bous et cuis ;
-	Œil de triton et orteil de grenouille,
-	Laine de chauve-souris et langue de chien,
-	Dard fourchu de vipère et aiguillon d'orvet,
-	Patte de lézard et aile de hibou,
-	Pour un charme de puissant tourment,
-	Comme un brouet d'enfer bous et bouillonne. »
-		[ Macbeth, de William Shakespeare ]
 ninja-to
 	Une épée large japonaise.
 *norn
@@ -3881,32 +3495,11 @@ nunchaku
 		[ Wikipédia, l'encyclopédie libre ]
 *nymph
 naiad
-	Créature féminine des mythologies romaine et grecque, la nymphe
-	habitait les rivières, les forêts, les étangs, etc.  La beauté
-	d'une nymphe dépasse les mots : une femme éternellement jeune,
-	à la silhouette élancée et aux longs cheveux épais, au teint
-	radieux et aux dents parfaites, aux lèvres pleines et aux yeux
-	doux.  Le parfum d'une nymphe est délicieux, et sa longue robe
-	luit, ourlée de fils d'or et brodée des couleurs de l'arc-en-ciel
-	d'une magnificence surnaturelle.  Le maintien d'une nymphe est
-	gracieux et charmant, son esprit vif et spirituel.
-		[]
+	Voleuses des parcs, des quais et des toits : charmantes, rapides,
+	et parties avant que vous ne remarquiez que votre trench a disparu.
+	Elles ne volent pas pour l'argent ; elles volent pour le plaisir.
+		[ Plainte déposée au NCPD, classée sans suite ]
 
-	Thésée sentait sa voix l'entraîner dans des abîmes de sommeil.
-	Le chant était le squelette de son rêve, et le rêve était plein
-	de terreur.  Des filles démons le poursuivaient, et un homme-
-	taureau l'encornait.  Partout il y avait du sang.  Il y avait
-	la douleur.  Il y avait la peur.  Mais sa tête reposait sur les
-	genoux de la nymphe et son musc l'enveloppait, sa voix tissant
-	le rêve.  Il sut alors qu'elle avait été envoyée pour lui
-	annoncer quelque chose de terrible qui devait lui arriver plus
-	tard.  Son chant était un avertissement.  Mais elle lui avait
-	apporté une joie nouvelle, qui lui faisait voir toute chose
-	autrement.  Le garçon, qui devait devenir un héros, sut alors
-	soudain ce que la plupart des héros apprennent plus tard -- et
-	certains trop tard -- que la joie efface la souffrance et que la
-	route des nymphes est semée de monstres.
-		[ The Minotaur, de Bernard Evslin ]
 obsidian*
 	Verre volcanique, de texture homogène et pauvre en eau, à
 	l'éclat vitreux et à la cassure conchoïdale.  Sa couleur est
@@ -3990,15 +3583,11 @@ olog-hai
 oracle
 delphi
 p*thia
-	Delphes, au pied du haut Parnasse, où se trouvait l'oracle
-	d'Apollon, joue un rôle important dans la mythologie.  Castalie
-	était sa source sacrée ; le Céphise son fleuve.  On la tenait
-	pour le centre du monde, aussi de nombreux pèlerins y venaient,
-	de pays étrangers comme de Grèce.  Aucun autre sanctuaire ne
-	l'égalait.  Les réponses aux questions posées par les chercheurs
-	anxieux de Vérité étaient rendues par une prêtresse qui entrait
-	en transe avant de parler.
-		[ Mythology, d'Edith Hamilton ]
+	La Courtière : elle sait tout, ou presque, et le vend à prix
+	d'or.  Ses consultations mineures coûtent un repas ; les majeures,
+	un mois de salaire.  Personne ne sait qui la renseigne.
+		[ Conseil d'un Fixer de Westbrook ]
+
 orange
 pear
 	Comment étaient ces fruits ?  Malheureusement, personne ne peut
@@ -4052,22 +3641,12 @@ orcus
 orc*
 * orc
 uruk*hai
-	Les orques, bipèdes d'apparence humanoïde, sont apparentés aux
-	gobelins, mais bien plus grands et plus dangereux.  L'orque moyen
-	n'est que moyennement intelligent ; il a de larges épaules
-	musclées, un cou court, un front fuyant et une épaisse fourrure
-	sombre.  Ses canines inférieures pointent vers l'avant, comme
-	celles d'un sanglier.  Les femelles orques sont plus légères et
-	ont la poitrine nue.  Sans avoir besoin de vêtements, ils aiment
-	s'habiller de tenues bariolées.  Méfiants par nature, les orques
-	vivent en tribus ou en hordes.  Ils vivent aussi bien sous terre
-	qu'à la surface (mais ils détestent la lumière du soleil).  Les
-	orques peuvent utiliser toutes les armes, tous les outils et
-	toutes les armures dont se servent les hommes.  Comme ils n'ont
-	pas le talent de les fabriquer eux-mêmes, ils sont sans cesse à
-	leur recherche.  Il n'y a rien qu'une horde d'orques ne puisse
-	utiliser.
-		[ het Boek van de Regels; Het Oog des Meesters ]
+	Corporatistes : employés de corpos envoyés sur le terrain en
+	groupes nombreux, avec des machettes et des primes de rendement.
+	Les gros bras et les membres de gang les accompagnent pour le sale
+	travail.  Ils obéissent à qui paie le mieux.
+		[ Rapport d'un syndicat clandestin ]
+
 orion
 sirius
 	Orion était le fils de Neptune.  C'était un beau géant et un
@@ -4099,11 +3678,10 @@ owlbear
 	croisement entre un hibou géant et un ours.  Ils sont couverts de
 	fourrure et de plumes.
 page
-	Serviteur ou suivant ; en particulier, dans la chevalerie,
-	garçon ou jeune homme qui se préparait à devenir chevalier, ou
-	jeune homme de bonne famille au service d'un roi ou d'un prince.
-		[ Webster's Comprehensive International Dictionary
-		  of the English Language ]
+	Écuyer corpo : jeune recrue d'un service de sécurité, qui porte le
+	matériel de son supérieur et rêve de sa place.
+		[ Offre d'emploi, Tour Camelot ]
+
 *pall
 	_Pallium._  Nom romain d'un manteau de laine carré que portaient
 	les hommes dans la Grèce antique, surtout les philosophes et les
@@ -4269,21 +3847,10 @@ polymorph trap
 	sa corpulence, s'agitaient désespérément devant ses yeux.
 		[ La Métamorphose, de Franz Kafka ]
 pony
-		Holà !  Venez, holà !  Où vous promenez-vous ?
-		En haut, en bas, près ou loin, ici, là ou ailleurs ?
-		Fine-Oreille, Fin-Museau, Fouette-Queue et Lourdaud,
-		Chaussettes-Blanches mon petit gars, et vieux Gros-Lumpkin !
+	Moto-poney : petite monture mécanique pour les enfants des riches
+	et les Lawmen pressés.  Elle hennit par haut-parleur.
+		[ Catalogue d'un concessionnaire de Westbrook ]
 
-	[...]
-	Tom les appela un par un, et ils franchirent la crête et se
-	mirent en rang.  Alors Tom s'inclina devant les hobbits.
-
-	« Voici vos poneys, à présent ! dit-il.  Ils ont plus de bon sens
-	(à certains égards) que vous autres hobbits vagabonds -- plus de
-	bon sens dans le nez.  Car ils flairent le danger devant eux, là
-	où vous foncez tout droit ; et s'ils s'enfuient pour se sauver,
-	ils s'enfuient du bon côté. »
-		[ The Fellowship of the Ring, de J.R.R. Tolkien ]
 *portal
 	Les Portails peuvent être des Miroirs, des Tableaux, des Menhirs,
 	des Cercles de pierres, des Fenêtres et des portes spéciales
@@ -4333,24 +3900,12 @@ priest*
 cleric
 * cleric
 acolyte
-	[...]  Car les deux prêtres parlaient exactement comme des
-	prêtres, pieusement, avec érudition et loisir, des énigmes les
-	plus éthérées de la théologie.  Le petit prêtre de l'Essex
-	parlait le plus simplement, son visage rond tourné vers les
-	étoiles qui s'affermissaient ; l'autre parlait la tête baissée,
-	comme s'il n'était même pas digne de les regarder.  Mais on
-	n'aurait pu entendre conversation plus innocemment cléricale
-	dans aucun cloître blanc d'Italie ni dans aucune cathédrale
-	noire d'Espagne.  La première chose qu'il entendit fut la fin
-	d'une phrase du Père Brown, qui se terminait par : « ... ce
-	qu'ils voulaient vraiment dire au Moyen Âge en disant que les
-	cieux étaient incorruptibles. »  Le plus grand des prêtres hocha
-	sa tête baissée et dit : « Ah, oui, ces infidèles modernes en
-	appellent à leur raison ; mais qui peut regarder ces millions de
-	mondes sans sentir qu'il peut bien y avoir au-dessus de nous de
-	merveilleux univers où la raison est tout à fait
-	déraisonnable ? »
-		[ The Innocence of Father Brown, de G.K. Chesterton ]
+	Technoprêtres : ministres d'une foi qui a fusionné avec le code.
+	Ils gardent les temples, bénissent les implants et exécutent les
+	liturgies comme des programmes.  Mieux vaut ne pas les fâcher dans
+	leur sanctuaire.
+		[ Guide des cultes de Night City ]
+
 paddle cactus
 	Opuntia, communément appelé figuier de Barbarie, est un genre de
 	la famille des cactus, les Cactaceae.  Les figuiers de Barbarie
@@ -4360,21 +3915,11 @@ paddle cactus
 	ou encore cactus raquette.
 		[ Wikipédia, l'encyclopédie libre ]
 prisoner
-	Où suis-je ?
-		Au Village.
-	Que voulez-vous ?
-		Des renseignements.
-	De quel côté êtes-vous ?
-		Ce serait trop vous en dire.  Nous voulons des
-		renseignements... des renseignements...
-	Vous n'en aurez pas.
-		De gré ou de force, nous en aurons.
-	Qui êtes-vous ?
-		Le nouveau Numéro 2.
-	Qui est le Numéro 1 ?
-		Vous êtes le Numéro 6.
-	Je ne suis pas un numéro !  Je suis un homme libre !
-		[ The Prisoner, de Patrick McGoohan ]
+	Détenu : prisonnier d'une corpo ou d'un gang, oublié au fond d'une
+	cellule.  Libérez-le et il vous suivra peut-être ; ou il vous
+	dénoncera pour une récompense.
+		[ Conseil d'un Fixer ]
+
 ptah
 	Connu sous divers noms (Nou, Neph, Cenubis, Amon-Kneph,
 	Khery-Bakef), Ptah est le dieu créateur et le dieu des artisans.
@@ -4445,9 +3990,10 @@ quantum mechanic
 	moins précis à cause de leur plus grande longueur d'onde.
 		[ A Concise Dictionary of Physics ]
 quasit
-	Les quasits sont de petites créatures malfaisantes, apparentées
-	aux diablotins.  Leurs serres libèrent un poison très toxique
-	quand ils attaquent.
+	Ver informatique : programme qui se reproduit en vous mordant et
+	vous vole un peu de votre agilité à chaque fois.
+		[ Bulletin de sécurité, Netwatch ]
+
 *quest
 	Beaucoup de Circuits, peut-être la plupart, sont organisés en
 	Quête.  C'est comme une chasse au trésor à grande échelle, avec
@@ -4501,46 +4047,23 @@ raiden
 		[ Encyclopedia Mythica, éd. M.F. Lindemans ]
 ranger
 * ranger
-	« Nous sommes des hommes solitaires, Rôdeurs des terres
-	sauvages, chasseurs -- mais toujours chasseurs des serviteurs de
-	l'Ennemi ; car on les trouve en bien des lieux, pas seulement au
-	Mordor.
-	Si le Gondor, Boromir, a été une tour solide, nous avons joué un
-	autre rôle.  Il est bien des choses mauvaises que vos murs
-	puissants et vos épées brillantes n'arrêtent pas.  Vous savez peu
-	de chose des terres au-delà de vos frontières.  La paix et la
-	liberté, dites-vous ?  Le Nord ne les aurait guère connues sans
-	nous.  La peur les aurait détruites.  Mais quand des choses
-	ténébreuses descendent des collines inhabitées ou rampent hors
-	des bois sans soleil, elles fuient devant nous.  Quelles routes
-	oserait-on emprunter, quelle sécurité y aurait-il dans les terres
-	paisibles, ou la nuit dans les foyers des hommes simples, si les
-	Dúnedain dormaient, ou étaient tous descendus au tombeau ? »
-		[ The Fellowship of the Ring, de J.R.R. Tolkien ]
+	Traqueur : tireur des Badlands, aussi à l'aise avec un arc à
+	poulies qu'avec un fusil.  Il suit sa proie pendant des jours et ne
+	la manque qu'une fois, la dernière.
+		[ Annonce d'une agence de chasseurs de primes ]
+
 rat
 * rat
-	Les rats sont des rongeurs à longue queue.  Ils sont agressifs,
-	omnivores et adaptables, et transmettent souvent des maladies.
-		[]
+	Rats : d'égout ou mutants, ils pullulent sous Night City et mangent
+	tout, y compris les câbles.  Les mutants ont la taille d'un chien
+	et la patience d'un percepteur.
+		[ Rapport du service de dératisation ]
 
-	« Le rat, dit O'Brien, s'adressant toujours à son auditoire
-	invisible, bien qu'il soit un rongeur, est carnivore.  Vous le
-	savez.  Vous avez entendu parler de ce qui arrive dans les
-	quartiers pauvres de cette ville.  Dans certaines rues, une femme
-	n'ose pas laisser son bébé seul à la maison, même cinq minutes.
-	Les rats l'attaqueraient à coup sûr.  En très peu de temps, ils
-	le réduiraient à l'état de squelette.  Ils attaquent aussi les
-	malades et les mourants.  Ils font preuve d'une intelligence
-	étonnante pour savoir quand un être humain est sans défense. »
-		[ 1984, de George Orwell ]
 raven
-	Mais le corbeau, seul sur le buste placide, ne prononça
-	Que ce mot, comme si son âme en ce mot il déversait.
-	Il ne dit rien de plus -- il ne remua pas une plume --
-	Jusqu'à ce que je murmure : « D'autres amis ont fui déjà --
-	Demain *il* me quittera, comme mes espoirs ont fui déjà. »
-		Alors l'oiseau dit : « Jamais plus. »
-				[ The Raven, d'Edgar Allan Poe ]
+	Drone corbeau : drone de surveillance noir, au vol silencieux, qui
+	crève les optiques de qui le regarde de trop près.
+		[ Fiche de reconnaissance, MaxTac ]
+
 ~*invisibility
 ring
 * ring
@@ -4622,17 +4145,11 @@ rodent*
 		  of the English Language ]
 rogue
 * rogue
-	Je comprends l'affaire, je l'entends : avoir l'oreille ouverte,
-	l'œil vif et la main leste, voilà ce qu'il faut à un coupeur de
-	bourses ; un bon nez est requis aussi, pour flairer de l'ouvrage
-	aux autres sens.  Je vois que voici le temps où l'homme injuste
-	prospère.  ...  Le prince lui-même trame une iniquité, il
-	s'enfuit loin de son père avec son boulet aux talons : si je
-	pensais que ce fût une honnêteté d'en informer le roi, je ne le
-	ferais pas : je tiens pour plus coquin de le cacher ; et en cela
-	je suis fidèle à ma profession.
-		[ Autolycus le Vaurien, dans Le Conte d'hiver de
-			William Shakespeare ]
+	Fixer : intermédiaire de Night City, il connaît tout le monde et
+	ne travaille pour personne.  Il vous trouvera une arme, un contrat
+	ou un alibi, contre un pourcentage.
+		[ Conseil aux nouveaux arrivants, guide de Night City ]
+
 root
 dwarven root
 	Mais une fois cuites, ces racines se révélèrent bonnes à manger,
@@ -4659,13 +4176,11 @@ dwarven root
 	premières qui sont mûres. »
 		[ Unfinished Tales, Part 1, de J.R.R. Tolkien ]
 roshi
-	Roshi est un mot japonais, courant dans le bouddhisme zen, qui
-	signifie « vieux » (ro) et « maître » (shi).  Roshi peut
-	s'employer comme terme de respect, comme dans l'école Rinzai ;
-	comme simple référence à l'âge réel, comme dans l'école Soto ; ou
-	désigner un maître qui a transmis son savoir à un nouveau maître,
-	et lui a ainsi « donné naissance ».
-		[ Wikipédia, l'encyclopédie libre ]
+	Sensei : maître d'arts martiaux d'un clan de ronins urbains.  Il
+	enseigne le bushido et la monokatana, et ne pardonne pas les
+	fautes d'honneur.
+		[ Brochure du Siège du clan Taro ]
+
 rothe
 	Le rothé (prononcé roth-É) est une créature semblable au
 	bœuf musqué, qui a horreur de la lumière.  Il préfère vivre sous
@@ -4694,9 +4209,11 @@ sapphire
 	(rouge) et le saphir (bleu).
 		[ The Columbia Encyclopedia, Sixth Edition ]
 rust monster
-	Ces étranges créatures se nourrissent de métaux.  Elles peuvent
-	changer une armure complète en ferraille rouillée et inutile en
-	un rien de temps.
+	Dévoreur de métal : créature bricolée par un labo qui voulait
+	recycler la ferraille.  Elle dévore les armes et les armures, et
+	le labo n'existe plus.
+		[ Avertissement d'un récupérateur ]
+
 # takes "rust monster or disenchanter" when specifying 'R'
 rust monster or disenchanter
 	Ces monstres terrestres sont connus pour dégrader en un rien de
@@ -4739,17 +4256,11 @@ salamander
 		[ Salamanders, de Cherie Winner ]
 samurai
 * samurai
-	À ce moment-là, Narahara avait déjà dégagé son bras de la manche
-	de sa robe de dessus, tiré son sabre Fujiwara Tadahiro de
-	soixante-quinze centimètres et, le brandissant au-dessus de sa
-	tête, il fonçait sur les étrangers.  En moins d'une minute, il
-	les avait chargés et avait tranché l'un d'eux en travers du
-	torse.  L'homme s'enfuit en tenant ses entrailles qui sortaient,
-	pour finalement tomber de cheval au pied d'un pin, à près d'un
-	kilomètre de là.  Kaeda Takeji l'acheva.  Les deux autres Anglais
-	furent grièvement blessés en tentant de fuir.  Seule la femme
-	parvint à s'échapper pratiquement indemne.
-		[ The Fox-horse, dans Drunk as a Lord, de Ryotaro Shiba ]
+	Ronin urbain : samouraï sans maître de Night City, au service du
+	zaibatsu qui paie.  Il a le code d'honneur d'un autre siècle et
+	les implants du sien.
+		[ Portrait du clan Taro, magazine de City Center ]
+
 sandestin
 	Ildefonse quitta la terrasse, et presque aussitôt des bruits de
 	dispute vinrent de la direction de l'atelier.  Ildefonse revint
@@ -4925,40 +4436,16 @@ shark
 shito
 	Un couteau japonais pour frapper d'estoc.
 shopkeeper
-	On a avancé trois théories générales pour expliquer le phénomène
-	des boutiques errantes, ou, comme on les appelle génériquement,
-	_tabernae vagantes._
-	La première postule qu'il y a des milliers et des milliers
-	d'années évolua quelque part dans le multivers une race dont
-	l'unique talent était d'acheter bon marché et de vendre cher.
-	Bientôt, elle contrôla un vaste empire galactique ou, comme elle
-	disait, Emporium, et les membres les plus avancés de l'espèce
-	trouvèrent le moyen d'équiper leurs boutiques mêmes de moteurs
-	uniques capables de briser les murs obscurs de l'espace lui-même
-	et d'ouvrir de vastes marchés nouveaux.  Et longtemps après que
-	les mondes de l'Emporium eurent péri dans la mort thermique de
-	leur univers particulier, après une dernière liquidation
-	provocante, les boutiques stellaires errantes poursuivent encore
-	leur commerce, se frayant un chemin à travers les pages de
-	l'espace-temps comme un ver à travers un roman en trois volumes.
-	La deuxième est qu'elles sont la création d'un Destin
-	compatissant, chargé de fournir exactement la bonne chose au bon
-	moment.
-	La troisième est qu'elles sont simplement un moyen très astucieux
-	de contourner les diverses lois sur la fermeture dominicale.
-	Toutes ces théories, si diverses soient-elles, ont deux points
-	communs.  Elles expliquent les faits observés, et elles sont
-	complètement et totalement fausses.
-		[ The Light Fantastic, de Terry Pratchett ]
+	Vendeur : il tient boutique, connaît ses prix, et garde une arme
+	sous le comptoir.  On ne vole pas un vendeur de Night City : on
+	essaie, une fois.
+		[ Proverbe de la rue ]
+
 shrieker
-	D'un seul coup de lance sauvage, la guerrière empala le
-	champignon et le fit taire.  Mais il était trop tard : l'alarme
-	avait été donnée[...]
-	Soudain, une grande forme sombre s'éleva de l'abîme devant eux,
-	sa masse fétide les surplombant...  Le monstre était une sorte de
-	grand ver sombre, mais c'était à peu près tout ce dont ils
-	étaient sûrs.
-		[ The Adventurers, Epic IV, de Thomas A. Miller ]
+	Alarme ambulante : petit robot de sécurité qui hurle dès qu'il vous
+	voit, et attire tout ce qui rôde autour.
+		[ Fiche produit, gamme sécurité résidentielle ]
+
 throwing star
 shuriken
 	Vous savez, c'est ce que je déteste le plus quand on se bat
@@ -4970,10 +4457,11 @@ shuriken
 	ne se battrait contre personne avant un bon moment.
 		[ Jhereg, de Steven Brust ]
 skeleton
-	Le squelette est un mort-vivant animé par magie.  Contrairement
-	aux ombres, on ne peut créer un squelette qu'à partir d'une
-	créature humanoïde.  Nul ne sait pourquoi, mais c'est devenu un
-	fait admis parmi les adeptes de la magie noire.
+	Squelette chromé : il ne reste plus de chair, seulement le
+	squelette de titane d'un ancien Solo, qui continue de se battre
+	par habitude.
+		[ Rapport du coroner, Night City ]
+
 slasher
 	« Ce chien appartenait à un colon qui avait essayé de bâtir sa
 	cabane sur la rive du fleuve, à quelques kilomètres au sud du
@@ -5062,14 +4550,11 @@ sokoban
 sergeant
 lieutenant
 captain
-	Les soldats de Yendor sont bien entraînés à l'art de la guerre,
-	beaucoup par le Sorcier lui-même.  Certains disent que ces
-	soldats sont des explorateurs qui ont eu le malheur d'être
-	capturés et ensorcelés par le Sorcier.  Ceux qui ont survécu à
-	des rencontres avec eux disent qu'ils se déplacent ensemble en
-	sections et qu'ils se battent férocement.  Mais à cause du poids
-	de leur équipement de combat, on peut d'ordinaire les distancer,
-	et c'est considéré comme une sage décision.
+	Soldats de Militech : professionnels disciplinés, bien armés, qui
+	avancent en escouade et ne posent pas de questions.  Leurs
+	officiers en posent encore moins.
+		[ Plaquette de recrutement, Militech ]
+
 *spear
 javelin
 	Lance : de mineur, de réplicant ou ordinaire.  Une perche, une
@@ -5085,25 +4570,17 @@ javelin
 		[ Cours d'initiation, apprentis hackers du data center isolé ]
 
 *spider
-	Créature à huit pattes capable de tisser des toiles pour piéger
-	ses proies.
-		[]
+	Araignées : des égouts ou mécaniques.  Les mécaniques tissent des
+	toiles de fil d'acier et injectent un poison de synthèse.
+		[ Avertissement des égoutiers de Watson ]
 
-	« Tu veux dire que tu manges des mouches ? » s'étrangla Wilbur.
-	« Bien sûr.  Des mouches, des punaises, des sauterelles, des
-	scarabées de choix, des papillons de nuit, des papillons, de
-	savoureux cafards, des moucherons, des cousins, des faucheux, des
-	mille-pattes, des moustiques, des grillons - tout ce qui est
-	assez imprudent pour se prendre dans ma toile.  Il faut bien que
-	je vive, non ?
-	— Eh bien, oui, bien sûr », dit Wilbur.
-		[ Charlotte's Web, de E.B. White ]
 *spore
 *sphere
-	L'attaque de ceux qui veulent mourir -- voilà l'attaque contre
-	laquelle on ne peut préparer de défense parfaite.
-					--Aphorisme humain
-		[ The Dosadi Experiment, de Frank Herbert ]
+	Mines gazeuses et drones explosifs : sphères qui flottent jusqu'à
+	vous et explosent en froid, en feu ou en électricité.  Abattez-les
+	de loin.
+		[ Manuel de déminage, Militech ]
+
 squeaky board
 	Une latte de plancher grinça.  Galder avait passé de longues
 	heures à les accorder, précaution toujours sage avec un assistant
@@ -5152,34 +4629,10 @@ branch stair*
 		[ Ghostbusters, réalisé par Ivan Reitman,
 		  écrit par Dan Ackroyd et Harold Ramis ]
 *stalker
-	« Vous ne comprenez pas, dit-il, qui je suis ni ce que je suis.
-	Je vais vous montrer.  Par le Ciel !  Je vais vous montrer. »
-	Puis il posa la paume ouverte sur son visage et la retira.  Le
-	centre de son visage devint une cavité noire.  « Tenez », dit-il.
-	Il s'avança et tendit à Mme Hall quelque chose qu'elle, fixant
-	son visage métamorphosé, accepta machinalement.  Puis, quand elle
-	vit ce que c'était, elle poussa un grand cri, le laissa tomber
-	et recula en titubant.  Le nez -- c'était le nez de l'étranger !
-	rose et luisant -- roula sur le plancher.
+	Chasseur furtif : traqueur invisible, armé d'un camouflage optique
+	de pointe.  On ne le voit qu'au moment où il frappe.
+		[ Rapport d'enquête, NCPD ]
 
-	Puis il ôta ses lunettes, et toute la salle eut le souffle
-	coupé.  Il retira son chapeau et, d'un geste violent, arracha
-	ses favoris et ses bandages.  Un instant, ils lui résistèrent.
-	Un frisson d'horrible attente parcourut la salle.  « Oh, mon
-	Dieu ! » dit quelqu'un.  Puis ils cédèrent.
-
-	C'était pire que tout.  Mme Hall, bouche bée et frappée
-	d'horreur, hurla devant ce qu'elle voyait et se précipita vers
-	la porte de la maison.  Tout le monde se mit à bouger.  On
-	s'attendait à des cicatrices, à des difformités, à des horreurs
-	tangibles, mais rien !  Les bandages et les faux cheveux
-	volèrent à travers le couloir jusque dans la salle, obligeant un
-	grand dadais à sauter pour les éviter.  Tous dégringolèrent les
-	marches les uns sur les autres.  Car l'homme qui se tenait là en
-	criant une explication incohérente était une silhouette solide
-	et gesticulante jusqu'au col de son manteau, et puis -- le néant,
-	plus rien de visible du tout !
-		[ The Invisible Man, de H.G. Wells ]
 ~statue trap
 statue*
 	Puis enfin il commença à se demander pourquoi le lion se tenait
@@ -5249,17 +4702,11 @@ glorkum*
 	étrange qui semblait vivant.
 		[ Crime et Châtiment, de Fiodor Dostoïevski ]
 straw golem
-	Dorothée posa le menton sur sa main et contempla
-	l'Épouvantail d'un air pensif.  Sa tête était un petit sac
-	rempli de paille, sur lequel on avait peint des yeux, un nez et
-	une bouche pour figurer un visage.  Un vieux chapeau bleu
-	pointu, qui avait appartenu à quelque Munchkin, était perché sur
-	sa tête, et le reste du personnage était un costume bleu, usé et
-	délavé, lui aussi rempli de paille.  Aux pieds, il avait de
-	vieilles bottes à revers bleus, comme en portaient tous les
-	hommes de ce pays, et le personnage était dressé au-dessus des
-	tiges de maïs au moyen du poteau planté dans son dos.
-		[ The Wonderful Wizard of Oz, de L. Frank Baum ]
+	Drone de paille : un épouvantail robotisé, bon marché, qui garde
+	les champs des Badlands.  Il ne fait peur qu'aux oiseaux, et pas
+	à tous.
+		[ Catalogue de matériel agricole ]
+
 sunsword
 	L'Épée solaire concentre la lumière d'une batterie au lithium
 	dans une lame de verre trempé.  Les morts-vivants du Réseau
@@ -5277,13 +4724,11 @@ tanko
 	Armure de plaques de samouraï de l'époque Yamato (300 - 710
 	apr. J.-C.).
 tengu
-	Le tengu était la créature la plus pénible de la légende
-	japonaise.  Mi-oiseau, mi-homme, avec un bec rouge en guise de
-	nez et des yeux étincelants, le tengu était connu pour attiser
-	les querelles et prolonger les inimitiés entre familles.  À vrai
-	dire, les belliqueux tengu auraient été les premiers à enseigner
-	aux hommes le maniement des armes.
-	  [ Mythical Beasts, de Deirdre Headon (The Leprechaun Library) ]
+	Cheval de Troie : programme qui prend une forme rassurante et se
+	téléporte à côté de vous pour mordre.  Absorber son code permet de
+	se téléporter à son tour.
+		[ Bulletin de sécurité, Netwatch ]
+
 thoth
 	Dieu égyptien de la lune et de la sagesse, Thot est la divinité
 	protectrice des scribes et du savoir, y compris des écrits
@@ -5412,25 +4857,11 @@ touch*stone
 		[ Chilon (vers 560 av. J.-C.) ]
 tourist
 * tourist
-	La route d'Ankh-Morpork à Chrim est haute, blanche et sinueuse,
-	trente lieues de nids-de-poule et de rochers à demi enterrés qui
-	serpente autour des montagnes, plonge dans de fraîches vallées
-	vertes d'agrumes, franchit des gorges tendues de lianes sur des
-	ponts de corde grinçants, et se révèle en général plus
-	pittoresque qu'utile.
-	Pittoresque.  C'était un mot nouveau pour Rincevent le mage
-	(BMgc, Université de l'Invisible [recalé]).  C'était l'un des
-	nombreux mots qu'il avait glanés depuis qu'il avait quitté les
-	ruines calcinées d'Ankh-Morpork.  Charmant en était un autre.
-	Pittoresque voulait dire -- conclut-il après avoir observé
-	attentivement les paysages qui inspiraient ce mot à Deuxfleurs --
-	que le paysage était horriblement escarpé.  Charmant, quand on
-	parlait des villages qu'ils traversaient de temps à autre,
-	voulait dire délabré et infesté de fièvres.
-	Deuxfleurs était un touriste, le premier qu'on ait jamais vu sur
-	le Disque-monde.  Touriste, avait conclu Rincevent, voulait dire
-	« idiot ».
-		[ The Colour of Magic, de Terry Pratchett ]
+	Corpo en goguette : cadre d'une corporation en vacances à Night
+	City, avec une chemise hawaïenne, une holocaméra et beaucoup trop
+	d'eddies.  Les vendeurs l'adorent ; les voleurs encore plus.
+		[ Guide du touriste à Night City ]
+
 towel
 wet towel
 moist towel
@@ -5558,29 +4989,11 @@ turquoise*
 		[ Le Marchand de Venise, de William Shakespeare ]
 twoflower
 guide
-	« Rincevent ! »
-	Deuxfleurs sauta du lit.  Le mage fit un bond en arrière en se
-	tordant les traits en un sourire.
-	« Mon cher, pile à l'heure !  On va juste déjeuner, et ensuite
-	je suis sûr que vous avez prévu un programme merveilleux pour
-	cet après-midi !
-	— Euh...
-	— Formidable ! »
-	Rincevent prit une grande inspiration.  « Écoutez, dit-il
-	désespérément, allons manger ailleurs.  Il y a eu une petite
-	bagarre en bas.
-	— Une rixe de taverne ?  Pourquoi ne m'avez-vous pas réveillé ?
-	— Eh bien, voyez-vous, je... _quoi_ ?
-	— Je croyais avoir été clair ce matin, Rincevent.  Je veux voir
-	la vraie vie morporkienne - le marché aux esclaves, les Fosses
-	aux Catins, le Temple des Petits Dieux, la Guilde des
-	Mendiants... et une vraie rixe de taverne. »  Une légère note de
-	soupçon perça dans la voix de Deuxfleurs.  « Vous en _avez_,
-	n'est-ce pas ?  Vous savez, des gens qui se balancent aux
-	lustres, des duels à l'épée par-dessus les tables, le genre de
-	choses où Hrun le Barbare et la Belette se retrouvent toujours
-	mêlés.  Vous savez -- de l'_action_. »
-		[ The Colour of Magic, de Terry Pratchett ]
+	Guide touristique : il montre aux visiteurs les beautés de Night
+	City, en évitant les quartiers où on les dépouillerait.  Il
+	connaît tous les prix, y compris le sien.
+		[ Brochure de l'office du tourisme ]
+
 tyr
 	Il reste encore celui des Ases qu'on appelle Tyr : c'est le plus
 	hardi, le meilleur pour la fermeté du cœur, et il a grande
@@ -5649,17 +5062,11 @@ white-handed shield
 		[ The Two Towers, de J.R.R. Tolkien ]
 valkyrie
 * valkyrie
-	Les Valkyries étaient les treize choisisseuses des morts, les
-	belles guerrières d'Odin qui chevauchaient dans les airs et
-	sur la mer.  Elles suivaient le déroulement de la bataille et
-	choisissaient les héros qui devaient tomber au combat.  Une fois
-	ceux-ci morts, les jeunes filles les récompensaient d'un baiser,
-	puis conduisaient leurs âmes au Valhalla, où les guerriers
-	vivaient heureux une existence idéale, buvant et mangeant sans
-	retenue et rejouant les batailles où ils étaient morts et où ils
-	avaient gagné leur gloire immortelle.
-	    [ The Encyclopaedia of Myths and Legends of All Nations,
-		de Herbert Spencer Robinson et Knox Wilson ]
+	Solo : mercenaire, garde du corps ou tueur, il loue ses services au
+	plus offrant.  Il a plus de chrome que de chair et plus de contrats
+	que d'amis.
+		[ Annonce d'une agence de sécurité privée ]
+
 vampire
 ~vampire bat
 vampire l*
@@ -5708,11 +5115,11 @@ vlad*
 	tête.
 *vortex
 vortices
-	Nuages tourbillonnants d'énergies élémentaires pures, les vortex
-	seraient apparentés aux grands élémentaires.  Ils sont connus
-	pour pouvoir envelopper les voyageurs imprudents.  Le malheureux
-	sot ainsi avalé par un vortex périra bientôt, exposé à l'élément
-	dont le vortex est composé.
+	Tempêtes de données et vortex : des tourbillons d'information qui
+	avalent ce qu'ils touchent et le rejettent brûlé, gelé ou
+	électrocuté.
+		[ Bulletin météo du Réseau ]
+
 vrock
 	Le vrock est l'une des formes de démon les plus faibles.  Il
 	ressemble à un croisement entre un être humain et un vautour, et
@@ -5879,25 +5286,18 @@ winning
 wizard
 * wizard
 apprentice
-	Ebenezum marchait devant moi sur ce qui ressemblait le plus à un
-	chemin dans ces bois envahis par la végétation.  Tous les
-	quelques pas, il s'arrêtait pour que moi, chargé d'un sac bourré
-	d'un attirail arcanique et pesant, je puisse rattraper ses
-	enjambées de magicien.  Lui, comme d'habitude, ne portait rien,
-	préférant, comme il le disait souvent, garder les mains libres
-	pour des incantations rapides et l'esprit libre pour les pensées
-	d'un mage.
-		[ A Dealing with Demons, de Craig Shaw Gardner ]
+	Netrunner : pirate du Réseau, branché par une prise dans le crâne.
+	Il vole des données, grille des cerveaux et exécute des programmes
+	comme d'autres lancent des sorts.
+		[ Portrait des netrunners, reportage de N54 News ]
+
 wizard of yendor
-	Nul ne sait l'âge de ce puissant sorcier, ni d'où il vient.  On
-	sait qu'ayant vécu bien plus longtemps qu'aucun homme ordinaire,
-	il se lassa des mortels inférieurs ; et ainsi, dédaignant toute
-	compagnie humaine, il abandonna les demeures des hommes et alla
-	vivre dans les profondeurs de la Terre.  Il emporta avec lui un
-	terrible artefact, le Livre des Morts, qui renfermerait en vérité
-	un grand pouvoir.  Beaucoup ont cherché le sorcier et son trésor,
-	mais aucun ne l'a trouvé et n'a vécu pour le raconter.  Malheur à
-	l'aventurier imprudent qui dérange ce puissant sorcier !
+	L'Archihacker de Yendor : le plus grand pirate de tous les temps,
+	qui a dérobé l'Amulette et s'est retranché dans le Réseau profond.
+	On dit qu'il revient toujours, une sauvegarde de plus à chaque
+	mort.
+		[ Légende du Réseau profond ]
+
 wolf
 *wolf
 *wolf cub
@@ -5917,24 +5317,10 @@ wolf
 		[ The American Heritage Dictionary of
 		    the English Language, Fourth Edition. ]
 wood golem
-	Viens, vieux balai, on a besoin de toi,
-	Prends ces haillons et enveloppe-t'en !
-	Longtemps tu as obéi à mes ordres,
-	Par mes désirs je t'ai lié maintenant.
-	Aie deux jambes et tiens debout,
-	Et une tête par-dessus.
-	Cours, et dans ta main
-	Tiens aussi un seau.
-	...
-	Vois-le, vers la rive il court,
-	Le voilà déjà au ruisseau,
-	Il revient comme l'éclair,
-	Versant l'eau vite et sans arrêt.
-	De nouveau il se hâte !
-	Comme l'eau déborde,
-	Comme il remplit à ras bord
-	Les bassins d'eau !
-	  [ L'Apprenti sorcier, de Johann Wolfgang von Goethe ]
+	Drone de bois : robot de chantier à coque en bois composite, lourd
+	et lent, mais increvable.
+		[ Catalogue de matériel de chantier ]
+
 woodchuck
 	L'Oracle d'Usenet exige une réponse à cette question !
 
@@ -5963,24 +5349,11 @@ crysknife
 		[ Dune, de Frank Herbert ]
 wraith
 nazgul
-	Aussitôt, bien que tout le reste demeurât comme avant, terne et
-	sombre, les formes devinrent terriblement nettes.  Il pouvait voir
-	sous leurs enveloppes noires.  Il y avait cinq hautes
-	silhouettes : deux debout au bord du vallon, trois qui
-	avançaient.  Dans leurs visages blancs brûlaient des yeux
-	perçants et impitoyables ; sous leurs manteaux, il y avait de
-	longues robes grises ; sur leurs cheveux gris, des heaumes
-	d'argent ; dans leurs mains décharnées, des épées d'acier.  Leurs
-	yeux tombèrent sur lui et le transpercèrent, tandis qu'ils se
-	ruaient vers lui.  Désespéré, il tira sa propre épée, et il lui
-	sembla qu'elle vacillait d'une lueur rouge, comme un tison.  Deux
-	des silhouettes s'arrêtèrent.  La troisième était plus grande que
-	les autres : ses cheveux étaient longs et luisants, et sur son
-	heaume il y avait une couronne.  D'une main il tenait une longue
-	épée, et de l'autre un couteau ; le couteau comme la main qui le
-	tenait luisaient d'une pâle lumière.  Il bondit en avant et
-	fondit sur Frodo.
-		[ The Fellowship of the Ring, de J.R.R. Tolkien ]
+	Spectre numérique : la conscience numérisée d'un mort, errant dans
+	les réseaux.  Absorber son code donne de l'expérience ; le
+	rencontrer, de l'insomnie.
+		[ Rumeur du Réseau profond ]
+
 *wumpus
 	Le Wumpus, soit dit en passant, ne craint pas les dangers, car il
 	a des pieds à ventouses et il est trop gros pour qu'une
@@ -6051,11 +5424,11 @@ yumi
 	Avec le yumi-ya, l'arc et la flèche, le samouraï est un guerrier
 	extrêmement précis et mortel.
 *zombi*
-	Le zombi... est un cadavre humain sans âme, toujours mort, mais
-	tiré de la tombe et doté par sorcellerie d'un semblant mécanique
-	de vie -- c'est un corps mort qu'on fait marcher, agir et bouger
-	comme s'il était vivant.
-		[ W.B. Seabrook ]
+	Zombies : voyous, squatteurs, corporatistes ou mineurs morts dont
+	les implants ont continué de tourner.  Lents, affamés et
+	nombreux, ils ne s'arrêtent que quand on coupe le courant.
+		[ Brochure de prévention, Trauma Team ]
+
 zruty
 	Les zruty sont des êtres sauvages et gigantesques qui vivent dans
 	les étendues sauvages des monts Tatras.

@@ -33,11 +33,14 @@ while i < n:
                     '# écrit pour Night City ; les autres reprennent data-fr.base.']
     hdr_done = True
     if ln and ln[0] not in '\t #':
+        # the keys, possibly with comment lines between them
         keys = []
-        while i < n and src[i] and src[i][0] not in '\t #':
+        while i < n and src[i] and src[i][0] not in '\t ':
             keys.append(src[i]); i += 1
+        while keys and keys[-1].startswith('#'):
+            keys.pop(); i -= 1
         out.extend(keys)
-        k0 = keys[0].strip()
+        k0 = keys[0].strip()  # the first key names the entry
         if k0 in new:
             done.add(k0)
             # the old text, paragraphs separated by blank lines included
