@@ -9693,3 +9693,33 @@ msgstr "Lister ou réordonner les programmes"
 
 msgid "Magic"
 msgstr "Code"
+
+# Restes de magie
+
+msgid "the Wizard of Yendor's tower"
+msgstr "la tour de l'Archihacker de Yendor"
+
+msgid "You see the Wizard of Yendor gazing out at you."
+msgstr "Vous voyez l'Archihacker de Yendor qui vous observe."
+
+msgid "You are a very tricky wizard, it seems."
+msgstr "Vous êtes un hacker très rusé, semble-t-il."
+
+msgctxt "symbol"
+msgid "anti-magic field"
+msgstr "champ anti-piratage"
+
+msgctxt "symbol a"
+msgid "anti-magic field"
+msgstr "un champ anti-piratage"
+
+msgctxt "trap"
+msgid "anti-magic field"
+msgstr "champ anti-piratage"
+
+msgctxt "killer a"
+msgid "anti-magic implosion"
+msgstr "une implosion anti-piratage"
+
+msgid "The damaged vault's walls are magically restored!"
+msgstr "Les murs endommagés de la chambre forte se reconstruisent tout seuls !"
