@@ -183,6 +183,10 @@ accord des déesses (`483cafe`, « La Dame », « Tu m'as mise en colère »),
 artefacts traduits en français et renommés dans le thème (Fléau-des-Hackers,
 Antivirus, Scanner de Détection, Optiques du Surmonde...).
 
+Puis l'encyclopédie du thème (`data-fr@cyber.base`, `77a4f85` et
+`6f53632`) : 147 entrées réécrites pour Night City (objets, artefacts,
+monstres) ; voir `CYBERPUNK.md`, section « Encyclopédie ».
+
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
    (4 rumeurs, 2 gravures, 1 oracle), texte libre sans format.

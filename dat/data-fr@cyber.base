@@ -1579,7 +1579,7 @@ ettin
 excalibur
 	Excalibur Mk II.  Livrée sur un lit de mousse dans une mallette
 	blindée, avec un certificat de propriété signé par le conseil
-	d'administration de Camelot.  Seuls les Exécuteurs loyaux
+	d'administration de Camelot.  Seuls les Lawmen loyaux
 	peuvent l'activer : la poignée lit l'ADN et le dossier
 	disciplinaire avant d'allumer la lame.  Les autres reçoivent une
 	décharge et une convocation.
@@ -1677,7 +1677,7 @@ floating eye
 	Caméra flottante : une sphère de surveillance qui plane dans les
 	couloirs.  Ne la frappez surtout pas en la regardant : son flash
 	paralyse.  Les corpos en posent partout.
-		[ Conseil d'un Voleur de données ]
+		[ Conseil d'un Fixer ]
 
 *flute
 	Flûte : de bois, de plastique ou hypnotique.  La flûte
@@ -3296,7 +3296,7 @@ mjollnir
 	Marteau Mjöllnir : bobines électromagnétiques dans la tête,
 	retour automatique par aimant dans le gant de la propriétaire.
 	Militech en a fabriqué douze ; onze ont explosé pendant les
-	essais.  Le douzième est revenu dans la main d'une Mercenaire,
+	essais.  Le douzième est revenu dans la main d'une Solo,
 	et n'est jamais reparti au service après-vente.
 		[ Rapport d'incident interne, Militech ]
 
@@ -4658,7 +4658,7 @@ statue*
 stethoscope
 	Scanner médical : il lit les constantes de n'importe quel être
 	vivant, et parfois de choses qui ne devraient pas en avoir.  Un
-	Charcudoc peut s'en servir une fois par tour sans perdre de
+	Medtech peut s'en servir une fois par tour sans perdre de
 	temps.
 		[ Manuel de la clinique d'Épidaure ]
 

@@ -438,3 +438,28 @@ graffitis citent les quartiers, les corporations et les gangs.  Les
 elfes sont des réplicants, comme la race du héros, et les objets des
 races renommées sont « de mineur », « de réplicant » et « corpo ».  Les
 messages sur l'or parlent d'eddies.
+
+## Encyclopédie
+
+Ce que montre `/` (ou `;`) quand on demande la description d'une chose
+vient de l'encyclopédie, `dat/data-fr@cyber.base`, compilée en
+`data.fr@cyber` par `makedefs -d`.  C'est une copie complète de
+`data-fr.base` (le jeu change de fichier, pas d'entrée), dont 147
+entrées ont un texte écrit pour Night City à la place des citations de
+livres sur les choses d'origine :
+
+- 65 objets et artefacts : stims, puces, modules, logiciels, implants,
+  eddies, outils, armes, armures, nourriture ; Fléau-des-Hackers,
+  Antivirus, Scanner de Détection...
+- 82 monstres : squatteurs, corporatistes, réplicants, cyberpsychos, IA
+  corrompues, drones, NCPD et Militech, les rôles et les gardiens des
+  quêtes ; les entrées partagées avec des créatures gardées (chats,
+  chiens) parlent des deux.
+
+Les textes sont des notices, réclames, rapports du NCPD et messages de
+forum, avec des sources inventées ; aucun texte publié n'est repris.
+Les clés restent celles de `data.base` (la recherche se fait sur le nom
+anglais).  `po/encyclo-theme.py` écrit le fichier à partir d'une copie
+et de textes « @@ clé » ; les 368 autres entrées gardent le texte
+français.
+
