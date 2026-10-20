@@ -469,9 +469,12 @@ convert_arg_i18n(char c, char mod)
         str = C_("quest", Blind ? "sense" : "see");
         break;
     case 'Z':
-        /* "les Donjons du Destin": capitalize it with %ZC */
+        /* "les Donjons du Destin": capitalize it with %ZC; a name without
+           article ("Night City" in a theme) keeps its capital */
         Strcpy(gc.cvt_buf, _(svd.dungeons[0].dname));
-        gc.cvt_buf[0] = lowc(gc.cvt_buf[0]);
+        if (!strncmp(gc.cvt_buf, "Le ", 3) || !strncmp(gc.cvt_buf, "La ", 3)
+            || !strncmp(gc.cvt_buf, "Les ", 4))
+            gc.cvt_buf[0] = lowc(gc.cvt_buf[0]);
         str = 0;
         break;
     default:

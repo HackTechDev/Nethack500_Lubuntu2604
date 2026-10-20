@@ -328,12 +328,12 @@ catalogue.
   anglais) : elles gardent la version du lot 10, rendue neutre
   (« Quittez ce sanctuaire »).
 - Traqueur (Rôdeur) : le Poste avancé d'Orion dans le dernier parc
-  sauvage de la Mégalopole, défendu par des champs de force ; le
+  sauvage de Night City, défendu par des champs de force ; le
   Labyrinthe du wumpus, « comme dans un très vieux jeu vidéo » ; le
   bunker de Scorpius ; l'arc qui imprime lui-même ses flèches.
 
 Vérifié en jeu : arrivée dans la quête du Traqueur (« le dernier parc
-sauvage de la Mégalopole ») ; le reste dans le catalogue.
+sauvage de Night City ») ; le reste dans le catalogue.
 
 ## Douzième lot : quêtes du Voleur de données et du Ronin urbain (en place)
 
@@ -342,7 +342,7 @@ sauvage de la Mégalopole ») ; le reste dans le catalogue.
   des Voleurs et celui de la Guilde des Assassins (le premier sert aussi
   à la quête du Corpo en goguette) ; crédits, puces de données, passe
   électronique, virus qui change les puces en ferraille ; la clé ouvre
-  « toutes les serrures et tous les pare-feu de la Mégalopole ».
+  « toutes les serrures et tous les pare-feu de Night City ».
 - Ronin urbain (Samouraï) : le Siège du clan Taro et la Tour du Shogun ;
   le daimyo devient directeur, l'empereur le Président du zaibatsu ;
   yakuzas des bas quartiers, monokatana, hologramme du teki, saké de
