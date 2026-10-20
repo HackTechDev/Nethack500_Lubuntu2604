@@ -1236,8 +1236,13 @@ xname_i18n(struct obj *obj, unsigned cxn_flags)
             pat = obj_pattern(pattern, pl, &gram, arg);
             Snprintf(buf, BUFSZ - PREFIX, pat, arg);
         }
-        if (label && ofnoun) /* tin preparation, as an adjective */
-            Sprintf(eos(buf), " %s", obj_agree(label, gram));
+        if (label && ofnoun) { /* tin preparation, as an adjective */
+            const char *adj = obj_agree(label, gram);
+
+            if (adj == label) /* no agreeing form: the msgctxt "tin" one */
+                adj = C_("tin", label);
+            Sprintf(eos(buf), " %s", adj);
+        }
     } else {
         Snprintf(buf, BUFSZ - PREFIX, "%s",
                  obj_noun(noun ? noun : "object?", pl, &gram));

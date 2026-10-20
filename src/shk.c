@@ -1805,7 +1805,9 @@ menu_pick_pay_items(
         amt = ibill[i].cost;
         /* this doesn't support hallucinatory currency because shopkeeper
            isn't hallucinating; also, that would mess up the alignment */
-        Snprintf(buf, sizeof buf, "%*ld Zm, %s", amt_width, amt, p);
+        /* "Zm": abbreviation of the currency, which a theme can rename */
+        Snprintf(buf, sizeof buf, "%*ld %s, %s", amt_width, amt,
+                 C_("currency", "Zm"), p);
         any.a_int = i + 1; /* +1: avoid 0 */
         add_menu(win, &nul_glyphinfo, &any, 0, 0, ATR_NONE, NO_COLOR, buf,
                  MENU_ITEMFLAGS_NONE);
@@ -4405,6 +4407,33 @@ sellobj(
                when container's contents are unknown, plural "items"
                should be used to not give away information.
              */
+            if (i18n_active()) {
+                /* whole formats; the object is a noun phrase of its own */
+                char objbuf[BUFSZ];
+                const char *objnm = obj->unpaid ? the(xname(obj))
+                                                : yname(obj);
+
+                if (cltmp && !ltmp)
+                    Snprintf(objbuf, sizeof objbuf,
+                             (yourc == 1L) ? _("your item in %s")
+                                           : _("your items in %s"), objnm);
+                else if (cltmp && ltmp)
+                    Snprintf(objbuf, sizeof objbuf,
+                             !only_partially_your_contents
+                                 ? _("%s and its contents")
+                                 : (yourc == 1L) ? _("%s and item inside")
+                                                 : _("%s and items inside"),
+                             objnm);
+                else
+                    Strcpy(objbuf, objnm);
+                Snprintf(qbuf, QBUFSZ,
+                         short_funds ? _("%s offers only %ld %s for %s.  Sell?")
+                                     : _("%s offers %ld %s for %s.  Sell?"),
+                         Shknam(shkp), offer, currency(offer), objbuf);
+                i18n_contract(qbuf);
+                record_price_quote(obj->otyp, offer / obj->quan, FALSE);
+                goto sell_prompt;
+            }
             Sprintf(qbuf, "%s offers%s %ld gold piece%s for %s%s ",
                     Shknam(shkp), short_funds ? " only" : "", offer,
                     plur(offer),
@@ -4427,6 +4456,7 @@ sellobj(
         } else
             qbuf[0] = '\0'; /* just to pacify lint */
 
+ sell_prompt:
         switch (gs.sell_response ? gs.sell_response : nyaq(qbuf)) {
         case 'q':
             gs.sell_response = 'n';

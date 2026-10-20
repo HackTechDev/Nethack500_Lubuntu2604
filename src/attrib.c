@@ -970,7 +970,8 @@ from_what(
      * Restrict the source of the attributes just to debug mode for now
      */
     if (wizard) {
-        static NEARDATA const char because_of[] = " because of %s";
+        static NEARDATA const char because_of_en[] = N_(" because of %s");
+        const char *because_of = _(because_of_en);
 
         if (propidx >= 0) {
             char *p;
@@ -993,24 +994,24 @@ from_what(
              */
             if ((propidx == BLINDED && u.uroleplay.blind)
                 || (propidx == DEAF && u.uroleplay.deaf))
-                Sprintf(buf, " from birth");
+                Sprintf(buf, _(" from birth"));
             else if (innateness == FROM_ROLE || innateness == FROM_RACE)
-                Strcpy(buf, " innately");
+                Strcpy(buf, _(" innately"));
             else if (innateness == FROM_INTR) /* [].intrinsic & FROMOUTSIDE */
-                Strcpy(buf, " intrinsically");
+                Strcpy(buf, _(" intrinsically"));
             else if (innateness == FROM_EXP)
-                Strcpy(buf, " because of your experience");
+                Strcpy(buf, _(" because of your experience"));
             else if (innateness == FROM_LYCN)
-                Strcpy(buf, " due to your lycanthropy");
+                Strcpy(buf, _(" due to your lycanthropy"));
             else if (innateness == FROM_FORM)
-                Strcpy(buf, " from your creature form");
+                Strcpy(buf, _(" from your creature form"));
             else if (propidx == FAST && Very_fast)
                 Sprintf(buf, because_of,
-                        ((HFast & TIMEOUT) != 0L) ? "a potion or spell"
+                        ((HFast & TIMEOUT) != 0L) ? _("a potion or spell")
                           : ((EFast & W_ARMF) != 0L && uarmf->dknown
                              && objects[uarmf->otyp].oc_name_known)
                               ? ysimple_name(uarmf) /* speed boots */
-                                : EFast ? "worn equipment"
+                                : EFast ? _("worn equipment")
                                   : something);
             else if (wizard
                      && (obj = what_gives(&u.uprops[propidx].extrinsic)) != 0)
@@ -1022,7 +1023,7 @@ from_what(
             else if (propidx == BLINDED && u.ucreamed
                      && BlindedTimeout == (long) u.ucreamed
                      && !EBlinded && !(HBlinded & ~TIMEOUT))
-                Sprintf(buf, "due to goop covering your %s",
+                Sprintf(buf, _("due to goop covering your %s"),
                         body_part(FACE));
 
             /* remove some verbosity and/or redundancy */

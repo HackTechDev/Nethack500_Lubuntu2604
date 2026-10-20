@@ -3144,6 +3144,10 @@ translated: a worn item burning in lava, unknown extended command (tty and
 	bigger terminal
 translated: naming an object or a monster (#name); quest texts elide "de"
 	before a god ("d'Athéna", "d'Hermes")
+translated: temple priests' names, the shopkeeper's offer when selling, the
+	currency abbreviation of the bill, tin preparations agreeing with the
+	tin, lycanthropy and debug-mode property sources in enlightenment;
+	verbalize() puts translated quotes around translated sentences
 
 
 NetHack Community Patches (or Variation) Included

@@ -9128,3 +9128,36 @@ msgstr "humain ou réplicant"
 msgctxt "symbol a"
 msgid "human or elf"
 msgstr "un humain ou réplicant"
+
+# Partie de test du 2026-10-20 : prêtres, monnaie abrégée, cyberpsychose
+
+msgctxt "currency"
+msgid "Zm"
+msgstr "€$"
+
+msgid "priest"
+msgstr "technoprêtre"
+
+msgid "priestess"
+msgstr "technoprêtresse"
+
+msgid "high priest"
+msgstr "grand technoprêtre"
+
+msgid "high priestess"
+msgstr "grande technoprêtresse"
+
+msgid "priest of %s"
+msgstr "technoprêtre @de %s"
+
+msgid "priestess of %s"
+msgstr "technoprêtresse @de %s"
+
+msgid "high priest of %s"
+msgstr "grand technoprêtre @de %s"
+
+msgid "high priestess of %s"
+msgstr "grande technoprêtresse @de %s"
+
+msgid " due to your lycanthropy"
+msgstr " à cause de votre cyberpsychose"

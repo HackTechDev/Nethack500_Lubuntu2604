@@ -557,7 +557,12 @@ verbalize(const char *line, ...)
 {
     va_list the_args;
     char *tmp;
+    const char *quote = i18n_active() ? _("\"%s\"") : "\"%s\"",
+               *pct = strstr(quote, "%s");
 
+    /* the quotes are translated too ("« %s »") */
+    if (!pct)
+        quote = "\"%s\"", pct = quote + 1;
     va_start(the_args, line);
     gp.pline_flags |= PLINE_VERBALIZE;
     if (i18n_active() && !strcmp(line, "%s")) {
@@ -568,20 +573,20 @@ verbalize(const char *line, ...)
 
         if (translation == arg)
             translation = _(arg);
-        tmp = You_buf((int) strlen(translation) + sizeof "\"\"");
-        Strcpy(tmp, "\"");
+        tmp = You_buf((int) (strlen(translation) + strlen(quote)));
+        copynchars(tmp, quote, (int) (pct - quote));
         Strcat(tmp, translation);
-        Strcat(tmp, "\"");
+        Strcat(tmp, pct + 2);
         pline("%s", tmp);
         gp.pline_flags &= ~PLINE_VERBALIZE;
         va_end(the_args);
         return;
     }
     line = _(line);
-    tmp = You_buf((int) strlen(line) + sizeof "\"\"");
-    Strcpy(tmp, "\"");
+    tmp = You_buf((int) (strlen(line) + strlen(quote)));
+    copynchars(tmp, quote, (int) (pct - quote));
     Strcat(tmp, line);
-    Strcat(tmp, "\"");
+    Strcat(tmp, pct + 2);
     vpline(tmp, the_args);
     gp.pline_flags &= ~PLINE_VERBALIZE;
     va_end(the_args);

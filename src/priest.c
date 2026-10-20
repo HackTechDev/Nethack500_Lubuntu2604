@@ -298,6 +298,8 @@ mon_aligntyp(struct monst *mon)
  *      - caller needs to inhibit Hallucination if it wants to force
  *              the true name even when under that influence
  */
+DISABLE_WARNING_FORMAT_NONLITERAL
+
 char *
 priestname(
     struct monst *mon,
@@ -313,6 +315,76 @@ priestname(
 
     if (!mon->ispriest && !mon->isminion) /* should never happen...  */
         return strcpy(pname, what);       /* caller must be confused */
+
+#ifdef NHI18N
+    if (i18n_active()) {
+        /* whole translatable noun phrases ("prêtre de %s"), the
+           adjectives after the noun and the article agreeing with it */
+        char noun[BUFSZ];
+        boolean ispri = (mon->ispriest || aligned_priest || high_priest),
+                showgod = (do_hallu || !high_priest || reveal_high_priest
+                           || !Is_astralevel(&u.uz) || m_next2u(mon)
+                           || program_state.gameover),
+                fem = mon->female;
+        const char *god = halu_gname(mon_aligntyp(mon)), *fmt;
+
+        if (ispri) {
+            if (do_hallu)
+                fmt = !showgod ? (high_priest ? _("grand poohbah")
+                                              : _("poohbah"))
+                      : high_priest ? _("grand poohbah of %s")
+                        : _("poohbah of %s");
+            else if (high_priest)
+                fmt = !showgod ? (fem ? _("high priestess") : _("high priest"))
+                      : fem ? _("high priestess of %s")
+                        : _("high priest of %s");
+            else
+                fmt = !showgod ? (fem ? _("priestess") : _("priest"))
+                      : fem ? _("priestess of %s") : _("priest of %s");
+            Snprintf(noun, sizeof noun, fmt, god);
+        } else {
+            /* minion: Angel &c, possibly guardian or renegade */
+            const char *mnam = do_hallu ? what : C_("monster", what);
+
+            if (mon->mtame && !strcmpi(what, "Angel"))
+                Snprintf(noun, sizeof noun, _("guardian %s"), mnam);
+            else
+                Strcpy(noun, mnam);
+            if (EMIN(mon)->renegade) {
+                char tmp[BUFSZ];
+
+                Snprintf(tmp, sizeof tmp, _("renegade %s"), noun);
+                Strcpy(noun, tmp);
+            }
+            if (showgod) {
+                char tmp[BUFSZ];
+
+                Snprintf(tmp, sizeof tmp, _("%s of %s"), noun, god);
+                Strcpy(noun, tmp);
+            }
+            fem = i18n_mon_fem(mon);
+        }
+        if (mon->minvis) {
+            char tmp[BUFSZ];
+
+            Snprintf(tmp, sizeof tmp, _("invisible %s"), noun);
+            Strcpy(noun, tmp);
+        }
+        if (article == ARTICLE_YOUR || (article == ARTICLE_A && high_priest))
+            article = ARTICLE_THE;
+        if (article == ARTICLE_THE)
+            fmt = i18n_vowel_start(noun) ? C_("priest elided", "the %s")
+                  : fem ? C_("priest feminine", "the %s")
+                    : C_("priest", "the %s");
+        else if (article == ARTICLE_A)
+            fmt = fem ? C_("priest feminine", "a %s") : C_("priest", "a %s");
+        else
+            fmt = "%s";
+        Snprintf(pname, BUFSZ, fmt, noun);
+        i18n_contract(pname); /* "%s @de %s" of a minion */
+        return pname;
+    }
+#endif /* NHI18N */
 
     /* for high priest(ess), "high" (or "grand" for poohbah) will be inserted
        [this was done near the end but we want 'what' to be updated sooner] */
@@ -365,6 +437,8 @@ priestname(
     }
     return pname;
 }
+
+RESTORE_WARNING_FORMAT_NONLITERAL
 
 boolean
 p_coaligned(struct monst *priest)

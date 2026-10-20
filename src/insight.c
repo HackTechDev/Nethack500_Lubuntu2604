@@ -2491,10 +2491,15 @@ attributes_enlightenment(
         you_can("lay eggs", "");
     if (ismnum(u.ulycn)) {
         /* "you are a werecreature [in beast form]" */
-        Strcpy(buf, an(pmname(&mons[u.ulycn],
-               flags.female ? FEMALE : MALE)));
+        if (i18n_active())
+            Strcpy(buf, i18n_an_ctx("monster",
+                                    pmname(&mons[u.ulycn],
+                                           flags.female ? FEMALE : MALE)));
+        else
+            Strcpy(buf, an(pmname(&mons[u.ulycn],
+                   flags.female ? FEMALE : MALE)));
         if (u.umonnum == u.ulycn) {
-            Strcat(buf, " in beast form");
+            Strcat(buf, _(" in beast form"));
             if (wizard)
                 Sprintf(eos(buf), " (%d)", u.mtimedone);
         }
