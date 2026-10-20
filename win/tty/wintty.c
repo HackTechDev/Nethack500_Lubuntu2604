@@ -2961,7 +2961,7 @@ ttyinv_create_window(int newid, struct WinDesc *newwin)
                    &newwin->maxrow)) {
         tty_destroy_nhwindow(newid);
         WIN_INVEN = WIN_ERR;
-        pline("%s.", "tty perm_invent could not be enabled");
+        pline("tty perm_invent could not be enabled.");
         pline("tty perm_invent needs a terminal that is at least %dx%d, "
               "yours is %dx%d.",
               (int) (minrow + 1 + ROWNO + StatusRows()), tty_perminv_mincol,

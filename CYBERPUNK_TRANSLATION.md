@@ -157,6 +157,13 @@ Penser aux genres (`objgender`) et aux formes plurielles.
 
 ## 4. Les mêmes tâches, de la plus simple à la plus difficile
 
+Fait le 2026-10-20 : points 1 à 5 (commits `d0c2b5e`, `ff8042a`,
+`a975e8a`, `2fed821`, puis celui des trous de `fr.po`).  Pour le point 5,
+seuls 4 des « trous » servaient vraiment (feu de lave sur un objet porté,
+commande étendue inconnue, fichiers introuvables, terminal trop petit
+pour `perm_invent`) ; l'invocation entendue et l'écriture du golem
+d'argile avaient déjà leur branche traduite.
+
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
    (4 rumeurs, 2 gravures, 1 oracle), texte libre sans format.

@@ -7636,7 +7636,13 @@ lava_effects(void)
             } else if (obj->in_use) {
                 if (obj->owornmask) {
                     if (usurvive) {
-                        pline("%s into flame!", Yobjnam2(obj, "burst"));
+                        if (i18n_active()) {
+                            const char *nm = Yname2(obj);
+
+                            pline(objnam_fmt("%s bursts into flame!", nm,
+                                             obj), nm);
+                        } else
+                            pline("%s into flame!", Yobjnam2(obj, "burst"));
                         ++burnmesgcount;
                     }
                     remove_worn_item(obj, TRUE);

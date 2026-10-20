@@ -3139,6 +3139,9 @@ curses: paperdoll option (on by default) shows the worn equipment beside
 	with the short names of the worn items
 the full key bindings list (help menu) and the menu control keys help
 	are translated, keys padded by their width on screen
+translated: a worn item burning in lava, unknown extended command (tty and
+	curses), files that cannot be opened, tty perm_invent needing a
+	bigger terminal
 
 
 NetHack Community Patches (or Variation) Included
