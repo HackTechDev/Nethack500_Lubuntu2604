@@ -615,6 +615,7 @@ xcalled(
 #define OGRAM_ELIDE 4
 #define OGRAM_NOELIDE 8
 #define OGRAM_SET 16 /* grammar known */
+#define OGRAM_DEFINITE 32 /* an() gives "the" too ("the 2nd arrow") */
 
 /* xname_i18n() flag: leave out "poisoned" (doname_i18n() adds it) */
 #define CXN_NOPOISON 0x100
@@ -2198,7 +2199,25 @@ mshot_xname(struct obj *obj)
     char tmpbuf[BUFSZ];
     char *onm = xname(obj);
 
-    /* (the English ordinal isn't added to a translated name) */
+#ifdef NHI18N
+    if (gm.m_shot.n > 1 && gm.m_shot.o == obj->otyp && i18n_active()) {
+        /* "2nd arrow" with the grammar of "arrow"; an() and the() both
+           give it the definite article, and a number is never elided */
+        unsigned gram = get_objgram(onm);
+        char *buf = nextobuf();
+
+        if (gm.m_shot.i == 1)
+            Snprintf(buf, BUFSZ, (gram & OGRAM_FEM)
+                                     ? C_("ordinal feminine", "1st %s")
+                                     : C_("ordinal", "1st %s"), onm);
+        else
+            Snprintf(buf, BUFSZ, C_("ordinal", "%dth %s"), gm.m_shot.i,
+                     onm);
+        set_objgram(buf, (gram & ~(OGRAM_ELIDE | OGRAM_SET))
+                             | OGRAM_NOELIDE | OGRAM_DEFINITE);
+        return buf;
+    }
+#endif
     if (gm.m_shot.n > 1 && gm.m_shot.o == obj->otyp && !i18n_active()) {
         /* "the Nth arrow"; value will eventually be passed to an() or
            The(), both of which correctly handle this "the " prefix */
@@ -3264,7 +3283,8 @@ an(const char *str)
 #ifdef NHI18N
     if (i18n_active() && (get_objgram(str) & OGRAM_SET)) {
         releaseobuf(buf);
-        return article_i18n(str, get_objgram(str), FALSE);
+        return article_i18n(str, get_objgram(str),
+                            (get_objgram(str) & OGRAM_DEFINITE) != 0);
     }
 #endif
     (void) just_an(buf, str);
