@@ -170,6 +170,14 @@ objets des races (`b59f8d5`), elfes → réplicants (`750970b`), noms
 propres de Night City (NCPD, Militech, nouvelles rumeurs, épitaphes et
 graffitis).  Reste le point 11 : les vérifications en jeu.
 
+Puis (2026-10-20) : la magie devient du code (`50e4164` : sorts →
+programmes, magie → piratage, 143 entrées), aides `help`, `hh`,
+`cmdhelp`, `opthelp`, `usagehlp`, `wizhelp` en version `.fr@cyber` ;
+l'historique de NetHack reste tel quel et l'encyclopédie (`data.fr`,
+plus de 7 000 lignes) n'a pas de version cyberpunk.  Des 448 textes de
+quête laissés au français, un seul jurait (résumé de l'antre de
+l'Exécuteur, `1ff6350`).
+
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
    (4 rumeurs, 2 gravures, 1 oracle), texte libre sans format.
