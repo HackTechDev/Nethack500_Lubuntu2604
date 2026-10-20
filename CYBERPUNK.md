@@ -454,9 +454,9 @@ la Verte gardent leur nom.  Les textes de quête du Medtech disent
 Ce que montre `/` (ou `;`) quand on demande la description d'une chose
 vient de l'encyclopédie, `dat/data-fr@cyber.base`, compilée en
 `data.fr@cyber` par `makedefs -d`.  C'est une copie complète de
-`data-fr.base` (le jeu change de fichier, pas d'entrée), dont 147
-entrées ont un texte écrit pour Night City à la place des citations de
-livres sur les choses d'origine :
+`data-fr.base` (le jeu change de fichier, pas d'entrée), dont toutes
+les entrées ont un texte écrit pour Night City à la place des citations
+de livres sur les choses d'origine.  Les 147 premières :
 
 - 65 objets et artefacts : stims, puces, modules, logiciels, implants,
   eddies, outils, armes, armures, nourriture ; Fléau-des-Hackers,
@@ -466,10 +466,14 @@ livres sur les choses d'origine :
   quêtes ; les entrées partagées avec des créatures gardées (chats,
   chiens) parlent des deux.
 
+Puis les 368 autres : dieux des cultes de Night City, chefs et lieux de
+quête, entités du Réseau profond, bêtes de labo, armes du clan Taro,
+pierres, nourriture, pièges, et les tables de grades de chaque rôle
+(« Grades du Techie »...).
+
 Les textes sont des notices, réclames, rapports du NCPD et messages de
 forum, avec des sources inventées ; aucun texte publié n'est repris.
 Les clés restent celles de `data.base` (la recherche se fait sur le nom
 anglais).  `po/encyclo-theme.py` écrit le fichier à partir d'une copie
-et de textes « @@ clé » ; les 368 autres entrées gardent le texte
-français.
+et de textes « @@ clé ».
 

@@ -186,6 +186,9 @@ Antivirus, Scanner de Détection, Optiques du Surmonde...).
 Puis l'encyclopédie du thème (`data-fr@cyber.base`, `77a4f85` et
 `6f53632`) : 147 entrées réécrites pour Night City (objets, artefacts,
 monstres) ; voir `CYBERPUNK.md`, section « Encyclopédie ».
+Puis les chefs de quête renommés (`2a805fa`) et les 368 entrées
+restantes de l'encyclopédie (`c7be3fb` à `4f298b5`) : toute
+l'encyclopédie est réécrite.
 
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
