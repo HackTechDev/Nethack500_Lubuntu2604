@@ -2369,7 +2369,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "elf mummy"
-msgstr "elfe momifié"
+msgstr "réplicant momifié"
 
 msgctxt "gender"
 msgid "elf mummy"
@@ -8954,3 +8954,177 @@ msgstr[1] "lances corpo"
 msgctxt "objgender"
 msgid "orcish spear"
 msgstr "f"
+
+# Les elfes sont des réplicants, comme la race du héros ; derniers
+# gnomes, orques et garous (en partie hallucinés)
+
+msgctxt "monster"
+msgid "elf"
+msgstr "réplicant"
+
+msgctxt "gender"
+msgid "elf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Woodland-elf"
+msgstr "réplicant des friches"
+
+msgctxt "gender"
+msgid "Woodland-elf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Green-elf"
+msgstr "réplicant de combat"
+
+msgctxt "gender"
+msgid "Green-elf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Grey-elf"
+msgstr "réplicant furtif"
+
+msgctxt "gender"
+msgid "Grey-elf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "High-elf"
+msgstr "réplicant supérieur"
+
+msgctxt "gender"
+msgid "High-elf"
+msgstr "m"
+
+msgctxt "monster"
+msgid "elf-noble"
+msgstr "réplicant de luxe"
+
+msgctxt "gender"
+msgid "elf-noble"
+msgstr "m"
+
+msgctxt "monster"
+msgid "elf-lord"
+msgstr "chef réplicant"
+
+msgctxt "gender"
+msgid "elf-lord"
+msgstr "m"
+
+msgctxt "monster"
+msgid "elf-lady"
+msgstr "cheffe réplicante"
+
+msgctxt "gender"
+msgid "elf-lady"
+msgstr "f"
+
+msgctxt "monster"
+msgid "Elvenking"
+msgstr "Roi réplicant"
+
+msgctxt "gender"
+msgid "Elvenking"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Elvenqueen"
+msgstr "Reine réplicante"
+
+msgctxt "gender"
+msgid "Elvenqueen"
+msgstr "f"
+
+msgctxt "monster"
+msgid "elven monarch"
+msgstr "monarque réplicant"
+
+msgctxt "gender"
+msgid "elven monarch"
+msgstr "m"
+
+msgctxt "monster"
+msgid "elf zombie"
+msgstr "réplicant zombie"
+
+msgctxt "gender"
+msgid "elf zombie"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome dummy"
+msgstr "squatteur mannequin"
+
+msgctxt "gender"
+msgid "gnome dummy"
+msgstr "m"
+
+msgctxt "monster"
+msgid "gnome laureate"
+msgstr "squatteur lauréat"
+
+msgctxt "gender"
+msgid "gnome laureate"
+msgstr "m"
+
+msgctxt "monster"
+msgid "martyr orc"
+msgstr "corporatiste martyr"
+
+msgctxt "gender"
+msgid "martyr orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "mortar orc"
+msgstr "corporatiste mortier"
+
+msgctxt "gender"
+msgid "mortar orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "Blork the orc"
+msgstr "Blork le corporatiste"
+
+msgctxt "gender"
+msgid "Blork the orc"
+msgstr "m"
+
+msgctxt "monster"
+msgid "were-rabbit"
+msgstr "cyberpsycho des clapiers"
+
+msgctxt "gender"
+msgid "were-rabbit"
+msgstr "m"
+
+msgctxt "monster"
+msgid "weremoustache"
+msgstr "cyberpsycho à moustache"
+
+msgctxt "gender"
+msgid "weremoustache"
+msgstr "m"
+
+msgctxt "monster"
+msgid "wereplatypus"
+msgstr "cyberpsycho ornithorynque"
+
+msgctxt "gender"
+msgid "wereplatypus"
+msgstr "m"
+
+msgid "Elf"
+msgstr "Réplicant"
+
+msgctxt "symbol"
+msgid "human or elf"
+msgstr "humain ou réplicant"
+
+msgctxt "symbol a"
+msgid "human or elf"
+msgstr "un humain ou réplicant"
