@@ -3182,8 +3182,8 @@ msgstr "m"
 msgctxt "object"
 msgid "elven mithril-coat"
 msgid_plural "elven mithril-coats"
-msgstr[0] "gilet elfique en nanofibre"
-msgstr[1] "gilets elfiques en nanofibre"
+msgstr[0] "gilet de réplicant en nanofibre"
+msgstr[1] "gilets de réplicant en nanofibre"
 
 msgctxt "objgender"
 msgid "elven mithril-coat"
@@ -8700,3 +8700,257 @@ msgstr[1] "détections des eddies"
 msgctxt "objgender"
 msgid "gold detection"
 msgstr "m"
+
+# Objets des anciennes races : nain → de mineur, elfique → de réplicant,
+# orque → corpo (noms de base du thème : poignard, machette, arc à poulies,
+# maille de kevlar)
+
+msgctxt "object"
+msgid "dwarvish cloak"
+msgid_plural "dwarvish cloaks"
+msgstr[0] "cape de mineur"
+msgstr[1] "capes de mineur"
+
+msgctxt "objgender"
+msgid "dwarvish cloak"
+msgstr "f"
+
+msgctxt "object"
+msgid "dwarvish iron helm"
+msgid_plural "dwarvish iron helms"
+msgstr[0] "casque de mineur"
+msgstr[1] "casques de mineur"
+
+msgctxt "objgender"
+msgid "dwarvish iron helm"
+msgstr "m"
+
+msgctxt "object"
+msgid "dwarvish roundshield"
+msgid_plural "dwarvish roundshields"
+msgstr[0] "bouclier rond de mineur"
+msgstr[1] "boucliers ronds de mineur"
+
+msgctxt "objgender"
+msgid "dwarvish roundshield"
+msgstr "m"
+
+msgctxt "object"
+msgid "dwarvish short sword"
+msgid_plural "dwarvish short swords"
+msgstr[0] "machette de mineur"
+msgstr[1] "machettes de mineur"
+
+msgctxt "objgender"
+msgid "dwarvish short sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "dwarvish spear"
+msgid_plural "dwarvish spears"
+msgstr[0] "lance de mineur"
+msgstr[1] "lances de mineur"
+
+msgctxt "objgender"
+msgid "dwarvish spear"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven arrow"
+msgid_plural "elven arrows"
+msgstr[0] "flèche de réplicant"
+msgstr[1] "flèches de réplicant"
+
+msgctxt "objgender"
+msgid "elven arrow"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven boots"
+msgid_plural "elven bootss"
+msgstr[0] "bottes de réplicant"
+msgstr[1] "bottes de réplicant"
+
+msgctxt "objgender"
+msgid "elven boots"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven bow"
+msgid_plural "elven bows"
+msgstr[0] "arc à poulies de réplicant"
+msgstr[1] "arcs à poulies de réplicant"
+
+msgctxt "objgender"
+msgid "elven bow"
+msgstr "m"
+
+msgctxt "object"
+msgid "elven broadsword"
+msgid_plural "elven broadswords"
+msgstr[0] "épée large de réplicant"
+msgstr[1] "épées larges de réplicant"
+
+msgctxt "objgender"
+msgid "elven broadsword"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven cloak"
+msgid_plural "elven cloaks"
+msgstr[0] "cape de réplicant"
+msgstr[1] "capes de réplicant"
+
+msgctxt "objgender"
+msgid "elven cloak"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven dagger"
+msgid_plural "elven daggers"
+msgstr[0] "poignard de réplicant"
+msgstr[1] "poignards de réplicant"
+
+msgctxt "objgender"
+msgid "elven dagger"
+msgstr "m"
+
+msgctxt "object"
+msgid "elven leather helm"
+msgid_plural "elven leather helms"
+msgstr[0] "casque de cuir de réplicant"
+msgstr[1] "casques de cuir de réplicant"
+
+msgctxt "objgender"
+msgid "elven leather helm"
+msgstr "m"
+
+msgctxt "object"
+msgid "elven shield"
+msgid_plural "elven shields"
+msgstr[0] "bouclier de réplicant"
+msgstr[1] "boucliers de réplicant"
+
+msgctxt "objgender"
+msgid "elven shield"
+msgstr "m"
+
+msgctxt "object"
+msgid "elven short sword"
+msgid_plural "elven short swords"
+msgstr[0] "machette de réplicant"
+msgstr[1] "machettes de réplicant"
+
+msgctxt "objgender"
+msgid "elven short sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "elven spear"
+msgid_plural "elven spears"
+msgstr[0] "lance de réplicant"
+msgstr[1] "lances de réplicant"
+
+msgctxt "objgender"
+msgid "elven spear"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish arrow"
+msgid_plural "orcish arrows"
+msgstr[0] "flèche corpo"
+msgstr[1] "flèches corpo"
+
+msgctxt "objgender"
+msgid "orcish arrow"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish bow"
+msgid_plural "orcish bows"
+msgstr[0] "arc à poulies corpo"
+msgstr[1] "arcs à poulies corpo"
+
+msgctxt "objgender"
+msgid "orcish bow"
+msgstr "m"
+
+msgctxt "object"
+msgid "orcish chain mail"
+msgid_plural "orcish chain mails"
+msgstr[0] "maille de kevlar corpo"
+msgstr[1] "mailles de kevlar corpo"
+
+msgctxt "objgender"
+msgid "orcish chain mail"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish cloak"
+msgid_plural "orcish cloaks"
+msgstr[0] "cape corpo"
+msgstr[1] "capes corpo"
+
+msgctxt "objgender"
+msgid "orcish cloak"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish dagger"
+msgid_plural "orcish daggers"
+msgstr[0] "poignard corpo"
+msgstr[1] "poignards corpo"
+
+msgctxt "objgender"
+msgid "orcish dagger"
+msgstr "m"
+
+msgctxt "object"
+msgid "orcish helm"
+msgid_plural "orcish helms"
+msgstr[0] "casque corpo"
+msgstr[1] "casques corpo"
+
+msgctxt "objgender"
+msgid "orcish helm"
+msgstr "m"
+
+msgctxt "object"
+msgid "orcish ring mail"
+msgid_plural "orcish ring mails"
+msgstr[0] "armure d'anneaux corpo"
+msgstr[1] "armures d'anneaux corpo"
+
+msgctxt "objgender"
+msgid "orcish ring mail"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish shield"
+msgid_plural "orcish shields"
+msgstr[0] "bouclier corpo"
+msgstr[1] "boucliers corpo"
+
+msgctxt "objgender"
+msgid "orcish shield"
+msgstr "m"
+
+msgctxt "object"
+msgid "orcish short sword"
+msgid_plural "orcish short swords"
+msgstr[0] "machette corpo"
+msgstr[1] "machettes corpo"
+
+msgctxt "objgender"
+msgid "orcish short sword"
+msgstr "f"
+
+msgctxt "object"
+msgid "orcish spear"
+msgid_plural "orcish spears"
+msgstr[0] "lance corpo"
+msgstr[1] "lances corpo"
+
+msgctxt "objgender"
+msgid "orcish spear"
+msgstr "f"
