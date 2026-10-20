@@ -8440,3 +8440,263 @@ msgstr "[Emportez %o, retournez à %Z et reprenez l'Amulette.]"
 msgctxt "quest"
 msgid "[You are the keeper of %o.  Return to %Z and find the Amulet.]"
 msgstr "[Vous êtes {le gardien|la gardienne} @de %o.  Retournez à %Z et trouvez l'Amulette.]"
+
+# L'or devient les eddies (messages des marchands, des voleurs, du
+# coffre-fort, des pièces lancées...)
+
+msgid "%s calms down and picks up the gold."
+msgstr "%s se calme et ramasse les eddies."
+
+msgid "%s catches the gold."
+msgstr "%s attrape les eddies."
+
+msgid "%s picks up the gold."
+msgstr "%s ramasse les eddies."
+
+msgid "%s quickly snatches some gold from between the %s of %s!"
+msgstr "%s chipe vivement des eddies entre les %s @de %s !"
+
+msgid "%s quickly snatches some gold from between your %s!"
+msgstr "%s chipe vivement des eddies entre vos %s !"
+
+msgid "But you don't have enough gold or credit."
+msgstr "Mais vous n'avez pas assez d'eddies ni de crédit."
+
+msgid "But you don't have enough gold."
+msgstr "Mais vous n'avez pas assez d'eddies."
+
+msgid "But you don't seem to have enough gold or credit."
+msgstr "Mais vous ne semblez pas avoir assez d'eddies ni de crédit."
+
+msgid "But you don't seem to have enough gold."
+msgstr "Mais vous ne semblez pas avoir assez d'eddies."
+
+msgid "How dare you destroy that gold, scoundrel!"
+msgstr "Comment osez-vous détruire ces eddies, canaille !"
+
+msgid "Moreover, you have no gold."
+msgstr "De plus, vous n'avez pas d'eddies."
+
+msgid "The gold of %s seems to vanish."
+msgstr "Les eddies @de %s semblent disparaître."
+
+msgid "You don't have enough gold to buy any of the items on your bill."
+msgstr "Vous n'avez pas assez d'eddies pour acheter aucun des objets de votre facture."
+
+msgid "You don't have enough gold to buy any of the items you've picked."
+msgstr "Vous n'avez pas assez d'eddies pour acheter aucun des objets choisis."
+
+msgid "You don't have enough gold to buy the item on your bill."
+msgstr "Vous n'avez pas assez d'eddies pour acheter l'objet de votre facture."
+
+msgid "You don't have enough gold to buy the item you've picked."
+msgstr "Vous n'avez pas assez d'eddies pour acheter l'objet choisi."
+
+msgid "You don't have gold enough to pay for %s."
+msgstr "Vous n'avez pas assez d'eddies pour payer %s."
+
+msgid "You don't have gold or credit enough to pay for %s."
+msgstr "Vous n'avez pas assez d'eddies ni de crédit pour payer %s."
+
+msgid "You don't seem to have gold enough to pay for %s."
+msgstr "Vous ne semblez pas avoir assez d'eddies pour payer %s."
+
+msgid "You don't seem to have gold or credit enough to pay for %s."
+msgstr "Vous ne semblez pas avoir assez d'eddies ni de crédit pour payer %s."
+
+msgid "You have no gold or credit left."
+msgstr "Vous n'avez plus d'eddies ni de crédit."
+
+msgid "You have no gold or credit."
+msgstr "Vous n'avez ni eddies ni crédit."
+
+msgid "You owe %s %ld %s for gold picked up and the use of merchandise."
+msgstr "Vous devez %2$ld %3$s à %1$s pour les eddies ramassés et l'utilisation de marchandises."
+
+msgid "You seem to have no gold or credit."
+msgstr "Vous semblez n'avoir ni eddies ni crédit."
+
+msgid "You still have hidden gold.  Drop it now."
+msgstr "Vous avez encore des eddies cachés.  Lâchez-les maintenant."
+
+msgid "classify gold as unknown or uncursed"
+msgstr "classer les eddies comme inconnus ou non maudits"
+
+msgid "show gold, possibly shop credit or debt"
+msgstr "afficher les eddies, et le crédit ou la dette en boutique"
+
+msgid "You notice some gold between your %s."
+msgstr "Vous remarquez des eddies entre vos %s."
+
+msgid "You feel very greedy, and sense gold!"
+msgstr "Vous vous sentez très avide, et flairez des eddies !"
+
+msgid "%s awakens and catches the gold."
+msgstr "%s se réveille et attrape les eddies."
+
+msgid "You cannot throw gold at yourself."
+msgstr "Vous ne pouvez pas vous lancer des eddies à vous-même."
+
+msgid "The gold disappears into %s."
+msgstr "Les eddies disparaissent dans %s."
+
+msgid "The gold hits %s, then falls back on top of your %s."
+msgstr "Les eddies frappent %s, puis retombent sur votre %s."
+
+msgid "The gold hits %s."
+msgstr "Les eddies frappent %s."
+
+msgid "You lost some of your gold in the fountain!"
+msgstr "Vous avez perdu une partie de vos eddies dans la fontaine !"
+
+msgid "You cannot %s gold."
+msgstr "Vous ne pouvez pas %s des eddies."
+
+msgid "Only carrying gold"
+msgstr "Vous ne portez que des eddies"
+
+msgid "%s tries to take your gold, but fails..."
+msgstr "%s essaie de prendre vos eddies, mais échoue..."
+
+msgid "You give %s all your gold."
+msgstr "Vous donnez tous vos eddies à %s."
+
+msgid "%s picks up some gold."
+msgstr "%s ramasse des eddies."
+
+msgid "Your knapsack cannot accommodate any more items (except gold)."
+msgstr "Votre sac ne peut plus contenir d'objets (sauf des eddies)."
+
+msgid "You have no gold."
+msgstr "Vous n'avez pas d'eddies."
+
+msgid "You don't even have enough gold for that!"
+msgstr "Vous n'avez même pas assez d'eddies pour cela !"
+
+msgid "You paid for %s at a cost of %ld gold piece%s.%s"
+msgstr "Vous avez payé %s pour %ld eddie%s.%s"
+
+msgid "You bought %s for %ld gold piece%s.%s"
+msgstr "Vous avez acheté %s pour %ld eddie%s.%s"
+
+msgid "You sold some items inside %s for %ld gold piece%s.%s"
+msgstr "Vous avez vendu des objets contenus dans %s pour %ld eddie%s.%s"
+
+msgid "You sold %s for %ld gold piece%s.%s"
+msgstr "Vous avez vendu %s pour %ld eddie%s.%s"
+
+msgid "You relinquish %s and receive %ld gold piece%s in compensation.%s"
+msgstr "Vous cédez %s et recevez %ld eddie%s en compensation.%s"
+
+msgid "You have no room for the gold!"
+msgstr "Vous n'avez pas de place pour les eddies !"
+
+msgid "You don't owe any gold here."
+msgstr "Vous ne devez pas d'eddies ici."
+
+msgid "You seem to have no gold."
+msgstr "Vous semblez n'avoir pas d'eddies."
+
+msgid "But you have some gold stashed away."
+msgstr "Mais vous avez des eddies mis de côté."
+
+msgid "You give %s all your openly kept gold."
+msgstr "Vous donnez à %s tous les eddies que vous portez ouvertement."
+
+msgid "But you have hidden gold!"
+msgstr "Mais vous avez des eddies cachés !"
+
+msgid "Moreover, you seem to have no gold."
+msgstr "De plus, vous semblez n'avoir pas d'eddies."
+
+msgid "%s is after blood, not gold!"
+msgstr "%s veut du sang, pas des eddies !"
+
+msgid "%s is after your hide, not your gold!"
+msgstr "%s veut votre peau, pas vos eddies !"
+
+msgid "Maybe you have some gold stashed away?"
+msgstr "Vous avez peut-être des eddies mis de côté ?"
+
+msgid "You seem to have no gold or credit left."
+msgstr "Vous semblez n'avoir plus d'eddies ni de crédit."
+
+msgid "You notice you have no gold!"
+msgstr "Vous remarquez que vous n'avez pas d'eddies !"
+
+msgid "Please drop that gold and follow me."
+msgstr "Veuillez lâcher ces eddies et me suivre."
+
+msgid "%s quickly snatches some gold from beneath your %s!"
+msgstr "%s chipe vivement des eddies sous vos %s !"
+
+msgid "%s quickly snatches some gold from beneath the %s of %s!"
+msgstr "%s chipe vivement des eddies sous les %s @de %s !"
+
+msgid "%s tries to rob you, but isn't interested in gold."
+msgstr "%s essaie de vous voler, mais les eddies ne l'intéressent pas."
+
+msgid "The gold of %s vanishes."
+msgstr "Les eddies @de %s disparaissent."
+
+msgid "You grab %s's gold, but find no room in your knapsack."
+msgstr "Vous prenez les eddies @de %s, mais il n'y a pas de place dans votre sac."
+
+msgid "%s steals some gold from %s."
+msgstr "%s vole des eddies à %s."
+
+msgid "You have hidden gold."
+msgstr "Vous avez des eddies cachés."
+
+msgid "Most likely all your gold was stolen from this vault."
+msgstr "Tous vos eddies ont très probablement été volés dans cette chambre forte."
+
+msgid "A mysterious force moves the gold into the vault."
+msgstr "Une force mystérieuse déplace les eddies dans la chambre forte."
+
+msgid "%s calms down and picks up the gold from beneath you."
+msgstr "%s se calme et ramasse les eddies sous vos pieds."
+
+msgid "%s picks up the gold from beneath you."
+msgstr "%s ramasse les eddies sous vos pieds."
+
+msgid "How dare you consume that gold, scoundrel!"
+msgstr "Comment osez-vous consommer ces eddies, canaille !"
+
+msgid "drop that hidden gold and follow me!"
+msgstr "lâchez ces eddies cachés et suivez-moi !"
+
+msgid "drop that gold and follow me!"
+msgstr "lâchez ces eddies et suivez-moi !"
+
+msgid "Drop all your gold, scoundrel!"
+msgstr "Lâchez tous vos eddies, crapule !"
+
+msgid "%s remits your gold to the vault."
+msgstr "%s remet vos eddies au coffre."
+
+msgid "To Croesus: here's the gold recovered from %s the %s."
+msgstr "À Crésus : voici les eddies récupérés sur %s, %s."
+
+msgid "You can't ready only part of your gold."
+msgstr "Vous ne pouvez pas préparer seulement une partie de vos eddies."
+
+msgid "Gold"
+msgstr "Eddies"
+
+msgid "Gold:"
+msgstr "Eddies :"
+
+msgctxt "while"
+msgid ", while pretending to be a pile of gold"
+msgstr ", en se faisant passer pour un tas d'eddies"
+
+msgctxt "object"
+msgid "gold detection"
+msgid_plural "gold detections"
+msgstr[0] "détection des eddies"
+msgstr[1] "détections des eddies"
+
+msgctxt "objgender"
+msgid "gold detection"
+msgstr "m"
