@@ -430,3 +430,11 @@ publiés :
 « Night City » n'a pas d'article : « à Night City », « de Night City »
 (pas de contraction), « dans les rues de Night City ».  Les Bas-fonds
 gardent leur nom générique.
+
+En place (2026-10-20) : les flics de choc sont ceux du NCPD, les soldats
+corpo ceux de Militech ; 11 rumeurs vraies (de vrais conseils situés dans
+les quartiers ou chez les gangs), 12 fausses, 12 épitaphes et 12
+graffitis citent les quartiers, les corporations et les gangs.  Les
+elfes sont des réplicants, comme la race du héros, et les objets des
+races renommées sont « de mineur », « de réplicant » et « corpo ».  Les
+messages sur l'or parlent d'eddies.

@@ -1607,11 +1607,11 @@ msgstr "un monstre furtif"
 
 msgctxt "symbol"
 msgid "Keystone Kop"
-msgstr "flic de choc"
+msgstr "flic du NCPD"
 
 msgctxt "symbol a"
 msgid "Keystone Kop"
-msgstr "un flic de choc"
+msgstr "un flic du NCPD"
 
 msgctxt "symbol"
 msgid "lich"
@@ -2281,7 +2281,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Keystone Kop"
-msgstr "flic de choc"
+msgstr "flic du NCPD"
 
 msgctxt "gender"
 msgid "Keystone Kop"
@@ -2289,7 +2289,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Kop Sergeant"
-msgstr "sergent de choc"
+msgstr "sergent du NCPD"
 
 msgctxt "gender"
 msgid "Kop Sergeant"
@@ -2297,7 +2297,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Kop Lieutenant"
-msgstr "lieutenant de choc"
+msgstr "lieutenant du NCPD"
 
 msgctxt "gender"
 msgid "Kop Lieutenant"
@@ -2305,7 +2305,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "Kop Kaptain"
-msgstr "capitaine de choc"
+msgstr "capitaine du NCPD"
 
 msgctxt "gender"
 msgid "Kop Kaptain"
@@ -2601,7 +2601,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "soldier"
-msgstr "soldat corpo"
+msgstr "soldat de Militech"
 
 msgctxt "gender"
 msgid "soldier"
@@ -2609,7 +2609,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "sergeant"
-msgstr "sergent corpo"
+msgstr "sergent de Militech"
 
 msgctxt "gender"
 msgid "sergeant"
@@ -2617,7 +2617,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "lieutenant"
-msgstr "lieutenant corpo"
+msgstr "lieutenant de Militech"
 
 msgctxt "gender"
 msgid "lieutenant"
@@ -2625,7 +2625,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "captain"
-msgstr "capitaine corpo"
+msgstr "capitaine de Militech"
 
 msgctxt "gender"
 msgid "captain"

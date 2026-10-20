@@ -164,6 +164,12 @@ commande étendue inconnue, fichiers introuvables, terminal trop petit
 pour `perm_invent`) ; l'invocation entendue et l'écriture du golem
 d'argile avaient déjà leur branche traduite.
 
+Puis points 6 à 10 : questions pour nommer (`f6a7929`, avec l'élision
+« d'Athéna », « d'Hermes » dans les quêtes), or → eddies (`d754bee`),
+objets des races (`b59f8d5`), elfes → réplicants (`750970b`), noms
+propres de Night City (NCPD, Militech, nouvelles rumeurs, épitaphes et
+graffitis).  Reste le point 11 : les vérifications en jeu.
+
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
    (4 rumeurs, 2 gravures, 1 oracle), texte libre sans format.
