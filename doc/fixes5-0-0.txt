@@ -3142,6 +3142,8 @@ the full key bindings list (help menu) and the menu control keys help
 translated: a worn item burning in lava, unknown extended command (tty and
 	curses), files that cannot be opened, tty perm_invent needing a
 	bigger terminal
+translated: naming an object or a monster (#name); quest texts elide "de"
+	before a god ("d'Athéna", "d'Hermes")
 
 
 NetHack Community Patches (or Variation) Included

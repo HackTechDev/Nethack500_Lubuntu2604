@@ -150,7 +150,7 @@ msgid ""
 "defeat %ni.\""
 msgstr ""
 "« %p, je crains que vous ne manquiez encore trop d'expérience pour\n"
-"affronter %n.  Seul{|e} %Ra avec l'aide de %d pourrait espérer\n"
+"affronter %n.  Seul{|e} %Ra avec l'aide @de %d pourrait espérer\n"
 "le vaincre. »"
 
 #, no-c-format
@@ -252,7 +252,7 @@ msgid ""
 "How goes your quest to recover the Amulet for %d?\""
 msgstr ""
 "« %pC !  Bon retour.\n"
-"Comment se passe votre quête pour reprendre l'Amulette au nom de %d ? »"
+"Comment se passe votre quête pour reprendre l'Amulette au nom @de %d ? »"
 
 #, no-c-format
 msgctxt "quest"
@@ -993,7 +993,7 @@ msgstr ""
 "à vaincre le Magicien de Yendor et ses sbires, ce serait vous.\n"
 "\n"
 "» Partez maintenant, et portez l'Amulette jusqu'au Plan astral.  Une\n"
-"fois là-bas, présentez l'Amulette sur l'autel de %d.  En chemin, vous\n"
+"fois là-bas, présentez l'Amulette sur l'autel @de %d.  En chemin, vous\n"
 "traverserez les quatre Plans élémentaires.  Ces plans ne ressemblent à\n"
 "rien de ce que vous avez connu, alors soyez prêt{|e} !\n"
 "\n"
@@ -1018,7 +1018,7 @@ msgstr ""
 "dans une ultime aventure.\n"
 "\n"
 "» Prenez l'Amulette et trouvez le chemin du Plan astral.\n"
-"Là, vous devrez trouver l'autel de %d et sacrifier\n"
+"Là, vous devrez trouver l'autel @de %d et sacrifier\n"
 "l'Amulette sur cet autel pour accomplir votre destin.\n"
 "\n"
 "» Souvenez-vous : votre chemin doit désormais toujours monter. »"
@@ -1193,7 +1193,7 @@ msgid ""
 msgstr ""
 "« Excellent, %p.  Je vois que vous avez repris l'Amulette !\n"
 "\n"
-"» Vous devez porter l'Amulette au Grand Temple de %d, dans le Plan\n"
+"» Vous devez porter l'Amulette au Grand Temple @de %d, dans le Plan\n"
 "astral.  Là, vous devrez offrir l'Amulette à %d.\n"
 "\n"
 "» Partez maintenant, {mon fils|ma fille}.  Je ne peux pas vous dire votre\n"
@@ -1254,7 +1254,7 @@ msgstr "« Vas-y, va chercher ta maman !  J'attendrai. »"
 #, no-c-format
 msgctxt "quest"
 msgid "\"Go forth with the blessings of %d.\""
-msgstr "« Partez avec les bénédictions de %d. »"
+msgstr "« Partez avec les bénédictions @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -1264,7 +1264,7 @@ msgstr "« Va jouer à saute-mouton avec un troupeau de licornes ! »"
 #, no-c-format
 msgctxt "quest"
 msgid "\"Go with the blessings of %d.\""
-msgstr "« Partez avec les bénédictions de %d. »"
+msgstr "« Partez avec les bénédictions @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -1298,7 +1298,7 @@ msgstr ""
 "» C'est la seule façon d'empêcher les coupes budgétaires qui pourraient\n"
 "faire fermer ce collège.\n"
 "\n"
-"» Que la sagesse de %d vous guide. »"
+"» Que la sagesse @de %d vous guide. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -1565,7 +1565,7 @@ msgstr "« J'espère que, pour le bien @de %H, vous vous êtes préparé{|e} cet
 #, no-c-format
 msgctxt "quest"
 msgid "\"I killed scores of %ds best when I took %o. Do you really think that one %c can stand against me?\""
-msgstr "« J'ai tué des dizaines des meilleurs guerriers de %d quand j'ai pris %o.  Crois-tu vraiment qu'un{|e} seul{|e} %c puisse me tenir tête ? »"
+msgstr "« J'ai tué des dizaines des meilleurs guerriers @de %d quand j'ai pris %o.  Crois-tu vraiment qu'un{|e} seul{|e} %c puisse me tenir tête ? »"
 
 #, no-c-format
 msgctxt "quest"
@@ -2374,7 +2374,7 @@ msgstr "« Souvenez-vous de votre entraînement, %p.  Vous pouvez réussir. »"
 #, no-c-format
 msgctxt "quest"
 msgid "\"Remember, %p, follow always the path of %d.\""
-msgstr "« Souviens-toi, %p, suis toujours la voie de %d. »"
+msgstr "« Souviens-toi, %p, suis toujours la voie @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -2582,7 +2582,7 @@ msgstr ""
 #, no-c-format
 msgctxt "quest"
 msgid "\"Some instrument of %d you are, %p.  You are a weakling!\""
-msgstr "« Bel instrument de %d que tu fais, %p.  Tu n'es qu'{un gringalet|une mauviette} ! »"
+msgstr "« Bel instrument @de %d que tu fais, %p.  Tu n'es qu'{un gringalet|une mauviette} ! »"
 
 #, no-c-format
 msgctxt "quest"
@@ -2750,7 +2750,7 @@ msgstr ""
 #, no-c-format
 msgctxt "quest"
 msgid "\"The wrath of %D is now upon you!\""
-msgstr "« La colère de %D s'abat maintenant sur toi ! »"
+msgstr "« La colère @de %D s'abat maintenant sur toi ! »"
 
 msgid "\"Then die, creature!\""
 msgstr "« Alors meurs, créature ! »"
@@ -2788,7 +2788,7 @@ msgstr ""
 "suivante.  Revenez parmi nous en %R confirmé{|e}, et peut-être serez-vous\n"
 "prêt{|e} alors.\n"
 "\n"
-"» Repartez maintenant, et que les enseignements de %d vous soient utiles. »"
+"» Repartez maintenant, et que les enseignements @de %d vous soient utiles. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -2921,16 +2921,16 @@ msgstr ""
 "\n"
 "    %d fera envoyer un enfant dans le monde.  Cet enfant sera\n"
 "    endurci par l'épreuve du combat et de la magie, car %d l'a voulu.\n"
-"    Il est dit que l'enfant de %d reprendra l'Amulette de Yendor\n"
+"    Il est dit que l'enfant @de %d reprendra l'Amulette de Yendor\n"
 "    qui fut dérobée au Créateur au commencement des temps.\n"
 "\n"
 "» Puisque vous possédez maintenant l'Amulette, %p, je soupçonne que\n"
 "le Livre parle de vous.\n"
 "\n"
-"    L'enfant de %d prendra l'Amulette et voyagera jusqu'au Plan\n"
-"    astral, où se trouve le Grand Temple de %d.  L'Amulette\n"
+"    L'enfant @de %d prendra l'Amulette et voyagera jusqu'au Plan\n"
+"    astral, où se trouve le Grand Temple @de %d.  L'Amulette\n"
 "    sera sacrifiée à %d, là, sur son autel.  Alors l'enfant se\n"
-"    tiendra aux côtés de %d, champion de tous les %cp pour l'éternité.\n"
+"    tiendra aux côtés @de %d, champion de tous les %cp pour l'éternité.\n"
 "\n"
 "» C'est tout ce que je sais, %p.  J'espère que cela vous aidera. »"
 
@@ -3252,7 +3252,7 @@ msgid ""
 "regain the Amulet of Yendor for %d?\""
 msgstr ""
 "« Bon retour, %p.  Avez-vous progressé dans votre quête pour\n"
-"reprendre l'Amulette de Yendor au nom de %d ? »"
+"reprendre l'Amulette de Yendor au nom @de %d ? »"
 
 #, no-c-format
 msgctxt "quest"
@@ -3361,7 +3361,7 @@ msgstr "« Quand tu seras vaincu{|e}, ton tourment durera mille ans. »"
 #, no-c-format
 msgctxt "quest"
 msgid "\"When you encounter %n, call upon %d for assistance.\""
-msgstr "« Quand vous affronterez %n, invoquez l'aide de %d. »"
+msgstr "« Quand vous affronterez %n, invoquez l'aide @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -3608,7 +3608,7 @@ msgid ""
 "as you have failed us utterly.\""
 msgstr ""
 "« Vous êtes {un hérétique|une hérétique}, %p !  Comment, vous qui êtes %ra,\n"
-"pouvez-vous vous écarter à ce point des enseignements de %d ?  Quittez ce\n"
+"pouvez-vous vous écarter à ce point des enseignements @de %d ?  Quittez ce\n"
 "temple.  Vous n'êtes plus {un frère|une sœur} de cet ordre.  Nous\n"
 "prierons %d de nous envoyer une autre aide, car vous nous avez totalement\n"
 "déçus. »"
@@ -3854,7 +3854,7 @@ msgstr ""
 "faire :\n"
 "\n"
 "» Remontez jusqu'à l'air libre.  L'Amulette que vous portez vous emmènera\n"
-"alors dans les Plans astraux, d'où le Grand Temple de %d\n"
+"alors dans les Plans astraux, d'où le Grand Temple @de %d\n"
 "étend son influence sur tout notre monde.\n"
 "\n"
 "» Sacrifiez l'Amulette sur l'autel.  Ainsi %d deviendra suprême ! »"
@@ -3976,7 +3976,7 @@ msgstr ""
 "Maintenant, écoutez-moi, %p, et je vais vous dire ce qu'il faut faire :\n"
 "\n"
 "» L'Amulette renferme une magie capable de vous transporter dans\n"
-"le Plan astral, où réside le cercle principal de %d.\n"
+"le Plan astral, où réside le cercle principal @de %d.\n"
 "\n"
 "» Pour activer cette magie, vous devez monter aussi haut que possible.\n"
 "Quand vous atteindrez le temple, sacrifiez l'Amulette à %d.\n"
@@ -3994,7 +3994,7 @@ msgid ""
 msgstr ""
 "« Vous avez beaucoup appris sur les remèdes bienfaisants, mais vous devez\n"
 "aussi savoir quelle médecine convient à quel mal.  C'est pourquoi les\n"
-"enseignements de %d font partie de votre formation.\n"
+"enseignements @de %d font partie de votre formation.\n"
 "\n"
 "» Revenez parmi nous quand vous vous serez guéri{|e} vous-même. »"
 
@@ -4007,9 +4007,9 @@ msgid ""
 "life, but I hope to at %ds feet.\""
 msgstr ""
 "« Vous l'avez emporté, %p !  %d est sûrement avec vous.  Maintenant,\n"
-"vous devez prendre l'Amulette et la sacrifier sur l'autel de %d dans\n"
+"vous devez prendre l'Amulette et la sacrifier sur l'autel @de %d dans\n"
 "le Plan astral.  Je crains de ne jamais vous revoir en cette vie, mais\n"
-"j'espère vous revoir aux pieds de %d. »"
+"j'espère vous revoir aux pieds @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -4020,9 +4020,9 @@ msgid ""
 "life, but I hope to at %ds feet.\""
 msgstr ""
 "« Vous l'avez emporté, %p !  %d est sûrement avec vous.  Maintenant,\n"
-"vous devez prendre l'Amulette et la sacrifier sur l'autel de %d dans\n"
+"vous devez prendre l'Amulette et la sacrifier sur l'autel @de %d dans\n"
 "le Plan astral.  Je crains de ne jamais vous revoir en cette vie, mais\n"
-"j'espère vous revoir aux pieds de %d. »"
+"j'espère vous revoir aux pieds @de %d. »"
 
 #, no-c-format
 msgctxt "quest"
@@ -4058,7 +4058,7 @@ msgstr ""
 "Félicitations.\n"
 "\n"
 "» J'étais en méditation, et j'ai reçu des instructions d'un serviteur\n"
-"de %d.  %d ordonne que vous gardiez\n"
+"@de %d.  %d ordonne que vous gardiez\n"
 "%o.  Avec eux, vous devrez reprendre l'Amulette\n"
 "de Yendor.\n"
 "\n"
@@ -4081,7 +4081,7 @@ msgstr ""
 "Félicitations.\n"
 "\n"
 "» J'étais en méditation, et j'ai reçu des instructions d'un serviteur\n"
-"de %d.  %d ordonne que vous gardiez\n"
+"@de %d.  %d ordonne que vous gardiez\n"
 "%o.  Avec elle, vous devrez reprendre l'Amulette\n"
 "de Yendor.\n"
 "\n"
@@ -4506,7 +4506,7 @@ msgstr ""
 "» Je vous en prie, emportez %o avec vous.  Vous, %p, saurez\n"
 "le garder bien mieux que moi désormais.\n"
 "\n"
-"» Que les bénédictions de %d vous accompagnent et vous protègent. »"
+"» Que les bénédictions @de %d vous accompagnent et vous protègent. »"
 
 #, c-format
 msgid "%ld %s added to your credit; total is now %ld %s."
@@ -5804,7 +5804,7 @@ msgstr ""
 "le pouvoir de prédire l'avenir, car aucun mortel ne devrait posséder ce\n"
 "pouvoir.  Ses autres facultés, en revanche, sont à votre disposition.\n"
 "\n"
-"» Vous devez maintenant commencer, au nom de %d, à chercher l'Amulette\n"
+"» Vous devez maintenant commencer, au nom @de %d, à chercher l'Amulette\n"
 "de Yendor.  Que vos pas soient guidés par %d, {mon fils|ma fille}. »"
 
 #, no-c-format
@@ -5979,10 +5979,10 @@ msgid ""
 msgstr ""
 "Quand vous ramassez %o, vous sentez l'essence de\n"
 "%d emplir votre âme.  Vous savez maintenant pourquoi %n les a volés\n"
-"@à %H, car avec eux, %ca de %d pourrait\n"
+"@à %H, car avec eux, %ca @de %d pourrait\n"
 "aisément déjouer ses plans.\n"
 "\n"
-"Vous percevez un message de %d.  Il n'a rien de verbal, mais vous\n"
+"Vous percevez un message @de %d.  Il n'a rien de verbal, mais vous\n"
 "avez l'impression que vous devez retourner auprès @de %l au plus\n"
 "vite."
 
@@ -6000,10 +6000,10 @@ msgid ""
 msgstr ""
 "Quand vous ramassez %o, vous sentez l'essence de\n"
 "%d emplir votre âme.  Vous savez maintenant pourquoi %n l'a volée\n"
-"@à %H, car avec elle, %ca de %d pourrait\n"
+"@à %H, car avec elle, %ca @de %d pourrait\n"
 "aisément déjouer ses plans.\n"
 "\n"
-"Vous percevez un message de %d.  Il n'a rien de verbal, mais vous\n"
+"Vous percevez un message @de %d.  Il n'a rien de verbal, mais vous\n"
 "avez l'impression que vous devez retourner auprès @de %l au plus\n"
 "vite."
 
@@ -6877,7 +6877,7 @@ msgid ""
 "attempt.  Your hour of destiny has come.  For the sake\n"
 "of us all:  Go bravely with %d!"
 msgstr ""
-"Il est écrit dans le Livre de %d :\n"
+"Il est écrit dans le Livre @de %d :\n"
 "\n"
 "    Après la Création, le cruel dieu Moloch se rebella\n"
 "    contre l'autorité de Marduk le Créateur.\n"
@@ -6890,7 +6890,7 @@ msgstr ""
 "grâce à elle une suprématie méritée sur les autres dieux.\n"
 "\n"
 "Vous, %r fraîchement {formé|formée}, avez été {annoncé|annoncée}\n"
-"dès votre naissance comme l'instrument de %d.  Votre destin\n"
+"dès votre naissance comme l'instrument @de %d.  Votre destin\n"
 "est de rapporter l'Amulette à votre divinité, ou de mourir\n"
 "en essayant.  L'heure de votre destin a sonné.  Pour notre\n"
 "salut à tous : allez bravement avec %d !"
@@ -6916,7 +6916,7 @@ msgid ""
 "in the attempt.  Your hour of destiny has come.  For the\n"
 "sake of us all:  Go bravely with %d!"
 msgstr ""
-"Il est écrit dans le Livre de %d :\n"
+"Il est écrit dans le Livre @de %d :\n"
 "\n"
 "    Après la Création, le cruel dieu Moloch se rebella\n"
 "    contre l'autorité de Marduk le Créateur.\n"
@@ -6929,7 +6929,7 @@ msgstr ""
 "grâce à elle une suprématie méritée sur les autres dieux.\n"
 "\n"
 "Vous, %r sans formation, n'avez pas pu vous préparer\n"
-"convenablement à être l'instrument de %d.  Pourtant, votre\n"
+"convenablement à être l'instrument @de %d.  Pourtant, votre\n"
 "destin est de rapporter l'Amulette à votre divinité, ou de\n"
 "mourir en essayant.  L'heure de votre destin a sonné.  Pour\n"
 "notre salut à tous : allez bravement avec %d !"
@@ -8864,7 +8864,7 @@ msgid ""
 "And they've noticed you!"
 msgstr ""
 "Vous arrivez dans un décor familier.  Au loin, vous parvenez à %x\n"
-"l'ancien bosquet sacré, le lieu de culte de %d.\n"
+"l'ancien bosquet sacré, le lieu de culte @de %d.\n"
 "\n"
 "Pourtant, quelque chose ne va pas.  Des centaures encerclent le bosquet !\n"
 "Et ils vous ont remarqué{|e} !"
@@ -10673,7 +10673,7 @@ msgstr "[« Sortez d'ici ! »]"
 #, no-c-format
 msgctxt "quest"
 msgid "[\"Have you progressed with your quest to regain the Amulet of Yendor for %d?\"]"
-msgstr "[« Avez-vous progressé dans votre quête pour reprendre l'Amulette de Yendor au nom de %d ? »]"
+msgstr "[« Avez-vous progressé dans votre quête pour reprendre l'Amulette de Yendor au nom @de %d ? »]"
 
 #, no-c-format
 msgctxt "quest"
@@ -10703,7 +10703,7 @@ msgstr "[« Emportez %o.  Il vous aidera dans votre quête de l'Amulette de Yend
 #, no-c-format
 msgctxt "quest"
 msgid "[\"Take the Amulet to the altar of %d on the Astral Plane and offer it.\"]"
-msgstr "[« Portez l'Amulette à l'autel de %d sur le Plan astral et offrez-la. »]"
+msgstr "[« Portez l'Amulette à l'autel @de %d sur le Plan astral et offrez-la. »]"
 
 #, no-c-format
 msgctxt "quest"
@@ -10988,7 +10988,7 @@ msgstr "[Allez faire pénitence.  Revenez quand vous serez vraiment {%a|%af}.]"
 #, no-c-format
 msgctxt "quest"
 msgid "[Go; come back when you are worthy of %d.]"
-msgstr "[Partez ; revenez quand vous serez digne de %d.]"
+msgstr "[Partez ; revenez quand vous serez digne @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -11093,12 +11093,12 @@ msgstr "[Emportez %o.  Cherchez l'Amulette.]"
 #, no-c-format
 msgctxt "quest"
 msgid "[Take the Amulet to %ds altar on the Astral Plane.]"
-msgstr "[Portez l'Amulette à l'autel de %d dans le Plan astral.]"
+msgstr "[Portez l'Amulette à l'autel @de %d dans le Plan astral.]"
 
 #, no-c-format
 msgctxt "quest"
 msgid "[Take the Amulet to %ds temple on the Astral Plane and offer it.]"
-msgstr "[Portez l'Amulette au temple de %d dans le Plan astral et offrez-la.]"
+msgstr "[Portez l'Amulette au temple @de %d dans le Plan astral et offrez-la.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -11108,17 +11108,17 @@ msgstr "[Portez l'Amulette jusqu'au Plan astral et remettez-la à %d.]"
 #, no-c-format
 msgctxt "quest"
 msgid "[Take the Amulet to the Astral Plane and find %ds temple.]"
-msgstr "[Portez l'Amulette jusqu'au Plan astral et trouvez le temple de %d.]"
+msgstr "[Portez l'Amulette jusqu'au Plan astral et trouvez le temple @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
 msgid "[Take the Amulet to the Astral Plane and offer it on %ds altar.]"
-msgstr "[Portez l'Amulette jusqu'au Plan astral et offrez-la sur l'autel de %d.]"
+msgstr "[Portez l'Amulette jusqu'au Plan astral et offrez-la sur l'autel @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
 msgid "[Take the Amulet to the Astral Plane and sacrifice it at the altar of %d.]"
-msgstr "[Portez l'Amulette jusqu'au Plan astral et sacrifiez-la sur l'autel de %d.]"
+msgstr "[Portez l'Amulette jusqu'au Plan astral et sacrifiez-la sur l'autel @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -11238,7 +11238,7 @@ msgstr "[Vous êtes {un hérétique|une hérétique} et vous avez totalement éc
 #, no-c-format
 msgctxt "quest"
 msgid "[You are a heretic who has deviated from the teachings of %d.]"
-msgstr "[Vous êtes {un hérétique|une hérétique} qui s'est écarté{|e} des enseignements de %d.]"
+msgstr "[Vous êtes {un hérétique|une hérétique} qui s'est écarté{|e} des enseignements @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -11363,7 +11363,7 @@ msgstr "[Vous sentez le pouvoir @de %o et savez que vous devez le rapporter @à 
 #, no-c-format
 msgctxt "quest"
 msgid "[You feel the essence of %d and realize that you should take %o to %l.]"
-msgstr "[Vous sentez l'essence de %d et comprenez que vous devez porter %o @à %l.]"
+msgstr "[Vous sentez l'essence @de %d et comprenez que vous devez porter %o @à %l.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -11483,7 +11483,7 @@ msgstr "[Vous avez l'Amulette.  Portez-la jusqu'au Plan astral pour achever votr
 #, no-c-format
 msgctxt "quest"
 msgid "[You must atone.  Come back when you are worthy of %d.]"
-msgstr "[Vous devez expier.  Revenez quand vous serez digne de %d.]"
+msgstr "[Vous devez expier.  Revenez quand vous serez digne @de %d.]"
 
 #, no-c-format
 msgctxt "quest"
@@ -24637,7 +24637,7 @@ msgctxt "how many"
 msgid "several"
 msgstr "plusieurs"
 
-#: src/apply.c:78 src/do_name.c:857
+#: src/apply.c:78 src/do_name.c:865
 msgid "beautiful"
 msgstr "beau"
 
@@ -24665,7 +24665,7 @@ msgstr "mignon"
 msgid "homely"
 msgstr "sans charme"
 
-#: src/apply.c:79 src/do_name.c:857
+#: src/apply.c:79 src/do_name.c:865
 msgid "plain"
 msgstr "simple"
 
@@ -24687,7 +24687,7 @@ msgstr "sublime"
 msgid "ugly"
 msgstr "laid"
 
-#: src/apply.c:81 src/do_name.c:862
+#: src/apply.c:81 src/do_name.c:870
 #, c-format
 msgctxt "feminine"
 msgid "beautiful"
@@ -24723,7 +24723,7 @@ msgctxt "feminine"
 msgid "cute"
 msgstr "mignonne"
 
-#: src/apply.c:83 src/do_name.c:862
+#: src/apply.c:83 src/do_name.c:870
 #, c-format
 msgctxt "feminine"
 msgid "plain"
@@ -25776,7 +25776,7 @@ msgstr "La laisse tomberait tout simplement."
 msgid "%s has no extremities the leash would fit."
 msgstr "%s n'a aucune extrémité à laquelle attacher la laisse."
 
-#: src/apply.c:1080 src/do_name.c:1134 src/engrave.c:1089 src/objnam.c:1642
+#: src/apply.c:1080 src/do_name.c:1142 src/engrave.c:1089 src/objnam.c:1642
 #: src/objnam.c:3506 src/shk.c:955 src/shk.c:968 src/trap.c:331 src/trap.c:6108
 #: src/trap.c:6842
 #, c-format
@@ -25904,8 +25904,8 @@ msgstr "Hein ? Ça ne vous ressemble pas !"
 msgid "You look %s."
 msgstr "Vous avez l'air %s."
 
-#: src/apply.c:1333 src/do.c:538 src/do_name.c:871 src/do_name.c:948
-#: src/do_name.c:1126 src/hack.c:2242 src/muse.c:809 src/objnam.c:1305
+#: src/apply.c:1333 src/do.c:538 src/do_name.c:879 src/do_name.c:956
+#: src/do_name.c:1134 src/hack.c:2242 src/muse.c:809 src/objnam.c:1305
 #: src/questpgr.c:495 src/trap.c:334 src/trap.c:6535 src/trap.c:6578
 #: src/trap.c:6847 src/zap.c:2391 src/zap.c:3994
 #, c-format
@@ -25913,7 +25913,7 @@ msgctxt "feminine"
 msgid "a %s"
 msgstr "une %s"
 
-#: src/apply.c:1334 src/do.c:538 src/do_name.c:950 src/do_name.c:1128
+#: src/apply.c:1334 src/do.c:538 src/do_name.c:958 src/do_name.c:1136
 #: src/hack.c:2242 src/muse.c:809 src/objnam.c:647 src/objnam.c:1307
 #: src/questpgr.c:496 src/trap.c:334 src/trap.c:6536 src/trap.c:6578
 #: src/trap.c:6847 src/zap.c:2392 src/zap.c:3995
@@ -26875,7 +26875,7 @@ msgstr "Vous finissez d'armer %s."
 msgid "Your trap setting attempt fails."
 msgstr "Votre tentative d'installer le piège échoue."
 
-#: src/apply.c:3434 src/do_name.c:926 src/objnam.c:648 src/objnam.c:1295
+#: src/apply.c:3434 src/do_name.c:934 src/objnam.c:648 src/objnam.c:1295
 #, c-format
 msgctxt "plural"
 msgid "the %s"
@@ -27116,7 +27116,7 @@ msgstr ""
 msgid "an object on %s"
 msgstr "un objet sur %s"
 
-#: src/apply.c:4345 src/do_name.c:544 src/wizcmds.c:261 src/wizcmds.c:513
+#: src/apply.c:4345 src/do_name.c:552 src/wizcmds.c:261 src/wizcmds.c:513
 #: src/wizcmds.c:922
 msgid "a monster"
 msgstr "un monstre"
@@ -33031,6 +33031,11 @@ msgstr "Cette créature %s s'appelle %s et ne peut pas être renommée."
 msgid "I see no monster there."
 msgstr "Je ne vois aucun monstre là."
 
+#: src/do_name.c:269
+#, c-format
+msgid "What do you want to call %s?"
+msgstr "Comment voulez-vous appeler %s ?"
+
 #: src/do_name.c:286
 #, c-format
 msgid "%s doesn't like being called names!"
@@ -33051,499 +33056,504 @@ msgstr "%s n'accepte pas le nom %s."
 msgid "%s already has a published name."
 msgstr "%s a déjà un titre publié."
 
-#: src/do_name.c:341
+#: src/do_name.c:324
+#, c-format
+msgid "What do you want to name %s?"
+msgstr "Quel nom voulez-vous donner @à %s ?"
+
+#: src/do_name.c:349
 #, c-format
 msgid "%s resists the attempt."
 msgstr "%s résiste à la tentative."
 
-#: src/do_name.c:370
+#: src/do_name.c:378
 #, c-format
 msgid "While engraving, your %s slips."
 msgstr "En gravant, votre %s glisse."
 
-#: src/do_name.c:372
+#: src/do_name.c:380
 #, c-format
 msgid "You engrave: \"%s\"."
 msgstr "Vous gravez : « %s »."
 
-#: src/do_name.c:550
+#: src/do_name.c:558
 msgid "a particular object in inventory"
 msgstr "un objet précis de l'inventaire"
 
-#: src/do_name.c:554
+#: src/do_name.c:562
 msgid "the type of an object in inventory"
 msgstr "le type d'un objet de l'inventaire"
 
-#: src/do_name.c:559
+#: src/do_name.c:567
 msgid "the type of an object upon the floor"
 msgstr "le type d'un objet au sol"
 
-#: src/do_name.c:563
+#: src/do_name.c:571
 msgid "the type of an object on discoveries list"
 msgstr "le type d'un objet de la liste des découvertes"
 
-#: src/do_name.c:567
+#: src/do_name.c:575
 msgid "record an annotation for the current level"
 msgstr "une annotation pour le niveau actuel"
 
-#: src/do_name.c:569
+#: src/do_name.c:577
 msgid "What do you want to name?"
 msgstr "Que voulez-vous nommer ?"
 
-#: src/do_name.c:586
+#: src/do_name.c:594
 msgctxt "verb"
 msgid "name"
 msgstr "nommer"
 
-#: src/do_name.c:591
+#: src/do_name.c:599
 msgctxt "verb"
 msgid "call"
 msgstr "appeler"
 
-#: src/do_name.c:599
+#: src/do_name.c:607
 msgid "You would never recognize another one."
 msgstr "Vous n'en reconnaîtriez jamais un autre."
 
-#: src/do_name.c:602
+#: src/do_name.c:610
 msgid "You know those as well as you ever will."
 msgstr "Vous les connaissez aussi bien que vous les connaîtrez jamais."
 
-#: src/do_name.c:667
+#: src/do_name.c:675
 #, c-format
 msgid "Call a stream of %s fluid:"
 msgstr "Nommer un filet de liquide %s :"
 
-#: src/do_name.c:670
+#: src/do_name.c:678
 msgid ":"
 msgstr " :"
 
-#: src/do_name.c:670
+#: src/do_name.c:678
 msgid "Call "
 msgstr "Nommer "
 
-#: src/do_name.c:671 src/objnam.c:1344 src/objnam.c:1594 src/shk.c:6267
+#: src/do_name.c:679 src/objnam.c:1344 src/objnam.c:1594 src/shk.c:6267
 msgid "thing"
 msgstr "chose"
 
-#: src/do_name.c:699
+#: src/do_name.c:707
 #, c-format
 msgctxt "feminine"
 msgid "That %s can't be assigned a type name."
 msgstr "Cette %s ne peut pas recevoir de nom de type."
 
-#: src/do_name.c:700
+#: src/do_name.c:708
 #, c-format
 msgctxt "plural"
 msgid "That %s can't be assigned a type name."
 msgstr "Ces %s ne peuvent pas recevoir de nom de type."
 
-#: src/do_name.c:701
+#: src/do_name.c:709
 #, c-format
 msgctxt "feminine plural"
 msgid "That %s can't be assigned a type name."
 msgstr "Ces %s ne peuvent pas recevoir de nom de type."
 
-#: src/do_name.c:702
+#: src/do_name.c:710
 #, c-format
 msgctxt "feminine"
 msgid "You don't know that %s well enough to name it."
 msgstr "Vous ne connaissez pas assez cette %s pour la nommer."
 
-#: src/do_name.c:703
+#: src/do_name.c:711
 #, c-format
 msgctxt "plural"
 msgid "You don't know that %s well enough to name it."
 msgstr "Vous ne connaissez pas assez ces %s pour les nommer."
 
-#: src/do_name.c:704
+#: src/do_name.c:712
 #, c-format
 msgctxt "feminine plural"
 msgid "You don't know that %s well enough to name it."
 msgstr "Vous ne connaissez pas assez ces %s pour les nommer."
 
-#: src/do_name.c:738
+#: src/do_name.c:746
 msgid "There doesn't seem to be any object under you."
 msgstr "Il ne semble y avoir aucun objet sous vous."
 
-#: src/do_name.c:739
+#: src/do_name.c:747
 msgid "There doesn't seem to be any object there."
 msgstr "Il ne semble y avoir aucun objet là."
 
-#: src/do_name.c:741
+#: src/do_name.c:749
 #, c-format
 msgid "There doesn't seem to be any object %s."
 msgstr ""
 
-#: src/do_name.c:779
+#: src/do_name.c:787
 #, c-format
 msgid "%s decide to call you \"%s.\""
 msgstr "%s décident de vous appeler « %s »."
 
-#: src/do_name.c:780
+#: src/do_name.c:788
 #, c-format
 msgid "%s decides to call you \"%s.\""
 msgstr "%s décide de vous appeler « %s »."
 
-#: src/do_name.c:783
+#: src/do_name.c:791
 #, c-format
 msgid "%s %s to call you \"%s.\""
 msgstr ""
 
-#: src/do_name.c:788
+#: src/do_name.c:796
 #, c-format
 msgid "That %s can't be assigned a type name."
 msgstr "Ce %s ne peut pas recevoir de nom de type."
 
-#: src/do_name.c:791
+#: src/do_name.c:799
 #, c-format
 msgid "%s %s can't be assigned a type name."
 msgstr ""
 
-#: src/do_name.c:795
+#: src/do_name.c:803
 #, c-format
 msgid "You don't know that %s well enough to name it."
 msgstr "Vous ne connaissez pas assez ce %s pour le nommer."
 
-#: src/do_name.c:798
+#: src/do_name.c:806
 #, c-format
 msgid "You don't know %s %s well enough to name %s."
 msgstr ""
 
-#: src/do_name.c:855
+#: src/do_name.c:863
 msgid "angry"
 msgstr "en colère"
 
-#: src/do_name.c:855 src/insight.c:254
+#: src/do_name.c:863 src/insight.c:254
 msgid "invisible"
 msgstr "invisible"
 
-#: src/do_name.c:855
+#: src/do_name.c:863
 msgid "poor"
 msgstr "pauvre"
 
-#: src/do_name.c:855
+#: src/do_name.c:863
 msgid "saddled"
 msgstr "sellé"
 
-#: src/do_name.c:855
+#: src/do_name.c:863
 msgid "sleeping"
 msgstr "endormi"
 
-#: src/do_name.c:856
+#: src/do_name.c:864
 msgid "blind"
 msgstr "aveugle"
 
-#: src/do_name.c:856
+#: src/do_name.c:864
 msgid "blinded"
 msgstr "aveuglé"
 
-#: src/do_name.c:856
+#: src/do_name.c:864
 msgid "falling"
 msgstr "qui tombe"
 
-#: src/do_name.c:856
+#: src/do_name.c:864
 msgid "immobile"
 msgstr "immobile"
 
-#: src/do_name.c:857
+#: src/do_name.c:865
 msgid "peaceful"
 msgstr "pacifique"
 
-#: src/do_name.c:858
+#: src/do_name.c:866
 #, c-format
 msgctxt "feminine"
 msgid "invisible"
 msgstr "invisible"
 
-#: src/do_name.c:858
+#: src/do_name.c:866
 #, c-format
 msgctxt "feminine"
 msgid "saddled"
 msgstr "sellée"
 
-#: src/do_name.c:859
+#: src/do_name.c:867
 #, c-format
 msgctxt "feminine"
 msgid "angry"
 msgstr "en colère"
 
-#: src/do_name.c:859
+#: src/do_name.c:867
 #, c-format
 msgctxt "feminine"
 msgid "poor"
 msgstr "pauvre"
 
-#: src/do_name.c:859
+#: src/do_name.c:867
 #, c-format
 msgctxt "feminine"
 msgid "sleeping"
 msgstr "endormie"
 
-#: src/do_name.c:860
+#: src/do_name.c:868
 #, c-format
 msgctxt "feminine"
 msgid "blind"
 msgstr "aveugle"
 
-#: src/do_name.c:860
+#: src/do_name.c:868
 #, c-format
 msgctxt "feminine"
 msgid "blinded"
 msgstr "aveuglée"
 
-#: src/do_name.c:861
+#: src/do_name.c:869
 #, c-format
 msgctxt "feminine"
 msgid "falling"
 msgstr "qui tombe"
 
-#: src/do_name.c:861
+#: src/do_name.c:869
 #, c-format
 msgctxt "feminine"
 msgid "immobile"
 msgstr "immobile"
 
-#: src/do_name.c:863
+#: src/do_name.c:871
 #, c-format
 msgctxt "feminine"
 msgid "peaceful"
 msgstr "pacifique"
 
-#: src/do_name.c:865
+#: src/do_name.c:873
 msgctxt "adjective-position"
 msgid "angry"
 msgstr ""
 
-#: src/do_name.c:865
+#: src/do_name.c:873
 msgctxt "adjective-position"
 msgid "poor"
 msgstr "before"
 
-#: src/do_name.c:866
+#: src/do_name.c:874
 msgctxt "adjective-position"
 msgid "blind"
 msgstr ""
 
-#: src/do_name.c:866
+#: src/do_name.c:874
 msgctxt "adjective-position"
 msgid "sleeping"
 msgstr ""
 
-#: src/do_name.c:867
+#: src/do_name.c:875
 msgctxt "adjective-position"
 msgid "blinded"
 msgstr ""
 
-#: src/do_name.c:867
+#: src/do_name.c:875
 msgctxt "adjective-position"
 msgid "immobile"
 msgstr ""
 
-#: src/do_name.c:868
+#: src/do_name.c:876
 msgctxt "adjective-position"
 msgid "falling"
 msgstr ""
 
-#: src/do_name.c:869
+#: src/do_name.c:877
 msgctxt "adjective-position"
 msgid "beautiful"
 msgstr "before"
 
-#: src/do_name.c:869
+#: src/do_name.c:877
 msgctxt "adjective-position"
 msgid "plain"
 msgstr ""
 
-#: src/do_name.c:871 src/do_name.c:928 src/do_name.c:1118 src/objnam.c:648
+#: src/do_name.c:879 src/do_name.c:936 src/do_name.c:1126 src/objnam.c:648
 #: src/objnam.c:1291
 #, c-format
 msgctxt "elided"
 msgid "the %s"
 msgstr "l'%s"
 
-#: src/do_name.c:871 src/do_name.c:930 src/do_name.c:1120 src/objnam.c:1297
+#: src/do_name.c:879 src/do_name.c:938 src/do_name.c:1128 src/objnam.c:1297
 #, c-format
 msgctxt "feminine"
 msgid "the %s"
 msgstr "la %s"
 
-#: src/do_name.c:872 src/do_name.c:1132 src/objnam.c:1640 src/objnam.c:3504
+#: src/do_name.c:880 src/do_name.c:1140 src/objnam.c:1640 src/objnam.c:3504
 #: src/trap.c:139 src/trap.c:331 src/trap.c:6108 src/trap.c:6842
 #, c-format
 msgctxt "feminine"
 msgid "your %s"
 msgstr "votre %s"
 
-#: src/do_name.c:932 src/do_name.c:1122 src/objnam.c:647 src/objnam.c:1299
+#: src/do_name.c:940 src/do_name.c:1130 src/objnam.c:647 src/objnam.c:1299
 #, c-format
 msgid "the %s"
 msgstr "le %s"
 
-#: src/do_name.c:946 src/objnam.c:648 src/objnam.c:1303
+#: src/do_name.c:954 src/objnam.c:648 src/objnam.c:1303
 #, c-format
 msgctxt "plural"
 msgid "a %s"
 msgstr "des %s"
 
-#: src/do_name.c:1056
+#: src/do_name.c:1064
 #, c-format
 msgid "%s ghost"
 msgstr "fantôme de %s"
 
-#: src/do_name.c:1059 src/objnam.c:646 src/pager.c:473
+#: src/do_name.c:1067 src/objnam.c:646 src/pager.c:473
 #, c-format
 msgid "%s called %s"
 msgstr "%s nommé %s"
 
-#: src/do_name.c:1188 src/pager.c:1927 src/pager.c:2637 src/uhitm.c:2123
+#: src/do_name.c:1196 src/pager.c:1927 src/pager.c:2637 src/uhitm.c:2123
 #: src/uhitm.c:2130 src/uhitm.c:5598
 msgid "you"
 msgstr "vous"
 
-#: src/do_name.c:1224 src/mon.c:3542 src/pray.c:1857 src/timeout.c:1259
+#: src/do_name.c:1232 src/mon.c:3542 src/pray.c:1857 src/timeout.c:1259
 #: src/timeout.c:1391 src/zap.c:3426
 msgid "it"
 msgstr "quelque chose"
 
-#: src/do_name.c:1225
+#: src/do_name.c:1233
 msgid "someone"
 msgstr "quelqu'un"
 
-#: src/do_name.c:1226 src/mhitm.c:796
+#: src/do_name.c:1234 src/mhitm.c:796
 msgid "something"
 msgstr "quelque chose"
 
-#: src/do_name.c:1707
+#: src/do_name.c:1715
 #, c-format
 msgid "obj_pmname otyp:%i,corpsenm:%i"
 msgstr "obj_pmname otyp:%i,corpsenm:%i"
 
-#: src/do_name.c:1820
+#: src/do_name.c:1828
 msgid "amber"
 msgstr "ambre"
 
-#: src/do_name.c:1820
+#: src/do_name.c:1828
 msgid "black"
 msgstr "noir"
 
-#: src/do_name.c:1820
+#: src/do_name.c:1828
 msgid "golden"
 msgstr "doré"
 
-#: src/do_name.c:1820
+#: src/do_name.c:1828
 msgid "light blue"
 msgstr "bleu clair"
 
-#: src/do_name.c:1820
+#: src/do_name.c:1828
 msgid "red"
 msgstr "rouge"
 
-#: src/do_name.c:1821
+#: src/do_name.c:1829
 msgid "blue"
 msgstr "bleu"
 
-#: src/do_name.c:1821
+#: src/do_name.c:1829
 msgid "green"
 msgstr "vert"
 
-#: src/do_name.c:1821
+#: src/do_name.c:1829
 msgid "purple"
 msgstr "pourpre"
 
-#: src/do_name.c:1821 src/eat.c:179
+#: src/do_name.c:1829 src/eat.c:179
 msgid "silver"
 msgstr "en argent"
 
-#: src/do_name.c:1821
+#: src/do_name.c:1829
 msgid "white"
 msgstr "blanc"
 
-#: src/do_name.c:1822 src/pray.c:1776
+#: src/do_name.c:1830 src/pray.c:1776
 msgid "gray"
 msgstr "gris"
 
-#: src/do_name.c:1822
+#: src/do_name.c:1830
 msgid "orange"
 msgstr "orange"
 
-#: src/do_name.c:1823
+#: src/do_name.c:1831
 #, c-format
 msgctxt "feminine"
 msgid "amber"
 msgstr ""
 
-#: src/do_name.c:1823
+#: src/do_name.c:1831
 #, c-format
 msgctxt "feminine"
 msgid "black"
 msgstr "noire"
 
-#: src/do_name.c:1823
+#: src/do_name.c:1831
 #, c-format
 msgctxt "feminine"
 msgid "golden"
 msgstr "dorée"
 
-#: src/do_name.c:1824
+#: src/do_name.c:1832
 #, c-format
 msgctxt "feminine"
 msgid "light blue"
 msgstr "bleu clair"
 
-#: src/do_name.c:1824
+#: src/do_name.c:1832
 #, c-format
 msgctxt "feminine"
 msgid "red"
 msgstr "rouge"
 
-#: src/do_name.c:1825
+#: src/do_name.c:1833
 #, c-format
 msgctxt "feminine"
 msgid "blue"
 msgstr "bleue"
 
-#: src/do_name.c:1825
+#: src/do_name.c:1833
 #, c-format
 msgctxt "feminine"
 msgid "green"
 msgstr "verte"
 
-#: src/do_name.c:1825
+#: src/do_name.c:1833
 #, c-format
 msgctxt "feminine"
 msgid "silver"
 msgstr "en argent"
 
-#: src/do_name.c:1826
+#: src/do_name.c:1834
 #, c-format
 msgctxt "feminine"
 msgid "purple"
 msgstr "pourpre"
 
-#: src/do_name.c:1826
+#: src/do_name.c:1834
 #, c-format
 msgctxt "feminine"
 msgid "white"
 msgstr "blanche"
 
-#: src/do_name.c:1827
+#: src/do_name.c:1835
 #, c-format
 msgctxt "feminine"
 msgid "gray"
 msgstr "grise"
 
-#: src/do_name.c:1827
+#: src/do_name.c:1835
 #, c-format
 msgctxt "feminine"
 msgid "orange"
 msgstr "orange"
 
-#: src/do_name.c:1830
+#: src/do_name.c:1838
 msgctxt "color"
 msgid "silver"
 msgstr "argenté"
 
-#: src/do_name.c:1830
+#: src/do_name.c:1838
 msgctxt "feminine color"
 msgid "silver"
 msgstr "argentée"
@@ -51512,7 +51522,7 @@ msgstr "Vous entendez %d engrenage tourner."
 #: src/nhi18n.c:479
 msgctxt "grammar"
 msgid "contractions"
-msgstr "de le >du |de les >des |de +>d'|De le >Du |De les >Des |De +>D'|à le >au |à les >aux |À le >Au |À les >Aux |de >de |De >De |à >à |À >À "
+msgstr "de Hermes>d'Hermes|De Hermes>D'Hermes|de le >du |de les >des |de +>d'|De le >Du |De les >Des |De +>D'|à le >au |à les >aux |À le >Au |À les >Aux |de >de |De >De |à >à |À >À "
 
 #: src/nhlua.c:156
 #, c-format
@@ -70383,7 +70393,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-20 18:45+0200\n"
+"POT-Creation-Date: 2026-10-20 18:49+0200\n"
 "PO-Revision-Date: 2026-09-27 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
