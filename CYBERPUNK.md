@@ -102,7 +102,7 @@ Jouer ensuite pour juger de l'effet avant d'aller plus loin.
 
 Rôles (d'après ceux du jeu de rôle Cyberpunk quand l'un correspond) :
 Archéologue → Techie, Barbare → Nomade, Homme/Femme des cavernes →
-Sauvageon/Sauvageonne, Guérisseur → Medtech, Chevalier → Avocat/Avocate, Moine → Moine
+Sauvageon/Sauvageonne, Guérisseur → Medtech, Chevalier → Lawman, Moine → Moine
 augmenté/Moniale augmentée, Prêtre/Prêtresse →
 Technoprêtre/Technoprêtresse, Rôdeur → Traqueur/Traqueuse, Voleur →
 Fixer/Fixeuse, Samouraï → Ronin urbain(e), Touriste → Corpo
@@ -145,7 +145,7 @@ thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
 | Nomade | Casseur, Pilleur, Racketteur, Braqueur, Pillard, Ravageur, Tueur, Chef de gang, Seigneur de guerre |
 | Sauvageon | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Bourlingueur, Écumeur, Pionnier |
 | Medtech | Herboriste de rue, Rafistoleur, Embaumeur, Infirmier, Rebouteux, Chimiste de rue, Doc, Médecin de l'ombre, Chirurgien cybernétique |
-| Avocat | Recrue, Vigile, Agent, Sergent, Avocat, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
+| Lawman | Recrue, Vigile, Agent, Sergent, Lawman, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
 | Moine augmenté | Candidat, Novice, Initié, Élève du Silicium, du Flux, du Chrome, des Ondes, du Plasma, Maître |
 | Technoprêtre | Aspirant, Acolyte, Adepte, Technoprêtre, Desservant du Code, Chanoine du Réseau, Gourou, Patriarche du Réseau, Grand Technoprêtre |
 | Traqueur | Bleu, Guetteur, Éclaireur, Ombre, Pisteur, Arbalétrier, Tireur, Tireur d'élite, Sniper |
@@ -397,7 +397,7 @@ Tous les lots prévus sont faits ; les pistes pour plus tard sont dans
 Les noms et termes génériques du jeu de rôle (ses noms propres sont venus
 ensuite, voir « Night City » ci-dessous) :
 
-- rôles : Techie, Nomade, Medtech, Avocat, Fixer/Fixeuse, Solo (voir
+- rôles : Techie, Nomade, Medtech, Lawman, Fixer/Fixeuse, Solo (voir
   plus haut) ; le rang « Nomade » des Sauvageons devient « Bourlingueur »
   pour ne pas faire doublon, et l'Oracle « la Fixeuse » devient « la
   Courtière » ;

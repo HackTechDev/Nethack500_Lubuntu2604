@@ -84,7 +84,7 @@ publiés du jeu de rôle) :
 - les gangs (Maelstrom, Tyger Claws, Valentinos, 6th Street, Voodoo
   Boys...) : voyous, cyberpsychos, nouvelles gravures ;
 - les forces de l'ordre (NCPD, MaxTac) pour les Keystone Kops et le
-  Lawman (devenu Avocat) ; Trauma Team pour le Medtech.
+  Lawman ; Trauma Team pour le Medtech.
 
 Mettre à jour `CYBERPUNK.md` en conséquence : sa section « Jargon du jeu
 de rôle Cyberpunk » dit encore « sans ses noms propres (villes,

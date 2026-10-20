@@ -401,7 +401,7 @@ bow
 		[ Fiche technique, armurerie de la 6th Street ]
 
 brigit
-	Brigit : déesse du feu et de la forge, que les Avocats neutres
+	Brigit : déesse du feu et de la forge, que les Lawmen neutres
 	invoquent avant les opérations.
 		[ Guide des cultes de Night City ]
 
@@ -435,7 +435,7 @@ bullwhip
 
 camelot*
 	Camelot : la corporation de sécurité qui siège dans la Tour
-	Camelot, à City Center.  Ses Avocats portent l'insigne du dragon
+	Camelot, à City Center.  Ses Lawmen portent l'insigne du dragon
 	et la morale du conseil d'administration.
 		[ Plaquette de recrutement, Tour Camelot ]
 
@@ -945,7 +945,7 @@ ettin
 excalibur
 	Excalibur Mk II.  Livrée sur un lit de mousse dans une mallette
 	blindée, avec un certificat de propriété signé par le conseil
-	d'administration de Camelot.  Seuls les Avocats loyaux
+	d'administration de Camelot.  Seuls les Lawmen loyaux
 	peuvent l'activer : la poignée lit l'ADN et le dossier
 	disciplinaire avant d'allumer la lame.  Les autres reçoivent une
 	décharge et une convocation.
@@ -1580,11 +1580,10 @@ stiletto
 
 knight
 * knight
-	Avocat : homme de loi d'une corpo de sécurité, il fait appliquer
-	la loi, ou du moins celle de son employeur, le code dans une main
-	et la lance dans l'autre.  Il ne frappe pas dans le dos, par
-	principe ; ses confrères, si.
-		[ Code de déontologie du barreau de Night City ]
+	Lawman : flic, shérif ou agent d'une corpo de sécurité, il fait
+	appliquer la loi, ou du moins celle de son employeur.  Il ne tire
+	pas dans le dos, par principe ; ses collègues, si.
+		[ Code de conduite du NCPD, article premier ]
 
 ~kobold ??m*
 *kobold*
@@ -1630,9 +1629,9 @@ offler
 		[ Forum « Objets bizarres », section Night City ]
 
 lance
-	Lance de joute : arme de cavalerie, que les Avocats manient du haut
+	Lance de joute : arme de cavalerie, que les Lawmen manient du haut
 	de leur moto-destrier.
-		[ Manuel des Avocats de Camelot ]
+		[ Manuel des Lawmen de Camelot ]
 
 land mine
 	Mine : explosif enterré dans les friches, oublié depuis une guerre
@@ -1755,7 +1754,7 @@ bad luck
 #		 "the toyminator", refers to it using conventional
 #		 capitalization in a couple of early footnotes]
 lug*
-	Lugh : dieu loyal des Avocats, maître de tous les métiers.
+	Lugh : dieu loyal des Lawmen, maître de tous les métiers.
 		[ Guide des cultes de Night City ]
 
 lurker*
@@ -1813,7 +1812,7 @@ mail d*emon
 		[ Mention légale d'un fournisseur de messagerie ]
 
 ma*annan*
-	Manannan Mac Lir : dieu de la mer, honoré par les Avocats
+	Manannan Mac Lir : dieu de la mer, honoré par les Lawmen
 	chaotiques.
 		[ Guide des cultes de Night City ]
 
@@ -2258,7 +2257,7 @@ lucern hammer
 bec de corbin
 	Armes d'hast : lames au bout de longs manches, pour frapper de loin
 	dans les couloirs étroits.
-		[ Manuel d'entraînement des Avocats ]
+		[ Manuel d'entraînement des Lawmen ]
 
 polymorph trap
 	Piège de métamorphose : une borne de reprogrammation génétique
@@ -2267,7 +2266,7 @@ polymorph trap
 
 pony
 	Moto-poney : petite monture mécanique pour les enfants des riches
-	et les Avocats pressés.  Elle hennit par haut-parleur.
+	et les Lawmen pressés.  Elle hennit par haut-parleur.
 		[ Catalogue d'un concessionnaire de Westbrook ]
 
 *portal
@@ -3285,7 +3284,7 @@ chevalier*
 seignieur
 dame
 paladin
-	Grades de l'Avocat
+	Grades du Lawman
 	  titre                 niveau
 	Recrue                1 à  2
 	Vigile                3 à  5
@@ -3293,8 +3292,7 @@ paladin
 	 Agente                6 à  9
 	Sergent,
 	 Sergente              10 à 13
-	Avocat,
-	 Avocate               14 à 17
+	Lawman                14 à 17
 	Chef d'escouade,
 	 Cheffe d'escouade     18 à 21
 	Chevalier corpo,

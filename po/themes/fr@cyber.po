@@ -45,11 +45,11 @@ msgid "Healer"
 msgstr "Medtech"
 
 msgid "Knight"
-msgstr "Avocat"
+msgstr "Lawman"
 
 msgctxt "feminine"
 msgid "Knight"
-msgstr "Avocate"
+msgstr "Lawman"
 
 msgid "Monk"
 msgstr "Moine augmenté"
@@ -2705,7 +2705,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "knight"
-msgstr "avocat"
+msgstr "lawman"
 
 msgctxt "gender"
 msgid "knight"
@@ -6436,7 +6436,7 @@ msgstr ""
 "Une odeur de mort et de désinfectant imprègne l'air.  Pas besoin d'être\n"
 "%Ra pour savoir que %n est sur le point de l'emporter."
 
-# Quête de l'Avocat (Kni)
+# Quête du Lawman (Kni)
 
 msgctxt "quest"
 msgid "Camelot Castle"
