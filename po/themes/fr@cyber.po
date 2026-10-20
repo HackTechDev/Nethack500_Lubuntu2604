@@ -9723,3 +9723,206 @@ msgstr "une implosion anti-piratage"
 
 msgid "The damaged vault's walls are magically restored!"
 msgstr "Les murs endommagés de la chambre forte se reconstruisent tout seuls !"
+
+# Artefacts : noms du thème (msgctxt artifact, objgender ; quest pour
+# ceux des quêtes, formes abrégées comprises)
+
+msgctxt "artifact"
+msgid "Excalibur"
+msgstr "Excalibur Mk II"
+
+msgctxt "objgender"
+msgid "Excalibur"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Stormbringer"
+msgstr "Lame Porte-Tempête"
+
+msgctxt "objgender"
+msgid "Stormbringer"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Mjollnir"
+msgstr "Marteau Mjöllnir"
+
+msgctxt "objgender"
+msgid "Mjollnir"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "Cleaver"
+msgstr "Fendoir industriel"
+
+msgctxt "objgender"
+msgid "Cleaver"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "Magicbane"
+msgstr "Fléau-des-Hackers"
+
+msgctxt "objgender"
+msgid "Magicbane"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "Frost Brand"
+msgstr "Lame cryogénique"
+
+msgctxt "objgender"
+msgid "Frost Brand"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Fire Brand"
+msgstr "Lame plasma"
+
+msgctxt "objgender"
+msgid "Fire Brand"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Dragonbane"
+msgstr "Tueuse-de-Dragons"
+
+msgctxt "objgender"
+msgid "Dragonbane"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Demonbane"
+msgstr "Antivirus"
+
+msgctxt "objgender"
+msgid "Demonbane"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "Werebane"
+msgstr "Fléau-des-Cyberpsychos"
+
+msgctxt "objgender"
+msgid "Werebane"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "Vorpal Blade"
+msgstr "Lame vorpale à monofilament"
+
+msgctxt "objgender"
+msgid "Vorpal Blade"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "Sunsword"
+msgstr "Épée solaire"
+
+msgctxt "objgender"
+msgid "Sunsword"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "The Orb of Detection"
+msgstr "le Scanner de Détection"
+
+msgctxt "objgender"
+msgid "The Orb of Detection"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "The Magic Mirror of Merlin"
+msgstr "le Miroir diagnostic de Merlin"
+
+msgctxt "objgender"
+msgid "The Magic Mirror of Merlin"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "The Eyes of the Overworld"
+msgstr "les Optiques du Surmonde"
+
+msgctxt "objgender"
+msgid "The Eyes of the Overworld"
+msgstr "fp"
+
+msgctxt "artifact"
+msgid "The Longbow of Diana"
+msgstr "l'Arc à poulies de Diane"
+
+msgctxt "objgender"
+msgid "The Longbow of Diana"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "The Master Key of Thievery"
+msgstr "le Passe-partout du Larcin"
+
+msgctxt "objgender"
+msgid "The Master Key of Thievery"
+msgstr "m"
+
+msgctxt "artifact"
+msgid "The Platinum Yendorian Express Card"
+msgstr "la puce de crédit Yendorian Express Platine"
+
+msgctxt "objgender"
+msgid "The Platinum Yendorian Express Card"
+msgstr "f"
+
+msgctxt "artifact"
+msgid "The Orb of Fate"
+msgstr "le Noyau du Destin"
+
+msgctxt "objgender"
+msgid "The Orb of Fate"
+msgstr "m"
+
+msgctxt "quest"
+msgid "the Orb of Detection"
+msgstr "le Scanner de Détection"
+
+msgctxt "quest"
+msgid "the Orb"
+msgstr "le Scanner"
+
+msgctxt "quest"
+msgid "the Magic Mirror of Merlin"
+msgstr "le Miroir diagnostic de Merlin"
+
+msgctxt "quest"
+msgid "the Magic Mirror"
+msgstr "le Miroir diagnostic"
+
+msgctxt "quest"
+msgid "the Eyes of the Overworld"
+msgstr "les Optiques du Surmonde"
+
+msgctxt "quest"
+msgid "the Eyes"
+msgstr "les Optiques"
+
+msgctxt "quest"
+msgid "the Longbow of Diana"
+msgstr "l'Arc à poulies de Diane"
+
+msgctxt "quest"
+msgid "the Longbow"
+msgstr "l'Arc à poulies"
+
+msgctxt "quest"
+msgid "the Master Key of Thievery"
+msgstr "le Passe-partout du Larcin"
+
+msgctxt "quest"
+msgid "the Master Key"
+msgstr "le Passe-partout"
+
+msgctxt "quest"
+msgid "the Platinum Yendorian Express Card"
+msgstr "la puce de crédit Yendorian Express Platine"
+
+msgctxt "quest"
+msgid "the Orb of Fate"
+msgstr "le Noyau du Destin"

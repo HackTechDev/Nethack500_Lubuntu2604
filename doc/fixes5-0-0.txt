@@ -3151,6 +3151,8 @@ translated: temple priests' names, the shopkeeper's offer when selling, the
 god names are translated (msgctxt "god": Athéna, Hermès, La Dame...),
 	the death reason keeping the English name; messages about a goddess
 	agree with her (msgctxt "goddess", pline flag PLINE_GODDESS)
+artifact names are translated for display (msgctxt "artifact", with their
+	gender under "objgender"); wishes and comparisons keep the English
 
 
 NetHack Community Patches (or Variation) Included

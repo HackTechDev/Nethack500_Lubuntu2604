@@ -178,6 +178,11 @@ plus de 7 000 lignes) n'a pas de version cyberpunk.  Des 448 textes de
 quête laissés au français, un seul jurait (résumé de l'antre de
 l'Exécuteur, `1ff6350`).
 
+Puis : derniers restes de magie (`a42f2b8`), noms des dieux traduits avec
+accord des déesses (`483cafe`, « La Dame », « Tu m'as mise en colère »),
+artefacts traduits en français et renommés dans le thème (Fléau-des-Hackers,
+Antivirus, Scanner de Détection, Optiques du Surmonde...).
+
 1. Mines → Bas-fonds : 6 entrées à reprendre dans le thème.
 2. Mégalopole → Night City dans les fichiers de données : 7 occurrences
    (4 rumeurs, 2 gravures, 1 oracle), texte libre sans format.

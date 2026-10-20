@@ -1003,8 +1003,14 @@ xname_i18n(struct obj *obj, unsigned cxn_flags)
     }
 
     if (obj_is_pname(obj)) {
-        Strcpy(buf, ONAME(obj));
-        set_objgram(buf, 0U);
+        /* artifact names are translated with msgctxt "artifact", their
+           gender under "objgender" */
+        const char *g = obj->oartifact ? i18n_lookup("objgender", ONAME(obj))
+                                       : 0;
+
+        Strcpy(buf, obj->oartifact ? C_("artifact", ONAME(obj)) : ONAME(obj));
+        set_objgram(buf, ((g && strchr(g, 'f')) ? OGRAM_FEM : 0U)
+                         | ((g && strchr(g, 'p')) ? OGRAM_PLURAL : 0U));
         return buf;
     }
 
@@ -1276,7 +1282,8 @@ xname_i18n(struct obj *obj, unsigned cxn_flags)
     }
     if (has_oname(obj) && dknown)
         Snprintf(eos(buf), BUFSZ - PREFIX - strlen(buf),
-                 obj_agree(" named %s", gram), ONAME(obj));
+                 obj_agree(" named %s", gram),
+                 obj->oartifact ? C_("artifact", ONAME(obj)) : ONAME(obj));
 
     set_objgram(buf, gram);
     return buf;
@@ -3665,7 +3672,7 @@ bare_artifactname(struct obj *obj)
 
     if (obj->oartifact) {
         outbuf = nextobuf();
-        Strcpy(outbuf, artiname(obj->oartifact));
+        Strcpy(outbuf, C_("artifact", artiname(obj->oartifact)));
         if (!strncmp(outbuf, "The ", 4))
             outbuf[0] = lowc(outbuf[0]);
     } else {
@@ -3673,6 +3680,57 @@ bare_artifactname(struct obj *obj)
     }
     return outbuf;
 }
+
+#if 0
+/* for xgettext: artifact names and genders, translated for display */
+NC_("artifact", "Excalibur"), NC_("objgender", "Excalibur"),
+NC_("artifact", "Stormbringer"), NC_("objgender", "Stormbringer"),
+NC_("artifact", "Mjollnir"), NC_("objgender", "Mjollnir"),
+NC_("artifact", "Cleaver"), NC_("objgender", "Cleaver"),
+NC_("artifact", "Grimtooth"), NC_("objgender", "Grimtooth"),
+NC_("artifact", "Orcrist"), NC_("objgender", "Orcrist"),
+NC_("artifact", "Sting"), NC_("objgender", "Sting"),
+NC_("artifact", "Magicbane"), NC_("objgender", "Magicbane"),
+NC_("artifact", "Frost Brand"), NC_("objgender", "Frost Brand"),
+NC_("artifact", "Fire Brand"), NC_("objgender", "Fire Brand"),
+NC_("artifact", "Dragonbane"), NC_("objgender", "Dragonbane"),
+NC_("artifact", "Demonbane"), NC_("objgender", "Demonbane"),
+NC_("artifact", "Werebane"), NC_("objgender", "Werebane"),
+NC_("artifact", "Grayswandir"), NC_("objgender", "Grayswandir"),
+NC_("artifact", "Giantslayer"), NC_("objgender", "Giantslayer"),
+NC_("artifact", "Ogresmasher"), NC_("objgender", "Ogresmasher"),
+NC_("artifact", "Trollsbane"), NC_("objgender", "Trollsbane"),
+NC_("artifact", "Vorpal Blade"), NC_("objgender", "Vorpal Blade"),
+NC_("artifact", "Snickersnee"), NC_("objgender", "Snickersnee"),
+NC_("artifact", "Sunsword"), NC_("objgender", "Sunsword"),
+NC_("artifact", "The Orb of Detection"),
+NC_("objgender", "The Orb of Detection"),
+NC_("artifact", "The Heart of Ahriman"),
+NC_("objgender", "The Heart of Ahriman"),
+NC_("artifact", "The Sceptre of Might"),
+NC_("objgender", "The Sceptre of Might"),
+NC_("artifact", "The Palantir of Westernesse"),
+NC_("objgender", "The Palantir of Westernesse"),
+NC_("artifact", "The Staff of Aesculapius"),
+NC_("objgender", "The Staff of Aesculapius"),
+NC_("artifact", "The Magic Mirror of Merlin"),
+NC_("objgender", "The Magic Mirror of Merlin"),
+NC_("artifact", "The Eyes of the Overworld"),
+NC_("objgender", "The Eyes of the Overworld"),
+NC_("artifact", "The Mitre of Holiness"),
+NC_("objgender", "The Mitre of Holiness"),
+NC_("artifact", "The Longbow of Diana"),
+NC_("objgender", "The Longbow of Diana"),
+NC_("artifact", "The Master Key of Thievery"),
+NC_("objgender", "The Master Key of Thievery"),
+NC_("artifact", "The Tsurugi of Muramasa"),
+NC_("objgender", "The Tsurugi of Muramasa"),
+NC_("artifact", "The Platinum Yendorian Express Card"),
+NC_("objgender", "The Platinum Yendorian Express Card"),
+NC_("artifact", "The Orb of Fate"), NC_("objgender", "The Orb of Fate"),
+NC_("artifact", "The Eye of the Aethiopica"),
+NC_("objgender", "The Eye of the Aethiopica"),
+#endif
 
 static const char *const wrp[] = {
     "wand",   "ring",      "potion",     "scroll", "gem",
