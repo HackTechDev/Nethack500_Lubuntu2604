@@ -1,7 +1,7 @@
 # NetHack 5.0  engrave-fr@cyber.txt
 # NetHack may be freely redistributed.  See license for details.
 # Gravures aléatoires du thème cyberpunk (CYBERPUNK.md) : des graffitis
-# sur les murs de la Mégalopole.  Compilé en engrave.fr@cyber
+# sur les murs de Night City.  Compilé en engrave.fr@cyber
 # (MAKEDEFS_LANG=fr@cyber ../util/makedefs -2) ; sans ce fichier, le jeu
 # prend engrave.fr.
 #
@@ -33,7 +33,7 @@ Erreur 404 : sortie introuvable
 Segmentation fault (core dumped)
 Hello, World!
 # contestation
-La Mégalopole ment
+Night City ment
 Les corpos nous mangent vivants
 Débranchez-les tous
 Le Réseau est à tout le monde
