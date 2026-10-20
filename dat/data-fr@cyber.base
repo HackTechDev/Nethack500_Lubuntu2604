@@ -673,47 +673,16 @@ curse*
 		[ Conseil d'un technoprêtre ]
 
 cwn*n
-	Meute de chiens spectraux blancs comme neige aux oreilles
-	rouges, qui prenaient parfois part aux enlèvements et aux raids
-	que les habitants du monde souterrain font parfois sur ce monde
-	(la Chasse sauvage).  Au pays de Galles, on les associe aux cris
-	des oies sauvages en migration, et on dit qu'ils conduisent les
-	âmes des damnés en enfer.  On entend ou on voit d'ordinaire
-	cette chasse fantôme au cœur de l'hiver, accompagnée d'un vent
-	hurlant.
-		[ Encyclopedia Mythica, éd. M.F. Lindemans ]
+	Cwn Annwn : meute de chiens-robots fantômes qui chasse dans le
+	Réseau profond.  Leur aboiement annonce une mort prochaine.
+		[ Rumeur du Réseau profond ]
+
 cyclops
-	Et après avoir trait prestement son bétail,
-	il saisit de nouveau deux de mes hommes
-	et en fit son souper.
-	Alors je m'avançai, avec une jarre de vin rouge,
-	devant le Cyclope, et lui dis :
-	« Une goutte de vin après toute cette chair humaine,
-	pour que tu goûtes le vin délicieux
-	qu'on garde dans notre navire, Cyclope. »
-	Il prit la jarre et la vida.
-	Il apprécia tant ce vin sans prix
-	qu'aussitôt il m'en demanda une deuxième.
-	« Donne-la, dit-il, et donne-moi aussi ton nom. »
-			...
-	Trois fois je remplis la jarre,
-	et quand le vin lui eut embrumé l'esprit,
-	je lui dis, d'un ton doux comme le miel :
-	« Tu m'as demandé mon nom, Cyclope ?  Eh bien,
-	mon nom est très connu.  Je te le donnerai,
-	si tu me fais le présent promis à ton hôte.
-	Mon nom est Personne.  Tous m'appellent ainsi :
-	mon père et ma mère et mes amis. »
-	Impitoyable, il répondit à cela :
-	« Personne, je te mangerai le dernier de tous ;
-	ta foule d'amis te précédera entièrement.
-	Ce sera mon présent pour toi, mon ami. »
-	Et sur ces mots il tomba à la renverse,
-	terrassé par Hypnos qui terrasse tout.
-	Son cou monstrueux glissa dans la poussière ;
-	le vin rouge jaillit de sa gorge ;
-	l'ivrogne vomit des morceaux de chair humaine.
-		[ L'Odyssée (chant Epsilon), d'Homère ]
+	Le Cyclope : géant à l'œil unique qui a volé le Bâton d'Esculape
+	pour vivre éternellement en pompant la santé des autres.  Il
+	répand un virus depuis son île des marais toxiques.
+		[ Dossier de la Clinique d'Épidaure ]
+
 ~sting
 *dagger
 	Poignard : lame courte, facile à cacher et à lancer.  Ceux des
@@ -722,55 +691,30 @@ cyclops
 		[ Manuel d'autodéfense pour employés en déplacement ]
 
 dark one
-	... Mais il régnait plutôt par la force et la peur, si elles
-	pouvaient servir ; et ceux qui voyaient son ombre s'étendre sur
-	le monde l'appelaient le Seigneur Ténébreux et le nommaient
-	l'Ennemi ; et il rassembla de nouveau sous son gouvernement
-	toutes les choses mauvaises du temps de Morgoth qui restaient
-	sur terre ou sous terre, et les Orques étaient à ses ordres et
-	se multipliaient comme des mouches.  Ainsi commencèrent les
-	Années Noires...
-		[ The Silmarillion, de J.R.R. Tolkien ]
+	Le Ténébreux : netrunner renégat retranché dans la Tour
+	Obsidienne, qui a volé l'Œil de l'Aethiopica à Néferet la Verte.
+	Ses attaques passent les meilleurs pare-feu.
+		[ Archives du data center isolé ]
+
 # includes "dart trap"
 dart*
-	Les fléchettes sont des armes de jet, conçues pour voler de
-	façon qu'une pointe acérée, souvent lestée, frappe en premier.
-	On les distingue des javelots par leur empennage (c'est-à-dire
-	des plumes à l'arrière) et une hampe plus courte ou plus
-	souple, et des flèches par le fait qu'elles n'ont pas la bonne
-	longueur pour un arc normal.
-		[ Wikipédia, l'encyclopédie libre ]
+	Fléchettes : petites, légères, faciles à cacher dans une manche.
+	Les Corpos en goguette les lancent par poignées.
+		[ Conseil d'un Fixer ]
 
-	Contre mon ennemi je lançai une fléchette meurtrière.
-	Il l'attrapa dans sa main -- je l'entendis rire --
-	Je vis l'objet qui aurait dû lui percer le cœur
-	Se changer en bâton d'or.
-		[ Gifts, de Mary Coleridge ]
 demogorgon
-	Divinité terrible, dont le seul nom pouvait produire les effets
-	les plus horribles.  Il est mentionné pour la première fois par
-	l'écrivain chrétien du IVe siècle Lactance, qui rompit ce
-	faisant avec la superstition selon laquelle la simple mention
-	du nom de Démogorgon apportait mort et désastre.
-		[ Brewer's Concise Dictionary of Phrase and Fable ]
+	Démogorgon : prince des entités du Réseau profond, dont même les
+	IA corrompues prononcent le nom à voix basse.
+		[ Rapport confidentiel, Netwatch ]
 
-	Démogorgon, le prince des démons, se vautre dans l'ordure et
-	peut transmettre à ses victimes, en les déchirant, une maladie
-	rapidement mortelle.  C'est un puissant lanceur de sorts, et il
-	peut drainer la vie des mortels d'un coup de queue.
 # takes "major demon" when specifying '&'
 demon
 major demon
-	Il est souvent très difficile de savoir à quoi ressemble un
-	Démon donné, à part une impression générale de grande taille,
-	d'énormes crocs, d'yeux exorbités, de nombreux membres et d'une
-	couleur bizarre ; mais tous les récits s'accordent à dire que
-	les Démons sont très puissants, très Magiques (d'une manière
-	non humaine) et faits d'une substance qui peut se faufiler par
-	un trou de serrure sans pouvoir être percée par une Épée.  Ce
-	qui les rend difficiles à manier, même dans les rares occasions
-	où ils sont amicaux.
-	  [ The Tough Guide to Fantasyland, de Diana Wynne Jones ]
+	Entités du Réseau : démons de code né du Réseau profond, qui ont
+	appris à prendre forme dans le monde.  Certaines négocient,
+	d'autres dévorent ; aucune ne rend de comptes.
+		[ Rapport confidentiel, Netwatch ]
+
 # added by PR #1108 by NullCGT then replaced by PR #1109 by entrez
 # (Demonbane has been changed from a sword to a mace so the new quote doesn't
 # seem to be very appropriate)
@@ -792,65 +736,25 @@ demonbane
 	je ne suis pas venu jeter la paix, mais le glaive.
 		[ Évangile selon Matthieu, 10:34 ]
 dented pot
-	Voilà un spectacle qui battait tout : un homme dans la force de
-	l'âge, marchant pieds nus sur la route sauvage, vêtu d'un
-	pantalon en loques cousu dans deux sacs de farine, d'une chemise
-	si déchirée et si rapiécée que son propriétaire avait fièrement
-	le choix des trous où passer les bras, et -- comble de gloire --
-	d'un chapeau qui était exactement une marmite en fer-blanc,
-	quelque peu cabossée mais bien ajustée, la poignée tournée de
-	côté, comme si c'était le dernier cri de l'élégance.
-		[ Johnny Appleseed, de James Howard Kunstler ]
-diamond
-	Le plus dur des minéraux connus (dureté 10 sur l'échelle de
-	Mohs).  C'est une forme allotropique du carbone pur, cristallisée
-	sous une forte pression dans le système cubique, généralement en
-	octaèdres ou en cubes.
-		[ A Concise Dictionary of Physics ]
+	Casserole cabossée : casque de fortune des squatteurs.  Ça ne
+	protège pas grand-chose, mais ça fait du bruit.
+		[ Conseil d'un squatteur ]
 
-	Le diamant, _adamas_ ou _dyamas_, est une pierre transparente,
-	comme le cristal, mais de la couleur du fer poli, et on ne peut
-	le détruire ni par le fer, ni par le feu, ni par aucun autre
-	moyen, à moins de le plonger dans le sang chaud d'un bouc ; avec
-	des éclats de diamant, on grave et on polit les autres pierres.
-	Il n'est pas plus gros qu'une petite noix.  Il en existe six
-	sortes ; l'Adamant attire le métal ; il chasse le venin ; il
-	produit l'ambre (et il est efficace contre les vaines terreurs
-	et pour ceux qui résistent aux sortilèges).  On le trouve en
-	Inde, en Grèce et à Chypre, où les magiciens s'en servent.  Il
-	donne du courage ; il écarte les apparitions ; il dissipe la
-	colère et les querelles ; il guérit les fous ; il défend contre
-	les ennemis.  Il faut le sertir dans l'or ou l'argent et le
-	porter au bras gauche.  On le trouve aussi en Arabie.
-	 	[ The Aberdeen Bestiary, traduit par Colin McLaren ]
+diamond
+	Diamant : la pierre la plus dure, et la plus chère.  Les Fixers
+	vérifient toujours qu'il ne s'agit pas de verre.
+		[ Conseil d'un receleur de Kabuki ]
+
 dilithium*
-	Le plus célèbre, et le premier à recevoir un nom, des
-	« minéraux » imaginaires de Star Trek est le dilithium. ...  En
-	raison du rôle central de ce minéral dans l'histoire, toute une
-	mythologie l'entoure.  C'est cependant une substance naturelle
-	dans cette mythologie, puisque plusieurs épisodes mentionnent
-	l'exploitation de gisements de dilithium. ...
-	Ce nom lui-même est imaginaire et ne renseigne pas vraiment sur
-	la structure ou la composition de cette substance, sinon que
-	cette forme du nom suggère une sorte d'aluminosilicate
-	contenant du lithium et du fer.  Cela dit, le minéral réel qui
-	correspond le mieux aux éléments descriptifs de ce nom est la
-	ferroholmquistite, un triferrodiallosilicate de dilithium.  Si
-	l'on part du principe que la nature suit certaines normes
-	générales, on peut extrapoler que le dilithium aurait un nombre
-	semblable d'atomes de silicium dans sa structure.  En gardant
-	sept (c'est-à-dire hepto) fers ferreux et en équilibrant les
-	oxygènes, on obtiendrait la formule théorique Li2Fe7Al2Si8O27.
-	Un minéral de cette composition pourrait théoriquement exister,
-	même s'il est douteux qu'il possède les propriétés plus
-	fantastiques attribuées au dilithium.
-		[ The Mineralogy of Star Trek, de Jeffrey de Fourestier ]
+	Cristal de dilithium : pierre rare qui alimente, dit-on, les
+	moteurs des vaisseaux des corpos spatiales.
+		[ Rumeur des quais ]
+
 dingo
-	Chien sauvage d'aspect lupin, Canis dingo, d'Australie, au
-	pelage brun roux ou brun jaunâtre, qui aurait été introduit par
-	les aborigènes.
-		[ Webster's Encyclopedic Unabridged Dictionary
-		    of the English Language ]
+	Dingo : chien sauvage importé pour un zoo, relâché pendant une
+	émeute.  Il chasse avec les chiens errants.
+		[ Rapport du service animalier ]
+
 disenchanter
 	Désactivateur : machine de saisie du NCPD qui vide les objets de
 	leurs optimisations au simple contact.  Les Solos le détestent
@@ -858,35 +762,25 @@ disenchanter
 		[ Message sur un forum de Solos ]
 
 dispater
-	Le souverain romain du monde souterrain et de la fortune,
-	semblable à l'Hadès grec.  Tous les cent ans, on célébrait en
-	son honneur les Ludi Tarentini.  Les Gaulois considéraient Dis
-	Pater comme leur ancêtre.  Le nom est une contraction du latin
-	Dives, « le riche », Dives Pater, « le père riche », ou « Père
-	Richesse ».  Il désigne la richesse en pierres précieuses sous
-	la terre.
-		[ Encyclopedia Mythica, éd. M.F. Lindemans ]
+	Dispater : entité du Réseau profond qui gère sa couche comme une
+	corporation, avec des contrats et des pénalités.
+		[ Rapport confidentiel, Netwatch ]
+
 # 5.0; monster adapted from slash'em based on an AD&D Monster Manual entry;
 # slash'em lacked a description so this entry has been created from scratch;
 # the puma comparison is how the AD&D monster is described (except that
 # that creature has six legs and two tentacles!) but the actual monster's
 # behavior is substantially different
 displacer beast
-	Cette étrange créature semble être une forme mutante de puma
-	(appelé aussi couguar ou lion des montagnes) qui vivrait sous
-	terre plutôt que dans la nature sauvage.  Elle est capable
-	d'échanger sa place avec les gens ou les créatures sur son
-	chemin, et les images déplacées des autres ne la trompent pas.
+	Bête de déplacement : félin à camouflage holographique, qui semble
+	toujours être à côté de l'endroit où il est.
+		[ Rapport de MaxTac ]
+
 djinn*
-	Les djinns sont des génies du plan élémentaire de l'Air.  Là,
-	parmi leurs semblables, ils ont leurs propres sociétés.  On en
-	rencontre parfois sur terre, et on peut même les y invoquer
-	pour rendre quelque service à de puissants magiciens.  Les
-	magiciens les laissent souvent traîner pour s'en servir plus
-	tard, bien rangés dans une flasque ou une lampe.  De temps en
-	temps, un tel objet est trouvé par un vaurien chanceux, et
-	certains djinns sont réputés si reconnaissants d'être libérés
-	qu'ils pourraient accorder un vœu à leur sauveur.
+	Djinn : IA enfermée dans une bouteille de stim, qui exauce parfois
+	un souhait à celui qui la libère.  Parfois elle se venge.
+		[ Forum « Objets bizarres » ]
+
 # takes "dog or other canine" when specifying 'd'
 ~hachi
 ~slasher
@@ -905,78 +799,29 @@ pup*
 ~*spellbook*
 *door
 doorway
-	Par moi l'on va dans la cité dolente,
-	Par moi l'on va dans l'éternelle douleur,
-	Par moi l'on va parmi la race perdue.
-	La justice inspira mon souverain auteur ;
-	Je fus faite par la puissance divine,
-	La suprême sagesse et le premier amour.
-	Avant moi nulle chose ne fut créée,
-	Sinon d'éternelles, et je dure éternellement.
-	Vous qui entrez, laissez toute espérance.
-	    [ L'Enfer, de La Divine Comédie de Dante Alighieri ]
+	Trappes et trous : le sol de Night City est plein de faux planchers
+	et de cages d'ascenseur sans ascenseur.  On tombe d'un niveau, ou
+	de plusieurs.
+		[ Conseil d'un vigile ]
+
 doppelganger
-	« Alors nous ne pouvons que rendre grâce d'être en Antarctique,
-	où il n'existe pas une seule chose vivante qu'elle puisse
-	imiter, à part ces animaux du camp. »
+	Doppelgänger : androïde de contrefaçon, capable de prendre
+	n'importe quelle apparence, y compris la vôtre.
+		[ Rapport de MaxTac ]
 
-	« Nous, gloussa Blair.  Elle peut nous imiter.  Les chiens ne
-	peuvent pas parcourir six cents kilomètres jusqu'à la mer ; il
-	n'y a pas de nourriture.  Il n'y a pas de labbes à imiter en
-	cette saison.  Il n'y a pas de manchots aussi loin dans les
-	terres.  Rien ne peut atteindre la mer depuis ici - sauf nous.
-	Nous avons un cerveau.  Nous pouvons le faire.  Vous ne voyez
-	pas - elle doit nous imiter - elle doit être l'un de nous -
-	c'est le seul moyen pour elle de piloter un avion - de piloter
-	un avion pendant deux heures, et de dominer - d'être - tous les
-	habitants de la Terre.  Un monde à prendre - si elle nous
-	imite !
-		[ Who Goes There?, de John W. Campbell ]
-
-	Alex : Lâche ça !  Je dois tuer le robot démon !
-	Double d'Alex (saisissant le pistolet) : Anya, pousse-toi.
-	Buffy : Alex !
-	Double d'Alex : Ça va, Buffy.  Je le tiens.
-	Alex : Non, Buffy, c'est moi, moi.  Aide-moi !
-	Anya : Mon pistolet, il a pris mon pistolet.
-	Riley : Tu as un pistolet ?
-	Buffy : Alex, l'Alex qui tient le pistolet, donne-le-moi.
-	Anya : Buffy, lequel est le vrai ?
-	Alex : Moi.
-	Double d'Alex : Non, c'est _moi_.
-	    [ Buffy the Vampire Slayer, épisode 5.03, « The Replacement » ]
 *dragon
 *xoth
-	En Occident, le dragon était l'ennemi naturel de l'homme.  Bien
-	qu'il préférât vivre dans des régions mornes et désolées, chaque
-	fois qu'on le voyait parmi les hommes, il laissait derrière lui
-	une traînée de destruction et de maladie.  Pourtant, toute
-	tentative de tuer cette bête était une entreprise périlleuse.
-	Car l'assaillant du dragon devait affronter non seulement les
-	nuages de fumées sulfureuses qui sortaient de ses naseaux
-	crachant le feu, mais aussi les coups de sa queue, la partie la
-	plus mortelle de son corps de serpent.
-	 [ Mythical Beasts, de Deirdre Headon (The Leprechaun Library) ]
+	Dragons : créatures géantes nées des labos de génie génétique les
+	plus fous, ou de légendes plus anciennes que la ville.  Leur
+	souffle traverse le blindage, leurs écailles valent une fortune.
+		[ Reportage de N54 News ]
 
-	« Celui à qui les dragons acceptent de parler, dit-il, voilà un
-	seigneur des dragons, ou du moins c'est le cœur de la chose.  Ce
-	n'est pas un tour de main pour maîtriser les dragons, comme le
-	croient la plupart des gens.  Les dragons n'ont pas de maîtres.
-	La question est toujours la même, avec un dragon : va-t-il te
-	parler ou va-t-il te manger ?  Si tu peux compter qu'il fera la
-	première chose et pas la seconde, eh bien tu es un seigneur des
-	dragons. »
-		[ The Tombs of Atuan, d'Ursula K. Le Guin ]
 *dragon*scale*
-	Stephen avait soutenu, et l'armurier expert avait admis à
-	contrecœur, qu'un bouclier ou une armure en écailles de dragon,
-	à supposer qu'on parvienne à en fabriquer, devrait offrir des
-	avantages pratiques réels sur n'importe quelle cuirasse ou
-	bouclier de métal -- à poids égal, une telle protection serait
-	sans doute bien plus solide et protectrice que tout ce que des
-	forgerons humains pourraient faire en acier.
-		[ The Last Book of Swords: Shieldbreaker's Story,
-			de Fred Saberhagen ]
+	Écailles de dragon : armure naturelle que les tailleurs de
+	Westbrook transforment en gilet.  Elles gardent les pouvoirs du
+	dragon qui les portait.
+		[ Vitrine d'un tailleur de Westbrook ]
+
 dragonbane
 	On raconte qu'une corpo l'a commandée pour tuer un dragon de
 	démonstration échappé d'un salon d'exposition.  Le dragon est
@@ -985,37 +830,21 @@ dragonbane
 		[ Légende urbaine de Heywood ]
 
 *drum*
-	Bien des voyageurs ont vu les tambours des grands singes, et
-	certains ont entendu le bruit de leurs battements et le vacarme
-	des réjouissances sauvages et étranges de ces premiers seigneurs
-	de la jungle, mais Tarzan, Lord Greystoke, est sans doute le
-	seul être humain qui ait jamais pris part à la fête farouche,
-	folle et enivrante du Dum-Dum.
-		[ Tarzan of the Apes, d'Edgar Rice Burroughs ]
+	Tambours : instruments qui effraient les monstres.  Le tambour
+	sismique fait trembler le sol sous les pieds de tout le monde.
+		[ Catalogue d'instruments ]
+
 dunce*
-	Le bonnet d'âne est un haut chapeau conique.  Dans la culture
-	populaire, il est généralement en papier, souvent marqué d'un
-	D, et on le fait porter aux écoliers pour les punir d'être
-	bêtes ou paresseux.  Bien que la pratique soit devenue rare,
-	elle est souvent représentée dans la culture populaire, par
-	exemple dans les dessins animés pour enfants.
-		[ Wikipédia, l'encyclopédie libre ]
+	Bonnet d'âne : il rend son porteur stupide et refuse de partir.
+	Certaines corpos en équipent leurs stagiaires.
+		[ Forum des stagiaires anonymes ]
+
 dungeon*
-	D'un seul regard, aussi loin que perce la vue des Anges, il
-	embrasse ce lieu lugubre, dévasté et sauvage, un Cachot
-	horrible, qui de tous côtés flambait comme une immense
-	Fournaise ; mais de ces flammes ne sortait nulle lumière,
-	plutôt des ténèbres visibles, qui servaient seulement à
-	découvrir des spectacles de malheur, des régions de chagrin,
-	des ombres dolentes, où la paix et le repos ne peuvent jamais
-	habiter, où l'espérance ne vient jamais, elle qui vient à
-	tous ; mais une torture sans fin presse toujours, et un Déluge
-	de feu nourri d'un Soufre toujours brûlant et jamais consumé :
-	tel est le lieu que la Justice Éternelle avait préparé pour ces
-	rebelles ; ici elle leur ordonna leur Prison dans les ténèbres
-	absolues, et fixa leur part aussi loin de Dieu et de la lumière
-	du Ciel que trois fois la distance du Centre au Pôle extrême.
-		[ Paradise Lost, de John Milton ]
+	Night City : une ville verticale, des sous-sols aux Couches du
+	Réseau, qu'on descend niveau par niveau.  Plus on descend, plus
+	on gagne, et plus on perd.
+		[ Guide de survie, introduction ]
+
 ~dwarf ??m*
 ~dwar* cloak
 #~dwar* cave*man
@@ -1029,87 +858,43 @@ dwarf*
 # accept "dwarfish" and "dwarvish"
 dwar* cloak
 hooded cloak
-	C'est ainsi qu'ils se mirent tous en route, partant de l'auberge
-	au petit trot par un beau matin juste avant mai, sur des poneys
-	chargés ; et Bilbo portait un capuchon vert foncé (un peu
-	délavé par les intempéries) et une cape vert foncé empruntée à
-	Dwalin.  Ils étaient trop grands pour lui, et il avait l'air
-	plutôt comique.
-		[ The Hobbit, de J.R.R. Tolkien ]
+	Cape de mineur : capuche épaisse contre la poussière et les
+	éboulements.
+		[ Inventaire d'une mine des Bas-fonds ]
+
 earendil
 elwing
-	Plus tard, quand, par le triomphe de Morgoth, Elfes et Hommes
-	devinrent étrangers les uns aux autres, comme il le souhaitait
-	le plus, ceux de la race des Elfes qui vivaient encore en
-	Terre du Milieu déclinèrent et s'effacèrent, et les Hommes
-	usurpèrent la lumière du soleil.  Alors les Quendi errèrent dans
-	les lieux solitaires des grandes terres et des îles, et
-	prirent goût au clair de lune et à la lumière des étoiles, aux
-	bois et aux grottes, devenant comme des ombres et des
-	souvenirs, sauf ceux qui de temps à autre faisaient voile vers
-	l'Ouest et disparaissaient de la Terre du Milieu.  Mais à
-	l'aube des années, Elfes et Hommes étaient alliés et se
-	tenaient pour parents, et certains parmi les Hommes apprirent
-	la sagesse des Eldar et devinrent grands et vaillants parmi les
-	capitaines des Noldor.  Et à la gloire et à la beauté des
-	Elfes, et à leur destin, eut pleinement part la descendance
-	des Elfes et des mortels, Eärendil, et Elwing, et Elrond leur
-	fils.
-		[ The Silmarillion, de J.R.R. Tolkien ]
+	Eärendil : nom d'une étoile que les réplicants regardent depuis
+	les toits, sans savoir pourquoi.
+		[ Poème anonyme sur un mur de Westbrook ]
+
 eel
 giant eel
-	Le comportement des anguilles en eau douce ajoute au mystère
-	qui les entoure.  Elles s'enfoncent librement dans les fonds
-	vaseux et limoneux des lacs, restant enfouies pendant les
-	heures de jour en été.  [...]  Les anguilles sont des
-	carnivores voraces, qui se nourrissent surtout la nuit et
-	consomment une grande variété de poissons et d'invertébrés.
-	Contrairement à ce qu'on pensait autrefois, les anguilles
-	recherchent les créatures vivantes plutôt que mortes et ne se
-	nourrissent pas habituellement de charognes.
-	    [ Freshwater Fishes of Canada, de Scott et Crossman ]
+	Anguille : bête des eaux polluées, qui s'enroule autour de vous et
+	vous entraîne au fond.
+		[ Avertissement sur un quai ]
+
 egg
-	Mais je demandai pourquoi ne pas le garder et laisser la poule
-	le couver jusqu'à ce qu'il éclose, et alors nous verrions ce qui
-	en sortirait.
-	« Rien de bon, j'en suis sûre, dit Maman.  Ce serait sans doute
-	quelque chose d'horrible.  Mais rappelle-toi bien, si c'est un
-	crocodile ou un dragon ou quelque chose comme ça, je ne le
-	garderai pas une minute dans ma maison. »
-		[ The Enormous Egg, d'Oliver Butterworth ]
+	Œuf : nourriture, ou futur monstre.  Certains éclosent dans le
+	sac, d'autres pétrifient qui les mange.
+		[ Conseil d'un cuisinier des Bas-fonds ]
+
 elbereth
-	... Au moment même où ils franchissaient le seuil, une voix
-	claire s'éleva seule en un chant.
+	Elbereth : un nom gravé sur le sol, que la plupart des monstres
+	n'osent pas franchir.  Personne ne sait d'où vient ce graffiti,
+	mais il marche.
+		[ Graffiti relevé dans toute la ville ]
 
-		A Elbereth Gilthoniel,
-		silivren penna miriel
-		o menel aglar elenath!
-		Na-chaered palan-diriel
-		o galadhremmin ennorath,
-		Fanuilos, le linnathon
-		nef aear, si nef aearon!
-
-	Frodo s'arrêta un instant et se retourna.  Elrond était dans son
-	fauteuil et le feu éclairait son visage comme la lumière d'été
-	sur les arbres.  Près de lui était assise la Dame Arwen.  [...]
-	Il resta immobile, enchanté, tandis que les douces syllabes du
-	chant elfique tombaient comme des joyaux limpides de mots et de
-	mélodie mêlés.  « C'est un chant à Elbereth, dit Bilbo.  Ils le
-	chanteront, ainsi que d'autres chants du Royaume Béni, bien des
-	fois ce soir.  Viens ! »
-	   [ The Fellowship of the Ring, de J.R.R. Tolkien ]
 electric eel
-	Poisson d'Amérique du Sud (_Gymnotus electricus_), vivant en eau
-	douce.  En forme de serpent, il peut atteindre 2 mètres.  Cette
-	anguille est connue pour son organe électrique qui lui permet de
-	paralyser des créatures jusqu'à la taille d'un cheval.
-	   [ Van Dale's Groot Woordenboek der Nederlandse Taal ]
+	Anguille électrique : elle décharge assez de courant pour griller
+	un implant.
+		[ Avertissement sur un quai ]
+
 *elemental
-	Les élémentaires sont des manifestations de la nature
-	fondamentale de l'univers.  On en connaît quatre formes : l'air,
-	le feu, l'eau et la terre.  Certains mystiques ont postulé la
-	nécessité d'un cinquième type, l'élémentaire de l'esprit, mais
-	on n'en a jamais rencontré, du moins sur ce plan d'existence.
+	Élémentaires : entités du Réseau faites d'air, de feu, de terre
+	ou d'eau, qui gardent les Couches du Réseau.
+		[ Rumeur du Réseau profond ]
+
 ~human or elf*
 ~elf ??m*
 *elf*
@@ -1129,78 +914,34 @@ elven cloak
 		[ Note de sécurité, chef des vigiles ]
 
 emerald
-	« Ôte ce masque d'or brûlant
-	Aux yeux d'émeraude.
-	— Oh non, mon cher, tu as l'audace
-	De chercher si les cœurs sont fous et sages,
-	Et pourtant pas froids.
+	Émeraude : pierre verte, appréciée des corpos pour les boutons de
+	manchette.
+		[ Conseil d'un receleur de Kabuki ]
 
-	— Je voudrais seulement trouver ce qu'il y a à trouver,
-	Amour ou tromperie.
-	— C'est le masque qui a captivé ton esprit,
-	Et ensuite fait battre ton cœur,
-	Non ce qui est derrière.
-
-	— Mais de peur que tu ne sois mon ennemie,
-	Je dois m'enquérir.
-	— Oh non, mon cher, laisse tout cela ;
-	Qu'importe, pourvu qu'il y ait du feu
-	En toi, en moi ? »
-		[ The Mask, de W.B. Yeats ]
 engrav*
 A.S*
-	Bientôt nous arrivâmes à un endroit où la plage se rétrécissait ;
-	la mer venait presque battre le pied des falaises, laissant un
-	passage large de deux mètres au plus.  Entre deux avancées de
-	roc, on apercevait l'entrée d'un tunnel obscur.
-	Là, sur une plaque de granit, apparaissaient deux lettres
-	mystérieuses, à demi rongées par le temps -- les deux initiales
-	du hardi et aventureux voyageur :
+	Graffitis : on écrit sur le sol avec ses doigts, un poignard, un
+	implant ou un graveur.  Les mots s'effacent quand on marche dessus,
+	sauf ceux qu'on grave au laser.
+		[ Manuel du parfait tagueur ]
 
-			A.S.
-
-	« A. S., s'écria mon oncle.  Arne Saknussemm !  Toujours Arne
-	Saknussemm ! »
-
-	[...] à la vue de ces deux lettres gravées là depuis trois cents
-	ans, je demeurai dans une stupéfaction profonde.  Non seulement
-	la signature du savant alchimiste se lisait sur le roc, mais je
-	tenais à la main le poignard qui l'avait tracée.  À moins d'être
-	d'une insigne mauvaise foi, je ne pouvais plus douter de
-	l'existence du voyageur et de la réalité de son voyage.
-		[ Voyage au centre de la Terre, de Jules Verne ]
 *epidaurus
-	L'asclépiéion d'Épidaure était le centre de guérison le plus
-	célèbre du monde classique, le lieu où les malades se rendaient
-	dans l'espoir d'être guéris.  Pour connaître le bon remède à
-	leurs maux, ils passaient une nuit dans l'enkoimitiria, une
-	grande salle où l'on dormait.  En rêve, le dieu lui-même
-	(Asclépios) leur conseillait ce qu'ils devaient faire pour
-	recouvrer la santé.  Il y a aussi des sources minérales aux
-	environs, qui ont peut-être servi à guérir.
-		[ Wikipédia, l'encyclopédie libre ]
+	La Clinique d'Épidaure : la clinique de Doc Hippocrate, où les
+	medtechs soignent à crédit ceux que Trauma Team ignore.
+		[ Brochure de la Clinique d'Épidaure ]
+
 erinys
 erinyes
 furies
-	Les Érinyes sont les Furies du mythe antique.
-	(Érinye est la forme du singulier.)
-		[]
+	Érinye : entité vengeresse du Réseau profond, qui poursuit ceux
+	qui ont trahi.
+		[ Rumeur du Réseau profond ]
 
-	Saintes et pures, nées de Zeus Khthonios
-	et de Perséphone, que parent de belles boucles :
-	Dont le regard perçant, d'une vue sans limites,
-	surveille les actes de toute la race impie :
-	Servantes du Destin, punissant la race
-	(d'un courroux sévère) des actes injustes et vils.
-	Reines au teint sombre, dont les yeux étincelants brillent
-	d'une lumière terrible, radieuse et meurtrière :
-	Souveraines éternelles, terribles et fortes,
-	à qui appartiennent la vengeance et les tortures cruelles.
-		[ LXIX. Aux Furies, Hymnes orphiques ]
 ettin
-	Le géant à deux têtes, ou ettin, est un chasseur cruel et
-	imprévisible qui rôde la nuit et mange toute viande qu'il peut
-	attraper.
+	Ettin : géant à deux têtes, sorti d'un labo qui voulait un garde
+	qui ne dort jamais.
+		[ Rapport de MaxTac ]
+
 excalibur
 	Excalibur Mk II.  Livrée sur un lit de mousse dans une mallette
 	blindée, avec un certificat de propriété signé par le conseil
@@ -1217,14 +958,10 @@ expensive camera
 		[ Réclame d'une boutique de souvenirs de City Center ]
 
 eye of the aethiopica
-	C'est une puissante amulette de télépathie.  En plus de ses
-	pouvoirs ordinaires, elle régénère l'énergie de quiconque la
-	porte, lui permettant de lancer des sorts plus souvent.  Elle
-	réduit aussi de moitié les dégâts des sorts subis par son
-	porteur, et protège des projectiles magiques.  Enfin, quand on
-	l'invoque, elle a le pouvoir d'ouvrir instantanément un portail
-	vers n'importe quelle autre partie du donjon, permettant à son
-	invocateur de voyager rapidement d'une zone à l'autre.
+	L'Œil de l'Aethiopica : amulette de Néferet la Verte, qui fait
+	lire les pensées et régénère l'énergie.
+		[ Archives du data center isolé ]
+
 # note:  The Eyes of the Overworld is the title of Jack Vance's sequel
 # to The Dying Earth and in it the 'Eyes' were separate "cusps" that
 # needed to be worn like contact lenses, one on each eyeball.  Wearing
@@ -1236,43 +973,25 @@ eye of the aethiopica
 # been changed to be useful to game play (Xray vision).  [The quote is
 # not derived from the book.]
 eyes of the overworld
-	Les Yeux du Surmonde sont un artefact plutôt obscur.  Ces
-	lentilles magiques projettent la vue de leur porteur dans le
-	« surmonde » -- autre nom d'une partie du Plan Astral.  En
-	général, il n'y a rien à voir.  Mais le porteur peut aussi
-	regarder en arrière et voir la zone qui l'entoure, un peu comme
-	sur une carte.  Pourquoi quiconque voudrait...
+	Les Optiques du Surmonde : lentilles qui montrent tout, même ce
+	qui est invisible, et donnent une résistance au piratage.
+		[ Brochure du Dojo de Chan-Sune ]
+
 fedora
-	Certains chapeaux ne se portent que si l'on est prêt à être
-	désinvolte, à les incliner de biais et à marcher dessous d'un
-	pas élastique, comme si l'on était à deux doigts de danser.  Ils
-	exigent beaucoup de vous.
-		[ Anansi Boys, de Neil Gaiman ]
+	Fédora : chapeau de récupérateur, increvable et toujours de
+	travers.  Il ne protège de rien, sauf du ridicule.
+		[ Portrait d'un Techie ]
+
 figurine*
-	Puis il reparut à Paris à peu près à l'époque où Paris était
-	plein de carlistes qui avaient dû quitter l'Espagne.  L'un d'eux
-	a dû l'apporter avec lui, mais, qui qu'il fût, il est probable
-	qu'il ignorait tout de sa vraie valeur.  On l'avait -- sans doute
-	par précaution pendant les troubles carlistes en Espagne --
-	peint ou émaillé pour qu'il ressemble à rien de plus qu'une
-	statuette noire assez intéressante.  Et sous ce déguisement,
-	monsieur, il a, pour ainsi dire, traîné dans Paris pendant
-	soixante-dix ans, entre les mains de propriétaires et de
-	marchands trop bêtes pour voir ce qu'il y avait sous la peau.
-		[ The Maltese Falcon, de Dashiell Hammett ]
+	Figurine : petite statuette qui, appliquée, se change en
+	véritable créature.  Les Fixers en vendent sans dire laquelle.
+		[ Conseil d'un Fixer ]
+
 fire trap
-	« Laissez-le un moment, dit Cohen.  J'ai l'impression que le
-	poisson ne lui a pas réussi.
-	— Je vois pas pourquoi, dit Truckle.  Je l'ai sorti avant qu'il
-	l'ait presque mâché.  Et il a dû bien sécher dans ce couloir.
-	Vous savez, celui où les flammes jaillissaient du sol à
-	l'improviste.
-	— J'ai l'impression que notre barde ne s'attendait pas à ce que
-	des flammes jaillissent du sol à l'improviste, dit Cohen. »
-	Truckle haussa les épaules de façon théâtrale.  « _Ben_, si on
-	s'attend pas à des flammes inattendues, à quoi ça sert d'aller
-	_où que ce soit_ ? »
-		[ The Last Hero, de Terry Pratchett ]
+	Piège incendiaire : une bouche de gaz qui s'enflamme quand on
+	marche dessus.
+		[ Rapport du service des pompiers ]
+
 f* brand
 	Deux lames sœurs, sorties du même atelier clandestin de Santo
 	Domingo.  L'une contient un circuit cryogénique, l'autre un
@@ -1288,16 +1007,9 @@ flesh golem
 		[ Rapport du coroner, Night City ]
 
 flint*
-	Une émeraude est verte comme l'herbe ;
-	Un rubis rouge comme le sang ;
-	Un saphir brille bleu comme le ciel ;
-	Un silex gît dans la boue.
+	Silex : petite pierre de jet, l'arme des gamins de Pacifica.
+		[ Observation d'un sociologue de rue ]
 
-	Un diamant est une pierre brillante,
-	Faite pour attirer le désir du monde ;
-	Une opale renferme une étincelle ardente ;
-	Mais un silex renferme le feu.
-		[ Precious Stones, de Christina Giorgina Rossetti ]
 floating eye
 	Caméra flottante : une sphère de surveillance qui plane dans les
 	couloirs.  Ne la frappez surtout pas en la regardant : son flash
@@ -1325,132 +1037,49 @@ fog* cloud
 		[ Emballage d'une ration standard ]
 
 fortune cookie
-	Némésis cassa un autre biscuit et plissa le nez.  « _Vous aurez
-	une grande fortune quand vous vous y attendrez le moins_,
-	lut-elle.  C'est exactement le genre d'âneries que je déteste.
-	Quelqu'un ouvre un biscuit, et soudain il a une prophétie qui
-	lui annonce qu'il sera riche !  C'est la faute de cette traînée
-	de Tyché.  Toujours à distribuer de la chance à des gens qui ne
-	la méritent pas ! »
-	Leo regarda le tas de biscuits brisés.  « Euh... vous savez que
-	ce ne sont pas de vraies prophéties, hein ?  On les fourre juste
-	dans les biscuits dans une usine...
-	— N'essaie pas de l'excuser ! lança sèchement Némésis.  C'est
-	bien Tyché, ça, de donner de faux espoirs aux gens.  Non, non.
-	Je _dois_ la contrer. »  Némésis effleura du doigt le bout de
-	papier, et les lettres devinrent rouges.  « _Vous mourrez dans
-	la douleur quand vous vous y attendrez le plus._  Voilà !  C'est
-	bien mieux. »
-		[ The Mark of Athena, de Rick Riordan ]
+	Biscuit de fortune : il contient une prédiction, parfois vraie.
+	Les restaurants de Kabuki en offrent avec l'addition.
+		[ Menu d'un restaurant de Kabuki ]
+
 fountain
-	Repose-toi !  Cette petite Fontaine coule
-	Ainsi à jamais : -- jamais elle ne s'arrête
-	Pour l'éclat des soleils d'été,
-	Ni pour le froid des jours d'hiver.
-	Quiconque errera près d'ici,
-	Quand la chaleur syrienne est au pire,
-	Qu'il vienne ici, sans craindre
-	De ne pouvoir étancher sa soif :
-	Il trouvera cette petite rivière
-	Coulant toujours, aussi claire que jamais.
-	Qu'il boive et reprenne sa route,
-	En gardant seulement à l'esprit que moi,
-	Érotas, j'ai fait jaillir la Naïade,
-	Et qu'il rende grâce de tout au grand dieu Pan !
-		[ For a Fountain, de Bryan Waller Procter ]
+	Borne à eau : fontaine publique de Night City, qui donne de l'eau,
+	des serpents, des souhaits ou rien du tout, selon l'humeur de sa
+	programmation.
+		[ Avertissement de la régie des eaux ]
+
 fox
-	Par une chaude journée d'été, un Renard se promenait dans un
-	verger quand il arriva devant une grappe de Raisins qui
-	mûrissait sur une vigne palissée le long d'une haute branche.
-	« Voilà juste ce qu'il faut pour étancher ma soif », dit-il.
-	Reculant de quelques pas, il prit son élan, sauta, et manqua de
-	peu la grappe.  Se retournant, il compta Un, Deux, Trois, sauta,
-	sans plus de succès.  Encore et encore il tenta d'attraper le
-	morceau tentant, mais il dut finalement y renoncer, et s'en alla
-	le nez en l'air en disant : « Je suis sûr qu'ils sont trop
-	verts. »
-		[ Fables d'Ésope ]
+	Renard : animal des friches, rusé et mordant.
+		[ Conseil d'un nomade ]
+
 fruit
 fruitname
-	On dit que ça se mange.  Certains aventuriers ont des goûts
-	bizarres.
-*fung*
-	Champignons, division de plantes simples dépourvues de
-	chlorophylle, de vraies tiges, de racines et de feuilles.
-	Contrairement aux algues, les champignons ne peuvent pas faire
-	de photosynthèse, et vivent en parasites ou en saprophytes.  La
-	division comprend les myxomycètes et les vrais champignons.  Les
-	vrais champignons sont pluricellulaires (sauf les levures) ; le
-	corps de la plupart des vrais champignons est fait de minces
-	filaments cotonneux, les hyphes.  Tous les champignons peuvent
-	se reproduire de façon asexuée, par division cellulaire,
-	bourgeonnement, fragmentation ou spores.  Ceux qui se
-	reproduisent de façon sexuée alternent une génération sexuée
-	(gamétophyte) et une génération productrice de spores.  Les
-	quatre classes de vrais champignons sont les phycomycètes (par
-	exemple la moisissure noire du pain et le mildiou), les
-	ascomycètes (par exemple les levures, l'oïdium, les truffes et
-	les moisissures bleues et vertes comme le Penicillium), les
-	basidiomycètes (par exemple les champignons à chapeau et les
-	vesses-de-loup) et les champignons imparfaits (par exemple les
-	espèces qui causent le pied d'athlète et la teigne).  Les
-	champignons aident à décomposer la matière organique (ce qui est
-	important pour le renouvellement des sols) ; ils sont précieux
-	comme source d'antibiotiques, de vitamines et de divers produits
-	chimiques, et pour leur rôle dans la fermentation, par exemple
-	dans la fabrication du pain et des boissons alcoolisées.
-		[ The Concise Columbia Encyclopedia ]
-*gargoyle
-	Et il advint que, tandis que l'Homme régnait sur la Terre, les
-	gargouilles attendaient, tapies, cachées de la lumière.
-	Renaissant tous les 600 ans selon le calcul du temps des Hommes,
-	les gargouilles livraient bataille à l'Homme pour obtenir la
-	domination de la Terre.
+	Fruit : un luxe à Night City, où tout ce qui pousse coûte cher.
+		[ Étal d'un marché de Kabuki ]
 
-	À chaque venue, les gargouilles furent presque anéanties par les
-	Hommes, qui prospéraient en plus grand nombre.  Il y a maintenant
-	tant de centaines d'années de cela que les anciennes statues et
-	peintures de gargouilles semblent n'être que des produits de
-	l'imagination de l'Homme.  Cette année, l'Homme, l'esprit tourné
-	vers les nombreux maux qu'il a lui-même apportés parmi les
-	siens, a oublié son plus ancien adversaire, les gargouilles.
-		[ Extrait de la narration d'ouverture du film
-		    _Gargoyles_, écrite par Stephen et Elinor Karpf ]
+*fung*
+	Champignons : moisissures et lichens qui poussent dans les
+	sous-sols humides.  Certains brûlent, d'autres collent.
+		[ Rapport du service d'hygiène ]
+
+*gargoyle
+	Gargouille : statue de sécurité animée qui garde les toits des
+	vieilles églises de Night City.
+		[ Guide architectural de la vieille ville ]
+
 *garlic
-	1er novembre - Toute la journée nous avons voyagé, et à bonne
-	allure.  Les chevaux semblent savoir qu'on les traite avec
-	bonté, car ils fournissent de bon gré leur étape entière au
-	meilleur train.  Nous avons maintenant changé si souvent, en
-	trouvant toujours la même chose, que nous sommes encouragés à
-	penser que le voyage sera facile.  Le Dr Van Helsing est
-	laconique ; il dit aux fermiers qu'il se hâte vers Bistritz, et
-	les paie bien pour l'échange des chevaux.  On nous sert de la
-	soupe chaude, ou du café, ou du thé, et nous repartons.  C'est un
-	pays charmant.  Plein de beautés de toutes les sortes
-	imaginables, et les gens sont braves, forts et simples, et
-	semblent pleins de belles qualités.  Ils sont très, très
-	superstitieux.  Dans la première maison où nous nous sommes
-	arrêtés, quand la femme qui nous servait a vu la cicatrice sur
-	mon front, elle s'est signée et a pointé deux doigts vers moi
-	pour éloigner le mauvais œil.  Je crois qu'ils ont pris la peine
-	de mettre une dose supplémentaire d'ail dans notre repas, et je
-	ne supporte pas l'ail.  Depuis, j'ai pris soin de ne pas ôter
-	mon chapeau ni ma voilette, et j'ai ainsi échappé à leurs
-	soupçons.
-		[ Dracula, de Bram Stoker ]
+	Ail : il éloigne les vampires, disent les vieux.  Il éloigne aussi
+	les collègues.
+		[ Étal d'un marché de Kabuki ]
+
 # gas spore -- see *spore
 gehenn*
 *h?nnom
 hell
-	« Lieu de Tourment. »  La vallée de Hinnom, au sud-ouest de
-	Jérusalem, où Salomon, roi d'Israël, bâtit « un haut lieu », ou
-	lieu de culte, pour les dieux Kemosh et Moloch.  La vallée finit
-	par être considérée comme un lieu d'abomination parce que
-	certains Israélites y sacrifiaient leurs enfants à Moloch.  Plus
-	tard, on en fit une décharge, où l'on entretenait des feux
-	perpétuels pour prévenir la peste.  C'est ainsi que, dans le
-	Nouveau Testament, la Géhenne devint synonyme d'enfer.
-		[ Encyclopedia Mythica, éd. M.F. Lindemans ]
+	Le Réseau profond : les couches les plus basses du Réseau, où les
+	entités règnent et où l'Amulette est cachée.  On y entre par la
+	Vallée des Morts.
+		[ Légende du Réseau profond ]
+
 gelatinous cube
 	Cube de gel industriel : un bloc de gel de nettoyage qui avale tout
 	ce qui traîne, objets comme passants.  Ce qu'il digère ressort
@@ -1459,88 +1088,40 @@ gelatinous cube
 
 *gem
 gem or rock
-	La différence entre les faux souvenirs et les vrais est la même
-	que pour les bijoux : ce sont toujours les faux qui paraissent
-	les plus vrais, les plus brillants.
-		[ Salvador Dalí ]
+	Pierres précieuses : les seules valeurs que les eddies ne peuvent
+	pas remplacer.  Les licornes en raffolent.
+		[ Conseil d'un receleur de Kabuki ]
+
 # 5.0; monster derived from slash'em which lacked a description so this
 # entry has been created from scratch
 genetic engineer
-	Ces gens très bizarres maîtrisent l'art d'insérer des séquences
-	génétiques d'un organisme dans un autre, ce qui déclenche
-	généralement des mutations immédiates chez le sujet.  Loin
-	d'avoir besoin d'un laboratoire élaboré pour accomplir de telles
-	abominations, un simple contact semble leur suffire.
-		[]
+	Ingénieur généticien : savant de Biotechnica qui modifie l'ADN de
+	ses cibles d'un simple contact.  Il change ses ennemis en autre
+	chose.
+		[ Rapport de MaxTac ]
 
-	« Je croyais que tout l'intérêt du génie génétique était
-	d'éviter le gaspillage aléatoire de l'évolution naturelle, et de
-	le remplacer par l'efficacité de la raison », lança Miles.  Les
-	trois haut-femmes se tournèrent vers lui, stupéfaites, comme si
-	une plante en pot venait soudain de critiquer son programme de
-	fertilisation.  « Ou... c'est ce qu'il me semble », acheva Miles
-	d'une voix beaucoup plus petite.
-		[ Cetaganda, de Lois McMaster Bujold ]
 geryon
-	Aussitôt apparut cette vile image de la fraude ;
-	Elle posa sur la rive sa tête et son buste,
-	Mais n'y amena pas sa queue de bête.
-	Sa face avait l'air de celle d'un homme juste,
-	Tant son aspect extérieur était doux et bienveillant ;
-	Le reste était tout serpent : deux pattes velues
-	Lui montaient jusqu'aux aisselles, et le dos, la poitrine
-	Et les deux flancs étaient peints de nœuds
-	Et de cercles.  De couleurs plus variées,
-	Jamais Turcs ni Tartares n'ont tissé d'étoffe d'apparat
-	Aux broderies entremêlées,
-	Et jamais Arachné n'en déploya sur son métier.
-	Comme souvent une barque légère, amarrée au rivage,
-	Est en partie dans l'eau, en partie sur la terre ;
-	Ou comme, au pays des goinfres d'Allemands,
-	Le castor s'installe pour guetter sa proie ;
-	Ainsi, sur le bord de roc qui borde le sable,
-	Était perchée la bête malfaisante.  Dans le vide
-	Frétillait sa queue, dressant sa fourche venimeuse,
-	Armée d'un dard comme celui du scorpion.  Alors mon guide :
-	« Il faut à présent que notre chemin s'écarte un peu,
-	Jusqu'à cette méchante bête qui se couche là. »
-	    [ L'Enfer, de La Divine Comédie de Dante Alighieri ]
+	Géryon : entité du Réseau profond à corps de serpent, qui garde
+	sa couche contre les intrus.
+		[ Rapport confidentiel, Netwatch ]
+
 *ghost
 valley of *dea*
-	Et voici que les âmes des morts descendus sous terre montèrent
-	en essaim de l'Érèbe -- jeunes épousées, jeunes gens non mariés,
-	vieillards ayant derrière eux les longues souffrances de la vie,
-	tendres jeunes filles au cœur encore meurtri de leur premier
-	chagrin, et une foule de guerriers tués au combat, leurs
-	blessures de lance encore béantes et leurs armures toutes
-	tachées de sang.  De cette multitude d'âmes qui voletaient en
-	tous sens près de la fosse s'élevait une plainte horrible à
-	entendre.  La panique me vida les joues de leur sang.
-	     [ L'Odyssée (chant Lambda), d'Homère ]
+	Fantômes : traces numériques des morts, qui restent accrochées aux
+	lieux où ils ont été tués.
+		[ Rumeur du Réseau ]
+
 ghoul
-	Les forces de l'ombre se connaissent, et sont entre elles dans
-	un équilibre étrange.  Les dents et les griffes craignent
-	l'insaisissable.  La bestialité buveuse de sang, les voraces
-	appétits, la faim en quête de la proie, les instincts armés
-	d'ongles et de mâchoires qui ont pour source et pour but le
-	ventre, regardent et flairent avec inquiétude l'impassible
-	linéament spectral errant sous un suaire, debout dans sa vague
-	robe frissonnante, et qui leur semble vivre d'une vie morte et
-	terrible.  Ces brutalités, qui ne sont que matière, craignent
-	confusément d'avoir affaire à l'immense obscurité condensée dans
-	un être inconnu.  Une figure noire barrant le passage arrête net
-	la bête fauve.  Ce qui sort du cimetière intimide et déconcerte
-	ce qui sort de l'antre ; le féroce a peur du sinistre ; les loups
-	reculent devant une goule rencontrée.
-		[ Les Misérables, de Victor Hugo ]
+	Goule : mort-vivant qui paralyse et dévore les cadavres.
+		[ Rapport du coroner, Night City ]
+
 *giant
 giant humanoid
-	Les géants ont toujours foulé la terre, même s'ils sont rares de
-	nos jours.  Leur taille va d'un peu moins de trois mètres à six
-	mètres ou plus.  Les plus grands se servent d'énormes rochers
-	comme armes, qu'ils lancent à de grandes distances.  Tous les
-	types de géants partagent un amour des hommes - rôtis, bouillis
-	ou frits.  Leurs manières de table sont légendaires.
+	Géants : humains augmentés jusqu'à l'absurde, ou créatures de labo
+	de trois mètres.  Ils lancent des rochers et ne savent pas
+	s'arrêter.
+		[ Rapport de MaxTac ]
+
 *gloves
 gauntlets*
 	Gants : de cuir, de précision, défectueux, ou gantelets
@@ -1566,20 +1147,10 @@ goblin
 
 god
 goddess
-	Déesses et Dieux opèrent seuls, par trois, ou en panthéons
-	entiers de neuf ou plus (voir Religion).  La plupart prétendent
-	avoir fait le monde, et c'est en effet une prétention plausible
-	dans le cas des trios ou des panthéons : le Pays de la Fantasy a
-	bien l'air d'avoir été fait par un comité.  Mais toutes les
-	Déesses et tous les Dieux, qu'ils disent avoir fait le monde ou
-	non, ont pour lui des projets à court terme très détaillés qu'ils
-	sont décidés à mener à bien.  Par conséquent, ils ont tendance à
-	pousser les gens vers les actions voulues au moyen de
-	coïncidences ou de Prophéties, ou simplement en restreignant vos
-	choix possibles pour la suite : si une divinité vous pousse, les
-	choses iront lamentablement mal jusqu'à ce qu'il ne vous reste
-	plus qu'un seul choix.
-	  [ The Tough Guide to Fantasyland, de Diana Wynne Jones ]
+	Dieux : à Night City, chacun a le sien, et chacun prétend qu'il
+	répond.  Les technoprêtres disent qu'ils écoutent.
+		[ Guide des cultes de Night City ]
+
 gold
 gold piece
 	Eddie : l'eurodollar, la seule chose en laquelle Night City
@@ -1605,19 +1176,15 @@ gold golem
 		[ Brochure de démonstration, salon de la robotique ]
 
 grave
-	« Qui voudrait les creuser, dit le vieux, vieux homme,
-	Ces six pieds marqués à la craie ?
-	Je parle beaucoup, je marche plus encore ;
-	Il serait temps qu'on m'enterre », dit le vieux, vieux homme.
-		[ Three Songs to the Same Tune, de W.B. Yeats ]
+	Tombe : on y enterre les morts et ce qu'ils portaient.  Les
+	pilleurs creusent la nuit.
+		[ Rapport du cimetière municipal ]
+
 grayswandir
-	Pourquoi portais-je Grayswandir ?  Une autre arme aurait-elle
-	affecté aussi fortement un fantôme du Logrus ?  Était-ce donc
-	vraiment mon père qui m'avait amené ici ?  Et avait-il pensé que
-	j'aurais besoin de l'avantage supplémentaire que son arme
-	pouvait m'offrir ?  Je voulais le penser, croire qu'il avait été
-	plus qu'un fantôme de la Marelle.
-		[ Knight of Shadows, de Roger Zelazny ]
+	Grayswandir : sabre d'argent qui voit à travers les illusions.
+	Personne ne sait d'où il vient.
+		[ Fil de discussion « Lames de légende » ]
+
 *grease
 	Bombe de lubrifiant : rend glissant tout ce qu'on vaporise.  Une
 	armure graissée glisse entre les doigts d'un adversaire ; un
@@ -1625,21 +1192,10 @@ grayswandir
 		[ Fiche technique, gamme atelier ]
 
 gremlin
-	Le gremlin est une créature très intelligente et complètement
-	malfaisante.  Il vit pour tourmenter les autres créatures et ne
-	reculera devant rien pour infliger de la douleur ou causer des
-	blessures.
-		[]
+	Gremlin : petite créature qui se multiplie dans l'eau et vole les
+	pouvoirs de ceux qu'elle mord la nuit.
+		[ Rapport de MaxTac ]
 
-	Soudain, Wilson pensa à la guerre, aux articles de journaux qui
-	relataient l'existence supposée de créatures dans le ciel qui
-	harcelaient les pilotes alliés dans leurs missions.  On les
-	appelait des gremlins, se rappela-t-il.  Y avait-il réellement
-	de tels êtres ?  Existaient-ils vraiment là-haut, ne tombant
-	jamais, chevauchant le vent, apparemment dotés de volume et de
-	poids, et pourtant insensibles à la pesanteur ?
-	Il pensait à cela quand l'homme réapparut.
-		[ Nightmare at 20,000 Feet, de Richard Matheson ]
 grid bug
 	Bug réseau : petit programme défectueux qui ne sait se déplacer
 	qu'en ligne droite.  Inoffensif, sauf pour l'orgueil du codeur qui
@@ -1647,30 +1203,20 @@ grid bug
 		[ Commentaire dans un code source anonyme ]
 
 gunyoki
-	Le dernier repas du samouraï avant la bataille.  Il se composait
-	en général de châtaignes cuites, d'algues séchées et de saké.
+	Gunyoki : ration du clan Taro, compacte et nourrissante.
+		[ Inventaire du Siège du clan Taro ]
+
 hachi
-	Hachi était un chien qui accompagnait chaque matin son maître,
-	un professeur, à la gare de Shibuya.  L'après-midi, quand son
-	maître devait rentrer du travail, Hachi était là à l'attendre.
-	Un jour, son maître mourut au bureau et ne revint pas.  Pendant
-	plus de dix ans, Hachi retourna à la gare chaque après-midi pour
-	attendre son maître.  À la mort de Hachi, on érigea une statue
-	en son honneur sur le quai de la gare.  On dit que toucher sa
-	statue porte bonheur.
+	Hachi : nom traditionnel des chiens-robots des ronins urbains.
+		[ Brochure du Siège du clan Taro ]
+
 hallucinat*
 potion of hallucination
-	Tout à coup, et sans autre avertissement, la raison
-	m'abandonna complètement, et je quittai la maison du père
-	Moffitt pour me rendre à ma pension.  Les trottoirs n'étaient
-	pour moi qu'une masse d'animaux vivants, grouillants, hurlants
-	et féroces.  Ours, lions, tigres, loups, jaguars, léopards,
-	pumas -- toutes les bêtes sauvages de tous les climats --
-	écumaient autour de moi et s'efforçaient de m'atteindre.
-	Rappelez-vous que, bien que tout cela fût une hallucination,
-	c'était aussi réel que si cela avait été une réalité indéniable
-	et atroce.
-		[ Fifteen Years in Hell, de Luther Benson ]
+	Hallucinations : quand les stims ou les cyberpsychoses brouillent
+	vos optiques, le monde devient étrange et les monstres changent de
+	visage.
+		[ Brochure de prévention, Trauma Team ]
+
 *harp
 	Harpe : instrument ancien, que les collectionneurs de Westbrook
 	s'arrachent.  La harpe hypnotique joue une suite d'accords qui
@@ -1679,16 +1225,10 @@ potion of hallucination
 		[ Catalogue d'une salle des ventes de Westbrook ]
 
 hawaiian*shirt
-	« Une des choses qu'il ne sait pas faire, c'est monter à
-	cheval », dit-il.  Puis il se raidit comme assommé par un
-	souvenir soudain, poussa un petit jappement de terreur et se
-	précipita dans la pénombre.  Quand il revint, l'être appelé
-	Deuxfleurs pendait mollement sur son épaule.  Il était petit et
-	maigre, et très bizarrement vêtu d'une culotte qui lui
-	descendait aux genoux et d'une chemise aux couleurs si violemment
-	et vivement discordantes que l'œil délicat de la Belette en fut
-	choqué même dans la demi-obscurité.
-		[ The Colour of Magic, de Terry Pratchett ]
+	Chemise hawaïenne : uniforme officiel des Corpos en goguette.  Les
+	vendeurs la repèrent de loin et augmentent leurs prix.
+		[ Guide du touriste à Night City ]
+
 healer
 * healer
 attendant
@@ -1701,50 +1241,22 @@ physician
 		[ Portrait d'un charcudoc de Watson ]
 
 heart of ahriman
-	Les trois autres retinrent brusquement leur souffle, et l'homme
-	brun et puissant qui se tenait à la tête du sarcophage murmura :
-	« Le Cœur d'Ahriman ! »  L'autre leva vivement la main pour
-	réclamer le silence.  Quelque part, un chien se mit à hurler
-	lugubrement, et un pas furtif feutré passa derrière la porte
-	barrée et verrouillée. ...  Mais aucun ne détourna les yeux du
-	cercueil de la momie au-dessus duquel l'homme à la robe bordée
-	d'hermine promenait à présent le grand joyau flamboyant, tout
-	en marmonnant une incantation qui était déjà ancienne quand
-	l'Atlantide sombra.  L'éclat de la gemme leur éblouissait les
-	yeux, si bien qu'ils ne pouvaient être sûrs de ce qu'ils
-	voyaient ; mais dans un fracas de bois éclaté, le couvercle
-	sculpté du sarcophage vola vers l'extérieur comme sous une
-	pression irrésistible exercée de l'intérieur, et les quatre
-	hommes, penchés en avant avec avidité, virent son occupant --
-	une forme recroquevillée, desséchée, ratatinée, aux membres bruns
-	et secs comme du bois mort qui se voyaient à travers des
-	bandelettes moisies.
-	« Ramener ça à la vie ? marmonna le petit homme brun qui se
-	tenait à droite, avec un rire bref et sardonique.  C'est prêt à
-	tomber en poussière au moindre contact.  Nous sommes fous... »
-		[ Conan the Conqueror, de Robert E. Howard ]
+	Le Cœur d'Ahriman : pierre de puissance que Thoth Amon a volée aux
+	nomades.  Elle protège son porteur et attire la chance.
+		[ Récit d'un ancien du Squat de la tribu Duali ]
+
 hell hound*
-	Mais soudain ils se figèrent en un regard fixe et rigide, et ses
-	lèvres s'entrouvrirent de stupeur.  Au même instant, Lestrade
-	poussa un hurlement de terreur et se jeta face contre terre.  Je
-	bondis sur mes pieds, la main inerte serrée sur mon pistolet,
-	l'esprit paralysé par la forme effroyable qui s'était jetée sur
-	nous de l'ombre du brouillard.  C'était un chien, un énorme chien
-	noir comme le charbon, mais pas un chien comme des yeux mortels
-	en ont jamais vu.  Du feu jaillissait de sa gueule ouverte, ses
-	yeux luisaient d'un éclat de braise, son museau, son poil hérissé
-	et son fanon étaient soulignés de flammes vacillantes.  Jamais,
-	dans le rêve délirant d'un cerveau dérangé, on n'aurait pu
-	concevoir rien de plus sauvage, de plus effroyable, de plus
-	infernal que cette forme sombre et cette face sauvage qui
-	surgirent sur nous du mur de brouillard.
-	  [ The Hound of the Baskervilles, de Sir Arthur Conan Doyle ]
+	Chiens de l'enfer : chiens-robots équipés de lance-flammes, qui
+	gardent les couches du Réseau profond.
+		[ Rapport confidentiel, Netwatch ]
+
 ~helm of *
 ~crystal helmet
 helm*
 * helmet
-	Pièce d'armure conçue pour protéger la tête.
-	(À quoi vous attendiez-vous ?)
+	Casques : ils protègent la tête et, parfois, l'esprit.
+		[ Fiche d'un armurier de Heywood ]
+
 helm of telepathy
 	Casque télépathique : un réseau de capteurs qui capte l'activité
 	nerveuse des êtres proches.  Les yeux fermés, on sent même les
@@ -1759,9 +1271,10 @@ helm of opposite alignment
 		[ Témoignage anonyme, forum des lanceurs d'alerte ]
 
 helm of caution
-	Casque qui confère la propriété d'« avertissement » : il fait
-	sentir la force des menaces que représentent les créatures
-	hostiles invisibles.
+	Casque de prudence : il avertit de la présence de monstres, s'il
+	n'est pas lui-même un piège.
+		[ Fiche d'un armurier de Heywood ]
+
 # note: this quotation had "high of steel" but we're going to cheat--it is
 # now deliberately mistranslated as "high of crystal" to match nethack 5.0's
 # change to helm of brilliance and become more useful to players.
@@ -1777,49 +1290,25 @@ crystal helmet
 		[ Catalogue de cyberware, gamme haut de gamme ]
 
 hermes
-	Messager et héraut des Olympiens.  Comme il devait beaucoup
-	voyager et parler en public, il devint le dieu de l'éloquence,
-	des voyageurs, des marchands et des voleurs.  C'était l'un des
-	plus énergiques des dieux grecs, un personnage machiavélique
-	plein de ruse et de vigueur sexuelle.  Comme les autres dieux
-	grecs, il est doté de prouesses sexuelles non négligeables,
-	qu'il dirige vers les nymphes des campagnes.  C'est un dieu des
-	frontières, gardien des tombes et divinité protectrice des
-	bergers.  On le représente d'ordinaire en beau jeune homme
-	chaussé de sandales d'or ailées et tenant un bâton de héraut
-	magique fait de serpents entrelacés, le kérykeion.  Il serait le
-	seul être capable de trouver le chemin du bac de Charon vers le
-	monde souterrain et d'en revenir.  On dit qu'il a inventé, entre
-	autres choses, la lyre, la flûte de Pan, les nombres,
-	l'alphabet, les poids et mesures, et les sacrifices.
+	Hermès : dieu des voyageurs et des voleurs, patron des medtechs
+	neutres.
+		[ Guide des cultes de Night City ]
+
 hezrou
-	« Hezrou » est le nom courant du démon de type II.  Il compte
-	parmi les plus faibles des démons, mais reste assez redoutable,
-	surtout à cause de sa puanteur.
+	Hezrou : entité du Réseau profond à l'odeur insupportable.
+		[ Rapport confidentiel, Netwatch ]
+
 hippocrates
-	Médecin grec, reconnu comme le père de la médecine.  On pense
-	qu'il est né sur l'île de Cos, qu'il a étudié auprès de son
-	père, médecin, qu'il a voyagé quelque temps, étudiant peut-être
-	à Athènes, puis qu'il est revenu exercer, enseigner et écrire à
-	Cos.  L'école hippocratique, ou école de Cos, qui se forma autour
-	de lui eut une importance énorme pour séparer la médecine de la
-	superstition et de la spéculation philosophique, en la plaçant
-	sur un plan strictement scientifique fondé sur l'observation
-	objective et le raisonnement déductif critique.
-		[ The Columbia Encyclopedia, Sixth Edition ]
+	Doc Hippocrate : fondateur de la Clinique d'Épidaure, qui soigne
+	encore à quatre-vingts ans.  Il a juré de ne pas nuire, et il
+	s'y tient.
+		[ Brochure de la Clinique d'Épidaure ]
+
 hobbit
-	Les Hobbits sont un peuple discret mais très ancien, plus
-	nombreux autrefois qu'aujourd'hui ; car ils aiment la paix, la
-	tranquillité et la bonne terre cultivée : une campagne bien
-	ordonnée et bien cultivée était leur séjour favori.  Ils ne
-	comprennent ni n'aiment, et n'ont jamais compris ni aimé, les
-	machines plus compliquées qu'un soufflet de forge, un moulin à
-	eau ou un métier à tisser à main, bien qu'ils fussent habiles de
-	leurs mains.  Même dans les temps anciens, ils étaient en
-	général timides devant « les Grandes Gens », comme ils nous
-	appellent, et aujourd'hui ils nous évitent avec effroi et
-	deviennent difficiles à trouver.
-		[ The Fellowship of the Ring, de J.R.R. Tolkien ]
+	Hobbit : petit habitant des friches, discret et gourmand, qui
+	porte parfois un gilet en nanofibre trouvé on ne sait où.
+		[ Conseil d'un nomade ]
+
 hobgoblin
 	Gros dur : petite frappe qui a pris du muscle et du chrome.  Il
 	garde les portes des clubs, rackette les commerçants et règle les
@@ -1827,43 +1316,14 @@ hobgoblin
 		[ Rapport de patrouille, NCPD ]
 
 holy water
-	« Nous voulons te dire un mot », dit Ligur (d'un ton qui
-	laissait entendre que « mot » était synonyme d'« éternité
-	horriblement douloureuse »), et le démon trapu poussa la porte
-	du bureau.
-	Le seau vacilla, puis tomba proprement sur la tête de Ligur.
-	Jetez un morceau de sodium dans l'eau.  Regardez-le s'enflammer,
-	brûler et tournoyer follement, flamboyant et crépitant.  C'était
-	pareil, en plus atroce.
-	Le démon pela, flamboya et vacilla.  Une fumée brune et huileuse
-	suinta de lui, et il hurla, et il hurla, et il hurla.  Puis il
-	s'affaissa, se replia sur lui-même, et ce qui en restait gisait,
-	luisant, sur le cercle de moquette brûlé et noirci, comme une
-	poignée de limaces écrasées.
-	« Salut », dit Rampa à Hastur, qui marchait derrière Ligur et
-	n'avait malheureusement pas reçu la moindre éclaboussure.
-	Il est des choses impensables ; il est des bassesses auxquelles
-	même les démons ne croiraient pas que d'autres démons puissent
-	s'abaisser.
-	« ... De l'eau bénite.  Espèce de salaud, dit Hastur.  Espèce de
-	_salaud_ fini.  Il t'avait jamais rien fait, à _toi_.
-	— Pas encore », corrigea Rampa.
-		[ Good Omens, de Neil Gaiman et Terry Pratchett ]
-hom*nculus
-	L'homoncule est une créature invoquée par un mage pour
-	accomplir une tâche particulière.  Ils sont particulièrement
-	doués pour l'espionnage.  Ce sont des créatures plutôt petites,
-	mais très agiles.  Ils peuvent endormir leurs victimes d'une
-	morsure venimeuse, mais en raison de leur taille, l'effet ne
-	dure pas longtemps sur les humains.
+	Eau bénite : eau consacrée par un technoprêtre.  Elle bénit les
+	objets ; l'eau maudite les maudit.
+		[ Guide des cultes de Night City ]
 
-	« Tothapis l'interrompit.  "Tais-toi et écoute.  Tu voyageras à
-	bord du bateau ailé sacré.  Tu n'en as peut-être pas entendu
-	parler ; mais il te portera là-bas en une nuit, un jour et une
-	nuit.  Avec toi ira un homoncule qui pourra me transmettre tes
-	paroles, et à toi les miennes, à travers les lieues qui nous
-	séparent, à la vitesse de la pensée." »
-		[ Conan the Rebel, de Poul Anderson ]
+hom*nculus
+	Homoncule : petit être de labo qui endort ce qu'il mord.
+		[ Rapport du service animalier ]
+
 # also gets 'pruning hook' aka guisarme
 *hook
 	Lance-grappin : un câble de kevlar et un crochet à propulsion
