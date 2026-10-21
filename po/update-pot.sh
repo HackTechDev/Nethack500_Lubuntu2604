@@ -78,6 +78,12 @@ $XGETTEXT $COMMON --no-location -k --keyword=NC_:1c,2 \
 # amulets, spellbooks, gems and scrolls are adjectives ("bubbly potion"),
 # translated without context (masculine) or with "feminine" (see objnam.c)
 awk '
+# extra descriptions without an object name: WAND(NoDes, "forked", ...)
+match($0, /^[ \t]*WAND\(NoDes,[ \t]*"[^"]*"/) {
+    desc = substr($0, RSTART, RLENGTH); sub(/^[^"]*/, "", desc)
+    printf "N_(%s); C_(\"feminine\", %s);\n", desc, desc
+    next
+}
 match($0, /^[ \t]*[A-Z_]+\((OBJ\()?"[^"]*"/) {
     s = substr($0, RSTART, RLENGTH); rest = substr($0, RSTART + RLENGTH)
     macro = s; sub(/^[ \t]*/, "", macro); sub(/\(.*/, "", macro)

@@ -630,6 +630,7 @@ staticfn void erosion_i18n(struct obj *, char *, unsigned);
 staticfn char *xname_i18n(struct obj *, unsigned);
 staticfn char *doname_i18n(struct obj *, unsigned);
 staticfn char *article_i18n(const char *, unsigned, boolean);
+staticfn char *your_i18n(struct obj *, const char *);
 staticfn const char *obj_pattern(const char *, boolean, unsigned *,
                                  const char *) FORMAT_ARG(1);
 staticfn char *corpse_xname_i18n(struct obj *, unsigned);
@@ -3513,6 +3514,28 @@ paydoname(struct obj *obj)
 }
 
 /* returns "[your ]xname(obj)" or "Foobar's xname(obj)" or "the xname(obj)" */
+#ifdef NHI18N
+/* translated name s of obj with "your" (or "the" when not carried) */
+staticfn char *
+your_i18n(struct obj *obj, const char *s)
+{
+    unsigned gram = get_objgram(s);
+    char *outbuf;
+
+    if (!carried(obj))
+        return article_i18n(s, gram, TRUE);
+    outbuf = nextobuf();
+    if (gram & OGRAM_PLURAL)
+        Snprintf(outbuf, BUFSZ, C_("plural", "your %s"), s);
+    else if (gram & OGRAM_FEM)
+        Snprintf(outbuf, BUFSZ, C_("feminine", "your %s"), s);
+    else
+        Snprintf(outbuf, BUFSZ, _("your %s"), s);
+    set_objgram(outbuf, gram);
+    return outbuf;
+}
+#endif
+
 char *
 yname(struct obj *obj)
 {
@@ -3524,20 +3547,7 @@ yname(struct obj *obj)
     if (i18n_active() && (get_objgram(s) & OGRAM_SET)
         && (!carried(obj) || !obj_is_pname(obj)
             || obj->oartifact >= ART_ORB_OF_DETECTION)) {
-        unsigned gram = get_objgram(s);
-        char *outbuf;
-
-        if (!carried(obj))
-            return article_i18n(s, gram, TRUE);
-        outbuf = nextobuf();
-        if (gram & OGRAM_PLURAL)
-            Snprintf(outbuf, BUFSZ, C_("plural", "your %s"), s);
-        else if (gram & OGRAM_FEM)
-            Snprintf(outbuf, BUFSZ, C_("feminine", "your %s"), s);
-        else
-            Snprintf(outbuf, BUFSZ, _("your %s"), s);
-        set_objgram(outbuf, gram);
-        return outbuf;
+        return your_i18n(obj, s);
     }
 #endif
     if (!carried(obj) || !obj_is_pname(obj)
@@ -3568,7 +3578,17 @@ Yname2(struct obj *obj)
 char *
 ysimple_name(struct obj *obj)
 {
-    char *outbuf = nextobuf();
+    char *outbuf;
+
+#ifdef NHI18N
+    if (i18n_active()) {
+        char *nm = minimal_xname(obj);
+
+        if (get_objgram(nm) & OGRAM_SET)
+            return your_i18n(obj, nm);
+    }
+#endif
+    outbuf = nextobuf();
     char *s = shk_your(outbuf, obj); /* assert( s == outbuf ); */
     int space_left = BUFSZ - 1 - Strlen(s);
 
