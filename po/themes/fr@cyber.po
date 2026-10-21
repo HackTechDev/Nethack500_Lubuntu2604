@@ -32,10 +32,10 @@ msgid "Barbarian"
 msgstr "Nomade"
 
 msgid "Caveman"
-msgstr "Sauvageon"
+msgstr "Zonard"
 
 msgid "Cavewoman"
-msgstr "Sauvageonne"
+msgstr "Zonarde"
 
 msgid "Healer"
 msgstr "Medtech"
@@ -86,11 +86,11 @@ msgid "Samurai"
 msgstr "Ronin urbaine"
 
 msgid "Tourist"
-msgstr "Corpo en goguette"
+msgstr "Influenceur"
 
 msgctxt "feminine"
 msgid "Tourist"
-msgstr "Corpo en goguette"
+msgstr "Influenceuse"
 
 msgid "Valkyrie"
 msgstr "Solo"
@@ -418,18 +418,18 @@ msgid "elven"
 msgstr "réplicante"
 
 msgid "dwarf"
-msgstr "mineur"
+msgstr "foreur"
 
 msgctxt "feminine"
 msgid "dwarf"
-msgstr "mineuse"
+msgstr "foreuse"
 
 msgid "dwarven"
-msgstr "mineur"
+msgstr "foreur"
 
 msgctxt "feminine"
 msgid "dwarven"
-msgstr "mineuse"
+msgstr "foreuse"
 
 msgid "gnome"
 msgstr "squatteur"
@@ -527,7 +527,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "dwarf"
-msgstr "mineur"
+msgstr "foreur"
 
 msgctxt "gender"
 msgid "dwarf"
@@ -1865,7 +1865,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "dwarf lord"
-msgstr "chef mineur"
+msgstr "chef foreur"
 
 msgctxt "gender"
 msgid "dwarf lord"
@@ -1873,7 +1873,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "dwarf lady"
-msgstr "cheffe mineuse"
+msgstr "cheffe foreuse"
 
 msgctxt "gender"
 msgid "dwarf lady"
@@ -1881,7 +1881,7 @@ msgstr "f"
 
 msgctxt "monster"
 msgid "dwarf leader"
-msgstr "responsable des mineurs"
+msgstr "responsable des foreurs"
 
 msgctxt "gender"
 msgid "dwarf leader"
@@ -2361,7 +2361,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "dwarf mummy"
-msgstr "mineur momifié"
+msgstr "foreur momifié"
 
 msgctxt "gender"
 msgid "dwarf mummy"
@@ -2425,7 +2425,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "dwarf zombie"
-msgstr "mineur zombie"
+msgstr "foreur zombie"
 
 msgctxt "gender"
 msgid "dwarf zombie"
@@ -2673,7 +2673,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "caveman"
-msgstr "sauvageon"
+msgstr "zonard"
 
 msgctxt "gender"
 msgid "caveman"
@@ -2681,7 +2681,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "cavewoman"
-msgstr "sauvageonne"
+msgstr "zonarde"
 
 msgctxt "gender"
 msgid "cavewoman"
@@ -2753,7 +2753,7 @@ msgstr "m"
 
 msgctxt "monster"
 msgid "tourist"
-msgstr "corpo en goguette"
+msgstr "influenceur"
 
 msgctxt "gender"
 msgid "tourist"
@@ -3172,8 +3172,8 @@ msgstr "m"
 msgctxt "object"
 msgid "dwarvish mithril-coat"
 msgid_plural "dwarvish mithril-coats"
-msgstr[0] "gilet de mineur en nanofibre"
-msgstr[1] "gilets de mineur en nanofibre"
+msgstr[0] "gilet de foreur en nanofibre"
+msgstr[1] "gilets de foreur en nanofibre"
 
 msgctxt "objgender"
 msgid "dwarvish mithril-coat"
@@ -5758,7 +5758,7 @@ msgctxt "quest"
 msgid "\"Tell us, %p, have you fared well on your great quest?\""
 msgstr "« Dites-nous, %p, votre gros coup se passe bien ? »"
 
-# Quête du Sauvageon (Cav)
+# Quête du Zonard (Cav)
 
 msgctxt "quest"
 msgid "the Caves of the Ancestors"
@@ -7920,7 +7920,7 @@ msgstr ""
 "par le portail qui vous a amené{|e} ici, afin d'accomplir le\n"
 "destin qui vous attend. »"
 
-# Quête du Corpo en goguette (Tou)
+# Quête de l'Influenceur (Tou)
 
 msgctxt "quest"
 msgid ""
@@ -8701,15 +8701,15 @@ msgctxt "objgender"
 msgid "gold detection"
 msgstr "m"
 
-# Objets des anciennes races : nain → de mineur, elfique → de réplicant,
+# Objets des anciennes races : nain → de foreur, elfique → de réplicant,
 # orque → corpo (noms de base du thème : poignard, machette, arc à poulies,
 # maille de kevlar)
 
 msgctxt "object"
 msgid "dwarvish cloak"
 msgid_plural "dwarvish cloaks"
-msgstr[0] "cape de mineur"
-msgstr[1] "capes de mineur"
+msgstr[0] "cape de foreur"
+msgstr[1] "capes de foreur"
 
 msgctxt "objgender"
 msgid "dwarvish cloak"
@@ -8718,8 +8718,8 @@ msgstr "f"
 msgctxt "object"
 msgid "dwarvish iron helm"
 msgid_plural "dwarvish iron helms"
-msgstr[0] "casque de mineur"
-msgstr[1] "casques de mineur"
+msgstr[0] "casque de foreur"
+msgstr[1] "casques de foreur"
 
 msgctxt "objgender"
 msgid "dwarvish iron helm"
@@ -8728,8 +8728,8 @@ msgstr "m"
 msgctxt "object"
 msgid "dwarvish roundshield"
 msgid_plural "dwarvish roundshields"
-msgstr[0] "bouclier rond de mineur"
-msgstr[1] "boucliers ronds de mineur"
+msgstr[0] "bouclier rond de foreur"
+msgstr[1] "boucliers ronds de foreur"
 
 msgctxt "objgender"
 msgid "dwarvish roundshield"
@@ -8738,8 +8738,8 @@ msgstr "m"
 msgctxt "object"
 msgid "dwarvish short sword"
 msgid_plural "dwarvish short swords"
-msgstr[0] "machette de mineur"
-msgstr[1] "machettes de mineur"
+msgstr[0] "machette de foreur"
+msgstr[1] "machettes de foreur"
 
 msgctxt "objgender"
 msgid "dwarvish short sword"
@@ -8748,8 +8748,8 @@ msgstr "f"
 msgctxt "object"
 msgid "dwarvish spear"
 msgid_plural "dwarvish spears"
-msgstr[0] "lance de mineur"
-msgstr[1] "lances de mineur"
+msgstr[0] "lance de foreur"
+msgstr[1] "lances de foreur"
 
 msgctxt "objgender"
 msgid "dwarvish spear"

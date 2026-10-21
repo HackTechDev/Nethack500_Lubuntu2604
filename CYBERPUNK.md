@@ -18,7 +18,7 @@ toucher aux règles du jeu :
 - lieux et rôles, à l'affichage seulement : Donjons du Destin →
   Night City, Mines des gnomes → Bas-fonds, Sokoban → Entrepôt automatisé,
   le Magicien → Netrunner, la Valkyrie → Solo, le Samouraï → Ronin
-  urbain, le Touriste → Corpo en goguette.
+  urbain, le Touriste → Influenceur.
 
 Avantages : le français reste disponible à côté, et la partie technique
 est déjà en place.  Le travail est surtout de l'écriture : environ 15 000
@@ -102,13 +102,13 @@ Jouer ensuite pour juger de l'effet avant d'aller plus loin.
 
 Rôles (d'après ceux du jeu de rôle Cyberpunk quand l'un correspond) :
 Archéologue → Techie, Barbare → Nomade, Homme/Femme des cavernes →
-Sauvageon/Sauvageonne, Guérisseur → Medtech, Chevalier → Lawman, Moine → Moine
+Zonard/Zonarde, Guérisseur → Medtech, Chevalier → Lawman, Moine → Moine
 augmenté/Moniale augmentée, Prêtre/Prêtresse →
 Technoprêtre/Technoprêtresse, Rôdeur → Traqueur/Traqueuse, Voleur →
-Fixer/Fixeuse, Samouraï → Ronin urbain(e), Touriste → Corpo
-en goguette, Valkyrie → Solo, Magicien → Netrunner/Netrunneuse.
+Fixer/Fixeuse, Samouraï → Ronin urbain(e), Touriste →
+Influenceur/Influenceuse, Valkyrie → Solo, Magicien → Netrunner/Netrunneuse.
 
-Races : elfe → réplicant/réplicante, nain → mineur/mineuse, gnome →
+Races : elfe → réplicant/réplicante, nain → foreur/foreuse, gnome →
 squatteur/squatteuse, orque → corporatiste ; humain reste humain.
 
 Lieux : Donjons du Destin → Night City (d'abord « la Mégalopole »), Mines
@@ -119,7 +119,7 @@ Fort Ludios → le Coffre-fort de Ludios, Géhennom → le Réseau profond, Plan
 
 Monstres : triton → rat de labo, chacal → chien errant, insecte de grille
 → bug réseau, œil flottant → caméra flottante, kobold → voyou, gnome →
-squatteur, seigneur gnome → chef squatteur, nain → mineur, orque des
+squatteur, seigneur gnome → chef squatteur, nain → foreur, orque des
 collines → corporatiste, orque du Mordor → corporatiste du Mordor,
 Uruk-hai → gros bras, liche → IA corrompue, golem de papier → drone de
 papier, golem de fer → drone de combat, diablotin → virus,
@@ -143,7 +143,7 @@ thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
 |---|---|
 | Techie | Fouineur, Ferrailleur, Fouilleur de décharges, Pilleur d'épaves, Démonteur, Spéléo urbain, Archéotechnicien, Collectionneur, Conservateur |
 | Nomade | Casseur, Pilleur, Racketteur, Braqueur, Pillard, Ravageur, Tueur, Chef de gang, Seigneur de guerre |
-| Sauvageon | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Bourlingueur, Écumeur, Pionnier |
+| Zonard | Troglo, Rat de tunnel, Errant, Clodo, Routard, Rôdeur des friches, Bourlingueur, Écumeur, Pionnier |
 | Medtech | Herboriste de rue, Rafistoleur, Embaumeur, Infirmier, Rebouteux, Chimiste de rue, Doc, Médecin de l'ombre, Chirurgien cybernétique |
 | Lawman | Recrue, Vigile, Agent, Sergent, Lawman, Chef d'escouade, Chevalier corpo, Patron, Paladin corpo |
 | Moine augmenté | Candidat, Novice, Initié, Élève du Silicium, du Flux, du Chrome, des Ondes, du Plasma, Maître |
@@ -151,7 +151,7 @@ thème.  Le trône s'adresse au héros par « Patron » ou « Patronne »
 | Traqueur | Bleu, Guetteur, Éclaireur, Ombre, Pisteur, Arbalétrier, Tireur, Tireur d'élite, Sniper |
 | Fixer | Pickpocket, Coupe-bourse, Fixer, Chapardeur, Braqueur, Cambrioleur, Escroc, Arnaqueur, Maître voleur |
 | Ronin urbain | Recrue du clan, Ronin des rues, Ninja/Kunoichi, Garde du corps, Chef de quartier, Chef de district, Oyabun, Conseiller zaibatsu, Shogun corpo |
-| Corpo en goguette | Badaud, Visiteur, Excursionniste, Globe-trotteur, Voyageur, Baroudeur, Grand voyageur, Explorateur, Aventurier |
+| Influenceur | Badaud, Visiteur, Excursionniste, Globe-trotteur, Voyageur, Baroudeur, Grand voyageur, Explorateur, Aventurier |
 | Solo | Gamin, Escarmoucheur, Combattant, Homme d'armes, Guerrier, Bretteur, Héros, Champion, Seigneur des rues |
 | Netrunner | Script-kiddie, Bidouilleur, Codeur, Hacker, Cracker, Sorcier du code, Nécromancien des données, Netrunner, Légende du Réseau |
 
@@ -185,7 +185,7 @@ sont dans le msgctxt `monster-plural` (« chevaux de Troie », « IA
 corrompues »), que `check-theme.py` accepte.
 
 - Monstres : chien-robot de garde, molosse-robot, chat-robot,
-  moto-cheval ; mineurs (chef mineur, contremaître, contremaîtresse),
+  moto-cheval ; foreurs (chef foreur, contremaître, contremaîtresse),
   squatteurs (caïd, caïde, parrain, bidouilleur squatteur), voyous et
   gangs (petite frappe, gros dur, membre de gang, capitaine de gang) ;
   pirate neuronal, ver informatique, cheval de Troie, racketteur, leurres,
@@ -290,11 +290,11 @@ que partage déjà la quête du Netrunner gardent sa version.
 Vérifié en jeu : arrivée dans la quête du Récupérateur (« ou que le
 Campus d'archéotechnique a été assiégé ») ; le reste dans le catalogue.
 
-## Neuvième lot : quêtes du Sauvageon et du Charcudoc (en place)
+## Neuvième lot : quêtes du Zonard et du Charcudoc (en place)
 
 73 entrées (textes changés et noms de lieux).
 
-- Sauvageon (Homme des cavernes) : les Tunnels des Ancêtres, vieilles
+- Zonard (Homme des cavernes) : les Tunnels des Ancêtres, vieilles
   rames de métro éclairées de braseros ; le Collecteur du Dragon, au
   bout d'égouts géants ; pluies acides, sortie vers la surface coupée.
 - Charcudoc (Guérisseur) : la Clinique d'Épidaure et ses cuves de
@@ -340,7 +340,7 @@ sauvage de Night City ») ; le reste dans le catalogue.
 - Voleur de données (Voleur) : Ransmannsby devient un quartier, le code
   de la guilde se tape sur un terminal de poignet ; le QG de la Guilde
   des Voleurs et celui de la Guilde des Assassins (le premier sert aussi
-  à la quête du Corpo en goguette) ; crédits, puces de données, passe
+  à la quête de l'Influenceur) ; crédits, puces de données, passe
   électronique, virus qui change les puces en ferraille ; la clé ouvre
   « toutes les serrures et tous les pare-feu de Night City ».
 - Ronin urbain (Samouraï) : le Siège du clan Taro et la Tour du Shogun ;
@@ -351,9 +351,9 @@ sauvage de Night City ») ; le reste dans le catalogue.
 Vérifié en jeu : arrivée dans la quête du Ronin urbain (« le kami du
 Siège du clan Taro ») ; le reste dans le catalogue.
 
-## Treizième lot : quêtes du Corpo en goguette et de la Mercenaire (en place)
+## Treizième lot : quêtes de l'Influenceur et de la Mercenaire (en place)
 
-- Corpo en goguette (Touriste) : Ankh-Morpork garde son nom, ses néons
+- Influenceur (Touriste) : Ankh-Morpork garde son nom, ses néons
   éteints et ses aérotaxis cloués au sol ; le maire financé par les
   corpos s'enfuit avec la caisse municipale vers le QG de la Guilde des
   Voleurs (nom du lot 12) ; crédits, holocartes postales des Bas-fonds,
@@ -398,7 +398,7 @@ Les noms et termes génériques du jeu de rôle (ses noms propres sont venus
 ensuite, voir « Night City » ci-dessous) :
 
 - rôles : Techie, Nomade, Medtech, Lawman, Fixer/Fixeuse, Solo (voir
-  plus haut) ; le rang « Nomade » des Sauvageons devient « Bourlingueur »
+  plus haut) ; le rang « Nomade » des Zonards devient « Bourlingueur »
   pour ne pas faire doublon, et l'Oracle « la Fixeuse » devient « la
   Courtière » ;
 - la monnaie : eddies (« Votre bourse contient 978 eddies. ») ; le
@@ -422,7 +422,7 @@ publiés :
 - les quartiers (Watson, Westbrook, Heywood, Pacifica, Santo Domingo,
   City Center) et les Badlands autour ;
 - les corporations (Arasaka, Militech, Biotechnica...), auxquelles
-  peuvent appartenir les corporatistes et le Corpo en goguette ;
+  peuvent appartenir les corporatistes et l'Influenceur ;
 - les gangs (Maelstrom, Tyger Claws, Valentinos, 6th Street, Voodoo
   Boys...) ;
 - les forces de l'ordre (NCPD, MaxTac) et Trauma Team.
@@ -436,7 +436,7 @@ corpo ceux de Militech ; 11 rumeurs vraies (de vrais conseils situés dans
 les quartiers ou chez les gangs), 12 fausses, 12 épitaphes et 12
 graffitis citent les quartiers, les corporations et les gangs.  Les
 elfes sont des réplicants, comme la race du héros, et les objets des
-races renommées sont « de mineur », « de réplicant » et « corpo ».  Les
+races renommées sont « de foreur », « de réplicant » et « corpo ».  Les
 messages sur l'or parlent d'eddies.
 
 ## Chefs de quête

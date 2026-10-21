@@ -130,12 +130,12 @@ anhur
 
 ankh-morpork
 	Ankh-Morpork : la ville jumelle de Night City, plus vieille, plus
-	sale et encore plus fière de l'être.  Les Corpos en goguette y
+	sale et encore plus fière de l'être.  Les Influenceurs y
 	viennent en vacances et y laissent leur portefeuille.
 		[ Guide touristique, édition non censurée ]
 
 anshar
-	Anshar : dieu du ciel ancien, honoré par les sauvageons
+	Anshar : dieu du ciel ancien, honoré par les zonards
 	chaotiques des tunnels.
 		[ Guide des cultes de Night City ]
 
@@ -147,7 +147,7 @@ ant
 		[ Rapport d'incident, NCPD, quartier de Heywood ]
 
 anu
-	Anu : père des dieux des tunnels, que les sauvageons loyaux
+	Anu : père des dieux des tunnels, que les zonards loyaux
 	invoquent avant de sortir à la surface.
 		[ Guide des cultes de Night City ]
 
@@ -310,7 +310,7 @@ blindfold
 		[ Conseil d'un netrunner ]
 
 blind io
-	Io l'Aveugle : dieu loyal que vénèrent les Corpos en goguette, et
+	Io l'Aveugle : dieu loyal que vénèrent les Influenceurs, et
 	qui voit tout sans yeux.
 		[ Guide des cultes de Night City ]
 
@@ -390,7 +390,7 @@ potion of sleeping
 boulder
 	Rocher : bloc de béton ou de roche qui barre les couloirs.  On le
 	pousse, on le casse, ou on fait le tour.
-		[ Conseil d'un mineur des Bas-fonds ]
+		[ Conseil d'un foreur des Bas-fonds ]
 
 ~*longbow of diana
 bow
@@ -468,14 +468,14 @@ kitten
 cave dweller
 cave*man
 human cave*man
-	Sauvageon : vit dans les tunnels du métro abandonné, chasse le rat
+	Zonard : vit dans les tunnels du métro abandonné, chasse le rat
 	mutant et refuse le chrome.  Les corpos le méprisent ; les tunnels
 	le protègent.
 		[ Reportage « Les oubliés des Tunnels des Ancêtres » ]
 
 dwar* cave*man
 gnom* cave*man
-	Mineurs et squatteurs sauvageons : ceux qui ont choisi les
+	Foreurs et squatteurs zonards : ceux qui ont choisi les
 	tunnels plutôt que la surface, et ne remontent plus.
 		[ Reportage « Les oubliés des Tunnels des Ancêtres » ]
 
@@ -699,7 +699,7 @@ dark one
 # includes "dart trap"
 dart*
 	Fléchettes : petites, légères, faciles à cacher dans une manche.
-	Les Corpos en goguette les lancent par poignées.
+	Les Influenceurs les lancent par poignées.
 		[ Conseil d'un Fixer ]
 
 demogorgon
@@ -849,16 +849,16 @@ dungeon*
 ~dwar* cloak
 #~dwar* cave*man
 dwarf*
-	Mineurs : ouvriers des Bas-fonds, petits, solides, toujours avec
-	un casque et une perceuse.  Ils creusent pour les corpos et gardent
-	pour eux ce qu'ils trouvent.  Leurs chefs portent des gilets en
-	nanofibre qu'ils ne quittent jamais.
+	Foreurs : ouvriers des forages des Bas-fonds, petits, solides,
+	toujours avec un casque et une perceuse.  Ils creusent pour les
+	corpos et gardent pour eux ce qu'ils trouvent.  Leurs chefs portent
+	des gilets en nanofibre qu'ils ne quittent jamais.
 		[ Rapport syndical, mines des Bas-fonds ]
 
 # accept "dwarfish" and "dwarvish"
 dwar* cloak
 hooded cloak
-	Cape de mineur : capuche épaisse contre la poussière et les
+	Cape de foreur : capuche épaisse contre la poussière et les
 	éboulements.
 		[ Inventaire d'une mine des Bas-fonds ]
 
@@ -953,8 +953,8 @@ excalibur
 
 expensive camera
 	Holocaméra professionnelle : flash de cinq cents lumens, de quoi
-	aveugler un ganger ou un journaliste concurrent.  Les Corpos en
-	goguette la portent autour du cou comme une médaille.
+	aveugler un ganger ou un journaliste concurrent.  Les Influenceurs la
+	portent autour du cou comme une médaille.
 		[ Réclame d'une boutique de souvenirs de City Center ]
 
 eye of the aethiopica
@@ -1225,7 +1225,7 @@ potion of hallucination
 		[ Catalogue d'une salle des ventes de Westbrook ]
 
 hawaiian*shirt
-	Chemise hawaïenne : uniforme officiel des Corpos en goguette.  Les
+	Chemise hawaïenne : uniforme officiel des Influenceurs.  Les
 	vendeurs la repèrent de loin et augmentent leurs prix.
 		[ Guide du touriste à Night City ]
 
@@ -1481,7 +1481,7 @@ iron bars
 
 ishtar
 	Ishtar : déesse de l'amour et de la guerre, honorée par les
-	sauvageons neutres.
+	zonards neutres.
 		[ Guide des cultes de Night City ]
 
 issek
@@ -1617,7 +1617,7 @@ the lady
 lady
 lady luck
 offler
-	La Dame : déesse neutre des Corpos en goguette, maîtresse de la
+	La Dame : déesse neutre des Influenceurs, maîtresse de la
 	chance.  Elle déteste qu'on prononce son nom.
 		[ Guide des cultes de Night City ]
 
@@ -1690,7 +1690,7 @@ leprechaun
 lichen
 	Lichen : moisissure qui colle à ce qu'elle touche.  Elle se mange,
 	et ne pourrit jamais.
-		[ Conseil d'un sauvageon ]
+		[ Conseil d'un zonard ]
 
 # takes "light" when specifying 'y'
 ~* of light
@@ -1862,7 +1862,7 @@ mastodon
 
 *mattock
 	Marteau-piqueur : la même chose qu'une perceuse, en plus lourd,
-	plus bruyant et plus efficace.  Les mineurs s'en servent aussi
+	plus bruyant et plus efficace.  Les foreurs s'en servent aussi
 	pour régler leurs différends.
 		[ Règlement intérieur d'une mine des Bas-fonds, article 4 ]
 
@@ -1911,7 +1911,7 @@ mercury
 mine*
 gnomish mines
 	Les Bas-fonds : sous-sols et mines sous Night City, où vivent les
-	squatteurs et les mineurs.  On y trouve une ville, et tout en
+	squatteurs et les foreurs.  On y trouve une ville, et tout en
 	bas, des trésors.
 		[ Guide de survie, chapitre « Descendre » ]
 
@@ -1926,7 +1926,7 @@ mit*ra*
 
 *mithril*
 	Gilet en nanofibre : tissage de carbone plus léger que la soie et
-	plus résistant que l'acier.  Les mineurs et les réplicants s'en
+	plus résistant que l'acier.  Les foreurs et les réplicants s'en
 	transmettent les rares exemplaires comme un héritage.
 		[ Note d'un récupérateur ]
 
@@ -1951,7 +1951,7 @@ mog
 *mold
 	Moisissures : elles poussent sur les murs humides des Bas-fonds,
 	et certaines se mangent.  Lesquelles, c'est toute la question.
-		[ Conseil d'un sauvageon ]
+		[ Conseil d'un zonard ]
 
 mol?ch
 	Moloch : le dieu sans fidèles, qui a volé l'Amulette à Marduk et
@@ -1985,7 +1985,7 @@ mumak*
 		[ Reportage de N54 News ]
 
 *mummy
-	Momifiés : des cyborgs, des squatteurs ou des mineurs morts depuis
+	Momifiés : des cyborgs, des squatteurs ou des foreurs morts depuis
 	longtemps, dont les implants continuent de faire marcher le corps.
 	Ils grincent, ils sentent la poussière, et ils n'ont pas fini leur
 	service.
@@ -2166,14 +2166,11 @@ page
 		[ Rapport du cimetière municipal ]
 
 panther
-	Et voici, presque au début de la montée,
-	Une panthère légère et très agile,
-	Que couvrait une peau tachetée !
+	Panthère : félin noir d'une ménagerie privée de Westbrook, qui a
+	sauté par la baie vitrée et chasse depuis sur les toits.  Ses yeux
+	sont plus brillants que les néons.
+		[ Rapport du service animalier ]
 
-	Et jamais elle ne s'écartait de devant moi,
-	Mais au contraire entravait tant mon chemin
-	Que maintes fois je m'étais tourné pour revenir.
-		[ L'Enfer, de Dante ]
 *paper
 	Papier : support d'écriture d'avant les puces.  Les netrunners en
 	gardent pour les codes qu'ils ne veulent pas laisser sur le
@@ -2189,7 +2186,7 @@ pick*ax*
 broad pick
 	Perceuse : outil de chantier qui creuse le béton, la roche et les
 	murs des voisins.  Les Techies la portent à la ceinture, les
-	mineurs des Bas-fonds à l'épaule.
+	foreurs des Bas-fonds à l'épaule.
 		[ Inventaire d'un chantier de Watson ]
 
 *piercer
@@ -2215,7 +2212,7 @@ pit fiend
 
 platinum yendorian express card
 	La puce de crédit Yendorian Express Platine : le crédit illimité
-	des Corpos en goguette.  Elle protège du piratage et des
+	des Influenceurs.  Elle protège du piratage et des
 	contrôleurs fiscaux.
 		[ Réclame de Yendorian Express ]
 
@@ -2428,8 +2425,8 @@ rogue
 
 root
 dwarven root
-	Racine : celle des mineurs, qu'on mâche pour tenir le coup.
-		[ Conseil d'un mineur ]
+	Racine : celle des foreurs, qu'on mâche pour tenir le coup.
+		[ Conseil d'un foreur ]
 
 roshi
 	Sensei : maître d'arts martiaux d'un clan de ronins urbains.  Il
@@ -2503,7 +2500,7 @@ scalpel
 		[ Publicité d'un charcudoc de Pacifica ]
 
 *sceptre of might
-	Le Sceptre de Puissance : l'artefact du clan des sauvageons,
+	Le Sceptre de Puissance : l'artefact du clan des zonards,
 	volé par les sbires de la Dragonne Chromatique.
 		[ Légende des Tunnels des Ancêtres ]
 
@@ -2547,7 +2544,7 @@ shad*
 		[ Rumeur du Réseau profond ]
 
 shaman karnov
-	Le Prophète Karnov : guide des sauvageons des Tunnels des Ancêtres,
+	Le Prophète Karnov : guide des zonards des Tunnels des Ancêtres,
 	qui lit l'avenir dans les vieilles rames de métro.
 		[ Légende des Tunnels des Ancêtres ]
 
@@ -2564,7 +2561,7 @@ shark
 ~uruk*
 ~white*
 *shield
-	Boucliers : anti-émeute, rond de mineur, de réplicant, corpo...
+	Boucliers : anti-émeute, rond de foreur, de réplicant, corpo...
 	Tous arrêtent les coups ; aucun n'arrête la peur.  Le bouclier
 	réfléchissant renvoie même les regards et les rayons.
 		[ Manuel d'entraînement des forces anti-émeutes ]
@@ -2614,7 +2611,7 @@ slime mold
 sling
 	Lance-pierre : élastique de compétition et poignée moulée.  Les
 	gamins de Pacifica s'en servent pour casser les caméras ; les
-	Corpos en goguette pour paraître dangereux.
+	Influenceurs pour paraître dangereux.
 		[ Observation d'un sociologue de rue ]
 
 *snake
@@ -2647,7 +2644,7 @@ captain
 
 *spear
 javelin
-	Lance : de mineur, de réplicant ou ordinaire.  Une perche, une
+	Lance : de foreur, de réplicant ou ordinaire.  Une perche, une
 	pointe, et l'allonge qui manque aux couteaux.  Les gangs des
 	Badlands la préfèrent à l'arme à feu : elle ne s'enraye jamais.
 		[ Fil de discussion, forum des nomades ]
@@ -2830,9 +2827,10 @@ touch*stone
 
 tourist
 * tourist
-	Corpo en goguette : cadre d'une corporation en vacances à Night
-	City, avec une chemise hawaïenne, une holocaméra et beaucoup trop
-	d'eddies.  Les vendeurs l'adorent ; les voleurs encore plus.
+	Influenceur : il vient filmer Night City pour ses abonnés, avec
+	une chemise hawaïenne, une holocaméra et beaucoup trop d'eddies.
+	Les vendeurs l'adorent ; les voleurs encore plus.  Il rentre
+	rarement avec tout son matériel, mais toujours avec une vidéo.
 		[ Guide du touriste à Night City ]
 
 towel
@@ -2980,7 +2978,7 @@ warg
 ~mjollnir
 war*hammer
 	Marteau de guerre : masse lourde à tête carrée, l'arme favorite
-	des mineurs en colère.
+	des foreurs en colère.
 		[ Saisie d'armes, NCPD ]
 
 water
@@ -3128,7 +3126,7 @@ yumi
 		[ Inventaire du Siège du clan Taro ]
 
 *zombi*
-	Zombies : voyous, squatteurs, corporatistes ou mineurs morts dont
+	Zombies : voyous, squatteurs, corporatistes ou foreurs morts dont
 	les implants ont continué de tourner.  Lents, affamés et
 	nombreux, ils ne s'arrêtent que quand on coupe le courant.
 		[ Brochure de prévention, Trauma Team ]
@@ -3222,7 +3220,7 @@ roamer
 nomad
 rover
 pioneer
-	Grades du Sauvageon
+	Grades du Zonard
 	  titre                 niveau
 	Troglo                1 à  2
 	Rat de tunnel,
@@ -3461,7 +3459,7 @@ journeyer
 voyager
 explorer
 adventurer
-	Grades du Corpo en goguette
+	Grades de l'Influenceur
 	  titre                 niveau
 	Badaud,
 	 Badaude               1 à  2
@@ -3556,7 +3554,7 @@ mage
 novel
 paperback book
 discworld novel*
-	Roman de poche : vieux livre de papier, qu'un Corpo en goguette
+	Roman de poche : vieux livre de papier, qu'un Influenceur
 	lit au bord de la piscine.  On peut le lire, pas le charger.
 		[ Guide du touriste à Night City ]
 
