@@ -594,7 +594,7 @@ endmultishot(boolean verbose)
         if (verbose && !svc.context.mon_moving) {
             You(gm.m_shot.s ? "stop firing after the %d%s shot."
                             : "stop throwing after the %d%s toss.",
-                gm.m_shot.i, ordin(gm.m_shot.i));
+                gm.m_shot.i, i18n_ordin(gm.m_shot.i, FALSE));
         }
         gm.m_shot.n = gm.m_shot.i; /* make current shot be the last */
     }

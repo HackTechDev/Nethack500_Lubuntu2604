@@ -856,6 +856,20 @@ rndghostname(void)
  *              article newt    art xan art invisible orc       art dog
  */
 
+/* suffix of the ordinal number n, for a "%d%s" format: ordin() in
+   English, the translated "1st" (masculine or feminine) and "Nth"
+   suffixes otherwise ("1er", "1re", "2e") */
+const char *
+i18n_ordin(int n, boolean fem)
+{
+    if (!i18n_active())
+        return ordin(n);
+    if (n == 1)
+        return fem ? C_("ordinal suffix feminine", "st")
+                   : C_("ordinal suffix", "st");
+    return C_("ordinal suffix", "th");
+}
+
 #ifdef NHI18N
 #if 0
 /* for xgettext: data used by x_monnam_i18n() */

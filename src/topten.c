@@ -831,13 +831,14 @@ topten(int how, time_t when)
         if (!done_stopprint)
             if (rank0 > 0) {
                 if (rank0 <= 10) {
-                    topten_print("You made the top ten list!");
+                    topten_print(_("You made the top ten list!"));
                 } else {
                     char pbuf[BUFSZ];
 
-                    Sprintf(pbuf,
-                            "You reached the %d%s place on the top %d list.",
-                            rank0, ordin(rank0), sysopt.entrymax);
+                    Snprintf(pbuf, sizeof pbuf,
+                    _("You reached the %d%s place on the top %d list."),
+                             rank0, i18n_ordin(rank0, TRUE),
+                             sysopt.entrymax);
                     topten_print(pbuf);
                 }
                 topten_print("");

@@ -693,6 +693,7 @@ extern int call_ok(struct obj *);
 extern int docallcmd(void);
 extern void docall(struct obj *) NONNULLARG1;
 extern const char *rndghostname(void);
+extern const char *i18n_ordin(int, boolean);
 #ifdef NHI18N
 extern boolean monnam_is_feminine(struct monst *) NONNULLARG1;
 extern char *i18n_the(const char *) NONNULLARG1;

@@ -23267,7 +23267,7 @@ msgctxt "how many"
 msgid "several"
 msgstr ""
 
-#: src/apply.c:78 src/do_name.c:865
+#: src/apply.c:78 src/do_name.c:879
 msgid "beautiful"
 msgstr ""
 
@@ -23295,7 +23295,7 @@ msgstr ""
 msgid "homely"
 msgstr ""
 
-#: src/apply.c:79 src/do_name.c:865
+#: src/apply.c:79 src/do_name.c:879
 msgid "plain"
 msgstr ""
 
@@ -23317,7 +23317,7 @@ msgstr ""
 msgid "ugly"
 msgstr ""
 
-#: src/apply.c:81 src/do_name.c:870
+#: src/apply.c:81 src/do_name.c:884
 #, c-format
 msgctxt "feminine"
 msgid "beautiful"
@@ -23353,7 +23353,7 @@ msgctxt "feminine"
 msgid "cute"
 msgstr ""
 
-#: src/apply.c:83 src/do_name.c:870
+#: src/apply.c:83 src/do_name.c:884
 #, c-format
 msgctxt "feminine"
 msgid "plain"
@@ -24304,7 +24304,7 @@ msgid "%s others appear"
 msgstr ""
 
 #: src/apply.c:884 src/insight.c:642 src/insight.c:649 src/insight.c:656
-#: src/insight.c:882 src/insight.c:4201 src/mdlib.c:786 src/mdlib.c:829
+#: src/insight.c:884 src/insight.c:4203 src/mdlib.c:786 src/mdlib.c:829
 msgid " and"
 msgstr ""
 
@@ -24406,7 +24406,7 @@ msgstr ""
 msgid "%s has no extremities the leash would fit."
 msgstr ""
 
-#: src/apply.c:1080 src/do_name.c:1142 src/engrave.c:1089 src/objnam.c:1655
+#: src/apply.c:1080 src/do_name.c:1156 src/engrave.c:1089 src/objnam.c:1655
 #: src/objnam.c:3538 src/shk.c:955 src/shk.c:968 src/trap.c:331 src/trap.c:6108
 #: src/trap.c:6842
 #, c-format
@@ -24534,8 +24534,8 @@ msgstr ""
 msgid "You look %s."
 msgstr ""
 
-#: src/apply.c:1333 src/do.c:538 src/do_name.c:879 src/do_name.c:956
-#: src/do_name.c:1134 src/hack.c:2242 src/muse.c:809 src/objnam.c:1318
+#: src/apply.c:1333 src/do.c:538 src/do_name.c:893 src/do_name.c:970
+#: src/do_name.c:1148 src/hack.c:2242 src/muse.c:809 src/objnam.c:1318
 #: src/questpgr.c:495 src/trap.c:334 src/trap.c:6535 src/trap.c:6578
 #: src/trap.c:6847 src/zap.c:2391 src/zap.c:3994
 #, c-format
@@ -24543,7 +24543,7 @@ msgctxt "feminine"
 msgid "a %s"
 msgstr ""
 
-#: src/apply.c:1334 src/do.c:538 src/do_name.c:958 src/do_name.c:1136
+#: src/apply.c:1334 src/do.c:538 src/do_name.c:972 src/do_name.c:1150
 #: src/hack.c:2242 src/muse.c:809 src/objnam.c:648 src/objnam.c:1320
 #: src/questpgr.c:496 src/trap.c:334 src/trap.c:6536 src/trap.c:6578
 #: src/trap.c:6847 src/zap.c:2392 src/zap.c:3995
@@ -25505,7 +25505,7 @@ msgstr ""
 msgid "Your trap setting attempt fails."
 msgstr ""
 
-#: src/apply.c:3434 src/do_name.c:934 src/objnam.c:649 src/objnam.c:1308
+#: src/apply.c:3434 src/do_name.c:948 src/objnam.c:649 src/objnam.c:1308
 #, c-format
 msgctxt "plural"
 msgid "the %s"
@@ -31883,341 +31883,359 @@ msgstr ""
 msgid "You don't know %s %s well enough to name %s."
 msgstr ""
 
-#: src/do_name.c:863
-msgid "angry"
-msgstr ""
-
-#: src/do_name.c:863 src/insight.c:254
-msgid "invisible"
-msgstr ""
-
-#: src/do_name.c:863
-msgid "poor"
-msgstr ""
-
-#: src/do_name.c:863
-msgid "saddled"
-msgstr ""
-
-#: src/do_name.c:863
-msgid "sleeping"
-msgstr ""
-
-#: src/do_name.c:864
-msgid "blind"
-msgstr ""
-
-#: src/do_name.c:864
-msgid "blinded"
-msgstr ""
-
-#: src/do_name.c:864
-msgid "falling"
-msgstr ""
-
-#: src/do_name.c:864
-msgid "immobile"
-msgstr ""
-
-#: src/do_name.c:865
-msgid "peaceful"
-msgstr ""
-
-#: src/do_name.c:866
-#, c-format
-msgctxt "feminine"
-msgid "invisible"
-msgstr ""
-
-#: src/do_name.c:866
-#, c-format
-msgctxt "feminine"
-msgid "saddled"
-msgstr ""
-
-#: src/do_name.c:867
-#, c-format
-msgctxt "feminine"
-msgid "angry"
-msgstr ""
-
-#: src/do_name.c:867
-#, c-format
-msgctxt "feminine"
-msgid "poor"
-msgstr ""
-
-#: src/do_name.c:867
-#, c-format
-msgctxt "feminine"
-msgid "sleeping"
-msgstr ""
-
 #: src/do_name.c:868
 #, c-format
-msgctxt "feminine"
-msgid "blind"
-msgstr ""
-
-#: src/do_name.c:868
-#, c-format
-msgctxt "feminine"
-msgid "blinded"
+msgctxt "ordinal suffix feminine"
+msgid "st"
 msgstr ""
 
 #: src/do_name.c:869
 #, c-format
-msgctxt "feminine"
-msgid "falling"
+msgctxt "ordinal suffix"
+msgid "st"
 msgstr ""
 
-#: src/do_name.c:869
+#: src/do_name.c:870
 #, c-format
-msgctxt "feminine"
-msgid "immobile"
-msgstr ""
-
-#: src/do_name.c:871
-#, c-format
-msgctxt "feminine"
-msgid "peaceful"
-msgstr ""
-
-#: src/do_name.c:873
-msgctxt "adjective-position"
-msgid "angry"
-msgstr ""
-
-#: src/do_name.c:873
-msgctxt "adjective-position"
-msgid "poor"
-msgstr ""
-
-#: src/do_name.c:874
-msgctxt "adjective-position"
-msgid "blind"
-msgstr ""
-
-#: src/do_name.c:874
-msgctxt "adjective-position"
-msgid "sleeping"
-msgstr ""
-
-#: src/do_name.c:875
-msgctxt "adjective-position"
-msgid "blinded"
-msgstr ""
-
-#: src/do_name.c:875
-msgctxt "adjective-position"
-msgid "immobile"
-msgstr ""
-
-#: src/do_name.c:876
-msgctxt "adjective-position"
-msgid "falling"
+msgctxt "ordinal suffix"
+msgid "th"
 msgstr ""
 
 #: src/do_name.c:877
+msgid "angry"
+msgstr ""
+
+#: src/do_name.c:877 src/insight.c:254
+msgid "invisible"
+msgstr ""
+
+#: src/do_name.c:877
+msgid "poor"
+msgstr ""
+
+#: src/do_name.c:877
+msgid "saddled"
+msgstr ""
+
+#: src/do_name.c:877
+msgid "sleeping"
+msgstr ""
+
+#: src/do_name.c:878
+msgid "blind"
+msgstr ""
+
+#: src/do_name.c:878
+msgid "blinded"
+msgstr ""
+
+#: src/do_name.c:878
+msgid "falling"
+msgstr ""
+
+#: src/do_name.c:878
+msgid "immobile"
+msgstr ""
+
+#: src/do_name.c:879
+msgid "peaceful"
+msgstr ""
+
+#: src/do_name.c:880
+#, c-format
+msgctxt "feminine"
+msgid "invisible"
+msgstr ""
+
+#: src/do_name.c:880
+#, c-format
+msgctxt "feminine"
+msgid "saddled"
+msgstr ""
+
+#: src/do_name.c:881
+#, c-format
+msgctxt "feminine"
+msgid "angry"
+msgstr ""
+
+#: src/do_name.c:881
+#, c-format
+msgctxt "feminine"
+msgid "poor"
+msgstr ""
+
+#: src/do_name.c:881
+#, c-format
+msgctxt "feminine"
+msgid "sleeping"
+msgstr ""
+
+#: src/do_name.c:882
+#, c-format
+msgctxt "feminine"
+msgid "blind"
+msgstr ""
+
+#: src/do_name.c:882
+#, c-format
+msgctxt "feminine"
+msgid "blinded"
+msgstr ""
+
+#: src/do_name.c:883
+#, c-format
+msgctxt "feminine"
+msgid "falling"
+msgstr ""
+
+#: src/do_name.c:883
+#, c-format
+msgctxt "feminine"
+msgid "immobile"
+msgstr ""
+
+#: src/do_name.c:885
+#, c-format
+msgctxt "feminine"
+msgid "peaceful"
+msgstr ""
+
+#: src/do_name.c:887
+msgctxt "adjective-position"
+msgid "angry"
+msgstr ""
+
+#: src/do_name.c:887
+msgctxt "adjective-position"
+msgid "poor"
+msgstr ""
+
+#: src/do_name.c:888
+msgctxt "adjective-position"
+msgid "blind"
+msgstr ""
+
+#: src/do_name.c:888
+msgctxt "adjective-position"
+msgid "sleeping"
+msgstr ""
+
+#: src/do_name.c:889
+msgctxt "adjective-position"
+msgid "blinded"
+msgstr ""
+
+#: src/do_name.c:889
+msgctxt "adjective-position"
+msgid "immobile"
+msgstr ""
+
+#: src/do_name.c:890
+msgctxt "adjective-position"
+msgid "falling"
+msgstr ""
+
+#: src/do_name.c:891
 msgctxt "adjective-position"
 msgid "beautiful"
 msgstr ""
 
-#: src/do_name.c:877
+#: src/do_name.c:891
 msgctxt "adjective-position"
 msgid "plain"
 msgstr ""
 
-#: src/do_name.c:879 src/do_name.c:936 src/do_name.c:1126 src/objnam.c:649
+#: src/do_name.c:893 src/do_name.c:950 src/do_name.c:1140 src/objnam.c:649
 #: src/objnam.c:1304
 #, c-format
 msgctxt "elided"
 msgid "the %s"
 msgstr ""
 
-#: src/do_name.c:879 src/do_name.c:938 src/do_name.c:1128 src/objnam.c:1310
+#: src/do_name.c:893 src/do_name.c:952 src/do_name.c:1142 src/objnam.c:1310
 #, c-format
 msgctxt "feminine"
 msgid "the %s"
 msgstr ""
 
-#: src/do_name.c:880 src/do_name.c:1140 src/objnam.c:1653 src/objnam.c:3536
+#: src/do_name.c:894 src/do_name.c:1154 src/objnam.c:1653 src/objnam.c:3536
 #: src/trap.c:139 src/trap.c:331 src/trap.c:6108 src/trap.c:6842
 #, c-format
 msgctxt "feminine"
 msgid "your %s"
 msgstr ""
 
-#: src/do_name.c:940 src/do_name.c:1130 src/objnam.c:648 src/objnam.c:1312
+#: src/do_name.c:954 src/do_name.c:1144 src/objnam.c:648 src/objnam.c:1312
 #, c-format
 msgid "the %s"
 msgstr ""
 
-#: src/do_name.c:954 src/objnam.c:649 src/objnam.c:1316
+#: src/do_name.c:968 src/objnam.c:649 src/objnam.c:1316
 #, c-format
 msgctxt "plural"
 msgid "a %s"
 msgstr ""
 
-#: src/do_name.c:1064
+#: src/do_name.c:1078
 #, c-format
 msgid "%s ghost"
 msgstr ""
 
-#: src/do_name.c:1067 src/objnam.c:647 src/pager.c:473
+#: src/do_name.c:1081 src/objnam.c:647 src/pager.c:473
 #, c-format
 msgid "%s called %s"
 msgstr ""
 
-#: src/do_name.c:1196 src/pager.c:1939 src/pager.c:2656 src/uhitm.c:2123
+#: src/do_name.c:1210 src/pager.c:1939 src/pager.c:2656 src/uhitm.c:2123
 #: src/uhitm.c:2130 src/uhitm.c:5598
 msgid "you"
 msgstr ""
 
-#: src/do_name.c:1232 src/mon.c:3542 src/pray.c:1885 src/timeout.c:1259
+#: src/do_name.c:1246 src/mon.c:3542 src/pray.c:1885 src/timeout.c:1259
 #: src/timeout.c:1391 src/zap.c:3426
 msgid "it"
 msgstr ""
 
-#: src/do_name.c:1233
+#: src/do_name.c:1247
 msgid "someone"
 msgstr ""
 
-#: src/do_name.c:1234 src/mhitm.c:796
+#: src/do_name.c:1248 src/mhitm.c:796
 msgid "something"
 msgstr ""
 
-#: src/do_name.c:1715
+#: src/do_name.c:1729
 #, c-format
 msgid "obj_pmname otyp:%i,corpsenm:%i"
 msgstr ""
 
-#: src/do_name.c:1828
+#: src/do_name.c:1842
 msgid "amber"
 msgstr ""
 
-#: src/do_name.c:1828
+#: src/do_name.c:1842
 msgid "black"
 msgstr ""
 
-#: src/do_name.c:1828
+#: src/do_name.c:1842
 msgid "golden"
 msgstr ""
 
-#: src/do_name.c:1828
+#: src/do_name.c:1842
 msgid "light blue"
 msgstr ""
 
-#: src/do_name.c:1828
+#: src/do_name.c:1842
 msgid "red"
 msgstr ""
 
-#: src/do_name.c:1829
+#: src/do_name.c:1843
 msgid "blue"
 msgstr ""
 
-#: src/do_name.c:1829
+#: src/do_name.c:1843
 msgid "green"
 msgstr ""
 
-#: src/do_name.c:1829
+#: src/do_name.c:1843
 msgid "purple"
 msgstr ""
 
-#: src/do_name.c:1829 src/eat.c:195
+#: src/do_name.c:1843 src/eat.c:195
 msgid "silver"
 msgstr ""
 
-#: src/do_name.c:1829
+#: src/do_name.c:1843
 msgid "white"
 msgstr ""
 
-#: src/do_name.c:1830 src/pray.c:1804
+#: src/do_name.c:1844 src/pray.c:1804
 msgid "gray"
 msgstr ""
 
-#: src/do_name.c:1830
+#: src/do_name.c:1844
 msgid "orange"
 msgstr ""
 
-#: src/do_name.c:1831
+#: src/do_name.c:1845
 #, c-format
 msgctxt "feminine"
 msgid "amber"
 msgstr ""
 
-#: src/do_name.c:1831
+#: src/do_name.c:1845
 #, c-format
 msgctxt "feminine"
 msgid "black"
 msgstr ""
 
-#: src/do_name.c:1831
+#: src/do_name.c:1845
 #, c-format
 msgctxt "feminine"
 msgid "golden"
 msgstr ""
 
-#: src/do_name.c:1832
+#: src/do_name.c:1846
 #, c-format
 msgctxt "feminine"
 msgid "light blue"
 msgstr ""
 
-#: src/do_name.c:1832
+#: src/do_name.c:1846
 #, c-format
 msgctxt "feminine"
 msgid "red"
 msgstr ""
 
-#: src/do_name.c:1833
+#: src/do_name.c:1847
 #, c-format
 msgctxt "feminine"
 msgid "blue"
 msgstr ""
 
-#: src/do_name.c:1833
+#: src/do_name.c:1847
 #, c-format
 msgctxt "feminine"
 msgid "green"
 msgstr ""
 
-#: src/do_name.c:1833
+#: src/do_name.c:1847
 #, c-format
 msgctxt "feminine"
 msgid "silver"
 msgstr ""
 
-#: src/do_name.c:1834
+#: src/do_name.c:1848
 #, c-format
 msgctxt "feminine"
 msgid "purple"
 msgstr ""
 
-#: src/do_name.c:1834
+#: src/do_name.c:1848
 #, c-format
 msgctxt "feminine"
 msgid "white"
 msgstr ""
 
-#: src/do_name.c:1835
+#: src/do_name.c:1849
 #, c-format
 msgctxt "feminine"
 msgid "gray"
 msgstr ""
 
-#: src/do_name.c:1835
+#: src/do_name.c:1849
 #, c-format
 msgctxt "feminine"
 msgid "orange"
 msgstr ""
 
-#: src/do_name.c:1838
+#: src/do_name.c:1852
 msgctxt "color"
 msgid "silver"
 msgstr ""
 
-#: src/do_name.c:1838
+#: src/do_name.c:1852
 msgctxt "feminine color"
 msgid "silver"
 msgstr ""
@@ -35037,7 +35055,7 @@ msgstr ""
 msgid " <- You were here."
 msgstr ""
 
-#: src/dungeon.c:3677 src/end.c:1510 src/insight.c:1922
+#: src/dungeon.c:3677 src/end.c:1510 src/insight.c:1924
 #, c-format
 msgid " and %s"
 msgstr ""
@@ -42032,1303 +42050,1303 @@ msgstr ""
 msgid "%s the %s's attributes:"
 msgstr ""
 
-#: src/insight.c:731
+#: src/insight.c:733
 msgid "Miscellaneous:"
 msgstr ""
 
-#: src/insight.c:737
+#: src/insight.c:739
 msgid " You are running in debug mode."
 msgstr ""
 
-#: src/insight.c:738
+#: src/insight.c:740
 msgid " You were running in debug mode."
 msgstr ""
 
-#: src/insight.c:740
+#: src/insight.c:742
 msgid " You are running in explore mode."
 msgstr ""
 
-#: src/insight.c:741
+#: src/insight.c:743
 msgid " You were running in explore mode."
 msgstr ""
 
-#: src/insight.c:797
+#: src/insight.c:799
 msgid "Background:"
 msgstr ""
 
-#: src/insight.c:836
+#: src/insight.c:838
 #, c-format
 msgid " You are actually %s, %s %s of level %d."
 msgstr ""
 
-#: src/insight.c:837
+#: src/insight.c:839
 #, c-format
 msgid " You are %s, %s %s of level %d."
 msgstr ""
 
-#: src/insight.c:862
+#: src/insight.c:864
 msgid "currently "
 msgstr ""
 
-#: src/insight.c:862
+#: src/insight.c:864
 msgid "temporarily "
 msgstr ""
 
-#: src/insight.c:864
+#: src/insight.c:866
 msgid "belatedly "
 msgstr ""
 
-#: src/insight.c:864
+#: src/insight.c:866
 msgid "now "
 msgstr ""
 
-#: src/insight.c:866
+#: src/insight.c:868
 msgid "nominally "
 msgstr ""
 
-#: src/insight.c:869
+#: src/insight.c:871
 #, c-format
 msgid " You are %s%s, on a mission for %s"
 msgstr ""
 
-#: src/insight.c:870
+#: src/insight.c:872
 #, c-format
 msgid " You were %s%s, on a mission for %s"
 msgstr ""
 
-#: src/insight.c:874
+#: src/insight.c:876
 msgid " who is opposed by"
 msgstr ""
 
-#: src/insight.c:875
+#: src/insight.c:877
 msgid " who was opposed by"
 msgstr ""
 
-#: src/insight.c:877
+#: src/insight.c:879
 #, c-format
 msgid " %s (%s) and"
 msgstr ""
 
-#: src/insight.c:1005
+#: src/insight.c:1007
 msgid ", a primitive area"
 msgstr ""
 
-#: src/insight.c:1007
+#: src/insight.c:1009
 msgid ", a very big room"
 msgstr ""
 
-#: src/insight.c:1017
+#: src/insight.c:1019
 #, c-format
 msgid " You are in %s, on level %d%s."
 msgstr ""
 
-#: src/insight.c:1018
+#: src/insight.c:1020
 #, c-format
 msgid " You were in %s, on level %d%s."
 msgstr ""
 
-#: src/insight.c:1030
+#: src/insight.c:1032
 msgid " You have just started your adventure."
-msgstr ""
-
-#: src/insight.c:1118
-#, c-format
-msgid " You have %ld experience points, %ld needed for level %d."
 msgstr ""
 
 #: src/insight.c:1120
 #, c-format
+msgid " You have %ld experience points, %ld needed for level %d."
+msgstr ""
+
+#: src/insight.c:1122
+#, c-format
 msgid " You had %ld experience points, %ld were needed for level %d."
 msgstr ""
 
-#: src/insight.c:1125
+#: src/insight.c:1127
 #, c-format
 msgid " You have %ld experience points."
 msgstr ""
 
-#: src/insight.c:1126
+#: src/insight.c:1128
 #, c-format
 msgid " You had %ld experience points."
 msgstr ""
 
-#: src/insight.c:1155
+#: src/insight.c:1157
 msgid "Basics:"
 msgstr ""
 
-#: src/insight.c:1163
+#: src/insight.c:1165
 #, c-format
 msgid " You have all %d hit points."
 msgstr ""
 
-#: src/insight.c:1164
+#: src/insight.c:1166
 #, c-format
 msgid " You had all %d hit points."
 msgstr ""
 
-#: src/insight.c:1167
+#: src/insight.c:1169
 #, c-format
 msgid " You have %d out of %d hit points."
 msgstr ""
 
-#: src/insight.c:1168
+#: src/insight.c:1170
 #, c-format
 msgid " You had %d out of %d hit points."
 msgstr ""
 
-#: src/insight.c:1173
+#: src/insight.c:1175
 msgid " You have no energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1174
+#: src/insight.c:1176
 msgid " You had no energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1178
+#: src/insight.c:1180
 #, c-format
 msgid " You have all %d energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1179
+#: src/insight.c:1181
 #, c-format
 msgid " You had all %d energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1183
+#: src/insight.c:1185
 #, c-format
 msgid " You have %d out of %d energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1185
+#: src/insight.c:1187
 #, c-format
 msgid " You had %d out of %d energy points (spell power)."
 msgstr ""
 
-#: src/insight.c:1226
+#: src/insight.c:1228
 #, c-format
 msgid " Your armor class is %d."
 msgstr ""
 
-#: src/insight.c:1227
+#: src/insight.c:1229
 #, c-format
 msgid " Your armor class was %d."
 msgstr ""
 
-#: src/insight.c:1230
+#: src/insight.c:1232
 #, c-format
 msgid " Your armor class is %d, the best possible."
 msgstr ""
 
-#: src/insight.c:1231
+#: src/insight.c:1233
 #, c-format
 msgid " Your armor class was %d, the best possible."
 msgstr ""
 
-#: src/insight.c:1233
+#: src/insight.c:1235
 #, c-format
 msgid " Your armor class is %d, the worst possible."
 msgstr ""
 
-#: src/insight.c:1234
+#: src/insight.c:1236
 #, c-format
 msgid " Your armor class was %d, the worst possible."
 msgstr ""
 
-#: src/insight.c:1254
+#: src/insight.c:1256
 msgid " Your wallet is empty."
 msgstr ""
 
-#: src/insight.c:1255
+#: src/insight.c:1257
 msgid " Your wallet was empty."
 msgstr ""
 
-#: src/insight.c:1258
+#: src/insight.c:1260
 #, c-format
 msgid " Your wallet contains %ld %s."
 msgstr ""
 
-#: src/insight.c:1259
+#: src/insight.c:1261
 #, c-format
 msgid " Your wallet contained %ld %s."
 msgstr ""
 
-#: src/insight.c:1263
+#: src/insight.c:1265
 #, c-format
 msgid " Your wallet contains %ld %s, and you have %ld stashed away in your pack."
 msgstr ""
 
-#: src/insight.c:1265
+#: src/insight.c:1267
 #, c-format
 msgid " Your wallet contained %ld %s, and you had %ld stashed away in your pack."
 msgstr ""
 
-#: src/insight.c:1311
+#: src/insight.c:1313
 msgid " Autopickup is off."
 msgstr ""
 
-#: src/insight.c:1312
+#: src/insight.c:1314
 msgid " Autopickup was off."
 msgstr ""
 
-#: src/insight.c:1314
+#: src/insight.c:1316
 msgid " Autopickup is on, but temporarily disabled while inside the shop."
 msgstr ""
 
-#: src/insight.c:1316
+#: src/insight.c:1318
 msgid " Autopickup was on, but temporarily disabled while inside the shop."
 msgstr ""
 
-#: src/insight.c:1319
+#: src/insight.c:1321
 msgid " Autopickup is on for all types."
 msgstr ""
 
-#: src/insight.c:1320
+#: src/insight.c:1322
 msgid " Autopickup was on for all types."
 msgstr ""
 
-#: src/insight.c:1332
+#: src/insight.c:1334
 msgid "Characteristics:"
 msgstr ""
 
-#: src/insight.c:1332
+#: src/insight.c:1334
 msgid "Final Characteristics:"
 msgstr ""
 
-#: src/insight.c:1398
+#: src/insight.c:1400
 #, c-format
 msgid "Your %s "
 msgstr ""
 
-#: src/insight.c:1466
+#: src/insight.c:1468
 msgid "Final Status:"
 msgstr ""
 
-#: src/insight.c:1466
+#: src/insight.c:1468
 msgid "Status:"
 msgstr ""
 
-#: src/insight.c:1585
+#: src/insight.c:1587
 #, c-format
 msgid "Punished without uball?"
 msgstr ""
 
-#: src/insight.c:1803
+#: src/insight.c:1805
 #, c-format
 msgid " You are wielding %s."
 msgstr ""
 
-#: src/insight.c:1804
+#: src/insight.c:1806
 #, c-format
 msgid " You were wielding %s."
 msgstr ""
 
-#: src/insight.c:1839 src/insight.c:1880
+#: src/insight.c:1841 src/insight.c:1882
 #, c-format
 msgid " Your skill in %s is: %s%s."
 msgstr ""
 
-#: src/insight.c:1840 src/insight.c:1881
+#: src/insight.c:1842 src/insight.c:1883
 #, c-format
 msgid " Your skill in %s was: %s%s."
 msgstr ""
 
-#: src/insight.c:1842 src/insight.c:1866 src/insight.c:1883
+#: src/insight.c:1844 src/insight.c:1868 src/insight.c:1885
 msgid "restricted"
 msgstr ""
 
-#: src/insight.c:1845
+#: src/insight.c:1847
 msgid " (you can enhance it)"
 msgstr ""
 
-#: src/insight.c:1846
+#: src/insight.c:1848
 msgid " (you could have enhanced it)"
-msgstr ""
-
-#: src/insight.c:1888
-#, c-format
-msgid " With two weapons, your skill in %s is limited to %s."
 msgstr ""
 
 #: src/insight.c:1890
 #, c-format
-msgid " With two weapons, your skill in %s was limited to %s."
+msgid " With two weapons, your skill in %s is limited to %s."
 msgstr ""
 
-#: src/insight.c:1896
+#: src/insight.c:1892
 #, c-format
-msgid " Your two weapon skill is limited by your skill in %s."
+msgid " With two weapons, your skill in %s was limited to %s."
 msgstr ""
 
 #: src/insight.c:1898
 #, c-format
+msgid " Your two weapon skill is limited by your skill in %s."
+msgstr ""
+
+#: src/insight.c:1900
+#, c-format
 msgid " Your two weapon skill was limited by your skill in %s."
 msgstr ""
 
-#: src/insight.c:1907
+#: src/insight.c:1909
 #, c-format
 msgid " Your two weapon skill is: %s."
 msgstr ""
 
-#: src/insight.c:1908
+#: src/insight.c:1910
 #, c-format
 msgid " Your two weapon skill was: %s."
 msgstr ""
 
-#: src/insight.c:1915
+#: src/insight.c:1917
 msgid "two weapons"
 msgstr ""
 
-#: src/insight.c:1924
+#: src/insight.c:1926
 #, c-format
 msgid " You can enhance your skill with %s."
 msgstr ""
 
-#: src/insight.c:1925
+#: src/insight.c:1927
 #, c-format
 msgid " You could have enhanced your skill with %s."
 msgstr ""
 
-#: src/insight.c:2096
+#: src/insight.c:2098
 msgid "Attributes:"
 msgstr ""
 
-#: src/insight.c:2096
+#: src/insight.c:2098
 msgid "Final Attributes:"
 msgstr ""
 
-#: src/insight.c:2112
+#: src/insight.c:2114
 msgid " You have sinned."
 msgstr ""
 
-#: src/insight.c:2113
+#: src/insight.c:2115
 msgid " You had sinned."
 msgstr ""
 
-#: src/insight.c:2114
+#: src/insight.c:2116
 msgid " You have transgressed."
 msgstr ""
 
-#: src/insight.c:2115
+#: src/insight.c:2117
 msgid " You had transgressed."
 msgstr ""
 
-#: src/insight.c:2229
+#: src/insight.c:2231
 msgid " because of "
 msgstr ""
 
-#: src/insight.c:2229
+#: src/insight.c:2231
 msgid " if not for "
 msgstr ""
 
-#: src/insight.c:2503
+#: src/insight.c:2505
 msgid " in beast form"
 msgstr ""
 
-#: src/insight.c:2610
+#: src/insight.c:2612
 #, c-format
 msgid "dead without dying?"
 msgstr ""
 
-#: src/insight.c:2709
-msgctxt "heroine"
-msgid "You have been deaf from birth."
-msgstr ""
-
-#: src/insight.c:2710
-msgctxt "heroine"
-msgid "You were deaf from birth."
-msgstr ""
-
 #: src/insight.c:2711
 msgctxt "heroine"
-msgid "You have been vegetarian."
+msgid "You have been deaf from birth."
 msgstr ""
 
 #: src/insight.c:2712
 msgctxt "heroine"
-msgid "You were vegetarian."
+msgid "You were deaf from birth."
 msgstr ""
 
 #: src/insight.c:2713
 msgctxt "heroine"
-msgid "You have been illiterate."
+msgid "You have been vegetarian."
 msgstr ""
 
 #: src/insight.c:2714
 msgctxt "heroine"
-msgid "You were illiterate."
+msgid "You were vegetarian."
 msgstr ""
 
 #: src/insight.c:2715
 msgctxt "heroine"
-msgid "You have gone without food."
+msgid "You have been illiterate."
 msgstr ""
 
 #: src/insight.c:2716
 msgctxt "heroine"
-msgid "You have gone without any armor."
-msgstr ""
-
-#: src/insight.c:2717
-msgid "You have been blind from birth."
-msgstr ""
-
-#: src/insight.c:2718
-msgid "You were blind from birth."
-msgstr ""
-
-#: src/insight.c:2719
-msgid "You have been deaf from birth."
-msgstr ""
-
-#: src/insight.c:2720
-msgid "You were deaf from birth."
-msgstr ""
-
-#: src/insight.c:2721
-msgid "You have been faithfully nudist."
-msgstr ""
-
-#: src/insight.c:2722
-msgid "You were faithfully nudist."
-msgstr ""
-
-#: src/insight.c:2723
-msgid "You have been vegetarian."
-msgstr ""
-
-#: src/insight.c:2724
-msgid "You were vegetarian."
-msgstr ""
-
-#: src/insight.c:2725
-msgid "You have been an atheist."
-msgstr ""
-
-#: src/insight.c:2726
-msgid "You were an atheist."
-msgstr ""
-
-#: src/insight.c:2727
-msgid "You have been a pacifist."
-msgstr ""
-
-#: src/insight.c:2728
-msgid "You were a pacifist."
-msgstr ""
-
-#: src/insight.c:2729
-msgid "You have been illiterate."
-msgstr ""
-
-#: src/insight.c:2730
 msgid "You were illiterate."
 msgstr ""
 
-#: src/insight.c:2731
-msgid "You have never hit with a wielded weapon."
-msgstr ""
-
-#: src/insight.c:2732
-msgid "You never hit with a wielded weapon."
-msgstr ""
-
-#: src/insight.c:2733
-msgid "You have never had a pet."
-msgstr ""
-
-#: src/insight.c:2734
-msgid "You never had a pet."
-msgstr ""
-
-#: src/insight.c:2735
-msgid "You have never genocided any monsters."
-msgstr ""
-
-#: src/insight.c:2736
-msgid "You never genocided any monsters."
-msgstr ""
-
-#: src/insight.c:2737
-msgid "You have never polymorphed an object."
-msgstr ""
-
-#: src/insight.c:2738
-msgid "You never polymorphed an object."
-msgstr ""
-
-#: src/insight.c:2739
-msgid "You have never changed form."
-msgstr ""
-
-#: src/insight.c:2740
-msgid "You never changed form."
-msgstr ""
-
-#: src/insight.c:2741
-msgid "You have followed a strict vegan diet."
-msgstr ""
-
-#: src/insight.c:2742
-msgid "You followed a strict vegan diet."
-msgstr ""
-
-#: src/insight.c:2743
-msgid "You have used no wishes."
-msgstr ""
-
-#: src/insight.c:2744
-msgid "You used no wishes."
-msgstr ""
-
-#: src/insight.c:2745
-msgid "You started without possessions."
-msgstr ""
-
-#: src/insight.c:2746
-msgid "You are without possessions."
-msgstr ""
-
-#: src/insight.c:2747
-msgid "You started out without possessions."
-msgstr ""
-
-#: src/insight.c:2748
+#: src/insight.c:2717
+msgctxt "heroine"
 msgid "You have gone without food."
 msgstr ""
 
+#: src/insight.c:2718
+msgctxt "heroine"
+msgid "You have gone without any armor."
+msgstr ""
+
+#: src/insight.c:2719
+msgid "You have been blind from birth."
+msgstr ""
+
+#: src/insight.c:2720
+msgid "You were blind from birth."
+msgstr ""
+
+#: src/insight.c:2721
+msgid "You have been deaf from birth."
+msgstr ""
+
+#: src/insight.c:2722
+msgid "You were deaf from birth."
+msgstr ""
+
+#: src/insight.c:2723
+msgid "You have been faithfully nudist."
+msgstr ""
+
+#: src/insight.c:2724
+msgid "You were faithfully nudist."
+msgstr ""
+
+#: src/insight.c:2725
+msgid "You have been vegetarian."
+msgstr ""
+
+#: src/insight.c:2726
+msgid "You were vegetarian."
+msgstr ""
+
+#: src/insight.c:2727
+msgid "You have been an atheist."
+msgstr ""
+
+#: src/insight.c:2728
+msgid "You were an atheist."
+msgstr ""
+
+#: src/insight.c:2729
+msgid "You have been a pacifist."
+msgstr ""
+
+#: src/insight.c:2730
+msgid "You were a pacifist."
+msgstr ""
+
+#: src/insight.c:2731
+msgid "You have been illiterate."
+msgstr ""
+
+#: src/insight.c:2732
+msgid "You were illiterate."
+msgstr ""
+
+#: src/insight.c:2733
+msgid "You have never hit with a wielded weapon."
+msgstr ""
+
+#: src/insight.c:2734
+msgid "You never hit with a wielded weapon."
+msgstr ""
+
+#: src/insight.c:2735
+msgid "You have never had a pet."
+msgstr ""
+
+#: src/insight.c:2736
+msgid "You never had a pet."
+msgstr ""
+
+#: src/insight.c:2737
+msgid "You have never genocided any monsters."
+msgstr ""
+
+#: src/insight.c:2738
+msgid "You never genocided any monsters."
+msgstr ""
+
+#: src/insight.c:2739
+msgid "You have never polymorphed an object."
+msgstr ""
+
+#: src/insight.c:2740
+msgid "You never polymorphed an object."
+msgstr ""
+
+#: src/insight.c:2741
+msgid "You have never changed form."
+msgstr ""
+
+#: src/insight.c:2742
+msgid "You never changed form."
+msgstr ""
+
+#: src/insight.c:2743
+msgid "You have followed a strict vegan diet."
+msgstr ""
+
+#: src/insight.c:2744
+msgid "You followed a strict vegan diet."
+msgstr ""
+
+#: src/insight.c:2745
+msgid "You have used no wishes."
+msgstr ""
+
+#: src/insight.c:2746
+msgid "You used no wishes."
+msgstr ""
+
+#: src/insight.c:2747
+msgid "You started without possessions."
+msgstr ""
+
+#: src/insight.c:2748
+msgid "You are without possessions."
+msgstr ""
+
 #: src/insight.c:2749
-msgid "You went without food."
+msgid "You started out without possessions."
 msgstr ""
 
 #: src/insight.c:2750
-msgid "You haven't wished for any artifacts."
+msgid "You have gone without food."
 msgstr ""
 
 #: src/insight.c:2751
-msgid "You did not wish for any artifacts."
+msgid "You went without food."
 msgstr ""
 
 #: src/insight.c:2752
-msgid "You haven't violated any of the special Sokoban rules."
+msgid "You haven't wished for any artifacts."
 msgstr ""
 
 #: src/insight.c:2753
-msgid "You did not violate any of the special Sokoban rules."
+msgid "You did not wish for any artifacts."
 msgstr ""
 
 #: src/insight.c:2754
-#, c-format
-msgid "You have genocided %ld type of monster."
+msgid "You haven't violated any of the special Sokoban rules."
 msgstr ""
 
 #: src/insight.c:2755
-#, c-format
-msgid "You genocided %ld type of monster."
+msgid "You did not violate any of the special Sokoban rules."
 msgstr ""
 
 #: src/insight.c:2756
 #, c-format
-msgid "You have genocided %ld types of monsters."
+msgid "You have genocided %ld type of monster."
 msgstr ""
 
 #: src/insight.c:2757
 #, c-format
-msgid "You genocided %ld types of monsters."
+msgid "You genocided %ld type of monster."
 msgstr ""
 
 #: src/insight.c:2758
 #, c-format
-msgid "You have used %ld wish."
+msgid "You have genocided %ld types of monsters."
 msgstr ""
 
 #: src/insight.c:2759
 #, c-format
-msgid "You used %ld wish."
+msgid "You genocided %ld types of monsters."
 msgstr ""
 
 #: src/insight.c:2760
 #, c-format
-msgid "You have used %ld wishes."
+msgid "You have used %ld wish."
 msgstr ""
 
 #: src/insight.c:2761
 #, c-format
-msgid "You used %ld wishes."
+msgid "You used %ld wish."
 msgstr ""
 
 #: src/insight.c:2762
 #, c-format
-msgid "You have used %ld wish (for an artifact)."
+msgid "You have used %ld wishes."
 msgstr ""
 
 #: src/insight.c:2763
 #, c-format
-msgid "You used %ld wish (for an artifact)."
+msgid "You used %ld wishes."
 msgstr ""
 
 #: src/insight.c:2764
 #, c-format
-msgid "You have used %ld wishes (both for artifacts)."
+msgid "You have used %ld wish (for an artifact)."
 msgstr ""
 
 #: src/insight.c:2765
 #, c-format
-msgid "You used %ld wishes (both for artifacts)."
+msgid "You used %ld wish (for an artifact)."
 msgstr ""
 
 #: src/insight.c:2766
 #, c-format
-msgid "You have used %ld wishes (all for artifacts)."
+msgid "You have used %ld wishes (both for artifacts)."
 msgstr ""
 
 #: src/insight.c:2767
 #, c-format
+msgid "You used %ld wishes (both for artifacts)."
+msgstr ""
+
+#: src/insight.c:2768
+#, c-format
+msgid "You have used %ld wishes (all for artifacts)."
+msgstr ""
+
+#: src/insight.c:2769
+#, c-format
 msgid "You used %ld wishes (all for artifacts)."
 msgstr ""
 
-#: src/insight.c:2778
+#: src/insight.c:2780
 msgid "Voluntary challenges:"
 msgstr ""
 
-#: src/insight.c:2785
+#: src/insight.c:2787
 msgid " Character rerolling was not enabled."
 msgstr ""
 
-#: src/insight.c:2787
+#: src/insight.c:2789
 msgid " Your character was not rerolled."
 msgstr ""
 
-#: src/insight.c:2790
+#: src/insight.c:2792
 #, c-format
 msgid " Your character was rerolled %ld time(s)."
 msgstr ""
 
-#: src/insight.c:2930
+#: src/insight.c:2932
 msgid "You have entered the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2931
+#: src/insight.c:2933
 msgid "You entered the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2932
+#: src/insight.c:2934
 msgid "You have entered Minetown."
 msgstr ""
 
-#: src/insight.c:2933
+#: src/insight.c:2935
 msgid "You entered Minetown."
 msgstr ""
 
-#: src/insight.c:2934
+#: src/insight.c:2936
 msgid "You have entered a shop."
 msgstr ""
 
-#: src/insight.c:2935
+#: src/insight.c:2937
 msgid "You entered a shop."
 msgstr ""
 
-#: src/insight.c:2936
+#: src/insight.c:2938
 msgid "You have entered a temple."
 msgstr ""
 
-#: src/insight.c:2937
+#: src/insight.c:2939
 msgid "You entered a temple."
 msgstr ""
 
-#: src/insight.c:2938
+#: src/insight.c:2940
 msgid "You have consulted the Oracle of Delphi."
 msgstr ""
 
-#: src/insight.c:2939
+#: src/insight.c:2941
 msgid "You consulted the Oracle of Delphi."
 msgstr ""
 
-#: src/insight.c:2940
+#: src/insight.c:2942
 msgid "You have read from a Discworld novel."
 msgstr ""
 
-#: src/insight.c:2941
+#: src/insight.c:2943
 msgid "You read from a Discworld novel."
 msgstr ""
 
-#: src/insight.c:2942
+#: src/insight.c:2944
 msgid "You have entered Sokoban."
 msgstr ""
 
-#: src/insight.c:2943
+#: src/insight.c:2945
 msgid "You entered Sokoban."
 msgstr ""
 
-#: src/insight.c:2944
+#: src/insight.c:2946
 msgid "You have completed Sokoban."
 msgstr ""
 
-#: src/insight.c:2945
+#: src/insight.c:2947
 msgid "You completed Sokoban."
 msgstr ""
 
-#: src/insight.c:2946
+#: src/insight.c:2948
 msgid "You have completed the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2947
+#: src/insight.c:2949
 msgid "You completed the Gnomish Mines."
 msgstr ""
 
-#: src/insight.c:2948
+#: src/insight.c:2950
 msgid "You have entered the Big Room."
 msgstr ""
 
-#: src/insight.c:2949
+#: src/insight.c:2951
 msgid "You entered the Big Room."
 msgstr ""
 
-#: src/insight.c:2950
+#: src/insight.c:2952
 msgid "You have defeated Medusa."
 msgstr ""
 
-#: src/insight.c:2951
+#: src/insight.c:2953
 msgid "You defeated Medusa."
 msgstr ""
 
-#: src/insight.c:2952
+#: src/insight.c:2954
 msgid "You have learned the tune to open and close the Castle's drawbridge."
 msgstr ""
 
-#: src/insight.c:2953
+#: src/insight.c:2955
 msgid "You learned the tune to open and close the Castle's drawbridge."
 msgstr ""
 
-#: src/insight.c:2954
+#: src/insight.c:2956
 msgid "You have gained access to Moloch's Sanctum."
 msgstr ""
 
-#: src/insight.c:2955
+#: src/insight.c:2957
 msgid "You gained access to Moloch's Sanctum."
 msgstr ""
 
-#: src/insight.c:2956
+#: src/insight.c:2958
 msgid "You have reached the Elemental Planes."
 msgstr ""
 
-#: src/insight.c:2957
+#: src/insight.c:2959
 msgid "You reached the Elemental Planes."
 msgstr ""
 
-#: src/insight.c:2958
+#: src/insight.c:2960
 msgid "You have reached the Astral Plane."
 msgstr ""
 
-#: src/insight.c:2959
+#: src/insight.c:2961
 msgid "You reached the Astral Plane."
 msgstr ""
 
-#: src/insight.c:2960
+#: src/insight.c:2962
 msgid "You have entered Gehennom."
 msgstr ""
 
-#: src/insight.c:2961
+#: src/insight.c:2963
 msgid "You entered Gehennom."
 msgstr ""
 
-#: src/insight.c:2962
+#: src/insight.c:2964
 msgid "You are exploring without being able to see."
 msgstr ""
 
-#: src/insight.c:2963
+#: src/insight.c:2965
 msgid "You explored without being able to see."
 msgstr ""
 
-#: src/insight.c:2964
+#: src/insight.c:2966
 msgid "You have gone without any armor."
 msgstr ""
 
-#: src/insight.c:2965
+#: src/insight.c:2967
 msgid "You went without any armor."
 msgstr ""
 
-#: src/insight.c:2966
+#: src/insight.c:2968
 msgid "You have the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2967
+#: src/insight.c:2969
 msgid "You had the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2968
+#: src/insight.c:2970
 msgid "You have handled the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2969
+#: src/insight.c:2971
 msgid "You handled the Bell of Opening."
 msgstr ""
 
-#: src/insight.c:2970
+#: src/insight.c:2972
 msgid "You have the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2971
+#: src/insight.c:2973
 msgid "You had the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2972
+#: src/insight.c:2974
 msgid "You have handled the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2973
+#: src/insight.c:2975
 msgid "You handled the Candelabrum of Invocation."
 msgstr ""
 
-#: src/insight.c:2974
+#: src/insight.c:2976
 msgid "You have the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2975
+#: src/insight.c:2977
 msgid "You had the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2976
+#: src/insight.c:2978
 msgid "You have handled the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2977
+#: src/insight.c:2979
 msgid "You handled the Book of the Dead."
 msgstr ""
 
-#: src/insight.c:2978
+#: src/insight.c:2980
 msgid "You have the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2979
+#: src/insight.c:2981
 msgid "You have obtained the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2980
+#: src/insight.c:2982
 msgid "You delivered the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2981
+#: src/insight.c:2983
 msgid "You had the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2982
+#: src/insight.c:2984
 msgid "You had obtained the Amulet of Yendor."
 msgstr ""
 
-#: src/insight.c:2983
+#: src/insight.c:2985
 msgid "You ascended!"
 msgstr ""
 
-#: src/insight.c:3012
+#: src/insight.c:3014
 msgid "Achievement:"
 msgstr ""
 
-#: src/insight.c:3012
+#: src/insight.c:3014
 msgid "Achievements:"
 msgstr ""
 
-#: src/insight.c:3124
+#: src/insight.c:3126
 msgid " You ascended!"
 msgstr ""
 
-#: src/insight.c:3132
+#: src/insight.c:3134
 #, c-format
 msgid " You attained the rank of %s."
 msgstr ""
 
-#: src/insight.c:3133
+#: src/insight.c:3135
 #, c-format
 msgid " You have attained the rank of %s."
 msgstr ""
 
-#: src/insight.c:3171
+#: src/insight.c:3173
 #, c-format
 msgid "Achievement #%d is out of range."
 msgstr ""
 
-#: src/insight.c:3292
+#: src/insight.c:3294
 msgid "No chronicled events."
 msgstr ""
 
-#: src/insight.c:3295
+#: src/insight.c:3297
 msgid "Chronicle was turned off during compile-time."
 msgstr ""
 
-#: src/insight.c:3356
+#: src/insight.c:3358
 msgid "traditional: by monster level"
 msgstr ""
 
-#: src/insight.c:3357
+#: src/insight.c:3359
 msgid "traditional: by monster level, by internal monster index"
 msgstr ""
 
-#: src/insight.c:3358
+#: src/insight.c:3360
 msgid "by monster difficulty rating"
 msgstr ""
 
-#: src/insight.c:3359
+#: src/insight.c:3361
 msgid "by monster difficulty rating, by internal monster index"
 msgstr ""
 
-#: src/insight.c:3360
+#: src/insight.c:3362
 msgid "alphabetically, unique monsters separate"
 msgstr ""
 
-#: src/insight.c:3361
+#: src/insight.c:3363
 msgid "alphabetically, first unique monsters, then others"
 msgstr ""
 
-#: src/insight.c:3362
+#: src/insight.c:3364
 msgid "alphabetically, unique monsters intermixed"
 msgstr ""
 
-#: src/insight.c:3363
+#: src/insight.c:3365
 msgid "alphabetically, unique monsters and others intermixed"
 msgstr ""
 
-#: src/insight.c:3364
+#: src/insight.c:3366
 msgid "by monster class, high to low level in class"
 msgstr ""
 
-#: src/insight.c:3365
+#: src/insight.c:3367
 msgid "by monster class, high to low level within class"
 msgstr ""
 
-#: src/insight.c:3366
+#: src/insight.c:3368
 msgid "by monster class, low to high level in class"
 msgstr ""
 
-#: src/insight.c:3367
+#: src/insight.c:3369
 msgid "by monster class, low to high level within class"
 msgstr ""
 
-#: src/insight.c:3368
+#: src/insight.c:3370
 msgid "by count, high to low"
 msgstr ""
 
-#: src/insight.c:3369
+#: src/insight.c:3371
 msgid "by count, high to low, by internal index within tied count"
 msgstr ""
 
-#: src/insight.c:3370
+#: src/insight.c:3372
 msgid "by count, low to high"
 msgstr ""
 
-#: src/insight.c:3371
+#: src/insight.c:3373
 msgid "by count, low to high, by internal index within tied count"
 msgstr ""
 
-#: src/insight.c:3496 src/spell.c:1927
+#: src/insight.c:3498 src/spell.c:1927
 msgid "alphabetically"
 msgstr ""
 
-#: src/insight.c:3504
+#: src/insight.c:3506
 msgid "Sort order for vanquished monster counts (also genocided types)"
 msgstr ""
 
-#: src/insight.c:3506
+#: src/insight.c:3508
 msgid "Sort order for genocided monster types (also vanquished counts)"
 msgstr ""
 
-#: src/insight.c:3598
+#: src/insight.c:3600
 msgid "Do you want an account of creatures vanquished?"
 msgstr ""
 
-#: src/insight.c:3699
+#: src/insight.c:3701
 msgid "No creatures have been vanquished."
 msgstr ""
 
-#: src/insight.c:3717
+#: src/insight.c:3719
 #, c-format
 msgid "unique creature '%d: %s' genocided?"
 msgstr ""
 
-#: src/insight.c:3881
+#: src/insight.c:3883
 msgid "No creatures have been genocided yet."
 msgstr ""
 
-#: src/insight.c:3910
+#: src/insight.c:3912
 msgid "died born"
 msgstr ""
 
-#: src/insight.c:4032
+#: src/insight.c:4034
 msgid "devoutly"
 msgstr ""
 
-#: src/insight.c:4032
+#: src/insight.c:4034
 msgid "fervently"
 msgstr ""
 
-#: src/insight.c:4032
+#: src/insight.c:4034
 msgid "piously"
 msgstr ""
 
-#: src/insight.c:4032
+#: src/insight.c:4034
 msgid "stridently"
 msgstr ""
 
-#: src/insight.c:4033
+#: src/insight.c:4035
 msgid "haltingly"
 msgstr ""
 
-#: src/insight.c:4033
+#: src/insight.c:4035
 msgid "insufficiently"
 msgstr ""
 
-#: src/insight.c:4033
+#: src/insight.c:4035
 msgid "nominally"
 msgstr ""
 
-#: src/insight.c:4033
+#: src/insight.c:4035
 msgid "strayed"
 msgstr ""
 
-#: src/insight.c:4034 src/role.c:765
+#: src/insight.c:4036 src/role.c:765
 msgid "chaotic"
 msgstr ""
 
-#: src/insight.c:4034 src/role.c:763
+#: src/insight.c:4036 src/role.c:763
 msgid "lawful"
 msgstr ""
 
-#: src/insight.c:4034 src/role.c:764
+#: src/insight.c:4036 src/role.c:764
 msgid "neutral"
 msgstr ""
 
-#: src/insight.c:4034
+#: src/insight.c:4036
 msgid "sinned"
 msgstr ""
 
-#: src/insight.c:4034
+#: src/insight.c:4036
 msgid "transgressed"
 msgstr ""
 
-#: src/insight.c:4035 src/objnam.c:643
+#: src/insight.c:4037 src/objnam.c:643
 msgid "medium"
 msgstr ""
 
-#: src/insight.c:4035 src/objnam.c:643
+#: src/insight.c:4037 src/objnam.c:643
 msgid "small"
 msgstr ""
 
-#: src/insight.c:4035
+#: src/insight.c:4037
 msgid "tiny"
 msgstr ""
 
-#: src/insight.c:4035 src/role.c:766 win/Qt/qt_stat.cpp:956
+#: src/insight.c:4037 src/role.c:766 win/Qt/qt_stat.cpp:956
 #: win/Qt/qt_stat.cpp:957
 msgid "unaligned"
 msgstr ""
 
-#: src/insight.c:4035
+#: src/insight.c:4037
 msgid "unknown"
 msgstr ""
 
-#: src/insight.c:4036
+#: src/insight.c:4038
 msgid "gigantic"
 msgstr ""
 
-#: src/insight.c:4036
+#: src/insight.c:4038
 msgid "huge"
 msgstr ""
 
-#: src/insight.c:4036 src/objnam.c:644
+#: src/insight.c:4038 src/objnam.c:644
 msgid "large"
 msgstr ""
 
-#: src/insight.c:4064
+#: src/insight.c:4066
 msgid ", tame"
 msgstr ""
 
-#: src/insight.c:4073
+#: src/insight.c:4075
 msgid ", peaceful"
 msgstr ""
 
-#: src/insight.c:4082
+#: src/insight.c:4084
 msgid ", single segment"
 msgstr ""
 
-#: src/insight.c:4087
+#: src/insight.c:4089
 #, c-format
 msgid ", segment %d of %d"
 msgstr ""
 
-#: src/insight.c:4096
+#: src/insight.c:4098
 msgid ", shapechanger"
 msgstr ""
 
-#: src/insight.c:4099
+#: src/insight.c:4101
 msgid ", eating"
 msgstr ""
 
-#: src/insight.c:4108
+#: src/insight.c:4110
 msgid ", cancelled"
 msgstr ""
 
-#: src/insight.c:4110 src/insight.c:4214
+#: src/insight.c:4112 src/insight.c:4216
 msgid ", confused"
 msgstr ""
 
-#: src/insight.c:4112 src/insight.c:4216
+#: src/insight.c:4114 src/insight.c:4218
 msgid ", blind"
 msgstr ""
 
-#: src/insight.c:4114 src/insight.c:4232
+#: src/insight.c:4116 src/insight.c:4234
 msgid ", stunned"
 msgstr ""
 
-#: src/insight.c:4116 src/pager.c:893
+#: src/insight.c:4118 src/pager.c:893
 msgid ", asleep"
 msgstr ""
 
-#: src/insight.c:4120
+#: src/insight.c:4122
 msgid ", paralyzed"
 msgstr ""
 
-#: src/insight.c:4123
+#: src/insight.c:4125
 msgid ", can't move"
 msgstr ""
 
-#: src/insight.c:4127 src/pager.c:895
+#: src/insight.c:4129 src/pager.c:895
 msgid ", meditating"
 msgstr ""
 
-#: src/insight.c:4129
+#: src/insight.c:4131
 msgid ", scared"
 msgstr ""
 
-#: src/insight.c:4131 src/insight.c:4249
+#: src/insight.c:4133 src/insight.c:4251
 msgid ", trapped"
 msgstr ""
 
-#: src/insight.c:4133 src/insight.c:4251
+#: src/insight.c:4135 src/insight.c:4253
 msgid ", fast"
 msgstr ""
 
-#: src/insight.c:4134
+#: src/insight.c:4136
 msgid ", slow"
 msgstr ""
 
-#: src/insight.c:4137 src/insight.c:4257
+#: src/insight.c:4139 src/insight.c:4259
 msgid ", invisible"
 msgstr ""
 
-#: src/insight.c:4144
+#: src/insight.c:4146
 msgid ", digesting you"
 msgstr ""
 
-#: src/insight.c:4151 src/pager.c:883
+#: src/insight.c:4153 src/pager.c:883
 msgid ", swallowing you"
 msgstr ""
 
-#: src/insight.c:4152 src/pager.c:885
+#: src/insight.c:4154 src/pager.c:885
 msgid ", engulfing you"
 msgstr ""
 
-#: src/insight.c:4155 src/pager.c:889
+#: src/insight.c:4157 src/pager.c:889
 msgid ", holding you"
 msgstr ""
 
-#: src/insight.c:4156
+#: src/insight.c:4158
 msgid ", held by you"
 msgstr ""
 
-#: src/insight.c:4159
+#: src/insight.c:4161
 msgid ", carrying you"
 msgstr ""
 
-#: src/insight.c:4169
+#: src/insight.c:4171
 #, c-format
 msgid ", injured %s"
 msgstr ""
 
-#: src/insight.c:4173
+#: src/insight.c:4175
 msgid ", leashed"
 msgstr ""
 
-#: src/insight.c:4180
+#: src/insight.c:4182
 #, c-format
 msgid "Status of %s (%s, %s):  Level %d  HP %d(%d)  AC %d%s."
 msgstr ""
 
-#: src/insight.c:4196
+#: src/insight.c:4198
 msgid ", dying from"
 msgstr ""
 
-#: src/insight.c:4198
+#: src/insight.c:4200
 msgid " food poisoning"
 msgstr ""
 
-#: src/insight.c:4202
+#: src/insight.c:4204
 msgid " illness"
 msgstr ""
 
-#: src/insight.c:4206
+#: src/insight.c:4208
 msgid ", solidifying"
 msgstr ""
 
-#: src/insight.c:4208
+#: src/insight.c:4210
 msgid ", becoming slimy"
 msgstr ""
 
-#: src/insight.c:4210
+#: src/insight.c:4212
 msgid ", being strangled"
 msgstr ""
 
-#: src/insight.c:4212
+#: src/insight.c:4214
 msgid ", nauseated"
 msgstr ""
 
-#: src/insight.c:4222
+#: src/insight.c:4224
 msgid ", covered by sticky goop"
 msgstr ""
 
-#: src/insight.c:4223
+#: src/insight.c:4225
 msgid " by sticky goop"
 msgstr ""
 
-#: src/insight.c:4247
+#: src/insight.c:4249
 #, c-format
 msgid ", slippery %s"
 msgstr ""
 
-#: src/insight.c:4251
+#: src/insight.c:4253
 msgid ", very fast"
 msgstr ""
 
-#: src/insight.c:4253
+#: src/insight.c:4255
 msgid ", concealed"
 msgstr ""
 
-#: src/insight.c:4255
+#: src/insight.c:4257
 msgid ", disguised"
 msgstr ""
 
-#: src/insight.c:4260
+#: src/insight.c:4262
 msgid ", being digested by "
 msgstr ""
 
-#: src/insight.c:4261
+#: src/insight.c:4263
 msgid ", engulfed by "
 msgstr ""
 
-#: src/insight.c:4263
+#: src/insight.c:4265
 msgid ", held by "
 msgstr ""
 
-#: src/insight.c:4265
+#: src/insight.c:4267
 msgid ", holding "
 msgstr ""
 
-#: src/insight.c:4276 src/pager.c:687
+#: src/insight.c:4278 src/pager.c:687
 msgid ", in a cloud of poison gas"
 msgstr ""
 
-#: src/insight.c:4277 src/pager.c:688
+#: src/insight.c:4279 src/pager.c:688
 msgid ", in a cloud of vapor"
 msgstr ""
 
-#: src/insight.c:4279
+#: src/insight.c:4281
 #, c-format
 msgid "Status of %s (%s):  Level %d  HP %d(%d)  AC %d%s."
 msgstr ""
@@ -70056,7 +70074,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetHack 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-20 20:46+0200\n"
+"POT-Creation-Date: 2026-10-21 20:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70253,350 +70271,359 @@ msgstr ""
 msgid "bad killer format? (%d)"
 msgstr ""
 
-#: src/topten.c:937
+#: src/topten.c:834
+msgid "You made the top ten list!"
+msgstr ""
+
+#: src/topten.c:839
+#, c-format
+msgid "You reached the %d%s place on the top %d list."
+msgstr ""
+
+#: src/topten.c:938
 msgid " No  Points     Name"
 msgstr ""
 
-#: src/topten.c:941
+#: src/topten.c:942
 msgid "Hp [max]"
 msgstr ""
 
-#: src/topten.c:949
+#: src/topten.c:950
 msgid "ascended to demigodhood"
 msgstr ""
 
-#: src/topten.c:949
+#: src/topten.c:950
 msgid "escaped the dungeon"
 msgstr ""
 
-#: src/topten.c:949 win/X11/winmisc.c:1314 win/X11/winmisc.c:1393
+#: src/topten.c:950 win/X11/winmisc.c:1314 win/X11/winmisc.c:1393
 #: win/X11/winmisc.c:1470 win/X11/winmisc.c:1544
 msgid "quit"
 msgstr ""
 
-#: src/topten.c:950
+#: src/topten.c:951
 msgid "choked on his food"
 msgstr ""
 
-#: src/topten.c:950
+#: src/topten.c:951
 msgid "starved to death"
 msgstr ""
 
-#: src/topten.c:950
+#: src/topten.c:951
 msgid "was poisoned"
 msgstr ""
 
-#: src/topten.c:951
+#: src/topten.c:952
 msgid "died"
 msgstr ""
 
-#: src/topten.c:951
+#: src/topten.c:952
 msgid "turned to stone"
 msgstr ""
 
-#: src/topten.c:951
+#: src/topten.c:952
 msgid "was crushed to death"
 msgstr ""
 
-#: src/topten.c:952
+#: src/topten.c:953
 msgid " on the Astral Plane"
 msgstr ""
 
-#: src/topten.c:952
+#: src/topten.c:953
 msgid " on the Plane of Water"
 msgstr ""
 
-#: src/topten.c:953
+#: src/topten.c:954
 msgid " on the Plane of Air"
 msgstr ""
 
-#: src/topten.c:953
+#: src/topten.c:954
 msgid " on the Plane of Fire"
 msgstr ""
 
-#: src/topten.c:954 src/topten.c:1117
+#: src/topten.c:955 src/topten.c:1118
 msgid " in the Void"
 msgstr ""
 
-#: src/topten.c:954
+#: src/topten.c:955
 msgid " on the Plane of Earth"
 msgstr ""
 
-#: src/topten.c:955 src/topten.c:1135
+#: src/topten.c:956 src/topten.c:1136
 #, c-format
 msgid " [max %d]"
 msgstr ""
 
-#: src/topten.c:955 src/topten.c:1107
+#: src/topten.c:956 src/topten.c:1108
 #, c-format
 msgid " [max level %d]"
 msgstr ""
 
-#: src/topten.c:955 src/topten.c:1127
+#: src/topten.c:956 src/topten.c:1128
 #, c-format
 msgid " in %s"
 msgstr ""
 
-#: src/topten.c:955 src/topten.c:1130
+#: src/topten.c:956 src/topten.c:1131
 #, c-format
 msgid " on level %d"
 msgstr ""
 
-#: src/topten.c:956
+#: src/topten.c:957
 msgid "escaped the dungeon with the Amulet"
 msgstr ""
 
-#: src/topten.c:957
+#: src/topten.c:958
 #, c-format
 msgctxt "feminine"
 msgid "escaped the dungeon with the Amulet"
 msgstr ""
 
-#: src/topten.c:958
+#: src/topten.c:959
 msgctxt "while"
 msgid ", while being frightened to death"
 msgstr ""
 
-#: src/topten.c:959
+#: src/topten.c:960
 msgctxt "while"
 msgid ", while being scared stiff"
 msgstr ""
 
-#: src/topten.c:960
+#: src/topten.c:961
 msgctxt "while"
 msgid ", while being terrified of a demon"
 msgstr ""
 
-#: src/topten.c:961
+#: src/topten.c:962
 msgctxt "while"
 msgid ", while being terrified of a ghost"
 msgstr ""
 
-#: src/topten.c:962
+#: src/topten.c:963
 msgctxt "while"
 msgid ", while digesting something"
 msgstr ""
 
-#: src/topten.c:963
+#: src/topten.c:964
 msgctxt "while"
 msgid ", while disrobing"
 msgstr ""
 
-#: src/topten.c:964
+#: src/topten.c:965
 msgctxt "while"
 msgid ", while dragging an iron ball"
 msgstr ""
 
-#: src/topten.c:965
+#: src/topten.c:966
 msgctxt "while"
 msgid ", while dressing up"
 msgstr ""
 
-#: src/topten.c:966
+#: src/topten.c:967
 msgctxt "while"
 msgid ", while fainted from lack of food"
 msgstr ""
 
-#: src/topten.c:967
+#: src/topten.c:968
 msgctxt "while"
 msgid ", while frozen by a monster's gaze"
 msgstr ""
 
-#: src/topten.c:968
+#: src/topten.c:969
 msgctxt "while"
 msgid ", while frozen by a potion"
 msgstr ""
 
-#: src/topten.c:969
+#: src/topten.c:970
 msgctxt "while"
 msgid ", while frozen by a trap"
 msgstr ""
 
-#: src/topten.c:970
+#: src/topten.c:971
 msgctxt "while"
 msgid ", while fumbling"
 msgstr ""
 
-#: src/topten.c:971
+#: src/topten.c:972
 msgctxt "while"
 msgid ", while gazing into a crystal ball"
 msgstr ""
 
-#: src/topten.c:972
+#: src/topten.c:973
 msgctxt "while"
 msgid ", while gazing into a Magic 8-Ball (tm)"
 msgstr ""
 
-#: src/topten.c:973
+#: src/topten.c:974
 msgctxt "while"
 msgid ", while gazing into a mirror"
 msgstr ""
 
-#: src/topten.c:974
+#: src/topten.c:975
 msgctxt "while"
 msgid ", while getting stoned"
 msgstr ""
 
-#: src/topten.c:975
+#: src/topten.c:976
 msgctxt "while"
 msgid ", while hiding from thunderstorm"
 msgstr ""
 
-#: src/topten.c:976
+#: src/topten.c:977
 msgctxt "while"
 msgid ", while jumping around"
 msgstr ""
 
-#: src/topten.c:977
+#: src/topten.c:978
 msgctxt "while"
 msgid ", while moving through the air"
 msgstr ""
 
-#: src/topten.c:978
+#: src/topten.c:979
 msgctxt "while"
 msgid ", while opening a container"
 msgstr ""
 
-#: src/topten.c:979
+#: src/topten.c:980
 msgctxt "while"
 msgid ", while paralyzed by a monster"
 msgstr ""
 
-#: src/topten.c:980
+#: src/topten.c:981
 msgctxt "while"
 msgid ", while praying"
 msgstr ""
 
-#: src/topten.c:981
+#: src/topten.c:982
 msgctxt "while"
 msgid ", while pretending to be a pile of gold"
 msgstr ""
 
-#: src/topten.c:982
+#: src/topten.c:983
 msgctxt "while"
 msgid ", while reading a book"
 msgstr ""
 
-#: src/topten.c:983
+#: src/topten.c:984
 msgctxt "while"
 msgid ", while scared by rattling"
 msgstr ""
 
-#: src/topten.c:984
+#: src/topten.c:985
 msgctxt "while"
 msgid ", while sleeping"
 msgstr ""
 
-#: src/topten.c:985
+#: src/topten.c:986
 msgctxt "while"
 msgid ", while sleeping off a magical draught"
 msgstr ""
 
-#: src/topten.c:986
+#: src/topten.c:987
 msgctxt "while"
 msgid ", while stuck in a spider web"
 msgstr ""
 
-#: src/topten.c:987
+#: src/topten.c:988
 msgctxt "while"
 msgid ", while taking off clothes"
 msgstr ""
 
-#: src/topten.c:988
+#: src/topten.c:989
 msgctxt "while"
 msgid ", while tipping a container"
 msgstr ""
 
-#: src/topten.c:989
+#: src/topten.c:990
 msgctxt "while"
 msgid ", while trying to turn the monsters"
 msgstr ""
 
-#: src/topten.c:990
+#: src/topten.c:991
 msgctxt "while"
 msgid ", while unconscious from rotten food"
 msgstr ""
 
-#: src/topten.c:991
+#: src/topten.c:992
 msgctxt "while"
 msgid ", while vomiting"
 msgstr ""
 
-#: src/topten.c:992
+#: src/topten.c:993
 msgctxt "while"
 msgid ", while helpless"
 msgstr ""
 
-#: src/topten.c:993
+#: src/topten.c:994
 msgctxt "while"
 msgid ", while being toyed with by Fate"
 msgstr ""
 
-#: src/topten.c:994
+#: src/topten.c:995
 msgctxt "while"
 msgid ", while attempting to cheat Death"
 msgstr ""
 
-#: src/topten.c:995
+#: src/topten.c:996
 #, c-format
 msgctxt "feminine"
 msgid "escaped the dungeon"
 msgstr ""
 
-#: src/topten.c:996
+#: src/topten.c:997
 #, c-format
 msgctxt "feminine"
 msgid "ascended to demigodhood"
 msgstr ""
 
-#: src/topten.c:996
+#: src/topten.c:997
 #, c-format
 msgctxt "feminine"
 msgid "quit"
 msgstr ""
 
-#: src/topten.c:997
+#: src/topten.c:998
 #, c-format
 msgctxt "feminine"
 msgid "choked on his food"
 msgstr ""
 
-#: src/topten.c:997
+#: src/topten.c:998
 #, c-format
 msgctxt "feminine"
 msgid "starved to death"
 msgstr ""
 
-#: src/topten.c:998
+#: src/topten.c:999
 #, c-format
 msgctxt "feminine"
 msgid "was crushed to death"
 msgstr ""
 
-#: src/topten.c:998
+#: src/topten.c:999
 #, c-format
 msgctxt "feminine"
 msgid "was poisoned"
 msgstr ""
 
-#: src/topten.c:999
+#: src/topten.c:1000
 #, c-format
 msgctxt "feminine"
 msgid "died"
 msgstr ""
 
-#: src/topten.c:999
+#: src/topten.c:1000
 #, c-format
 msgctxt "feminine"
 msgid "turned to stone"
 msgstr ""
 
-#: src/topten.c:1594
+#: src/topten.c:1595
 #, c-format
 msgid "What weird role is this? (%s)"
 msgstr ""
 
-#: src/topten.c:1611
+#: src/topten.c:1612
 #, c-format
 msgid "Cannot open record file!"
 msgstr ""
