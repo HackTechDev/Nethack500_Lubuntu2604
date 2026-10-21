@@ -382,6 +382,11 @@ N_("You were overloaded; movement was not possible.")
 N_("You were unencumbered.")
 N_("You were overloaded <%ld>; movement was not possible.")
 N_("You were unencumbered <%ld>.")
+NC_("heroine", "You have been killed once.")
+NC_("heroine", "You have been killed %d times.")
+NC_("heroine", "You survived after being killed once.")
+NC_("heroine", "You survived after being killed %d times.")
+NC_("heroine", "You are dead.") NC_("heroine", "You are dead (%d%s time!).")
 NC_("heroine", "You are not hungry.")
 NC_("heroine", "You are not hungry <%ld>.")
 NC_("heroine", "You are hungry.")
@@ -2595,6 +2600,37 @@ attributes_enlightenment(
     }
 #endif
 
+#ifdef NHI18N
+    if (i18n_active()) {
+        /* whole sentences, with their "heroine" forms */
+        const char *fmt = 0;
+        int n = u.umortality;
+
+        if (final >= 2)
+            fmt = (n <= 1) ? N_("You are dead.")
+                           : N_("You are dead (%d%s time!).");
+        else if (!n)
+            fmt = final ? N_("You survived.") : (const char *) 0;
+        else if (n == 1)
+            fmt = final ? N_("You survived after being killed once.")
+                        : N_("You have been killed once.");
+        else
+            fmt = final ? N_("You survived after being killed %d times.")
+                        : N_("You have been killed %d times.");
+        if (fmt) {
+            const char *tr = flags.female ? i18n_lookup("heroine", fmt) : 0;
+            char line[BUFSZ];
+
+            if (!tr)
+                tr = _(fmt);
+            DISABLE_WARNING_FORMAT_NONLITERAL;
+            Snprintf(line, sizeof line, tr, n, i18n_ordin(n, TRUE));
+            RESTORE_WARNING_FORMAT_NONLITERAL;
+            Snprintf(buf, sizeof buf, " %s", line);
+            enlght_out(buf);
+        }
+    } else
+#endif
     {
         const char *p;
 
