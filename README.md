@@ -51,6 +51,38 @@ make WANT_WIN_ALL=1 WANT_WIN_QT6=1 QT6MANUAL=1 HOSTTYPE=x86_64 all
 Après un changement d'interfaces, supprimer d'abord les objets
 (`rm src/*.o`), sinon l'édition de liens échoue.
 
+### Erreur d'édition de liens avec Lua
+
+**Problème.** La compilation s'arrête à l'édition des liens de `nethack`
+sur des dizaines de « référence indéfinie vers « luaG_runerror » » (ou
+`lua_getstack`, `lua_getinfo`, `luaG_typeerror`…), suivies de
+`internal symbol 'luaG_runerror' isn't defined` et
+`ld returned 1 exit status`. Le code de NetHack n'est pas en cause :
+la bibliothèque Lua compilée, `lib/lua/liblua-5.4.8.a`, est abîmée.
+`ldebug.o` y est bien présent et complet, mais l'index des symboles de
+l'archive ne contient aucun de ses symboles ; le lieur ne les trouve
+donc pas. On le vérifie avec :
+
+```sh
+nm -s lib/lua/liblua-5.4.8.a | grep -c "in ldebug.o"   # 0 : archive abîmée
+```
+
+La cause exacte n'a pas été trouvée : Lua se compile en série et une
+reconstruction donne une archive correcte. Le plus probable est un
+incident pendant la première compilation (script interrompu, ou lancé
+deux fois en même temps).
+
+**Résolution.** Supprimer la bibliothèque Lua compilée et `include/nhlua.h`
+(tous regénérés), puis relancer le script :
+
+```sh
+rm -rf lib/lua include/nhlua.h lib/lua-5.4.8/src/*.o lib/lua-5.4.8/src/liblua.a
+./install.sh
+```
+
+Le message `troff: cannot load font 'S' for emboldening` affiché pendant
+la compilation du Guidebook n'est qu'un avertissement sans conséquence.
+
 ## Jouer en français
 
 La configuration fournie contient `OPTIONS=language:fr` : le jeu démarre
